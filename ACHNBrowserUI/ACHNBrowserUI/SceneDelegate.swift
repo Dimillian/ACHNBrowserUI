@@ -15,6 +15,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         let contentView = TabbarView()
+            .environmentObject(Collection())
         if let windowScene = scene as? UIWindowScene {
             
             //TODO: Move that to SwiftUI once implemented
@@ -34,7 +35,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             UITableView.appearance().tableFooterView = UIView()
             
             
-            UITabBar.appearance().tintColor = UIColor(named: "bell")
             UITabBar.appearance().unselectedItemTintColor = UIColor(named: "text")
             UITabBar.appearance().barTintColor = UIColor(named: "grass")
             UITabBar.appearance().backgroundColor = UIColor(named: "grass")

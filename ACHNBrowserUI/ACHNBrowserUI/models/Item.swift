@@ -14,7 +14,7 @@ struct ItemResponse: Codable {
     let results: [Item]
 }
 
-struct Item: Codable, Identifiable {
+struct Item: Codable, Equatable, Identifiable {
     var id: String { name }
     
     let name: String
@@ -22,6 +22,8 @@ struct Item: Codable, Identifiable {
     let obtainedFrom: String?
     let dIY: Bool?
     let customize: Bool?
+    
+    let variants: [String]?
     
     let buy: Int?
     let sell: Int?

@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct ItemsListView: View {
-    @ObservedObject var viewModel = ItemsViewModel(categorie: .housewares)
+    @ObservedObject private var viewModel = ItemsViewModel(categorie: .housewares)
     @State private var showFilterSheet = false
     
     let categories: [Categories]

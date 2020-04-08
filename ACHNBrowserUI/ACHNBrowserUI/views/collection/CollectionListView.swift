@@ -9,13 +9,17 @@
 import SwiftUI
 
 struct CollectionListView: View {
+    @EnvironmentObject private var collection: Collection
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-    }
-}
-
-struct CollectionListView_Previews: PreviewProvider {
-    static var previews: some View {
-        CollectionListView()
+        NavigationView {
+            List(collection.items) { item in
+                ItemRowView(item: item)
+                    .listRowBackground(Color.dialogue)
+            }
+            .background(Color.dialogue)
+            .navigationBarTitle(Text("Collection"),
+                                displayMode: .inline)
+        }
     }
 }

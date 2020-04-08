@@ -37,6 +37,6 @@ struct TabbarView: View {
             CollectionListView().tabItem{
                 self.tabbarItem(text: "Collection", image: "tray.2")
             }.tag(Tab.nature)
-        }
+        }.accentColor(.white)
     }
 }

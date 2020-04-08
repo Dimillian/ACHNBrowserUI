@@ -9,7 +9,11 @@
 import SwiftUI
 
 struct ItemRowView: View {
+    @EnvironmentObject private var collection: Collection
+    
     let item: Item
+    
+    @State var displayedVariant: String?
     
     func bellsView(title: String, price: Int) -> some View {
         HStack(spacing: 2) {
@@ -25,7 +29,17 @@ struct ItemRowView: View {
     
     var body: some View {
         HStack(spacing: 8) {
-            ItemImage(imageLoader: ImageLoader(path: item.image))
+            Button(action: {
+                if self.collection.items.contains(self.item) {
+                    self.collection.items.removeAll(where: { $0 == self.item })
+                } else {
+                    self.collection.items.append(self.item)
+                }
+            }) {
+                Image(systemName: self.collection.items.contains(self.item) ? "star.fill" : "star")
+                    .foregroundColor(.yellow)
+            }
+            ItemImage(imageLoader: ImageLoader(path: displayedVariant ?? item.image))
             VStack(alignment: .leading, spacing: 2) {
                 Text(item.name)
                     .font(.headline)
@@ -39,6 +53,22 @@ struct ItemRowView: View {
                     }
                     if item.sell != nil {
                         bellsView(title: "Sell for:", price: item.sell!)
+                    }
+                }
+                if item.variants != nil {
+                    ScrollView(.horizontal, showsIndicators: false) {
+                        HStack(spacing: 2) {
+                            ForEach(item.variants!, id: \.self) { variant in
+                                ItemVariantImage(imageLoader: ImageLoader(path: variant))
+                                    .cornerRadius(4)
+                                    .background(Rectangle()
+                                        .cornerRadius(4)
+                                        .foregroundColor(self.displayedVariant == variant ? Color.gray : Color.clear))
+                                    .onTapGesture {
+                                        self.displayedVariant = variant
+                                }
+                            }
+                        }.frame(height: 30)
                     }
                 }
             }
