@@ -14,7 +14,7 @@ class ItemsViewModel: ObservableObject {
     @Published var searchItems: [Item] = []
     @Published var searchText = ""
     
-    var currentFilter = APIService.Endpoint.housewares {
+    var categorie: Categories {
         didSet {
             items = []
             fetch()
@@ -29,7 +29,8 @@ class ItemsViewModel: ObservableObject {
         }
     }
     
-    init() {
+    init(categorie: Categories) {
+        self.categorie = categorie
         searchCancellable = _searchText
             .projectedValue
             .debounce(for: .milliseconds(300), scheduler: DispatchQueue.main)
@@ -42,7 +43,7 @@ class ItemsViewModel: ObservableObject {
     }
     
     func fetch() {
-        apiPublisher = APIService.fetch(endpoint: currentFilter)
+        apiPublisher = APIService.fetch(endpoint: categorie)
             .replaceError(with: ItemResponse(total: 0, results: []))
             .eraseToAnyPublisher()
         apiCancellable = apiPublisher?

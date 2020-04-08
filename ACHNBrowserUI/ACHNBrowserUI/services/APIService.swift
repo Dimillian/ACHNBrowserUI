@@ -13,21 +13,13 @@ struct APIService {
     static let BASE_URL = URL(string: API_URL)!
     
     private static let decoder = JSONDecoder()
-    
-    enum Endpoint: String, CaseIterable {
-        case housewares, miscellaneous
-        case wallMounted = "wall-mounted"
-        case wallpaper, floors, rugs, photos, posters, fencing, tools
-        case tops, bottoms, dresses, headwear, accessories, socks, shoes, bags
-        case umbrellas, songs, recipes, fossils, construction, nookmiles, other
-    }
-    
+        
     enum APIError: Error {
         case unknown
         case message(reason: String), parseError(reason: String), networkError(reason: String)
     }
     
-    static func fetch<T: Codable>(endpoint: Endpoint) -> AnyPublisher<T ,APIError> {
+    static func fetch<T: Codable>(endpoint: Categories) -> AnyPublisher<T ,APIError> {
         let component = URLComponents(url: BASE_URL.appendingPathComponent(endpoint.rawValue),
                                       resolvingAgainstBaseURL: false)!
         let request = URLRequest(url: component.url!)

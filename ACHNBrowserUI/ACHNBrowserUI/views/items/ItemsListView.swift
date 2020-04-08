@@ -9,8 +9,10 @@
 import SwiftUI
 
 struct ItemsListView: View {
-    @ObservedObject var viewModel = ItemsViewModel()
+    @ObservedObject var viewModel = ItemsViewModel(categorie: .housewares)
     @State private var showFilterSheet = false
+    
+    let categories: [Categories]
     
     private var filterButton: some View {
         Button(action: {
@@ -23,10 +25,10 @@ struct ItemsListView: View {
     
     private var filterSheet: ActionSheet {
         var buttons: [ActionSheet.Button] = []
-        for filter in APIService.Endpoint.allCases {
-            buttons.append(.default(Text(filter.rawValue),
+        for filter in categories {
+            buttons.append(.default(Text(filter.rawValue.capitalized),
                                     action: {
-                                        self.viewModel.currentFilter = filter
+                                        self.viewModel.categorie = filter
             }))
         }
         buttons.append(.cancel())
@@ -45,10 +47,10 @@ struct ItemsListView: View {
             .background(Color.dialogue)
             .navigationBarItems(trailing: filterButton
                 .actionSheet(isPresented: $showFilterSheet, content: { filterSheet }))
-            .navigationBarTitle(Text(viewModel.currentFilter.rawValue.capitalized),
+            .navigationBarTitle(Text(viewModel.categorie.rawValue.capitalized),
                                 displayMode: .inline)
         }.onAppear {
-            self.viewModel.fetch()
+            self.viewModel.categorie = self.categories.first!
         }
     }
 }
