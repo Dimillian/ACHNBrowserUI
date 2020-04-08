@@ -36,7 +36,7 @@ class ItemsViewModel: ObservableObject {
             .removeDuplicates()
             .sink { [weak self] string in
                 if !string.isEmpty {
-                    self?.searchItems = self?.items.filter({ $0.name.contains(string) }) ?? []
+                    self?.searchItems = self?.items.filter({ $0.name.lowercased().contains(string.lowercased()) }) ?? []
                 }
         }
     }

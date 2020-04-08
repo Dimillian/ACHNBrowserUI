@@ -36,28 +36,17 @@ struct ItemsListView: View {
     var body: some View {
         NavigationView {
             List {
-                SearchField(searchText: $viewModel.searchText)
+                SearchField(searchText: $viewModel.searchText).listRowBackground(Color.grass)
                 ForEach(!viewModel.searchText.isEmpty ? viewModel.searchItems : viewModel.items) { item in
-                    HStack(spacing: 8) {
-                        ItemImage(imageLoader: ImageLoader(path: item.image))
-                        VStack(alignment: .leading, spacing: 4) {
-                            Text(item.name).font(.headline)
-                            Text(item.obtainedFrom ?? "unknown source").font(.subheadline)
-                            HStack(spacing: 4) {
-                                if item.buy != nil {
-                                    Text("Buy for: \(item.buy!)").font(.caption)
-                                }
-                                if item.sell != nil {
-                                    Text("Sell for: \(item.sell!)").font(.caption)
-                                }
-                            }
-                        }
-                    }
+                    ItemRowView(item: item)
+                        .listRowBackground(Color.dialogue)
                 }
             }
+            .background(Color.dialogue)
             .navigationBarItems(trailing: filterButton
                 .actionSheet(isPresented: $showFilterSheet, content: { filterSheet }))
-            .navigationBarTitle(viewModel.currentFilter.rawValue.capitalized)
+            .navigationBarTitle(Text(viewModel.currentFilter.rawValue.capitalized),
+                                displayMode: .inline)
         }.onAppear {
             self.viewModel.fetch()
         }
