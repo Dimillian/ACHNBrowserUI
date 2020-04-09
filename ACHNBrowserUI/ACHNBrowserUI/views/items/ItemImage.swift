@@ -11,6 +11,7 @@ import SwiftUI
 struct ItemImage : View {
     @ObservedObject var imageLoader: ImageLoader
     @State var isImageLoaded = false
+    let size: CGFloat
     
     var body: some View {
         ZStack(alignment: .center) {
@@ -18,7 +19,7 @@ struct ItemImage : View {
                 Image(uiImage: self.imageLoader.image!)
                     .resizable()
                     .renderingMode(.original)
-                    .frame(width: 100, height: 100)
+                    .frame(width: size, height: size)
                     .animation(.spring())
                     .onAppear{
                         self.isImageLoaded = true
@@ -26,7 +27,7 @@ struct ItemImage : View {
             } else {
                 Rectangle()
                     .foregroundColor(.clear)
-                    .frame(width: 100, height: 100)
+                    .frame(width: size, height: size)
             }
         }
     }

@@ -40,8 +40,11 @@ struct ItemsListView: View {
             List {
                 SearchField(searchText: $viewModel.searchText).listRowBackground(Color.grass)
                 ForEach(!viewModel.searchText.isEmpty ? viewModel.searchItems : viewModel.items) { item in
-                    ItemRowView(item: item)
-                        .listRowBackground(Color.dialogue)
+                    NavigationLink(destination: ItemDetailView(item: item,
+                                                               viewModel: self.viewModel)) {
+                        ItemRowView(item: item)
+                            .listRowBackground(Color.dialogue)
+                    }
                 }
             }
             .background(Color.dialogue)
@@ -52,5 +55,12 @@ struct ItemsListView: View {
         }.onAppear {
             self.viewModel.categorie = self.categories.first!
         }
+    }
+}
+
+struct ItemsListViewPreviews: PreviewProvider {
+    static var previews: some View {
+        ItemsListView(categories: Categories.items())
+            .environmentObject(Collection())
     }
 }

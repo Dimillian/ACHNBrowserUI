@@ -38,8 +38,9 @@ struct ItemRowView: View {
             }) {
                 Image(systemName: self.collection.items.contains(self.item) ? "star.fill" : "star")
                     .foregroundColor(.yellow)
-            }
-            ItemImage(imageLoader: ImageLoaderCache.shared.loaderFor(path: displayedVariant ?? item.image))
+            }.buttonStyle(BorderlessButtonStyle())
+            ItemImage(imageLoader: ImageLoaderCache.shared.loaderFor(path: displayedVariant ?? item.image),
+                      size: 100)
             VStack(alignment: .leading, spacing: 2) {
                 Text(item.name)
                     .font(.headline)
@@ -59,7 +60,8 @@ struct ItemRowView: View {
                     ScrollView(.horizontal, showsIndicators: false) {
                         HStack(spacing: 2) {
                             ForEach(item.variants!, id: \.self) { variant in
-                                ItemVariantImage(imageLoader: ImageLoaderCache.shared.loaderFor(path: variant))
+                                ItemImage(imageLoader: ImageLoaderCache.shared.loaderFor(path: variant),
+                                                 size: 25)
                                     .cornerRadius(4)
                                     .background(Rectangle()
                                         .cornerRadius(4)
@@ -71,6 +73,21 @@ struct ItemRowView: View {
                         }.frame(height: 30)
                     }
                 }
+            }
+        }
+    }
+}
+
+struct ItemRowView_Previews: PreviewProvider {
+    static var previews: some View {
+        NavigationView {
+            List {
+                ItemRowView(item: static_item)
+                    .environmentObject(Collection())
+                ItemRowView(item: static_item)
+                    .environmentObject(Collection())
+                ItemRowView(item: static_item)
+                    .environmentObject(Collection())
             }
         }
     }
