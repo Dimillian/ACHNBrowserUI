@@ -25,4 +25,8 @@ extension Color {
     public static var grass: Color {
         Color("grass", bundle: nil)
     }
+    
+    public static var grass2: Color {
+        Color("grass-2", bundle: nil)
+    }
 }
