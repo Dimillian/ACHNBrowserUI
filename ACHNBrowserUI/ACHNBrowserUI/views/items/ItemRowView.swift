@@ -39,7 +39,7 @@ struct ItemRowView: View {
                 Image(systemName: self.collection.items.contains(self.item) ? "star.fill" : "star")
                     .foregroundColor(.yellow)
             }
-            ItemImage(imageLoader: ImageLoader(path: displayedVariant ?? item.image))
+            ItemImage(imageLoader: ImageLoaderCache.shared.loaderFor(path: displayedVariant ?? item.image))
             VStack(alignment: .leading, spacing: 2) {
                 Text(item.name)
                     .font(.headline)
@@ -59,7 +59,7 @@ struct ItemRowView: View {
                     ScrollView(.horizontal, showsIndicators: false) {
                         HStack(spacing: 2) {
                             ForEach(item.variants!, id: \.self) { variant in
-                                ItemVariantImage(imageLoader: ImageLoader(path: variant))
+                                ItemVariantImage(imageLoader: ImageLoaderCache.shared.loaderFor(path: variant))
                                     .cornerRadius(4)
                                     .background(Rectangle()
                                         .cornerRadius(4)

@@ -41,8 +41,6 @@ public final class ImageLoader: ObservableObject {
         
         self.objectWillChange = $image.handleEvents(receiveSubscription: { [weak self] sub in
             self?.loadImage()
-            }, receiveCancel: { [weak self] in
-                self?.cancellable?.cancel()
         }).eraseToAnyPublisher()
     }
     
