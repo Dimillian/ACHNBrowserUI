@@ -30,11 +30,7 @@ struct ItemRowView: View {
     var body: some View {
         HStack(spacing: 8) {
             Button(action: {
-                if self.collection.items.contains(self.item) {
-                    self.collection.items.removeAll(where: { $0 == self.item })
-                } else {
-                    self.collection.items.append(self.item)
-                }
+                self.collection.toggleItem(item: self.item)
             }) {
                 Image(systemName: self.collection.items.contains(self.item) ? "star.fill" : "star")
                     .foregroundColor(.yellow)
