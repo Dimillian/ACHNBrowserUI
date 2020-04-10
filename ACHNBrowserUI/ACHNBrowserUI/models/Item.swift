@@ -26,6 +26,9 @@ struct Item: Codable, Equatable, Identifiable {
     let variants: [String]?
     
     let category: String
+    var appCategory: Categories? {
+        Categories(rawValue: category)
+    }
     
     let buy: Int?
     let sell: Int?

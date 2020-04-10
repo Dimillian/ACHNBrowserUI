@@ -25,8 +25,11 @@ struct CollectionListView: View {
                 .padding()
                 
                 List(collection.items) { item in
-                    ItemRowView(item: item)
-                        .listRowBackground(Color.dialogue)
+                    NavigationLink(destination: ItemDetailView(item: item,
+                                                               viewModel: ItemsViewModel(categorie: item.appCategory ?? .housewares))) {
+                                                                ItemRowView(item: item)
+                                                                    .listRowBackground(Color.dialogue)
+                    }
                 }
             }
             .background(Color.dialogue)

@@ -44,13 +44,11 @@ struct ItemRowView: View {
                 Text(item.obtainedFrom ?? "unknown source")
                     .font(.subheadline)
                     .foregroundColor(.text)
-                HStack(spacing: 4) {
-                    if item.buy != nil {
-                        bellsView(title: "Buy for:", price: item.buy!)
-                    }
-                    if item.sell != nil {
-                        bellsView(title: "Sell for:", price: item.sell!)
-                    }
+                if item.buy != nil {
+                    bellsView(title: "Buy for:", price: item.buy!)
+                }
+                if item.sell != nil {
+                    bellsView(title: "Sell for:", price: item.sell!)
                 }
                 if item.variants != nil {
                     ScrollView(.horizontal, showsIndicators: false) {
