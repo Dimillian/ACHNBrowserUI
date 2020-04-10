@@ -25,6 +25,8 @@ struct Item: Codable, Equatable, Identifiable {
     
     let variants: [String]?
     
+    let category: String
+    
     let buy: Int?
     let sell: Int?
     
@@ -45,6 +47,7 @@ let static_item = Item(name: "Acoustic guitar",
                        dIY: true,
                        customize: true,
                        variants: ["3FX566U", "dob8IS9", "fJWXEXw", "CrJ1ozg", "LJROUEd", ""],
+                       category: "Housewares",
                        buy: 200,
                        sell: 300,
                        set: "Instrument")

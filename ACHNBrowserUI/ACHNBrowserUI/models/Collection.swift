@@ -11,6 +11,7 @@ import Combine
 
 class Collection: ObservableObject {
     @Published var items: [Item] = []
+    @Published var categories: [String] = []
     
     private let filePath: URL
     private let encoder = JSONEncoder()
@@ -25,6 +26,11 @@ class Collection: ObservableObject {
             if let data = try? Data(contentsOf: filePath) {
                 decoder.dataDecodingStrategy = .base64
                 items = try decoder.decode([Item].self, from: data)
+                for item in items {
+                    if !categories.contains(item.category) {
+                        categories.append(item.category)
+                    }
+                }
             }
         } catch let error {
             fatalError(error.localizedDescription)
@@ -36,6 +42,9 @@ class Collection: ObservableObject {
             items.removeAll(where: { $0 == item })
         } else {
             items.append(item)
+        }
+        if !categories.contains(item.category) {
+            categories.append(item.category)
         }
         save()
     }
