@@ -27,8 +27,10 @@ struct Item: Codable, Equatable, Identifiable {
     
     let category: String
     var appCategory: Categories? {
-        Categories(rawValue: category)
+        Categories(rawValue: category.lowercased())
     }
+    
+    let materials: [Material]?
     
     let buy: Int?
     let sell: Int?
@@ -51,6 +53,7 @@ let static_item = Item(name: "Acoustic guitar",
                        customize: true,
                        variants: ["3FX566U", "dob8IS9", "fJWXEXw", "CrJ1ozg", "LJROUEd", ""],
                        category: "Housewares",
+                       materials: nil,
                        buy: 200,
                        sell: 300,
                        set: "Instrument")

@@ -20,8 +20,14 @@ struct ItemDetailView: View {
             .foregroundColor(.text)) {
                 HStack(alignment: .center) {
                     Spacer()
-                    ItemImage(imageLoader: ImageLoaderCache.shared.loaderFor(path: displayedVariant ?? item.image),
-                              size: 150)
+                    if item.image == nil && displayedVariant == nil {
+                        Image(item.appCategory!.iconName())
+                            .resizable()
+                            .frame(width: 150, height: 150)
+                    } else {
+                        ItemImage(imageLoader: ImageLoaderCache.shared.loaderFor(path: displayedVariant ?? item.image),
+                                  size: 150)
+                    }
                     Spacer()
                 }
         }
@@ -41,6 +47,34 @@ struct ItemDetailView: View {
                                     withAnimation {
                                         self.displayedVariant = variant
                                     }
+                            }
+                        }
+                    }
+                }
+        }
+    }
+    
+    private var materialsSection: some View {
+        Section(header: Text("MATERIALS")
+            .font(.headline)
+            .fontWeight(.bold)
+            .foregroundColor(.text)) {
+                ScrollView(.horizontal, showsIndicators: false) {
+                    HStack {
+                        ForEach(item.materials!) { material in
+                            VStack {
+                                if material.iconName != nil {
+                                    Image(material.iconName!)
+                                        .resizable()
+                                        .frame(width: 50, height: 50)
+                                }
+                                Text(material.itemName)
+                                    .font(.callout)
+                                    .foregroundColor(.text)
+                                Text("\(material.count)")
+                                    .font(.footnote)
+                                    .foregroundColor(.bell)
+                                
                             }
                         }
                     }
@@ -81,6 +115,9 @@ struct ItemDetailView: View {
             
             if item.set != nil {
                 setSection
+            }
+            if item.materials != nil {
+                materialsSection
             }
         }
         .onAppear(perform: {

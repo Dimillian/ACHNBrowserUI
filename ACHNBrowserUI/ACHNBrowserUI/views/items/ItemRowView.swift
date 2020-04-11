@@ -26,7 +26,7 @@ struct ItemRowView: View {
                 .foregroundColor(.bell)
         }
     }
-    
+        
     var body: some View {
         HStack(spacing: 8) {
             Button(action: {
@@ -35,8 +35,14 @@ struct ItemRowView: View {
                 Image(systemName: self.collection.items.contains(self.item) ? "star.fill" : "star")
                     .foregroundColor(.yellow)
             }.buttonStyle(BorderlessButtonStyle())
-            ItemImage(imageLoader: ImageLoaderCache.shared.loaderFor(path: displayedVariant ?? item.image),
-                      size: 100)
+            if item.image == nil && displayedVariant == nil {
+                Image(item.appCategory!.iconName())
+                    .resizable()
+                    .frame(width: 100, height: 100)
+            } else {
+                ItemImage(imageLoader: ImageLoaderCache.shared.loaderFor(path: displayedVariant ?? item.image),
+                          size: 100)
+            }
             VStack(alignment: .leading, spacing: 2) {
                 Text(item.name)
                     .font(.headline)

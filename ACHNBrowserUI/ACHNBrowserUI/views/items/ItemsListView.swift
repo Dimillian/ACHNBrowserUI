@@ -49,7 +49,8 @@ struct ItemsListView: View {
             }
             .background(Color.dialogue)
             .navigationBarItems(trailing: filterButton
-                .actionSheet(isPresented: $showFilterSheet, content: { filterSheet }))
+                .sheet(isPresented: $showFilterSheet, content: { CategoriesView(categories: self.categories,
+                                                                                selectedCategory: self.$viewModel.categorie) }))
             .navigationBarTitle(Text(viewModel.categorie.rawValue.capitalized),
                                 displayMode: .inline)
         }.onAppear {
