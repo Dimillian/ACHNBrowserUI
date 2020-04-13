@@ -27,7 +27,7 @@ struct Item: Codable, Equatable, Identifiable {
     
     let category: String
     var appCategory: Categories? {
-        Categories(rawValue: category.lowercased())
+        Categories(rawValue: category.lowercased().replacingOccurrences(of: " ", with: ""))
     }
     
     let materials: [Material]?

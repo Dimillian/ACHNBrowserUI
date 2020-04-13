@@ -10,7 +10,8 @@ import Foundation
 import Combine
 
 struct APIService {
-    static let BASE_URL = URL(string: API_URL)!
+    // Will be available once the API is public
+    // static let BASE_URL = URL(string: API_URL)!
     
     private static let decoder = JSONDecoder()
         
@@ -20,10 +21,13 @@ struct APIService {
     }
     
     static func fetch<T: Codable>(endpoint: Categories) -> AnyPublisher<T ,APIError> {
-        let component = URLComponents(url: BASE_URL.appendingPathComponent(endpoint.rawValue),
+        let url = Bundle.main.url(forResource: endpoint.rawValue, withExtension: nil)!
+        let data = try! Data(contentsOf: url)
+        let component = URLComponents(url: URL(string: "https://localhost")!.appendingPathComponent(endpoint.rawValue),
                                       resolvingAgainstBaseURL: false)!
         let request = URLRequest(url: component.url!)
         return URLSession.shared.dataTaskPublisher(for: request)
+            .replaceError(with: (data: data, response: HTTPURLResponse(url: url, mimeType: nil, expectedContentLength: 0, textEncodingName: "utf8")))
             .tryMap{ data, response in
                 guard let httpResponse = response as? HTTPURLResponse else {
                     throw APIError.unknown
