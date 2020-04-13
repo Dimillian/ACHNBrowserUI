@@ -8,4 +8,6 @@ This is just a very simple SwiftUI application, all the database hard work have 
 
 And [u/Azarro](https://www.reddit.com/user/Azarro/) made an awesome JSON API from that google sheet. (private for now).
 
-Note: You won't be able to compile the project for now as it miss some conf files, once the API will be publicly available I'll push the changes. 
+As the API is private the app use a local dump of the API at the moment. 
+
+You can use this application for learning about SwiftUI and Combine. It use a very standard view, and view model architecture with full use of @State, @Binding, @Published, Observed and Observable object. 

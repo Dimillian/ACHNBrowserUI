@@ -20,6 +20,7 @@ struct APIService {
         case message(reason: String), parseError(reason: String), networkError(reason: String)
     }
     
+    // Here we fake the API so we use localshost and replace any response with a local response coming from bundle files.
     static func fetch<T: Codable>(endpoint: Categories) -> AnyPublisher<T ,APIError> {
         let url = Bundle.main.url(forResource: endpoint.rawValue, withExtension: nil)!
         let data = try! Data(contentsOf: url)
