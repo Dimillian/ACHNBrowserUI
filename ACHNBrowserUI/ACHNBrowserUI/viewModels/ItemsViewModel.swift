@@ -31,15 +31,20 @@ class ItemsViewModel: ObservableObject {
             guard let sort = sort else { return }
             switch sort {
             case .name:
-                sortedItems = items.sorted(by: \.name)
+                let compare: (String, String) -> Bool = sort == oldValue ? (>) : (<)
+                sortedItems = items.sorted{ compare($0.name, $1.name) }
             case .buy:
-                sortedItems = items.filter{ $0.buy != nil}.sorted{ $0.buy! > $1.buy! }
+                let compare: (Int, Int) -> Bool = sort == oldValue ? (>) : (<)
+                sortedItems = items.filter{ $0.buy != nil}.sorted{ compare($0.buy!, $1.buy!) }
             case .sell:
-                sortedItems = items.filter{ $0.sell != nil}.sorted{ $0.sell! > $1.sell! }
+                let compare: (Int, Int) -> Bool = sort == oldValue ? (>) : (<)
+                sortedItems = items.filter{ $0.sell != nil}.sorted{ compare($0.sell!, $1.sell!) }
             case .from:
-                sortedItems = items.filter{ $0.obtainedFrom != nil}.sorted{ $0.obtainedFrom! > $1.obtainedFrom! }
+                let compare: (String, String) -> Bool = sort == oldValue ? (>) : (<)
+                sortedItems = items.filter{ $0.obtainedFrom != nil}.sorted{ compare($0.obtainedFrom!, $1.obtainedFrom!) }
             case .set:
-                sortedItems = items.filter{ $0.set != nil}.sorted{ $0.set! > $1.set! }
+                let compare: (String, String) -> Bool = sort == oldValue ? (>) : (<)
+                sortedItems = items.filter{ $0.set != nil}.sorted{ compare($0.set!, $1.set!) }
             }
         }
     }
