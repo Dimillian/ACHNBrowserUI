@@ -11,3 +11,9 @@ And [u/Azarro](https://www.reddit.com/user/Azarro/) made an awesome JSON API fro
 As the API is private the app use a local dump of the API at the moment. 
 
 You can use this application for learning about SwiftUI and Combine. It use a very standard view, and view model architecture with full use of @State, @Binding, @Published, Observed and Observable object. 
+
+## Images
+
+![Image1](images/image1.png?)
+![Image2](images/image2.png?)
+![Image3](images/image3.png?)
