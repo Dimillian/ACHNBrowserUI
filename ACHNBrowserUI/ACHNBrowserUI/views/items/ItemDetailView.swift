@@ -14,7 +14,8 @@ struct ItemDetailView: View {
     @State private var displayedVariant: String?
     
     var setItems: [Item] {
-        viewModel.items.filter({ $0.set == item.set})
+        guard let set = item.set else { return [] }
+        return viewModel.items.filter({ $0.set == set })
     }
     
     private var informationSection: some View {

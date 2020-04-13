@@ -21,6 +21,7 @@ class ItemsViewModel: ObservableObject {
     
     var categorie: Categories {
         didSet {
+            sort = nil
             items = []
             fetch()
         }

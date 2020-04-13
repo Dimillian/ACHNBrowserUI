@@ -15,15 +15,6 @@ struct CollectionListView: View {
     var body: some View {
         NavigationView {
             VStack {
-                Picker(selection: self.$selectedCatory, label: Text("")) {
-                    Text("All").tag(0)
-                    ForEach(self.collection.categories, id: \.self) { category in
-                        Text(category).tag(self.collection.categories.firstIndex(of: category)! - 1)
-                    }
-                }
-                .pickerStyle(SegmentedPickerStyle())
-                .padding()
-                
                 List(collection.items) { item in
                     NavigationLink(destination: ItemDetailView(item: item,
                                                                viewModel: ItemsViewModel(categorie: item.appCategory ?? .housewares))) {

@@ -53,6 +53,10 @@ struct ItemsListView: View {
                                         self.viewModel.sort = sort
             }))
         }
+        buttons.append(.default(Text("Remove filter"), action: {
+            self.viewModel.sort = nil
+            self.viewModel.fetch()
+        }))
         buttons.append(.cancel())
         return ActionSheet(title: Text("Sort items"), buttons: buttons)
     }
