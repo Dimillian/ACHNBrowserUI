@@ -13,22 +13,54 @@ struct ItemDetailView: View {
     @ObservedObject var viewModel: ItemsViewModel
     @State private var displayedVariant: String?
     
+    var setItems: [Item] {
+        viewModel.items.filter({ $0.set == item.set})
+    }
+    
     private var informationSection: some View {
         Section(header: Text("INFORMATION")
             .font(.headline)
             .fontWeight(.bold)
             .foregroundColor(.text)) {
-                HStack(alignment: .center) {
-                    Spacer()
-                    if item.image == nil && displayedVariant == nil {
-                        Image(item.appCategory!.iconName())
-                            .resizable()
-                            .frame(width: 150, height: 150)
-                    } else {
-                        ItemImage(imageLoader: ImageLoaderCache.shared.loaderFor(path: displayedVariant ?? item.image),
-                                  size: 150)
+                VStack( spacing: 4) {
+                    HStack(alignment: .center) {
+                        Spacer()
+                        if item.image == nil && displayedVariant == nil {
+                            Image(item.appCategory!.iconName())
+                                .resizable()
+                                .frame(width: 150, height: 150)
+                        } else {
+                            ItemImage(imageLoader: ImageLoaderCache.shared.loaderFor(path: displayedVariant ?? item.image),
+                                      size: 150)
+                        }
+                        Spacer()
                     }
-                    Spacer()
+                    if item.obtainedFrom != nil {
+                        Text(item.obtainedFrom!)
+                            .foregroundColor(.secondaryText)
+                    }
+                    Text("Customizable: \(item.customize == true ? "Yes" : "no")")
+                        .foregroundColor(.text)
+                    HStack(spacing: 16) {
+                        if item.sell != nil {
+                            HStack(spacing: 2) {
+                                Image("icon-bells")
+                                    .resizable()
+                                    .frame(width: 25, height: 25)
+                                Text("\(item.sell!)")
+                                    .foregroundColor(.bell)
+                            }
+                        }
+                        if item.buy != nil {
+                            HStack(spacing: 2) {
+                                Image("icon-bell")
+                                    .resizable()
+                                    .frame(width: 25, height: 25)
+                                Text("\(item.buy!)")
+                                    .foregroundColor(.bell)
+                            }
+                        }
+                    }
                 }
         }
     }
@@ -89,7 +121,7 @@ struct ItemDetailView: View {
             .foregroundColor(.text)) {
                 ScrollView(.horizontal, showsIndicators: false) {
                     HStack {
-                        ForEach(viewModel.items.filter({ $0.set == item.set} )) { item in
+                        ForEach(setItems) { item in
                             VStack(alignment: .center, spacing: 4) {
                                 ItemImage(imageLoader: ImageLoaderCache.shared.loaderFor(path: item.image),
                                           size: 75)
@@ -113,7 +145,7 @@ struct ItemDetailView: View {
                 variantsSection
             }
             
-            if item.set != nil {
+            if !setItems.isEmpty {
                 setSection
             }
             if item.materials != nil {

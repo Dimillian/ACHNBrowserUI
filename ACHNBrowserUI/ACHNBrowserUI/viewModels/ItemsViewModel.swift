@@ -11,13 +11,36 @@ import Combine
 
 class ItemsViewModel: ObservableObject {
     @Published var items: [Item] = []
+    @Published var sortedItems: [Item] = []
     @Published var searchItems: [Item] = []
     @Published var searchText = ""
+    
+    enum Sort: String, CaseIterable {
+        case name, buy, sell, from, set
+    }
     
     var categorie: Categories {
         didSet {
             items = []
             fetch()
+        }
+    }
+    
+    var sort: Sort? {
+        didSet {
+            guard let sort = sort else { return }
+            switch sort {
+            case .name:
+                sortedItems = items.sorted(by: \.name)
+            case .buy:
+                sortedItems = items.filter{ $0.buy != nil}.sorted{ $0.buy! > $1.buy! }
+            case .sell:
+                sortedItems = items.filter{ $0.sell != nil}.sorted{ $0.sell! > $1.sell! }
+            case .from:
+                sortedItems = items.filter{ $0.obtainedFrom != nil}.sorted{ $0.obtainedFrom! > $1.obtainedFrom! }
+            case .set:
+                sortedItems = items.filter{ $0.set != nil}.sorted{ $0.set! > $1.set! }
+            }
         }
     }
     

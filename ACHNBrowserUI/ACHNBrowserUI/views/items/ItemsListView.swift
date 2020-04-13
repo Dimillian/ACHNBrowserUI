@@ -11,6 +11,19 @@ import SwiftUI
 struct ItemsListView: View {
     @ObservedObject private var viewModel = ItemsViewModel(categorie: .housewares)
     @State private var showFilterSheet = false
+    @State private var showSortSheet = false
+    
+    var currentItems: [Item] {
+        get {
+            if !viewModel.searchText.isEmpty {
+                return viewModel.searchItems
+            } else if viewModel.sort != nil {
+                return viewModel.sortedItems
+            } else {
+                return viewModel.items
+            }
+        }
+    }
     
     let categories: [Categories]
     
@@ -23,23 +36,32 @@ struct ItemsListView: View {
         }
     }
     
-    private var filterSheet: ActionSheet {
+    private var sortButton: some View {
+        Button(action: {
+            self.showSortSheet.toggle()
+        }) {
+            Image(systemName: "arrow.up.arrow.down.circle")
+                .font(.title)
+        }
+    }
+    
+    private var sortSheet: ActionSheet {
         var buttons: [ActionSheet.Button] = []
-        for filter in categories {
-            buttons.append(.default(Text(filter.rawValue.capitalized),
+        for sort in ItemsViewModel.Sort.allCases {
+            buttons.append(.default(Text(sort.rawValue.capitalized),
                                     action: {
-                                        self.viewModel.categorie = filter
+                                        self.viewModel.sort = sort
             }))
         }
         buttons.append(.cancel())
-        return ActionSheet(title: Text("Filter items"), buttons: buttons)
+        return ActionSheet(title: Text("Sort items"), buttons: buttons)
     }
     
     var body: some View {
         NavigationView {
             List {
                 SearchField(searchText: $viewModel.searchText).listRowBackground(Color.grass)
-                ForEach(!viewModel.searchText.isEmpty ? viewModel.searchItems : viewModel.items) { item in
+                ForEach(currentItems) { item in
                     NavigationLink(destination: ItemDetailView(item: item,
                                                                viewModel: self.viewModel)) {
                         ItemRowView(item: item)
@@ -48,11 +70,12 @@ struct ItemsListView: View {
                 }
             }
             .background(Color.dialogue)
-            .navigationBarItems(trailing: filterButton
-                .sheet(isPresented: $showFilterSheet, content: { CategoriesView(categories: self.categories,
-                                                                                selectedCategory: self.$viewModel.categorie) }))
+            .navigationBarItems(leading: sortButton, trailing: filterButton)
             .navigationBarTitle(Text(viewModel.categorie.rawValue.capitalized),
                                 displayMode: .inline)
+            .sheet(isPresented: $showFilterSheet, content: { CategoriesView(categories: self.categories,
+                                                                            selectedCategory: self.$viewModel.categorie) })
+            .actionSheet(isPresented: $showSortSheet, content: { self.sortSheet })
         }.onAppear {
             self.viewModel.categorie = self.categories.first!
         }

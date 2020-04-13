@@ -49,7 +49,7 @@ struct ItemRowView: View {
                     .foregroundColor(.text)
                 Text(item.obtainedFrom ?? "unknown source")
                     .font(.subheadline)
-                    .foregroundColor(.text)
+                    .foregroundColor(.secondaryText)
                 if item.buy != nil {
                     bellsView(title: "Buy for:", price: item.buy!)
                 }

@@ -26,8 +26,8 @@ struct CategoriesView: View {
                     self.selectedCategory = categorie
                     self.presentationMode.wrappedValue.dismiss()
                 }
-            }.navigationBarTitle(Text("Categories"), displayMode: .inline)
-        }
+                }.navigationBarTitle(Text("Categories"), displayMode: .inline)
+        }.navigationViewStyle(StackNavigationViewStyle())
     }
 }
 
