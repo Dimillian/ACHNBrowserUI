@@ -73,7 +73,6 @@ struct ItemsListView: View {
                     }
                 }
             }
-            .id(UUID())
             .background(Color.dialogue)
             .navigationBarItems(leading: sortButton, trailing: filterButton)
             .navigationBarTitle(Text(viewModel.categorie.rawValue.capitalized),
