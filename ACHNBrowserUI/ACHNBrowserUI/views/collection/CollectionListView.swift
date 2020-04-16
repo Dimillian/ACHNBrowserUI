@@ -22,6 +22,12 @@ struct CollectionListView: View {
                                                                     .listRowBackground(Color.dialogue)
                     }
                 }
+                .overlay(Group {
+                    if collection.items.isEmpty {
+                        Text("Tap the stars to start collecting!")
+                            .foregroundColor(.secondary)
+                    }
+                })
             }
             .background(Color.dialogue)
             .navigationBarTitle(Text("Collection"),
