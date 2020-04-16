@@ -16,15 +16,20 @@ struct CategoriesView: View {
     var body: some View {
         NavigationView {
             List(categories, id: \.self) { categorie in
-                HStack(spacing: 4) {
-                    if categorie == self.selectedCategory {
-                        Image(systemName: "checkmark").foregroundColor(.bell)
-                    }
-                    Image(categorie.iconName()).resizable().frame(width: 25, height: 25)
-                    Text(categorie.rawValue.capitalized).foregroundColor(.text)
-                }.onTapGesture {
+                Button(action: {
                     self.selectedCategory = categorie
                     self.presentationMode.wrappedValue.dismiss()
+                }) {
+                    HStack(spacing: 4) {
+                        if categorie == self.selectedCategory {
+                            Image(systemName: "checkmark").foregroundColor(.bell)
+                        }
+                        Image(categorie.iconName())
+                            .renderingMode(.original)
+                            .resizable()
+                            .frame(width: 25, height: 25)
+                        Text(categorie.rawValue.capitalized).foregroundColor(.text)
+                    }
                 }
                 }.navigationBarTitle(Text("Categories"), displayMode: .inline)
         }.navigationViewStyle(StackNavigationViewStyle())
