@@ -19,7 +19,8 @@ public class ImageService {
     }
     
     public func fetchImage(key: String) -> AnyPublisher<UIImage?, Never> {
-        return URLSession.shared.dataTaskPublisher(for: URL(string: "\(ImageService.SERVICE_URL)\(key).png")!)
+        let url = key.starts(with: "http") ? URL(string: key) : URL(string: "\(ImageService.SERVICE_URL)\(key).png")
+        return URLSession.shared.dataTaskPublisher(for: url!)
             .tryMap { (data, response) -> UIImage? in
                 return UIImage(data: data)
         }.catch { error in

@@ -27,6 +27,7 @@ struct Listing: Decodable, Identifiable {
     var active: Bool
     var selling: Bool
     var makeOffer: Bool
+    var needMaterials: Bool
     var username: String
     var discord: String?
     var status: Status?
