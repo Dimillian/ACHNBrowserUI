@@ -85,17 +85,9 @@ struct ItemsListView: View {
         }
         .id(viewModel.sort)
         .background(Color.dialogue)
-        .navigationBarItems(trailing: sortButton)
         .navigationBarTitle(Text(viewModel.categorie.rawValue.capitalized),
                             displayMode: .inline)
         .actionSheet(isPresented: $showSortSheet, content: { self.sortSheet })
         .onAppear(perform: viewModel.fetch)
     }
 }
-
-//struct ItemsListViewPreviews: PreviewProvider {
-//    static var previews: some View {
-//        ItemsListView(categories: Categories.items())
-//            .environmentObject(CollectionViewModel())
-//    }
-//}
