@@ -38,6 +38,12 @@ struct Island: Decodable {
     let commerce: Commerce
     let islandTime: String
     let creationTime: String
-    let islandDescription: String
+    let islandDescription: String?
     let queued: String
+}
+
+extension Island: Identifiable {
+    var id: String {
+        turnipCode
+    }
 }

@@ -58,7 +58,7 @@ class ItemsViewModel: ObservableObject {
         }
     }
     
-    init(categorie: Categories) {
+    public init(categorie: Categories) {
         self.categorie = categorie
         searchCancellable = _searchText
             .projectedValue
