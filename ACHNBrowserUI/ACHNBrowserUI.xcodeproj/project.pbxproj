@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		687B57602449EEB100C1E86F /* Island.swift in Sources */ = {isa = PBXBuildFile; fileRef = 687B575F2449EEB100C1E86F /* Island.swift */; };
+		687B57622449EF8C00C1E86F /* TurnipExchangeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 687B57612449EF8C00C1E86F /* TurnipExchangeService.swift */; };
 		68DFFFA9244927A400DEA07F /* NookazonService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68DFFFA8244927A400DEA07F /* NookazonService.swift */; };
 		68DFFFAB244927CA00DEA07F /* Listing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68DFFFAA244927CA00DEA07F /* Listing.swift */; };
 		68DFFFAD24492D7F00DEA07F /* ItemDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68DFFFAC24492D7F00DEA07F /* ItemDetailViewModel.swift */; };
@@ -74,6 +76,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		687B575F2449EEB100C1E86F /* Island.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Island.swift; sourceTree = "<group>"; };
+		687B57612449EF8C00C1E86F /* TurnipExchangeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TurnipExchangeService.swift; sourceTree = "<group>"; };
 		68DFFFA8244927A400DEA07F /* NookazonService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NookazonService.swift; sourceTree = "<group>"; };
 		68DFFFAA244927CA00DEA07F /* Listing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Listing.swift; sourceTree = "<group>"; };
 		68DFFFAC24492D7F00DEA07F /* ItemDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailViewModel.swift; sourceTree = "<group>"; };
@@ -279,11 +283,12 @@
 		69AF8C65243E285A001DD9CB /* models */ = {
 			isa = PBXGroup;
 			children = (
-				69AF8C7F243E5EBD001DD9CB /* Categories.swift */,
-				69AF8C69243E28B0001DD9CB /* Item.swift */,
-				69C5F5E62442119500BF8FA4 /* Material.swift */,
-				68DFFFAA244927CA00DEA07F /* Listing.swift */,
 				697E63EF2449A38A008FB710 /* APIError.swift */,
+				69AF8C7F243E5EBD001DD9CB /* Categories.swift */,
+				687B575F2449EEB100C1E86F /* Island.swift */,
+				69AF8C69243E28B0001DD9CB /* Item.swift */,
+				68DFFFAA244927CA00DEA07F /* Listing.swift */,
+				69C5F5E62442119500BF8FA4 /* Material.swift */,
 				697E63F12449A406008FB710 /* Villager.swift */,
 			);
 			path = models;
@@ -296,6 +301,7 @@
 				69AF8C6E243E2E6D001DD9CB /* ImageService.swift */,
 				68DFFFA8244927A400DEA07F /* NookazonService.swift */,
 				697E63ED2449A365008FB710 /* ACNHApiService.swift */,
+				687B57612449EF8C00C1E86F /* TurnipExchangeService.swift */,
 			);
 			path = services;
 			sourceTree = "<group>";
@@ -466,7 +472,9 @@
 			files = (
 				68DFFFAD24492D7F00DEA07F /* ItemDetailViewModel.swift in Sources */,
 				69AF8C7E243E4DD9001DD9CB /* ItemRowView.swift in Sources */,
+				687B57602449EEB100C1E86F /* Island.swift in Sources */,
 				697E63F52449A58E008FB710 /* VillagersListView.swift in Sources */,
+				687B57622449EF8C00C1E86F /* TurnipExchangeService.swift in Sources */,
 				68DFFFAB244927CA00DEA07F /* Listing.swift in Sources */,
 				69C5F5E72442119500BF8FA4 /* Material.swift in Sources */,
 				69AF8C80243E5EBD001DD9CB /* Categories.swift in Sources */,
@@ -633,7 +641,7 @@
 				CODE_SIGN_ENTITLEMENTS = ACHNBrowserUI/ACHNBrowserUI.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"ACHNBrowserUI/Preview Content\"";
-				DEVELOPMENT_TEAM = Z6P74P6T99;
+				DEVELOPMENT_TEAM = F9PGNEMEHU;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = ACHNBrowserUI/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -655,7 +663,7 @@
 				CODE_SIGN_ENTITLEMENTS = ACHNBrowserUI/ACHNBrowserUI.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"ACHNBrowserUI/Preview Content\"";
-				DEVELOPMENT_TEAM = Z6P74P6T99;
+				DEVELOPMENT_TEAM = F9PGNEMEHU;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = ACHNBrowserUI/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
