@@ -1,11 +1,11 @@
 {
   "images" : [
     {
-      "filename" : "DIYBranch.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "filename" : "DIYBranch.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
