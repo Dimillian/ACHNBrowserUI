@@ -41,7 +41,7 @@ class VillagersViewModel: ObservableObject {
             .replaceError(with: [:])
             .eraseToAnyPublisher()
         apiCancellable = apiPublisher?
-            .map{ $0.map{ $0.1} }
+            .map{ $0.map{ $0.1}.sorted(by: { $0.id > $1.id }) }
             .receive(on: DispatchQueue.main)
             .assign(to: \.villagers, on: self)
     }
