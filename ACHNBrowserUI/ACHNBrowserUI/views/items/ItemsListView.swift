@@ -74,6 +74,13 @@ struct ItemsListView: View {
         return ActionSheet(title: title, buttons: buttons)
     }
     
+    func makeDetailView() -> some View {
+        Text("Please choose an item.")
+            .foregroundColor(.secondary)
+            .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
+            .background(Color.dialogue)
+    }
+    
     var body: some View {
         NavigationView {
             List {
@@ -95,6 +102,7 @@ struct ItemsListView: View {
             .sheet(isPresented: $showFilterSheet, content: { CategoriesView(categories: self.categories,
                                                                             selectedCategory: self.$viewModel.categorie) })
             .actionSheet(isPresented: $showSortSheet, content: { self.sortSheet })
+            makeDetailView()
         }.onAppear {
             self.viewModel.categorie = self.categories.first!
         }
