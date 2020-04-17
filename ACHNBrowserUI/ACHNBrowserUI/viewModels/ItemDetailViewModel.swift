@@ -12,6 +12,7 @@ import Combine
 class ItemDetailViewModel: ObservableObject {
     @Published var item: Item
     @Published var listings: [Listing] = []
+    @Published var loading: Bool = true
     
     var cancellable: AnyCancellable?
     var itemCancellable: AnyCancellable?
@@ -28,12 +29,14 @@ class ItemDetailViewModel: ObservableObject {
     }
     
     func fetch(item: Item) {
+        loading = true
         cancellable = NookazonService.fetchListings(item: item)
             .catch { _ in Just([]) }
             .receive(on: RunLoop.main)
             .sink { [weak self] listings in
+                self?.loading = false
                 self?.listings = listings
-        }
+            }
     }
     
     deinit {

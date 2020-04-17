@@ -183,6 +183,10 @@ struct ItemDetailView: View {
             .font(.headline)
             .fontWeight(.bold)
             .foregroundColor(.text)) {
+                if listingsViewModel.loading {
+                    Text("Loading Listings...")
+                        .foregroundColor(.secondary)
+                }
                 if !listingsViewModel.listings.isEmpty {
                     ForEach(listingsViewModel.listings.filter { $0.active && $0.selling }, content: makeListingCell)
                 }
