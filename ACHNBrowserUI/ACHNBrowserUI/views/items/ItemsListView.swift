@@ -40,7 +40,7 @@ struct ItemsListView: View {
         Button(action: {
             self.showSortSheet.toggle()
         }) {
-            Image(systemName: "arrow.up.arrow.down.circle")
+            Image(systemName: viewModel.sort == nil ? "arrow.up.arrow.down.circle" : "arrow.up.arrow.down.circle.fill")
                 .font(.title)
         }
     }
@@ -48,17 +48,30 @@ struct ItemsListView: View {
     private var sortSheet: ActionSheet {
         var buttons: [ActionSheet.Button] = []
         for sort in ItemsViewModel.Sort.allCases {
-            buttons.append(.default(Text(sort.rawValue.capitalized),
+            buttons.append(.default(Text(sort.rawValue.localizedCapitalized),
                                     action: {
                                         self.viewModel.sort = sort
             }))
         }
-        buttons.append(.default(Text("Remove filter"), action: {
-            self.viewModel.sort = nil
-            self.viewModel.fetch()
-        }))
+        
+        if viewModel.sort != nil {
+            buttons.append(.default(Text("Clear Selection"), action: {
+                self.viewModel.sort = nil
+                self.viewModel.fetch()
+            }))
+        }
+        
         buttons.append(.cancel())
-        return ActionSheet(title: Text("Sort items"), buttons: buttons)
+        
+        let title = Text("Sort items")
+        
+        if let currentSort = viewModel.sort {
+            return ActionSheet(title: title,
+                               message: Text("Current Sort: \(currentSort.rawValue.localizedCapitalized)"),
+                               buttons: buttons)
+        }
+        
+        return ActionSheet(title: title, buttons: buttons)
     }
     
     var body: some View {
@@ -74,6 +87,7 @@ struct ItemsListView: View {
                     }
                 }
             }
+            .id(viewModel.sort)
             .background(Color.dialogue)
             .navigationBarItems(leading: sortButton, trailing: filterButton)
             .navigationBarTitle(Text(viewModel.categorie.rawValue.capitalized),
