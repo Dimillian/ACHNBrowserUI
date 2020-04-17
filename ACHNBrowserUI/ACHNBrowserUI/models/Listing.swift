@@ -23,6 +23,7 @@ struct Listing: Decodable, Identifiable {
     }
     
     var id: String
+    var itemId: String
     var amount: Int
     var active: Bool
     var selling: Bool

@@ -39,6 +39,8 @@
 		692C2C352444448E00E5B818 /* fish-south in Resources */ = {isa = PBXBuildFile; fileRef = 692C2C182444448E00E5B818 /* fish-south */; };
 		692C2C362444448E00E5B818 /* bags in Resources */ = {isa = PBXBuildFile; fileRef = 692C2C192444448E00E5B818 /* bags */; };
 		692C2C372444448E00E5B818 /* nookmiles in Resources */ = {isa = PBXBuildFile; fileRef = 692C2C1A2444448E00E5B818 /* nookmiles */; };
+		6942FC37244988F80062FE8F /* SafariView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6942FC36244988F80062FE8F /* SafariView.swift */; };
+		6942FC3A244989530062FE8F /* ListingRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6942FC39244989530062FE8F /* ListingRow.swift */; };
 		69AF8C51243E283D001DD9CB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69AF8C50243E283D001DD9CB /* AppDelegate.swift */; };
 		69AF8C53243E283D001DD9CB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69AF8C52243E283D001DD9CB /* SceneDelegate.swift */; };
 		69AF8C55243E283D001DD9CB /* ItemsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69AF8C54243E283D001DD9CB /* ItemsListView.swift */; };
@@ -98,6 +100,8 @@
 		692C2C182444448E00E5B818 /* fish-south */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "fish-south"; sourceTree = "<group>"; };
 		692C2C192444448E00E5B818 /* bags */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = bags; sourceTree = "<group>"; };
 		692C2C1A2444448E00E5B818 /* nookmiles */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = nookmiles; sourceTree = "<group>"; };
+		6942FC36244988F80062FE8F /* SafariView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariView.swift; sourceTree = "<group>"; };
+		6942FC39244989530062FE8F /* ListingRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListingRow.swift; sourceTree = "<group>"; };
 		69AF8C4D243E283D001DD9CB /* ACHNBrowserUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ACHNBrowserUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		69AF8C50243E283D001DD9CB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		69AF8C52243E283D001DD9CB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -172,6 +176,22 @@
 			path = json;
 			sourceTree = "<group>";
 		};
+		6942FC35244988E90062FE8F /* representable */ = {
+			isa = PBXGroup;
+			children = (
+				6942FC36244988F80062FE8F /* SafariView.swift */,
+			);
+			path = representable;
+			sourceTree = "<group>";
+		};
+		6942FC38244989470062FE8F /* listing */ = {
+			isa = PBXGroup;
+			children = (
+				6942FC39244989530062FE8F /* ListingRow.swift */,
+			);
+			path = listing;
+			sourceTree = "<group>";
+		};
 		69AF8C44243E283D001DD9CB = {
 			isa = PBXGroup;
 			children = (
@@ -220,6 +240,8 @@
 		69AF8C64243E2857001DD9CB /* views */ = {
 			isa = PBXGroup;
 			children = (
+				6942FC38244989470062FE8F /* listing */,
+				6942FC35244988E90062FE8F /* representable */,
 				69C5F5E8244217EF00BF8FA4 /* categories */,
 				69BEA983243E638C00F02C61 /* collection */,
 				69BEA982243E609400F02C61 /* items */,
@@ -418,6 +440,7 @@
 				68DFFFAB244927CA00DEA07F /* Listing.swift in Sources */,
 				69C5F5E72442119500BF8FA4 /* Material.swift in Sources */,
 				69AF8C80243E5EBD001DD9CB /* Categories.swift in Sources */,
+				6942FC3A244989530062FE8F /* ListingRow.swift in Sources */,
 				69AF8C6A243E28B0001DD9CB /* Item.swift in Sources */,
 				69BEA97F243E602C00F02C61 /* TabbarView.swift in Sources */,
 				69AF8C51243E283D001DD9CB /* AppDelegate.swift in Sources */,
@@ -426,6 +449,7 @@
 				69C5F5EA244217FB00BF8FA4 /* CategoriesView.swift in Sources */,
 				69AF8C68243E286C001DD9CB /* APIService.swift in Sources */,
 				69BEA989243E68D400F02C61 /* Collection.swift in Sources */,
+				6942FC37244988F80062FE8F /* SafariView.swift in Sources */,
 				69AF8C7C243E4D29001DD9CB /* Color.swift in Sources */,
 				69AF8C55243E283D001DD9CB /* ItemsListView.swift in Sources */,
 				69BEA98B243EFE9700F02C61 /* ItemDetailView.swift in Sources */,
