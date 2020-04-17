@@ -24,6 +24,8 @@ struct TurnipExchangeService {
             webView.evaluateJavaScript("document.body.children[0].innerHTML") { [weak self] html, err in
                 if let text = html as? String, let data = text.data(using: .utf8) {
                     self?.callback?(try? JSONDecoder().decode(IslandContainer.self, from: data))
+                } else {
+                    self?.callback(nil)
                 }
             }
         }
