@@ -41,13 +41,18 @@
 		692C2C372444448E00E5B818 /* nookmiles in Resources */ = {isa = PBXBuildFile; fileRef = 692C2C1A2444448E00E5B818 /* nookmiles */; };
 		6942FC37244988F80062FE8F /* SafariView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6942FC36244988F80062FE8F /* SafariView.swift */; };
 		6942FC3A244989530062FE8F /* ListingRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6942FC39244989530062FE8F /* ListingRow.swift */; };
+		697E63EE2449A365008FB710 /* ACNHApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 697E63ED2449A365008FB710 /* ACNHApiService.swift */; };
+		697E63F02449A38A008FB710 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 697E63EF2449A38A008FB710 /* APIError.swift */; };
+		697E63F22449A406008FB710 /* Villager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 697E63F12449A406008FB710 /* Villager.swift */; };
+		697E63F52449A58E008FB710 /* VillagersListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 697E63F42449A58E008FB710 /* VillagersListView.swift */; };
+		697E63F72449A7BA008FB710 /* VillagersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 697E63F62449A7BA008FB710 /* VillagersViewModel.swift */; };
 		69AF8C51243E283D001DD9CB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69AF8C50243E283D001DD9CB /* AppDelegate.swift */; };
 		69AF8C53243E283D001DD9CB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69AF8C52243E283D001DD9CB /* SceneDelegate.swift */; };
 		69AF8C55243E283D001DD9CB /* ItemsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69AF8C54243E283D001DD9CB /* ItemsListView.swift */; };
 		69AF8C57243E2841001DD9CB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 69AF8C56243E2841001DD9CB /* Assets.xcassets */; };
 		69AF8C5A243E2841001DD9CB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 69AF8C59243E2841001DD9CB /* Preview Assets.xcassets */; };
 		69AF8C5D243E2841001DD9CB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 69AF8C5B243E2841001DD9CB /* LaunchScreen.storyboard */; };
-		69AF8C68243E286C001DD9CB /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69AF8C67243E286C001DD9CB /* APIService.swift */; };
+		69AF8C68243E286C001DD9CB /* NookPlazaAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69AF8C67243E286C001DD9CB /* NookPlazaAPIService.swift */; };
 		69AF8C6A243E28B0001DD9CB /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69AF8C69243E28B0001DD9CB /* Item.swift */; };
 		69AF8C6D243E2A18001DD9CB /* ItemsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69AF8C6C243E2A18001DD9CB /* ItemsViewModel.swift */; };
 		69AF8C6F243E2E6D001DD9CB /* ImageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69AF8C6E243E2E6D001DD9CB /* ImageService.swift */; };
@@ -102,6 +107,11 @@
 		692C2C1A2444448E00E5B818 /* nookmiles */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = nookmiles; sourceTree = "<group>"; };
 		6942FC36244988F80062FE8F /* SafariView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariView.swift; sourceTree = "<group>"; };
 		6942FC39244989530062FE8F /* ListingRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListingRow.swift; sourceTree = "<group>"; };
+		697E63ED2449A365008FB710 /* ACNHApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ACNHApiService.swift; sourceTree = "<group>"; };
+		697E63EF2449A38A008FB710 /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
+		697E63F12449A406008FB710 /* Villager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Villager.swift; sourceTree = "<group>"; };
+		697E63F42449A58E008FB710 /* VillagersListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VillagersListView.swift; sourceTree = "<group>"; };
+		697E63F62449A7BA008FB710 /* VillagersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VillagersViewModel.swift; sourceTree = "<group>"; };
 		69AF8C4D243E283D001DD9CB /* ACHNBrowserUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ACHNBrowserUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		69AF8C50243E283D001DD9CB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		69AF8C52243E283D001DD9CB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -110,7 +120,7 @@
 		69AF8C59243E2841001DD9CB /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		69AF8C5C243E2841001DD9CB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		69AF8C5E243E2841001DD9CB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		69AF8C67243E286C001DD9CB /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
+		69AF8C67243E286C001DD9CB /* NookPlazaAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NookPlazaAPIService.swift; sourceTree = "<group>"; };
 		69AF8C69243E28B0001DD9CB /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		69AF8C6C243E2A18001DD9CB /* ItemsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsViewModel.swift; sourceTree = "<group>"; };
 		69AF8C6E243E2E6D001DD9CB /* ImageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageService.swift; sourceTree = "<group>"; };
@@ -192,6 +202,14 @@
 			path = listing;
 			sourceTree = "<group>";
 		};
+		697E63F32449A488008FB710 /* villagers */ = {
+			isa = PBXGroup;
+			children = (
+				697E63F42449A58E008FB710 /* VillagersListView.swift */,
+			);
+			path = villagers;
+			sourceTree = "<group>";
+		};
 		69AF8C44243E283D001DD9CB = {
 			isa = PBXGroup;
 			children = (
@@ -240,6 +258,7 @@
 		69AF8C64243E2857001DD9CB /* views */ = {
 			isa = PBXGroup;
 			children = (
+				697E63F32449A488008FB710 /* villagers */,
 				6942FC38244989470062FE8F /* listing */,
 				6942FC35244988E90062FE8F /* representable */,
 				69C5F5E8244217EF00BF8FA4 /* categories */,
@@ -258,6 +277,8 @@
 				69AF8C69243E28B0001DD9CB /* Item.swift */,
 				69C5F5E62442119500BF8FA4 /* Material.swift */,
 				68DFFFAA244927CA00DEA07F /* Listing.swift */,
+				697E63EF2449A38A008FB710 /* APIError.swift */,
+				697E63F12449A406008FB710 /* Villager.swift */,
 			);
 			path = models;
 			sourceTree = "<group>";
@@ -265,9 +286,10 @@
 		69AF8C66243E2861001DD9CB /* services */ = {
 			isa = PBXGroup;
 			children = (
-				69AF8C67243E286C001DD9CB /* APIService.swift */,
+				69AF8C67243E286C001DD9CB /* NookPlazaAPIService.swift */,
 				69AF8C6E243E2E6D001DD9CB /* ImageService.swift */,
 				68DFFFA8244927A400DEA07F /* NookazonService.swift */,
+				697E63ED2449A365008FB710 /* ACNHApiService.swift */,
 			);
 			path = services;
 			sourceTree = "<group>";
@@ -278,6 +300,7 @@
 				69BEA988243E68D400F02C61 /* CollectionViewModel.swift */,
 				69AF8C6C243E2A18001DD9CB /* ItemsViewModel.swift */,
 				68DFFFAC24492D7F00DEA07F /* ItemDetailViewModel.swift */,
+				697E63F62449A7BA008FB710 /* VillagersViewModel.swift */,
 			);
 			path = viewModels;
 			sourceTree = "<group>";
@@ -437,17 +460,20 @@
 			files = (
 				68DFFFAD24492D7F00DEA07F /* ItemDetailViewModel.swift in Sources */,
 				69AF8C7E243E4DD9001DD9CB /* ItemRowView.swift in Sources */,
+				697E63F52449A58E008FB710 /* VillagersListView.swift in Sources */,
 				68DFFFAB244927CA00DEA07F /* Listing.swift in Sources */,
 				69C5F5E72442119500BF8FA4 /* Material.swift in Sources */,
 				69AF8C80243E5EBD001DD9CB /* Categories.swift in Sources */,
 				6942FC3A244989530062FE8F /* ListingRow.swift in Sources */,
 				69AF8C6A243E28B0001DD9CB /* Item.swift in Sources */,
 				69BEA97F243E602C00F02C61 /* TabbarView.swift in Sources */,
+				697E63F22449A406008FB710 /* Villager.swift in Sources */,
 				69AF8C51243E283D001DD9CB /* AppDelegate.swift in Sources */,
+				697E63EE2449A365008FB710 /* ACNHApiService.swift in Sources */,
 				69AF8C53243E283D001DD9CB /* SceneDelegate.swift in Sources */,
 				69BEA985243E639900F02C61 /* CollectionListView.swift in Sources */,
 				69C5F5EA244217FB00BF8FA4 /* CategoriesView.swift in Sources */,
-				69AF8C68243E286C001DD9CB /* APIService.swift in Sources */,
+				69AF8C68243E286C001DD9CB /* NookPlazaAPIService.swift in Sources */,
 				69BEA989243E68D400F02C61 /* CollectionViewModel.swift in Sources */,
 				6942FC37244988F80062FE8F /* SafariView.swift in Sources */,
 				69AF8C7C243E4D29001DD9CB /* Color.swift in Sources */,
@@ -459,6 +485,8 @@
 				69AF8C72243E2F06001DD9CB /* ImageLoader.swift in Sources */,
 				69AF8C74243E2F73001DD9CB /* ItemImage.swift in Sources */,
 				69AF8C6F243E2E6D001DD9CB /* ImageService.swift in Sources */,
+				697E63F02449A38A008FB710 /* APIError.swift in Sources */,
+				697E63F72449A7BA008FB710 /* VillagersViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

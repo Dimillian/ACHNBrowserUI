@@ -72,7 +72,7 @@ class ItemsViewModel: ObservableObject {
     }
     
     func fetch() {
-        apiPublisher = APIService.fetch(endpoint: categorie)
+        apiPublisher = NookPlazaAPIService.fetch(endpoint: categorie)
             .replaceError(with: ItemResponse(total: 0, results: []))
             .eraseToAnyPublisher()
         apiCancellable = apiPublisher?

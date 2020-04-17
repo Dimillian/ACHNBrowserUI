@@ -10,7 +10,7 @@ import SwiftUI
 
 struct TabbarView: View {
     enum Tab: Int {
-        case items, wardrobe, nature, collection
+        case items, wardrobe, nature, villagers, collection
     }
     
     @State var selectedTab = Tab.items
@@ -34,11 +34,13 @@ struct TabbarView: View {
                 ItemsListView(categories: Categories.nature()).tabItem{
                     self.tabbarItem(text: "Nature", image: "icon-fossil")
                 }.tag(Tab.nature)
+                VillagersListView().tabItem{
+                    self.tabbarItem(text: "Villagers", image: "icon-villager")
+                }.tag(Tab.villagers)
                 CollectionListView().tabItem{
                     self.tabbarItem(text: "Collection", image: "icon-cardboard")
                 }.tag(Tab.collection)
             }
-            .accentColor(.grass2)
         }.accentColor(.white)
     }
 }

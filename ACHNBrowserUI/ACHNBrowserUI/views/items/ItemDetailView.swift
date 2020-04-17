@@ -174,13 +174,13 @@ struct ItemDetailView: View {
             }
             listingSection
         }
+        .listStyle(GroupedListStyle())
         .onAppear(perform: {
             self.itemViewModel.fetch(item: self.itemViewModel.item)
         })
         .onDisappear {
             self.itemViewModel.cancellable?.cancel()
         }
-        .listStyle(GroupedListStyle())
         .navigationBarTitle(Text(itemViewModel.item.name))
     }
 }
