@@ -17,7 +17,6 @@ struct ACNHApiService {
         case villagerIcon(id: Int)
         case villagerImage(id: Int)
         
-        
         func path() -> String {
             switch self {
             case .villagers:
@@ -32,7 +31,6 @@ struct ACNHApiService {
     
     private static let decoder = JSONDecoder()
     
-    // Here we fake the API so we use localshost and replace any response with a local response coming from bundle files.
     static func fetch<T: Codable>(endpoint: Endpoint) -> AnyPublisher<T ,APIError> {
         let component = URLComponents(url: BASE_URL.appendingPathComponent(endpoint.path()),
                                       resolvingAgainstBaseURL: false)!
