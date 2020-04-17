@@ -157,12 +157,13 @@ struct ItemDetailView: View {
             }
             ForEach(listing.prices?.filter {
                 $0.bells == nil
-            } ?? [], id: \.name) {
-                $0.name.map { name in
+            } ?? [], id: \.name) { item in
+                item.name.map { name in
                     HStack(spacing: 4) {
-                        Image("icon-fossil")
-                            .resizable()
-                            .frame(width: 25, height: 25)
+                        item.img.map {
+                            ItemImage(imageLoader: ImageLoaderCache.shared.loaderFor(path: $0.absoluteString),
+                                      size: 25)
+                        }
                         Text(name)
                     }
                 }
