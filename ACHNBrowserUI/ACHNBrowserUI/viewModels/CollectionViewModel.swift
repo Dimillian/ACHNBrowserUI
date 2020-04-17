@@ -1,5 +1,5 @@
 //
-//  Collection.swift
+//  CollectionViewModel.swift
 //  ACHNBrowserUI
 //
 //  Created by Thomas Ricouard on 08/04/2020.
@@ -9,7 +9,7 @@
 import Foundation
 import Combine
 
-class Collection: ObservableObject {
+class CollectionViewModel: ObservableObject {
     @Published var items: [Item] = []
     @Published var categories: [String] = []
     

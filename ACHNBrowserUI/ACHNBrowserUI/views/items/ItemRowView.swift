@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct ItemRowView: View {
-    @EnvironmentObject private var collection: Collection
+    @EnvironmentObject private var collection: CollectionViewModel
     
     let item: Item
     
@@ -83,11 +83,11 @@ struct ItemRowView_Previews: PreviewProvider {
         NavigationView {
             List {
                 ItemRowView(item: static_item)
-                    .environmentObject(Collection())
+                    .environmentObject(CollectionViewModel())
                 ItemRowView(item: static_item)
-                    .environmentObject(Collection())
+                    .environmentObject(CollectionViewModel())
                 ItemRowView(item: static_item)
-                    .environmentObject(Collection())
+                    .environmentObject(CollectionViewModel())
             }
         }
     }

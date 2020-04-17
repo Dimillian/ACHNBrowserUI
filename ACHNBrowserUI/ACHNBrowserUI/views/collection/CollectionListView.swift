@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct CollectionListView: View {
-    @EnvironmentObject private var collection: Collection
+    @EnvironmentObject private var collection: CollectionViewModel
     @State private var selectedCatory: Int = 0
     
     var body: some View {

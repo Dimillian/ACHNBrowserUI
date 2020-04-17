@@ -113,6 +113,6 @@ struct ItemsListView: View {
 struct ItemsListViewPreviews: PreviewProvider {
     static var previews: some View {
         ItemsListView(categories: Categories.items())
-            .environmentObject(Collection())
+            .environmentObject(CollectionViewModel())
     }
 }
