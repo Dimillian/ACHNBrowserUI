@@ -88,8 +88,10 @@ struct ItemsListView: View {
                     .foregroundColor(.white)
                 ForEach(currentItems) { item in
                     NavigationLink(destination: ItemDetailView(item: item,
-                                                               viewModel: self.viewModel)) {
+                                                               viewModel: self.viewModel,
+                                                               listingsViewModel: ItemDetailViewModel(item: item))) {
                         ItemRowView(item: item)
+                            .environmentObject(ItemDetailViewModel(item: item))
                             .listRowBackground(Color.dialogue)
                     }
                 }
