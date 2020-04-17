@@ -11,6 +11,8 @@ import SwiftUI
 struct ItemDetailView: View {
     @State var item: Item
     @ObservedObject var viewModel: ItemsViewModel
+    @ObservedObject var listingsViewModel: ItemDetailViewModel
+    
     @State private var displayedVariant: String?
     
     var setItems: [Item] {
@@ -139,6 +141,17 @@ struct ItemDetailView: View {
         }
     }
     
+    private func makeListingsSection() -> some View {
+        Section(header: Text("Listings")
+            .font(.headline)
+            .fontWeight(.bold)
+            .foregroundColor(.text)) {
+            ForEach(listingsViewModel.listings) {
+                Text($0.username)
+            }
+        }
+    }
+    
     var body: some View {
         List {
             informationSection
@@ -152,10 +165,16 @@ struct ItemDetailView: View {
             if item.materials != nil {
                 materialsSection
             }
+            if !listingsViewModel.listings.isEmpty {
+                makeListingsSection()
+            }
         }
         .onAppear(perform: {
             self.viewModel.fetch()
         })
+        .onDisappear {
+            self.listingsViewModel.cancellable?.cancel()
+        }
         .listStyle(GroupedListStyle())
         .navigationBarTitle(Text(item.name))
     }
@@ -165,7 +184,8 @@ struct ItemDetailView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
             ItemDetailView(item: static_item,
-                           viewModel: ItemsViewModel(categorie: .housewares))
+                           viewModel: ItemsViewModel(categorie: .housewares),
+                           listingsViewModel: ItemDetailViewModel(item: static_item))
                 .environmentObject(Collection())
         }
     }
