@@ -18,7 +18,7 @@ Thanks to [Turnip.exchange](https://turnip.exchange/) for the turnips exchange A
 
 Thanks to [ACHN API](http://acnhapi.com/) for the API that allow us to display villagers and their icons/images.
 
-Thanks to [Nookazon](https://nookazon.com/) for item prices listing and exchage. 
+Thanks to [Nookazon](https://nookazon.com/) for item listings and trading platform. 
 
 ## Images
 
