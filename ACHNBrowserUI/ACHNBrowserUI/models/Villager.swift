@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Villager: Identifiable, Codable {
+struct Villager: Identifiable, Codable, Equatable {
     let id: Int
     let name: [String: String]
     let personality: String
