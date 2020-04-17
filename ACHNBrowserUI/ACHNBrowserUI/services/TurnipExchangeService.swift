@@ -8,6 +8,7 @@
 
 import Foundation
 import Combine
+import WebKit
 
 struct TurnipExchangeService {
     struct IslandContainer: Decodable {
@@ -16,16 +17,31 @@ struct TurnipExchangeService {
         let islands: [Island]
     }
     
-    private static var decoder: JSONDecoder = {
-        let decoder = JSONDecoder()
-        return decoder
-    }()
+    class WebKitCoordinator: NSObject, WKNavigationDelegate {
+        var callback: ((IslandContainer?) -> Void)?
+        
+        func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+            webView.evaluateJavaScript("document.body.children[0].innerHTML") { [weak self] html, err in
+                if let text = html as? String, let data = text.data(using: .utf8) {
+                    self?.callback?(try? JSONDecoder().decode(IslandContainer.self, from: data))
+                }
+            }
+        }
+    }
     
-    static func fetchIslands() -> AnyPublisher<[Island], Error> {
-        URLSession.shared.dataTaskPublisher(for: URL(string: "https://api.turnip.exchange/islands")!)
-            .map { $0.data }
-            .decode(type: IslandContainer.self, decoder: decoder)
-            .map { $0.islands }
-            .eraseToAnyPublisher()
+    private static let webview = WKWebView(frame: .zero)
+    private static let coordinator = WebKitCoordinator()
+    
+    /// Get a list of all the islands
+    static func fetchIslands() -> AnyPublisher<[Island], Never> {
+        Future { resolve in
+            webview.navigationDelegate = coordinator
+            coordinator.callback = { container in
+                resolve(.success(container?.islands ?? []))
+            }
+            
+            webview.load(URLRequest(url: URL(string: "https://api.turnip.exchange/islands")!))
+        }
+        .eraseToAnyPublisher()
     }
 }
