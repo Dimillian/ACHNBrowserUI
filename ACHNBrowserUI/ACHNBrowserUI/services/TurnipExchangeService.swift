@@ -17,7 +17,7 @@ struct TurnipExchangeService {
         let islands: [Island]
     }
     
-    class WebKitCoordinator: NSObject, WKUIDelegate, WKNavigationDelegate {
+    class WebKitCoordinator: NSObject, WKNavigationDelegate {
         var callback: ((IslandContainer?) -> Void)?
         
         func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
@@ -29,29 +29,19 @@ struct TurnipExchangeService {
         }
     }
     
-    private static let baseURL = URL(string: "https://api.turnip.exchange")!
-    private static let session = URLSession.shared
-    
-    private static var decoder: JSONDecoder = {
-        let decoder = JSONDecoder()
-        return decoder
-    }()
-    
     private static let webview = WKWebView(frame: .zero)
     private static let coordinator = WebKitCoordinator()
     
     /// Get a list of all the islands
     static func fetchIslands() -> AnyPublisher<[Island], Never> {
         Future { resolve in
-            webview.uiDelegate = coordinator
             webview.navigationDelegate = coordinator
             coordinator.callback = { container in
                 resolve(.success(container?.islands ?? []))
             }
             
-            webview.load(URLRequest(url: baseURL.appendingPathComponent("islands")))
+            webview.load(URLRequest(url: URL(string: "https://api.turnip.exchange/islands")!))
         }
-        .delay(for: .seconds(1), scheduler: RunLoop.main)
         .eraseToAnyPublisher()
     }
 }

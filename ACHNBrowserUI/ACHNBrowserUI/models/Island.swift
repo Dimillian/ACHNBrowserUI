@@ -8,14 +8,14 @@
 
 import Foundation
 
-struct Island: Codable {
-    enum Commerce: String, Codable {
+struct Island: Decodable {
+    enum Commerce: String, Decodable {
         case buying
         case neither
         case selling
     }
     
-    enum Fruit: String, Codable {
+    enum Fruit: String, Decodable {
         case apple
         case cherry
         case orange
@@ -23,7 +23,7 @@ struct Island: Codable {
         case pear
     }
     
-    enum Hemisphere: String, Codable {
+    enum Hemisphere: String, Decodable {
         case north
         case south
     }

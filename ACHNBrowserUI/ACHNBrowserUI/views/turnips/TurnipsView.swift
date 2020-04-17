@@ -18,7 +18,6 @@ class TurnipsViewModel: ObservableObject {
         cancellable = TurnipExchangeService
             .fetchIslands()
             .receive(on: RunLoop.main)
-            .print()
             .sink(receiveCompletion: { _ in
                 
             }) { [weak self] islands in
