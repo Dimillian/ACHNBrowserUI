@@ -17,7 +17,7 @@ struct CollectionListView: View {
             VStack {
                 List(collection.items) { item in
                     NavigationLink(destination: ItemDetailView(viewModel: ItemsViewModel(categorie: item.appCategory ?? .housewares),
-                                                               listingsViewModel: ItemDetailViewModel(item: item))) {
+                                                               itemViewModel: ItemDetailViewModel(item: item))) {
                                                                 ItemRowView(item: item)
                                                                     .listRowBackground(Color.dialogue)
                     }
