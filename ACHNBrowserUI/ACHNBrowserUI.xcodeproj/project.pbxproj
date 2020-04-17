@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		68DFFFA9244927A400DEA07F /* NookazonService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68DFFFA8244927A400DEA07F /* NookazonService.swift */; };
+		68DFFFAB244927CA00DEA07F /* Listing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68DFFFAA244927CA00DEA07F /* Listing.swift */; };
+		68DFFFAD24492D7F00DEA07F /* ItemDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68DFFFAC24492D7F00DEA07F /* ItemDetailViewModel.swift */; };
 		692C2C1B2444448E00E5B818 /* housewares in Resources */ = {isa = PBXBuildFile; fileRef = 692C2BFE2444448D00E5B818 /* housewares */; };
 		692C2C1C2444448E00E5B818 /* bugs-south in Resources */ = {isa = PBXBuildFile; fileRef = 692C2BFF2444448D00E5B818 /* bugs-south */; };
 		692C2C1D2444448E00E5B818 /* fencing in Resources */ = {isa = PBXBuildFile; fileRef = 692C2C002444448D00E5B818 /* fencing */; };
@@ -62,6 +65,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		68DFFFA8244927A400DEA07F /* NookazonService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NookazonService.swift; sourceTree = "<group>"; };
+		68DFFFAA244927CA00DEA07F /* Listing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Listing.swift; sourceTree = "<group>"; };
+		68DFFFAC24492D7F00DEA07F /* ItemDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailViewModel.swift; sourceTree = "<group>"; };
 		690BD65324404F4300DEECD3 /* ACHNBrowserUI.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ACHNBrowserUI.entitlements; sourceTree = "<group>"; };
 		692C2BFE2444448D00E5B818 /* housewares */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = housewares; sourceTree = "<group>"; };
 		692C2BFF2444448D00E5B818 /* bugs-south */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "bugs-south"; sourceTree = "<group>"; };
@@ -230,6 +236,7 @@
 				69AF8C69243E28B0001DD9CB /* Item.swift */,
 				69BEA988243E68D400F02C61 /* Collection.swift */,
 				69C5F5E62442119500BF8FA4 /* Material.swift */,
+				68DFFFAA244927CA00DEA07F /* Listing.swift */,
 			);
 			path = models;
 			sourceTree = "<group>";
@@ -239,6 +246,7 @@
 			children = (
 				69AF8C67243E286C001DD9CB /* APIService.swift */,
 				69AF8C6E243E2E6D001DD9CB /* ImageService.swift */,
+				68DFFFA8244927A400DEA07F /* NookazonService.swift */,
 			);
 			path = services;
 			sourceTree = "<group>";
@@ -247,6 +255,7 @@
 			isa = PBXGroup;
 			children = (
 				69AF8C6C243E2A18001DD9CB /* ItemsViewModel.swift */,
+				68DFFFAC24492D7F00DEA07F /* ItemDetailViewModel.swift */,
 			);
 			path = viewModels;
 			sourceTree = "<group>";
@@ -404,7 +413,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				68DFFFAD24492D7F00DEA07F /* ItemDetailViewModel.swift in Sources */,
 				69AF8C7E243E4DD9001DD9CB /* ItemRowView.swift in Sources */,
+				68DFFFAB244927CA00DEA07F /* Listing.swift in Sources */,
 				69C5F5E72442119500BF8FA4 /* Material.swift in Sources */,
 				69AF8C80243E5EBD001DD9CB /* Categories.swift in Sources */,
 				69AF8C6A243E28B0001DD9CB /* Item.swift in Sources */,
@@ -420,6 +431,7 @@
 				69BEA98B243EFE9700F02C61 /* ItemDetailView.swift in Sources */,
 				69AF8C6D243E2A18001DD9CB /* ItemsViewModel.swift in Sources */,
 				69AF8C76243E3545001DD9CB /* SearchField.swift in Sources */,
+				68DFFFA9244927A400DEA07F /* NookazonService.swift in Sources */,
 				69AF8C72243E2F06001DD9CB /* ImageLoader.swift in Sources */,
 				69AF8C74243E2F73001DD9CB /* ItemImage.swift in Sources */,
 				69AF8C6F243E2E6D001DD9CB /* ImageService.swift in Sources */,

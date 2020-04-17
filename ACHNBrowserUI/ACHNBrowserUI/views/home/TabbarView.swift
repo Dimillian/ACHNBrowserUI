@@ -24,18 +24,21 @@ struct TabbarView: View {
     
     var body: some View {
         TabView(selection: $selectedTab) {
-            ItemsListView(categories: Categories.items()).tabItem{
-                self.tabbarItem(text: "Items", image: "icon-leaf")
-            }.tag(Tab.items)
-            ItemsListView(categories: Categories.wardrobe()).tabItem{
-                self.tabbarItem(text: "Wardrobe", image: "icon-top")
-            }.tag(Tab.wardrobe)
-            ItemsListView(categories: Categories.nature()).tabItem{
-                self.tabbarItem(text: "Nature", image: "icon-fossil")
-            }.tag(Tab.nature)
-            CollectionListView().tabItem{
-                self.tabbarItem(text: "Collection", image: "icon-cardboard")
-            }.tag(Tab.collection)
-        }.accentColor(.grass2)
+            Group {
+                ItemsListView(categories: Categories.items()).tabItem{
+                    self.tabbarItem(text: "Items", image: "icon-leaf")
+                }.tag(Tab.items)
+                ItemsListView(categories: Categories.wardrobe()).tabItem{
+                    self.tabbarItem(text: "Wardrobe", image: "icon-top")
+                }.tag(Tab.wardrobe)
+                ItemsListView(categories: Categories.nature()).tabItem{
+                    self.tabbarItem(text: "Nature", image: "icon-fossil")
+                }.tag(Tab.nature)
+                CollectionListView().tabItem{
+                    self.tabbarItem(text: "Collection", image: "icon-cardboard")
+                }.tag(Tab.collection)
+            }
+            .accentColor(.grass2)
+        }.accentColor(.white)
     }
 }
