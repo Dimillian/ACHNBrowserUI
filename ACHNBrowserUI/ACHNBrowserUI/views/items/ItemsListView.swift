@@ -65,6 +65,7 @@ struct ItemsListView: View {
         NavigationView {
             List {
                 SearchField(searchText: $viewModel.searchText).listRowBackground(Color.grass)
+                    .foregroundColor(.white)
                 ForEach(currentItems) { item in
                     NavigationLink(destination: ItemDetailView(item: item,
                                                                viewModel: self.viewModel)) {
