@@ -87,7 +87,7 @@ struct ItemsListView: View {
                 SearchField(searchText: $viewModel.searchText).listRowBackground(Color.grass)
                     .foregroundColor(.white)
                 ForEach(currentItems) { item in
-                    NavigationLink(destination: ItemDetailView(viewModel: self.viewModel,
+                    NavigationLink(destination: ItemDetailView(itemsViewModel: self.viewModel,
                                                                itemViewModel: ItemDetailViewModel(item: item))) {
                         ItemRowView(item: item)
                             .environmentObject(ItemDetailViewModel(item: item))

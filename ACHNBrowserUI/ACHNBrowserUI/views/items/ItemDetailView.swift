@@ -9,14 +9,14 @@
 import SwiftUI
 
 struct ItemDetailView: View {
-    @ObservedObject var viewModel: ItemsViewModel
+    @ObservedObject var itemsViewModel: ItemsViewModel
     @ObservedObject var itemViewModel: ItemDetailViewModel
     
     @State private var displayedVariant: String?
     
     var setItems: [Item] {
         guard let set = itemViewModel.item.set else { return [] }
-        return viewModel.items.filter({ $0.set == set })
+        return itemsViewModel.items.filter({ $0.set == set })
     }
     
     private var informationSection: some View {
@@ -235,7 +235,7 @@ struct ItemDetailView: View {
 struct ItemDetailView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
-            ItemDetailView(viewModel: ItemsViewModel(categorie: .housewares),
+            ItemDetailView(itemsViewModel: ItemsViewModel(categorie: .housewares),
                            itemViewModel: ItemDetailViewModel(item: static_item))
                 .environmentObject(Collection())
         }
