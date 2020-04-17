@@ -9,8 +9,7 @@
 import SwiftUI
 
 struct ItemsListView: View {
-    @ObservedObject private var viewModel = ItemsViewModel(categorie: .housewares)
-    @State private var showFilterSheet = false
+    @ObservedObject var viewModel: ItemsViewModel
     @State private var showSortSheet = false
     
     var currentItems: [Item] {
@@ -22,17 +21,6 @@ struct ItemsListView: View {
             } else {
                 return viewModel.items
             }
-        }
-    }
-    
-    let categories: [Categories]
-    
-    private var filterButton: some View {
-        Button(action: {
-            self.showFilterSheet.toggle()
-        }) {
-            Image(systemName: "line.horizontal.3.decrease.circle")
-                .font(.title)
         }
     }
     
@@ -82,38 +70,32 @@ struct ItemsListView: View {
     }
     
     var body: some View {
-        NavigationView {
-            List {
-                SearchField(searchText: $viewModel.searchText)
-                    .listRowBackground(Color.grass)
-                    .foregroundColor(.white)
-                ForEach(currentItems) { item in
-                    NavigationLink(destination: ItemDetailView(itemsViewModel: self.viewModel,
-                                                               itemViewModel: ItemDetailViewModel(item: item))) {
-                        ItemRowView(item: item)
-                            .environmentObject(ItemDetailViewModel(item: item))
-                            .listRowBackground(Color.dialogue)
-                    }
+        List {
+            SearchField(searchText: $viewModel.searchText)
+                .listRowBackground(Color.grass)
+                .foregroundColor(.white)
+            ForEach(currentItems) { item in
+                NavigationLink(destination: ItemDetailView(itemsViewModel: self.viewModel,
+                                                           itemViewModel: ItemDetailViewModel(item: item))) {
+                    ItemRowView(item: item)
+                        .environmentObject(ItemDetailViewModel(item: item))
+                        .listRowBackground(Color.dialogue)
                 }
             }
-            .id(viewModel.sort)
-            .background(Color.dialogue)
-            .navigationBarItems(leading: sortButton, trailing: filterButton)
-            .navigationBarTitle(Text(viewModel.categorie.rawValue.capitalized),
-                                displayMode: .inline)
-            .sheet(isPresented: $showFilterSheet, content: { CategoriesView(categories: self.categories,
-                                                                            selectedCategory: self.$viewModel.categorie) })
-            .actionSheet(isPresented: $showSortSheet, content: { self.sortSheet })
-            placeholderView
-        }.onAppear {
-            self.viewModel.categorie = self.categories.first!
         }
+        .id(viewModel.sort)
+        .background(Color.dialogue)
+        .navigationBarItems(trailing: sortButton)
+        .navigationBarTitle(Text(viewModel.categorie.rawValue.capitalized),
+                            displayMode: .inline)
+        .actionSheet(isPresented: $showSortSheet, content: { self.sortSheet })
+        .onAppear(perform: viewModel.fetch)
     }
 }
 
-struct ItemsListViewPreviews: PreviewProvider {
-    static var previews: some View {
-        ItemsListView(categories: Categories.items())
-            .environmentObject(CollectionViewModel())
-    }
-}
+//struct ItemsListViewPreviews: PreviewProvider {
+//    static var previews: some View {
+//        ItemsListView(categories: Categories.items())
+//            .environmentObject(CollectionViewModel())
+//    }
+//}

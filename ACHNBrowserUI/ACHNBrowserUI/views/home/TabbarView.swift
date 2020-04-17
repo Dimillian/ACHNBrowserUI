@@ -25,15 +25,15 @@ struct TabbarView: View {
     var body: some View {
         TabView(selection: $selectedTab) {
             Group {
-                ItemsListView(categories: Categories.items()).tabItem{
-                    self.tabbarItem(text: "Items", image: "icon-leaf")
+                CategoriesView(categories: Categories.items()).tabItem{
+                    self.tabbarItem(text: "Catalog", image: "icon-leaf")
                 }.tag(Tab.items)
 //                ItemsListView(categories: Categories.wardrobe()).tabItem{
 //                    self.tabbarItem(text: "Wardrobe", image: "icon-top")
 //                }.tag(Tab.wardrobe)
-                ItemsListView(categories: Categories.nature()).tabItem{
-                    self.tabbarItem(text: "Nature", image: "icon-fossil")
-                }.tag(Tab.nature)
+//                ItemsListView(categories: Categories.nature()).tabItem{
+//                    self.tabbarItem(text: "Nature", image: "icon-fossil")
+//                }.tag(Tab.nature)
                 TurnipsView().tabItem {
                     tabbarItem(text: "Turnips", image: "icon-turnip")
                 }.tag(Tab.turnips)
