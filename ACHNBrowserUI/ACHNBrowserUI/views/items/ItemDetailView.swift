@@ -9,14 +9,13 @@
 import SwiftUI
 
 struct ItemDetailView: View {
-    @State var item: Item
     @ObservedObject var viewModel: ItemsViewModel
     @ObservedObject var listingsViewModel: ItemDetailViewModel
     
     @State private var displayedVariant: String?
     
     var setItems: [Item] {
-        guard let set = item.set else { return [] }
+        guard let set = listingsViewModel.item.set else { return [] }
         return viewModel.items.filter({ $0.set == set })
     }
     
@@ -28,38 +27,38 @@ struct ItemDetailView: View {
                 VStack( spacing: 4) {
                     HStack(alignment: .center) {
                         Spacer()
-                        if item.image == nil && displayedVariant == nil {
-                            Image(item.appCategory!.iconName())
+                        if listingsViewModel.item.image == nil && displayedVariant == nil {
+                            Image(listingsViewModel.item.appCategory!.iconName())
                                 .resizable()
                                 .frame(width: 150, height: 150)
                         } else {
-                            ItemImage(imageLoader: ImageLoaderCache.shared.loaderFor(path: displayedVariant ?? item.image),
+                            ItemImage(imageLoader: ImageLoaderCache.shared.loaderFor(path: displayedVariant ?? listingsViewModel.item.image),
                                       size: 150)
                         }
                         Spacer()
                     }
-                    if item.obtainedFrom != nil {
-                        Text(item.obtainedFrom!)
+                    if listingsViewModel.item.obtainedFrom != nil {
+                        Text(listingsViewModel.item.obtainedFrom!)
                             .foregroundColor(.secondaryText)
                     }
-                    Text("Customizable: \(item.customize == true ? "Yes" : "no")")
+                    Text("Customizable: \(listingsViewModel.item.customize == true ? "Yes" : "no")")
                         .foregroundColor(.text)
                     HStack(spacing: 16) {
-                        if item.sell != nil {
+                        if listingsViewModel.item.sell != nil {
                             HStack(spacing: 2) {
                                 Image("icon-bells")
                                     .resizable()
                                     .frame(width: 25, height: 25)
-                                Text("\(item.sell!)")
+                                Text("\(listingsViewModel.item.sell!)")
                                     .foregroundColor(.bell)
                             }
                         }
-                        if item.buy != nil {
+                        if listingsViewModel.item.buy != nil {
                             HStack(spacing: 2) {
                                 Image("icon-bell")
                                     .resizable()
                                     .frame(width: 25, height: 25)
-                                Text("\(item.buy!)")
+                                Text("\(listingsViewModel.item.buy!)")
                                     .foregroundColor(.bell)
                             }
                         }
@@ -75,7 +74,7 @@ struct ItemDetailView: View {
             .foregroundColor(.text)) {
                 ScrollView(.horizontal, showsIndicators: false) {
                     HStack {
-                        ForEach(item.variants!, id: \.self) { variant in
+                        ForEach(listingsViewModel.item.variants!, id: \.self) { variant in
                             ItemImage(imageLoader: ImageLoaderCache.shared.loaderFor(path: variant),
                                       size: 75)
                                 .onTapGesture {
@@ -96,7 +95,7 @@ struct ItemDetailView: View {
             .foregroundColor(.text)) {
                 ScrollView(.horizontal, showsIndicators: false) {
                     HStack {
-                        ForEach(item.materials!) { material in
+                        ForEach(listingsViewModel.item.materials!) { material in
                             VStack {
                                 if material.iconName != nil {
                                     Image(material.iconName!)
@@ -133,7 +132,7 @@ struct ItemDetailView: View {
                                     .foregroundColor(.text)
                             }.onTapGesture {
                                 self.displayedVariant = nil
-                                self.item = item
+                                self.listingsViewModel.item = item
                             }
                         }
                     }
@@ -141,50 +140,84 @@ struct ItemDetailView: View {
         }
     }
     
+    private func makeListingCell(_ listing: Listing) -> some View {
+        VStack(alignment: .leading, spacing: 5) {
+            listing.prices?.first {
+                $0.name == nil
+                }?.bells.map { bells in
+                    HStack(spacing: 4) {
+                        Image("icon-bells")
+                            .resizable()
+                            .frame(width: 25, height: 25)
+                        Text(String(bells))
+                    }
+            }
+            ForEach(listing.prices?.filter {
+                $0.bells == nil
+            } ?? [], id: \.name) {
+                $0.name.map { name in
+                    HStack(spacing: 4) {
+                        Image("icon-fossil")
+                            .resizable()
+                            .frame(width: 25, height: 25)
+                        Text(name)
+                    }
+                }
+            }
+            if listing.makeOffer {
+                HStack(spacing: 4) {
+                    Image("icon-bell")
+                        .resizable()
+                        .frame(width: 25, height: 25)
+                    Text("Make an Offer")
+                }
+            }
+            Text("\(listing.username)\(listing.discord.map { " · \($0)" } ?? "")")
+                .font(.subheadline)
+        }
+        .font(.headline)
+    }
+    
     private func makeListingsSection() -> some View {
-        Section(header: Text("Listings")
+        Section(header: Text("LISTINGS")
             .font(.headline)
             .fontWeight(.bold)
             .foregroundColor(.text)) {
-            ForEach(listingsViewModel.listings) {
-                Text($0.username)
-            }
+                if !listingsViewModel.listings.isEmpty {
+                    ForEach(listingsViewModel.listings.filter { $0.active && $0.selling }, content: makeListingCell)
+                }
         }
     }
     
     var body: some View {
         List {
             informationSection
-            if item.variants != nil {
+            if listingsViewModel.item.variants != nil {
                 variantsSection
             }
-            
             if !setItems.isEmpty {
                 setSection
             }
-            if item.materials != nil {
+            if listingsViewModel.item.materials != nil {
                 materialsSection
             }
-            if !listingsViewModel.listings.isEmpty {
-                makeListingsSection()
-            }
+            makeListingsSection()
         }
         .onAppear(perform: {
-            self.viewModel.fetch()
+            self.listingsViewModel.fetch(item: self.listingsViewModel.item)
         })
         .onDisappear {
             self.listingsViewModel.cancellable?.cancel()
         }
         .listStyle(GroupedListStyle())
-        .navigationBarTitle(Text(item.name))
+        .navigationBarTitle(Text(listingsViewModel.item.name))
     }
 }
 
 struct ItemDetailView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
-            ItemDetailView(item: static_item,
-                           viewModel: ItemsViewModel(categorie: .housewares),
+            ItemDetailView(viewModel: ItemsViewModel(categorie: .housewares),
                            listingsViewModel: ItemDetailViewModel(item: static_item))
                 .environmentObject(Collection())
         }
