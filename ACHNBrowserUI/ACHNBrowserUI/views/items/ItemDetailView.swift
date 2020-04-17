@@ -140,17 +140,20 @@ struct ItemDetailView: View {
         }
     }
     
+    // TODO: Refactor, this is a bit of a mess.
     private func makeListingCell(_ listing: Listing) -> some View {
         VStack(alignment: .leading, spacing: 5) {
-            listing.prices?.first {
-                $0.name == nil
-                }?.bells.map { bells in
-                    HStack(spacing: 4) {
-                        Image("icon-bells")
-                            .resizable()
-                            .frame(width: 25, height: 25)
-                        Text("\(bells)")
-                    }
+            HStack(spacing: 4) {
+                listing.prices?.first {
+                    $0.name == nil
+                    }?.bells.map { bells in
+                        Group {
+                            Image("icon-bells")
+                                .resizable()
+                                .frame(width: 25, height: 25)
+                            Text("\(bells)")
+                        }
+                }
             }
             ForEach(listing.prices?.filter {
                 $0.bells == nil
