@@ -37,7 +37,7 @@ struct VillagersListView: View {
                 ForEach(currentVillagers) { villager in
                     NavigationLink(destination: VillagerDetailView(villager: villager,
                                                                    villagersViewModel: self.viewModel)) {
-                        VillagerRowView(villager: villager)
+                                                                    VillagerRowView(villager: villager)
                     }
                 }
             }
@@ -45,7 +45,6 @@ struct VillagersListView: View {
             .background(Color.dialogue)
             .navigationBarTitle(Text("Villagers"),
                                 displayMode: .inline)
-            }
             placeholderView
         }
     }
