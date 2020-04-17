@@ -21,10 +21,10 @@ class ItemDetailViewModel: ObservableObject {
         self.item = item
         self.itemCancellable = self.$item
             .receive(on: RunLoop.main)
-            .sink {
-                self.cancellable?.cancel()
-                self.listings = []
-                self.fetch(item: $0)
+            .sink { [weak self] in
+                self?.cancellable?.cancel()
+                self?.listings = []
+                self?.fetch(item: $0)
             }
     }
     
