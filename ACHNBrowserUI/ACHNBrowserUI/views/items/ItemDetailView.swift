@@ -149,7 +149,7 @@ struct ItemDetailView: View {
                         Image("icon-bells")
                             .resizable()
                             .frame(width: 25, height: 25)
-                        Text(String(bells))
+                        Text("\(bells)")
                     }
             }
             ForEach(listing.prices?.filter {
@@ -179,7 +179,7 @@ struct ItemDetailView: View {
     }
     
     private func makeListingsSection() -> some View {
-        Section(header: Text("LISTINGS")
+        Section(header: Text("NOOKAZON LISTINGS")
             .font(.headline)
             .fontWeight(.bold)
             .foregroundColor(.text)) {
