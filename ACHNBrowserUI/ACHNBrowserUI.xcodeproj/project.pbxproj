@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		687B57602449EEB100C1E86F /* Island.swift in Sources */ = {isa = PBXBuildFile; fileRef = 687B575F2449EEB100C1E86F /* Island.swift */; };
 		687B57622449EF8C00C1E86F /* TurnipExchangeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 687B57612449EF8C00C1E86F /* TurnipExchangeService.swift */; };
+		687B5768244A030700C1E86F /* TurnipsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 687B5767244A030700C1E86F /* TurnipsView.swift */; };
 		68DFFFA9244927A400DEA07F /* NookazonService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68DFFFA8244927A400DEA07F /* NookazonService.swift */; };
 		68DFFFAB244927CA00DEA07F /* Listing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68DFFFAA244927CA00DEA07F /* Listing.swift */; };
 		68DFFFAD24492D7F00DEA07F /* ItemDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68DFFFAC24492D7F00DEA07F /* ItemDetailViewModel.swift */; };
@@ -78,6 +79,7 @@
 /* Begin PBXFileReference section */
 		687B575F2449EEB100C1E86F /* Island.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Island.swift; sourceTree = "<group>"; };
 		687B57612449EF8C00C1E86F /* TurnipExchangeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TurnipExchangeService.swift; sourceTree = "<group>"; };
+		687B5767244A030700C1E86F /* TurnipsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TurnipsView.swift; sourceTree = "<group>"; };
 		68DFFFA8244927A400DEA07F /* NookazonService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NookazonService.swift; sourceTree = "<group>"; };
 		68DFFFAA244927CA00DEA07F /* Listing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Listing.swift; sourceTree = "<group>"; };
 		68DFFFAC24492D7F00DEA07F /* ItemDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailViewModel.swift; sourceTree = "<group>"; };
@@ -158,6 +160,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		687B5765244A02E400C1E86F /* turnips */ = {
+			isa = PBXGroup;
+			children = (
+				687B5767244A030700C1E86F /* TurnipsView.swift */,
+			);
+			path = turnips;
+			sourceTree = "<group>";
+		};
 		692C2BFD2444445E00E5B818 /* json */ = {
 			isa = PBXGroup;
 			children = (
@@ -268,6 +278,7 @@
 		69AF8C64243E2857001DD9CB /* views */ = {
 			isa = PBXGroup;
 			children = (
+				687B5765244A02E400C1E86F /* turnips */,
 				697E63F32449A488008FB710 /* villagers */,
 				6942FC38244989470062FE8F /* listing */,
 				6942FC35244988E90062FE8F /* representable */,
@@ -490,6 +501,7 @@
 				697E63FB2449DB0C008FB710 /* VillagerDetailView.swift in Sources */,
 				69C5F5EA244217FB00BF8FA4 /* CategoriesView.swift in Sources */,
 				69AF8C68243E286C001DD9CB /* NookPlazaAPIService.swift in Sources */,
+				687B5768244A030700C1E86F /* TurnipsView.swift in Sources */,
 				69BEA989243E68D400F02C61 /* CollectionViewModel.swift in Sources */,
 				6942FC37244988F80062FE8F /* SafariView.swift in Sources */,
 				69AF8C7C243E4D29001DD9CB /* Color.swift in Sources */,
