@@ -11,18 +11,41 @@ import SwiftUI
 struct VillagersListView: View {
     @ObservedObject var viewModel = VillagersViewModel()
     
+    var currentVillagers: [Villager] {
+        get {
+            if !viewModel.searchText.isEmpty {
+                return viewModel.searchResults
+            } else {
+                return viewModel.villagers
+            }
+        }
+    }
+    
+    private var placeholderView: some View {
+        Text("Please choose a villager.")
+            .foregroundColor(.secondary)
+            .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
+            .background(Color.dialogue)
+    }
+    
     var body: some View {
         NavigationView {
-            List(viewModel.villagers) { villager in
-                HStack {
-                    ItemImage(imageLoader: ImageLoader(path: ACNHApiService.BASE_URL.absoluteString +
-                        ACNHApiService.Endpoint.villagerIcon(id: villager.id).path()),
-                              size: 50)
-                    Text(villager.name["name-en"] ?? "")
+            List {
+                SearchField(searchText: $viewModel.searchText)
+                    .listRowBackground(Color.grass)
+                    .foregroundColor(.white)
+                ForEach(currentVillagers) { villager in
+                    NavigationLink(destination: VillagerDetailView(villager: villager,
+                                                                   villagersViewModel: self.viewModel)) {
+                                                                    VillagerRowView(villager: villager)
+                    }
                 }
             }
-        }.onAppear {
-            self.viewModel.fetch()
+            .onAppear(perform: viewModel.fetch)
+            .background(Color.dialogue)
+            .navigationBarTitle(Text("Villagers"),
+                                displayMode: .inline)
+            placeholderView
         }
     }
 }

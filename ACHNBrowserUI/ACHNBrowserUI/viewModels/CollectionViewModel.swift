@@ -11,7 +11,13 @@ import Combine
 
 class CollectionViewModel: ObservableObject {
     @Published var items: [Item] = []
+    @Published var villagers: [Villager] = []
     @Published var categories: [String] = []
+    
+    struct SavedData: Codable {
+        let items: [Item]
+        let villagers: [Villager]
+    }
     
     private let filePath: URL
     private let encoder = JSONEncoder()
@@ -25,12 +31,14 @@ class CollectionViewModel: ObservableObject {
                                                    create: false).appendingPathComponent("collection")
             if let data = try? Data(contentsOf: filePath) {
                 decoder.dataDecodingStrategy = .base64
-                items = try decoder.decode([Item].self, from: data)
-                for item in items {
+                let savedData = try decoder.decode(SavedData.self, from: data)
+                for item in savedData.items {
                     if !categories.contains(item.category) {
                         categories.append(item.category)
                     }
                 }
+                self.items = savedData.items
+                self.villagers = savedData.villagers
             }
         } catch let error {
             fatalError(error.localizedDescription)
@@ -49,9 +57,19 @@ class CollectionViewModel: ObservableObject {
         save()
     }
     
+    func toggleVillager(villager: Villager) {
+        if villagers.contains(villager) {
+            villagers.removeAll(where: { $0 == villager })
+        } else {
+            villagers.append(villager)
+        }
+        save()
+    }
+    
     private func save() {
         do {
-            let data = try encoder.encode(items)
+            let savedData = SavedData(items: items, villagers: villagers)
+            let data = try encoder.encode(savedData)
             try data.write(to: filePath, options: .atomicWrite)
         } catch let error {
             print("Error while saving collection: \(error.localizedDescription)")

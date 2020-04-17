@@ -11,12 +11,28 @@ import Combine
 
 class VillagersViewModel: ObservableObject {
     @Published var villagers: [Villager] = []
+    @Published var searchResults: [Villager] = []
+    @Published var searchText = ""
     
     private var apiPublisher: AnyPublisher<[String: Villager], Never>?
     private var searchCancellable: AnyCancellable?
     private var apiCancellable: AnyCancellable? {
         willSet {
             apiCancellable?.cancel()
+        }
+    }
+    
+    init() {
+        searchCancellable = _searchText
+            .projectedValue
+            .debounce(for: .milliseconds(300), scheduler: DispatchQueue.main)
+            .removeDuplicates()
+            .sink { [weak self] string in
+                if !string.isEmpty {
+                    self?.searchResults = self?.villagers.filter({
+                        $0.name["name-en"]?.lowercased().contains(string.lowercased()) == true
+                    }) ?? []
+                }
         }
     }
     

@@ -74,7 +74,7 @@ struct ItemsListView: View {
         return ActionSheet(title: title, buttons: buttons)
     }
     
-    func makeDetailView() -> some View {
+    private var placeholderView: some View {
         Text("Please choose an item.")
             .foregroundColor(.secondary)
             .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
@@ -84,7 +84,8 @@ struct ItemsListView: View {
     var body: some View {
         NavigationView {
             List {
-                SearchField(searchText: $viewModel.searchText).listRowBackground(Color.grass)
+                SearchField(searchText: $viewModel.searchText)
+                    .listRowBackground(Color.grass)
                     .foregroundColor(.white)
                 ForEach(currentItems) { item in
                     NavigationLink(destination: ItemDetailView(itemsViewModel: self.viewModel,
@@ -103,7 +104,7 @@ struct ItemsListView: View {
             .sheet(isPresented: $showFilterSheet, content: { CategoriesView(categories: self.categories,
                                                                             selectedCategory: self.$viewModel.categorie) })
             .actionSheet(isPresented: $showSortSheet, content: { self.sortSheet })
-            makeDetailView()
+            placeholderView
         }.onAppear {
             self.viewModel.categorie = self.categories.first!
         }
