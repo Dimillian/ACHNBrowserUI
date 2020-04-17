@@ -21,8 +21,10 @@ struct VillagersListView: View {
                     Text(villager.name["name-en"] ?? "")
                 }
             }
-        }.onAppear {
-            self.viewModel.fetch()
+            .onAppear(perform: viewModel.fetch)
+            .background(Color.dialogue)
+            .navigationBarTitle(Text("Villagers"),
+                                displayMode: .inline)
         }
     }
 }
