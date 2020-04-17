@@ -40,10 +40,13 @@ struct VillagersListView: View {
                         VillagerRowView(villager: villager)
                     }
                 }
-            }.navigationBarTitle("Villagers")
+            }
+            .onAppear(perform: viewModel.fetch)
+            .background(Color.dialogue)
+            .navigationBarTitle(Text("Villagers"),
+                                displayMode: .inline)
+            }
             placeholderView
-        }.onAppear {
-            self.viewModel.fetch()
         }
     }
 }
