@@ -19,6 +19,7 @@ struct ItemImage : View {
                 Image(uiImage: self.imageLoader.image!)
                     .resizable()
                     .renderingMode(.original)
+                    .aspectRatio(contentMode: .fit)
                     .frame(width: size, height: size)
                     .animation(.spring())
                     .onAppear{
