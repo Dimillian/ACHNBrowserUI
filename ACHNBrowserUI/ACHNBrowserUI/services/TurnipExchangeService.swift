@@ -25,7 +25,7 @@ struct TurnipExchangeService {
                 if let text = html as? String, let data = text.data(using: .utf8) {
                     self?.callback?(try? JSONDecoder().decode(IslandContainer.self, from: data))
                 } else {
-                    self?.callback(nil)
+                    self?.callback?(nil)
                 }
             }
         }
