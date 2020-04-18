@@ -34,7 +34,7 @@ struct IslandDetailView: View {
             }
             Section(header: Text("Visitors")) {
                 if viewModel.container == nil {
-                    Text("Loading....")
+                    Text("Loading Visitors....")
                         .foregroundColor(.secondary)
                 }
                 viewModel.container.map {
@@ -51,6 +51,7 @@ struct IslandDetailView: View {
         }
         .sheet(isPresented: $showSafari) {
             SafariView(url: URL(string: "https://turnip.exchange/island/\(self.island.turnipCode)")!)
+                .edgesIgnoringSafeArea(.all)
         }
     }
 }

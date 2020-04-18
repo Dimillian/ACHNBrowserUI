@@ -48,6 +48,7 @@ struct TurnipsView: View {
             List {
                 if viewModel.islands == nil {
                     Text("Loading Islands...")
+                        .foregroundColor(.secondary)
                 }
                 viewModel.islands.map {
                     ForEach($0) { island in

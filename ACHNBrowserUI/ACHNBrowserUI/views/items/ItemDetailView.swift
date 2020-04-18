@@ -174,6 +174,7 @@ struct ItemDetailView: View {
         switch(sheet) {
         case .safari(let url):
             return SafariView(url: url)
+                .edgesIgnoringSafeArea(.all)
         }
     }
     
