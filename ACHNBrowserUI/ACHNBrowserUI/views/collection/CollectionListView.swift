@@ -52,7 +52,7 @@ struct CollectionListView: View {
                 }
             }
             .overlay(Group {
-                if collection.items.isEmpty {
+                if (selectedTab == .items && collection.items.isEmpty) || (selectedTab == .villagers && collection.villagers.isEmpty) {
                     Text("Tap the stars to start collecting!")
                         .foregroundColor(.secondary)
                 }
