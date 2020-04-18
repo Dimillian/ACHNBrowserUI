@@ -28,12 +28,6 @@ struct TabbarView: View {
                 CategoriesView(categories: Categories.items()).tabItem{
                     self.tabbarItem(text: "Catalog", image: "icon-leaf")
                 }.tag(Tab.items)
-//                ItemsListView(categories: Categories.wardrobe()).tabItem{
-//                    self.tabbarItem(text: "Wardrobe", image: "icon-top")
-//                }.tag(Tab.wardrobe)
-//                ItemsListView(categories: Categories.nature()).tabItem{
-//                    self.tabbarItem(text: "Nature", image: "icon-fossil")
-//                }.tag(Tab.nature)
                 TurnipsView().tabItem {
                     tabbarItem(text: "Turnips", image: "icon-turnip")
                 }.tag(Tab.turnips)
@@ -41,7 +35,7 @@ struct TabbarView: View {
                     self.tabbarItem(text: "Villagers", image: "icon-villager")
                 }.tag(Tab.villagers)
                 CollectionListView().tabItem{
-                    self.tabbarItem(text: "Collection", image: "icon-cardboard")
+                    self.tabbarItem(text: "My Stuff", image: "icon-cardboard")
                 }.tag(Tab.collection)
             }
         }.accentColor(.white)

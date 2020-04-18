@@ -58,7 +58,7 @@ struct CollectionListView: View {
                 }
             })
             .background(Color.dialogue)
-            .navigationBarTitle(Text("Collection"),
+            .navigationBarTitle(Text("My Stuff"),
                                 displayMode: .inline)
         }
     }
