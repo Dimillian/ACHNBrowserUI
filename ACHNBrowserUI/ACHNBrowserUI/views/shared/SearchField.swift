@@ -11,10 +11,11 @@ import SwiftUI
 
 struct SearchField: View {
     @Binding var searchText: String
-    
+    var placeholder: LocalizedStringKey = "Search an item"
+
     var body: some View {
         HStack {
-            TextField("Search an item", text: $searchText)
+            TextField(placeholder, text: $searchText)
             if !searchText.isEmpty {
                 Button(action: {
                     self.searchText = ""

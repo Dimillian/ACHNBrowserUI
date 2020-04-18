@@ -31,7 +31,8 @@ struct VillagersListView: View {
     var body: some View {
         NavigationView {
             List {
-                SearchField(searchText: $viewModel.searchText)
+                SearchField(searchText: $viewModel.searchText,
+                            placeholder: "Search a villager")
                     .listRowBackground(Color.grass)
                     .foregroundColor(.white)
                 ForEach(currentVillagers) { villager in
