@@ -87,6 +87,7 @@ struct ItemsListView: View {
         .background(Color.dialogue)
         .navigationBarTitle(Text(viewModel.categorie.rawValue.capitalized),
                             displayMode: .inline)
+        .navigationBarItems(trailing: sortButton)
         .actionSheet(isPresented: $showSortSheet, content: { self.sortSheet })
         .onAppear(perform: viewModel.fetch)
     }

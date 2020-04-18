@@ -14,17 +14,7 @@ struct CategoryDetailView: View {
     var body: some View {
         List {
             ForEach(categories, id: \.rawValue) { category in
-                NavigationLink(destination: ItemsListView(viewModel: ItemsViewModel(categorie: category))) {
-                    HStack {
-                        Image(category.iconName())
-                            .renderingMode(.original)
-                            .resizable()
-                            .frame(width: 46, height: 46)
-                        Text(category.rawValue.localizedCapitalized)
-                            .font(.headline)
-                            .foregroundColor(.text)
-                    }
-                }
+                CategoryRowView(category: category)
             }
             
         }

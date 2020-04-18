@@ -10,7 +10,6 @@ import SwiftUI
 
 struct CategoriesView: View {
     let categories: [Categories]
-    @Environment(\.presentationMode) private var presentationMode
     
     func makeWardrobeCell() -> some View {
         NavigationLink(destination: CategoryDetailView(categories: Categories.wardrobe()).navigationBarTitle("Wardrobe")) {
@@ -42,17 +41,7 @@ struct CategoriesView: View {
     
     func makeCategories() -> some View {
         ForEach(categories, id: \.self) { categorie in
-            NavigationLink(destination: ItemsListView(viewModel: ItemsViewModel(categorie: categorie))) {
-                HStack {
-                    Image(categorie.iconName())
-                        .renderingMode(.original)
-                        .resizable()
-                        .frame(width: 46, height: 46)
-                    Text(categorie.rawValue.capitalized)
-                        .font(.headline)
-                        .foregroundColor(.text)
-                }
-            }
+            CategoryRowView(category: categorie)
         }
     }
     
