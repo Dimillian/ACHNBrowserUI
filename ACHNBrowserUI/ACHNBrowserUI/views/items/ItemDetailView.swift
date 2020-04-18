@@ -8,12 +8,18 @@
 
 import SwiftUI
 
+extension URL: Identifiable {
+    public var id: URL {
+        self
+    }
+}
+
 struct ItemDetailView: View {
     @ObservedObject var itemsViewModel: ItemsViewModel
     @ObservedObject var itemViewModel: ItemDetailViewModel
     
     @State private var displayedVariant: String?
-    @State private var sheet: Sheets?
+    @State private var selectedListing: URL?
 
     var setItems: [Item] {
         guard let set = itemViewModel.item.set else { return [] }
@@ -141,14 +147,6 @@ struct ItemDetailView: View {
         }
     }
     
-    enum Sheets: Identifiable {
-        case safari(URL)
-        
-        var id: String {
-            "safari"
-        }
-    }
-        
     private var listingSection: some View {
         Section(header: Text("NOOKAZON LISTINGS")
             .font(.headline)
@@ -161,20 +159,12 @@ struct ItemDetailView: View {
                 if !itemViewModel.listings.isEmpty {
                     ForEach(itemViewModel.listings.filter { $0.active && $0.selling }, content: { listing in
                         Button(action: {
-                            self.sheet = .safari(URL(string: "https://nookazon.com/product/\(listing.itemId)")!)
+                            self.selectedListing = URL(string: "https://nookazon.com/product/\(listing.itemId)")
                         }) {
                             ListingRow(listing: listing)
                         }
                     })
                 }
-        }
-    }
-    
-    func makeSheet(_ sheet: Sheets) -> some View {
-        switch(sheet) {
-        case .safari(let url):
-            return SafariView(url: url)
-                .edgesIgnoringSafeArea(.all)
         }
     }
     
@@ -200,7 +190,10 @@ struct ItemDetailView: View {
             self.itemViewModel.cancellable?.cancel()
         }
         .navigationBarTitle(Text(itemViewModel.item.name))
-        .sheet(item: $sheet, content: makeSheet)
+        .sheet(item: $selectedListing) {
+            SafariView(url: $0)
+                .edgesIgnoringSafeArea(.all)
+        }
     }
 }
 
