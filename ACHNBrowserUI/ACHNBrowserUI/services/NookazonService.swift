@@ -30,4 +30,12 @@ struct NookazonService {
             .map { $0.listings }
             .eraseToAnyPublisher()
     }
+    
+    static func recentListings() -> AnyPublisher<[Listing], Error> {
+        URLSession.shared.dataTaskPublisher(for: URL(string: "https://nookazon.com/api/listings?size=3")!)
+            .map { $0.data }
+            .decode(type: ListingContainer.self, decoder: decoder)
+            .map { $0.listings }
+            .eraseToAnyPublisher()
+    }
 }

@@ -24,6 +24,7 @@ struct Listing: Decodable, Identifiable {
     
     var id: String
     var itemId: String
+    var name: String?
     var amount: Int
     var active: Bool
     var selling: Bool
@@ -31,6 +32,7 @@ struct Listing: Decodable, Identifiable {
     var needMaterials: Bool
     var username: String
     var discord: String?
+    var img: URL?
     var status: Status?
     var prices: [Pricing]?
     var rating: String?

@@ -16,7 +16,7 @@ struct ItemImage : View {
     let size: CGFloat
     
     var body: some View {
-        WebImage(url: path!.starts(with: "http") ? URL(string: path!) : URL(string: "\(Self.SERVICE_URL)\(path!).png"))
+        WebImage(url: path != nil ? path!.starts(with: "http") ? URL(string: path!) : URL(string: "\(Self.SERVICE_URL)\(path!).png") : nil)
             .resizable()
             .renderingMode(.original)
             .indicator(.activity) 

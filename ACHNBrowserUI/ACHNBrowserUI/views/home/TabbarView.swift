@@ -26,7 +26,7 @@ struct TabbarView: View {
         TabView(selection: $selectedTab) {
             Group {
                 DashboardView().tabItem{
-                    self.tabbarItem(text: "Dashboard", image: "icon-leaf")
+                    self.tabbarItem(text: "Dashboard", image: "icon-bells")
                 }.tag(Tab.items)
                 CategoriesView(categories: Categories.items()).tabItem{
                     self.tabbarItem(text: "Catalog", image: "icon-leaf")

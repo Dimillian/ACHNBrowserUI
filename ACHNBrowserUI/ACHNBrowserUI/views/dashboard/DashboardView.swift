@@ -7,43 +7,142 @@
 //
 
 import SwiftUI
+import Combine
+import UIKit
+
+struct Progress: UIViewRepresentable {
+    func makeUIView(context: Context) -> UIProgressView {
+        UIProgressView()
+    }
+    
+    func updateUIView(_ uiView: UIProgressView, context: Context) {
+        uiView.progress = 0.5
+    }
+}
+
+class DashboardViewModel: ObservableObject {
+    @Published var recentListings: [Listing]?
+    @Published var island: Island?
+    
+    var listingCancellable: AnyCancellable?
+    var islandCancellable: AnyCancellable?
+
+    func fetchListings() {
+        listingCancellable = NookazonService
+            .recentListings()
+            .receive(on: RunLoop.main)
+            .sink(receiveCompletion: { _ in }) { [weak self] listings in
+                self?.recentListings = listings
+        }
+    }
+    
+    func fetchIsland() {
+        islandCancellable = TurnipExchangeService.shared
+            .fetchIslands()
+            .receive(on: RunLoop.main)
+            .sink(receiveCompletion: { _ in }) { [weak self] islands in
+                self?.island = islands.first
+        }
+    }
+}
 
 struct DashboardView: View {
+    @ObservedObject var viewModel = DashboardViewModel()
+    
     var body: some View {
-        List {
-            makeAvailableCritterSection()
-            makeCritterCollectionProgressSection()
-            makeCatalogSection()
-            makeTopTurnipSection()
-            makeRecentFavoritesSection()
-            makeRecentNookazonListings()
+        NavigationView {
+            List {
+                makeAvailableCritterSection()
+                makeCritterCollectionProgressSection()
+                makeTopTurnipSection()
+                makeRecentNookazonListings()
+                makeRecentFavoritesSection()
+            }
+            .onAppear(perform: viewModel.fetchListings)
+            .onAppear(perform: viewModel.fetchIsland)
+            .navigationBarTitle("Dashboard",
+                                displayMode: .inline)
         }
     }
 }
 
 extension DashboardView {
     func makeAvailableCritterSection() -> some View {
-        Text("available critters")
+        Section(header: Text("Critters Active")) {
+            HStack {
+                Spacer()
+                VStack {
+                    Text("10/10")
+                }
+                Spacer()
+                Divider()
+                Spacer()
+                VStack {
+                    Text("10/10")
+                }
+                Spacer()
+            }
+        }
     }
     
     func makeCritterCollectionProgressSection() -> some View {
-        Text("critter progress")
-    }
-    
-    func makeCatalogSection() -> some View {
-        Text("catalog")
+        Section(header: Text("Collection Progress")) {
+            VStack(alignment: .leading) {
+                Text("Fish")
+                    .font(.subheadline)
+                Progress()
+                Text("Bugs")
+                    .font(.subheadline)
+                Progress()
+                Text("Fossils")
+                    .font(.subheadline)
+                Progress()
+            }
+            .padding(.bottom, 10)
+            .padding(.top, 5)
+        }
+        .accentColor(.grass)
     }
     
     func makeTopTurnipSection() -> some View {
-        Text("turnips!")
+        Section(header: Text("Top Turnip Island")) {
+            if viewModel.island == nil {
+                Text("Loading...")
+                    .foregroundColor(.secondary)
+            }
+            viewModel.island.map {
+                TurnipCell(island: $0)
+            }
+        }
     }
     
     func makeRecentFavoritesSection() -> some View {
-        Text("Faves")
+        Section(header: Text("Recently Collected")) {
+            Text("ph")
+        }
     }
     
     func makeRecentNookazonListings() -> some View {
-        Text("recent nookazon listings")
+        Section(header: Text("Recent Nookazon Listings")) {
+            if viewModel.recentListings == nil {
+                Text("Loading...")
+                    .foregroundColor(.secondary)
+            }
+            viewModel.recentListings.map {
+                ForEach($0) { listing in
+                    VStack(alignment: .leading, spacing: 0) {
+                        HStack {
+                            ItemImage(path: listing.img?.absoluteString, size: 25)
+                                .frame(width: 25, height: 25)
+                            Text(listing.name!)
+                                .font(.headline)
+                                .foregroundColor(.text)
+                        }
+                        ListingRow(listing: listing)
+                    }
+                }
+            }
+        }
     }
 }
 
