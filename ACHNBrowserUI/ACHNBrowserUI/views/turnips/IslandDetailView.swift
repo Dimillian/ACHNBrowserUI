@@ -10,6 +10,7 @@ import SwiftUI
 
 struct IslandDetailView: View {
     @ObservedObject var viewModel = IslandDetailViewModel()
+    @State var showSafari = false
     
     var island: Island
     
@@ -18,7 +19,7 @@ struct IslandDetailView: View {
             HStack {
                 Spacer()
                 Button("Join Island") {
-                    
+                    self.showSafari.toggle()
                 }
                 .accentColor(.grass)
                 Spacer()
@@ -34,6 +35,7 @@ struct IslandDetailView: View {
             Section(header: Text("Visitors")) {
                 if viewModel.container == nil {
                     Text("Loading....")
+                        .foregroundColor(.secondary)
                 }
                 viewModel.container.map {
                     ForEach($0.visitors) {
@@ -46,6 +48,9 @@ struct IslandDetailView: View {
         .navigationBarTitle(island.name)
         .onAppear {
             self.viewModel.fetch(turnipCode: self.island.turnipCode)
+        }
+        .sheet(isPresented: $showSafari) {
+            SafariView(url: URL(string: "https://turnip.exchange/island/\(self.island.turnipCode)")!)
         }
     }
 }
