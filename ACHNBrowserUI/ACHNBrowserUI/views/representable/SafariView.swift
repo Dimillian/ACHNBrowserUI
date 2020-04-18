@@ -15,7 +15,9 @@ struct SafariView: UIViewControllerRepresentable {
     let url: URL
     
     func makeUIViewController(context: UIViewControllerRepresentableContext<SafariView>) -> SFSafariViewController {
-        return SFSafariViewController(url: url)
+        let vc = SFSafariViewController(url: url)
+        vc.configuration.barCollapsingEnabled = false
+        return vc
     }
     
     func updateUIViewController(_ uiViewController: SFSafariViewController,

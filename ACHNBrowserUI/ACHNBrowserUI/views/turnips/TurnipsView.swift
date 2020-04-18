@@ -7,22 +7,36 @@
 //
 
 import SwiftUI
-import Combine
 
-class TurnipsViewModel: ObservableObject {
-    @Published var islands: [Island]?
+struct TurnipCell: View {
+    let island: Island
     
-    var cancellable: AnyCancellable?
-    
-    func fetch() {
-        cancellable = TurnipExchangeService()
-            .fetchIslands()
-            .receive(on: RunLoop.main)
-            .sink(receiveCompletion: { _ in
-                
-            }) { [weak self] islands in
-                self?.islands = islands
+    var body: some View {
+        VStack(alignment: .leading) {
+            Text(island.name)
+                .font(.headline)
+            Text(island.islandTime.description)
+                .font(.subheadline)
+            HStack {
+                Spacer()
+                island.fruit.image
+                Spacer()
+                Divider()
+                Spacer()
+                Text("\(island.turnipPrice)")
+                    .font(.largeTitle)
+                    .bold()
+                Group {
+                    Spacer()
+                    Divider()
+                    Spacer()
+                }
+                Text(island.hemisphere.rawValue.localizedCapitalized)
+                    .font(.largeTitle)
+                    .bold()
+                Spacer()
             }
+        }
     }
 }
 
@@ -30,20 +44,22 @@ struct TurnipsView: View {
     @ObservedObject var viewModel = TurnipsViewModel()
     
     var body: some View {
-        List {
-            Section(header: Text("Chart")) {
-                Text("Chart here")
-            }
-            Section(header: Text("Open Islands")) {
+        NavigationView {
+            List {
                 if viewModel.islands == nil {
                     Text("Loading Islands...")
+                        .foregroundColor(.secondary)
                 }
                 viewModel.islands.map {
-                    ForEach($0) {
-                        Text($0.name)
+                    ForEach($0) { island in
+                        NavigationLink(destination: IslandDetailView(island: island)) {
+                            TurnipCell(island: island)
+                        }
                     }
                 }
             }
+            .navigationBarTitle("Turnips",
+                                displayMode: .inline)
         }
         .onAppear(perform: viewModel.fetch)
     }

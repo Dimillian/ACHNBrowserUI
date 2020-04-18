@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import SwiftUI
 
 struct Island: Decodable {
     enum Commerce: String, Decodable {
@@ -38,12 +39,18 @@ struct Island: Decodable {
     let commerce: Commerce
     let islandTime: String
     let creationTime: String
-    let islandDescription: String?
+    let description: String?
     let queued: String
 }
 
 extension Island: Identifiable {
     var id: String {
         turnipCode
+    }
+}
+
+extension Island.Fruit {
+    var image: Image {
+        Image(self.rawValue.capitalized)
     }
 }
