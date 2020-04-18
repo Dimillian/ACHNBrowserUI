@@ -25,6 +25,9 @@ struct TabbarView: View {
     var body: some View {
         TabView(selection: $selectedTab) {
             Group {
+                DashboardView().tabItem{
+                    self.tabbarItem(text: "Dashboard", image: "icon-leaf")
+                }.tag(Tab.items)
                 CategoriesView(categories: Categories.items()).tabItem{
                     self.tabbarItem(text: "Catalog", image: "icon-leaf")
                 }.tag(Tab.items)

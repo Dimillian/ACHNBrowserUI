@@ -1,11 +1,11 @@
 {
   "images" : [
     {
-      "filename" : "Gold_Ore.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "filename" : "Gold_Ore.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
