@@ -10,40 +10,53 @@ import Foundation
 import Combine
 import WebKit
 
-struct TurnipExchangeService {
+class TurnipExchangeService: NSObject, WKScriptMessageHandler {
     struct IslandContainer: Decodable {
         let success: Bool
         let message: String
         let islands: [Island]
     }
     
-    class WebKitCoordinator: NSObject, WKNavigationDelegate {
-        var callback: ((IslandContainer?) -> Void)?
+    private let config: WKWebViewConfiguration
+    private let webview: WKWebView
+    private var callback: (([Island]) -> Void)?
+    
+    override init() {
+        self.config = WKWebViewConfiguration()
+        self.webview = WKWebView(frame: .zero, configuration: self.config)
+        super.init()
         
-        func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
-            webView.evaluateJavaScript("document.body.children[0].innerHTML") { [weak self] html, err in
-                if let text = html as? String, let data = text.data(using: .utf8) {
-                    self?.callback?(try? JSONDecoder().decode(IslandContainer.self, from: data))
-                } else {
-                    self?.callback?(nil)
-                }
-            }
-        }
+        self.config.userContentController.add(self, name: "messageBox")
     }
     
-    private static let webview = WKWebView(frame: .zero)
-    private static let coordinator = WebKitCoordinator()
-    
     /// Get a list of all the islands
-    static func fetchIslands() -> AnyPublisher<[Island], Never> {
-        Future { resolve in
-            webview.navigationDelegate = coordinator
-            coordinator.callback = { container in
-                resolve(.success(container?.islands ?? []))
+    func fetchIslands() -> AnyPublisher<[Island], Never> {
+        Future { [weak self] resolve in
+            self?.callback = {
+                resolve(.success($0))
             }
             
-            webview.load(URLRequest(url: URL(string: "https://api.turnip.exchange/islands")!))
+            self?.config.userContentController.addUserScript(
+                WKUserScript(
+                    source: "fetch('https://api.turnip.exchange/islands/', { method: 'POST'} ).then(r => r.json()).then((r) => {window.webkit.messageHandlers.messageBox.postMessage(r)})",
+                    injectionTime: .atDocumentEnd,
+                    forMainFrameOnly: true
+                )
+            )
+            
+            self?.webview.load(URLRequest(url: URL(string: "https://turnip.exchange/islands")!))
         }
         .eraseToAnyPublisher()
+    }
+    
+    func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
+        do {
+            let encoded = try JSONSerialization.data(withJSONObject: message.body, options: [])
+            let decoded = try JSONDecoder().decode(IslandContainer.self, from: encoded)
+            
+            callback?(decoded.islands)
+        } catch {
+            print(error)
+        }
     }
 }
