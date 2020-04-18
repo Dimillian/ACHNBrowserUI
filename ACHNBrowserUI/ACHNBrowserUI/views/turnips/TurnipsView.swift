@@ -26,6 +26,38 @@ class TurnipsViewModel: ObservableObject {
     }
 }
 
+struct TurnipCell: View {
+    let island: Island
+    
+    var body: some View {
+        VStack(alignment: .leading) {
+            Text(island.name)
+                .font(.headline)
+            Text(island.islandTime.description)
+                .font(.subheadline)
+            HStack {
+                Spacer()
+                island.fruit.image
+                Spacer()
+                Divider()
+                Spacer()
+                Text("\(island.turnipPrice)")
+                    .font(.largeTitle)
+                    .bold()
+                Group {
+                    Spacer()
+                    Divider()
+                    Spacer()
+                }
+                Text(island.hemisphere.rawValue.localizedCapitalized)
+                    .font(.largeTitle)
+                    .bold()
+                Spacer()
+            }
+        }
+    }
+}
+
 struct TurnipsView: View {
     @ObservedObject var viewModel = TurnipsViewModel()
     
@@ -37,30 +69,8 @@ struct TurnipsView: View {
                 }
                 viewModel.islands.map {
                     ForEach($0) { island in
-                        VStack(alignment: .leading) {
-                            Text(island.name)
-                                .font(.headline)
-                            Text(island.islandTime.description)
-                                .font(.subheadline)
-                            HStack {
-                                Spacer()
-                                island.fruit.image
-                                Spacer()
-                                Divider()
-                                Spacer()
-                                Text("\(island.turnipPrice)")
-                                    .font(.largeTitle)
-                                    .bold()
-                                Group {
-                                    Spacer()
-                                    Divider()
-                                    Spacer()
-                                }
-                                Text(island.hemisphere.rawValue.localizedCapitalized)
-                                    .font(.largeTitle)
-                                    .bold()
-                                Spacer()
-                            }
+                        NavigationLink(destination: IslandDetailView(island: island)) {
+                            TurnipCell(island: island)
                         }
                     }
                 }

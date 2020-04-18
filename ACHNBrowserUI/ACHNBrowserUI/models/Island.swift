@@ -39,7 +39,7 @@ struct Island: Decodable {
     let commerce: Commerce
     let islandTime: String
     let creationTime: String
-    let islandDescription: String?
+    let description: String?
     let queued: String
 }
 
