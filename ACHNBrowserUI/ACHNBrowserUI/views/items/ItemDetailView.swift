@@ -33,7 +33,7 @@ struct ItemDetailView: View {
                                 .resizable()
                                 .frame(width: 150, height: 150)
                         } else {
-                            ItemImage(imageLoader: ImageLoaderCache.shared.loaderFor(path: displayedVariant ?? itemViewModel.item.image),
+                            ItemImage(path: displayedVariant ?? itemViewModel.item.image,
                                       size: 150)
                         }
                         Spacer()
@@ -76,7 +76,7 @@ struct ItemDetailView: View {
                 ScrollView(.horizontal, showsIndicators: false) {
                     HStack {
                         ForEach(itemViewModel.item.variants!, id: \.self) { variant in
-                            ItemImage(imageLoader: ImageLoaderCache.shared.loaderFor(path: variant),
+                            ItemImage(path: variant,
                                       size: 75)
                                 .onTapGesture {
                                     withAnimation {
@@ -126,7 +126,7 @@ struct ItemDetailView: View {
                     HStack {
                         ForEach(setItems) { item in
                             VStack(alignment: .center, spacing: 4) {
-                                ItemImage(imageLoader: ImageLoaderCache.shared.loaderFor(path: item.image),
+                                ItemImage(path: item.image,
                                           size: 75)
                                 Text(item.name)
                                     .font(.caption)

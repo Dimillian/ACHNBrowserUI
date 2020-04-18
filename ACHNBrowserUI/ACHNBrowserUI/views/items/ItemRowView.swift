@@ -40,7 +40,7 @@ struct ItemRowView: View {
                     .resizable()
                     .frame(width: 100, height: 100)
             } else {
-                ItemImage(imageLoader: ImageLoaderCache.shared.loaderFor(path: displayedVariant ?? item.image),
+                ItemImage(path: displayedVariant ?? item.image,
                           size: 100)
             }
             VStack(alignment: .leading, spacing: 2) {
@@ -60,8 +60,8 @@ struct ItemRowView: View {
                     ScrollView(.horizontal, showsIndicators: false) {
                         HStack(spacing: 2) {
                             ForEach(item.variants!, id: \.self) { variant in
-                                ItemImage(imageLoader: ImageLoaderCache.shared.loaderFor(path: variant),
-                                                 size: 25)
+                                ItemImage(path: variant,
+                                         size: 25)
                                     .cornerRadius(4)
                                     .background(Rectangle()
                                         .cornerRadius(4)

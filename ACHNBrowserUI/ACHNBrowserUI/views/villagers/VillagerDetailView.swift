@@ -29,8 +29,8 @@ struct VillagerDetailView: View {
             VStack {
                 HStack {
                     Spacer()
-                    ItemImage(imageLoader: ImageLoader(path: ACNHApiService.BASE_URL.absoluteString +
-                        ACNHApiService.Endpoint.villagerImage(id: villager.id).path()),
+                    ItemImage(path: ACNHApiService.BASE_URL.absoluteString +
+                        ACNHApiService.Endpoint.villagerImage(id: villager.id).path(),
                               size: 150).cornerRadius(40)
                     Spacer()
                 }.padding()

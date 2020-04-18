@@ -31,7 +31,7 @@ struct ListingRow: View {
                     item.name.map { name in
                         HStack(spacing: 4) {
                             item.img.map {
-                                ItemImage(imageLoader: ImageLoaderCache.shared.loaderFor(path: $0.absoluteString),
+                                ItemImage(path: $0.absoluteString,
                                           size: 25)
                             }
                             Text(name)
