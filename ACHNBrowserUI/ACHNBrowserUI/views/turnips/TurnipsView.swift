@@ -15,7 +15,7 @@ class TurnipsViewModel: ObservableObject {
     var cancellable: AnyCancellable?
     
     func fetch() {
-        cancellable = TurnipExchangeService
+        cancellable = TurnipExchangeService()
             .fetchIslands()
             .receive(on: RunLoop.main)
             .sink(receiveCompletion: { _ in
