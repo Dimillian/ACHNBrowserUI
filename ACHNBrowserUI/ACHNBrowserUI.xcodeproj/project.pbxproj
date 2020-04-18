@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -14,6 +14,7 @@
 		68BA5828244B646C00B53811 /* IslandDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68BA5827244B646C00B53811 /* IslandDetailView.swift */; };
 		68BA582A244B693400B53811 /* TurnipsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68BA5829244B693300B53811 /* TurnipsViewModel.swift */; };
 		68BA582C244B695F00B53811 /* IslandDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68BA582B244B695F00B53811 /* IslandDetailViewModel.swift */; };
+		68BA5831244B738700B53811 /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 68BA5830244B738700B53811 /* SDWebImageSwiftUI */; };
 		68DFFFA9244927A400DEA07F /* NookazonService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68DFFFA8244927A400DEA07F /* NookazonService.swift */; };
 		68DFFFAB244927CA00DEA07F /* Listing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68DFFFAA244927CA00DEA07F /* Listing.swift */; };
 		68DFFFAD24492D7F00DEA07F /* ItemDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68DFFFAC24492D7F00DEA07F /* ItemDetailViewModel.swift */; };
@@ -67,7 +68,6 @@
 		69AF8C6A243E28B0001DD9CB /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69AF8C69243E28B0001DD9CB /* Item.swift */; };
 		69AF8C6D243E2A18001DD9CB /* ItemsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69AF8C6C243E2A18001DD9CB /* ItemsViewModel.swift */; };
 		69AF8C6F243E2E6D001DD9CB /* ImageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69AF8C6E243E2E6D001DD9CB /* ImageService.swift */; };
-		69AF8C72243E2F06001DD9CB /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69AF8C71243E2F06001DD9CB /* ImageLoader.swift */; };
 		69AF8C74243E2F73001DD9CB /* ItemImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69AF8C73243E2F73001DD9CB /* ItemImage.swift */; };
 		69AF8C76243E3545001DD9CB /* SearchField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69AF8C75243E3545001DD9CB /* SearchField.swift */; };
 		69AF8C7A243E4C78001DD9CB /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 69AF8C79243E4C78001DD9CB /* Colors.xcassets */; };
@@ -146,7 +146,6 @@
 		69AF8C69243E28B0001DD9CB /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		69AF8C6C243E2A18001DD9CB /* ItemsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsViewModel.swift; sourceTree = "<group>"; };
 		69AF8C6E243E2E6D001DD9CB /* ImageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageService.swift; sourceTree = "<group>"; };
-		69AF8C71243E2F06001DD9CB /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
 		69AF8C73243E2F73001DD9CB /* ItemImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemImage.swift; sourceTree = "<group>"; };
 		69AF8C75243E3545001DD9CB /* SearchField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchField.swift; sourceTree = "<group>"; };
 		69AF8C79243E4C78001DD9CB /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
@@ -166,6 +165,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				68BA5831244B738700B53811 /* SDWebImageSwiftUI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -355,7 +355,6 @@
 		69AF8C70243E2EFE001DD9CB /* utils */ = {
 			isa = PBXGroup;
 			children = (
-				69AF8C71243E2F06001DD9CB /* ImageLoader.swift */,
 				69AF8C7B243E4D29001DD9CB /* Color.swift */,
 			);
 			path = utils;
@@ -422,6 +421,9 @@
 			dependencies = (
 			);
 			name = ACHNBrowserUI;
+			packageProductDependencies = (
+				68BA5830244B738700B53811 /* SDWebImageSwiftUI */,
+			);
 			productName = ACHNBrowserUI;
 			productReference = 69AF8C4D243E283D001DD9CB /* AC Helper.app */;
 			productType = "com.apple.product-type.application";
@@ -450,6 +452,9 @@
 				Base,
 			);
 			mainGroup = 69AF8C44243E283D001DD9CB;
+			packageReferences = (
+				68BA582F244B738700B53811 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */,
+			);
 			productRefGroup = 69AF8C4E243E283D001DD9CB /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -541,7 +546,6 @@
 				697E63FD244AD42D008FB710 /* CategoryRowView.swift in Sources */,
 				69AF8C76243E3545001DD9CB /* SearchField.swift in Sources */,
 				68DFFFA9244927A400DEA07F /* NookazonService.swift in Sources */,
-				69AF8C72243E2F06001DD9CB /* ImageLoader.swift in Sources */,
 				68BA582A244B693400B53811 /* TurnipsViewModel.swift in Sources */,
 				69AF8C74243E2F73001DD9CB /* ItemImage.swift in Sources */,
 				69AF8C6F243E2E6D001DD9CB /* ImageService.swift in Sources */,
@@ -746,6 +750,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		68BA582F244B738700B53811 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImageSwiftUI";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.3.3;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		68BA5830244B738700B53811 /* SDWebImageSwiftUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 68BA582F244B738700B53811 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */;
+			productName = SDWebImageSwiftUI;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 69AF8C45243E283D001DD9CB /* Project object */;
 }

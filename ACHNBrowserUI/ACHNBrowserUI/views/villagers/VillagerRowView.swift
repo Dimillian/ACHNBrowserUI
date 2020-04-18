@@ -21,8 +21,8 @@ struct VillagerRowView: View {
                 Image(systemName: self.collection.villagers.contains(self.villager) ? "star.fill" : "star")
                     .foregroundColor(.yellow)
             }.buttonStyle(BorderlessButtonStyle())
-            ItemImage(imageLoader: ImageLoader(path: ACNHApiService.BASE_URL.absoluteString +
-                ACNHApiService.Endpoint.villagerIcon(id: villager.id).path()),
+            ItemImage(path: ACNHApiService.BASE_URL.absoluteString +
+                ACNHApiService.Endpoint.villagerIcon(id: villager.id).path(),
                       size: 50)
             Text(villager.name["name-en"] ?? "")
                 .font(.body)

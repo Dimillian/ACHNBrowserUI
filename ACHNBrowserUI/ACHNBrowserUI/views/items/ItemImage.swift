@@ -7,29 +7,23 @@
 //
 
 import SwiftUI
+import SDWebImageSwiftUI
 
 struct ItemImage : View {
-    @ObservedObject var imageLoader: ImageLoader
-    @State var isImageLoaded = false
+    private static let SERVICE_URL = "https://i.imgur.com/"
+
+    let path: String?
     let size: CGFloat
     
     var body: some View {
-        ZStack(alignment: .center) {
-            if self.imageLoader.image != nil {
-                Image(uiImage: self.imageLoader.image!)
-                    .resizable()
-                    .renderingMode(.original)
-                    .aspectRatio(contentMode: .fit)
-                    .frame(width: size, height: size)
-                    .animation(.spring())
-                    .onAppear{
-                        self.isImageLoaded = true
-                }
-            } else {
-                Rectangle()
-                    .foregroundColor(.clear)
-                    .frame(width: size, height: size)
-            }
-        }
+        WebImage(url: path!.starts(with: "http") ? URL(string: path!) : URL(string: "\(Self.SERVICE_URL)\(path!).png"))
+            .resizable()
+            .renderingMode(.original)
+            .indicator(.activity) 
+            .animation(.easeInOut(duration: 0.1))
+            .transition(.fade)
+            .aspectRatio(contentMode: .fit)
+            .frame(width: size, height: size)
+            .animation(.spring())
     }
 }
