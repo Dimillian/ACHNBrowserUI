@@ -11,6 +11,8 @@ import Combine
 import WebKit
 
 class TurnipExchangeService: NSObject, WKScriptMessageHandler {
+    static let shared = TurnipExchangeService()
+    
     struct IslandContainer: Decodable {
         let success: Bool
         let message: String
@@ -27,10 +29,13 @@ class TurnipExchangeService: NSObject, WKScriptMessageHandler {
     
     struct Visitor: Decodable, Identifiable {
         let name: String
-        let id: Int
         let addedTimestamp: String
         let place: Int
         let time: Int
+        
+        var id: String {
+            name
+        }
     }
     
     private let config: WKWebViewConfiguration

@@ -7,24 +7,6 @@
 //
 
 import SwiftUI
-import Combine
-
-class TurnipsViewModel: ObservableObject {
-    @Published var islands: [Island]?
-    
-    var cancellable: AnyCancellable?
-    
-    func fetch() {
-        cancellable = TurnipExchangeService()
-            .fetchIslands()
-            .receive(on: RunLoop.main)
-            .sink(receiveCompletion: { _ in
-                
-            }) { [weak self] islands in
-                self?.islands = islands
-            }
-    }
-}
 
 struct TurnipCell: View {
     let island: Island
