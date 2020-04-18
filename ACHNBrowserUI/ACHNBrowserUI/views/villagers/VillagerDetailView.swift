@@ -25,24 +25,21 @@ struct VillagerDetailView: View {
         }
     }
     var body: some View {
-        List {
-            HStack {
-                Spacer()
-                ItemImage(imageLoader: ImageLoader(path: ACNHApiService.BASE_URL.absoluteString +
-                    ACNHApiService.Endpoint.villagerImage(id: villager.id).path()),
-                          size: 150)
-                Spacer()
+        ScrollView {
+            VStack {
+                HStack {
+                    Spacer()
+                    ItemImage(imageLoader: ImageLoader(path: ACNHApiService.BASE_URL.absoluteString +
+                        ACNHApiService.Endpoint.villagerImage(id: villager.id).path()),
+                              size: 150).cornerRadius(40)
+                    Spacer()
+                }.padding()
+                infoCell(title: "Personality", value: villager.personality).padding()
+                infoCell(title: "Birthday", value: villager.birdthday ?? "Unknown").padding()
+                infoCell(title: "Species", value: villager.species).padding()
+                infoCell(title: "Gender", value: villager.gender).padding()
             }
-            Section(header: Text("Information")
-                .font(.title)
-                .fontWeight(.bold)) {
-                infoCell(title: "Personality", value: villager.personality)
-                infoCell(title: "Birthday", value: villager.birdthday ?? "Unknown")
-                infoCell(title: "Species", value: villager.species)
-                infoCell(title: "Gender", value: villager.gender)
-            }
-        }
-        .listStyle(GroupedListStyle())
+        }.background(Color.dialogue)
         .navigationBarTitle(villager.name["name-en"] ?? "")
     }
 }
