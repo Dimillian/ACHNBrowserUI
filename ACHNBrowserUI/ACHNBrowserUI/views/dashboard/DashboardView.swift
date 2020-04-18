@@ -56,8 +56,8 @@ struct DashboardView: View {
                 makeCritterCollectionProgressSection()
                 makeTopTurnipSection()
                 makeRecentNookazonListings()
-                makeRecentFavoritesSection()
             }
+            .listStyle(GroupedListStyle())
             .onAppear(perform: viewModel.fetchListings)
             .onAppear(perform: viewModel.fetchIsland)
             .navigationBarTitle("Dashboard",
@@ -73,12 +73,22 @@ extension DashboardView {
                 Spacer()
                 VStack {
                     Text("10/10")
+                        .font(.largeTitle)
+                        .bold()
+                    Text("Fish")
+                        .font(.caption)
+                        .foregroundColor(.secondary)
                 }
                 Spacer()
                 Divider()
                 Spacer()
                 VStack {
                     Text("10/10")
+                        .font(.largeTitle)
+                        .bold()
+                    Text("Bugs")
+                        .font(.caption)
+                        .foregroundColor(.secondary)
                 }
                 Spacer()
             }
@@ -113,12 +123,6 @@ extension DashboardView {
             viewModel.island.map {
                 TurnipCell(island: $0)
             }
-        }
-    }
-    
-    func makeRecentFavoritesSection() -> some View {
-        Section(header: Text("Recently Collected")) {
-            Text("ph")
         }
     }
     
