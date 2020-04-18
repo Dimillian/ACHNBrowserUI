@@ -19,6 +19,7 @@ struct ListingRow: View {
                     }?.bells.map { bells in
                         Group {
                             Image("icon-bells")
+                                .renderingMode(.original)
                                 .resizable()
                                 .frame(width: 25, height: 25)
                             Text("\(bells)")
@@ -41,6 +42,7 @@ struct ListingRow: View {
             if listing.makeOffer {
                 HStack(spacing: 4) {
                     Image("icon-bell")
+                        .renderingMode(.original)
                         .resizable()
                         .frame(width: 25, height: 25)
                     Text("Make an Offer")
@@ -49,6 +51,7 @@ struct ListingRow: View {
             if listing.needMaterials {
                 HStack(spacing: 4) {
                     Image("icon-helmet")
+                        .renderingMode(.original)
                         .resizable()
                         .frame(width: 25, height: 25)
                     Text("Need Materials")
