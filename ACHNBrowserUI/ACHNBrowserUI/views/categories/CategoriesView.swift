@@ -11,6 +11,16 @@ import SwiftUI
 struct CategoriesView: View {
     let categories: [Categories]
     
+    @State private var isPreferencesShown = false
+    
+    private var preferenceButton: some View {
+        Button(action: {
+            self.isPreferencesShown = true
+        }, label: {
+            Image(systemName: "wrench").imageScale(.medium)
+        })
+    }
+    
     func makeWardrobeCell() -> some View {
         NavigationLink(destination: CategoryDetailView(categories: Categories.wardrobe()).navigationBarTitle("Wardrobe")) {
             HStack {
@@ -53,6 +63,8 @@ struct CategoriesView: View {
                 makeCategories()
             }
             .navigationBarTitle(Text("Catalog"), displayMode: .inline)
+            .navigationBarItems(trailing: preferenceButton)
+            .sheet(isPresented: $isPreferencesShown, content: { SettingsView() })
         }.navigationViewStyle(StackNavigationViewStyle())
     }
 }
