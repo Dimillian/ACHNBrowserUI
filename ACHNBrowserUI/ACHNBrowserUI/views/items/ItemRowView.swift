@@ -31,7 +31,7 @@ struct ItemRowView: View {
         HStack(spacing: 8) {
             StarButtonView(item: item)
             if item.image == nil && displayedVariant == nil {
-                Image(item.appCategory!.iconName())
+                Image(item.appCategory.iconName())
                     .resizable()
                     .frame(width: 100, height: 100)
             } else {
@@ -76,6 +76,10 @@ struct ItemRowView: View {
                             .foregroundColor(.secondaryText)
                             .font(.caption)
                     }.padding(.top, 4)
+                } else if item.startTimeAsString() != nil {
+                    Text(item.startTimeAsString()!)
+                        .foregroundColor(.secondaryText)
+                        .font(.caption)
                 }
             }
         }

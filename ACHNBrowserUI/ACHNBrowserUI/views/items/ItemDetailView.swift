@@ -22,56 +22,59 @@ struct ItemDetailView: View {
     
     var setItems: [Item] {
         guard let set = itemViewModel.item.set,
-            let category = itemViewModel.item.appCategory,
-            let items = items.categories[category] else { return [] }
+            let items = items.categories[itemViewModel.item.appCategory] else { return [] }
         return items.filter({ $0.set == set })
     }
     
     private var informationSection: some View {
-        Section(header: Text("INFORMATION")
-            .font(.headline)
-            .fontWeight(.bold)
-            .foregroundColor(.text)) {
-                VStack( spacing: 4) {
-                    HStack(alignment: .center) {
-                        Spacer()
-                        if itemViewModel.item.image == nil && displayedVariant == nil {
-                            Image(itemViewModel.item.appCategory!.iconName())
-                                .resizable()
-                                .frame(width: 150, height: 150)
-                        } else {
-                            ItemImage(path: displayedVariant ?? itemViewModel.item.image,
-                                      size: 150)
-                        }
-                        Spacer()
-                    }
-                    if itemViewModel.item.obtainedFrom != nil {
-                        Text(itemViewModel.item.obtainedFrom!)
-                            .foregroundColor(.secondaryText)
-                    }
-                    Text("Customizable: \(itemViewModel.item.customize == true ? "Yes" : "no")")
-                        .foregroundColor(.text)
-                    HStack(spacing: 16) {
-                        if itemViewModel.item.sell != nil {
-                            HStack(spacing: 2) {
-                                Image("icon-bells")
-                                    .resizable()
-                                    .frame(width: 25, height: 25)
-                                Text("\(itemViewModel.item.sell!)")
-                                    .foregroundColor(.bell)
-                            }
-                        }
-                        if itemViewModel.item.buy != nil {
-                            HStack(spacing: 2) {
-                                Image("icon-bell")
-                                    .resizable()
-                                    .frame(width: 25, height: 25)
-                                Text("\(itemViewModel.item.buy!)")
-                                    .foregroundColor(.bell)
-                            }
-                        }
+        VStack(spacing: 4) {
+            HStack(alignment: .center) {
+                Image(itemViewModel.item.appCategory.iconName())
+                    .renderingMode(.original)
+                    .resizable()
+                    .frame(width: 20, height: 20)
+                Text(itemViewModel.item.appCategory.label())
+                    .font(.callout)
+                    .foregroundColor(.text)
+            }
+            HStack(alignment: .center) {
+                Spacer()
+                if itemViewModel.item.image == nil && displayedVariant == nil {
+                    Image(itemViewModel.item.appCategory.iconName())
+                        .resizable()
+                        .frame(width: 150, height: 150)
+                } else {
+                    ItemImage(path: displayedVariant ?? itemViewModel.item.image,
+                              size: 150)
+                }
+                Spacer()
+            }
+            if itemViewModel.item.obtainedFrom != nil {
+                Text(itemViewModel.item.obtainedFrom!)
+                    .foregroundColor(.secondaryText)
+            }
+            Text("Customizable: \(itemViewModel.item.customize == true ? "Yes" : "no")")
+                .foregroundColor(.text)
+            HStack(spacing: 16) {
+                if itemViewModel.item.sell != nil {
+                    HStack(spacing: 2) {
+                        Image("icon-bells")
+                            .resizable()
+                            .frame(width: 25, height: 25)
+                        Text("\(itemViewModel.item.sell!)")
+                            .foregroundColor(.bell)
                     }
                 }
+                if itemViewModel.item.buy != nil {
+                    HStack(spacing: 2) {
+                        Image("icon-bell")
+                            .resizable()
+                            .frame(width: 25, height: 25)
+                        Text("\(itemViewModel.item.buy!)")
+                            .foregroundColor(.bell)
+                    }
+                }
+            }
         }
     }
     
@@ -169,6 +172,40 @@ struct ItemDetailView: View {
         }
     }
     
+    private var seasonalityView: some View {
+        Section(header: Text("Seasonality")
+            .font(.headline)
+            .fontWeight(.bold)
+            .foregroundColor(.text)) {
+                VStack(spacing: 8) {
+                    if itemViewModel.item.formattedStartTime() != nil &&
+                        itemViewModel.item.formattedEndTime() != nil {
+                        HStack {
+                            Spacer()
+                            Image(systemName: "clock.fill").foregroundColor(.secondaryText)
+                            Text("\(itemViewModel.item.formattedStartTime()!) - \(itemViewModel.item.formattedEndTime()!)h")
+                                .foregroundColor(.secondaryText)
+                                .font(.body)
+                            Spacer()
+                        }.padding(.top, 4)
+                    } else if itemViewModel.item.startTimeAsString() != nil {
+                        HStack {
+                            Spacer()
+                            Text(itemViewModel.item.startTimeAsString()!)
+                                .foregroundColor(.secondaryText)
+                                .font(.body)
+                            Spacer()
+                        }
+                    }
+                    HStack(alignment: .center) {
+                        Spacer()
+                        CalendarView(selectedMonth: itemViewModel.item.activeMonths())
+                        Spacer()
+                    }
+                }
+        }
+    }
+    
     var body: some View {
         List {
             informationSection
@@ -180,6 +217,9 @@ struct ItemDetailView: View {
             }
             if itemViewModel.item.materials != nil {
                 materialsSection
+            }
+            if itemViewModel.item.isCritter {
+                seasonalityView
             }
             listingSection
         }

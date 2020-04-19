@@ -18,14 +18,10 @@ struct StarButtonView: View {
     
     var body: some View {
         Button(action: {
-            if let category = self.item.appCategory {
-                switch category {
-                case .bugsSouth, .bugsNorth, .fishesSouth, .fishesNorth, .fossils:
-                    self.collection.toggleCritters(critter: self.item)
-                default:
-                    self.collection.toggleItem(item: self.item)
-                }
-            } else {
+            switch self.item.appCategory {
+            case .bugsSouth, .bugsNorth, .fishesSouth, .fishesNorth, .fossils:
+                self.collection.toggleCritters(critter: self.item)
+            default:
                 self.collection.toggleItem(item: self.item)
             }
         }) {

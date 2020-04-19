@@ -89,6 +89,7 @@
 		69BEA98B243EFE9700F02C61 /* ItemDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69BEA98A243EFE9700F02C61 /* ItemDetailView.swift */; };
 		69C5F5E72442119500BF8FA4 /* Material.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69C5F5E62442119500BF8FA4 /* Material.swift */; };
 		69C5F5EA244217FB00BF8FA4 /* CategoriesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69C5F5E9244217FB00BF8FA4 /* CategoriesView.swift */; };
+		69CA5EDA244CBA8600B275B6 /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69CA5ED9244CBA8600B275B6 /* CalendarView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -176,6 +177,7 @@
 		69BEA98A243EFE9700F02C61 /* ItemDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailView.swift; sourceTree = "<group>"; };
 		69C5F5E62442119500BF8FA4 /* Material.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Material.swift; sourceTree = "<group>"; };
 		69C5F5E9244217FB00BF8FA4 /* CategoriesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesView.swift; sourceTree = "<group>"; };
+		69CA5ED9244CBA8600B275B6 /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -431,6 +433,7 @@
 			children = (
 				69AF8C75243E3545001DD9CB /* SearchField.swift */,
 				68345578244C994C0072FC0C /* StarButtonView.swift */,
+				69CA5ED9244CBA8600B275B6 /* CalendarView.swift */,
 			);
 			path = shared;
 			sourceTree = "<group>";
@@ -614,6 +617,7 @@
 				69AF8C76243E3545001DD9CB /* SearchField.swift in Sources */,
 				68DFFFA9244927A400DEA07F /* NookazonService.swift in Sources */,
 				68345579244C994C0072FC0C /* StarButtonView.swift in Sources */,
+				69CA5EDA244CBA8600B275B6 /* CalendarView.swift in Sources */,
 				68BA582A244B693400B53811 /* TurnipsViewModel.swift in Sources */,
 				69AF8C74243E2F73001DD9CB /* ItemImage.swift in Sources */,
 				69AF8C6F243E2E6D001DD9CB /* ImageService.swift in Sources */,

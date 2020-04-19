@@ -26,8 +26,13 @@ struct Item: Codable, Equatable, Identifiable {
     let variants: [String]?
     
     let category: String
-    var appCategory: Categories? {
-        Categories(rawValue: category.lowercased().replacingOccurrences(of: " ", with: ""))
+    
+    var appCategory: Categories {
+        Categories(rawValue: category.lowercased().replacingOccurrences(of: " ", with: ""))!
+    }
+    
+    var isCritter: Bool {
+        appCategory == Categories.fish() || appCategory == Categories.bugs()
     }
     
     let materials: [Material]?
@@ -145,6 +150,20 @@ extension Item {
         return months[currentMonth - 1] == true
     }
     
+    func activeMonths() -> [String] {
+        let monthsBool = [jan, feb, mar, apr, may, jun, jul, aug, sep, oct, nov, dec]
+        let monthsString =  ["jan", "feb", "mar", "apr",
+                             "may", "jun", "jul", "aug",
+                             "sep","oct", "nov", "dec"]
+        var months: [String] = []
+        for (index, bool) in monthsBool.enumerated() {
+            if bool == true {
+                months.append(monthsString[index])
+            }
+        }
+        return months
+    }
+    
     private func formattedTime(time: CritterTimeContainer) -> Int? {
         let aDay: TimeInterval = 24*60*60
         switch time {
@@ -166,6 +185,13 @@ extension Item {
     func formattedEndTime() -> Int? {
         if let endTime = self.endTime {
             return formattedTime(time: endTime)
+        }
+        return nil
+    }
+    
+    func startTimeAsString() -> String? {
+        if case .string(let value) = startTime {
+            return value
         }
         return nil
     }
