@@ -78,7 +78,7 @@ extension DashboardView {
     }
     
     func makeAvailableCritterSection() -> some View {
-        Section(header: Text("Available this month")) {
+        Section(header: Text("Available This Month")) {
             NavigationLink(destination: ActiveCrittersView(activeFishes: viewModel.fishes.filterActive(),
                                                            activeBugs: viewModel.bugs.filterActive())) {
                 HStack {
@@ -87,9 +87,10 @@ extension DashboardView {
                         Text(numberOfFish)
                             .font(.title)
                             .bold()
+                            .foregroundColor(.text)
                         Text("Fishes")
                             .font(.caption)
-                            .foregroundColor(.secondary)
+                            .foregroundColor(.secondaryText)
                     }
                     Spacer()
                     Divider()
@@ -98,9 +99,10 @@ extension DashboardView {
                         Text(numberOfBugs)
                             .font(.title)
                             .bold()
+                            .foregroundColor(.text)
                         Text("Bugs")
                             .font(.caption)
-                            .foregroundColor(.secondary)
+                            .foregroundColor(.secondaryText)
                     }
                     Spacer()
                 }
