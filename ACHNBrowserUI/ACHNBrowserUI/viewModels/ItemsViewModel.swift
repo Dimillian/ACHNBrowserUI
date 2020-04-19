@@ -15,15 +15,20 @@ class ItemsViewModel: ObservableObject {
     @Published var searchItems: [Item] = []
     @Published var searchText = ""
     
+    private var itemCancellable: AnyCancellable?
+    
     enum Sort: String, CaseIterable {
         case name, buy, sell, from, set
     }
     
+    
     var categorie: Categories {
         didSet {
             sort = nil
-            items = []
-            fetch()
+            itemCancellable = Items.shared.$categories.sink { [weak self] items in
+                guard let weakself = self else { return }
+                self?.items = items[weakself.categorie] ?? []
+            }
         }
     }
     
@@ -50,13 +55,7 @@ class ItemsViewModel: ObservableObject {
         }
     }
     
-    private var apiPublisher: AnyPublisher<ItemResponse, Never>?
     private var searchCancellable: AnyCancellable?
-    private var apiCancellable: AnyCancellable? {
-        willSet {
-            apiCancellable?.cancel()
-        }
-    }
     
     public init(categorie: Categories) {
         self.categorie = categorie
@@ -69,15 +68,8 @@ class ItemsViewModel: ObservableObject {
                     self?.searchItems = self?.items.filter({ $0.name.lowercased().contains(string.lowercased()) }) ?? []
                 }
         }
-    }
-    
-    func fetch() {
-        apiPublisher = NookPlazaAPIService.fetch(endpoint: categorie)
-            .replaceError(with: ItemResponse(total: 0, results: []))
-            .eraseToAnyPublisher()
-        apiCancellable = apiPublisher?
-            .map{ $0.results }
-            .receive(on: DispatchQueue.main)
-            .assign(to: \.items, on: self)
+        itemCancellable = Items.shared.$categories.sink { [weak self] items in
+            self?.items = items[categorie] ?? []
+        }
     }
 }

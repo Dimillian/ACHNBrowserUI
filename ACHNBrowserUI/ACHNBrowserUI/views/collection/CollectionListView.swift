@@ -18,9 +18,8 @@ struct CollectionListView: View {
     
     private var itemsList: some View {
         List(collection.items) { item in
-            NavigationLink(destination: ItemDetailView(itemsViewModel: ItemsViewModel(categorie: item.appCategory ?? .housewares),
-                                                       itemViewModel: ItemDetailViewModel(item: item))) {
-                                                        ItemRowView(item: item)
+            NavigationLink(destination: ItemDetailView(item: item)) {
+                ItemRowView(item: item)
             }
         }
     }
@@ -36,9 +35,8 @@ struct CollectionListView: View {
     
     private var crittersList: some View {
         List(collection.critters) { item in
-            NavigationLink(destination: ItemDetailView(itemsViewModel: ItemsViewModel(categorie: item.appCategory ?? .housewares),
-                                                       itemViewModel: ItemDetailViewModel(item: item))) {
-                                                        ItemRowView(item: item)
+            NavigationLink(destination: ItemDetailView(item: item)) {
+                ItemRowView(item: item)
             }
         }
     }

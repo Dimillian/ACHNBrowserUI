@@ -56,9 +56,6 @@ struct DashboardView: View {
                 makeRecentNookazonListings()
             }
             .listStyle(GroupedListStyle())
-            .onAppear(perform: viewModel.fetchListings)
-            .onAppear(perform: viewModel.fetchIsland)
-            .onAppear(perform: viewModel.fetchCritters)
             .navigationBarTitle("Dashboard",
                                 displayMode: .inline)
         }.navigationViewStyle(StackNavigationViewStyle())

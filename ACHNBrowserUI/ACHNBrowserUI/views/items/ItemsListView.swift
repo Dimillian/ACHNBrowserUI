@@ -45,7 +45,6 @@ struct ItemsListView: View {
         if viewModel.sort != nil {
             buttons.append(.default(Text("Clear Selection"), action: {
                 self.viewModel.sort = nil
-                self.viewModel.fetch()
             }))
         }
         
@@ -75,8 +74,7 @@ struct ItemsListView: View {
                 .listRowBackground(Color.grass)
                 .foregroundColor(.white)
             ForEach(currentItems) { item in
-                NavigationLink(destination: ItemDetailView(itemsViewModel: self.viewModel,
-                                                           itemViewModel: ItemDetailViewModel(item: item))) {
+                NavigationLink(destination: ItemDetailView(item: item)) {
                     ItemRowView(item: item)
                         .environmentObject(ItemDetailViewModel(item: item))
                         .listRowBackground(Color.dialogue)
@@ -89,6 +87,5 @@ struct ItemsListView: View {
                             displayMode: .inline)
         .navigationBarItems(trailing: sortButton)
         .actionSheet(isPresented: $showSortSheet, content: { self.sortSheet })
-        .onAppear(perform: viewModel.fetch)
     }
 }

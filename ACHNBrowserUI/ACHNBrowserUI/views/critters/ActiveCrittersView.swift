@@ -31,18 +31,16 @@ struct ActiveCrittersView: View {
             Section(header: Text("To catch")) {
                 ForEach(selectedTab == .fishes ? activeFishes.filter{ !collection.critters.contains($0) } :
                 activeBugs.filter{ !collection.critters.contains($0) }) { critter in
-                    NavigationLink(destination: ItemDetailView(itemsViewModel: ItemsViewModel(categorie: critter.appCategory!),
-                                                               itemViewModel: ItemDetailViewModel(item: critter))) {
-                                                                ItemRowView(item: critter)
+                    NavigationLink(destination: ItemDetailView(item: critter)) {
+                        ItemRowView(item: critter)
                     }
                 }
             }
             Section(header: Text("Caught")) {
                 ForEach(selectedTab == .fishes ? activeFishes.filter{ collection.critters.contains($0) } :
                 activeBugs.filter{ collection.critters.contains($0) }) { critter in
-                    NavigationLink(destination: ItemDetailView(itemsViewModel: ItemsViewModel(categorie: critter.appCategory!),
-                                                               itemViewModel: ItemDetailViewModel(item: critter))) {
-                                                                ItemRowView(item: critter)
+                    NavigationLink(destination: ItemDetailView(item: critter)) {
+                        ItemRowView(item: critter)
                     }
                 }
             }

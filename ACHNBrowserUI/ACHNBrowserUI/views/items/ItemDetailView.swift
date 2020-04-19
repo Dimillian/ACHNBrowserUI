@@ -15,15 +15,22 @@ extension URL: Identifiable {
 }
 
 struct ItemDetailView: View {
-    @ObservedObject var itemsViewModel: ItemsViewModel
-    @ObservedObject var itemViewModel: ItemDetailViewModel
+    @EnvironmentObject private var items: Items
+
+    @ObservedObject private var itemViewModel: ItemDetailViewModel
     
     @State private var displayedVariant: String?
     @State private var selectedListing: URL?
 
+    init(item: Item) {
+        self.itemViewModel = ItemDetailViewModel(item: item)
+    }
+    
     var setItems: [Item] {
-        guard let set = itemViewModel.item.set else { return [] }
-        return itemsViewModel.items.filter({ $0.set == set })
+        guard let set = itemViewModel.item.set,
+            let category = itemViewModel.item.appCategory,
+            let items = items.categories[category] else { return [] }
+        return items.filter({ $0.set == set })
     }
     
     private var informationSection: some View {
@@ -200,8 +207,7 @@ struct ItemDetailView: View {
 struct ItemDetailView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
-            ItemDetailView(itemsViewModel: ItemsViewModel(categorie: .housewares),
-                           itemViewModel: ItemDetailViewModel(item: static_item))
+            ItemDetailView(item: static_item)
                 .environmentObject(UserCollection())
         }
     }
