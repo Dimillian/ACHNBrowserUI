@@ -12,7 +12,7 @@ struct Villager: Identifiable, Codable, Equatable {
     let id: Int
     let name: [String: String]
     let personality: String
-    let birdthday: String?
+    let birthday: String?
     let gender: String
     let species: String
 }

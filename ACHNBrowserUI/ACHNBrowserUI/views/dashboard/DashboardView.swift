@@ -153,11 +153,11 @@ extension DashboardView {
                     Text("Fishes")
                         .font(.subheadline)
                     ProgressView(progress:
-                        Float(caughtIn(list: viewModel.fishes)) / Float(viewModel.fishes.filterActive().count))
+                        Float(caughtIn(list: viewModel.fishes)) / Float(viewModel.fishes.count))
                     Text("Bugs")
                         .font(.subheadline)
                     ProgressView(progress:
-                        Float(caughtIn(list: viewModel.bugs)) / Float(viewModel.bugs.filterActive().count))
+                        Float(caughtIn(list: viewModel.bugs)) / Float(viewModel.bugs.count))
                     Text("Fossils")
                         .font(.subheadline)
                     ProgressView(progress: Float(caughtIn(list: viewModel.fossils)) / Float(viewModel.fossils.count))
