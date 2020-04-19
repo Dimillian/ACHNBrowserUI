@@ -13,7 +13,7 @@ struct CollectionListView: View {
         case items, villagers, critters
     }
 
-    @EnvironmentObject private var collection: CollectionViewModel
+    @EnvironmentObject private var collection: UserCollection
     @State private var selectedTab: Tabs = .items
     
     private var itemsList: some View {

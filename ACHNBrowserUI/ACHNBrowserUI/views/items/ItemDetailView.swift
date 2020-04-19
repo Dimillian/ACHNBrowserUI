@@ -202,7 +202,7 @@ struct ItemDetailView_Previews: PreviewProvider {
         NavigationView {
             ItemDetailView(itemsViewModel: ItemsViewModel(categorie: .housewares),
                            itemViewModel: ItemDetailViewModel(item: static_item))
-                .environmentObject(CollectionViewModel())
+                .environmentObject(UserCollection())
         }
     }
 }

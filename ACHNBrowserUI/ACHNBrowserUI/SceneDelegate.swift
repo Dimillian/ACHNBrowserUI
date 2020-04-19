@@ -15,7 +15,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         let contentView = TabbarView()
-            .environmentObject(CollectionViewModel())
+            .environmentObject(UserCollection())
         if let windowScene = scene as? UIWindowScene {
             
             //TODO: Move that to SwiftUI once implemented

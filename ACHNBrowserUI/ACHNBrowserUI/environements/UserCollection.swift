@@ -9,7 +9,7 @@
 import Foundation
 import Combine
 
-class CollectionViewModel: ObservableObject {
+class UserCollection: ObservableObject {
     @Published var items: [Item] = []
     @Published var villagers: [Villager] = []
     @Published var critters: [Item] = []

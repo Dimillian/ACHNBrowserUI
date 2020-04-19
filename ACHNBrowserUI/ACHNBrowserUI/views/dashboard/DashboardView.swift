@@ -11,7 +11,7 @@ import Combine
 import UIKit
 
 struct DashboardView: View {
-    @EnvironmentObject private var collection: CollectionViewModel
+    @EnvironmentObject private var collection: UserCollection
     @ObservedObject private var viewModel = DashboardViewModel()
     
     

@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct VillagerRowView: View {
-    @EnvironmentObject private var collection: CollectionViewModel
+    @EnvironmentObject private var collection: UserCollection
     
     let villager: Villager
     
