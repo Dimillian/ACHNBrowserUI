@@ -52,7 +52,9 @@ struct DashboardView: View {
                 makeDateView()
                 makeAvailableCritterSection()
                 makeCritterCollectionProgressSection()
-                makeTopTurnipSection()
+                if !Date().isSunday() {
+                    makeTopTurnipSection()
+                }
                 makeRecentNookazonListings()
             }
             .listStyle(GroupedListStyle())

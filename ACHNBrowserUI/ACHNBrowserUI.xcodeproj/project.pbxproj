@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		68345577244C94560072FC0C /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68345576244C94560072FC0C /* Date.swift */; };
 		687B57602449EEB100C1E86F /* Island.swift in Sources */ = {isa = PBXBuildFile; fileRef = 687B575F2449EEB100C1E86F /* Island.swift */; };
 		687B57622449EF8C00C1E86F /* TurnipExchangeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 687B57612449EF8C00C1E86F /* TurnipExchangeService.swift */; };
 		687B5768244A030700C1E86F /* TurnipsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 687B5767244A030700C1E86F /* TurnipsView.swift */; };
@@ -90,6 +91,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		68345576244C94560072FC0C /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		687B575F2449EEB100C1E86F /* Island.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Island.swift; sourceTree = "<group>"; };
 		687B57612449EF8C00C1E86F /* TurnipExchangeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TurnipExchangeService.swift; sourceTree = "<group>"; };
 		687B5767244A030700C1E86F /* TurnipsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TurnipsView.swift; sourceTree = "<group>"; };
@@ -409,6 +411,7 @@
 			children = (
 				69AF8C7B243E4D29001DD9CB /* Color.swift */,
 				693E0B1A244C2B9300D20E46 /* AppUserDefault.swift */,
+				68345576244C94560072FC0C /* Date.swift */,
 			);
 			path = utils;
 			sourceTree = "<group>";
@@ -581,6 +584,7 @@
 				69AF8C6A243E28B0001DD9CB /* Item.swift in Sources */,
 				69BEA97F243E602C00F02C61 /* TabbarView.swift in Sources */,
 				697E63F22449A406008FB710 /* Villager.swift in Sources */,
+				68345577244C94560072FC0C /* Date.swift in Sources */,
 				693E0B19244C2B8400D20E46 /* UserDefaultWrapper.swift in Sources */,
 				693E0B22244C596D00D20E46 /* ActiveCrittersView.swift in Sources */,
 				69AF8C51243E283D001DD9CB /* AppDelegate.swift in Sources */,
