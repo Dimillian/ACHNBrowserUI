@@ -199,7 +199,7 @@ struct ItemDetailView: View {
                     }
                     HStack(alignment: .center) {
                         Spacer()
-                        CalendarView(selectedMonth: itemViewModel.item.activeMonths())
+                        CalendarView(selectedMonths: itemViewModel.item.activeMonths())
                         Spacer()
                     }
                 }

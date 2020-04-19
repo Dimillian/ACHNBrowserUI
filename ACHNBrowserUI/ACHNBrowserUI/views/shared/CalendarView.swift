@@ -9,12 +9,12 @@
 import SwiftUI
 
 struct CalendarView: View {
-    let selectedMonth: [String]
-    let months = [["jan", "feb", "mar", "apr"],
-                  ["may", "jun", "jul", "aug"],
-                  ["sep","oct", "nov", "dec"]]
+    let selectedMonths: [String]
+    private let months = [["jan", "feb", "mar", "apr"],
+                          ["may", "jun", "jul", "aug"],
+                          ["sep","oct", "nov", "dec"]]
 
-    func makeMonthPill(month: String, selected: Bool) -> some View {
+    private func makeMonthPill(month: String, selected: Bool) -> some View {
         Text(month.capitalized)
             .font(.callout)
             .frame(width: 50, height: 30)
@@ -28,7 +28,7 @@ struct CalendarView: View {
                 HStack(spacing: 8) {
                     ForEach(group, id: \.self) { month in
                         self.makeMonthPill(month: month,
-                                           selected: self.selectedMonth.contains(month))
+                                           selected: self.selectedMonths.contains(month))
                     }
                 }
             }
@@ -41,6 +41,6 @@ struct CalendarView: View {
 
 struct CalendarView_Previews: PreviewProvider {
     static var previews: some View {
-        CalendarView(selectedMonth: ["jan", "feb"])
+        CalendarView(selectedMonths: ["jan", "feb"])
     }
 }
