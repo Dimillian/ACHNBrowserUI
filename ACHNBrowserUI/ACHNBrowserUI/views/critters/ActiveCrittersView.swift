@@ -27,7 +27,10 @@ struct ActiveCrittersView: View {
                 }
             }.pickerStyle(SegmentedPickerStyle())
             ForEach(selectedTab == .fishes ? activeFishes : activeBugs) { critter in
-                ItemRowView(item: critter)
+                NavigationLink(destination: ItemDetailView(itemsViewModel: ItemsViewModel(categorie: critter.appCategory!),
+                                                           itemViewModel: ItemDetailViewModel(item: critter))) {
+                    ItemRowView(item: critter)
+                }
             }
         }.listStyle(GroupedListStyle())
         .navigationBarTitle("Active Critters")
