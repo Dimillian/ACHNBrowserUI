@@ -10,10 +10,10 @@ import SwiftUI
 
 struct TabbarView: View {
     enum Tab: Int {
-        case items, wardrobe, nature, villagers, collection, turnips
+        case dashboard, items, villagers, collection, turnips
     }
     
-    @State var selectedTab = Tab.items
+    @State var selectedTab = Tab.dashboard
     
     func tabbarItem(text: String, image: String) -> some View {
         VStack {
@@ -27,7 +27,7 @@ struct TabbarView: View {
             Group {
                 DashboardView().tabItem{
                     self.tabbarItem(text: "Dashboard", image: "icon-bells")
-                }.tag(Tab.items)
+                }.tag(Tab.dashboard)
                 CategoriesView(categories: Categories.items()).tabItem{
                     self.tabbarItem(text: "Catalog", image: "icon-leaf")
                 }.tag(Tab.items)
