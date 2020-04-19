@@ -127,7 +127,7 @@ extension Item {
     func isActive() -> Bool {
         let months = [jan, feb, mar, apr, may, jun, jul, aug, sep, oct, nov, dec]
         let currentMonth = Int(Item.formatter.string(from: Date()))!
-        return months[currentMonth] == true
+        return months[currentMonth - 1] == true
     }
 }
 
