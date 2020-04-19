@@ -13,38 +13,7 @@ import UIKit
 struct DashboardView: View {
     @EnvironmentObject private var collection: UserCollection
     @ObservedObject private var viewModel = DashboardViewModel()
-    
-    
-    private func caughtIn(list: [Item]) -> Int {
-        var caught = 0
-        for critter in collection.critters {
-            if list.contains(critter) {
-                caught += 1
-            }
-        }
-        return caught
-    }
-    
-    private var numberOfFish: String {
-        if !viewModel.fishes.isEmpty {
-            return "\(caughtIn(list: viewModel.fishes))/\(viewModel.fishes.filterActive().count)"
-        }
-        return "Loading..."
-    }
-    
-    private var numberOfBugs: String {
-        if !viewModel.bugs.isEmpty {
-            return "\(caughtIn(list: viewModel.bugs))/\(viewModel.bugs.filterActive().count)"
-        }
-        return "Loading..."
-    }
-    
-    private var numberOfFossils: String {
-        if !viewModel.fossils.isEmpty {
-            return "\(caughtIn(list: viewModel.fossils))/\(viewModel.fossils.count)"
-        }
-        return "Loading..."
-    }
+    @State var selectedURL: URL?
     
     var body: some View {
         NavigationView {
@@ -60,7 +29,11 @@ struct DashboardView: View {
             .onAppear(perform: viewModel.fetchIsland)
             .navigationBarTitle("Dashboard",
                                 displayMode: .inline)
-        }.navigationViewStyle(StackNavigationViewStyle())
+        }
+        .navigationViewStyle(StackNavigationViewStyle())
+        .sheet(item: $selectedURL) {
+            SafariView(url: $0)
+        }
     }
 }
 
@@ -75,6 +48,37 @@ extension DashboardView {
                 .fontWeight(.bold)
                 .foregroundColor(.text)
         }
+    }
+    
+    private var numberOfBugs: String {
+        if !viewModel.bugs.isEmpty {
+            return "\(caughtIn(list: viewModel.bugs))/\(viewModel.bugs.filterActive().count)"
+        }
+        return "Loading..."
+    }
+    
+    private var numberOfFish: String {
+        if !viewModel.fishes.isEmpty {
+            return "\(caughtIn(list: viewModel.fishes))/\(viewModel.fishes.filterActive().count)"
+        }
+        return "Loading..."
+    }
+    
+    private func caughtIn(list: [Item]) -> Int {
+        var caught = 0
+        for critter in collection.critters {
+            if list.contains(critter) {
+                caught += 1
+            }
+        }
+        return caught
+    }
+    
+    private var numberOfFossils: String {
+        if !viewModel.fossils.isEmpty {
+            return "\(caughtIn(list: viewModel.fossils))/\(viewModel.fossils.count)"
+        }
+        return "Loading..."
     }
     
     func makeAvailableCritterSection() -> some View {
@@ -157,15 +161,19 @@ extension DashboardView {
             }
             viewModel.recentListings.map {
                 ForEach($0) { listing in
-                    VStack(alignment: .leading, spacing: 0) {
-                        HStack {
-                            ItemImage(path: listing.img?.absoluteString, size: 25)
-                                .frame(width: 25, height: 25)
-                            Text(listing.name!)
-                                .font(.headline)
-                                .foregroundColor(.text)
+                    Button(action: {
+                        self.selectedURL = URL.nookazon(listing: listing)
+                    }) {
+                        VStack(alignment: .leading, spacing: 0) {
+                            HStack {
+                                ItemImage(path: listing.img?.absoluteString, size: 25)
+                                    .frame(width: 25, height: 25)
+                                Text(listing.name!)
+                                    .font(.headline)
+                                    .foregroundColor(.text)
+                            }
+                            ListingRow(listing: listing)
                         }
-                        ListingRow(listing: listing)
                     }
                 }
             }

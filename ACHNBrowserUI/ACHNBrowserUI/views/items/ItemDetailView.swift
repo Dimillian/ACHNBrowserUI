@@ -8,12 +8,6 @@
 
 import SwiftUI
 
-extension URL: Identifiable {
-    public var id: URL {
-        self
-    }
-}
-
 struct ItemDetailView: View {
     @EnvironmentObject private var items: Items
 
@@ -166,7 +160,7 @@ struct ItemDetailView: View {
                 if !itemViewModel.listings.isEmpty {
                     ForEach(itemViewModel.listings.filter { $0.active && $0.selling }, content: { listing in
                         Button(action: {
-                            self.selectedListing = URL(string: "https://nookazon.com/product/\(listing.itemId)")
+                            self.selectedListing = URL.nookazon(listing: listing)
                         }) {
                             ListingRow(listing: listing)
                         }

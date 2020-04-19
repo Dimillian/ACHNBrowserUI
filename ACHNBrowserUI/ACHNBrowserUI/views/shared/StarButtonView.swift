@@ -12,7 +12,6 @@ struct StarButtonView: View {
     let item: Item
     @EnvironmentObject private var collection: UserCollection
     
-    
     private var isInCollection: Bool {
         collection.items.contains(item) || collection.critters.contains(item)
     }
