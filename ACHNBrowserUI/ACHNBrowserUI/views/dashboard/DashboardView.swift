@@ -10,18 +10,6 @@ import SwiftUI
 import Combine
 import UIKit
 
-struct Progress: UIViewRepresentable {
-    let progress: Float
-    
-    func makeUIView(context: Context) -> UIProgressView {
-        UIProgressView()
-    }
-    
-    func updateUIView(_ uiView: UIProgressView, context: Context) {
-        uiView.progress = progress
-    }
-}
-
 struct DashboardView: View {
     @EnvironmentObject private var collection: CollectionViewModel
     @ObservedObject private var viewModel = DashboardViewModel()
@@ -39,14 +27,14 @@ struct DashboardView: View {
     
     private var numberOfFish: String {
         if !viewModel.fishes.isEmpty {
-            return "\(caughtIn(list: viewModel.fishes))/\(viewModel.fishes.count)"
+            return "\(caughtIn(list: viewModel.fishes))/\(viewModel.fishes.filterActive().count)"
         }
         return "Loading..."
     }
     
     private var numberOfBugs: String {
         if !viewModel.bugs.isEmpty {
-            return "\(caughtIn(list: viewModel.bugs))/\(viewModel.bugs.count)"
+            return "\(caughtIn(list: viewModel.bugs))/\(viewModel.bugs.filterActive().count)"
         }
         return "Loading..."
     }
@@ -61,6 +49,7 @@ struct DashboardView: View {
     var body: some View {
         NavigationView {
             List {
+                makeDateView()
                 makeAvailableCritterSection()
                 makeCritterCollectionProgressSection()
                 makeTopTurnipSection()
@@ -77,13 +66,25 @@ struct DashboardView: View {
 }
 
 extension DashboardView {
+    func makeDateView() -> some View {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "EEEE, dd MMMM"
+        let dateString = formatter.string(from: Date())
+        return Section(header: Text("Today")) {
+            Text(dateString)
+                .font(.title)
+                .fontWeight(.bold)
+                .foregroundColor(.text)
+        }
+    }
+    
     func makeAvailableCritterSection() -> some View {
         Section(header: Text("Critters Active")) {
             HStack {
                 Spacer()
                 VStack {
                     Text(numberOfFish)
-                        .font(.largeTitle)
+                        .font(.title)
                         .bold()
                     Text("Fish")
                         .font(.caption)
@@ -94,7 +95,7 @@ extension DashboardView {
                 Spacer()
                 VStack {
                     Text(numberOfBugs)
-                        .font(.largeTitle)
+                        .font(.title)
                         .bold()
                     Text("Bugs")
                         .font(.caption)
@@ -113,13 +114,15 @@ extension DashboardView {
                     !viewModel.fossils.isEmpty {
                     Text("Fish")
                         .font(.subheadline)
-                    Progress(progress: Float(caughtIn(list: viewModel.fishes)) / Float(viewModel.fishes.count))
+                    ProgressView(progress:
+                        Float(caughtIn(list: viewModel.fishes)) / Float(viewModel.fishes.filterActive().count))
                     Text("Bugs")
                         .font(.subheadline)
-                    Progress(progress: Float(caughtIn(list: viewModel.bugs)) / Float(viewModel.bugs.count))
+                    ProgressView(progress:
+                        Float(caughtIn(list: viewModel.bugs)) / Float(viewModel.bugs.filterActive().count))
                     Text("Fossils")
                         .font(.subheadline)
-                    Progress(progress: Float(caughtIn(list: viewModel.fossils)) / Float(viewModel.fossils.count))
+                    ProgressView(progress: Float(caughtIn(list: viewModel.fossils)) / Float(viewModel.fossils.count))
                 } else {
                     Text("Loading...")
                 }

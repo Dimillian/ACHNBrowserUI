@@ -36,6 +36,74 @@ struct Item: Codable, Equatable, Identifiable {
     let sell: Int?
     
     let set: String?
+    
+    let jan: Bool?
+    let feb: Bool?
+    let mar: Bool?
+    let apr: Bool?
+    let may: Bool?
+    let jun: Bool?
+    let jul: Bool?
+    let aug: Bool?
+    let sep: Bool?
+    let oct: Bool?
+    let nov: Bool?
+    let dec: Bool?
+    
+    /*
+     Item(name: "Acoustic guitar",
+     image: "3FX566U",
+     obtainedFrom: "Crafting",
+     dIY: true,
+     customize: true,
+     variants: ["3FX566U", "dob8IS9", "fJWXEXw", "CrJ1ozg", "LJROUEd", ""],
+     category: "Housewares",
+     buy: 200,
+     sell: 300,
+     set: "Instrument")
+     */
+    init(name: String, image: String, obtainedFrom: String, dIY: Bool,
+         customize: Bool, variants: [String], category: String, buy: Int, sell: Int, set: String) {
+        self.name = name
+        self.image = image
+        self.obtainedFrom = obtainedFrom
+        self.dIY = dIY
+        self.customize = customize
+        self.variants = variants
+        self.category = category
+        self.buy = buy
+        self.sell = sell
+        self.set = set
+        
+        self.materials = nil
+        
+        self.jan = false
+        self.feb = false
+        self.mar = false
+        self.apr = false
+        self.may = false
+        self.jun = false
+        self.jul = false
+        self.aug = false
+        self.sep = false
+        self.oct = false
+        self.nov = false
+        self.dec = false
+    }
+}
+
+extension Item {
+    fileprivate static let formatter: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "MM"
+        return formatter
+    }()
+    
+    func isActive() -> Bool {
+        let months = [jan, feb, mar, apr, may, jun, jul, aug, sep, oct, nov, dec]
+        let currentMonth = Int(Item.formatter.string(from: Date()))!
+        return months[currentMonth] == true
+    }
 }
 
 extension Sequence {
@@ -46,6 +114,12 @@ extension Sequence {
     }
 }
 
+extension BidirectionalCollection where Element == Item {
+    func filterActive() -> [Item] {
+        self.filter({ $0.isActive() })
+    }
+}
+
 let static_item = Item(name: "Acoustic guitar",
                        image: "3FX566U",
                        obtainedFrom: "Crafting",
@@ -53,7 +127,6 @@ let static_item = Item(name: "Acoustic guitar",
                        customize: true,
                        variants: ["3FX566U", "dob8IS9", "fJWXEXw", "CrJ1ozg", "LJROUEd", ""],
                        category: "Housewares",
-                       materials: nil,
                        buy: 200,
                        sell: 300,
                        set: "Instrument")
