@@ -17,12 +17,12 @@ class DashboardViewModel: ObservableObject {
     @Published var bugs: [Item] = []
     @Published var fossils: [Item] = []
     
-    var listingCancellable: AnyCancellable?
-    var islandCancellable: AnyCancellable?
+    private var listingCancellable: AnyCancellable?
+    private var islandCancellable: AnyCancellable?
     
-    var bugsApiCancellable: AnyCancellable?
-    var fishesApiCancellable: AnyCancellable?
-    var fossilsApiCancellable: AnyCancellable?
+    private var bugsApiCancellable: AnyCancellable?
+    private var fishesApiCancellable: AnyCancellable?
+    private var fossilsApiCancellable: AnyCancellable?
     
     func fetchListings() {
         listingCancellable = NookazonService
@@ -44,7 +44,7 @@ class DashboardViewModel: ObservableObject {
     
     private func processPublisher(publisher: AnyPublisher<ItemResponse, APIError>,
                                   keypath: ReferenceWritableKeyPath<DashboardViewModel, [Item]>) -> AnyCancellable {
-        return publisher.replaceError(with: ItemResponse(total: 0, results: []))
+        publisher.replaceError(with: ItemResponse(total: 0, results: []))
             .eraseToAnyPublisher()
             .map{ $0.results }
             .receive(on: DispatchQueue.main)
