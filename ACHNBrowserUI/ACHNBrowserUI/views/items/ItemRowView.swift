@@ -14,11 +14,7 @@ struct ItemRowView: View {
     let item: Item
     
     @State private var displayedVariant: String?
-    
-    private var isInCollection: Bool {
-        collection.items.contains(item) || collection.critters.contains(item)
-    }
-    
+
     private func bellsView(title: String, price: Int) -> some View {
         HStack(spacing: 2) {
             Text(title)
@@ -33,21 +29,7 @@ struct ItemRowView: View {
         
     var body: some View {
         HStack(spacing: 8) {
-            Button(action: {
-                if let category = self.item.appCategory {
-                    switch category {
-                    case .bugsSouth, .bugsNorth, .fishesSouth, .fishesNorth, .fossils:
-                        self.collection.toggleCritters(critter: self.item)
-                    default:
-                        self.collection.toggleItem(item: self.item)
-                    }
-                } else {
-                    self.collection.toggleItem(item: self.item)
-                }
-            }) {
-                Image(systemName: self.isInCollection ? "star.fill" : "star")
-                    .foregroundColor(.yellow)
-            }.buttonStyle(BorderlessButtonStyle())
+            StarButtonView(item: item)
             if item.image == nil && displayedVariant == nil {
                 Image(item.appCategory!.iconName())
                     .resizable()
