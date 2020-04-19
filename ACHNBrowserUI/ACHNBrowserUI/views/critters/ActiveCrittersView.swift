@@ -9,6 +9,8 @@
 import SwiftUI
 
 struct ActiveCrittersView: View {
+    @EnvironmentObject private var collection: CollectionViewModel
+    
     enum Tab: String, CaseIterable {
         case fishes = "Fishes"
         case bugs = "Bugs"
@@ -26,13 +28,25 @@ struct ActiveCrittersView: View {
                     Text(tab.rawValue).tag(tab.rawValue)
                 }
             }.pickerStyle(SegmentedPickerStyle())
-            ForEach(selectedTab == .fishes ? activeFishes : activeBugs) { critter in
-                NavigationLink(destination: ItemDetailView(itemsViewModel: ItemsViewModel(categorie: critter.appCategory!),
-                                                           itemViewModel: ItemDetailViewModel(item: critter))) {
-                    ItemRowView(item: critter)
+            Section(header: Text("To catch")) {
+                ForEach(selectedTab == .fishes ? activeFishes.filter{ !collection.critters.contains($0) } :
+                activeBugs.filter{ !collection.critters.contains($0) }) { critter in
+                    NavigationLink(destination: ItemDetailView(itemsViewModel: ItemsViewModel(categorie: critter.appCategory!),
+                                                               itemViewModel: ItemDetailViewModel(item: critter))) {
+                                                                ItemRowView(item: critter)
+                    }
                 }
             }
-        }.listStyle(GroupedListStyle())
+            Section(header: Text("Caught")) {
+                ForEach(selectedTab == .fishes ? activeFishes.filter{ collection.critters.contains($0) } :
+                activeBugs.filter{ collection.critters.contains($0) }) { critter in
+                    NavigationLink(destination: ItemDetailView(itemsViewModel: ItemsViewModel(categorie: critter.appCategory!),
+                                                               itemViewModel: ItemDetailViewModel(item: critter))) {
+                                                                ItemRowView(item: critter)
+                    }
+                }
+            }
+        }.listStyle(PlainListStyle())
         .navigationBarTitle("Active Critters")
     }
 }
