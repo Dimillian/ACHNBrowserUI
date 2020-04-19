@@ -39,6 +39,6 @@ struct StarButtonView: View {
 
 struct StarButtonView_Previews: PreviewProvider {
     static var previews: some View {
-        StarButtonView()
+        StarButtonView(item: static_item)
     }
 }
