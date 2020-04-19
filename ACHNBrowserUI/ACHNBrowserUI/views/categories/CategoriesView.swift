@@ -20,6 +20,12 @@ struct CategoriesView: View {
             Image(systemName: "wrench").imageScale(.medium)
         })
     }
+
+    func makeCategories() -> some View {
+        ForEach(categories, id: \.self) { categorie in
+            CategoryRowView(category: categorie)
+        }
+    }
     
     func makeWardrobeCell() -> some View {
         NavigationLink(destination: CategoryDetailView(categories: Categories.wardrobe()).navigationBarTitle("Wardrobe")) {
@@ -46,12 +52,6 @@ struct CategoriesView: View {
                     .font(.headline)
                     .foregroundColor(.text)
             }
-        }
-    }
-    
-    func makeCategories() -> some View {
-        ForEach(categories, id: \.self) { categorie in
-            CategoryRowView(category: categorie)
         }
     }
     

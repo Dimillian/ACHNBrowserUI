@@ -14,8 +14,10 @@ struct TurnipCell: View {
     var body: some View {
         VStack(alignment: .leading) {
             Text(island.name)
+                .foregroundColor(.text)
                 .font(.headline)
             Text(island.islandTime.description)
+                .foregroundColor(.secondaryText)
                 .font(.subheadline)
             HStack {
                 Spacer()
@@ -26,6 +28,7 @@ struct TurnipCell: View {
                 Text("\(island.turnipPrice)")
                     .font(.largeTitle)
                     .bold()
+                    .foregroundColor(.text)
                 Group {
                     Spacer()
                     Divider()
@@ -34,6 +37,7 @@ struct TurnipCell: View {
                 Text(island.hemisphere.rawValue.localizedCapitalized)
                     .font(.largeTitle)
                     .bold()
+                    .foregroundColor(.text)
                 Spacer()
             }
         }

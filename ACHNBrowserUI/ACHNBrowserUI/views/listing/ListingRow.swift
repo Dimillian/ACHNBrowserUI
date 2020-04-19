@@ -21,6 +21,7 @@ struct ListingRow: View {
                             Image("icon-bells")
                                 .renderingMode(.original)
                                 .resizable()
+                                .aspectRatio(contentMode: .fit)
                                 .frame(width: 25, height: 25)
                             Text("\(bells)")
                         }
@@ -44,6 +45,7 @@ struct ListingRow: View {
                     Image("icon-bell")
                         .renderingMode(.original)
                         .resizable()
+                        .aspectRatio(contentMode: .fit)
                         .frame(width: 25, height: 25)
                     Text("Make an Offer")
                 }
@@ -53,6 +55,7 @@ struct ListingRow: View {
                     Image("icon-helmet")
                         .renderingMode(.original)
                         .resizable()
+                        .aspectRatio(contentMode: .fit)
                         .frame(width: 25, height: 25)
                     Text("Need Materials")
                 }

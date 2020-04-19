@@ -15,6 +15,7 @@
 		68BA582A244B693400B53811 /* TurnipsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68BA5829244B693300B53811 /* TurnipsViewModel.swift */; };
 		68BA582C244B695F00B53811 /* IslandDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68BA582B244B695F00B53811 /* IslandDetailViewModel.swift */; };
 		68BA5831244B738700B53811 /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 68BA5830244B738700B53811 /* SDWebImageSwiftUI */; };
+		68BA5834244B9D4100B53811 /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68BA5833244B9D4100B53811 /* DashboardView.swift */; };
 		68DFFFA9244927A400DEA07F /* NookazonService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68DFFFA8244927A400DEA07F /* NookazonService.swift */; };
 		68DFFFAB244927CA00DEA07F /* Listing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68DFFFAA244927CA00DEA07F /* Listing.swift */; };
 		68DFFFAD24492D7F00DEA07F /* ItemDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68DFFFAC24492D7F00DEA07F /* ItemDetailViewModel.swift */; };
@@ -49,6 +50,7 @@
 		692C2C372444448E00E5B818 /* nookmiles in Resources */ = {isa = PBXBuildFile; fileRef = 692C2C1A2444448E00E5B818 /* nookmiles */; };
 		693E0B19244C2B8400D20E46 /* UserDefaultWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 693E0B18244C2B8400D20E46 /* UserDefaultWrapper.swift */; };
 		693E0B1B244C2B9300D20E46 /* AppUserDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = 693E0B1A244C2B9300D20E46 /* AppUserDefault.swift */; };
+		693E0B1D244C315B00D20E46 /* DashboardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 693E0B1C244C315B00D20E46 /* DashboardViewModel.swift */; };
 		6942FC37244988F80062FE8F /* SafariView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6942FC36244988F80062FE8F /* SafariView.swift */; };
 		6942FC3A244989530062FE8F /* ListingRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6942FC39244989530062FE8F /* ListingRow.swift */; };
 		697E63EE2449A365008FB710 /* ACNHApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 697E63ED2449A365008FB710 /* ACNHApiService.swift */; };
@@ -92,6 +94,7 @@
 		68BA5827244B646C00B53811 /* IslandDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IslandDetailView.swift; sourceTree = "<group>"; };
 		68BA5829244B693300B53811 /* TurnipsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TurnipsViewModel.swift; sourceTree = "<group>"; };
 		68BA582B244B695F00B53811 /* IslandDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IslandDetailViewModel.swift; sourceTree = "<group>"; };
+		68BA5833244B9D4100B53811 /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
 		68DFFFA8244927A400DEA07F /* NookazonService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NookazonService.swift; sourceTree = "<group>"; };
 		68DFFFAA244927CA00DEA07F /* Listing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Listing.swift; sourceTree = "<group>"; };
 		68DFFFAC24492D7F00DEA07F /* ItemDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailViewModel.swift; sourceTree = "<group>"; };
@@ -127,6 +130,7 @@
 		692C2C1A2444448E00E5B818 /* nookmiles */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = nookmiles; sourceTree = "<group>"; };
 		693E0B18244C2B8400D20E46 /* UserDefaultWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultWrapper.swift; sourceTree = "<group>"; };
 		693E0B1A244C2B9300D20E46 /* AppUserDefault.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppUserDefault.swift; sourceTree = "<group>"; };
+		693E0B1C244C315B00D20E46 /* DashboardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewModel.swift; sourceTree = "<group>"; };
 		6942FC36244988F80062FE8F /* SafariView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariView.swift; sourceTree = "<group>"; };
 		6942FC39244989530062FE8F /* ListingRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListingRow.swift; sourceTree = "<group>"; };
 		697E63ED2449A365008FB710 /* ACNHApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ACNHApiService.swift; sourceTree = "<group>"; };
@@ -185,6 +189,15 @@
 				68BA5829244B693300B53811 /* TurnipsViewModel.swift */,
 			);
 			path = turnips;
+			sourceTree = "<group>";
+		};
+		68BA5832244B9D2F00B53811 /* dashboard */ = {
+			isa = PBXGroup;
+			children = (
+				693E0B1C244C315B00D20E46 /* DashboardViewModel.swift */,
+				68BA5833244B9D4100B53811 /* DashboardView.swift */,
+			);
+			path = dashboard;
 			sourceTree = "<group>";
 		};
 		692C2BFD2444445E00E5B818 /* json */ = {
@@ -314,6 +327,7 @@
 		69AF8C64243E2857001DD9CB /* views */ = {
 			isa = PBXGroup;
 			children = (
+				68BA5832244B9D2F00B53811 /* dashboard */,
 				697E63FE244AD664008FB710 /* settings */,
 				687B5765244A02E400C1E86F /* turnips */,
 				697E63F32449A488008FB710 /* villagers */,
@@ -544,6 +558,7 @@
 				697E63F22449A406008FB710 /* Villager.swift in Sources */,
 				693E0B19244C2B8400D20E46 /* UserDefaultWrapper.swift in Sources */,
 				69AF8C51243E283D001DD9CB /* AppDelegate.swift in Sources */,
+				68BA5834244B9D4100B53811 /* DashboardView.swift in Sources */,
 				697E63F92449DADE008FB710 /* VillagerRowView.swift in Sources */,
 				697E63EE2449A365008FB710 /* ACNHApiService.swift in Sources */,
 				69AF8C53243E283D001DD9CB /* SceneDelegate.swift in Sources */,
@@ -555,6 +570,7 @@
 				693E0B1B244C2B9300D20E46 /* AppUserDefault.swift in Sources */,
 				69BEA989243E68D400F02C61 /* CollectionViewModel.swift in Sources */,
 				6942FC37244988F80062FE8F /* SafariView.swift in Sources */,
+				693E0B1D244C315B00D20E46 /* DashboardViewModel.swift in Sources */,
 				69AF8C7C243E4D29001DD9CB /* Color.swift in Sources */,
 				69AF8C55243E283D001DD9CB /* ItemsListView.swift in Sources */,
 				69BEA98B243EFE9700F02C61 /* ItemDetailView.swift in Sources */,
