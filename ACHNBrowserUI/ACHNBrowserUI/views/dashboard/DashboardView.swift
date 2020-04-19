@@ -11,9 +11,32 @@ import Combine
 import UIKit
 
 struct DashboardView: View {
+    enum Sheet: Identifiable {
+        case safari(URL), settings
+        
+        var id: String {
+            switch self {
+            case .safari(let url):
+                return url.absoluteString
+            case .settings:
+                return "settings"
+            }
+        }
+    }
+    
+    
     @EnvironmentObject private var collection: UserCollection
     @ObservedObject private var viewModel = DashboardViewModel()
-    @State var selectedURL: URL?
+    @State var selectedSheet: Sheet?
+    
+    func makeSheet(_ sheet: Sheet) -> some View {
+        switch sheet {
+        case .settings:
+            return AnyView(SettingsView())
+        case .safari(let url):
+            return AnyView(SafariView(url: url))
+        }
+    }
     
     var body: some View {
         NavigationView {
@@ -27,17 +50,24 @@ struct DashboardView: View {
             .listStyle(GroupedListStyle())
             .onAppear(perform: viewModel.fetchListings)
             .onAppear(perform: viewModel.fetchIsland)
+            .navigationBarItems(trailing: preferenceButton)
             .navigationBarTitle("Dashboard",
                                 displayMode: .inline)
         }
         .navigationViewStyle(StackNavigationViewStyle())
-        .sheet(item: $selectedURL) {
-            SafariView(url: $0)
-        }
+        .sheet(item: $selectedSheet, content: makeSheet)
     }
 }
 
 extension DashboardView {
+    private var preferenceButton: some View {
+        Button(action: {
+            self.selectedSheet = .settings
+        }, label: {
+            Image(systemName: "wrench").imageScale(.medium)
+        })
+    }
+
     func makeDateView() -> some View {
         let formatter = DateFormatter()
         formatter.dateFormat = "EEEE, dd MMMM"
@@ -162,7 +192,7 @@ extension DashboardView {
             viewModel.recentListings.map {
                 ForEach($0) { listing in
                     Button(action: {
-                        self.selectedURL = URL.nookazon(listing: listing)
+                        self.selectedSheet = .safari(URL.nookazon(listing: listing)!)
                     }) {
                         VStack(alignment: .leading, spacing: 0) {
                             HStack {

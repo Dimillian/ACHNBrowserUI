@@ -11,16 +11,6 @@ import SwiftUI
 struct CategoriesView: View {
     let categories: [Categories]
     
-    @State private var isPreferencesShown = false
-    
-    private var preferenceButton: some View {
-        Button(action: {
-            self.isPreferencesShown = true
-        }, label: {
-            Image(systemName: "wrench").imageScale(.medium)
-        })
-    }
-
     func makeCategories() -> some View {
         ForEach(categories, id: \.self) { categorie in
             CategoryRowView(category: categorie)
@@ -63,8 +53,6 @@ struct CategoriesView: View {
                 makeCategories()
             }
             .navigationBarTitle(Text("Catalog"), displayMode: .inline)
-            .navigationBarItems(trailing: preferenceButton)
-            .sheet(isPresented: $isPreferencesShown, content: { SettingsView() })
         }
     }
 }

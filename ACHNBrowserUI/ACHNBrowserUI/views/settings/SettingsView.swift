@@ -16,7 +16,7 @@ struct SettingsView: View {
         Button(action: {
             self.presentationMode.wrappedValue.dismiss()
         }, label: {
-            Text("Cancel")
+            Text("Dismiss")
         })
     }
     
