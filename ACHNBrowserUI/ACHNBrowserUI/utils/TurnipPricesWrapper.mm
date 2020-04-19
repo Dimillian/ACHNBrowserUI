@@ -9,22 +9,40 @@
 #import "TurnipPricesWrapper.h"
 #include "TurnipPrices.h"
 
+@implementation Day
+
+- (id)initWithMorningPrice:(uint32_t)morning andAfternoonPrice:(uint32_t)afternoon
+{
+    self = [super init];
+    if(self) {
+        [self setMorningPrice:@(morning)];
+        [self setAfternoonPrice:@(afternoon)];
+    }
+    
+    return self;
+}
+
+@end
+
 @implementation TurnipPricesWrapper
 
-- (void)calculate:(NSNumber *)pattern {
+- (NSArray<Day *>*)calculateWithBasePrice:(NSNumber *)basePrice pattern:(NSNumber *)pattern seed:(NSNumber*)seed {
     TurnipPrices turnips = TurnipPrices();
+    
     turnips.whatPattern = pattern.unsignedIntValue;
-
+    turnips.rng.init(seed.unsignedIntValue);
+    
     turnips.calculate();
-    printf("Pattern %d:\n", turnips.whatPattern);
-    printf("Sun  Mon  Tue  Wed  Thu  Fri  Sat\n");
-    printf("%3d  %3d  %3d  %3d  %3d  %3d  %3d\n",
-           turnips.basePrice,
-           turnips.sellPrices[2], turnips.sellPrices[4], turnips.sellPrices[6],
-           turnips.sellPrices[8], turnips.sellPrices[10], turnips.sellPrices[12]);
-    printf("     %3d  %3d  %3d  %3d  %3d  %3d\n",
-           turnips.sellPrices[3], turnips.sellPrices[5], turnips.sellPrices[7],
-           turnips.sellPrices[9], turnips.sellPrices[11], turnips.sellPrices[13]);
+
+    return @[
+        [[Day alloc] initWithMorningPrice:turnips.basePrice andAfternoonPrice:0],
+        [[Day alloc] initWithMorningPrice:turnips.sellPrices[2] andAfternoonPrice:turnips.sellPrices[3]],
+        [[Day alloc] initWithMorningPrice:turnips.sellPrices[4] andAfternoonPrice:turnips.sellPrices[5]],
+        [[Day alloc] initWithMorningPrice:turnips.sellPrices[6] andAfternoonPrice:turnips.sellPrices[7]],
+        [[Day alloc] initWithMorningPrice:turnips.sellPrices[8] andAfternoonPrice:turnips.sellPrices[9]],
+        [[Day alloc] initWithMorningPrice:turnips.sellPrices[10] andAfternoonPrice:turnips.sellPrices[11]],
+        [[Day alloc] initWithMorningPrice:turnips.sellPrices[12] andAfternoonPrice:turnips.sellPrices[13]],
+    ];
 }
 
 @end

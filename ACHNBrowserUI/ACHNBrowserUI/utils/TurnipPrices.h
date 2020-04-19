@@ -98,7 +98,6 @@ struct TurnipPrices
     int32_t basePrice;
     int32_t sellPrices[14];
     uint32_t whatPattern;
-    int32_t tmp40;
     
     void calculate();
     

@@ -56,6 +56,11 @@ struct DashboardView: View {
         }
         .navigationViewStyle(StackNavigationViewStyle())
         .sheet(item: $selectedSheet, content: makeSheet)
+        .onAppear {
+            TurnipPricesWrapper().calculate(withBasePrice: 100, pattern: 2, seed: 0).forEach {
+                print($0.morningPrice.uintValue, $0.afternoonPrice.uintValue)
+            }
+        }
     }
 }
 

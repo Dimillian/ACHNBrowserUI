@@ -10,9 +10,18 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+@interface Day : NSObject
+
+@property(assign) NSNumber *morningPrice;
+@property(assign) NSNumber *afternoonPrice;
+
+- (id)initWithMorningPrice:(uint32_t)morning andAfternoonPrice:(uint32_t)afternoon;
+
+@end
+
 @interface TurnipPricesWrapper : NSObject
 
-- (void)calculate:(NSNumber *)pattern;
+- (NSArray<Day *>*)calculateWithBasePrice:(NSNumber *)basePrice pattern:(NSNumber *)pattern seed:(NSNumber*)seed;
 
 @end
 
