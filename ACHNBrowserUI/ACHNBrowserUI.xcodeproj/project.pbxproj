@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		68345579244C994C0072FC0C /* StarButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68345578244C994C0072FC0C /* StarButtonView.swift */; };
 		6834557B244CA8E10072FC0C /* URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6834557A244CA8E10072FC0C /* URL.swift */; };
+		68345586244CB39F0072FC0C /* TurnipPricesWrapper.mm in Sources */ = {isa = PBXBuildFile; fileRef = 68345585244CB39F0072FC0C /* TurnipPricesWrapper.mm */; };
 		687B57602449EEB100C1E86F /* Island.swift in Sources */ = {isa = PBXBuildFile; fileRef = 687B575F2449EEB100C1E86F /* Island.swift */; };
 		687B57622449EF8C00C1E86F /* TurnipExchangeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 687B57612449EF8C00C1E86F /* TurnipExchangeService.swift */; };
 		687B5768244A030700C1E86F /* TurnipsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 687B5767244A030700C1E86F /* TurnipsView.swift */; };
@@ -94,6 +95,10 @@
 /* Begin PBXFileReference section */
 		68345578244C994C0072FC0C /* StarButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarButtonView.swift; sourceTree = "<group>"; };
 		6834557A244CA8E10072FC0C /* URL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URL.swift; sourceTree = "<group>"; };
+		6834557C244CB1120072FC0C /* ACHNBrowserUI-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ACHNBrowserUI-Bridging-Header.h"; sourceTree = "<group>"; };
+		68345580244CB1AB0072FC0C /* TurnipPrices.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TurnipPrices.h; sourceTree = "<group>"; };
+		68345584244CB39F0072FC0C /* TurnipPricesWrapper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TurnipPricesWrapper.h; sourceTree = "<group>"; };
+		68345585244CB39F0072FC0C /* TurnipPricesWrapper.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = TurnipPricesWrapper.mm; sourceTree = "<group>"; };
 		687B575F2449EEB100C1E86F /* Island.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Island.swift; sourceTree = "<group>"; };
 		687B57612449EF8C00C1E86F /* TurnipExchangeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TurnipExchangeService.swift; sourceTree = "<group>"; };
 		687B5767244A030700C1E86F /* TurnipsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TurnipsView.swift; sourceTree = "<group>"; };
@@ -411,8 +416,12 @@
 		69AF8C70243E2EFE001DD9CB /* utils */ = {
 			isa = PBXGroup;
 			children = (
-				69AF8C7B243E4D29001DD9CB /* Color.swift */,
+				6834557C244CB1120072FC0C /* ACHNBrowserUI-Bridging-Header.h */,
 				693E0B1A244C2B9300D20E46 /* AppUserDefault.swift */,
+				69AF8C7B243E4D29001DD9CB /* Color.swift */,
+				68345580244CB1AB0072FC0C /* TurnipPrices.h */,
+				68345584244CB39F0072FC0C /* TurnipPricesWrapper.h */,
+				68345585244CB39F0072FC0C /* TurnipPricesWrapper.mm */,
 				6834557A244CA8E10072FC0C /* URL.swift */,
 			);
 			path = utils;
@@ -499,6 +508,7 @@
 				TargetAttributes = {
 					69AF8C4C243E283D001DD9CB = {
 						CreatedOnToolsVersion = 11.4;
+						LastSwiftMigration = 1140;
 					};
 				};
 			};
@@ -604,6 +614,7 @@
 				693E0B1B244C2B9300D20E46 /* AppUserDefault.swift in Sources */,
 				69BEA989243E68D400F02C61 /* UserCollection.swift in Sources */,
 				6942FC37244988F80062FE8F /* SafariView.swift in Sources */,
+				68345586244CB39F0072FC0C /* TurnipPricesWrapper.mm in Sources */,
 				693E0B1D244C315B00D20E46 /* DashboardViewModel.swift in Sources */,
 				69AF8C7C243E4D29001DD9CB /* Color.swift in Sources */,
 				69AF8C55243E283D001DD9CB /* ItemsListView.swift in Sources */,
@@ -754,6 +765,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = ACHNBrowserUI/ACHNBrowserUI.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"ACHNBrowserUI/Preview Content\"";
@@ -768,6 +780,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.thomasricouard.ACNH;
 				PRODUCT_NAME = "AC Helper";
 				SUPPORTS_MACCATALYST = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "ACHNBrowserUI/utils/ACHNBrowserUI-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -777,6 +791,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = ACHNBrowserUI/ACHNBrowserUI.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"ACHNBrowserUI/Preview Content\"";
@@ -791,6 +806,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.thomasricouard.ACNH;
 				PRODUCT_NAME = "AC Helper";
 				SUPPORTS_MACCATALYST = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "ACHNBrowserUI/utils/ACHNBrowserUI-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
