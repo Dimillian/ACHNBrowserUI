@@ -16,7 +16,7 @@ struct SettingsView: View {
         Button(action: {
             self.presentationMode.wrappedValue.dismiss()
         }, label: {
-            Text("Close")
+            Text("Cancel")
         })
     }
     
@@ -30,9 +30,17 @@ struct SettingsView: View {
                             Text("South").tag(1)
                     }
                 }
+                Button(action: {
+                    AppUserDefaults.emisphere = self.selectedEmisphere == 0 ? "north" : "south"
+                    self.presentationMode.wrappedValue.dismiss()
+                }, label: {
+                    Text("Save").foregroundColor(.grass)
+                })
             }
             .navigationBarTitle(Text("Preferences"), displayMode: .inline)
             .navigationBarItems(trailing: closeButton)
+        }.onAppear {
+            self.selectedEmisphere = AppUserDefaults.emisphere == "north" ? 0 : 1
         }
     }
 }

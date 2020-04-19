@@ -18,7 +18,7 @@ struct CategoryRowView: View {
                     .renderingMode(.original)
                     .resizable()
                     .frame(width: 46, height: 46)
-                Text(category.rawValue.capitalized)
+                Text(category.label())
                     .font(.headline)
                     .foregroundColor(.text)
             }

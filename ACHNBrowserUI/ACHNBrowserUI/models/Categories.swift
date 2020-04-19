@@ -20,6 +20,19 @@ enum Categories: String, CaseIterable {
     case fishesNorth = "fish-north"
     case fishesSouth = "fish-south"
     
+    func label() -> String {
+        switch self {
+        case .bugsSouth, .bugsNorth:
+            return "Bugs"
+        case .fishesSouth, .fishesNorth:
+            return "Fishes"
+        case .wallMounted:
+            return "Wall mounted"
+        default:
+            return self.rawValue.capitalized
+        }
+    }
+    
     func iconName() -> String {
         switch self {
         case .housewares, .miscellaneous, .wallMounted, .photos, .posters:
@@ -72,17 +85,20 @@ enum Categories: String, CaseIterable {
     }
     
     static func items() -> [Categories] {
-        return [.housewares, .miscellaneous, .wallMounted,
-                .wallpaper, .floors, .rugs, .photos, .fencing, .tools, .songs, .nookmiles,
-                .recipes, .construction, .other]
+        [.housewares, .miscellaneous, .wallMounted,
+         .wallpaper, .floors, .rugs, .photos, .fencing, .tools, .songs, .nookmiles,
+         .recipes, .construction, .other]
     }
     
     static func wardrobe() -> [Categories] {
-        return [.tops, .bottoms, .dresses, .headwear,
-                .accessories, .socks, .shoes, .bags, .umbrellas]
+        [.tops, .bottoms, .dresses, .headwear,
+         .accessories, .socks, .shoes, .bags, .umbrellas]
     }
     
     static func nature() -> [Categories] {
-        return [.bugsNorth, .bugsSouth, .fishesNorth, .fishesSouth, .fossils]
+        if AppUserDefaults.emisphere == "north" {
+            return [.bugsNorth, .fishesNorth, .fossils]
+        }
+        return [.bugsSouth, .fishesSouth, .fossils]
     }
 }
