@@ -65,7 +65,7 @@ struct CategoriesView: View {
             .navigationBarTitle(Text("Catalog"), displayMode: .inline)
             .navigationBarItems(trailing: preferenceButton)
             .sheet(isPresented: $isPreferencesShown, content: { SettingsView() })
-        }.navigationViewStyle(StackNavigationViewStyle())
+        }
     }
 }
 

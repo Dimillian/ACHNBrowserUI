@@ -1,8 +1,16 @@
-# Animal Crossing New Horizon item browser in SwiftUI!
+# Animal Crossing New Horizon SwiftUI application!
 
-This is a browser for Animal Crossing New Horizon items. 
+![Image](images/promo.png?)
 
-Pretty barebone as of now but you can browse items by categories and search them. 
+This is a full featured Animal Crossing helper application entierly in SwiftUI.
+
+# Features
+* Dashboard to track your fishes and bugs. 
+* Turnip.echange integration.
+* Nookazon integration. 
+* Full catalog browser with filter, sorting and search.
+* Villagers list.
+* Bookmark anything in the app to add it to your collection.
 
 You can use this application for learning about SwiftUI and Combine. It use a very standTrd view, and view model architecture with full use of @State, @Binding, @Published, Observed and Observable object. 
 
@@ -21,9 +29,3 @@ Thanks to [ACHN API](http://acnhapi.com/) for the API that allow us to display v
 Thanks to [Nookazon](https://nookazon.com/) for item listings and trading platform. 
 
 Thanks to [Shihab](https://twitter.com/JPEGuin) for the app icons.
-
-## Images
-
-![Image1](images/image1.png?)
-![Image2](images/image2.png?)
-![Image3](images/image3.png?)
