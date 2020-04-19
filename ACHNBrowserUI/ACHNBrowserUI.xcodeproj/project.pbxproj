@@ -52,6 +52,7 @@
 		693E0B1B244C2B9300D20E46 /* AppUserDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = 693E0B1A244C2B9300D20E46 /* AppUserDefault.swift */; };
 		693E0B1D244C315B00D20E46 /* DashboardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 693E0B1C244C315B00D20E46 /* DashboardViewModel.swift */; };
 		693E0B1F244C526A00D20E46 /* ProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 693E0B1E244C526A00D20E46 /* ProgressView.swift */; };
+		693E0B22244C596D00D20E46 /* ActiveCrittersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 693E0B21244C596D00D20E46 /* ActiveCrittersView.swift */; };
 		6942FC37244988F80062FE8F /* SafariView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6942FC36244988F80062FE8F /* SafariView.swift */; };
 		6942FC3A244989530062FE8F /* ListingRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6942FC39244989530062FE8F /* ListingRow.swift */; };
 		697E63EE2449A365008FB710 /* ACNHApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 697E63ED2449A365008FB710 /* ACNHApiService.swift */; };
@@ -133,6 +134,7 @@
 		693E0B1A244C2B9300D20E46 /* AppUserDefault.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppUserDefault.swift; sourceTree = "<group>"; };
 		693E0B1C244C315B00D20E46 /* DashboardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewModel.swift; sourceTree = "<group>"; };
 		693E0B1E244C526A00D20E46 /* ProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressView.swift; sourceTree = "<group>"; };
+		693E0B21244C596D00D20E46 /* ActiveCrittersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveCrittersView.swift; sourceTree = "<group>"; };
 		6942FC36244988F80062FE8F /* SafariView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariView.swift; sourceTree = "<group>"; };
 		6942FC39244989530062FE8F /* ListingRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListingRow.swift; sourceTree = "<group>"; };
 		697E63ED2449A365008FB710 /* ACNHApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ACNHApiService.swift; sourceTree = "<group>"; };
@@ -246,6 +248,14 @@
 			path = wrappers;
 			sourceTree = "<group>";
 		};
+		693E0B20244C596000D20E46 /* critters */ = {
+			isa = PBXGroup;
+			children = (
+				693E0B21244C596D00D20E46 /* ActiveCrittersView.swift */,
+			);
+			path = critters;
+			sourceTree = "<group>";
+		};
 		6942FC35244988E90062FE8F /* representable */ = {
 			isa = PBXGroup;
 			children = (
@@ -330,6 +340,7 @@
 		69AF8C64243E2857001DD9CB /* views */ = {
 			isa = PBXGroup;
 			children = (
+				693E0B20244C596000D20E46 /* critters */,
 				68BA5832244B9D2F00B53811 /* dashboard */,
 				697E63FE244AD664008FB710 /* settings */,
 				687B5765244A02E400C1E86F /* turnips */,
@@ -560,6 +571,7 @@
 				69BEA97F243E602C00F02C61 /* TabbarView.swift in Sources */,
 				697E63F22449A406008FB710 /* Villager.swift in Sources */,
 				693E0B19244C2B8400D20E46 /* UserDefaultWrapper.swift in Sources */,
+				693E0B22244C596D00D20E46 /* ActiveCrittersView.swift in Sources */,
 				69AF8C51243E283D001DD9CB /* AppDelegate.swift in Sources */,
 				68BA5834244B9D4100B53811 /* DashboardView.swift in Sources */,
 				697E63F92449DADE008FB710 /* VillagerRowView.swift in Sources */,

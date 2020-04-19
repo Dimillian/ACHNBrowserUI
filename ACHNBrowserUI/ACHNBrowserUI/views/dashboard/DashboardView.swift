@@ -79,29 +79,32 @@ extension DashboardView {
     }
     
     func makeAvailableCritterSection() -> some View {
-        Section(header: Text("Critters Active")) {
-            HStack {
-                Spacer()
-                VStack {
-                    Text(numberOfFish)
-                        .font(.title)
-                        .bold()
-                    Text("Fish")
-                        .font(.caption)
-                        .foregroundColor(.secondary)
+        Section(header: Text("Active critters")) {
+            NavigationLink(destination: ActiveCrittersView(activeFishes: viewModel.fishes.filterActive(),
+                                                           activeBugs: viewModel.bugs.filterActive())) {
+                HStack {
+                    Spacer()
+                    VStack {
+                        Text(numberOfFish)
+                            .font(.title)
+                            .bold()
+                        Text("Fishes")
+                            .font(.caption)
+                            .foregroundColor(.secondary)
+                    }
+                    Spacer()
+                    Divider()
+                    Spacer()
+                    VStack {
+                        Text(numberOfBugs)
+                            .font(.title)
+                            .bold()
+                        Text("Bugs")
+                            .font(.caption)
+                            .foregroundColor(.secondary)
+                    }
+                    Spacer()
                 }
-                Spacer()
-                Divider()
-                Spacer()
-                VStack {
-                    Text(numberOfBugs)
-                        .font(.title)
-                        .bold()
-                    Text("Bugs")
-                        .font(.caption)
-                        .foregroundColor(.secondary)
-                }
-                Spacer()
             }
         }
     }
@@ -112,7 +115,7 @@ extension DashboardView {
                 if !viewModel.fishes.isEmpty &&
                     !viewModel.bugs.isEmpty &&
                     !viewModel.fossils.isEmpty {
-                    Text("Fish")
+                    Text("Fishes")
                         .font(.subheadline)
                     ProgressView(progress:
                         Float(caughtIn(list: viewModel.fishes)) / Float(viewModel.fishes.filterActive().count))

@@ -35,6 +35,9 @@ struct Item: Codable, Equatable, Identifiable {
     let buy: Int?
     let sell: Int?
     
+    let starTime: CritterTimeContainer?
+    let endTime: CritterTimeContainer?
+    
     let set: String?
     
     let jan: Bool?
@@ -50,18 +53,6 @@ struct Item: Codable, Equatable, Identifiable {
     let nov: Bool?
     let dec: Bool?
     
-    /*
-     Item(name: "Acoustic guitar",
-     image: "3FX566U",
-     obtainedFrom: "Crafting",
-     dIY: true,
-     customize: true,
-     variants: ["3FX566U", "dob8IS9", "fJWXEXw", "CrJ1ozg", "LJROUEd", ""],
-     category: "Housewares",
-     buy: 200,
-     sell: 300,
-     set: "Instrument")
-     */
     init(name: String, image: String, obtainedFrom: String, dIY: Bool,
          customize: Bool, variants: [String], category: String, buy: Int, sell: Int, set: String) {
         self.name = name
@@ -77,6 +68,9 @@ struct Item: Codable, Equatable, Identifiable {
         
         self.materials = nil
         
+        self.starTime = nil
+        self.endTime = nil
+        
         self.jan = false
         self.feb = false
         self.mar = false
@@ -89,6 +83,37 @@ struct Item: Codable, Equatable, Identifiable {
         self.oct = false
         self.nov = false
         self.dec = false
+    }
+}
+
+enum CritterTimeContainer: Codable, Equatable {
+    case float(Float)
+    case string(String)
+    
+    func encode(to encoder: Encoder) throws {
+        var container = encoder.singleValueContainer()
+        switch self {
+        case .float(let v): try container.encode(v)
+        case .string(let v): try container.encode(v)
+        }
+    }
+    
+    init(from decoder: Decoder) throws {
+        let value = try decoder.singleValueContainer()
+        
+        if let v = try? value.decode(Float.self) {
+            self = .float(v)
+            return
+        } else if let v = try? value.decode(String.self) {
+            self = .string(v)
+            return
+        }
+        
+        throw ParseError.notRecognizedType(value)
+    }
+    
+    enum ParseError: Error {
+        case notRecognizedType(Any)
     }
 }
 
