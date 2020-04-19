@@ -33,4 +33,20 @@ extension Color {
     public static var grass2: Color {
         Color("grass-2", bundle: nil)
     }
+    
+    public static var catalogBackground: Color {
+        Color("catalog-background", bundle: nil)
+    }
+    
+    public static var catalogBar: Color {
+        Color("catalog-bar", bundle: nil)
+    }
+    
+    public static var catalogSelected: Color {
+        Color("catalog-selected", bundle: nil)
+    }
+    
+    public static var catalogUnselected: Color {
+        Color("catalog-unselected", bundle: nil)
+    }
 }
