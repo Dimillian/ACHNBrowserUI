@@ -9,14 +9,14 @@
 import SwiftUI
 
 struct SettingsView: View {
-    @State private var selectedEmisphere = 0
+    @State private var selectedHemisphere = 0
     @Environment(\.presentationMode) private var presentationMode
     
     var closeButton: some View {
         Button(action: {
             self.presentationMode.wrappedValue.dismiss()
         }, label: {
-            Text("Close")
+            Text("Cancel")
         })
     }
     
@@ -24,15 +24,23 @@ struct SettingsView: View {
         NavigationView {
             Form {
                 Section(header: Text("Island")) {
-                    Picker(selection: $selectedEmisphere,
+                    Picker(selection: $selectedHemisphere,
                            label: Text("Emisphere")) {
                             Text("North").tag(0)
                             Text("South").tag(1)
                     }
                 }
+                Button(action: {
+                    AppUserDefaults.hemisphere = self.selectedHemisphere == 0 ? "north" : "south"
+                    self.presentationMode.wrappedValue.dismiss()
+                }, label: {
+                    Text("Save").foregroundColor(.grass)
+                })
             }
             .navigationBarTitle(Text("Preferences"), displayMode: .inline)
             .navigationBarItems(trailing: closeButton)
+        }.onAppear {
+            self.selectedHemisphere = AppUserDefaults.hemisphere == "north" ? 0 : 1
         }
     }
 }

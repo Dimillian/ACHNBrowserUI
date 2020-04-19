@@ -12,11 +12,12 @@ import Combine
 class CollectionViewModel: ObservableObject {
     @Published var items: [Item] = []
     @Published var villagers: [Villager] = []
-    @Published var categories: [String] = []
+    @Published var critters: [Item] = []
     
     struct SavedData: Codable {
         let items: [Item]
         let villagers: [Villager]
+        let critters: [Item]
     }
     
     private let filePath: URL
@@ -32,13 +33,9 @@ class CollectionViewModel: ObservableObject {
             if let data = try? Data(contentsOf: filePath) {
                 decoder.dataDecodingStrategy = .base64
                 let savedData = try decoder.decode(SavedData.self, from: data)
-                for item in savedData.items {
-                    if !categories.contains(item.category) {
-                        categories.append(item.category)
-                    }
-                }
                 self.items = savedData.items
                 self.villagers = savedData.villagers
+                self.critters = savedData.critters
             }
         } catch let error {
             fatalError(error.localizedDescription)
@@ -51,8 +48,14 @@ class CollectionViewModel: ObservableObject {
         } else {
             items.append(item)
         }
-        if !categories.contains(item.category) {
-            categories.append(item.category)
+        save()
+    }
+    
+    func toggleCritters(critter: Item) {
+        if critters.contains(critter) {
+            critters.removeAll(where: { $0 == critter })
+        } else {
+            critters.append(critter)
         }
         save()
     }
@@ -68,7 +71,7 @@ class CollectionViewModel: ObservableObject {
     
     private func save() {
         do {
-            let savedData = SavedData(items: items, villagers: villagers)
+            let savedData = SavedData(items: items, villagers: villagers, critters: critters)
             let data = try encoder.encode(savedData)
             try data.write(to: filePath, options: .atomicWrite)
         } catch let error {

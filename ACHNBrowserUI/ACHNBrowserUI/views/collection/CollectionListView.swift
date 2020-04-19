@@ -10,7 +10,7 @@ import SwiftUI
 
 struct CollectionListView: View {
     enum Tabs: String, CaseIterable {
-        case items, villagers
+        case items, villagers, critters
     }
 
     @EnvironmentObject private var collection: CollectionViewModel
@@ -34,6 +34,15 @@ struct CollectionListView: View {
         }
     }
     
+    private var crittersList: some View {
+        List(collection.critters) { item in
+            NavigationLink(destination: ItemDetailView(itemsViewModel: ItemsViewModel(categorie: item.appCategory ?? .housewares),
+                                                       itemViewModel: ItemDetailViewModel(item: item))) {
+                                                        ItemRowView(item: item)
+            }
+        }
+    }
+    
     var body: some View {
         NavigationView {
             VStack {
@@ -49,6 +58,8 @@ struct CollectionListView: View {
                     itemsList
                 } else if selectedTab == .villagers {
                     villagersList
+                } else if selectedTab == .critters {
+                    crittersList
                 }
             }
             .overlay(Group {
