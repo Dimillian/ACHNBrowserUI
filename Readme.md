@@ -11,6 +11,7 @@ This is a full featured Animal Crossing helper application entierly in SwiftUI.
 * Full catalog browser with filter, sorting and search.
 * Villagers list.
 * Bookmark anything in the app to add it to your collection.
+* iOS, iPad and macOS (Catalyst support)!
 
 You can use this application for learning about SwiftUI and Combine. It use a very standTrd view, and view model architecture with full use of @State, @Binding, @Published, Observed and Observable object. 
 
