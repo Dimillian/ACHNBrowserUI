@@ -9,7 +9,7 @@
 import Foundation
 
 public struct AppUserDefaults {
-    @UserDefault("emisphere", defaultValue: "north")
-    public static var emisphere: String
+    @UserDefault("hemisphere", defaultValue: "north")
+    public static var hemisphere: String
 }
 
