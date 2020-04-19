@@ -13,9 +13,13 @@ struct ItemRowView: View {
     
     let item: Item
     
-    @State var displayedVariant: String?
+    @State private var displayedVariant: String?
     
-    func bellsView(title: String, price: Int) -> some View {
+    private var isInCollection: Bool {
+        collection.items.contains(item) || collection.critters.contains(item)
+    }
+    
+    private func bellsView(title: String, price: Int) -> some View {
         HStack(spacing: 2) {
             Text(title)
                 .font(.footnote)
@@ -30,9 +34,18 @@ struct ItemRowView: View {
     var body: some View {
         HStack(spacing: 8) {
             Button(action: {
-                self.collection.toggleItem(item: self.item)
+                if let category = self.item.appCategory {
+                    switch category {
+                    case .bugsSouth, .bugsNorth, .fishesSouth, .fishesNorth, .fossils:
+                        self.collection.toggleCritters(critter: self.item)
+                    default:
+                        self.collection.toggleItem(item: self.item)
+                    }
+                } else {
+                    self.collection.toggleItem(item: self.item)
+                }
             }) {
-                Image(systemName: self.collection.items.contains(self.item) ? "star.fill" : "star")
+                Image(systemName: self.isInCollection ? "star.fill" : "star")
                     .foregroundColor(.yellow)
             }.buttonStyle(BorderlessButtonStyle())
             if item.image == nil && displayedVariant == nil {
