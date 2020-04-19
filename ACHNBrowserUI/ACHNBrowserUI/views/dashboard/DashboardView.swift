@@ -11,43 +11,52 @@ import Combine
 import UIKit
 
 struct Progress: UIViewRepresentable {
+    let progress: Float
+    
     func makeUIView(context: Context) -> UIProgressView {
         UIProgressView()
     }
     
     func updateUIView(_ uiView: UIProgressView, context: Context) {
-        uiView.progress = 0.5
-    }
-}
-
-class DashboardViewModel: ObservableObject {
-    @Published var recentListings: [Listing]?
-    @Published var island: Island?
-    
-    var listingCancellable: AnyCancellable?
-    var islandCancellable: AnyCancellable?
-
-    func fetchListings() {
-        listingCancellable = NookazonService
-            .recentListings()
-            .receive(on: RunLoop.main)
-            .sink(receiveCompletion: { _ in }) { [weak self] listings in
-                self?.recentListings = listings
-        }
-    }
-    
-    func fetchIsland() {
-        islandCancellable = TurnipExchangeService.shared
-            .fetchIslands()
-            .receive(on: RunLoop.main)
-            .sink(receiveCompletion: { _ in }) { [weak self] islands in
-                self?.island = islands.first
-        }
+        uiView.progress = progress
     }
 }
 
 struct DashboardView: View {
-    @ObservedObject var viewModel = DashboardViewModel()
+    @EnvironmentObject private var collection: CollectionViewModel
+    @ObservedObject private var viewModel = DashboardViewModel()
+    
+    
+    private func caughtIn(list: [Item]) -> Int {
+        var caught = 0
+        for critter in collection.critters {
+            if list.contains(critter) {
+                caught += 1
+            }
+        }
+        return caught
+    }
+    
+    private var numberOfFish: String {
+        if !viewModel.fishes.isEmpty {
+            return "\(caughtIn(list: viewModel.fishes))/\(viewModel.fishes.count)"
+        }
+        return "Loading..."
+    }
+    
+    private var numberOfBugs: String {
+        if !viewModel.bugs.isEmpty {
+            return "\(caughtIn(list: viewModel.bugs))/\(viewModel.bugs.count)"
+        }
+        return "Loading..."
+    }
+    
+    private var numberOfFossils: String {
+        if !viewModel.fossils.isEmpty {
+            return "\(caughtIn(list: viewModel.fossils))/\(viewModel.fossils.count)"
+        }
+        return "Loading..."
+    }
     
     var body: some View {
         NavigationView {
@@ -60,6 +69,7 @@ struct DashboardView: View {
             .listStyle(GroupedListStyle())
             .onAppear(perform: viewModel.fetchListings)
             .onAppear(perform: viewModel.fetchIsland)
+            .onAppear(perform: viewModel.fetchCritters)
             .navigationBarTitle("Dashboard",
                                 displayMode: .inline)
         }
@@ -72,7 +82,7 @@ extension DashboardView {
             HStack {
                 Spacer()
                 VStack {
-                    Text("10/10")
+                    Text(numberOfFish)
                         .font(.largeTitle)
                         .bold()
                     Text("Fish")
@@ -83,7 +93,7 @@ extension DashboardView {
                 Divider()
                 Spacer()
                 VStack {
-                    Text("10/10")
+                    Text(numberOfBugs)
                         .font(.largeTitle)
                         .bold()
                     Text("Bugs")
@@ -98,15 +108,21 @@ extension DashboardView {
     func makeCritterCollectionProgressSection() -> some View {
         Section(header: Text("Collection Progress")) {
             VStack(alignment: .leading) {
-                Text("Fish")
-                    .font(.subheadline)
-                Progress()
-                Text("Bugs")
-                    .font(.subheadline)
-                Progress()
-                Text("Fossils")
-                    .font(.subheadline)
-                Progress()
+                if !viewModel.fishes.isEmpty &&
+                    !viewModel.bugs.isEmpty &&
+                    !viewModel.fossils.isEmpty {
+                    Text("Fish")
+                        .font(.subheadline)
+                    Progress(progress: Float(caughtIn(list: viewModel.fishes)) / Float(viewModel.fishes.count))
+                    Text("Bugs")
+                        .font(.subheadline)
+                    Progress(progress: Float(caughtIn(list: viewModel.bugs)) / Float(viewModel.bugs.count))
+                    Text("Fossils")
+                        .font(.subheadline)
+                    Progress(progress: Float(caughtIn(list: viewModel.fossils)) / Float(viewModel.fossils.count))
+                } else {
+                    Text("Loading...")
+                }
             }
             .padding(.bottom, 10)
             .padding(.top, 5)

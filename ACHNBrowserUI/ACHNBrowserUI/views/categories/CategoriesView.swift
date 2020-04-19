@@ -27,9 +27,39 @@ struct CategoriesView: View {
         }
     }
     
+    func makeWardrobeCell() -> some View {
+        NavigationLink(destination: CategoryDetailView(categories: Categories.wardrobe()).navigationBarTitle("Wardrobe")) {
+            HStack {
+                Image(Categories.dresses.iconName())
+                    .renderingMode(.original)
+                    .resizable()
+                    .frame(width: 46, height: 46)
+                Text("Wardrobe")
+                    .font(.headline)
+                    .foregroundColor(.text)
+            }
+        }
+    }
+    
+    func makeNatureCell() -> some View {
+        NavigationLink(destination: CategoryDetailView(categories: Categories.nature()).navigationBarTitle("Nature")) {
+            HStack {
+                Image(Categories.fossils.iconName())
+                    .renderingMode(.original)
+                    .resizable()
+                    .frame(width: 46, height: 46)
+                Text("Nature")
+                    .font(.headline)
+                    .foregroundColor(.text)
+            }
+        }
+    }
+    
     var body: some View {
         NavigationView {
             List {
+                makeNatureCell()
+                makeWardrobeCell()
                 makeCategories()
             }
             .navigationBarTitle(Text("Catalog"), displayMode: .inline)
