@@ -61,7 +61,7 @@ struct DashboardView: View {
             .onAppear(perform: viewModel.fetchCritters)
             .navigationBarTitle("Dashboard",
                                 displayMode: .inline)
-        }
+        }.navigationViewStyle(StackNavigationViewStyle())
     }
 }
 
