@@ -44,15 +44,14 @@ class DashboardViewModel: ObservableObject {
     
     
     func fetchCritters() {
-        let isNorth = AppUserDefaults.hemisphere == "north"
-        bugsApiCancellable = NookPlazaAPIService.fetch(endpoint: isNorth ? .bugsNorth : .bugsSouth)
+        bugsApiCancellable = NookPlazaAPIService.fetch(endpoint: Categories.bugs())
             .replaceError(with: ItemResponse(total: 0, results: []))
             .eraseToAnyPublisher()
             .map{ $0.results }
             .receive(on: DispatchQueue.main)
             .assign(to: \.bugs, on: self)
         
-        fishesApiCancellable = NookPlazaAPIService.fetch(endpoint: isNorth ? .fishesNorth : .fishesSouth)
+        fishesApiCancellable = NookPlazaAPIService.fetch(endpoint: Categories.fish())
             .replaceError(with: ItemResponse(total: 0, results: []))
             .eraseToAnyPublisher()
             .map{ $0.results }

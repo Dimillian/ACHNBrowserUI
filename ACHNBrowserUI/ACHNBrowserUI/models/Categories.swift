@@ -96,9 +96,14 @@ enum Categories: String, CaseIterable {
     }
     
     static func nature() -> [Categories] {
-        if AppUserDefaults.hemisphere == "north" {
-            return [.bugsNorth, .fishesNorth, .fossils]
-        }
-        return [.bugsSouth, .fishesSouth, .fossils]
+        return [fish(), bugs(), .fossils]
+    }
+    
+    static func fish() -> Categories {
+        AppUserDefaults.hemisphere == "north" ? .fishesNorth : .fishesSouth
+    }
+    
+    static func bugs() -> Categories {
+        AppUserDefaults.hemisphere == "north" ? .bugsNorth : .bugsSouth
     }
 }
