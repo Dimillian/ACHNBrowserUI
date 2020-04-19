@@ -79,7 +79,7 @@ extension DashboardView {
     }
     
     func makeAvailableCritterSection() -> some View {
-        Section(header: Text("Active critters")) {
+        Section(header: Text("Available this month")) {
             NavigationLink(destination: ActiveCrittersView(activeFishes: viewModel.fishes.filterActive(),
                                                            activeBugs: viewModel.bugs.filterActive())) {
                 HStack {

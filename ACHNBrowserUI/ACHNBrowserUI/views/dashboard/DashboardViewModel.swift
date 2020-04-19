@@ -42,27 +42,21 @@ class DashboardViewModel: ObservableObject {
         }
     }
     
+    private func processPublisher(publisher: AnyPublisher<ItemResponse, APIError>,
+                                  keypath: ReferenceWritableKeyPath<DashboardViewModel, [Item]>) -> AnyCancellable {
+        return publisher.replaceError(with: ItemResponse(total: 0, results: []))
+            .eraseToAnyPublisher()
+            .map{ $0.results }
+            .receive(on: DispatchQueue.main)
+            .assign(to: keypath, on: self)
+    }
     
     func fetchCritters() {
-        bugsApiCancellable = NookPlazaAPIService.fetch(endpoint: Categories.bugs())
-            .replaceError(with: ItemResponse(total: 0, results: []))
-            .eraseToAnyPublisher()
-            .map{ $0.results }
-            .receive(on: DispatchQueue.main)
-            .assign(to: \.bugs, on: self)
-        
-        fishesApiCancellable = NookPlazaAPIService.fetch(endpoint: Categories.fish())
-            .replaceError(with: ItemResponse(total: 0, results: []))
-            .eraseToAnyPublisher()
-            .map{ $0.results }
-            .receive(on: DispatchQueue.main)
-            .assign(to: \.fishes, on: self)
-        
-        fossilsApiCancellable = NookPlazaAPIService.fetch(endpoint: .fossils)
-            .replaceError(with: ItemResponse(total: 0, results: []))
-            .eraseToAnyPublisher()
-            .map{ $0.results }
-            .receive(on: DispatchQueue.main)
-            .assign(to: \.fossils, on: self)
+        bugsApiCancellable = processPublisher(publisher:NookPlazaAPIService.fetch(endpoint: Categories.bugs()),
+                                              keypath: \.bugs)
+        fishesApiCancellable = processPublisher(publisher: NookPlazaAPIService.fetch(endpoint: Categories.fish()),
+                                                 keypath: \.fishes)
+        fossilsApiCancellable = processPublisher(publisher: NookPlazaAPIService.fetch(endpoint: .fossils),
+                                                 keypath: \.fossils)
     }
 }
