@@ -35,7 +35,7 @@ struct Item: Codable, Equatable, Identifiable {
     let buy: Int?
     let sell: Int?
     
-    let starTime: CritterTimeContainer?
+    let startTime: CritterTimeContainer?
     let endTime: CritterTimeContainer?
     
     let set: String?
@@ -68,7 +68,7 @@ struct Item: Codable, Equatable, Identifiable {
         
         self.materials = nil
         
-        self.starTime = nil
+        self.startTime = nil
         self.endTime = nil
         
         self.jan = false
@@ -117,20 +117,61 @@ enum CritterTimeContainer: Codable, Equatable {
     }
 }
 
+
+// MARK: - Calendar
 extension Item {
-    fileprivate static let formatter: DateFormatter = {
+    fileprivate static let monthFormatter: DateFormatter = {
         let formatter = DateFormatter()
         formatter.dateFormat = "MM"
         return formatter
     }()
     
+    fileprivate static let timeFormatter: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "HH"
+        return formatter
+    }()
+    
+    fileprivate static let startOfDay: TimeInterval = {
+        var utzCal = Calendar(identifier: .gregorian)
+        utzCal.timeZone = TimeZone(secondsFromGMT: 0)!
+        let year = utzCal.component(.year, from: Date())
+        return DateComponents(calendar: utzCal, year: year, month: 1, day: 1).date!.timeIntervalSince1970
+    }()
+    
     func isActive() -> Bool {
         let months = [jan, feb, mar, apr, may, jun, jul, aug, sep, oct, nov, dec]
-        let currentMonth = Int(Item.formatter.string(from: Date()))!
+        let currentMonth = Int(Item.monthFormatter.string(from: Date()))!
         return months[currentMonth - 1] == true
+    }
+    
+    private func formattedTime(time: CritterTimeContainer) -> Int? {
+        let aDay: TimeInterval = 24*60*60
+        switch time {
+        case let .float(percentile):
+            let newDate = Date(timeIntervalSince1970: Item.startOfDay + (aDay * TimeInterval(percentile)))
+            return Int(Item.timeFormatter.string(from: newDate))! - 1
+        default:
+            return nil
+        }
+    }
+    
+    func formattedStartTime() -> Int? {
+        if let startTime = self.startTime {
+            return formattedTime(time: startTime)
+        }
+        return nil
+    }
+    
+    func formattedEndTime() -> Int? {
+        if let endTime = self.endTime {
+            return formattedTime(time: endTime)
+        }
+        return nil
     }
 }
 
+// MARK: - Array
 extension Sequence {
     func sorted<T: Comparable>(by keyPath: KeyPath<Element, T>) -> [Element] {
         return sorted { a, b in

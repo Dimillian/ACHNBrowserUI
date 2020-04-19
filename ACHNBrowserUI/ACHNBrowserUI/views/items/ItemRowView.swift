@@ -86,6 +86,15 @@ struct ItemRowView: View {
                         }.frame(height: 30)
                     }
                 }
+                
+                if item.formattedStartTime() != nil && item.formattedEndTime() != nil {
+                    HStack {
+                        Image(systemName: "clock.fill").foregroundColor(.secondaryText)
+                        Text("\(item.formattedStartTime()!) - \(item.formattedEndTime()!)h")
+                            .foregroundColor(.secondaryText)
+                            .font(.caption)
+                    }.padding(.top, 4)
+                }
             }
         }
     }
