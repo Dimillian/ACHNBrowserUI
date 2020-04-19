@@ -21,7 +21,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface TurnipPricesWrapper : NSObject
 
-- (NSArray<Day *>*)calculateWithBasePrice:(NSNumber *)basePrice pattern:(NSNumber *)pattern seed:(NSNumber*)seed;
+- (NSArray<Day *>*)calculateWithPattern:(NSNumber *)pattern seed:(NSNumber*)seed;
 
 @end
 
