@@ -11,8 +11,9 @@
 
 @implementation TurnipPricesWrapper
 
-- (void)calculate {
+- (void)calculate:(NSNumber *)pattern {
     TurnipPrices turnips = TurnipPrices();
+    turnips.whatPattern = pattern.unsignedIntValue;
 
     turnips.calculate();
     printf("Pattern %d:\n", turnips.whatPattern);

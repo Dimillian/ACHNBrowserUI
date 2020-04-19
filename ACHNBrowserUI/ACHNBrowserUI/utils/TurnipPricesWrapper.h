@@ -6,13 +6,13 @@
 //  Copyright © 2020 Thomas Ricouard. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface TurnipPricesWrapper : NSObject
 
-- (void)calculate;
+- (void)calculate:(NSNumber *)pattern;
 
 @end
 
