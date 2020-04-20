@@ -8,14 +8,41 @@
 
 import SwiftUI
 
-struct ActiveCrittersView: View {
+enum Tab: String, CaseIterable {
+    case fishes = "Fishes"
+    case bugs = "Bugs"
+}
+
+struct ActiveCritterSections: View {
     @EnvironmentObject private var collection: UserCollection
+    @Binding var selectedTab: Tab
+
+    let activeFishes: [Item]
+    let activeBugs: [Item]
     
-    enum Tab: String, CaseIterable {
-        case fishes = "Fishes"
-        case bugs = "Bugs"
+    var body: some View {
+        Group {
+            Section(header: Text("To catch")) {
+                ForEach(selectedTab == .fishes ? activeFishes.filter{ !collection.critters.contains($0) } :
+                    activeBugs.filter{ !collection.critters.contains($0) }) { critter in
+                        NavigationLink(destination: ItemDetailView(item: critter)) {
+                            ItemRowView(item: critter)
+                        }
+                }
+            }
+            Section(header: Text("Caught")) {
+                ForEach(selectedTab == .fishes ? activeFishes.filter{ collection.critters.contains($0) } :
+                    activeBugs.filter{ collection.critters.contains($0) }) { critter in
+                        NavigationLink(destination: ItemDetailView(item: critter)) {
+                            ItemRowView(item: critter)
+                        }
+                }
+            }
+        }
     }
-    
+}
+
+struct ActiveCrittersView: View {
     let activeFishes: [Item]
     let activeBugs: [Item]
     
@@ -28,23 +55,11 @@ struct ActiveCrittersView: View {
                     Text(tab.rawValue).tag(tab.rawValue)
                 }
             }.pickerStyle(SegmentedPickerStyle())
-            Section(header: Text("To catch")) {
-                ForEach(selectedTab == .fishes ? activeFishes.filter{ !collection.critters.contains($0) } :
-                activeBugs.filter{ !collection.critters.contains($0) }) { critter in
-                    NavigationLink(destination: ItemDetailView(item: critter)) {
-                        ItemRowView(item: critter)
-                    }
-                }
-            }
-            Section(header: Text("Caught")) {
-                ForEach(selectedTab == .fishes ? activeFishes.filter{ collection.critters.contains($0) } :
-                activeBugs.filter{ collection.critters.contains($0) }) { critter in
-                    NavigationLink(destination: ItemDetailView(item: critter)) {
-                        ItemRowView(item: critter)
-                    }
-                }
-            }
-        }.listStyle(PlainListStyle())
+            ActiveCritterSections(selectedTab: $selectedTab,
+                                  activeFishes: activeFishes,
+                                  activeBugs: activeBugs)
+        }
+        .listStyle(PlainListStyle())
         .navigationBarTitle("Active Critters")
     }
 }
