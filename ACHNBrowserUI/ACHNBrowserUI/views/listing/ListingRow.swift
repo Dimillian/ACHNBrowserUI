@@ -10,6 +10,7 @@ import SwiftUI
 
 struct ListingRow: View {
     let listing: Listing
+    var hideDetail: Bool = false
     
     var body: some View {
         VStack(alignment: .leading, spacing: 5) {
@@ -60,9 +61,11 @@ struct ListingRow: View {
                     Text("Need Materials")
                 }
             }
-            Text("\(listing.username)\(listing.discord.map { $0.isEmpty ? "" : " · \($0)" } ?? "")\(listing.rating.map { $0.isEmpty ? " · No Rating" : " · \($0[..<$0.index($0.startIndex, offsetBy: 4)]) Rating" } ?? " · No Rating")")
-                .font(.subheadline)
-                .foregroundColor(.secondaryText)
+            if !hideDetail {
+                Text("\(listing.username)\(listing.discord.map { $0.isEmpty ? "" : " · \($0)" } ?? "")\(listing.rating.map { $0.isEmpty ? " · No Rating" : " · \($0[..<$0.index($0.startIndex, offsetBy: 4)]) Rating" } ?? " · No Rating")")
+                    .font(.subheadline)
+                    .foregroundColor(.secondaryText)
+            }
         }
         .font(.headline)
         .foregroundColor(.text)

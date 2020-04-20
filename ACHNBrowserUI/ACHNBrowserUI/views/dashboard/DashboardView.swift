@@ -226,23 +226,32 @@ extension DashboardView {
                 Text("Loading...")
                     .foregroundColor(.secondary)
             }
-            viewModel.recentListings.map {
-                ForEach($0) { listing in
-                    Button(action: {
-                        self.selectedSheet = .safari(URL.nookazon(listing: listing)!)
-                    }) {
-                        VStack(alignment: .leading, spacing: 0) {
-                            HStack {
-                                ItemImage(path: listing.img?.absoluteString, size: 25)
-                                    .frame(width: 25, height: 25)
-                                Text(listing.name!)
-                                    .font(.headline)
-                                    .foregroundColor(.text)
+            viewModel.recentListings.map { listings in
+                ScrollView(.horizontal, showsIndicators: false) {
+                    HStack(spacing: 20) {
+                        ForEach(listings) { listing in
+                            Button(action: {
+                                self.selectedSheet = .safari(URL.nookazon(listing: listing)!)
+                            }) {
+                                VStack {
+                                    ItemImage(path: listing.img?.absoluteString, size: 80)
+                                    Text(listing.name!)
+                                        .font(.headline)
+                                        .foregroundColor(.text)
+                                }
+                                .padding()
+                                .background(
+                                    RoundedRectangle(cornerRadius: 8, style: .continuous)
+                                        .fill(Color.dialogue)
+                                        .shadow(radius: 4)
+                                )
+                                .padding(.vertical, 10)
                             }
-                            ListingRow(listing: listing)
                         }
                     }
+                    .padding()
                 }
+                .listRowInsets(.init(top: 0, leading: 0, bottom: 0, trailing: 0))
             }
         }
     }
