@@ -108,11 +108,9 @@ struct ItemDetailView: View {
                     HStack {
                         ForEach(itemViewModel.item.materials!) { material in
                             VStack {
-                                if material.iconName != nil {
-                                    Image(material.iconName!)
-                                        .resizable()
-                                        .frame(width: 50, height: 50)
-                                }
+                                Image(material.iconName)
+                                    .resizable()
+                                    .frame(width: 50, height: 50)
                                 Text(material.itemName)
                                     .font(.callout)
                                     .foregroundColor(.text)

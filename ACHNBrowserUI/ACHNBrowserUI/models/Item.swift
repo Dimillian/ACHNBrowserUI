@@ -125,7 +125,7 @@ enum CritterTimeContainer: Codable, Equatable {
 
 // MARK: - Calendar
 extension Item {
-    fileprivate static let monthFormatter: DateFormatter = {
+    static let monthFormatter: DateFormatter = {
         let formatter = DateFormatter()
         formatter.dateFormat = "MM"
         return formatter
