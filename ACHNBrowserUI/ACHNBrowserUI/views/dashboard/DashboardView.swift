@@ -78,10 +78,15 @@ extension DashboardView {
         formatter.dateFormat = "EEEE, dd MMMM"
         let dateString = formatter.string(from: Date())
         return Section(header: makeSectionHeader(icon: "icon-helmet", text: "Today")) {
-            Text(dateString)
-                .font(.title)
-                .fontWeight(.bold)
-                .foregroundColor(.text)
+            VStack(alignment: .leading) {
+                Text(dateString)
+                    .font(.title)
+                    .fontWeight(.bold)
+                    .foregroundColor(.text)
+                Text("No events today")
+                    .foregroundColor(.secondaryText)
+            }
+            .padding(.vertical, 5)
         }
     }
     
