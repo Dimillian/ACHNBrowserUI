@@ -156,6 +156,7 @@ extension DashboardView {
                     }
                     Spacer()
                 }
+                .padding(.vertical, 5)
             }
         }
     }
