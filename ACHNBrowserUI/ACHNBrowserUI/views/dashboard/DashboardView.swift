@@ -72,7 +72,7 @@ extension DashboardView {
         let formatter = DateFormatter()
         formatter.dateFormat = "EEEE, dd MMMM"
         let dateString = formatter.string(from: Date())
-        return Section(header: Text("Today")) {
+        return Section(header: makeSectionHeader(icon: "icon-helmet", text: "Today")) {
             Text(dateString)
                 .font(.title)
                 .fontWeight(.bold)
@@ -111,8 +111,15 @@ extension DashboardView {
         return "Loading..."
     }
     
+    private func makeSectionHeader(icon: String, text: String) -> some View {
+        HStack {
+            Image(icon).resizable().frame(width: 25, height: 25)
+            Text(text).font(.subheadline)
+        }
+    }
+    
     func makeAvailableCritterSection() -> some View {
-        Section(header: Text("Available This Month")) {
+        Section(header: makeSectionHeader(icon: "icon-insect", text: "Available This Month")) {
             NavigationLink(destination: ActiveCrittersView(activeFishes: viewModel.fishes.filterActive(),
                                                            activeBugs: viewModel.bugs.filterActive())) {
                 HStack {
@@ -145,7 +152,7 @@ extension DashboardView {
     }
     
     func makeCritterCollectionProgressSection() -> some View {
-        Section(header: Text("Collection Progress")) {
+        Section(header: makeSectionHeader(icon: "icon-leaf", text: "Collection Progress")) {
             VStack(alignment: .leading) {
                 if !viewModel.fishes.isEmpty &&
                     !viewModel.bugs.isEmpty &&
@@ -186,7 +193,7 @@ extension DashboardView {
     }
     
     func makeTopTurnipSection() -> some View {
-        Section(header: Text("Top Turnip Island")) {
+        Section(header: makeSectionHeader(icon: "icon-turnip", text: "Top Turnip Island")) {
             if viewModel.island == nil {
                 Text("Loading...")
                     .foregroundColor(.secondary)
@@ -198,7 +205,7 @@ extension DashboardView {
     }
     
     func makeRecentNookazonListings() -> some View {
-        Section(header: Text("Recent Nookazon Listings")) {
+        Section(header: makeSectionHeader(icon: "icon-bells", text: "Recent Nookazon Listings")) {
             if viewModel.recentListings == nil {
                 Text("Loading...")
                     .foregroundColor(.secondary)
