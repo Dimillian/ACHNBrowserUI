@@ -174,6 +174,8 @@ extension DashboardView {
                             Float(caughtIn(list: viewModel.fishes)) / Float(viewModel.fishes.count))
                         Text("\(caughtIn(list: viewModel.fishes))/\(viewModel.fishes.count)")
                             .font(.caption)
+                            .bold()
+                            .foregroundColor(.text)
                     }
                     HStack {
                         Image("Ins62")
@@ -183,6 +185,8 @@ extension DashboardView {
                         Float(caughtIn(list: viewModel.bugs)) / Float(viewModel.bugs.count))
                         Text("\(caughtIn(list: viewModel.bugs))/\(viewModel.bugs.count)")
                             .font(.caption)
+                            .bold()
+                            .foregroundColor(.text)
                     }
                     HStack {
                         Image("icon-fossil")
@@ -190,9 +194,12 @@ extension DashboardView {
                         ProgressView(progress: Float(caughtIn(list: viewModel.fossils)) / Float(viewModel.fossils.count))
                         Text("\(caughtIn(list: viewModel.fossils))/\(viewModel.fossils.count)")
                             .font(.caption)
+                            .bold()
+                            .foregroundColor(.text)
                     }
                 } else {
                     Text("Loading...")
+                        .foregroundColor(.secondary)
                 }
             }
             .padding(.bottom, 10)
