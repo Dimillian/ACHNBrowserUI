@@ -36,9 +36,8 @@ struct VillagersListView: View {
                     .listRowBackground(Color.grass)
                     .foregroundColor(.white)
                 ForEach(currentVillagers) { villager in
-                    NavigationLink(destination: VillagerDetailView(villager: villager,
-                                                                   villagersViewModel: self.viewModel)) {
-                                                                    VillagerRowView(villager: villager)
+                    NavigationLink(destination: VillagerDetailView(villager: villager)) {
+                        VillagerRowView(villager: villager)
                     }
                 }
             }

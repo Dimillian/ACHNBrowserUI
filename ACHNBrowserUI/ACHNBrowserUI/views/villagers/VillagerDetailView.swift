@@ -10,7 +10,6 @@ import SwiftUI
 
 struct VillagerDetailView: View {
     let villager: Villager
-    @ObservedObject var villagersViewModel: VillagersViewModel
     
     private func infoCell(title: String, value: String) -> some View {
         HStack {

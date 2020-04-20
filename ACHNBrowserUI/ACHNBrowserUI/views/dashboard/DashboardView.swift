@@ -27,6 +27,7 @@ struct DashboardView: View {
     
     @EnvironmentObject private var collection: UserCollection
     @ObservedObject private var viewModel = DashboardViewModel()
+    @ObservedObject private var villagersViewModel = VillagersViewModel()
     @State var selectedSheet: Sheet?
     
     func makeSheet(_ sheet: Sheet) -> some View {
@@ -44,12 +45,16 @@ struct DashboardView: View {
                 makeDateView()
                 makeAvailableCritterSection()
                 makeCritterCollectionProgressSection()
+                if !villagersViewModel.todayBirthdays.isEmpty {
+                    makeBirthdayView()
+                }
                 makeTopTurnipSection()
                 makeRecentNookazonListings()
             }
             .listStyle(GroupedListStyle())
             .onAppear(perform: viewModel.fetchListings)
             .onAppear(perform: viewModel.fetchIsland)
+            .onAppear(perform: villagersViewModel.fetch)
             .navigationBarItems(trailing: preferenceButton)
             .navigationBarTitle("Dashboard",
                                 displayMode: .inline)
@@ -190,6 +195,17 @@ extension DashboardView {
             .padding(.top, 5)
         }
         .accentColor(.grass)
+    }
+    
+    func makeBirthdayView() -> some View {
+        Section(header: makeSectionHeader(icon: "icon-present", text: "Villager birthday")) {
+            ForEach(villagersViewModel.todayBirthdays) { villager in
+                NavigationLink(destination: VillagerDetailView(villager: villager),
+                               label: {
+                                VillagerRowView(villager: villager)
+                })
+            }
+        }
     }
     
     func makeTopTurnipSection() -> some View {

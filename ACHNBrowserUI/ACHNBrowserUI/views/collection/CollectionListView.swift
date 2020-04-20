@@ -26,8 +26,7 @@ struct CollectionListView: View {
     
     private var villagersList: some View {
         List(collection.villagers) { villager in
-            NavigationLink(destination: VillagerDetailView(villager: villager,
-                                                           villagersViewModel: VillagersViewModel())) {
+            NavigationLink(destination: VillagerDetailView(villager: villager)) {
                                                             VillagerRowView(villager: villager)
             }
         }

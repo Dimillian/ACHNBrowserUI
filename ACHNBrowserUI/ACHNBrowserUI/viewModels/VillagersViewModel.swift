@@ -10,9 +10,17 @@ import Foundation
 import Combine
 
 class VillagersViewModel: ObservableObject {
-    @Published var villagers: [Villager] = []
+    @Published var villagers: [Villager] = [] {
+        didSet {
+            let formatter = DateFormatter()
+            formatter.dateFormat = "d/M"
+            let today = formatter.string(from: Date())
+            todayBirthdays = villagers.filter( { $0.birthday == today })
+        }
+    }
     @Published var searchResults: [Villager] = []
     @Published var searchText = ""
+    @Published var todayBirthdays: [Villager] = []
     
     private var apiPublisher: AnyPublisher<[String: Villager], Never>?
     private var searchCancellable: AnyCancellable?
