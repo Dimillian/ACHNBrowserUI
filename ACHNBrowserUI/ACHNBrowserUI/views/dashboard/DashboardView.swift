@@ -150,17 +150,31 @@ extension DashboardView {
                 if !viewModel.fishes.isEmpty &&
                     !viewModel.bugs.isEmpty &&
                     !viewModel.fossils.isEmpty {
-                    Text("Fishes")
-                        .font(.subheadline)
-                    ProgressView(progress:
-                        Float(caughtIn(list: viewModel.fishes)) / Float(viewModel.fishes.count))
-                    Text("Bugs")
-                        .font(.subheadline)
-                    ProgressView(progress:
+                    HStack {
+                        Image("Fish19")
+                            .resizable()
+                            .frame(width: 20, height: 20)
+                        ProgressView(progress:
+                            Float(caughtIn(list: viewModel.fishes)) / Float(viewModel.fishes.count))
+                        Text("\(caughtIn(list: viewModel.fishes))/\(viewModel.fishes.count)")
+                            .font(.caption)
+                    }
+                    HStack {
+                        Image("Ins62")
+                            .resizable()
+                            .frame(width: 20, height: 20)
+                        ProgressView(progress:
                         Float(caughtIn(list: viewModel.bugs)) / Float(viewModel.bugs.count))
-                    Text("Fossils")
-                        .font(.subheadline)
-                    ProgressView(progress: Float(caughtIn(list: viewModel.fossils)) / Float(viewModel.fossils.count))
+                        Text("\(caughtIn(list: viewModel.bugs))/\(viewModel.bugs.count)")
+                            .font(.caption)
+                    }
+                    HStack {
+                        Image("icon-fossil")
+                            .frame(width: 20, height: 20)
+                        ProgressView(progress: Float(caughtIn(list: viewModel.fossils)) / Float(viewModel.fossils.count))
+                        Text("\(caughtIn(list: viewModel.fossils))/\(viewModel.fossils.count)")
+                            .font(.caption)
+                    }
                 } else {
                     Text("Loading...")
                 }
