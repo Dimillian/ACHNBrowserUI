@@ -15,20 +15,7 @@ struct Island: Decodable {
         case neither
         case selling
     }
-    
-    enum Fruit: String, Decodable {
-        case apple
-        case cherry
-        case orange
-        case peach
-        case pear
-    }
-    
-    enum Hemisphere: String, Decodable {
-        case north
-        case south
-    }
-    
+            
     let name: String
     let fruit: Fruit
     let turnipPrice: Int
@@ -46,11 +33,5 @@ struct Island: Decodable {
 extension Island: Identifiable {
     var id: String {
         turnipCode
-    }
-}
-
-extension Island.Fruit {
-    var image: Image {
-        Image(self.rawValue.capitalized)
     }
 }

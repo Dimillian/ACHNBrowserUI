@@ -100,10 +100,10 @@ enum Categories: String, CaseIterable {
     }
     
     static func fish() -> Categories {
-        AppUserDefaults.hemisphere == "north" ? .fishesNorth : .fishesSouth
+        AppUserDefaults.hemisphere == .north ? .fishesNorth : .fishesSouth
     }
     
     static func bugs() -> Categories {
-        AppUserDefaults.hemisphere == "north" ? .bugsNorth : .bugsSouth
+        AppUserDefaults.hemisphere == .north ? .bugsNorth : .bugsSouth
     }
 }
