@@ -34,7 +34,7 @@ struct VillagerDetailView: View {
                     Spacer()
                 }.padding()
                 infoCell(title: "Personality", value: villager.personality).padding()
-                infoCell(title: "Birthday", value: villager.birthday ?? "Unknown").padding()
+                infoCell(title: "Birthday", value: villager.formattedBirthday ?? "Unknown").padding()
                 infoCell(title: "Species", value: villager.species).padding()
                 infoCell(title: "Gender", value: villager.gender).padding()
             }
