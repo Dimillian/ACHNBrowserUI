@@ -118,7 +118,6 @@ extension DashboardView {
     
     private func makeSectionHeader(icon: String, text: String) -> some View {
         HStack {
-            Image(icon).resizable().frame(width: 30, height: 30).aspectRatio(contentMode: .fit)
             Text(text).font(.headline)
         }
     }
