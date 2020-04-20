@@ -113,8 +113,8 @@ extension DashboardView {
     
     private func makeSectionHeader(icon: String, text: String) -> some View {
         HStack {
-            Image(icon).resizable().frame(width: 25, height: 25)
-            Text(text).font(.subheadline)
+            Image(icon).resizable().frame(width: 30, height: 30).aspectRatio(contentMode: .fit)
+            Text(text).font(.headline)
         }
     }
     
@@ -205,7 +205,7 @@ extension DashboardView {
     }
     
     func makeRecentNookazonListings() -> some View {
-        Section(header: makeSectionHeader(icon: "icon-bells", text: "Recent Nookazon Listings")) {
+        Section(header: makeSectionHeader(icon: "icon-bell", text: "Recent Nookazon Listings")) {
             if viewModel.recentListings == nil {
                 Text("Loading...")
                     .foregroundColor(.secondary)
