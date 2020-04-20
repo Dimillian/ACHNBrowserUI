@@ -10,14 +10,22 @@ import SwiftUI
 
 struct CalendarView: View {
     let selectedMonths: [String]
+    
+    private let currentMonth = Int(Item.monthFormatter.string(from: Date()))!
     private let months = [["jan", "feb", "mar", "apr"],
                           ["may", "jun", "jul", "aug"],
                           ["sep","oct", "nov", "dec"]]
 
     private func makeMonthPill(month: String, selected: Bool) -> some View {
-        Text(month.capitalized)
+        let monthsArray = months.flatMap({ $0 })
+        let isCurrentMonth = monthsArray.firstIndex(of: month) == currentMonth - 1
+        let border =  RoundedRectangle(cornerRadius: 10)
+            .stroke(lineWidth: isCurrentMonth ? 5 : 0)
+            .foregroundColor(isCurrentMonth ? .grass : .clear)
+        return Text(month.capitalized)
             .font(.callout)
             .frame(width: 50, height: 30)
+            .overlay(border)
             .background(selected ? Color.catalogSelected : Color.catalogBar)
         .cornerRadius(10)
     }
