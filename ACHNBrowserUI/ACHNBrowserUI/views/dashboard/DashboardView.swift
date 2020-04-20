@@ -83,8 +83,7 @@ extension DashboardView {
                     .font(.title)
                     .fontWeight(.bold)
                     .foregroundColor(.text)
-                Text("No events today")
-                    .foregroundColor(.secondaryText)
+                EventTextView()
             }
             .padding(.vertical, 5)
         }
