@@ -8,14 +8,14 @@
 
 import SwiftUI
 
-struct CollectionListView: View {
-    enum Tabs: String, CaseIterable {
-        case items, villagers, critters
-    }
+enum Tabs: String, CaseIterable {
+    case items, villagers, critters
+}
 
+struct CollectionListSections: View {
+    @Binding var selectedTab: Tabs
     @EnvironmentObject private var collection: UserCollection
-    @State private var selectedTab: Tabs = .items
-    
+
     private var itemsList: some View {
         List(collection.items) { item in
             NavigationLink(destination: ItemDetailView(item: item)) {
@@ -27,7 +27,7 @@ struct CollectionListView: View {
     private var villagersList: some View {
         List(collection.villagers) { villager in
             NavigationLink(destination: VillagerDetailView(villager: villager)) {
-                                                            VillagerRowView(villager: villager)
+                VillagerRowView(villager: villager)
             }
         }
     }
@@ -41,6 +41,28 @@ struct CollectionListView: View {
     }
     
     var body: some View {
+        Group {
+            if selectedTab == .items {
+                itemsList
+            } else if selectedTab == .villagers {
+                villagersList
+            } else if selectedTab == .critters {
+                crittersList
+            }
+        }
+        .overlay(Group {
+            if (selectedTab == .items && collection.items.isEmpty) || (selectedTab == .villagers && collection.villagers.isEmpty) {
+                Text("Tap the stars to start collecting!")
+                    .foregroundColor(.secondary)
+            }
+        })
+    }
+}
+
+struct CollectionListView: View {
+    @State private var selectedTab: Tabs = .items
+    
+    var body: some View {
         NavigationView {
             VStack {
                 Picker(selection: $selectedTab, label: Text("")) {
@@ -50,21 +72,8 @@ struct CollectionListView: View {
                 }
                 .pickerStyle(SegmentedPickerStyle())
                 .padding()
-                
-                if selectedTab == .items {
-                    itemsList
-                } else if selectedTab == .villagers {
-                    villagersList
-                } else if selectedTab == .critters {
-                    crittersList
-                }
+                CollectionListSections(selectedTab: $selectedTab)
             }
-            .overlay(Group {
-                if (selectedTab == .items && collection.items.isEmpty) || (selectedTab == .villagers && collection.villagers.isEmpty) {
-                    Text("Tap the stars to start collecting!")
-                        .foregroundColor(.secondary)
-                }
-            })
             .background(Color.dialogue)
             .navigationBarTitle(Text("My Stuff"),
                                 displayMode: .inline)
