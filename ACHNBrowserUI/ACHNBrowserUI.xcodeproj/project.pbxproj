@@ -99,6 +99,7 @@
 		69CA5EFC244ED38C00B275B6 /* FeedbackGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69CA5EFB244ED38C00B275B6 /* FeedbackGenerator.swift */; };
 		69CA5EFF244EEA4E00B275B6 /* UIImageColors in Frameworks */ = {isa = PBXBuildFile; productRef = 69CA5EFE244EEA4E00B275B6 /* UIImageColors */; };
 		69CA5F01244F1AD300B275B6 /* SectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69CA5F00244F1AD300B275B6 /* SectionHeaderView.swift */; };
+		69CA5F18244F447E00B275B6 /* EventsDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69CA5F17244F447E00B275B6 /* EventsDescription.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -194,6 +195,7 @@
 		69CA5EF9244DC73500B275B6 /* Infrastucture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Infrastucture.swift; sourceTree = "<group>"; };
 		69CA5EFB244ED38C00B275B6 /* FeedbackGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackGenerator.swift; sourceTree = "<group>"; };
 		69CA5F00244F1AD300B275B6 /* SectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionHeaderView.swift; sourceTree = "<group>"; };
+		69CA5F17244F447E00B275B6 /* EventsDescription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsDescription.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -448,6 +450,7 @@
 				693E0B1A244C2B9300D20E46 /* AppUserDefault.swift */,
 				6834557A244CA8E10072FC0C /* URL.swift */,
 				69CA5EFB244ED38C00B275B6 /* FeedbackGenerator.swift */,
+				69CA5F17244F447E00B275B6 /* EventsDescription.swift */,
 			);
 			path = utils;
 			sourceTree = "<group>";
@@ -664,6 +667,7 @@
 				69CA5EF8244DBFEA00B275B6 /* Hemisphere.swift in Sources */,
 				68BA582A244B693400B53811 /* TurnipsViewModel.swift in Sources */,
 				69AF8C74243E2F73001DD9CB /* ItemImage.swift in Sources */,
+				69CA5F18244F447E00B275B6 /* EventsDescription.swift in Sources */,
 				69AF8C6F243E2E6D001DD9CB /* ImageService.swift in Sources */,
 				697E63F02449A38A008FB710 /* APIError.swift in Sources */,
 				697E63F72449A7BA008FB710 /* VillagersViewModel.swift in Sources */,

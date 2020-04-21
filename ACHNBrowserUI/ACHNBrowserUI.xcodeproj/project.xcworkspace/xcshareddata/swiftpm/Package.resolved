@@ -6,8 +6,8 @@
         "repositoryURL": "https://github.com/ericlewis/Date-ACNHEvents",
         "state": {
           "branch": null,
-          "revision": "a69b531141244a56be2505222632bfbe21a693c2",
-          "version": "1.0.0"
+          "revision": "f6a4f55d8f839300e4999e5c158a73350dfa6dfe",
+          "version": "1.1.0"
         }
       },
       {
@@ -15,8 +15,8 @@
         "repositoryURL": "https://github.com/SDWebImage/SDWebImage.git",
         "state": {
           "branch": null,
-          "revision": "74ae21337c415bb542eb901803f3e84799265c34",
-          "version": "5.7.2"
+          "revision": "39370d1af85734dffe0e3f89b389976da461be3f",
+          "version": "5.7.3"
         }
       },
       {
