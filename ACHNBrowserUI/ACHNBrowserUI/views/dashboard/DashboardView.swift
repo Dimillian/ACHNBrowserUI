@@ -209,16 +209,12 @@ extension DashboardView {
     }
     
     func makeBirthdayView() -> some View {
-        Group {
-            if !villagersViewModel.todayBirthdays.isEmpty {
-                Section(header: makeSectionHeader(icon: "icon-present", text: "Villager Birthday's")) {
-                    ForEach(villagersViewModel.todayBirthdays) { villager in
-                        NavigationLink(destination: VillagerDetailView(villager: villager),
-                                       label: {
-                                        VillagerRowView(villager: villager)
-                        })
-                    }
-                }
+        Section(header: makeSectionHeader(icon: "icon-present", text: "Villager birthday")) {
+            ForEach(villagersViewModel.todayBirthdays) { villager in
+                NavigationLink(destination: VillagerDetailView(villager: villager),
+                               label: {
+                                VillagerRowView(villager: villager)
+                })
             }
         }
     }
