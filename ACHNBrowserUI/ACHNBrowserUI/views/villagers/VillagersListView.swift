@@ -45,6 +45,7 @@ struct VillagersListView: View {
             .background(Color.dialogue)
             .navigationBarTitle(Text("Villagers"),
                                 displayMode: .inline)
+            .modifier(DismissingKeyboardOnSwipe())
             placeholderView
         }
     }

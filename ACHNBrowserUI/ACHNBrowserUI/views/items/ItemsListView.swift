@@ -83,6 +83,7 @@ struct ItemsListView: View {
         }
         .id(viewModel.sort)
         .background(Color.dialogue)
+        .modifier(DismissingKeyboardOnSwipe())
         .navigationBarTitle(Text(viewModel.categorie.label()),
                             displayMode: .inline)
         .navigationBarItems(trailing: sortButton)
