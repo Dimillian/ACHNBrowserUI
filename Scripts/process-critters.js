@@ -2,6 +2,7 @@ const csv = require('csvtojson');
 const fs = require('fs');
 const {checkBool} = require('./utils');
 const moment = require('moment');
+const {uniqBy} = require('lodash')
 
 csv({
     ignoreColumns: /#/
@@ -79,7 +80,7 @@ csv({
             name: fish.Name,
             houseImage: `https://storage.googleapis.com/acdb/fish/${fish["Item Filename"]}.png`,
             sell: parseInt(fish.Sell, 10),
-            weather: fish["Rain/Snow Catch Up"],
+            weather: fish["Rain/Snow Catch Up"] == 'Yes' ? 'Rain or Snow' : 'Any weather',
             location: fish['Where/How'],
             rarity: fish.Rarity,
             allDay: fish["Start Time"] === 'All day',
