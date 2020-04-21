@@ -11,7 +11,11 @@ import SwiftUI
 // See https://stackoverflow.com/questions/56491386/how-to-hide-keyboard-when-using-swiftui
 struct DismissingKeyboardOnSwipe: ViewModifier {
     func body(content: Content) -> some View {
-        content.gesture(swipeGesture)
+        #if os(macOS)
+        return content
+        #else
+        return content.gesture(swipeGesture)
+        #endif
     }
 
     private var swipeGesture: some Gesture {
