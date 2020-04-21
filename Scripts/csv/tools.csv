@@ -1,6 +1,6 @@
 Name,Image,Variation,Body Title,DIY,Customize,Kit Cost,Uses,Buy,Sell,Color 1,Color 2,Size,Set,Source,Source Notes,Version,Filename,Variant ID,Internal ID
 axe,,NA,NA,Yes,No,NA,100,2500,625,None,None,1x1,None,"Nook's Cranny
-Crafting",,1.0.0,ToolAxeFirst,NA,2100
+Crafting",,1.0.0,ToolAxe,NA,2100
 bamboo wand,,NA,NA,Yes,No,NA,Unlimited,NFS,3900,None,None,1x1,None,Crafting,Spring seasonal DIY using bamboo (from bamboo trees),1.0.0,ToolStickBamboo,NA,7590
 bug wand,,NA,NA,No,No,NA,Unlimited,NFS,1500,None,None,1x1,None,Bug-Off,,1.0.0,ToolStcikInsect,NA,8769
 Bunny Day wand,,NA,NA,Yes,No,NA,Unlimited,NFS,11100,None,None,1x1,None,Crafting,Obtained from Zipper on Bunny Day after collecting most Bunny Day recipes (third gift),1.1.0a,ToolStickEgg,NA,12578
