@@ -1,6 +1,7 @@
 const csv = require('csvtojson');
 const fs = require('fs');
 const {checkBool} = require('./utils');
+const moment = require('moment');
 
 csv({
     ignoreColumns: /#/
@@ -22,8 +23,8 @@ csv({
             location: bug['Where/How'],
             rarity: bug.Rarity,
             allDay: bug["Start Time"] === 'All day',
-            startTime: bug["Start Time"] === 'All day' ? undefined : bug["Start Time"],
-            endTime: bug["Start Time"] === 'All day' ? undefined : bug["End Time"],
+            startTime: bug["Start Time"] === 'All day' ? null : moment(bug["Start Time"], "h:mm:ss A").utc().format(),
+            endTime: bug["Start Time"] === 'All day' ? null : moment(bug["End Time"], "h:mm:ss A").utc().format(),
             northAvailableMonths: [
                 checkBool(bug.Jan) ? 1 : undefined,
                 checkBool(bug.Feb) ? 2 : undefined,
@@ -56,7 +57,7 @@ csv({
     })
 })
 .then(json => {
-    let data = JSON.stringify(json, null, 2);
+    let data = JSON.stringify(json);
     fs.writeFileSync('./output/bugs.json', data);
 })
 
@@ -82,8 +83,8 @@ csv({
             location: fish['Where/How'],
             rarity: fish.Rarity,
             allDay: fish["Start Time"] === 'All day',
-            startTime: fish["Start Time"] === 'All day' ? undefined : fish["Start Time"],
-            endTime: fish["Start Time"] === 'All day' ? undefined : fish["End Time"],
+            startTime: fish["Start Time"] === 'All day' ? null : moment(fish["Start Time"], "h:mm:ss A").utc().format(),
+            endTime: fish["Start Time"] === 'All day' ? null : moment(fish["End Time"], "h:mm:ss A").utc().format(),
             northAvailableMonths: [
                 checkBool(fish.Jan) ? 1 : undefined,
                 checkBool(fish.Feb) ? 2 : undefined,
@@ -116,6 +117,6 @@ csv({
     })
 })
 .then(json => {
-    let data = JSON.stringify(json, null, 2);
+    let data = JSON.stringify(json);
     fs.writeFileSync('./output/fish.json', data);
 })
