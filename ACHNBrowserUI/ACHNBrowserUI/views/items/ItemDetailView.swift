@@ -90,6 +90,7 @@ struct ItemDetailView: View {
                                       size: 75)
                                 .onTapGesture {
                                     withAnimation {
+                                        FeedbackGenerator.shared.triggerSelection()
                                         self.displayedVariant = variant
                                     }
                             }
@@ -140,6 +141,7 @@ struct ItemDetailView: View {
                                     .font(.caption)
                                     .foregroundColor(.text)
                             }.onTapGesture {
+                                FeedbackGenerator.shared.triggerSelection()
                                 self.displayedVariant = nil
                                 self.itemViewModel.item = item
                             }

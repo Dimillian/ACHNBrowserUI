@@ -62,6 +62,7 @@ struct ItemRowView: View {
                                         .cornerRadius(4)
                                         .foregroundColor(self.displayedVariant == variant ? Color.gray : Color.clear))
                                     .onTapGesture {
+                                        FeedbackGenerator.shared.triggerSelection()
                                         self.displayedVariant = variant
                                 }
                             }
