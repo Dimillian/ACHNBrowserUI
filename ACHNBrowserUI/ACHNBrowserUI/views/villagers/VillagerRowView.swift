@@ -15,13 +15,7 @@ struct VillagerRowView: View {
     
     var body: some View {
         HStack {
-            Button(action: {
-                let added =  self.collection.toggleVillager(villager: self.villager)
-                FeedbackGenerator.shared.triggerNotification(type: added ? .success : .warning)
-            }) {
-                Image(systemName: self.collection.villagers.contains(self.villager) ? "star.fill" : "star")
-                    .foregroundColor(.yellow)
-            }.buttonStyle(BorderlessButtonStyle())
+            LikeButtonView(villager: villager)
             ItemImage(path: ACNHApiService.BASE_URL.absoluteString +
                 ACNHApiService.Endpoint.villagerIcon(id: villager.id).path(),
                       size: 50)

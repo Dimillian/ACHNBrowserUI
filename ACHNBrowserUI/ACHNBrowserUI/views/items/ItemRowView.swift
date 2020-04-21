@@ -29,7 +29,7 @@ struct ItemRowView: View {
         
     var body: some View {
         HStack(spacing: 8) {
-            StarButtonView(item: item)
+            LikeButtonView(item: item)
             if item.image == nil && displayedVariant == nil {
                 Image(item.appCategory.iconName())
                     .resizable()

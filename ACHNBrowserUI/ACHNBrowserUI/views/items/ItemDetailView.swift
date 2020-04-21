@@ -230,7 +230,7 @@ struct ItemDetailView: View {
         .onDisappear {
             self.itemViewModel.cancellable?.cancel()
         }
-        .navigationBarItems(trailing: StarButtonView(item: self.itemViewModel.item))
+        .navigationBarItems(trailing: LikeButtonView(item: self.itemViewModel.item))
         .navigationBarTitle(Text(itemViewModel.item.name))
         .sheet(item: $selectedListing) {
             SafariView(url: $0)

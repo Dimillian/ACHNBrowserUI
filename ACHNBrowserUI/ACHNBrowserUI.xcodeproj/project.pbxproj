@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4C382EE8244E418800F446BA /* DismissingKeyboardOnSwipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C382EE7244E418800F446BA /* DismissingKeyboardOnSwipe.swift */; };
-		68345579244C994C0072FC0C /* StarButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68345578244C994C0072FC0C /* StarButtonView.swift */; };
+		68345579244C994C0072FC0C /* LikeButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68345578244C994C0072FC0C /* LikeButtonView.swift */; };
 		6834557B244CA8E10072FC0C /* URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6834557A244CA8E10072FC0C /* URL.swift */; };
 		68345589244E4DEF0072FC0C /* ACNHEvents in Frameworks */ = {isa = PBXBuildFile; productRef = 68345588244E4DEF0072FC0C /* ACNHEvents */; };
 		6834558B244E4E0B0072FC0C /* EventTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6834558A244E4E0B0072FC0C /* EventTextView.swift */; };
@@ -102,7 +102,7 @@
 
 /* Begin PBXFileReference section */
 		4C382EE7244E418800F446BA /* DismissingKeyboardOnSwipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DismissingKeyboardOnSwipe.swift; sourceTree = "<group>"; };
-		68345578244C994C0072FC0C /* StarButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarButtonView.swift; sourceTree = "<group>"; };
+		68345578244C994C0072FC0C /* LikeButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeButtonView.swift; sourceTree = "<group>"; };
 		6834557A244CA8E10072FC0C /* URL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URL.swift; sourceTree = "<group>"; };
 		6834558A244E4E0B0072FC0C /* EventTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventTextView.swift; sourceTree = "<group>"; };
 		687B575F2449EEB100C1E86F /* Island.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Island.swift; sourceTree = "<group>"; };
@@ -462,7 +462,7 @@
 			isa = PBXGroup;
 			children = (
 				69AF8C75243E3545001DD9CB /* SearchField.swift */,
-				68345578244C994C0072FC0C /* StarButtonView.swift */,
+				68345578244C994C0072FC0C /* LikeButtonView.swift */,
 				69CA5ED9244CBA8600B275B6 /* CalendarView.swift */,
 			);
 			path = shared;
@@ -655,7 +655,7 @@
 				697E63FD244AD42D008FB710 /* CategoryRowView.swift in Sources */,
 				69AF8C76243E3545001DD9CB /* SearchField.swift in Sources */,
 				68DFFFA9244927A400DEA07F /* NookazonService.swift in Sources */,
-				68345579244C994C0072FC0C /* StarButtonView.swift in Sources */,
+				68345579244C994C0072FC0C /* LikeButtonView.swift in Sources */,
 				69CA5EDA244CBA8600B275B6 /* CalendarView.swift in Sources */,
 				69CA5EF8244DBFEA00B275B6 /* Hemisphere.swift in Sources */,
 				68BA582A244B693400B53811 /* TurnipsViewModel.swift in Sources */,

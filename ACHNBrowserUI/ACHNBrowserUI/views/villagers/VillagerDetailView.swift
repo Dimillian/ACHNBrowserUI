@@ -44,6 +44,7 @@ struct VillagerDetailView: View {
             }
         }
         .background(backgroundColor)
+        .navigationBarItems(trailing: LikeButtonView(villager: villager))
         .navigationBarTitle(villager.name["name-en"] ?? "")
         .onAppear {
             let url = ACNHApiService.BASE_URL.absoluteString +
