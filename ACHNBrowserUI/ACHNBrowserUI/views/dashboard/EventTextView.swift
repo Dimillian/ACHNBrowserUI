@@ -27,16 +27,19 @@ struct EventTextView: View {
     
     var body: some View {
         Group {
-            if !todayEvents.isEmpty {
-                Text("Today is \(todayEvents.first!.title()) ")
-            } else if nextEvent.1 != nil {
-                HStack {
-                    Text("Next event: \(nextEvent.1!.title())!")
-                    Spacer()
-                    makeDateBadge(date: nextEvent.0)
+            VStack(alignment: .leading) {
+                if !todayEvents.isEmpty {
+                    Text("Today is \(todayEvents.first!.title())!")
+                } else {
+                    Text("No events today.")
                 }
-            } else {
-                Text("No events today.")
+                if nextEvent.1 != nil && nextEvent.1 != todayEvents.first {
+                    HStack {
+                        Text("Next event: \(nextEvent.1!.title())!")
+                        Spacer()
+                        makeDateBadge(date: nextEvent.0)
+                    }
+                }
             }
         }
         .foregroundColor(.secondaryText)

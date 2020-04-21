@@ -83,7 +83,7 @@ extension DashboardView {
                     .font(.title)
                     .fontWeight(.bold)
                     .foregroundColor(.text)
-                EventTextView()
+                EventTextView().padding(.top, 4)
             }
             .padding(.vertical, 5)
         }
