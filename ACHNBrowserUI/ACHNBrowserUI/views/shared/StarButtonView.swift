@@ -20,15 +20,19 @@ struct StarButtonView: View {
         Button(action: {
             switch self.item.appCategory {
             case .bugsSouth, .bugsNorth, .fishesSouth, .fishesNorth, .fossils:
-                self.collection.toggleCritters(critter: self.item)
+                let added = self.collection.toggleCritters(critter: self.item)
+                FeedbackGenerator.shared.triggerNotification(type: added ? .success : .warning)
             default:
-                self.collection.toggleItem(item: self.item)
+                let added = self.collection.toggleItem(item: self.item)
+                FeedbackGenerator.shared.triggerNotification(type: added ? .success : .warning)
             }
         }) {
             Image(systemName: self.isInCollection ? "star.fill" : "star")
                 .foregroundColor(.yellow)
         }
+        .scaleEffect(self.isInCollection ? 1.2 : 1.0)
         .buttonStyle(BorderlessButtonStyle())
+        .animation(.interactiveSpring())
     }
 }
 

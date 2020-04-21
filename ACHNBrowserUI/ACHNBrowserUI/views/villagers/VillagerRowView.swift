@@ -16,7 +16,8 @@ struct VillagerRowView: View {
     var body: some View {
         HStack {
             Button(action: {
-                self.collection.toggleVillager(villager: self.villager)
+                let added =  self.collection.toggleVillager(villager: self.villager)
+                FeedbackGenerator.shared.triggerNotification(type: added ? .success : .warning)
             }) {
                 Image(systemName: self.collection.villagers.contains(self.villager) ? "star.fill" : "star")
                     .foregroundColor(.yellow)

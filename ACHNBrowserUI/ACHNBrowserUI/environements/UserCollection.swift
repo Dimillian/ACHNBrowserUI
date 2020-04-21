@@ -42,31 +42,40 @@ class UserCollection: ObservableObject {
         }
     }
     
-    func toggleItem(item: Item) {
+    func toggleItem(item: Item) -> Bool {
+        var added = false
         if items.contains(item) {
             items.removeAll(where: { $0 == item })
         } else {
+            added = true
             items.append(item)
         }
         save()
+        return added
     }
     
-    func toggleCritters(critter: Item) {
+    func toggleCritters(critter: Item) -> Bool {
+        var added = false
         if critters.contains(critter) {
             critters.removeAll(where: { $0 == critter })
         } else {
             critters.append(critter)
+            added = true
         }
         save()
+        return added
     }
     
-    func toggleVillager(villager: Villager) {
+    func toggleVillager(villager: Villager) -> Bool {
+        var added = false
         if villagers.contains(villager) {
             villagers.removeAll(where: { $0 == villager })
         } else {
             villagers.append(villager)
+            added = true
         }
         save()
+        return added
     }
     
     private func save() {

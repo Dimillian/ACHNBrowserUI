@@ -95,6 +95,7 @@
 		69CA5EF6244DBFCB00B275B6 /* Fruit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69CA5EF5244DBFCB00B275B6 /* Fruit.swift */; };
 		69CA5EF8244DBFEA00B275B6 /* Hemisphere.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69CA5EF7244DBFEA00B275B6 /* Hemisphere.swift */; };
 		69CA5EFA244DC73500B275B6 /* Infrastucture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69CA5EF9244DC73500B275B6 /* Infrastucture.swift */; };
+		69CA5EFC244ED38C00B275B6 /* FeedbackGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69CA5EFB244ED38C00B275B6 /* FeedbackGenerator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -187,6 +188,7 @@
 		69CA5EF5244DBFCB00B275B6 /* Fruit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fruit.swift; sourceTree = "<group>"; };
 		69CA5EF7244DBFEA00B275B6 /* Hemisphere.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hemisphere.swift; sourceTree = "<group>"; };
 		69CA5EF9244DC73500B275B6 /* Infrastucture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Infrastucture.swift; sourceTree = "<group>"; };
+		69CA5EFB244ED38C00B275B6 /* FeedbackGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackGenerator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -430,6 +432,7 @@
 				69AF8C7B243E4D29001DD9CB /* Color.swift */,
 				693E0B1A244C2B9300D20E46 /* AppUserDefault.swift */,
 				6834557A244CA8E10072FC0C /* URL.swift */,
+				69CA5EFB244ED38C00B275B6 /* FeedbackGenerator.swift */,
 			);
 			path = utils;
 			sourceTree = "<group>";
@@ -632,6 +635,7 @@
 				69BEA98B243EFE9700F02C61 /* ItemDetailView.swift in Sources */,
 				69029263244C87A400F767D0 /* Items.swift in Sources */,
 				69AF8C6D243E2A18001DD9CB /* ItemsViewModel.swift in Sources */,
+				69CA5EFC244ED38C00B275B6 /* FeedbackGenerator.swift in Sources */,
 				697E63FD244AD42D008FB710 /* CategoryRowView.swift in Sources */,
 				69AF8C76243E3545001DD9CB /* SearchField.swift in Sources */,
 				68DFFFA9244927A400DEA07F /* NookazonService.swift in Sources */,
