@@ -43,7 +43,7 @@ csv()
                 variants: [items.filter(o => o.Name === item.Name).map(o => ({
                     id: parseInt(o["Internal ID"], 10),
                     name: o.Variation,
-                    filename: `https://storage.googleapis.com/acdb/${k}/${o.Filename}.png`,
+                    image: `https://storage.googleapis.com/acdb/${k}/${o.Filename}.png`,
                     colors: [o["Color 1"], o["Color 2"]].filter(o => o),
                 }))],
                 recipe: item.DIY === 'Yes' ? recipes.filter(o => o.name === item.Name).pop() : null,
@@ -91,7 +91,7 @@ csv()
                 variants: [items.filter(o => o.Name === item.Name).map(o => ({
                     id: parseInt(o["Internal ID"], 10),
                     name: o.Variation,
-                    filename: `https://storage.googleapis.com/acdb/${k}/${o.Filename}.png`,
+                    image: `https://storage.googleapis.com/acdb/${k}/${o.Filename}.png`,
                     colors: [o["Color 1"], o["Color 2"]].filter(o => o),
                 }))],
                 recipe: item.DIY === 'Yes' ? recipes.filter(o => o.name === item.Name).pop() : null,

@@ -15,7 +15,8 @@ csv({
         return bugs.map((bug, i) => ({
             id: parseInt(bug["Internal ID"]),
             name: bug.Name,
-            filename: bug.Filename,
+            image: null,
+            houseImage: `https://storage.googleapis.com/acdb/bugs/${bug["Item Filename"]}.png`,
             sell: parseInt(bug.Sell, 10),
             weather: bug.Weather,
             location: bug['Where/How'],
@@ -55,7 +56,7 @@ csv({
     })
 })
 .then(json => {
-    let data = JSON.stringify(json);
+    let data = JSON.stringify(json, null, 2);
     fs.writeFileSync('./output/bugs.json', data);
 })
 
@@ -75,7 +76,7 @@ csv({
             // common critter
             id: parseInt(fish["Internal ID"], 10),
             name: fish.Name,
-            filename: fish.Filename,
+            houseImage: `https://storage.googleapis.com/acdb/fish/${fish["Item Filename"]}.png`,
             sell: parseInt(fish.Sell, 10),
             weather: fish["Rain/Snow Catch Up"],
             location: fish['Where/How'],
@@ -115,6 +116,6 @@ csv({
     })
 })
 .then(json => {
-    let data = JSON.stringify(json);
+    let data = JSON.stringify(json, null, 2);
     fs.writeFileSync('./output/fish.json', data);
 })
