@@ -14,6 +14,10 @@ extension Color {
         Color("dialogue", bundle: nil)
     }
     
+    public static var dialogueReverse: Color {
+        Color("dialogue-reverse", bundle: nil)
+    }
+    
     public static var text: Color {
         Color("text", bundle: nil)
     }

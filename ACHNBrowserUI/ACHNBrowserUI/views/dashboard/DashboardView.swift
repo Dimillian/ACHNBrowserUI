@@ -121,9 +121,14 @@ extension DashboardView {
     }
     
     private func makeSectionHeader(icon: String, text: String) -> some View {
-        HStack {
-            Text(text).font(.headline)
-        }
+        Group {
+            HStack {
+                Text(text).font(.headline)
+            }
+            .padding(8)
+            .background(Color.dialogueReverse)
+            .cornerRadius(20)
+        }.padding(.leading, -8)
     }
     
     func makeAvailableCritterSection() -> some View {
