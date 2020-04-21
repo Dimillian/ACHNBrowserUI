@@ -21,6 +21,7 @@ extension ItemEntity {
         newItem.color1 = item.colors.first?.rawValue
         newItem.color2 = item.colors.last?.rawValue
         newItem.tag = item.tag
+        
         // bug: variants shouldn't be nested
         item.variants.first?.forEach { variant in
             let newVariant = ItemVariantEntity.init(context: context)
@@ -45,6 +46,12 @@ extension ItemEntity {
                 newMaterial.addToRecipe(newRecipe)
             }
         }
+        
+        let hha = HHAInfoEntity.init(context: context)
+        hha.concept1 = item.hhaConcepts.first
+        hha.concept2 = item.hhaConcepts.last
+        
+        newItem.hhaInfo = hha
     }
     
     var colors: [String] {
