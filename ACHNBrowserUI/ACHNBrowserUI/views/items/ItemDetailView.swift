@@ -53,22 +53,38 @@ struct ItemDetailView: View {
                 Text(itemViewModel.item.obtainedFrom!)
                     .foregroundColor(.secondaryText)
             }
-            Text("Customizable: \(itemViewModel.item.customize == true ? "Yes" : "no")")
-                .foregroundColor(.text)
+            if !itemViewModel.item.isCritter {
+                Text("Customizable: \(itemViewModel.item.customize == true ? "Yes" : "no")")
+                    .foregroundColor(.text)
+            }
             HStack(spacing: 16) {
                 if itemViewModel.item.sell != nil {
                     HStack(spacing: 2) {
-                        Image("icon-bells")
+                        Image("icon-bell")
                             .resizable()
+                            .aspectRatio(contentMode: .fit)
                             .frame(width: 25, height: 25)
                         Text("\(itemViewModel.item.sell!)")
+                            .font(.body)
+                            .fontWeight(.semibold)
                             .foregroundColor(.bell)
+                        if itemViewModel.item.isCritter {
+                            Text("Flick: ")
+                                .foregroundColor(.text)
+                                .padding(.leading, 8)
+                            Text("\(Int(Float(itemViewModel.item.sell!) * 1.5))")
+                                .font(.body)
+                                .fontWeight(.semibold)
+                                .foregroundColor(.bell)
+                            
+                        }
                     }
                 }
                 if itemViewModel.item.buy != nil {
                     HStack(spacing: 2) {
-                        Image("icon-bell")
+                        Image("icon-bells")
                             .resizable()
+                            .aspectRatio(contentMode: .fit)
                             .frame(width: 25, height: 25)
                         Text("\(itemViewModel.item.buy!)")
                             .foregroundColor(.bell)
@@ -79,10 +95,7 @@ struct ItemDetailView: View {
     }
     
     private var variantsSection: some View {
-        Section(header: Text("VARIANTS")
-            .font(.headline)
-            .fontWeight(.bold)
-            .foregroundColor(.text)) {
+        Section(header: SectionHeaderView(text: "Variants")) {
                 ScrollView(.horizontal, showsIndicators: false) {
                     HStack {
                         ForEach(itemViewModel.item.variants!, id: \.self) { variant in
@@ -101,10 +114,7 @@ struct ItemDetailView: View {
     }
     
     private var materialsSection: some View {
-        Section(header: Text("MATERIALS")
-            .font(.headline)
-            .fontWeight(.bold)
-            .foregroundColor(.text)) {
+        Section(header: SectionHeaderView(text: "Materials")) {
                 ScrollView(.horizontal, showsIndicators: false) {
                     HStack {
                         ForEach(itemViewModel.item.materials!) { material in
@@ -127,10 +137,7 @@ struct ItemDetailView: View {
     }
     
     private var setSection: some View {
-        Section(header: Text("SET ITEMS")
-            .font(.headline)
-            .fontWeight(.bold)
-            .foregroundColor(.text)) {
+        Section(header: SectionHeaderView(text: "Set items")) {
                 ScrollView(.horizontal, showsIndicators: false) {
                     HStack {
                         ForEach(setItems) { item in
@@ -152,10 +159,7 @@ struct ItemDetailView: View {
     }
     
     private var listingSection: some View {
-        Section(header: Text("NOOKAZON LISTINGS")
-            .font(.headline)
-            .fontWeight(.bold)
-            .foregroundColor(.text)) {
+        Section(header: SectionHeaderView(text: "Nookazon listings")) {
                 if itemViewModel.loading {
                     Text("Loading Listings...")
                         .foregroundColor(.secondary)
@@ -173,10 +177,7 @@ struct ItemDetailView: View {
     }
     
     private var seasonalityView: some View {
-        Section(header: Text("Seasonality")
-            .font(.headline)
-            .fontWeight(.bold)
-            .foregroundColor(.text)) {
+        Section(header: SectionHeaderView(text: "Seasonality")) {
                 VStack(spacing: 8) {
                     if itemViewModel.item.formattedStartTime() != nil &&
                         itemViewModel.item.formattedEndTime() != nil {

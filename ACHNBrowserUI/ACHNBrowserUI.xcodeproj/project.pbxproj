@@ -98,6 +98,7 @@
 		69CA5EFA244DC73500B275B6 /* Infrastucture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69CA5EF9244DC73500B275B6 /* Infrastucture.swift */; };
 		69CA5EFC244ED38C00B275B6 /* FeedbackGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69CA5EFB244ED38C00B275B6 /* FeedbackGenerator.swift */; };
 		69CA5EFF244EEA4E00B275B6 /* UIImageColors in Frameworks */ = {isa = PBXBuildFile; productRef = 69CA5EFE244EEA4E00B275B6 /* UIImageColors */; };
+		69CA5F01244F1AD300B275B6 /* SectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69CA5F00244F1AD300B275B6 /* SectionHeaderView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -192,6 +193,7 @@
 		69CA5EF7244DBFEA00B275B6 /* Hemisphere.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hemisphere.swift; sourceTree = "<group>"; };
 		69CA5EF9244DC73500B275B6 /* Infrastucture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Infrastucture.swift; sourceTree = "<group>"; };
 		69CA5EFB244ED38C00B275B6 /* FeedbackGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackGenerator.swift; sourceTree = "<group>"; };
+		69CA5F00244F1AD300B275B6 /* SectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionHeaderView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -464,6 +466,7 @@
 				69AF8C75243E3545001DD9CB /* SearchField.swift */,
 				68345578244C994C0072FC0C /* LikeButtonView.swift */,
 				69CA5ED9244CBA8600B275B6 /* CalendarView.swift */,
+				69CA5F00244F1AD300B275B6 /* SectionHeaderView.swift */,
 			);
 			path = shared;
 			sourceTree = "<group>";
@@ -619,6 +622,7 @@
 				68BA582C244B695F00B53811 /* IslandDetailViewModel.swift in Sources */,
 				69CA5EFA244DC73500B275B6 /* Infrastucture.swift in Sources */,
 				69C5F5E72442119500BF8FA4 /* Material.swift in Sources */,
+				69CA5F01244F1AD300B275B6 /* SectionHeaderView.swift in Sources */,
 				69AF8C80243E5EBD001DD9CB /* Categories.swift in Sources */,
 				68BA5828244B646C00B53811 /* IslandDetailView.swift in Sources */,
 				6942FC3A244989530062FE8F /* ListingRow.swift in Sources */,

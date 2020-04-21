@@ -77,7 +77,7 @@ extension DashboardView {
         let formatter = DateFormatter()
         formatter.dateFormat = "EEEE, dd MMMM"
         let dateString = formatter.string(from: Date())
-        return Section(header: makeSectionHeader(icon: "icon-helmet", text: "Today")) {
+        return Section(header: SectionHeaderView(text: "Today")) {
             VStack(alignment: .leading) {
                 Text(dateString)
                     .font(.title)
@@ -119,20 +119,9 @@ extension DashboardView {
         }
         return "Loading..."
     }
-    
-    private func makeSectionHeader(icon: String, text: String) -> some View {
-        Group {
-            HStack {
-                Text(text).font(.headline)
-            }
-            .padding(8)
-            .background(Color.dialogueReverse)
-            .cornerRadius(20)
-        }.padding(.leading, -8)
-    }
-    
+        
     func makeAvailableCritterSection() -> some View {
-        Section(header: makeSectionHeader(icon: "icon-insect", text: "Available This Month")) {
+        Section(header: SectionHeaderView(text: "Available This Month")) {
             NavigationLink(destination: ActiveCrittersView(activeFishes: viewModel.fishes.filterActive(),
                                                            activeBugs: viewModel.bugs.filterActive())) {
                 HStack {
@@ -166,7 +155,7 @@ extension DashboardView {
     }
     
     func makeCritterCollectionProgressSection() -> some View {
-        Section(header: makeSectionHeader(icon: "icon-leaf", text: "Collection Progress")) {
+        Section(header: SectionHeaderView(text: "Collection Progress")) {
             VStack(alignment: .leading) {
                 if !viewModel.fishes.isEmpty &&
                     !viewModel.bugs.isEmpty &&
@@ -214,7 +203,7 @@ extension DashboardView {
     }
     
     func makeBirthdayView() -> some View {
-        Section(header: makeSectionHeader(icon: "icon-present", text: "Villager birthday")) {
+        Section(header: SectionHeaderView(text: "Villager birthday")) {
             ForEach(villagersViewModel.todayBirthdays) { villager in
                 NavigationLink(destination: VillagerDetailView(villager: villager),
                                label: {
@@ -225,7 +214,7 @@ extension DashboardView {
     }
     
     func makeTopTurnipSection() -> some View {
-        Section(header: makeSectionHeader(icon: "icon-turnip", text: "Top Turnip Island")) {
+        Section(header: SectionHeaderView(text: "Top Turnip Island")) {
             if viewModel.island == nil {
                 Text("Loading...")
                     .foregroundColor(.secondary)
@@ -237,7 +226,7 @@ extension DashboardView {
     }
     
     func makeRecentNookazonListings() -> some View {
-        Section(header: makeSectionHeader(icon: "icon-bell", text: "Recent Nookazon Listings")) {
+        Section(header: SectionHeaderView(text: "Recent Nookazon Listings")) {
             if viewModel.recentListings == nil {
                 Text("Loading...")
                     .foregroundColor(.secondary)
