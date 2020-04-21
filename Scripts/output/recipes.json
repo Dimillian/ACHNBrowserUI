@@ -1,0 +1,8654 @@
+[
+  {
+    "name": "leaf",
+    "source": "Jock",
+    "category": "Accessories",
+    "materials": [
+      {
+        "name": "clump of weeds",
+        "count": 5
+      }
+    ]
+  },
+  {
+    "name": "acorn pochette",
+    "source": "Balloons (Autumn)",
+    "category": "Bags",
+    "materials": [
+      {
+        "name": "acorn",
+        "count": 6
+      }
+    ]
+  },
+  {
+    "name": "basket pack",
+    "source": "Balloons (Spring)",
+    "category": "Bags",
+    "materials": [
+      {
+        "name": "young spring bamboo",
+        "count": 6
+      }
+    ]
+  },
+  {
+    "name": "Bunny Day bag",
+    "source": "Villager (Bunny Day)",
+    "category": "Bags",
+    "materials": [
+      {
+        "name": "earth egg",
+        "count": 1
+      },
+      {
+        "name": "stone egg",
+        "count": 1
+      },
+      {
+        "name": "leaf egg",
+        "count": 1
+      },
+      {
+        "name": "wood egg",
+        "count": 1
+      },
+      {
+        "name": "sky egg",
+        "count": 1
+      },
+      {
+        "name": "water egg",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "name": "cherry-blossom pochette",
+    "source": "Balloons (Cherry-Blossom Season)",
+    "category": "Bags",
+    "materials": [
+      {
+        "name": "cherry-blossom petal",
+        "count": 6
+      }
+    ]
+  },
+  {
+    "name": "knitted-grass backpack",
+    "source": "Normal",
+    "category": "Bags",
+    "materials": [
+      {
+        "name": "clump of weeds",
+        "count": 20
+      }
+    ]
+  },
+  {
+    "name": "log pack",
+    "source": "Jock",
+    "category": "Bags",
+    "materials": [
+      {
+        "name": "wood",
+        "count": 3
+      },
+      {
+        "name": "hardwood",
+        "count": 5
+      }
+    ]
+  },
+  {
+    "name": "maple-leaf pochette",
+    "source": "Balloons (Maple Leaf Season)",
+    "category": "Bags",
+    "materials": [
+      {
+        "name": "maple leaf",
+        "count": 6
+      }
+    ]
+  },
+  {
+    "name": "shellfish pochette",
+    "source": "Balloons (Summer)",
+    "category": "Bags",
+    "materials": [
+      {
+        "name": "giant clam",
+        "count": 2
+      },
+      {
+        "name": "summer shell",
+        "count": 6
+      }
+    ]
+  },
+  {
+    "name": "snowflake pochette",
+    "source": "Balloons (Winter)",
+    "category": "Bags",
+    "materials": [
+      {
+        "name": "snowflake",
+        "count": 6
+      }
+    ]
+  },
+  {
+    "name": "star pochette",
+    "source": "Celeste",
+    "category": "Bags",
+    "materials": [
+      {
+        "name": "star fragment",
+        "count": 6
+      }
+    ]
+  },
+  {
+    "name": "grass skirt",
+    "source": "Normal",
+    "category": "Bottoms",
+    "materials": [
+      {
+        "name": "clump of weeds",
+        "count": 7
+      }
+    ]
+  },
+  {
+    "name": "green grass skirt",
+    "source": "Peppy",
+    "category": "Bottoms",
+    "materials": [
+      {
+        "name": "clump of weeds",
+        "count": 7
+      }
+    ]
+  },
+  {
+    "name": "apple dress",
+    "source": "Uchi",
+    "category": "Dresses",
+    "materials": [
+      {
+        "name": "apple",
+        "count": 8
+      }
+    ]
+  },
+  {
+    "name": "cherry dress",
+    "source": "Peppy",
+    "category": "Dresses",
+    "materials": [
+      {
+        "name": "cherry",
+        "count": 8
+      }
+    ]
+  },
+  {
+    "name": "earth-egg outfit",
+    "source": "Collecting earth eggs (Bunny Day)",
+    "category": "Dresses",
+    "materials": [
+      {
+        "name": "earth egg",
+        "count": 3
+      }
+    ]
+  },
+  {
+    "name": "egg party dress",
+    "source": "Learning all egg outfit DIYs (Bunny Day)",
+    "category": "Dresses",
+    "materials": [
+      {
+        "name": "earth egg",
+        "count": 3
+      },
+      {
+        "name": "stone egg",
+        "count": 3
+      },
+      {
+        "name": "leaf egg",
+        "count": 3
+      },
+      {
+        "name": "wood egg",
+        "count": 3
+      },
+      {
+        "name": "sky egg",
+        "count": 3
+      },
+      {
+        "name": "water egg",
+        "count": 3
+      }
+    ]
+  },
+  {
+    "name": "gold armor",
+    "source": "Smug",
+    "category": "Dresses",
+    "materials": [
+      {
+        "name": "gold nugget",
+        "count": 8
+      }
+    ]
+  },
+  {
+    "name": "iron armor",
+    "source": "Cranky",
+    "category": "Dresses",
+    "materials": [
+      {
+        "name": "iron nugget",
+        "count": 8
+      }
+    ]
+  },
+  {
+    "name": "leaf-egg outfit",
+    "source": "Collecting leaf eggs (Bunny Day)",
+    "category": "Dresses",
+    "materials": [
+      {
+        "name": "leaf egg",
+        "count": 3
+      }
+    ]
+  },
+  {
+    "name": "orange dress",
+    "source": "Lazy",
+    "category": "Dresses",
+    "materials": [
+      {
+        "name": "orange",
+        "count": 8
+      }
+    ]
+  },
+  {
+    "name": "peach dress",
+    "source": "Normal",
+    "category": "Dresses",
+    "materials": [
+      {
+        "name": "peach",
+        "count": 8
+      }
+    ]
+  },
+  {
+    "name": "pear dress",
+    "source": "Jock",
+    "category": "Dresses",
+    "materials": [
+      {
+        "name": "pear",
+        "count": 8
+      }
+    ]
+  },
+  {
+    "name": "sky-egg outfit",
+    "source": "Collecting sky eggs (Bunny Day)",
+    "category": "Dresses",
+    "materials": [
+      {
+        "name": "sky egg",
+        "count": 3
+      }
+    ]
+  },
+  {
+    "name": "stone-egg outfit",
+    "source": "Collecting stone eggs (Bunny Day)",
+    "category": "Dresses",
+    "materials": [
+      {
+        "name": "stone egg",
+        "count": 3
+      }
+    ]
+  },
+  {
+    "name": "water-egg outfit",
+    "source": "Collecting water eggs (Bunny Day)",
+    "category": "Dresses",
+    "materials": [
+      {
+        "name": "water egg",
+        "count": 3
+      }
+    ]
+  },
+  {
+    "name": "wood-egg outfit",
+    "source": "Collecting wood eggs (Bunny Day)",
+    "category": "Dresses",
+    "materials": [
+      {
+        "name": "wood egg",
+        "count": 3
+      }
+    ]
+  },
+  {
+    "name": "bamboo lattice fence",
+    "source": "Nook Miles Exchange",
+    "category": "Fencing",
+    "materials": [
+      {
+        "name": "bamboo piece",
+        "count": 6
+      }
+    ]
+  },
+  {
+    "name": "barbed-wire fence",
+    "source": "Nook Miles Exchange",
+    "category": "Fencing",
+    "materials": [
+      {
+        "name": "hardwood",
+        "count": 3
+      },
+      {
+        "name": "iron nugget",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "name": "brick fence",
+    "source": "Nook Miles Exchange",
+    "category": "Fencing",
+    "materials": [
+      {
+        "name": "clay",
+        "count": 6
+      }
+    ]
+  },
+  {
+    "name": "Bunny Day fence",
+    "source": "Egg bottle/balloon (Bunny Day)",
+    "category": "Fencing",
+    "materials": [
+      {
+        "name": "earth egg",
+        "count": 1
+      },
+      {
+        "name": "stone egg",
+        "count": 1
+      },
+      {
+        "name": "leaf egg",
+        "count": 1
+      },
+      {
+        "name": "wood egg",
+        "count": 1
+      },
+      {
+        "name": "sky egg",
+        "count": 1
+      },
+      {
+        "name": "water egg",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "name": "corral fence",
+    "source": "Nook Miles Exchange",
+    "category": "Fencing",
+    "materials": [
+      {
+        "name": "wood",
+        "count": 6
+      }
+    ]
+  },
+  {
+    "name": "country fence",
+    "source": "Nook Miles Exchange",
+    "category": "Fencing",
+    "materials": [
+      {
+        "name": "hardwood",
+        "count": 6
+      }
+    ]
+  },
+  {
+    "name": "imperial fence",
+    "source": "Nook Miles Exchange",
+    "category": "Fencing",
+    "materials": [
+      {
+        "name": "wood",
+        "count": 6
+      },
+      {
+        "name": "softwood",
+        "count": 4
+      }
+    ]
+  },
+  {
+    "name": "iron fence",
+    "source": "Nook Miles Exchange",
+    "category": "Fencing",
+    "materials": [
+      {
+        "name": "iron nugget",
+        "count": 6
+      }
+    ]
+  },
+  {
+    "name": "iron-and-stone fence",
+    "source": "Nook Miles Exchange",
+    "category": "Fencing",
+    "materials": [
+      {
+        "name": "stone",
+        "count": 6
+      },
+      {
+        "name": "iron nugget",
+        "count": 3
+      }
+    ]
+  },
+  {
+    "name": "lattice fence",
+    "source": "Nook Miles Exchange",
+    "category": "Fencing",
+    "materials": [
+      {
+        "name": "softwood",
+        "count": 8
+      }
+    ]
+  },
+  {
+    "name": "rope fence",
+    "source": "Nook Miles Exchange",
+    "category": "Fencing",
+    "materials": [
+      {
+        "name": "iron nugget",
+        "count": 4
+      }
+    ]
+  },
+  {
+    "name": "simple wooden fence",
+    "source": "Nook Miles Exchange",
+    "category": "Fencing",
+    "materials": [
+      {
+        "name": "softwood",
+        "count": 6
+      }
+    ]
+  },
+  {
+    "name": "spiky fence",
+    "source": "Nook Miles Exchange",
+    "category": "Fencing",
+    "materials": [
+      {
+        "name": "hardwood",
+        "count": 8
+      }
+    ]
+  },
+  {
+    "name": "stone fence",
+    "source": "Nook Miles Exchange",
+    "category": "Fencing",
+    "materials": [
+      {
+        "name": "stone",
+        "count": 4
+      }
+    ]
+  },
+  {
+    "name": "straw fence",
+    "source": "Nook Miles Exchange",
+    "category": "Fencing",
+    "materials": [
+      {
+        "name": "clump of weeds",
+        "count": 10
+      },
+      {
+        "name": "wood",
+        "count": 3
+      }
+    ]
+  },
+  {
+    "name": "vertical-board fence",
+    "source": "Nook Miles Exchange",
+    "category": "Fencing",
+    "materials": [
+      {
+        "name": "wood",
+        "count": 8
+      }
+    ]
+  },
+  {
+    "name": "zen fence",
+    "source": "Nook Miles Exchange",
+    "category": "Fencing",
+    "materials": [
+      {
+        "name": "iron nugget",
+        "count": 3
+      },
+      {
+        "name": "clay",
+        "count": 3
+      },
+      {
+        "name": "stone",
+        "count": 3
+      }
+    ]
+  },
+  {
+    "name": "backyard lawn",
+    "source": "Peppy",
+    "category": "Floors",
+    "materials": [
+      {
+        "name": "clump of weeds",
+        "count": 30
+      }
+    ]
+  },
+  {
+    "name": "bamboo flooring",
+    "source": "Cranky",
+    "category": "Floors",
+    "materials": [
+      {
+        "name": "bamboo piece",
+        "count": 15
+      }
+    ]
+  },
+  {
+    "name": "basement flooring",
+    "source": "Smug",
+    "category": "Floors",
+    "materials": [
+      {
+        "name": "stone",
+        "count": 10
+      }
+    ]
+  },
+  {
+    "name": "Bunny Day flooring",
+    "source": "Egg bottle/balloon (Bunny Day)",
+    "category": "Floors",
+    "materials": [
+      {
+        "name": "earth egg",
+        "count": 2
+      },
+      {
+        "name": "stone egg",
+        "count": 2
+      },
+      {
+        "name": "leaf egg",
+        "count": 2
+      },
+      {
+        "name": "wood egg",
+        "count": 2
+      },
+      {
+        "name": "sky egg",
+        "count": 2
+      },
+      {
+        "name": "water egg",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "name": "cherry-blossom flooring",
+    "source": "Balloons (Cherry-Blossom Season)",
+    "category": "Floors",
+    "materials": [
+      {
+        "name": "cherry-blossom petal",
+        "count": 10
+      },
+      {
+        "name": "clump of weeds",
+        "count": 20
+      }
+    ]
+  },
+  {
+    "name": "colored-leaves flooring",
+    "source": "Balloons (Maple Leaf Season)",
+    "category": "Floors",
+    "materials": [
+      {
+        "name": "maple leaf",
+        "count": 10
+      },
+      {
+        "name": "clump of weeds",
+        "count": 15
+      }
+    ]
+  },
+  {
+    "name": "forest flooring",
+    "source": "Balloons (Mushroom Season)",
+    "category": "Floors",
+    "materials": [
+      {
+        "name": "rare mushroom",
+        "count": 1
+      },
+      {
+        "name": "round mushroom",
+        "count": 2
+      },
+      {
+        "name": "skinny mushroom",
+        "count": 2
+      },
+      {
+        "name": "flat mushroom",
+        "count": 2
+      },
+      {
+        "name": "clump of weeds",
+        "count": 10
+      }
+    ]
+  },
+  {
+    "name": "galaxy flooring",
+    "source": "Celeste",
+    "category": "Floors",
+    "materials": [
+      {
+        "name": "star fragment",
+        "count": 5
+      },
+      {
+        "name": "large star fragment",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "name": "garbage-heap flooring",
+    "source": "Fishing up trash",
+    "category": "Floors",
+    "materials": [
+      {
+        "name": "empty can",
+        "count": 2
+      },
+      {
+        "name": "boot",
+        "count": 2
+      },
+      {
+        "name": "old tire",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "name": "golden flooring",
+    "source": "Smug",
+    "category": "Floors",
+    "materials": [
+      {
+        "name": "gold nugget",
+        "count": 4
+      }
+    ]
+  },
+  {
+    "name": "honeycomb flooring",
+    "source": "Jock",
+    "category": "Floors",
+    "materials": [
+      {
+        "name": "wasp nest",
+        "count": 5
+      }
+    ]
+  },
+  {
+    "name": "ice flooring",
+    "source": "Making a perfect Snowboy",
+    "category": "Floors",
+    "materials": [
+      {
+        "name": "large snowflake",
+        "count": 1
+      },
+      {
+        "name": "snowflake",
+        "count": 8
+      }
+    ]
+  },
+  {
+    "name": "iceberg flooring",
+    "source": "Balloons (Winter)",
+    "category": "Floors",
+    "materials": [
+      {
+        "name": "snowflake",
+        "count": 10
+      }
+    ]
+  },
+  {
+    "name": "jungle flooring",
+    "source": "Jock",
+    "category": "Floors",
+    "materials": [
+      {
+        "name": "clump of weeds",
+        "count": 10
+      },
+      {
+        "name": "clay",
+        "count": 10
+      }
+    ]
+  },
+  {
+    "name": "lunar surface",
+    "source": "Celeste",
+    "category": "Floors",
+    "materials": [
+      {
+        "name": "star fragment",
+        "count": 5
+      },
+      {
+        "name": "large star fragment",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "name": "money flooring",
+    "source": "Snooty",
+    "category": "Floors",
+    "materials": [
+      {
+        "name": "bells",
+        "count": 50
+      }
+    ]
+  },
+  {
+    "name": "sakura-wood flooring",
+    "source": "Balloons (Cherry-Blossom Season)",
+    "category": "Floors",
+    "materials": [
+      {
+        "name": "cherry-blossom petal",
+        "count": 5
+      },
+      {
+        "name": "wood",
+        "count": 10
+      }
+    ]
+  },
+  {
+    "name": "sandy-beach flooring",
+    "source": "Jock",
+    "category": "Floors",
+    "materials": [
+      {
+        "name": "sea snail",
+        "count": 1
+      },
+      {
+        "name": "venus comb",
+        "count": 1
+      },
+      {
+        "name": "sand dollar",
+        "count": 1
+      },
+      {
+        "name": "coral",
+        "count": 1
+      },
+      {
+        "name": "giant clam",
+        "count": 1
+      },
+      {
+        "name": "cowrie",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "name": "sci-fi flooring",
+    "source": "Celeste",
+    "category": "Floors",
+    "materials": [
+      {
+        "name": "star fragment",
+        "count": 5
+      },
+      {
+        "name": "large star fragment",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "name": "ski-slope flooring",
+    "source": "Balloons (Winter)",
+    "category": "Floors",
+    "materials": [
+      {
+        "name": "snowflake",
+        "count": 8
+      }
+    ]
+  },
+  {
+    "name": "starry-sands flooring",
+    "source": "Balloons (Summer)",
+    "category": "Floors",
+    "materials": [
+      {
+        "name": "summer shell",
+        "count": 3
+      },
+      {
+        "name": "sandy-beach flooring",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "name": "steel flooring",
+    "source": "Smug",
+    "category": "Floors",
+    "materials": [
+      {
+        "name": "iron nugget",
+        "count": 7
+      }
+    ]
+  },
+  {
+    "name": "underwater flooring",
+    "source": "Balloons (Summer)",
+    "category": "Floors",
+    "materials": [
+      {
+        "name": "summer shell",
+        "count": 3
+      },
+      {
+        "name": "coral",
+        "count": 3
+      }
+    ]
+  },
+  {
+    "name": "water flooring",
+    "source": "Balloons (Summer)",
+    "category": "Floors",
+    "materials": [
+      {
+        "name": "summer shell",
+        "count": 6
+      }
+    ]
+  },
+  {
+    "name": "apple hat",
+    "source": "Uchi",
+    "category": "Headwear",
+    "materials": [
+      {
+        "name": "apple",
+        "count": 5
+      }
+    ]
+  },
+  {
+    "name": "bamboo hat",
+    "source": "Cranky",
+    "category": "Headwear",
+    "materials": [
+      {
+        "name": "clump of weeds",
+        "count": 10
+      }
+    ]
+  },
+  {
+    "name": "blue rose crown",
+    "source": "All Villagers",
+    "category": "Headwear",
+    "materials": [
+      {
+        "name": "blue roses",
+        "count": 6
+      }
+    ]
+  },
+  {
+    "name": "Bunny Day crown",
+    "source": "Villager (Bunny Day)",
+    "category": "Headwear",
+    "materials": [
+      {
+        "name": "earth egg",
+        "count": 1
+      },
+      {
+        "name": "stone egg",
+        "count": 1
+      },
+      {
+        "name": "leaf egg",
+        "count": 1
+      },
+      {
+        "name": "wood egg",
+        "count": 1
+      },
+      {
+        "name": "sky egg",
+        "count": 1
+      },
+      {
+        "name": "water egg",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "name": "cherry hat",
+    "source": "Peppy",
+    "category": "Headwear",
+    "materials": [
+      {
+        "name": "cherry",
+        "count": 5
+      }
+    ]
+  },
+  {
+    "name": "chic mum crown",
+    "source": "All Villagers",
+    "category": "Headwear",
+    "materials": [
+      {
+        "name": "purple mums",
+        "count": 3
+      },
+      {
+        "name": "pink mums",
+        "count": 3
+      }
+    ]
+  },
+  {
+    "name": "chic rose crown",
+    "source": "All Villagers",
+    "category": "Headwear",
+    "materials": [
+      {
+        "name": "purple roses",
+        "count": 3
+      },
+      {
+        "name": "black roses",
+        "count": 3
+      }
+    ]
+  },
+  {
+    "name": "chic tulip crown",
+    "source": "All Villagers",
+    "category": "Headwear",
+    "materials": [
+      {
+        "name": "purple tulips",
+        "count": 2
+      },
+      {
+        "name": "pink tulips",
+        "count": 2
+      },
+      {
+        "name": "orange tulips",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "name": "cool hyacinth crown",
+    "source": "All Villagers",
+    "category": "Headwear",
+    "materials": [
+      {
+        "name": "blue hyacinths",
+        "count": 4
+      },
+      {
+        "name": "pink hyacinths",
+        "count": 2
+      },
+      {
+        "name": "orange hyacinths",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "name": "cool pansy crown",
+    "source": "All Villagers",
+    "category": "Headwear",
+    "materials": [
+      {
+        "name": "orange pansies",
+        "count": 3
+      },
+      {
+        "name": "blue pansies",
+        "count": 3
+      }
+    ]
+  },
+  {
+    "name": "cool windflower crown",
+    "source": "All Villagers",
+    "category": "Headwear",
+    "materials": [
+      {
+        "name": "blue windflowers",
+        "count": 3
+      },
+      {
+        "name": "pink windflowers",
+        "count": 3
+      }
+    ]
+  },
+  {
+    "name": "cosmos crown",
+    "source": "All Villagers",
+    "category": "Headwear",
+    "materials": [
+      {
+        "name": "red cosmos",
+        "count": 2
+      },
+      {
+        "name": "yellow cosmos",
+        "count": 2
+      },
+      {
+        "name": "white cosmos",
+        "count": 3
+      }
+    ]
+  },
+  {
+    "name": "cute lily crown",
+    "source": "All Villagers",
+    "category": "Headwear",
+    "materials": [
+      {
+        "name": "pink lilies",
+        "count": 2
+      },
+      {
+        "name": "orange lilies",
+        "count": 2
+      },
+      {
+        "name": "white lilies",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "name": "cute rose crown",
+    "source": "All Villagers",
+    "category": "Headwear",
+    "materials": [
+      {
+        "name": "pink roses",
+        "count": 3
+      },
+      {
+        "name": "orange roses",
+        "count": 3
+      }
+    ]
+  },
+  {
+    "name": "dark cosmos crown",
+    "source": "All Villagers",
+    "category": "Headwear",
+    "materials": [
+      {
+        "name": "black cosmos",
+        "count": 7
+      }
+    ]
+  },
+  {
+    "name": "dark lily crown",
+    "source": "All Villagers",
+    "category": "Headwear",
+    "materials": [
+      {
+        "name": "black lilies",
+        "count": 6
+      }
+    ]
+  },
+  {
+    "name": "dark tulip crown",
+    "source": "All Villagers",
+    "category": "Headwear",
+    "materials": [
+      {
+        "name": "black tulips",
+        "count": 5
+      }
+    ]
+  },
+  {
+    "name": "earth-egg shell",
+    "source": "Collecting earth eggs (Bunny Day)",
+    "category": "Headwear",
+    "materials": [
+      {
+        "name": "earth egg",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "name": "egg party hat",
+    "source": "Learning all egg outfit DIYs (Bunny Day)",
+    "category": "Headwear",
+    "materials": [
+      {
+        "name": "earth egg",
+        "count": 2
+      },
+      {
+        "name": "stone egg",
+        "count": 2
+      },
+      {
+        "name": "leaf egg",
+        "count": 2
+      },
+      {
+        "name": "wood egg",
+        "count": 2
+      },
+      {
+        "name": "sky egg",
+        "count": 2
+      },
+      {
+        "name": "water egg",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "name": "gold helmet",
+    "source": "Smug",
+    "category": "Headwear",
+    "materials": [
+      {
+        "name": "gold nugget",
+        "count": 5
+      }
+    ]
+  },
+  {
+    "name": "gold rose crown",
+    "source": "All Villagers",
+    "category": "Headwear",
+    "materials": [
+      {
+        "name": "gold roses",
+        "count": 6
+      }
+    ]
+  },
+  {
+    "name": "hyacinth crown",
+    "source": "All Villagers",
+    "category": "Headwear",
+    "materials": [
+      {
+        "name": "red hyacinths",
+        "count": 4
+      },
+      {
+        "name": "yellow hyacinths",
+        "count": 2
+      },
+      {
+        "name": "white hyacinths",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "name": "knight's helmet",
+    "source": "Cranky",
+    "category": "Headwear",
+    "materials": [
+      {
+        "name": "iron nugget",
+        "count": 5
+      }
+    ]
+  },
+  {
+    "name": "leaf mask",
+    "source": "Peppy",
+    "category": "Headwear",
+    "materials": [
+      {
+        "name": "clump of weeds",
+        "count": 10
+      }
+    ]
+  },
+  {
+    "name": "leaf-egg shell",
+    "source": "Collecting leaf eggs (Bunny Day)",
+    "category": "Headwear",
+    "materials": [
+      {
+        "name": "leaf egg",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "name": "lily crown",
+    "source": "All Villagers",
+    "category": "Headwear",
+    "materials": [
+      {
+        "name": "red lilies",
+        "count": 2
+      },
+      {
+        "name": "yellow lilies",
+        "count": 2
+      },
+      {
+        "name": "white lilies",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "name": "lovely cosmos crown",
+    "source": "All Villagers",
+    "category": "Headwear",
+    "materials": [
+      {
+        "name": "pink cosmos",
+        "count": 3
+      },
+      {
+        "name": "orange cosmos",
+        "count": 3
+      }
+    ]
+  },
+  {
+    "name": "mum crown",
+    "source": "All Villagers",
+    "category": "Headwear",
+    "materials": [
+      {
+        "name": "red mums",
+        "count": 2
+      },
+      {
+        "name": "yellow mums",
+        "count": 2
+      },
+      {
+        "name": "white mums",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "name": "orange hat",
+    "source": "Lazy",
+    "category": "Headwear",
+    "materials": [
+      {
+        "name": "orange",
+        "count": 5
+      }
+    ]
+  },
+  {
+    "name": "pansy crown",
+    "source": "All Villagers",
+    "category": "Headwear",
+    "materials": [
+      {
+        "name": "red pansies",
+        "count": 2
+      },
+      {
+        "name": "yellow pansies",
+        "count": 2
+      },
+      {
+        "name": "white pansies",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "name": "peach hat",
+    "source": "Normal",
+    "category": "Headwear",
+    "materials": [
+      {
+        "name": "peach",
+        "count": 5
+      }
+    ]
+  },
+  {
+    "name": "pear hat",
+    "source": "Jock",
+    "category": "Headwear",
+    "materials": [
+      {
+        "name": "pear",
+        "count": 5
+      }
+    ]
+  },
+  {
+    "name": "purple hyacinth crown",
+    "source": "All Villagers",
+    "category": "Headwear",
+    "materials": [
+      {
+        "name": "purple hyacinths",
+        "count": 6
+      }
+    ]
+  },
+  {
+    "name": "purple pansy crown",
+    "source": "All Villagers",
+    "category": "Headwear",
+    "materials": [
+      {
+        "name": "purple pansies",
+        "count": 6
+      }
+    ]
+  },
+  {
+    "name": "purple windflower crown",
+    "source": "All Villagers",
+    "category": "Headwear",
+    "materials": [
+      {
+        "name": "purple windflowers",
+        "count": 6
+      }
+    ]
+  },
+  {
+    "name": "rose crown",
+    "source": "All Villagers",
+    "category": "Headwear",
+    "materials": [
+      {
+        "name": "red roses",
+        "count": 2
+      },
+      {
+        "name": "yellow roses",
+        "count": 2
+      },
+      {
+        "name": "white roses",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "name": "simple mum crown",
+    "source": "All Villagers",
+    "category": "Headwear",
+    "materials": [
+      {
+        "name": "green mums",
+        "count": 6
+      }
+    ]
+  },
+  {
+    "name": "sky-egg shell",
+    "source": "Collecting sky eggs (Bunny Day)",
+    "category": "Headwear",
+    "materials": [
+      {
+        "name": "sky egg",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "name": "snowperson head",
+    "source": "Making a perfect Snowboy",
+    "category": "Headwear",
+    "materials": [
+      {
+        "name": "large snowflake",
+        "count": 1
+      },
+      {
+        "name": "snowflake",
+        "count": 5
+      }
+    ]
+  },
+  {
+    "name": "star head",
+    "source": "Celeste",
+    "category": "Headwear",
+    "materials": [
+      {
+        "name": "star fragment",
+        "count": 5
+      }
+    ]
+  },
+  {
+    "name": "stone-egg shell",
+    "source": "Collecting stone eggs (Bunny Day)",
+    "category": "Headwear",
+    "materials": [
+      {
+        "name": "stone egg",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "name": "straw umbrella hat",
+    "source": "Smug",
+    "category": "Headwear",
+    "materials": [
+      {
+        "name": "clump of weeds",
+        "count": 10
+      }
+    ]
+  },
+  {
+    "name": "tulip crown",
+    "source": "All Villagers",
+    "category": "Headwear",
+    "materials": [
+      {
+        "name": "red tulips",
+        "count": 2
+      },
+      {
+        "name": "yellow tulips",
+        "count": 2
+      },
+      {
+        "name": "white tulips",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "name": "water-egg shell",
+    "source": "Collecting water eggs (Bunny Day)",
+    "category": "Headwear",
+    "materials": [
+      {
+        "name": "water egg",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "name": "windflower crown",
+    "source": "All Villagers",
+    "category": "Headwear",
+    "materials": [
+      {
+        "name": "red windflowers",
+        "count": 2
+      },
+      {
+        "name": "orange windflowers",
+        "count": 2
+      },
+      {
+        "name": "white windflowers",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "name": "wood-egg shell",
+    "source": "Collecting wood eggs (Bunny Day)",
+    "category": "Headwear",
+    "materials": [
+      {
+        "name": "wood egg",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "name": "acoustic guitar",
+    "source": "Smug",
+    "category": "Housewares",
+    "materials": [
+      {
+        "name": "softwood",
+        "count": 8
+      },
+      {
+        "name": "iron nugget",
+        "count": 3
+      }
+    ]
+  },
+  {
+    "name": "angled signpost",
+    "source": "Lazy",
+    "category": "Housewares",
+    "materials": [
+      {
+        "name": "hardwood",
+        "count": 2
+      },
+      {
+        "name": "softwood",
+        "count": 3
+      }
+    ]
+  },
+  {
+    "name": "apple chair",
+    "source": "Uchi",
+    "category": "Housewares",
+    "materials": [
+      {
+        "name": "apple",
+        "count": 10
+      },
+      {
+        "name": "wood",
+        "count": 4
+      }
+    ]
+  },
+  {
+    "name": "Aquarius urn",
+    "source": "Celeste",
+    "category": "Housewares",
+    "materials": [
+      {
+        "name": "star fragment",
+        "count": 3
+      },
+      {
+        "name": "Aquarius fragment",
+        "count": 2
+      },
+      {
+        "name": "gold nugget",
+        "count": 2
+      },
+      {
+        "name": "stone",
+        "count": 5
+      }
+    ]
+  },
+  {
+    "name": "Aries rocking chair",
+    "source": "Celeste",
+    "category": "Housewares",
+    "materials": [
+      {
+        "name": "star fragment",
+        "count": 3
+      },
+      {
+        "name": "Aries fragment",
+        "count": 2
+      },
+      {
+        "name": "gold nugget",
+        "count": 1
+      },
+      {
+        "name": "stone",
+        "count": 5
+      }
+    ]
+  },
+  {
+    "name": "asteroid",
+    "source": "Celeste",
+    "category": "Housewares",
+    "materials": [
+      {
+        "name": "star fragment",
+        "count": 5
+      },
+      {
+        "name": "stone",
+        "count": 10
+      }
+    ]
+  },
+  {
+    "name": "astronaut suit",
+    "source": "Celeste",
+    "category": "Housewares",
+    "materials": [
+      {
+        "name": "star fragment",
+        "count": 5
+      },
+      {
+        "name": "iron nugget",
+        "count": 5
+      }
+    ]
+  },
+  {
+    "name": "bamboo basket",
+    "source": "Snooty",
+    "category": "Housewares",
+    "materials": [
+      {
+        "name": "bamboo piece",
+        "count": 7
+      }
+    ]
+  },
+  {
+    "name": "bamboo bench",
+    "source": "Normal",
+    "category": "Housewares",
+    "materials": [
+      {
+        "name": "bamboo piece",
+        "count": 8
+      }
+    ]
+  },
+  {
+    "name": "bamboo doll",
+    "source": "Balloons (Spring)",
+    "category": "Housewares",
+    "materials": [
+      {
+        "name": "young spring bamboo",
+        "count": 6
+      }
+    ]
+  },
+  {
+    "name": "bamboo floor lamp",
+    "source": "Normal",
+    "category": "Housewares",
+    "materials": [
+      {
+        "name": "bamboo piece",
+        "count": 8
+      }
+    ]
+  },
+  {
+    "name": "bamboo noodle slide",
+    "source": "Balloons (Spring)",
+    "category": "Housewares",
+    "materials": [
+      {
+        "name": "young spring bamboo",
+        "count": 7
+      },
+      {
+        "name": "wood",
+        "count": 3
+      }
+    ]
+  },
+  {
+    "name": "bamboo partition",
+    "source": "Cranky",
+    "category": "Housewares",
+    "materials": [
+      {
+        "name": "bamboo piece",
+        "count": 7
+      },
+      {
+        "name": "stone",
+        "count": 6
+      }
+    ]
+  },
+  {
+    "name": "bamboo shelf",
+    "source": "Snooty",
+    "category": "Housewares",
+    "materials": [
+      {
+        "name": "bamboo piece",
+        "count": 15
+      }
+    ]
+  },
+  {
+    "name": "bamboo speaker",
+    "source": "Snooty",
+    "category": "Housewares",
+    "materials": [
+      {
+        "name": "bamboo piece",
+        "count": 3
+      },
+      {
+        "name": "iron nugget",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "name": "bamboo stool",
+    "source": "Snooty",
+    "category": "Housewares",
+    "materials": [
+      {
+        "name": "bamboo piece",
+        "count": 5
+      }
+    ]
+  },
+  {
+    "name": "bamboo stopblock",
+    "source": "Jock",
+    "category": "Housewares",
+    "materials": [
+      {
+        "name": "bamboo piece",
+        "count": 3
+      }
+    ]
+  },
+  {
+    "name": "barbell",
+    "source": "Jock",
+    "category": "Housewares",
+    "materials": [
+      {
+        "name": "iron nugget",
+        "count": 10
+      }
+    ]
+  },
+  {
+    "name": "barrel",
+    "source": "Villager House Development (Tom Nook), Cranky",
+    "category": "Housewares",
+    "materials": [
+      {
+        "name": "wood",
+        "count": 5
+      },
+      {
+        "name": "iron nugget",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "name": "beekeeper's hive",
+    "source": "Jock",
+    "category": "Housewares",
+    "materials": [
+      {
+        "name": "wasp nest",
+        "count": 3
+      },
+      {
+        "name": "wood",
+        "count": 5
+      }
+    ]
+  },
+  {
+    "name": "big festive tree",
+    "source": "Balloons (Festive Season)",
+    "category": "Housewares",
+    "materials": [
+      {
+        "name": "red ornament",
+        "count": 6
+      },
+      {
+        "name": "blue ornament",
+        "count": 6
+      },
+      {
+        "name": "gold ornament",
+        "count": 4
+      },
+      {
+        "name": "wood",
+        "count": 5
+      },
+      {
+        "name": "clay",
+        "count": 5
+      }
+    ]
+  },
+  {
+    "name": "birdbath",
+    "source": "Villager House Development (Tom Nook), Snooty",
+    "category": "Housewares",
+    "materials": [
+      {
+        "name": "stone",
+        "count": 6
+      }
+    ]
+  },
+  {
+    "name": "birdcage",
+    "source": "Uchi",
+    "category": "Housewares",
+    "materials": [
+      {
+        "name": "wood",
+        "count": 8
+      }
+    ]
+  },
+  {
+    "name": "birdhouse",
+    "source": "Tom Nook, Peppy",
+    "category": "Housewares",
+    "materials": [
+      {
+        "name": "wood",
+        "count": 2
+      },
+      {
+        "name": "softwood",
+        "count": 5
+      }
+    ]
+  },
+  {
+    "name": "blossom-viewing lantern",
+    "source": "Balloons (Cherry-Blossom Season)",
+    "category": "Housewares",
+    "materials": [
+      {
+        "name": "cherry-blossom petal",
+        "count": 6
+      }
+    ]
+  },
+  {
+    "name": "bonfire",
+    "source": "Tom Nook, Cranky",
+    "category": "Housewares",
+    "materials": [
+      {
+        "name": "campfire",
+        "count": 1
+      },
+      {
+        "name": "wood",
+        "count": 10
+      }
+    ]
+  },
+  {
+    "name": "bonsai shelf",
+    "source": "Cranky",
+    "category": "Housewares",
+    "materials": [
+      {
+        "name": "cherry-blossom bonsai",
+        "count": 1
+      },
+      {
+        "name": "pine bonsai tree",
+        "count": 1
+      },
+      {
+        "name": "wood",
+        "count": 8
+      }
+    ]
+  },
+  {
+    "name": "brick oven",
+    "source": "Nook's Cranny",
+    "category": "Housewares",
+    "materials": [
+      {
+        "name": "clay",
+        "count": 8
+      },
+      {
+        "name": "iron nugget",
+        "count": 2
+      },
+      {
+        "name": "wood",
+        "count": 6
+      }
+    ]
+  },
+  {
+    "name": "brick well",
+    "source": "Nook Miles Exchange",
+    "category": "Housewares",
+    "materials": [
+      {
+        "name": "clay",
+        "count": 8
+      },
+      {
+        "name": "wood",
+        "count": 5
+      },
+      {
+        "name": "flimsy shovel",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "name": "Bunny Day arch",
+    "source": "Zipper after collecting all 6 egg types (Bunny Day)",
+    "category": "Housewares",
+    "materials": [
+      {
+        "name": "earth egg",
+        "count": 2
+      },
+      {
+        "name": "stone egg",
+        "count": 2
+      },
+      {
+        "name": "leaf egg",
+        "count": 2
+      },
+      {
+        "name": "wood egg",
+        "count": 2
+      },
+      {
+        "name": "sky egg",
+        "count": 2
+      },
+      {
+        "name": "water egg",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "name": "Bunny Day bed",
+    "source": "Egg bottle/balloon (Bunny Day)",
+    "category": "Housewares",
+    "materials": [
+      {
+        "name": "earth egg",
+        "count": 1
+      },
+      {
+        "name": "stone egg",
+        "count": 1
+      },
+      {
+        "name": "leaf egg",
+        "count": 1
+      },
+      {
+        "name": "wood egg",
+        "count": 1
+      },
+      {
+        "name": "sky egg",
+        "count": 1
+      },
+      {
+        "name": "water egg",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "name": "Bunny Day festive balloons",
+    "source": "Egg bottle/balloon (Bunny Day)",
+    "category": "Housewares",
+    "materials": [
+      {
+        "name": "stone egg",
+        "count": 1
+      },
+      {
+        "name": "wood egg",
+        "count": 1
+      },
+      {
+        "name": "water egg",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "name": "Bunny Day merry balloons",
+    "source": "Egg bottle/balloon (Bunny Day)",
+    "category": "Housewares",
+    "materials": [
+      {
+        "name": "earth egg",
+        "count": 1
+      },
+      {
+        "name": "leaf egg",
+        "count": 1
+      },
+      {
+        "name": "sky egg",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "name": "Bunny Day stool",
+    "source": "Egg bottle/balloon (Bunny Day)",
+    "category": "Housewares",
+    "materials": [
+      {
+        "name": "water egg",
+        "count": 3
+      }
+    ]
+  },
+  {
+    "name": "Bunny Day table",
+    "source": "Egg bottle/balloon (Bunny Day)",
+    "category": "Housewares",
+    "materials": [
+      {
+        "name": "earth egg",
+        "count": 4
+      }
+    ]
+  },
+  {
+    "name": "Bunny Day vanity",
+    "source": "Egg bottle/balloon (Bunny Day)",
+    "category": "Housewares",
+    "materials": [
+      {
+        "name": "leaf egg",
+        "count": 4
+      }
+    ]
+  },
+  {
+    "name": "Bunny Day wardrobe",
+    "source": "Egg bottle/balloon (Bunny Day)",
+    "category": "Housewares",
+    "materials": [
+      {
+        "name": "stone egg",
+        "count": 4
+      }
+    ]
+  },
+  {
+    "name": "butter churn",
+    "source": "Snooty",
+    "category": "Housewares",
+    "materials": [
+      {
+        "name": "wood",
+        "count": 4
+      },
+      {
+        "name": "iron nugget",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "name": "campfire",
+    "source": "Tom Nook",
+    "category": "Housewares",
+    "materials": [
+      {
+        "name": "tree branch",
+        "count": 3
+      }
+    ]
+  },
+  {
+    "name": "Cancer table",
+    "source": "Celeste",
+    "category": "Housewares",
+    "materials": [
+      {
+        "name": "star fragment",
+        "count": 3
+      },
+      {
+        "name": "Cancer fragment",
+        "count": 2
+      },
+      {
+        "name": "gold nugget",
+        "count": 2
+      },
+      {
+        "name": "stone",
+        "count": 3
+      }
+    ]
+  },
+  {
+    "name": "Capricorn ornament",
+    "source": "Celeste",
+    "category": "Housewares",
+    "materials": [
+      {
+        "name": "star fragment",
+        "count": 3
+      },
+      {
+        "name": "Capricorn fragment",
+        "count": 2
+      },
+      {
+        "name": "gold nugget",
+        "count": 2
+      },
+      {
+        "name": "stone",
+        "count": 12
+      }
+    ]
+  },
+  {
+    "name": "cardboard bed",
+    "source": "Lazy",
+    "category": "Housewares",
+    "materials": [
+      {
+        "name": "cardboard box",
+        "count": 4
+      }
+    ]
+  },
+  {
+    "name": "cardboard chair",
+    "source": "Lazy",
+    "category": "Housewares",
+    "materials": [
+      {
+        "name": "cardboard box",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "name": "cardboard sofa",
+    "source": "Peppy",
+    "category": "Housewares",
+    "materials": [
+      {
+        "name": "cardboard box",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "name": "cardboard table",
+    "source": "Peppy",
+    "category": "Housewares",
+    "materials": [
+      {
+        "name": "cardboard box",
+        "count": 4
+      }
+    ]
+  },
+  {
+    "name": "cherry-blossom branches",
+    "source": "Balloons (Cherry-Blossom Season)",
+    "category": "Housewares",
+    "materials": [
+      {
+        "name": "cherry-blossom petal",
+        "count": 8
+      },
+      {
+        "name": "tree branch",
+        "count": 4
+      },
+      {
+        "name": "clay",
+        "count": 5
+      }
+    ]
+  },
+  {
+    "name": "cherry-blossom pond stone",
+    "source": "Balloons (Cherry-Blossom Season)",
+    "category": "Housewares",
+    "materials": [
+      {
+        "name": "stone",
+        "count": 10
+      },
+      {
+        "name": "cherry-blossom petal",
+        "count": 3
+      }
+    ]
+  },
+  {
+    "name": "cherry-blossom-petal pile",
+    "source": "Balloons (Cherry-Blossom Season)",
+    "category": "Housewares",
+    "materials": [
+      {
+        "name": "cherry-blossom petal",
+        "count": 5
+      }
+    ]
+  },
+  {
+    "name": "clackercart",
+    "source": "Lazy",
+    "category": "Housewares",
+    "materials": [
+      {
+        "name": "hardwood",
+        "count": 2
+      },
+      {
+        "name": "softwood",
+        "count": 6
+      }
+    ]
+  },
+  {
+    "name": "clothesline",
+    "source": "Villager House Development (Tom Nook), Cranky",
+    "category": "Housewares",
+    "materials": [
+      {
+        "name": "tree branch",
+        "count": 10
+      }
+    ]
+  },
+  {
+    "name": "cosmos shower",
+    "source": "Snooty",
+    "category": "Housewares",
+    "materials": [
+      {
+        "name": "pink cosmos",
+        "count": 5
+      },
+      {
+        "name": "iron nugget",
+        "count": 3
+      }
+    ]
+  },
+  {
+    "name": "crescent-moon chair",
+    "source": "Celeste",
+    "category": "Housewares",
+    "materials": [
+      {
+        "name": "star fragment",
+        "count": 7
+      },
+      {
+        "name": "large star fragment",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "name": "crewed spaceship",
+    "source": "Celeste",
+    "category": "Housewares",
+    "materials": [
+      {
+        "name": "star fragment",
+        "count": 10
+      },
+      {
+        "name": "iron nugget",
+        "count": 20
+      }
+    ]
+  },
+  {
+    "name": "deer scare",
+    "source": "Cranky",
+    "category": "Housewares",
+    "materials": [
+      {
+        "name": "bamboo piece",
+        "count": 3
+      },
+      {
+        "name": "stone",
+        "count": 8
+      },
+      {
+        "name": "clump of weeds",
+        "count": 3
+      }
+    ]
+  },
+  {
+    "name": "destinations signpost",
+    "source": "Nook Miles Exchange",
+    "category": "Housewares",
+    "materials": [
+      {
+        "name": "hardwood",
+        "count": 4
+      },
+      {
+        "name": "softwood",
+        "count": 8
+      }
+    ]
+  },
+  {
+    "name": "DIY workbench",
+    "source": "Uchi",
+    "category": "Housewares",
+    "materials": [
+      {
+        "name": "wood",
+        "count": 5
+      },
+      {
+        "name": "hardwood",
+        "count": 5
+      },
+      {
+        "name": "softwood",
+        "count": 5
+      },
+      {
+        "name": "iron nugget",
+        "count": 3
+      },
+      {
+        "name": "mini DIY workbench",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "name": "doghouse",
+    "source": "Jock",
+    "category": "Housewares",
+    "materials": [
+      {
+        "name": "wood",
+        "count": 10
+      },
+      {
+        "name": "hardwood",
+        "count": 7
+      }
+    ]
+  },
+  {
+    "name": "drinking fountain",
+    "source": "Nook Miles Exchange",
+    "category": "Housewares",
+    "materials": [
+      {
+        "name": "stone",
+        "count": 8
+      },
+      {
+        "name": "iron nugget",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "name": "festive tree",
+    "source": "Balloons (Festive Season)",
+    "category": "Housewares",
+    "materials": [
+      {
+        "name": "red ornament",
+        "count": 3
+      },
+      {
+        "name": "blue ornament",
+        "count": 3
+      },
+      {
+        "name": "gold ornament",
+        "count": 3
+      },
+      {
+        "name": "wood",
+        "count": 5
+      }
+    ]
+  },
+  {
+    "name": "flat garden rock",
+    "source": "Snooty",
+    "category": "Housewares",
+    "materials": [
+      {
+        "name": "stone",
+        "count": 20
+      }
+    ]
+  },
+  {
+    "name": "flower stand",
+    "source": "Uchi",
+    "category": "Housewares",
+    "materials": [
+      {
+        "name": "red roses",
+        "count": 1
+      },
+      {
+        "name": "pink roses",
+        "count": 2
+      },
+      {
+        "name": "orange roses",
+        "count": 2
+      },
+      {
+        "name": "white liles",
+        "count": 2
+      },
+      {
+        "name": "yellow lilies",
+        "count": 2
+      },
+      {
+        "name": "purple windflowers",
+        "count": 5
+      }
+    ]
+  },
+  {
+    "name": "flying saucer",
+    "source": "Celeste",
+    "category": "Housewares",
+    "materials": [
+      {
+        "name": "star fragment",
+        "count": 15
+      },
+      {
+        "name": "iron nugget",
+        "count": 10
+      }
+    ]
+  },
+  {
+    "name": "fountain",
+    "source": "Nook Miles Exchange",
+    "category": "Housewares",
+    "materials": [
+      {
+        "name": "drinking fountain",
+        "count": 1
+      },
+      {
+        "name": "stone",
+        "count": 20
+      },
+      {
+        "name": "iron nugget",
+        "count": 8
+      }
+    ]
+  },
+  {
+    "name": "frozen arch",
+    "source": "Making a perfect Snowboy",
+    "category": "Housewares",
+    "materials": [
+      {
+        "name": "large snowflake",
+        "count": 1
+      },
+      {
+        "name": "snowflake",
+        "count": 10
+      }
+    ]
+  },
+  {
+    "name": "frozen bed",
+    "source": "Making a perfect Snowboy",
+    "category": "Housewares",
+    "materials": [
+      {
+        "name": "large snowflake",
+        "count": 1
+      },
+      {
+        "name": "snowflake",
+        "count": 10
+      }
+    ]
+  },
+  {
+    "name": "frozen chair",
+    "source": "Making a perfect Snowboy",
+    "category": "Housewares",
+    "materials": [
+      {
+        "name": "large snowflake",
+        "count": 1
+      },
+      {
+        "name": "snowflake",
+        "count": 3
+      }
+    ]
+  },
+  {
+    "name": "frozen counter",
+    "source": "Making a perfect Snowboy",
+    "category": "Housewares",
+    "materials": [
+      {
+        "name": "large snowflake",
+        "count": 1
+      },
+      {
+        "name": "snowflake",
+        "count": 5
+      }
+    ]
+  },
+  {
+    "name": "frozen partition",
+    "source": "Making a perfect Snowboy",
+    "category": "Housewares",
+    "materials": [
+      {
+        "name": "large snowflake",
+        "count": 1
+      },
+      {
+        "name": "snowflake",
+        "count": 6
+      }
+    ]
+  },
+  {
+    "name": "frozen pillar",
+    "source": "Making a perfect Snowboy",
+    "category": "Housewares",
+    "materials": [
+      {
+        "name": "large snowflake",
+        "count": 1
+      },
+      {
+        "name": "snowflake",
+        "count": 4
+      }
+    ]
+  },
+  {
+    "name": "frozen sculpture",
+    "source": "Making a perfect Snowboy",
+    "category": "Housewares",
+    "materials": [
+      {
+        "name": "large snowflake",
+        "count": 1
+      },
+      {
+        "name": "snowflake",
+        "count": 4
+      }
+    ]
+  },
+  {
+    "name": "frozen table",
+    "source": "Making a perfect Snowboy",
+    "category": "Housewares",
+    "materials": [
+      {
+        "name": "large snowflake",
+        "count": 1
+      },
+      {
+        "name": "snowflake",
+        "count": 8
+      }
+    ]
+  },
+  {
+    "name": "frozen tree",
+    "source": "Making a perfect Snowboy",
+    "category": "Housewares",
+    "materials": [
+      {
+        "name": "large snowflake",
+        "count": 1
+      },
+      {
+        "name": "snowflake",
+        "count": 8
+      }
+    ]
+  },
+  {
+    "name": "garden bench",
+    "source": "Snooty",
+    "category": "Housewares",
+    "materials": [
+      {
+        "name": "wood",
+        "count": 12
+      },
+      {
+        "name": "iron nugget",
+        "count": 4
+      }
+    ]
+  },
+  {
+    "name": "garden rock",
+    "source": "Lazy",
+    "category": "Housewares",
+    "materials": [
+      {
+        "name": "stone",
+        "count": 15
+      }
+    ]
+  },
+  {
+    "name": "garden wagon",
+    "source": "Peppy",
+    "category": "Housewares",
+    "materials": [
+      {
+        "name": "white hyacinths",
+        "count": 3
+      },
+      {
+        "name": "red cosmos",
+        "count": 3
+      },
+      {
+        "name": "yellow roses",
+        "count": 3
+      },
+      {
+        "name": "wood",
+        "count": 8
+      },
+      {
+        "name": "iron nugget",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "name": "Gemini closet",
+    "source": "Celeste",
+    "category": "Housewares",
+    "materials": [
+      {
+        "name": "star fragment",
+        "count": 3
+      },
+      {
+        "name": "Gemini fragment",
+        "count": 2
+      },
+      {
+        "name": "gold nugget",
+        "count": 2
+      },
+      {
+        "name": "stone",
+        "count": 6
+      }
+    ]
+  },
+  {
+    "name": "giant teddy bear",
+    "source": "Peppy",
+    "category": "Housewares",
+    "materials": [
+      {
+        "name": "Papa bear",
+        "count": 1
+      },
+      {
+        "name": "Mama bear",
+        "count": 1
+      },
+      {
+        "name": "Baby bear",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "name": "golden casket",
+    "source": "Smug",
+    "category": "Housewares",
+    "materials": [
+      {
+        "name": "gold nugget",
+        "count": 8
+      }
+    ]
+  },
+  {
+    "name": "golden seat",
+    "source": "Snooty",
+    "category": "Housewares",
+    "materials": [
+      {
+        "name": "gold nugget",
+        "count": 5
+      }
+    ]
+  },
+  {
+    "name": "golden toilet",
+    "source": "Snooty",
+    "category": "Housewares",
+    "materials": [
+      {
+        "name": "gold nugget",
+        "count": 6
+      }
+    ]
+  },
+  {
+    "name": "gong",
+    "source": "Cranky",
+    "category": "Housewares",
+    "materials": [
+      {
+        "name": "iron nugget",
+        "count": 6
+      },
+      {
+        "name": "wood",
+        "count": 5
+      }
+    ]
+  },
+  {
+    "name": "grass standee",
+    "source": "Normal",
+    "category": "Housewares",
+    "materials": [
+      {
+        "name": "wood",
+        "count": 2
+      },
+      {
+        "name": "softwood",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "name": "green-leaf pile",
+    "source": "Balloons (Spring)",
+    "category": "Housewares",
+    "materials": [
+      {
+        "name": "young spring bamboo",
+        "count": 1
+      },
+      {
+        "name": "clump of weeds",
+        "count": 10
+      }
+    ]
+  },
+  {
+    "name": "hay bed",
+    "source": "Nook's Cranny",
+    "category": "Housewares",
+    "materials": [
+      {
+        "name": "clump of weeds",
+        "count": 20
+      }
+    ]
+  },
+  {
+    "name": "hearth",
+    "source": "Nook's Cranny",
+    "category": "Housewares",
+    "materials": [
+      {
+        "name": "bamboo piece",
+        "count": 2
+      },
+      {
+        "name": "iron nugget",
+        "count": 5
+      },
+      {
+        "name": "clay",
+        "count": 4
+      },
+      {
+        "name": "hardwood",
+        "count": 5
+      }
+    ]
+  },
+  {
+    "name": "hedge standee",
+    "source": "Normal",
+    "category": "Housewares",
+    "materials": [
+      {
+        "name": "wood",
+        "count": 2
+      },
+      {
+        "name": "softwood",
+        "count": 3
+      }
+    ]
+  },
+  {
+    "name": "illuminated present",
+    "source": "Balloons (Festive Season)",
+    "category": "Housewares",
+    "materials": [
+      {
+        "name": "red ornament",
+        "count": 3
+      },
+      {
+        "name": "gold ornament",
+        "count": 4
+      },
+      {
+        "name": "iron nugget",
+        "count": 3
+      }
+    ]
+  },
+  {
+    "name": "illuminated reindeer",
+    "source": "Balloons (Festive Season)",
+    "category": "Housewares",
+    "materials": [
+      {
+        "name": "gold ornament",
+        "count": 6
+      },
+      {
+        "name": "iron nugget",
+        "count": 5
+      }
+    ]
+  },
+  {
+    "name": "illuminated snowflakes",
+    "source": "Balloons (Festive Season)",
+    "category": "Housewares",
+    "materials": [
+      {
+        "name": "blue ornament",
+        "count": 9
+      },
+      {
+        "name": "gold nugget",
+        "count": 3
+      }
+    ]
+  },
+  {
+    "name": "illuminated tree",
+    "source": "Balloons (Festive Season)",
+    "category": "Housewares",
+    "materials": [
+      {
+        "name": "red ornament",
+        "count": 3
+      },
+      {
+        "name": "gold ornament",
+        "count": 4
+      },
+      {
+        "name": "iron nugget",
+        "count": 3
+      }
+    ]
+  },
+  {
+    "name": "iron closet",
+    "source": "Uchi",
+    "category": "Housewares",
+    "materials": [
+      {
+        "name": "iron nugget",
+        "count": 12
+      }
+    ]
+  },
+  {
+    "name": "iron frame",
+    "source": "Jock",
+    "category": "Housewares",
+    "materials": [
+      {
+        "name": "iron nugget",
+        "count": 20
+      }
+    ]
+  },
+  {
+    "name": "iron garden bench",
+    "source": "Uchi",
+    "category": "Housewares",
+    "materials": [
+      {
+        "name": "iron nugget",
+        "count": 4
+      }
+    ]
+  },
+  {
+    "name": "iron garden chair",
+    "source": "Villager House Development (Tom Nook), Uchi",
+    "category": "Housewares",
+    "materials": [
+      {
+        "name": "iron nugget",
+        "count": 3
+      }
+    ]
+  },
+  {
+    "name": "iron garden table",
+    "source": "Villager House Development (Tom Nook), Uchi",
+    "category": "Housewares",
+    "materials": [
+      {
+        "name": "iron nugget",
+        "count": 5
+      }
+    ]
+  },
+  {
+    "name": "iron hanger stand",
+    "source": "Cranky",
+    "category": "Housewares",
+    "materials": [
+      {
+        "name": "iron nugget",
+        "count": 3
+      }
+    ]
+  },
+  {
+    "name": "iron shelf",
+    "source": "Uchi",
+    "category": "Housewares",
+    "materials": [
+      {
+        "name": "iron nugget",
+        "count": 14
+      }
+    ]
+  },
+  {
+    "name": "iron worktable",
+    "source": "Uchi",
+    "category": "Housewares",
+    "materials": [
+      {
+        "name": "iron nugget",
+        "count": 10
+      }
+    ]
+  },
+  {
+    "name": "ironwood bed",
+    "source": "Smug",
+    "category": "Housewares",
+    "materials": [
+      {
+        "name": "wood",
+        "count": 20
+      },
+      {
+        "name": "iron nugget",
+        "count": 10
+      }
+    ]
+  },
+  {
+    "name": "ironwood cart",
+    "source": "Smug",
+    "category": "Housewares",
+    "materials": [
+      {
+        "name": "wood",
+        "count": 6
+      },
+      {
+        "name": "iron nugget",
+        "count": 4
+      }
+    ]
+  },
+  {
+    "name": "ironwood chair",
+    "source": "Smug",
+    "category": "Housewares",
+    "materials": [
+      {
+        "name": "wood",
+        "count": 3
+      },
+      {
+        "name": "iron nugget",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "name": "ironwood cupboard",
+    "source": "Snooty",
+    "category": "Housewares",
+    "materials": [
+      {
+        "name": "wood",
+        "count": 12
+      },
+      {
+        "name": "iron nugget",
+        "count": 6
+      },
+      {
+        "name": "ironwood dresser",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "name": "ironwood DIY workbench",
+    "source": "Cranky",
+    "category": "Housewares",
+    "materials": [
+      {
+        "name": "wood",
+        "count": 12
+      },
+      {
+        "name": "iron nugget",
+        "count": 6
+      },
+      {
+        "name": "mini DIY workbench",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "name": "ironwood dresser",
+    "source": "Snooty",
+    "category": "Housewares",
+    "materials": [
+      {
+        "name": "wood",
+        "count": 7
+      },
+      {
+        "name": "iron nugget",
+        "count": 4
+      }
+    ]
+  },
+  {
+    "name": "ironwood kitchenette",
+    "source": "Nook's Cranny",
+    "category": "Housewares",
+    "materials": [
+      {
+        "name": "wood",
+        "count": 4
+      },
+      {
+        "name": "iron nugget",
+        "count": 3
+      },
+      {
+        "name": "ironwood dresser",
+        "count": 1
+      },
+      {
+        "name": "cutting board",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "name": "ironwood low table",
+    "source": "Snooty",
+    "category": "Housewares",
+    "materials": [
+      {
+        "name": "wood",
+        "count": 6
+      },
+      {
+        "name": "iron nugget",
+        "count": 4
+      }
+    ]
+  },
+  {
+    "name": "ironwood table",
+    "source": "Cranky",
+    "category": "Housewares",
+    "materials": [
+      {
+        "name": "wood",
+        "count": 12
+      },
+      {
+        "name": "iron nugget",
+        "count": 6
+      }
+    ]
+  },
+  {
+    "name": "jail bars",
+    "source": "Cranky",
+    "category": "Housewares",
+    "materials": [
+      {
+        "name": "iron nugget",
+        "count": 5
+      }
+    ]
+  },
+  {
+    "name": "juicy-apple TV",
+    "source": "Uchi",
+    "category": "Housewares",
+    "materials": [
+      {
+        "name": "apple",
+        "count": 10
+      },
+      {
+        "name": "iron nugget",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "name": "kettle bathtub",
+    "source": "Cranky",
+    "category": "Housewares",
+    "materials": [
+      {
+        "name": "iron nugget",
+        "count": 8
+      },
+      {
+        "name": "wood",
+        "count": 2
+      },
+      {
+        "name": "campfire",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "name": "large cardboard boxes",
+    "source": "Lazy",
+    "category": "Housewares",
+    "materials": [
+      {
+        "name": "cardboard box",
+        "count": 5
+      }
+    ]
+  },
+  {
+    "name": "leaf campfire",
+    "source": "Balloons (Autumn)",
+    "category": "Housewares",
+    "materials": [
+      {
+        "name": "pine cone",
+        "count": 3
+      },
+      {
+        "name": "clump of weeds",
+        "count": 5
+      },
+      {
+        "name": "tree branch",
+        "count": 3
+      }
+    ]
+  },
+  {
+    "name": "leaf stool",
+    "source": "Balloons (Maple Leaf Season)",
+    "category": "Housewares",
+    "materials": [
+      {
+        "name": "maple leaf",
+        "count": 3
+      },
+      {
+        "name": "wood",
+        "count": 3
+      }
+    ]
+  },
+  {
+    "name": "lily record player",
+    "source": "Cranky",
+    "category": "Housewares",
+    "materials": [
+      {
+        "name": "white lilies",
+        "count": 5
+      },
+      {
+        "name": "iron nugget",
+        "count": 3
+      },
+      {
+        "name": "wood",
+        "count": 3
+      }
+    ]
+  },
+  {
+    "name": "log bed",
+    "source": "Villager House Development (Tom Nook), Peppy",
+    "category": "Housewares",
+    "materials": [
+      {
+        "name": "hardwood",
+        "count": 30
+      }
+    ]
+  },
+  {
+    "name": "log bench",
+    "source": "Villager House Development (Tom Nook), Normal",
+    "category": "Housewares",
+    "materials": [
+      {
+        "name": "hardwood",
+        "count": 5
+      }
+    ]
+  },
+  {
+    "name": "log decorative shelves",
+    "source": "Normal",
+    "category": "Housewares",
+    "materials": [
+      {
+        "name": "log bench",
+        "count": 2
+      },
+      {
+        "name": "hardwood",
+        "count": 3
+      }
+    ]
+  },
+  {
+    "name": "log dining table",
+    "source": "Villager House Development (Tom Nook), Cranky",
+    "category": "Housewares",
+    "materials": [
+      {
+        "name": "hardwood",
+        "count": 15
+      }
+    ]
+  },
+  {
+    "name": "log extra-long sofa",
+    "source": "None",
+    "category": "Housewares",
+    "materials": [
+      {
+        "name": "log sofa",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "name": "log garden lounge",
+    "source": "Villager House Development (Tom Nook), Peppy",
+    "category": "Housewares",
+    "materials": [
+      {
+        "name": "hardwood",
+        "count": 12
+      }
+    ]
+  },
+  {
+    "name": "log round table",
+    "source": "Peppy",
+    "category": "Housewares",
+    "materials": [
+      {
+        "name": "hardwood",
+        "count": 15
+      }
+    ]
+  },
+  {
+    "name": "log sofa",
+    "source": "Normal",
+    "category": "Housewares",
+    "materials": [
+      {
+        "name": "hardwood",
+        "count": 8
+      }
+    ]
+  },
+  {
+    "name": "log stakes",
+    "source": "Tom Nook, Smug",
+    "category": "Housewares",
+    "materials": [
+      {
+        "name": "wood",
+        "count": 3
+      }
+    ]
+  },
+  {
+    "name": "log stool",
+    "source": "Villager House Development (Tom Nook), Peppy",
+    "category": "Housewares",
+    "materials": [
+      {
+        "name": "wood",
+        "count": 4
+      }
+    ]
+  },
+  {
+    "name": "lunar lander",
+    "source": "Celeste",
+    "category": "Housewares",
+    "materials": [
+      {
+        "name": "star fragment",
+        "count": 10
+      },
+      {
+        "name": "iron nugget",
+        "count": 15
+      }
+    ]
+  },
+  {
+    "name": "lunar rover",
+    "source": "Celeste",
+    "category": "Housewares",
+    "materials": [
+      {
+        "name": "star fragment",
+        "count": 10
+      },
+      {
+        "name": "iron nugget",
+        "count": 10
+      },
+      {
+        "name": "old tire",
+        "count": 4
+      }
+    ]
+  },
+  {
+    "name": "manhole cover",
+    "source": "Nook Miles Exchange",
+    "category": "Housewares",
+    "materials": [
+      {
+        "name": "iron nugget",
+        "count": 3
+      }
+    ]
+  },
+  {
+    "name": "maple-leaf pond stone",
+    "source": "Balloons (Maple Leaf Season)",
+    "category": "Housewares",
+    "materials": [
+      {
+        "name": "stone",
+        "count": 10
+      },
+      {
+        "name": "maple leaf",
+        "count": 3
+      }
+    ]
+  },
+  {
+    "name": "medium cardboard boxes",
+    "source": "Lazy",
+    "category": "Housewares",
+    "materials": [
+      {
+        "name": "cardboard box",
+        "count": 4
+      }
+    ]
+  },
+  {
+    "name": "mini DIY workbench",
+    "source": "Nook's Cranny",
+    "category": "Housewares",
+    "materials": [
+      {
+        "name": "wood",
+        "count": 3
+      },
+      {
+        "name": "hardwood",
+        "count": 3
+      },
+      {
+        "name": "softwood",
+        "count": 3
+      },
+      {
+        "name": "iron nugget",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "name": "moon",
+    "source": "Celeste",
+    "category": "Housewares",
+    "materials": [
+      {
+        "name": "star fragment",
+        "count": 15
+      },
+      {
+        "name": "large star fragment",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "name": "mossy garden rock",
+    "source": "Lazy",
+    "category": "Housewares",
+    "materials": [
+      {
+        "name": "stone",
+        "count": 15
+      },
+      {
+        "name": "clump of weeds",
+        "count": 15
+      }
+    ]
+  },
+  {
+    "name": "mountain standee",
+    "source": "Jock",
+    "category": "Housewares",
+    "materials": [
+      {
+        "name": "wood",
+        "count": 4
+      },
+      {
+        "name": "softwood",
+        "count": 5
+      }
+    ]
+  },
+  {
+    "name": "mum cushion",
+    "source": "Peppy",
+    "category": "Housewares",
+    "materials": [
+      {
+        "name": "yellow mums",
+        "count": 3
+      },
+      {
+        "name": "clump of weeds",
+        "count": 10
+      }
+    ]
+  },
+  {
+    "name": "mush lamp",
+    "source": "Balloons (Mushroom Season)",
+    "category": "Housewares",
+    "materials": [
+      {
+        "name": "skinny mushroom",
+        "count": 1
+      },
+      {
+        "name": "clay",
+        "count": 5
+      }
+    ]
+  },
+  {
+    "name": "mush log",
+    "source": "Balloons (Mushroom Season)",
+    "category": "Housewares",
+    "materials": [
+      {
+        "name": "skinny mushroom",
+        "count": 2
+      },
+      {
+        "name": "log stool",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "name": "mush low stool",
+    "source": "Balloons (Mushroom Season)",
+    "category": "Housewares",
+    "materials": [
+      {
+        "name": "round mushroom",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "name": "mush parasol",
+    "source": "Balloons (Mushroom Season)",
+    "category": "Housewares",
+    "materials": [
+      {
+        "name": "flat mushroom",
+        "count": 3
+      }
+    ]
+  },
+  {
+    "name": "mush partition",
+    "source": "Balloons (Mushroom Season)",
+    "category": "Housewares",
+    "materials": [
+      {
+        "name": "skinny mushroom",
+        "count": 3
+      }
+    ]
+  },
+  {
+    "name": "mush table",
+    "source": "Balloons (Mushroom Season)",
+    "category": "Housewares",
+    "materials": [
+      {
+        "name": "flat mushroom",
+        "count": 2
+      },
+      {
+        "name": "wood",
+        "count": 6
+      }
+    ]
+  },
+  {
+    "name": "music stand",
+    "source": "Lazy",
+    "category": "Housewares",
+    "materials": [
+      {
+        "name": "hardwood",
+        "count": 8
+      }
+    ]
+  },
+  {
+    "name": "natural garden chair",
+    "source": "Villager House Development (Tom Nook), Peppy",
+    "category": "Housewares",
+    "materials": [
+      {
+        "name": "hardwood",
+        "count": 6
+      },
+      {
+        "name": "iron nugget",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "name": "natural garden table",
+    "source": "Villager House Development (Tom Nook), Normal",
+    "category": "Housewares",
+    "materials": [
+      {
+        "name": "hardwood",
+        "count": 9
+      },
+      {
+        "name": "iron nugget",
+        "count": 3
+      }
+    ]
+  },
+  {
+    "name": "natural square table",
+    "source": "Normal",
+    "category": "Housewares",
+    "materials": [
+      {
+        "name": "hardwood",
+        "count": 4
+      },
+      {
+        "name": "iron nugget",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "name": "oil-barrel bathtub",
+    "source": "Jock",
+    "category": "Housewares",
+    "materials": [
+      {
+        "name": "oil barrel",
+        "count": 1
+      },
+      {
+        "name": "campfire",
+        "count": 1
+      },
+      {
+        "name": "stone",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "name": "orange end table",
+    "source": "Lazy",
+    "category": "Housewares",
+    "materials": [
+      {
+        "name": "orange",
+        "count": 10
+      },
+      {
+        "name": "wood",
+        "count": 4
+      }
+    ]
+  },
+  {
+    "name": "outdoor bath",
+    "source": "Nook Miles Exchange",
+    "category": "Housewares",
+    "materials": [
+      {
+        "name": "stone",
+        "count": 20
+      },
+      {
+        "name": "shovel",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "name": "outdoor picnic set",
+    "source": "Balloons (Cherry-Blossom Season)",
+    "category": "Housewares",
+    "materials": [
+      {
+        "name": "cherry-blossom petal",
+        "count": 10
+      }
+    ]
+  },
+  {
+    "name": "palm-tree lamp",
+    "source": "Snooty",
+    "category": "Housewares",
+    "materials": [
+      {
+        "name": "coconut",
+        "count": 4
+      },
+      {
+        "name": "wood",
+        "count": 4
+      },
+      {
+        "name": "clay",
+        "count": 4
+      }
+    ]
+  },
+  {
+    "name": "pansy table",
+    "source": "Normal",
+    "category": "Housewares",
+    "materials": [
+      {
+        "name": "yellow pansies",
+        "count": 5
+      },
+      {
+        "name": "hardwood",
+        "count": 3
+      }
+    ]
+  },
+  {
+    "name": "peach chair",
+    "source": "Normal",
+    "category": "Housewares",
+    "materials": [
+      {
+        "name": "peach",
+        "count": 10
+      },
+      {
+        "name": "wood",
+        "count": 5
+      }
+    ]
+  },
+  {
+    "name": "pear bed",
+    "source": "Jock",
+    "category": "Housewares",
+    "materials": [
+      {
+        "name": "pear",
+        "count": 10
+      },
+      {
+        "name": "softwood",
+        "count": 6
+      }
+    ]
+  },
+  {
+    "name": "pear wardrobe",
+    "source": "Jock",
+    "category": "Housewares",
+    "materials": [
+      {
+        "name": "pear",
+        "count": 10
+      },
+      {
+        "name": "wood",
+        "count": 5
+      }
+    ]
+  },
+  {
+    "name": "pile of leaves",
+    "source": "Balloons (Autumn)",
+    "category": "Housewares",
+    "materials": [
+      {
+        "name": "pine cone",
+        "count": 3
+      },
+      {
+        "name": "clump of weeds",
+        "count": 5
+      }
+    ]
+  },
+  {
+    "name": "pile of zen cushions",
+    "source": "Cranky",
+    "category": "Housewares",
+    "materials": [
+      {
+        "name": "zen cushion",
+        "count": 3
+      }
+    ]
+  },
+  {
+    "name": "Pisces lamp",
+    "source": "Celeste",
+    "category": "Housewares",
+    "materials": [
+      {
+        "name": "star fragment",
+        "count": 3
+      },
+      {
+        "name": "Pisces fragment",
+        "count": 2
+      },
+      {
+        "name": "gold nugget",
+        "count": 2
+      },
+      {
+        "name": "stone",
+        "count": 4
+      }
+    ]
+  },
+  {
+    "name": "plain sink",
+    "source": "Nook's Cranny",
+    "category": "Housewares",
+    "materials": [
+      {
+        "name": "wood",
+        "count": 6
+      },
+      {
+        "name": "clay",
+        "count": 4
+      },
+      {
+        "name": "iron nugget",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "name": "plain wooden shop sign",
+    "source": "Jock",
+    "category": "Housewares",
+    "materials": [
+      {
+        "name": "wood",
+        "count": 6
+      }
+    ]
+  },
+  {
+    "name": "pond stone",
+    "source": "Snooty",
+    "category": "Housewares",
+    "materials": [
+      {
+        "name": "stone",
+        "count": 10
+      }
+    ]
+  },
+  {
+    "name": "raccoon figurine",
+    "source": "Cranky",
+    "category": "Housewares",
+    "materials": [
+      {
+        "name": "clay",
+        "count": 6
+      }
+    ]
+  },
+  {
+    "name": "red-leaf pile",
+    "source": "Balloons (Maple Leaf Season)",
+    "category": "Housewares",
+    "materials": [
+      {
+        "name": "maple leaf",
+        "count": 3
+      },
+      {
+        "name": "clump of weeds",
+        "count": 4
+      }
+    ]
+  },
+  {
+    "name": "robot hero",
+    "source": "Nook Miles Exchange",
+    "category": "Housewares",
+    "materials": [
+      {
+        "name": "rocket",
+        "count": 1
+      },
+      {
+        "name": "gold armor",
+        "count": 1
+      },
+      {
+        "name": "rusted part",
+        "count": 30
+      },
+      {
+        "name": "iron nugget",
+        "count": 90
+      },
+      {
+        "name": "gold nugget",
+        "count": 10
+      }
+    ]
+  },
+  {
+    "name": "rocket",
+    "source": "Celeste",
+    "category": "Housewares",
+    "materials": [
+      {
+        "name": "star fragment",
+        "count": 10
+      },
+      {
+        "name": "iron nugget",
+        "count": 20
+      }
+    ]
+  },
+  {
+    "name": "rocking chair",
+    "source": "Nook's Cranny",
+    "category": "Housewares",
+    "materials": [
+      {
+        "name": "wood",
+        "count": 3
+      },
+      {
+        "name": "softwood",
+        "count": 5
+      }
+    ]
+  },
+  {
+    "name": "rocking horse",
+    "source": "Normal",
+    "category": "Housewares",
+    "materials": [
+      {
+        "name": "softwood",
+        "count": 5
+      }
+    ]
+  },
+  {
+    "name": "rose bed",
+    "source": "Smug",
+    "category": "Housewares",
+    "materials": [
+      {
+        "name": "red roses",
+        "count": 10
+      },
+      {
+        "name": "wood",
+        "count": 5
+      }
+    ]
+  },
+  {
+    "name": "satellite",
+    "source": "Celeste",
+    "category": "Housewares",
+    "materials": [
+      {
+        "name": "star fragment",
+        "count": 10
+      },
+      {
+        "name": "iron nugget",
+        "count": 15
+      }
+    ]
+  },
+  {
+    "name": "sauna heater",
+    "source": "Lazy",
+    "category": "Housewares",
+    "materials": [
+      {
+        "name": "stone",
+        "count": 6
+      },
+      {
+        "name": "iron nugget",
+        "count": 3
+      },
+      {
+        "name": "wood",
+        "count": 3
+      }
+    ]
+  },
+  {
+    "name": "scarecrow",
+    "source": "Cranky",
+    "category": "Housewares",
+    "materials": [
+      {
+        "name": "tree branch",
+        "count": 3
+      },
+      {
+        "name": "clump of weeds",
+        "count": 5
+      }
+    ]
+  },
+  {
+    "name": "scattered papers",
+    "source": "Smug",
+    "category": "Housewares",
+    "materials": [
+      {
+        "name": "document stack",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "name": "shell arch",
+    "source": "Lazy",
+    "category": "Housewares",
+    "materials": [
+      {
+        "name": "sea snail",
+        "count": 3
+      },
+      {
+        "name": "venus comb",
+        "count": 3
+      },
+      {
+        "name": "sand dollar",
+        "count": 3
+      },
+      {
+        "name": "coral",
+        "count": 3
+      },
+      {
+        "name": "giant clam",
+        "count": 3
+      },
+      {
+        "name": "cowrie",
+        "count": 3
+      }
+    ]
+  },
+  {
+    "name": "shell bed",
+    "source": "Peppy",
+    "category": "Housewares",
+    "materials": [
+      {
+        "name": "giant clam",
+        "count": 5
+      },
+      {
+        "name": "clay",
+        "count": 3
+      },
+      {
+        "name": "stone",
+        "count": 4
+      }
+    ]
+  },
+  {
+    "name": "shell fountain",
+    "source": "Lazy",
+    "category": "Housewares",
+    "materials": [
+      {
+        "name": "giant clam",
+        "count": 5
+      },
+      {
+        "name": "stone",
+        "count": 3
+      }
+    ]
+  },
+  {
+    "name": "shell partition",
+    "source": "Uchi",
+    "category": "Housewares",
+    "materials": [
+      {
+        "name": "venus comb",
+        "count": 4
+      },
+      {
+        "name": "conch",
+        "count": 4
+      }
+    ]
+  },
+  {
+    "name": "shell stool",
+    "source": "Uchi",
+    "category": "Housewares",
+    "materials": [
+      {
+        "name": "cowrie",
+        "count": 5
+      }
+    ]
+  },
+  {
+    "name": "shell table",
+    "source": "Peppy",
+    "category": "Housewares",
+    "materials": [
+      {
+        "name": "sand dollar",
+        "count": 7
+      },
+      {
+        "name": "clay",
+        "count": 3
+      }
+    ]
+  },
+  {
+    "name": "signpost",
+    "source": "Lazy",
+    "category": "Housewares",
+    "materials": [
+      {
+        "name": "hardwood",
+        "count": 2
+      },
+      {
+        "name": "softwood",
+        "count": 3
+      }
+    ]
+  },
+  {
+    "name": "silo",
+    "source": "Nook Miles Exchange",
+    "category": "Housewares",
+    "materials": [
+      {
+        "name": "iron nugget",
+        "count": 12
+      },
+      {
+        "name": "hardwood",
+        "count": 6
+      },
+      {
+        "name": "clay",
+        "count": 12
+      },
+      {
+        "name": "stone",
+        "count": 12
+      }
+    ]
+  },
+  {
+    "name": "simple DIY workbench",
+    "source": "Jock",
+    "category": "Housewares",
+    "materials": [
+      {
+        "name": "hardwood",
+        "count": 5
+      },
+      {
+        "name": "iron nugget",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "name": "simple well",
+    "source": "Nook Miles Exchange",
+    "category": "Housewares",
+    "materials": [
+      {
+        "name": "stone",
+        "count": 15
+      },
+      {
+        "name": "flimsy shovel",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "name": "sleigh",
+    "source": "Cranky",
+    "category": "Housewares",
+    "materials": [
+      {
+        "name": "wood",
+        "count": 8
+      }
+    ]
+  },
+  {
+    "name": "small cardboard boxes",
+    "source": "Peppy",
+    "category": "Housewares",
+    "materials": [
+      {
+        "name": "cardboard box",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "name": "space shuttle",
+    "source": "Celeste",
+    "category": "Housewares",
+    "materials": [
+      {
+        "name": "star fragment",
+        "count": 5
+      },
+      {
+        "name": "iron nugget",
+        "count": 10
+      }
+    ]
+  },
+  {
+    "name": "stall",
+    "source": "Nook Miles Exchange",
+    "category": "Housewares",
+    "materials": [
+      {
+        "name": "wood",
+        "count": 12
+      }
+    ]
+  },
+  {
+    "name": "standard umbrella stand",
+    "source": "Cranky",
+    "category": "Housewares",
+    "materials": [
+      {
+        "name": "iron nugget",
+        "count": 3
+      }
+    ]
+  },
+  {
+    "name": "stone arch",
+    "source": "Nook Miles Exchange",
+    "category": "Housewares",
+    "materials": [
+      {
+        "name": "stone",
+        "count": 90
+      }
+    ]
+  },
+  {
+    "name": "stone lion-dog",
+    "source": "Smug",
+    "category": "Housewares",
+    "materials": [
+      {
+        "name": "stone",
+        "count": 24
+      }
+    ]
+  },
+  {
+    "name": "stone stool",
+    "source": "Nook's Cranny",
+    "category": "Housewares",
+    "materials": [
+      {
+        "name": "stone",
+        "count": 3
+      }
+    ]
+  },
+  {
+    "name": "stone table",
+    "source": "Villager House Development (Tom Nook), Lazy",
+    "category": "Housewares",
+    "materials": [
+      {
+        "name": "stone",
+        "count": 8
+      }
+    ]
+  },
+  {
+    "name": "stone tablet",
+    "source": "Nook Miles Exchange",
+    "category": "Housewares",
+    "materials": [
+      {
+        "name": "stone",
+        "count": 12
+      }
+    ]
+  },
+  {
+    "name": "street piano",
+    "source": "Uchi",
+    "category": "Housewares",
+    "materials": [
+      {
+        "name": "upright piano",
+        "count": 1
+      },
+      {
+        "name": "painting set",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "name": "swinging bench",
+    "source": "Nook's Cranny",
+    "category": "Housewares",
+    "materials": [
+      {
+        "name": "wood",
+        "count": 5
+      },
+      {
+        "name": "softwood",
+        "count": 7
+      }
+    ]
+  },
+  {
+    "name": "tall garden rock",
+    "source": "Snooty",
+    "category": "Housewares",
+    "materials": [
+      {
+        "name": "stone",
+        "count": 60
+      }
+    ]
+  },
+  {
+    "name": "tall lantern",
+    "source": "Smug",
+    "category": "Housewares",
+    "materials": [
+      {
+        "name": "stone",
+        "count": 18
+      }
+    ]
+  },
+  {
+    "name": "Taurus bathtub",
+    "source": "Celeste",
+    "category": "Housewares",
+    "materials": [
+      {
+        "name": "star fragment",
+        "count": 3
+      },
+      {
+        "name": "Taurus fragment",
+        "count": 2
+      },
+      {
+        "name": "gold nugget",
+        "count": 1
+      },
+      {
+        "name": "stone",
+        "count": 8
+      }
+    ]
+  },
+  {
+    "name": "tea table",
+    "source": "Cranky",
+    "category": "Housewares",
+    "materials": [
+      {
+        "name": "hardwood",
+        "count": 12
+      }
+    ]
+  },
+  {
+    "name": "three-tiered snowperson",
+    "source": "Making a perfect Snowboy",
+    "category": "Housewares",
+    "materials": [
+      {
+        "name": "large snowflake",
+        "count": 1
+      },
+      {
+        "name": "snowflake",
+        "count": 6
+      },
+      {
+        "name": "tree branch",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "name": "tiki torch",
+    "source": "Tom Nook, Cranky",
+    "category": "Housewares",
+    "materials": [
+      {
+        "name": "tree branch",
+        "count": 5
+      },
+      {
+        "name": "wood",
+        "count": 5
+      }
+    ]
+  },
+  {
+    "name": "tiny library",
+    "source": "Normal",
+    "category": "Housewares",
+    "materials": [
+      {
+        "name": "book",
+        "count": 3
+      },
+      {
+        "name": "wood",
+        "count": 5
+      }
+    ]
+  },
+  {
+    "name": "tire stack",
+    "source": "Fishing up three old tires",
+    "category": "Housewares",
+    "materials": [
+      {
+        "name": "old tire",
+        "count": 3
+      }
+    ]
+  },
+  {
+    "name": "tire toy",
+    "source": "Fishing up an old tire",
+    "category": "Housewares",
+    "materials": [
+      {
+        "name": "old tire",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "name": "tree standee",
+    "source": "Jock",
+    "category": "Housewares",
+    "materials": [
+      {
+        "name": "wood",
+        "count": 5
+      },
+      {
+        "name": "softwood",
+        "count": 8
+      }
+    ]
+  },
+  {
+    "name": "tree's bounty arch",
+    "source": "Balloons (Maple Leaf Season)",
+    "category": "Housewares",
+    "materials": [
+      {
+        "name": "pine cone",
+        "count": 4
+      },
+      {
+        "name": "acorn",
+        "count": 5
+      },
+      {
+        "name": "maple leaf",
+        "count": 5
+      },
+      {
+        "name": "tree branch",
+        "count": 15
+      }
+    ]
+  },
+  {
+    "name": "tree's bounty big tree",
+    "source": "Balloons (Maple Leaf Season)",
+    "category": "Housewares",
+    "materials": [
+      {
+        "name": "pine cone",
+        "count": 5
+      },
+      {
+        "name": "acorn",
+        "count": 4
+      },
+      {
+        "name": "maple leaf",
+        "count": 4
+      },
+      {
+        "name": "tree branch",
+        "count": 8
+      },
+      {
+        "name": "clay",
+        "count": 4
+      }
+    ]
+  },
+  {
+    "name": "trophy case",
+    "source": "Jock",
+    "category": "Housewares",
+    "materials": [
+      {
+        "name": "hardwood",
+        "count": 24
+      },
+      {
+        "name": "gold nugget",
+        "count": 3
+      },
+      {
+        "name": "iron nugget",
+        "count": 6
+      }
+    ]
+  },
+  {
+    "name": "tulip surprise box",
+    "source": "Jock",
+    "category": "Housewares",
+    "materials": [
+      {
+        "name": "red tulips",
+        "count": 5
+      },
+      {
+        "name": "softwood",
+        "count": 3
+      }
+    ]
+  },
+  {
+    "name": "Virgo harp",
+    "source": "Celeste",
+    "category": "Housewares",
+    "materials": [
+      {
+        "name": "star fragment",
+        "count": 3
+      },
+      {
+        "name": "Virgo fragment",
+        "count": 2
+      },
+      {
+        "name": "gold nugget",
+        "count": 2
+      },
+      {
+        "name": "stone",
+        "count": 4
+      }
+    ]
+  },
+  {
+    "name": "water pump",
+    "source": "Villager House Development (Tom Nook), Lazy",
+    "category": "Housewares",
+    "materials": [
+      {
+        "name": "iron nugget",
+        "count": 2
+      },
+      {
+        "name": "clay",
+        "count": 6
+      }
+    ]
+  },
+  {
+    "name": "wave breaker",
+    "source": "Nook Miles Exchange",
+    "category": "Housewares",
+    "materials": [
+      {
+        "name": "stone",
+        "count": 10
+      },
+      {
+        "name": "clay",
+        "count": 10
+      }
+    ]
+  },
+  {
+    "name": "western-style stone",
+    "source": "Normal",
+    "category": "Housewares",
+    "materials": [
+      {
+        "name": "stone",
+        "count": 30
+      }
+    ]
+  },
+  {
+    "name": "wild log bench",
+    "source": "Jock",
+    "category": "Housewares",
+    "materials": [
+      {
+        "name": "hardwood",
+        "count": 8
+      }
+    ]
+  },
+  {
+    "name": "wooden bookshelf",
+    "source": "Lazy",
+    "category": "Housewares",
+    "materials": [
+      {
+        "name": "book",
+        "count": 5
+      },
+      {
+        "name": "wood",
+        "count": 10
+      }
+    ]
+  },
+  {
+    "name": "wooden bucket",
+    "source": "Villager House Development (Tom Nook), Smug",
+    "category": "Housewares",
+    "materials": [
+      {
+        "name": "wood",
+        "count": 3
+      },
+      {
+        "name": "iron nugget",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "name": "wooden chair",
+    "source": "Villager House Development (Tom Nook), Snooty",
+    "category": "Housewares",
+    "materials": [
+      {
+        "name": "wood",
+        "count": 6
+      }
+    ]
+  },
+  {
+    "name": "wooden chest",
+    "source": "Lazy",
+    "category": "Housewares",
+    "materials": [
+      {
+        "name": "wood",
+        "count": 16
+      }
+    ]
+  },
+  {
+    "name": "wooden double bed",
+    "source": "Smug",
+    "category": "Housewares",
+    "materials": [
+      {
+        "name": "wood",
+        "count": 30
+      }
+    ]
+  },
+  {
+    "name": "wooden end table",
+    "source": "Snooty",
+    "category": "Housewares",
+    "materials": [
+      {
+        "name": "wood",
+        "count": 8
+      }
+    ]
+  },
+  {
+    "name": "wooden full-length mirror",
+    "source": "Peppy",
+    "category": "Housewares",
+    "materials": [
+      {
+        "name": "wood",
+        "count": 5
+      },
+      {
+        "name": "iron nugget",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "name": "wooden low table",
+    "source": "Smug",
+    "category": "Housewares",
+    "materials": [
+      {
+        "name": "wood",
+        "count": 10
+      }
+    ]
+  },
+  {
+    "name": "wooden mini table",
+    "source": "Uchi",
+    "category": "Housewares",
+    "materials": [
+      {
+        "name": "wood",
+        "count": 6
+      }
+    ]
+  },
+  {
+    "name": "wooden simple bed",
+    "source": "Villager House Development (Tom Nook), Lazy",
+    "category": "Housewares",
+    "materials": [
+      {
+        "name": "wood",
+        "count": 18
+      }
+    ]
+  },
+  {
+    "name": "wooden stool",
+    "source": "Peppy",
+    "category": "Housewares",
+    "materials": [
+      {
+        "name": "wood",
+        "count": 4
+      }
+    ]
+  },
+  {
+    "name": "wooden table",
+    "source": "Uchi",
+    "category": "Housewares",
+    "materials": [
+      {
+        "name": "wood",
+        "count": 15
+      }
+    ]
+  },
+  {
+    "name": "wooden wardrobe",
+    "source": "Tom Nook",
+    "category": "Housewares",
+    "materials": [
+      {
+        "name": "wood",
+        "count": 12
+      }
+    ]
+  },
+  {
+    "name": "wooden waste bin",
+    "source": "Uchi",
+    "category": "Housewares",
+    "materials": [
+      {
+        "name": "wood",
+        "count": 4
+      }
+    ]
+  },
+  {
+    "name": "wooden-block bed",
+    "source": "Normal",
+    "category": "Housewares",
+    "materials": [
+      {
+        "name": "wooden-block toy",
+        "count": 1
+      },
+      {
+        "name": "softwood",
+        "count": 17
+      }
+    ]
+  },
+  {
+    "name": "wooden-block bench",
+    "source": "Uchi",
+    "category": "Housewares",
+    "materials": [
+      {
+        "name": "wooden-block toy",
+        "count": 1
+      },
+      {
+        "name": "softwood",
+        "count": 4
+      }
+    ]
+  },
+  {
+    "name": "wooden-block bookshelf",
+    "source": "Nook's Cranny",
+    "category": "Housewares",
+    "materials": [
+      {
+        "name": "wooden-block toy",
+        "count": 1
+      },
+      {
+        "name": "softwood",
+        "count": 3
+      }
+    ]
+  },
+  {
+    "name": "wooden-block chair",
+    "source": "Nook's Cranny",
+    "category": "Housewares",
+    "materials": [
+      {
+        "name": "wooden-block toy",
+        "count": 1
+      },
+      {
+        "name": "softwood",
+        "count": 3
+      }
+    ]
+  },
+  {
+    "name": "wooden-block chest",
+    "source": "Normal",
+    "category": "Housewares",
+    "materials": [
+      {
+        "name": "wooden-block toy",
+        "count": 1
+      },
+      {
+        "name": "softwood",
+        "count": 12
+      }
+    ]
+  },
+  {
+    "name": "wooden-block stereo",
+    "source": "Nook's Cranny",
+    "category": "Housewares",
+    "materials": [
+      {
+        "name": "wooden-block toy",
+        "count": 1
+      },
+      {
+        "name": "softwood",
+        "count": 5
+      },
+      {
+        "name": "iron nugget",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "name": "wooden-block stool",
+    "source": "Peppy",
+    "category": "Housewares",
+    "materials": [
+      {
+        "name": "wooden-block toy",
+        "count": 1
+      },
+      {
+        "name": "softwood",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "name": "wooden-block table",
+    "source": "Villager House Development (Tom Nook), Uchi",
+    "category": "Housewares",
+    "materials": [
+      {
+        "name": "wooden-block toy",
+        "count": 1
+      },
+      {
+        "name": "softwood",
+        "count": 8
+      }
+    ]
+  },
+  {
+    "name": "yellow-leaf pile",
+    "source": "Balloons (Autumn)",
+    "category": "Housewares",
+    "materials": [
+      {
+        "name": "acorn",
+        "count": 3
+      },
+      {
+        "name": "clump of weeds",
+        "count": 5
+      }
+    ]
+  },
+  {
+    "name": "zen-style stone",
+    "source": "Lazy",
+    "category": "Housewares",
+    "materials": [
+      {
+        "name": "stone",
+        "count": 30
+      }
+    ]
+  },
+  {
+    "name": "aroma pot",
+    "source": "Snooty",
+    "category": "Miscellaneous",
+    "materials": [
+      {
+        "name": "clay",
+        "count": 3
+      }
+    ]
+  },
+  {
+    "name": "bamboo candleholder",
+    "source": "Snooty",
+    "category": "Miscellaneous",
+    "materials": [
+      {
+        "name": "bamboo piece",
+        "count": 3
+      },
+      {
+        "name": "clay",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "name": "bamboo drum",
+    "source": "Jock",
+    "category": "Miscellaneous",
+    "materials": [
+      {
+        "name": "bamboo piece",
+        "count": 3
+      },
+      {
+        "name": "softwood",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "name": "bamboo lunch box",
+    "source": "Snooty",
+    "category": "Miscellaneous",
+    "materials": [
+      {
+        "name": "bamboo piece",
+        "count": 4
+      }
+    ]
+  },
+  {
+    "name": "bamboo sphere",
+    "source": "Normal",
+    "category": "Miscellaneous",
+    "materials": [
+      {
+        "name": "bamboo piece",
+        "count": 3
+      }
+    ]
+  },
+  {
+    "name": "bamboo-shoot lamp",
+    "source": "Balloons (Spring)",
+    "category": "Miscellaneous",
+    "materials": [
+      {
+        "name": "young spring bamboo",
+        "count": 4
+      },
+      {
+        "name": "bamboo shoot",
+        "count": 5
+      },
+      {
+        "name": "clay",
+        "count": 4
+      }
+    ]
+  },
+  {
+    "name": "Bunny Day lamp",
+    "source": "Egg bottle/balloon (Bunny Day)",
+    "category": "Miscellaneous",
+    "materials": [
+      {
+        "name": "wood egg",
+        "count": 4
+      }
+    ]
+  },
+  {
+    "name": "cherry speakers",
+    "source": "Peppy",
+    "category": "Miscellaneous",
+    "materials": [
+      {
+        "name": "cherry",
+        "count": 10
+      },
+      {
+        "name": "iron nugget",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "name": "cherry-blossom bonsai",
+    "source": "Balloons (Cherry-Blossom Season)",
+    "category": "Miscellaneous",
+    "materials": [
+      {
+        "name": "cherry-blossom petal",
+        "count": 6
+      },
+      {
+        "name": "hardwood",
+        "count": 2
+      },
+      {
+        "name": "clump of weeds",
+        "count": 3
+      },
+      {
+        "name": "clay",
+        "count": 3
+      }
+    ]
+  },
+  {
+    "name": "classic pitcher",
+    "source": "Villager House Development (Tom Nook), Snooty",
+    "category": "Miscellaneous",
+    "materials": [
+      {
+        "name": "clay",
+        "count": 4
+      }
+    ]
+  },
+  {
+    "name": "coconut juice",
+    "source": "Snooty",
+    "category": "Miscellaneous",
+    "materials": [
+      {
+        "name": "coconut",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "name": "cutting board",
+    "source": "Normal",
+    "category": "Miscellaneous",
+    "materials": [
+      {
+        "name": "hardwood",
+        "count": 2
+      },
+      {
+        "name": "iron nugget",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "name": "decoy duck",
+    "source": "Smug",
+    "category": "Miscellaneous",
+    "materials": [
+      {
+        "name": "softwood",
+        "count": 4
+      }
+    ]
+  },
+  {
+    "name": "document stack",
+    "source": "Smug",
+    "category": "Miscellaneous",
+    "materials": [
+      {
+        "name": "scattered papers",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "name": "festive top set",
+    "source": "Balloons (Festive Season)",
+    "category": "Miscellaneous",
+    "materials": [
+      {
+        "name": "gold ornament",
+        "count": 2
+      },
+      {
+        "name": "hardwood",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "name": "firewood",
+    "source": "Jock",
+    "category": "Miscellaneous",
+    "materials": [
+      {
+        "name": "wood",
+        "count": 8
+      }
+    ]
+  },
+  {
+    "name": "frozen-treat set",
+    "source": "Making a perfect Snowboy",
+    "category": "Miscellaneous",
+    "materials": [
+      {
+        "name": "large snowflake",
+        "count": 1
+      },
+      {
+        "name": "snowflake",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "name": "fruit basket",
+    "source": "Cranky",
+    "category": "Miscellaneous",
+    "materials": [
+      {
+        "name": "apple",
+        "count": 1
+      },
+      {
+        "name": "pear",
+        "count": 1
+      },
+      {
+        "name": "cherry",
+        "count": 1
+      },
+      {
+        "name": "orange",
+        "count": 1
+      },
+      {
+        "name": "peach",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "name": "frying pan",
+    "source": "Nook's Cranny",
+    "category": "Miscellaneous",
+    "materials": [
+      {
+        "name": "iron nugget",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "name": "gold bars",
+    "source": "Snooty",
+    "category": "Miscellaneous",
+    "materials": [
+      {
+        "name": "gold nugget",
+        "count": 3
+      }
+    ]
+  },
+  {
+    "name": "golden arowana model",
+    "source": "Lazy",
+    "category": "Miscellaneous",
+    "materials": [
+      {
+        "name": "gold nugget",
+        "count": 3
+      }
+    ]
+  },
+  {
+    "name": "golden candlestick",
+    "source": "Smug",
+    "category": "Miscellaneous",
+    "materials": [
+      {
+        "name": "gold nugget",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "name": "golden dishes",
+    "source": "Snooty",
+    "category": "Miscellaneous",
+    "materials": [
+      {
+        "name": "gold nugget",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "name": "golden dung beetle",
+    "source": "Lazy",
+    "category": "Miscellaneous",
+    "materials": [
+      {
+        "name": "gold nugget",
+        "count": 3
+      }
+    ]
+  },
+  {
+    "name": "holiday candle",
+    "source": "Balloons (Festive Season)",
+    "category": "Miscellaneous",
+    "materials": [
+      {
+        "name": "red ornament",
+        "count": 5
+      },
+      {
+        "name": "clump of weeds",
+        "count": 5
+      }
+    ]
+  },
+  {
+    "name": "hyacinth lamp",
+    "source": "Uchi",
+    "category": "Miscellaneous",
+    "materials": [
+      {
+        "name": "purple hyacinths",
+        "count": 5
+      },
+      {
+        "name": "clay",
+        "count": 3
+      }
+    ]
+  },
+  {
+    "name": "infused-water dispenser",
+    "source": "Cranky",
+    "category": "Miscellaneous",
+    "materials": [
+      {
+        "name": "apple",
+        "count": 2
+      },
+      {
+        "name": "pear",
+        "count": 2
+      },
+      {
+        "name": "cherry",
+        "count": 2
+      },
+      {
+        "name": "orange",
+        "count": 2
+      },
+      {
+        "name": "peach",
+        "count": 2
+      },
+      {
+        "name": "coconut",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "name": "kettlebell",
+    "source": "Jock",
+    "category": "Miscellaneous",
+    "materials": [
+      {
+        "name": "iron nugget",
+        "count": 5
+      }
+    ]
+  },
+  {
+    "name": "Libra scale",
+    "source": "Celeste",
+    "category": "Miscellaneous",
+    "materials": [
+      {
+        "name": "star fragment",
+        "count": 3
+      },
+      {
+        "name": "Libra fragment",
+        "count": 2
+      },
+      {
+        "name": "gold nugget",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "name": "lucky gold cat",
+    "source": "Snooty",
+    "category": "Miscellaneous",
+    "materials": [
+      {
+        "name": "gold nugget",
+        "count": 2
+      },
+      {
+        "name": "lucky cat",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "name": "magazine rack",
+    "source": "Peppy",
+    "category": "Miscellaneous",
+    "materials": [
+      {
+        "name": "magazine",
+        "count": 2
+      },
+      {
+        "name": "wood",
+        "count": 4
+      }
+    ]
+  },
+  {
+    "name": "matryoshka",
+    "source": "Lazy",
+    "category": "Miscellaneous",
+    "materials": [
+      {
+        "name": "softwood",
+        "count": 5
+      }
+    ]
+  },
+  {
+    "name": "modeling clay",
+    "source": "Cranky",
+    "category": "Miscellaneous",
+    "materials": [
+      {
+        "name": "clay",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "name": "nova light",
+    "source": "Celeste",
+    "category": "Miscellaneous",
+    "materials": [
+      {
+        "name": "star fragment",
+        "count": 5
+      }
+    ]
+  },
+  {
+    "name": "old-fashioned washtub",
+    "source": "Nook's Cranny",
+    "category": "Miscellaneous",
+    "materials": [
+      {
+        "name": "softwood",
+        "count": 3
+      }
+    ]
+  },
+  {
+    "name": "peach surprise box",
+    "source": "Normal",
+    "category": "Miscellaneous",
+    "materials": [
+      {
+        "name": "peach",
+        "count": 10
+      },
+      {
+        "name": "softwood",
+        "count": 4
+      }
+    ]
+  },
+  {
+    "name": "pine bonsai tree",
+    "source": "Balloons (Autumn)",
+    "category": "Miscellaneous",
+    "materials": [
+      {
+        "name": "pine cone",
+        "count": 8
+      },
+      {
+        "name": "clay",
+        "count": 5
+      }
+    ]
+  },
+  {
+    "name": "pot",
+    "source": "Villager House Development (Tom Nook), Cranky",
+    "category": "Miscellaneous",
+    "materials": [
+      {
+        "name": "clay",
+        "count": 5
+      }
+    ]
+  },
+  {
+    "name": "recycled-can thumb piano",
+    "source": "Fishing up an empty can",
+    "category": "Miscellaneous",
+    "materials": [
+      {
+        "name": "empty can",
+        "count": 1
+      },
+      {
+        "name": "wood",
+        "count": 1
+      },
+      {
+        "name": "iron nugget",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "name": "ringtoss",
+    "source": "Nook's Cranny",
+    "category": "Miscellaneous",
+    "materials": [
+      {
+        "name": "wood",
+        "count": 2
+      },
+      {
+        "name": "softwood",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "name": "Scorpio lamp",
+    "source": "Celeste",
+    "category": "Miscellaneous",
+    "materials": [
+      {
+        "name": "star fragment",
+        "count": 3
+      },
+      {
+        "name": "Scorpius fragment",
+        "count": 2
+      },
+      {
+        "name": "gold nugget",
+        "count": 2
+      },
+      {
+        "name": "stone",
+        "count": 5
+      }
+    ]
+  },
+  {
+    "name": "shell lamp",
+    "source": "Uchi",
+    "category": "Miscellaneous",
+    "materials": [
+      {
+        "name": "giant clam",
+        "count": 2
+      },
+      {
+        "name": "clay",
+        "count": 3
+      }
+    ]
+  },
+  {
+    "name": "shell speaker",
+    "source": "Uchi",
+    "category": "Miscellaneous",
+    "materials": [
+      {
+        "name": "conch",
+        "count": 3
+      },
+      {
+        "name": "iron nugget",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "name": "stack of books",
+    "source": "Lazy",
+    "category": "Miscellaneous",
+    "materials": [
+      {
+        "name": "book",
+        "count": 5
+      }
+    ]
+  },
+  {
+    "name": "stacked magazines",
+    "source": "Peppy",
+    "category": "Miscellaneous",
+    "materials": [
+      {
+        "name": "magazine",
+        "count": 6
+      }
+    ]
+  },
+  {
+    "name": "star clock",
+    "source": "Celeste",
+    "category": "Miscellaneous",
+    "materials": [
+      {
+        "name": "star fragment",
+        "count": 3
+      },
+      {
+        "name": "iron nugget",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "name": "steamer-basket set",
+    "source": "Balloons (Spring)",
+    "category": "Miscellaneous",
+    "materials": [
+      {
+        "name": "young spring bamboo",
+        "count": 6
+      }
+    ]
+  },
+  {
+    "name": "succulent plant",
+    "source": "Fishing up an empty can",
+    "category": "Miscellaneous",
+    "materials": [
+      {
+        "name": "clump of weeds",
+        "count": 10
+      },
+      {
+        "name": "empty can",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "name": "tabletop festive tree",
+    "source": "Balloons (Festive Season)",
+    "category": "Miscellaneous",
+    "materials": [
+      {
+        "name": "gold ornament",
+        "count": 5
+      },
+      {
+        "name": "tree branch",
+        "count": 3
+      },
+      {
+        "name": "clay",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "name": "terrarium",
+    "source": "Normal",
+    "category": "Miscellaneous",
+    "materials": [
+      {
+        "name": "clump of weeds",
+        "count": 12
+      },
+      {
+        "name": "iron nugget",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "name": "traditional balancing toy",
+    "source": "Balloons (Autumn)",
+    "category": "Miscellaneous",
+    "materials": [
+      {
+        "name": "acorn",
+        "count": 4
+      },
+      {
+        "name": "hardwood",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "name": "trash bags",
+    "source": "Fishing up all 3 trash items",
+    "category": "Miscellaneous",
+    "materials": [
+      {
+        "name": "empty can",
+        "count": 1
+      },
+      {
+        "name": "boot",
+        "count": 1
+      },
+      {
+        "name": "old tire",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "name": "tree's bounty lamp",
+    "source": "Balloons (Autumn)",
+    "category": "Miscellaneous",
+    "materials": [
+      {
+        "name": "acorn",
+        "count": 6
+      },
+      {
+        "name": "clay",
+        "count": 4
+      }
+    ]
+  },
+  {
+    "name": "tree's bounty little tree",
+    "source": "Balloons (Autumn)",
+    "category": "Miscellaneous",
+    "materials": [
+      {
+        "name": "pine cone",
+        "count": 6
+      },
+      {
+        "name": "acorn",
+        "count": 4
+      },
+      {
+        "name": "hardwood",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "name": "ukulele",
+    "source": "Smug",
+    "category": "Miscellaneous",
+    "materials": [
+      {
+        "name": "hardwood",
+        "count": 5
+      }
+    ]
+  },
+  {
+    "name": "unglazed dish set",
+    "source": "Snooty",
+    "category": "Miscellaneous",
+    "materials": [
+      {
+        "name": "clay",
+        "count": 3
+      }
+    ]
+  },
+  {
+    "name": "windflower fan",
+    "source": "Lazy",
+    "category": "Miscellaneous",
+    "materials": [
+      {
+        "name": "red windflowers",
+        "count": 3
+      },
+      {
+        "name": "iron nugget",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "name": "Wobbling Zipper toy",
+    "source": "Zipper after crafting all Bunny Day recipes",
+    "category": "Miscellaneous",
+    "materials": [
+      {
+        "name": "earth egg",
+        "count": 4
+      },
+      {
+        "name": "stone egg",
+        "count": 4
+      },
+      {
+        "name": "leaf egg",
+        "count": 4
+      },
+      {
+        "name": "wood egg",
+        "count": 4
+      },
+      {
+        "name": "sky egg",
+        "count": 4
+      },
+      {
+        "name": "water egg",
+        "count": 4
+      }
+    ]
+  },
+  {
+    "name": "wooden fish",
+    "source": "Nook's Cranny",
+    "category": "Miscellaneous",
+    "materials": [
+      {
+        "name": "wood",
+        "count": 3
+      }
+    ]
+  },
+  {
+    "name": "wooden table mirror",
+    "source": "Uchi",
+    "category": "Miscellaneous",
+    "materials": [
+      {
+        "name": "wood",
+        "count": 3
+      },
+      {
+        "name": "iron nugget",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "name": "wooden toolbox",
+    "source": "Normal",
+    "category": "Miscellaneous",
+    "materials": [
+      {
+        "name": "softwood",
+        "count": 4
+      },
+      {
+        "name": "iron nugget",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "name": "wooden-block toy",
+    "source": "Nook's Cranny",
+    "category": "Miscellaneous",
+    "materials": [
+      {
+        "name": "softwood",
+        "count": 3
+      }
+    ]
+  },
+  {
+    "name": "bridge construction kit",
+    "source": "Tom Nook (Story)",
+    "category": "Other",
+    "materials": [
+      {
+        "name": "log stakes",
+        "count": 4
+      },
+      {
+        "name": "clay",
+        "count": 4
+      },
+      {
+        "name": "stone",
+        "count": 4
+      }
+    ]
+  },
+  {
+    "name": "campsite construction kit",
+    "source": "Tom Nook (Story)",
+    "category": "Other",
+    "materials": [
+      {
+        "name": "wood",
+        "count": 15
+      },
+      {
+        "name": "softwood",
+        "count": 15
+      },
+      {
+        "name": "hardwood",
+        "count": 15
+      },
+      {
+        "name": "iron nugget",
+        "count": 15
+      }
+    ]
+  },
+  {
+    "name": "fish bait",
+    "source": "Digging up clams",
+    "category": "Other",
+    "materials": [
+      {
+        "name": "manila clam",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "name": "medicine",
+    "source": "All Villagers (when stung)",
+    "category": "Other",
+    "materials": [
+      {
+        "name": "wasp nest",
+        "count": 1
+      },
+      {
+        "name": "clump of weeds",
+        "count": 3
+      }
+    ]
+  },
+  {
+    "name": "pitfall seed",
+    "source": "Jock",
+    "category": "Other",
+    "materials": [
+      {
+        "name": "clump of weeds",
+        "count": 4
+      },
+      {
+        "name": "tree branch",
+        "count": 6
+      }
+    ]
+  },
+  {
+    "name": "apple rug",
+    "source": "Uchi",
+    "category": "Rugs",
+    "materials": [
+      {
+        "name": "apple",
+        "count": 6
+      }
+    ]
+  },
+  {
+    "name": "Bunny Day rug",
+    "source": "Egg bottle/balloon (Bunny Day)",
+    "category": "Rugs",
+    "materials": [
+      {
+        "name": "earth egg",
+        "count": 1
+      },
+      {
+        "name": "stone egg",
+        "count": 1
+      },
+      {
+        "name": "leaf egg",
+        "count": 1
+      },
+      {
+        "name": "wood egg",
+        "count": 1
+      },
+      {
+        "name": "sky egg",
+        "count": 1
+      },
+      {
+        "name": "water egg",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "name": "cherry rug",
+    "source": "Peppy",
+    "category": "Rugs",
+    "materials": [
+      {
+        "name": "cherry",
+        "count": 6
+      }
+    ]
+  },
+  {
+    "name": "dark bamboo rug",
+    "source": "Cranky",
+    "category": "Rugs",
+    "materials": [
+      {
+        "name": "bamboo piece",
+        "count": 6
+      }
+    ]
+  },
+  {
+    "name": "light bamboo rug",
+    "source": "Balloons (Spring)",
+    "category": "Rugs",
+    "materials": [
+      {
+        "name": "young spring bamboo",
+        "count": 6
+      }
+    ]
+  },
+  {
+    "name": "orange rug",
+    "source": "Lazy",
+    "category": "Rugs",
+    "materials": [
+      {
+        "name": "orange",
+        "count": 6
+      }
+    ]
+  },
+  {
+    "name": "peach rug",
+    "source": "Normal",
+    "category": "Rugs",
+    "materials": [
+      {
+        "name": "peach",
+        "count": 6
+      }
+    ]
+  },
+  {
+    "name": "pear rug",
+    "source": "Jock",
+    "category": "Rugs",
+    "materials": [
+      {
+        "name": "pear",
+        "count": 6
+      }
+    ]
+  },
+  {
+    "name": "shell rug",
+    "source": "Peppy",
+    "category": "Rugs",
+    "materials": [
+      {
+        "name": "giant clam",
+        "count": 3
+      }
+    ]
+  },
+  {
+    "name": "armor shoes",
+    "source": "Cranky",
+    "category": "Shoes",
+    "materials": [
+      {
+        "name": "iron nugget",
+        "count": 4
+      }
+    ]
+  },
+  {
+    "name": "earth-egg shoes",
+    "source": "Collecting earth eggs (Bunny Day)",
+    "category": "Shoes",
+    "materials": [
+      {
+        "name": "earth egg",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "name": "gold-armor shoes",
+    "source": "Smug",
+    "category": "Shoes",
+    "materials": [
+      {
+        "name": "gold nugget",
+        "count": 4
+      }
+    ]
+  },
+  {
+    "name": "leaf-egg shoes",
+    "source": "Collecting leaf eggs (Bunny Day)",
+    "category": "Shoes",
+    "materials": [
+      {
+        "name": "leaf egg",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "name": "recycled boots",
+    "source": "Fishing up a boot",
+    "category": "Shoes",
+    "materials": [
+      {
+        "name": "boot",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "name": "sky-egg shoes",
+    "source": "Collecting sky eggs (Bunny Day)",
+    "category": "Shoes",
+    "materials": [
+      {
+        "name": "sky egg",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "name": "stone-egg shoes",
+    "source": "Collecting stone eggs (Bunny Day)",
+    "category": "Shoes",
+    "materials": [
+      {
+        "name": "stone egg",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "name": "water-egg shoes",
+    "source": "Collecting water eggs (Bunny Day)",
+    "category": "Shoes",
+    "materials": [
+      {
+        "name": "water egg",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "name": "wood-egg shoes",
+    "source": "Collecting wood eggs (Bunny Day)",
+    "category": "Shoes",
+    "materials": [
+      {
+        "name": "wood egg",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "name": "axe",
+    "source": "Nook Miles Exchange",
+    "category": "Tools",
+    "materials": [
+      {
+        "name": "flimsy axe",
+        "count": 1
+      },
+      {
+        "name": "wood",
+        "count": 3
+      },
+      {
+        "name": "iron nugget",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "name": "bamboo wand",
+    "source": "Balloons (Spring)",
+    "category": "Tools",
+    "materials": [
+      {
+        "name": "young spring bamboo",
+        "count": 6
+      },
+      {
+        "name": "star fragment",
+        "count": 3
+      }
+    ]
+  },
+  {
+    "name": "Bunny Day wand",
+    "source": "Zipper after crafting toy (Bunny Day)",
+    "category": "Tools",
+    "materials": [
+      {
+        "name": "wobbling Zipper toy",
+        "count": 1
+      },
+      {
+        "name": "star fragment",
+        "count": 3
+      }
+    ]
+  },
+  {
+    "name": "cherry-blossom wand",
+    "source": "Balloons (Cherry-Blossom Season)",
+    "category": "Tools",
+    "materials": [
+      {
+        "name": "cherry-blossom petal",
+        "count": 3
+      },
+      {
+        "name": "star fragment",
+        "count": 3
+      }
+    ]
+  },
+  {
+    "name": "cosmos wand",
+    "source": "Celeste",
+    "category": "Tools",
+    "materials": [
+      {
+        "name": "white cosmos",
+        "count": 1
+      },
+      {
+        "name": "star fragment",
+        "count": 3
+      }
+    ]
+  },
+  {
+    "name": "fishing rod",
+    "source": "Nook Miles Exchange",
+    "category": "Tools",
+    "materials": [
+      {
+        "name": "flimsy fishing rod",
+        "count": 1
+      },
+      {
+        "name": "iron nugget",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "name": "flimsy axe",
+    "source": "Tom Nook",
+    "category": "Tools",
+    "materials": [
+      {
+        "name": "tree branch",
+        "count": 5
+      },
+      {
+        "name": "stone",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "name": "flimsy fishing rod",
+    "source": "Tom Nook",
+    "category": "Tools",
+    "materials": [
+      {
+        "name": "tree branch",
+        "count": 5
+      }
+    ]
+  },
+  {
+    "name": "flimsy net",
+    "source": "Tom Nook",
+    "category": "Tools",
+    "materials": [
+      {
+        "name": "tree branch",
+        "count": 5
+      }
+    ]
+  },
+  {
+    "name": "flimsy shovel",
+    "source": "Blathers",
+    "category": "Tools",
+    "materials": [
+      {
+        "name": "hardwood",
+        "count": 5
+      }
+    ]
+  },
+  {
+    "name": "flimsy watering can",
+    "source": "Tom Nook",
+    "category": "Tools",
+    "materials": [
+      {
+        "name": "softwood",
+        "count": 5
+      }
+    ]
+  },
+  {
+    "name": "golden axe",
+    "source": "Breaking 100 axes",
+    "category": "Tools",
+    "materials": [
+      {
+        "name": "axe",
+        "count": 1
+      },
+      {
+        "name": "gold nugget",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "name": "golden net",
+    "source": "Completing bug Critterpedia",
+    "category": "Tools",
+    "materials": [
+      {
+        "name": "net",
+        "count": 1
+      },
+      {
+        "name": "gold nugget",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "name": "golden rod",
+    "source": "Completing fish Critterpedia",
+    "category": "Tools",
+    "materials": [
+      {
+        "name": "fishing rod",
+        "count": 1
+      },
+      {
+        "name": "gold nugget",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "name": "golden shovel",
+    "source": "Helping Gulliver 30 times",
+    "category": "Tools",
+    "materials": [
+      {
+        "name": "shovel",
+        "count": 1
+      },
+      {
+        "name": "gold nugget",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "name": "golden slingshot",
+    "source": "Shooting 300 balloons",
+    "category": "Tools",
+    "materials": [
+      {
+        "name": "slingshot",
+        "count": 1
+      },
+      {
+        "name": "gold nugget",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "name": "golden wand",
+    "source": "Celeste",
+    "category": "Tools",
+    "materials": [
+      {
+        "name": "gold nugget",
+        "count": 2
+      },
+      {
+        "name": "star fragment",
+        "count": 3
+      }
+    ]
+  },
+  {
+    "name": "golden watering can",
+    "source": "5-star town evaluation",
+    "category": "Tools",
+    "materials": [
+      {
+        "name": "watering can",
+        "count": 1
+      },
+      {
+        "name": "gold nugget",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "name": "hyacinth wand",
+    "source": "Celeste",
+    "category": "Tools",
+    "materials": [
+      {
+        "name": "pink hyacinths",
+        "count": 1
+      },
+      {
+        "name": "star fragment",
+        "count": 3
+      }
+    ]
+  },
+  {
+    "name": "ice wand",
+    "source": "Making a perfect Snowboy",
+    "category": "Tools",
+    "materials": [
+      {
+        "name": "large snowflake",
+        "count": 1
+      },
+      {
+        "name": "star fragment",
+        "count": 3
+      }
+    ]
+  },
+  {
+    "name": "iron wand",
+    "source": "Celeste",
+    "category": "Tools",
+    "materials": [
+      {
+        "name": "iron nugget",
+        "count": 3
+      },
+      {
+        "name": "star fragment",
+        "count": 3
+      }
+    ]
+  },
+  {
+    "name": "ladder",
+    "source": "Villager House Development (Tom Nook), Cranky",
+    "category": "Tools",
+    "materials": [
+      {
+        "name": "wood",
+        "count": 4
+      },
+      {
+        "name": "hardwood",
+        "count": 4
+      },
+      {
+        "name": "softwood",
+        "count": 4
+      }
+    ]
+  },
+  {
+    "name": "lily wand",
+    "source": "Celeste",
+    "category": "Tools",
+    "materials": [
+      {
+        "name": "white lilies",
+        "count": 1
+      },
+      {
+        "name": "star fragment",
+        "count": 3
+      }
+    ]
+  },
+  {
+    "name": "mums wand",
+    "source": "Celeste",
+    "category": "Tools",
+    "materials": [
+      {
+        "name": "yellow mums",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "name": "mushroom wand",
+    "source": "Balloons (Mushroom Season)",
+    "category": "Tools",
+    "materials": [
+      {
+        "name": "skinny mushroom",
+        "count": 3
+      },
+      {
+        "name": "star fragment",
+        "count": 3
+      }
+    ]
+  },
+  {
+    "name": "net",
+    "source": "Nook Miles Exchange",
+    "category": "Tools",
+    "materials": [
+      {
+        "name": "flimsy net",
+        "count": 1
+      },
+      {
+        "name": "iron nugget",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "name": "ocarina",
+    "source": "Nook's Cranny",
+    "category": "Tools",
+    "materials": [
+      {
+        "name": "clay",
+        "count": 5
+      }
+    ]
+  },
+  {
+    "name": "pan flute",
+    "source": "Balloons (Spring)",
+    "category": "Tools",
+    "materials": [
+      {
+        "name": "young spring bamboo",
+        "count": 7
+      }
+    ]
+  },
+  {
+    "name": "pansy wand",
+    "source": "Celeste",
+    "category": "Tools",
+    "materials": [
+      {
+        "name": "yellow pansies",
+        "count": 1
+      },
+      {
+        "name": "star fragment",
+        "count": 3
+      }
+    ]
+  },
+  {
+    "name": "rose wand",
+    "source": "Celeste",
+    "category": "Tools",
+    "materials": [
+      {
+        "name": "red roses",
+        "count": 1
+      },
+      {
+        "name": "star fragment",
+        "count": 3
+      }
+    ]
+  },
+  {
+    "name": "shell wand",
+    "source": "Balloons (Summer)",
+    "category": "Tools",
+    "materials": [
+      {
+        "name": "summer shell",
+        "count": 3
+      },
+      {
+        "name": "star fragment",
+        "count": 3
+      }
+    ]
+  },
+  {
+    "name": "shovel",
+    "source": "Nook Miles Exchange",
+    "category": "Tools",
+    "materials": [
+      {
+        "name": "flimsy shovel",
+        "count": 1
+      },
+      {
+        "name": "iron nugget",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "name": "slingshot",
+    "source": "Nook's Cranny",
+    "category": "Tools",
+    "materials": [
+      {
+        "name": "hardwood",
+        "count": 5
+      }
+    ]
+  },
+  {
+    "name": "star wand",
+    "source": "Celeste",
+    "category": "Tools",
+    "materials": [
+      {
+        "name": "large star fragment",
+        "count": 1
+      },
+      {
+        "name": "star fragment",
+        "count": 3
+      }
+    ]
+  },
+  {
+    "name": "stone axe",
+    "source": "Nook Miles Exchange",
+    "category": "Tools",
+    "materials": [
+      {
+        "name": "flimsy axe",
+        "count": 1
+      },
+      {
+        "name": "wood",
+        "count": 3
+      }
+    ]
+  },
+  {
+    "name": "tree-branch wand",
+    "source": "Celeste",
+    "category": "Tools",
+    "materials": [
+      {
+        "name": "tree branch",
+        "count": 5
+      },
+      {
+        "name": "star fragment",
+        "count": 3
+      }
+    ]
+  },
+  {
+    "name": "tulip wand",
+    "source": "Celeste",
+    "category": "Tools",
+    "materials": [
+      {
+        "name": "red tulips",
+        "count": 1
+      },
+      {
+        "name": "star fragment",
+        "count": 3
+      }
+    ]
+  },
+  {
+    "name": "vaulting pole",
+    "source": "Blathers",
+    "category": "Tools",
+    "materials": [
+      {
+        "name": "softwood",
+        "count": 5
+      }
+    ]
+  },
+  {
+    "name": "wand",
+    "source": "Celeste",
+    "category": "Tools",
+    "materials": [
+      {
+        "name": "star fragment",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "name": "watering can",
+    "source": "Nook Miles Exchange",
+    "category": "Tools",
+    "materials": [
+      {
+        "name": "flimsy watering can",
+        "count": 1
+      },
+      {
+        "name": "iron nugget",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "name": "windflower wand",
+    "source": "Celeste",
+    "category": "Tools",
+    "materials": [
+      {
+        "name": "orange windflowers",
+        "count": 1
+      },
+      {
+        "name": "star fragment",
+        "count": 3
+      }
+    ]
+  },
+  {
+    "name": "traditional straw coat",
+    "source": "Normal",
+    "category": "Tops",
+    "materials": [
+      {
+        "name": "clump of weeds",
+        "count": 8
+      }
+    ]
+  },
+  {
+    "name": "apple umbrella",
+    "source": "Uchi",
+    "category": "Umbrellas",
+    "materials": [
+      {
+        "name": "apple",
+        "count": 7
+      }
+    ]
+  },
+  {
+    "name": "cherry umbrella",
+    "source": "Peppy",
+    "category": "Umbrellas",
+    "materials": [
+      {
+        "name": "cherry",
+        "count": 7
+      }
+    ]
+  },
+  {
+    "name": "cherry-blossom umbrella",
+    "source": "Balloons (Cherry-Blossom Season)",
+    "category": "Umbrellas",
+    "materials": [
+      {
+        "name": "cherry-blossom petal",
+        "count": 7
+      }
+    ]
+  },
+  {
+    "name": "leaf umbrella",
+    "source": "Uchi",
+    "category": "Umbrellas",
+    "materials": [
+      {
+        "name": "clump of weeds",
+        "count": 15
+      }
+    ]
+  },
+  {
+    "name": "maple-leaf umbrella",
+    "source": "Balloons (Maple Leaf Season)",
+    "category": "Umbrellas",
+    "materials": [
+      {
+        "name": "maple leaf",
+        "count": 7
+      }
+    ]
+  },
+  {
+    "name": "mush umbrella",
+    "source": "Balloons (Mushroom Season)",
+    "category": "Umbrellas",
+    "materials": [
+      {
+        "name": "flat mushroom",
+        "count": 3
+      }
+    ]
+  },
+  {
+    "name": "orange umbrella",
+    "source": "Lazy",
+    "category": "Umbrellas",
+    "materials": [
+      {
+        "name": "orange",
+        "count": 7
+      }
+    ]
+  },
+  {
+    "name": "peach umbrella",
+    "source": "Normal",
+    "category": "Umbrellas",
+    "materials": [
+      {
+        "name": "peach",
+        "count": 7
+      }
+    ]
+  },
+  {
+    "name": "pear umbrella",
+    "source": "Jock",
+    "category": "Umbrellas",
+    "materials": [
+      {
+        "name": "pear",
+        "count": 7
+      }
+    ]
+  },
+  {
+    "name": "bamboo wall decoration",
+    "source": "Jock",
+    "category": "Wall-Mounted",
+    "materials": [
+      {
+        "name": "bamboo piece",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "name": "blue rose wreath",
+    "source": "All Villagers",
+    "category": "Wall-Mounted",
+    "materials": [
+      {
+        "name": "blue roses",
+        "count": 10
+      }
+    ]
+  },
+  {
+    "name": "bone doorplate",
+    "source": "Lazy",
+    "category": "Wall-Mounted",
+    "materials": [
+      {
+        "name": "softwood",
+        "count": 3
+      }
+    ]
+  },
+  {
+    "name": "boomerang",
+    "source": "Lazy",
+    "category": "Wall-Mounted",
+    "materials": [
+      {
+        "name": "hardwood",
+        "count": 3
+      }
+    ]
+  },
+  {
+    "name": "Bunny Day glowy garland",
+    "source": "Egg bottle/balloon (Bunny Day)",
+    "category": "Wall-Mounted",
+    "materials": [
+      {
+        "name": "earth egg",
+        "count": 1
+      },
+      {
+        "name": "stone egg",
+        "count": 1
+      },
+      {
+        "name": "leaf egg",
+        "count": 1
+      },
+      {
+        "name": "wood egg",
+        "count": 1
+      },
+      {
+        "name": "sky egg",
+        "count": 1
+      },
+      {
+        "name": "water egg",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "name": "Bunny Day wall clock",
+    "source": "Egg bottle/balloon (Bunny Day)",
+    "category": "Wall-Mounted",
+    "materials": [
+      {
+        "name": "sky egg",
+        "count": 3
+      }
+    ]
+  },
+  {
+    "name": "Bunny Day wreath",
+    "source": "Egg bottle/balloon (Bunny Day)",
+    "category": "Wall-Mounted",
+    "materials": [
+      {
+        "name": "earth egg",
+        "count": 1
+      },
+      {
+        "name": "stone egg",
+        "count": 1
+      },
+      {
+        "name": "leaf egg",
+        "count": 1
+      },
+      {
+        "name": "wood egg",
+        "count": 1
+      },
+      {
+        "name": "sky egg",
+        "count": 1
+      },
+      {
+        "name": "water egg",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "name": "cherry lamp",
+    "source": "Peppy",
+    "category": "Wall-Mounted",
+    "materials": [
+      {
+        "name": "cherry",
+        "count": 10
+      },
+      {
+        "name": "clay",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "name": "cherry-blossom clock",
+    "source": "Balloons (Cherry-Blossom Season)",
+    "category": "Wall-Mounted",
+    "materials": [
+      {
+        "name": "cherry-blossom petal",
+        "count": 5
+      }
+    ]
+  },
+  {
+    "name": "chic cosmos wreath",
+    "source": "All Villagers",
+    "category": "Wall-Mounted",
+    "materials": [
+      {
+        "name": "black cosmos",
+        "count": 10
+      }
+    ]
+  },
+  {
+    "name": "chic windflower wreath",
+    "source": "All Villagers",
+    "category": "Wall-Mounted",
+    "materials": [
+      {
+        "name": "purple windflowers",
+        "count": 10
+      }
+    ]
+  },
+  {
+    "name": "coconut wall planter",
+    "source": "Snooty",
+    "category": "Wall-Mounted",
+    "materials": [
+      {
+        "name": "coconut",
+        "count": 1
+      },
+      {
+        "name": "clump of weeds",
+        "count": 5
+      }
+    ]
+  },
+  {
+    "name": "cool hyacinth wreath",
+    "source": "All Villagers",
+    "category": "Wall-Mounted",
+    "materials": [
+      {
+        "name": "orange hyacinths",
+        "count": 3
+      },
+      {
+        "name": "blue hyacinths",
+        "count": 3
+      },
+      {
+        "name": "pink hyacinths",
+        "count": 3
+      }
+    ]
+  },
+  {
+    "name": "cool pansy wreath",
+    "source": "All Villagers",
+    "category": "Wall-Mounted",
+    "materials": [
+      {
+        "name": "purple pansies",
+        "count": 10
+      }
+    ]
+  },
+  {
+    "name": "cool windflower wreath",
+    "source": "All Villagers",
+    "category": "Wall-Mounted",
+    "materials": [
+      {
+        "name": "blue windflowers",
+        "count": 3
+      },
+      {
+        "name": "pink windflowers",
+        "count": 3
+      },
+      {
+        "name": "white windflowers",
+        "count": 3
+      }
+    ]
+  },
+  {
+    "name": "cosmos wreath",
+    "source": "All Villagers",
+    "category": "Wall-Mounted",
+    "materials": [
+      {
+        "name": "yellow cosmos",
+        "count": 3
+      },
+      {
+        "name": "white cosmos",
+        "count": 3
+      },
+      {
+        "name": "red cosmos",
+        "count": 3
+      }
+    ]
+  },
+  {
+    "name": "crest doorplate",
+    "source": "Smug",
+    "category": "Wall-Mounted",
+    "materials": [
+      {
+        "name": "iron nugget",
+        "count": 4
+      }
+    ]
+  },
+  {
+    "name": "dark lily wreath",
+    "source": "All Villagers",
+    "category": "Wall-Mounted",
+    "materials": [
+      {
+        "name": "black lilies",
+        "count": 10
+      }
+    ]
+  },
+  {
+    "name": "dark rose wreath",
+    "source": "All Villagers",
+    "category": "Wall-Mounted",
+    "materials": [
+      {
+        "name": "black roses",
+        "count": 3
+      },
+      {
+        "name": "purple roses",
+        "count": 6
+      }
+    ]
+  },
+  {
+    "name": "dark tulip wreath",
+    "source": "All Villagers",
+    "category": "Wall-Mounted",
+    "materials": [
+      {
+        "name": "black tulips",
+        "count": 10
+      }
+    ]
+  },
+  {
+    "name": "deer decoration",
+    "source": "Lazy",
+    "category": "Wall-Mounted",
+    "materials": [
+      {
+        "name": "softwood",
+        "count": 8
+      }
+    ]
+  },
+  {
+    "name": "fancy lily wreath",
+    "source": "All Villagers",
+    "category": "Wall-Mounted",
+    "materials": [
+      {
+        "name": "orange lilies",
+        "count": 3
+      },
+      {
+        "name": "pink lilies",
+        "count": 3
+      },
+      {
+        "name": "yellow lilies",
+        "count": 3
+      }
+    ]
+  },
+  {
+    "name": "fancy mum wreath",
+    "source": "All Villagers",
+    "category": "Wall-Mounted",
+    "materials": [
+      {
+        "name": "pink mums",
+        "count": 3
+      },
+      {
+        "name": "purple mums",
+        "count": 3
+      },
+      {
+        "name": "red mums",
+        "count": 3
+      }
+    ]
+  },
+  {
+    "name": "fancy rose wreath",
+    "source": "All Villagers",
+    "category": "Wall-Mounted",
+    "materials": [
+      {
+        "name": "orange roses",
+        "count": 3
+      },
+      {
+        "name": "pink roses",
+        "count": 3
+      },
+      {
+        "name": "yellow roses",
+        "count": 3
+      }
+    ]
+  },
+  {
+    "name": "floral swag",
+    "source": "Normal",
+    "category": "Wall-Mounted",
+    "materials": [
+      {
+        "name": "clump of weeds",
+        "count": 10
+      }
+    ]
+  },
+  {
+    "name": "fossil doorplate",
+    "source": "Jock",
+    "category": "Wall-Mounted",
+    "materials": [
+      {
+        "name": "fossil",
+        "count": 1
+      },
+      {
+        "name": "stone",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "name": "fruit wreath",
+    "source": "Cranky",
+    "category": "Wall-Mounted",
+    "materials": [
+      {
+        "name": "apple",
+        "count": 2
+      },
+      {
+        "name": "pear",
+        "count": 1
+      },
+      {
+        "name": "cherry",
+        "count": 3
+      },
+      {
+        "name": "orange",
+        "count": 3
+      },
+      {
+        "name": "peach",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "name": "gold rose wreath",
+    "source": "All Villagers",
+    "category": "Wall-Mounted",
+    "materials": [
+      {
+        "name": "gold roses",
+        "count": 10
+      }
+    ]
+  },
+  {
+    "name": "golden gears",
+    "source": "Smug",
+    "category": "Wall-Mounted",
+    "materials": [
+      {
+        "name": "gold nugget",
+        "count": 1
+      },
+      {
+        "name": "iron nugget",
+        "count": 3
+      }
+    ]
+  },
+  {
+    "name": "hanging terrarium",
+    "source": "Peppy",
+    "category": "Wall-Mounted",
+    "materials": [
+      {
+        "name": "clump of weeds",
+        "count": 10
+      },
+      {
+        "name": "iron nugget",
+        "count": 4
+      }
+    ]
+  },
+  {
+    "name": "hyacinth wreath",
+    "source": "All Villagers",
+    "category": "Wall-Mounted",
+    "materials": [
+      {
+        "name": "white hyacinths",
+        "count": 3
+      },
+      {
+        "name": "red hyacinths",
+        "count": 3
+      },
+      {
+        "name": "yellow hyacinths",
+        "count": 3
+      }
+    ]
+  },
+  {
+    "name": "iron doorplate",
+    "source": "Uchi",
+    "category": "Wall-Mounted",
+    "materials": [
+      {
+        "name": "iron nugget",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "name": "iron wall lamp",
+    "source": "Nook's Cranny",
+    "category": "Wall-Mounted",
+    "materials": [
+      {
+        "name": "iron nugget",
+        "count": 4
+      },
+      {
+        "name": "clay",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "name": "iron wall rack",
+    "source": "Smug",
+    "category": "Wall-Mounted",
+    "materials": [
+      {
+        "name": "iron nugget",
+        "count": 3
+      },
+      {
+        "name": "clay",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "name": "ironwood clock",
+    "source": "Smug",
+    "category": "Wall-Mounted",
+    "materials": [
+      {
+        "name": "wood",
+        "count": 2
+      },
+      {
+        "name": "iron nugget",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "name": "key holder",
+    "source": "Uchi",
+    "category": "Wall-Mounted",
+    "materials": [
+      {
+        "name": "wood",
+        "count": 3
+      },
+      {
+        "name": "iron nugget",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "name": "Leo sculpture",
+    "source": "Celeste",
+    "category": "Wall-Mounted",
+    "materials": [
+      {
+        "name": "star fragment",
+        "count": 3
+      },
+      {
+        "name": "Leo fragment",
+        "count": 2
+      },
+      {
+        "name": "gold nugget",
+        "count": 2
+      },
+      {
+        "name": "stone",
+        "count": 3
+      }
+    ]
+  },
+  {
+    "name": "lily wreath",
+    "source": "All Villagers",
+    "category": "Wall-Mounted",
+    "materials": [
+      {
+        "name": "white lilies",
+        "count": 3
+      },
+      {
+        "name": "red lilies",
+        "count": 3
+      },
+      {
+        "name": "yellow lilies",
+        "count": 3
+      }
+    ]
+  },
+  {
+    "name": "log wall-mounted clock",
+    "source": "Lazy",
+    "category": "Wall-Mounted",
+    "materials": [
+      {
+        "name": "hardwood",
+        "count": 2
+      },
+      {
+        "name": "iron nugget",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "name": "mum wreath",
+    "source": "All Villagers",
+    "category": "Wall-Mounted",
+    "materials": [
+      {
+        "name": "white mums",
+        "count": 3
+      },
+      {
+        "name": "yellow mums",
+        "count": 3
+      },
+      {
+        "name": "red mums",
+        "count": 3
+      }
+    ]
+  },
+  {
+    "name": "mushroom wreath",
+    "source": "Balloons (Mushroom Season)",
+    "category": "Wall-Mounted",
+    "materials": [
+      {
+        "name": "tree branch",
+        "count": 10
+      },
+      {
+        "name": "round mushroom",
+        "count": 1
+      },
+      {
+        "name": "skinny mushroom",
+        "count": 1
+      },
+      {
+        "name": "flat mushroom",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "name": "natural mum wreath",
+    "source": "All Villagers",
+    "category": "Wall-Mounted",
+    "materials": [
+      {
+        "name": "green mums",
+        "count": 10
+      }
+    ]
+  },
+  {
+    "name": "orange wall-mounted clock",
+    "source": "Lazy",
+    "category": "Wall-Mounted",
+    "materials": [
+      {
+        "name": "orange",
+        "count": 10
+      },
+      {
+        "name": "wood",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "name": "ornament mobile",
+    "source": "Balloons (Festive Season)",
+    "category": "Wall-Mounted",
+    "materials": [
+      {
+        "name": "red ornament",
+        "count": 1
+      },
+      {
+        "name": "blue ornament",
+        "count": 1
+      },
+      {
+        "name": "gold ornament",
+        "count": 1
+      },
+      {
+        "name": "tree branch",
+        "count": 4
+      }
+    ]
+  },
+  {
+    "name": "ornament wreath",
+    "source": "Balloons (Festive Season)",
+    "category": "Wall-Mounted",
+    "materials": [
+      {
+        "name": "blue ornament",
+        "count": 6
+      },
+      {
+        "name": "gold ornament",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "name": "pansy wreath",
+    "source": "All Villagers",
+    "category": "Wall-Mounted",
+    "materials": [
+      {
+        "name": "yellow pansies",
+        "count": 3
+      },
+      {
+        "name": "white pansies",
+        "count": 3
+      },
+      {
+        "name": "red pansies",
+        "count": 3
+      }
+    ]
+  },
+  {
+    "name": "paw-print doorplate",
+    "source": "Peppy",
+    "category": "Wall-Mounted",
+    "materials": [
+      {
+        "name": "wood",
+        "count": 3
+      }
+    ]
+  },
+  {
+    "name": "potted ivy",
+    "source": "Nook's Cranny",
+    "category": "Wall-Mounted",
+    "materials": [
+      {
+        "name": "clump of weeds",
+        "count": 5
+      },
+      {
+        "name": "clay",
+        "count": 5
+      }
+    ]
+  },
+  {
+    "name": "pretty cosmos wreath",
+    "source": "All Villagers",
+    "category": "Wall-Mounted",
+    "materials": [
+      {
+        "name": "orange cosmos",
+        "count": 3
+      },
+      {
+        "name": "pink cosmos",
+        "count": 3
+      },
+      {
+        "name": "red cosmos",
+        "count": 3
+      }
+    ]
+  },
+  {
+    "name": "pretty tulip wreath",
+    "source": "All Villagers",
+    "category": "Wall-Mounted",
+    "materials": [
+      {
+        "name": "orange tulips",
+        "count": 3
+      },
+      {
+        "name": "pink tulips",
+        "count": 3
+      },
+      {
+        "name": "purple tulips",
+        "count": 3
+      }
+    ]
+  },
+  {
+    "name": "purple hyacinth wreath",
+    "source": "All Villagers",
+    "category": "Wall-Mounted",
+    "materials": [
+      {
+        "name": "purple hyacinths",
+        "count": 10
+      }
+    ]
+  },
+  {
+    "name": "rose wreath",
+    "source": "All Villagers",
+    "category": "Wall-Mounted",
+    "materials": [
+      {
+        "name": "red roses",
+        "count": 3
+      },
+      {
+        "name": "white roses",
+        "count": 3
+      },
+      {
+        "name": "yellow roses",
+        "count": 3
+      }
+    ]
+  },
+  {
+    "name": "Sagittarius arrow",
+    "source": "Celeste",
+    "category": "Wall-Mounted",
+    "materials": [
+      {
+        "name": "star fragment",
+        "count": 3
+      },
+      {
+        "name": "Sagittarius fragment",
+        "count": 2
+      },
+      {
+        "name": "gold nugget",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "name": "shell wreath",
+    "source": "Balloons (Summer)",
+    "category": "Wall-Mounted",
+    "materials": [
+      {
+        "name": "summer shell",
+        "count": 1
+      },
+      {
+        "name": "sea snail",
+        "count": 1
+      },
+      {
+        "name": "sand dollar",
+        "count": 1
+      },
+      {
+        "name": "coral",
+        "count": 1
+      },
+      {
+        "name": "giant clam",
+        "count": 1
+      },
+      {
+        "name": "cowrie",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "name": "snazzy pansy wreath",
+    "source": "All Villagers",
+    "category": "Wall-Mounted",
+    "materials": [
+      {
+        "name": "orange pansies",
+        "count": 3
+      },
+      {
+        "name": "blue pansies",
+        "count": 3
+      },
+      {
+        "name": "yellow pansies",
+        "count": 3
+      }
+    ]
+  },
+  {
+    "name": "snowflake wreath",
+    "source": "Balloons (Winter)",
+    "category": "Wall-Mounted",
+    "materials": [
+      {
+        "name": "snowflake",
+        "count": 4
+      }
+    ]
+  },
+  {
+    "name": "starry garland",
+    "source": "Celeste",
+    "category": "Wall-Mounted",
+    "materials": [
+      {
+        "name": "star fragment",
+        "count": 10
+      }
+    ]
+  },
+  {
+    "name": "timber doorplate",
+    "source": "Snooty",
+    "category": "Wall-Mounted",
+    "materials": [
+      {
+        "name": "wood",
+        "count": 2
+      },
+      {
+        "name": "pink roses",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "name": "tree branch wreath",
+    "source": "Uchi",
+    "category": "Wall-Mounted",
+    "materials": [
+      {
+        "name": "tree branch",
+        "count": 10
+      }
+    ]
+  },
+  {
+    "name": "tree's bounty mobile",
+    "source": "Balloons (Autumn)",
+    "category": "Wall-Mounted",
+    "materials": [
+      {
+        "name": "pine cone",
+        "count": 2
+      },
+      {
+        "name": "acorn",
+        "count": 3
+      },
+      {
+        "name": "tree branch",
+        "count": 3
+      }
+    ]
+  },
+  {
+    "name": "tulip wreath",
+    "source": "All Villagers",
+    "category": "Wall-Mounted",
+    "materials": [
+      {
+        "name": "red tulips",
+        "count": 3
+      },
+      {
+        "name": "yellow tulips",
+        "count": 3
+      },
+      {
+        "name": "white tulips",
+        "count": 3
+      }
+    ]
+  },
+  {
+    "name": "windflower wreath",
+    "source": "All Villagers",
+    "category": "Wall-Mounted",
+    "materials": [
+      {
+        "name": "red windflowers",
+        "count": 3
+      },
+      {
+        "name": "white windflowers",
+        "count": 3
+      },
+      {
+        "name": "orange windflowers",
+        "count": 3
+      }
+    ]
+  },
+  {
+    "name": "wooden-block wall clock",
+    "source": "Peppy",
+    "category": "Wall-Mounted",
+    "materials": [
+      {
+        "name": "wooden-block toy",
+        "count": 1
+      },
+      {
+        "name": "softwood",
+        "count": 2
+      },
+      {
+        "name": "iron nugget",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "name": "wooden-plank sign",
+    "source": "Cranky",
+    "category": "Wall-Mounted",
+    "materials": [
+      {
+        "name": "hardwood",
+        "count": 5
+      }
+    ]
+  },
+  {
+    "name": "apple wall",
+    "source": "Uchi",
+    "category": "Wallpaper",
+    "materials": [
+      {
+        "name": "apple",
+        "count": 20
+      }
+    ]
+  },
+  {
+    "name": "autumn wall",
+    "source": "Balloons (Maple Leaf Season)",
+    "category": "Wallpaper",
+    "materials": [
+      {
+        "name": "maple leaf",
+        "count": 10
+      },
+      {
+        "name": "wood",
+        "count": 5
+      },
+      {
+        "name": "clump of weeds",
+        "count": 5
+      }
+    ]
+  },
+  {
+    "name": "bamboo wall",
+    "source": "Cranky",
+    "category": "Wallpaper",
+    "materials": [
+      {
+        "name": "bamboo piece",
+        "count": 15
+      }
+    ]
+  },
+  {
+    "name": "bamboo-grove wall",
+    "source": "Balloons (Spring)",
+    "category": "Wallpaper",
+    "materials": [
+      {
+        "name": "young spring bamboo",
+        "count": 7
+      },
+      {
+        "name": "bamboo shoot",
+        "count": 3
+      }
+    ]
+  },
+  {
+    "name": "brown herringbone wall",
+    "source": "Uchi",
+    "category": "Wallpaper",
+    "materials": [
+      {
+        "name": "softwood",
+        "count": 15
+      }
+    ]
+  },
+  {
+    "name": "Bunny Day wall",
+    "source": "Egg bottle/balloon (Bunny Day)",
+    "category": "Wallpaper",
+    "materials": [
+      {
+        "name": "earth egg",
+        "count": 2
+      },
+      {
+        "name": "stone egg",
+        "count": 2
+      },
+      {
+        "name": "leaf egg",
+        "count": 2
+      },
+      {
+        "name": "wood egg",
+        "count": 2
+      },
+      {
+        "name": "sky egg",
+        "count": 2
+      },
+      {
+        "name": "water egg",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "name": "cabin wall",
+    "source": "Peppy",
+    "category": "Wallpaper",
+    "materials": [
+      {
+        "name": "hardwood",
+        "count": 15
+      }
+    ]
+  },
+  {
+    "name": "cherry wall",
+    "source": "Peppy",
+    "category": "Wallpaper",
+    "materials": [
+      {
+        "name": "cherry",
+        "count": 20
+      }
+    ]
+  },
+  {
+    "name": "cherry-blossom-trees wall",
+    "source": "Balloons (Cherry-Blossom Season)",
+    "category": "Wallpaper",
+    "materials": [
+      {
+        "name": "cherry-blossom petal",
+        "count": 10
+      },
+      {
+        "name": "hardwood",
+        "count": 5
+      }
+    ]
+  },
+  {
+    "name": "chocolate herringbone wall",
+    "source": "Smug",
+    "category": "Wallpaper",
+    "materials": [
+      {
+        "name": "softwood",
+        "count": 15
+      }
+    ]
+  },
+  {
+    "name": "classic-library wall",
+    "source": "Normal",
+    "category": "Wallpaper",
+    "materials": [
+      {
+        "name": "book",
+        "count": 10
+      }
+    ]
+  },
+  {
+    "name": "dark wooden-mosaic wall",
+    "source": "Uchi",
+    "category": "Wallpaper",
+    "materials": [
+      {
+        "name": "wood",
+        "count": 15
+      }
+    ]
+  },
+  {
+    "name": "forest wall",
+    "source": "Balloons (Mushroom Season)",
+    "category": "Wallpaper",
+    "materials": [
+      {
+        "name": "elegant mushroom",
+        "count": 2
+      },
+      {
+        "name": "round mushroom",
+        "count": 2
+      },
+      {
+        "name": "skinny mushroom",
+        "count": 2
+      },
+      {
+        "name": "flat mushroom",
+        "count": 2
+      },
+      {
+        "name": "wood",
+        "count": 10
+      }
+    ]
+  },
+  {
+    "name": "garbage-heap wall",
+    "source": "Fishing up trash",
+    "category": "Wallpaper",
+    "materials": [
+      {
+        "name": "empty can",
+        "count": 2
+      },
+      {
+        "name": "boot",
+        "count": 2
+      },
+      {
+        "name": "old tire",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "name": "gold-screen wall",
+    "source": "Smug",
+    "category": "Wallpaper",
+    "materials": [
+      {
+        "name": "gold nugget",
+        "count": 2
+      },
+      {
+        "name": "screen wall",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "name": "golden wall",
+    "source": "Smug",
+    "category": "Wallpaper",
+    "materials": [
+      {
+        "name": "gold nugget",
+        "count": 4
+      }
+    ]
+  },
+  {
+    "name": "honeycomb wall",
+    "source": "Jock",
+    "category": "Wallpaper",
+    "materials": [
+      {
+        "name": "wasp nest",
+        "count": 6
+      }
+    ]
+  },
+  {
+    "name": "ice wall",
+    "source": "Making a perfect Snowboy",
+    "category": "Wallpaper",
+    "materials": [
+      {
+        "name": "large snowflake",
+        "count": 1
+      },
+      {
+        "name": "snowflake",
+        "count": 8
+      }
+    ]
+  },
+  {
+    "name": "iceberg wall",
+    "source": "Balloons (Winter)",
+    "category": "Wallpaper",
+    "materials": [
+      {
+        "name": "large snowflake",
+        "count": 1
+      },
+      {
+        "name": "snowflake",
+        "count": 8
+      }
+    ]
+  },
+  {
+    "name": "Jingle wall",
+    "source": "Balloons (Festive Season)",
+    "category": "Wallpaper",
+    "materials": [
+      {
+        "name": "red ornament",
+        "count": 5
+      },
+      {
+        "name": "blue ornament",
+        "count": 5
+      },
+      {
+        "name": "gold ornament",
+        "count": 5
+      },
+      {
+        "name": "clay",
+        "count": 5
+      }
+    ]
+  },
+  {
+    "name": "jungle wall",
+    "source": "Jock",
+    "category": "Wallpaper",
+    "materials": [
+      {
+        "name": "clump of weeds",
+        "count": 15
+      },
+      {
+        "name": "wood",
+        "count": 3
+      },
+      {
+        "name": "hardwood",
+        "count": 3
+      },
+      {
+        "name": "softwood",
+        "count": 3
+      }
+    ]
+  },
+  {
+    "name": "manga-library wall",
+    "source": "Peppy",
+    "category": "Wallpaper",
+    "materials": [
+      {
+        "name": "magazine",
+        "count": 10
+      }
+    ]
+  },
+  {
+    "name": "modern wood wall",
+    "source": "Snooty",
+    "category": "Wallpaper",
+    "materials": [
+      {
+        "name": "wood",
+        "count": 5
+      },
+      {
+        "name": "softwood",
+        "count": 5
+      },
+      {
+        "name": "hardwood",
+        "count": 5
+      }
+    ]
+  },
+  {
+    "name": "mush wall",
+    "source": "Balloons (Mushroom Season)",
+    "category": "Wallpaper",
+    "materials": [
+      {
+        "name": "elegant mushroom",
+        "count": 1
+      },
+      {
+        "name": "round mushroom",
+        "count": 1
+      },
+      {
+        "name": "skinny mushroom",
+        "count": 1
+      },
+      {
+        "name": "flat mushroom",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "name": "orange wall",
+    "source": "Lazy",
+    "category": "Wallpaper",
+    "materials": [
+      {
+        "name": "orange",
+        "count": 20
+      }
+    ]
+  },
+  {
+    "name": "peach wall",
+    "source": "Normal",
+    "category": "Wallpaper",
+    "materials": [
+      {
+        "name": "peach",
+        "count": 6
+      }
+    ]
+  },
+  {
+    "name": "pear wall",
+    "source": "Jock",
+    "category": "Wallpaper",
+    "materials": [
+      {
+        "name": "pear",
+        "count": 20
+      }
+    ]
+  },
+  {
+    "name": "rustic-stone wall",
+    "source": "Snooty",
+    "category": "Wallpaper",
+    "materials": [
+      {
+        "name": "stone",
+        "count": 5
+      },
+      {
+        "name": "clay",
+        "count": 5
+      }
+    ]
+  },
+  {
+    "name": "sakura-wood wall",
+    "source": "Balloons (Cherry-Blossom Season)",
+    "category": "Wallpaper",
+    "materials": [
+      {
+        "name": "cherry-blossom petal",
+        "count": 5
+      },
+      {
+        "name": "wood",
+        "count": 10
+      }
+    ]
+  },
+  {
+    "name": "sci-fi wall",
+    "source": "Celeste",
+    "category": "Wallpaper",
+    "materials": [
+      {
+        "name": "star fragment",
+        "count": 5
+      },
+      {
+        "name": "large star fragment",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "name": "ski-slope wall",
+    "source": "Balloons (Winter)",
+    "category": "Wallpaper",
+    "materials": [
+      {
+        "name": "snowflake",
+        "count": 8
+      }
+    ]
+  },
+  {
+    "name": "snowflake wall",
+    "source": "Balloons (Winter)",
+    "category": "Wallpaper",
+    "materials": [
+      {
+        "name": "snowflake",
+        "count": 12
+      }
+    ]
+  },
+  {
+    "name": "stacked-wood wall",
+    "source": "Jock",
+    "category": "Wallpaper",
+    "materials": [
+      {
+        "name": "hardwood",
+        "count": 15
+      }
+    ]
+  },
+  {
+    "name": "starry wall",
+    "source": "Celeste",
+    "category": "Wallpaper",
+    "materials": [
+      {
+        "name": "star fragment",
+        "count": 5
+      },
+      {
+        "name": "large star fragment",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "name": "starry-sky wall",
+    "source": "Celeste",
+    "category": "Wallpaper",
+    "materials": [
+      {
+        "name": "star fragment",
+        "count": 5
+      },
+      {
+        "name": "large star fragment",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "name": "steel-frame wall",
+    "source": "Smug",
+    "category": "Wallpaper",
+    "materials": [
+      {
+        "name": "iron nugget",
+        "count": 8
+      }
+    ]
+  },
+  {
+    "name": "stone wall",
+    "source": "Smug",
+    "category": "Wallpaper",
+    "materials": [
+      {
+        "name": "stone",
+        "count": 10
+      }
+    ]
+  },
+  {
+    "name": "tropical vista",
+    "source": "Balloons (Summer)",
+    "category": "Wallpaper",
+    "materials": [
+      {
+        "name": "summer shell",
+        "count": 5
+      }
+    ]
+  },
+  {
+    "name": "underwater wall",
+    "source": "Balloons (Summer)",
+    "category": "Wallpaper",
+    "materials": [
+      {
+        "name": "summer shell",
+        "count": 3
+      },
+      {
+        "name": "coral",
+        "count": 5
+      }
+    ]
+  },
+  {
+    "name": "wild-wood wall",
+    "source": "Cranky",
+    "category": "Wallpaper",
+    "materials": [
+      {
+        "name": "wood",
+        "count": 15
+      }
+    ]
+  },
+  {
+    "name": "wooden-knot wall",
+    "source": "Smug",
+    "category": "Wallpaper",
+    "materials": [
+      {
+        "name": "hardwood",
+        "count": 15
+      }
+    ]
+  },
+  {
+    "name": "wooden-mosaic wall",
+    "source": "Normal",
+    "category": "Wallpaper",
+    "materials": [
+      {
+        "name": "wood",
+        "count": 15
+      }
+    ]
+  },
+  {
+    "name": "woodland wall",
+    "source": "Normal",
+    "category": "Wallpaper",
+    "materials": [
+      {
+        "name": "clump of weeds",
+        "count": 15
+      },
+      {
+        "name": "softwood",
+        "count": 9
+      }
+    ]
+  }
+]

@@ -1,0 +1,85 @@
+#,Name,Image,House,Sell,Where/How,Weather,Rarity,Start Time,End Time,Jan,Feb,Mar,Apr,May,Jun,Jul,Aug,Sep,Oct,Nov,Dec,Color 1,Color 2,Critterpedia Filename,Item Filename,Internal ID
+10,agrias butterfly,,,3000,Flying near flowers,Any except rain,Uncommon,8:00 AM,5:00 PM,Yes,Yes,Yes,No,No,No,No,No,No,Yes,Yes,Yes,Pink,Green,,FtrInsectMiirotateha,620
+69,ant,,,80,On rotten turnips,Any weather,Common,All day,All day,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Black,White,,FtrInsectAri,588
+14,Atlas moth,,,3000,On trees (any kind),Any weather,Uncommon,7:00 PM,4:00 AM,Yes,Yes,Yes,No,No,No,No,No,No,Yes,Yes,Yes,Orange,Yellow,,FtrInsectYonagunisan,652
+68,bagworm,,,600,Shaking trees (hardwood or cedar only),Any weather,Common,All day,All day,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Brown,Blue,,FtrInsectMinomushi,622
+34,banded dragonfly,,,4500,Flying,Any except rain,Rare,8:00 AM,5:00 PM,Yes,Yes,Yes,Yes,No,No,No,No,No,No,Yes,Yes,Black,Yellow,,FtrInsectOniyanma,635
+21,bell cricket,,,430,On the ground,Any except rain,Common,5:00 PM,8:00 AM,No,No,Yes,Yes,No,No,No,No,No,No,No,No,Black,Beige,,FtrInsectSuzumushi,642
+49,blue weevil beetle,,,800,On palm trees,Any weather,Common,All day,All day,Yes,Yes,No,No,No,No,No,No,No,No,No,No,Green,Pink,,FtrInsectHousekizoumushi,3485
+26,brown cicada,,,250,On hardwood/cedar trees,Any weather,Common,8:00 AM,5:00 PM,Yes,Yes,No,No,No,No,No,No,No,No,No,No,Brown,Green,,FtrInsectAburazemi,582
+77,centipede,,,300,From hitting rocks,Any weather,Common,4:00 PM,11:00 PM,No,No,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Black,Orange,,FtrInsectMukade,628
+31,cicada shell,,,10,Shaking trees (hardwood or cedar only),Any weather,Rare,All day,All day,Yes,Yes,No,No,No,No,No,No,No,No,No,No,Brown,Green,,FtrInsectSeminonukegara,641
+47,citrus long-horned beetle,,,350,On tree stumps,Any except rain,Common,All day,All day,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Black,Green,,FtrInsectGomadarakamikiri,609
+5,common bluebottle,,,300,Flying near flowers,Any except rain,Common,4:00 AM,7:00 PM,Yes,Yes,No,No,No,No,No,No,No,Yes,Yes,Yes,Black,Green,,FtrInsectAosujiageha,3477
+1,common butterfly,,,160,Flying near flowers,Any except rain,Common,4:00 AM,7:00 PM,No,No,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,White,Green,,FtrInsectMonshirocho,626
+20,cricket,,,130,On the ground,Any except rain,Common,5:00 PM,8:00 AM,No,No,Yes,Yes,Yes,No,No,No,No,No,No,No,Brown,Beige,,FtrInsectKohrogi,617
+59,cyclommatus stag,,,8000,On palm trees,Any weather,Ultra-rare,5:00 PM,8:00 AM,Yes,Yes,No,No,No,No,No,No,No,No,No,No,Black,Black,,FtrInsectHosoakakuwagata,602
+35,damselfly,,,500,Flying,Any except rain,Common,All day,All day,No,No,No,No,Yes,Yes,Yes,Yes,No,No,No,No,Green,Blue,,FtrInsectItotonbo,5339
+33,darner dragonfly,,,230,Flying,Any except rain,Common,8:00 AM,5:00 PM,Yes,Yes,Yes,Yes,No,No,No,No,No,Yes,Yes,Yes,Green,Green,,FtrInsectGinyanma,595
+39,diving beetle,,,800,On rivers/ponds,Any weather,Common,8:00 AM,7:00 PM,Yes,Yes,Yes,No,No,No,No,No,No,No,Yes,Yes,Black,Blue,,FtrInsectGengorou,594
+53,drone beetle,,,200,On trees (any kind),Any weather,Common,All day,All day,Yes,Yes,No,No,No,No,No,No,No,No,No,Yes,Green,Blue,,FtrInsectKanabun,3480
+50,dung beetle,,,3000,Pushing snowballs,Any weather,Common,All day,All day,No,No,No,No,No,Yes,Yes,Yes,No,No,No,No,Black,Beige,,FtrInsectFunkorogashi,604
+51,earth-boring dung beetle,,,300,On trees (any kind),Any weather,Common,All day,All day,Yes,Yes,Yes,No,No,No,No,No,No,No,No,No,Purple,Orange,,FtrInsectSenchikogane,614
+9,emperor butterfly,,,4000,Flying near flowers,Any except rain,Uncommon,5:00 PM,8:00 AM,Yes,Yes,Yes,No,No,Yes,Yes,Yes,Yes,No,No,Yes,Blue,Orange,,FtrInsectMorufuocho,627
+30,evening cicada,,,550,On hardwood/cedar trees,Any weather,Common,"4:00 AM 
+4:00 PM","8:00 AM
+7:00 PM",Yes,Yes,No,No,No,No,No,No,No,No,No,No,Black,Orange,,FtrInsectHigurashi,601
+36,firefly,,,300,Flying,Any except rain,Common,7:00 PM,4:00 AM,No,No,No,No,No,No,No,No,No,No,No,Yes,Black,Blue,,FtrInsectHotaru,603
+74,flea,,,70,On villagers,Any weather,Common,All day,All day,Yes,Yes,Yes,Yes,Yes,No,No,No,No,Yes,Yes,Yes,Brown,White,,FtrInsectNomi,633
+72,fly,,,60,"Flying near trash (boots, tires, cans)",Any weather,Common,All day,All day,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Black,White,,FtrInsectHae,597
+28,giant cicada,,,500,On hardwood/cedar trees,Any weather,Uncommon,8:00 AM,5:00 PM,Yes,Yes,No,No,No,No,No,No,No,No,No,No,Black,Yellow,,FtrInsectKumazemi,618
+57,giant stag,,,10000,On trees (any kind),Any weather,Rare,11:00 PM,8:00 AM,Yes,Yes,No,No,No,No,No,No,No,No,No,No,Black,Black,,FtrInsectOhkuwagata,637
+40,giant water bug,,,2000,On rivers/ponds,Any weather,Rare,7:00 PM,8:00 AM,Yes,Yes,Yes,No,No,No,No,No,No,Yes,Yes,Yes,Brown,Blue,,FtrInsectTagame,5157
+61,giraffe stag,,,12000,On palm trees,Any weather,Ultra-rare,5:00 PM,8:00 AM,Yes,Yes,No,No,No,No,No,No,No,No,No,No,Black,Black,,FtrInsectGirafanokogirikuwagata,3482
+60,golden stag,,,12000,On palm trees,Any weather,Ultra-rare,5:00 PM,8:00 AM,Yes,Yes,No,No,No,No,No,No,No,No,No,No,Black,Yellow,,FtrInsectOugononikuwagata,638
+54,goliath beetle,,,8000,On palm trees,Any weather,Ultra-rare,5:00 PM,8:00 AM,Yes,Yes,Yes,No,No,No,No,No,No,No,No,Yes,Red,Black,,FtrInsectGoraiasuohtsunohanamuguri,596
+19,grasshopper,,,160,On the ground,Any except rain,Common,8:00 AM,5:00 PM,Yes,Yes,Yes,No,No,No,No,No,No,No,No,No,Green,Beige,,FtrInsectKirigirisu,613
+7,great purple emperor,,,3000,Flying near flowers,Any except rain,Rare,4:00 AM,7:00 PM,Yes,Yes,No,No,No,No,No,No,No,No,Yes,Yes,Purple,Orange,,FtrInsectOhmurasaki,3479
+70,hermit crab,,,1000,Disguised on shoreline,Any weather,Common,7:00 PM,8:00 AM,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Beige,Pink,,FtrInsectYadokari,651
+24,honeybee,,,200,Flying near flowers,Any except rain,Common,8:00 AM,5:00 PM,Yes,No,No,No,No,No,No,No,Yes,Yes,Yes,Yes,Yellow,Blue,,FtrInsectMitsubachi,623
+63,horned atlas,,,8000,On palm trees,Any weather,Ultra-rare,5:00 PM,8:00 AM,Yes,Yes,No,No,No,No,No,No,No,No,No,No,Black,Black,,FtrInsectKohkasasuohkabuto,615
+62,horned dynastid,,,1350,On trees (any kind),Any weather,Common,5:00 PM,8:00 AM,Yes,Yes,No,No,No,No,No,No,No,No,No,No,Brown,Black,,FtrInsectKabutomushi,612
+64,horned elephant,,,8000,On palm trees,Any weather,Ultra-rare,5:00 PM,8:00 AM,Yes,Yes,No,No,No,No,No,No,No,No,No,No,Beige,Black,,FtrInsectZoukabuto,653
+65,horned hercules,,,12000,On palm trees,Any weather,Ultra-rare,5:00 PM,8:00 AM,Yes,Yes,No,No,No,No,No,No,No,No,No,No,Yellow,Black,,FtrInsectHerakuresuohkabuto,600
+45,jewel beetle,,,2400,On tree stumps,Any except rain,Uncommon,All day,All day,Yes,Yes,No,No,No,No,No,No,No,Yes,Yes,Yes,Green,Black,,FtrInsectTamamushi,645
+43,ladybug,,,200,On flowers,Any except rain,Common,8:00 AM,5:00 PM,No,No,No,Yes,No,No,No,No,Yes,Yes,Yes,Yes,Red,Green,,FtrInsectTentoumushi,647
+16,long locust,,,200,On the ground,Any weather,Common,8:00 AM,7:00 PM,Yes,Yes,Yes,Yes,Yes,No,No,No,No,Yes,Yes,Yes,Green,Blue,,FtrInsectShoryobatta,644
+15,Madagascan sunset moth,,,2500,Flying near flowers,Any except rain,Uncommon,8:00 AM,4:00 PM,Yes,Yes,Yes,No,No,No,No,No,No,Yes,Yes,Yes,Green,Pink,,FtrInsectNishikiohtsubamega,3484
+42,man-faced stink bug,,,1000,On flowers,Any except rain,Uncommon,7:00 PM,8:00 AM,Yes,Yes,Yes,Yes,No,No,No,No,Yes,Yes,Yes,Yes,Black,Orange,,FtrInsectJinmenkamemushi,3483
+22,mantis,,,430,On flowers,Any except rain,Common,8:00 AM,5:00 PM,Yes,Yes,Yes,Yes,Yes,No,No,No,Yes,Yes,Yes,Yes,Green,Green,,FtrInsectKamakiri,607
+17,migratory locust,,,600,On the ground,Any weather,Uncommon,8:00 AM,7:00 PM,No,Yes,Yes,Yes,Yes,No,No,No,No,No,No,No,Green,Orange,,FtrInsectTonosamabatta,648
+56,miyama stag,,,1000,On trees (any kind),Any weather,Common,All day,All day,Yes,Yes,No,No,No,No,No,No,No,No,No,No,Black,Black,,FtrInsectMiyamakuwagata,624
+37,mole cricket,,,500,Underground (dig where noise is loudest),Any weather,Common,All day,All day,No,No,No,No,Yes,Yes,Yes,Yes,Yes,Yes,Yes,No,Brown,Yellow,,FtrInsectOkera,634
+8,monarch butterfly,,,140,Flying near flowers,Any except rain,Common,4:00 AM,5:00 PM,No,No,Yes,Yes,Yes,No,No,No,No,No,No,No,Orange,Blue,,FtrInsectOhkabamadara,636
+73,mosquito,,,130,Flying,Any except rain,Common,5:00 PM,4:00 AM,Yes,Yes,Yes,No,No,No,No,No,No,No,No,Yes,Black,White,,FtrInsectKa,606
+13,moth,,,130,Flying near light sources,Any except rain,Common,7:00 PM,4:00 AM,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Beige,Yellow,,FtrInsectGa,592
+23,orchid mantis,,,2400,On white flowers,Any except rain,Uncommon,8:00 AM,5:00 PM,Yes,Yes,Yes,Yes,Yes,No,No,No,Yes,Yes,Yes,Yes,White,Pink,,FtrInsectHanakamakiri,598
+6,paper kite butterfly,,,1000,Flying near flowers,Any except rain,Common,8:00 AM,7:00 PM,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,White,Yellow,,FtrInsectOhgomamadara,3478
+4,peacock butterfly,,,2500,Flying near blue/purple/black flowers,Any except rain,Uncommon,4:00 AM,7:00 PM,No,No,No,No,No,No,No,No,Yes,Yes,Yes,Yes,Green,Blue,,FtrInsectKarasuageha,610
+76,pill bug,,,250,From hitting rocks,Any weather,Common,11:00 PM,4:00 PM,No,No,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Black,Blue,,FtrInsectDangomushi,590
+38,pondskater,,,130,On rivers/ponds,Any weather,Common,8:00 AM,7:00 PM,Yes,Yes,Yes,No,No,No,No,No,No,No,Yes,Yes,Black,Blue,,FtrInsectAmenbo,587
+12,Queen Alexandra's birdwing,,,4000,Flying near flowers,Any except rain,Rare,8:00 AM,4:00 PM,Yes,Yes,Yes,No,No,No,No,No,No,No,Yes,Yes,Green,Pink,,FtrInsectArekisandoratoribaneageha,586
+58,rainbow stag,,,6000,On trees (any kind),Any weather,Rare,7:00 PM,8:00 AM,Yes,Yes,Yes,No,No,No,No,No,No,No,No,Yes,Brown,Black,,FtrInsectNijiirokuwagata,631
+11,Rajah Brooke's birdwing,,,2500,Flying near flowers,Any except rain,Uncommon,8:00 AM,5:00 PM,Yes,Yes,Yes,No,No,Yes,Yes,Yes,No,Yes,Yes,Yes,Green,Pink,,FtrInsectAkaeritoribaneageha,584
+32,red dragonfly,,,180,Flying,Any except rain,Common,8:00 AM,7:00 PM,No,No,Yes,Yes,No,No,No,No,No,No,No,No,Red,Orange,,FtrInsectAkiakane,585
+18,rice grasshopper,,,400,On the ground,Any weather,Common,8:00 AM,7:00 PM,No,Yes,Yes,Yes,Yes,No,No,No,No,No,No,No,Green,Yellow,,FtrInsectInago,605
+27,robust cicada,,,300,On hardwood/cedar trees,Any weather,Common,8:00 AM,5:00 PM,Yes,Yes,No,No,No,No,No,No,No,No,No,No,Black,Blue,,FtrInsectMinminzemi,621
+48,rosalia batesi beetle,,,3000,On tree stumps,Any except rain,Uncommon,All day,All day,Yes,Yes,Yes,No,No,No,No,No,No,No,Yes,Yes,Blue,Black,,FtrInsectRuriboshikamikiri,3487
+55,saw stag,,,2000,On trees (any kind),Any weather,Common,All day,All day,Yes,Yes,No,No,No,No,No,No,No,No,No,No,Brown,Black,,FtrInsectNokogirikuwagata,632
+52,scarab beetle,,,10000,On trees (any kind),Any weather,Rare,11:00 PM,8:00 PM,Yes,Yes,No,No,No,No,No,No,No,No,No,No,Black,Beige,,FtrInsectPurachinakogane,639
+80,scorpion,,,8000,On the ground,Any weather,Common,7:00 PM,4:00 AM,Yes,Yes,Yes,Yes,No,No,No,No,No,No,Yes,Yes,Black,Black,,FtrInsectSasori,640
+75,snail,,,250,On rocks,Rain only,Common,All day,All day,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Beige,Green,,FtrInsectKatatsumuri,611
+78,spider,,,600,Shaking trees (hardwood or cedar only),Any weather,Common,7:00 PM,8:00 AM,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yellow,Orange,,FtrInsectKumo,619
+41,stinkbug,,,120,On flowers,Any except rain,Common,All day,All day,Yes,Yes,Yes,Yes,No,No,No,No,Yes,Yes,Yes,Yes,Green,Yellow,,FtrInsectKamemushi,608
+79,tarantula,,,8000,On the ground,Any weather,Common,7:00 PM,4:00 AM,No,No,No,No,Yes,Yes,Yes,Yes,Yes,Yes,No,No,Brown,Black,,FtrInsectTaranchura,646
+44,tiger beetle,,,1500,On the ground,Any except rain,Uncommon,All day,All day,Yes,Yes,Yes,Yes,No,No,No,Yes,Yes,Yes,Yes,Yes,Green,Yellow,,FtrInsectHanmyou,599
+3,tiger butterfly,,,240,Flying near flowers,Any except rain,Common,4:00 AM,7:00 PM,Yes,Yes,Yes,No,No,No,No,No,Yes,Yes,Yes,Yes,Yellow,Green,,FtrInsectAgehacho,583
+46,violin beetle,,,450,On tree stumps,Any except rain,Common,All day,All day,No,No,Yes,Yes,Yes,No,No,No,No,No,Yes,Yes,Brown,Black,,FtrInsectBaiorinmushi,650
+29,walker cicada,,,400,On hardwood/cedar trees,Any weather,Common,8:00 AM,5:00 PM,No,Yes,Yes,No,No,No,No,No,No,No,No,No,Black,Pink,,FtrInsectTsukutsukuhousi,649
+67,walking leaf,,,600,Disguised under trees,Any weather,Uncommon,All day,All day,Yes,Yes,Yes,No,No,No,No,No,No,No,No,No,Green,Green,,FtrInsectKonohamushi,616
+66,walking stick,,,600,On trees (any kind),Any weather,Uncommon,"4:00 AM
+5:00 PM","8:00 AM
+7:00 PM",Yes,Yes,Yes,Yes,Yes,No,No,No,No,No,No,Yes,Brown,Yellow,,FtrInsectNanafushi,630
+25,wasp,,,2500,Shaking trees,Any weather,Common,All day,All day,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yellow,Orange,,FtrInsectHachi,643
+71,wharf roach,,,200,On beach rocks,Any weather,Common,All day,All day,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Beige,Blue,,FtrInsectFunamushi,591
+2,yellow butterfly,,,160,Flying near flowers,Any except rain,Common,4:00 AM,7:00 PM,No,No,Yes,Yes,No,No,No,No,Yes,Yes,Yes,Yes,Yellow,Blue,,FtrInsectMonkicho,625

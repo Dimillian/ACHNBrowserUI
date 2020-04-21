@@ -1,0 +1,74 @@
+Name,Image,Buy,Sell,Color 1,Color 2,Size,Source,Version,Interact,Catalog,Filename,Internal ID
+acanthostega,,NFS,2000,Beige,Brown,1x1,Dig spot,1.0.0,No,Not for sale,FtrFossilFirstFourLegs,4664
+amber,,NFS,1200,Yellow,Yellow,1x1,Dig spot,1.0.0,No,Not for sale,FtrFossilAmber,294
+ammonite,,NFS,1100,Beige,Brown,1x1,Dig spot,1.0.0,No,Not for sale,FtrFossilAmmonoidea,295
+ankylo skull,,NFS,3500,Brown,Brown,2x2,Dig spot,1.0.0,No,Not for sale,FtrFossilAnkylosaurusA,169
+ankylo tail,,NFS,2500,Brown,Brown,2x2,Dig spot,1.0.0,No,Not for sale,FtrFossilAnkylosaurusC,171
+ankylo torso,,NFS,3000,Brown,Brown,2x2,Dig spot,1.0.0,No,Not for sale,FtrFossilAnkylosaurusB,170
+anomalocaris,,NFS,2000,Black,Gray,1x1,Dig spot,1.0.0,No,Not for sale,FtrFossilAnomalocaris,4651
+archaeopteryx,,NFS,1300,Beige,Brown,1x1,Dig spot,1.0.0,No,Not for sale,FtrFossilArchaeopteryx,298
+archelon skull,,NFS,4000,Brown,Brown,2x2,Dig spot,1.0.0,No,Not for sale,FtrFossilArchelonA,177
+archelon tail,,NFS,3500,Brown,Brown,2x2,Dig spot,1.0.0,No,Not for sale,FtrFossilArchelonB,178
+australopith,,NFS,1100,Beige,Brown,1x1,Dig spot,1.0.0,No,Not for sale,FtrFossilAustralopithecus,301
+brachio chest,,NFS,5500,Brown,Brown,2x2,Dig spot,1.0.0,No,Not for sale,FtrFossilBrachiosaurusB,4689
+brachio pelvis,,NFS,5000,Brown,Brown,2x2,Dig spot,1.0.0,No,Not for sale,FtrFossilBrachiosaurusC,4690
+brachio skull,,NFS,6000,Brown,Brown,2x2,Dig spot,1.0.0,No,Not for sale,FtrFossilBrachiosaurusA,4688
+brachio tail,,NFS,5500,Brown,Brown,2x2,Dig spot,1.0.0,No,Not for sale,FtrFossilBrachiosaurusD,4691
+coprolite,,NFS,1100,Brown,Brown,1x1,Dig spot,1.0.0,No,Not for sale,FtrFossilCoprolite,296
+deinony tail,,NFS,2500,Brown,Brown,2x2,Dig spot,1.0.0,No,Not for sale,FtrFossilDeinonychusB,211
+deinony torso,,NFS,3000,Brown,Brown,2x2,Dig spot,1.0.0,No,Not for sale,FtrFossilDeinonychusA,210
+dimetrodon skull,,NFS,5500,Brown,Brown,2x2,Dig spot,1.0.0,No,Not for sale,FtrFossilDimetrodonA,184
+dimetrodon torso,,NFS,5000,Brown,Brown,2x2,Dig spot,1.0.0,No,Not for sale,FtrFossilDimetrodonB,185
+dinosaur track,,NFS,1000,Beige,Brown,1x1,Dig spot,1.0.0,No,Not for sale,FtrFossilIchnology,300
+diplo chest,,NFS,4000,Brown,Brown,2x2,Dig spot,1.0.0,No,Not for sale,FtrFossilDiplodocusC,218
+diplo neck,,NFS,4500,Brown,Brown,2x2,Dig spot,1.0.0,No,Not for sale,FtrFossilDiplodocusB,217
+diplo pelvis,,NFS,4500,Brown,Brown,2x2,Dig spot,1.0.0,No,Not for sale,FtrFossilDiplodocusD,219
+diplo skull,,NFS,5000,Brown,Brown,2x2,Dig spot,1.0.0,No,Not for sale,FtrFossilDiplodocusA,216
+diplo tail,,NFS,5000,Brown,Brown,2x2,Dig spot,1.0.0,No,Not for sale,FtrFossilDiplodocusE,220
+diplo tail tip,,NFS,4000,Brown,Brown,2x2,Dig spot,1.0.0,No,Not for sale,FtrFossilDiplodocusF,7251
+dunkleosteus,,NFS,3500,Gray,Brown,2x2,Dig spot,1.0.0,No,Not for sale,FtrFossilDunkleosteus,4660
+eusthenopteron,,NFS,2000,Brown,Brown,1x1,Dig spot,1.0.0,No,Not for sale,FtrFossilFirstAmphibian,4663
+iguanodon skull,,NFS,4000,Brown,Brown,2x2,Dig spot,1.0.0,No,Not for sale,FtrFossilIguanodonA,188
+iguanodon tail,,NFS,3000,Brown,Brown,2x2,Dig spot,1.0.0,No,Not for sale,FtrFossilIguanodonC,190
+iguanodon torso,,NFS,3500,Brown,Brown,2x2,Dig spot,1.0.0,No,Not for sale,FtrFossilIguanodonB,189
+juramaia,,NFS,1500,Beige,Brown,1x1,Dig spot,1.0.0,No,Not for sale,FtrFossilFirstMammal,4665
+left megalo side,,NFS,4000,Beige,Brown,2x2,Dig spot,1.0.0,No,Not for sale,FtrFossilMegalocerosB,4659
+left ptera wing,,NFS,4500,Brown,Brown,2x2,Dig spot,1.0.0,No,Not for sale,FtrFossilPteranodonC,208
+left quetzal wing,,NFS,5000,Brown,Brown,2x2,Dig spot,1.0.0,No,Not for sale,FtrFossilQuetzalcoatlusC,4699
+mammoth skull,,NFS,3000,Beige,Brown,2x2,Dig spot,1.0.0,No,Not for sale,FtrFossilMammothA,195
+mammoth torso,,NFS,2500,Beige,Brown,2x2,Dig spot,1.0.0,No,Not for sale,FtrFossilMammothB,196
+megacero skull,,NFS,4500,Brown,Brown,2x2,Dig spot,1.0.0,No,Not for sale,FtrFossilBrontotheriumA,180
+megacero tail,,NFS,3000,Brown,Brown,2x2,Dig spot,1.0.0,No,Not for sale,FtrFossilBrontotheriumC,182
+megacero torso,,NFS,3500,Brown,Brown,2x2,Dig spot,1.0.0,No,Not for sale,FtrFossilBrontotheriumB,181
+myllokunmingia,,NFS,1500,Gray,Gray,1x1,Dig spot,1.0.0,No,Not for sale,FtrFossilFirstFish,4662
+ophthalmo skull,,NFS,2500,Brown,Brown,2x2,Dig spot,1.0.0,No,Not for sale,FtrFossilOphthalmosaurusA,192
+ophthalmo torso,,NFS,2000,Brown,Brown,2x2,Dig spot,1.0.0,No,Not for sale,FtrFossilOphthalmosaurusB,193
+pachysaurus skull,,NFS,4000,Brown,Brown,2x2,Dig spot,1.0.0,Yes,Not for sale,FtrFossilPachycephalosaurusA,198
+pachysaurus tail,,NFS,3500,Brown,Brown,2x2,Dig spot,1.0.0,No,Not for sale,FtrFossilPachycephalosaurusB,199
+parasaur skull,,NFS,3500,Brown,Brown,2x2,Dig spot,1.0.0,No,Not for sale,FtrFossilParasaurolophusA,202
+parasaur tail,,NFS,2500,Brown,Brown,2x2,Dig spot,1.0.0,No,Not for sale,FtrFossilParasaurolophusC,204
+parasaur torso,,NFS,3000,Brown,Brown,2x2,Dig spot,1.0.0,No,Not for sale,FtrFossilParasaurolophusB,203
+plesio body,,NFS,4500,Brown,Brown,2x2,Dig spot,1.0.0,No,Not for sale,FtrFossilElasmosaurusB,235
+plesio skull,,NFS,4000,Brown,Brown,2x2,Dig spot,1.0.0,No,Not for sale,FtrFossilElasmosaurusA,234
+plesio tail,,NFS,4500,Brown,Brown,2x2,Dig spot,1.0.0,No,Not for sale,FtrFossilElasmosaurusC,236
+ptera body,,NFS,4000,Brown,Brown,2x2,Dig spot,1.0.0,No,Not for sale,FtrFossilPteranodonA,206
+quetzal torso,,NFS,4500,Brown,Brown,2x2,Dig spot,1.0.0,No,Not for sale,FtrFossilQuetzalcoatlusA,4697
+right megalo side,,NFS,5500,Beige,Brown,2x2,Dig spot,1.0.0,No,Not for sale,FtrFossilMegalocerosA,4658
+right ptera wing,,NFS,4500,Brown,Brown,2x2,Dig spot,1.0.0,No,Not for sale,FtrFossilPteranodonB,207
+right quetzal wing,,NFS,5000,Brown,Brown,2x2,Dig spot,1.0.0,No,Not for sale,FtrFossilQuetzalcoatlusB,4698
+sabertooth skull,,NFS,2500,Brown,Brown,2x2,Dig spot,1.0.0,No,Not for sale,FtrFossilSmilodonA,213
+sabertooth tail,,NFS,2000,Brown,Brown,2x2,Dig spot,1.0.0,No,Not for sale,FtrFossilSmilodonB,214
+shark-tooth pattern,,NFS,1000,Beige,Brown,1x1,Dig spot,1.0.0,No,Not for sale,FtrFossilShark,302
+spino skull,,NFS,4000,Brown,Brown,2x2,Dig spot,1.0.0,Yes,Not for sale,FtrFossilSpinosaurusA,222
+spino tail,,NFS,2500,Brown,Brown,2x2,Dig spot,1.0.0,No,Not for sale,FtrFossilSpinosaurusC,224
+spino torso,,NFS,3000,Brown,Brown,2x2,Dig spot,1.0.0,No,Not for sale,FtrFossilSpinosaurusB,223
+stego skull,,NFS,5000,Brown,Brown,2x2,Dig spot,1.0.0,No,Not for sale,FtrFossilStegosaurusA,226
+stego tail,,NFS,4000,Brown,Brown,2x2,Dig spot,1.0.0,No,Not for sale,FtrFossilStegosaurusC,228
+stego torso,,NFS,4500,Brown,Brown,2x2,Dig spot,1.0.0,No,Not for sale,FtrFossilStegosaurusB,227
+T. rex skull,,NFS,6000,Brown,Brown,2x2,Dig spot,1.0.0,Yes,Not for sale,FtrFossilTRexA,238
+T. rex tail,,NFS,5000,Brown,Brown,2x2,Dig spot,1.0.0,No,Not for sale,FtrFossilTRexC,240
+T. rex torso,,NFS,5500,Brown,Brown,2x2,Dig spot,1.0.0,No,Not for sale,FtrFossilTRexB,239
+tricera skull,,NFS,5500,Brown,Brown,2x2,Dig spot,1.0.0,Yes,Not for sale,FtrFossilTriceratopsA,242
+tricera tail,,NFS,4500,Brown,Brown,2x2,Dig spot,1.0.0,No,Not for sale,FtrFossilTriceratopsC,244
+tricera torso,,NFS,5000,Brown,Brown,2x2,Dig spot,1.0.0,No,Not for sale,FtrFossilTriceratopsB,243
+trilobite,,NFS,1300,Beige,Brown,1x1,Dig spot,1.0.0,No,Not for sale,FtrFossilTrilobite,303

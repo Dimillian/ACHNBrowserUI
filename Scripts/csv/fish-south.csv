@@ -1,0 +1,83 @@
+#,Name,Image,House,Sell,Where/How,Shadow,Rarity,Rain/Snow Catch Up,Start Time,End Time,Jan,Feb,Mar,Apr,May,Jun,Jul,Aug,Sep,Oct,Nov,Dec,Color 1,Color 2,Size,Lighting Type,Critterpedia Filename,Item Filename,Internal ID
+56,anchovy,,,200,Sea,Small,Common,No,4:00 AM,9:00 PM,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Blue,Red,1x1,No lighting,,FtrFishAntyobi,4201
+36,angelfish,,,3000,River,Small,Uncommon,No,4:00 PM,9:00 AM,Yes,Yes,Yes,Yes,No,No,No,No,No,No,Yes,Yes,Yellow,Black,1x1,Fluorescent,,FtrFishAngelfish,2247
+44,arapaima,,,10000,River,XX-Large,Rare,Yes,4:00 PM,9:00 AM,Yes,Yes,Yes,No,No,No,No,No,No,No,No,Yes,Black,Blue,3x2,No lighting,,FtrFishPiraruku,2253
+41,arowana,,,10000,River,Large,Rare,No,4:00 PM,9:00 AM,Yes,Yes,Yes,No,No,No,No,No,No,No,No,Yes,Yellow,Black,2x1,Fluorescent,,FtrFishArowana,2250
+58,barred knifejaw,,,5000,Sea,Medium,Uncommon,No,All day,All day,Yes,Yes,Yes,Yes,Yes,No,No,No,Yes,Yes,Yes,Yes,White,Black,1x1,Fluorescent,,FtrFishIshidai,2265
+79,barreleye,,,15000,Sea,Small,Ultra-rare,No,9:00 PM,4:00 AM,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Black,Black,1x1,Fluorescent,,FtrFishDemenigisu,4204
+37,betta,,,2500,River,Small,Uncommon,No,9:00 AM,4:00 PM,Yes,Yes,Yes,Yes,No,No,No,No,No,No,Yes,Yes,Light blue,Black,1x1,Fluorescent,,FtrFishBeta,4191
+1,bitterling,,,900,River,X-Small,Common,No,All day,All day,No,No,No,No,Yes,Yes,Yes,Yes,Yes,No,No,No,Light blue,Blue,1x1,No lighting,,FtrFishTanago,2215
+22,black bass,,,400,River,Large,Common,No,All day,All day,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Green,Black,1x1,Fluorescent,,FtrFishBlackbass,2234
+54,blowfish,,,5000,Sea,Medium,Uncommon,No,9:00 PM,5:00 AM,No,No,No,No,Yes,Yes,Yes,Yes,No,No,No,No,Beige,Black,1x1,Fluorescent,,FtrFishFugu,2262
+67,blue marlin,,,10000,Pier,XX-Large,Rare,Yes,All day,All day,Yes,Yes,Yes,No,Yes,Yes,Yes,Yes,Yes,Yes,No,No,Blue,Black,2x1,Fluorescent,,FtrFishKajiki,2275
+20,bluegill,,,180,River,Small,Common,No,9:00 AM,4:00 PM,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Blue,Black,1x1,No lighting,,FtrFishBlueguill,2232
+51,butterfly fish,,,1000,Sea,Small,Common,No,All day,All day,Yes,Yes,Yes,No,No,No,No,No,No,Yes,Yes,Yes,Yellow,Black,1x1,Fluorescent,,FtrFishChouchouuo,2259
+5,carp,,,300,Pond,Large,Common,No,All day,All day,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Gray,Black,1x1,Fluorescent,,FtrFishKoi,2219
+18,catfish,,,800,Pond,Large,Common,No,4:00 PM,9:00 AM,Yes,Yes,Yes,Yes,No,No,No,No,No,No,Yes,Yes,Black,Black,1x1,Fluorescent,,FtrFishNamazu,2229
+28,char,,,3800,River (clifftop),Medium,Uncommon,No,4:00 PM,9:00 AM,No,No,Yes,Yes,Yes,No,No,No,Yes,Yes,Yes,Yes,Brown,Black,1x1,Fluorescent,,FtrFishOoiwana,2239
+27,cherry salmon,,,1000,River (clifftop),Medium,Common,No,4:00 PM,9:00 AM,No,No,Yes,Yes,Yes,No,No,No,Yes,Yes,Yes,Yes,Brown,Black,1x1,Fluorescent,,FtrFishYamame,2238
+49,clown fish,,,650,Sea,X-Small,Common,No,All day,All day,Yes,Yes,Yes,No,No,No,No,No,No,Yes,Yes,Yes,Orange,Black,1x1,Fluorescent,,FtrFishKumanomi,2257
+80,coelacanth,,,15000,Sea (raining),XX-Large,Ultra-rare,Yes,All day,All day,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Black,Black,2x1,Fluorescent,,FtrFishSirakansu,2284
+11,crawfish,,,200,Pond,Small,Common,No,All day,All day,Yes,Yes,Yes,No,No,No,No,No,No,Yes,Yes,Yes,Red,Black,1x1,Fluorescent,,FtrFishZarigani,2223
+3,crucian carp,,,160,River,Small,Common,No,All day,All day,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Brown,Black,1x1,Fluorescent,,FtrFishFuna,328
+61,dab,,,300,Sea,Medium,Common,No,All day,All day,No,No,No,Yes,Yes,Yes,Yes,Yes,Yes,Yes,No,No,Brown,Black,1x1,Fluorescent,,FtrFishKarei,2268
+4,dace,,,240,River,Medium,Common,No,4:00 PM,9:00 AM,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Brown,Black,1x1,Fluorescent,,FtrFishUgui,2217
+42,dorado,,,15000,River,X-Large,Ultra-rare,No,4:00 AM,9:00 PM,Yes,Yes,Yes,No,No,No,No,No,No,No,No,Yes,Yellow,Black,2x1,Fluorescent,,FtrFishDolado,2251
+77,football fish,,,2500,Sea,Large,Uncommon,No,4:00 PM,9:00 AM,No,No,No,No,Yes,Yes,Yes,Yes,Yes,No,No,No,Black,Black,2x1,Emission,,FtrFishChouchinankou,2273
+16,freshwater goby,,,400,River,Small,Common,No,4:00 PM,9:00 AM,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Brown,Black,1x1,Fluorescent,,FtrFishDonko,2227
+15,frog,,,120,Pond,Small,Common,No,All day,All day,Yes,Yes,No,No,No,No,No,No,No,No,Yes,Yes,Green,Black,1x1,Fluorescent,,FtrFishKaeru,2226
+43,gar,,,6000,Pond,X-Large,Rare,No,4:00 PM,9:00 AM,Yes,Yes,Yes,No,No,No,No,No,No,No,No,Yes,Brown,Black,2x1,Fluorescent,,FtrFishGa,2252
+19,giant snakehead,,,5500,Pond,Large,Rare,No,9:00 AM,4:00 PM,Yes,Yes,No,No,No,No,No,No,No,No,No,Yes,Black,Black,2x1,Fluorescent,,FtrFishRaigyo,2231
+68,giant trevally,,,4500,Pier,X-Large,Uncommon,No,All day,All day,Yes,Yes,Yes,Yes,No,No,No,No,No,No,Yes,Yes,Black,Black,2x1,Fluorescent,,FtrFishGT,2276
+29,golden trout,,,15000,River (clifftop),Medium,Ultra-rare,No,4:00 PM,9:00 AM,No,No,Yes,Yes,Yes,No,No,No,Yes,Yes,Yes,No,Brown,Black,1x1,Fluorescent,,FtrFishGoldenTorauto,4193
+7,goldfish,,,1300,Pond,X-Small,Common,No,All day,All day,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Red,Light blue,1x1,No lighting,,FtrFishKingyo,329
+74,great white shark,,,15000,Sea,Large w/Fin,Rare,Yes,4:00 PM,9:00 AM,Yes,Yes,Yes,No,No,No,No,No,No,No,No,Yes,Blue,Blue,3x2,No lighting,,FtrFishSame,2280
+34,guppy,,,1300,River,X-Small,Common,No,9:00 AM,4:00 PM,Yes,Yes,Yes,Yes,Yes,No,No,No,No,Yes,Yes,Yes,Blue,Black,1x1,Fluorescent,,FtrFishGuppi,2245
+73,hammerhead shark,,,8000,Sea,Large w/Fin,Uncommon,Yes,4:00 PM,9:00 AM,Yes,Yes,Yes,No,No,No,No,No,No,No,No,Yes,Black,Black,2x1,Fluorescent,,FtrFishShumokuzame,2279
+57,horse mackerel,,,150,Sea,Small,Common,No,All day,All day,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Blue,Black,1x1,Fluorescent,,FtrFishAji,2264
+10,killifish,,,300,Pond,X-Small,Common,No,All day,All day,Yes,Yes,No,No,No,No,No,No,No,Yes,Yes,Yes,Yellow,Black,1x1,Fluorescent,,FtrFishMedaka,2222
+32,king salmon,,,1800,River (mouth),X-Large,Uncommon,No,All day,All day,No,No,Yes,No,No,No,No,No,No,No,No,No,Gray,Black,2x1,Fluorescent,,FtrFishKingsalmon,2243
+6,koi,,,4000,Pond,Large,Uncommon,No,4:00 PM,9:00 AM,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Red,White,1x1,Fluorescent,,FtrFishNishikigoi,2220
+17,loach,,,400,River,Small,Common,No,All day,All day,No,No,No,No,No,No,No,No,Yes,Yes,Yes,No,Brown,Blue,1x1,No lighting,,FtrFishDojou,2228
+69,mahi-mahi,,,6000,Pier,X-Large,Rare,Yes,All day,All day,Yes,Yes,Yes,Yes,No,No,No,No,No,No,Yes,Yes,Yellow,Black,2x1,Fluorescent,,FtrFishShiira,4202
+33,mitten crab,,,2000,River,Small,Uncommon,No,4:00 PM,9:00 AM,No,No,Yes,Yes,Yes,No,No,No,No,No,No,No,Black,Blue,1x1,No lighting,,FtrFishShanghai,2244
+64,moray eel,,,2000,Sea,Long,Uncommon,No,All day,All day,No,Yes,Yes,Yes,No,No,No,No,No,No,No,No,Brown,Black,2x1,Fluorescent,,FtrFishUtsubo,2271
+52,Napoleonfish,,,10000,Sea,XX-Large,Rare,Yes,4:00 AM,9:00 PM,Yes,Yes,No,No,No,No,No,No,No,No,No,No,Light blue,Black,2x1,Fluorescent,,FtrFishNaporeonfish,2260
+38,neon tetra,,,500,River,X-Small,Common,No,9:00 AM,4:00 PM,Yes,Yes,Yes,Yes,Yes,No,No,No,No,Yes,Yes,Yes,Light blue,Black,1x1,Fluorescent,,FtrFishNeontetora,2248
+35,nibble fish,,,1500,River,X-Small,Uncommon,No,9:00 AM,4:00 PM,Yes,Yes,Yes,No,No,No,No,No,No,No,Yes,Yes,Brown,Blue,1x1,No lighting,,FtrFishDoctor,2246
+78,oarfish,,,9000,Sea,XX-Large,Rare,Yes,All day,All day,No,No,No,No,No,Yes,Yes,Yes,Yes,Yes,Yes,No,Red,Blue,3x2,No lighting,,FtrFishRyugu,2283
+70,ocean sunfish,,,4000,Sea,Large w/Fin,Uncommon,Yes,4:00 AM,9:00 PM,Yes,Yes,Yes,No,No,No,No,No,No,No,No,No,Blue,Orange,2x2,No lighting,,FtrFishManbou,2278
+62,olive flounder,,,800,Sea,X-Large,Common,No,All day,All day,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Beige,Black,2x1,Fluorescent,,FtrFishHirame,2269
+2,pale chub,,,200,River,X-Small,Common,No,9:00 AM,4:00 PM,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Blue,Blue,1x1,No lighting,,FtrFishOikawa,2216
+24,pike,,,1800,River,X-Large,Uncommon,No,All day,All day,No,No,Yes,Yes,Yes,Yes,No,No,No,No,No,No,Green,Black,2x1,Fluorescent,,FtrFishPaiku,2235
+40,piranha,,,2500,River,Small,Uncommon,No,"9:00 AM
+9:00 PM","4:00 PM
+4:00 AM",Yes,Yes,Yes,No,No,No,No,No,No,No,No,Yes,Green,Black,1x1,Fluorescent,,FtrFishPirania,2249
+25,pond smelt,,,400,River,Small,Common,No,All day,All day,No,No,No,No,No,Yes,Yes,Yes,No,No,No,No,Orange,Blue,1x1,No lighting,,FtrFishWakasagi,2236
+8,pop-eyed goldfish,,,1300,Pond,X-Small,Common,No,9:00 AM,4:00 PM,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Black,Light blue,1x1,No lighting,,FtrFishDemekin,2221
+55,puffer fish,,,250,Sea,Medium,Common,No,All day,All day,Yes,Yes,Yes,No,No,No,No,No,No,No,No,No,Beige,Black,1x1,Fluorescent,,FtrFishHarisenbon,2263
+39,rainbowfish,,,800,River,X-Small,Common,No,9:00 AM,4:00 PM,Yes,Yes,Yes,Yes,No,No,No,No,No,No,Yes,Yes,Orange,Black,1x1,Fluorescent,,FtrFishRainbowfish,4194
+9,ranchu goldfish,,,4500,Pond,Small,Uncommon,No,9:00 AM,4:00 PM,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Red,Black,1x1,No lighting,,FtrFishRanchu,5254
+71,ray,,,3000,Sea,X-Large,Uncommon,No,4:00 AM,9:00 PM,No,Yes,Yes,Yes,Yes,No,No,No,No,No,No,No,Brown,Black,2x1,Fluorescent,,FtrFishEi,2277
+60,red snapper,,,3000,Sea,Large,Common,No,All day,All day,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Red,Black,1x1,Fluorescent,,FtrFishTai,2267
+65,ribbon eel,,,600,Sea,Long,Common,No,All day,All day,Yes,Yes,Yes,Yes,No,No,No,No,No,No,No,Yes,Blue,Black,2x1,Fluorescent,,FtrFishHanahige,2272
+45,saddled bichir,,,4000,River,Large,Uncommon,No,9:00 PM,4:00 AM,Yes,Yes,Yes,No,No,No,No,No,No,No,No,Yes,Brown,Black,2x1,Fluorescent,,FtrFishEndlicheri,2254
+31,salmon,,,700,River (mouth),Large,Common,No,All day,All day,No,No,Yes,No,No,No,No,No,No,No,No,No,Brown,Black,2x1,Fluorescent,,FtrFishSake,2242
+72,saw shark,,,12000,Sea,Large w/Fin,Rare,No,4:00 PM,9:00 AM,Yes,Yes,Yes,No,No,No,No,No,No,No,No,Yes,Brown,Black,2x1,Fluorescent,,FtrFishNokogiri,2281
+59,sea bass,,,400,Sea,X-Large,Common,No,All day,All day,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Gray,Black,2x1,Fluorescent,,FtrFishSuzuki,2266
+47,sea butterfly,,,1000,Sea,X-Small,Common,No,All day,All day,No,No,No,No,No,Yes,Yes,Yes,Yes,No,No,No,White,Black,1x1,Fluorescent,,FtrFishKurione,2255
+48,sea horse,,,1100,Sea,X-Small,Common,No,All day,All day,Yes,Yes,Yes,Yes,Yes,No,No,No,No,Yes,Yes,Yes,Orange,Black,1x1,Fluorescent,,FtrFishTatsunootoshigo,2256
+13,snapping turtle,,,5000,River,Large,Common,No,9:00 PM,4:00 AM,Yes,Yes,Yes,Yes,No,No,No,No,No,Yes,Yes,Yes,Brown,Black,1x1,No lighting,,FtrFishKamitukigame,4192
+12,soft-shelled turtle,,,3750,River,Large,Uncommon,No,4:00 PM,9:00 AM,No,Yes,Yes,No,No,No,No,No,No,No,No,No,Green,Black,1x1,No lighting,,FtrFishSuppon,2224
+63,squid,,,500,Sea,Medium,Common,No,All day,All day,Yes,Yes,No,No,No,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Beige,Black,1x1,Fluorescent,,FtrFishIka,2270
+30,stringfish,,,15000,River (clifftop),X-Large,Ultra-rare,No,4:00 PM,9:00 AM,No,No,No,No,No,Yes,Yes,Yes,Yes,No,No,No,Brown,Black,2x1,Fluorescent,,FtrFishItou,2241
+46,sturgeon,,,10000,River (mouth),XX-Large,Uncommon,Yes,All day,All day,No,No,Yes,Yes,Yes,Yes,Yes,Yes,Yes,No,No,No,Black,Black,2x1,Fluorescent,,FtrFishTyouzame,4189
+76,suckerfish,,,1500,Sea,Medium w/Fin,Uncommon,No,All day,All day,Yes,Yes,Yes,No,No,No,No,No,No,No,No,Yes,Black,Black,1x1,Fluorescent,,FtrFishKobanzame,4203
+50,surgeonfish,,,1000,Sea,Small,Common,No,All day,All day,Yes,Yes,Yes,No,No,No,No,No,No,Yes,Yes,Yes,Blue,Black,1x1,Fluorescent,,FtrFishNanyouhagi,2258
+26,sweetfish,,,900,River,Medium,Common,No,All day,All day,Yes,Yes,Yes,No,No,No,No,No,No,No,No,No,Green,Black,1x1,Fluorescent,,FtrFishAyu,2237
+14,tadpole,,,100,Pond,X-Small,Common,No,All day,All day,Yes,No,No,No,No,No,No,No,Yes,Yes,Yes,Yes,Black,Blue,1x1,No lighting,,FtrFishOtama,2225
+23,tilapia,,,800,River,Medium,Common,No,All day,All day,Yes,Yes,Yes,Yes,No,No,No,No,No,No,No,Yes,Black,Black,1x1,Fluorescent,,FtrFishThirapia,4190
+66,tuna,,,7000,Pier,XX-Large,Rare,Yes,All day,All day,No,No,No,No,Yes,Yes,Yes,Yes,Yes,Yes,No,No,Blue,Black,2x1,Fluorescent,,FtrFishMaguro,2274
+75,whale shark,,,13000,Sea,Large w/Fin,Rare,Yes,All day,All day,Yes,Yes,Yes,No,No,No,No,No,No,No,No,Yes,Black,Blue,3x2,No lighting,,FtrFishJinbee,2282
+21,yellow perch,,,300,River,Medium,Common,No,All day,All day,No,No,No,Yes,Yes,Yes,Yes,Yes,Yes,No,No,No,Yellow,Black,1x1,Fluorescent,,FtrFishYellowparch,2233
+53,zebra turkeyfish,,,500,Sea,Medium,Common,No,All day,All day,Yes,Yes,Yes,Yes,Yes,No,No,No,No,Yes,Yes,Yes,Red,Black,1x1,Fluorescent,,FtrFishMinokasago,2261

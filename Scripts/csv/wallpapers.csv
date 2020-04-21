@@ -1,0 +1,244 @@
+Name,Image,VFX,VFX Type,DIY,Buy,Sell,Source,Source Notes,Catalog,Window Type,Window Color,Pane Type,Curtain Type,Curtain Color,Ceiling Type,Color 1,Color 2,HHA Concept 1,HHA Concept 2,HHA Series,Tag,Version,Filename,Internal ID
+abstract wall,,No,NA,No,3000,390,Nook's Cranny,,For sale,Four Pane,Grey Wood,Glass,Roller Shades,White,Cloth,White,Colorful,shop,facility,None,Cloth Walls,1.0.0,RoomTexWallAbstract00,4873
+ancient wall,,No,NA,No,3000,750,Saharah,,Not for sale,None,NA,NA,None,NA,Stone,Beige,Brown,folk art,horror,None,Asia,1.0.0,RoomTexWallEgypt00,4936
+apple wall,,No,NA,Yes,NFS,4000,Crafting,,Not for sale,Four Pane,Grey Wood,Glass,Roller Shades,White,Cloth,Red,Red,fancy,child's room,fruits,Fruit Walls,1.0.0,RoomTexWallApple00,4916
+aqua tile wall,,No,NA,No,1420,355,Nook's Cranny,,For sale,Single Pane,White Metal,Glass,Slatted Blinds,White Plastic,Stone,Light blue,Light blue,bathroom,facility,None,Tile Walls,1.0.0,RoomTexWallTile01,4930
+arched-window wall,,Yes,NA,No,2150,537,Nook's Cranny,,For sale,None,NA,NA,None,NA,Wood,Brown,Light blue,shop,expensive,None,Special Walls,1.0.0,RoomSpWallGlass00,5482
+autumn wall,,Yes,Random,Yes,NFS,4700,Crafting,Fall seasonal DIY using autumn leaves (caught with net),Not for sale,None,NA,NA,None,NA,Wood,Brown,Orange,garden,None,tree's bounty or leaves ,Special Warm Nature Walls,1.0.0,RoomSpWallAutumun00,4905
+backyard-fence wall,,Yes,Synchro,No,3000,750,Saharah,,Not for sale,None,NA,NA,None,NA,Plain,Light blue,White,garden,None,None,Special Cool Nature Walls,1.0.0,RoomSpWallBackyard00,5481
+bamboo wall,,No,NA,Yes,NFS,2400,Crafting,,Not for sale,None,NA,NA,None,NA,Wood,Green,Beige,zen-style,None,bamboo,Nature Walls,1.0.0,RoomTexWallBamboo00,4833
+bamboo-grove wall,,No,NA,Yes,NFS,4300,Crafting,Spring seasonal DIY using bamboo (from bamboo trees),Not for sale,None,NA,NA,None,NA,Wood,Green,Green,zen-style,None,bamboo,Nature Walls,1.0.0,RoomTexWallChikurin00,4853
+bamboo-screen wall,,No,NA,No,1770,442,Nook's Cranny,,For sale,None,NA,NA,None,NA,Stone,Brown,Brown,zen-style,None,None,Wood Walls,1.0.0,RoomTexWallRattan00,4836
+bank-vault wall,,No,NA,No,3000,750,Saharah,,Not for sale,None,NA,NA,None,NA,Tile,Gray,Gray,facility,expensive,None,Iron Walls,1.0.0,RoomTexWallSafeBox00,4839
+basic wall,,Yes,NA,No,600,150,Nook's Cranny,,For sale,None,NA,NA,None,NA,Tile,White,White,office,facility,None,Special Walls,1.0.0,RoomSpWallSimplePanel00,5559
+beaded-curtain wall,,No,NA,No,1720,430,Nook's Cranny,,For sale,Four Pane,Natural Wood,Glass,Curtains,White Lace,Wood,White,Orange,shop,kitchen,None,Cloth Walls,1.0.0,RoomTexWallBeadsCurtain00,4877
+beige art-deco wall,,No,NA,No,2780,695,Nook's Cranny,,For sale,Arch,Wood,Glass,None,NA,Wood,Beige,Beige,child's room,living room,None,Art Deco Walls,1.0.0,RoomTexWallArtDeco00,4817
+beige blossoming wall,,No,NA,No,1760,440,Nook's Cranny,,For sale,Four Pane,Natural Wood,Glass,Curtains,Red Checkered,Wood,Beige,Brown,fancy,living room,None,Country,1.0.0,RoomTexWallCountry00,4831
+beige desert-tile wall,,No,NA,No,2440,610,Nook's Cranny,,For sale,Sliding Pane,White Metal,Glass,None,NA,Stone,Beige,Beige,bathroom,facility,None,Morocco,1.0.0,RoomTexWallMorocco00,4834
+black botanical-tile wall,,No,NA,No,1240,310,Nook's Cranny,,For sale,Single Pane,Black Metal,Glass,Slatted Blinds,Black Plastic,Stone,Black,Black,facility,expensive,None,Wood Tile Walls,1.0.0,RoomTexWallWoodTile03,6877
+black hallway wall,,No,NA,No,2000,500,Nook's Cranny,,For sale,None,NA,NA,None,NA,Wood,Black,Black,facility,music,None,Hall Walls,1.0.0,RoomTexWallHall03,6862
+black perforated-board wall,,No,NA,No,1180,295,Nook's Cranny,,For sale,None,NA,NA,None,NA,Tile,Black,Black,music,facility,None,Pegboard Walls,1.0.0,RoomTexWallPegboard02,4922
+black two-toned tile wall,,No,NA,No,1850,462,Nook's Cranny,,For sale,Sliding Pane,White Metal,Glass,None,NA,Stone,Black,Black,bathroom,facility,None,Two-Tone Tile Walls,1.0.0,RoomTexWallTwoToneTile06,6859
+black-brick wall,,No,NA,No,1000,250,Nook's Cranny,,For sale,Four Pane,Dark Wood,Glass,None,NA,Wood,Black,Black,facility,shop,None,Brick,1.0.0,RoomTexWallBrick02,4929
+black-crown wall,,No,NA,No,2350,587,Nook's Cranny,,For sale,None,NA,NA,None,NA,Tile,Black,Black,expensive,None,None,Crown Walls,1.0.0,RoomTexWallCrown01,4815
+blackboard wall,,No,NA,No,3000,750,Saharah,,Not for sale,None,NA,NA,None,NA,Wood,Black,Colorful,shop,school,None,Neta Walls,1.0.0,RoomTexWallBlackBoard00,4882
+blue blossoming wall,,No,NA,No,1760,440,Nook's Cranny,,For sale,Four Pane,Grey Wood,Glass,Curtains,Blue Checkered,Wood,Light blue,Blue,fancy,living room,None,Country,1.0.0,RoomTexWallCountry02,4896
+blue camo wall,,No,NA,No,1150,287,Nook's Cranny,,For sale,Single Pane,Grey Wood,Glass,Slatted Blinds,White Plastic,Cloth,Blue,Blue,party,child's room,None,Camouflage,1.0.0,RoomTexWallCamouflage01,4884
+blue delicate-blooms wall,,No,NA,No,1900,475,Nook's Cranny,,For sale,Four Pane,Dark Wood,Glass,Roller Shades,Undyed,Wood,Blue,Black,expensive,living room,None,Manor Walls,1.0.0,RoomTexWallManor03,6852
+blue desert-tile wall,,No,NA,No,2440,610,Nook's Cranny,,For sale,Sliding Pane,White Metal,Glass,None,NA,Stone,Blue,White,bathroom,facility,None,Morocco,1.0.0,RoomTexWallMorocco01,4835
+blue diner wall,,No,NA,No,2420,605,Nook's Cranny,,For sale,Single Pane,White Metal,Glass,Slatted Blinds,White Plastic,Stone,Blue,Light blue,fancy,shop,None,Diner Walls,1.0.0,RoomTexWallDiner00,7241
+blue flower-print wall,,No,NA,No,1780,445,Nook's Cranny,,For sale,Four Pane,Dark Wood,Glass,Curtains,Light blue,Wood,Blue,Light blue,fancy,living room,None,Flower Walls,1.0.0,RoomTexWallFlower03,6873
+blue heart-pattern wall,,No,NA,No,1280,320,Nook's Cranny,,For sale,Four Pane,White Wood,Glass,Roller Shades,White,Cloth,Blue,Light blue,fancy,child's room,None,Heart Walls,1.0.0,RoomTexWallHeart00,4874
+blue honeycomb-tile wall,,No,NA,No,1680,420,Nook's Cranny,,For sale,Sliding Pane,Black Metal,Glass,None,NA,Stone,Blue,Blue,bathroom,facility,None,Honeycomb,1.0.0,RoomTexWallHoneycomb01,4912
+blue intricate wall,,No,NA,No,1570,392,Nook's Cranny,,For sale,Four Pane,Grey Wood,Glass,Roller Shades,White,Wood,Blue,White,living room,shop,None,Flower Pop Walls,1.0.0,RoomTexWallFlowerPop00,4848
+blue molded-panel wall,,No,NA,No,1980,495,Nook's Cranny,,For sale,Sliding Pane,White Metal,Glass,None,NA,Cloth,Blue,Brown,expensive,shop,None,Panel Mold Walls,1.0.0,RoomTexWallPanelMold01,4871
+blue painted-wood wall,,No,NA,No,1650,412,Nook's Cranny,,For sale,Four Pane,White Wood,Glass,None,NA,Wood,Blue,Light blue,fancy,living room,None,Painted Wood,1.0.0,RoomTexWallPaintWood00,4948
+blue playroom wall,,No,NA,No,2540,635,Nook's Cranny,,For sale,Sliding Pane,White Metal,Glass,None,NA,Cloth,Light blue,Blue,child's room,fancy,None,Toy Walls,1.0.0,RoomTexWallToy00,4888
+blue quilt wall,,No,NA,No,2150,537,Nook's Cranny,,For sale,Four Pane,White Wood,Glass,Curtains,White Lace,Cloth,Blue,White,fancy,child's room,None,Dollhouse Walls,1.0.0,RoomTexWallDollhouse01,7277
+blue shanty wall,,No,NA,No,620,155,Nook's Cranny,,For sale,Single Pane,Grey Wood,Glass,Slatted Blinds,White Plastic,Stone,Blue,Blue,garage,None,None,Tin Walls,1.0.0,RoomTexWallTin02,4925
+blue simple-cloth wall,,No,NA,No,750,187,Nook's Cranny,,For sale,Four Pane,White Wood,Glass,Curtains,White,Wood,Blue,Light blue,child's room,living room,None,Simple Walls,1.0.0,RoomTexWallSimple03,4869
+blue subway-tile wall,,No,NA,No,1340,335,Nook's Cranny,,For sale,Sliding Pane,White Metal,Glass,None,NA,Stone,Blue,Light blue,facility,shop,None,Metro Walls,1.0.0,RoomTexWallMetro00,4940
+blue tile wall,,No,NA,No,1420,355,Nook's Cranny,,For sale,Single Pane,White Metal,Glass,Slatted Blinds,White Plastic,Stone,Blue,Blue,bathroom,facility,None,Tile Walls,1.0.0,RoomTexWallTile03,7127
+blue two-toned tile wall,,No,NA,No,1850,462,Nook's Cranny,,For sale,Sliding Pane,White Metal,Glass,None,NA,Stone,Blue,Blue,bathroom,facility,None,Two-Tone Tile Walls,1.0.0,RoomTexWallTwoToneTile05,6858
+blue-crown wall,,No,NA,No,2350,587,Nook's Cranny,,For sale,None,NA,NA,None,NA,Tile,Blue,Black,expensive,None,None,Crown Walls,1.0.0,RoomTexWallCrown00,4814
+blue-paint wall,,No,NA,No,1600,400,Nook's Cranny,,For sale,Four Pane,Dark Wood,Glass,None,NA,Stone,Blue,Blue,fancy,living room,None,Stucco Walls,1.0.0,RoomTexWallStucco03,4811
+blue-rose wall,,No,NA,No,1720,430,Nook's Cranny,,For sale,Arch,Grey Metal,Glass,None,NA,Wood,Blue,Light blue,fancy,living room,None,Rose Walls,1.0.0,RoomTexWallRose03,6869
+blue-striped wall,,No,NA,No,1520,380,Nook's Cranny,,For sale,Four Pane,White Wood,Glass,Roller Shades,White,Cloth,Blue,White,fancy,child's room,None,Stripe Walls,1.0.0,RoomTexWallStripe03,4945
+botanical-tile wall,,No,NA,No,1240,310,Nook's Cranny,,For sale,Single Pane,Natural Wood,Glass,Slatted Blinds,Natural Wood,Stone,Beige,Yellow,facility,expensive,None,Wood Tile Walls,1.0.0,RoomTexWallWoodTile02,6876
+brown botanical-tile wall,,No,NA,No,1240,310,Nook's Cranny,,For sale,Single Pane,Dark Wood,Glass,Slatted Blinds,Dark Brown Wood,Stone,Brown,Brown,facility,expensive,None,Wood Tile Walls,1.0.0,RoomTexWallWoodTile01,4827
+brown diner wall,,No,NA,No,2420,605,Nook's Cranny,,For sale,Single Pane,White Metal,Glass,Slatted Blinds,White Plastic,Stone,Brown,Colorful,fancy,shop,None,Diner Walls,1.0.0,RoomTexWallDiner03,7244
+brown hallway wall,,No,NA,No,2000,500,Nook's Cranny,,For sale,None,NA,NA,None,NA,Wood,Brown,Brown,facility,music,None,Hall Walls,1.0.0,RoomTexWallHall00,4806
+brown herringbone wall,,No,NA,Yes,NFS,1800,Crafting,,Not for sale,Single Pane,Natural Wood,Glass,Slatted Blinds,Brown Wood,Wood,Brown,Brown,living room,shop,None,Herringbone,1.0.0,RoomTexWallHerringbone00,4804
+brown shanty wall,,No,NA,No,620,155,Nook's Cranny,,For sale,Single Pane,Grey Wood,Glass,Slatted Blinds,White Plastic,Stone,Brown,Brown,garage,None,None,Tin Walls,1.0.0,RoomTexWallTin03,4926
+brown-brick wall,,No,NA,No,1000,250,Nook's Cranny,,For sale,Four Pane,Natural Wood,Glass,None,NA,Wood,Brown,Brown,facility,shop,None,Brick,1.0.0,RoomTexWallBrick03,6850
+brown-crown wall,,No,NA,No,2350,587,Nook's Cranny,,For sale,None,NA,NA,None,NA,Tile,Brown,Brown,expensive,None,None,Crown Walls,1.0.0,RoomTexWallCrown03,6851
+Bunny Day wall,,No,NA,Yes,NFS,4800,Crafting,"Obtained randomly from villager, egg message bottle or egg balloon during Bunny Day event",Not for sale,,,,,,Wood,Yellow,Colorful,fancy,child's room,Bunny Day,Cloth Walls,1.1.0,RoomTexWallEaster00,5231
+butterflies wall,,No,NA,No,NFS,840,Bug-Off,,Not for sale,Four Pane,White Wood,Glass,Roller Shades,White,Wood,White,Colorful,fancy,facility,None,Nature Walls,1.0.0,RoomTexWallInsect00,4880
+cabin wall,,No,NA,Yes,NFS,1800,Crafting,,Not for sale,Four Pane,Natural Wood,Glass,Curtains,White Lace,Wood,Beige,Beige,living room,facility,None,Wood Walls,1.0.0,RoomTexWallLog00,4840
+café-curtain wall,,Yes,NA,No,3000,750,Saharah,,Not for sale,None,NA,NA,None,NA,Cloth,Black,White,shop,expensive,None,Special Walls,1.0.0,RoomSpWallCafe00,5483
+camo wall,,No,NA,No,1150,287,Nook's Cranny,,For sale,Single Pane,Grey Wood,Glass,Slatted Blinds,White Plastic,Plain,Black,Green,party,child's room,None,Camouflage,1.0.0,RoomTexWallCamouflage00,4883
+chain-link fence,,Yes,NA,No,3000,750,Saharah,,Not for sale,None,NA,NA,None,NA,Cloth,Gray,Gray,garden,garage,None,Special Cool Nature Walls,1.0.0,RoomSpWallEmptyLot00,5485
+cherry wall,,No,Random,Yes,NFS,4000,Crafting,,Not for sale,Four Pane,Grey Wood,Glass,Roller Shades,White,Stone,Pink,Red,child's room,fancy,fruits,Fruit Walls,1.0.0,RoomTexWallCherry00,4919
+cherry-blossom-trees wall,,Yes,NA,Yes,NFS,4600,Crafting,Cherry blossom seasonal DIY using cherry-blossom petals (caught with net),Not for sale,None,NA,NA,None,NA,Wood,Brown,Pink,garden,None,cherry blossoms,Special Warm Nature Walls,1.0.0,RoomSpWallSakura00,7205
+chic tearoom wall,,No,NA,No,1750,437,Nook's Cranny,,For sale,Circle,Dark Wood,Screen,None,NA,Wood,Black,Black,zen-style,shop,None,Tea Room Walls,1.0.0,RoomTexWallMud03,11176
+chic wall,,No,NA,No,1960,490,Nook's Cranny,,For sale,Four Pane,White Wood,Glass,Curtains,White Lace,Wood,Yellow,Beige,expensive,living room,None,Cloth Walls,1.0.0,RoomTexWallClassic00,4828
+chocolate hallway wall,,No,NA,No,2000,500,Nook's Cranny,,For sale,None,NA,NA,None,NA,Wood,Brown,Brown,facility,music,None,Hall Walls,1.0.0,RoomTexWallHall01,4807
+chocolate herringbone wall,,No,NA,Yes,NFS,1800,Crafting,,Not for sale,Single Pane,Dark Wood,Glass,Slatted Blinds,Dark Brown Wood,Stone,Brown,Brown,living room,shop,None,Herringbone,1.0.0,RoomTexWallHerringbone01,4805
+circuit-board wall,,No,NA,No,3000,750,Saharah,,Not for sale,None,NA,NA,None,NA,Cloth,Green,Green,facility,None,None,Neta Walls,1.0.0,RoomTexWallGeek00,4821
+cityscape wall,,Yes,NA,No,3000,750,Saharah,,Not for sale,None,NA,NA,None,NA,Wood,Black,Black,shop,expensive,None,Special Walls,1.0.0,RoomSpWallNightView00,5400
+classic-library wall,,No,NA,Yes,NFS,1450,Crafting,,Not for sale,None,NA,NA,None,NA,Cloth,Black,Black,den,None,None,Library Walls,1.0.0,RoomTexWallLibrary00,4837
+colorful puzzle wall,,No,NA,No,1540,385,Nook's Cranny,,For sale,Single Pane,White Metal,Glass,Slatted Blinds,White Plastic,Stone,Colorful,Colorful,fancy,child's room,None,Puzzle Walls,1.0.0,RoomTexWallPuzzle01,4887
+colorful-tile wall,,No,NA,No,1420,355,Nook's Cranny,,For sale,Single Pane,White Metal,Glass,Slatted Blinds,White Plastic,Wood,Colorful,Colorful,bathroom,facility,None,Tile Walls,1.0.0,RoomTexWallTile02,4931
+common wall,,No,NA,No,800,200,Nook's Cranny,,For sale,Four Pane,Natural Wood,Glass,Curtains,White,Stone,Beige,Brown,living room,school,None,Stone Walls,1.0.0,RoomTexWallCommon00,4795
+concrete wall,,No,NA,No,940,235,Nook's Cranny,,For sale,Single Pane,Grey Wood,Glass,Slatted Blinds,White Plastic,Stone,Gray,Gray,garage,facility,None,Stone Walls,1.0.0,RoomTexWallConcrete00,4890
+construction-site wall,,No,NA,No,3000,750,Saharah,,Not for sale,None,NA,NA,None,NA,Wood,Blue,Blue,garage,facility,None,Neta Walls,1.0.0,RoomTexWallBlueSheet00,4843
+crepe-design wall,,No,NA,No,1550,387,Nook's Cranny,,For sale,Circle,Grey Wood,Screen,None,NA,Cloth,White,Colorful,zen-style,None,None,Japanese Style,1.0.0,RoomTexWallCrepe00,4841
+cute blue wall,,No,NA,No,1880,470,Nook's Cranny,,For sale,Four Pane,White Wood,Glass,Curtains,White Lace,Cloth,Blue,White,fancy,child's room,None,Cute Walls,1.0.0,RoomTexWallCute02,7217
+cute red wall,,No,NA,No,1880,470,Nook's Cranny,,For sale,Four Pane,Grey Wood,Glass,Curtains,White Lace,Cloth,Red,White,fancy,child's room,None,Cute Walls,1.0.0,RoomTexWallCute01,7216
+cute white wall,,No,NA,No,1880,470,Nook's Cranny,,For sale,Four Pane,Grey Wood,Glass,Curtains,White Lace,Cloth,White,White,fancy,child's room,None,Cute Walls,1.0.0,RoomTexWallCute00,7215
+cute yellow wall,,No,NA,No,1880,470,Nook's Cranny,,For sale,Four Pane,White Wood,Glass,Curtains,White Lace,Stone,Yellow,White,fancy,child's room,None,Cute Walls,1.0.0,RoomTexWallCute03,7218
+dark wooden-mosaic wall,,No,NA,Yes,NFS,1800,Crafting,,Not for sale,Single Pane,Dark Wood,Glass,Slatted Blinds,Dark Brown Wood,Tile,Black,Black,living room,shop,None,Wood Plank Walls,1.0.0,RoomTexWallMixPlankWood01,4860
+dark-chocolate wall,,No,Synchro,No,3000,750,Saharah,,Not for sale,None,NA,NA,None,NA,Plain,Brown,Brown,fancy,None,None,Chocolate,1.0.0,RoomTexWallChocolate00,4932
+desert vista,,Yes,NA,No,3000,750,Saharah,,Not for sale,None,NA,NA,None,NA,Stone,Beige,Gray,folk art,None,None,Special Cool Nature Walls,1.0.0,RoomSpWallDesert00,5488
+dig-site wall,,No,NA,No,3000,750,Saharah,,Not for sale,None,NA,NA,None,NA,Wood,Brown,Beige,garden,horror,None,Stone Walls,1.0.0,RoomTexWallStratum00,5222
+dirt-clod wall,,No,NA,No,200,50,Nook's Cranny,,For sale,Four Pane,Natural Wood,Screen,None,NA,Wood,Beige,Brown,horror,None,None,Stone Walls,1.0.0,RoomTexWallOldSoil00,4856
+dojo wall,,No,NA,No,3000,750,Saharah,,Not for sale,None,NA,NA,None,NA,Stone,Yellow,Beige,fitness,zen-style,None,Wood Walls,1.0.0,RoomTexWallBaseboards00,5227
+dungeon wall,,Yes,NA,No,3000,750,Saharah,,Not for sale,None,NA,NA,None,NA,Wood,Black,Gray,horror,None,None,Special Inorganic Walls,1.0.0,RoomSpWallJail00,5509
+exquisite wall,,No,NA,No,3000,750,Saharah,,Not for sale,None,NA,NA,None,NA,Stone,Brown,White,zen-style,shop,None,Asia,1.0.0,RoomTexWallChina00,4866
+forest wall,,No,Synchro,Yes,NFS,44000,Crafting,Mushroom seasonal DIY,Not for sale,None,NA,NA,None,NA,Stone,Black,Black,garden,None,mush,Nature Walls,1.0.0,RoomTexWallMushForest00,7187
+future-tech wall,,Yes,NA,No,3000,750,Saharah,,Not for sale,None,NA,NA,None,NA,Plain,Black,Black,horror,folk art,None,Special Inorganic Walls,1.0.0,RoomSpWallTechnology00,5494
+garbage-heap wall,,No,NA,Yes,NFS,120,Crafting,,Not for sale,None,NA,NA,None,NA,Wood,Light blue,Gray,garage,horror,None,Neta Walls,1.0.0,RoomTexWallGarbage00,5229
+gold-screen wall,,No,NA,Yes,NFS,20750,Crafting,,Not for sale,None,NA,NA,None,NA,Gold,Yellow,Yellow,zen-style,expensive,None,Japanese Style,1.0.0,RoomTexWallFusumaGorgeous00,4820
+golden wall,,No,NA,Yes,NFS,40000,Crafting,,Not for sale,None,NA,NA,None,NA,Stone,Yellow,Brown,expensive,horror,golden,Asia,1.0.0,RoomTexWallGold00,4894
+gray diner wall,,No,NA,No,2420,605,Nook's Cranny,,For sale,Single Pane,White Metal,Glass,Slatted Blinds,White Plastic,Cloth,White,Colorful,fancy,shop,None,Diner Walls,1.0.0,RoomTexWallDiner02,7243
+gray molded-panel wall,,No,NA,No,1980,495,Nook's Cranny,,For sale,Sliding Pane,Black Metal,Glass,None,NA,Stone,Gray,Gray,expensive,shop,None,Panel Mold Walls,1.0.0,RoomTexWallPanelMold02,4872
+gray shanty wall,,No,NA,No,620,155,Nook's Cranny,,For sale,Single Pane,Grey Wood,Glass,Slatted Blinds,White Plastic,Cloth,Gray,Gray,garage,None,None,Tin Walls,1.0.0,RoomTexWallTin00,4923
+gray-striped wall,,No,NA,No,1520,380,Nook's Cranny,,For sale,Four Pane,White Wood,Glass,Roller Shades,White,Wood,Gray,White,fancy,child's room,None,Stripe Walls,1.0.0,RoomTexWallStripe02,4944
+green blossoming wall,,No,NA,No,1760,440,Nook's Cranny,,For sale,Four Pane,Light Wood,Glass,Curtains,Green Checkered,Wood,Green,Brown,fancy,living room,None,Country,1.0.0,RoomTexWallCountry03,4903
+green delicate-blooms wall,,No,NA,No,1900,475,Nook's Cranny,,For sale,Four Pane,Dark Wood,Glass,Roller Shades,Undyed,Wood,Green,Black,expensive,living room,None,Manor Walls,1.0.0,RoomTexWallManor02,4898
+green flower-print wall,,No,NA,No,1780,445,Nook's Cranny,,For sale,Four Pane,White Wood,Glass,Curtains,Green,Stone,Green,Beige,fancy,living room,None,Flower Walls,1.0.0,RoomTexWallFlower01,4935
+green honeycomb-tile wall,,No,NA,No,1680,420,Nook's Cranny,,For sale,Sliding Pane,Grey Metal,Glass,None,NA,Wood,Green,Green,bathroom,facility,None,Honeycomb,1.0.0,RoomTexWallHoneycomb02,4913
+green intricate wall,,No,NA,No,1570,392,Nook's Cranny,,For sale,Four Pane,Grey Wood,Glass,Roller Shades,White,Cloth,Green,White,living room,shop,None,Flower Pop Walls,1.0.0,RoomTexWallFlowerPop02,6878
+green molded-panel wall,,No,NA,No,1980,495,Nook's Cranny,,For sale,Sliding Pane,White Metal,Glass,None,NA,Wood,Green,White,fancy,child's room,None,Panel Mold Walls,1.0.0,RoomTexWallPanelMold03,6854
+green painted-wood wall,,No,NA,No,1650,412,Nook's Cranny,,For sale,Four Pane,White Wood,Glass,None,NA,Cloth,Green,Green,fancy,child's room,None,Painted Wood,1.0.0,RoomTexWallPaintWood01,4949
+green playroom wall,,No,NA,No,2540,635,Nook's Cranny,,For sale,Sliding Pane,White Metal,Glass,None,NA,Stone,Green,Green,child's room,fancy,None,Toy Walls,1.0.0,RoomTexWallToy02,6866
+green-paint wall,,No,NA,No,1600,400,Nook's Cranny,,For sale,Four Pane,Dark Wood,Glass,None,NA,Cloth,Green,Green,fancy,living room,None,Stucco Walls,1.0.0,RoomTexWallStucco04,4812
+groovy wall,,No,NA,No,1280,320,Nook's Cranny,,For sale,Single Pane,Natural Wood,Glass,Slatted Blinds,Brown Wood,Stone,Orange,Orange,party,None,None,Cloth Walls,1.0.0,RoomTexWallPsyche00,4846
+harmonious wall,,No,NA,No,1780,445,Nook's Cranny,,For sale,None,NA,NA,None,NA,Wood,Brown,Brown,zen-style,shop,None,Asia,1.0.0,RoomTexWallOriental00,11180
+heavy-curtain wall,,No,NA,No,3000,750,Saharah,,Not for sale,None,NA,NA,None,NA,Stone,Red,Black,music,party,None,Cloth Walls,1.0.0,RoomTexWallThickCurtain00,4878
+honeycomb wall,,No,NA,Yes,NFS,3600,Crafting,,Not for sale,None,NA,NA,None,NA,Stone,Yellow,Yellow,fancy,facility,None,Tile Walls,1.0.0,RoomTexWallHoney00,4865
+honeycomb-tile wall,,No,NA,No,1680,420,Nook's Cranny,,For sale,Sliding Pane,Black Metal,Glass,None,NA,Stone,Brown,Brown,bathroom,facility,None,Honeycomb,1.0.0,RoomTexWallHoneycomb00,4909
+ice wall,,Yes,NA,Yes,NFS,8200,Snowman,Reward for making a perfect snow-person,Not for sale,None,NA,NA,None,NA,Plain,Light blue,Light blue,freezing cold,facility,frozen,Special Walls,1.0.0,RoomSpWallIce00,5505
+iceberg wall,,No,NA,Yes,NFS,4000,Crafting,Winter seasonal DIY using snowflakes (caught with net),Not for sale,None,NA,NA,None,NA,Stone,Light blue,White,freezing cold,None,None,Neta Walls,1.0.0,RoomTexWallIceFloe00,5662
+imperial wall,,No,NA,No,3000,750,Saharah,,Not for sale,None,NA,NA,None,NA,Stone,Red,Red,expensive,None,None,Asia,1.0.0,RoomTexWallDynasty00,5224
+industrial wall,,No,NA,No,3000,750,Saharah,,Not for sale,None,NA,NA,None,NA,Stone,Black,Black,facility,None,None,Iron Walls,1.0.0,RoomTexWallFactory00,4876
+ivy wall,,No,Synchro,No,3000,750,Saharah,,Not for sale,None,NA,NA,None,NA,Wood,Brown,Green,facility,shop,None,Nature Walls,1.0.0,RoomTexWallIvy00,4850
+Jingle wall,,Yes,NA,Yes,NFS,2500,Crafting,Festive seasonal DIY using ornaments (from shaking trees),Not for sale,None,NA,NA,None,NA,Stone,Green,Colorful,fancy,party,festive,Special Walls,1.0.0,RoomSpWallXmas00,5230
+jungle wall,,No,NA,Yes,NFS,1380,Crafting,,Not for sale,None,NA,NA,None,NA,Cloth,Green,Green,garden,facility,None,Nature Walls,1.0.0,RoomTexWallJungle00,5457
+kisses wall,,No,Random,No,3000,750,Saharah,,Not for sale,Single Pane,White Metal,Glass,Slatted Blinds,White Plastic,Tile,Pink,White,party,fancy,None,Cloth Walls,1.0.0,RoomTexWallKiss00,4881
+laboratory wall,,Yes,NA,No,3000,750,Saharah,,Not for sale,None,NA,NA,None,NA,Wood,Black,Black,facility,None,None,Special Inorganic Walls,1.0.0,RoomSpWallLabo00,5495
+lattice wall,,No,Synchro,No,1780,445,Nook's Cranny,,For sale,None,NA,NA,None,NA,Stone,Brown,Brown,zen-style,shop,None,Asia,1.0.0,RoomTexWallLattice00,4830
+magma-cavern wall,,Yes,NA,No,3000,750,Saharah,,Not for sale,None,NA,NA,None,NA,Cloth,Orange,Orange,horror,None,None,Special Warm Nature Walls,1.0.0,RoomSpWallVolcano00,5506
+manga-library wall,,No,NA,Yes,NFS,1050,Crafting,,Not for sale,None,NA,NA,None,NA,Plain,White,White,facility,den,None,Library Walls,1.0.0,RoomTexWallLibrary01,4838
+mangrove wall,,No,NA,No,3000,750,Saharah,,Not for sale,None,NA,NA,None,NA,Wood,Green,Green,garden,None,None,Nature Walls,1.0.0,RoomTexWallMangrove00,5514
+marine pop wall,,No,Synchro,No,NFS,805,Fishing Tourney,,Not for sale,Four Pane,Grey Wood,Glass,Roller Shades,White,Plain,Light blue,Blue,ocean,child's room,None,Cloth Walls,1.0.0,RoomTexWallFish00,4879
+meadow vista,,Yes,Random,No,3000,750,Saharah,,Not for sale,None,NA,NA,None,NA,Stone,Green,Light blue,garden,None,None,Special Cool Nature Walls,1.0.0,RoomSpWallHighLands00,5484
+misty-garden wall,,Yes,NA,No,3000,585,Saharah,,Not for sale,None,NA,NA,None,NA,Cloth,Gray,Gray,garden,None,None,Special Cool Nature Walls,1.0.0,RoomSpWallRain00,11915
+mod wall,,No,NA,No,1220,305,Nook's Cranny,,For sale,Four Pane,Natural Wood,Glass,Roller Shades,Undyed,Wood,Orange,Orange,party,None,None,Cloth Walls,1.0.0,RoomTexWallMod00,4908
+modern shoji-screen wall,,Yes,NA,No,1150,287,Nook's Cranny,,For sale,None,NA,NA,None,NA,Wood,Brown,White,zen-style,shop,None,Japanese Style,1.0.0,RoomSpWallShojiModem00,4864
+modern tearoom wall,,No,NA,No,1750,437,Nook's Cranny,,For sale,Circle,Dark Wood,Screen,None,NA,Stone,Brown,Brown,zen-style,shop,None,Tea Room Walls,1.0.0,RoomTexWallMud02,11178
+modern wood wall,,No,NA,Yes,NFS,1800,Crafting,,Not for sale,Single Pane,Natural Wood,Glass,Slatted Blinds,Brown Wood,Wood,Brown,Brown,living room,child's room,None,Wood Walls,1.0.0,RoomTexWallMixwood00,4904
+monochromatic dotted wall,,No,NA,No,1100,275,Nook's Cranny,,For sale,Four Pane,Dark Wood,Glass,Curtains,White,Stone,Gray,White,fancy,child's room,None,Dot,1.0.0,RoomTexWallDot00,4892
+monochromatic-tile wall,,No,NA,No,1420,355,Nook's Cranny,,For sale,Single Pane,White Metal,Glass,Slatted Blinds,White Plastic,Stone,Gray,White,bathroom,facility,None,Tile Walls,1.0.0,RoomTexWallTile00,4910
+mortar wall,,No,NA,No,3000,750,Saharah,,Not for sale,None,NA,NA,None,NA,Stone,Gray,Gray,zen-style,None,None,Stone Walls,1.0.0,RoomTexWallPlaster00,5215
+mosaic-tile wall,,No,NA,No,1450,362,Nook's Cranny,,For sale,Four Pane,Grey Wood,Glass,Roller Shades,White,Stone,Black,White,bathroom,facility,None,Tile Walls,1.0.0,RoomTexWallMosaicTile00,4862
+mossy-garden wall,,No,NA,No,3000,750,Saharah,,Not for sale,None,NA,NA,None,NA,Cloth,Green,Green,zen-style,None,None,Nature Walls,1.0.0,RoomTexWallMoss00,5458
+mush wall,,No,NA,Yes,NFS,21400,Crafting,Mushroom seasonal DIY,Not for sale,Four Pane,White Wood,Glass,Roller Shades,Undyed,Wood,Orange,Brown,fancy,None,mush,Cloth Walls,1.0.0,RoomTexWallMush00,5164
+Nook Inc. wall,,No,NA,No,NFS,6000,Nook Miles Shop,,Not for sale,Four Pane,Dark Wood,Glass,Curtains,White,Plain,White,Light blue,fancy,shop,None,Cloth Walls,1.0.0,RoomTexWallFirst00,6004
+ocean-horizon wall,,Yes,Synchro,No,3000,750,Saharah,,Not for sale,None,NA,NA,None,NA,Tile,Blue,Light blue,ocean,None,None,Special Cool Nature Walls,1.0.0,RoomSpWallHorizon00,5486
+office wall,,No,NA,No,3000,750,Saharah,,Not for sale,None,NA,NA,None,NA,Wood,White,Light blue,office,None,None,Special Walls,1.0.0,RoomTexWallOffice00,5218
+old wallpaper,,No,NA,No,200,50,Nook's Cranny,,For sale,Four Pane,White Wood,Glass,None,NA,Stone,Beige,Beige,horror,None,None,Cloth Walls,1.0.0,RoomTexWallOld00,4857
+olive desert-tile wall,,No,NA,No,2440,610,Nook's Cranny,,For sale,Sliding Pane,White Metal,Glass,None,NA,Cloth,Yellow,Yellow,bathroom,facility,None,Morocco,1.0.0,RoomTexWallMorocco03,6863
+orange camo wall,,No,NA,No,1150,287,Nook's Cranny,,For sale,Single Pane,Grey Wood,Glass,Slatted Blinds,White Plastic,Cloth,Orange,Orange,party,child's room,None,Camouflage,1.0.0,RoomTexWallCamouflage03,6855
+orange molded-panel wall,,No,NA,No,1980,495,Nook's Cranny,,For sale,Sliding Pane,White Metal,Glass,None,NA,Cloth,Orange,Beige,fancy,child's room,None,Panel Mold Walls,1.0.0,RoomTexWallPanelMold00,4870
+orange wall,,No,NA,Yes,NFS,4000,Crafting,,Not for sale,Four Pane,Grey Wood,Glass,Roller Shades,White,Stone,Orange,Orange,fancy,child's room,fruits,Fruit Walls,1.0.0,RoomTexWallOrange00,4915
+orange-paint wall,,No,NA,No,1600,400,Nook's Cranny,,For sale,Four Pane,Natural Wood,Glass,None,NA,Stone,Orange,Orange,fancy,child's room,None,Stucco Walls,1.0.0,RoomTexWallStucco01,4809
+paintball wall,,No,NA,No,3000,750,Saharah,,Not for sale,Single Pane,Grey Metal,Glass,Slatted Blinds,Aluminium,Stone,White,Colorful,garage,facility,None,Stone Walls,1.0.0,RoomTexWallAtelier00,4854
+palace wall,,Yes,NA,No,3000,750,Saharah,,Not for sale,None,NA,NA,None,NA,Cloth,Beige,White,expensive,folk art,None,Special Inorganic Walls,1.0.0,RoomSpWallPalace00,5502
+party wall,,No,NA,No,NFS,370,Birthday,,Not for sale,Four Pane,Dark Wood,Glass,Roller Shades,White,Wood,Colorful,White,party,fancy,None,Cloth Walls,1.0.0,RoomTexWallParty00,5226
+pastel dotted wall,,No,NA,No,1100,275,Nook's Cranny,,For sale,Four Pane,Dark Wood,Glass,Curtains,White,Cloth,White,Colorful,fancy,child's room,None,Dot,1.0.0,RoomTexWallDot01,4899
+pastel puzzle wall,,No,NA,No,1540,385,Nook's Cranny,,For sale,Single Pane,White Metal,Glass,Slatted Blinds,White Plastic,Stone,White,White,fancy,child's room,None,Puzzle Walls,1.0.0,RoomTexWallPuzzle00,4886
+peach two-toned tile wall,,No,NA,No,1850,462,Nook's Cranny,,For sale,Sliding Pane,White Metal,Glass,None,NA,Cloth,Pink,Pink,bathroom,facility,None,Two-Tone Tile Walls,1.0.0,RoomTexWallTwoToneTile04,6857
+peach wall,,No,NA,Yes,NFS,4000,Crafting,,Not for sale,Four Pane,Grey Wood,Glass,Roller Shades,White,Cloth,Pink,Pink,fancy,child's room,fruits,Fruit Walls,1.0.0,RoomTexWallPeach00,4918
+pear wall,,No,NA,Yes,NFS,4000,Crafting,,Not for sale,Four Pane,Grey Wood,Glass,Roller Shades,White,Tile,Green,Green,fancy,child's room,fruits,Fruit Walls,1.0.0,RoomTexWallPear00,4917
+perforated-board wall,,No,NA,No,1180,295,Nook's Cranny,,For sale,None,NA,NA,None,NA,Wood,Brown,Brown,music,facility,None,Pegboard Walls,1.0.0,RoomTexWallPegboard01,4921
+pink blossoming wall,,No,NA,No,1760,440,Nook's Cranny,,For sale,Four Pane,Dark Wood,Glass,Curtains,Red Checkered,Stone,Pink,Brown,fancy,living room,None,Country,1.0.0,RoomTexWallCountry01,4895
+pink diner wall,,No,NA,No,2420,605,Nook's Cranny,,For sale,Single Pane,White Metal,Glass,Slatted Blinds,White Plastic,Wood,Pink,Colorful,fancy,shop,None,Diner Walls,1.0.0,RoomTexWallDiner01,7242
+pink flower-print wall,,No,NA,No,1780,445,Nook's Cranny,,For sale,Four Pane,Natural Wood,Glass,Curtains,Pink,Cloth,Pink,Pink,fancy,living room,None,Flower Walls,1.0.0,RoomTexWallFlower00,4893
+pink heart-pattern wall,,No,NA,No,1280,320,Nook's Cranny,,For sale,Four Pane,White Wood,Glass,Roller Shades,White,Wood,Pink,Pink,fancy,child's room,None,Heart Walls,1.0.0,RoomTexWallHeart01,4875
+pink painted-wood wall,,No,NA,No,1650,412,Nook's Cranny,,For sale,Four Pane,White Wood,Glass,None,NA,Cloth,Pink,Pink,fancy,child's room,None,Painted Wood,1.0.0,RoomTexWallPaintWood02,4802
+pink playroom wall,,No,NA,No,2540,635,Nook's Cranny,,For sale,Sliding Pane,White Metal,Glass,None,NA,Cloth,Pink,Pink,child's room,fancy,None,Toy Walls,1.0.0,RoomTexWallToy01,4889
+pink quilt wall,,No,NA,No,2150,537,Nook's Cranny,,For sale,Four Pane,White Wood,Glass,Curtains,White Lace,Stone,Pink,White,fancy,child's room,None,Dollhouse Walls,1.0.0,RoomTexWallDollhouse00,7274
+pink shanty wall,,No,NA,No,620,155,Nook's Cranny,,For sale,Single Pane,Grey Wood,Glass,Slatted Blinds,White Plastic,Wood,Pink,Pink,garage,None,None,Tin Walls,1.0.0,RoomTexWallTin01,4924
+pink simple-cloth wall,,No,NA,No,750,187,Nook's Cranny,,For sale,Four Pane,White Wood,Glass,Curtains,White,Tile,Pink,Pink,child's room,living room,None,Simple Walls,1.0.0,RoomTexWallSimple02,4868
+pink-crown wall,,No,NA,No,2350,587,Nook's Cranny,,For sale,None,NA,NA,None,NA,Cloth,Pink,White,fancy,expensive,None,Crown Walls,1.0.0,RoomTexWallCrown02,4816
+pink-striped wall,,No,NA,No,1520,380,Nook's Cranny,,For sale,Four Pane,White Wood,Glass,Roller Shades,White,Cloth,Pink,White,fancy,child's room,None,Stripe Walls,1.0.0,RoomTexWallStripe01,4943
+purple camo wall,,No,NA,No,1150,287,Nook's Cranny,,For sale,Single Pane,White Metal,Glass,Slatted Blinds,White Plastic,Stone,Purple,Purple,party,child's room,None,Camouflage,1.0.0,RoomTexWallCamouflage02,4885
+purple desert-tile wall,,No,NA,No,2440,610,Nook's Cranny,,For sale,Sliding Pane,White Metal,Glass,None,NA,Wood,Purple,Purple,bathroom,facility,None,Morocco,1.0.0,RoomTexWallMorocco02,6864
+purple dotted wall,,No,NA,No,1100,275,Nook's Cranny,,For sale,Four Pane,Natural Wood,Glass,Curtains,White,Cloth,Purple,White,fancy,child's room,None,Dot,1.0.0,RoomTexWallDot04,4902
+purple puzzle wall,,No,NA,No,1540,385,Nook's Cranny,,For sale,Single Pane,White Metal,Glass,Slatted Blinds,White Plastic,Cloth,Purple,Colorful,None,None,None,Puzzle Walls,1.0.0,RoomTexWallPuzzle03,6875
+purple quilt wall,,No,NA,No,2150,537,Nook's Cranny,,For sale,Four Pane,White Wood,Glass,Curtains,White Lace,Wood,Purple,White,fancy,child's room,None,Dollhouse Walls,1.0.0,RoomTexWallDollhouse03,7275
+purple-rose wall,,No,NA,No,1720,430,Nook's Cranny,,For sale,Arch,Grey Metal,Glass,None,NA,Stone,Purple,Purple,fancy,None,None,Rose Walls,1.0.0,RoomTexWallRose01,4907
+rammed-earth wall,,No,NA,No,1800,450,Nook's Cranny,,For sale,None,NA,NA,None,NA,Stone,Brown,Beige,folk art,None,None,Stone Walls,1.0.0,RoomTexWallHanchiku00,4845
+ramshackle wall,,No,NA,No,3000,750,Saharah,,Not for sale,Four Pane,Dark Wood,Glass,None,NA,Wood,Brown,Beige,horror,None,None,Stone Walls,1.0.0,RoomTexWallRuins00,5225
+red art-deco wall,,No,NA,No,2780,695,Nook's Cranny,,For sale,Arch,Grey Metal,Glass,None,NA,Wood,Red,Black,child's room,living room,None,Art Deco Walls,1.0.0,RoomTexWallArtDeco01,4818
+red delicate-blooms wall,,No,NA,No,1900,475,Nook's Cranny,,For sale,Four Pane,Dark Wood,Glass,Roller Shades,Undyed,Wood,Red,Brown,expensive,living room,None,Manor Walls,1.0.0,RoomTexWallManor01,4897
+red dotted wall,,No,NA,No,1100,275,Nook's Cranny,,For sale,Four Pane,White Wood,Glass,Curtains,White,Cloth,Red,Red,fancy,child's room,None,Dot,1.0.0,RoomTexWallDot02,4900
+red heart-pattern wall,,No,NA,No,1280,320,Nook's Cranny,,For sale,Four Pane,White Wood,Glass,Roller Shades,White,Wood,Red,Red,fancy,child's room,None,Heart Walls,1.0.0,RoomTexWallHeart03,6870
+red intricate wall,,No,NA,No,1570,392,Nook's Cranny,,For sale,Four Pane,Grey Wood,Glass,Roller Shades,White,Tile,Red,White,living room,shop,None,Flower Pop Walls,1.0.0,RoomTexWallFlowerPop03,6879
+red perforated-board wall,,No,NA,No,1180,295,Nook's Cranny,,For sale,None,NA,NA,None,NA,Stone,Red,Red,music,facility,None,Pegboard Walls,1.0.0,RoomTexWallPegboard03,6853
+red two-toned tile wall,,No,NA,No,1850,462,Nook's Cranny,,For sale,Sliding Pane,White Metal,Glass,None,NA,Wood,Red,Red,bathroom,facility,None,Two-Tone Tile Walls,1.0.0,RoomTexWallTwoToneTile03,6856
+red-brick wall,,No,NA,No,1000,250,Nook's Cranny,,For sale,Four Pane,Dark Wood,Glass,None,NA,Wood,Red,Brown,facility,shop,None,Brick,1.0.0,RoomTexWallBrick01,4928
+retro flower-print wall,,No,NA,No,1660,415,Nook's Cranny,,For sale,Four Pane,White Wood,Glass,Curtains,White Lace,Plain,Green,Green,fancy,living room,None,Cloth Walls,1.0.0,RoomTexWallKitsch00,4847
+rice-paddy wall,,Yes,Synchro,No,3000,750,Saharah,,Not for sale,None,NA,NA,None,NA,Plain,Light blue,Green,garden,None,None,Special Cool Nature Walls,1.0.0,RoomSpWallFarm00,5487
+ringside seating,,Yes,NA,No,3000,750,Saharah,,Not for sale,None,NA,NA,None,NA,Stone,Black,Black,fitness,None,None,Special Walls,1.0.0,RoomSpWallWrestling00,5512
+rock-climbing wall,,No,NA,No,3000,750,Saharah,,Not for sale,None,NA,NA,None,NA,Wood,White,Colorful,fitness,None,None,Neta Walls,1.0.0,RoomTexWallBouldering00,4851
+rose wall,,No,NA,No,1720,430,Nook's Cranny,,For sale,Arch,Wood,Glass,None,NA,Stone,Red,White,fancy,None,None,Rose Walls,1.0.0,RoomTexWallRose00,4906
+ruins wall,,No,NA,No,3000,750,Saharah,,Not for sale,None,NA,NA,None,NA,Stone,Black,Gray,horror,folk art,None,Nature Walls,1.0.0,RoomTexWallRemains00,5228
+rustic-stone wall,,No,NA,Yes,NFS,1750,Crafting,,Not for sale,Four Pane,Dark Wood,Glass,None,NA,Wood,Gray,Gray,facility,shop,None,Stone Walls,1.0.0,RoomTexWallStone00,4813
+sakura-wood wall,,No,NA,Yes,NFS,3200,Crafting,Cherry blossom seasonal DIY using cherry-blossom petals (caught with net),Not for sale,Four Pane,Grey Wood,Glass,Curtains,Pink,Tile,Pink,Pink,child's room,fancy,cherry blossoms,Wood Walls,1.0.0,RoomTexWallSolidWood00,4947
+sci-fi wall,,Yes,Random,Yes,NFS,7500,Crafting,,Not for sale,None,NA,NA,None,NA,Wood,Black,Black,space,facility,None,Special Inorganic Walls,1.0.0,RoomSpWallSF00,5510
+screen wall,,No,NA,No,3000,750,Nook's Cranny,,For sale,None,NA,NA,None,NA,Plain,White,White,zen-style,facility,None,Japanese Style,1.0.0,RoomTexWallFusuma00,4819
+sea view,,Yes,Synchro,No,3000,750,Saharah,,Not for sale,None,NA,NA,None,NA,Tile,Light blue,Blue,ocean,None,None,Special Cool Nature Walls,1.0.0,RoomSpWallSeaView00,5501
+security-monitors wall,,Yes,Random,No,3000,750,Saharah,,Not for sale,None,NA,NA,None,NA,Cloth,Black,Gray,facility,None,None,Special Inorganic Walls,1.0.0,RoomSpWallMonitor00,5491
+sepia puzzle wall,,No,NA,No,1540,385,Nook's Cranny,,For sale,Single Pane,White Metal,Glass,Slatted Blinds,White Plastic,Tile,Beige,Colorful,fancy,child's room,None,Puzzle Walls,1.0.0,RoomTexWallPuzzle02,6874
+server-room wall,,Yes,Random,No,3000,750,Saharah,,Not for sale,None,NA,NA,None,NA,Wood,Black,Black,facility,None,None,Special Inorganic Walls,1.0.0,RoomSpWallServer00,5490
+shoji screen,,Yes,NA,No,1880,470,Nook's Cranny,,For sale,None,NA,NA,None,NA,Stone,Beige,White,zen-style,None,None,Japanese Style,1.0.0,RoomSpWallShoji00,4863
+shutter wall,,No,NA,No,3000,750,Saharah,,Not for sale,None,NA,NA,None,NA,Plain,White,Gray,facility,shop,None,Iron Walls,1.0.0,RoomTexWallShutter00,4825
+ski-slope wall,,Yes,Synchro,Yes,NFS,3200,Crafting,Winter seasonal DIY using snowflakes (caught with net),Not for sale,None,NA,NA,None,NA,Cloth,White,White,freezing cold,None,None,Special Cool Nature Walls,1.0.0,RoomSpWallGelande00,5498
+skull wall,,Yes,LightOff,No,3000,750,Nook's Cranny,,For sale,Single Pane,Black Metal,Glass,Slatted Blinds,Black Plastic,Plain,Black,Black,horror,child's room,None,Special Inorganic Walls,1.0.0,RoomSpWallSkull00,5520
+sky wall,,Yes,Synchro,No,3000,750,Saharah,,Not for sale,None,NA,NA,None,NA,Stone,Light blue,White,fancy,None,None,Special Cool Nature Walls,1.0.0,RoomSpWallCloud00,5504
+skyscraper wall,,No,NA,No,3000,750,Saharah,,Not for sale,None,NA,NA,None,NA,Cloth,Black,Gray,expensive,None,None,Neta Walls,1.0.0,RoomTexWallSkyscraper00,4852
+snowflake wall,,No,NA,Yes,NFS,4800,Crafting,Winter seasonal DIY using snowflakes (caught with net),Not for sale,Four Pane,Grey Wood,Glass,Roller Shades,White,Wood,Light blue,Light blue,freezing cold,None,None,Cloth Walls,1.0.0,RoomTexWallSnowCrystal00,4855
+soothing tearoom wall,,No,NA,No,1750,437,Nook's Cranny,,For sale,Circle,Natural Wood,Screen,None,NA,Wood,White,Beige,zen-style,shop,None,Tea Room Walls,1.0.0,RoomTexWallMud01,11177
+stacked-wood wall,,No,NA,Yes,NFS,1800,Crafting,,Not for sale,None,NA,NA,None,NA,Plain,Brown,Brown,garage,facility,None,Wood Walls,1.0.0,RoomTexWallFireWood00,4844
+stadium wall,,Yes,NA,No,3000,750,Saharah,,Not for sale,None,NA,NA,None,NA,Wood,Colorful,Colorful,fitness,None,None,Special Cool Nature Walls,1.0.0,RoomSpWallStadium00,5503
+standard tearoom wall,,No,NA,No,1750,437,Nook's Cranny,,For sale,Circle,Natural Wood,Screen,None,NA,Cloth,Green,Green,zen-style,None,None,Tea Room Walls,1.0.0,RoomTexWallMud00,5521
+starry wall,,Yes,LightOff,Yes,NFS,7500,Crafting,,Not for sale,Four Pane,White Wood,Glass,Roller Shades,White,Plain,Gray,White,fancy,child's room,None,Special Cool Nature Walls,1.0.0,RoomSpWallStarPrint00,5528
+starry-sky wall,,Yes,NA,Yes,NFS,7500,Crafting,,Not for sale,None,NA,NA,None,NA,Stone,Blue,Blue,space,None,stars,Special Cool Nature Walls,1.0.0,RoomSpWallStarSky00,5500
+stately wall,,No,NA,No,2450,612,Nook's Cranny,,For sale,None,NA,NA,None,NA,Stone,White,White,expensive,None,None,Asia,1.0.0,RoomTexWallRenaissance00,4861
+steel-frame wall,,No,NA,Yes,NFS,6000,Crafting,,Not for sale,None,NA,NA,None,NA,Stone,Red,Gray,garage,facility,None,Iron Walls,1.0.0,RoomTexWallSteel00,4801
+stone wall,,No,NA,Yes,NFS,1500,Crafting,,Not for sale,None,NA,NA,None,NA,Plain,Black,Gray,horror,facility,None,Stone Walls,1.0.0,RoomTexWallBasement00,5216
+stormy-night wall,,Yes,Random,No,3000,750,Saharah,,Not for sale,None,NA,NA,None,NA,Stone,Black,Gray,horror,None,None,Special Warm Nature Walls,1.0.0,RoomSpWallThunder00,5499
+straw wall,,No,NA,No,3000,750,Saharah,,Not for sale,None,NA,NA,None,NA,Tile,Beige,Beige,folk art,None,None,Wood Walls,1.0.0,RoomTexWallStraw00,5217
+strawberry-chocolate wall,,No,NA,No,3000,750,Saharah,,Not for sale,None,NA,NA,None,NA,Stone,Pink,Pink,fancy,None,None,Chocolate,1.0.0,RoomTexWallChocolate02,4934
+street-art wall,,No,NA,No,3000,750,Saharah,,Not for sale,None,NA,NA,None,NA,Plain,Colorful,Colorful,garage,None,None,Neta Walls,1.0.0,RoomTexWallStreetArt00,5221
+summit wall,,Yes,Synchro,No,3000,750,Saharah,,Not for sale,None,NA,NA,None,NA,Stone,Black,White,garden,None,None,Special Cool Nature Walls,1.0.0,RoomSpWallMountainTop00,5513
+tree-lined wall,,No,NA,No,3000,750,Saharah,,Not for sale,None,NA,NA,None,NA,Plain,Green,Light blue,garden,None,None,Nature Walls,1.0.0,RoomTexWallRoadsideTree00,5456
+tropical vista,,Yes,Synchro,Yes,NFS,6000,Crafting,Summer seasonal DIY using summer shells (found on beach),Not for sale,None,NA,NA,None,NA,Plain,Light blue,Beige,ocean,None,None,Special Cool Nature Walls,1.0.0,RoomSpWallTropical00,5661
+underwater wall,,Yes,Synchro,Yes,NFS,8600,Crafting,Summer seasonal DIY using summer shells (found on beach),Not for sale,None,NA,NA,None,NA,Stone,Blue,Light blue,ocean,None,None,Special Cool Nature Walls,1.0.0,RoomSpWallFishTank00,5508
+wavy-tile wall,,No,NA,No,1740,435,Nook's Cranny,,For sale,None,NA,NA,None,NA,Plain,Gray,White,shop,facility,None,Tile Walls,1.0.0,RoomTexWallWaveTile00,4832
+western vista,,Yes,Synchro,No,3000,750,Saharah,,Not for sale,None,NA,NA,None,NA,Stone,Brown,Beige,folk art,horror,None,Special Cool Nature Walls,1.0.0,RoomSpWallWilderness00,5489
+white botanical-tile wall,,No,NA,No,1240,310,Nook's Cranny,,For sale,Single Pane,White Wood,Glass,Slatted Blinds,White Plastic,Wood,White,White,facility,expensive,None,Wood Tile Walls,1.0.0,RoomTexWallWoodTile00,4826
+white delicate-blooms wall,,No,NA,No,1900,475,Nook's Cranny,,For sale,Four Pane,Dark Wood,Glass,Roller Shades,Undyed,Wood,White,White,expensive,living room,None,Manor Walls,1.0.0,RoomTexWallManor00,4891
+white hallway wall,,No,NA,No,2000,500,Nook's Cranny,,For sale,None,NA,NA,None,NA,Stone,White,White,facility,music,None,Hall Walls,1.0.0,RoomTexWallHall02,6861
+white honeycomb-tile wall,,No,NA,No,1680,420,Nook's Cranny,,For sale,Sliding Pane,White Metal,Glass,None,NA,Wood,White,White,bathroom,facility,None,Honeycomb,1.0.0,RoomTexWallHoneycomb03,4914
+white painted-wood wall,,No,NA,No,1650,412,Nook's Cranny,,For sale,Four Pane,White Wood,Glass,None,NA,Tile,White,White,living room,child's room,None,Painted Wood,1.0.0,RoomTexWallPaintWood03,4803
+white perforated-board wall,,No,NA,No,1180,295,Nook's Cranny,,For sale,None,NA,NA,None,NA,Wood,White,White,music,facility,None,Pegboard Walls,1.0.0,RoomTexWallPegboard00,4920
+white simple-cloth wall,,No,NA,No,750,187,Nook's Cranny,,For sale,Four Pane,Light Wood,Glass,Curtains,White,Stone,White,White,child's room,living room,None,Simple Walls,1.0.0,RoomTexWallSimple00,4939
+white subway-tile wall,,No,NA,No,1340,335,Nook's Cranny,,For sale,Sliding Pane,White Metal,Glass,None,NA,Wood,White,White,facility,shop,None,Metro Walls,1.0.0,RoomTexWallMetro01,4941
+white-brick wall,,No,NA,No,1000,250,Nook's Cranny,,For sale,Four Pane,White Wood,Glass,None,NA,Tile,White,White,facility,shop,None,Brick,1.0.0,RoomTexWallBrick00,4927
+white-chocolate wall,,No,NA,No,3000,750,Saharah,,Not for sale,None,NA,NA,None,NA,Wood,White,Beige,fancy,None,None,Chocolate,1.0.0,RoomTexWallChocolate01,4933
+white-rose wall,,No,NA,No,1720,430,Nook's Cranny,,For sale,Arch,Grey Metal,Glass,None,NA,Stone,Pink,White,fancy,None,None,Rose Walls,1.0.0,RoomTexWallRose02,6868
+wild-wood wall,,No,NA,Yes,NFS,1800,Crafting,,Not for sale,Single Pane,Dark Wood,Glass,Slatted Blinds,Dark Brown Wood,Wood,Black,Black,living room,shop,None,Wood Walls,1.0.0,RoomTexWallWildWood00,4858
+wooden-knot wall,,No,NA,Yes,NFS,1800,Crafting,,Not for sale,Four Pane,Natural Wood,Glass,Roller Shades,Undyed,Stone,Brown,Brown,living room,child's room,None,Wood Walls,1.0.0,RoomTexWallCedar00,4911
+wooden-mosaic wall,,No,NA,Yes,NFS,1800,Crafting,,Not for sale,Single Pane,Natural Wood,Glass,Slatted Blinds,Brown Wood,Stone,Brown,Brown,living room,shop,None,Wood Plank Walls,1.0.0,RoomTexWallMixPlankWood00,4859
+woodland wall,,No,NA,Yes,NFS,1380,Crafting,,Not for sale,None,NA,NA,None,NA,Wood,Green,Green,horror,facility,None,Nature Walls,1.0.0,RoomTexWallJukai00,5223
+yellow flower-print wall,,No,NA,No,1780,445,Nook's Cranny,,For sale,Four Pane,Dark Wood,Glass,Curtains,Yellow,Cloth,Yellow,Yellow,fancy,living room,None,Flower Walls,1.0.0,RoomTexWallFlower02,6872
+yellow heart-pattern wall,,No,NA,No,1280,320,Nook's Cranny,,For sale,Four Pane,White Wood,Glass,Roller Shades,White,Wood,Yellow,Yellow,fancy,child's room,None,Heart Walls,1.0.0,RoomTexWallHeart02,6871
+yellow intricate wall,,No,NA,No,1570,392,Nook's Cranny,,For sale,Four Pane,Grey Wood,Glass,Roller Shades,White,Cloth,Yellow,White,living room,shop,None,Flower Pop Walls,1.0.0,RoomTexWallFlowerPop01,4849
+yellow playroom wall,,No,NA,No,2540,635,Nook's Cranny,,For sale,Sliding Pane,White Metal,Glass,None,NA,Cloth,Yellow,Yellow,child's room,fancy,None,Toy Walls,1.0.0,RoomTexWallToy03,6865
+yellow quilt wall,,No,NA,No,2150,537,Nook's Cranny,,For sale,Four Pane,White Wood,Glass,Curtains,White Lace,Wood,Yellow,White,fancy,child's room,None,Dollhouse Walls,1.0.0,RoomTexWallDollhouse02,7276
+yellow simple-cloth wall,,No,NA,No,750,187,Nook's Cranny,,For sale,Four Pane,White Wood,Glass,Curtains,White,Stone,Beige,Yellow,child's room,living room,None,Simple Walls,1.0.0,RoomTexWallSimple01,4867
+yellow-paint wall,,No,NA,No,1600,400,Nook's Cranny,,For sale,Four Pane,Natural Wood,Glass,None,NA,Cloth,Yellow,Yellow,fancy,child's room,None,Stucco Walls,1.0.0,RoomTexWallStucco00,4808
+yellow-striped wall,,No,NA,No,1520,380,Nook's Cranny,,For sale,Four Pane,White Wood,Glass,Roller Shades,White,Cloth,Yellow,Beige,fancy,child's room,None,Stripe Walls,1.0.0,RoomTexWallStripe04,4946

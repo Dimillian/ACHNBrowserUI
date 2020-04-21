@@ -1,0 +1,174 @@
+Name,Image,VFX,DIY,Buy,Sell,Color 1,Color 2,Source,Source Notes,Version,HHA Concept 1,HHA Concept 2,HHA Series,Tag,Catalog,Filename,Internal ID
+aqua tile flooring,,No,No,3000,225,Light blue,Light blue,Nook's Cranny,,1.0.0,bathroom,facility,None,Tile Floors,For sale,RoomTexFloorTile01,5036
+arabesque flooring,,No,No,2120,530,Black,Gray,Nook's Cranny,,1.0.0,expensive,living room,None,Cloth Floors,For sale,RoomTexFloorArabesque00,4953
+arched-brick flooring,,No,No,1100,275,Brown,Brown,Nook's Cranny,,1.0.0,facility,shop,None,Arched Brick,For sale,RoomTexFloorArchBrick00,4998
+argyle tile flooring,,No,No,1750,437,White,Beige,Nook's Cranny,,1.0.0,bathroom,facility,None,Tile Floors,For sale,RoomTexFloorTileWood00,4994
+artsy parquet flooring,,No,No,1800,450,Beige,Beige,Nook's Cranny,,1.0.0,facility,shop,None,Simple Parquet,For sale,RoomTexFloorParquetArt00,5232
+backyard lawn,,No,Yes,NFS,600,Green,Green,Crafting,,1.0.0,garden,None,None,Grassland,Not for sale,RoomTexFloorLawn00,4979
+bamboo flooring,,No,Yes,NFS,2400,Green,Beige,Crafting,,1.0.0,zen-style,None,bamboo,Nature - Green,Not for sale,RoomTexFloorBamboo00,4964
+basement flooring,,No,Yes,NFS,1500,Gray,Gray,Crafting,,1.0.0,horror,facility,None,Stone Floors,Not for sale,RoomTexFloorBasement00,4797
+beige desert-tile flooring,,No,No,2100,525,Beige,White,Nook's Cranny,,1.0.0,bathroom,facility,None,Morocco,For sale,RoomTexFloorMorocco00,4965
+berry-chocolates flooring,,No,No,3000,750,Pink,Pink,Saharah,,1.0.0,fancy,None,None,Chocolate,Not for sale,RoomTexFloorChocolate02,5053
+birch flooring,,No,No,800,200,White,White,Nook's Cranny,,1.0.0,living room,child's room,None,Wood Floors,For sale,RoomTexFloorBirch00,5032
+black iron-parquet flooring,,No,No,2350,587,Black,White,Nook's Cranny,,1.0.0,expensive,living room,None,Iron Parquet,For sale,RoomTexFloorParquetIron02,5066
+black-brick flooring,,No,No,1040,260,Black,Black,Nook's Cranny,,1.0.0,facility,shop,None,Brick,For sale,RoomTexFloorBrick02,4976
+blue camo flooring,,No,No,1320,330,Blue,Blue,Nook's Cranny,,1.0.0,party,child's room,None,Camouflage,For sale,RoomTexFloorCamouflage01,5016
+blue desert-tile flooring,,No,No,2100,525,Blue,White,Nook's Cranny,,1.0.0,bathroom,facility,None,Morocco,For sale,RoomTexFloorMorocco01,4966
+blue dot flooring,,No,No,800,200,Blue,Light blue,Nook's Cranny,,1.0.0,fancy,child's room,None,Dot,For sale,RoomTexFloorDot04,5028
+blue floral flooring,,No,No,1520,380,Blue,Blue,Nook's Cranny,,1.0.0,shop,living room,None,Deco Wood,For sale,RoomTexFloorDecoWood01,5074
+blue honeycomb tile,,No,No,1420,355,Blue,Blue,Nook's Cranny,,1.0.0,bathroom,facility,None,Honeycomb,For sale,RoomTexFloorHoneycomb01,5040
+blue mosaic-tile flooring,,No,No,900,225,Blue,Blue,Nook's Cranny,,1.0.0,bathroom,facility,None,Tile Floors,For sale,RoomTexFloorTile03,6846
+blue rubber flooring,,No,No,850,212,Blue,Light blue,Nook's Cranny,,1.0.0,fitness,school,None,Rubber,For sale,RoomTexFloorRubber01,4954
+blue-paint flooring,,No,No,1040,260,Light blue,White,Nook's Cranny,,1.0.0,fancy,child's room,None,Painted Wood,For sale,RoomTexFloorPaintWood00,5057
+boxing-ring mat,,No,No,3000,750,Blue,Blue,Saharah,,1.0.0,fitness,None,None,Sports Floor,Not for sale,RoomTexFloorWrestling00,4982
+brown argyle-tile flooring,,No,No,1440,360,Brown,Brown,Nook's Cranny,,1.0.0,expensive,facility,None,Argyle,For sale,RoomTexFloorArgyleTile01,5081
+brown floral flooring,,No,No,1520,380,Brown,White,Nook's Cranny,,1.0.0,shop,living room,None,Deco Wood,For sale,RoomTexFloorDecoWood02,5075
+brown honeycomb tile,,No,No,1420,355,Brown,Brown,Nook's Cranny,,1.0.0,bathroom,facility,None,Honeycomb,For sale,RoomTexFloorHoneycomb00,5038
+brown iron-parquet flooring,,No,No,2350,587,Beige,Beige,Nook's Cranny,,1.0.0,expensive,living room,None,Iron Parquet,For sale,RoomTexFloorParquetIron01,5065
+brown-brick flooring,,No,No,1040,260,Brown,Brown,Nook's Cranny,,1.0.0,facility,shop,None,Brick,For sale,RoomTexFloorBrick03,6849
+Bunny Day flooring,,No,Yes,NFS,4800,None,None,Crafting,"Obtained randomly from villager, egg message bottle or egg balloon during Bunny Day event",1.1.0,fancy,child's room,Bunny Day,Dot,Not for sale,RoomTexFloorEaster00,12423
+camo flooring,,No,No,1320,330,Black,Green,Nook's Cranny,,1.0.0,party,child's room,None,Camouflage,For sale,RoomTexFloorCamouflage00,5015
+cherry-blossom flooring,,No,Yes,NFS,4400,Pink,Pink,Crafting,Cherry blossom seasonal DIY using cherry-blossom petals (caught with net),1.0.0,garden,fancy,cherry blossoms,Nature - Fallen Leaves,Not for sale,RoomTexFloorSakura00,7204
+circuit-board flooring,,No,No,3000,750,Green,Green,Saharah,,1.0.0,facility,None,None,Machine Floor,Not for sale,RoomTexFloorGeek00,5082
+cloud flooring,,Yes,No,3000,750,White,White,Saharah,,1.0.0,fancy,None,None,Special Nature Floors,Not for sale,RoomSpFloorCloud00,5267
+colored-leaves flooring,,No,Yes,NFS,4300,Orange,Orange,Crafting,Fall seasonal DIY using autumn leaves (caught with net),1.0.0,garden,None,tree's bounty or leaves ,Nature - Fallen Leaves,Not for sale,RoomTexFloorAutumun00,4990
+colorful mosaic-tile flooring,,No,No,900,225,Colorful,White,Nook's Cranny,,1.0.0,bathroom,facility,None,Tile Floors,For sale,RoomTexFloorTile02,5037
+colorful puzzle flooring,,No,No,1450,362,Colorful,Colorful,Nook's Cranny,,1.0.0,fancy,child's room,None,Puzzle Mat,For sale,RoomTexFloorPuzzleMat01,4957
+colorful tile flooring,,No,No,1620,405,Colorful,Colorful,Nook's Cranny,,1.0.0,living room,child's room,None,Panel,For sale,RoomTexFloorPanel01,5068
+common flooring,,No,No,720,180,Brown,Brown,Nook's Cranny,,1.0.0,living room,school,None,Wood Floors,For sale,RoomTexFloorCommon00,5018
+concrete flooring,,No,No,820,205,Gray,Gray,Nook's Cranny,,1.0.0,garage,facility,None,Stone Floors,For sale,RoomTexFloorConcrete00,4951
+construction-site flooring,,No,No,3000,750,Brown,White,Saharah,,1.0.0,garage,facility,None,Sidewalk,Not for sale,RoomTexFloorConstruction00,5235
+cool vinyl flooring,,No,No,1150,287,Blue,Gray,Nook's Cranny,,1.0.0,expensive,None,None,Tile Checker,For sale,RoomTexFloorTileChecker03,6844
+cool-paint flooring,,No,No,2200,550,Colorful,Colorful,Nook's Cranny,,1.0.0,fancy,child's room,None,Colorful Wood,For sale,RoomTexFloorColorfulWood01,5071
+cork flooring,,No,No,1500,375,Beige,Beige,Nook's Cranny,,1.0.0,school,music,None,Wood Floors,For sale,RoomTexFloorCork00,4969
+crop-circles flooring,,No,No,3000,750,Green,Green,Saharah,,1.0.0,garden,None,None,Nature - Green,Not for sale,RoomTexFloorCropCircles00,5243
+crosswalk flooring,,No,No,3000,750,Beige,Black,Saharah,,1.0.0,facility,None,None,Sidewalk,Not for sale,RoomTexFloorSidewalk00,5007
+cubic parquet flooring,,No,No,1500,375,Orange,Orange,Nook's Cranny,,1.0.0,living room,child's room,None,Simple Parquet,For sale,RoomTexFloorHoneycombWood00,4987
+cute blue-tile flooring,,No,No,780,195,Blue,Blue,Nook's Cranny,,1.0.0,fancy,child's room,None,Tile Floors,For sale,RoomTexFloorCute02,7221
+cute red-tile flooring,,No,No,780,195,Red,Pink,Nook's Cranny,,1.0.0,fancy,child's room,None,Tile Floors,For sale,RoomTexFloorCute01,7220
+cute white-tile flooring,,No,No,780,195,White,White,Nook's Cranny,,1.0.0,fancy,child's room,None,Tile Floors,For sale,RoomTexFloorCute00,7219
+cute yellow-tile flooring,,No,No,780,195,Yellow,Yellow,Nook's Cranny,,1.0.0,fancy,child's room,None,Tile Floors,For sale,RoomTexFloorCute03,7222
+cute-paint flooring,,No,No,2200,550,Pink,Orange,Nook's Cranny,,1.0.0,fancy,child's room,None,Colorful Wood,For sale,RoomTexFloorColorfulWood00,5070
+daisy meadow,,No,No,3000,750,Green,Green,Saharah,,1.0.0,garden,None,None,Grassland,Not for sale,RoomTexFloorGrassland00,5005
+dark herringbone flooring,,No,No,1200,300,Brown,Brown,Nook's Cranny,,1.0.0,living room,shop,None,Herringbone,For sale,RoomTexFloorHerringbone01,5062
+dark parquet flooring,,No,No,1560,390,Black,Gray,Nook's Cranny,,1.0.0,living room,None,None,Country,For sale,RoomTexFloorCountry01,5025
+dark wood-pattern flooring,,No,No,1500,375,Black,Black,Nook's Cranny,,1.0.0,living room,shop,None,Simple Parquet,For sale,RoomTexFloorSimpleParquet01,4992
+dark-block flooring,,No,No,1380,345,Brown,Brown,Nook's Cranny,,1.0.0,school,None,None,Parquet,For sale,RoomTexFloorParquet01,5035
+dark-chocolates flooring,,No,No,3000,750,Brown,Brown,Saharah,,1.0.0,fancy,None,None,Chocolate,Not for sale,RoomTexFloorChocolate00,5050
+dig-site flooring,,No,No,3000,750,Brown,Beige,Saharah,,1.0.0,garden,horror,None,Nature - Brown,Not for sale,RoomTexFloorStratum00,5011
+dirt flooring,,No,No,3000,750,Brown,Black,Saharah,,1.0.0,garden,outdoors,None,Nature - Brown,Not for sale,RoomTexFloorCottonSoil00,4981
+field flooring,,No,No,3000,750,Brown,Brown,Saharah,,1.0.0,garden,None,None,Nature - Brown,Not for sale,RoomTexFloorFarm00,4980
+flagstone flooring,,No,No,1700,425,Beige,Beige,Nook's Cranny,,1.0.0,shop,facility,None,Stone Floors,For sale,RoomTexFloorFlagStone00,5031
+floral mosaic-tile flooring,,No,No,1080,270,White,White,Nook's Cranny,,1.0.0,bathroom,facility,None,Tile Floors,For sale,RoomTexFloorMosaicTile00,4993
+floral rush-mat flooring,,No,No,3000,750,White,White,Saharah,,1.0.0,fancy,zen-style,None,Japanese Style,Not for sale,RoomTexFloorRush00,4977
+flowing-river flooring,,Yes,No,3000,750,Gray,Light blue,Saharah,,1.0.0,garden,None,None,Special Nature Floors,Not for sale,RoomSpFloorRiver00,5273
+forest flooring,,No,Yes,NFS,35000,Brown,Brown,Crafting,Mushroom seasonal DIY,1.0.0,garden,horror,mush,Nature - Fallen Leaves,Not for sale,RoomTexFloorMushForest00,7186
+future-tech flooring,,Yes,No,3000,750,Black,Black,Saharah,,1.0.0,horror,folk art,None,Special Inorganic Floors,Not for sale,RoomSpFloorTechnology00,5250
+galaxy flooring,,No,Yes,NFS,7500,Blue,Blue,Crafting,,1.0.0,space,None,None,Special Nature Floors,Not for sale,RoomSpFloorGalaxy00,5269
+garbage-heap flooring,,Yes,Yes,NFS,120,White,White,Crafting,,1.0.0,horror,garage,None,Decadence,Not for sale,RoomTexFloorGarbage00,5236
+giraffe-print flooring,,No,No,1300,325,Beige,Beige,Nook's Cranny,,1.0.0,party,fancy,None,Animal Floor,For sale,RoomTexFloorAnimal01,4961
+gold iron-parquet flooring,,No,No,2350,587,Beige,Beige,Nook's Cranny,,1.0.0,expensive,living room,None,Iron Parquet,For sale,RoomTexFloorParquetIron00,5064
+golden flooring,,No,Yes,NFS,40000,Yellow,Yellow,Crafting,,1.0.0,expensive,horror,golden,Luxury,Not for sale,RoomTexFloorGold00,5021
+gravel flooring,,No,No,3000,750,Gray,Gray,Saharah,,1.0.0,garden,facility,None,Stone Floors,Not for sale,RoomTexFloorGravel00,4978
+gray argyle-tile flooring,,No,No,1440,360,Gray,White,Nook's Cranny,,1.0.0,expensive,facility,None,Argyle,For sale,RoomTexFloorArgyleTile00,5080
+gray vinyl flooring,,No,No,1150,287,Gray,White,Nook's Cranny,,1.0.0,expensive,None,None,Tile Checker,For sale,RoomTexFloorTileChecker00,5046
+green floral flooring,,No,No,1520,380,Green,Green,Nook's Cranny,,1.0.0,shop,living room,None,Deco Wood,For sale,RoomTexFloorDecoWood03,6847
+green honeycomb tile,,No,No,1420,355,Green,Green,Nook's Cranny,,1.0.0,bathroom,facility,None,Honeycomb,For sale,RoomTexFloorHoneycomb02,5041
+green retro flooring,,No,No,1540,385,Green,Green,Nook's Cranny,,1.0.0,kitchen,shop,None,Kitchen Floors,For sale,RoomTexFloorKitchen01,5045
+green rubber flooring,,No,No,850,212,Green,Green,Nook's Cranny,,1.0.0,fitness,school,None,Rubber,For sale,RoomTexFloorRubber00,4952
+green vinyl flooring,,No,No,1150,287,Green,White,Nook's Cranny,,1.0.0,expensive,None,None,Tile Checker,For sale,RoomTexFloorTileChecker02,5048
+green-paint flooring,,No,No,1040,260,Green,Green,Nook's Cranny,,1.0.0,fancy,child's room,None,Painted Wood,For sale,RoomTexFloorPaintWood01,5058
+hexagonal floral flooring,,No,No,860,215,White,White,Nook's Cranny,,1.0.0,zen-style,shop,None,Tile Floors,For sale,RoomTexFloorHempTile00,4972
+highway flooring,,No,No,3000,750,Gray,Beige,Saharah,,1.0.0,facility,None,None,Sidewalk,Not for sale,RoomTexFloorHighway00,5237
+honeycomb flooring,,No,Yes,NFS,3000,Yellow,Yellow,Crafting,,1.0.0,fancy,facility,None,Neta,Not for sale,RoomTexFloorHoney00,4999
+ice flooring,,Yes,Yes,NFS,8200,Light blue,Light blue,Snowman,Reward for making a perfect snow-person,1.0.0,freezing cold,facility,frozen,Special Nature Floors,Not for sale,RoomSpFloorIce00,5516
+iceberg flooring,,Yes,Yes,NFS,4000,White,Light blue,Crafting,Winter seasonal DIY using snowflakes (caught with net),1.0.0,freezing cold,None,None,Special Nature Floors,Not for sale,RoomSpFloorIceFloe00,5253
+imperial tile,,No,No,3000,750,White,Gray,Saharah,,1.0.0,expensive,None,None,Luxury,Not for sale,RoomTexFloorDynasty00,5012
+jointed-mat flooring,,No,No,1050,262,Beige,Beige,Nook's Cranny,,1.0.0,school,child's room,None,Cloth Floors,For sale,RoomTexFloorJointMat00,4955
+jungle flooring,,No,Yes,NFS,2200,Green,Green,Crafting,,1.0.0,garden,facility,None,Nature - Green,Not for sale,RoomTexFloorJungle00,5515
+kitschy tile,,No,No,1280,320,Pink,White,Nook's Cranny,,1.0.0,party,None,None,Tile Floors,For sale,RoomTexFloorKitschTile00,5076
+lava flooring,,Yes,No,3000,750,Black,Orange,Saharah,,1.0.0,horror,None,None,Special Inorganic Floors,Not for sale,RoomSpFloorVolcano00,5274
+leopard-print flooring,,No,No,1300,325,Orange,Brown,Nook's Cranny,,1.0.0,party,fancy,None,Animal Floor,For sale,RoomTexFloorAnimal00,4959
+light herringbone flooring,,No,No,1200,300,Beige,Beige,Nook's Cranny,,1.0.0,living room,shop,None,Herringbone,For sale,RoomTexFloorHerringbone00,5061
+light parquet flooring,,No,No,1560,390,Beige,Brown,Nook's Cranny,,1.0.0,living room,shop,None,Country,For sale,RoomTexFloorCountry00,5022
+light wood-pattern flooring,,No,No,1500,375,Beige,Beige,Nook's Cranny,,1.0.0,living room,shop,None,Simple Parquet,For sale,RoomTexFloorSimpleParquet00,4991
+lobby flooring,,No,No,3000,750,Purple,Black,Saharah,,1.0.0,facility,party,None,Cloth Floors,Not for sale,RoomTexFloorLobby00,5034
+lunar surface,,No,Yes,NFS,7500,White,Gray,Crafting,,1.0.0,space,None,stars,Nature - White,Not for sale,RoomTexFloorLunar00,4968
+marine pop flooring,,No,No,2020,505,Blue,Blue,Nook's Cranny,,1.0.0,child's room,fancy,None,Cloth Floors,For sale,RoomTexFloorFishPop00,5024
+mint dot flooring,,No,No,800,200,Green,Green,Nook's Cranny,,1.0.0,fancy,child's room,None,Dot,For sale,RoomTexFloorDot01,5026
+modern wood flooring,,No,No,1280,320,Brown,Brown,Nook's Cranny,,1.0.0,living room,child's room,None,Wood Floors,For sale,RoomTexFloorMixwood00,5044
+money flooring,,No,Yes,NFS,25000,White,White,Crafting,,1.0.0,expensive,None,None,Decadence,Not for sale,RoomTexFloorBill00,4986
+monochromatic dot flooring,,No,No,800,200,Gray,White,Nook's Cranny,,1.0.0,fancy,child's room,None,Dot,For sale,RoomTexFloorDot00,5023
+monochromatic tile flooring,,No,No,1620,405,Black,White,Nook's Cranny,,1.0.0,den,living room,None,Panel,For sale,RoomTexFloorPanel00,5067
+mossy-garden flooring,,No,No,3000,750,Green,Green,Saharah,,1.0.0,zen-style,garden,None,Nature - Green,Not for sale,RoomTexFloorMoss00,5234
+natural-block flooring,,No,No,1380,345,Brown,Beige,Nook's Cranny,,1.0.0,school,None,None,Parquet,For sale,RoomTexFloorParquet00,5033
+Nook Inc. flooring,,No,No,24000,6000,Brown,Brown,Nook Miles Shop,,1.0.0,school,shop,None,Wood Floors,Not for sale,RoomTexFloorFirst00,6005
+oasis flooring,,Yes,No,3000,750,Beige,Light blue,Saharah,,1.0.0,garden,folk art,None,Special Inorganic Floors,Not for sale,RoomSpFloorOasis00,5255
+olive desert-tile flooring,,No,No,2100,525,Yellow,Brown,Nook's Cranny,,1.0.0,bathroom,facility,None,Morocco,For sale,RoomTexFloorMorocco03,6928
+orange camo flooring,,No,No,1320,330,Orange,Orange,Nook's Cranny,,1.0.0,party,child's room,None,Camouflage,For sale,RoomTexFloorCamouflage03,6845
+orange retro flooring,,No,No,1540,385,Orange,Orange,Nook's Cranny,,1.0.0,kitchen,shop,None,Kitchen Floors,For sale,RoomTexFloorKitchen00,5043
+paintball flooring,,No,No,3000,750,White,Colorful,Saharah,,1.0.0,garage,facility,None,Stone Floors,Not for sale,RoomTexFloorAtelier00,4988
+palace tile,,No,No,3000,750,White,White,Saharah,,1.0.0,expensive,folk art,None,Luxury,Not for sale,RoomTexFloorPalace00,5051
+parking flooring,,No,No,3000,750,Black,Gray,Saharah,,1.0.0,facility,None,None,Sidewalk,Not for sale,RoomTexFloorParking00,4997
+party flooring,,No,No,NFS,370,Colorful,Gray,Birthday,,1.0.0,party,fancy,None,Decadence,Not for sale,RoomTexFloorParty00,5241
+pastel puzzle flooring,,No,No,1450,362,White,White,Nook's Cranny,,1.0.0,fancy,child's room,None,Puzzle Mat,For sale,RoomTexFloorPuzzleMat00,4956
+patchwork-tile flooring,,No,No,2100,525,White,White,Nook's Cranny,,1.0.0,expensive,shop,None,Tile Floors,For sale,RoomTexFloorPatchworkTile00,4995
+pine-board flooring,,No,No,2500,625,Beige,Beige,Nook's Cranny,,1.0.0,living room,child's room,None,Wood Floors,For sale,RoomTexFloorSimple00,5019
+pink-paint flooring,,No,No,1040,260,Pink,Pink,Nook's Cranny,,1.0.0,fancy,child's room,None,Painted Wood,For sale,RoomTexFloorPaintWood02,5059
+purple camo flooring,,No,No,1320,330,Purple,Purple,Nook's Cranny,,1.0.0,party,child's room,None,Camouflage,For sale,RoomTexFloorCamouflage02,5017
+purple desert-tile flooring,,No,No,2100,525,Purple,White,Nook's Cranny,,1.0.0,bathroom,facility,None,Morocco,For sale,RoomTexFloorMorocco02,6927
+purple puzzle flooring,,No,No,1450,362,Purple,Colorful,Nook's Cranny,,1.0.0,fancy,None,None,Puzzle Mat,For sale,RoomTexFloorPuzzleMat03,7185
+pyramid tile,,No,No,3000,750,Beige,Beige,Saharah,,1.0.0,folk art,None,None,Luxury,Not for sale,RoomTexFloorEgypt00,5054
+racetrack flooring,,No,No,3000,750,Green,Green,Saharah,,1.0.0,fitness,school,None,Sports Floor,Not for sale,RoomTexFloorAthletics00,4996
+ramshackle flooring,,No,No,3000,750,Beige,Beige,Saharah,,1.0.0,horror,None,None,Decadence,Not for sale,RoomTexFloorRuins00,5240
+random-square-tile flooring,,No,No,1360,340,White,White,Nook's Cranny,,1.0.0,facility,shop,None,Tile Floors,For sale,RoomTexFloorSquareTile00,4973
+rattan flooring,,No,No,1100,275,Beige,Beige,Nook's Cranny,,1.0.0,facility,shop,rattan,Wood Floors,For sale,RoomTexFloorRattan00,4967
+red dot flooring,,No,No,800,200,Red,Red,Nook's Cranny,,1.0.0,fancy,child's room,None,Dot,For sale,RoomTexFloorDot02,5027
+red-and-black vinyl flooring,,No,No,1150,287,Red,Gray,Nook's Cranny,,1.0.0,expensive,None,None,Tile Checker,For sale,RoomTexFloorTileChecker01,5047
+red-brick flooring,,No,No,1040,260,Red,Brown,Nook's Cranny,,1.0.0,facility,shop,None,Brick,For sale,RoomTexFloorBrick01,4975
+rocky-mountain flooring,,No,No,3000,750,Beige,Beige,Saharah,,1.0.0,garden,None,None,Nature - Brown,Not for sale,RoomTexFloorRock00,5239
+rose flooring,,No,No,2200,550,Red,Red,Nook's Cranny,,1.0.0,fancy,expensive,None,Cloth Floors,For sale,RoomTexFloorRoseCarpet00,4958
+rosewood flooring,,No,No,2420,605,Gray,Gray,Nook's Cranny,,1.0.0,expensive,living room,None,Wood Floors,For sale,RoomTexFloorRoseWood00,5063
+rubber-tile flooring,,No,No,700,175,Gray,Gray,Nook's Cranny,,1.0.0,facility,shop,None,Tile Floors,For sale,RoomTexFloorRubberTile00,5163
+rush tatami,,No,No,2200,550,Beige,Beige,Nook's Cranny,,1.0.0,zen-style,living room,None,Tatami,For sale,RoomTexFloorTatami01,5079
+rush tatami flooring,,No,No,2200,550,Beige,Beige,Nook's Cranny,,1.0.0,zen-style,living room,None,Tatami Panel,For sale,RoomTexFloorTatamiPanel01,5078
+Saharah's desert,,No,No,3000,750,Beige,Beige,Saharah,,1.0.0,folk art,None,None,Nature - White,Not for sale,RoomTexFloorDesert00,4983
+sakura-wood flooring,,No,Yes,NFS,3200,Pink,Pink,Crafting,Cherry blossom seasonal DIY using cherry-blossom petals (caught with net),1.0.0,child's room,fancy,None,Wood Floors,Not for sale,RoomTexFloorSolidWood00,5056
+sandlot,,No,No,3000,750,Yellow,Beige,Saharah,,1.0.0,garden,None,None,Nature - Brown,Not for sale,RoomTexFloorEmptyLot00,4985
+sandy-beach flooring,,No,Yes,NFS,4120,Beige,Beige,Crafting,,1.0.0,ocean,None,None,Nature - White,Not for sale,RoomTexFloorSand00,4970
+sci-fi flooring,,Yes,Yes,NFS,7500,Black,Black,Crafting,,1.0.0,space,facility,None,Special Inorganic Floors,Not for sale,RoomSpFloorSF00,5270
+scramble crosswalk,,No,No,3000,750,Gray,Gray,Saharah,,1.0.0,facility,None,None,Sidewalk,Not for sale,RoomTexFloorScramble00,5010
+sepia puzzle flooring,,No,No,1450,362,Colorful,Colorful,Nook's Cranny,,1.0.0,fancy,child's room,None,Puzzle Mat,For sale,RoomTexFloorPuzzleMat02,7184
+ship deck,,No,No,4000,1000,Beige,Beige,Nook's Cranny,,1.0.0,ocean,None,None,Sports Floor,For sale,RoomTexFloorSeaView00,4950
+sidewalk flooring,,No,No,3000,750,Gray,Brown,Saharah,,1.0.0,shop,facility,None,Sidewalk,Not for sale,RoomTexFloorSidewalk01,5008
+simple blue flooring,,No,No,1500,375,Blue,Blue,Nook's Cranny,,1.0.0,den,living room,None,Simple Carpet,For sale,RoomTexFloorSimpleCarpet01,5001
+simple purple flooring,,No,No,1500,375,Purple,Purple,Nook's Cranny,,1.0.0,den,expensive,None,Simple Carpet,For sale,RoomTexFloorSimpleCarpet03,5003
+simple red flooring,,No,No,1500,375,Red,Red,Nook's Cranny,,1.0.0,den,expensive,None,Simple Carpet,For sale,RoomTexFloorSimpleCarpet00,5000
+simple white flooring,,No,No,1500,375,White,White,Nook's Cranny,,1.0.0,living room,shop,None,Simple Carpet,For sale,RoomTexFloorSimpleCarpet04,5004
+ski-slope flooring,,No,Yes,NFS,3200,White,White,Crafting,Winter seasonal DIY using snowflakes (caught with net),1.0.0,freezing cold,None,None,Nature - White,Not for sale,RoomTexFloorGelande00,4989
+skull-print flooring,,No,No,3000,750,Black,Black,Nook's Cranny,,1.0.0,horror,child's room,None,Cloth Floors,For sale,RoomTexFloorSkull00,5248
+slate flooring,,No,No,1380,345,Gray,Gray,Nook's Cranny,,1.0.0,facility,shop,None,Stone Floors,For sale,RoomTexFloorSlate00,5233
+starry-sands flooring,,No,Yes,NFS,7720,Beige,White,Crafting,Summer seasonal DIY using summer shells (found on beach),1.0.0,ocean,fancy,None,Nature - White,Not for sale,RoomTexFloorSandStar00,7239
+steel flooring,,No,Yes,NFS,5250,Gray,Gray,Crafting,,1.0.0,garage,facility,None,Iron,Not for sale,RoomTexFloorSteel00,4960
+stone tile,,No,No,3000,750,White,White,Nook's Cranny,,1.0.0,expensive,facility,None,Stone Floors,For sale,RoomTexFloorMarble00,5069
+stripe flooring,,No,No,1200,300,Colorful,Gray,Nook's Cranny,,1.0.0,living room,child's room,None,Cloth Floors,For sale,RoomTexFloorStripe00,4963
+sumo ring,,No,No,3000,750,Beige,Beige,Saharah,,1.0.0,fitness,zen-style,None,Sports Floor,Not for sale,RoomTexFloorArena00,5013
+swamp flooring,,No,No,3000,750,Black,Gray,Saharah,,1.0.0,garden,horror,None,Nature - Brown,Not for sale,RoomTexFloorBog00,5238
+tatami,,No,No,2200,550,Beige,Beige,Nook's Cranny,,1.0.0,zen-style,living room,None,Tatami,For sale,RoomTexFloorTatami00,5039
+tatami flooring,,No,No,2200,550,Green,White,Nook's Cranny,,1.0.0,zen-style,living room,None,Tatami Panel,For sale,RoomTexFloorTatamiPanel00,5077
+terra-cotta flooring,,No,No,1800,450,Orange,Orange,Nook's Cranny,,1.0.0,facility,shop,None,Tile Floors,For sale,RoomTexFloorTileTerracotta00,4971
+tiger-print flooring,,No,No,1300,325,Black,Orange,Nook's Cranny,,1.0.0,party,fancy,None,Animal Floor,For sale,RoomTexFloorAnimal03,6848
+train-station flooring,,No,No,3000,750,Beige,Brown,Saharah,,1.0.0,facility,None,None,Sidewalk,Not for sale,RoomTexFloorPlatform00,5009
+underwater flooring,,Yes,Yes,NFS,6600,Blue,Light blue,Crafting,Summer seasonal DIY using summer shells (found on beach),1.0.0,ocean,None,None,Special Nature Floors,Not for sale,RoomSpFloorFishTank00,5268
+water flooring,,Yes,Yes,NFS,7200,Light blue,Blue,Crafting,Summer seasonal DIY using summer shells (found on beach),1.0.0,ocean,None,None,Special Nature Floors,Not for sale,RoomSpFloorWater00,5030
+western desert,,No,No,3000,750,Beige,Beige,Saharah,,1.0.0,folk art,horror,None,Nature - Brown,Not for sale,RoomTexFloorWilderness00,4984
+white honeycomb tile,,No,No,1420,355,White,White,Nook's Cranny,,1.0.0,bathroom,facility,None,Honeycomb,For sale,RoomTexFloorHoneycomb03,5042
+white iron-parquet flooring,,No,No,2350,587,White,White,Nook's Cranny,,1.0.0,expensive,living room,None,Iron Parquet,For sale,RoomTexFloorParquetIron03,6843
+white mosaic-tile flooring,,No,No,900,225,White,White,Nook's Cranny,,1.0.0,bathroom,facility,None,Tile Floors,For sale,RoomTexFloorTile00,5020
+white-brick flooring,,No,No,1040,260,White,White,Nook's Cranny,,1.0.0,facility,shop,None,Brick,For sale,RoomTexFloorBrick00,4974
+white-chocolates flooring,,No,No,3000,750,White,Beige,Saharah,,1.0.0,fancy,None,None,Chocolate,Not for sale,RoomTexFloorChocolate01,5052
+white-paint flooring,,No,No,1040,260,White,White,Nook's Cranny,,1.0.0,living room,child's room,None,Painted Wood,For sale,RoomTexFloorPaintWood03,5060
+wildflower meadow,,No,No,3000,750,Green,Green,Saharah,,1.0.0,garden,fancy,None,Grassland,Not for sale,RoomTexFloorGrassland01,5006
+wooden-knot flooring,,No,No,780,195,Brown,Brown,Nook's Cranny,,1.0.0,living room,child's room,None,Wood Floors,For sale,RoomTexFloorCedar00,5049
+yellow floral flooring,,No,No,1520,380,Yellow,Yellow,Nook's Cranny,,1.0.0,shop,living room,None,Deco Wood,For sale,RoomTexFloorDecoWood00,5073
+zebra-print flooring,,No,No,1300,325,Black,White,Nook's Cranny,,1.0.0,party,fancy,None,Animal Floor,For sale,RoomTexFloorAnimal02,4962
