@@ -26,9 +26,9 @@ csv()
         fs.writeFileSync(`./output/recipes.json`, data);
 
         const house = ['housewares', 'miscellaneous', 'wall-mounted', 'wallpapers', 'floors', 'rugs']
-        house.map((o) => {
+        house.map((k) => {
             csv()
-            .fromFile(`./csv/${o}.csv`)
+            .fromFile(`./csv/${k}.csv`)
             .then((items) => {
             return items.map((item) => ({
                 id: parseInt(item["Internal ID"], 10),
@@ -43,7 +43,7 @@ csv()
                 variants: [items.filter(o => o.Name === item.Name).map(o => ({
                     id: parseInt(o["Internal ID"], 10),
                     name: o.Variation,
-                    filename: o.Filename,
+                    filename: `https://storage.googleapis.com/acdb/${k}/${o.Filename}.png`,
                     colors: [o["Color 1"], o["Color 2"]].filter(o => o),
                 }))],
                 recipe: item.DIY === 'Yes' ? recipes.filter(o => o.name === item.Name).pop() : null,
@@ -53,7 +53,7 @@ csv()
         })
         .then(json => {
             let data = JSON.stringify(uniqBy(json, 'id'));
-            fs.writeFileSync(`./output/${o}.json`, data);
+            fs.writeFileSync(`./output/${k}.json`, data);
         })
         })
 
@@ -75,9 +75,9 @@ csv()
         'photos', 
         'fencing'
         ]
-        items.map(o => {
+        items.map(k => {
         csv()
-        .fromFile(`./csv/${o}.csv`)
+        .fromFile(`./csv/${k}.csv`)
         .then((items) => {
             return items.map((item) => ({
                 id: parseInt(item["Internal ID"], 10),
@@ -91,7 +91,7 @@ csv()
                 variants: [items.filter(o => o.Name === item.Name).map(o => ({
                     id: parseInt(o["Internal ID"], 10),
                     name: o.Variation,
-                    filename: o.Filename,
+                    filename: `https://storage.googleapis.com/acdb/${k}/${o.Filename}.png`,
                     colors: [o["Color 1"], o["Color 2"]].filter(o => o),
                 }))],
                 recipe: item.DIY === 'Yes' ? recipes.filter(o => o.name === item.Name).pop() : null,
@@ -101,7 +101,7 @@ csv()
         })
         .then(json => {
             let data = JSON.stringify(uniqBy(json, 'id'));
-            fs.writeFileSync(`./output/${o}.json`, data);
+            fs.writeFileSync(`./output/${k}.json`, data);
         })
         })
     })
