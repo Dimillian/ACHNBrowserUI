@@ -1,1 +1,4208 @@
-[{"id":7356,"name":"aluminum rug","details":"Medium rug","source":"Saharah","diy":false,"buy":1500,"sell":375,"colors":["Gray","Gray"],"hhaConcepts":["garden","outdoors"],"variants":[[{"id":7356,"image":"https://storage.googleapis.com/acdb/rugs/RugRectAluminumM00.png","colors":["Gray","Gray"]}]],"recipe":null,"size":"3x2","tag":"Slender Rugs"},{"id":7327,"name":"apple rug","details":null,"source":"Crafting","diy":true,"buy":null,"sell":1200,"colors":["Red","Red"],"hhaConcepts":["fancy","child's room"],"variants":[[{"id":7327,"image":"https://storage.googleapis.com/acdb/rugs/RugOtherAppleM00.png","colors":["Red","Red"]}]],"recipe":{"name":"apple rug","source":"Uchi","category":"Rugs","materials":[{"name":"apple","count":6}]},"size":"3x3","tag":"Fruit Rugs"},{"id":11104,"name":"black blocks rug","details":"Medium rug","source":"Saharah","diy":false,"buy":1500,"sell":375,"colors":["Black","Gray"],"hhaConcepts":["living room","None"],"variants":[[{"id":11104,"image":"https://storage.googleapis.com/acdb/rugs/RugSquareBlockM03.png","colors":["Black","Gray"]}]],"recipe":null,"size":"3x3","tag":"Pattern Rugs"},{"id":7382,"name":"black wooden-deck rug","details":"Medium rug","source":"Saharah","diy":false,"buy":1500,"sell":375,"colors":["Black","Black"],"hhaConcepts":["outdoors","None"],"variants":[[{"id":7382,"image":"https://storage.googleapis.com/acdb/rugs/RugRectDeckM03.png","colors":["Black","Black"]}]],"recipe":null,"size":"3x2","tag":"Wood Rugs"},{"id":7594,"name":"black-design kitchen mat","details":"Small rug","source":"Saharah","diy":false,"buy":1000,"sell":250,"colors":["Black","Orange"],"hhaConcepts":["kitchen","None"],"variants":[[{"id":7594,"image":"https://storage.googleapis.com/acdb/rugs/RugRectNativeKitchenS03.png","colors":["Black","Orange"]}]],"recipe":null,"size":"2x1","tag":"Kitchen Rugs"},{"id":8467,"name":"blue argyle rug","details":"Large rug","source":"Saharah","diy":false,"buy":2000,"sell":500,"colors":["Blue","Green"],"hhaConcepts":["living room","expensive"],"variants":[[{"id":8467,"image":"https://storage.googleapis.com/acdb/rugs/RugRectArgyleL02.png","colors":["Blue","Green"]}]],"recipe":null,"size":"4x3","tag":"Slender Pattern Rugs"},{"id":11102,"name":"blue blocks rug","details":"Medium rug","source":"Saharah","diy":false,"buy":1500,"sell":375,"colors":["Blue","Blue"],"hhaConcepts":["living room","None"],"variants":[[{"id":11102,"image":"https://storage.googleapis.com/acdb/rugs/RugSquareBlockM01.png","colors":["Blue","Blue"]}]],"recipe":null,"size":"3x3","tag":"Pattern Rugs"},{"id":7467,"name":"blue dotted rug","details":"Large rug","source":"Saharah","diy":false,"buy":2000,"sell":500,"colors":["Blue","Blue"],"hhaConcepts":["fancy","child's room"],"variants":[[{"id":7467,"image":"https://storage.googleapis.com/acdb/rugs/RugRectDotL03.png","colors":["Blue","Blue"]}]],"recipe":null,"size":"4x3","tag":"Slender Pattern Rugs"},{"id":9316,"name":"blue kilim-style carpet","details":"Large rug","source":"Saharah","diy":false,"buy":2000,"sell":500,"colors":["Blue","Black"],"hhaConcepts":["living room","None"],"variants":[[{"id":9316,"image":"https://storage.googleapis.com/acdb/rugs/RugSquareKirimL01.png","colors":["Blue","Black"]}]],"recipe":null,"size":"5x5","tag":"Pattern Rugs"},{"id":8394,"name":"blue kitchen mat","details":"Small rug","source":"Saharah","diy":false,"buy":1000,"sell":250,"colors":["Blue","Blue"],"hhaConcepts":["kitchen","None"],"variants":[[{"id":8394,"image":"https://storage.googleapis.com/acdb/rugs/RugRectKitchenS02.png","colors":["Blue","Blue"]}]],"recipe":null,"size":"2x1","tag":"Kitchen Rugs"},{"id":9546,"name":"blue medium round mat","details":"Medium rug","source":"Saharah","diy":false,"buy":1500,"sell":375,"colors":["Blue","Blue"],"hhaConcepts":["living room","child's room"],"variants":[[{"id":9546,"image":"https://storage.googleapis.com/acdb/rugs/RugRoundSimpleM02.png","colors":["Blue","Blue"]}]],"recipe":null,"size":"3x3","tag":"Shaggy Round Rugs"},{"id":9310,"name":"blue message mat","details":"Small rug","source":"Saharah","diy":false,"buy":1000,"sell":250,"colors":["Blue","Blue"],"hhaConcepts":["child's room","None"],"variants":[[{"id":9310,"image":"https://storage.googleapis.com/acdb/rugs/RugOtherMessageS01.png","colors":["Blue","Blue"]}]],"recipe":null,"size":"2x1","tag":"Message Mats"},{"id":8035,"name":"blue Persian rug","details":"Large rug","source":"Saharah","diy":false,"buy":2000,"sell":500,"colors":["Blue","Beige"],"hhaConcepts":["expensive","living room"],"variants":[[{"id":8035,"image":"https://storage.googleapis.com/acdb/rugs/RugSquarePersianL01.png","colors":["Blue","Beige"]}]],"recipe":null,"size":"5x5","tag":"Pattern Rugs"},{"id":9564,"name":"blue shaggy rug","details":"Large rug","source":"Saharah","diy":false,"buy":2000,"sell":500,"colors":["Blue","Blue"],"hhaConcepts":["living room","None"],"variants":[[{"id":9564,"image":"https://storage.googleapis.com/acdb/rugs/RugSquareShaggyL02.png","colors":["Blue","Blue"]}]],"recipe":null,"size":"5x5","tag":"Pattern Rugs"},{"id":9549,"name":"blue small round mat","details":"Small rug","source":"Saharah","diy":false,"buy":1000,"sell":250,"colors":["Blue","Blue"],"hhaConcepts":["living room","child's room"],"variants":[[{"id":9549,"image":"https://storage.googleapis.com/acdb/rugs/RugRoundSimpleS02.png","colors":["Blue","Blue"]}]],"recipe":null,"size":"2x2","tag":"Shaggy Round Rugs"},{"id":7533,"name":"blue stripes rug","details":"Large rug","source":"Saharah","diy":false,"buy":2000,"sell":500,"colors":["Blue","White"],"hhaConcepts":["fancy","child's room"],"variants":[[{"id":7533,"image":"https://storage.googleapis.com/acdb/rugs/RugRectBorderL02.png","colors":["Blue","White"]}]],"recipe":null,"size":"4x3","tag":"Slender Pattern Rugs"},{"id":7404,"name":"blue vinyl sheet","details":"Medium rug","source":"Saharah","diy":false,"buy":1500,"sell":375,"colors":["Blue","Colorful"],"hhaConcepts":["garden","None"],"variants":[[{"id":7404,"image":"https://storage.googleapis.com/acdb/rugs/RugRectVinylM01.png","colors":["Blue","Colorful"]}]],"recipe":null,"size":"3x2","tag":"Slender Pattern Rugs"},{"id":7458,"name":"blue wavy rug","details":"Large rug","source":"Saharah","diy":false,"buy":2000,"sell":500,"colors":["Blue","Light blue"],"hhaConcepts":["living room","child's room"],"variants":[[{"id":7458,"image":"https://storage.googleapis.com/acdb/rugs/RugRectWaveL02.png","colors":["Blue","Light blue"]}]],"recipe":null,"size":"4x3","tag":"Slender Pattern Rugs"},{"id":7595,"name":"blue-design kitchen mat","details":"Small rug","source":"Saharah","diy":false,"buy":1000,"sell":250,"colors":["Blue","Black"],"hhaConcepts":["kitchen","None"],"variants":[[{"id":7595,"image":"https://storage.googleapis.com/acdb/rugs/RugRectNativeKitchenS01.png","colors":["Blue","Black"]}]],"recipe":null,"size":"2x1","tag":"Kitchen Rugs"},{"id":7353,"name":"botanical rug","details":"Large rug","source":"Saharah","diy":false,"buy":2000,"sell":500,"colors":["Green","Green"],"hhaConcepts":["living room","None"],"variants":[[{"id":7353,"image":"https://storage.googleapis.com/acdb/rugs/RugRectBotanicalL00.png","colors":["Green","Green"]}]],"recipe":null,"size":"4x3","tag":"Slender Pattern Rugs"},{"id":8468,"name":"brown argyle rug","details":"Large rug","source":"Saharah","diy":false,"buy":2000,"sell":500,"colors":["Brown","Yellow"],"hhaConcepts":["living room","expensive"],"variants":[[{"id":8468,"image":"https://storage.googleapis.com/acdb/rugs/RugRectArgyleL03.png","colors":["Brown","Yellow"]}]],"recipe":null,"size":"4x3","tag":"Slender Pattern Rugs"},{"id":7341,"name":"brown kitchen mat","details":"Small rug","source":"Saharah","diy":false,"buy":1000,"sell":250,"colors":["Brown","Brown"],"hhaConcepts":["kitchen","None"],"variants":[[{"id":7341,"image":"https://storage.googleapis.com/acdb/rugs/RugRectKitchenS00.png","colors":["Brown","Brown"]}]],"recipe":null,"size":"2x1","tag":"Kitchen Rugs"},{"id":9563,"name":"brown shaggy rug","details":"Large rug","source":"Saharah","diy":false,"buy":2000,"sell":500,"colors":["Brown","Brown"],"hhaConcepts":["living room","None"],"variants":[[{"id":9563,"image":"https://storage.googleapis.com/acdb/rugs/RugSquareShaggyL01.png","colors":["Brown","Brown"]}]],"recipe":null,"size":"5x5","tag":"Pattern Rugs"},{"id":7323,"name":"brown wooden-deck rug","details":"Medium rug","source":"Saharah","diy":false,"buy":1500,"sell":375,"colors":["Brown","Brown"],"hhaConcepts":["outdoors","None"],"variants":[[{"id":7323,"image":"https://storage.googleapis.com/acdb/rugs/RugRectDeckM00.png","colors":["Brown","Brown"]}]],"recipe":null,"size":"3x2","tag":"Wood Rugs"},{"id":7546,"name":"Bunny Day rug","details":"Obtained randomly from villager, egg message bottle or egg balloon during Bunny Day event","source":"Crafting","diy":true,"buy":null,"sell":2400,"colors":["None","None"],"hhaConcepts":["fancy","child's room"],"variants":[[{"id":7546,"image":"https://storage.googleapis.com/acdb/rugs/RugOtherEasterM00.png","colors":["None","None"]}]],"recipe":{"name":"Bunny Day rug","source":"Egg bottle/balloon (Bunny Day)","category":"Rugs","materials":[{"name":"earth egg","count":1},{"name":"stone egg","count":1},{"name":"leaf egg","count":1},{"name":"wood egg","count":1},{"name":"sky egg","count":1},{"name":"water egg","count":1}]},"size":"3x3","tag":"Icon Rugs"},{"id":7328,"name":"cherry rug","details":null,"source":"Crafting","diy":true,"buy":null,"sell":1200,"colors":["Red","Red"],"hhaConcepts":["fancy","child's room"],"variants":[[{"id":7328,"image":"https://storage.googleapis.com/acdb/rugs/RugOtherCherryM00.png","colors":["Red","Red"]}]],"recipe":{"name":"cherry rug","source":"Peppy","category":"Rugs","materials":[{"name":"cherry","count":6}]},"size":"3x3","tag":"Fruit Rugs"},{"id":7359,"name":"colorful vinyl sheet","details":"Medium rug","source":"Saharah","diy":false,"buy":1500,"sell":375,"colors":["Colorful","Colorful"],"hhaConcepts":["garden","None"],"variants":[[{"id":7359,"image":"https://storage.googleapis.com/acdb/rugs/RugRectVinylM00.png","colors":["Colorful","Colorful"]}]],"recipe":null,"size":"3x2","tag":"Slender Pattern Rugs"},{"id":11114,"name":"dark bamboo rug","details":null,"source":"Crafting","diy":true,"buy":null,"sell":960,"colors":["Brown","Brown"],"hhaConcepts":["zen-style","None"],"variants":[[{"id":11114,"image":"https://storage.googleapis.com/acdb/rugs/RugRectBambooM01.png","colors":["Brown","Brown"]}]],"recipe":{"name":"dark bamboo rug","source":"Cranky","category":"Rugs","materials":[{"name":"bamboo piece","count":6}]},"size":"3x2","tag":"Wood Rugs"},{"id":7357,"name":"Earth rug","details":"Medium rug","source":"Saharah","diy":false,"buy":1500,"sell":375,"colors":["Blue","White"],"hhaConcepts":["space","child's room"],"variants":[[{"id":7357,"image":"https://storage.googleapis.com/acdb/rugs/RugRoundEarthM00.png","colors":["Blue","White"]}]],"recipe":null,"size":"3x3","tag":"Icon Rugs"},{"id":7361,"name":"fish rug","details":null,"source":"Fishing Tourney","diy":false,"buy":null,"sell":375,"colors":["Light blue","Light blue"],"hhaConcepts":["ocean","child's room"],"variants":[[{"id":7361,"image":"https://storage.googleapis.com/acdb/rugs/RugOtherFishM00.png","colors":["Light blue","Light blue"]}]],"recipe":null,"size":"3x3","tag":"Icon Rugs"},{"id":7329,"name":"fluffy rug","details":"Medium rug","source":"Saharah","diy":false,"buy":1500,"sell":375,"colors":["White","White"],"hhaConcepts":["fancy","child's room"],"variants":[[{"id":7329,"image":"https://storage.googleapis.com/acdb/rugs/RugOtherCloudM00.png","colors":["White","White"]}]],"recipe":null,"size":"3x3","tag":"Icon Rugs"},{"id":7366,"name":"fossil rug","details":"Medium rug","source":"Saharah","diy":false,"buy":1500,"sell":375,"colors":["Purple","White"],"hhaConcepts":["fancy","child's room"],"variants":[[{"id":7366,"image":"https://storage.googleapis.com/acdb/rugs/RugOtherFossilM00.png","colors":["Purple","White"]}]],"recipe":null,"size":"3x3","tag":"Park Rugs"},{"id":7464,"name":"green checked rug","details":"Large rug","source":"Saharah","diy":false,"buy":2000,"sell":500,"colors":["Green","Purple"],"hhaConcepts":["living room","child's room"],"variants":[[{"id":7464,"image":"https://storage.googleapis.com/acdb/rugs/RugSquareCheckQuiltL03.png","colors":["Green","Purple"]}]],"recipe":null,"size":"4x4","tag":"Pattern Rugs"},{"id":9314,"name":"green kilim-style carpet","details":"Large rug","source":"Saharah","diy":false,"buy":2000,"sell":500,"colors":["Green","Green"],"hhaConcepts":["living room","None"],"variants":[[{"id":9314,"image":"https://storage.googleapis.com/acdb/rugs/RugSquareKirimL02.png","colors":["Green","Green"]}]],"recipe":null,"size":"5x5","tag":"Pattern Rugs"},{"id":8393,"name":"green kitchen mat","details":"Small rug","source":"Saharah","diy":false,"buy":1000,"sell":250,"colors":["Green","Green"],"hhaConcepts":["kitchen","None"],"variants":[[{"id":8393,"image":"https://storage.googleapis.com/acdb/rugs/RugRectKitchenS03.png","colors":["Green","Green"]}]],"recipe":null,"size":"2x1","tag":"Kitchen Rugs"},{"id":7354,"name":"green shaggy rug","details":"Large rug","source":"Saharah","diy":false,"buy":2000,"sell":500,"colors":["Green","Green"],"hhaConcepts":["living room","None"],"variants":[[{"id":7354,"image":"https://storage.googleapis.com/acdb/rugs/RugSquareShaggyL00.png","colors":["Green","Green"]}]],"recipe":null,"size":"5x5","tag":"Pattern Rugs"},{"id":7534,"name":"green stripes rug","details":"Large rug","source":"Saharah","diy":false,"buy":2000,"sell":500,"colors":["Green","White"],"hhaConcepts":["fancy","child's room"],"variants":[[{"id":7534,"image":"https://storage.googleapis.com/acdb/rugs/RugRectBorderL03.png","colors":["Green","White"]}]],"recipe":null,"size":"4x3","tag":"Slender Pattern Rugs"},{"id":7337,"name":"iron entrance mat","details":"Small rug","source":"Saharah","diy":false,"buy":1000,"sell":250,"colors":["Black","Black"],"hhaConcepts":["shop","expensive"],"variants":[[{"id":7337,"image":"https://storage.googleapis.com/acdb/rugs/RugRectIronmatS00.png","colors":["Black","Black"]}]],"recipe":null,"size":"2x1","tag":"Slender Rugs"},{"id":7325,"name":"ivory medium round mat","details":"Medium rug","source":"Saharah","diy":false,"buy":1500,"sell":375,"colors":["Beige","White"],"hhaConcepts":["living room","child's room"],"variants":[[{"id":7325,"image":"https://storage.googleapis.com/acdb/rugs/RugRoundSimpleM00.png","colors":["Beige","White"]}]],"recipe":null,"size":"3x3","tag":"Shaggy Round Rugs"},{"id":7333,"name":"ivory simple bath mat","details":"Small rug","source":"Saharah","diy":false,"buy":1000,"sell":250,"colors":["Beige","Beige"],"hhaConcepts":["bathroom","None"],"variants":[[{"id":7333,"image":"https://storage.googleapis.com/acdb/rugs/RugRectBathmatS00.png","colors":["Beige","Beige"]}]],"recipe":null,"size":"2x1","tag":"Slender Rugs"},{"id":7334,"name":"ivory small round mat","details":"Small rug","source":"Saharah","diy":false,"buy":1000,"sell":250,"colors":["Beige","White"],"hhaConcepts":["living room","child's room"],"variants":[[{"id":7334,"image":"https://storage.googleapis.com/acdb/rugs/RugRoundSimpleS00.png","colors":["Beige","White"]}]],"recipe":null,"size":"2x2","tag":"Shaggy Round Rugs"},{"id":7368,"name":"lacy rug","details":"Medium rug","source":"Saharah","diy":false,"buy":1500,"sell":375,"colors":["Beige","White"],"hhaConcepts":["fancy","expensive"],"variants":[[{"id":7368,"image":"https://storage.googleapis.com/acdb/rugs/RugRoundLaceM00.png","colors":["Beige","White"]}]],"recipe":null,"size":"3x3","tag":"Shaggy Round Rugs"},{"id":7360,"name":"ladybug rug","details":null,"source":"Bug-Off","diy":false,"buy":null,"sell":375,"colors":["Red","Black"],"hhaConcepts":["fancy","child's room"],"variants":[[{"id":7360,"image":"https://storage.googleapis.com/acdb/rugs/RugRoundLadybirdM00.png","colors":["Red","Black"]}]],"recipe":null,"size":"3x3","tag":"Icon Rugs"},{"id":11113,"name":"light bamboo rug","details":"Spring seasonal DIY using bamboo (from bamboo trees)","source":"Crafting","diy":true,"buy":null,"sell":2400,"colors":["Beige","Brown"],"hhaConcepts":["zen-style","None"],"variants":[[{"id":11113,"image":"https://storage.googleapis.com/acdb/rugs/RugRectBambooM00.png","colors":["Beige","Brown"]}]],"recipe":{"name":"light bamboo rug","source":"Balloons (Spring)","category":"Rugs","materials":[{"name":"young spring bamboo","count":6}]},"size":"3x2","tag":"Wood Rugs"},{"id":7367,"name":"magic-circle rug","details":"Medium rug","source":"Saharah","diy":false,"buy":1500,"sell":375,"colors":["Purple","Purple"],"hhaConcepts":["horror","child's room"],"variants":[[{"id":7367,"image":"https://storage.googleapis.com/acdb/rugs/RugRoundMagicM00.png","colors":["Purple","Purple"]}]],"recipe":null,"size":"3x3","tag":"Shaggy Round Rugs"},{"id":7350,"name":"modern wavy rug","details":"Large rug","source":"Saharah","diy":false,"buy":2000,"sell":500,"colors":["Colorful","Colorful"],"hhaConcepts":["living room","child's room"],"variants":[[{"id":7350,"image":"https://storage.googleapis.com/acdb/rugs/RugRectWaveL00.png","colors":["Colorful","Colorful"]}]],"recipe":null,"size":"4x3","tag":"Slender Pattern Rugs"},{"id":7402,"name":"Mom's cool kitchen mat","details":null,"source":"Mom","diy":false,"buy":null,"sell":88,"colors":["Light blue","Light blue"],"hhaConcepts":["fancy","kitchen"],"variants":[[{"id":7402,"image":"https://storage.googleapis.com/acdb/rugs/RugRectMomS00.png","colors":["Light blue","Light blue"]}]],"recipe":null,"size":"2x1","tag":"Kitchen Rugs"},{"id":9543,"name":"Mom's lively kitchen mat","details":null,"source":"Mom","diy":false,"buy":null,"sell":88,"colors":["Yellow","Yellow"],"hhaConcepts":["fancy","kitchen"],"variants":[[{"id":9543,"image":"https://storage.googleapis.com/acdb/rugs/RugRectMomS02.png","colors":["Yellow","Yellow"]}]],"recipe":null,"size":"2x1","tag":"Kitchen Rugs"},{"id":9542,"name":"Mom's playful kitchen mat","details":null,"source":"Mom","diy":false,"buy":null,"sell":88,"colors":["Pink","Pink"],"hhaConcepts":["fancy","kitchen"],"variants":[[{"id":9542,"image":"https://storage.googleapis.com/acdb/rugs/RugRectMomS01.png","colors":["Pink","Pink"]}]],"recipe":null,"size":"2x1","tag":"Kitchen Rugs"},{"id":9541,"name":"Mom's reliable kitchen mat","details":null,"source":"Mom","diy":false,"buy":null,"sell":88,"colors":["Purple","Purple"],"hhaConcepts":["fancy","kitchen"],"variants":[[{"id":9541,"image":"https://storage.googleapis.com/acdb/rugs/RugRectMomS03.png","colors":["Purple","Purple"]}]],"recipe":null,"size":"2x1","tag":"Kitchen Rugs"},{"id":7349,"name":"monochromatic dotted rug","details":"Large rug","source":"Saharah","diy":false,"buy":2000,"sell":500,"colors":["Black","White"],"hhaConcepts":["fancy","child's room"],"variants":[[{"id":7349,"image":"https://storage.googleapis.com/acdb/rugs/RugRectDotL00.png","colors":["Black","White"]}]],"recipe":null,"size":"4x3","tag":"Slender Pattern Rugs"},{"id":7456,"name":"monochromatic wavy rug","details":"Large rug","source":"Saharah","diy":false,"buy":2000,"sell":500,"colors":["Black","White"],"hhaConcepts":["living room","child's room"],"variants":[[{"id":7456,"image":"https://storage.googleapis.com/acdb/rugs/RugRectWaveL01.png","colors":["Black","White"]}]],"recipe":null,"size":"4x3","tag":"Slender Pattern Rugs"},{"id":7363,"name":"mush rug","details":"Medium rug","source":"Saharah","diy":false,"buy":1500,"sell":375,"colors":["Red","Red"],"hhaConcepts":["fancy","child's room"],"variants":[[{"id":7363,"image":"https://storage.googleapis.com/acdb/rugs/RugOtherMushM00.png","colors":["Red","Red"]}]],"recipe":null,"size":"3x3","tag":"Icon Rugs"},{"id":7380,"name":"natural wooden-deck rug","details":"Medium rug","source":"Saharah","diy":false,"buy":1500,"sell":375,"colors":["Brown","Brown"],"hhaConcepts":["outdoors","None"],"variants":[[{"id":7380,"image":"https://storage.googleapis.com/acdb/rugs/RugRectDeckM01.png","colors":["Brown","Brown"]}]],"recipe":null,"size":"3x2","tag":"Wood Rugs"},{"id":12325,"name":"Nook Inc. botanical rug","details":"Medium rug","source":"Nook Miles Shop","diy":false,"buy":null,"sell":5000,"colors":["None","None"],"hhaConcepts":["fancy","living room"],"variants":[[{"id":12325,"image":"https://storage.googleapis.com/acdb/rugs/RugOtherTanukiM00.png","colors":["None","None"]}]],"recipe":null,"size":"3x3","tag":"Park Rugs"},{"id":7364,"name":"Nook Inc. rug","details":"Medium rug","source":"Nook Miles Shop","diy":false,"buy":null,"sell":5000,"colors":["Green","Green"],"hhaConcepts":["fancy","child's room"],"variants":[[{"id":7364,"image":"https://storage.googleapis.com/acdb/rugs/RugOtherLeafM00.png","colors":["Green","Green"]}]],"recipe":null,"size":"3x3","tag":"Park Rugs"},{"id":12396,"name":"Nook Inc. silk rug","details":"Large rug","source":"Nook Miles Shop","diy":false,"buy":null,"sell":3000,"colors":["None","None"],"hhaConcepts":["facility","shop"],"variants":[[{"id":12396,"image":"https://storage.googleapis.com/acdb/rugs/RugRectTanukiL00.png","colors":["None","None"]}]],"recipe":null,"size":"4x3","tag":"Park Rugs"},{"id":7330,"name":"orange rug","details":"Medium rug","source":"Crafting","diy":true,"buy":null,"sell":1200,"colors":["Orange","Orange"],"hhaConcepts":["fancy","child's room"],"variants":[[{"id":7330,"image":"https://storage.googleapis.com/acdb/rugs/RugOtherOrangeM00.png","colors":["Orange","Orange"]}]],"recipe":{"name":"orange rug","source":"Lazy","category":"Rugs","materials":[{"name":"orange","count":6}]},"size":"3x3","tag":"Fruit Rugs"},{"id":7370,"name":"oval entrance mat","details":"Small rug","source":"Saharah","diy":false,"buy":1000,"sell":250,"colors":["Blue","Blue"],"hhaConcepts":["living room","None"],"variants":[[{"id":7370,"image":"https://storage.googleapis.com/acdb/rugs/RugOtherCountryS00.png","colors":["Blue","Blue"]}]],"recipe":null,"size":"2x1","tag":"Slender Rugs"},{"id":7463,"name":"peach checked rug","details":"Large rug","source":"Saharah","diy":false,"buy":2000,"sell":500,"colors":["Pink","Light blue"],"hhaConcepts":["living room","child's room"],"variants":[[{"id":7463,"image":"https://storage.googleapis.com/acdb/rugs/RugSquareCheckQuiltL02.png","colors":["Pink","Light blue"]}]],"recipe":null,"size":"4x4","tag":"Pattern Rugs"},{"id":7331,"name":"peach rug","details":"Medium rug","source":"Crafting","diy":true,"buy":null,"sell":1200,"colors":["Pink","Pink"],"hhaConcepts":["fancy","child's room"],"variants":[[{"id":7331,"image":"https://storage.googleapis.com/acdb/rugs/RugOtherPeachM00.png","colors":["Pink","Pink"]}]],"recipe":{"name":"peach rug","source":"Normal","category":"Rugs","materials":[{"name":"peach","count":6}]},"size":"3x3","tag":"Fruit Rugs"},{"id":7532,"name":"peach stripes rug","details":"Large rug","source":"Saharah","diy":false,"buy":2000,"sell":500,"colors":["Pink","White"],"hhaConcepts":["fancy","child's room"],"variants":[[{"id":7532,"image":"https://storage.googleapis.com/acdb/rugs/RugRectBorderL01.png","colors":["Pink","White"]}]],"recipe":null,"size":"4x3","tag":"Slender Pattern Rugs"},{"id":7332,"name":"pear rug","details":null,"source":"Crafting","diy":true,"buy":null,"sell":1200,"colors":["Green","Green"],"hhaConcepts":["fancy","child's room"],"variants":[[{"id":7332,"image":"https://storage.googleapis.com/acdb/rugs/RugOtherPearM00.png","colors":["Green","Green"]}]],"recipe":{"name":"pear rug","source":"Jock","category":"Rugs","materials":[{"name":"pear","count":6}]},"size":"3x3","tag":"Fruit Rugs"},{"id":7322,"name":"pink heart rug","details":"Medium rug","source":"Saharah","diy":false,"buy":1500,"sell":375,"colors":["Pink","Pink"],"hhaConcepts":["fancy","child's room"],"variants":[[{"id":7322,"image":"https://storage.googleapis.com/acdb/rugs/RugOtherHeartM00.png","colors":["Pink","Pink"]}]],"recipe":null,"size":"3x3","tag":"Heart Rugs"},{"id":7365,"name":"pink rose rug","details":"Medium rug","source":"Saharah","diy":false,"buy":1500,"sell":375,"colors":["Pink","Pink"],"hhaConcepts":["fancy","expensive"],"variants":[[{"id":7365,"image":"https://storage.googleapis.com/acdb/rugs/RugOtherRoseM00.png","colors":["Pink","Pink"]}]],"recipe":null,"size":"3x3","tag":"Rose Rug"},{"id":7580,"name":"purple heart rug","details":"Medium rug","source":"Saharah","diy":false,"buy":1500,"sell":375,"colors":["Purple","Pink"],"hhaConcepts":["fancy","child's room"],"variants":[[{"id":7580,"image":"https://storage.googleapis.com/acdb/rugs/RugOtherHeartM02.png","colors":["Purple","Pink"]}]],"recipe":null,"size":"3x3","tag":"Heart Rugs"},{"id":8037,"name":"purple Persian rug","details":"Large rug","source":"Saharah","diy":false,"buy":2000,"sell":500,"colors":["Purple","Beige"],"hhaConcepts":["expensive","living room"],"variants":[[{"id":8037,"image":"https://storage.googleapis.com/acdb/rugs/RugSquarePersianL03.png","colors":["Purple","Beige"]}]],"recipe":null,"size":"5x5","tag":"Pattern Rugs"},{"id":9562,"name":"purple shaggy rug","details":"Large rug","source":"Saharah","diy":false,"buy":2000,"sell":500,"colors":["Purple","Purple"],"hhaConcepts":["living room","None"],"variants":[[{"id":9562,"image":"https://storage.googleapis.com/acdb/rugs/RugSquareShaggyL03.png","colors":["Purple","Purple"]}]],"recipe":null,"size":"5x5","tag":"Pattern Rugs"},{"id":8466,"name":"red argyle rug","details":"Large rug","source":"Saharah","diy":false,"buy":2000,"sell":500,"colors":["Red","Red"],"hhaConcepts":["living room","expensive"],"variants":[[{"id":8466,"image":"https://storage.googleapis.com/acdb/rugs/RugRectArgyleL01.png","colors":["Red","Red"]}]],"recipe":null,"size":"4x3","tag":"Slender Pattern Rugs"},{"id":11101,"name":"red blocks rug","details":"Medium rug","source":"Saharah","diy":false,"buy":1500,"sell":375,"colors":["Red","Red"],"hhaConcepts":["living room","None"],"variants":[[{"id":11101,"image":"https://storage.googleapis.com/acdb/rugs/RugSquareBlockM00.png","colors":["Red","Red"]}]],"recipe":null,"size":"3x3","tag":"Pattern Rugs"},{"id":7348,"name":"red carpet","details":"Medium rug","source":"Saharah","diy":false,"buy":1500,"sell":375,"colors":["Red","Red"],"hhaConcepts":["expensive","None"],"variants":[[{"id":7348,"image":"https://storage.googleapis.com/acdb/rugs/RugRectElegantM00.png","colors":["Red","Red"]}]],"recipe":null,"size":"3x2","tag":"Slender Rugs"},{"id":7465,"name":"red dotted rug","details":"Large rug","source":"Saharah","diy":false,"buy":2000,"sell":500,"colors":["Red","Red"],"hhaConcepts":["fancy","child's room"],"variants":[[{"id":7465,"image":"https://storage.googleapis.com/acdb/rugs/RugRectDotL02.png","colors":["Red","Red"]}]],"recipe":null,"size":"4x3","tag":"Slender Pattern Rugs"},{"id":9313,"name":"red kilim-style carpet","details":"Large rug","source":"Saharah","diy":false,"buy":2000,"sell":500,"colors":["Red","Red"],"hhaConcepts":["living room","None"],"variants":[[{"id":9313,"image":"https://storage.googleapis.com/acdb/rugs/RugSquareKirimL00.png","colors":["Red","Red"]}]],"recipe":null,"size":"5x5","tag":"Pattern Rugs"},{"id":9545,"name":"red medium round mat","details":"Medium rug","source":"Saharah","diy":false,"buy":1500,"sell":375,"colors":["Red","Red"],"hhaConcepts":["living room","child's room"],"variants":[[{"id":9545,"image":"https://storage.googleapis.com/acdb/rugs/RugRoundSimpleM01.png","colors":["Red","Red"]}]],"recipe":null,"size":"3x3","tag":"Shaggy Round Rugs"},{"id":9312,"name":"red message mat","details":"Small rug","source":"Saharah","diy":false,"buy":1000,"sell":250,"colors":["Red","Red"],"hhaConcepts":["child's room","None"],"variants":[[{"id":9312,"image":"https://storage.googleapis.com/acdb/rugs/RugOtherMessageS03.png","colors":["Red","Red"]}]],"recipe":null,"size":"2x1","tag":"Message Mats"},{"id":7347,"name":"red Persian rug","details":"Large rug","source":"Saharah","diy":false,"buy":2000,"sell":500,"colors":["Red","Beige"],"hhaConcepts":["expensive","living room"],"variants":[[{"id":7347,"image":"https://storage.googleapis.com/acdb/rugs/RugSquarePersianL00.png","colors":["Red","Beige"]}]],"recipe":null,"size":"5x5","tag":"Pattern Rugs"},{"id":8758,"name":"red rose rug","details":"Medium rug","source":"Saharah","diy":false,"buy":1500,"sell":375,"colors":["Red","Red"],"hhaConcepts":["fancy","expensive"],"variants":[[{"id":8758,"image":"https://storage.googleapis.com/acdb/rugs/RugOtherRoseM01.png","colors":["Red","Red"]}]],"recipe":null,"size":"3x3","tag":"Rose Rug"},{"id":9548,"name":"red small round mat","details":"Small rug","source":"Saharah","diy":false,"buy":1000,"sell":250,"colors":["Red","Red"],"hhaConcepts":["living room","child's room"],"variants":[[{"id":9548,"image":"https://storage.googleapis.com/acdb/rugs/RugRoundSimpleS01.png","colors":["Red","Red"]}]],"recipe":null,"size":"2x2","tag":"Shaggy Round Rugs"},{"id":7405,"name":"red vinyl sheet","details":"Medium rug","source":"Saharah","diy":false,"buy":1500,"sell":375,"colors":["Red","Colorful"],"hhaConcepts":["garden","None"],"variants":[[{"id":7405,"image":"https://storage.googleapis.com/acdb/rugs/RugRectVinylM02.png","colors":["Red","Colorful"]}]],"recipe":null,"size":"3x2","tag":"Slender Pattern Rugs"},{"id":7457,"name":"red wavy rug","details":"Large rug","source":"Saharah","diy":false,"buy":2000,"sell":500,"colors":["Red","Yellow"],"hhaConcepts":["living room","child's room"],"variants":[[{"id":7457,"image":"https://storage.googleapis.com/acdb/rugs/RugRectWaveL03.png","colors":["Red","Yellow"]}]],"recipe":null,"size":"4x3","tag":"Slender Pattern Rugs"},{"id":7343,"name":"red-and-blue checked rug","details":"Large rug","source":"Saharah","diy":false,"buy":2000,"sell":500,"colors":["Red","Blue"],"hhaConcepts":["living room","child's room"],"variants":[[{"id":7343,"image":"https://storage.googleapis.com/acdb/rugs/RugSquareCheckQuiltL00.png","colors":["Red","Blue"]}]],"recipe":null,"size":"4x4","tag":"Pattern Rugs"},{"id":7340,"name":"red-design kitchen mat","details":"Small rug","source":"Saharah","diy":false,"buy":1000,"sell":250,"colors":["Red","Black"],"hhaConcepts":["kitchen","None"],"variants":[[{"id":7340,"image":"https://storage.googleapis.com/acdb/rugs/RugRectNativeKitchenS00.png","colors":["Red","Black"]}]],"recipe":null,"size":"2x1","tag":"Kitchen Rugs"},{"id":7466,"name":"retro dotted rug","details":"Large rug","source":"Saharah","diy":false,"buy":2000,"sell":500,"colors":["Green","Green"],"hhaConcepts":["fancy","child's room"],"variants":[[{"id":7466,"image":"https://storage.googleapis.com/acdb/rugs/RugRectDotL01.png","colors":["Green","Green"]}]],"recipe":null,"size":"4x3","tag":"Slender Pattern Rugs"},{"id":7324,"name":"rough rug","details":"Small rug","source":"Saharah","diy":false,"buy":1000,"sell":250,"colors":["Brown","Brown"],"hhaConcepts":["school","facility"],"variants":[[{"id":7324,"image":"https://storage.googleapis.com/acdb/rugs/RugRectDoormatS00.png","colors":["Brown","Brown"]}]],"recipe":null,"size":"2x1","tag":"Slender Rugs"},{"id":7339,"name":"rubber mud mat","details":"Small rug","source":"Saharah","diy":false,"buy":1000,"sell":250,"colors":["Green","Green"],"hhaConcepts":["school","None"],"variants":[[{"id":7339,"image":"https://storage.googleapis.com/acdb/rugs/RugRectRubberScraperS00.png","colors":["Green","Green"]}]],"recipe":null,"size":"2x1","tag":"Slender Rugs"},{"id":7345,"name":"shanty mat","details":"Large rug","source":"Saharah","diy":false,"buy":2000,"sell":500,"colors":["Brown","Beige"],"hhaConcepts":["zen-style","None"],"variants":[[{"id":7345,"image":"https://storage.googleapis.com/acdb/rugs/RugSquareOldStrawL00.png","colors":["Brown","Beige"]}]],"recipe":null,"size":"4x4","tag":"Simple Rugs"},{"id":7362,"name":"shell rug","details":null,"source":"Crafting","diy":true,"buy":null,"sell":5400,"colors":["Beige","Pink"],"hhaConcepts":["ocean","fancy"],"variants":[[{"id":7362,"image":"https://storage.googleapis.com/acdb/rugs/RugOtherShellM00.png","colors":["Beige","Pink"]}]],"recipe":{"name":"shell rug","source":"Peppy","category":"Rugs","materials":[{"name":"giant clam","count":3}]},"size":"3x3","tag":"Park Rugs"},{"id":7516,"name":"simple green bath mat","details":"Small rug","source":"Saharah","diy":false,"buy":1000,"sell":250,"colors":["Green","Green"],"hhaConcepts":["bathroom","None"],"variants":[[{"id":7516,"image":"https://storage.googleapis.com/acdb/rugs/RugRectBathmatS03.png","colors":["Green","Green"]}]],"recipe":null,"size":"2x1","tag":"Slender Rugs"},{"id":7524,"name":"simple medium avocado mat","details":"Medium rug","source":"Saharah","diy":false,"buy":1500,"sell":375,"colors":["Green","Green"],"hhaConcepts":["living room","facility"],"variants":[[{"id":7524,"image":"https://storage.googleapis.com/acdb/rugs/RugSquareSimpleM03.png","colors":["Green","Green"]}]],"recipe":null,"size":"3x3","tag":"Simple Rugs"},{"id":7539,"name":"simple medium black mat","details":"Medium rug","source":"Saharah","diy":false,"buy":1500,"sell":375,"colors":["Black","Black"],"hhaConcepts":["living room","facility"],"variants":[[{"id":7539,"image":"https://storage.googleapis.com/acdb/rugs/RugSquareSimpleM07.png","colors":["Black","Black"]}]],"recipe":null,"size":"3x3","tag":"Simple Rugs"},{"id":7523,"name":"simple medium blue mat","details":"Medium rug","source":"Saharah","diy":false,"buy":1500,"sell":375,"colors":["Blue","Blue"],"hhaConcepts":["living room","facility"],"variants":[[{"id":7523,"image":"https://storage.googleapis.com/acdb/rugs/RugSquareSimpleM02.png","colors":["Blue","Blue"]}]],"recipe":null,"size":"3x3","tag":"Simple Rugs"},{"id":7519,"name":"simple medium brown mat","details":"Medium rug","source":"Saharah","diy":false,"buy":1500,"sell":375,"colors":["Brown","Brown"],"hhaConcepts":["living room","facility"],"variants":[[{"id":7519,"image":"https://storage.googleapis.com/acdb/rugs/RugSquareSimpleM01.png","colors":["Brown","Brown"]}]],"recipe":null,"size":"3x3","tag":"Simple Rugs"},{"id":7536,"name":"simple medium orange mat","details":"Medium rug","source":"Saharah","diy":false,"buy":1500,"sell":375,"colors":["Orange","Orange"],"hhaConcepts":["living room","facility"],"variants":[[{"id":7536,"image":"https://storage.googleapis.com/acdb/rugs/RugSquareSimpleM05.png","colors":["Orange","Orange"]}]],"recipe":null,"size":"3x3","tag":"Simple Rugs"},{"id":7538,"name":"simple medium purple mat","details":"Medium rug","source":"Saharah","diy":false,"buy":1500,"sell":375,"colors":["Purple","Purple"],"hhaConcepts":["living room","facility"],"variants":[[{"id":7538,"image":"https://storage.googleapis.com/acdb/rugs/RugSquareSimpleM06.png","colors":["Purple","Purple"]}]],"recipe":null,"size":"3x3","tag":"Simple Rugs"},{"id":7540,"name":"simple medium red mat","details":"Medium rug","source":"Saharah","diy":false,"buy":1500,"sell":375,"colors":["Red","Red"],"hhaConcepts":["living room","facility"],"variants":[[{"id":7540,"image":"https://storage.googleapis.com/acdb/rugs/RugSquareSimpleM04.png","colors":["Red","Red"]}]],"recipe":null,"size":"3x3","tag":"Simple Rugs"},{"id":7518,"name":"simple navy bath mat","details":"Small rug","source":"Saharah","diy":false,"buy":1000,"sell":250,"colors":["Gray","Gray"],"hhaConcepts":["bathroom","None"],"variants":[[{"id":7518,"image":"https://storage.googleapis.com/acdb/rugs/RugRectBathmatS01.png","colors":["Gray","Gray"]}]],"recipe":null,"size":"2x1","tag":"Slender Rugs"},{"id":7517,"name":"simple pink bath mat","details":"Small rug","source":"Saharah","diy":false,"buy":1000,"sell":250,"colors":["Pink","Pink"],"hhaConcepts":["bathroom","None"],"variants":[[{"id":7517,"image":"https://storage.googleapis.com/acdb/rugs/RugRectBathmatS02.png","colors":["Pink","Pink"]}]],"recipe":null,"size":"2x1","tag":"Slender Rugs"},{"id":7520,"name":"simple small avocado mat","details":"Small rug","source":"Saharah","diy":false,"buy":1000,"sell":250,"colors":["Green","Green"],"hhaConcepts":["living room","facility"],"variants":[[{"id":7520,"image":"https://storage.googleapis.com/acdb/rugs/RugSquareSimpleS03.png","colors":["Green","Green"]}]],"recipe":null,"size":"2x2","tag":"Simple Rugs"},{"id":7543,"name":"simple small black mat","details":"Small rug","source":"Saharah","diy":false,"buy":1000,"sell":250,"colors":["Black","Black"],"hhaConcepts":["living room","facility"],"variants":[[{"id":7543,"image":"https://storage.googleapis.com/acdb/rugs/RugSquareSimpleS07.png","colors":["Black","Black"]}]],"recipe":null,"size":"2x2","tag":"Simple Rugs"},{"id":7521,"name":"simple small blue mat","details":"Small rug","source":"Saharah","diy":false,"buy":1000,"sell":250,"colors":["Blue","Blue"],"hhaConcepts":["living room","facility"],"variants":[[{"id":7521,"image":"https://storage.googleapis.com/acdb/rugs/RugSquareSimpleS02.png","colors":["Blue","Blue"]}]],"recipe":null,"size":"2x2","tag":"Simple Rugs"},{"id":7522,"name":"simple small brown mat","details":"Small rug","source":"Saharah","diy":false,"buy":1000,"sell":250,"colors":["Brown","Brown"],"hhaConcepts":["living room","facility"],"variants":[[{"id":7522,"image":"https://storage.googleapis.com/acdb/rugs/RugSquareSimpleS01.png","colors":["Brown","Brown"]}]],"recipe":null,"size":"2x2","tag":"Simple Rugs"},{"id":7541,"name":"simple small orange mat","details":"Small rug","source":"Saharah","diy":false,"buy":1000,"sell":250,"colors":["Orange","Orange"],"hhaConcepts":["living room","facility"],"variants":[[{"id":7541,"image":"https://storage.googleapis.com/acdb/rugs/RugSquareSimpleS05.png","colors":["Orange","Orange"]}]],"recipe":null,"size":"2x2","tag":"Simple Rugs"},{"id":7542,"name":"simple small purple mat","details":"Small rug","source":"Saharah","diy":false,"buy":1000,"sell":250,"colors":["Purple","Purple"],"hhaConcepts":["living room","facility"],"variants":[[{"id":7542,"image":"https://storage.googleapis.com/acdb/rugs/RugSquareSimpleS06.png","colors":["Purple","Purple"]}]],"recipe":null,"size":"2x2","tag":"Simple Rugs"},{"id":7537,"name":"simple small red mat","details":"Small rug","source":"Saharah","diy":false,"buy":1000,"sell":250,"colors":["Red","Red"],"hhaConcepts":["living room","facility"],"variants":[[{"id":7537,"image":"https://storage.googleapis.com/acdb/rugs/RugSquareSimpleS04.png","colors":["Red","Red"]}]],"recipe":null,"size":"2x2","tag":"Simple Rugs"},{"id":7371,"name":"sloppy rug","details":"Large rug","source":"Saharah","diy":false,"buy":2000,"sell":500,"colors":["Light blue","Light blue"],"hhaConcepts":["living room","child's room"],"variants":[[{"id":7371,"image":"https://storage.googleapis.com/acdb/rugs/RugOtherSloppyL00.png","colors":["Light blue","Light blue"]}]],"recipe":null,"size":"4x4","tag":"Simple Rugs"},{"id":7346,"name":"snowflake rug","details":"Medium rug","source":"Saharah","diy":false,"buy":1500,"sell":375,"colors":["Light blue","White"],"hhaConcepts":["freezing cold","fancy"],"variants":[[{"id":7346,"image":"https://storage.googleapis.com/acdb/rugs/RugRoundSnowM00.png","colors":["Light blue","White"]}]],"recipe":null,"size":"3x3","tag":"Shaggy Round Rugs"},{"id":7369,"name":"tatami mat","details":"Medium rug","source":"Saharah","diy":false,"buy":1500,"sell":375,"colors":["Green","Yellow"],"hhaConcepts":["zen-style","None"],"variants":[[{"id":7369,"image":"https://storage.googleapis.com/acdb/rugs/RugRectTatamiM00.png","colors":["Green","Yellow"]}]],"recipe":null,"size":"3x2","tag":"Wood Rugs"},{"id":7358,"name":"tropical rug","details":"Medium rug","source":"Saharah","diy":false,"buy":1500,"sell":375,"colors":["Green","Beige"],"hhaConcepts":["ocean","None"],"variants":[[{"id":7358,"image":"https://storage.googleapis.com/acdb/rugs/RugRoundIslandM00.png","colors":["Green","Beige"]}]],"recipe":null,"size":"3x3","tag":"Park Rugs"},{"id":7579,"name":"turquoise heart rug","details":"Medium rug","source":"Saharah","diy":false,"buy":1500,"sell":375,"colors":["Light blue","Light blue"],"hhaConcepts":["fancy","child's room"],"variants":[[{"id":7579,"image":"https://storage.googleapis.com/acdb/rugs/RugOtherHeartM01.png","colors":["Light blue","Light blue"]}]],"recipe":null,"size":"3x3","tag":"Heart Rugs"},{"id":7578,"name":"white heart rug","details":"Medium rug","source":"Saharah","diy":false,"buy":1500,"sell":375,"colors":["White","White"],"hhaConcepts":["fancy","child's room"],"variants":[[{"id":7578,"image":"https://storage.googleapis.com/acdb/rugs/RugOtherHeartM03.png","colors":["White","White"]}]],"recipe":null,"size":"3x3","tag":"Heart Rugs"},{"id":7338,"name":"white message mat","details":"Small rug","source":"Saharah","diy":false,"buy":1000,"sell":250,"colors":["White","White"],"hhaConcepts":["child's room","None"],"variants":[[{"id":7338,"image":"https://storage.googleapis.com/acdb/rugs/RugOtherMessageS00.png","colors":["White","White"]}]],"recipe":null,"size":"2x1","tag":"Message Mats"},{"id":8757,"name":"white rose rug","details":"Medium rug","source":"Saharah","diy":false,"buy":1500,"sell":375,"colors":["White","White"],"hhaConcepts":["fancy","expensive"],"variants":[[{"id":8757,"image":"https://storage.googleapis.com/acdb/rugs/RugOtherRoseM03.png","colors":["White","White"]}]],"recipe":null,"size":"3x3","tag":"Rose Rug"},{"id":7335,"name":"white simple medium mat","details":"Medium rug","source":"Saharah","diy":false,"buy":1500,"sell":375,"colors":["Beige","White"],"hhaConcepts":["living room","facility"],"variants":[[{"id":7335,"image":"https://storage.googleapis.com/acdb/rugs/RugSquareSimpleM00.png","colors":["Beige","White"]}]],"recipe":null,"size":"3x3","tag":"Simple Rugs"},{"id":7336,"name":"white simple small mat","details":"Small rug","source":"Saharah","diy":false,"buy":1000,"sell":250,"colors":["Beige","White"],"hhaConcepts":["living room","facility"],"variants":[[{"id":7336,"image":"https://storage.googleapis.com/acdb/rugs/RugSquareSimpleS00.png","colors":["Beige","White"]}]],"recipe":null,"size":"2x2","tag":"Simple Rugs"},{"id":7381,"name":"white wooden-deck rug","details":"Medium rug","source":"Saharah","diy":false,"buy":1500,"sell":375,"colors":["White","White"],"hhaConcepts":["outdoors","None"],"variants":[[{"id":7381,"image":"https://storage.googleapis.com/acdb/rugs/RugRectDeckM02.png","colors":["White","White"]}]],"recipe":null,"size":"3x2","tag":"Wood Rugs"},{"id":7352,"name":"yellow argyle rug","details":"Large rug","source":"Saharah","diy":false,"buy":2000,"sell":500,"colors":["Yellow","Yellow"],"hhaConcepts":["living room","fancy"],"variants":[[{"id":7352,"image":"https://storage.googleapis.com/acdb/rugs/RugRectArgyleL00.png","colors":["Yellow","Yellow"]}]],"recipe":null,"size":"4x3","tag":"Slender Pattern Rugs"},{"id":11103,"name":"yellow blocks rug","details":"Medium rug","source":"Saharah","diy":false,"buy":1500,"sell":375,"colors":["Yellow","Brown"],"hhaConcepts":["living room","None"],"variants":[[{"id":11103,"image":"https://storage.googleapis.com/acdb/rugs/RugSquareBlockM02.png","colors":["Yellow","Brown"]}]],"recipe":null,"size":"3x3","tag":"Pattern Rugs"},{"id":7462,"name":"yellow checked rug","details":"Large rug","source":"Saharah","diy":false,"buy":2000,"sell":500,"colors":["Yellow","Green"],"hhaConcepts":["living room","child's room"],"variants":[[{"id":7462,"image":"https://storage.googleapis.com/acdb/rugs/RugSquareCheckQuiltL01.png","colors":["Yellow","Green"]}]],"recipe":null,"size":"4x4","tag":"Pattern Rugs"},{"id":9315,"name":"yellow kilim-style carpet","details":"Large rug","source":"Saharah","diy":false,"buy":2000,"sell":500,"colors":["Yellow","Beige"],"hhaConcepts":["living room","None"],"variants":[[{"id":9315,"image":"https://storage.googleapis.com/acdb/rugs/RugSquareKirimL03.png","colors":["Yellow","Beige"]}]],"recipe":null,"size":"5x5","tag":"Pattern Rugs"},{"id":8395,"name":"yellow kitchen mat","details":"Small rug","source":"Saharah","diy":false,"buy":1000,"sell":250,"colors":["Yellow","Yellow"],"hhaConcepts":["kitchen","None"],"variants":[[{"id":8395,"image":"https://storage.googleapis.com/acdb/rugs/RugRectKitchenS01.png","colors":["Yellow","Yellow"]}]],"recipe":null,"size":"2x1","tag":"Kitchen Rugs"},{"id":9544,"name":"yellow medium round mat","details":"Medium rug","source":"Saharah","diy":false,"buy":1500,"sell":375,"colors":["Yellow","Yellow"],"hhaConcepts":["living room","child's room"],"variants":[[{"id":9544,"image":"https://storage.googleapis.com/acdb/rugs/RugRoundSimpleM03.png","colors":["Yellow","Yellow"]}]],"recipe":null,"size":"3x3","tag":"Shaggy Round Rugs"},{"id":9311,"name":"yellow message mat","details":"Small rug","source":"Saharah","diy":false,"buy":1000,"sell":250,"colors":["Yellow","Yellow"],"hhaConcepts":["child's room","None"],"variants":[[{"id":9311,"image":"https://storage.googleapis.com/acdb/rugs/RugOtherMessageS02.png","colors":["Yellow","Yellow"]}]],"recipe":null,"size":"2x1","tag":"Message Mats"},{"id":8036,"name":"yellow Persian rug","details":"Large rug","source":"Saharah","diy":false,"buy":2000,"sell":500,"colors":["Yellow","Beige"],"hhaConcepts":["expensive","living room"],"variants":[[{"id":8036,"image":"https://storage.googleapis.com/acdb/rugs/RugSquarePersianL02.png","colors":["Yellow","Beige"]}]],"recipe":null,"size":"5x5","tag":"Pattern Rugs"},{"id":8759,"name":"yellow rose rug","details":"Medium rug","source":"Saharah","diy":false,"buy":1500,"sell":375,"colors":["Yellow","Yellow"],"hhaConcepts":["fancy","expensive"],"variants":[[{"id":8759,"image":"https://storage.googleapis.com/acdb/rugs/RugOtherRoseM02.png","colors":["Yellow","Yellow"]}]],"recipe":null,"size":"3x3","tag":"Rose Rug"},{"id":9547,"name":"yellow small round mat","details":"Small rug","source":"Saharah","diy":false,"buy":1000,"sell":250,"colors":["Yellow","Yellow"],"hhaConcepts":["living room","child's room"],"variants":[[{"id":9547,"image":"https://storage.googleapis.com/acdb/rugs/RugRoundSimpleS03.png","colors":["Yellow","Yellow"]}]],"recipe":null,"size":"2x2","tag":"Shaggy Round Rugs"},{"id":7351,"name":"yellow stripes rug","details":"Large rug","source":"Saharah","diy":false,"buy":2000,"sell":500,"colors":["Yellow","White"],"hhaConcepts":["fancy","child's room"],"variants":[[{"id":7351,"image":"https://storage.googleapis.com/acdb/rugs/RugRectBorderL00.png","colors":["Yellow","White"]}]],"recipe":null,"size":"4x3","tag":"Slender Pattern Rugs"},{"id":7403,"name":"yellow vinyl sheet","details":"Medium rug","source":"Saharah","diy":false,"buy":1500,"sell":375,"colors":["Yellow","Colorful"],"hhaConcepts":["garden","None"],"variants":[[{"id":7403,"image":"https://storage.googleapis.com/acdb/rugs/RugRectVinylM03.png","colors":["Yellow","Colorful"]}]],"recipe":null,"size":"3x2","tag":"Slender Pattern Rugs"},{"id":7596,"name":"yellow-design kitchen mat","details":"Small rug","source":"Saharah","diy":false,"buy":1000,"sell":250,"colors":["Yellow","Black"],"hhaConcepts":["kitchen","None"],"variants":[[{"id":7596,"image":"https://storage.googleapis.com/acdb/rugs/RugRectNativeKitchenS02.png","colors":["Yellow","Black"]}]],"recipe":null,"size":"2x1","tag":"Kitchen Rugs"}]
+[
+  {
+    "id": 7356,
+    "name": "aluminum rug",
+    "details": "Medium rug",
+    "source": "Saharah",
+    "diy": false,
+    "buy": 1500,
+    "sell": 375,
+    "colors": [
+      "Gray",
+      "Gray"
+    ],
+    "hhaConcepts": [
+      "garden",
+      "outdoors"
+    ],
+    "variants": [
+      [
+        {
+          "id": 7356,
+          "image": "https://storage.googleapis.com/acdb/rugs/RugRectAluminumM00.png",
+          "colors": [
+            "Gray",
+            "Gray"
+          ]
+        }
+      ]
+    ],
+    "recipe": null,
+    "size": "3x2",
+    "tag": "Slender Rugs"
+  },
+  {
+    "id": 7327,
+    "name": "apple rug",
+    "details": null,
+    "source": "Crafting",
+    "diy": true,
+    "buy": null,
+    "sell": 1200,
+    "colors": [
+      "Red",
+      "Red"
+    ],
+    "hhaConcepts": [
+      "fancy",
+      "child's room"
+    ],
+    "variants": [
+      [
+        {
+          "id": 7327,
+          "image": "https://storage.googleapis.com/acdb/rugs/RugOtherAppleM00.png",
+          "colors": [
+            "Red",
+            "Red"
+          ]
+        }
+      ]
+    ],
+    "recipe": {
+      "name": "apple rug",
+      "source": "Uchi",
+      "category": "Rugs",
+      "materials": [
+        {
+          "name": "apple",
+          "count": 6
+        }
+      ]
+    },
+    "size": "3x3",
+    "tag": "Fruit Rugs"
+  },
+  {
+    "id": 11104,
+    "name": "black blocks rug",
+    "details": "Medium rug",
+    "source": "Saharah",
+    "diy": false,
+    "buy": 1500,
+    "sell": 375,
+    "colors": [
+      "Black",
+      "Gray"
+    ],
+    "hhaConcepts": [
+      "living room",
+      "None"
+    ],
+    "variants": [
+      [
+        {
+          "id": 11104,
+          "image": "https://storage.googleapis.com/acdb/rugs/RugSquareBlockM03.png",
+          "colors": [
+            "Black",
+            "Gray"
+          ]
+        }
+      ]
+    ],
+    "recipe": null,
+    "size": "3x3",
+    "tag": "Pattern Rugs"
+  },
+  {
+    "id": 7382,
+    "name": "black wooden-deck rug",
+    "details": "Medium rug",
+    "source": "Saharah",
+    "diy": false,
+    "buy": 1500,
+    "sell": 375,
+    "colors": [
+      "Black",
+      "Black"
+    ],
+    "hhaConcepts": [
+      "outdoors",
+      "None"
+    ],
+    "variants": [
+      [
+        {
+          "id": 7382,
+          "image": "https://storage.googleapis.com/acdb/rugs/RugRectDeckM03.png",
+          "colors": [
+            "Black",
+            "Black"
+          ]
+        }
+      ]
+    ],
+    "recipe": null,
+    "size": "3x2",
+    "tag": "Wood Rugs"
+  },
+  {
+    "id": 7594,
+    "name": "black-design kitchen mat",
+    "details": "Small rug",
+    "source": "Saharah",
+    "diy": false,
+    "buy": 1000,
+    "sell": 250,
+    "colors": [
+      "Black",
+      "Orange"
+    ],
+    "hhaConcepts": [
+      "kitchen",
+      "None"
+    ],
+    "variants": [
+      [
+        {
+          "id": 7594,
+          "image": "https://storage.googleapis.com/acdb/rugs/RugRectNativeKitchenS03.png",
+          "colors": [
+            "Black",
+            "Orange"
+          ]
+        }
+      ]
+    ],
+    "recipe": null,
+    "size": "2x1",
+    "tag": "Kitchen Rugs"
+  },
+  {
+    "id": 8467,
+    "name": "blue argyle rug",
+    "details": "Large rug",
+    "source": "Saharah",
+    "diy": false,
+    "buy": 2000,
+    "sell": 500,
+    "colors": [
+      "Blue",
+      "Green"
+    ],
+    "hhaConcepts": [
+      "living room",
+      "expensive"
+    ],
+    "variants": [
+      [
+        {
+          "id": 8467,
+          "image": "https://storage.googleapis.com/acdb/rugs/RugRectArgyleL02.png",
+          "colors": [
+            "Blue",
+            "Green"
+          ]
+        }
+      ]
+    ],
+    "recipe": null,
+    "size": "4x3",
+    "tag": "Slender Pattern Rugs"
+  },
+  {
+    "id": 11102,
+    "name": "blue blocks rug",
+    "details": "Medium rug",
+    "source": "Saharah",
+    "diy": false,
+    "buy": 1500,
+    "sell": 375,
+    "colors": [
+      "Blue",
+      "Blue"
+    ],
+    "hhaConcepts": [
+      "living room",
+      "None"
+    ],
+    "variants": [
+      [
+        {
+          "id": 11102,
+          "image": "https://storage.googleapis.com/acdb/rugs/RugSquareBlockM01.png",
+          "colors": [
+            "Blue",
+            "Blue"
+          ]
+        }
+      ]
+    ],
+    "recipe": null,
+    "size": "3x3",
+    "tag": "Pattern Rugs"
+  },
+  {
+    "id": 7467,
+    "name": "blue dotted rug",
+    "details": "Large rug",
+    "source": "Saharah",
+    "diy": false,
+    "buy": 2000,
+    "sell": 500,
+    "colors": [
+      "Blue",
+      "Blue"
+    ],
+    "hhaConcepts": [
+      "fancy",
+      "child's room"
+    ],
+    "variants": [
+      [
+        {
+          "id": 7467,
+          "image": "https://storage.googleapis.com/acdb/rugs/RugRectDotL03.png",
+          "colors": [
+            "Blue",
+            "Blue"
+          ]
+        }
+      ]
+    ],
+    "recipe": null,
+    "size": "4x3",
+    "tag": "Slender Pattern Rugs"
+  },
+  {
+    "id": 9316,
+    "name": "blue kilim-style carpet",
+    "details": "Large rug",
+    "source": "Saharah",
+    "diy": false,
+    "buy": 2000,
+    "sell": 500,
+    "colors": [
+      "Blue",
+      "Black"
+    ],
+    "hhaConcepts": [
+      "living room",
+      "None"
+    ],
+    "variants": [
+      [
+        {
+          "id": 9316,
+          "image": "https://storage.googleapis.com/acdb/rugs/RugSquareKirimL01.png",
+          "colors": [
+            "Blue",
+            "Black"
+          ]
+        }
+      ]
+    ],
+    "recipe": null,
+    "size": "5x5",
+    "tag": "Pattern Rugs"
+  },
+  {
+    "id": 8394,
+    "name": "blue kitchen mat",
+    "details": "Small rug",
+    "source": "Saharah",
+    "diy": false,
+    "buy": 1000,
+    "sell": 250,
+    "colors": [
+      "Blue",
+      "Blue"
+    ],
+    "hhaConcepts": [
+      "kitchen",
+      "None"
+    ],
+    "variants": [
+      [
+        {
+          "id": 8394,
+          "image": "https://storage.googleapis.com/acdb/rugs/RugRectKitchenS02.png",
+          "colors": [
+            "Blue",
+            "Blue"
+          ]
+        }
+      ]
+    ],
+    "recipe": null,
+    "size": "2x1",
+    "tag": "Kitchen Rugs"
+  },
+  {
+    "id": 9546,
+    "name": "blue medium round mat",
+    "details": "Medium rug",
+    "source": "Saharah",
+    "diy": false,
+    "buy": 1500,
+    "sell": 375,
+    "colors": [
+      "Blue",
+      "Blue"
+    ],
+    "hhaConcepts": [
+      "living room",
+      "child's room"
+    ],
+    "variants": [
+      [
+        {
+          "id": 9546,
+          "image": "https://storage.googleapis.com/acdb/rugs/RugRoundSimpleM02.png",
+          "colors": [
+            "Blue",
+            "Blue"
+          ]
+        }
+      ]
+    ],
+    "recipe": null,
+    "size": "3x3",
+    "tag": "Shaggy Round Rugs"
+  },
+  {
+    "id": 9310,
+    "name": "blue message mat",
+    "details": "Small rug",
+    "source": "Saharah",
+    "diy": false,
+    "buy": 1000,
+    "sell": 250,
+    "colors": [
+      "Blue",
+      "Blue"
+    ],
+    "hhaConcepts": [
+      "child's room",
+      "None"
+    ],
+    "variants": [
+      [
+        {
+          "id": 9310,
+          "image": "https://storage.googleapis.com/acdb/rugs/RugOtherMessageS01.png",
+          "colors": [
+            "Blue",
+            "Blue"
+          ]
+        }
+      ]
+    ],
+    "recipe": null,
+    "size": "2x1",
+    "tag": "Message Mats"
+  },
+  {
+    "id": 8035,
+    "name": "blue Persian rug",
+    "details": "Large rug",
+    "source": "Saharah",
+    "diy": false,
+    "buy": 2000,
+    "sell": 500,
+    "colors": [
+      "Blue",
+      "Beige"
+    ],
+    "hhaConcepts": [
+      "expensive",
+      "living room"
+    ],
+    "variants": [
+      [
+        {
+          "id": 8035,
+          "image": "https://storage.googleapis.com/acdb/rugs/RugSquarePersianL01.png",
+          "colors": [
+            "Blue",
+            "Beige"
+          ]
+        }
+      ]
+    ],
+    "recipe": null,
+    "size": "5x5",
+    "tag": "Pattern Rugs"
+  },
+  {
+    "id": 9564,
+    "name": "blue shaggy rug",
+    "details": "Large rug",
+    "source": "Saharah",
+    "diy": false,
+    "buy": 2000,
+    "sell": 500,
+    "colors": [
+      "Blue",
+      "Blue"
+    ],
+    "hhaConcepts": [
+      "living room",
+      "None"
+    ],
+    "variants": [
+      [
+        {
+          "id": 9564,
+          "image": "https://storage.googleapis.com/acdb/rugs/RugSquareShaggyL02.png",
+          "colors": [
+            "Blue",
+            "Blue"
+          ]
+        }
+      ]
+    ],
+    "recipe": null,
+    "size": "5x5",
+    "tag": "Pattern Rugs"
+  },
+  {
+    "id": 9549,
+    "name": "blue small round mat",
+    "details": "Small rug",
+    "source": "Saharah",
+    "diy": false,
+    "buy": 1000,
+    "sell": 250,
+    "colors": [
+      "Blue",
+      "Blue"
+    ],
+    "hhaConcepts": [
+      "living room",
+      "child's room"
+    ],
+    "variants": [
+      [
+        {
+          "id": 9549,
+          "image": "https://storage.googleapis.com/acdb/rugs/RugRoundSimpleS02.png",
+          "colors": [
+            "Blue",
+            "Blue"
+          ]
+        }
+      ]
+    ],
+    "recipe": null,
+    "size": "2x2",
+    "tag": "Shaggy Round Rugs"
+  },
+  {
+    "id": 7533,
+    "name": "blue stripes rug",
+    "details": "Large rug",
+    "source": "Saharah",
+    "diy": false,
+    "buy": 2000,
+    "sell": 500,
+    "colors": [
+      "Blue",
+      "White"
+    ],
+    "hhaConcepts": [
+      "fancy",
+      "child's room"
+    ],
+    "variants": [
+      [
+        {
+          "id": 7533,
+          "image": "https://storage.googleapis.com/acdb/rugs/RugRectBorderL02.png",
+          "colors": [
+            "Blue",
+            "White"
+          ]
+        }
+      ]
+    ],
+    "recipe": null,
+    "size": "4x3",
+    "tag": "Slender Pattern Rugs"
+  },
+  {
+    "id": 7404,
+    "name": "blue vinyl sheet",
+    "details": "Medium rug",
+    "source": "Saharah",
+    "diy": false,
+    "buy": 1500,
+    "sell": 375,
+    "colors": [
+      "Blue",
+      "Colorful"
+    ],
+    "hhaConcepts": [
+      "garden",
+      "None"
+    ],
+    "variants": [
+      [
+        {
+          "id": 7404,
+          "image": "https://storage.googleapis.com/acdb/rugs/RugRectVinylM01.png",
+          "colors": [
+            "Blue",
+            "Colorful"
+          ]
+        }
+      ]
+    ],
+    "recipe": null,
+    "size": "3x2",
+    "tag": "Slender Pattern Rugs"
+  },
+  {
+    "id": 7458,
+    "name": "blue wavy rug",
+    "details": "Large rug",
+    "source": "Saharah",
+    "diy": false,
+    "buy": 2000,
+    "sell": 500,
+    "colors": [
+      "Blue",
+      "Light blue"
+    ],
+    "hhaConcepts": [
+      "living room",
+      "child's room"
+    ],
+    "variants": [
+      [
+        {
+          "id": 7458,
+          "image": "https://storage.googleapis.com/acdb/rugs/RugRectWaveL02.png",
+          "colors": [
+            "Blue",
+            "Light blue"
+          ]
+        }
+      ]
+    ],
+    "recipe": null,
+    "size": "4x3",
+    "tag": "Slender Pattern Rugs"
+  },
+  {
+    "id": 7595,
+    "name": "blue-design kitchen mat",
+    "details": "Small rug",
+    "source": "Saharah",
+    "diy": false,
+    "buy": 1000,
+    "sell": 250,
+    "colors": [
+      "Blue",
+      "Black"
+    ],
+    "hhaConcepts": [
+      "kitchen",
+      "None"
+    ],
+    "variants": [
+      [
+        {
+          "id": 7595,
+          "image": "https://storage.googleapis.com/acdb/rugs/RugRectNativeKitchenS01.png",
+          "colors": [
+            "Blue",
+            "Black"
+          ]
+        }
+      ]
+    ],
+    "recipe": null,
+    "size": "2x1",
+    "tag": "Kitchen Rugs"
+  },
+  {
+    "id": 7353,
+    "name": "botanical rug",
+    "details": "Large rug",
+    "source": "Saharah",
+    "diy": false,
+    "buy": 2000,
+    "sell": 500,
+    "colors": [
+      "Green",
+      "Green"
+    ],
+    "hhaConcepts": [
+      "living room",
+      "None"
+    ],
+    "variants": [
+      [
+        {
+          "id": 7353,
+          "image": "https://storage.googleapis.com/acdb/rugs/RugRectBotanicalL00.png",
+          "colors": [
+            "Green",
+            "Green"
+          ]
+        }
+      ]
+    ],
+    "recipe": null,
+    "size": "4x3",
+    "tag": "Slender Pattern Rugs"
+  },
+  {
+    "id": 8468,
+    "name": "brown argyle rug",
+    "details": "Large rug",
+    "source": "Saharah",
+    "diy": false,
+    "buy": 2000,
+    "sell": 500,
+    "colors": [
+      "Brown",
+      "Yellow"
+    ],
+    "hhaConcepts": [
+      "living room",
+      "expensive"
+    ],
+    "variants": [
+      [
+        {
+          "id": 8468,
+          "image": "https://storage.googleapis.com/acdb/rugs/RugRectArgyleL03.png",
+          "colors": [
+            "Brown",
+            "Yellow"
+          ]
+        }
+      ]
+    ],
+    "recipe": null,
+    "size": "4x3",
+    "tag": "Slender Pattern Rugs"
+  },
+  {
+    "id": 7341,
+    "name": "brown kitchen mat",
+    "details": "Small rug",
+    "source": "Saharah",
+    "diy": false,
+    "buy": 1000,
+    "sell": 250,
+    "colors": [
+      "Brown",
+      "Brown"
+    ],
+    "hhaConcepts": [
+      "kitchen",
+      "None"
+    ],
+    "variants": [
+      [
+        {
+          "id": 7341,
+          "image": "https://storage.googleapis.com/acdb/rugs/RugRectKitchenS00.png",
+          "colors": [
+            "Brown",
+            "Brown"
+          ]
+        }
+      ]
+    ],
+    "recipe": null,
+    "size": "2x1",
+    "tag": "Kitchen Rugs"
+  },
+  {
+    "id": 9563,
+    "name": "brown shaggy rug",
+    "details": "Large rug",
+    "source": "Saharah",
+    "diy": false,
+    "buy": 2000,
+    "sell": 500,
+    "colors": [
+      "Brown",
+      "Brown"
+    ],
+    "hhaConcepts": [
+      "living room",
+      "None"
+    ],
+    "variants": [
+      [
+        {
+          "id": 9563,
+          "image": "https://storage.googleapis.com/acdb/rugs/RugSquareShaggyL01.png",
+          "colors": [
+            "Brown",
+            "Brown"
+          ]
+        }
+      ]
+    ],
+    "recipe": null,
+    "size": "5x5",
+    "tag": "Pattern Rugs"
+  },
+  {
+    "id": 7323,
+    "name": "brown wooden-deck rug",
+    "details": "Medium rug",
+    "source": "Saharah",
+    "diy": false,
+    "buy": 1500,
+    "sell": 375,
+    "colors": [
+      "Brown",
+      "Brown"
+    ],
+    "hhaConcepts": [
+      "outdoors",
+      "None"
+    ],
+    "variants": [
+      [
+        {
+          "id": 7323,
+          "image": "https://storage.googleapis.com/acdb/rugs/RugRectDeckM00.png",
+          "colors": [
+            "Brown",
+            "Brown"
+          ]
+        }
+      ]
+    ],
+    "recipe": null,
+    "size": "3x2",
+    "tag": "Wood Rugs"
+  },
+  {
+    "id": 7546,
+    "name": "Bunny Day rug",
+    "details": "Obtained randomly from villager, egg message bottle or egg balloon during Bunny Day event",
+    "source": "Crafting",
+    "diy": true,
+    "buy": null,
+    "sell": 2400,
+    "colors": [
+      "None",
+      "None"
+    ],
+    "hhaConcepts": [
+      "fancy",
+      "child's room"
+    ],
+    "variants": [
+      [
+        {
+          "id": 7546,
+          "image": "https://storage.googleapis.com/acdb/rugs/RugOtherEasterM00.png",
+          "colors": [
+            "None",
+            "None"
+          ]
+        }
+      ]
+    ],
+    "recipe": {
+      "name": "Bunny Day rug",
+      "source": "Egg bottle/balloon (Bunny Day)",
+      "category": "Rugs",
+      "materials": [
+        {
+          "name": "earth egg",
+          "count": 1
+        },
+        {
+          "name": "stone egg",
+          "count": 1
+        },
+        {
+          "name": "leaf egg",
+          "count": 1
+        },
+        {
+          "name": "wood egg",
+          "count": 1
+        },
+        {
+          "name": "sky egg",
+          "count": 1
+        },
+        {
+          "name": "water egg",
+          "count": 1
+        }
+      ]
+    },
+    "size": "3x3",
+    "tag": "Icon Rugs"
+  },
+  {
+    "id": 7328,
+    "name": "cherry rug",
+    "details": null,
+    "source": "Crafting",
+    "diy": true,
+    "buy": null,
+    "sell": 1200,
+    "colors": [
+      "Red",
+      "Red"
+    ],
+    "hhaConcepts": [
+      "fancy",
+      "child's room"
+    ],
+    "variants": [
+      [
+        {
+          "id": 7328,
+          "image": "https://storage.googleapis.com/acdb/rugs/RugOtherCherryM00.png",
+          "colors": [
+            "Red",
+            "Red"
+          ]
+        }
+      ]
+    ],
+    "recipe": {
+      "name": "cherry rug",
+      "source": "Peppy",
+      "category": "Rugs",
+      "materials": [
+        {
+          "name": "cherry",
+          "count": 6
+        }
+      ]
+    },
+    "size": "3x3",
+    "tag": "Fruit Rugs"
+  },
+  {
+    "id": 7359,
+    "name": "colorful vinyl sheet",
+    "details": "Medium rug",
+    "source": "Saharah",
+    "diy": false,
+    "buy": 1500,
+    "sell": 375,
+    "colors": [
+      "Colorful",
+      "Colorful"
+    ],
+    "hhaConcepts": [
+      "garden",
+      "None"
+    ],
+    "variants": [
+      [
+        {
+          "id": 7359,
+          "image": "https://storage.googleapis.com/acdb/rugs/RugRectVinylM00.png",
+          "colors": [
+            "Colorful",
+            "Colorful"
+          ]
+        }
+      ]
+    ],
+    "recipe": null,
+    "size": "3x2",
+    "tag": "Slender Pattern Rugs"
+  },
+  {
+    "id": 11114,
+    "name": "dark bamboo rug",
+    "details": null,
+    "source": "Crafting",
+    "diy": true,
+    "buy": null,
+    "sell": 960,
+    "colors": [
+      "Brown",
+      "Brown"
+    ],
+    "hhaConcepts": [
+      "zen-style",
+      "None"
+    ],
+    "variants": [
+      [
+        {
+          "id": 11114,
+          "image": "https://storage.googleapis.com/acdb/rugs/RugRectBambooM01.png",
+          "colors": [
+            "Brown",
+            "Brown"
+          ]
+        }
+      ]
+    ],
+    "recipe": {
+      "name": "dark bamboo rug",
+      "source": "Cranky",
+      "category": "Rugs",
+      "materials": [
+        {
+          "name": "bamboo piece",
+          "count": 6
+        }
+      ]
+    },
+    "size": "3x2",
+    "tag": "Wood Rugs"
+  },
+  {
+    "id": 7357,
+    "name": "Earth rug",
+    "details": "Medium rug",
+    "source": "Saharah",
+    "diy": false,
+    "buy": 1500,
+    "sell": 375,
+    "colors": [
+      "Blue",
+      "White"
+    ],
+    "hhaConcepts": [
+      "space",
+      "child's room"
+    ],
+    "variants": [
+      [
+        {
+          "id": 7357,
+          "image": "https://storage.googleapis.com/acdb/rugs/RugRoundEarthM00.png",
+          "colors": [
+            "Blue",
+            "White"
+          ]
+        }
+      ]
+    ],
+    "recipe": null,
+    "size": "3x3",
+    "tag": "Icon Rugs"
+  },
+  {
+    "id": 7361,
+    "name": "fish rug",
+    "details": null,
+    "source": "Fishing Tourney",
+    "diy": false,
+    "buy": null,
+    "sell": 375,
+    "colors": [
+      "Light blue",
+      "Light blue"
+    ],
+    "hhaConcepts": [
+      "ocean",
+      "child's room"
+    ],
+    "variants": [
+      [
+        {
+          "id": 7361,
+          "image": "https://storage.googleapis.com/acdb/rugs/RugOtherFishM00.png",
+          "colors": [
+            "Light blue",
+            "Light blue"
+          ]
+        }
+      ]
+    ],
+    "recipe": null,
+    "size": "3x3",
+    "tag": "Icon Rugs"
+  },
+  {
+    "id": 7329,
+    "name": "fluffy rug",
+    "details": "Medium rug",
+    "source": "Saharah",
+    "diy": false,
+    "buy": 1500,
+    "sell": 375,
+    "colors": [
+      "White",
+      "White"
+    ],
+    "hhaConcepts": [
+      "fancy",
+      "child's room"
+    ],
+    "variants": [
+      [
+        {
+          "id": 7329,
+          "image": "https://storage.googleapis.com/acdb/rugs/RugOtherCloudM00.png",
+          "colors": [
+            "White",
+            "White"
+          ]
+        }
+      ]
+    ],
+    "recipe": null,
+    "size": "3x3",
+    "tag": "Icon Rugs"
+  },
+  {
+    "id": 7366,
+    "name": "fossil rug",
+    "details": "Medium rug",
+    "source": "Saharah",
+    "diy": false,
+    "buy": 1500,
+    "sell": 375,
+    "colors": [
+      "Purple",
+      "White"
+    ],
+    "hhaConcepts": [
+      "fancy",
+      "child's room"
+    ],
+    "variants": [
+      [
+        {
+          "id": 7366,
+          "image": "https://storage.googleapis.com/acdb/rugs/RugOtherFossilM00.png",
+          "colors": [
+            "Purple",
+            "White"
+          ]
+        }
+      ]
+    ],
+    "recipe": null,
+    "size": "3x3",
+    "tag": "Park Rugs"
+  },
+  {
+    "id": 7464,
+    "name": "green checked rug",
+    "details": "Large rug",
+    "source": "Saharah",
+    "diy": false,
+    "buy": 2000,
+    "sell": 500,
+    "colors": [
+      "Green",
+      "Purple"
+    ],
+    "hhaConcepts": [
+      "living room",
+      "child's room"
+    ],
+    "variants": [
+      [
+        {
+          "id": 7464,
+          "image": "https://storage.googleapis.com/acdb/rugs/RugSquareCheckQuiltL03.png",
+          "colors": [
+            "Green",
+            "Purple"
+          ]
+        }
+      ]
+    ],
+    "recipe": null,
+    "size": "4x4",
+    "tag": "Pattern Rugs"
+  },
+  {
+    "id": 9314,
+    "name": "green kilim-style carpet",
+    "details": "Large rug",
+    "source": "Saharah",
+    "diy": false,
+    "buy": 2000,
+    "sell": 500,
+    "colors": [
+      "Green",
+      "Green"
+    ],
+    "hhaConcepts": [
+      "living room",
+      "None"
+    ],
+    "variants": [
+      [
+        {
+          "id": 9314,
+          "image": "https://storage.googleapis.com/acdb/rugs/RugSquareKirimL02.png",
+          "colors": [
+            "Green",
+            "Green"
+          ]
+        }
+      ]
+    ],
+    "recipe": null,
+    "size": "5x5",
+    "tag": "Pattern Rugs"
+  },
+  {
+    "id": 8393,
+    "name": "green kitchen mat",
+    "details": "Small rug",
+    "source": "Saharah",
+    "diy": false,
+    "buy": 1000,
+    "sell": 250,
+    "colors": [
+      "Green",
+      "Green"
+    ],
+    "hhaConcepts": [
+      "kitchen",
+      "None"
+    ],
+    "variants": [
+      [
+        {
+          "id": 8393,
+          "image": "https://storage.googleapis.com/acdb/rugs/RugRectKitchenS03.png",
+          "colors": [
+            "Green",
+            "Green"
+          ]
+        }
+      ]
+    ],
+    "recipe": null,
+    "size": "2x1",
+    "tag": "Kitchen Rugs"
+  },
+  {
+    "id": 7354,
+    "name": "green shaggy rug",
+    "details": "Large rug",
+    "source": "Saharah",
+    "diy": false,
+    "buy": 2000,
+    "sell": 500,
+    "colors": [
+      "Green",
+      "Green"
+    ],
+    "hhaConcepts": [
+      "living room",
+      "None"
+    ],
+    "variants": [
+      [
+        {
+          "id": 7354,
+          "image": "https://storage.googleapis.com/acdb/rugs/RugSquareShaggyL00.png",
+          "colors": [
+            "Green",
+            "Green"
+          ]
+        }
+      ]
+    ],
+    "recipe": null,
+    "size": "5x5",
+    "tag": "Pattern Rugs"
+  },
+  {
+    "id": 7534,
+    "name": "green stripes rug",
+    "details": "Large rug",
+    "source": "Saharah",
+    "diy": false,
+    "buy": 2000,
+    "sell": 500,
+    "colors": [
+      "Green",
+      "White"
+    ],
+    "hhaConcepts": [
+      "fancy",
+      "child's room"
+    ],
+    "variants": [
+      [
+        {
+          "id": 7534,
+          "image": "https://storage.googleapis.com/acdb/rugs/RugRectBorderL03.png",
+          "colors": [
+            "Green",
+            "White"
+          ]
+        }
+      ]
+    ],
+    "recipe": null,
+    "size": "4x3",
+    "tag": "Slender Pattern Rugs"
+  },
+  {
+    "id": 7337,
+    "name": "iron entrance mat",
+    "details": "Small rug",
+    "source": "Saharah",
+    "diy": false,
+    "buy": 1000,
+    "sell": 250,
+    "colors": [
+      "Black",
+      "Black"
+    ],
+    "hhaConcepts": [
+      "shop",
+      "expensive"
+    ],
+    "variants": [
+      [
+        {
+          "id": 7337,
+          "image": "https://storage.googleapis.com/acdb/rugs/RugRectIronmatS00.png",
+          "colors": [
+            "Black",
+            "Black"
+          ]
+        }
+      ]
+    ],
+    "recipe": null,
+    "size": "2x1",
+    "tag": "Slender Rugs"
+  },
+  {
+    "id": 7325,
+    "name": "ivory medium round mat",
+    "details": "Medium rug",
+    "source": "Saharah",
+    "diy": false,
+    "buy": 1500,
+    "sell": 375,
+    "colors": [
+      "Beige",
+      "White"
+    ],
+    "hhaConcepts": [
+      "living room",
+      "child's room"
+    ],
+    "variants": [
+      [
+        {
+          "id": 7325,
+          "image": "https://storage.googleapis.com/acdb/rugs/RugRoundSimpleM00.png",
+          "colors": [
+            "Beige",
+            "White"
+          ]
+        }
+      ]
+    ],
+    "recipe": null,
+    "size": "3x3",
+    "tag": "Shaggy Round Rugs"
+  },
+  {
+    "id": 7333,
+    "name": "ivory simple bath mat",
+    "details": "Small rug",
+    "source": "Saharah",
+    "diy": false,
+    "buy": 1000,
+    "sell": 250,
+    "colors": [
+      "Beige",
+      "Beige"
+    ],
+    "hhaConcepts": [
+      "bathroom",
+      "None"
+    ],
+    "variants": [
+      [
+        {
+          "id": 7333,
+          "image": "https://storage.googleapis.com/acdb/rugs/RugRectBathmatS00.png",
+          "colors": [
+            "Beige",
+            "Beige"
+          ]
+        }
+      ]
+    ],
+    "recipe": null,
+    "size": "2x1",
+    "tag": "Slender Rugs"
+  },
+  {
+    "id": 7334,
+    "name": "ivory small round mat",
+    "details": "Small rug",
+    "source": "Saharah",
+    "diy": false,
+    "buy": 1000,
+    "sell": 250,
+    "colors": [
+      "Beige",
+      "White"
+    ],
+    "hhaConcepts": [
+      "living room",
+      "child's room"
+    ],
+    "variants": [
+      [
+        {
+          "id": 7334,
+          "image": "https://storage.googleapis.com/acdb/rugs/RugRoundSimpleS00.png",
+          "colors": [
+            "Beige",
+            "White"
+          ]
+        }
+      ]
+    ],
+    "recipe": null,
+    "size": "2x2",
+    "tag": "Shaggy Round Rugs"
+  },
+  {
+    "id": 7368,
+    "name": "lacy rug",
+    "details": "Medium rug",
+    "source": "Saharah",
+    "diy": false,
+    "buy": 1500,
+    "sell": 375,
+    "colors": [
+      "Beige",
+      "White"
+    ],
+    "hhaConcepts": [
+      "fancy",
+      "expensive"
+    ],
+    "variants": [
+      [
+        {
+          "id": 7368,
+          "image": "https://storage.googleapis.com/acdb/rugs/RugRoundLaceM00.png",
+          "colors": [
+            "Beige",
+            "White"
+          ]
+        }
+      ]
+    ],
+    "recipe": null,
+    "size": "3x3",
+    "tag": "Shaggy Round Rugs"
+  },
+  {
+    "id": 7360,
+    "name": "ladybug rug",
+    "details": null,
+    "source": "Bug-Off",
+    "diy": false,
+    "buy": null,
+    "sell": 375,
+    "colors": [
+      "Red",
+      "Black"
+    ],
+    "hhaConcepts": [
+      "fancy",
+      "child's room"
+    ],
+    "variants": [
+      [
+        {
+          "id": 7360,
+          "image": "https://storage.googleapis.com/acdb/rugs/RugRoundLadybirdM00.png",
+          "colors": [
+            "Red",
+            "Black"
+          ]
+        }
+      ]
+    ],
+    "recipe": null,
+    "size": "3x3",
+    "tag": "Icon Rugs"
+  },
+  {
+    "id": 11113,
+    "name": "light bamboo rug",
+    "details": "Spring seasonal DIY using bamboo (from bamboo trees)",
+    "source": "Crafting",
+    "diy": true,
+    "buy": null,
+    "sell": 2400,
+    "colors": [
+      "Beige",
+      "Brown"
+    ],
+    "hhaConcepts": [
+      "zen-style",
+      "None"
+    ],
+    "variants": [
+      [
+        {
+          "id": 11113,
+          "image": "https://storage.googleapis.com/acdb/rugs/RugRectBambooM00.png",
+          "colors": [
+            "Beige",
+            "Brown"
+          ]
+        }
+      ]
+    ],
+    "recipe": {
+      "name": "light bamboo rug",
+      "source": "Balloons (Spring)",
+      "category": "Rugs",
+      "materials": [
+        {
+          "name": "young spring bamboo",
+          "count": 6
+        }
+      ]
+    },
+    "size": "3x2",
+    "tag": "Wood Rugs"
+  },
+  {
+    "id": 7367,
+    "name": "magic-circle rug",
+    "details": "Medium rug",
+    "source": "Saharah",
+    "diy": false,
+    "buy": 1500,
+    "sell": 375,
+    "colors": [
+      "Purple",
+      "Purple"
+    ],
+    "hhaConcepts": [
+      "horror",
+      "child's room"
+    ],
+    "variants": [
+      [
+        {
+          "id": 7367,
+          "image": "https://storage.googleapis.com/acdb/rugs/RugRoundMagicM00.png",
+          "colors": [
+            "Purple",
+            "Purple"
+          ]
+        }
+      ]
+    ],
+    "recipe": null,
+    "size": "3x3",
+    "tag": "Shaggy Round Rugs"
+  },
+  {
+    "id": 7350,
+    "name": "modern wavy rug",
+    "details": "Large rug",
+    "source": "Saharah",
+    "diy": false,
+    "buy": 2000,
+    "sell": 500,
+    "colors": [
+      "Colorful",
+      "Colorful"
+    ],
+    "hhaConcepts": [
+      "living room",
+      "child's room"
+    ],
+    "variants": [
+      [
+        {
+          "id": 7350,
+          "image": "https://storage.googleapis.com/acdb/rugs/RugRectWaveL00.png",
+          "colors": [
+            "Colorful",
+            "Colorful"
+          ]
+        }
+      ]
+    ],
+    "recipe": null,
+    "size": "4x3",
+    "tag": "Slender Pattern Rugs"
+  },
+  {
+    "id": 7402,
+    "name": "Mom's cool kitchen mat",
+    "details": null,
+    "source": "Mom",
+    "diy": false,
+    "buy": null,
+    "sell": 88,
+    "colors": [
+      "Light blue",
+      "Light blue"
+    ],
+    "hhaConcepts": [
+      "fancy",
+      "kitchen"
+    ],
+    "variants": [
+      [
+        {
+          "id": 7402,
+          "image": "https://storage.googleapis.com/acdb/rugs/RugRectMomS00.png",
+          "colors": [
+            "Light blue",
+            "Light blue"
+          ]
+        }
+      ]
+    ],
+    "recipe": null,
+    "size": "2x1",
+    "tag": "Kitchen Rugs"
+  },
+  {
+    "id": 9543,
+    "name": "Mom's lively kitchen mat",
+    "details": null,
+    "source": "Mom",
+    "diy": false,
+    "buy": null,
+    "sell": 88,
+    "colors": [
+      "Yellow",
+      "Yellow"
+    ],
+    "hhaConcepts": [
+      "fancy",
+      "kitchen"
+    ],
+    "variants": [
+      [
+        {
+          "id": 9543,
+          "image": "https://storage.googleapis.com/acdb/rugs/RugRectMomS02.png",
+          "colors": [
+            "Yellow",
+            "Yellow"
+          ]
+        }
+      ]
+    ],
+    "recipe": null,
+    "size": "2x1",
+    "tag": "Kitchen Rugs"
+  },
+  {
+    "id": 9542,
+    "name": "Mom's playful kitchen mat",
+    "details": null,
+    "source": "Mom",
+    "diy": false,
+    "buy": null,
+    "sell": 88,
+    "colors": [
+      "Pink",
+      "Pink"
+    ],
+    "hhaConcepts": [
+      "fancy",
+      "kitchen"
+    ],
+    "variants": [
+      [
+        {
+          "id": 9542,
+          "image": "https://storage.googleapis.com/acdb/rugs/RugRectMomS01.png",
+          "colors": [
+            "Pink",
+            "Pink"
+          ]
+        }
+      ]
+    ],
+    "recipe": null,
+    "size": "2x1",
+    "tag": "Kitchen Rugs"
+  },
+  {
+    "id": 9541,
+    "name": "Mom's reliable kitchen mat",
+    "details": null,
+    "source": "Mom",
+    "diy": false,
+    "buy": null,
+    "sell": 88,
+    "colors": [
+      "Purple",
+      "Purple"
+    ],
+    "hhaConcepts": [
+      "fancy",
+      "kitchen"
+    ],
+    "variants": [
+      [
+        {
+          "id": 9541,
+          "image": "https://storage.googleapis.com/acdb/rugs/RugRectMomS03.png",
+          "colors": [
+            "Purple",
+            "Purple"
+          ]
+        }
+      ]
+    ],
+    "recipe": null,
+    "size": "2x1",
+    "tag": "Kitchen Rugs"
+  },
+  {
+    "id": 7349,
+    "name": "monochromatic dotted rug",
+    "details": "Large rug",
+    "source": "Saharah",
+    "diy": false,
+    "buy": 2000,
+    "sell": 500,
+    "colors": [
+      "Black",
+      "White"
+    ],
+    "hhaConcepts": [
+      "fancy",
+      "child's room"
+    ],
+    "variants": [
+      [
+        {
+          "id": 7349,
+          "image": "https://storage.googleapis.com/acdb/rugs/RugRectDotL00.png",
+          "colors": [
+            "Black",
+            "White"
+          ]
+        }
+      ]
+    ],
+    "recipe": null,
+    "size": "4x3",
+    "tag": "Slender Pattern Rugs"
+  },
+  {
+    "id": 7456,
+    "name": "monochromatic wavy rug",
+    "details": "Large rug",
+    "source": "Saharah",
+    "diy": false,
+    "buy": 2000,
+    "sell": 500,
+    "colors": [
+      "Black",
+      "White"
+    ],
+    "hhaConcepts": [
+      "living room",
+      "child's room"
+    ],
+    "variants": [
+      [
+        {
+          "id": 7456,
+          "image": "https://storage.googleapis.com/acdb/rugs/RugRectWaveL01.png",
+          "colors": [
+            "Black",
+            "White"
+          ]
+        }
+      ]
+    ],
+    "recipe": null,
+    "size": "4x3",
+    "tag": "Slender Pattern Rugs"
+  },
+  {
+    "id": 7363,
+    "name": "mush rug",
+    "details": "Medium rug",
+    "source": "Saharah",
+    "diy": false,
+    "buy": 1500,
+    "sell": 375,
+    "colors": [
+      "Red",
+      "Red"
+    ],
+    "hhaConcepts": [
+      "fancy",
+      "child's room"
+    ],
+    "variants": [
+      [
+        {
+          "id": 7363,
+          "image": "https://storage.googleapis.com/acdb/rugs/RugOtherMushM00.png",
+          "colors": [
+            "Red",
+            "Red"
+          ]
+        }
+      ]
+    ],
+    "recipe": null,
+    "size": "3x3",
+    "tag": "Icon Rugs"
+  },
+  {
+    "id": 7380,
+    "name": "natural wooden-deck rug",
+    "details": "Medium rug",
+    "source": "Saharah",
+    "diy": false,
+    "buy": 1500,
+    "sell": 375,
+    "colors": [
+      "Brown",
+      "Brown"
+    ],
+    "hhaConcepts": [
+      "outdoors",
+      "None"
+    ],
+    "variants": [
+      [
+        {
+          "id": 7380,
+          "image": "https://storage.googleapis.com/acdb/rugs/RugRectDeckM01.png",
+          "colors": [
+            "Brown",
+            "Brown"
+          ]
+        }
+      ]
+    ],
+    "recipe": null,
+    "size": "3x2",
+    "tag": "Wood Rugs"
+  },
+  {
+    "id": 12325,
+    "name": "Nook Inc. botanical rug",
+    "details": "Medium rug",
+    "source": "Nook Miles Shop",
+    "diy": false,
+    "buy": null,
+    "sell": 5000,
+    "colors": [
+      "None",
+      "None"
+    ],
+    "hhaConcepts": [
+      "fancy",
+      "living room"
+    ],
+    "variants": [
+      [
+        {
+          "id": 12325,
+          "image": "https://storage.googleapis.com/acdb/rugs/RugOtherTanukiM00.png",
+          "colors": [
+            "None",
+            "None"
+          ]
+        }
+      ]
+    ],
+    "recipe": null,
+    "size": "3x3",
+    "tag": "Park Rugs"
+  },
+  {
+    "id": 7364,
+    "name": "Nook Inc. rug",
+    "details": "Medium rug",
+    "source": "Nook Miles Shop",
+    "diy": false,
+    "buy": null,
+    "sell": 5000,
+    "colors": [
+      "Green",
+      "Green"
+    ],
+    "hhaConcepts": [
+      "fancy",
+      "child's room"
+    ],
+    "variants": [
+      [
+        {
+          "id": 7364,
+          "image": "https://storage.googleapis.com/acdb/rugs/RugOtherLeafM00.png",
+          "colors": [
+            "Green",
+            "Green"
+          ]
+        }
+      ]
+    ],
+    "recipe": null,
+    "size": "3x3",
+    "tag": "Park Rugs"
+  },
+  {
+    "id": 12396,
+    "name": "Nook Inc. silk rug",
+    "details": "Large rug",
+    "source": "Nook Miles Shop",
+    "diy": false,
+    "buy": null,
+    "sell": 3000,
+    "colors": [
+      "None",
+      "None"
+    ],
+    "hhaConcepts": [
+      "facility",
+      "shop"
+    ],
+    "variants": [
+      [
+        {
+          "id": 12396,
+          "image": "https://storage.googleapis.com/acdb/rugs/RugRectTanukiL00.png",
+          "colors": [
+            "None",
+            "None"
+          ]
+        }
+      ]
+    ],
+    "recipe": null,
+    "size": "4x3",
+    "tag": "Park Rugs"
+  },
+  {
+    "id": 7330,
+    "name": "orange rug",
+    "details": "Medium rug",
+    "source": "Crafting",
+    "diy": true,
+    "buy": null,
+    "sell": 1200,
+    "colors": [
+      "Orange",
+      "Orange"
+    ],
+    "hhaConcepts": [
+      "fancy",
+      "child's room"
+    ],
+    "variants": [
+      [
+        {
+          "id": 7330,
+          "image": "https://storage.googleapis.com/acdb/rugs/RugOtherOrangeM00.png",
+          "colors": [
+            "Orange",
+            "Orange"
+          ]
+        }
+      ]
+    ],
+    "recipe": {
+      "name": "orange rug",
+      "source": "Lazy",
+      "category": "Rugs",
+      "materials": [
+        {
+          "name": "orange",
+          "count": 6
+        }
+      ]
+    },
+    "size": "3x3",
+    "tag": "Fruit Rugs"
+  },
+  {
+    "id": 7370,
+    "name": "oval entrance mat",
+    "details": "Small rug",
+    "source": "Saharah",
+    "diy": false,
+    "buy": 1000,
+    "sell": 250,
+    "colors": [
+      "Blue",
+      "Blue"
+    ],
+    "hhaConcepts": [
+      "living room",
+      "None"
+    ],
+    "variants": [
+      [
+        {
+          "id": 7370,
+          "image": "https://storage.googleapis.com/acdb/rugs/RugOtherCountryS00.png",
+          "colors": [
+            "Blue",
+            "Blue"
+          ]
+        }
+      ]
+    ],
+    "recipe": null,
+    "size": "2x1",
+    "tag": "Slender Rugs"
+  },
+  {
+    "id": 7463,
+    "name": "peach checked rug",
+    "details": "Large rug",
+    "source": "Saharah",
+    "diy": false,
+    "buy": 2000,
+    "sell": 500,
+    "colors": [
+      "Pink",
+      "Light blue"
+    ],
+    "hhaConcepts": [
+      "living room",
+      "child's room"
+    ],
+    "variants": [
+      [
+        {
+          "id": 7463,
+          "image": "https://storage.googleapis.com/acdb/rugs/RugSquareCheckQuiltL02.png",
+          "colors": [
+            "Pink",
+            "Light blue"
+          ]
+        }
+      ]
+    ],
+    "recipe": null,
+    "size": "4x4",
+    "tag": "Pattern Rugs"
+  },
+  {
+    "id": 7331,
+    "name": "peach rug",
+    "details": "Medium rug",
+    "source": "Crafting",
+    "diy": true,
+    "buy": null,
+    "sell": 1200,
+    "colors": [
+      "Pink",
+      "Pink"
+    ],
+    "hhaConcepts": [
+      "fancy",
+      "child's room"
+    ],
+    "variants": [
+      [
+        {
+          "id": 7331,
+          "image": "https://storage.googleapis.com/acdb/rugs/RugOtherPeachM00.png",
+          "colors": [
+            "Pink",
+            "Pink"
+          ]
+        }
+      ]
+    ],
+    "recipe": {
+      "name": "peach rug",
+      "source": "Normal",
+      "category": "Rugs",
+      "materials": [
+        {
+          "name": "peach",
+          "count": 6
+        }
+      ]
+    },
+    "size": "3x3",
+    "tag": "Fruit Rugs"
+  },
+  {
+    "id": 7532,
+    "name": "peach stripes rug",
+    "details": "Large rug",
+    "source": "Saharah",
+    "diy": false,
+    "buy": 2000,
+    "sell": 500,
+    "colors": [
+      "Pink",
+      "White"
+    ],
+    "hhaConcepts": [
+      "fancy",
+      "child's room"
+    ],
+    "variants": [
+      [
+        {
+          "id": 7532,
+          "image": "https://storage.googleapis.com/acdb/rugs/RugRectBorderL01.png",
+          "colors": [
+            "Pink",
+            "White"
+          ]
+        }
+      ]
+    ],
+    "recipe": null,
+    "size": "4x3",
+    "tag": "Slender Pattern Rugs"
+  },
+  {
+    "id": 7332,
+    "name": "pear rug",
+    "details": null,
+    "source": "Crafting",
+    "diy": true,
+    "buy": null,
+    "sell": 1200,
+    "colors": [
+      "Green",
+      "Green"
+    ],
+    "hhaConcepts": [
+      "fancy",
+      "child's room"
+    ],
+    "variants": [
+      [
+        {
+          "id": 7332,
+          "image": "https://storage.googleapis.com/acdb/rugs/RugOtherPearM00.png",
+          "colors": [
+            "Green",
+            "Green"
+          ]
+        }
+      ]
+    ],
+    "recipe": {
+      "name": "pear rug",
+      "source": "Jock",
+      "category": "Rugs",
+      "materials": [
+        {
+          "name": "pear",
+          "count": 6
+        }
+      ]
+    },
+    "size": "3x3",
+    "tag": "Fruit Rugs"
+  },
+  {
+    "id": 7322,
+    "name": "pink heart rug",
+    "details": "Medium rug",
+    "source": "Saharah",
+    "diy": false,
+    "buy": 1500,
+    "sell": 375,
+    "colors": [
+      "Pink",
+      "Pink"
+    ],
+    "hhaConcepts": [
+      "fancy",
+      "child's room"
+    ],
+    "variants": [
+      [
+        {
+          "id": 7322,
+          "image": "https://storage.googleapis.com/acdb/rugs/RugOtherHeartM00.png",
+          "colors": [
+            "Pink",
+            "Pink"
+          ]
+        }
+      ]
+    ],
+    "recipe": null,
+    "size": "3x3",
+    "tag": "Heart Rugs"
+  },
+  {
+    "id": 7365,
+    "name": "pink rose rug",
+    "details": "Medium rug",
+    "source": "Saharah",
+    "diy": false,
+    "buy": 1500,
+    "sell": 375,
+    "colors": [
+      "Pink",
+      "Pink"
+    ],
+    "hhaConcepts": [
+      "fancy",
+      "expensive"
+    ],
+    "variants": [
+      [
+        {
+          "id": 7365,
+          "image": "https://storage.googleapis.com/acdb/rugs/RugOtherRoseM00.png",
+          "colors": [
+            "Pink",
+            "Pink"
+          ]
+        }
+      ]
+    ],
+    "recipe": null,
+    "size": "3x3",
+    "tag": "Rose Rug"
+  },
+  {
+    "id": 7580,
+    "name": "purple heart rug",
+    "details": "Medium rug",
+    "source": "Saharah",
+    "diy": false,
+    "buy": 1500,
+    "sell": 375,
+    "colors": [
+      "Purple",
+      "Pink"
+    ],
+    "hhaConcepts": [
+      "fancy",
+      "child's room"
+    ],
+    "variants": [
+      [
+        {
+          "id": 7580,
+          "image": "https://storage.googleapis.com/acdb/rugs/RugOtherHeartM02.png",
+          "colors": [
+            "Purple",
+            "Pink"
+          ]
+        }
+      ]
+    ],
+    "recipe": null,
+    "size": "3x3",
+    "tag": "Heart Rugs"
+  },
+  {
+    "id": 8037,
+    "name": "purple Persian rug",
+    "details": "Large rug",
+    "source": "Saharah",
+    "diy": false,
+    "buy": 2000,
+    "sell": 500,
+    "colors": [
+      "Purple",
+      "Beige"
+    ],
+    "hhaConcepts": [
+      "expensive",
+      "living room"
+    ],
+    "variants": [
+      [
+        {
+          "id": 8037,
+          "image": "https://storage.googleapis.com/acdb/rugs/RugSquarePersianL03.png",
+          "colors": [
+            "Purple",
+            "Beige"
+          ]
+        }
+      ]
+    ],
+    "recipe": null,
+    "size": "5x5",
+    "tag": "Pattern Rugs"
+  },
+  {
+    "id": 9562,
+    "name": "purple shaggy rug",
+    "details": "Large rug",
+    "source": "Saharah",
+    "diy": false,
+    "buy": 2000,
+    "sell": 500,
+    "colors": [
+      "Purple",
+      "Purple"
+    ],
+    "hhaConcepts": [
+      "living room",
+      "None"
+    ],
+    "variants": [
+      [
+        {
+          "id": 9562,
+          "image": "https://storage.googleapis.com/acdb/rugs/RugSquareShaggyL03.png",
+          "colors": [
+            "Purple",
+            "Purple"
+          ]
+        }
+      ]
+    ],
+    "recipe": null,
+    "size": "5x5",
+    "tag": "Pattern Rugs"
+  },
+  {
+    "id": 8466,
+    "name": "red argyle rug",
+    "details": "Large rug",
+    "source": "Saharah",
+    "diy": false,
+    "buy": 2000,
+    "sell": 500,
+    "colors": [
+      "Red",
+      "Red"
+    ],
+    "hhaConcepts": [
+      "living room",
+      "expensive"
+    ],
+    "variants": [
+      [
+        {
+          "id": 8466,
+          "image": "https://storage.googleapis.com/acdb/rugs/RugRectArgyleL01.png",
+          "colors": [
+            "Red",
+            "Red"
+          ]
+        }
+      ]
+    ],
+    "recipe": null,
+    "size": "4x3",
+    "tag": "Slender Pattern Rugs"
+  },
+  {
+    "id": 11101,
+    "name": "red blocks rug",
+    "details": "Medium rug",
+    "source": "Saharah",
+    "diy": false,
+    "buy": 1500,
+    "sell": 375,
+    "colors": [
+      "Red",
+      "Red"
+    ],
+    "hhaConcepts": [
+      "living room",
+      "None"
+    ],
+    "variants": [
+      [
+        {
+          "id": 11101,
+          "image": "https://storage.googleapis.com/acdb/rugs/RugSquareBlockM00.png",
+          "colors": [
+            "Red",
+            "Red"
+          ]
+        }
+      ]
+    ],
+    "recipe": null,
+    "size": "3x3",
+    "tag": "Pattern Rugs"
+  },
+  {
+    "id": 7348,
+    "name": "red carpet",
+    "details": "Medium rug",
+    "source": "Saharah",
+    "diy": false,
+    "buy": 1500,
+    "sell": 375,
+    "colors": [
+      "Red",
+      "Red"
+    ],
+    "hhaConcepts": [
+      "expensive",
+      "None"
+    ],
+    "variants": [
+      [
+        {
+          "id": 7348,
+          "image": "https://storage.googleapis.com/acdb/rugs/RugRectElegantM00.png",
+          "colors": [
+            "Red",
+            "Red"
+          ]
+        }
+      ]
+    ],
+    "recipe": null,
+    "size": "3x2",
+    "tag": "Slender Rugs"
+  },
+  {
+    "id": 7465,
+    "name": "red dotted rug",
+    "details": "Large rug",
+    "source": "Saharah",
+    "diy": false,
+    "buy": 2000,
+    "sell": 500,
+    "colors": [
+      "Red",
+      "Red"
+    ],
+    "hhaConcepts": [
+      "fancy",
+      "child's room"
+    ],
+    "variants": [
+      [
+        {
+          "id": 7465,
+          "image": "https://storage.googleapis.com/acdb/rugs/RugRectDotL02.png",
+          "colors": [
+            "Red",
+            "Red"
+          ]
+        }
+      ]
+    ],
+    "recipe": null,
+    "size": "4x3",
+    "tag": "Slender Pattern Rugs"
+  },
+  {
+    "id": 9313,
+    "name": "red kilim-style carpet",
+    "details": "Large rug",
+    "source": "Saharah",
+    "diy": false,
+    "buy": 2000,
+    "sell": 500,
+    "colors": [
+      "Red",
+      "Red"
+    ],
+    "hhaConcepts": [
+      "living room",
+      "None"
+    ],
+    "variants": [
+      [
+        {
+          "id": 9313,
+          "image": "https://storage.googleapis.com/acdb/rugs/RugSquareKirimL00.png",
+          "colors": [
+            "Red",
+            "Red"
+          ]
+        }
+      ]
+    ],
+    "recipe": null,
+    "size": "5x5",
+    "tag": "Pattern Rugs"
+  },
+  {
+    "id": 9545,
+    "name": "red medium round mat",
+    "details": "Medium rug",
+    "source": "Saharah",
+    "diy": false,
+    "buy": 1500,
+    "sell": 375,
+    "colors": [
+      "Red",
+      "Red"
+    ],
+    "hhaConcepts": [
+      "living room",
+      "child's room"
+    ],
+    "variants": [
+      [
+        {
+          "id": 9545,
+          "image": "https://storage.googleapis.com/acdb/rugs/RugRoundSimpleM01.png",
+          "colors": [
+            "Red",
+            "Red"
+          ]
+        }
+      ]
+    ],
+    "recipe": null,
+    "size": "3x3",
+    "tag": "Shaggy Round Rugs"
+  },
+  {
+    "id": 9312,
+    "name": "red message mat",
+    "details": "Small rug",
+    "source": "Saharah",
+    "diy": false,
+    "buy": 1000,
+    "sell": 250,
+    "colors": [
+      "Red",
+      "Red"
+    ],
+    "hhaConcepts": [
+      "child's room",
+      "None"
+    ],
+    "variants": [
+      [
+        {
+          "id": 9312,
+          "image": "https://storage.googleapis.com/acdb/rugs/RugOtherMessageS03.png",
+          "colors": [
+            "Red",
+            "Red"
+          ]
+        }
+      ]
+    ],
+    "recipe": null,
+    "size": "2x1",
+    "tag": "Message Mats"
+  },
+  {
+    "id": 7347,
+    "name": "red Persian rug",
+    "details": "Large rug",
+    "source": "Saharah",
+    "diy": false,
+    "buy": 2000,
+    "sell": 500,
+    "colors": [
+      "Red",
+      "Beige"
+    ],
+    "hhaConcepts": [
+      "expensive",
+      "living room"
+    ],
+    "variants": [
+      [
+        {
+          "id": 7347,
+          "image": "https://storage.googleapis.com/acdb/rugs/RugSquarePersianL00.png",
+          "colors": [
+            "Red",
+            "Beige"
+          ]
+        }
+      ]
+    ],
+    "recipe": null,
+    "size": "5x5",
+    "tag": "Pattern Rugs"
+  },
+  {
+    "id": 8758,
+    "name": "red rose rug",
+    "details": "Medium rug",
+    "source": "Saharah",
+    "diy": false,
+    "buy": 1500,
+    "sell": 375,
+    "colors": [
+      "Red",
+      "Red"
+    ],
+    "hhaConcepts": [
+      "fancy",
+      "expensive"
+    ],
+    "variants": [
+      [
+        {
+          "id": 8758,
+          "image": "https://storage.googleapis.com/acdb/rugs/RugOtherRoseM01.png",
+          "colors": [
+            "Red",
+            "Red"
+          ]
+        }
+      ]
+    ],
+    "recipe": null,
+    "size": "3x3",
+    "tag": "Rose Rug"
+  },
+  {
+    "id": 9548,
+    "name": "red small round mat",
+    "details": "Small rug",
+    "source": "Saharah",
+    "diy": false,
+    "buy": 1000,
+    "sell": 250,
+    "colors": [
+      "Red",
+      "Red"
+    ],
+    "hhaConcepts": [
+      "living room",
+      "child's room"
+    ],
+    "variants": [
+      [
+        {
+          "id": 9548,
+          "image": "https://storage.googleapis.com/acdb/rugs/RugRoundSimpleS01.png",
+          "colors": [
+            "Red",
+            "Red"
+          ]
+        }
+      ]
+    ],
+    "recipe": null,
+    "size": "2x2",
+    "tag": "Shaggy Round Rugs"
+  },
+  {
+    "id": 7405,
+    "name": "red vinyl sheet",
+    "details": "Medium rug",
+    "source": "Saharah",
+    "diy": false,
+    "buy": 1500,
+    "sell": 375,
+    "colors": [
+      "Red",
+      "Colorful"
+    ],
+    "hhaConcepts": [
+      "garden",
+      "None"
+    ],
+    "variants": [
+      [
+        {
+          "id": 7405,
+          "image": "https://storage.googleapis.com/acdb/rugs/RugRectVinylM02.png",
+          "colors": [
+            "Red",
+            "Colorful"
+          ]
+        }
+      ]
+    ],
+    "recipe": null,
+    "size": "3x2",
+    "tag": "Slender Pattern Rugs"
+  },
+  {
+    "id": 7457,
+    "name": "red wavy rug",
+    "details": "Large rug",
+    "source": "Saharah",
+    "diy": false,
+    "buy": 2000,
+    "sell": 500,
+    "colors": [
+      "Red",
+      "Yellow"
+    ],
+    "hhaConcepts": [
+      "living room",
+      "child's room"
+    ],
+    "variants": [
+      [
+        {
+          "id": 7457,
+          "image": "https://storage.googleapis.com/acdb/rugs/RugRectWaveL03.png",
+          "colors": [
+            "Red",
+            "Yellow"
+          ]
+        }
+      ]
+    ],
+    "recipe": null,
+    "size": "4x3",
+    "tag": "Slender Pattern Rugs"
+  },
+  {
+    "id": 7343,
+    "name": "red-and-blue checked rug",
+    "details": "Large rug",
+    "source": "Saharah",
+    "diy": false,
+    "buy": 2000,
+    "sell": 500,
+    "colors": [
+      "Red",
+      "Blue"
+    ],
+    "hhaConcepts": [
+      "living room",
+      "child's room"
+    ],
+    "variants": [
+      [
+        {
+          "id": 7343,
+          "image": "https://storage.googleapis.com/acdb/rugs/RugSquareCheckQuiltL00.png",
+          "colors": [
+            "Red",
+            "Blue"
+          ]
+        }
+      ]
+    ],
+    "recipe": null,
+    "size": "4x4",
+    "tag": "Pattern Rugs"
+  },
+  {
+    "id": 7340,
+    "name": "red-design kitchen mat",
+    "details": "Small rug",
+    "source": "Saharah",
+    "diy": false,
+    "buy": 1000,
+    "sell": 250,
+    "colors": [
+      "Red",
+      "Black"
+    ],
+    "hhaConcepts": [
+      "kitchen",
+      "None"
+    ],
+    "variants": [
+      [
+        {
+          "id": 7340,
+          "image": "https://storage.googleapis.com/acdb/rugs/RugRectNativeKitchenS00.png",
+          "colors": [
+            "Red",
+            "Black"
+          ]
+        }
+      ]
+    ],
+    "recipe": null,
+    "size": "2x1",
+    "tag": "Kitchen Rugs"
+  },
+  {
+    "id": 7466,
+    "name": "retro dotted rug",
+    "details": "Large rug",
+    "source": "Saharah",
+    "diy": false,
+    "buy": 2000,
+    "sell": 500,
+    "colors": [
+      "Green",
+      "Green"
+    ],
+    "hhaConcepts": [
+      "fancy",
+      "child's room"
+    ],
+    "variants": [
+      [
+        {
+          "id": 7466,
+          "image": "https://storage.googleapis.com/acdb/rugs/RugRectDotL01.png",
+          "colors": [
+            "Green",
+            "Green"
+          ]
+        }
+      ]
+    ],
+    "recipe": null,
+    "size": "4x3",
+    "tag": "Slender Pattern Rugs"
+  },
+  {
+    "id": 7324,
+    "name": "rough rug",
+    "details": "Small rug",
+    "source": "Saharah",
+    "diy": false,
+    "buy": 1000,
+    "sell": 250,
+    "colors": [
+      "Brown",
+      "Brown"
+    ],
+    "hhaConcepts": [
+      "school",
+      "facility"
+    ],
+    "variants": [
+      [
+        {
+          "id": 7324,
+          "image": "https://storage.googleapis.com/acdb/rugs/RugRectDoormatS00.png",
+          "colors": [
+            "Brown",
+            "Brown"
+          ]
+        }
+      ]
+    ],
+    "recipe": null,
+    "size": "2x1",
+    "tag": "Slender Rugs"
+  },
+  {
+    "id": 7339,
+    "name": "rubber mud mat",
+    "details": "Small rug",
+    "source": "Saharah",
+    "diy": false,
+    "buy": 1000,
+    "sell": 250,
+    "colors": [
+      "Green",
+      "Green"
+    ],
+    "hhaConcepts": [
+      "school",
+      "None"
+    ],
+    "variants": [
+      [
+        {
+          "id": 7339,
+          "image": "https://storage.googleapis.com/acdb/rugs/RugRectRubberScraperS00.png",
+          "colors": [
+            "Green",
+            "Green"
+          ]
+        }
+      ]
+    ],
+    "recipe": null,
+    "size": "2x1",
+    "tag": "Slender Rugs"
+  },
+  {
+    "id": 7345,
+    "name": "shanty mat",
+    "details": "Large rug",
+    "source": "Saharah",
+    "diy": false,
+    "buy": 2000,
+    "sell": 500,
+    "colors": [
+      "Brown",
+      "Beige"
+    ],
+    "hhaConcepts": [
+      "zen-style",
+      "None"
+    ],
+    "variants": [
+      [
+        {
+          "id": 7345,
+          "image": "https://storage.googleapis.com/acdb/rugs/RugSquareOldStrawL00.png",
+          "colors": [
+            "Brown",
+            "Beige"
+          ]
+        }
+      ]
+    ],
+    "recipe": null,
+    "size": "4x4",
+    "tag": "Simple Rugs"
+  },
+  {
+    "id": 7362,
+    "name": "shell rug",
+    "details": null,
+    "source": "Crafting",
+    "diy": true,
+    "buy": null,
+    "sell": 5400,
+    "colors": [
+      "Beige",
+      "Pink"
+    ],
+    "hhaConcepts": [
+      "ocean",
+      "fancy"
+    ],
+    "variants": [
+      [
+        {
+          "id": 7362,
+          "image": "https://storage.googleapis.com/acdb/rugs/RugOtherShellM00.png",
+          "colors": [
+            "Beige",
+            "Pink"
+          ]
+        }
+      ]
+    ],
+    "recipe": {
+      "name": "shell rug",
+      "source": "Peppy",
+      "category": "Rugs",
+      "materials": [
+        {
+          "name": "giant clam",
+          "count": 3
+        }
+      ]
+    },
+    "size": "3x3",
+    "tag": "Park Rugs"
+  },
+  {
+    "id": 7516,
+    "name": "simple green bath mat",
+    "details": "Small rug",
+    "source": "Saharah",
+    "diy": false,
+    "buy": 1000,
+    "sell": 250,
+    "colors": [
+      "Green",
+      "Green"
+    ],
+    "hhaConcepts": [
+      "bathroom",
+      "None"
+    ],
+    "variants": [
+      [
+        {
+          "id": 7516,
+          "image": "https://storage.googleapis.com/acdb/rugs/RugRectBathmatS03.png",
+          "colors": [
+            "Green",
+            "Green"
+          ]
+        }
+      ]
+    ],
+    "recipe": null,
+    "size": "2x1",
+    "tag": "Slender Rugs"
+  },
+  {
+    "id": 7524,
+    "name": "simple medium avocado mat",
+    "details": "Medium rug",
+    "source": "Saharah",
+    "diy": false,
+    "buy": 1500,
+    "sell": 375,
+    "colors": [
+      "Green",
+      "Green"
+    ],
+    "hhaConcepts": [
+      "living room",
+      "facility"
+    ],
+    "variants": [
+      [
+        {
+          "id": 7524,
+          "image": "https://storage.googleapis.com/acdb/rugs/RugSquareSimpleM03.png",
+          "colors": [
+            "Green",
+            "Green"
+          ]
+        }
+      ]
+    ],
+    "recipe": null,
+    "size": "3x3",
+    "tag": "Simple Rugs"
+  },
+  {
+    "id": 7539,
+    "name": "simple medium black mat",
+    "details": "Medium rug",
+    "source": "Saharah",
+    "diy": false,
+    "buy": 1500,
+    "sell": 375,
+    "colors": [
+      "Black",
+      "Black"
+    ],
+    "hhaConcepts": [
+      "living room",
+      "facility"
+    ],
+    "variants": [
+      [
+        {
+          "id": 7539,
+          "image": "https://storage.googleapis.com/acdb/rugs/RugSquareSimpleM07.png",
+          "colors": [
+            "Black",
+            "Black"
+          ]
+        }
+      ]
+    ],
+    "recipe": null,
+    "size": "3x3",
+    "tag": "Simple Rugs"
+  },
+  {
+    "id": 7523,
+    "name": "simple medium blue mat",
+    "details": "Medium rug",
+    "source": "Saharah",
+    "diy": false,
+    "buy": 1500,
+    "sell": 375,
+    "colors": [
+      "Blue",
+      "Blue"
+    ],
+    "hhaConcepts": [
+      "living room",
+      "facility"
+    ],
+    "variants": [
+      [
+        {
+          "id": 7523,
+          "image": "https://storage.googleapis.com/acdb/rugs/RugSquareSimpleM02.png",
+          "colors": [
+            "Blue",
+            "Blue"
+          ]
+        }
+      ]
+    ],
+    "recipe": null,
+    "size": "3x3",
+    "tag": "Simple Rugs"
+  },
+  {
+    "id": 7519,
+    "name": "simple medium brown mat",
+    "details": "Medium rug",
+    "source": "Saharah",
+    "diy": false,
+    "buy": 1500,
+    "sell": 375,
+    "colors": [
+      "Brown",
+      "Brown"
+    ],
+    "hhaConcepts": [
+      "living room",
+      "facility"
+    ],
+    "variants": [
+      [
+        {
+          "id": 7519,
+          "image": "https://storage.googleapis.com/acdb/rugs/RugSquareSimpleM01.png",
+          "colors": [
+            "Brown",
+            "Brown"
+          ]
+        }
+      ]
+    ],
+    "recipe": null,
+    "size": "3x3",
+    "tag": "Simple Rugs"
+  },
+  {
+    "id": 7536,
+    "name": "simple medium orange mat",
+    "details": "Medium rug",
+    "source": "Saharah",
+    "diy": false,
+    "buy": 1500,
+    "sell": 375,
+    "colors": [
+      "Orange",
+      "Orange"
+    ],
+    "hhaConcepts": [
+      "living room",
+      "facility"
+    ],
+    "variants": [
+      [
+        {
+          "id": 7536,
+          "image": "https://storage.googleapis.com/acdb/rugs/RugSquareSimpleM05.png",
+          "colors": [
+            "Orange",
+            "Orange"
+          ]
+        }
+      ]
+    ],
+    "recipe": null,
+    "size": "3x3",
+    "tag": "Simple Rugs"
+  },
+  {
+    "id": 7538,
+    "name": "simple medium purple mat",
+    "details": "Medium rug",
+    "source": "Saharah",
+    "diy": false,
+    "buy": 1500,
+    "sell": 375,
+    "colors": [
+      "Purple",
+      "Purple"
+    ],
+    "hhaConcepts": [
+      "living room",
+      "facility"
+    ],
+    "variants": [
+      [
+        {
+          "id": 7538,
+          "image": "https://storage.googleapis.com/acdb/rugs/RugSquareSimpleM06.png",
+          "colors": [
+            "Purple",
+            "Purple"
+          ]
+        }
+      ]
+    ],
+    "recipe": null,
+    "size": "3x3",
+    "tag": "Simple Rugs"
+  },
+  {
+    "id": 7540,
+    "name": "simple medium red mat",
+    "details": "Medium rug",
+    "source": "Saharah",
+    "diy": false,
+    "buy": 1500,
+    "sell": 375,
+    "colors": [
+      "Red",
+      "Red"
+    ],
+    "hhaConcepts": [
+      "living room",
+      "facility"
+    ],
+    "variants": [
+      [
+        {
+          "id": 7540,
+          "image": "https://storage.googleapis.com/acdb/rugs/RugSquareSimpleM04.png",
+          "colors": [
+            "Red",
+            "Red"
+          ]
+        }
+      ]
+    ],
+    "recipe": null,
+    "size": "3x3",
+    "tag": "Simple Rugs"
+  },
+  {
+    "id": 7518,
+    "name": "simple navy bath mat",
+    "details": "Small rug",
+    "source": "Saharah",
+    "diy": false,
+    "buy": 1000,
+    "sell": 250,
+    "colors": [
+      "Gray",
+      "Gray"
+    ],
+    "hhaConcepts": [
+      "bathroom",
+      "None"
+    ],
+    "variants": [
+      [
+        {
+          "id": 7518,
+          "image": "https://storage.googleapis.com/acdb/rugs/RugRectBathmatS01.png",
+          "colors": [
+            "Gray",
+            "Gray"
+          ]
+        }
+      ]
+    ],
+    "recipe": null,
+    "size": "2x1",
+    "tag": "Slender Rugs"
+  },
+  {
+    "id": 7517,
+    "name": "simple pink bath mat",
+    "details": "Small rug",
+    "source": "Saharah",
+    "diy": false,
+    "buy": 1000,
+    "sell": 250,
+    "colors": [
+      "Pink",
+      "Pink"
+    ],
+    "hhaConcepts": [
+      "bathroom",
+      "None"
+    ],
+    "variants": [
+      [
+        {
+          "id": 7517,
+          "image": "https://storage.googleapis.com/acdb/rugs/RugRectBathmatS02.png",
+          "colors": [
+            "Pink",
+            "Pink"
+          ]
+        }
+      ]
+    ],
+    "recipe": null,
+    "size": "2x1",
+    "tag": "Slender Rugs"
+  },
+  {
+    "id": 7520,
+    "name": "simple small avocado mat",
+    "details": "Small rug",
+    "source": "Saharah",
+    "diy": false,
+    "buy": 1000,
+    "sell": 250,
+    "colors": [
+      "Green",
+      "Green"
+    ],
+    "hhaConcepts": [
+      "living room",
+      "facility"
+    ],
+    "variants": [
+      [
+        {
+          "id": 7520,
+          "image": "https://storage.googleapis.com/acdb/rugs/RugSquareSimpleS03.png",
+          "colors": [
+            "Green",
+            "Green"
+          ]
+        }
+      ]
+    ],
+    "recipe": null,
+    "size": "2x2",
+    "tag": "Simple Rugs"
+  },
+  {
+    "id": 7543,
+    "name": "simple small black mat",
+    "details": "Small rug",
+    "source": "Saharah",
+    "diy": false,
+    "buy": 1000,
+    "sell": 250,
+    "colors": [
+      "Black",
+      "Black"
+    ],
+    "hhaConcepts": [
+      "living room",
+      "facility"
+    ],
+    "variants": [
+      [
+        {
+          "id": 7543,
+          "image": "https://storage.googleapis.com/acdb/rugs/RugSquareSimpleS07.png",
+          "colors": [
+            "Black",
+            "Black"
+          ]
+        }
+      ]
+    ],
+    "recipe": null,
+    "size": "2x2",
+    "tag": "Simple Rugs"
+  },
+  {
+    "id": 7521,
+    "name": "simple small blue mat",
+    "details": "Small rug",
+    "source": "Saharah",
+    "diy": false,
+    "buy": 1000,
+    "sell": 250,
+    "colors": [
+      "Blue",
+      "Blue"
+    ],
+    "hhaConcepts": [
+      "living room",
+      "facility"
+    ],
+    "variants": [
+      [
+        {
+          "id": 7521,
+          "image": "https://storage.googleapis.com/acdb/rugs/RugSquareSimpleS02.png",
+          "colors": [
+            "Blue",
+            "Blue"
+          ]
+        }
+      ]
+    ],
+    "recipe": null,
+    "size": "2x2",
+    "tag": "Simple Rugs"
+  },
+  {
+    "id": 7522,
+    "name": "simple small brown mat",
+    "details": "Small rug",
+    "source": "Saharah",
+    "diy": false,
+    "buy": 1000,
+    "sell": 250,
+    "colors": [
+      "Brown",
+      "Brown"
+    ],
+    "hhaConcepts": [
+      "living room",
+      "facility"
+    ],
+    "variants": [
+      [
+        {
+          "id": 7522,
+          "image": "https://storage.googleapis.com/acdb/rugs/RugSquareSimpleS01.png",
+          "colors": [
+            "Brown",
+            "Brown"
+          ]
+        }
+      ]
+    ],
+    "recipe": null,
+    "size": "2x2",
+    "tag": "Simple Rugs"
+  },
+  {
+    "id": 7541,
+    "name": "simple small orange mat",
+    "details": "Small rug",
+    "source": "Saharah",
+    "diy": false,
+    "buy": 1000,
+    "sell": 250,
+    "colors": [
+      "Orange",
+      "Orange"
+    ],
+    "hhaConcepts": [
+      "living room",
+      "facility"
+    ],
+    "variants": [
+      [
+        {
+          "id": 7541,
+          "image": "https://storage.googleapis.com/acdb/rugs/RugSquareSimpleS05.png",
+          "colors": [
+            "Orange",
+            "Orange"
+          ]
+        }
+      ]
+    ],
+    "recipe": null,
+    "size": "2x2",
+    "tag": "Simple Rugs"
+  },
+  {
+    "id": 7542,
+    "name": "simple small purple mat",
+    "details": "Small rug",
+    "source": "Saharah",
+    "diy": false,
+    "buy": 1000,
+    "sell": 250,
+    "colors": [
+      "Purple",
+      "Purple"
+    ],
+    "hhaConcepts": [
+      "living room",
+      "facility"
+    ],
+    "variants": [
+      [
+        {
+          "id": 7542,
+          "image": "https://storage.googleapis.com/acdb/rugs/RugSquareSimpleS06.png",
+          "colors": [
+            "Purple",
+            "Purple"
+          ]
+        }
+      ]
+    ],
+    "recipe": null,
+    "size": "2x2",
+    "tag": "Simple Rugs"
+  },
+  {
+    "id": 7537,
+    "name": "simple small red mat",
+    "details": "Small rug",
+    "source": "Saharah",
+    "diy": false,
+    "buy": 1000,
+    "sell": 250,
+    "colors": [
+      "Red",
+      "Red"
+    ],
+    "hhaConcepts": [
+      "living room",
+      "facility"
+    ],
+    "variants": [
+      [
+        {
+          "id": 7537,
+          "image": "https://storage.googleapis.com/acdb/rugs/RugSquareSimpleS04.png",
+          "colors": [
+            "Red",
+            "Red"
+          ]
+        }
+      ]
+    ],
+    "recipe": null,
+    "size": "2x2",
+    "tag": "Simple Rugs"
+  },
+  {
+    "id": 7371,
+    "name": "sloppy rug",
+    "details": "Large rug",
+    "source": "Saharah",
+    "diy": false,
+    "buy": 2000,
+    "sell": 500,
+    "colors": [
+      "Light blue",
+      "Light blue"
+    ],
+    "hhaConcepts": [
+      "living room",
+      "child's room"
+    ],
+    "variants": [
+      [
+        {
+          "id": 7371,
+          "image": "https://storage.googleapis.com/acdb/rugs/RugOtherSloppyL00.png",
+          "colors": [
+            "Light blue",
+            "Light blue"
+          ]
+        }
+      ]
+    ],
+    "recipe": null,
+    "size": "4x4",
+    "tag": "Simple Rugs"
+  },
+  {
+    "id": 7346,
+    "name": "snowflake rug",
+    "details": "Medium rug",
+    "source": "Saharah",
+    "diy": false,
+    "buy": 1500,
+    "sell": 375,
+    "colors": [
+      "Light blue",
+      "White"
+    ],
+    "hhaConcepts": [
+      "freezing cold",
+      "fancy"
+    ],
+    "variants": [
+      [
+        {
+          "id": 7346,
+          "image": "https://storage.googleapis.com/acdb/rugs/RugRoundSnowM00.png",
+          "colors": [
+            "Light blue",
+            "White"
+          ]
+        }
+      ]
+    ],
+    "recipe": null,
+    "size": "3x3",
+    "tag": "Shaggy Round Rugs"
+  },
+  {
+    "id": 7369,
+    "name": "tatami mat",
+    "details": "Medium rug",
+    "source": "Saharah",
+    "diy": false,
+    "buy": 1500,
+    "sell": 375,
+    "colors": [
+      "Green",
+      "Yellow"
+    ],
+    "hhaConcepts": [
+      "zen-style",
+      "None"
+    ],
+    "variants": [
+      [
+        {
+          "id": 7369,
+          "image": "https://storage.googleapis.com/acdb/rugs/RugRectTatamiM00.png",
+          "colors": [
+            "Green",
+            "Yellow"
+          ]
+        }
+      ]
+    ],
+    "recipe": null,
+    "size": "3x2",
+    "tag": "Wood Rugs"
+  },
+  {
+    "id": 7358,
+    "name": "tropical rug",
+    "details": "Medium rug",
+    "source": "Saharah",
+    "diy": false,
+    "buy": 1500,
+    "sell": 375,
+    "colors": [
+      "Green",
+      "Beige"
+    ],
+    "hhaConcepts": [
+      "ocean",
+      "None"
+    ],
+    "variants": [
+      [
+        {
+          "id": 7358,
+          "image": "https://storage.googleapis.com/acdb/rugs/RugRoundIslandM00.png",
+          "colors": [
+            "Green",
+            "Beige"
+          ]
+        }
+      ]
+    ],
+    "recipe": null,
+    "size": "3x3",
+    "tag": "Park Rugs"
+  },
+  {
+    "id": 7579,
+    "name": "turquoise heart rug",
+    "details": "Medium rug",
+    "source": "Saharah",
+    "diy": false,
+    "buy": 1500,
+    "sell": 375,
+    "colors": [
+      "Light blue",
+      "Light blue"
+    ],
+    "hhaConcepts": [
+      "fancy",
+      "child's room"
+    ],
+    "variants": [
+      [
+        {
+          "id": 7579,
+          "image": "https://storage.googleapis.com/acdb/rugs/RugOtherHeartM01.png",
+          "colors": [
+            "Light blue",
+            "Light blue"
+          ]
+        }
+      ]
+    ],
+    "recipe": null,
+    "size": "3x3",
+    "tag": "Heart Rugs"
+  },
+  {
+    "id": 7578,
+    "name": "white heart rug",
+    "details": "Medium rug",
+    "source": "Saharah",
+    "diy": false,
+    "buy": 1500,
+    "sell": 375,
+    "colors": [
+      "White",
+      "White"
+    ],
+    "hhaConcepts": [
+      "fancy",
+      "child's room"
+    ],
+    "variants": [
+      [
+        {
+          "id": 7578,
+          "image": "https://storage.googleapis.com/acdb/rugs/RugOtherHeartM03.png",
+          "colors": [
+            "White",
+            "White"
+          ]
+        }
+      ]
+    ],
+    "recipe": null,
+    "size": "3x3",
+    "tag": "Heart Rugs"
+  },
+  {
+    "id": 7338,
+    "name": "white message mat",
+    "details": "Small rug",
+    "source": "Saharah",
+    "diy": false,
+    "buy": 1000,
+    "sell": 250,
+    "colors": [
+      "White",
+      "White"
+    ],
+    "hhaConcepts": [
+      "child's room",
+      "None"
+    ],
+    "variants": [
+      [
+        {
+          "id": 7338,
+          "image": "https://storage.googleapis.com/acdb/rugs/RugOtherMessageS00.png",
+          "colors": [
+            "White",
+            "White"
+          ]
+        }
+      ]
+    ],
+    "recipe": null,
+    "size": "2x1",
+    "tag": "Message Mats"
+  },
+  {
+    "id": 8757,
+    "name": "white rose rug",
+    "details": "Medium rug",
+    "source": "Saharah",
+    "diy": false,
+    "buy": 1500,
+    "sell": 375,
+    "colors": [
+      "White",
+      "White"
+    ],
+    "hhaConcepts": [
+      "fancy",
+      "expensive"
+    ],
+    "variants": [
+      [
+        {
+          "id": 8757,
+          "image": "https://storage.googleapis.com/acdb/rugs/RugOtherRoseM03.png",
+          "colors": [
+            "White",
+            "White"
+          ]
+        }
+      ]
+    ],
+    "recipe": null,
+    "size": "3x3",
+    "tag": "Rose Rug"
+  },
+  {
+    "id": 7335,
+    "name": "white simple medium mat",
+    "details": "Medium rug",
+    "source": "Saharah",
+    "diy": false,
+    "buy": 1500,
+    "sell": 375,
+    "colors": [
+      "Beige",
+      "White"
+    ],
+    "hhaConcepts": [
+      "living room",
+      "facility"
+    ],
+    "variants": [
+      [
+        {
+          "id": 7335,
+          "image": "https://storage.googleapis.com/acdb/rugs/RugSquareSimpleM00.png",
+          "colors": [
+            "Beige",
+            "White"
+          ]
+        }
+      ]
+    ],
+    "recipe": null,
+    "size": "3x3",
+    "tag": "Simple Rugs"
+  },
+  {
+    "id": 7336,
+    "name": "white simple small mat",
+    "details": "Small rug",
+    "source": "Saharah",
+    "diy": false,
+    "buy": 1000,
+    "sell": 250,
+    "colors": [
+      "Beige",
+      "White"
+    ],
+    "hhaConcepts": [
+      "living room",
+      "facility"
+    ],
+    "variants": [
+      [
+        {
+          "id": 7336,
+          "image": "https://storage.googleapis.com/acdb/rugs/RugSquareSimpleS00.png",
+          "colors": [
+            "Beige",
+            "White"
+          ]
+        }
+      ]
+    ],
+    "recipe": null,
+    "size": "2x2",
+    "tag": "Simple Rugs"
+  },
+  {
+    "id": 7381,
+    "name": "white wooden-deck rug",
+    "details": "Medium rug",
+    "source": "Saharah",
+    "diy": false,
+    "buy": 1500,
+    "sell": 375,
+    "colors": [
+      "White",
+      "White"
+    ],
+    "hhaConcepts": [
+      "outdoors",
+      "None"
+    ],
+    "variants": [
+      [
+        {
+          "id": 7381,
+          "image": "https://storage.googleapis.com/acdb/rugs/RugRectDeckM02.png",
+          "colors": [
+            "White",
+            "White"
+          ]
+        }
+      ]
+    ],
+    "recipe": null,
+    "size": "3x2",
+    "tag": "Wood Rugs"
+  },
+  {
+    "id": 7352,
+    "name": "yellow argyle rug",
+    "details": "Large rug",
+    "source": "Saharah",
+    "diy": false,
+    "buy": 2000,
+    "sell": 500,
+    "colors": [
+      "Yellow",
+      "Yellow"
+    ],
+    "hhaConcepts": [
+      "living room",
+      "fancy"
+    ],
+    "variants": [
+      [
+        {
+          "id": 7352,
+          "image": "https://storage.googleapis.com/acdb/rugs/RugRectArgyleL00.png",
+          "colors": [
+            "Yellow",
+            "Yellow"
+          ]
+        }
+      ]
+    ],
+    "recipe": null,
+    "size": "4x3",
+    "tag": "Slender Pattern Rugs"
+  },
+  {
+    "id": 11103,
+    "name": "yellow blocks rug",
+    "details": "Medium rug",
+    "source": "Saharah",
+    "diy": false,
+    "buy": 1500,
+    "sell": 375,
+    "colors": [
+      "Yellow",
+      "Brown"
+    ],
+    "hhaConcepts": [
+      "living room",
+      "None"
+    ],
+    "variants": [
+      [
+        {
+          "id": 11103,
+          "image": "https://storage.googleapis.com/acdb/rugs/RugSquareBlockM02.png",
+          "colors": [
+            "Yellow",
+            "Brown"
+          ]
+        }
+      ]
+    ],
+    "recipe": null,
+    "size": "3x3",
+    "tag": "Pattern Rugs"
+  },
+  {
+    "id": 7462,
+    "name": "yellow checked rug",
+    "details": "Large rug",
+    "source": "Saharah",
+    "diy": false,
+    "buy": 2000,
+    "sell": 500,
+    "colors": [
+      "Yellow",
+      "Green"
+    ],
+    "hhaConcepts": [
+      "living room",
+      "child's room"
+    ],
+    "variants": [
+      [
+        {
+          "id": 7462,
+          "image": "https://storage.googleapis.com/acdb/rugs/RugSquareCheckQuiltL01.png",
+          "colors": [
+            "Yellow",
+            "Green"
+          ]
+        }
+      ]
+    ],
+    "recipe": null,
+    "size": "4x4",
+    "tag": "Pattern Rugs"
+  },
+  {
+    "id": 9315,
+    "name": "yellow kilim-style carpet",
+    "details": "Large rug",
+    "source": "Saharah",
+    "diy": false,
+    "buy": 2000,
+    "sell": 500,
+    "colors": [
+      "Yellow",
+      "Beige"
+    ],
+    "hhaConcepts": [
+      "living room",
+      "None"
+    ],
+    "variants": [
+      [
+        {
+          "id": 9315,
+          "image": "https://storage.googleapis.com/acdb/rugs/RugSquareKirimL03.png",
+          "colors": [
+            "Yellow",
+            "Beige"
+          ]
+        }
+      ]
+    ],
+    "recipe": null,
+    "size": "5x5",
+    "tag": "Pattern Rugs"
+  },
+  {
+    "id": 8395,
+    "name": "yellow kitchen mat",
+    "details": "Small rug",
+    "source": "Saharah",
+    "diy": false,
+    "buy": 1000,
+    "sell": 250,
+    "colors": [
+      "Yellow",
+      "Yellow"
+    ],
+    "hhaConcepts": [
+      "kitchen",
+      "None"
+    ],
+    "variants": [
+      [
+        {
+          "id": 8395,
+          "image": "https://storage.googleapis.com/acdb/rugs/RugRectKitchenS01.png",
+          "colors": [
+            "Yellow",
+            "Yellow"
+          ]
+        }
+      ]
+    ],
+    "recipe": null,
+    "size": "2x1",
+    "tag": "Kitchen Rugs"
+  },
+  {
+    "id": 9544,
+    "name": "yellow medium round mat",
+    "details": "Medium rug",
+    "source": "Saharah",
+    "diy": false,
+    "buy": 1500,
+    "sell": 375,
+    "colors": [
+      "Yellow",
+      "Yellow"
+    ],
+    "hhaConcepts": [
+      "living room",
+      "child's room"
+    ],
+    "variants": [
+      [
+        {
+          "id": 9544,
+          "image": "https://storage.googleapis.com/acdb/rugs/RugRoundSimpleM03.png",
+          "colors": [
+            "Yellow",
+            "Yellow"
+          ]
+        }
+      ]
+    ],
+    "recipe": null,
+    "size": "3x3",
+    "tag": "Shaggy Round Rugs"
+  },
+  {
+    "id": 9311,
+    "name": "yellow message mat",
+    "details": "Small rug",
+    "source": "Saharah",
+    "diy": false,
+    "buy": 1000,
+    "sell": 250,
+    "colors": [
+      "Yellow",
+      "Yellow"
+    ],
+    "hhaConcepts": [
+      "child's room",
+      "None"
+    ],
+    "variants": [
+      [
+        {
+          "id": 9311,
+          "image": "https://storage.googleapis.com/acdb/rugs/RugOtherMessageS02.png",
+          "colors": [
+            "Yellow",
+            "Yellow"
+          ]
+        }
+      ]
+    ],
+    "recipe": null,
+    "size": "2x1",
+    "tag": "Message Mats"
+  },
+  {
+    "id": 8036,
+    "name": "yellow Persian rug",
+    "details": "Large rug",
+    "source": "Saharah",
+    "diy": false,
+    "buy": 2000,
+    "sell": 500,
+    "colors": [
+      "Yellow",
+      "Beige"
+    ],
+    "hhaConcepts": [
+      "expensive",
+      "living room"
+    ],
+    "variants": [
+      [
+        {
+          "id": 8036,
+          "image": "https://storage.googleapis.com/acdb/rugs/RugSquarePersianL02.png",
+          "colors": [
+            "Yellow",
+            "Beige"
+          ]
+        }
+      ]
+    ],
+    "recipe": null,
+    "size": "5x5",
+    "tag": "Pattern Rugs"
+  },
+  {
+    "id": 8759,
+    "name": "yellow rose rug",
+    "details": "Medium rug",
+    "source": "Saharah",
+    "diy": false,
+    "buy": 1500,
+    "sell": 375,
+    "colors": [
+      "Yellow",
+      "Yellow"
+    ],
+    "hhaConcepts": [
+      "fancy",
+      "expensive"
+    ],
+    "variants": [
+      [
+        {
+          "id": 8759,
+          "image": "https://storage.googleapis.com/acdb/rugs/RugOtherRoseM02.png",
+          "colors": [
+            "Yellow",
+            "Yellow"
+          ]
+        }
+      ]
+    ],
+    "recipe": null,
+    "size": "3x3",
+    "tag": "Rose Rug"
+  },
+  {
+    "id": 9547,
+    "name": "yellow small round mat",
+    "details": "Small rug",
+    "source": "Saharah",
+    "diy": false,
+    "buy": 1000,
+    "sell": 250,
+    "colors": [
+      "Yellow",
+      "Yellow"
+    ],
+    "hhaConcepts": [
+      "living room",
+      "child's room"
+    ],
+    "variants": [
+      [
+        {
+          "id": 9547,
+          "image": "https://storage.googleapis.com/acdb/rugs/RugRoundSimpleS03.png",
+          "colors": [
+            "Yellow",
+            "Yellow"
+          ]
+        }
+      ]
+    ],
+    "recipe": null,
+    "size": "2x2",
+    "tag": "Shaggy Round Rugs"
+  },
+  {
+    "id": 7351,
+    "name": "yellow stripes rug",
+    "details": "Large rug",
+    "source": "Saharah",
+    "diy": false,
+    "buy": 2000,
+    "sell": 500,
+    "colors": [
+      "Yellow",
+      "White"
+    ],
+    "hhaConcepts": [
+      "fancy",
+      "child's room"
+    ],
+    "variants": [
+      [
+        {
+          "id": 7351,
+          "image": "https://storage.googleapis.com/acdb/rugs/RugRectBorderL00.png",
+          "colors": [
+            "Yellow",
+            "White"
+          ]
+        }
+      ]
+    ],
+    "recipe": null,
+    "size": "4x3",
+    "tag": "Slender Pattern Rugs"
+  },
+  {
+    "id": 7403,
+    "name": "yellow vinyl sheet",
+    "details": "Medium rug",
+    "source": "Saharah",
+    "diy": false,
+    "buy": 1500,
+    "sell": 375,
+    "colors": [
+      "Yellow",
+      "Colorful"
+    ],
+    "hhaConcepts": [
+      "garden",
+      "None"
+    ],
+    "variants": [
+      [
+        {
+          "id": 7403,
+          "image": "https://storage.googleapis.com/acdb/rugs/RugRectVinylM03.png",
+          "colors": [
+            "Yellow",
+            "Colorful"
+          ]
+        }
+      ]
+    ],
+    "recipe": null,
+    "size": "3x2",
+    "tag": "Slender Pattern Rugs"
+  },
+  {
+    "id": 7596,
+    "name": "yellow-design kitchen mat",
+    "details": "Small rug",
+    "source": "Saharah",
+    "diy": false,
+    "buy": 1000,
+    "sell": 250,
+    "colors": [
+      "Yellow",
+      "Black"
+    ],
+    "hhaConcepts": [
+      "kitchen",
+      "None"
+    ],
+    "variants": [
+      [
+        {
+          "id": 7596,
+          "image": "https://storage.googleapis.com/acdb/rugs/RugRectNativeKitchenS02.png",
+          "colors": [
+            "Yellow",
+            "Black"
+          ]
+        }
+      ]
+    ],
+    "recipe": null,
+    "size": "2x1",
+    "tag": "Kitchen Rugs"
+  }
+]

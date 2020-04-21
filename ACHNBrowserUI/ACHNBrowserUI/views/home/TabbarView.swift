@@ -7,13 +7,61 @@
 //
 
 import SwiftUI
+import CoreData
+
+struct FetchRequests {
+    static func allItems() -> NSFetchRequest<ItemEntity> {
+        let request: NSFetchRequest<ItemEntity> = ItemEntity.fetchRequest()
+        request.sortDescriptors = [NSSortDescriptor(key: "name", ascending: true)]
+        return request
+    }
+}
+
+struct Demo: View {
+    @FetchRequest(fetchRequest: FetchRequests.allItems()) var items
+    
+    var body: some View {
+        List {
+            ForEach(items, id: \.self) { item in
+                VStack(alignment: .leading) {
+                    ItemImage(path: item.image?.absoluteString, size: 25)
+                    Text("\(item.id)")
+                    Group {
+                        item.name.map {
+                            Text($0)
+                        }
+                        item.source.map {
+                            Text($0)
+                        }
+                        item.detail.map {
+                            Text($0)
+                        }
+                        item.tag.map {
+                            Text($0)
+                        }
+                    }
+                    item.recipe.map { (recipe: RecipeEntity) in
+                        VStack(alignment: .leading) {
+                            Text("Recipe: \(recipe.name ?? "No name")")
+                            Text("Recipe Mat: \(recipe.materials?.count ?? 0)")
+                        }
+                    }
+                    Text("\(item.variants?.count ?? 0) variants")
+                    Text(item.colors.description)
+                    Text("\(item.buy)")
+                    Text("\(item.sell)")
+                }
+            }
+        }
+    }
+}
 
 struct TabbarView: View {
     enum Tab: Int {
-        case dashboard, items, villagers, collection, turnips
+        case demo, dashboard, items, villagers, collection, turnips
     }
     
-    @State var selectedTab = Tab.dashboard
+    @State var selectedTab = Tab.demo
     
     func tabbarItem(text: String, image: String) -> some View {
         VStack {
@@ -25,6 +73,9 @@ struct TabbarView: View {
     var body: some View {
         TabView(selection: $selectedTab) {
             Group {
+                Demo().tabItem{
+                    self.tabbarItem(text: "Demo", image: "icon-bells")
+                }.tag(Tab.demo)
                 DashboardView().tabItem{
                     self.tabbarItem(text: "Dashboard", image: "icon-bells")
                 }.tag(Tab.dashboard)

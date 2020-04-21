@@ -52,7 +52,7 @@ csv()
             })) 
         })
         .then(json => {
-            let data = JSON.stringify(uniqBy(json, 'id'));
+            let data = JSON.stringify(uniqBy(json, 'id'), null, 2);
             fs.writeFileSync(`./output/${k}.json`, data);
         })
         })
