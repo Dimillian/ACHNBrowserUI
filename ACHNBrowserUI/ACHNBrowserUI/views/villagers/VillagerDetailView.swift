@@ -11,15 +11,19 @@ import SwiftUI
 struct VillagerDetailView: View {
     let villager: Villager
     
+    @State private var backgroundColor = Color.dialogue
+    @State private var textColor = Color.text
+    @State private var secondaryTextColor = Color.secondaryText
+    
     private func infoCell(title: String, value: String) -> some View {
         HStack {
             Text(title)
-                .foregroundColor(.text)
+                .foregroundColor(textColor)
                 .font(.headline)
                 .fontWeight(.bold)
             Spacer()
             Text(value)
-                .foregroundColor(.secondaryText)
+                .foregroundColor(secondaryTextColor)
                 .font(.subheadline)
         }
     }
@@ -38,7 +42,21 @@ struct VillagerDetailView: View {
                 infoCell(title: "Species", value: villager.species).padding()
                 infoCell(title: "Gender", value: villager.gender).padding()
             }
-        }.background(Color.dialogue)
+        }
+        .background(backgroundColor)
         .navigationBarTitle(villager.name["name-en"] ?? "")
+        .onAppear {
+            let url = ACNHApiService.BASE_URL.absoluteString +
+                ACNHApiService.Endpoint.villagerIcon(id: self.villager.id).path()
+            ImageService.shared.getImageColors(key: url) { colors in
+                if let colors = colors {
+                    withAnimation(.easeInOut) {
+                        self.backgroundColor = Color(colors.background)
+                        self.textColor = Color(colors.primary)
+                        self.secondaryTextColor = Color(colors.detail)
+                    }
+                }
+            }
+        }
     }
 }

@@ -27,6 +27,15 @@
           "revision": "8e61e4451edd87840229c7305905d96f872d07a4",
           "version": "1.3.3"
         }
+      },
+      {
+        "package": "UIImageColors",
+        "repositoryURL": "https://github.com/jathu/UIImageColors",
+        "state": {
+          "branch": null,
+          "revision": "e49e6c32ea556e9fa0109dc79686bea4a10d41a2",
+          "version": "2.2.0"
+        }
       }
     ]
   },

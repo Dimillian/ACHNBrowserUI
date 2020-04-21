@@ -10,23 +10,20 @@ import Foundation
 import SwiftUI
 import Combine
 
+import UIImageColors
+import SDWebImage
+
 public class ImageService {
     private static let SERVICE_URL = "https://i.imgur.com/"
     public static let shared = ImageService()
-    
-    public enum ImageError: Error {
-        case decodingError
-    }
-    
-    public func fetchImage(key: String) -> AnyPublisher<UIImage?, Never> {
+        
+    public func getImageColors(key: String, completionHandler: @escaping ((UIImageColors?) -> Void)) {
         let url = key.starts(with: "http") ? URL(string: key) : URL(string: "\(ImageService.SERVICE_URL)\(key).png")
-        return URLSession.shared.dataTaskPublisher(for: url!)
-            .tryMap { (data, response) -> UIImage? in
-                return UIImage(data: data)
-        }.catch { error in
-            return Just(nil)
+        SDWebImageDownloader.shared.downloadImage(with: url!) { (image, _, _, _) in
+            image?.getColors { colors in
+                completionHandler(colors)
+            }
         }
-        .eraseToAnyPublisher()
     }
 }
 
