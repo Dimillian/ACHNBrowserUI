@@ -43,25 +43,13 @@ class UserCollection: ObservableObject {
     }
     
     func toggleItem(item: Item) -> Bool {
-        var added = false
-        if items.contains(item) {
-            items.removeAll(where: { $0 == item })
-        } else {
-            added = true
-            items.append(item)
-        }
+        let added = items.toggle(item: item)
         save()
         return added
     }
     
     func toggleCritters(critter: Item) -> Bool {
-        var added = false
-        if critters.contains(critter) {
-            critters.removeAll(where: { $0 == critter })
-        } else {
-            critters.append(critter)
-            added = true
-        }
+        let added = critters.toggle(item: critter)
         save()
         return added
     }
@@ -87,5 +75,18 @@ class UserCollection: ObservableObject {
             print("Error while saving collection: \(error.localizedDescription)")
         }
         encoder.dataEncodingStrategy = .base64
+    }
+}
+
+extension Array where Element == Item {
+    mutating func toggle(item: Item) -> Bool {
+        var added = false
+        if contains(item) {
+            removeAll(where: { $0 == item })
+        } else {
+            added = true
+            append(item)
+        }
+        return added
     }
 }

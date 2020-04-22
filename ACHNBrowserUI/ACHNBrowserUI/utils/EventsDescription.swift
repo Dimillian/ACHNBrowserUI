@@ -15,9 +15,9 @@ extension Event {
         case .bunnyDay:
             return "Bunny Day"
         case .bugOff:
-            return "Bugg tourney"
+            return "Bug-Off contest"
         case .cherryBlossumSeason:
-            return "Blossom trees"
+            return "Blossom Season"
         case .earthDay:
             return "Earth Day"
         case .fishingTourney:

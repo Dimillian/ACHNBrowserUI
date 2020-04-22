@@ -49,7 +49,7 @@ struct VillagerDetailView: View {
         .onAppear {
             let url = ACNHApiService.BASE_URL.absoluteString +
                 ACNHApiService.Endpoint.villagerIcon(id: self.villager.id).path()
-            ImageService.shared.getImageColors(key: url) { colors in
+            ImageService.getImageColors(key: url) { colors in
                 if let colors = colors {
                     withAnimation(.easeInOut) {
                         self.backgroundColor = Color(colors.background)

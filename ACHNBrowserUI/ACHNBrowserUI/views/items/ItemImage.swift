@@ -10,13 +10,11 @@ import SwiftUI
 import SDWebImageSwiftUI
 
 struct ItemImage : View {
-    private static let SERVICE_URL = "https://i.imgur.com/"
-
     let path: String?
     let size: CGFloat
     
     var body: some View {
-        WebImage(url: path != nil ? path!.starts(with: "http") ? URL(string: path!) : URL(string: "\(Self.SERVICE_URL)\(path!).png") : nil)
+        WebImage(url: path != nil ? ImageService.computeUrl(key: path!) : nil)
             .resizable()
             .renderingMode(.original)
             .indicator(.activity) 
