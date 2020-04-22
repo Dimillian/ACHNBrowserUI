@@ -30,17 +30,18 @@
         <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="name" optional="YES" attributeType="String"/>
         <attribute name="sell" optional="YES" attributeType="Integer 64" usesScalarValueType="YES"/>
+        <attribute name="set" optional="YES" attributeType="String"/>
         <attribute name="source" optional="YES" attributeType="String"/>
         <attribute name="tag" optional="YES" attributeType="String"/>
         <relationship name="collection" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CollectionEntity" inverseName="items" inverseEntity="CollectionEntity"/>
         <relationship name="critterInfo" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CritterInfoEntity" inverseName="item" inverseEntity="CritterInfoEntity"/>
         <relationship name="hhaInfo" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="HHAInfoEntity" inverseName="item" inverseEntity="HHAInfoEntity"/>
         <relationship name="recipe" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="RecipeEntity" inverseName="item" inverseEntity="RecipeEntity"/>
-        <relationship name="set" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ItemEntity" inverseName="set" inverseEntity="ItemEntity"/>
         <relationship name="variants" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ItemVariantEntity" inverseName="item" inverseEntity="ItemVariantEntity"/>
         <uniquenessConstraints>
             <uniquenessConstraint>
                 <constraint value="id"/>
+                <constraint value="name"/>
             </uniquenessConstraint>
         </uniquenessConstraints>
     </entity>
@@ -64,12 +65,12 @@
         <relationship name="recipe" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="RecipeEntity" inverseName="materials" inverseEntity="RecipeEntity"/>
     </entity>
     <elements>
-        <element name="ItemEntity" positionX="-331.5546875" positionY="29.36328125" width="128" height="283"/>
+        <element name="CollectionEntity" positionX="-152.58984375" positionY="30.33203125" width="128" height="73"/>
         <element name="CritterInfoEntity" positionX="-341.1171875" positionY="336.49609375" width="128" height="163"/>
         <element name="HHAInfoEntity" positionX="-125.5625" positionY="357.72265625" width="128" height="118"/>
+        <element name="ItemEntity" positionX="-331.5546875" positionY="29.36328125" width="128" height="283"/>
+        <element name="ItemVariantEntity" positionX="-508.46484375" positionY="252.40234375" width="128" height="118"/>
         <element name="RecipeEntity" positionX="-104.7421875" positionY="221.57421875" width="128" height="118"/>
         <element name="RecipeItemEntity" positionX="61.58203125" positionY="300.56640625" width="128" height="88"/>
-        <element name="ItemVariantEntity" positionX="-508.46484375" positionY="252.40234375" width="128" height="118"/>
-        <element name="CollectionEntity" positionX="-152.58984375" positionY="30.33203125" width="128" height="73"/>
     </elements>
 </model>

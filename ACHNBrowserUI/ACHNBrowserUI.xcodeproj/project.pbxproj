@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		680083E92450B2020076C8A2 /* items.json in Resources */ = {isa = PBXBuildFile; fileRef = 680083E82450B2020076C8A2 /* items.json */; };
 		68345579244C994C0072FC0C /* LikeButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68345578244C994C0072FC0C /* LikeButtonView.swift */; };
 		6834557B244CA8E10072FC0C /* URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6834557A244CA8E10072FC0C /* URL.swift */; };
 		68345589244E4DEF0072FC0C /* ACNHEvents in Frameworks */ = {isa = PBXBuildFile; productRef = 68345588244E4DEF0072FC0C /* ACNHEvents */; };
@@ -130,6 +131,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		680083E82450B2020076C8A2 /* items.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = items.json; path = ../../../Scripts/json/items.json; sourceTree = "<group>"; };
 		68345578244C994C0072FC0C /* LikeButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeButtonView.swift; sourceTree = "<group>"; };
 		6834557A244CA8E10072FC0C /* URL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URL.swift; sourceTree = "<group>"; };
 		6834558A244E4E0B0072FC0C /* EventTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventTextView.swift; sourceTree = "<group>"; };
@@ -297,6 +299,7 @@
 		692C0B2D245017D9004847A1 /* import */ = {
 			isa = PBXGroup;
 			children = (
+				680083E82450B2020076C8A2 /* items.json */,
 				692C0B37245017E5004847A1 /* accessories.json */,
 				692C0B3F245017E5004847A1 /* bags.json */,
 				692C0B34245017E4004847A1 /* bottoms.json */,
@@ -682,6 +685,7 @@
 				69AF8C5D243E2841001DD9CB /* LaunchScreen.storyboard in Resources */,
 				692C0B5F245017E5004847A1 /* wallpapers.json in Resources */,
 				692C2C272444448E00E5B818 /* accessories in Resources */,
+				680083E92450B2020076C8A2 /* items.json in Resources */,
 				692C2C342444448E00E5B818 /* headwear in Resources */,
 				692C0B4A245017E5004847A1 /* headwear.json in Resources */,
 				69AF8C7A243E4C78001DD9CB /* Colors.xcassets in Resources */,
