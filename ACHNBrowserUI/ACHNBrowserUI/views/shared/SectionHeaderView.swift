@@ -13,12 +13,13 @@ struct SectionHeaderView: View {
     
     var body: some View {
         Group {
-            HStack {
-                Text(text).font(.headline)
+            HStack(spacing: 16) {
+                Text(text)
+                    .font(.headline)
+                    .padding(8)
+                    .background(Color.dialogueReverse)
+                    .cornerRadius(20)
             }
-            .padding(8)
-            .background(Color.dialogueReverse)
-            .cornerRadius(20)
         }.padding(.leading, -8)
     }
 }

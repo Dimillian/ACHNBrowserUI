@@ -12,9 +12,9 @@ struct CalendarView: View {
     let selectedMonths: [String]
     
     private let currentMonth = Int(Item.monthFormatter.string(from: Date()))!
-    private let months = [["jan", "feb", "mar", "apr"],
-                          ["may", "jun", "jul", "aug"],
-                          ["sep","oct", "nov", "dec"]]
+    private let months = [["jan.", "feb.", "mar.", "apr."],
+                          ["may", "june", "july", "aug."],
+                          ["sept.","oct.", "nov.", "dec."]]
 
     private func makeMonthPill(month: String, selected: Bool) -> some View {
         let monthsArray = months.flatMap({ $0 })
@@ -24,6 +24,7 @@ struct CalendarView: View {
             .foregroundColor(isCurrentMonth ? .grass : .clear)
         return Text(month.capitalized)
             .font(.callout)
+            .foregroundColor(.black)
             .frame(width: 50, height: 30)
             .overlay(border)
             .background(selected ? Color.catalogSelected : Color.catalogBar)
