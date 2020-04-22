@@ -6,14 +6,14 @@ This is a full featured Animal Crossing helper application entierly in SwiftUI.
 
 # Features
 * Dashboard to track your fishes and bugs. 
-* Turnip.echange integration.
+* Turnip.exchange integration.
 * Nookazon integration. 
 * Full catalog browser with filter, sorting and search.
 * Villagers list.
 * Bookmark anything in the app to add it to your collection.
 * iOS, iPad and macOS (Catalyst support)!
 
-You can use this application for learning about SwiftUI and Combine. It use a very standTrd view, and view model architecture with full use of @State, @Binding, @Published, Observed and Observable object. 
+You can use this application for learning about SwiftUI and Combine. It uses a very standard view, and view model architecture with full use of @State, @Binding, @Published, Observed and Observable object. 
 
 ## Credits
 
@@ -25,7 +25,7 @@ As the API is private the app use a local dump of the API at the moment.
 
 Thanks to [Turnip.exchange](https://turnip.exchange/) for the turnips exchange API.
 
-Thanks to [ACHN API](http://acnhapi.com/) for the API that allow us to display villagers and their icons/images.
+Thanks to [ACNH API](http://acnhapi.com/) for the API that allow us to display villagers and their icons/images.
 
 Thanks to [Nookazon](https://nookazon.com/) for item listings and trading platform. 
 
