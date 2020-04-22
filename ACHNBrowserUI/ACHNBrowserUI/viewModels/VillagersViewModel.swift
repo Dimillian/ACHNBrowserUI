@@ -35,13 +35,9 @@ class VillagersViewModel: ObservableObject {
             .projectedValue
             .debounce(for: .milliseconds(300), scheduler: DispatchQueue.main)
             .removeDuplicates()
-            .sink { [weak self] string in
-                if !string.isEmpty {
-                    self?.searchResults = self?.villagers.filter({
-                        $0.name["name-en"]?.lowercased().contains(string.lowercased()) == true
-                    }) ?? []
-                }
-        }
+            .filter { !$0.isEmpty }
+            .map(villagers(with:))
+            .assign(to: \.searchResults, on: self)
     }
     
     func fetch() {
@@ -52,6 +48,12 @@ class VillagersViewModel: ObservableObject {
             .map{ $0.map{ $0.1}.sorted(by: { $0.id > $1.id }) }
             .receive(on: DispatchQueue.main)
             .assign(to: \.villagers, on: self)
+    }
+
+    private func villagers(with string: String) -> [Villager] {
+        villagers.filter {
+            $0.name["name-en"]?.lowercased().contains(string.lowercased()) == true
+        }
     }
 }
 
