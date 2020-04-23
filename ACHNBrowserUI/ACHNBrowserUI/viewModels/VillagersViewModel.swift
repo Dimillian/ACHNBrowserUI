@@ -31,13 +31,12 @@ class VillagersViewModel: ObservableObject {
     }
     
     init() {
-        searchCancellable = _searchText
-            .projectedValue
+        searchCancellable = $searchText
             .debounce(for: .milliseconds(300), scheduler: DispatchQueue.main)
             .removeDuplicates()
             .filter { !$0.isEmpty }
             .map(villagers(with:))
-            .assign(to: \.searchResults, on: self)
+            .sink(receiveValue: { [weak self] in self?.searchResults = $0 })
     }
     
     func fetch() {
