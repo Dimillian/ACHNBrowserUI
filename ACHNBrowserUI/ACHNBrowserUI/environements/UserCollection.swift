@@ -42,6 +42,16 @@ class UserCollection: ObservableObject {
         }
     }
     
+    func caughtIn(list: [Item]) -> Int {
+        var caught = 0
+        for critter in critters {
+            if list.contains(critter) {
+                caught += 1
+            }
+        }
+        return caught
+    }
+    
     func toggleItem(item: Item) -> Bool {
         let added = items.toggle(item: item)
         save()

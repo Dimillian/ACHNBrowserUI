@@ -1,5 +1,5 @@
 //
-//  EventTextView.swift
+//  DashboardEventTextView.swift
 //  ACHNBrowserUI
 //
 //  Created by Eric Lewis on 4/20/20.
@@ -9,7 +9,7 @@
 import SwiftUI
 import ACNHEvents
 
-struct EventTextView: View {
+struct DashboardEventTextView: View {
     let todayEvents = Date().events(for: .north)
     let nextEvent = Event.nextEvent()
     
@@ -48,6 +48,6 @@ struct EventTextView: View {
 
 struct EventTextView_Previews: PreviewProvider {
     static var previews: some View {
-        EventTextView()
+        DashboardEventTextView()
     }
 }

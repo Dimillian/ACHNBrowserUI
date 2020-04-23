@@ -11,7 +11,7 @@
 		68345579244C994C0072FC0C /* LikeButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68345578244C994C0072FC0C /* LikeButtonView.swift */; };
 		6834557B244CA8E10072FC0C /* URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6834557A244CA8E10072FC0C /* URL.swift */; };
 		68345589244E4DEF0072FC0C /* ACNHEvents in Frameworks */ = {isa = PBXBuildFile; productRef = 68345588244E4DEF0072FC0C /* ACNHEvents */; };
-		6834558B244E4E0B0072FC0C /* EventTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6834558A244E4E0B0072FC0C /* EventTextView.swift */; };
+		6834558B244E4E0B0072FC0C /* DashboardEventTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6834558A244E4E0B0072FC0C /* DashboardEventTextView.swift */; };
 		687B57602449EEB100C1E86F /* Island.swift in Sources */ = {isa = PBXBuildFile; fileRef = 687B575F2449EEB100C1E86F /* Island.swift */; };
 		687B57622449EF8C00C1E86F /* TurnipExchangeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 687B57612449EF8C00C1E86F /* TurnipExchangeService.swift */; };
 		687B5768244A030700C1E86F /* TurnipsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 687B5767244A030700C1E86F /* TurnipsView.swift */; };
@@ -25,6 +25,9 @@
 		68DFFFAB244927CA00DEA07F /* Listing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68DFFFAA244927CA00DEA07F /* Listing.swift */; };
 		68DFFFAD24492D7F00DEA07F /* ItemDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68DFFFAC24492D7F00DEA07F /* ItemDetailViewModel.swift */; };
 		69029263244C87A400F767D0 /* Items.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69029262244C87A400F767D0 /* Items.swift */; };
+		692C0B83245176BF004847A1 /* DashboardAvailableCrittersSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 692C0B82245176BF004847A1 /* DashboardAvailableCrittersSection.swift */; };
+		692C0B8524517837004847A1 /* DashboardCollectionProgressSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 692C0B8424517837004847A1 /* DashboardCollectionProgressSection.swift */; };
+		692C0B872451791E004847A1 /* DashboardNookazonListingSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 692C0B862451791E004847A1 /* DashboardNookazonListingSection.swift */; };
 		692C2C1B2444448E00E5B818 /* housewares in Resources */ = {isa = PBXBuildFile; fileRef = 692C2BFE2444448D00E5B818 /* housewares */; };
 		692C2C1C2444448E00E5B818 /* bugs-south in Resources */ = {isa = PBXBuildFile; fileRef = 692C2BFF2444448D00E5B818 /* bugs-south */; };
 		692C2C1D2444448E00E5B818 /* fencing in Resources */ = {isa = PBXBuildFile; fileRef = 692C2C002444448D00E5B818 /* fencing */; };
@@ -106,7 +109,7 @@
 		4C382EE7244E418800F446BA /* DismissingKeyboardOnSwipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DismissingKeyboardOnSwipe.swift; sourceTree = "<group>"; };
 		68345578244C994C0072FC0C /* LikeButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeButtonView.swift; sourceTree = "<group>"; };
 		6834557A244CA8E10072FC0C /* URL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URL.swift; sourceTree = "<group>"; };
-		6834558A244E4E0B0072FC0C /* EventTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventTextView.swift; sourceTree = "<group>"; };
+		6834558A244E4E0B0072FC0C /* DashboardEventTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardEventTextView.swift; sourceTree = "<group>"; };
 		687B575F2449EEB100C1E86F /* Island.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Island.swift; sourceTree = "<group>"; };
 		687B57612449EF8C00C1E86F /* TurnipExchangeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TurnipExchangeService.swift; sourceTree = "<group>"; };
 		687B5767244A030700C1E86F /* TurnipsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TurnipsView.swift; sourceTree = "<group>"; };
@@ -120,6 +123,9 @@
 		68DFFFAC24492D7F00DEA07F /* ItemDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailViewModel.swift; sourceTree = "<group>"; };
 		69029262244C87A400F767D0 /* Items.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Items.swift; sourceTree = "<group>"; };
 		690BD65324404F4300DEECD3 /* ACHNBrowserUI.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ACHNBrowserUI.entitlements; sourceTree = "<group>"; };
+		692C0B82245176BF004847A1 /* DashboardAvailableCrittersSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardAvailableCrittersSection.swift; sourceTree = "<group>"; };
+		692C0B8424517837004847A1 /* DashboardCollectionProgressSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardCollectionProgressSection.swift; sourceTree = "<group>"; };
+		692C0B862451791E004847A1 /* DashboardNookazonListingSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardNookazonListingSection.swift; sourceTree = "<group>"; };
 		692C2BFE2444448D00E5B818 /* housewares */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = housewares; sourceTree = "<group>"; };
 		692C2BFF2444448D00E5B818 /* bugs-south */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "bugs-south"; sourceTree = "<group>"; };
 		692C2C002444448D00E5B818 /* fencing */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = fencing; sourceTree = "<group>"; };
@@ -235,7 +241,10 @@
 			isa = PBXGroup;
 			children = (
 				68BA5833244B9D4100B53811 /* DashboardView.swift */,
-				6834558A244E4E0B0072FC0C /* EventTextView.swift */,
+				6834558A244E4E0B0072FC0C /* DashboardEventTextView.swift */,
+				692C0B82245176BF004847A1 /* DashboardAvailableCrittersSection.swift */,
+				692C0B8424517837004847A1 /* DashboardCollectionProgressSection.swift */,
+				692C0B862451791E004847A1 /* DashboardNookazonListingSection.swift */,
 			);
 			path = dashboard;
 			sourceTree = "<group>";
@@ -624,7 +633,9 @@
 				68DFFFAB244927CA00DEA07F /* Listing.swift in Sources */,
 				68BA582C244B695F00B53811 /* IslandDetailViewModel.swift in Sources */,
 				69CA5EFA244DC73500B275B6 /* Infrastucture.swift in Sources */,
+				692C0B872451791E004847A1 /* DashboardNookazonListingSection.swift in Sources */,
 				69C5F5E72442119500BF8FA4 /* Material.swift in Sources */,
+				692C0B83245176BF004847A1 /* DashboardAvailableCrittersSection.swift in Sources */,
 				69CA5F01244F1AD300B275B6 /* SectionHeaderView.swift in Sources */,
 				69AF8C80243E5EBD001DD9CB /* Categories.swift in Sources */,
 				68BA5828244B646C00B53811 /* IslandDetailView.swift in Sources */,
@@ -636,10 +647,11 @@
 				693E0B22244C596D00D20E46 /* ActiveCrittersView.swift in Sources */,
 				69AF8C51243E283D001DD9CB /* AppDelegate.swift in Sources */,
 				68BA5834244B9D4100B53811 /* DashboardView.swift in Sources */,
+				692C0B8524517837004847A1 /* DashboardCollectionProgressSection.swift in Sources */,
 				4C382EE8244E418800F446BA /* DismissingKeyboardOnSwipe.swift in Sources */,
 				697E63F92449DADE008FB710 /* VillagerRowView.swift in Sources */,
 				697E63EE2449A365008FB710 /* ACNHApiService.swift in Sources */,
-				6834558B244E4E0B0072FC0C /* EventTextView.swift in Sources */,
+				6834558B244E4E0B0072FC0C /* DashboardEventTextView.swift in Sources */,
 				693E0B1F244C526A00D20E46 /* ProgressView.swift in Sources */,
 				6834557B244CA8E10072FC0C /* URL.swift in Sources */,
 				69AF8C53243E283D001DD9CB /* SceneDelegate.swift in Sources */,
