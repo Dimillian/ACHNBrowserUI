@@ -59,17 +59,21 @@ class ItemsViewModel: ObservableObject {
     
     public init(categorie: Categories) {
         self.categorie = categorie
-        searchCancellable = _searchText
-            .projectedValue
+        searchCancellable = $searchText
             .debounce(for: .milliseconds(300), scheduler: DispatchQueue.main)
             .removeDuplicates()
-            .sink { [weak self] string in
-                if !string.isEmpty {
-                    self?.searchItems = self?.items.filter({ $0.name.lowercased().contains(string.lowercased()) }) ?? []
-                }
-        }
+            .filter { !$0.isEmpty }
+            .map(items(with:))
+            .sink(receiveValue: { [weak self] in self?.searchItems = $0 })
+
         itemCancellable = Items.shared.$categories.sink { [weak self] items in
             self?.items = items[categorie] ?? []
+        }
+    }
+
+    private func items(with string: String) -> [Item] {
+        items.filter {
+            $0.name.lowercased().contains(string.lowercased()) == true
         }
     }
 }
