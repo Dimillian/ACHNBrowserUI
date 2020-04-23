@@ -13,34 +13,82 @@ struct DemoCell: View {
     var item: ItemEntity
     
     var body: some View {
-        VStack(alignment: .leading) {
-            ItemImage(path: item.image?.absoluteString, size: 25)
-            Text("\(item.id)")
-            Group {
-                item.name.map {
-                    Text($0)
+        HStack {
+            ItemImage(path: item.image?.absoluteString, size: 60)
+            VStack(alignment: .leading) {
+                Group {
+                    item.name.map {
+                        Text($0)
+                    }
+                    item.source.map {
+                        Text($0)
+                    }
+                    item.detail.map {
+                        Text($0)
+                    }
+                    item.tag.map {
+                        Text($0)
+                    }
                 }
-                item.source.map {
-                    Text($0)
+                item.recipe.map { (recipe: RecipeEntity) in
+                    VStack(alignment: .leading) {
+                        Text("Recipe: \(recipe.name ?? "No name")")
+                        Text("Recipe Mat: \(recipe.materials?.count ?? 0)")
+                    }
                 }
-                item.detail.map {
-                    Text($0)
+                HStack {
+                    Text("\(item.buy)")
+                    Text("\(item.sell)")
                 }
-                item.tag.map {
-                    Text($0)
-                }
+                Text("\(item.variants?.count ?? 0) variants")
+                Text(item.colors.description)
             }
-            item.recipe.map { (recipe: RecipeEntity) in
-                VStack(alignment: .leading) {
-                    Text("Recipe: \(recipe.name ?? "No name")")
-                    Text("Recipe Mat: \(recipe.materials?.count ?? 0)")
-                }
-            }
-            Text("\(item.variants?.count ?? 0) variants")
-            Text(item.colors.description)
-            Text("\(item.buy)")
-            Text("\(item.sell)")
         }
+    }
+}
+
+extension Category {
+    static var clothing: [Category] {
+        [
+            .accessories,
+            .bags,
+            .bottoms,
+            .dresses,
+            .headwear,
+            .tops,
+            .socks,
+            .shoes,
+            .umbrellas,
+        ]
+    }
+    
+    static var critters: [Category] {
+        [
+            .bugs,
+            .fish,
+            .fossils,
+        ]
+    }
+    
+    static var blacklist: [Category] {
+        [
+            .villagers
+        ]
+    }
+    
+    static var categories: [Category] {
+        Array(
+            Set(allCases)
+                .subtracting(critters)
+                .subtracting(clothing)
+                .subtracting(blacklist)
+        ).sorted {
+            $0.rawValue < $1.rawValue
+        }
+    }
+    
+    var title: LocalizedStringKey {
+        LocalizedStringKey(rawValue.localizedCapitalized)
     }
 }
 
@@ -56,9 +104,16 @@ struct FetchRequests {
         return request
     }
     
-    static func items(category: [Category]) -> NSFetchRequest<ItemEntity> {
+    static func items(categories: [Category]) -> NSFetchRequest<ItemEntity> {
         let request: NSFetchRequest<ItemEntity> = ItemEntity.fetchRequest()
-        request.predicate = NSPredicate(format: "category IN %@", category.map { $0.rawValue })
+        request.predicate = NSPredicate(format: "category IN %@", categories.map { $0.rawValue })
+        request.sortDescriptors = [NSSortDescriptor(key: "name", ascending: true)]
+        return request
+    }
+    
+    static func items(set: ItemSet) -> NSFetchRequest<ItemEntity> {
+        let request: NSFetchRequest<ItemEntity> = ItemEntity.fetchRequest()
+        request.predicate = NSPredicate(format: "set = %@", set.rawValue)
         request.sortDescriptors = [NSSortDescriptor(key: "name", ascending: true)]
         return request
     }
@@ -76,20 +131,56 @@ struct DemoItemsView: View {
     }
 }
 
-struct Demo: View {
+struct DemoCategoryView: View {
+    let categories: [Category]
     
     func makeCell(_ category: Category) -> some View {
-        NavigationLink(destination: DemoItemsView(items: .init(fetchRequest: FetchRequests.items(category: category)))) {
-            Text(category.rawValue.localizedCapitalized)
+        NavigationLink(destination:
+            DemoItemsView(items: FetchRequest(fetchRequest: FetchRequests.items(category: category)))
+                .navigationBarTitle(category.title)
+        ) {
+            Text(category.title)
         }
     }
     
     var body: some View {
+        List {
+            NavigationLink(destination: DemoItemsView(items: FetchRequest(fetchRequest: FetchRequests.items(categories: categories)))) {
+                Text("All")
+            }
+            ForEach(categories, id: \.self, content: makeCell)
+        }
+    }
+}
+
+struct Demo: View {
+    let categories = [
+        ("All", Category.allCases),
+        ("Clothing", Category.clothing),
+        ("Critters", Category.critters)
+    ]
+    
+    var body: some View {
         NavigationView {
             List {
-                ForEach(Category.allCases, id: \.self, content: makeCell)
+                ForEach(categories, id: \.self.0) { tuple in
+                    NavigationLink(destination:
+                        DemoCategoryView(categories: tuple.1)
+                            .navigationBarTitle(tuple.0)
+                    ) {
+                        Text(tuple.0)
+                    }
+                }
+                ForEach(Category.categories, id: \.self) { category in
+                    NavigationLink(destination:
+                        DemoItemsView(items: FetchRequest(fetchRequest: FetchRequests.items(category: category)))
+                            .navigationBarTitle(category.title)
+                    ) {
+                        Text(category.title)
+                    }
+                }
             }
-            .navigationBarTitle("Demo", displayMode: .inline)
+            .navigationBarTitle("Categories", displayMode: .inline)
         }
     }
 }

@@ -67,7 +67,7 @@ public enum Category: String, CaseIterable, Codable {
 public struct ResultContent: Codable {
     public let buy: Int?
     public let dIy: Bool?
-    public let contentSet: Set?
+    public let contentSet: ItemSet?
     public let tag: String?
     public let name: String
     public let sell: Int?
@@ -317,7 +317,7 @@ public enum ColoRR: String, Codable {
     case yellow = "Yellow"
 }
 
-public enum Set: String, Codable {
+public enum ItemSet: String, Codable {
     case antique = "antique"
     case bamboo = "bamboo"
     case bunnyDay = "Bunny Day"
@@ -597,7 +597,7 @@ public struct Variation: Codable {
 
 // MARK: - VariationContent
 public struct VariationContent: Codable {
-    public let contentSet: Set?
+    public let contentSet: ItemSet?
     public let tag: Tag?
     public let name: String
     public let image: String
