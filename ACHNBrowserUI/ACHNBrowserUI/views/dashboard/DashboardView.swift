@@ -105,8 +105,9 @@ struct DashboardView: View {
             .navigationBarItems(trailing: preferenceButton)
             .navigationBarTitle("Dashboard",
                                 displayMode: .inline)
+            ActiveCrittersView(activeFishes: viewModel.fishes.filterActive(),
+                               activeBugs: viewModel.bugs.filterActive())
         }
-        .navigationViewStyle(StackNavigationViewStyle())
         .sheet(item: $selectedSheet, content: makeSheet)
     }
 }
