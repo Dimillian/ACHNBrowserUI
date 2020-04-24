@@ -50,17 +50,18 @@ struct CollectionListSections: View {
                 crittersList
             }
         }
-        .overlay(Group {
-            if (selectedTab == .items && collection.items.isEmpty) || (selectedTab == .villagers && collection.villagers.isEmpty) {
-                Text("Tap the stars to start collecting!")
-                    .foregroundColor(.secondary)
-            }
-        })
     }
 }
 
 struct CollectionListView: View {
     @State private var selectedTab: Tabs = .items
+    
+    private var placeholderView: some View {
+        Text("Please select or go stars some items!")
+            .foregroundColor(.secondary)
+            .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
+            .background(Color.dialogue)
+    }
     
     var body: some View {
         NavigationView {
@@ -77,6 +78,8 @@ struct CollectionListView: View {
             .background(Color.dialogue)
             .navigationBarTitle(Text("My Stuff"),
                                 displayMode: .inline)
+            
+            placeholderView
         }
     }
 }

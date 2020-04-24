@@ -87,6 +87,8 @@ struct CategoriesView: View {
             }
             .navigationBarTitle(Text("Catalog"), displayMode: .inline)
             .background(Color.grassBackground)
+            
+            ItemsListView(viewModel: ItemsViewModel(categorie: .housewares))
         }
     }
 }

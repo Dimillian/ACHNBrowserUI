@@ -21,8 +21,8 @@ struct VillagersListView: View {
         }
     }
     
-    private var placeholderView: some View {
-        Text("Please choose a villager.")
+    private var loadingView: some View {
+        Text("Loading...")
             .foregroundColor(.secondary)
             .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
             .background(Color.dialogue)
@@ -44,7 +44,11 @@ struct VillagersListView: View {
             .navigationBarTitle(Text("Villagers"),
                                 displayMode: .inline)
             .modifier(DismissingKeyboardOnSwipe())
-            placeholderView
+            if !viewModel.villagers.isEmpty {
+                VillagerDetailView(villager: viewModel.villagers.first!)
+            } else {
+                loadingView
+            }
         }
     }
 }

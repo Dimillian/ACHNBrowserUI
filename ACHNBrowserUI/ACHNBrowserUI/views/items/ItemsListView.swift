@@ -61,13 +61,6 @@ struct ItemsListView: View {
         return ActionSheet(title: title, buttons: buttons)
     }
     
-    private var placeholderView: some View {
-        Text("Please choose an item.")
-            .foregroundColor(.secondary)
-            .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
-            .background(Color.dialogue)
-    }
-    
     var body: some View {
         List {
             SearchField(searchText: $viewModel.searchText)
