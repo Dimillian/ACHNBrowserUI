@@ -72,7 +72,9 @@ struct CategoriesView: View {
                     ForEach(viewModel.searchResults.keys.map{ $0 }, id: \.self) { key in
                         Section(header: self.makeSearchCategoryHeader(category: key)) {
                             ForEach(self.viewModel.searchResults[key] ?? []) { item in
-                                ItemRowView(item: item)
+                                NavigationLink(destination: ItemDetailView(item: item)) {
+                                    ItemRowView(item: item)
+                                }
                             }
                         }
                     }
