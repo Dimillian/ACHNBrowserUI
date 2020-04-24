@@ -137,11 +137,13 @@ extension Item {
         return formatter
     }()
     
+    fileprivate static let staticDate: Date = {
+        return DateComponents(calendar: Calendar(identifier: .gregorian),
+                              year: 2000, month: 1, day: 1).date!
+    }()
+    
     fileprivate static let startOfDay: TimeInterval = {
-        var utzCal = Calendar(identifier: .gregorian)
-        utzCal.timeZone = TimeZone(secondsFromGMT: 0)!
-        let year = utzCal.component(.year, from: Date())
-        return DateComponents(calendar: utzCal, year: year, month: 1, day: 1).date!.timeIntervalSince1970
+        staticDate .timeIntervalSince1970
     }()
     
     func isActive() -> Bool {
@@ -169,10 +171,7 @@ extension Item {
         switch time {
         case let .float(percentile):
             let newDate = Date(timeIntervalSince1970: Item.startOfDay + (aDay * TimeInterval(percentile)))
-            if let int = Int(Item.timeFormatter.string(from: newDate)) {
-                return int - 1
-            }
-            return nil
+            return Int(Item.timeFormatter.string(from: newDate))
         default:
             return nil
         }
