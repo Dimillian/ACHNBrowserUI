@@ -11,6 +11,8 @@ import SwiftUI
 struct CategoriesView: View {
     let categories: [Categories]
     
+    @ObservedObject var viewModel = CategoriesSearchViewModel()
+    
     func makeCategories() -> some View {
         ForEach(categories, id: \.self) { categorie in
             CategoryRowView(category: categorie)
@@ -45,12 +47,36 @@ struct CategoriesView: View {
         }
     }
     
+    func makeSearchCategoryHeader(category: Categories) -> some View {
+        HStack {
+            Image(category.iconName())
+                .renderingMode(.original)
+                .resizable()
+                .frame(width: 30, height: 30)
+            Text(category.label())
+                .font(.subheadline)
+        }
+    }
+    
     var body: some View {
         NavigationView {
             List {
-                makeNatureCell()
-                makeWardrobeCell()
-                makeCategories()
+                SearchField(searchText: $viewModel.searchText)
+                    .listRowBackground(Color.grass)
+                    .foregroundColor(.white)
+                if viewModel.searchText.isEmpty {
+                    makeNatureCell()
+                    makeWardrobeCell()
+                    makeCategories()
+                } else {
+                    ForEach(viewModel.searchResults.keys.map{ $0 }, id: \.self) { key in
+                        Section(header: self.makeSearchCategoryHeader(category: key)) {
+                            ForEach(self.viewModel.searchResults[key] ?? []) { item in
+                                ItemRowView(item: item)
+                            }
+                        }
+                    }
+                }
             }
             .navigationBarTitle(Text("Catalog"), displayMode: .inline)
         }
