@@ -169,7 +169,10 @@ extension Item {
         switch time {
         case let .float(percentile):
             let newDate = Date(timeIntervalSince1970: Item.startOfDay + (aDay * TimeInterval(percentile)))
-            return Int(Item.timeFormatter.string(from: newDate))! - 1
+            if let int = Int(Item.timeFormatter.string(from: newDate)) {
+                return int - 1
+            }
+            return nil
         default:
             return nil
         }
