@@ -60,20 +60,26 @@ struct CategoriesView: View {
     
     var body: some View {
         NavigationView {
-            List {
+            VStack {
                 SearchField(searchText: $viewModel.searchText)
-                    .listRowBackground(Color.grass)
+                    .background(Color.grass)
                     .foregroundColor(.white)
-                if viewModel.searchText.isEmpty {
-                    makeNatureCell()
-                    makeWardrobeCell()
-                    makeCategories()
-                } else {
-                    ForEach(viewModel.searchResults.keys.map{ $0 }, id: \.self) { key in
-                        Section(header: self.makeSearchCategoryHeader(category: key)) {
-                            ForEach(self.viewModel.searchResults[key] ?? []) { item in
-                                NavigationLink(destination: ItemDetailView(item: item)) {
-                                    ItemRowView(item: item)
+                    .padding(.leading, 8)
+                    .padding(.trailing, 8)
+                    .padding(.top, 8)
+                    .padding(.bottom, 4)
+                List {
+                    if viewModel.searchText.isEmpty {
+                        makeNatureCell()
+                        makeWardrobeCell()
+                        makeCategories()
+                    } else {
+                        ForEach(viewModel.searchResults.keys.map{ $0 }, id: \.self) { key in
+                            Section(header: self.makeSearchCategoryHeader(category: key)) {
+                                ForEach(self.viewModel.searchResults[key] ?? []) { item in
+                                    NavigationLink(destination: ItemDetailView(item: item)) {
+                                        ItemRowView(item: item)
+                                    }
                                 }
                             }
                         }
@@ -81,6 +87,7 @@ struct CategoriesView: View {
                 }
             }
             .navigationBarTitle(Text("Catalog"), displayMode: .inline)
+            .background(Color.grass)
         }
     }
 }
