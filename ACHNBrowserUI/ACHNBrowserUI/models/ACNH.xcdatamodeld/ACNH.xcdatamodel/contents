@@ -4,39 +4,42 @@
         <attribute name="name" optional="YES" attributeType="String"/>
         <relationship name="items" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ItemEntity" inverseName="collection" inverseEntity="ItemEntity"/>
     </entity>
+    <entity name="ColorEntity" representedClassName="ColorEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="value" optional="YES" attributeType="String"/>
+        <relationship name="items" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ItemEntity" inverseName="colors" inverseEntity="ItemEntity"/>
+        <relationship name="variants" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ItemVariantEntity" inverseName="colors" inverseEntity="ItemVariantEntity"/>
+    </entity>
+    <entity name="CommerceEntity" representedClassName="CommerceEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="buy" optional="YES" attributeType="Integer 64" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="nookMiles" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="sell" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="item" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ItemEntity" inverseName="commerce" inverseEntity="ItemEntity"/>
+    </entity>
     <entity name="CritterInfoEntity" representedClassName="CritterInfoEntity" syncable="YES" codeGenerationType="class">
-        <attribute name="endTime" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="endTime" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
         <attribute name="location" optional="YES" attributeType="String"/>
         <attribute name="northernAvailability" optional="YES" attributeType="Transformable" customClassName="[Int]"/>
         <attribute name="rarity" optional="YES" attributeType="String"/>
         <attribute name="southernAvailability" optional="YES" attributeType="Transformable" customClassName="[Int]"/>
-        <attribute name="startTime" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="startTime" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
         <attribute name="weather" optional="YES" attributeType="String"/>
-        <relationship name="item" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ItemEntity" inverseName="critterInfo" inverseEntity="ItemEntity"/>
-    </entity>
-    <entity name="HHAInfoEntity" representedClassName="HHAInfoEntity" syncable="YES" codeGenerationType="class">
-        <attribute name="concept1" optional="YES" attributeType="String"/>
-        <attribute name="concept2" optional="YES" attributeType="String"/>
-        <attribute name="series" optional="YES" attributeType="String"/>
-        <attribute name="set" optional="YES" attributeType="String"/>
-        <relationship name="item" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ItemEntity" inverseName="hhaInfo" inverseEntity="ItemEntity"/>
+        <relationship name="item" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ItemEntity" inverseName="critter" inverseEntity="ItemEntity"/>
     </entity>
     <entity name="ItemEntity" representedClassName="ItemEntity" syncable="YES" codeGenerationType="class">
-        <attribute name="buy" optional="YES" attributeType="Integer 64" usesScalarValueType="YES"/>
         <attribute name="category" optional="YES" attributeType="String"/>
-        <attribute name="color1" optional="YES" attributeType="String"/>
-        <attribute name="color2" optional="YES" attributeType="String"/>
         <attribute name="detail" optional="YES" attributeType="String"/>
         <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="name" optional="YES" attributeType="String"/>
-        <attribute name="sell" optional="YES" attributeType="Integer 64" usesScalarValueType="YES"/>
-        <attribute name="set" optional="YES" attributeType="String"/>
         <attribute name="source" optional="YES" attributeType="String"/>
         <attribute name="tag" optional="YES" attributeType="String"/>
         <relationship name="collection" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CollectionEntity" inverseName="items" inverseEntity="CollectionEntity"/>
-        <relationship name="critterInfo" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CritterInfoEntity" inverseName="item" inverseEntity="CritterInfoEntity"/>
-        <relationship name="hhaInfo" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="HHAInfoEntity" inverseName="item" inverseEntity="HHAInfoEntity"/>
+        <relationship name="colors" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ColorEntity" inverseName="items" inverseEntity="ColorEntity"/>
+        <relationship name="commerce" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CommerceEntity" inverseName="item" inverseEntity="CommerceEntity"/>
+        <relationship name="critter" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CritterInfoEntity" inverseName="item" inverseEntity="CritterInfoEntity"/>
         <relationship name="recipe" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="RecipeEntity" inverseName="item" inverseEntity="RecipeEntity"/>
+        <relationship name="recipes" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="RecipeEntity" inverseName="materials" inverseEntity="RecipeEntity"/>
+        <relationship name="set" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="SetEntity" inverseName="items" inverseEntity="SetEntity"/>
+        <relationship name="size" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="SizeEntity" inverseName="items" inverseEntity="SizeEntity"/>
         <relationship name="variants" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ItemVariantEntity" inverseName="item" inverseEntity="ItemVariantEntity"/>
         <uniquenessConstraints>
             <uniquenessConstraint>
@@ -46,10 +49,9 @@
         </uniquenessConstraints>
     </entity>
     <entity name="ItemVariantEntity" representedClassName="ItemVariantEntity" syncable="YES" codeGenerationType="class">
-        <attribute name="color1" optional="YES" attributeType="String"/>
-        <attribute name="color2" optional="YES" attributeType="String"/>
         <attribute name="image" optional="YES" attributeType="URI"/>
         <attribute name="name" optional="YES" attributeType="String"/>
+        <relationship name="colors" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ColorEntity" inverseName="variants" inverseEntity="ColorEntity"/>
         <relationship name="item" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ItemEntity" inverseName="variants" inverseEntity="ItemEntity"/>
     </entity>
     <entity name="RecipeEntity" representedClassName="RecipeEntity" syncable="YES" codeGenerationType="class">
@@ -57,20 +59,26 @@
         <attribute name="name" optional="YES" attributeType="String"/>
         <attribute name="source" optional="YES" attributeType="String"/>
         <relationship name="item" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ItemEntity" inverseName="recipe" inverseEntity="ItemEntity"/>
-        <relationship name="materials" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="RecipeItemEntity" inverseName="recipe" inverseEntity="RecipeItemEntity"/>
+        <relationship name="materials" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ItemEntity" inverseName="recipes" inverseEntity="ItemEntity"/>
     </entity>
-    <entity name="RecipeItemEntity" representedClassName="RecipeItemEntity" syncable="YES" codeGenerationType="class">
-        <attribute name="count" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+    <entity name="SetEntity" representedClassName="SetEntity" syncable="YES" codeGenerationType="class">
         <attribute name="name" optional="YES" attributeType="String"/>
-        <relationship name="recipe" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="RecipeEntity" inverseName="materials" inverseEntity="RecipeEntity"/>
+        <relationship name="items" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ItemEntity" inverseName="set" inverseEntity="ItemEntity"/>
+    </entity>
+    <entity name="SizeEntity" representedClassName="SizeEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="column" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="row" optional="YES" attributeType="Double" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="items" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ItemEntity" inverseName="size" inverseEntity="ItemEntity"/>
     </entity>
     <elements>
-        <element name="CollectionEntity" positionX="-152.58984375" positionY="30.33203125" width="128" height="73"/>
-        <element name="CritterInfoEntity" positionX="-341.1171875" positionY="336.49609375" width="128" height="163"/>
-        <element name="HHAInfoEntity" positionX="-125.5625" positionY="357.72265625" width="128" height="118"/>
-        <element name="ItemEntity" positionX="-331.5546875" positionY="29.36328125" width="128" height="283"/>
-        <element name="ItemVariantEntity" positionX="-508.46484375" positionY="252.40234375" width="128" height="118"/>
-        <element name="RecipeEntity" positionX="-104.7421875" positionY="221.57421875" width="128" height="118"/>
-        <element name="RecipeItemEntity" positionX="61.58203125" positionY="300.56640625" width="128" height="88"/>
+        <element name="CollectionEntity" positionX="-232.7265625" positionY="-36.55859375" width="128" height="73"/>
+        <element name="CritterInfoEntity" positionX="-276.28515625" positionY="383.078125" width="128" height="163"/>
+        <element name="ItemEntity" positionX="-505.640625" positionY="-44.8515625" width="128" height="268"/>
+        <element name="ItemVariantEntity" positionX="-682.8671875" positionY="305.09375" width="128" height="103"/>
+        <element name="RecipeEntity" positionX="-215.859375" positionY="246.9296875" width="128" height="118"/>
+        <element name="ColorEntity" positionX="-484.4609375" positionY="274.87890625" width="128" height="88"/>
+        <element name="SizeEntity" positionX="-206.859375" positionY="149.69140625" width="128" height="88"/>
+        <element name="CommerceEntity" positionX="-714.12109375" positionY="133.6171875" width="128" height="103"/>
+        <element name="SetEntity" positionX="-715.671875" positionY="34.0625" width="128" height="73"/>
     </elements>
 </model>

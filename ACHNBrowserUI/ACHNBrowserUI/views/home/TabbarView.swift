@@ -36,12 +36,12 @@ struct DemoCell: View {
                         Text("Recipe Mat: \(recipe.materials?.count ?? 0)")
                     }
                 }
-                HStack {
-                    Text("\(item.buy)")
-                    Text("\(item.sell)")
-                }
+//                HStack {
+//                    Text("\(item.buy)")
+//                    Text("\(item.sell)")
+//                }
                 Text("\(item.variants?.count ?? 0) variants")
-                Text(item.colors.description)
+//                Text(item.colors.description)
             }
         }
     }
