@@ -38,6 +38,10 @@ extension Color {
         Color("grass-2", bundle: nil)
     }
     
+    public static var grassBackground: Color {
+        Color("grass-background", bundle: nil)
+    }
+    
     public static var catalogBackground: Color {
         Color("catalog-background", bundle: nil)
     }

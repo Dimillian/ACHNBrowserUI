@@ -62,12 +62,11 @@ struct CategoriesView: View {
         NavigationView {
             VStack {
                 SearchField(searchText: $viewModel.searchText)
-                    .background(Color.grass)
-                    .foregroundColor(.white)
                     .padding(.leading, 8)
                     .padding(.trailing, 8)
                     .padding(.top, 8)
                     .padding(.bottom, 4)
+                    .background(Color.grassBackground)
                 List {
                     if viewModel.searchText.isEmpty {
                         makeNatureCell()
@@ -87,7 +86,7 @@ struct CategoriesView: View {
                 }
             }
             .navigationBarTitle(Text("Catalog"), displayMode: .inline)
-            .background(Color.grass)
+            .background(Color.grassBackground)
         }
     }
 }

@@ -71,8 +71,6 @@ struct ItemsListView: View {
     var body: some View {
         List {
             SearchField(searchText: $viewModel.searchText)
-                .listRowBackground(Color.grass)
-                .foregroundColor(.white)
             ForEach(currentItems) { item in
                 NavigationLink(destination: ItemDetailView(item: item)) {
                     ItemRowView(item: item)

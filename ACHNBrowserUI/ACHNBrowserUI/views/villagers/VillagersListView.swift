@@ -33,8 +33,6 @@ struct VillagersListView: View {
             List {
                 SearchField(searchText: $viewModel.searchText,
                             placeholder: "Search a villager")
-                    .listRowBackground(Color.grass)
-                    .foregroundColor(.white)
                 ForEach(currentVillagers) { villager in
                     NavigationLink(destination: VillagerDetailView(villager: villager)) {
                         VillagerRowView(villager: villager)
