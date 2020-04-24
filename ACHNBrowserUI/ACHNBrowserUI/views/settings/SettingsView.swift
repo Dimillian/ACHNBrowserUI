@@ -85,7 +85,7 @@ struct SettingsView: View {
             }
             .navigationBarTitle(Text("Preferences"), displayMode: .inline)
             .navigationBarItems(trailing: closeButton)
-        }
+        }.navigationViewStyle(StackNavigationViewStyle())
     }
 }
 
