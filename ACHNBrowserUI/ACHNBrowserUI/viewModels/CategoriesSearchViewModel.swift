@@ -30,7 +30,7 @@ class CategoriesSearchViewModel: ObservableObject {
         var results: [Categories: [Item]] = [:]
         Items.shared.categories.forEach {
             let items = $1.filter {
-                $0.name.lowercased().contains(string.lowercased()) == true
+                $0.name.lowercased().contains(string.lowercased())
             }.prefix(5).compactMap{ $0 }
             if !items.isEmpty {
                 results[$0] = items

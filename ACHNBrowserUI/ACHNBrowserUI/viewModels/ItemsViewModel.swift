@@ -73,7 +73,7 @@ class ItemsViewModel: ObservableObject {
 
     private func items(with string: String) -> [Item] {
         items.filter {
-            $0.name.lowercased().contains(string.lowercased()) == true
+            $0.name.lowercased().contains(string.lowercased())
         }
     }
 }
