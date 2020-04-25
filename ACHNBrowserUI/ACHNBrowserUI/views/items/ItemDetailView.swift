@@ -26,7 +26,7 @@ struct ItemDetailView: View {
         return items.filter({ $0.set == set })
     }
     
-    var simillarItems: [Item] {
+    var similarItems: [Item] {
         guard let tag = itemViewModel.item.tag,
             let items = items.categories[itemViewModel.item.appCategory] else { return [] }
         return items.filter({ $0.tag == tag })
@@ -233,8 +233,8 @@ struct ItemDetailView: View {
             if !setItems.isEmpty {
                 makeItemsSection(items: setItems, title: "Set items")
             }
-            if !simillarItems.isEmpty {
-                makeItemsSection(items: simillarItems, title: "Simillar items")
+            if !similarItems.isEmpty {
+                makeItemsSection(items: similarItems, title: "Similar items")
             }
             if itemViewModel.item.materials != nil {
                 materialsSection
