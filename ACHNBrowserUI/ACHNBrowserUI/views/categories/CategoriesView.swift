@@ -83,7 +83,7 @@ struct CategoriesView: View {
                             }
                         }
                     }
-                }
+                }.modifier(DismissingKeyboardOnSwipe())
             }
             .navigationBarTitle(Text("Catalog"), displayMode: .inline)
             .background(Color.grassBackground)
