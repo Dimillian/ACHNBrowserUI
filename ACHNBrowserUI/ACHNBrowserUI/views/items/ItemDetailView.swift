@@ -21,15 +21,21 @@ struct ItemDetailView: View {
     }
     
     var setItems: [Item] {
-        guard let set = itemViewModel.item.set,
+        guard let set = itemViewModel.item.set, set != "None",
             let items = items.categories[itemViewModel.item.appCategory] else { return [] }
         return items.filter({ $0.set == set })
     }
     
     var similarItems: [Item] {
-        guard let tag = itemViewModel.item.tag,
+        guard let tag = itemViewModel.item.tag, tag != "None",
             let items = items.categories[itemViewModel.item.appCategory] else { return [] }
         return items.filter({ $0.tag == tag })
+    }
+    
+    var themeItems: [Item] {
+        guard let theme = itemViewModel.item.themes?.filter({ $0 != "None" }).first,
+            let items = items.categories[itemViewModel.item.appCategory] else { return [] }
+        return items.filter({ $0.themes?.contains(theme) == true })
     }
     
     private var informationSection: some View {
@@ -238,6 +244,9 @@ struct ItemDetailView: View {
             }
             if !similarItems.isEmpty {
                 makeItemsSection(items: similarItems, title: "Similar items")
+            }
+            if !themeItems.isEmpty {
+                makeItemsSection(items: themeItems, title: "Thematic")
             }
             if itemViewModel.item.materials != nil {
                 materialsSection
