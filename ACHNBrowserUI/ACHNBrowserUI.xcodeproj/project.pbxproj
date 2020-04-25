@@ -28,35 +28,6 @@
 		692C0B83245176BF004847A1 /* DashboardAvailableCrittersSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 692C0B82245176BF004847A1 /* DashboardAvailableCrittersSection.swift */; };
 		692C0B8524517837004847A1 /* DashboardCollectionProgressSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 692C0B8424517837004847A1 /* DashboardCollectionProgressSection.swift */; };
 		692C0B872451791E004847A1 /* DashboardNookazonListingSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 692C0B862451791E004847A1 /* DashboardNookazonListingSection.swift */; };
-		692C2C1B2444448E00E5B818 /* housewares in Resources */ = {isa = PBXBuildFile; fileRef = 692C2BFE2444448D00E5B818 /* housewares */; };
-		692C2C1C2444448E00E5B818 /* bugs-south in Resources */ = {isa = PBXBuildFile; fileRef = 692C2BFF2444448D00E5B818 /* bugs-south */; };
-		692C2C1D2444448E00E5B818 /* fencing in Resources */ = {isa = PBXBuildFile; fileRef = 692C2C002444448D00E5B818 /* fencing */; };
-		692C2C1E2444448E00E5B818 /* photos in Resources */ = {isa = PBXBuildFile; fileRef = 692C2C012444448D00E5B818 /* photos */; };
-		692C2C1F2444448E00E5B818 /* bugs-north in Resources */ = {isa = PBXBuildFile; fileRef = 692C2C022444448D00E5B818 /* bugs-north */; };
-		692C2C202444448E00E5B818 /* floors in Resources */ = {isa = PBXBuildFile; fileRef = 692C2C032444448D00E5B818 /* floors */; };
-		692C2C212444448E00E5B818 /* socks in Resources */ = {isa = PBXBuildFile; fileRef = 692C2C042444448D00E5B818 /* socks */; };
-		692C2C222444448E00E5B818 /* wall-mounted in Resources */ = {isa = PBXBuildFile; fileRef = 692C2C052444448D00E5B818 /* wall-mounted */; };
-		692C2C232444448E00E5B818 /* wallpaper in Resources */ = {isa = PBXBuildFile; fileRef = 692C2C062444448D00E5B818 /* wallpaper */; };
-		692C2C242444448E00E5B818 /* rugs in Resources */ = {isa = PBXBuildFile; fileRef = 692C2C072444448D00E5B818 /* rugs */; };
-		692C2C252444448E00E5B818 /* recipes in Resources */ = {isa = PBXBuildFile; fileRef = 692C2C082444448D00E5B818 /* recipes */; };
-		692C2C262444448E00E5B818 /* dresses in Resources */ = {isa = PBXBuildFile; fileRef = 692C2C092444448D00E5B818 /* dresses */; };
-		692C2C272444448E00E5B818 /* accessories in Resources */ = {isa = PBXBuildFile; fileRef = 692C2C0A2444448D00E5B818 /* accessories */; };
-		692C2C282444448E00E5B818 /* fossils in Resources */ = {isa = PBXBuildFile; fileRef = 692C2C0B2444448D00E5B818 /* fossils */; };
-		692C2C292444448E00E5B818 /* umbrellas in Resources */ = {isa = PBXBuildFile; fileRef = 692C2C0C2444448D00E5B818 /* umbrellas */; };
-		692C2C2A2444448E00E5B818 /* bottoms in Resources */ = {isa = PBXBuildFile; fileRef = 692C2C0D2444448D00E5B818 /* bottoms */; };
-		692C2C2B2444448E00E5B818 /* tops in Resources */ = {isa = PBXBuildFile; fileRef = 692C2C0E2444448D00E5B818 /* tops */; };
-		692C2C2C2444448E00E5B818 /* miscellaneous in Resources */ = {isa = PBXBuildFile; fileRef = 692C2C0F2444448D00E5B818 /* miscellaneous */; };
-		692C2C2D2444448E00E5B818 /* shoes in Resources */ = {isa = PBXBuildFile; fileRef = 692C2C102444448D00E5B818 /* shoes */; };
-		692C2C2E2444448E00E5B818 /* tools in Resources */ = {isa = PBXBuildFile; fileRef = 692C2C112444448E00E5B818 /* tools */; };
-		692C2C2F2444448E00E5B818 /* construction in Resources */ = {isa = PBXBuildFile; fileRef = 692C2C122444448E00E5B818 /* construction */; };
-		692C2C302444448E00E5B818 /* posters in Resources */ = {isa = PBXBuildFile; fileRef = 692C2C132444448E00E5B818 /* posters */; };
-		692C2C312444448E00E5B818 /* songs in Resources */ = {isa = PBXBuildFile; fileRef = 692C2C142444448E00E5B818 /* songs */; };
-		692C2C322444448E00E5B818 /* fish-north in Resources */ = {isa = PBXBuildFile; fileRef = 692C2C152444448E00E5B818 /* fish-north */; };
-		692C2C332444448E00E5B818 /* other in Resources */ = {isa = PBXBuildFile; fileRef = 692C2C162444448E00E5B818 /* other */; };
-		692C2C342444448E00E5B818 /* headwear in Resources */ = {isa = PBXBuildFile; fileRef = 692C2C172444448E00E5B818 /* headwear */; };
-		692C2C352444448E00E5B818 /* fish-south in Resources */ = {isa = PBXBuildFile; fileRef = 692C2C182444448E00E5B818 /* fish-south */; };
-		692C2C362444448E00E5B818 /* bags in Resources */ = {isa = PBXBuildFile; fileRef = 692C2C192444448E00E5B818 /* bags */; };
-		692C2C372444448E00E5B818 /* nookmiles in Resources */ = {isa = PBXBuildFile; fileRef = 692C2C1A2444448E00E5B818 /* nookmiles */; };
 		693E0B19244C2B8400D20E46 /* UserDefaultWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 693E0B18244C2B8400D20E46 /* UserDefaultWrapper.swift */; };
 		693E0B1B244C2B9300D20E46 /* AppUserDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = 693E0B1A244C2B9300D20E46 /* AppUserDefault.swift */; };
 		693E0B1D244C315B00D20E46 /* DashboardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 693E0B1C244C315B00D20E46 /* DashboardViewModel.swift */; };
@@ -90,6 +61,35 @@
 		69AF8C7C243E4D29001DD9CB /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69AF8C7B243E4D29001DD9CB /* Color.swift */; };
 		69AF8C7E243E4DD9001DD9CB /* ItemRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69AF8C7D243E4DD9001DD9CB /* ItemRowView.swift */; };
 		69AF8C80243E5EBD001DD9CB /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69AF8C7F243E5EBD001DD9CB /* Category.swift */; };
+		69B13C84245473900089BD7B /* housewares in Resources */ = {isa = PBXBuildFile; fileRef = 69B13C682454738E0089BD7B /* housewares */; };
+		69B13C85245473900089BD7B /* bottoms in Resources */ = {isa = PBXBuildFile; fileRef = 69B13C692454738F0089BD7B /* bottoms */; };
+		69B13C86245473900089BD7B /* music in Resources */ = {isa = PBXBuildFile; fileRef = 69B13C6A2454738F0089BD7B /* music */; };
+		69B13C87245473900089BD7B /* socks in Resources */ = {isa = PBXBuildFile; fileRef = 69B13C6B2454738F0089BD7B /* socks */; };
+		69B13C88245473900089BD7B /* miscellaneous in Resources */ = {isa = PBXBuildFile; fileRef = 69B13C6C2454738F0089BD7B /* miscellaneous */; };
+		69B13C89245473900089BD7B /* fossils in Resources */ = {isa = PBXBuildFile; fileRef = 69B13C6D2454738F0089BD7B /* fossils */; };
+		69B13C8A245473900089BD7B /* recipes in Resources */ = {isa = PBXBuildFile; fileRef = 69B13C6E2454738F0089BD7B /* recipes */; };
+		69B13C8B245473900089BD7B /* photos in Resources */ = {isa = PBXBuildFile; fileRef = 69B13C6F2454738F0089BD7B /* photos */; };
+		69B13C8C245473900089BD7B /* art in Resources */ = {isa = PBXBuildFile; fileRef = 69B13C702454738F0089BD7B /* art */; };
+		69B13C8D245473900089BD7B /* umbrellas in Resources */ = {isa = PBXBuildFile; fileRef = 69B13C712454738F0089BD7B /* umbrellas */; };
+		69B13C8E245473900089BD7B /* construction in Resources */ = {isa = PBXBuildFile; fileRef = 69B13C722454738F0089BD7B /* construction */; };
+		69B13C8F245473900089BD7B /* other in Resources */ = {isa = PBXBuildFile; fileRef = 69B13C732454738F0089BD7B /* other */; };
+		69B13C90245473900089BD7B /* shoes in Resources */ = {isa = PBXBuildFile; fileRef = 69B13C742454738F0089BD7B /* shoes */; };
+		69B13C91245473900089BD7B /* dresses in Resources */ = {isa = PBXBuildFile; fileRef = 69B13C752454738F0089BD7B /* dresses */; };
+		69B13C92245473900089BD7B /* nookmiles in Resources */ = {isa = PBXBuildFile; fileRef = 69B13C762454738F0089BD7B /* nookmiles */; };
+		69B13C93245473900089BD7B /* headwear in Resources */ = {isa = PBXBuildFile; fileRef = 69B13C772454738F0089BD7B /* headwear */; };
+		69B13C94245473900089BD7B /* tops in Resources */ = {isa = PBXBuildFile; fileRef = 69B13C782454738F0089BD7B /* tops */; };
+		69B13C95245473900089BD7B /* wall-mounted in Resources */ = {isa = PBXBuildFile; fileRef = 69B13C792454738F0089BD7B /* wall-mounted */; };
+		69B13C96245473900089BD7B /* accessories in Resources */ = {isa = PBXBuildFile; fileRef = 69B13C7A2454738F0089BD7B /* accessories */; };
+		69B13C97245473900089BD7B /* posters in Resources */ = {isa = PBXBuildFile; fileRef = 69B13C7B2454738F0089BD7B /* posters */; };
+		69B13C98245473900089BD7B /* fish in Resources */ = {isa = PBXBuildFile; fileRef = 69B13C7C2454738F0089BD7B /* fish */; };
+		69B13C99245473900089BD7B /* wallpapers in Resources */ = {isa = PBXBuildFile; fileRef = 69B13C7D2454738F0089BD7B /* wallpapers */; };
+		69B13C9A245473900089BD7B /* tools in Resources */ = {isa = PBXBuildFile; fileRef = 69B13C7E2454738F0089BD7B /* tools */; };
+		69B13C9B245473900089BD7B /* rugs in Resources */ = {isa = PBXBuildFile; fileRef = 69B13C7F2454738F0089BD7B /* rugs */; };
+		69B13C9C245473900089BD7B /* fencing in Resources */ = {isa = PBXBuildFile; fileRef = 69B13C802454738F0089BD7B /* fencing */; };
+		69B13C9D245473900089BD7B /* bags in Resources */ = {isa = PBXBuildFile; fileRef = 69B13C81245473900089BD7B /* bags */; };
+		69B13C9E245473900089BD7B /* floors in Resources */ = {isa = PBXBuildFile; fileRef = 69B13C82245473900089BD7B /* floors */; };
+		69B13C9F245473900089BD7B /* bugs in Resources */ = {isa = PBXBuildFile; fileRef = 69B13C83245473900089BD7B /* bugs */; };
+		69B13CA12454746C0089BD7B /* Variant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69B13CA02454746C0089BD7B /* Variant.swift */; };
 		69BEA97F243E602C00F02C61 /* TabbarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69BEA97E243E602C00F02C61 /* TabbarView.swift */; };
 		69BEA985243E639900F02C61 /* CollectionListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69BEA984243E639900F02C61 /* CollectionListView.swift */; };
 		69BEA989243E68D400F02C61 /* UserCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69BEA988243E68D400F02C61 /* UserCollection.swift */; };
@@ -127,35 +127,6 @@
 		692C0B82245176BF004847A1 /* DashboardAvailableCrittersSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardAvailableCrittersSection.swift; sourceTree = "<group>"; };
 		692C0B8424517837004847A1 /* DashboardCollectionProgressSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardCollectionProgressSection.swift; sourceTree = "<group>"; };
 		692C0B862451791E004847A1 /* DashboardNookazonListingSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardNookazonListingSection.swift; sourceTree = "<group>"; };
-		692C2BFE2444448D00E5B818 /* housewares */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = housewares; sourceTree = "<group>"; };
-		692C2BFF2444448D00E5B818 /* bugs-south */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "bugs-south"; sourceTree = "<group>"; };
-		692C2C002444448D00E5B818 /* fencing */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = fencing; sourceTree = "<group>"; };
-		692C2C012444448D00E5B818 /* photos */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = photos; sourceTree = "<group>"; };
-		692C2C022444448D00E5B818 /* bugs-north */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "bugs-north"; sourceTree = "<group>"; };
-		692C2C032444448D00E5B818 /* floors */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = floors; sourceTree = "<group>"; };
-		692C2C042444448D00E5B818 /* socks */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = socks; sourceTree = "<group>"; };
-		692C2C052444448D00E5B818 /* wall-mounted */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "wall-mounted"; sourceTree = "<group>"; };
-		692C2C062444448D00E5B818 /* wallpaper */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = wallpaper; sourceTree = "<group>"; };
-		692C2C072444448D00E5B818 /* rugs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = rugs; sourceTree = "<group>"; };
-		692C2C082444448D00E5B818 /* recipes */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = recipes; sourceTree = "<group>"; };
-		692C2C092444448D00E5B818 /* dresses */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dresses; sourceTree = "<group>"; };
-		692C2C0A2444448D00E5B818 /* accessories */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = accessories; sourceTree = "<group>"; };
-		692C2C0B2444448D00E5B818 /* fossils */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = fossils; sourceTree = "<group>"; };
-		692C2C0C2444448D00E5B818 /* umbrellas */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = umbrellas; sourceTree = "<group>"; };
-		692C2C0D2444448D00E5B818 /* bottoms */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = bottoms; sourceTree = "<group>"; };
-		692C2C0E2444448D00E5B818 /* tops */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = tops; sourceTree = "<group>"; };
-		692C2C0F2444448D00E5B818 /* miscellaneous */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = miscellaneous; sourceTree = "<group>"; };
-		692C2C102444448D00E5B818 /* shoes */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = shoes; sourceTree = "<group>"; };
-		692C2C112444448E00E5B818 /* tools */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = tools; sourceTree = "<group>"; };
-		692C2C122444448E00E5B818 /* construction */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = construction; sourceTree = "<group>"; };
-		692C2C132444448E00E5B818 /* posters */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = posters; sourceTree = "<group>"; };
-		692C2C142444448E00E5B818 /* songs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = songs; sourceTree = "<group>"; };
-		692C2C152444448E00E5B818 /* fish-north */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "fish-north"; sourceTree = "<group>"; };
-		692C2C162444448E00E5B818 /* other */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = other; sourceTree = "<group>"; };
-		692C2C172444448E00E5B818 /* headwear */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = headwear; sourceTree = "<group>"; };
-		692C2C182444448E00E5B818 /* fish-south */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "fish-south"; sourceTree = "<group>"; };
-		692C2C192444448E00E5B818 /* bags */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = bags; sourceTree = "<group>"; };
-		692C2C1A2444448E00E5B818 /* nookmiles */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = nookmiles; sourceTree = "<group>"; };
 		693E0B18244C2B8400D20E46 /* UserDefaultWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultWrapper.swift; sourceTree = "<group>"; };
 		693E0B1A244C2B9300D20E46 /* AppUserDefault.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppUserDefault.swift; sourceTree = "<group>"; };
 		693E0B1C244C315B00D20E46 /* DashboardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewModel.swift; sourceTree = "<group>"; };
@@ -191,6 +162,35 @@
 		69AF8C7B243E4D29001DD9CB /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		69AF8C7D243E4DD9001DD9CB /* ItemRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemRowView.swift; sourceTree = "<group>"; };
 		69AF8C7F243E5EBD001DD9CB /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		69B13C682454738E0089BD7B /* housewares */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = housewares; sourceTree = "<group>"; };
+		69B13C692454738F0089BD7B /* bottoms */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = bottoms; sourceTree = "<group>"; };
+		69B13C6A2454738F0089BD7B /* music */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = music; sourceTree = "<group>"; };
+		69B13C6B2454738F0089BD7B /* socks */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = socks; sourceTree = "<group>"; };
+		69B13C6C2454738F0089BD7B /* miscellaneous */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = miscellaneous; sourceTree = "<group>"; };
+		69B13C6D2454738F0089BD7B /* fossils */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = fossils; sourceTree = "<group>"; };
+		69B13C6E2454738F0089BD7B /* recipes */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = recipes; sourceTree = "<group>"; };
+		69B13C6F2454738F0089BD7B /* photos */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = photos; sourceTree = "<group>"; };
+		69B13C702454738F0089BD7B /* art */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = art; sourceTree = "<group>"; };
+		69B13C712454738F0089BD7B /* umbrellas */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = umbrellas; sourceTree = "<group>"; };
+		69B13C722454738F0089BD7B /* construction */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = construction; sourceTree = "<group>"; };
+		69B13C732454738F0089BD7B /* other */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = other; sourceTree = "<group>"; };
+		69B13C742454738F0089BD7B /* shoes */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = shoes; sourceTree = "<group>"; };
+		69B13C752454738F0089BD7B /* dresses */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dresses; sourceTree = "<group>"; };
+		69B13C762454738F0089BD7B /* nookmiles */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = nookmiles; sourceTree = "<group>"; };
+		69B13C772454738F0089BD7B /* headwear */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = headwear; sourceTree = "<group>"; };
+		69B13C782454738F0089BD7B /* tops */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = tops; sourceTree = "<group>"; };
+		69B13C792454738F0089BD7B /* wall-mounted */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "wall-mounted"; sourceTree = "<group>"; };
+		69B13C7A2454738F0089BD7B /* accessories */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = accessories; sourceTree = "<group>"; };
+		69B13C7B2454738F0089BD7B /* posters */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = posters; sourceTree = "<group>"; };
+		69B13C7C2454738F0089BD7B /* fish */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = fish; sourceTree = "<group>"; };
+		69B13C7D2454738F0089BD7B /* wallpapers */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = wallpapers; sourceTree = "<group>"; };
+		69B13C7E2454738F0089BD7B /* tools */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = tools; sourceTree = "<group>"; };
+		69B13C7F2454738F0089BD7B /* rugs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = rugs; sourceTree = "<group>"; };
+		69B13C802454738F0089BD7B /* fencing */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = fencing; sourceTree = "<group>"; };
+		69B13C81245473900089BD7B /* bags */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = bags; sourceTree = "<group>"; };
+		69B13C82245473900089BD7B /* floors */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = floors; sourceTree = "<group>"; };
+		69B13C83245473900089BD7B /* bugs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = bugs; sourceTree = "<group>"; };
+		69B13CA02454746C0089BD7B /* Variant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Variant.swift; sourceTree = "<group>"; };
 		69BEA97E243E602C00F02C61 /* TabbarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarView.swift; sourceTree = "<group>"; };
 		69BEA984243E639900F02C61 /* CollectionListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionListView.swift; sourceTree = "<group>"; };
 		69BEA988243E68D400F02C61 /* UserCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCollection.swift; sourceTree = "<group>"; };
@@ -254,35 +254,34 @@
 		692C2BFD2444445E00E5B818 /* json */ = {
 			isa = PBXGroup;
 			children = (
-				692C2C0A2444448D00E5B818 /* accessories */,
-				692C2C192444448E00E5B818 /* bags */,
-				692C2C0D2444448D00E5B818 /* bottoms */,
-				692C2C022444448D00E5B818 /* bugs-north */,
-				692C2BFF2444448D00E5B818 /* bugs-south */,
-				692C2C122444448E00E5B818 /* construction */,
-				692C2C092444448D00E5B818 /* dresses */,
-				692C2C002444448D00E5B818 /* fencing */,
-				692C2C152444448E00E5B818 /* fish-north */,
-				692C2C182444448E00E5B818 /* fish-south */,
-				692C2C032444448D00E5B818 /* floors */,
-				692C2C0B2444448D00E5B818 /* fossils */,
-				692C2C172444448E00E5B818 /* headwear */,
-				692C2BFE2444448D00E5B818 /* housewares */,
-				692C2C0F2444448D00E5B818 /* miscellaneous */,
-				692C2C1A2444448E00E5B818 /* nookmiles */,
-				692C2C162444448E00E5B818 /* other */,
-				692C2C012444448D00E5B818 /* photos */,
-				692C2C132444448E00E5B818 /* posters */,
-				692C2C082444448D00E5B818 /* recipes */,
-				692C2C072444448D00E5B818 /* rugs */,
-				692C2C102444448D00E5B818 /* shoes */,
-				692C2C042444448D00E5B818 /* socks */,
-				692C2C142444448E00E5B818 /* songs */,
-				692C2C112444448E00E5B818 /* tools */,
-				692C2C0E2444448D00E5B818 /* tops */,
-				692C2C0C2444448D00E5B818 /* umbrellas */,
-				692C2C052444448D00E5B818 /* wall-mounted */,
-				692C2C062444448D00E5B818 /* wallpaper */,
+				69B13C7A2454738F0089BD7B /* accessories */,
+				69B13C702454738F0089BD7B /* art */,
+				69B13C81245473900089BD7B /* bags */,
+				69B13C692454738F0089BD7B /* bottoms */,
+				69B13C83245473900089BD7B /* bugs */,
+				69B13C722454738F0089BD7B /* construction */,
+				69B13C752454738F0089BD7B /* dresses */,
+				69B13C802454738F0089BD7B /* fencing */,
+				69B13C7C2454738F0089BD7B /* fish */,
+				69B13C82245473900089BD7B /* floors */,
+				69B13C6D2454738F0089BD7B /* fossils */,
+				69B13C772454738F0089BD7B /* headwear */,
+				69B13C682454738E0089BD7B /* housewares */,
+				69B13C6C2454738F0089BD7B /* miscellaneous */,
+				69B13C762454738F0089BD7B /* nookmiles */,
+				69B13C732454738F0089BD7B /* other */,
+				69B13C6F2454738F0089BD7B /* photos */,
+				69B13C7B2454738F0089BD7B /* posters */,
+				69B13C6E2454738F0089BD7B /* recipes */,
+				69B13C7F2454738F0089BD7B /* rugs */,
+				69B13C742454738F0089BD7B /* shoes */,
+				69B13C6B2454738F0089BD7B /* socks */,
+				69B13C6A2454738F0089BD7B /* music */,
+				69B13C7E2454738F0089BD7B /* tools */,
+				69B13C782454738F0089BD7B /* tops */,
+				69B13C712454738F0089BD7B /* umbrellas */,
+				69B13C792454738F0089BD7B /* wall-mounted */,
+				69B13C7D2454738F0089BD7B /* wallpapers */,
 			);
 			path = json;
 			sourceTree = "<group>";
@@ -427,6 +426,7 @@
 				69CA5EF5244DBFCB00B275B6 /* Fruit.swift */,
 				69CA5EF7244DBFEA00B275B6 /* Hemisphere.swift */,
 				69CA5EF9244DC73500B275B6 /* Infrastucture.swift */,
+				69B13CA02454746C0089BD7B /* Variant.swift */,
 			);
 			path = models;
 			sourceTree = "<group>";
@@ -583,39 +583,38 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				692C2C292444448E00E5B818 /* umbrellas in Resources */,
-				692C2C262444448E00E5B818 /* dresses in Resources */,
-				692C2C212444448E00E5B818 /* socks in Resources */,
-				692C2C2F2444448E00E5B818 /* construction in Resources */,
-				692C2C322444448E00E5B818 /* fish-north in Resources */,
-				692C2C222444448E00E5B818 /* wall-mounted in Resources */,
-				692C2C232444448E00E5B818 /* wallpaper in Resources */,
-				692C2C252444448E00E5B818 /* recipes in Resources */,
-				692C2C2E2444448E00E5B818 /* tools in Resources */,
+				69B13C92245473900089BD7B /* nookmiles in Resources */,
+				69B13C9D245473900089BD7B /* bags in Resources */,
+				69B13C93245473900089BD7B /* headwear in Resources */,
+				69B13C87245473900089BD7B /* socks in Resources */,
+				69B13C88245473900089BD7B /* miscellaneous in Resources */,
+				69B13C9F245473900089BD7B /* bugs in Resources */,
 				69AF8C5D243E2841001DD9CB /* LaunchScreen.storyboard in Resources */,
-				692C2C272444448E00E5B818 /* accessories in Resources */,
-				692C2C342444448E00E5B818 /* headwear in Resources */,
+				69B13C9C245473900089BD7B /* fencing in Resources */,
+				69B13C8A245473900089BD7B /* recipes in Resources */,
+				69B13C90245473900089BD7B /* shoes in Resources */,
 				69AF8C7A243E4C78001DD9CB /* Colors.xcassets in Resources */,
-				692C2C1D2444448E00E5B818 /* fencing in Resources */,
-				692C2C1E2444448E00E5B818 /* photos in Resources */,
-				692C2C2D2444448E00E5B818 /* shoes in Resources */,
-				692C2C1F2444448E00E5B818 /* bugs-north in Resources */,
-				692C2C362444448E00E5B818 /* bags in Resources */,
-				692C2C202444448E00E5B818 /* floors in Resources */,
-				692C2C282444448E00E5B818 /* fossils in Resources */,
-				692C2C242444448E00E5B818 /* rugs in Resources */,
-				692C2C372444448E00E5B818 /* nookmiles in Resources */,
-				692C2C312444448E00E5B818 /* songs in Resources */,
-				692C2C2A2444448E00E5B818 /* bottoms in Resources */,
+				69B13C91245473900089BD7B /* dresses in Resources */,
+				69B13C9B245473900089BD7B /* rugs in Resources */,
+				69B13C89245473900089BD7B /* fossils in Resources */,
 				69AF8C5A243E2841001DD9CB /* Preview Assets.xcassets in Resources */,
-				692C2C352444448E00E5B818 /* fish-south in Resources */,
-				692C2C2B2444448E00E5B818 /* tops in Resources */,
-				692C2C1B2444448E00E5B818 /* housewares in Resources */,
+				69B13C8F245473900089BD7B /* other in Resources */,
+				69B13C96245473900089BD7B /* accessories in Resources */,
+				69B13C85245473900089BD7B /* bottoms in Resources */,
+				69B13C8E245473900089BD7B /* construction in Resources */,
+				69B13C99245473900089BD7B /* wallpapers in Resources */,
+				69B13C97245473900089BD7B /* posters in Resources */,
+				69B13C86245473900089BD7B /* music in Resources */,
+				69B13C9A245473900089BD7B /* tools in Resources */,
+				69B13C9E245473900089BD7B /* floors in Resources */,
+				69B13C84245473900089BD7B /* housewares in Resources */,
 				69AF8C57243E2841001DD9CB /* Assets.xcassets in Resources */,
-				692C2C1C2444448E00E5B818 /* bugs-south in Resources */,
-				692C2C332444448E00E5B818 /* other in Resources */,
-				692C2C2C2444448E00E5B818 /* miscellaneous in Resources */,
-				692C2C302444448E00E5B818 /* posters in Resources */,
+				69B13C95245473900089BD7B /* wall-mounted in Resources */,
+				69B13C98245473900089BD7B /* fish in Resources */,
+				69B13C94245473900089BD7B /* tops in Resources */,
+				69B13C8C245473900089BD7B /* art in Resources */,
+				69B13C8D245473900089BD7B /* umbrellas in Resources */,
+				69B13C8B245473900089BD7B /* photos in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -681,6 +680,7 @@
 				68345579244C994C0072FC0C /* LikeButtonView.swift in Sources */,
 				69CA5EDA244CBA8600B275B6 /* CalendarView.swift in Sources */,
 				69CA5EF8244DBFEA00B275B6 /* Hemisphere.swift in Sources */,
+				69B13CA12454746C0089BD7B /* Variant.swift in Sources */,
 				68BA582A244B693400B53811 /* TurnipsViewModel.swift in Sources */,
 				69AF8C74243E2F73001DD9CB /* ItemImage.swift in Sources */,
 				69CA5F18244F447E00B275B6 /* EventsDescription.swift in Sources */,

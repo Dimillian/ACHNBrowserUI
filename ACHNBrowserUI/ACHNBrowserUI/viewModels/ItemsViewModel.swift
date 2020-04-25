@@ -18,7 +18,7 @@ class ItemsViewModel: ObservableObject {
     private var itemCancellable: AnyCancellable?
     
     enum Sort: String, CaseIterable {
-        case name, buy, sell, from, set
+        case name, buy, sell, from, set, simillar
     }
     
     
@@ -51,6 +51,9 @@ class ItemsViewModel: ObservableObject {
             case .set:
                 let compare: (String, String) -> Bool = sort == oldValue ? (>) : (<)
                 sortedItems = items.filter{ $0.set != nil}.sorted{ compare($0.set!, $1.set!) }
+            case .simillar:
+                let compare: (String, String) -> Bool = sort == oldValue ? (>) : (<)
+                sortedItems = items.filter{ $0.tag != nil}.sorted{ compare($0.tag!, $1.tag!) }
             }
         }
     }

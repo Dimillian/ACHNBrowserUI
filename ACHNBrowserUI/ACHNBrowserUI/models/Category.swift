@@ -12,19 +12,14 @@ import SwiftUI
 enum Category: String, CaseIterable {
     case housewares, miscellaneous
     case wallMounted = "wall-mounted"
-    case wallpaper, floors, rugs, photos, posters, fencing, tools
+    case wallpapers, floors, rugs, photos, posters, fencing, tools
     case tops, bottoms, dresses, headwear, accessories, socks, shoes, bags
-    case umbrellas, songs, recipes, fossils, construction, nookmiles, other
-    case bugsNorth = "bugs-north"
-    case bugsSouth = "bugs-south"
-    case fishesNorth = "fish-north"
-    case fishesSouth = "fish-south"
+    case umbrellas, music, recipes, construction, nookmiles, other
+    case art, bugs, fish, fossils
     
     func label() -> String {
         switch self {
-        case .bugsSouth, .bugsNorth:
-            return "Bugs"
-        case .fishesSouth, .fishesNorth:
+        case .fish:
             return "Fishes"
         case .wallMounted:
             return "Wall mounted"
@@ -35,11 +30,11 @@ enum Category: String, CaseIterable {
     
     func iconName() -> String {
         switch self {
-        case .housewares, .miscellaneous, .wallMounted, .photos, .posters:
+        case .housewares, .miscellaneous, .wallMounted, .photos, .posters, .art:
             return "icon-leaf"
         case .recipes:
             return "icon-recipe"
-        case .wallpaper:
+        case .wallpapers:
             return "icon-wallpaper"
         case .floors:
             return "icon-floor"
@@ -61,7 +56,7 @@ enum Category: String, CaseIterable {
             return "icon-umbrella"
         case .bags:
             return "icon-bag"
-        case .songs:
+        case .music:
             return "icon-song"
         case .fossils:
             return "icon-fossil"
@@ -71,9 +66,9 @@ enum Category: String, CaseIterable {
             return "icon-miles"
         case .other:
             return "icon-leaf"
-        case .bugsNorth, .bugsSouth:
+        case .bugs:
             return "icon-insect"
-        case .fishesNorth, .fishesSouth:
+        case .fish:
             return "icon-fish"
         case .tools:
             return "icon-tool"
@@ -85,8 +80,8 @@ enum Category: String, CaseIterable {
     }
     
     static func items() -> [Category] {
-        [.housewares, .miscellaneous, .wallMounted,
-         .wallpaper, .floors, .rugs, .photos, .fencing, .tools, .songs, .nookmiles,
+        [.housewares, .miscellaneous, .wallMounted, .art,
+         .wallpapers, .floors, .rugs, .photos, .fencing, .tools, .music, .nookmiles,
          .recipes, .construction, .other]
     }
     
@@ -96,14 +91,6 @@ enum Category: String, CaseIterable {
     }
     
     static func nature() -> [Category] {
-        return [fish(), bugs(), .fossils]
-    }
-    
-    static func fish() -> Category {
-        AppUserDefaults.hemisphere == .north ? .fishesNorth : .fishesSouth
-    }
-    
-    static func bugs() -> Category {
-        AppUserDefaults.hemisphere == .north ? .bugsNorth : .bugsSouth
+        return [.fish, .bugs, .fossils]
     }
 }

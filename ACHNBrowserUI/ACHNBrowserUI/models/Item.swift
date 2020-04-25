@@ -19,109 +19,48 @@ struct Item: Codable, Equatable, Identifiable {
     
     let name: String
     let image: String?
+    let filename: String?
+    
+    var itemImage: String? {
+        if let filename = filename {
+            return filename
+        } else if let image = image, !image.hasPrefix("https://storage") {
+            return image
+        }
+        return nil
+    }
+    
     let obtainedFrom: String?
     let dIY: Bool?
     let customize: Bool?
     
-    let variants: [String]?
+    let variants: [Variant]?
     
     let category: String
     
     var appCategory: Category {
-        Category(rawValue: category.lowercased().replacingOccurrences(of: " ", with: ""))!
+        if category == "Fish - North" || category == "Fish - South" {
+            return .fish
+        } else if category == "Bugs - North" || category == "Buhs - South" {
+            return .bugs
+        }
+        return Category(rawValue: category.lowercased())!
     }
-    
-    var isCritter: Bool {
-        appCategory == Category.fish() || appCategory == Category.bugs()
-    }
-    
+        
     let materials: [Material]?
     
     let buy: Int?
     let sell: Int?
     
-    let startTime: CritterTimeContainer?
-    let endTime: CritterTimeContainer?
-    
+    let weather: String?
+    let shadow: String?
+    let rarity: String?
+    let activeMonthsNorth: [Int]?
+    let activeMonthsSouth: [Int]?
+    let activeTimes: [[String: Int]]?
     let set: String?
-    
-    let jan: Bool?
-    let feb: Bool?
-    let mar: Bool?
-    let apr: Bool?
-    let may: Bool?
-    let jun: Bool?
-    let jul: Bool?
-    let aug: Bool?
-    let sep: Bool?
-    let oct: Bool?
-    let nov: Bool?
-    let dec: Bool?
-    
-    init(name: String, image: String, obtainedFrom: String, dIY: Bool,
-         customize: Bool, variants: [String], category: String, buy: Int, sell: Int, set: String) {
-        self.name = name
-        self.image = image
-        self.obtainedFrom = obtainedFrom
-        self.dIY = dIY
-        self.customize = customize
-        self.variants = variants
-        self.category = category
-        self.buy = buy
-        self.sell = sell
-        self.set = set
-        
-        self.materials = nil
-        
-        self.startTime = nil
-        self.endTime = nil
-        
-        self.jan = false
-        self.feb = false
-        self.mar = false
-        self.apr = false
-        self.may = false
-        self.jun = false
-        self.jul = false
-        self.aug = false
-        self.sep = false
-        self.oct = false
-        self.nov = false
-        self.dec = false
-    }
+    let tag: String?
 }
-
-enum CritterTimeContainer: Codable, Equatable {
-    case float(Float)
-    case string(String)
-    
-    func encode(to encoder: Encoder) throws {
-        var container = encoder.singleValueContainer()
-        switch self {
-        case .float(let v): try container.encode(v)
-        case .string(let v): try container.encode(v)
-        }
-    }
-    
-    init(from decoder: Decoder) throws {
-        let value = try decoder.singleValueContainer()
-        
-        if let v = try? value.decode(Float.self) {
-            self = .float(v)
-            return
-        } else if let v = try? value.decode(String.self) {
-            self = .string(v)
-            return
-        }
-        
-        throw ParseError.notRecognizedType(value)
-    }
-    
-    enum ParseError: Error {
-        case notRecognizedType(Any)
-    }
-}
-
 
 // MARK: - Calendar
 extension Item {
@@ -131,71 +70,38 @@ extension Item {
         return formatter
     }()
     
-    fileprivate static let timeFormatter: DateFormatter = {
-        let formatter = DateFormatter()
-        formatter.dateFormat = "HH"
-        return formatter
-    }()
-    
-    fileprivate static let staticDate: Date = {
-        return DateComponents(calendar: Calendar(identifier: .gregorian),
-                              year: 2000, month: 1, day: 1).date!
-    }()
-    
-    fileprivate static let startOfDay: TimeInterval = {
-        staticDate .timeIntervalSince1970
-    }()
-    
-    func isActive() -> Bool {
-        let months = [jan, feb, mar, apr, may, jun, jul, aug, sep, oct, nov, dec]
-        let currentMonth = Int(Item.monthFormatter.string(from: Date()))!
-        return months[currentMonth - 1] == true
-    }
-    
-    func activeMonths() -> [String] {
-        let monthsBool = [jan, feb, mar, apr, may, jun, jul, aug, sep, oct, nov, dec]
-        let monthsString =  ["jan", "feb", "mar", "apr",
-                             "may", "jun", "jul", "aug",
-                             "sep","oct", "nov", "dec"]
-        var months: [String] = []
-        for (index, bool) in monthsBool.enumerated() {
-            if bool == true {
-                months.append(monthsString[index])
-            }
+    var activeMonths: [Int]? {
+        var months = AppUserDefaults.hemisphere == .north ? activeMonthsNorth : activeMonthsSouth
+        // Fix jan missing from API.
+        if months?.count == 11 {
+            months?.insert(0, at: 0)
         }
         return months
     }
     
-    private func formattedTime(time: CritterTimeContainer) -> Int? {
-        let aDay: TimeInterval = 24*60*60
-        switch time {
-        case let .float(percentile):
-            let newDate = Date(timeIntervalSince1970: Item.startOfDay + (aDay * TimeInterval(percentile)))
-            return Int(Item.timeFormatter.string(from: newDate))
-        default:
-            return nil
-        }
+    func isActive() -> Bool {
+        let currentMonth = Int(Item.monthFormatter.string(from: Date()))!
+        return activeMonths?.contains(currentMonth - 1) == true
+           
     }
     
-    func formattedStartTime() -> Int? {
-        if let startTime = self.startTime {
-            return formattedTime(time: startTime)
+    func formattedTimes() -> String? {
+        guard let activeTimes = activeTimes,
+            let startTime = activeTimes.first?["startTime"],
+            let endTime = activeTimes.first?["endTime"] else {
+                return nil
         }
-        return nil
+        if startTime == 0 && endTime == 0 {
+            return "All day"
+        }
+        return "\(startTime) - \(endTime)h"
     }
-    
-    func formattedEndTime() -> Int? {
-        if let endTime = self.endTime {
-            return formattedTime(time: endTime)
-        }
-        return nil
-    }
-    
-    func startTimeAsString() -> String? {
-        if case .string(let value) = startTime {
-            return value
-        }
-        return nil
+}
+
+// MARK: - Critters
+extension Item {
+    var isCritter: Bool {
+        appCategory == .fish || appCategory == .bugs
     }
 }
 
@@ -215,12 +121,21 @@ extension BidirectionalCollection where Element == Item {
 }
 
 let static_item = Item(name: "Acoustic guitar",
-                       image: "3FX566U",
+                       image: nil,
+                       filename: "Test",
                        obtainedFrom: "Crafting",
                        dIY: true,
                        customize: true,
-                       variants: ["3FX566U", "dob8IS9", "fJWXEXw", "CrJ1ozg", "LJROUEd", ""],
+                       variants: nil,
                        category: "Housewares",
+                       materials: nil,
                        buy: 200,
                        sell: 300,
-                       set: "Instrument")
+                       weather: nil,
+                       shadow: nil,
+                       rarity: nil,
+                       activeMonthsNorth: nil,
+                       activeMonthsSouth: nil,
+                       activeTimes: nil,
+                       set: nil,
+                       tag: "Instrument")

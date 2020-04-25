@@ -13,7 +13,7 @@ struct ItemDetailView: View {
 
     @ObservedObject private var itemViewModel: ItemDetailViewModel
     
-    @State private var displayedVariant: String?
+    @State private var displayedVariant: Variant?
     @State private var selectedListing: URL?
 
     init(item: Item) {
@@ -24,6 +24,12 @@ struct ItemDetailView: View {
         guard let set = itemViewModel.item.set,
             let items = items.categories[itemViewModel.item.appCategory] else { return [] }
         return items.filter({ $0.set == set })
+    }
+    
+    var simillarItems: [Item] {
+        guard let tag = itemViewModel.item.tag,
+            let items = items.categories[itemViewModel.item.appCategory] else { return [] }
+        return items.filter({ $0.tag == tag })
     }
     
     private var informationSection: some View {
@@ -39,12 +45,12 @@ struct ItemDetailView: View {
             }
             HStack(alignment: .center) {
                 Spacer()
-                if itemViewModel.item.image == nil && displayedVariant == nil {
+                if itemViewModel.item.itemImage == nil && displayedVariant == nil {
                     Image(itemViewModel.item.appCategory.iconName())
                         .resizable()
                         .frame(width: 150, height: 150)
                 } else {
-                    ItemImage(path: displayedVariant ?? itemViewModel.item.image,
+                    ItemImage(path: displayedVariant?.filename ?? itemViewModel.item.itemImage,
                               size: 150)
                 }
                 Spacer()
@@ -98,8 +104,8 @@ struct ItemDetailView: View {
         Section(header: SectionHeaderView(text: "Variants")) {
                 ScrollView(.horizontal, showsIndicators: false) {
                     HStack {
-                        ForEach(itemViewModel.item.variants!, id: \.self) { variant in
-                            ItemImage(path: variant,
+                        ForEach(itemViewModel.item.variants!) { variant in
+                            ItemImage(path: variant.filename,
                                       size: 75)
                                 .onTapGesture {
                                     withAnimation {
@@ -142,7 +148,7 @@ struct ItemDetailView: View {
                     HStack {
                         ForEach(setItems) { item in
                             VStack(alignment: .center, spacing: 4) {
-                                ItemImage(path: item.image,
+                                ItemImage(path: item.filename,
                                           size: 75)
                                 Text(item.name)
                                     .font(.caption)
@@ -179,29 +185,22 @@ struct ItemDetailView: View {
     private var seasonalityView: some View {
         Section(header: SectionHeaderView(text: "Seasonality")) {
                 VStack(spacing: 8) {
-                    if itemViewModel.item.formattedStartTime() != nil &&
-                        itemViewModel.item.formattedEndTime() != nil {
+                    if itemViewModel.item.formattedTimes() != nil {
                         HStack {
                             Spacer()
                             Image(systemName: "clock.fill").foregroundColor(.secondaryText)
-                            Text("\(itemViewModel.item.formattedStartTime()!) - \(itemViewModel.item.formattedEndTime()!)h")
+                            Text("\(itemViewModel.item.formattedTimes()!)")
                                 .foregroundColor(.secondaryText)
                                 .font(.body)
                             Spacer()
                         }.padding(.top, 4)
-                    } else if itemViewModel.item.startTimeAsString() != nil {
-                        HStack {
+                    }
+                    if itemViewModel.item.activeMonths != nil {
+                        HStack(alignment: .center) {
                             Spacer()
-                            Text(itemViewModel.item.startTimeAsString()!)
-                                .foregroundColor(.secondaryText)
-                                .font(.body)
+                            CalendarView(activeMonths: itemViewModel.item.activeMonths!)
                             Spacer()
                         }
-                    }
-                    HStack(alignment: .center) {
-                        Spacer()
-                        CalendarView(selectedMonths: itemViewModel.item.activeMonths())
-                        Spacer()
                     }
                 }
         }

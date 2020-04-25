@@ -28,7 +28,9 @@ struct NookPlazaAPIService {
                 return try APIError.processResponse(data: data, response: response)
         }
         .decode(type: T.self, decoder: NookPlazaAPIService.decoder)
-        .mapError{ APIError.parseError(reason: $0.localizedDescription) }
+        .mapError{
+            APIError.parseError(reason: $0.localizedDescription)
+        }
         .eraseToAnyPublisher()
     }
 }

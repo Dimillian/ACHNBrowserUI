@@ -48,7 +48,7 @@ struct LikeButtonView: View {
         Button(action: {
             if let item = self.item {
                 switch item.appCategory {
-                case .bugsSouth, .bugsNorth, .fishesSouth, .fishesNorth, .fossils:
+                case .fish, .bugs, .fossils:
                     let added = self.collection.toggleCritters(critter: item)
                     FeedbackGenerator.shared.triggerNotification(type: added ? .success : .warning)
                 default:

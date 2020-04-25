@@ -11,7 +11,7 @@ import UIImageColors
 import SDWebImage
 
 public class ImageService {
-    public static let SERVICE_URL = "https://i.imgur.com/"
+    public static let SERVICE_URL = "https://acnhcdn.com/latest/FtrIcon/"
         
     class func computeUrl(key: String) -> URL {
         key.starts(with: "http") || key.starts(with: "https") ? URL(string: key)! : URL(string: "\(Self.SERVICE_URL)\(key).png")!
