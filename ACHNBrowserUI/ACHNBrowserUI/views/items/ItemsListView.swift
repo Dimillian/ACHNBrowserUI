@@ -74,7 +74,7 @@ struct ItemsListView: View {
         }
         .id(viewModel.sort)
         .modifier(DismissingKeyboardOnSwipe())
-        .navigationBarTitle(Text(viewModel.categorie.label()),
+        .navigationBarTitle(Text(viewModel.category.label()),
                             displayMode: .inline)
         .navigationBarItems(trailing: sortButton)
         .actionSheet(isPresented: $showSortSheet, content: { self.sortSheet })

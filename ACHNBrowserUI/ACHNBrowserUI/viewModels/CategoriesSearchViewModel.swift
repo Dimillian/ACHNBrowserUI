@@ -12,7 +12,7 @@ import Combine
 
 class CategoriesSearchViewModel: ObservableObject {
     @Published var searchText = ""
-    @Published var searchResults: [Categories: [Item]] = [:]
+    @Published var searchResults: [Category: [Item]] = [:]
     
     private var searchCancellable: AnyCancellable?
     
@@ -21,13 +21,13 @@ class CategoriesSearchViewModel: ObservableObject {
             .debounce(for: .milliseconds(300), scheduler: DispatchQueue.main)
             .removeDuplicates()
             .filter { !$0.isEmpty }
-            .map(itemsInCategories(with:))
+            .map(itemsInCategory(with:))
             .subscribe(on: DispatchQueue.global())
             .receive(on: DispatchQueue.main)
             .sink(receiveValue: { [weak self] in self?.searchResults = $0})
     }
 
-    private func itemsInCategories(with string: String) -> [Categories: [Item]] {
+    private func itemsInCategory(with string: String) -> [Category: [Item]] {
         Items.shared.categories
             .mapValues({ $0.filter({
                 $0.name.lowercased().contains(string.lowercased())

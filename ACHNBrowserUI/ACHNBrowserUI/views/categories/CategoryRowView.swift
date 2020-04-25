@@ -1,5 +1,5 @@
 //
-//  CategoriesRow.swift
+//  CategoryRowView.swift
 //  ACHNBrowserUI
 //
 //  Created by Thomas Ricouard on 18/04/2020.
@@ -9,10 +9,10 @@
 import SwiftUI
 
 struct CategoryRowView: View {
-    let category: Categories
+    let category: Category
     
     var body: some View {
-        NavigationLink(destination: ItemsListView(viewModel: ItemsViewModel(categorie: category))) {
+        NavigationLink(destination: ItemsListView(viewModel: ItemsViewModel(category: category))) {
             HStack {
                 Image(category.iconName())
                     .renderingMode(.original)

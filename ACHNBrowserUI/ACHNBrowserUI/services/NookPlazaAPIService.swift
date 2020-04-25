@@ -16,7 +16,7 @@ struct NookPlazaAPIService {
     private static let decoder = JSONDecoder()
             
     // Here we fake the API so we use localshost and replace any response with a local response coming from bundle files.
-    static func fetch<T: Codable>(endpoint: Categories) -> AnyPublisher<T ,APIError> {
+    static func fetch<T: Codable>(endpoint: Category) -> AnyPublisher<T ,APIError> {
         let url = Bundle.main.url(forResource: endpoint.rawValue, withExtension: nil)!
         let data = try! Data(contentsOf: url)
         let component = URLComponents(url: URL(string: "https://localhost")!.appendingPathComponent(endpoint.rawValue),

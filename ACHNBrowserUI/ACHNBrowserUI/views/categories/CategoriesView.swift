@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct CategoriesView: View {
-    let categories: [Categories]
+    let categories: [Category]
     
     @ObservedObject var viewModel = CategoriesSearchViewModel()
     
@@ -20,9 +20,9 @@ struct CategoriesView: View {
     }
     
     func makeWardrobeCell() -> some View {
-        NavigationLink(destination: CategoryDetailView(categories: Categories.wardrobe()).navigationBarTitle("Wardrobe")) {
+        NavigationLink(destination: CategoryDetailView(categories: Category.wardrobe()).navigationBarTitle("Wardrobe")) {
             HStack {
-                Image(Categories.dresses.iconName())
+                Image(Category.dresses.iconName())
                     .renderingMode(.original)
                     .resizable()
                     .frame(width: 46, height: 46)
@@ -34,9 +34,9 @@ struct CategoriesView: View {
     }
     
     func makeNatureCell() -> some View {
-        NavigationLink(destination: CategoryDetailView(categories: Categories.nature()).navigationBarTitle("Nature")) {
+        NavigationLink(destination: CategoryDetailView(categories: Category.nature()).navigationBarTitle("Nature")) {
             HStack {
-                Image(Categories.fossils.iconName())
+                Image(Category.fossils.iconName())
                     .renderingMode(.original)
                     .resizable()
                     .frame(width: 46, height: 46)
@@ -47,7 +47,7 @@ struct CategoriesView: View {
         }
     }
     
-    func makeSearchCategoryHeader(category: Categories) -> some View {
+    func makeSearchCategoryHeader(category: Category) -> some View {
         HStack {
             Image(category.iconName())
                 .renderingMode(.original)
@@ -88,13 +88,13 @@ struct CategoriesView: View {
             .navigationBarTitle(Text("Catalog"), displayMode: .inline)
             .background(Color.grassBackground)
             
-            ItemsListView(viewModel: ItemsViewModel(categorie: .housewares))
+            ItemsListView(viewModel: ItemsViewModel(category: .housewares))
         }
     }
 }
 
 struct CategoriesView_Previews: PreviewProvider {
     static var previews: some View {
-        CategoriesView(categories: Categories.items())
+        CategoriesView(categories: Category.items())
     }
 }

@@ -22,12 +22,12 @@ class ItemsViewModel: ObservableObject {
     }
     
     
-    var categorie: Categories {
+    var category: Category {
         didSet {
             sort = nil
             itemCancellable = Items.shared.$categories.sink { [weak self] items in
-                guard let weakself = self else { return }
-                self?.items = items[weakself.categorie] ?? []
+                guard let self = self else { return }
+                self.items = items[self.category] ?? []
             }
         }
     }
@@ -57,8 +57,8 @@ class ItemsViewModel: ObservableObject {
     
     private var searchCancellable: AnyCancellable?
     
-    public init(categorie: Categories) {
-        self.categorie = categorie
+    public init(category: Category) {
+        self.category = category
         searchCancellable = $searchText
             .debounce(for: .milliseconds(300), scheduler: DispatchQueue.main)
             .removeDuplicates()
@@ -67,7 +67,7 @@ class ItemsViewModel: ObservableObject {
             .sink(receiveValue: { [weak self] in self?.searchItems = $0 })
 
         itemCancellable = Items.shared.$categories.sink { [weak self] items in
-            self?.items = items[categorie] ?? []
+            self?.items = items[category] ?? []
         }
     }
 

@@ -1,5 +1,5 @@
 //
-//  Categories.swift
+//  Category.swift
 //  ACHNBrowserUI
 //
 //  Created by Thomas Ricouard on 08/04/2020.
@@ -9,7 +9,7 @@
 import Foundation
 import SwiftUI
 
-enum Categories: String, CaseIterable {
+enum Category: String, CaseIterable {
     case housewares, miscellaneous
     case wallMounted = "wall-mounted"
     case wallpaper, floors, rugs, photos, posters, fencing, tools
@@ -84,26 +84,26 @@ enum Categories: String, CaseIterable {
         }
     }
     
-    static func items() -> [Categories] {
+    static func items() -> [Category] {
         [.housewares, .miscellaneous, .wallMounted,
          .wallpaper, .floors, .rugs, .photos, .fencing, .tools, .songs, .nookmiles,
          .recipes, .construction, .other]
     }
     
-    static func wardrobe() -> [Categories] {
+    static func wardrobe() -> [Category] {
         [.tops, .bottoms, .dresses, .headwear,
          .accessories, .socks, .shoes, .bags, .umbrellas]
     }
     
-    static func nature() -> [Categories] {
+    static func nature() -> [Category] {
         return [fish(), bugs(), .fossils]
     }
     
-    static func fish() -> Categories {
+    static func fish() -> Category {
         AppUserDefaults.hemisphere == .north ? .fishesNorth : .fishesSouth
     }
     
-    static func bugs() -> Categories {
+    static func bugs() -> Category {
         AppUserDefaults.hemisphere == .north ? .bugsNorth : .bugsSouth
     }
 }
