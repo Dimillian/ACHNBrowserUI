@@ -24,8 +24,8 @@ class DashboardViewModel: ObservableObject {
     
     init() {
         itemsCancellable = Items.shared.$categories.sink { [weak self] items in
-            self?.fishes = items[Categories.fish()] ?? []
-            self?.bugs = items[Categories.bugs()] ?? []
+            self?.fishes = items[Category.fish()] ?? []
+            self?.bugs = items[Category.bugs()] ?? []
             self?.fossils = items[.fossils] ?? []
         }
     }

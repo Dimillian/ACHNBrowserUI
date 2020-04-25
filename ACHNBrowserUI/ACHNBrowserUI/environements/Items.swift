@@ -12,19 +12,21 @@ import Combine
 class Items: ObservableObject {
     static let shared = Items()
     
-    @Published var categories: [Categories: [Item]] = [:]
+    @Published var categories: [Category: [Item]] = [:]
     
-    private var cancellable: [AnyCancellable] = []
+    private var cancellable = Set<AnyCancellable>()
     
     init() {
-        for categorie in Categories.allCases {
-            cancellable.append(NookPlazaAPIService.fetch(endpoint: categorie)
+        for category in Category.allCases {
+            NookPlazaAPIService
+                .fetch(endpoint: category)
                 .replaceError(with: ItemResponse(total: 0, results: []))
                 .eraseToAnyPublisher()
                 .map{ $0.results }
-                .receive(on: DispatchQueue.main).sink { [weak self] items in
-                    self?.categories[categorie] =  items
-            })
+                .subscribe(on: DispatchQueue.global())
+                .receive(on: DispatchQueue.main)
+                .sink(receiveValue: { [weak self] items in self?.categories[category] = items })
+                .store(in: &cancellable)
         }
     }
 }

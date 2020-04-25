@@ -28,7 +28,7 @@ struct TabbarView: View {
                 DashboardView().tabItem{
                     self.tabbarItem(text: "Dashboard", image: "icon-bells")
                 }.tag(Tab.dashboard)
-                CategoriesView(categories: Categories.items()).tabItem{
+                CategoriesView(categories: Category.items()).tabItem{
                     self.tabbarItem(text: "Catalog", image: "icon-leaf")
                 }.tag(Tab.items)
                 TurnipsView().tabItem {

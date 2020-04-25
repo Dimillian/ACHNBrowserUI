@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct CategoryDetailView: View {
-    let categories: [Categories]
+    let categories: [Category]
     
     var body: some View {
         List {

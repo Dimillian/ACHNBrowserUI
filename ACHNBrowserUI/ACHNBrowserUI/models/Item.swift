@@ -27,12 +27,12 @@ struct Item: Codable, Equatable, Identifiable {
     
     let category: String
     
-    var appCategory: Categories {
-        Categories(rawValue: category.lowercased().replacingOccurrences(of: " ", with: ""))!
+    var appCategory: Category {
+        Category(rawValue: category.lowercased().replacingOccurrences(of: " ", with: ""))!
     }
     
     var isCritter: Bool {
-        appCategory == Categories.fish() || appCategory == Categories.bugs()
+        appCategory == Category.fish() || appCategory == Category.bugs()
     }
     
     let materials: [Material]?
