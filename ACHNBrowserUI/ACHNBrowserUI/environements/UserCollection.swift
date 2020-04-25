@@ -32,10 +32,14 @@ class UserCollection: ObservableObject {
                                                    create: false).appendingPathComponent("collection")
             if let data = try? Data(contentsOf: filePath) {
                 decoder.dataDecodingStrategy = .base64
-                let savedData = try decoder.decode(SavedData.self, from: data)
-                self.items = savedData.items
-                self.villagers = savedData.villagers
-                self.critters = savedData.critters
+                do {
+                    let savedData = try decoder.decode(SavedData.self, from: data)
+                    self.items = savedData.items
+                    self.villagers = savedData.villagers
+                    self.critters = savedData.critters
+                } catch {
+                    try? FileManager.default.removeItem(at: filePath)
+                }
             }
         } catch let error {
             fatalError(error.localizedDescription)
