@@ -67,28 +67,48 @@ struct CategoriesView: View {
                     .padding(.top, 8)
                     .padding(.bottom, 4)
                     .background(Color.grassBackground)
-                List {
-                    if viewModel.searchText.isEmpty {
-                        makeNatureCell()
-                        makeWardrobeCell()
-                        makeCategories()
-                    } else {
-                        ForEach(viewModel.searchResults.keys.map{ $0 }, id: \.self) { key in
-                            Section(header: self.makeSearchCategoryHeader(category: key)) {
-                                ForEach(self.viewModel.searchResults[key] ?? []) { item in
-                                    NavigationLink(destination: ItemDetailView(item: item)) {
-                                        ItemRowView(item: item)
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }.modifier(DismissingKeyboardOnSwipe())
+                if viewModel.searchText.isEmpty {
+                    categoriesList
+                } else {
+                    searchList
+                }
             }
             .navigationBarTitle(Text("Catalog"), displayMode: .inline)
             .background(Color.grassBackground)
             
             ItemsListView(viewModel: ItemsViewModel(category: .housewares))
+        }
+    }
+
+    private var categoriesList: some View {
+        List {
+            makeNatureCell()
+            makeWardrobeCell()
+            makeCategories()
+        }.modifier(DismissingKeyboardOnSwipe())
+    }
+
+    private var searchList: some View {
+        List {
+            ForEach(searchCategories, id: \.0, content: searchSection)
+        }.modifier(DismissingKeyboardOnSwipe())
+    }
+
+    private var searchCategories: [(Category, [Item])] {
+        viewModel.searchResults
+            .map { $0 }
+            .sorted(by: \.key.rawValue)
+    }
+
+    private func searchSection(category: Category, items: [Item]) -> some View {
+        Section(header: self.makeSearchCategoryHeader(category: category)) {
+            ForEach(items, content: self.searchItemRow)
+        }
+    }
+
+    private func searchItemRow(item: Item) -> some View {
+        NavigationLink(destination: ItemDetailView(item: item)) {
+            ItemRowView(item: item)
         }
     }
 }
