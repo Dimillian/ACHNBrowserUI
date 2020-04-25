@@ -59,6 +59,24 @@ struct ItemDetailView: View {
                 Text(itemViewModel.item.obtainedFrom!)
                     .foregroundColor(.secondaryText)
             }
+            if itemViewModel.item.isCritter {
+                HStack(spacing: 8) {
+                    if itemViewModel.item.rarity != nil {
+                        HStack(spacing: 4) {
+                            Text("Rarity:")
+                            Text(itemViewModel.item.rarity!)
+                                .foregroundColor(.secondaryText)
+                        }
+                    }
+                    if itemViewModel.item.shadow != nil {
+                        HStack(spacing: 4) {
+                            Text("Shadow size:")
+                            Text(itemViewModel.item.shadow!)
+                                .foregroundColor(.secondaryText)
+                        }
+                    }
+                }
+            }
             if !itemViewModel.item.isCritter {
                 Text("Customizable: \(itemViewModel.item.customize == true ? "Yes" : "no")")
                     .foregroundColor(.text)
@@ -142,25 +160,25 @@ struct ItemDetailView: View {
         }
     }
     
-    private var setSection: some View {
-        Section(header: SectionHeaderView(text: "Set items")) {
-                ScrollView(.horizontal, showsIndicators: false) {
-                    HStack {
-                        ForEach(setItems) { item in
-                            VStack(alignment: .center, spacing: 4) {
-                                ItemImage(path: item.filename,
-                                          size: 75)
-                                Text(item.name)
-                                    .font(.caption)
-                                    .foregroundColor(.text)
-                            }.onTapGesture {
-                                FeedbackGenerator.shared.triggerSelection()
-                                self.displayedVariant = nil
-                                self.itemViewModel.item = item
-                            }
+    private func makeItemsSection(items: [Item], title: String) -> some View {
+        Section(header: SectionHeaderView(text: title)) {
+            ScrollView(.horizontal, showsIndicators: false) {
+                HStack {
+                    ForEach(items) { item in
+                        VStack(alignment: .center, spacing: 4) {
+                            ItemImage(path: item.filename,
+                                      size: 75)
+                            Text(item.name)
+                                .font(.caption)
+                                .foregroundColor(.text)
+                        }.onTapGesture {
+                            FeedbackGenerator.shared.triggerSelection()
+                            self.displayedVariant = nil
+                            self.itemViewModel.item = item
                         }
                     }
                 }
+            }
         }
     }
     
@@ -213,7 +231,10 @@ struct ItemDetailView: View {
                 variantsSection
             }
             if !setItems.isEmpty {
-                setSection
+                makeItemsSection(items: setItems, title: "Set items")
+            }
+            if !simillarItems.isEmpty {
+                makeItemsSection(items: simillarItems, title: "Simillar items")
             }
             if itemViewModel.item.materials != nil {
                 materialsSection

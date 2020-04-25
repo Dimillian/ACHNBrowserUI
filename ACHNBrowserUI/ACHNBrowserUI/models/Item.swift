@@ -52,7 +52,6 @@ struct Item: Codable, Equatable, Identifiable {
     let buy: Int?
     let sell: Int?
     
-    let weather: String?
     let shadow: String?
     let rarity: String?
     let activeMonthsNorth: [Int]?
@@ -131,7 +130,6 @@ let static_item = Item(name: "Acoustic guitar",
                        materials: nil,
                        buy: 200,
                        sell: 300,
-                       weather: nil,
                        shadow: nil,
                        rarity: nil,
                        activeMonthsNorth: nil,
