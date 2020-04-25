@@ -20,6 +20,7 @@ struct Item: Codable, Equatable, Identifiable {
     let name: String
     let image: String?
     let filename: String?
+    let house: String?
     
     var itemImage: String? {
         if let filename = filename {
@@ -122,6 +123,7 @@ extension BidirectionalCollection where Element == Item {
 let static_item = Item(name: "Acoustic guitar",
                        image: nil,
                        filename: "Test",
+                       house: nil,
                        obtainedFrom: "Crafting",
                        dIY: true,
                        customize: true,

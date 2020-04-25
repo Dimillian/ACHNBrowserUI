@@ -132,8 +132,9 @@ struct ItemDetailView: View {
                                     }
                             }
                         }
-                    }
+                    }.padding()
                 }
+                .listRowInsets(EdgeInsets())
         }
     }
     
@@ -155,8 +156,9 @@ struct ItemDetailView: View {
                                 
                             }
                         }
-                    }
+                    }.padding()
                 }
+                .listRowInsets(EdgeInsets())
         }
     }
     
@@ -177,8 +179,9 @@ struct ItemDetailView: View {
                             self.itemViewModel.item = item
                         }
                     }
-                }
+                }.padding()
             }
+            .listRowInsets(EdgeInsets())
         }
     }
     
