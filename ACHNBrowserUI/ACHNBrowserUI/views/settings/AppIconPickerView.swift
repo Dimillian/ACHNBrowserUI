@@ -32,7 +32,7 @@ struct AppIcon {
     
     let style: AppIcon.Style
     let color: AppIcon.Color
-    var name: String { return "\(self.style)-\(self.color)" }
+    var name: String { return "\(self.style.rawValue)-\(self.color.rawValue)" }
 }
 
 struct AppIconPickerView: View {
@@ -61,6 +61,7 @@ struct AppIconPickerView: View {
     }
     
     private func setAppIcon(to icon: AppIcon) {
+        print("@@ Attempting to set icon: \(icon.name)")
         if UIApplication.shared.supportsAlternateIcons {
             UIApplication.shared.setAlternateIconName(icon.name) { (error) in
                 if let error = error {
