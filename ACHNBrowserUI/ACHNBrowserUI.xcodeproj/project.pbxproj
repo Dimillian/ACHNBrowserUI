@@ -90,6 +90,9 @@
 		69B13C9E245473900089BD7B /* floors in Resources */ = {isa = PBXBuildFile; fileRef = 69B13C82245473900089BD7B /* floors */; };
 		69B13C9F245473900089BD7B /* bugs in Resources */ = {isa = PBXBuildFile; fileRef = 69B13C83245473900089BD7B /* bugs */; };
 		69B13CA12454746C0089BD7B /* Variant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69B13CA02454746C0089BD7B /* Variant.swift */; };
+		69B13CA42455973F0089BD7B /* ItemsCrosslineSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69B13CA32455973F0089BD7B /* ItemsCrosslineSectionView.swift */; };
+		69B13CA6245598E80089BD7B /* ItemDetailSeasonSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69B13CA5245598E80089BD7B /* ItemDetailSeasonSectionView.swift */; };
+		69B13CA8245599A00089BD7B /* ItemDetailInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69B13CA7245599A00089BD7B /* ItemDetailInfoView.swift */; };
 		69BEA97F243E602C00F02C61 /* TabbarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69BEA97E243E602C00F02C61 /* TabbarView.swift */; };
 		69BEA985243E639900F02C61 /* CollectionListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69BEA984243E639900F02C61 /* CollectionListView.swift */; };
 		69BEA989243E68D400F02C61 /* UserCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69BEA988243E68D400F02C61 /* UserCollection.swift */; };
@@ -191,6 +194,9 @@
 		69B13C82245473900089BD7B /* floors */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = floors; sourceTree = "<group>"; };
 		69B13C83245473900089BD7B /* bugs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = bugs; sourceTree = "<group>"; };
 		69B13CA02454746C0089BD7B /* Variant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Variant.swift; sourceTree = "<group>"; };
+		69B13CA32455973F0089BD7B /* ItemsCrosslineSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsCrosslineSectionView.swift; sourceTree = "<group>"; };
+		69B13CA5245598E80089BD7B /* ItemDetailSeasonSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailSeasonSectionView.swift; sourceTree = "<group>"; };
+		69B13CA7245599A00089BD7B /* ItemDetailInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailInfoView.swift; sourceTree = "<group>"; };
 		69BEA97E243E602C00F02C61 /* TabbarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarView.swift; sourceTree = "<group>"; };
 		69BEA984243E639900F02C61 /* CollectionListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionListView.swift; sourceTree = "<group>"; };
 		69BEA988243E68D400F02C61 /* UserCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCollection.swift; sourceTree = "<group>"; };
@@ -467,6 +473,17 @@
 			path = utils;
 			sourceTree = "<group>";
 		};
+		69B13CA2245597050089BD7B /* detail */ = {
+			isa = PBXGroup;
+			children = (
+				69B13CA7245599A00089BD7B /* ItemDetailInfoView.swift */,
+				69B13CA32455973F0089BD7B /* ItemsCrosslineSectionView.swift */,
+				69B13CA5245598E80089BD7B /* ItemDetailSeasonSectionView.swift */,
+				69BEA98A243EFE9700F02C61 /* ItemDetailView.swift */,
+			);
+			path = detail;
+			sourceTree = "<group>";
+		};
 		69BEA980243E608900F02C61 /* home */ = {
 			isa = PBXGroup;
 			children = (
@@ -489,10 +506,10 @@
 		69BEA982243E609400F02C61 /* items */ = {
 			isa = PBXGroup;
 			children = (
+				69B13CA2245597050089BD7B /* detail */,
 				69AF8C54243E283D001DD9CB /* ItemsListView.swift */,
 				69AF8C7D243E4DD9001DD9CB /* ItemRowView.swift */,
 				69AF8C73243E2F73001DD9CB /* ItemImage.swift */,
-				69BEA98A243EFE9700F02C61 /* ItemDetailView.swift */,
 			);
 			path = items;
 			sourceTree = "<group>";
@@ -646,11 +663,13 @@
 				69BEA97F243E602C00F02C61 /* TabbarView.swift in Sources */,
 				697E63F22449A406008FB710 /* Villager.swift in Sources */,
 				693E0B19244C2B8400D20E46 /* UserDefaultWrapper.swift in Sources */,
+				69B13CA42455973F0089BD7B /* ItemsCrosslineSectionView.swift in Sources */,
 				693E0B22244C596D00D20E46 /* ActiveCrittersView.swift in Sources */,
 				69AF8C51243E283D001DD9CB /* AppDelegate.swift in Sources */,
 				68BA5834244B9D4100B53811 /* DashboardView.swift in Sources */,
 				692C0B8524517837004847A1 /* DashboardCollectionProgressSection.swift in Sources */,
 				4C382EE8244E418800F446BA /* DismissingKeyboardOnSwipe.swift in Sources */,
+				69B13CA6245598E80089BD7B /* ItemDetailSeasonSectionView.swift in Sources */,
 				697E63F92449DADE008FB710 /* VillagerRowView.swift in Sources */,
 				697E63EE2449A365008FB710 /* ACNHApiService.swift in Sources */,
 				6834558B244E4E0B0072FC0C /* DashboardEventTextView.swift in Sources */,
@@ -684,6 +703,7 @@
 				68BA582A244B693400B53811 /* TurnipsViewModel.swift in Sources */,
 				69AF8C74243E2F73001DD9CB /* ItemImage.swift in Sources */,
 				69CA5F18244F447E00B275B6 /* EventsDescription.swift in Sources */,
+				69B13CA8245599A00089BD7B /* ItemDetailInfoView.swift in Sources */,
 				69AF8C6F243E2E6D001DD9CB /* ImageService.swift in Sources */,
 				697E63F02449A38A008FB710 /* APIError.swift in Sources */,
 				697E63F72449A7BA008FB710 /* VillagersViewModel.swift in Sources */,
@@ -824,7 +844,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = ACHNBrowserUI/ACHNBrowserUI.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 042422020;
+				CURRENT_PROJECT_VERSION = 042522020;
 				DEVELOPMENT_ASSET_PATHS = "\"ACHNBrowserUI/Preview Content\"";
 				DEVELOPMENT_TEAM = Z6P74P6T99;
 				ENABLE_PREVIEWS = YES;
@@ -849,7 +869,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = ACHNBrowserUI/ACHNBrowserUI.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 042422020;
+				CURRENT_PROJECT_VERSION = 042522020;
 				DEVELOPMENT_ASSET_PATHS = "\"ACHNBrowserUI/Preview Content\"";
 				DEVELOPMENT_TEAM = Z6P74P6T99;
 				ENABLE_PREVIEWS = YES;
