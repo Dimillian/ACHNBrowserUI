@@ -32,6 +32,7 @@ struct AppIcon {
     
     let style: AppIcon.Style
     let color: AppIcon.Color
+    var name: String { return "\(self.style)-\(self.color)" }
 }
 
 struct AppIconPickerView: View {
@@ -43,7 +44,7 @@ struct AppIconPickerView: View {
         }
     }
     
-    func makeRow(for color: AppIcon.Color) -> some View {
+    private func makeRow(for color: AppIcon.Color) -> some View {
         HStack {
             ForEach(AppIcon.Style.allCases, id: \.self) { style in
                 Image("\(style.rawValue)-\(color.rawValue)")
@@ -51,9 +52,22 @@ struct AppIconPickerView: View {
                     .frame(width: 64, height: 64)
                     .mask(RoundedRectangle(cornerRadius: 14, style: .continuous))
                     .frame(maxWidth: .infinity)
+                    .onTapGesture {
+                        self.setAppIcon(to: AppIcon(style: style, color: color))
+                    }
             }
         }
         .padding(.vertical)
+    }
+    
+    private func setAppIcon(to icon: AppIcon) {
+        if UIApplication.shared.supportsAlternateIcons {
+            UIApplication.shared.setAlternateIconName(icon.name) { (error) in
+                if let error = error {
+                    print("@@ Error setting alternate app icon: \(error)")
+                }
+            }
+        }
     }
 }
 
