@@ -25,7 +25,7 @@ struct IslandDetailView: View {
                 Spacer()
             }
             Section(header: Text("Island")) {
-                TurnipCell(island: island)
+                TurnipIslandRow(island: island)
             }
             island.description.map { description in
                 Section(header: Text("Description")) {

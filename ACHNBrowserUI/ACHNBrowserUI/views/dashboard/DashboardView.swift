@@ -81,7 +81,7 @@ struct DashboardView: View {
                     .foregroundColor(.secondary)
             }
             viewModel.island.map {
-                TurnipCell(island: $0)
+                TurnipIslandRow(island: $0)
             }
         }
     }

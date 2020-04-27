@@ -175,6 +175,8 @@
 		69B13CA42455973F0089BD7B /* ItemsCrosslineSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69B13CA32455973F0089BD7B /* ItemsCrosslineSectionView.swift */; };
 		69B13CA6245598E80089BD7B /* ItemDetailSeasonSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69B13CA5245598E80089BD7B /* ItemDetailSeasonSectionView.swift */; };
 		69B13CA8245599A00089BD7B /* ItemDetailInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69B13CA7245599A00089BD7B /* ItemDetailInfoView.swift */; };
+		69B13CAB2456EEA50089BD7B /* turnips.js in Resources */ = {isa = PBXBuildFile; fileRef = 69B13CAA2456EEA50089BD7B /* turnips.js */; };
+		69B13CAD24577A090089BD7B /* TurnipIslandRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69B13CAC24577A090089BD7B /* TurnipIslandRow.swift */; };
 		69BEA97F243E602C00F02C61 /* TabbarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69BEA97E243E602C00F02C61 /* TabbarView.swift */; };
 		69BEA985243E639900F02C61 /* CollectionListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69BEA984243E639900F02C61 /* CollectionListView.swift */; };
 		69BEA989243E68D400F02C61 /* UserCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69BEA988243E68D400F02C61 /* UserCollection.swift */; };
@@ -361,6 +363,8 @@
 		69B13CA32455973F0089BD7B /* ItemsCrosslineSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsCrosslineSectionView.swift; sourceTree = "<group>"; };
 		69B13CA5245598E80089BD7B /* ItemDetailSeasonSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailSeasonSectionView.swift; sourceTree = "<group>"; };
 		69B13CA7245599A00089BD7B /* ItemDetailInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailInfoView.swift; sourceTree = "<group>"; };
+		69B13CAA2456EEA50089BD7B /* turnips.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = turnips.js; sourceTree = "<group>"; };
+		69B13CAC24577A090089BD7B /* TurnipIslandRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TurnipIslandRow.swift; sourceTree = "<group>"; };
 		69BEA97E243E602C00F02C61 /* TabbarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarView.swift; sourceTree = "<group>"; };
 		69BEA984243E639900F02C61 /* CollectionListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionListView.swift; sourceTree = "<group>"; };
 		69BEA988243E68D400F02C61 /* UserCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCollection.swift; sourceTree = "<group>"; };
@@ -506,6 +510,7 @@
 			children = (
 				68BA5827244B646C00B53811 /* IslandDetailView.swift */,
 				68BA582B244B695F00B53811 /* IslandDetailViewModel.swift */,
+				69B13CAC24577A090089BD7B /* TurnipIslandRow.swift */,
 				687B5767244A030700C1E86F /* TurnipsView.swift */,
 				68BA5829244B693300B53811 /* TurnipsViewModel.swift */,
 			);
@@ -639,6 +644,7 @@
 		69AF8C4F243E283D001DD9CB /* ACHNBrowserUI */ = {
 			isa = PBXGroup;
 			children = (
+				69B13CA92456EE9B0089BD7B /* js */,
 				692C2BFD2444445E00E5B818 /* json */,
 				690BD65324404F4300DEECD3 /* ACHNBrowserUI.entitlements */,
 				693E0B17244C2B7200D20E46 /* wrappers */,
@@ -751,6 +757,14 @@
 				69BEA98A243EFE9700F02C61 /* ItemDetailView.swift */,
 			);
 			path = detail;
+			sourceTree = "<group>";
+		};
+		69B13CA92456EE9B0089BD7B /* js */ = {
+			isa = PBXGroup;
+			children = (
+				69B13CAA2456EEA50089BD7B /* turnips.js */,
+			);
+			path = js;
 			sourceTree = "<group>";
 		};
 		69BEA980243E608900F02C61 /* home */ = {
@@ -885,6 +899,7 @@
 				02F2D4472455D81C009741DA /* simple-orange@3x.png in Resources */,
 				69B13C88245473900089BD7B /* miscellaneous in Resources */,
 				02F2D4302455D81C009741DA /* round-sky@3x.png in Resources */,
+				69B13CAB2456EEA50089BD7B /* turnips.js in Resources */,
 				02F2D4132455D81C009741DA /* bookmark-blueberry@2x.png in Resources */,
 				02F2D4232455D81C009741DA /* simple-lime@3x.png in Resources */,
 				02F2D42E2455D81C009741DA /* round-mint@3x.png in Resources */,
@@ -1021,6 +1036,7 @@
 				4C382EE8244E418800F446BA /* DismissingKeyboardOnSwipe.swift in Sources */,
 				69B13CA6245598E80089BD7B /* ItemDetailSeasonSectionView.swift in Sources */,
 				697E63F92449DADE008FB710 /* VillagerRowView.swift in Sources */,
+				69B13CAD24577A090089BD7B /* TurnipIslandRow.swift in Sources */,
 				697E63EE2449A365008FB710 /* ACNHApiService.swift in Sources */,
 				6834558B244E4E0B0072FC0C /* DashboardEventTextView.swift in Sources */,
 				693E0B1F244C526A00D20E46 /* ProgressView.swift in Sources */,
