@@ -12,6 +12,7 @@ struct CategoriesView: View {
     let categories: [Category]
     
     @ObservedObject var viewModel = CategoriesSearchViewModel()
+    @State var isLoadingData = false
     
     func makeCategories() -> some View {
         ForEach(categories, id: \.self) { categorie in
@@ -75,6 +76,7 @@ struct CategoriesView: View {
             }
             .navigationBarTitle(Text("Catalog"), displayMode: .inline)
             .background(Color.grassBackground)
+            .onReceive(viewModel.$isLoadingData) { self.isLoadingData = $0 }
             
             ItemsListView(viewModel: ItemsViewModel(category: .housewares))
         }
@@ -89,8 +91,13 @@ struct CategoriesView: View {
     }
 
     private var searchList: some View {
-        List {
-            ForEach(searchCategories, id: \.0, content: searchSection)
+        ZStack {
+            List {
+                ForEach(searchCategories, id: \.0, content: searchSection)
+            }
+            loadingView
+                .opacity(isLoadingData ? 80/100 : 0)
+                .animation(.default)
         }.modifier(DismissingKeyboardOnSwipe())
     }
 
@@ -110,6 +117,15 @@ struct CategoriesView: View {
         NavigationLink(destination: ItemDetailView(item: item)) {
             ItemRowView(item: item)
         }
+    }
+
+    private var loadingView: some View {
+        VStack {
+            HStack { Spacer() }
+            Spacer()
+            ActivityIndicator(isAnimating: $isLoadingData, style: .large)
+            Spacer()
+        }.background(Color.dialogue)
     }
 }
 
