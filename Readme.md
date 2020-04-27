@@ -4,7 +4,7 @@
 
 ![Image](images/promo.png?)
 
-This is a full featured Animal Crossing helper application entierly in SwiftUI.
+This is a full featured Animal Crossing helper application entirely in SwiftUI.
 
 # Features
 * Dashboard to track your fishes and bugs. 
