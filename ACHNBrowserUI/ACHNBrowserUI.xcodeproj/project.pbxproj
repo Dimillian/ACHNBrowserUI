@@ -177,6 +177,8 @@
 		69B13CA8245599A00089BD7B /* ItemDetailInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69B13CA7245599A00089BD7B /* ItemDetailInfoView.swift */; };
 		69B13CAB2456EEA50089BD7B /* turnips.js in Resources */ = {isa = PBXBuildFile; fileRef = 69B13CAA2456EEA50089BD7B /* turnips.js */; };
 		69B13CAD24577A090089BD7B /* TurnipIslandRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69B13CAC24577A090089BD7B /* TurnipIslandRow.swift */; };
+		69B13CAF24577B070089BD7B /* Turnips.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69B13CAE24577B070089BD7B /* Turnips.swift */; };
+		69B13CB124577BBF0089BD7B /* TurnipsFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69B13CB024577BBF0089BD7B /* TurnipsFormView.swift */; };
 		69BEA97F243E602C00F02C61 /* TabbarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69BEA97E243E602C00F02C61 /* TabbarView.swift */; };
 		69BEA985243E639900F02C61 /* CollectionListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69BEA984243E639900F02C61 /* CollectionListView.swift */; };
 		69BEA989243E68D400F02C61 /* UserCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69BEA988243E68D400F02C61 /* UserCollection.swift */; };
@@ -365,6 +367,8 @@
 		69B13CA7245599A00089BD7B /* ItemDetailInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailInfoView.swift; sourceTree = "<group>"; };
 		69B13CAA2456EEA50089BD7B /* turnips.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = turnips.js; sourceTree = "<group>"; };
 		69B13CAC24577A090089BD7B /* TurnipIslandRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TurnipIslandRow.swift; sourceTree = "<group>"; };
+		69B13CAE24577B070089BD7B /* Turnips.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Turnips.swift; sourceTree = "<group>"; };
+		69B13CB024577BBF0089BD7B /* TurnipsFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TurnipsFormView.swift; sourceTree = "<group>"; };
 		69BEA97E243E602C00F02C61 /* TabbarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarView.swift; sourceTree = "<group>"; };
 		69BEA984243E639900F02C61 /* CollectionListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionListView.swift; sourceTree = "<group>"; };
 		69BEA988243E68D400F02C61 /* UserCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCollection.swift; sourceTree = "<group>"; };
@@ -512,6 +516,7 @@
 				68BA582B244B695F00B53811 /* IslandDetailViewModel.swift */,
 				69B13CAC24577A090089BD7B /* TurnipIslandRow.swift */,
 				687B5767244A030700C1E86F /* TurnipsView.swift */,
+				69B13CB024577BBF0089BD7B /* TurnipsFormView.swift */,
 			);
 			path = turnips;
 			sourceTree = "<group>";
@@ -707,6 +712,7 @@
 				69CA5EF7244DBFEA00B275B6 /* Hemisphere.swift */,
 				69CA5EF9244DC73500B275B6 /* Infrastucture.swift */,
 				69B13CA02454746C0089BD7B /* Variant.swift */,
+				69B13CAE24577B070089BD7B /* Turnips.swift */,
 			);
 			path = models;
 			sourceTree = "<group>";
@@ -1061,8 +1067,10 @@
 				69AF8C6D243E2A18001DD9CB /* ItemsViewModel.swift in Sources */,
 				69CA5EFC244ED38C00B275B6 /* FeedbackGenerator.swift in Sources */,
 				697E63FD244AD42D008FB710 /* CategoryRowView.swift in Sources */,
+				69B13CB124577BBF0089BD7B /* TurnipsFormView.swift in Sources */,
 				69AF8C76243E3545001DD9CB /* SearchField.swift in Sources */,
 				68DFFFA9244927A400DEA07F /* NookazonService.swift in Sources */,
+				69B13CAF24577B070089BD7B /* Turnips.swift in Sources */,
 				028620752454C32800795719 /* AppIconPickerView.swift in Sources */,
 				68345579244C994C0072FC0C /* LikeButtonView.swift in Sources */,
 				69CA5EDA244CBA8600B275B6 /* CalendarView.swift in Sources */,

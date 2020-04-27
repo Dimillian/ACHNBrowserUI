@@ -13,8 +13,16 @@ import JavaScriptCore
 
 class TurnipsViewModel: ObservableObject {
     @Published var islands: [Island]?
+    @Published var predictions: TurnipPredictions?
     
     var cancellable: AnyCancellable?
+    
+    init() {
+        if TurnipFields.exist() {
+            let userTurnips = TurnipFields.decode()
+            self.predictions = calculate(values: userTurnips)
+        }
+    }
     
     lazy var calculatorContext: JSContext? = {
         guard let url = Bundle.main.url(forResource: "turnips", withExtension: "js"),
@@ -37,10 +45,11 @@ class TurnipsViewModel: ObservableObject {
         }
     }
     
-    func calculate(values: [Int]) -> (avg: [Int]?, minValue: Int?, minMax: [[Int]]?) {
-        let results = calculatorContext?.evaluateScript("calculate([\(values.map{ String($0) }.joined(separator: ","))])")
-        return (avg: results?.toDictionary()["avgPattern"] as? [Int],
-                minValue: results?.toDictionary()["minWeekValue"] as? Int,
-                minMax: results?.toDictionary()["minMaxPattern"] as? [[Int]])
+    func calculate(values: TurnipFields) -> TurnipPredictions {
+        let call = "calculate([\(values.buyPrice),\(values.fields.filter{ !$0.isEmpty }.joined(separator: ","))])"
+        let results = calculatorContext?.evaluateScript(call)
+        return TurnipPredictions(minBuyPrice: results?.toDictionary()["minWeekValue"] as? Int,
+                                 averagePrices: results?.toDictionary()["avgPattern"] as? [Int],
+                                 minMax: results?.toDictionary()["minMaxPattern"] as? [[Int]])
     }
 }

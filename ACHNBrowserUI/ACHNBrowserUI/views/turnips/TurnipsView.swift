@@ -10,24 +10,44 @@ import SwiftUI
 
 struct TurnipsView: View {
     @ObservedObject var viewModel = TurnipsViewModel()
+    @State private var turnipsFormShown = false
+    
+    private let labels = ["Monday AM", "Monday PM", "Tuesday AM", "Tuesday PM", "Wednesday AM", "Wednesday PM",
+                          "Thursday AM", "Thursday PM", "Friday AM", "Friday PM", "Saturday AM", "Saturday PM"]
     
     var body: some View {
         NavigationView {
             List {
-                if viewModel.islands == nil {
-                    Text("Loading Islands...")
-                        .foregroundColor(.secondary)
+                Section(header: Text("Stalks market")) {
+                    Button(action: {
+                        self.turnipsFormShown = true
+                    }) {
+                        Text(TurnipFields.exist() ? "Edit your prices" : "Add your prices")
+                            .foregroundColor(.blue)
+                    }
+                    if viewModel.predictions?.averagePrices != nil {
+                        ForEach(viewModel.predictions!.averagePrices!, id: \.self) { value in
+                            Text("Average \(self.labels[self.viewModel.predictions!.averagePrices!.firstIndex(of: value)!]): \(value)")
+                        }
+                    }
                 }
-                viewModel.islands.map {
-                    ForEach($0) { island in
-                        NavigationLink(destination: IslandDetailView(island: island)) {
-                            TurnipIslandRow(island: island)
+                Section(header: Text("Exchange")) {
+                    if viewModel.islands == nil {
+                        Text("Loading Islands...")
+                            .foregroundColor(.secondary)
+                    }
+                    viewModel.islands.map {
+                        ForEach($0) { island in
+                            NavigationLink(destination: IslandDetailView(island: island)) {
+                                TurnipIslandRow(island: island)
+                            }
                         }
                     }
                 }
             }
             .navigationBarTitle("Turnips",
                                 displayMode: .inline)
+            .sheet(isPresented: $turnipsFormShown, content: { TurnipsFormView() })
         }
         .onAppear(perform: viewModel.fetch)
     }
