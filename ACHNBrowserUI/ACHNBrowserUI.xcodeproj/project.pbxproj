@@ -512,7 +512,6 @@
 				68BA582B244B695F00B53811 /* IslandDetailViewModel.swift */,
 				69B13CAC24577A090089BD7B /* TurnipIslandRow.swift */,
 				687B5767244A030700C1E86F /* TurnipsView.swift */,
-				68BA5829244B693300B53811 /* TurnipsViewModel.swift */,
 			);
 			path = turnips;
 			sourceTree = "<group>";
@@ -727,6 +726,7 @@
 		69AF8C6B243E2A0C001DD9CB /* viewModels */ = {
 			isa = PBXGroup;
 			children = (
+				68BA5829244B693300B53811 /* TurnipsViewModel.swift */,
 				693E0B1C244C315B00D20E46 /* DashboardViewModel.swift */,
 				69AF8C6C243E2A18001DD9CB /* ItemsViewModel.swift */,
 				68DFFFAC24492D7F00DEA07F /* ItemDetailViewModel.swift */,
