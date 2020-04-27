@@ -1,3 +1,5 @@
+![Xcode build](https://github.com/Dimillian/ACHNBrowserUI/workflows/Xcode%20build/badge.svg?branch=master)
+
 # Animal Crossing New Horizon SwiftUI application!
 
 ![Image](images/promo.png?)
