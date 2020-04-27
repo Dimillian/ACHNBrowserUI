@@ -179,6 +179,7 @@
 		69B13CAD24577A090089BD7B /* TurnipIslandRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69B13CAC24577A090089BD7B /* TurnipIslandRow.swift */; };
 		69B13CAF24577B070089BD7B /* Turnips.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69B13CAE24577B070089BD7B /* Turnips.swift */; };
 		69B13CB124577BBF0089BD7B /* TurnipsFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69B13CB024577BBF0089BD7B /* TurnipsFormView.swift */; };
+		69B13CB4245786B40089BD7B /* SwiftUICharts in Frameworks */ = {isa = PBXBuildFile; productRef = 69B13CB3245786B40089BD7B /* SwiftUICharts */; };
 		69BEA97F243E602C00F02C61 /* TabbarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69BEA97E243E602C00F02C61 /* TabbarView.swift */; };
 		69BEA985243E639900F02C61 /* CollectionListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69BEA984243E639900F02C61 /* CollectionListView.swift */; };
 		69BEA989243E68D400F02C61 /* UserCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69BEA988243E68D400F02C61 /* UserCollection.swift */; };
@@ -390,6 +391,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				69CA5EFF244EEA4E00B275B6 /* UIImageColors in Frameworks */,
+				69B13CB4245786B40089BD7B /* SwiftUICharts in Frameworks */,
 				68BA5831244B738700B53811 /* SDWebImageSwiftUI in Frameworks */,
 				68345589244E4DEF0072FC0C /* ACNHEvents in Frameworks */,
 			);
@@ -842,6 +844,7 @@
 				68BA5830244B738700B53811 /* SDWebImageSwiftUI */,
 				68345588244E4DEF0072FC0C /* ACNHEvents */,
 				69CA5EFE244EEA4E00B275B6 /* UIImageColors */,
+				69B13CB3245786B40089BD7B /* SwiftUICharts */,
 			);
 			productName = ACHNBrowserUI;
 			productReference = 69AF8C4D243E283D001DD9CB /* AC Helper.app */;
@@ -875,6 +878,7 @@
 				68BA582F244B738700B53811 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */,
 				68345587244E4DEF0072FC0C /* XCRemoteSwiftPackageReference "Date-ACNHEvents" */,
 				69CA5EFD244EEA4E00B275B6 /* XCRemoteSwiftPackageReference "UIImageColors" */,
+				69B13CB2245786B40089BD7B /* XCRemoteSwiftPackageReference "ChartView" */,
 			);
 			productRefGroup = 69AF8C4E243E283D001DD9CB /* Products */;
 			projectDirPath = "";
@@ -1304,6 +1308,14 @@
 				minimumVersion = 1.3.3;
 			};
 		};
+		69B13CB2245786B40089BD7B /* XCRemoteSwiftPackageReference "ChartView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/AppPear/ChartView";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.5.0;
+			};
+		};
 		69CA5EFD244EEA4E00B275B6 /* XCRemoteSwiftPackageReference "UIImageColors" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/jathu/UIImageColors";
@@ -1324,6 +1336,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 68BA582F244B738700B53811 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */;
 			productName = SDWebImageSwiftUI;
+		};
+		69B13CB3245786B40089BD7B /* SwiftUICharts */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 69B13CB2245786B40089BD7B /* XCRemoteSwiftPackageReference "ChartView" */;
+			productName = SwiftUICharts;
 		};
 		69CA5EFE244EEA4E00B275B6 /* UIImageColors */ = {
 			isa = XCSwiftPackageProductDependency;

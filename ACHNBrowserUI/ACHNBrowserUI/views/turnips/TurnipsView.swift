@@ -7,6 +7,7 @@
 //
 
 import SwiftUI
+import SwiftUICharts
 
 struct TurnipsView: View {
     @ObservedObject var viewModel = TurnipsViewModel()
@@ -26,6 +27,8 @@ struct TurnipsView: View {
                             .foregroundColor(.blue)
                     }
                     if viewModel.predictions?.averagePrices != nil {
+                        BarChartView(data: ChartData(points: viewModel.predictions!.averagePrices!.map{ Double($0) }),
+                                     title: "Weekly average")
                         ForEach(viewModel.predictions!.averagePrices!, id: \.self) { value in
                             Text("Average \(self.labels[self.viewModel.predictions!.averagePrices!.firstIndex(of: value)!]): \(value)")
                         }
@@ -50,5 +53,6 @@ struct TurnipsView: View {
             .sheet(isPresented: $turnipsFormShown, content: { TurnipsFormView() })
         }
         .onAppear(perform: viewModel.fetch)
+        .onAppear(perform: viewModel.refreshPrediction)
     }
 }

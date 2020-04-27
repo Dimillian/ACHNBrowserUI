@@ -17,13 +17,6 @@ class TurnipsViewModel: ObservableObject {
     
     var cancellable: AnyCancellable?
     
-    init() {
-        if TurnipFields.exist() {
-            let userTurnips = TurnipFields.decode()
-            self.predictions = calculate(values: userTurnips)
-        }
-    }
-    
     lazy var calculatorContext: JSContext? = {
         guard let url = Bundle.main.url(forResource: "turnips", withExtension: "js"),
             let script = try? String(contentsOf: url) else {
@@ -33,6 +26,13 @@ class TurnipsViewModel: ObservableObject {
         context?.evaluateScript(script)
         return context
     }()
+    
+    func refreshPrediction() {
+        if TurnipFields.exist() {
+            let userTurnips = TurnipFields.decode()
+            self.predictions = calculate(values: userTurnips)
+        }
+    }
     
     func fetch() {
         cancellable = TurnipExchangeService.shared
