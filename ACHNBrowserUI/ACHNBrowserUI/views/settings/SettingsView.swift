@@ -71,6 +71,13 @@ struct SettingsView: View {
                             }
                     }
                 }
+                
+                Section(header: Text("App")) {
+                    NavigationLink(destination: AppIconPickerView()) {
+                        Text("App Icon")
+                    }
+                }
+                
                 Button(action: {
                     AppUserDefaults.islandName = self.islandName
                     AppUserDefaults.hemisphere = self.selectedHemisphere
