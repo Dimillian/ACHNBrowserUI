@@ -2,15 +2,6 @@
   "object": {
     "pins": [
       {
-        "package": "SwiftUICharts",
-        "repositoryURL": "https://github.com/AppPear/ChartView",
-        "state": {
-          "branch": null,
-          "revision": "c12c773af0b18be3abc30a5e39fc8370a6498502",
-          "version": "1.5.0"
-        }
-      },
-      {
         "package": "ACNHEvents",
         "repositoryURL": "https://github.com/ericlewis/Date-ACNHEvents",
         "state": {

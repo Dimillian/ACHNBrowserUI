@@ -14,7 +14,7 @@ import JavaScriptCore
 class TurnipsViewModel: ObservableObject {
     @Published var islands: [Island]?
     @Published var predictions: TurnipPredictions?
-    
+        
     var cancellable: AnyCancellable?
     
     lazy var calculatorContext: JSContext? = {
