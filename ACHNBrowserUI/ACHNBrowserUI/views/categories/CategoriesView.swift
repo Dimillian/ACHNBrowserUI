@@ -9,56 +9,20 @@
 import SwiftUI
 
 struct CategoriesView: View {
+    // MARK: - Vars
     let categories: [Category]
     
     @ObservedObject var viewModel = CategoriesSearchViewModel()
     @State var isLoadingData = false
-    
-    func makeCategories() -> some View {
-        ForEach(categories, id: \.self) { categorie in
-            CategoryRowView(category: categorie)
-        }
+
+    // MARK: - Computed vars
+    private var searchCategories: [(Category, [Item])] {
+        viewModel.searchResults
+            .map { $0 }
+            .sorted(by: \.key.rawValue)
     }
     
-    func makeWardrobeCell() -> some View {
-        NavigationLink(destination: CategoryDetailView(categories: Category.wardrobe()).navigationBarTitle("Wardrobe")) {
-            HStack {
-                Image(Category.dresses.iconName())
-                    .renderingMode(.original)
-                    .resizable()
-                    .frame(width: 46, height: 46)
-                Text("Wardrobe")
-                    .font(.headline)
-                    .foregroundColor(.text)
-            }
-        }
-    }
-    
-    func makeNatureCell() -> some View {
-        NavigationLink(destination: CategoryDetailView(categories: Category.nature()).navigationBarTitle("Nature")) {
-            HStack {
-                Image(Category.fossils.iconName())
-                    .renderingMode(.original)
-                    .resizable()
-                    .frame(width: 46, height: 46)
-                Text("Nature")
-                    .font(.headline)
-                    .foregroundColor(.text)
-            }
-        }
-    }
-    
-    func makeSearchCategoryHeader(category: Category) -> some View {
-        HStack {
-            Image(category.iconName())
-                .renderingMode(.original)
-                .resizable()
-                .frame(width: 30, height: 30)
-            Text(category.label())
-                .font(.subheadline)
-        }
-    }
-    
+    // MARK: - Body
     var body: some View {
         NavigationView {
             VStack {
@@ -81,7 +45,81 @@ struct CategoriesView: View {
             ItemsListView(viewModel: ItemsViewModel(category: .housewares))
         }
     }
+}
 
+// MARK: - Views
+extension CategoriesView {
+    func makeCategories() -> some View {
+        ForEach(categories, id: \.self) { categorie in
+            CategoryRowView(category: categorie)
+        }
+    }
+    
+    func makeWardrobeCell() -> some View {
+        NavigationLink(destination: CategoryDetailView(categories: Category.wardrobe())
+            .navigationBarTitle("Wardrobe")) {
+                HStack {
+                    Image(Category.dresses.iconName())
+                        .renderingMode(.original)
+                        .resizable()
+                        .frame(width: 46, height: 46)
+                    Text("Wardrobe")
+                        .font(.headline)
+                        .foregroundColor(.text)
+                }
+        }
+    }
+    
+    func makeNatureCell() -> some View {
+        NavigationLink(destination: CategoryDetailView(categories: Category.nature())
+            .navigationBarTitle("Nature")) {
+                HStack {
+                    Image(Category.fossils.iconName())
+                        .renderingMode(.original)
+                        .resizable()
+                        .frame(width: 46, height: 46)
+                    Text("Nature")
+                        .font(.headline)
+                        .foregroundColor(.text)
+                }
+        }
+    }
+    
+    
+    func makeSearchCategoryHeader(category: Category) -> some View {
+        HStack {
+            Image(category.iconName())
+                .renderingMode(.original)
+                .resizable()
+                .frame(width: 30, height: 30)
+            Text(category.label())
+                .font(.subheadline)
+        }
+    }
+    
+    
+    private func searchSection(category: Category, items: [Item]) -> some View {
+        Section(header: self.makeSearchCategoryHeader(category: category)) {
+            ForEach(items, content: self.searchItemRow)
+        }
+    }
+    
+    private func searchItemRow(item: Item) -> some View {
+        NavigationLink(destination: ItemDetailView(item: item)) {
+            ItemRowView(item: item)
+        }
+    }
+    
+    private var loadingView: some View {
+        VStack {
+            HStack { Spacer() }
+            Spacer()
+            ActivityIndicator(isAnimating: $isLoadingData, style: .large)
+            Spacer()
+        }.background(Color.dialogue)
+    }
+    
+    
     private var categoriesList: some View {
         List {
             makeNatureCell()
@@ -89,7 +127,7 @@ struct CategoriesView: View {
             makeCategories()
         }.modifier(DismissingKeyboardOnSwipe())
     }
-
+    
     private var searchList: some View {
         ZStack {
             List {
@@ -100,35 +138,9 @@ struct CategoriesView: View {
                 .animation(.default)
         }.modifier(DismissingKeyboardOnSwipe())
     }
-
-    private var searchCategories: [(Category, [Item])] {
-        viewModel.searchResults
-            .map { $0 }
-            .sorted(by: \.key.rawValue)
-    }
-
-    private func searchSection(category: Category, items: [Item]) -> some View {
-        Section(header: self.makeSearchCategoryHeader(category: category)) {
-            ForEach(items, content: self.searchItemRow)
-        }
-    }
-
-    private func searchItemRow(item: Item) -> some View {
-        NavigationLink(destination: ItemDetailView(item: item)) {
-            ItemRowView(item: item)
-        }
-    }
-
-    private var loadingView: some View {
-        VStack {
-            HStack { Spacer() }
-            Spacer()
-            ActivityIndicator(isAnimating: $isLoadingData, style: .large)
-            Spacer()
-        }.background(Color.dialogue)
-    }
 }
 
+// MARK: - Previews
 struct CategoriesView_Previews: PreviewProvider {
     static var previews: some View {
         CategoriesView(categories: Category.items())
