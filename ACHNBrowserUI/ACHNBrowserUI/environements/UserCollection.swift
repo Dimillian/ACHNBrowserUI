@@ -91,16 +91,3 @@ class UserCollection: ObservableObject {
         encoder.dataEncodingStrategy = .base64
     }
 }
-
-extension Array where Element == Item {
-    mutating func toggle(item: Item) -> Bool {
-        var added = false
-        if contains(item) {
-            removeAll(where: { $0 == item })
-        } else {
-            added = true
-            append(item)
-        }
-        return added
-    }
-}

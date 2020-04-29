@@ -11,6 +11,7 @@ import SwiftUI
 
 struct TurnipsFormView: View {
     @Environment(\.presentationMode) private var presentationMode
+    let turnipsViewModel: TurnipsViewModel
     
     @State private var fields = TurnipFields.decode()
     
@@ -20,6 +21,7 @@ struct TurnipsFormView: View {
     private var saveButton: some View {
         Button(action: {
             self.fields.save()
+            self.turnipsViewModel.refreshPrediction()
             self.presentationMode.wrappedValue.dismiss()
         }, label: {
             Text("Save")
@@ -29,6 +31,13 @@ struct TurnipsFormView: View {
     var body: some View {
         NavigationView {
             List {
+                Button(action: {
+                    self.fields.clear()
+                    self.turnipsViewModel.refreshPrediction()
+                }) {
+                    Text("Clear all fields").foregroundColor(.secondaryText)
+                }
+                
                 TextField("Buy price", text: $fields.buyPrice)
                     .keyboardType(.numberPad)
                 ForEach(0..<fields.fields.count) { i in
@@ -45,6 +54,6 @@ struct TurnipsFormView: View {
 
 struct TurnipsFormView_Previews: PreviewProvider {
     static var previews: some View {
-        TurnipsFormView()
+        TurnipsFormView(turnipsViewModel: TurnipsViewModel())
     }
 }

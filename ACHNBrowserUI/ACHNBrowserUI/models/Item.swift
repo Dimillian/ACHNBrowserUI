@@ -115,12 +115,6 @@ extension Sequence {
     }
 }
 
-extension BidirectionalCollection where Element == Item {
-    func filterActive() -> [Item] {
-        self.filter({ $0.isActive() })
-    }
-}
-
 let static_item = Item(name: "Acoustic guitar",
                        image: nil,
                        filename: "Test",

@@ -30,7 +30,13 @@ class TurnipsViewModel: ObservableObject {
     func refreshPrediction() {
         if TurnipFields.exist() {
             let userTurnips = TurnipFields.decode()
-            self.predictions = calculate(values: userTurnips)
+            if !userTurnips.buyPrice.isEmpty {
+                predictions = calculate(values: userTurnips)
+            } else {
+                predictions = nil
+            }
+        } else {
+            predictions = nil
         }
     }
     

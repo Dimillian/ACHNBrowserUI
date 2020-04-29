@@ -48,4 +48,10 @@ struct TurnipFields: Codable {
             print("Error while saving turnips: \(error.localizedDescription)")
         }
     }
+    
+    mutating func clear() {
+        buyPrice = ""
+        fields = [String](repeating: "", count: 12)
+        save()
+    }
 }
