@@ -59,7 +59,7 @@ extension TurnipsView {
     private var predictionsSection: some View {
         Section(header: Text(turnipsDisplay == .average ? "Average daily buy prices" : "Daily min-max prices"),
                 footer: Text(viewModel.pendingNotifications == 0 ? "" :
-                    "You'll receive prices predictions in \(viewModel.pendingNotifications) upcoming daily notifications")
+                    "You'll receive prices predictions in \(viewModel.pendingNotifications - 1) upcoming daily notifications")
                     .font(.footnote)
                     .foregroundColor(.catalogUnselected)) {
             if viewModel.predictions?.averagePrices != nil && viewModel.predictions?.minMax != nil {
