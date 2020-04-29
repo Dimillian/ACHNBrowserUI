@@ -48,6 +48,7 @@ struct TurnipsView: View {
                                 displayMode: .inline)
             .sheet(isPresented: $turnipsFormShown, content: { TurnipsFormView(turnipsViewModel: self.viewModel) })
         }
+        .onAppear(perform: NotificationManager.shared.registerForNotifications)
         .onAppear(perform: viewModel.fetch)
         .onAppear(perform: viewModel.refreshPrediction)
     }
@@ -56,7 +57,11 @@ struct TurnipsView: View {
 // MARK: - Views
 extension TurnipsView {
     private var predictionsSection: some View {
-        Section(header: Text(turnipsDisplay == .average ? "Average daily buy prices" : "Daily min max prices")) {
+        Section(header: Text(turnipsDisplay == .average ? "Average daily buy prices" : "Daily min-max prices"),
+                footer: Text(viewModel.pendingNotifications == 0 ? "" :
+                    "You'll receive prices predictions in \(viewModel.pendingNotifications) upcoming daily notifications")
+                    .font(.footnote)
+                    .foregroundColor(.catalogUnselected)) {
             if viewModel.predictions?.averagePrices != nil && viewModel.predictions?.minMax != nil {
                 Picker(selection: $turnipsDisplay, label: Text("")) {
                     ForEach(TurnipsDisplay.allCases, id: \.self) { section in

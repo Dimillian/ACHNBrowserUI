@@ -14,6 +14,7 @@ import JavaScriptCore
 class TurnipsViewModel: ObservableObject {
     @Published var islands: [Island]?
     @Published var predictions: TurnipPredictions?
+    @Published var pendingNotifications = 0
         
     var cancellable: AnyCancellable?
     
@@ -37,6 +38,14 @@ class TurnipsViewModel: ObservableObject {
             }
         } else {
             predictions = nil
+        }
+    }
+    
+    func refreshPendingNotifications() {
+        NotificationManager.shared.pendingNotifications { [weak self] requests in
+            DispatchQueue.main.async {
+                self?.pendingNotifications = requests.count
+            }
         }
     }
     

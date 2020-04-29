@@ -14,6 +14,7 @@ struct TurnipsFormView: View {
     let turnipsViewModel: TurnipsViewModel
     
     @State private var fields = TurnipFields.decode()
+    @State private var enableNotifications = true
     
     private let labels = ["Monday AM", "Monday PM", "Tuesday AM", "Tuesday PM", "Wednesday AM", "Wednesday PM",
                           "Thursday AM", "Thursday PM", "Friday AM", "Friday PM", "Saturday AM", "Saturday PM"]
@@ -22,6 +23,12 @@ struct TurnipsFormView: View {
         Button(action: {
             self.fields.save()
             self.turnipsViewModel.refreshPrediction()
+            if self.enableNotifications, let predictions = self.turnipsViewModel.predictions {
+                NotificationManager.shared.registerTurnipsPredictionNotification(prediction: predictions)
+            } else {
+                NotificationManager.shared.removePendingNotifications()
+            }
+            self.turnipsViewModel.refreshPendingNotifications()
             self.presentationMode.wrappedValue.dismiss()
         }, label: {
             Text("Save")
@@ -31,18 +38,25 @@ struct TurnipsFormView: View {
     var body: some View {
         NavigationView {
             List {
-                Button(action: {
-                    self.fields.clear()
-                    self.turnipsViewModel.refreshPrediction()
-                }) {
-                    Text("Clear all fields").foregroundColor(.secondaryText)
+                Section(header: Text("Configuration")) {
+                    Button(action: {
+                        self.fields.clear()
+                        self.turnipsViewModel.refreshPrediction()
+                    }) {
+                        Text("Clear all fields").foregroundColor(.secondaryText)
+                    }
+                    Toggle(isOn: $enableNotifications) {
+                        Text("Receive prices predictions notification")
+                    }
+                    
                 }
-                
-                TextField("Buy price", text: $fields.buyPrice)
-                    .keyboardType(.numberPad)
-                ForEach(0..<fields.fields.count) { i in
-                    TextField(self.labels[i], text: self.$fields.fields[i])
+                Section(header: Text("Your in game prices")) {
+                    TextField("Buy price", text: $fields.buyPrice)
                         .keyboardType(.numberPad)
+                    ForEach(0..<fields.fields.count) { i in
+                        TextField(self.labels[i], text: self.$fields.fields[i])
+                            .keyboardType(.numberPad)
+                    }
                 }
             }
             .navigationBarItems(trailing: saveButton)

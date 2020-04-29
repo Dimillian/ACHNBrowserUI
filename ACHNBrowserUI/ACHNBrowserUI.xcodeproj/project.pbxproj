@@ -121,6 +121,7 @@
 		695183682459721C005D28E0 /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = 695183672459721C005D28E0 /* Array.swift */; };
 		6951836A245977D1005D28E0 /* TurnipsAveragePriceRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69518369245977D1005D28E0 /* TurnipsAveragePriceRow.swift */; };
 		69518370245983C2005D28E0 /* Collection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6951836F245983C2005D28E0 /* Collection.swift */; };
+		6951837224598C8A005D28E0 /* NotificationsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6951837124598C8A005D28E0 /* NotificationsManager.swift */; };
 		697E63EE2449A365008FB710 /* ACNHApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 697E63ED2449A365008FB710 /* ACNHApiService.swift */; };
 		697E63F02449A38A008FB710 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 697E63EF2449A38A008FB710 /* APIError.swift */; };
 		697E63F22449A406008FB710 /* Villager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 697E63F12449A406008FB710 /* Villager.swift */; };
@@ -312,6 +313,7 @@
 		695183672459721C005D28E0 /* Array.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Array.swift; sourceTree = "<group>"; };
 		69518369245977D1005D28E0 /* TurnipsAveragePriceRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TurnipsAveragePriceRow.swift; sourceTree = "<group>"; };
 		6951836F245983C2005D28E0 /* Collection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Collection.swift; sourceTree = "<group>"; };
+		6951837124598C8A005D28E0 /* NotificationsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsManager.swift; sourceTree = "<group>"; };
 		697E63ED2449A365008FB710 /* ACNHApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ACNHApiService.swift; sourceTree = "<group>"; };
 		697E63EF2449A38A008FB710 /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
 		697E63F12449A406008FB710 /* Villager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Villager.swift; sourceTree = "<group>"; };
@@ -783,6 +785,7 @@
 				6834557A244CA8E10072FC0C /* URL.swift */,
 				69CA5EFB244ED38C00B275B6 /* FeedbackGenerator.swift */,
 				69CA5F17244F447E00B275B6 /* EventsDescription.swift */,
+				6951837124598C8A005D28E0 /* NotificationsManager.swift */,
 			);
 			path = utils;
 			sourceTree = "<group>";
@@ -1090,6 +1093,7 @@
 				695183682459721C005D28E0 /* Array.swift in Sources */,
 				69CA5EF6244DBFCB00B275B6 /* Fruit.swift in Sources */,
 				693E0B1B244C2B9300D20E46 /* AppUserDefault.swift in Sources */,
+				6951837224598C8A005D28E0 /* NotificationsManager.swift in Sources */,
 				69BEA989243E68D400F02C61 /* UserCollection.swift in Sources */,
 				4C7FE78324574FB50011E8AB /* ActivityIndicator.swift in Sources */,
 				6942FC37244988F80062FE8F /* SafariView.swift in Sources */,
