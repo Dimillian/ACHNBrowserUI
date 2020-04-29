@@ -122,6 +122,7 @@
 		6951836A245977D1005D28E0 /* TurnipsAveragePriceRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69518369245977D1005D28E0 /* TurnipsAveragePriceRow.swift */; };
 		69518370245983C2005D28E0 /* Collection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6951836F245983C2005D28E0 /* Collection.swift */; };
 		6951837224598C8A005D28E0 /* NotificationsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6951837124598C8A005D28E0 /* NotificationsManager.swift */; };
+		6951837524599C26005D28E0 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6951837424599C26005D28E0 /* StoreKit.framework */; };
 		697E63EE2449A365008FB710 /* ACNHApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 697E63ED2449A365008FB710 /* ACNHApiService.swift */; };
 		697E63F02449A38A008FB710 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 697E63EF2449A38A008FB710 /* APIError.swift */; };
 		697E63F22449A406008FB710 /* Villager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 697E63F12449A406008FB710 /* Villager.swift */; };
@@ -314,6 +315,7 @@
 		69518369245977D1005D28E0 /* TurnipsAveragePriceRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TurnipsAveragePriceRow.swift; sourceTree = "<group>"; };
 		6951836F245983C2005D28E0 /* Collection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Collection.swift; sourceTree = "<group>"; };
 		6951837124598C8A005D28E0 /* NotificationsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsManager.swift; sourceTree = "<group>"; };
+		6951837424599C26005D28E0 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		697E63ED2449A365008FB710 /* ACNHApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ACNHApiService.swift; sourceTree = "<group>"; };
 		697E63EF2449A38A008FB710 /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
 		697E63F12449A406008FB710 /* Villager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Villager.swift; sourceTree = "<group>"; };
@@ -400,6 +402,7 @@
 				69CA5EFF244EEA4E00B275B6 /* UIImageColors in Frameworks */,
 				68BA5831244B738700B53811 /* SDWebImageSwiftUI in Frameworks */,
 				68345589244E4DEF0072FC0C /* ACNHEvents in Frameworks */,
+				6951837524599C26005D28E0 /* StoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -644,6 +647,14 @@
 			path = rows;
 			sourceTree = "<group>";
 		};
+		6951837324599C26005D28E0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6951837424599C26005D28E0 /* StoreKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		697E63F32449A488008FB710 /* villagers */ = {
 			isa = PBXGroup;
 			children = (
@@ -668,6 +679,7 @@
 			children = (
 				69AF8C4F243E283D001DD9CB /* ACHNBrowserUI */,
 				69AF8C4E243E283D001DD9CB /* Products */,
+				6951837324599C26005D28E0 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -1260,7 +1272,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = ACHNBrowserUI/ACHNBrowserUI.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 042522020;
+				CURRENT_PROJECT_VERSION = 042912020;
 				DEVELOPMENT_ASSET_PATHS = "\"ACHNBrowserUI/Preview Content\"";
 				DEVELOPMENT_TEAM = Z6P74P6T99;
 				ENABLE_PREVIEWS = YES;
@@ -1285,7 +1297,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = ACHNBrowserUI/ACHNBrowserUI.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 042522020;
+				CURRENT_PROJECT_VERSION = 042912020;
 				DEVELOPMENT_ASSET_PATHS = "\"ACHNBrowserUI/Preview Content\"";
 				DEVELOPMENT_TEAM = Z6P74P6T99;
 				ENABLE_PREVIEWS = YES;
