@@ -41,19 +41,37 @@ class NotificationManager {
                     components.weekday = dayOfTheWeek
                     components.hour = isMorning ? 8 : 12
                     
-                    let trigger = UNCalendarNotificationTrigger(dateMatching: components, repeats: false)
-                    let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
-                    UNUserNotificationCenter.current().add(request) { error in
-                        if let error = error {
-                            print("Error while registering notification: \(error.localizedDescription)")
-                        }
-                    }
-                    
+                    registerNotification(content: content, date: components)
                 }
                 
                 if !isMorning {
                     dayOfTheWeek += 1
                 }
+            }
+            
+            registerReminderNotification()
+        }
+    }
+    
+    private func registerReminderNotification() {
+        let content = UNMutableNotificationContent()
+        content.title = "Friendly reminder "
+        content.body = "It's time to buy turnips and add the buy price in the app"
+        
+        var components = DateComponents()
+        components.calendar = Calendar(identifier: .gregorian)
+        components.weekday = 1
+        components.hour = 9
+        
+        registerNotification(content: content, date: components)
+    }
+    
+    private func registerNotification(content: UNMutableNotificationContent, date: DateComponents) {
+        let trigger = UNCalendarNotificationTrigger(dateMatching: date, repeats: false)
+        let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
+        UNUserNotificationCenter.current().add(request) { error in
+            if let error = error {
+                print("Error while registering notification: \(error.localizedDescription)")
             }
         }
     }

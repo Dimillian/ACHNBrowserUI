@@ -22,6 +22,7 @@ struct TurnipPredictions: Codable {
 struct TurnipFields: Codable {
     var buyPrice: String = ""
     var fields = [String](repeating: "", count: 12)
+    var amount: Int = 0
     
     static func exist() -> Bool {
         FileManager.default.fileExists(atPath: savePath.path)
