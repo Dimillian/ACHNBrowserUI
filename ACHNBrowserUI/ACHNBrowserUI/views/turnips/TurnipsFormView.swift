@@ -57,13 +57,14 @@ struct TurnipsFormView: View {
                 Section(header: SectionHeaderView(text: "Your in game prices")) {
                     HStack {
                         Text("Buy price")
-                        TextField("...🔔", text: $fields.buyPrice)
+                        TextField("... 🔔 ...", text: $fields.buyPrice)
                             .keyboardType(.numberPad)
                     }
                     ForEach(weekdays, id: \.self, content: weekdayRow)
                 }
             }
             .listStyle(GroupedListStyle())
+            .modifier(AdaptsToSoftwareKeyboard())
             .navigationBarItems(trailing: saveButton)
             .navigationBarTitle("Add your turnip prices", displayMode: .inline)
         }
