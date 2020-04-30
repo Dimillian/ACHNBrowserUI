@@ -27,6 +27,7 @@ public struct NookazonService {
         return URLSession.shared.dataTaskPublisher(for: components!.url!)
             .map { $0.data }
             .decode(type: ListingContainer.self, decoder: decoder)
+            .mapError{ $0 }
             .map { $0.listings }
             .eraseToAnyPublisher()
     }

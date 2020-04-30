@@ -43,7 +43,7 @@ struct ListingRow: View {
                         }
                     }
             }
-            if listing.makeOffer {
+            if listing.makeOffer == true {
                 HStack(spacing: 4) {
                     Image("icon-bell")
                         .renderingMode(.original)
@@ -53,7 +53,7 @@ struct ListingRow: View {
                     Text("Make an Offer")
                 }
             }
-            if listing.needMaterials {
+            if listing.needMaterials == true {
                 HStack(spacing: 4) {
                     Image("icon-helmet")
                         .renderingMode(.original)
