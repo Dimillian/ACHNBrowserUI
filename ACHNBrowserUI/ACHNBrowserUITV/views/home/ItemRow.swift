@@ -19,7 +19,7 @@ struct ItemRow: View {
             ItemImage(path: item.itemImage, size: 150)
             Text(item.name)
         }
-        .scaleEffect(focused ? 1.3 : 1.0)
+        .scaleEffect(focused ? 1.2 : 1.0)
         .animation(.interactiveSpring())
         .focusable(true) { isFocused in
             self.focused = isFocused

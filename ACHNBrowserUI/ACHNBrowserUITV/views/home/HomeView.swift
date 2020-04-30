@@ -21,10 +21,12 @@ struct HomeView: View {
     
     private func categorySection(category: Backend.Category, items: [Item]) -> some View {
         Section(header: Text(category.label())) {
-            HStack {
-                ForEach(items.prefix(5)) { item in
-                    ItemRow(item: item)
-                }
+            ScrollView(.horizontal) {
+                HStack {
+                    ForEach(items.prefix(10)) { item in
+                        ItemRow(item: item)
+                    }
+                }.frame(height: 220)
             }
         }
     }
