@@ -10,30 +10,30 @@ import Foundation
 import Combine
 import WebKit
 
-class TurnipExchangeService: NSObject, WKScriptMessageHandler {
-    static let shared = TurnipExchangeService()
+public class TurnipExchangeService: NSObject, WKScriptMessageHandler {
+    public static let shared = TurnipExchangeService()
     
-    struct IslandContainer: Decodable {
-        let success: Bool
-        let message: String
-        let islands: [Island]
+    public struct IslandContainer: Decodable {
+        public let success: Bool
+        public let message: String
+        public let islands: [Island]
     }
     
-    struct QueueContainer: Decodable {
-        let success: Bool
-        let onIsland: Int
-        let visitors: [Visitor]
-        let total: Int
-        let visitorCount: Int
+    public struct QueueContainer: Decodable {
+        public let success: Bool
+        public let onIsland: Int
+        public let visitors: [Visitor]
+        public let total: Int
+        public let visitorCount: Int
     }
     
-    struct Visitor: Decodable, Identifiable {
-        let name: String
-        let addedTimestamp: String
-        let place: Int
-        let time: Int
+    public struct Visitor: Decodable, Identifiable {
+        public let name: String
+        public let addedTimestamp: String
+        public let place: Int
+        public let time: Int
         
-        var id: String {
+        public var id: String {
             name
         }
     }
@@ -53,7 +53,7 @@ class TurnipExchangeService: NSObject, WKScriptMessageHandler {
     }
     
     /// Get a list of all the islands
-    func fetchIslands() -> AnyPublisher<[Island], Never> {
+    public func fetchIslands() -> AnyPublisher<[Island], Never> {
         Future { [weak self] resolve in
             self?.islandCallback = {
                 resolve(.success($0))
@@ -72,7 +72,7 @@ class TurnipExchangeService: NSObject, WKScriptMessageHandler {
         .eraseToAnyPublisher()
     }
     
-    func fetchQueue(turnipCode: String) -> AnyPublisher<QueueContainer, Never> {
+    public func fetchQueue(turnipCode: String) -> AnyPublisher<QueueContainer, Never> {
         Future { [weak self] resolve in
             self?.queueCallback = {
                 resolve(.success($0))
@@ -91,7 +91,7 @@ class TurnipExchangeService: NSObject, WKScriptMessageHandler {
         .eraseToAnyPublisher()
     }
     
-    func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
+    public func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
         if message.name == "island" {
             do {
                 let encoded = try JSONSerialization.data(withJSONObject: message.body, options: [])

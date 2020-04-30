@@ -7,6 +7,7 @@
 //
 
 import SwiftUI
+import Backend
 
 struct DashboardNookazonListingSection: View {
     @Binding var selectedSheet: DashboardView.Sheet?

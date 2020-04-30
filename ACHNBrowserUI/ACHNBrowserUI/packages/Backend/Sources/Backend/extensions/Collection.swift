@@ -9,16 +9,16 @@
 import Foundation
 
 
-extension BidirectionalCollection where Element == Item {
+public extension BidirectionalCollection where Element == Item {
     func filterActive() -> [Item] {
         self.filter({ $0.isActive() })
     }
 }
 
-extension Collection where Element: Numeric {
+public extension Collection where Element: Numeric {
     var total: Element { reduce(0, +) }
 }
 
-extension Collection where Element: BinaryInteger {
+public extension Collection where Element: BinaryInteger {
     var average: Double { isEmpty ? 0 : Double(total) / Double(count) }
 }

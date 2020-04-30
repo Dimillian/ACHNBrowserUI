@@ -9,13 +9,13 @@
 import Foundation
 import SwiftUI
 
-struct Material: Codable, Equatable, Identifiable {
-    var id: String { itemName }
+public struct Material: Codable, Equatable, Identifiable {
+    public var id: String { itemName }
     
-    let itemName: String
-    let count: Int
+    public let itemName: String
+    public let count: Int
     
-    var iconName: String {
+    public var iconName: String {
         switch itemName {
         case "Softwood":
             return "icon-softwood"

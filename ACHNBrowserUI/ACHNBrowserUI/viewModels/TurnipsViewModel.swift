@@ -10,6 +10,7 @@ import Foundation
 import Combine
 import SwiftUI
 import JavaScriptCore
+import Backend
 
 class TurnipsViewModel: ObservableObject {
     @Published var islands: [Island]?

@@ -7,9 +7,10 @@
 //
 
 import SwiftUI
+import Backend
 
 struct CategoryRowView: View {
-    let category: Category
+    let category: Backend.Category
     
     var body: some View {
         NavigationLink(destination: ItemsListView(viewModel: ItemsViewModel(category: category))) {

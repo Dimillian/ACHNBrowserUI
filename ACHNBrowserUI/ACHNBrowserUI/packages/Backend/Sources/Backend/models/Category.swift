@@ -9,7 +9,7 @@
 import Foundation
 import SwiftUI
 
-enum Category: String, CaseIterable {
+public enum Category: String, CaseIterable {
     case housewares, miscellaneous
     case wallMounted = "wall-mounted"
     case wallpapers, floors, rugs, photos, posters, fencing, tools
@@ -17,7 +17,7 @@ enum Category: String, CaseIterable {
     case umbrellas, music, recipes, construction, nookmiles, other
     case art, bugs, fish, fossils
     
-    func label() -> String {
+    public func label() -> String {
         switch self {
         case .fish:
             return "Fishes"
@@ -28,7 +28,7 @@ enum Category: String, CaseIterable {
         }
     }
     
-    func iconName() -> String {
+    public func iconName() -> String {
         switch self {
         case .housewares, .miscellaneous, .wallMounted, .photos, .posters, .art:
             return "icon-leaf"
@@ -79,18 +79,18 @@ enum Category: String, CaseIterable {
         }
     }
     
-    static func items() -> [Category] {
+    public static func items() -> [Category] {
         [.housewares, .miscellaneous, .wallMounted, .art,
          .wallpapers, .floors, .rugs, .photos, .fencing, .tools, .music, .nookmiles,
          .recipes, .construction, .other]
     }
     
-    static func wardrobe() -> [Category] {
+    public static func wardrobe() -> [Category] {
         [.tops, .bottoms, .dresses, .headwear,
          .accessories, .socks, .shoes, .bags, .umbrellas]
     }
     
-    static func nature() -> [Category] {
+    public static func nature() -> [Category] {
         return [.fish, .bugs, .fossils]
     }
 }

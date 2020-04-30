@@ -8,18 +8,18 @@
 
 import Foundation
 
-struct Infrastructure {
-    enum NookShop: String, CaseIterable {
+public struct Infrastructure {
+    public enum NookShop: String, CaseIterable {
         case tent = "Tent"
         case crany = "Nook's Cranny"
         case upraded = "Nook's Cranny upgraded"
     }
     
-    enum AbleSisters: String, CaseIterable {
+    public enum AbleSisters: String, CaseIterable {
         case visiting, shop
     }
     
-    enum ResidentService: String, CaseIterable {
+    public enum ResidentService: String, CaseIterable {
         case tent, building
     }
 }

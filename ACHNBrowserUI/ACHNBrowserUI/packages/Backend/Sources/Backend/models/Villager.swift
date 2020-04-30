@@ -8,12 +8,12 @@
 
 import Foundation
 
-struct Villager: Identifiable, Codable, Equatable {
-    let id: Int
-    let name: [String: String]
-    let personality: String
-    let birthday: String?
-    var formattedBirthday: String? {
+public struct Villager: Identifiable, Codable, Equatable {
+    public let id: Int
+    public let name: [String: String]
+    public let personality: String
+    public let birthday: String?
+    public var formattedBirthday: String? {
         guard let birthday = birthday else { return nil }
         let formatter = DateFormatter()
         formatter.dateFormat = "d/M"
@@ -22,6 +22,6 @@ struct Villager: Identifiable, Codable, Equatable {
         return formatter.string(from: day)
     }
     
-    let gender: String
-    let species: String
+    public let gender: String
+    public let species: String
 }

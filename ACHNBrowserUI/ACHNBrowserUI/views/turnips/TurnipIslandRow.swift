@@ -7,6 +7,7 @@
 //
 
 import SwiftUI
+import Backend
 
 struct TurnipIslandRow: View {
     let island: Island

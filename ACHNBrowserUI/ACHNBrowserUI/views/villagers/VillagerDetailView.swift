@@ -7,6 +7,7 @@
 //
 
 import SwiftUI
+import Backend
 
 struct VillagerDetailView: View {
     let villager: Villager

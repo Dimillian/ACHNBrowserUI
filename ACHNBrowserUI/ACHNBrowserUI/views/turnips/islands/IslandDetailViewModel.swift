@@ -9,6 +9,7 @@
 import Foundation
 import Combine
 import SwiftUI
+import Backend
 
 class IslandDetailViewModel: ObservableObject {
     @Published var container: TurnipExchangeService.QueueContainer?

@@ -7,6 +7,7 @@
 //
 
 import SwiftUI
+import Backend
 
 struct ListingRow: View {
     let listing: Listing

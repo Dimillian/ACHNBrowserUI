@@ -9,15 +9,15 @@
 import Foundation
 import Combine
 
-struct ACNHApiService {
-    static let BASE_URL = URL(string: "http://acnhapi.com/")!
+public struct ACNHApiService {
+    public static let BASE_URL = URL(string: "http://acnhapi.com/")!
     
-    enum Endpoint {
+    public enum Endpoint {
         case villagers
         case villagerIcon(id: Int)
         case villagerImage(id: Int)
         
-        func path() -> String {
+        public func path() -> String {
             switch self {
             case .villagers:
                 return "villagers"
@@ -31,7 +31,7 @@ struct ACNHApiService {
     
     private static let decoder = JSONDecoder()
     
-    static func fetch<T: Codable>(endpoint: Endpoint) -> AnyPublisher<T ,APIError> {
+    public static func fetch<T: Codable>(endpoint: Endpoint) -> AnyPublisher<T ,APIError> {
         let component = URLComponents(url: BASE_URL.appendingPathComponent(endpoint.path()),
                                       resolvingAgainstBaseURL: false)!
         let request = URLRequest(url: component.url!)

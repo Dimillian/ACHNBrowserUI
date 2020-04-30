@@ -7,6 +7,7 @@
 //
 
 import SwiftUI
+import Backend
 
 struct VillagerRowView: View {
     @EnvironmentObject private var collection: UserCollection

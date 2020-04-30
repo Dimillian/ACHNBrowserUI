@@ -9,10 +9,10 @@
 import Foundation
 import Combine
 
-class Items: ObservableObject {
-    static let shared = Items()
+public class Items: ObservableObject {
+    public static let shared = Items()
     
-    @Published var categories: [Category: [Item]] = [:]
+    @Published public var categories: [Category: [Item]] = [:]
     
     private var cancellable = Set<AnyCancellable>()
     

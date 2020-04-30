@@ -7,16 +7,17 @@
 //
 
 import SwiftUI
+import Backend
 
 struct CategoriesView: View {
     // MARK: - Vars
-    let categories: [Category]
+    let categories: [Backend.Category]
     
     @ObservedObject var viewModel = CategoriesSearchViewModel()
     @State var isLoadingData = false
 
     // MARK: - Computed vars
-    private var searchCategories: [(Category, [Item])] {
+    private var searchCategories: [(Backend.Category, [Item])] {
         viewModel.searchResults
             .map { $0 }
             .sorted(by: \.key.rawValue)
@@ -86,7 +87,7 @@ extension CategoriesView {
     }
     
     
-    func makeSearchCategoryHeader(category: Category) -> some View {
+    func makeSearchCategoryHeader(category: Backend.Category) -> some View {
         HStack {
             Image(category.iconName())
                 .renderingMode(.original)
@@ -98,7 +99,7 @@ extension CategoriesView {
     }
     
     
-    private func searchSection(category: Category, items: [Item]) -> some View {
+    private func searchSection(category: Backend.Category, items: [Item]) -> some View {
         Section(header: self.makeSearchCategoryHeader(category: category)) {
             ForEach(items, content: self.searchItemRow)
         }

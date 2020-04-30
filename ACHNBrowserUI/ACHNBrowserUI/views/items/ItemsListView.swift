@@ -7,6 +7,7 @@
 //
 
 import SwiftUI
+import Backend
 
 struct ItemsListView: View {
     @ObservedObject var viewModel: ItemsViewModel

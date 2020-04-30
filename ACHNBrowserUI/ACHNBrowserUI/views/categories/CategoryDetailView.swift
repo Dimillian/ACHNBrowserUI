@@ -7,9 +7,10 @@
 //
 
 import SwiftUI
+import Backend
 
 struct CategoryDetailView: View {
-    let categories: [Category]
+    let categories: [Backend.Category]
     
     var body: some View {
         List {

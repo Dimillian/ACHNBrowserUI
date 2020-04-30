@@ -8,23 +8,23 @@
 
 import Foundation
 
-struct AppUserDefaults {
+public struct AppUserDefaults {
     @UserDefault("island_name", defaultValue: "")
-    static var islandName: String
+    public static var islandName: String
     
     @UserDefaultEnum("hemisphere", defaultValue: Hemisphere.north)
-    static var hemisphere: Hemisphere
+    public static var hemisphere: Hemisphere
     
     @UserDefaultEnum("fruit", defaultValue: Fruit.apple)
-    static var fruit: Fruit
+    public static var fruit: Fruit
     
     @UserDefaultEnum("nook_shop", defaultValue: Infrastructure.NookShop.tent)
-    static var nookShop: Infrastructure.NookShop
+    public static var nookShop: Infrastructure.NookShop
     
     @UserDefaultEnum("able_sisters", defaultValue: Infrastructure.AbleSisters.visiting)
-    static var ableSisters: Infrastructure.AbleSisters
+    public static var ableSisters: Infrastructure.AbleSisters
     
     @UserDefaultEnum("resident_service", defaultValue: Infrastructure.ResidentService.tent)
-    static var residentService: Infrastructure.ResidentService
+    public static var residentService: Infrastructure.ResidentService
 }
 

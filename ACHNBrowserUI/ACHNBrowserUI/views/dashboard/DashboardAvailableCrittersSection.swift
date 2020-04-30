@@ -7,6 +7,7 @@
 //
 
 import SwiftUI
+import Backend
 
 struct DashboardAvailableCrittersSection: View {
     @EnvironmentObject private var collection: UserCollection

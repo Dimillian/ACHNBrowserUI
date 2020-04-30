@@ -9,14 +9,14 @@
 import Foundation
 import Combine
 
-struct NookPlazaAPIService {
+public struct NookPlazaAPIService {
     // Will be available once the API is public
     // static let BASE_URL = URL(string: API_URL)!
     
     private static let decoder = JSONDecoder()
             
     // Here we fake the API so we use localshost and replace any response with a local response coming from bundle files.
-    static func fetch<T: Codable>(endpoint: Category) -> AnyPublisher<T ,APIError> {
+    public static func fetch<T: Codable>(endpoint: Category) -> AnyPublisher<T ,APIError> {
         let url = Bundle.main.url(forResource: endpoint.rawValue, withExtension: nil)!
         let data = try! Data(contentsOf: url)
         let component = URLComponents(url: URL(string: "https://localhost")!.appendingPathComponent(endpoint.rawValue),

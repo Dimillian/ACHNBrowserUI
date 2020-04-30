@@ -8,6 +8,7 @@
 
 import SwiftUI
 import Combine
+import Backend
 
 class ItemDetailViewModel: ObservableObject {
     @Published var item: Item

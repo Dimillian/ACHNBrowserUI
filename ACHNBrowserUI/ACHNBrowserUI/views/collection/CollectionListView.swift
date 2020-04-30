@@ -7,6 +7,7 @@
 //
 
 import SwiftUI
+import Backend
 
 enum Tabs: String, CaseIterable {
     case items, villagers, critters

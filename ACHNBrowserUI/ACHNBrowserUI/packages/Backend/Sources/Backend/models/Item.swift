@@ -9,20 +9,20 @@
 import Foundation
 import SwiftUI
 
-struct ItemResponse: Codable {
+public struct ItemResponse: Codable {
     let total: Int
     let results: [Item]
 }
 
-struct Item: Codable, Equatable, Identifiable {
-    var id: String { name }
+public struct Item: Codable, Equatable, Identifiable {
+    public var id: String { name }
     
-    let name: String
-    let image: String?
-    let filename: String?
-    let house: String?
+    public let name: String
+    public let image: String?
+    public let filename: String?
+    public let house: String?
     
-    var itemImage: String? {
+    public var itemImage: String? {
         if let filename = filename {
             return filename
         } else if let image = image, !image.hasPrefix("https://storage") {
@@ -31,15 +31,15 @@ struct Item: Codable, Equatable, Identifiable {
         return nil
     }
     
-    let obtainedFrom: String?
-    let dIY: Bool?
-    let customize: Bool?
+    public let obtainedFrom: String?
+    public let dIY: Bool?
+    public let customize: Bool?
     
-    let variants: [Variant]?
+    public let variants: [Variant]?
     
-    let category: String
+    public let category: String
     
-    var appCategory: Category {
+    public var appCategory: Category {
         if category == "Fish - North" || category == "Fish - South" {
             return .fish
         } else if category == "Bugs - North" || category == "Buhs - South" {
@@ -48,23 +48,23 @@ struct Item: Codable, Equatable, Identifiable {
         return Category(rawValue: category.lowercased())!
     }
         
-    let materials: [Material]?
+    public let materials: [Material]?
     
-    let buy: Int?
-    let sell: Int?
+    public let buy: Int?
+    public let sell: Int?
     
-    let shadow: String?
-    let rarity: String?
-    let activeMonthsNorth: [Int]?
-    let activeMonthsSouth: [Int]?
-    let activeTimes: [[String: Int]]?
-    let set: String?
-    let tag: String?
-    let themes: [String]?
+    public let shadow: String?
+    public let rarity: String?
+    public let activeMonthsNorth: [Int]?
+    public let activeMonthsSouth: [Int]?
+    public let activeTimes: [[String: Int]]?
+    public let set: String?
+    public let tag: String?
+    public let themes: [String]?
 }
 
 // MARK: - Calendar
-extension Item {
+public extension Item {
     static let monthFormatter: DateFormatter = {
         let formatter = DateFormatter()
         formatter.dateFormat = "MM"
@@ -100,14 +100,14 @@ extension Item {
 }
 
 // MARK: - Critters
-extension Item {
+public extension Item {
     var isCritter: Bool {
         appCategory == .fish || appCategory == .bugs
     }
 }
 
 // MARK: - Array
-extension Sequence {
+public extension Sequence {
     func sorted<T: Comparable>(by keyPath: KeyPath<Element, T>) -> [Element] {
         return sorted { a, b in
             return a[keyPath: keyPath] > b[keyPath: keyPath]
@@ -115,7 +115,7 @@ extension Sequence {
     }
 }
 
-let static_item = Item(name: "Acoustic guitar",
+public let static_item = Item(name: "Acoustic guitar",
                        image: nil,
                        filename: "Test",
                        house: nil,

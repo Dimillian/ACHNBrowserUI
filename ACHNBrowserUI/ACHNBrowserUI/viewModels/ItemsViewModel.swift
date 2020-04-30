@@ -8,6 +8,7 @@
 
 import Foundation
 import Combine
+import Backend
 
 class ItemsViewModel: ObservableObject {
     @Published var items: [Item] = []
@@ -22,7 +23,7 @@ class ItemsViewModel: ObservableObject {
     }
     
     
-    var category: Category {
+    var category: Backend.Category {
         didSet {
             sort = nil
             itemCancellable = Items.shared.$categories.sink { [weak self] items in
@@ -60,7 +61,7 @@ class ItemsViewModel: ObservableObject {
     
     private var searchCancellable: AnyCancellable?
     
-    public init(category: Category) {
+    public init(category: Backend.Category) {
         self.category = category
         searchCancellable = $searchText
             .debounce(for: .milliseconds(300), scheduler: DispatchQueue.main)

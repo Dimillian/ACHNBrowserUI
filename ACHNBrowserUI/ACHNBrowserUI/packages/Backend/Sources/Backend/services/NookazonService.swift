@@ -9,8 +9,8 @@
 import Foundation
 import Combine
 
-struct NookazonService {
-    struct ListingContainer: Decodable {
+public struct NookazonService {
+    public struct ListingContainer: Decodable {
         var listings: [Listing]
     }
 
@@ -20,7 +20,7 @@ struct NookazonService {
         return decoder
     }()
     
-    static func fetchListings(item: Item) -> AnyPublisher<[Listing], Error> {
+    public static func fetchListings(item: Item) -> AnyPublisher<[Listing], Error> {
         var components = URLComponents(string: "https://acnh.ericlewis.dev/")
         components?.queryItems = [URLQueryItem(name: "search", value: item.id)]
         
@@ -31,7 +31,7 @@ struct NookazonService {
             .eraseToAnyPublisher()
     }
     
-    static func recentListings() -> AnyPublisher<[Listing], Error> {
+    public static func recentListings() -> AnyPublisher<[Listing], Error> {
         URLSession.shared.dataTaskPublisher(for: URL(string: "https://nookazon.com/api/listings?size=6")!)
             .map { $0.data }
             .decode(type: ListingContainer.self, decoder: decoder)

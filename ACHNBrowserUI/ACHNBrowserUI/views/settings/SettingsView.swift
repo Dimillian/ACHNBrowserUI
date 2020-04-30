@@ -7,6 +7,7 @@
 //
 
 import SwiftUI
+import Backend
 
 struct SettingsView: View {
     @State private var islandName = AppUserDefaults.islandName

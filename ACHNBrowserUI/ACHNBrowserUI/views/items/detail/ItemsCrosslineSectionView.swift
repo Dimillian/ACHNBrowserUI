@@ -7,6 +7,7 @@
 //
 
 import SwiftUI
+import Backend
 
 struct ItemsCrosslineSectionView: View {
     let title: String

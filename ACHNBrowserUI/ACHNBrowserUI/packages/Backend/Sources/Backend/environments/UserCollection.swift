@@ -9,10 +9,10 @@
 import Foundation
 import Combine
 
-class UserCollection: ObservableObject {
-    @Published var items: [Item] = []
-    @Published var villagers: [Villager] = []
-    @Published var critters: [Item] = []
+public class UserCollection: ObservableObject {
+    @Published public var items: [Item] = []
+    @Published public var villagers: [Villager] = []
+    @Published public var critters: [Item] = []
     
     struct SavedData: Codable {
         let items: [Item]
@@ -24,7 +24,7 @@ class UserCollection: ObservableObject {
     private let encoder = JSONEncoder()
     private let decoder = JSONDecoder()
     
-    init() {
+    public init() {
         do {
             filePath = try FileManager.default.url(for: .documentDirectory,
                                                    in: .userDomainMask,
@@ -46,7 +46,7 @@ class UserCollection: ObservableObject {
         }
     }
     
-    func caughtIn(list: [Item]) -> Int {
+    public func caughtIn(list: [Item]) -> Int {
         var caught = 0
         for critter in critters {
             if list.contains(critter) {
@@ -56,19 +56,19 @@ class UserCollection: ObservableObject {
         return caught
     }
     
-    func toggleItem(item: Item) -> Bool {
+    public func toggleItem(item: Item) -> Bool {
         let added = items.toggle(item: item)
         save()
         return added
     }
     
-    func toggleCritters(critter: Item) -> Bool {
+    public func toggleCritters(critter: Item) -> Bool {
         let added = critters.toggle(item: critter)
         save()
         return added
     }
     
-    func toggleVillager(villager: Villager) -> Bool {
+    public func toggleVillager(villager: Villager) -> Bool {
         var added = false
         if villagers.contains(villager) {
             villagers.removeAll(where: { $0 == villager })

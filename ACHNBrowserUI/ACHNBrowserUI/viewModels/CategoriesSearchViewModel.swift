@@ -9,10 +9,11 @@
 import Foundation
 import SwiftUI
 import Combine
+import Backend
 
 class CategoriesSearchViewModel: ObservableObject {
     @Published var searchText = ""
-    @Published var searchResults: [Category: [Item]] = [:]
+    @Published var searchResults: [Backend.Category: [Item]] = [:]
     @Published var isLoadingData = false
     
     private var searchCancellable: AnyCancellable?
@@ -33,7 +34,7 @@ class CategoriesSearchViewModel: ObservableObject {
             })
     }
 
-    private func itemsInCategory(with string: String) -> [Category: [Item]] {
+    private func itemsInCategory(with string: String) -> [Backend.Category: [Item]] {
         Items.shared.categories
             .mapValues({ $0.filter({
                 $0.name.lowercased().contains(string.lowercased())

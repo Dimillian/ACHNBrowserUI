@@ -13,22 +13,29 @@ fileprivate let savePath = try! FileManager.default.url(for: .documentDirectory,
                                                         appropriateFor: nil,
                                                         create: true).appendingPathComponent("turnips")
 
-struct TurnipPredictions: Codable {
-    let minBuyPrice: Int?
-    let averagePrices: [Int]?
-    let minMax: [[Int]]?
+public struct TurnipPredictions: Codable {
+    public let minBuyPrice: Int?
+    public let averagePrices: [Int]?
+    public let minMax: [[Int]]?
+    
+    
+    public init(minBuyPrice: Int?, averagePrices: [Int]?, minMax: [[Int]]?) {
+        self.minBuyPrice = minBuyPrice
+        self.averagePrices = averagePrices
+        self.minMax = minMax
+    }
 }
 
-struct TurnipFields: Codable {
-    var buyPrice: String = ""
-    var fields = [String](repeating: "", count: 12)
-    var amount: Int = 0
+public struct TurnipFields: Codable {
+    public var buyPrice: String = ""
+    public var fields = [String](repeating: "", count: 12)
+    public var amount: Int = 0
     
-    static func exist() -> Bool {
+    public static func exist() -> Bool {
         FileManager.default.fileExists(atPath: savePath.path)
         
     }
-    static func decode() -> TurnipFields {
+    public static func decode() -> TurnipFields {
         if let data = try? Data(contentsOf: savePath) {
             do {
                 let decoder = JSONDecoder()
@@ -40,7 +47,7 @@ struct TurnipFields: Codable {
         return TurnipFields()
     }
     
-    func save() {
+    public func save() {
         let encoder = JSONEncoder()
         do {
             let data = try encoder.encode(self)
@@ -50,7 +57,7 @@ struct TurnipFields: Codable {
         }
     }
     
-    mutating func clear() {
+    public mutating func clear() {
         buyPrice = ""
         fields = [String](repeating: "", count: 12)
         save()

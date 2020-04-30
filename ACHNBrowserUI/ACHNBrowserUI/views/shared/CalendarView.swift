@@ -7,6 +7,7 @@
 //
 
 import SwiftUI
+import Backend
 
 struct CalendarView: View {
     let activeMonths: [Int]

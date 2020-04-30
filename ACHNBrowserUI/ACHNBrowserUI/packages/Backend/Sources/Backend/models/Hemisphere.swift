@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum Hemisphere: String, Decodable, CaseIterable {
+public enum Hemisphere: String, Decodable, CaseIterable {
     case north
     case south
 }

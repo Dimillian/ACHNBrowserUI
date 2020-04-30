@@ -8,6 +8,7 @@
 
 import Foundation
 import Combine
+import Backend
 
 class VillagersViewModel: ObservableObject {
     @Published var villagers: [Villager] = [] {

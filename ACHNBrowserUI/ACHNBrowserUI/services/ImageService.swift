@@ -13,11 +13,11 @@ import SDWebImage
 public class ImageService {
     public static let SERVICE_URL = "https://acnhcdn.com/latest/FtrIcon/"
         
-    class func computeUrl(key: String) -> URL {
+    public class func computeUrl(key: String) -> URL {
         key.starts(with: "http") || key.starts(with: "https") ? URL(string: key)! : URL(string: "\(Self.SERVICE_URL)\(key).png")!
     }
     
-    class func getImageColors(key: String, completionHandler: @escaping ((UIImageColors?) -> Void)) {
+    public class func getImageColors(key: String, completionHandler: @escaping ((UIImageColors?) -> Void)) {
         SDWebImageDownloader.shared.downloadImage(with: computeUrl(key: key)) { (image, _, _, _) in
             image?.getColors { colors in
                 completionHandler(colors)

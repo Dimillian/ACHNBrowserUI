@@ -7,6 +7,7 @@
 //
 
 import SwiftUI
+import Backend
 
 struct ItemDetailView: View {
     @EnvironmentObject private var items: Items

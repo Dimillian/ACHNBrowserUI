@@ -8,6 +8,7 @@
 
 import Foundation
 import Combine
+import Backend
 
 class DashboardViewModel: ObservableObject {
     @Published var recentListings: [Listing]?

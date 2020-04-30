@@ -7,6 +7,7 @@
 //
 
 import SwiftUI
+import Backend
 
 struct ItemDetailSeasonSectionView: View {
     let item: Item

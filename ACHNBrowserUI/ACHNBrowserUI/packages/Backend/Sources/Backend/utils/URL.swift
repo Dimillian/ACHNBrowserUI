@@ -14,7 +14,7 @@ extension URL: Identifiable {
     }
 }
 
-extension URL {
+public extension URL {
     static func nookazon(listing: Listing) -> URL? {
         URL(string: "https://nookazon.com/product/\(listing.itemId)")
     }

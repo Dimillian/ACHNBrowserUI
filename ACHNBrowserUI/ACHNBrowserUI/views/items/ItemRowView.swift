@@ -7,6 +7,7 @@
 //
 
 import SwiftUI
+import Backend
 
 struct ItemRowView: View {
     @EnvironmentObject private var collection: UserCollection

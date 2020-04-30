@@ -9,7 +9,7 @@
 import Foundation
 import SwiftUI
 
-enum Fruit: String, Codable, CaseIterable {
+public enum Fruit: String, Codable, CaseIterable {
     case apple
     case cherry
     case orange
@@ -19,7 +19,7 @@ enum Fruit: String, Codable, CaseIterable {
 }
 
 
-extension Fruit {
+public extension Fruit {
     var image: Image {
         Image(self.rawValue.capitalized)
     }

@@ -7,6 +7,7 @@
 //
 
 import SwiftUI
+import Backend
 
 enum Tab: String, CaseIterable {
     case fishes = "Fishes"
