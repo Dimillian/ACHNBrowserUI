@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct SectionHeaderView: View {
-    @State private var curved: Bool = true
+    @State private var curved: Bool = false
     
     let text: String
     
@@ -23,9 +23,10 @@ struct SectionHeaderView: View {
             .padding(.horizontal, 10)
             .background(Color.bell)
             .mask(RoundedRectangle(cornerRadius: 14, style: .continuous))
-            .padding(.leading, -22)
+            .padding(.leading, -10)
             .padding(.bottom, -12)
-            .rotationEffect(.degrees(self.curved ? -2 : 0))
+            .rotationEffect(.degrees(self.curved ? -0.5 : 0))
+            .shadow(color: Color.black.opacity(0.15), radius: 2, x: 0, y: 1)
     }
 }
 

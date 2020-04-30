@@ -30,7 +30,7 @@ struct SettingsView: View {
     var body: some View {
         NavigationView {
             Form {
-                Section(header: Text("Island")) {
+                Section(header: SectionHeaderView(text: "Island")) {
                     HStack {
                         Text("Island name")
                         Spacer()
@@ -73,7 +73,7 @@ struct SettingsView: View {
                     }
                 }
                 
-                Section(header: Text("App")) {
+                Section(header: SectionHeaderView(text: "App Settings")) {
                     NavigationLink(destination: AppIconPickerView()) {
                         Text("App Icon")
                     }
@@ -91,6 +91,8 @@ struct SettingsView: View {
                     Text("Save").foregroundColor(.grass)
                 })
             }
+            .listStyle(GroupedListStyle())
+            .environment(\.horizontalSizeClass, .regular)
             .navigationBarTitle(Text("Preferences"), displayMode: .inline)
             .navigationBarItems(trailing: closeButton)
         }.navigationViewStyle(StackNavigationViewStyle())
