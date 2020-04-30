@@ -99,6 +99,7 @@ struct AboutView: View {
                 }
             }
             .listStyle(GroupedListStyle())
+            .environment(\.horizontalSizeClass, .regular)
             .navigationBarTitle(Text("About"), displayMode: .inline)
             .navigationBarItems(leading: dismissButton)
         }.sheet(item: $selectedSheet, content: makeSheet)
