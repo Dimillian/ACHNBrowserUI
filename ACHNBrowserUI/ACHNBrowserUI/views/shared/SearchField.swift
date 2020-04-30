@@ -11,7 +11,7 @@ import SwiftUI
 
 struct SearchField: View {
     @Binding var searchText: String
-    var placeholder: LocalizedStringKey = "Search an item"
+    var placeholder: LocalizedStringKey = "Search..."
 
     var body: some View {
         HStack {
@@ -26,9 +26,12 @@ struct SearchField: View {
                 }.buttonStyle(BorderlessButtonStyle())
             }
         }
-        .foregroundColor(.white)
-        .background(Color.grassBackground)
-        .listRowBackground(Color.grassBackground)
+        .foregroundColor(Color.text)
+        .padding(8)
+        .background(Color.dialogue)
+        .mask(RoundedRectangle(cornerRadius: 8, style: .continuous))
+        .padding(2)
+        .listRowBackground(Color.dialogueReverse)
     }
 }
 

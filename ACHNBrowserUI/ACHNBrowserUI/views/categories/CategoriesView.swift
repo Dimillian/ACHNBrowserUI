@@ -32,7 +32,7 @@ struct CategoriesView: View {
                     .padding(.trailing, 8)
                     .padding(.top, 8)
                     .padding(.bottom, 4)
-                    .background(Color.grassBackground)
+//                    .background(Color.grassBackground)
                 if viewModel.searchText.isEmpty {
                     categoriesList
                 } else {
@@ -40,7 +40,7 @@ struct CategoriesView: View {
                 }
             }
             .navigationBarTitle(Text("Catalog"), displayMode: .inline)
-            .background(Color.grassBackground)
+            .background(Color.dialogueReverse)
             .onReceive(viewModel.$isLoadingData) { self.isLoadingData = $0 }
             
             ItemsListView(viewModel: ItemsViewModel(category: .housewares))
