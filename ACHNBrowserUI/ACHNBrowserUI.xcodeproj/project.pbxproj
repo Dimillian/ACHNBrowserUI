@@ -90,6 +90,7 @@
 		02F2D4482455D81C009741DA /* simple-mint@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 02F2D3F82455D81C009741DA /* simple-mint@3x.png */; };
 		4C382EE8244E418800F446BA /* DismissingKeyboardOnSwipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C382EE7244E418800F446BA /* DismissingKeyboardOnSwipe.swift */; };
 		4C7FE78324574FB50011E8AB /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7FE78224574FB50011E8AB /* ActivityIndicator.swift */; };
+		4C7FE789245B57A10011E8AB /* AdaptsToSoftwareKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7FE788245B57A10011E8AB /* AdaptsToSoftwareKeyboard.swift */; };
 		68345579244C994C0072FC0C /* LikeButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68345578244C994C0072FC0C /* LikeButtonView.swift */; };
 		68345589244E4DEF0072FC0C /* ACNHEvents in Frameworks */ = {isa = PBXBuildFile; productRef = 68345588244E4DEF0072FC0C /* ACNHEvents */; };
 		6834558B244E4E0B0072FC0C /* DashboardEventTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6834558A244E4E0B0072FC0C /* DashboardEventTextView.swift */; };
@@ -314,6 +315,7 @@
 		02F2D3F82455D81C009741DA /* simple-mint@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "simple-mint@3x.png"; sourceTree = "<group>"; };
 		4C382EE7244E418800F446BA /* DismissingKeyboardOnSwipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DismissingKeyboardOnSwipe.swift; sourceTree = "<group>"; };
 		4C7FE78224574FB50011E8AB /* ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
+		4C7FE788245B57A10011E8AB /* AdaptsToSoftwareKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdaptsToSoftwareKeyboard.swift; sourceTree = "<group>"; };
 		68345578244C994C0072FC0C /* LikeButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeButtonView.swift; sourceTree = "<group>"; };
 		6834558A244E4E0B0072FC0C /* DashboardEventTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardEventTextView.swift; sourceTree = "<group>"; };
 		687B5767244A030700C1E86F /* TurnipsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TurnipsView.swift; sourceTree = "<group>"; };
@@ -543,6 +545,7 @@
 			isa = PBXGroup;
 			children = (
 				4C382EE7244E418800F446BA /* DismissingKeyboardOnSwipe.swift */,
+				4C7FE788245B57A10011E8AB /* AdaptsToSoftwareKeyboard.swift */,
 			);
 			path = viewModifiers;
 			sourceTree = "<group>";
@@ -1168,6 +1171,7 @@
 				4C382EE8244E418800F446BA /* DismissingKeyboardOnSwipe.swift in Sources */,
 				69B13CA6245598E80089BD7B /* ItemDetailSeasonSectionView.swift in Sources */,
 				697E63F92449DADE008FB710 /* VillagerRowView.swift in Sources */,
+				4C7FE789245B57A10011E8AB /* AdaptsToSoftwareKeyboard.swift in Sources */,
 				69B13CAD24577A090089BD7B /* TurnipIslandRow.swift in Sources */,
 				6834558B244E4E0B0072FC0C /* DashboardEventTextView.swift in Sources */,
 				693E0B1F244C526A00D20E46 /* ProgressView.swift in Sources */,
