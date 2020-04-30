@@ -16,23 +16,24 @@ struct HomeView: View {
         items.categories
             .map { $0 }
             .sorted(by: \.key.rawValue)
+            .reversed()
     }
     
     private func categorySection(category: Backend.Category, items: [Item]) -> some View {
         Section(header: Text(category.label())) {
-            ScrollView(.horizontal, showsIndicators: true) {
-                HStack {
-                    ForEach(items) { item in
-                        Text(item.name)
-                    }
+            HStack {
+                ForEach(items.prefix(5)) { item in
+                    ItemRow(item: item)
                 }
             }
         }
     }
     
     var body: some View {
-        List {
-            ForEach(categories, id: \.0, content: categorySection)
+        NavigationView {
+            List {
+                ForEach(categories, id: \.0, content: categorySection)
+            }.navigationBarTitle(Text("Items home"))
         }
     }
 }

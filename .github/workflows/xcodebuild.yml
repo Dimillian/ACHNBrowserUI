@@ -25,7 +25,7 @@ jobs:
         cd ACHNBrowserUI/ACHNBrowserUI/packages/UI/
         swift test
 
-    - name: Xcode build app
+    - name: Xcode build iOS App
       run: |
         cd ACHNBrowserUI/
         xcodebuild clean build -scheme ACHNBrowserUI -destination 'platform=iOS Simulator,name=iPhone 11,OS=13.4'
