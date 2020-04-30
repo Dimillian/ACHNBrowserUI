@@ -13,10 +13,14 @@ let package = Package(
             name: "Backend",
             targets: ["Backend"]),
     ],
+    dependencies: [
+        .package(url: "https://github.com/SDWebImage/SDWebImageSwiftUI", from: "1.3.4"),
+        .package(url: "https://github.com/jathu/UIImageColors", from: "2.2.0")
+    ],
     targets: [
         .target(
             name: "Backend",
-            dependencies: []),
+            dependencies: ["SDWebImageSwiftUI", "UIImageColors"]),
         .testTarget(
             name: "BackendTests",
             dependencies: ["Backend"]),

@@ -98,7 +98,6 @@
 		68BA5828244B646C00B53811 /* IslandDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68BA5827244B646C00B53811 /* IslandDetailView.swift */; };
 		68BA582A244B693400B53811 /* TurnipsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68BA5829244B693300B53811 /* TurnipsViewModel.swift */; };
 		68BA582C244B695F00B53811 /* IslandDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68BA582B244B695F00B53811 /* IslandDetailViewModel.swift */; };
-		68BA5831244B738700B53811 /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 68BA5830244B738700B53811 /* SDWebImageSwiftUI */; };
 		68BA5834244B9D4100B53811 /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68BA5833244B9D4100B53811 /* DashboardView.swift */; };
 		68DFFFAD24492D7F00DEA07F /* ItemDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68DFFFAC24492D7F00DEA07F /* ItemDetailViewModel.swift */; };
 		692C0B83245176BF004847A1 /* DashboardAvailableCrittersSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 692C0B82245176BF004847A1 /* DashboardAvailableCrittersSection.swift */; };
@@ -142,10 +141,8 @@
 		69C5F5EA244217FB00BF8FA4 /* CategoriesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69C5F5E9244217FB00BF8FA4 /* CategoriesView.swift */; };
 		69CA5EDA244CBA8600B275B6 /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69CA5ED9244CBA8600B275B6 /* CalendarView.swift */; };
 		69CA5EFC244ED38C00B275B6 /* FeedbackGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69CA5EFB244ED38C00B275B6 /* FeedbackGenerator.swift */; };
-		69CA5EFF244EEA4E00B275B6 /* UIImageColors in Frameworks */ = {isa = PBXBuildFile; productRef = 69CA5EFE244EEA4E00B275B6 /* UIImageColors */; };
 		69CA5F01244F1AD300B275B6 /* SectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69CA5F00244F1AD300B275B6 /* SectionHeaderView.swift */; };
 		69CA5F18244F447E00B275B6 /* EventsDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69CA5F17244F447E00B275B6 /* EventsDescription.swift */; };
-		69CFCA31245A9ECE0059C067 /* ImageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69CFCA30245A9ECE0059C067 /* ImageService.swift */; };
 		69CFCA34245AA62D0059C067 /* Backend in Frameworks */ = {isa = PBXBuildFile; productRef = 69CFCA33245AA62D0059C067 /* Backend */; };
 		69CFCA9F245AAF520059C067 /* turnips.js in Resources */ = {isa = PBXBuildFile; fileRef = 69CFCA81245AAF520059C067 /* turnips.js */; };
 		69CFCAA0245AAF520059C067 /* headwear in Resources */ = {isa = PBXBuildFile; fileRef = 69CFCA83245AAF520059C067 /* headwear */; };
@@ -331,7 +328,6 @@
 		69CA5F00244F1AD300B275B6 /* SectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionHeaderView.swift; sourceTree = "<group>"; };
 		69CA5F17244F447E00B275B6 /* EventsDescription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsDescription.swift; sourceTree = "<group>"; };
 		69CFCA14245A9C400059C067 /* Backend */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Backend; path = ACHNBrowserUI/packages/Backend; sourceTree = "<group>"; };
-		69CFCA30245A9ECE0059C067 /* ImageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageService.swift; sourceTree = "<group>"; };
 		69CFCA81245AAF520059C067 /* turnips.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = turnips.js; sourceTree = "<group>"; };
 		69CFCA83245AAF520059C067 /* headwear */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = headwear; sourceTree = "<group>"; };
 		69CFCA84245AAF520059C067 /* music */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = music; sourceTree = "<group>"; };
@@ -368,8 +364,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				69CA5EFF244EEA4E00B275B6 /* UIImageColors in Frameworks */,
-				68BA5831244B738700B53811 /* SDWebImageSwiftUI in Frameworks */,
 				68345589244E4DEF0072FC0C /* ACNHEvents in Frameworks */,
 				69CFCA34245AA62D0059C067 /* Backend in Frameworks */,
 				6951837524599C26005D28E0 /* StoreKit.framework in Frameworks */,
@@ -607,7 +601,6 @@
 			children = (
 				690BD65324404F4300DEECD3 /* ACHNBrowserUI.entitlements */,
 				69AF8C70243E2EFE001DD9CB /* utils */,
-				69CFCA32245A9ED50059C067 /* services */,
 				69AF8C6B243E2A0C001DD9CB /* viewModels */,
 				4C382EE6244E415800F446BA /* viewModifiers */,
 				69AF8C64243E2857001DD9CB /* views */,
@@ -734,14 +727,6 @@
 			path = categories;
 			sourceTree = "<group>";
 		};
-		69CFCA32245A9ED50059C067 /* services */ = {
-			isa = PBXGroup;
-			children = (
-				69CFCA30245A9ECE0059C067 /* ImageService.swift */,
-			);
-			path = services;
-			sourceTree = "<group>";
-		};
 		69CFCA7F245AAF300059C067 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -812,9 +797,7 @@
 			);
 			name = ACHNBrowserUI;
 			packageProductDependencies = (
-				68BA5830244B738700B53811 /* SDWebImageSwiftUI */,
 				68345588244E4DEF0072FC0C /* ACNHEvents */,
-				69CA5EFE244EEA4E00B275B6 /* UIImageColors */,
 				69CFCA33245AA62D0059C067 /* Backend */,
 			);
 			productName = ACHNBrowserUI;
@@ -846,9 +829,7 @@
 			);
 			mainGroup = 69AF8C44243E283D001DD9CB;
 			packageReferences = (
-				68BA582F244B738700B53811 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */,
 				68345587244E4DEF0072FC0C /* XCRemoteSwiftPackageReference "Date-ACNHEvents" */,
-				69CA5EFD244EEA4E00B275B6 /* XCRemoteSwiftPackageReference "UIImageColors" */,
 			);
 			productRefGroup = 69AF8C4E243E283D001DD9CB /* Products */;
 			projectDirPath = "";
@@ -1024,7 +1005,6 @@
 				69AF8C55243E283D001DD9CB /* ItemsListView.swift in Sources */,
 				69BEA98B243EFE9700F02C61 /* ItemDetailView.swift in Sources */,
 				69AF8C6D243E2A18001DD9CB /* ItemsViewModel.swift in Sources */,
-				69CFCA31245A9ECE0059C067 /* ImageService.swift in Sources */,
 				69CA5EFC244ED38C00B275B6 /* FeedbackGenerator.swift in Sources */,
 				697E63FD244AD42D008FB710 /* CategoryRowView.swift in Sources */,
 				69B13CB124577BBF0089BD7B /* TurnipsFormView.swift in Sources */,
@@ -1251,22 +1231,6 @@
 				version = 1.1.0;
 			};
 		};
-		68BA582F244B738700B53811 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/SDWebImage/SDWebImageSwiftUI";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 1.3.3;
-			};
-		};
-		69CA5EFD244EEA4E00B275B6 /* XCRemoteSwiftPackageReference "UIImageColors" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/jathu/UIImageColors";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 2.2.0;
-			};
-		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -1274,16 +1238,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 68345587244E4DEF0072FC0C /* XCRemoteSwiftPackageReference "Date-ACNHEvents" */;
 			productName = ACNHEvents;
-		};
-		68BA5830244B738700B53811 /* SDWebImageSwiftUI */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 68BA582F244B738700B53811 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */;
-			productName = SDWebImageSwiftUI;
-		};
-		69CA5EFE244EEA4E00B275B6 /* UIImageColors */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 69CA5EFD244EEA4E00B275B6 /* XCRemoteSwiftPackageReference "UIImageColors" */;
-			productName = UIImageColors;
 		};
 		69CFCA33245AA62D0059C067 /* Backend */ = {
 			isa = XCSwiftPackageProductDependency;

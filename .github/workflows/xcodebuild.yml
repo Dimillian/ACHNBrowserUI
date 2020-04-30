@@ -14,8 +14,13 @@ jobs:
 
     - name: Xcode version
       run: /usr/bin/xcodebuild -version
-      
-    - name: Xcode build
+
+    - name: Xcode test backend
       run: |
-        cd ACHNBrowserUI/
+        cd ACHNBrowserUI/packages/Backend/
+        swift test
+
+    - name: Xcode build app
+      run: |
+        cd ../../
         xcodebuild clean build -scheme ACHNBrowserUI -destination 'platform=iOS Simulator,name=iPhone 11,OS=13.4'

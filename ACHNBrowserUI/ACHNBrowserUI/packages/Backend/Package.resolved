@@ -2,15 +2,6 @@
   "object": {
     "pins": [
       {
-        "package": "ACNHEvents",
-        "repositoryURL": "https://github.com/ericlewis/Date-ACNHEvents",
-        "state": {
-          "branch": null,
-          "revision": "f6a4f55d8f839300e4999e5c158a73350dfa6dfe",
-          "version": "1.1.0"
-        }
-      },
-      {
         "package": "SDWebImage",
         "repositoryURL": "https://github.com/SDWebImage/SDWebImage.git",
         "state": {

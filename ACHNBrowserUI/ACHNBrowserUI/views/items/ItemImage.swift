@@ -7,6 +7,7 @@
 //
 
 import SwiftUI
+import Backend
 import SDWebImageSwiftUI
 
 struct ItemImage : View {
