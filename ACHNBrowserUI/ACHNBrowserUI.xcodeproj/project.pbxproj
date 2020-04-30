@@ -214,6 +214,7 @@
 		69E4BBB6245AE5C9001035E2 /* ItemDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69E4BBB5245AE5C9001035E2 /* ItemDetailView.swift */; };
 		69E4BBB7245AE60C001035E2 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69AF8C7B243E4D29001DD9CB /* Color.swift */; };
 		69E4BBB8245AE60F001035E2 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 69AF8C79243E4C78001DD9CB /* Colors.xcassets */; };
+		69E4BBBB245B0BEF001035E2 /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69E4BBBA245B0BEF001035E2 /* AboutView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -407,6 +408,7 @@
 		69E4BBAE245ADF26001035E2 /* UI */ = {isa = PBXFileReference; lastKnownFileType = folder; name = UI; path = ACHNBrowserUI/packages/UI; sourceTree = "<group>"; };
 		69E4BBB3245AE472001035E2 /* ItemRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemRow.swift; sourceTree = "<group>"; };
 		69E4BBB5245AE5C9001035E2 /* ItemDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailView.swift; sourceTree = "<group>"; };
+		69E4BBBA245B0BEF001035E2 /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -690,6 +692,7 @@
 		69AF8C64243E2857001DD9CB /* views */ = {
 			isa = PBXGroup;
 			children = (
+				69E4BBB9245B0BE4001035E2 /* about */,
 				693E0B20244C596000D20E46 /* critters */,
 				68BA5832244B9D2F00B53811 /* dashboard */,
 				697E63FE244AD664008FB710 /* settings */,
@@ -879,6 +882,14 @@
 				69E4BBB5245AE5C9001035E2 /* ItemDetailView.swift */,
 			);
 			path = home;
+			sourceTree = "<group>";
+		};
+		69E4BBB9245B0BE4001035E2 /* about */ = {
+			isa = PBXGroup;
+			children = (
+				69E4BBBA245B0BEF001035E2 /* AboutView.swift */,
+			);
+			path = about;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1181,6 +1192,7 @@
 				028620752454C32800795719 /* AppIconPickerView.swift in Sources */,
 				68345579244C994C0072FC0C /* LikeButtonView.swift in Sources */,
 				69CA5EDA244CBA8600B275B6 /* CalendarView.swift in Sources */,
+				69E4BBBB245B0BEF001035E2 /* AboutView.swift in Sources */,
 				68BA582A244B693400B53811 /* TurnipsViewModel.swift in Sources */,
 				6951836A245977D1005D28E0 /* TurnipsAveragePriceRow.swift in Sources */,
 				69CA5F18244F447E00B275B6 /* EventsDescription.swift in Sources */,
