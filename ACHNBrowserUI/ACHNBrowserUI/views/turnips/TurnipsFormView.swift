@@ -38,7 +38,7 @@ struct TurnipsFormView: View {
     var body: some View {
         NavigationView {
             List {
-                Section(header: Text("Configuration")) {
+                Section(header: SectionHeaderView(text: "Configuration")) {
                     Button(action: {
                         self.fields.clear()
                         self.turnipsViewModel.refreshPrediction()
@@ -50,7 +50,7 @@ struct TurnipsFormView: View {
                     }
                     
                 }
-                Section(header: Text("Your in game prices")) {
+                Section(header: SectionHeaderView(text: "Your in game prices")) {
                     TextField("Buy price", text: $fields.buyPrice)
                         .keyboardType(.numberPad)
                     ForEach(0..<fields.fields.count) { i in
@@ -59,6 +59,7 @@ struct TurnipsFormView: View {
                     }
                 }
             }
+            .listStyle(GroupedListStyle())
             .navigationBarItems(trailing: saveButton)
             .navigationBarTitle("Add your turnip prices", displayMode: .inline)
         }

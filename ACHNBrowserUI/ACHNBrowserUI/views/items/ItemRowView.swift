@@ -13,9 +13,23 @@ import UI
 struct ItemRowView: View {
     @EnvironmentObject private var collection: UserCollection
     
+    enum DisplayMode {
+        case small, big
+    }
+    
+    let displayMode: DisplayMode
     let item: Item
     
     @State private var displayedVariant: Variant?
+    
+    private var imageSize: CGFloat {
+        switch displayMode {
+        case .small:
+            return 25
+        case .big:
+            return 100
+        }
+    }
 
     private func bellsView(icon: String, price: Int) -> some View {
         HStack(spacing: 2) {
@@ -99,16 +113,18 @@ struct ItemRowView: View {
             if item.itemImage == nil && displayedVariant == nil {
                 Image(item.appCategory.iconName())
                     .resizable()
-                    .frame(width: 100, height: 100)
+                    .frame(width: imageSize, height: imageSize)
             } else {
                 ItemImage(path: displayedVariant?.filename ?? item.itemImage,
-                          size: 100)
+                          size: imageSize)
             }
             
             VStack(alignment: .leading, spacing: 2) {
                 itemInfo
-                itemSubInfo
-                itemVariants
+                if displayMode == .big {
+                    itemSubInfo
+                    itemVariants
+                }
             }
             
             Spacer()
@@ -120,11 +136,11 @@ struct ItemRowView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
             List {
-                ItemRowView(item: static_item)
+                ItemRowView(displayMode: .big, item: static_item)
                     .environmentObject(UserCollection())
-                ItemRowView(item: static_item)
+                ItemRowView(displayMode: .small, item: static_item)
                     .environmentObject(UserCollection())
-                ItemRowView(item: static_item)
+                ItemRowView(displayMode: .big, item: static_item)
                     .environmentObject(UserCollection())
             }
         }

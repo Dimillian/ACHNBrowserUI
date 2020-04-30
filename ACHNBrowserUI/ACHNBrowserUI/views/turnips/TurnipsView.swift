@@ -34,7 +34,7 @@ struct TurnipsView: View {
     var body: some View {
         NavigationView {
             List {
-                Section(header: Text("Stalks market")) {
+                Section(header: SectionHeaderView(text: "Stalks market")) {
                     Button(action: {
                         self.turnipsFormShown = true
                     }) {
@@ -45,6 +45,7 @@ struct TurnipsView: View {
                 predictionsSection
                 exchangeSection
             }
+            .listStyle(GroupedListStyle())
             .navigationBarTitle("Turnips",
                                 displayMode: .inline)
             .sheet(isPresented: $turnipsFormShown, content: { TurnipsFormView(turnipsViewModel: self.viewModel) })
@@ -59,7 +60,7 @@ struct TurnipsView: View {
 // MARK: - Views
 extension TurnipsView {
     private var predictionsSection: some View {
-        Section(header: Text(turnipsDisplay == .average ? "Average daily buy prices" : "Daily min-max prices"),
+        Section(header: SectionHeaderView(text: turnipsDisplay == .average ? "Average daily buy prices" : "Daily min-max prices"),
                 footer: Text(viewModel.pendingNotifications == 0 ? "" :
                     "You'll receive prices predictions in \(viewModel.pendingNotifications - 1) upcoming daily notifications")
                     .font(.footnote)
@@ -96,7 +97,7 @@ extension TurnipsView {
     }
     
     private var exchangeSection: some View {
-        Section(header: Text("Exchange")) {
+        Section(header: SectionHeaderView(text: "Exchange")) {
             if viewModel.islands == nil {
                 Text("Loading Islands...")
                     .foregroundColor(.secondary)

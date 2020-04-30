@@ -12,6 +12,7 @@ import Backend
 struct ItemsListView: View {
     @ObservedObject var viewModel: ItemsViewModel
     @State private var showSortSheet = false
+    @State private var itemRowsDisplayMode: ItemRowView.DisplayMode = .big
     
     var currentItems: [Item] {
         get {
@@ -30,7 +31,16 @@ struct ItemsListView: View {
             self.showSortSheet.toggle()
         }) {
             Image(systemName: viewModel.sort == nil ? "arrow.up.arrow.down.circle" : "arrow.up.arrow.down.circle.fill")
-                .font(.title)
+                .imageScale(.large)
+        }
+    }
+    
+    private var layoutButton: some View {
+        Button(action: {
+            self.itemRowsDisplayMode = self.itemRowsDisplayMode == .small ? .big : .small
+        }) {
+            Image(systemName: itemRowsDisplayMode == .big ? "rectangle.grid.1x2" : "list.dash")
+                .imageScale(.large)
         }
     }
     
@@ -67,7 +77,7 @@ struct ItemsListView: View {
             SearchField(searchText: $viewModel.searchText)
             ForEach(currentItems) { item in
                 NavigationLink(destination: ItemDetailView(item: item)) {
-                    ItemRowView(item: item)
+                    ItemRowView(displayMode: self.itemRowsDisplayMode, item: item)
                         .environmentObject(ItemDetailViewModel(item: item))
                         .listRowBackground(Color.dialogue)
                 }
@@ -77,7 +87,11 @@ struct ItemsListView: View {
         .modifier(DismissingKeyboardOnSwipe())
         .navigationBarTitle(Text(viewModel.category.label()),
                             displayMode: .inline)
-        .navigationBarItems(trailing: sortButton)
+            .navigationBarItems(trailing:
+                HStack(spacing: 16) {
+                    layoutButton
+                    sortButton
+                })
         .actionSheet(isPresented: $showSortSheet, content: { self.sortSheet })
     }
 }

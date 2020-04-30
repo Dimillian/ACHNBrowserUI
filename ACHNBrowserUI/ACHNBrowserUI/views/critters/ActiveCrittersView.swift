@@ -27,7 +27,7 @@ struct ActiveCritterSections: View {
                 ForEach(selectedTab == .fishes ? activeFishes.filter{ !collection.critters.contains($0) } :
                     activeBugs.filter{ !collection.critters.contains($0) }) { critter in
                         NavigationLink(destination: ItemDetailView(item: critter)) {
-                            ItemRowView(item: critter)
+                            ItemRowView(displayMode: .big, item: critter)
                         }
                 }
             }
@@ -35,7 +35,7 @@ struct ActiveCritterSections: View {
                 ForEach(selectedTab == .fishes ? activeFishes.filter{ collection.critters.contains($0) } :
                     activeBugs.filter{ collection.critters.contains($0) }) { critter in
                         NavigationLink(destination: ItemDetailView(item: critter)) {
-                            ItemRowView(item: critter)
+                            ItemRowView(displayMode: .big, item: critter)
                         }
                 }
             }

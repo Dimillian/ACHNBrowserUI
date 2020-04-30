@@ -13,7 +13,7 @@ import Backend
 
 struct DashboardView: View {
     enum Sheet: Identifiable {
-        case safari(URL), settings
+        case safari(URL), settings, about
         
         var id: String {
             switch self {
@@ -21,6 +21,8 @@ struct DashboardView: View {
                 return url.absoluteString
             case .settings:
                 return "settings"
+            case .about:
+                return "about"
             }
         }
     }
@@ -39,12 +41,22 @@ struct DashboardView: View {
         })
     }
     
+    private var aboutButton: some View {
+        Button(action: {
+            self.selectedSheet = .about
+        }, label: {
+            Image(systemName: "info.circle").imageScale(.large)
+        })
+    }
+    
     func makeSheet(_ sheet: Sheet) -> some View {
         switch sheet {
         case .settings:
             return AnyView(SettingsView())
         case .safari(let url):
             return AnyView(SafariView(url: url))
+        case .about:
+            return AnyView(AboutView())
         }
     }
     
@@ -97,15 +109,17 @@ struct DashboardView: View {
                     makeBirthdayView()
                 }
                 makeTopTurnipSection()
-                DashboardNookazonListingSection(selectedSheet: $selectedSheet, viewModel: viewModel)
+                DashboardNookazonListingSection(selectedSheet: $selectedSheet,
+                                                viewModel: viewModel)
             }
             .listStyle(GroupedListStyle())
             .environment(\.horizontalSizeClass, .regular)
             .onAppear(perform: viewModel.fetchListings)
             .onAppear(perform: viewModel.fetchIsland)
             .onAppear(perform: villagersViewModel.fetch)
-            .navigationBarItems(trailing: preferenceButton)
             .navigationBarTitle("Dashboard")
+            .navigationBarItems(leading: aboutButton,
+                                trailing: preferenceButton)
             ActiveCrittersView(activeFishes: viewModel.fishes.filterActive(),
                                activeBugs: viewModel.bugs.filterActive())
         }
