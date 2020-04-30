@@ -19,20 +19,24 @@ struct TurnipsFormView: View {
     private let labels = ["Monday AM", "Monday PM", "Tuesday AM", "Tuesday PM", "Wednesday AM", "Wednesday PM",
                           "Thursday AM", "Thursday PM", "Friday AM", "Friday PM", "Saturday AM", "Saturday PM"]
 
+    private let weekdays = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
+
     private var saveButton: some View {
-        Button(action: {
-            self.fields.save()
-            self.turnipsViewModel.refreshPrediction()
-            if self.enableNotifications, let predictions = self.turnipsViewModel.predictions {
-                NotificationManager.shared.registerTurnipsPredictionNotification(prediction: predictions)
-            } else {
-                NotificationManager.shared.removePendingNotifications()
-            }
-            self.turnipsViewModel.refreshPendingNotifications()
-            self.presentationMode.wrappedValue.dismiss()
-        }, label: {
+        Button(action: save) {
             Text("Save")
-        })
+        }
+    }
+
+    private func save() {
+        fields.save()
+        turnipsViewModel.refreshPrediction()
+        if enableNotifications, let predictions = turnipsViewModel.predictions {
+            NotificationManager.shared.registerTurnipsPredictionNotification(prediction: predictions)
+        } else {
+            NotificationManager.shared.removePendingNotifications()
+        }
+        turnipsViewModel.refreshPendingNotifications()
+        presentationMode.wrappedValue.dismiss()
     }
     
     var body: some View {
@@ -51,12 +55,12 @@ struct TurnipsFormView: View {
                     
                 }
                 Section(header: SectionHeaderView(text: "Your in game prices")) {
-                    TextField("Buy price", text: $fields.buyPrice)
-                        .keyboardType(.numberPad)
-                    ForEach(0..<fields.fields.count) { i in
-                        TextField(self.labels[i], text: self.$fields.fields[i])
+                    HStack {
+                        Text("Buy price")
+                        TextField("...🔔", text: $fields.buyPrice)
                             .keyboardType(.numberPad)
                     }
+                    ForEach(weekdays, id: \.self, content: weekdayRow)
                 }
             }
             .listStyle(GroupedListStyle())
@@ -64,6 +68,33 @@ struct TurnipsFormView: View {
             .navigationBarTitle("Add your turnip prices", displayMode: .inline)
         }
         .navigationViewStyle(StackNavigationViewStyle())
+    }
+
+    private func weekdayRow(_ weekday: String) -> some View {
+        HStack {
+            Text(weekday)
+            Spacer(minLength: 40)
+            TextField("AM", text: morningField(for: weekday))
+                .keyboardType(.numberPad)
+                .textFieldStyle(RoundedBorderTextFieldStyle())
+                .multilineTextAlignment(.center)
+                .frame(maxWidth: 60)
+            TextField("PM", text: afternoonField(for: weekday))
+                .keyboardType(.numberPad)
+                .textFieldStyle(RoundedBorderTextFieldStyle())
+                .multilineTextAlignment(.center)
+                .frame(maxWidth: 60)
+        }
+    }
+
+    private func morningField(for weekday: String) -> Binding<String> {
+        let index = weekdays.firstIndex(of: weekday) ?? 0
+        return $fields.fields[index * 2]
+    }
+
+    private func afternoonField(for weekday: String) -> Binding<String> {
+        let index = weekdays.firstIndex(of: weekday) ?? 0
+        return $fields.fields[index * 2 + 1]
     }
 }
 
