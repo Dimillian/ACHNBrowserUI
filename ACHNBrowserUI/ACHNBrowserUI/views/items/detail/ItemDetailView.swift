@@ -136,6 +136,7 @@ struct ItemDetailView: View {
             listingSection
         }
         .listStyle(GroupedListStyle())
+        .environment(\.horizontalSizeClass, .regular)
         .onAppear(perform: {
             self.itemViewModel.fetch(item: self.itemViewModel.item)
         })

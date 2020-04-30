@@ -37,7 +37,7 @@ struct DashboardView: View {
         Button(action: {
             self.selectedSheet = .settings
         }, label: {
-            Image(systemName: "wrench").imageScale(.large)
+            Image(systemName: "slider.horizontal.3").imageScale(.medium)
         })
     }
     
@@ -113,13 +113,13 @@ struct DashboardView: View {
                                                 viewModel: viewModel)
             }
             .listStyle(GroupedListStyle())
+            .environment(\.horizontalSizeClass, .regular)
             .onAppear(perform: viewModel.fetchListings)
             .onAppear(perform: viewModel.fetchIsland)
             .onAppear(perform: villagersViewModel.fetch)
+            .navigationBarTitle("Dashboard")
             .navigationBarItems(leading: aboutButton,
                                 trailing: preferenceButton)
-            .navigationBarTitle("Dashboard",
-                                displayMode: .inline)
             ActiveCrittersView(activeFishes: viewModel.fishes.filterActive(),
                                activeBugs: viewModel.bugs.filterActive())
         }
