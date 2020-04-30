@@ -8,6 +8,7 @@
 
 import SwiftUI
 import Backend
+import UI
 
 struct VillagerDetailView: View {
     let villager: Villager

@@ -125,7 +125,6 @@
 		69AF8C5A243E2841001DD9CB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 69AF8C59243E2841001DD9CB /* Preview Assets.xcassets */; };
 		69AF8C5D243E2841001DD9CB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 69AF8C5B243E2841001DD9CB /* LaunchScreen.storyboard */; };
 		69AF8C6D243E2A18001DD9CB /* ItemsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69AF8C6C243E2A18001DD9CB /* ItemsViewModel.swift */; };
-		69AF8C74243E2F73001DD9CB /* ItemImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69AF8C73243E2F73001DD9CB /* ItemImage.swift */; };
 		69AF8C76243E3545001DD9CB /* SearchField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69AF8C75243E3545001DD9CB /* SearchField.swift */; };
 		69AF8C7A243E4C78001DD9CB /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 69AF8C79243E4C78001DD9CB /* Colors.xcassets */; };
 		69AF8C7C243E4D29001DD9CB /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69AF8C7B243E4D29001DD9CB /* Color.swift */; };
@@ -173,6 +172,44 @@
 		69CFCAB9245AAF520059C067 /* shoes in Resources */ = {isa = PBXBuildFile; fileRef = 69CFCA9C245AAF520059C067 /* shoes */; };
 		69CFCABA245AAF520059C067 /* fish in Resources */ = {isa = PBXBuildFile; fileRef = 69CFCA9D245AAF520059C067 /* fish */; };
 		69CFCABB245AAF520059C067 /* rugs in Resources */ = {isa = PBXBuildFile; fileRef = 69CFCA9E245AAF520059C067 /* rugs */; };
+		69CFCAC9245ADC780059C067 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69CFCAC8245ADC780059C067 /* AppDelegate.swift */; };
+		69CFCACD245ADC7A0059C067 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 69CFCACC245ADC7A0059C067 /* Assets.xcassets */; };
+		69CFCAD0245ADC7A0059C067 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 69CFCACF245ADC7A0059C067 /* Preview Assets.xcassets */; };
+		69CFCAD3245ADC7A0059C067 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 69CFCAD1245ADC7A0059C067 /* LaunchScreen.storyboard */; };
+		69CFCADB245ADC9C0059C067 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69CFCADA245ADC9C0059C067 /* HomeView.swift */; };
+		69CFCADD245ADCCF0059C067 /* Backend in Frameworks */ = {isa = PBXBuildFile; productRef = 69CFCADC245ADCCF0059C067 /* Backend */; };
+		69CFCADF245ADCD40059C067 /* ACNHEvents in Frameworks */ = {isa = PBXBuildFile; productRef = 69CFCADE245ADCD40059C067 /* ACNHEvents */; };
+		69CFCAE0245ADDA20059C067 /* turnips.js in Resources */ = {isa = PBXBuildFile; fileRef = 69CFCA81245AAF520059C067 /* turnips.js */; };
+		69CFCAE1245ADDA80059C067 /* headwear in Resources */ = {isa = PBXBuildFile; fileRef = 69CFCA83245AAF520059C067 /* headwear */; };
+		69CFCAE2245ADDA80059C067 /* music in Resources */ = {isa = PBXBuildFile; fileRef = 69CFCA84245AAF520059C067 /* music */; };
+		69CFCAE3245ADDA80059C067 /* accessories in Resources */ = {isa = PBXBuildFile; fileRef = 69CFCA85245AAF520059C067 /* accessories */; };
+		69CFCAE4245ADDA80059C067 /* tools in Resources */ = {isa = PBXBuildFile; fileRef = 69CFCA86245AAF520059C067 /* tools */; };
+		69CFCAE5245ADDA80059C067 /* nookmiles in Resources */ = {isa = PBXBuildFile; fileRef = 69CFCA87245AAF520059C067 /* nookmiles */; };
+		69CFCAE6245ADDA80059C067 /* tops in Resources */ = {isa = PBXBuildFile; fileRef = 69CFCA88245AAF520059C067 /* tops */; };
+		69CFCAE7245ADDA80059C067 /* posters in Resources */ = {isa = PBXBuildFile; fileRef = 69CFCA89245AAF520059C067 /* posters */; };
+		69CFCAE8245ADDA80059C067 /* art in Resources */ = {isa = PBXBuildFile; fileRef = 69CFCA8A245AAF520059C067 /* art */; };
+		69CFCAE9245ADDA80059C067 /* fossils in Resources */ = {isa = PBXBuildFile; fileRef = 69CFCA8B245AAF520059C067 /* fossils */; };
+		69CFCAEA245ADDA80059C067 /* wall-mounted in Resources */ = {isa = PBXBuildFile; fileRef = 69CFCA8C245AAF520059C067 /* wall-mounted */; };
+		69CFCAEB245ADDA80059C067 /* other in Resources */ = {isa = PBXBuildFile; fileRef = 69CFCA8D245AAF520059C067 /* other */; };
+		69CFCAEC245ADDA80059C067 /* bugs in Resources */ = {isa = PBXBuildFile; fileRef = 69CFCA8E245AAF520059C067 /* bugs */; };
+		69CFCAED245ADDA80059C067 /* miscellaneous in Resources */ = {isa = PBXBuildFile; fileRef = 69CFCA8F245AAF520059C067 /* miscellaneous */; };
+		69CFCAEE245ADDA80059C067 /* housewares in Resources */ = {isa = PBXBuildFile; fileRef = 69CFCA90245AAF520059C067 /* housewares */; };
+		69CFCAEF245ADDA80059C067 /* dresses in Resources */ = {isa = PBXBuildFile; fileRef = 69CFCA91245AAF520059C067 /* dresses */; };
+		69CFCAF0245ADDA80059C067 /* wallpapers in Resources */ = {isa = PBXBuildFile; fileRef = 69CFCA92245AAF520059C067 /* wallpapers */; };
+		69CFCAF1245ADDA80059C067 /* recipes in Resources */ = {isa = PBXBuildFile; fileRef = 69CFCA93245AAF520059C067 /* recipes */; };
+		69CFCAF2245ADDA80059C067 /* fencing in Resources */ = {isa = PBXBuildFile; fileRef = 69CFCA94245AAF520059C067 /* fencing */; };
+		69CFCAF3245ADDA80059C067 /* umbrellas in Resources */ = {isa = PBXBuildFile; fileRef = 69CFCA95245AAF520059C067 /* umbrellas */; };
+		69CFCAF4245ADDA80059C067 /* construction in Resources */ = {isa = PBXBuildFile; fileRef = 69CFCA96245AAF520059C067 /* construction */; };
+		69CFCAF5245ADDA80059C067 /* socks in Resources */ = {isa = PBXBuildFile; fileRef = 69CFCA97245AAF520059C067 /* socks */; };
+		69CFCAF6245ADDA80059C067 /* floors in Resources */ = {isa = PBXBuildFile; fileRef = 69CFCA98245AAF520059C067 /* floors */; };
+		69CFCAF7245ADDA80059C067 /* bottoms in Resources */ = {isa = PBXBuildFile; fileRef = 69CFCA99245AAF520059C067 /* bottoms */; };
+		69CFCAF8245ADDA80059C067 /* bags in Resources */ = {isa = PBXBuildFile; fileRef = 69CFCA9A245AAF520059C067 /* bags */; };
+		69CFCAF9245ADDA80059C067 /* photos in Resources */ = {isa = PBXBuildFile; fileRef = 69CFCA9B245AAF520059C067 /* photos */; };
+		69CFCAFA245ADDA80059C067 /* shoes in Resources */ = {isa = PBXBuildFile; fileRef = 69CFCA9C245AAF520059C067 /* shoes */; };
+		69CFCAFB245ADDA80059C067 /* fish in Resources */ = {isa = PBXBuildFile; fileRef = 69CFCA9D245AAF520059C067 /* fish */; };
+		69CFCAFC245ADDA80059C067 /* rugs in Resources */ = {isa = PBXBuildFile; fileRef = 69CFCA9E245AAF520059C067 /* rugs */; };
+		69E4BBB0245AE067001035E2 /* UI in Frameworks */ = {isa = PBXBuildFile; productRef = 69E4BBAF245AE067001035E2 /* UI */; };
+		69E4BBB2245AE06B001035E2 /* UI in Frameworks */ = {isa = PBXBuildFile; productRef = 69E4BBB1245AE06B001035E2 /* UI */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -309,7 +346,6 @@
 		69AF8C5C243E2841001DD9CB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		69AF8C5E243E2841001DD9CB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		69AF8C6C243E2A18001DD9CB /* ItemsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsViewModel.swift; sourceTree = "<group>"; };
-		69AF8C73243E2F73001DD9CB /* ItemImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemImage.swift; sourceTree = "<group>"; };
 		69AF8C75243E3545001DD9CB /* SearchField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchField.swift; sourceTree = "<group>"; };
 		69AF8C79243E4C78001DD9CB /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		69AF8C7B243E4D29001DD9CB /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
@@ -357,6 +393,14 @@
 		69CFCA9C245AAF520059C067 /* shoes */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = shoes; sourceTree = "<group>"; };
 		69CFCA9D245AAF520059C067 /* fish */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = fish; sourceTree = "<group>"; };
 		69CFCA9E245AAF520059C067 /* rugs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = rugs; sourceTree = "<group>"; };
+		69CFCAC6245ADC780059C067 /* ACHNBrowserUITV.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ACHNBrowserUITV.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		69CFCAC8245ADC780059C067 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		69CFCACC245ADC7A0059C067 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		69CFCACF245ADC7A0059C067 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		69CFCAD2245ADC7A0059C067 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		69CFCAD4245ADC7A0059C067 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		69CFCADA245ADC9C0059C067 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		69E4BBAE245ADF26001035E2 /* UI */ = {isa = PBXFileReference; lastKnownFileType = folder; name = UI; path = ACHNBrowserUI/packages/UI; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -364,9 +408,20 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				69E4BBB0245AE067001035E2 /* UI in Frameworks */,
 				68345589244E4DEF0072FC0C /* ACNHEvents in Frameworks */,
 				69CFCA34245AA62D0059C067 /* Backend in Frameworks */,
 				6951837524599C26005D28E0 /* StoreKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		69CFCAC3245ADC780059C067 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				69CFCADD245ADCCF0059C067 /* Backend in Frameworks */,
+				69E4BBB2245AE06B001035E2 /* UI in Frameworks */,
+				69CFCADF245ADCD40059C067 /* ACNHEvents in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -580,8 +635,10 @@
 		69AF8C44243E283D001DD9CB = {
 			isa = PBXGroup;
 			children = (
+				69CFCAC7245ADC780059C067 /* ACHNBrowserUITV */,
 				69AF8C4F243E283D001DD9CB /* ACHNBrowserUI */,
 				69CFCA14245A9C400059C067 /* Backend */,
+				69E4BBAE245ADF26001035E2 /* UI */,
 				69CFCA7F245AAF300059C067 /* Resources */,
 				69AF8C4E243E283D001DD9CB /* Products */,
 				6951837324599C26005D28E0 /* Frameworks */,
@@ -592,6 +649,7 @@
 			isa = PBXGroup;
 			children = (
 				69AF8C4D243E283D001DD9CB /* AC Helper.app */,
+				69CFCAC6245ADC780059C067 /* ACHNBrowserUITV.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -704,7 +762,6 @@
 				69B13CA2245597050089BD7B /* detail */,
 				69AF8C54243E283D001DD9CB /* ItemsListView.swift */,
 				69AF8C7D243E4DD9001DD9CB /* ItemRowView.swift */,
-				69AF8C73243E2F73001DD9CB /* ItemImage.swift */,
 			);
 			path = items;
 			sourceTree = "<group>";
@@ -779,6 +836,43 @@
 			path = json;
 			sourceTree = "<group>";
 		};
+		69CFCAC7245ADC780059C067 /* ACHNBrowserUITV */ = {
+			isa = PBXGroup;
+			children = (
+				69CFCAD8245ADC8E0059C067 /* views */,
+				69CFCAC8245ADC780059C067 /* AppDelegate.swift */,
+				69CFCACC245ADC7A0059C067 /* Assets.xcassets */,
+				69CFCAD1245ADC7A0059C067 /* LaunchScreen.storyboard */,
+				69CFCAD4245ADC7A0059C067 /* Info.plist */,
+				69CFCACE245ADC7A0059C067 /* Preview Content */,
+			);
+			path = ACHNBrowserUITV;
+			sourceTree = "<group>";
+		};
+		69CFCACE245ADC7A0059C067 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				69CFCACF245ADC7A0059C067 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		69CFCAD8245ADC8E0059C067 /* views */ = {
+			isa = PBXGroup;
+			children = (
+				69CFCAD9245ADC930059C067 /* home */,
+			);
+			path = views;
+			sourceTree = "<group>";
+		};
+		69CFCAD9245ADC930059C067 /* home */ = {
+			isa = PBXGroup;
+			children = (
+				69CFCADA245ADC9C0059C067 /* HomeView.swift */,
+			);
+			path = home;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -799,9 +893,32 @@
 			packageProductDependencies = (
 				68345588244E4DEF0072FC0C /* ACNHEvents */,
 				69CFCA33245AA62D0059C067 /* Backend */,
+				69E4BBAF245AE067001035E2 /* UI */,
 			);
 			productName = ACHNBrowserUI;
 			productReference = 69AF8C4D243E283D001DD9CB /* AC Helper.app */;
+			productType = "com.apple.product-type.application";
+		};
+		69CFCAC5245ADC780059C067 /* ACHNBrowserUITV */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 69CFCAD5245ADC7A0059C067 /* Build configuration list for PBXNativeTarget "ACHNBrowserUITV" */;
+			buildPhases = (
+				69CFCAC2245ADC780059C067 /* Sources */,
+				69CFCAC3245ADC780059C067 /* Frameworks */,
+				69CFCAC4245ADC780059C067 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ACHNBrowserUITV;
+			packageProductDependencies = (
+				69CFCADC245ADCCF0059C067 /* Backend */,
+				69CFCADE245ADCD40059C067 /* ACNHEvents */,
+				69E4BBB1245AE06B001035E2 /* UI */,
+			);
+			productName = ACHNBrowserUITV;
+			productReference = 69CFCAC6245ADC780059C067 /* ACHNBrowserUITV.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -816,6 +933,9 @@
 				TargetAttributes = {
 					69AF8C4C243E283D001DD9CB = {
 						CreatedOnToolsVersion = 11.4;
+					};
+					69CFCAC5245ADC780059C067 = {
+						CreatedOnToolsVersion = 11.4.1;
 					};
 				};
 			};
@@ -836,6 +956,7 @@
 			projectRoot = "";
 			targets = (
 				69AF8C4C243E283D001DD9CB /* ACHNBrowserUI */,
+				69CFCAC5245ADC780059C067 /* ACHNBrowserUITV */,
 			);
 		};
 /* End PBXProject section */
@@ -961,6 +1082,45 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		69CFCAC4245ADC780059C067 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				69CFCAE5245ADDA80059C067 /* nookmiles in Resources */,
+				69CFCAF2245ADDA80059C067 /* fencing in Resources */,
+				69CFCAED245ADDA80059C067 /* miscellaneous in Resources */,
+				69CFCAE2245ADDA80059C067 /* music in Resources */,
+				69CFCAE6245ADDA80059C067 /* tops in Resources */,
+				69CFCAEB245ADDA80059C067 /* other in Resources */,
+				69CFCAF7245ADDA80059C067 /* bottoms in Resources */,
+				69CFCAD3245ADC7A0059C067 /* LaunchScreen.storyboard in Resources */,
+				69CFCAEC245ADDA80059C067 /* bugs in Resources */,
+				69CFCAFA245ADDA80059C067 /* shoes in Resources */,
+				69CFCAE1245ADDA80059C067 /* headwear in Resources */,
+				69CFCAEF245ADDA80059C067 /* dresses in Resources */,
+				69CFCAF9245ADDA80059C067 /* photos in Resources */,
+				69CFCAF1245ADDA80059C067 /* recipes in Resources */,
+				69CFCAEE245ADDA80059C067 /* housewares in Resources */,
+				69CFCAF8245ADDA80059C067 /* bags in Resources */,
+				69CFCAE7245ADDA80059C067 /* posters in Resources */,
+				69CFCAF6245ADDA80059C067 /* floors in Resources */,
+				69CFCAE9245ADDA80059C067 /* fossils in Resources */,
+				69CFCAF3245ADDA80059C067 /* umbrellas in Resources */,
+				69CFCAE8245ADDA80059C067 /* art in Resources */,
+				69CFCAFC245ADDA80059C067 /* rugs in Resources */,
+				69CFCAF0245ADDA80059C067 /* wallpapers in Resources */,
+				69CFCAFB245ADDA80059C067 /* fish in Resources */,
+				69CFCAD0245ADC7A0059C067 /* Preview Assets.xcassets in Resources */,
+				69CFCAE0245ADDA20059C067 /* turnips.js in Resources */,
+				69CFCAE3245ADDA80059C067 /* accessories in Resources */,
+				69CFCAEA245ADDA80059C067 /* wall-mounted in Resources */,
+				69CFCAE4245ADDA80059C067 /* tools in Resources */,
+				69CFCACD245ADC7A0059C067 /* Assets.xcassets in Resources */,
+				69CFCAF4245ADDA80059C067 /* construction in Resources */,
+				69CFCAF5245ADDA80059C067 /* socks in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -1013,11 +1173,19 @@
 				68345579244C994C0072FC0C /* LikeButtonView.swift in Sources */,
 				69CA5EDA244CBA8600B275B6 /* CalendarView.swift in Sources */,
 				68BA582A244B693400B53811 /* TurnipsViewModel.swift in Sources */,
-				69AF8C74243E2F73001DD9CB /* ItemImage.swift in Sources */,
 				6951836A245977D1005D28E0 /* TurnipsAveragePriceRow.swift in Sources */,
 				69CA5F18244F447E00B275B6 /* EventsDescription.swift in Sources */,
 				69B13CA8245599A00089BD7B /* ItemDetailInfoView.swift in Sources */,
 				697E63F72449A7BA008FB710 /* VillagersViewModel.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		69CFCAC2245ADC780059C067 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				69CFCADB245ADC9C0059C067 /* HomeView.swift in Sources */,
+				69CFCAC9245ADC780059C067 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1028,6 +1196,14 @@
 			isa = PBXVariantGroup;
 			children = (
 				69AF8C5C243E2841001DD9CB /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		69CFCAD1245ADC7A0059C067 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				69CFCAD2245ADC7A0059C067 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -1199,6 +1375,50 @@
 			};
 			name = Release;
 		};
+		69CFCAD6245ADC7A0059C067 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"ACHNBrowserUITV/Preview Content\"";
+				DEVELOPMENT_TEAM = Z6P74P6T99;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = ACHNBrowserUITV/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.thomasricouard.ACHNBrowserUITV;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 13.4;
+			};
+			name = Debug;
+		};
+		69CFCAD7245ADC7A0059C067 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"ACHNBrowserUITV/Preview Content\"";
+				DEVELOPMENT_TEAM = Z6P74P6T99;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = ACHNBrowserUITV/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.thomasricouard.ACHNBrowserUITV;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 13.4;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1216,6 +1436,15 @@
 			buildConfigurations = (
 				69AF8C62243E2841001DD9CB /* Debug */,
 				69AF8C63243E2841001DD9CB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		69CFCAD5245ADC7A0059C067 /* Build configuration list for PBXNativeTarget "ACHNBrowserUITV" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				69CFCAD6245ADC7A0059C067 /* Debug */,
+				69CFCAD7245ADC7A0059C067 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1242,6 +1471,23 @@
 		69CFCA33245AA62D0059C067 /* Backend */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = Backend;
+		};
+		69CFCADC245ADCCF0059C067 /* Backend */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Backend;
+		};
+		69CFCADE245ADCD40059C067 /* ACNHEvents */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 68345587244E4DEF0072FC0C /* XCRemoteSwiftPackageReference "Date-ACNHEvents" */;
+			productName = ACNHEvents;
+		};
+		69E4BBAF245AE067001035E2 /* UI */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = UI;
+		};
+		69E4BBB1245AE06B001035E2 /* UI */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = UI;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

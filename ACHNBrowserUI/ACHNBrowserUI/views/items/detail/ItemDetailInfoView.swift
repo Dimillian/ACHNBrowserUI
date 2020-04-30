@@ -8,6 +8,7 @@
 
 import SwiftUI
 import Backend
+import UI
 
 struct ItemDetailInfoView: View {
     let item: Item

@@ -20,6 +20,11 @@ jobs:
         cd ACHNBrowserUI/ACHNBrowserUI/packages/Backend/
         swift test
 
+    - name: Xcode test UI
+      run: |
+        cd ACHNBrowserUI/ACHNBrowserUI/packages/UI/
+        swift test
+
     - name: Xcode build app
       run: |
         cd ACHNBrowserUI/

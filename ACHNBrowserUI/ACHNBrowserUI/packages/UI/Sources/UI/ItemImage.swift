@@ -10,11 +10,16 @@ import SwiftUI
 import Backend
 import SDWebImageSwiftUI
 
-struct ItemImage : View {
+public struct ItemImage : View {
     let path: String?
     let size: CGFloat
     
-    var body: some View {
+    public init(path: String?, size: CGFloat) {
+        self.path = path
+        self.size = size
+    }
+    
+    public var body: some View {
         WebImage(url: path != nil ? ImageService.computeUrl(key: path!) : nil)
             .resizable()
             .renderingMode(.original)

@@ -8,8 +8,11 @@
 
 import Foundation
 import Combine
+#if !os(tvOS)
 import WebKit
+#endif
 
+#if !os(tvOS)
 public class TurnipExchangeService: NSObject, WKScriptMessageHandler {
     public static let shared = TurnipExchangeService()
     
@@ -114,3 +117,4 @@ public class TurnipExchangeService: NSObject, WKScriptMessageHandler {
         }
     }
 }
+#endif
