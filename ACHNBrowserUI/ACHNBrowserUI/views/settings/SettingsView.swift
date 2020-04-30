@@ -27,6 +27,20 @@ struct SettingsView: View {
         })
     }
     
+    var saveButton: some View {
+        Button(action: {
+            AppUserDefaults.islandName = self.islandName
+            AppUserDefaults.hemisphere = self.selectedHemisphere
+            AppUserDefaults.fruit = self.selectedFruit
+            AppUserDefaults.nookShop = self.selectedNookShop
+            AppUserDefaults.ableSisters = self.selectedAbleSisters
+            AppUserDefaults.residentService = self.selectedResidentService
+            self.presentationMode.wrappedValue.dismiss()
+        }, label: {
+            Text("Save")
+        })
+    }
+    
     var body: some View {
         NavigationView {
             Form {
@@ -78,21 +92,10 @@ struct SettingsView: View {
                         Text("App Icon")
                     }
                 }
-                
-                Button(action: {
-                    AppUserDefaults.islandName = self.islandName
-                    AppUserDefaults.hemisphere = self.selectedHemisphere
-                    AppUserDefaults.fruit = self.selectedFruit
-                    AppUserDefaults.nookShop = self.selectedNookShop
-                    AppUserDefaults.ableSisters = self.selectedAbleSisters
-                    AppUserDefaults.residentService = self.selectedResidentService
-                    self.presentationMode.wrappedValue.dismiss()
-                }, label: {
-                    Text("Save").foregroundColor(.grass)
-                })
+                saveButton
             }
             .navigationBarTitle(Text("Preferences"), displayMode: .inline)
-            .navigationBarItems(trailing: closeButton)
+            .navigationBarItems(leading: closeButton, trailing: saveButton)
         }.navigationViewStyle(StackNavigationViewStyle())
     }
 }

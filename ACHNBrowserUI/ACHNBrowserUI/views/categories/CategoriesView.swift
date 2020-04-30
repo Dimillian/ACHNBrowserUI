@@ -107,7 +107,7 @@ extension CategoriesView {
     
     private func searchItemRow(item: Item) -> some View {
         NavigationLink(destination: ItemDetailView(item: item)) {
-            ItemRowView(item: item)
+            ItemRowView(displayMode: .big, item: item)
         }
     }
     
