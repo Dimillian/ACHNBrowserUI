@@ -21,23 +21,45 @@ struct ActiveCritterSections: View {
     let activeFishes: [Item]
     let activeBugs: [Item]
     
-    var body: some View {
+    func toCatchCritter(critters: [Item]) -> [Item] {
+        critters.filter{ !collection.critters.contains($0) }
+    }
+    
+    func caughtCritters(critters: [Item]) -> [Item] {
+        critters.filter{ collection.critters.contains($0) }
+    }
+    
+    func newThisMonth(critters: [Item]) -> [Item] {
+        critters.filter{ $0.isNewThisMonth() && !collection.critters.contains($0) }
+    }
+    
+    private func sectionContent(critter: Item) -> some View {
+        NavigationLink(destination: ItemDetailView(item: critter)) {
+            ItemRowView(displayMode: .big, item: critter)
+        }
+    }
+    
+    private func makeSectionOrPlaceholder(title: String, critters: [Item]) -> some View {
         Group {
-            Section(header: SectionHeaderView(text: "To catch")) {
-                ForEach(selectedTab == .fishes ? activeFishes.filter{ !collection.critters.contains($0) } :
-                    activeBugs.filter{ !collection.critters.contains($0) }) { critter in
-                        NavigationLink(destination: ItemDetailView(item: critter)) {
-                            ItemRowView(displayMode: .big, item: critter)
-                        }
+            if critters.isEmpty {
+                Text("You caught them all!").font(.body).fontWeight(.bold)
+            } else {
+                Section(header: SectionHeaderView(text: title)) {
+                    ForEach(critters, content: sectionContent)
                 }
             }
+        }
+    }
+    
+    var body: some View {
+        Group {
+            makeSectionOrPlaceholder(title: "New this month",
+                                     critters: newThisMonth(critters: selectedTab == .fishes ? activeFishes : activeBugs))
+            makeSectionOrPlaceholder(title: "To catch",
+                                     critters: toCatchCritter(critters: selectedTab == .fishes ? activeFishes : activeBugs))
             Section(header: SectionHeaderView(text: "Caught")) {
-                ForEach(selectedTab == .fishes ? activeFishes.filter{ collection.critters.contains($0) } :
-                    activeBugs.filter{ collection.critters.contains($0) }) { critter in
-                        NavigationLink(destination: ItemDetailView(item: critter)) {
-                            ItemRowView(displayMode: .big, item: critter)
-                        }
-                }
+                ForEach(caughtCritters(critters: selectedTab == .fishes ? activeFishes : activeBugs),
+                        content: sectionContent)
             }
         }
     }
