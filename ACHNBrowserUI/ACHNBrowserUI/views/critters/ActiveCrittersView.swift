@@ -23,7 +23,7 @@ struct ActiveCritterSections: View {
     
     var body: some View {
         Group {
-            Section(header: Text("To catch")) {
+            Section(header: SectionHeaderView(text: "To catch")) {
                 ForEach(selectedTab == .fishes ? activeFishes.filter{ !collection.critters.contains($0) } :
                     activeBugs.filter{ !collection.critters.contains($0) }) { critter in
                         NavigationLink(destination: ItemDetailView(item: critter)) {
@@ -31,7 +31,7 @@ struct ActiveCritterSections: View {
                         }
                 }
             }
-            Section(header: Text("Caught")) {
+            Section(header: SectionHeaderView(text: "Caught")) {
                 ForEach(selectedTab == .fishes ? activeFishes.filter{ collection.critters.contains($0) } :
                     activeBugs.filter{ collection.critters.contains($0) }) { critter in
                         NavigationLink(destination: ItemDetailView(item: critter)) {
@@ -60,7 +60,8 @@ struct ActiveCrittersView: View {
                                   activeFishes: activeFishes,
                                   activeBugs: activeBugs)
         }
-        .listStyle(PlainListStyle())
+        .listStyle(GroupedListStyle())
+        .environment(\.horizontalSizeClass, .regular)
         .navigationBarTitle("Active Critters")
     }
 }
