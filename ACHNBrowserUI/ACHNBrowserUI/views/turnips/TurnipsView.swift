@@ -51,6 +51,7 @@ struct TurnipsView: View {
                                 displayMode: .automatic)
             .sheet(isPresented: $turnipsFormShown, content: { TurnipsFormView(turnipsViewModel: self.viewModel) })
         }
+        .navigationViewStyle(StackNavigationViewStyle())
         .onAppear(perform: NotificationManager.shared.registerForNotifications)
         .onAppear(perform: viewModel.fetch)
         .onAppear(perform: viewModel.refreshPrediction)

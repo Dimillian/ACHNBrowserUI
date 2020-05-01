@@ -2,12 +2,14 @@
 
 # Animal Crossing New Horizon SwiftUI application!
 
-![Image](images/promo.png?)
+![Image](images/promo2.png?)
 
 This is a full featured Animal Crossing helper application entirely in SwiftUI.
 
 # Features
-* Dashboard to track your fishes and bugs. 
+* Dashboard to track your fishes, bugs, collection progress and active events.
+* See the active critters this month and catch em all! 
+* Turnips price tracking and predictions with daily push notifications. 
 * Turnip.exchange integration.
 * Nookazon integration. 
 * Full catalog browser with filter, sorting and search.
