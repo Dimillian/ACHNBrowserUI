@@ -144,7 +144,7 @@ struct ItemDetailView: View {
             self.itemViewModel.cancellable?.cancel()
         }
         .navigationBarItems(trailing: LikeButtonView(item: self.itemViewModel.item))
-        .navigationBarTitle(Text(itemViewModel.item.name))
+        .navigationBarTitle(Text(itemViewModel.item.name), displayMode: .large)
         .sheet(item: $selectedListing) {
             SafariView(url: $0)
                 .edgesIgnoringSafeArea(.all)

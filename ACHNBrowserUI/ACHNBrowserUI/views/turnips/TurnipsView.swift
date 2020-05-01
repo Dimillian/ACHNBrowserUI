@@ -46,8 +46,9 @@ struct TurnipsView: View {
                 exchangeSection
             }
             .listStyle(GroupedListStyle())
+            .environment(\.horizontalSizeClass, .regular)
             .navigationBarTitle("Turnips",
-                                displayMode: .inline)
+                                displayMode: .automatic)
             .sheet(isPresented: $turnipsFormShown, content: { TurnipsFormView(turnipsViewModel: self.viewModel) })
         }
         .onAppear(perform: NotificationManager.shared.registerForNotifications)

@@ -22,7 +22,7 @@ struct SearchField: View {
                     self.searchText = ""
                 }) {
                     Image(systemName: "xmark.circle")
-                        .font(.subheadline).foregroundColor(.red)
+                        .font(.headline).foregroundColor(.red)
                 }.buttonStyle(BorderlessButtonStyle())
             }
         }

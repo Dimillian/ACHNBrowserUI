@@ -108,7 +108,9 @@ struct DashboardView: View {
                 if !villagersViewModel.todayBirthdays.isEmpty {
                     makeBirthdayView()
                 }
-                makeTopTurnipSection()
+                if viewModel.island != nil {
+                    makeTopTurnipSection()
+                }
                 DashboardNookazonListingSection(selectedSheet: $selectedSheet,
                                                 viewModel: viewModel)
             }

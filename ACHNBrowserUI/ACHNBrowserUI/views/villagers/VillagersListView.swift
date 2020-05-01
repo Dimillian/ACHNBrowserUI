@@ -32,18 +32,20 @@ struct VillagersListView: View {
     var body: some View {
         NavigationView {
             List {
-                SearchField(searchText: $viewModel.searchText,
-                            placeholder: "Search a villager")
-                ForEach(currentVillagers) { villager in
-                    NavigationLink(destination: VillagerDetailView(villager: villager)) {
-                        VillagerRowView(villager: villager)
+                Section(header: SearchField(searchText: $viewModel.searchText,
+                                            placeholder: "Search a villager"))
+                {
+                    ForEach(currentVillagers) { villager in
+                        NavigationLink(destination: VillagerDetailView(villager: villager)) {
+                            VillagerRowView(villager: villager)
+                        }
                     }
                 }
             }
-            .onAppear(perform: viewModel.fetch)
-            .background(Color.dialogue)
+            .listStyle(GroupedListStyle())
             .navigationBarTitle(Text("Villagers"),
-                                displayMode: .inline)
+                                displayMode: .automatic)
+            .onAppear(perform: viewModel.fetch)
             .modifier(DismissingKeyboardOnSwipe())
             if !viewModel.villagers.isEmpty {
                 VillagerDetailView(villager: viewModel.villagers.first!)
