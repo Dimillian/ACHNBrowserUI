@@ -91,6 +91,11 @@ public extension Item {
         return activeMonths?.contains(currentMonth - 2) == false
     }
     
+    func leavingThisMonth() -> Bool {
+        let currentMonth = Int(Item.monthFormatter.string(from: Date()))!
+        return activeMonths?.contains(currentMonth) == false
+    }
+    
     func formattedTimes() -> String? {
         guard let activeTimes = activeTimes,
             let startTime = activeTimes.first?["startTime"],

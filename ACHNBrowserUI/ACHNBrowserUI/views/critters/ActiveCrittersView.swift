@@ -33,6 +33,10 @@ struct ActiveCritterSections: View {
         critters.filter{ $0.isNewThisMonth() && !collection.critters.contains($0) }
     }
     
+    func leavingThisMonth(critters: [Item]) -> [Item] {
+        critters.filter{ $0.leavingThisMonth() && !collection.critters.contains($0) }
+    }
+    
     private func sectionContent(critter: Item) -> some View {
         NavigationLink(destination: ItemDetailView(item: critter)) {
             ItemRowView(displayMode: .big, item: critter)
@@ -57,6 +61,8 @@ struct ActiveCritterSections: View {
                                      critters: newThisMonth(critters: selectedTab == .fishes ? activeFishes : activeBugs))
             makeSectionOrPlaceholder(title: "To catch",
                                      critters: toCatchCritter(critters: selectedTab == .fishes ? activeFishes : activeBugs))
+            makeSectionOrPlaceholder(title: "Leaving this month",
+                                     critters: leavingThisMonth(critters: selectedTab == .fishes ? activeFishes : activeBugs))
             Section(header: SectionHeaderView(text: "Caught")) {
                 ForEach(caughtCritters(critters: selectedTab == .fishes ? activeFishes : activeBugs),
                         content: sectionContent)

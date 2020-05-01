@@ -27,6 +27,14 @@ struct DashboardAvailableCrittersSection: View {
         return "Loading..."
     }
     
+    private var newFishes: Int {
+        viewModel.fishes.filterActive().filter{ $0.isNewThisMonth() }.count
+    }
+    
+    private var newBugs: Int {
+        viewModel.bugs.filterActive().filter{ $0.isNewThisMonth() }.count
+    }
+    
     private var crittersView: some View {
         HStack {
             Spacer()
@@ -35,7 +43,7 @@ struct DashboardAvailableCrittersSection: View {
                     .font(.title)
                     .bold()
                     .foregroundColor(.text)
-                Text("Fishes")
+                Text("\(newFishes) new fishes")
                     .font(.caption)
                     .foregroundColor(.secondaryText)
             }
@@ -47,7 +55,7 @@ struct DashboardAvailableCrittersSection: View {
                     .font(.title)
                     .bold()
                     .foregroundColor(.text)
-                Text("Bugs")
+                Text("\(newBugs) new bugs")
                     .font(.caption)
                     .foregroundColor(.secondaryText)
             }
