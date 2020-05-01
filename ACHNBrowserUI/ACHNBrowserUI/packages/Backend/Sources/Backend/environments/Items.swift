@@ -13,12 +13,10 @@ public class Items: ObservableObject {
     public static let shared = Items()
     
     @Published public var categories: [Category: [Item]] = [:]
-    
-    private var cancellable = Set<AnyCancellable>()
-    
+        
     init() {
         for category in Category.allCases {
-            NookPlazaAPIService
+            _ = NookPlazaAPIService
                 .fetch(endpoint: category)
                 .replaceError(with: ItemResponse(total: 0, results: []))
                 .eraseToAnyPublisher()
@@ -26,7 +24,6 @@ public class Items: ObservableObject {
                 .subscribe(on: DispatchQueue.global())
                 .receive(on: DispatchQueue.main)
                 .sink(receiveValue: { [weak self] items in self?.categories[category] = items })
-                .store(in: &cancellable)
         }
     }
 }
