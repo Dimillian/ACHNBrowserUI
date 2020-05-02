@@ -10,7 +10,7 @@ import Foundation
 import SwiftUI
 import Purchases
 
-public class SubcriptionManager: NSObject, ObservableObject {
+public class SubcriptionManager: ObservableObject {
     public static let shared = SubcriptionManager()
     
     public enum SubscriptionStatus {
@@ -22,10 +22,7 @@ public class SubcriptionManager: NSObject, ObservableObject {
     @Published public var paymentStatus: SKPaymentTransactionState?
     @Published public var subscriptionStatus: SubscriptionStatus = AppUserDefaults.isSubscribed ? .subscribed : .notSubscribed
     
-    override init() {
-        super.init()
-        
-        Purchases.debugLogsEnabled = true
+    init() {        
         Purchases.configure(withAPIKey: "glVAIPplNhAuvgOlCcUcrEaaCQwLRzQs")
         Purchases.shared.offerings { (offerings, error) in
             self.subscription = offerings?.current?.monthly
