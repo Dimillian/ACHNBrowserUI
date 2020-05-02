@@ -18,6 +18,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let contentView = TabbarView()
             .environmentObject(UserCollection())
             .environmentObject(Items.shared)
+            .environmentObject(UIState())
         
         if let windowScene = scene as? UIWindowScene {
             

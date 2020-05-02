@@ -8,9 +8,10 @@
 
 import SwiftUI
 import ACNHEvents
+import Backend
 
 struct DashboardEventTextView: View {
-    let todayEvents = Date().events(for: .north)
+    let todayEvents = Date().events(for: AppUserDefaults.hemisphere == .north ? .north : .south)
     let nextEvent = Event.nextEvent()
     
     func makeDateBadge(date: Date) -> some View {
@@ -28,8 +29,17 @@ struct DashboardEventTextView: View {
     var body: some View {
         Group {
             VStack(alignment: .leading) {
-                if !todayEvents.isEmpty {
+                if !todayEvents.isEmpty && todayEvents.count == 1 {
                     Text("Today is \(todayEvents.first!.title())!")
+                } else if todayEvents.count > 1 {
+                    Text("Today events are ") +
+                        Text("\(todayEvents.first!.title())")
+                            .foregroundColor(.bell)
+                            .fontWeight(.semibold) +
+                        Text(" and ") +
+                        Text("\(todayEvents.last!.title())")
+                            .foregroundColor(.bell)
+                            .fontWeight(.semibold)
                 } else {
                     Text("No events today.")
                 }

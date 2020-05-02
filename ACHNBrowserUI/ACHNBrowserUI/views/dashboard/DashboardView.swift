@@ -27,7 +27,7 @@ struct DashboardView: View {
         }
     }
     
-    
+    @EnvironmentObject private var uiState: UIState
     @EnvironmentObject private var collection: UserCollection
     @ObservedObject private var viewModel = DashboardViewModel()
     @ObservedObject private var villagersViewModel = VillagersViewModel()
@@ -49,7 +49,7 @@ struct DashboardView: View {
         })
     }
     
-    func makeSheet(_ sheet: Sheet) -> some View {
+    private func makeSheet(_ sheet: Sheet) -> some View {
         switch sheet {
         case .settings:
             return AnyView(SettingsView())
@@ -60,7 +60,7 @@ struct DashboardView: View {
         }
     }
     
-    func makeDateView() -> some View {
+    private func makeDateView() -> some View {
         let formatter = DateFormatter()
         formatter.dateFormat = "EEEE, dd MMMM"
         let dateString = formatter.string(from: Date())
@@ -76,7 +76,7 @@ struct DashboardView: View {
         }
     }
     
-    func makeBirthdayView() -> some View {
+    private func makeBirthdayView() -> some View {
         Section(header: SectionHeaderView(text: "Villager birthday")) {
             ForEach(villagersViewModel.todayBirthdays) { villager in
                 NavigationLink(destination: VillagerDetailView(villager: villager),
@@ -87,7 +87,31 @@ struct DashboardView: View {
         }
     }
     
-    func makeTopTurnipSection() -> some View {
+    private func makeTurnipsPredictionsView() -> some View {
+        Section(header: SectionHeaderView(text: "Turnips predictions")) {
+            Group {
+                if viewModel.turnipsPredictions!.todayAverages?.isEmpty == true {
+                    Text("Today is sunday, don't forget to buy more turnips and fill your buy price")
+                } else {
+                    Text("Today average buy prices should be ") +
+                        Text("\(viewModel.turnipsPredictions!.todayAverages![0])")
+                            .foregroundColor(.bell)
+                            .fontWeight(.semibold) +
+                        Text(" for this morning and ") +
+                        Text("\(viewModel.turnipsPredictions!.todayAverages![1])")
+                            .foregroundColor(.bell)
+                            .fontWeight(.semibold) +
+                        Text(" for this afternoon")
+                }
+            }
+            .foregroundColor(.text)
+            .onTapGesture {
+                self.uiState.selectedTab = .turnips
+            }
+        }
+    }
+    
+    private func makeTopTurnipSection() -> some View {
         Section(header: SectionHeaderView(text: "Top Turnip Island")) {
             if viewModel.island == nil {
                 Text("Loading...")
@@ -107,6 +131,9 @@ struct DashboardView: View {
                 DashboardCollectionProgressSection(viewModel: viewModel)
                 if !villagersViewModel.todayBirthdays.isEmpty {
                     makeBirthdayView()
+                }
+                if viewModel.turnipsPredictions?.todayAverages != nil {
+                    makeTurnipsPredictionsView()
                 }
                 if viewModel.island != nil {
                     makeTopTurnipSection()

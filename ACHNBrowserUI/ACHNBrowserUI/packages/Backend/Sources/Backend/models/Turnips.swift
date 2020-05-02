@@ -18,6 +18,17 @@ public struct TurnipPredictions: Codable {
     public let averagePrices: [Int]?
     public let minMax: [[Int]]?
     
+    public var todayAverages: [Int]? {
+        guard let averagePrices = averagePrices else {
+            return nil
+        }
+        let today = Calendar.current.component(.weekday, from: Date())
+        if today == 1 {
+            return []
+        }
+        let base = (today * 2) - 4
+        return [averagePrices[base], averagePrices[base + 1]]
+    }
     
     public init(minBuyPrice: Int?, averagePrices: [Int]?, minMax: [[Int]]?) {
         self.minBuyPrice = minBuyPrice

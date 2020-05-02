@@ -8,6 +8,7 @@
 
 import SwiftUI
 import ACNHEvents
+import Backend
 
 extension Event {
     func title() -> String {
@@ -46,7 +47,7 @@ extension Event {
         
         while nextDate.compare(endDate) == .orderedAscending
         {
-            event = nextDate.events(for: .north).first
+            event = nextDate.events(for: AppUserDefaults.hemisphere == .north ? .north : .south).first
             if event != nil {
                 break
             }

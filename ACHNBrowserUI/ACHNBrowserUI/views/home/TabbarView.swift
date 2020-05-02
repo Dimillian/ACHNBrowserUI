@@ -10,11 +10,7 @@ import SwiftUI
 import Backend
 
 struct TabbarView: View {
-    enum Tab: Int {
-        case dashboard, items, villagers, collection, turnips
-    }
-    
-    @State var selectedTab = Tab.dashboard
+    @EnvironmentObject private var uiState: UIState
     
     func tabbarItem(text: String, image: String) -> some View {
         VStack {
@@ -24,23 +20,23 @@ struct TabbarView: View {
     }
     
     var body: some View {
-        TabView(selection: $selectedTab) {
+        TabView(selection: $uiState.selectedTab) {
             Group {
                 DashboardView().tabItem{
                     self.tabbarItem(text: "Dashboard", image: "icon-bells")
-                }.tag(Tab.dashboard)
+                }.tag(UIState.Tab.dashboard)
                 CategoriesView(categories: Category.items()).tabItem{
                     self.tabbarItem(text: "Catalog", image: "icon-leaf")
-                }.tag(Tab.items)
+                }.tag(UIState.Tab.items)
                 TurnipsView().tabItem {
                     tabbarItem(text: "Turnips", image: "icon-turnip")
-                }.tag(Tab.turnips)
+                }.tag(UIState.Tab.turnips)
                 VillagersListView().tabItem{
                     self.tabbarItem(text: "Villagers", image: "icon-villager")
-                }.tag(Tab.villagers)
+                }.tag(UIState.Tab.villagers)
                 CollectionListView().tabItem{
                     self.tabbarItem(text: "My Stuff", image: "icon-cardboard")
-                }.tag(Tab.collection)
+                }.tag(UIState.Tab.collection)
             }
         }.accentColor(.white)
     }

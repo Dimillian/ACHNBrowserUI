@@ -44,13 +44,11 @@ struct ActiveCritterSections: View {
     }
     
     private func makeSectionOrPlaceholder(title: String, critters: [Item]) -> some View {
-        Group {
+        Section(header: SectionHeaderView(text: title)) {
             if critters.isEmpty {
                 Text("You caught them all!").font(.body).fontWeight(.bold)
             } else {
-                Section(header: SectionHeaderView(text: title)) {
-                    ForEach(critters, content: sectionContent)
-                }
+                ForEach(critters, content: sectionContent)
             }
         }
     }
