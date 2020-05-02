@@ -42,6 +42,13 @@ struct TurnipsView: View {
                             .foregroundColor(.blue)
                     }
                 }
+                if viewModel.predictions != nil {
+                    Section(header: SectionHeaderView(text: "Chart")) {
+                        NavigationLink(destination: TurnipsChartView(predictions: viewModel.predictions!)) {
+                            Text("Chart").foregroundColor(.blue)
+                        }
+                    }
+                }
                 predictionsSection
                 exchangeSection
             }
