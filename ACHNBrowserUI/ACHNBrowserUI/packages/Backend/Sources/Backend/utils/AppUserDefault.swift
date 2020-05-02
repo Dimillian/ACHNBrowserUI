@@ -26,5 +26,8 @@ public struct AppUserDefaults {
     
     @UserDefaultEnum("resident_service", defaultValue: Infrastructure.ResidentService.tent)
     public static var residentService: Infrastructure.ResidentService
+    
+    @UserDefault("is_subscribed", defaultValue: false)
+    public static var isSubscribed: Bool
 }
 

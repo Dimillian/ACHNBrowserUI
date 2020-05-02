@@ -15,8 +15,17 @@ struct TurnipsView: View {
         case average, minMax
     }
     
-    @ObservedObject var viewModel = TurnipsViewModel()
-    @State private var turnipsFormShown = false
+    private enum Sheet: String, Identifiable {
+        case form, subscription
+        
+        var id: String {
+            self.rawValue
+        }
+    }
+    
+    @EnvironmentObject private var subManager: SubcriptionManager
+    @ObservedObject private var viewModel = TurnipsViewModel()
+    @State private var presentedSheet: Sheet?
     @State private var turnipsDisplay: TurnipsDisplay = .average
     
     private let labels = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat"]
@@ -34,9 +43,19 @@ struct TurnipsView: View {
     var body: some View {
         NavigationView {
             List {
+                if subManager.subscriptionStatus == .notSubscribed {
+                    Section(header: SectionHeaderView(text: "AC Helper+")) {
+                        Button(action: {
+                            self.presentedSheet = .subscription
+                        }) {
+                            Text("To help us support the application and get turnips predictions notification, you can try out AC Helper+")
+                                .foregroundColor(.secondaryText)
+                        }
+                    }
+                }
                 Section(header: SectionHeaderView(text: "Stalks market")) {
                     Button(action: {
-                        self.turnipsFormShown = true
+                        self.presentedSheet = .form
                     }) {
                         Text(TurnipFields.exist() ? "Edit your in game prices" : "Add your in game prices")
                             .foregroundColor(.blue)
@@ -49,7 +68,7 @@ struct TurnipsView: View {
             .environment(\.horizontalSizeClass, .regular)
             .navigationBarTitle("Turnips",
                                 displayMode: .automatic)
-            .sheet(isPresented: $turnipsFormShown, content: { TurnipsFormView(turnipsViewModel: self.viewModel) })
+            .sheet(item: $presentedSheet, content: makeSheet)
         }
         .navigationViewStyle(StackNavigationViewStyle())
         .onAppear(perform: NotificationManager.shared.registerForNotifications)
@@ -61,6 +80,16 @@ struct TurnipsView: View {
 
 // MARK: - Views
 extension TurnipsView {
+    
+    private func makeSheet(_ sheet: Sheet) -> some View {
+        switch sheet {
+        case .form:
+            return AnyView(TurnipsFormView(turnipsViewModel: viewModel).environmentObject(subManager))
+        case .subscription:
+            return AnyView(SubscribeView().environmentObject(subManager))
+        }
+    }
+    
     private var predictionsSection: some View {
         Section(header: SectionHeaderView(text: turnipsDisplay == .average ? "Average daily buy prices" : "Daily min-max prices"),
                 footer: Text(viewModel.pendingNotifications == 0 ? "" :

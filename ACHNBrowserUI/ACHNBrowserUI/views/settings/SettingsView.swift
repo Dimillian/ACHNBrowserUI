@@ -10,14 +10,15 @@ import SwiftUI
 import Backend
 
 struct SettingsView: View {
+    @EnvironmentObject private var subscriptionManager: SubcriptionManager
+    @Environment(\.presentationMode) private var presentationMode
+    
     @State private var islandName = AppUserDefaults.islandName
     @State private var selectedHemisphere = AppUserDefaults.hemisphere
     @State private var selectedFruit = AppUserDefaults.fruit
     @State private var selectedNookShop = AppUserDefaults.nookShop
     @State private var selectedAbleSisters = AppUserDefaults.ableSisters
     @State private var selectedResidentService = AppUserDefaults.residentService
-    
-    @Environment(\.presentationMode) private var presentationMode
     
     var closeButton: some View {
         Button(action: {
@@ -91,6 +92,19 @@ struct SettingsView: View {
                     NavigationLink(destination: AppIconPickerView()) {
                         Text("App Icon")
                     }
+                    Button(action: {
+                        self.subscriptionManager.restorePurchase()
+                    }) {
+                        if self.subscriptionManager.subscriptionStatus == .subscribed {
+                            Text("You're subscribed to AC Helper+")
+                                .foregroundColor(.secondaryText)
+                        } else {
+                            Text("Restore purchase")
+                                .foregroundColor(.bell)
+                        }
+                    }
+                    .disabled(subscriptionManager.inPaymentProgress)
+                    .opacity(subscriptionManager.inPaymentProgress ? 0.5 : 1.0)
                 }
                 saveButton
             }

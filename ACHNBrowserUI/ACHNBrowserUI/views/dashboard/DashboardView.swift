@@ -52,7 +52,7 @@ struct DashboardView: View {
     private func makeSheet(_ sheet: Sheet) -> some View {
         switch sheet {
         case .settings:
-            return AnyView(SettingsView())
+            return AnyView(SettingsView().environmentObject(SubcriptionManager.shared))
         case .safari(let url):
             return AnyView(SafariView(url: url))
         case .about:

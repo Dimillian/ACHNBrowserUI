@@ -10,11 +10,13 @@ import SwiftUI
 import Backend
 
 struct TurnipsFormView: View {
+    @EnvironmentObject private var subscriptionManager: SubcriptionManager
     @Environment(\.presentationMode) private var presentationMode
     let turnipsViewModel: TurnipsViewModel
     
     @State private var fields = TurnipFields.decode()
-    @State private var enableNotifications = true
+    @State private var enableNotifications = AppUserDefaults.isSubscribed == true
+    @State private var isSubscribePresented = false
     
     private let labels = ["Monday AM", "Monday PM", "Tuesday AM", "Tuesday PM", "Wednesday AM", "Wednesday PM",
                           "Thursday AM", "Thursday PM", "Friday AM", "Friday PM", "Saturday AM", "Saturday PM"]
@@ -30,7 +32,9 @@ struct TurnipsFormView: View {
     private func save() {
         fields.save()
         turnipsViewModel.refreshPrediction()
-        if enableNotifications, let predictions = turnipsViewModel.predictions {
+        if enableNotifications,
+            let predictions = turnipsViewModel.predictions,
+            subscriptionManager.subscriptionStatus == .subscribed {
             NotificationManager.shared.registerTurnipsPredictionNotification(prediction: predictions)
         } else {
             NotificationManager.shared.removePendingNotifications()
@@ -52,6 +56,17 @@ struct TurnipsFormView: View {
                     Toggle(isOn: $enableNotifications) {
                         Text("Receive prices predictions notification")
                     }
+                    .opacity(subscriptionManager.subscriptionStatus == .subscribed ? 1.0 : 0.5)
+                    .disabled(subscriptionManager.subscriptionStatus != .subscribed)
+                    if subscriptionManager.subscriptionStatus != .subscribed {
+                        Button(action: {
+                            self.isSubscribePresented = true
+                        }) {
+                            Text("You can get daily notifications for your average turnips price by subscribing to AC Helper+")
+                                .foregroundColor(.secondaryText)
+                                .font(.footnote)
+                        }
+                    }
                     
                 }
                 Section(header: SectionHeaderView(text: "Your in game prices")) {
@@ -67,6 +82,7 @@ struct TurnipsFormView: View {
             .modifier(AdaptsToSoftwareKeyboard())
             .navigationBarItems(trailing: saveButton)
             .navigationBarTitle("Add your turnip prices", displayMode: .inline)
+            .sheet(isPresented: $isSubscribePresented, content: { SubscribeView().environmentObject(self.subscriptionManager) })
         }
         .navigationViewStyle(StackNavigationViewStyle())
     }
