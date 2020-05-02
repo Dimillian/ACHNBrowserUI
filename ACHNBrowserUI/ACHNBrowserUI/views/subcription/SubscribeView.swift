@@ -8,21 +8,21 @@
 
 import SwiftUI
 import Backend
-import StoreKit
+import Purchases
 
 struct SubscribeView: View {
     @EnvironmentObject private var subscriptionManager: SubcriptionManager
     @Environment(\.presentationMode) private var presentationMode
     
-    private var sub: SKProduct? {
+    private var sub: Purchases.Package? {
         subscriptionManager.subscription
     }
     
     private var price: String {
         let formatter = NumberFormatter()
         formatter.numberStyle = .currency
-        formatter.locale = sub!.priceLocale
-        return formatter.string(from: sub!.price)!
+        formatter.locale = sub!.product.priceLocale
+        return formatter.string(from: sub!.product.price)!
     }
     
     private var dismissButton: some View {
