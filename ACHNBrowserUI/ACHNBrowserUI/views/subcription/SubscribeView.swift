@@ -40,11 +40,14 @@ struct SubscribeView: View {
                     Color.dialogueReverse.edgesIgnoringSafeArea(.all)
                     if sub != nil {
                         VStack {
-                            Text("Upgrade to Pro")
-                                .font(.largeTitle)
-                                .fontWeight(.bold)
-                                .foregroundColor(.bell)
-                                .padding(.top, 32)
+                            HStack(alignment: .center, spacing: 4) {
+                                Text("Upgrade to +")
+                                    .font(.largeTitle)
+                                    .fontWeight(.bold)
+                                    .foregroundColor(.bell)
+                                Image("icon-bell")
+                            }
+                            .padding(.top, 32)
                             Image("notification")
                                 .resizable()
                                 .aspectRatio(contentMode: .fit)
