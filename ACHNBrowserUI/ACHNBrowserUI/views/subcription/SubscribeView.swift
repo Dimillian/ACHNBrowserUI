@@ -53,7 +53,7 @@ struct SubscribeView: View {
                             Text("""
                             Subscribing to AC Helper+ is a great way to to show support to our free and open open source project.♥️
 
-                            You also get access to a great feature, turnips predictions notifications! 📈
+                            You also get access to a great feature, turnip predictions notifications! 📈
 
                             Everyday at 8 and 12 you'll get a notification with the average buy price of your store.
 
@@ -101,7 +101,7 @@ struct SubscribeView: View {
             .navigationBarItems(trailing: dismissButton)
             .navigationBarTitle(Text("AC Helper+"),
                                 displayMode: .inline)
-        }
+        }.navigationViewStyle(StackNavigationViewStyle())
     }
 }
 

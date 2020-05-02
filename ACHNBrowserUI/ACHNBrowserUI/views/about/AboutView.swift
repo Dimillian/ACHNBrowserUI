@@ -94,7 +94,7 @@ struct AboutView: View {
                             self.selectedSheet = .safari(URL(string: "https://twitter.com/JPEGuin")!)
                     }
                     makeRow(image: "suit.heart.fill",
-                            text: "Christian & Ninji for the turnips predictions algorithm",
+                            text: "Christian & Ninji for the turnip predictions algorithm",
                             color: .red)
                         .onTapGesture {
                             self.selectedSheet = .safari(URL(string: "https://elxris.github.io/Turnip-Calculator/")!)

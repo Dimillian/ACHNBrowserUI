@@ -62,7 +62,7 @@ struct TurnipsFormView: View {
                         Button(action: {
                             self.isSubscribePresented = true
                         }) {
-                            Text("You can get daily notifications for your average turnips price by subscribing to AC Helper+")
+                            Text("You can get daily notifications for your average turnip price by subscribing to AC Helper+")
                                 .foregroundColor(.secondaryText)
                                 .font(.footnote)
                         }

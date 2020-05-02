@@ -88,7 +88,7 @@ struct DashboardView: View {
     }
     
     private func makeTurnipsPredictionsView() -> some View {
-        Section(header: SectionHeaderView(text: "Turnips predictions")) {
+        Section(header: SectionHeaderView(text: "Turnip predictions")) {
             Group {
                 if viewModel.turnipsPredictions!.todayAverages?.isEmpty == true {
                     Text("Today is sunday, don't forget to buy more turnips and fill your buy price")

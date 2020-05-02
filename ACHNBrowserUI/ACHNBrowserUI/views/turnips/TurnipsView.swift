@@ -48,7 +48,7 @@ struct TurnipsView: View {
                         Button(action: {
                             self.presentedSheet = .subscription
                         }) {
-                            Text("To help us support the application and get turnips predictions notification, you can try out AC Helper+")
+                            Text("To help us support the application and get turnip predictions notification, you can try out AC Helper+")
                                 .foregroundColor(.secondaryText)
                         }
                     }
@@ -122,7 +122,7 @@ extension TurnipsView {
                     }
                 }
             } else {
-                Text("Add your in game turnips prices to see predictions")
+                Text("Add your in game turnip prices to see predictions")
             }
         }
     }
