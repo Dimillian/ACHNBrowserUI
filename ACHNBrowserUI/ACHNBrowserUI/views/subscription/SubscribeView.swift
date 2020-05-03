@@ -65,31 +65,30 @@ struct SubscribeView: View {
                 .frame(width: 320)
                 .padding()
                 .lineLimit(nil)
-            Button(action: {
+            makeBorderedButton(action: {
                 if self.subscriptionManager.subscriptionStatus == .subscribed {
                     self.presentationMode.wrappedValue.dismiss()
                 } else {
                     self.subscriptionManager.puschase(product: self.sub!)
                 }
-            }) {
-                Group {
-                    if self.subscriptionManager.subscriptionStatus == .subscribed {
-                        Text("Thanks you for your support!")
-                            .fontWeight(.bold)
-                            .foregroundColor(.white)
-                    } else {
-                        Text("Subscribe for \(price) / Month")
-                            .fontWeight(.bold)
-                            .foregroundColor(.white)
-                    }
-                }
+            }, label: self.subscriptionManager.subscriptionStatus == .subscribed ?
+                "Thanks you for your support!" :
+                "Subscribe for \(price) / Month")
+            .opacity(subscriptionManager.inPaymentProgress ? 0.5 : 1.0)
+            .disabled(subscriptionManager.inPaymentProgress)
+
+        }
+    }
+    
+    private func makeBorderedButton(action: @escaping () -> Void, label: String) -> some View {
+        Button(action: action) {
+            Text(label)
                 .font(.headline)
+                .fontWeight(.bold)
+                .foregroundColor(.white)
                 .frame(width: 320, height: 50)
                 .background(Color.grass)
                 .cornerRadius(8)
-            }
-            .opacity(subscriptionManager.inPaymentProgress ? 0.5 : 1.0)
-            .disabled(subscriptionManager.inPaymentProgress)
         }
     }
     
@@ -106,29 +105,14 @@ struct SubscribeView: View {
                 .padding()
                 .lineLimit(nil)
             Spacer(minLength: 16)
-            Button(action: {
+            makeBorderedButton(action: {
                 self.sheetURL = URL(string: "https://github.com/Dimillian/ACHNBrowserUI/blob/master/privacy-policy.md#ac-helper-privacy-policy")
-            }) {
-                Text("Privacy policy")
-                    .font(.headline)
-                    .fontWeight(.bold)
-                    .foregroundColor(.white)
-                    .frame(width: 320, height: 50)
-                    .background(Color.grass)
-                    .cornerRadius(8)
-            }
+            }, label: "Privacy policy")
+            
             Spacer(minLength: 16)
-            Button(action: {
+            makeBorderedButton(action: {
                 self.sheetURL = URL(string: "https://www.apple.com/legal/internet-services/itunes/dev/stdeula/")
-            }) {
-                Text("Term of use")
-                    .font(.headline)
-                    .fontWeight(.bold)
-                    .foregroundColor(.white)
-                    .frame(width: 320, height: 50)
-                    .background(Color.grass)
-                    .cornerRadius(8)
-            }
+            }, label: "Term of Use")
             
             Spacer(minLength: 300)
         }.background(Color.dialogueReverse.edgesIgnoringSafeArea(.all))
