@@ -9,6 +9,7 @@
 import Foundation
 import SwiftUI
 
+#if !os(tvOS)
 public struct ActivityControllerView: UIViewControllerRepresentable {
     
     public let activityItems: [Any]
@@ -29,3 +30,4 @@ public struct ActivityControllerView: UIViewControllerRepresentable {
         
     }
 }
+#endif

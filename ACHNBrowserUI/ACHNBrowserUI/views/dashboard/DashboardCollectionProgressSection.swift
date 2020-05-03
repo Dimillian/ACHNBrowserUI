@@ -8,6 +8,7 @@
 
 import SwiftUI
 import Backend
+import UI
 
 struct DashboardCollectionProgressSection: View {
     @EnvironmentObject private var collection: UserCollection

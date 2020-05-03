@@ -10,6 +10,7 @@ import SwiftUI
 import Combine
 import UIKit
 import Backend
+import UI
 
 struct DashboardView: View {
     enum Sheet: Identifiable {

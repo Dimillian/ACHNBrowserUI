@@ -8,6 +8,7 @@
 
 import SwiftUI
 import Backend
+import UI
 
 struct IslandDetailView: View {
     @ObservedObject var viewModel = IslandDetailViewModel()

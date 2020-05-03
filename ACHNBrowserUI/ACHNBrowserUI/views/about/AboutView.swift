@@ -7,6 +7,7 @@
 //
 
 import SwiftUI
+import UI
 
 struct AboutView: View {
     private enum Sheet: Identifiable {

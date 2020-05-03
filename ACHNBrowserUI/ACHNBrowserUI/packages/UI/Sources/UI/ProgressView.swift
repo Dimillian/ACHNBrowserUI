@@ -14,6 +14,12 @@ public struct ProgressView: View {
     public let trackColor: Color
     public let progressColor: Color
     
+    public init(progress: CGFloat, trackColor: Color, progressColor: Color) {
+        self.progress = progress
+        self.trackColor = trackColor
+        self.progressColor = progressColor
+    }
+    
     public var body: some View {
         ZStack {
             GeometryReader { proxy in
