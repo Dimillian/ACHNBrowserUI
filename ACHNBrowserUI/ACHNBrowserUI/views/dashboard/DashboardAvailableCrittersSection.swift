@@ -39,10 +39,7 @@ struct DashboardAvailableCrittersSection: View {
         HStack {
             Spacer()
             VStack {
-                Text(numberOfFish)
-                    .font(.title)
-                    .bold()
-                    .foregroundColor(.text)
+                Text(numberOfFish).title()
                 Text("\(newFishes) new fishes")
                     .font(.caption)
                     .foregroundColor(.secondaryText)
@@ -51,10 +48,7 @@ struct DashboardAvailableCrittersSection: View {
             Divider()
             Spacer()
             VStack {
-                Text(numberOfBugs)
-                    .font(.title)
-                    .bold()
-                    .foregroundColor(.text)
+                Text(numberOfBugs).title()
                 Text("\(newBugs) new bugs")
                     .font(.caption)
                     .foregroundColor(.secondaryText)
