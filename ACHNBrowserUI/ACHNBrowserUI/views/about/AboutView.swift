@@ -106,7 +106,9 @@ struct AboutView: View {
             .environment(\.horizontalSizeClass, .regular)
             .navigationBarTitle(Text("About"), displayMode: .inline)
             .navigationBarItems(leading: dismissButton)
-        }.sheet(item: $selectedSheet, content: makeSheet)
+        }
+        .navigationViewStyle(StackNavigationViewStyle())
+        .sheet(item: $selectedSheet, content: makeSheet)
     }
 }
 
