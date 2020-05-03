@@ -2,6 +2,15 @@
   "object": {
     "pins": [
       {
+        "package": "Purchases",
+        "repositoryURL": "https://github.com/RevenueCat/purchases-ios",
+        "state": {
+          "branch": null,
+          "revision": "a86c5744bc23ff1a61f9d387c5458743614cc800",
+          "version": "3.2.2"
+        }
+      },
+      {
         "package": "SDWebImage",
         "repositoryURL": "https://github.com/SDWebImage/SDWebImage.git",
         "state": {

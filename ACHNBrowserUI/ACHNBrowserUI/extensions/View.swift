@@ -7,6 +7,7 @@
 
 import Foundation
 import SwiftUI
+import UIKit
 
 extension View {
     public func asImage() -> UIImage {
