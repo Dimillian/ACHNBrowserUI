@@ -32,9 +32,11 @@ class DashboardViewModel: ObservableObject {
             self?.fossils = items[.fossils] ?? []
         }
         turnipsPredictions = TurnipsPredictionService.shared.makeTurnipsPredictions()
+        fetchIsland()
+        fetchListings()
     }
     
-    func fetchListings() {
+    private func fetchListings() {
         listingCancellable = NookazonService
             .recentListings()
             .receive(on: RunLoop.main)
@@ -43,7 +45,7 @@ class DashboardViewModel: ObservableObject {
         }
     }
     
-    func fetchIsland() {
+    private func fetchIsland() {
         islandCancellable = TurnipExchangeService.shared
             .fetchIslands()
             .receive(on: RunLoop.main)

@@ -10,6 +10,7 @@ import SwiftUI
 import Combine
 import UIKit
 import Backend
+import UI
 
 struct DashboardView: View {
     enum Sheet: Identifiable {
@@ -52,7 +53,7 @@ struct DashboardView: View {
     private func makeSheet(_ sheet: Sheet) -> some View {
         switch sheet {
         case .settings:
-            return AnyView(SettingsView())
+            return AnyView(SettingsView().environmentObject(SubcriptionManager.shared))
         case .safari(let url):
             return AnyView(SafariView(url: url))
         case .about:
@@ -66,10 +67,7 @@ struct DashboardView: View {
         let dateString = formatter.string(from: Date())
         return Section(header: SectionHeaderView(text: "Today")) {
             VStack(alignment: .leading) {
-                Text(dateString)
-                    .font(.title)
-                    .fontWeight(.bold)
-                    .foregroundColor(.text)
+                Text(dateString).title()
                 DashboardEventTextView().padding(.top, 4)
             }
             .padding(.vertical, 5)
@@ -88,7 +86,7 @@ struct DashboardView: View {
     }
     
     private func makeTurnipsPredictionsView() -> some View {
-        Section(header: SectionHeaderView(text: "Turnips predictions")) {
+        Section(header: SectionHeaderView(text: "Turnip predictions")) {
             Group {
                 if viewModel.turnipsPredictions!.todayAverages?.isEmpty == true {
                     Text("Today is sunday, don't forget to buy more turnips and fill your buy price")
@@ -143,9 +141,6 @@ struct DashboardView: View {
             }
             .listStyle(GroupedListStyle())
             .environment(\.horizontalSizeClass, .regular)
-            .onAppear(perform: viewModel.fetchListings)
-            .onAppear(perform: viewModel.fetchIsland)
-            .onAppear(perform: villagersViewModel.fetch)
             .navigationBarTitle("Dashboard")
             .navigationBarItems(leading: aboutButton,
                                 trailing: preferenceButton)

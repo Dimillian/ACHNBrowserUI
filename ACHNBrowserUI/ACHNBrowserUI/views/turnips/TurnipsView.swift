@@ -15,10 +15,18 @@ struct TurnipsView: View {
         case average, minMax
     }
     
-    @ObservedObject var viewModel = TurnipsViewModel()
-    @State private var turnipsFormShown = false
+    private enum Sheet: String, Identifiable {
+        case form, subscription, chart
+        
+        var id: String {
+            self.rawValue
+        }
+    }
+    
+    @EnvironmentObject private var subManager: SubcriptionManager
+    @ObservedObject private var viewModel = TurnipsViewModel()
+    @State private var presentedSheet: Sheet?
     @State private var turnipsDisplay: TurnipsDisplay = .average
-    @State private var turnipsChartShown = false
     
     private let labels = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat"]
     
@@ -35,21 +43,29 @@ struct TurnipsView: View {
     var body: some View {
         NavigationView {
             List {
+                if subManager.subscriptionStatus == .notSubscribed {
+                    Section(header: SectionHeaderView(text: "AC Helper+")) {
+                        Button(action: {
+                            self.presentedSheet = .subscription
+                        }) {
+                            Text("To help us support the application and get turnip predictions notification, you can try out AC Helper+")
+                                .foregroundColor(.secondaryText)
+                        }
+                    }
+                }
                 Section(header: SectionHeaderView(text: "Stalks market")) {
                     Button(action: {
-                        self.turnipsFormShown = true
+                        self.presentedSheet = .form
                     }) {
                         Text(TurnipFields.exist() ? "Edit your in game prices" : "Add your in game prices")
                             .foregroundColor(.blue)
                     }
-                    .sheet(isPresented: $turnipsFormShown, content: { TurnipsFormView(turnipsViewModel: self.viewModel) })
                 }
                 if viewModel.predictions != nil {
                     Section(header: SectionHeaderView(text: "Chart")) {
-                        Button(action: { self.turnipsChartShown = true }) {
+                        Button(action: { self.presentedSheet = .chart }) {
                             Text("Chart").foregroundColor(.blue)
                         }
-                        .sheet(isPresented: $turnipsChartShown, content: turnipsChart)
                     }
                 }
                 predictionsSection
@@ -59,6 +75,7 @@ struct TurnipsView: View {
             .environment(\.horizontalSizeClass, .regular)
             .navigationBarTitle("Turnips",
                                 displayMode: .automatic)
+            .sheet(item: $presentedSheet, content: makeSheet)
         }
         .navigationViewStyle(StackNavigationViewStyle())
         .onAppear(perform: NotificationManager.shared.registerForNotifications)
@@ -70,12 +87,28 @@ struct TurnipsView: View {
 
 // MARK: - Views
 extension TurnipsView {
+    
+    private func makeSheet(_ sheet: Sheet) -> some View {
+        switch sheet {
+        case .form:
+            return AnyView(TurnipsFormView(turnipsViewModel: viewModel).environmentObject(subManager))
+        case .subscription:
+            return AnyView(SubscribeView().environmentObject(subManager))
+        case .chart:
+            return AnyView(TurnipsChartView(predictions: viewModel.predictions!))
+        }
+    }
+    
     private var predictionsSection: some View {
         Section(header: SectionHeaderView(text: turnipsDisplay == .average ? "Average daily buy prices" : "Daily min-max prices"),
                 footer: Text(viewModel.pendingNotifications == 0 ? "" :
-                    "You'll receive prices predictions in \(viewModel.pendingNotifications - 1) upcoming daily notifications")
+                    """
+                    You'll receive prices predictions in \(viewModel.pendingNotifications - 1) upcoming
+                    daily notifications.
+                    """)
                     .font(.footnote)
-                    .foregroundColor(.catalogUnselected)) {
+                    .foregroundColor(.catalogUnselected)
+                    .lineLimit(2)) {
             if viewModel.predictions?.averagePrices != nil && viewModel.predictions?.minMax != nil {
                 Picker(selection: $turnipsDisplay, label: Text("")) {
                     ForEach(TurnipsDisplay.allCases, id: \.self) { section in
@@ -102,7 +135,7 @@ extension TurnipsView {
                     }
                 }
             } else {
-                Text("Add your in game turnips prices to see predictions")
+                Text("Add your in game turnip prices to see predictions")
             }
         }
     }
@@ -121,9 +154,5 @@ extension TurnipsView {
                 }
             }
         }
-    }
-
-    private func turnipsChart() -> some View {
-        TurnipsChartView(predictions: viewModel.predictions!)
     }
 }

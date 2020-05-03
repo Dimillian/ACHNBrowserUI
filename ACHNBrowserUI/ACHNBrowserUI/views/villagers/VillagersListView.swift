@@ -45,7 +45,6 @@ struct VillagersListView: View {
             .listStyle(GroupedListStyle())
             .navigationBarTitle(Text("Villagers"),
                                 displayMode: .automatic)
-            .onAppear(perform: viewModel.fetch)
             .modifier(DismissingKeyboardOnSwipe())
             if !viewModel.villagers.isEmpty {
                 VillagerDetailView(villager: viewModel.villagers.first!)

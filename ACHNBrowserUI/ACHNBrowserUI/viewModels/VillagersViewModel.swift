@@ -38,9 +38,11 @@ class VillagersViewModel: ObservableObject {
             .filter { !$0.isEmpty }
             .map(villagers(with:))
             .sink(receiveValue: { [weak self] in self?.searchResults = $0 })
+        
+        fetch()
     }
     
-    func fetch() {
+    private func fetch() {
         apiPublisher = ACNHApiService.fetch(endpoint: .villagers)
             .replaceError(with: [:])
             .eraseToAnyPublisher()

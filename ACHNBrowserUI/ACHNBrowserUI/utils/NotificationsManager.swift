@@ -32,10 +32,10 @@ class NotificationManager {
             for (index, day) in average.enumerated()  {
                 let isMorning = index % 2 == 0
                 
-                if dayOfTheWeek >= today && (dayOfTheWeek != today && todayHour > 12) {
+                if (dayOfTheWeek >= today && (dayOfTheWeek != today && todayHour > 12)) || today != 2 {
                     let content = UNMutableNotificationContent()
-                    content.title = "Turnips prices"
-                    content.body = "Your price prediction for \(isMorning ? "this morning": "this afternoon") should be around \(day) bells"
+                    content.title = "Turnip prices"
+                    content.body = "Your prices predictions for \(isMorning ? "this morning": "this afternoon") should be around \(day) bells"
                     
                     var components = DateComponents()
                     components.calendar = Calendar(identifier: .gregorian)

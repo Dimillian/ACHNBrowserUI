@@ -10,11 +10,13 @@ import SwiftUI
 import Backend
 
 struct TurnipsFormView: View {
+    @EnvironmentObject private var subscriptionManager: SubcriptionManager
     @Environment(\.presentationMode) private var presentationMode
     let turnipsViewModel: TurnipsViewModel
     
     @State private var fields = TurnipFields.decode()
-    @State private var enableNotifications = true
+    @State private var enableNotifications = AppUserDefaults.isSubscribed == true
+    @State private var isSubscribePresented = false
 
     private let weekdays = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
 
@@ -27,7 +29,9 @@ struct TurnipsFormView: View {
     private func save() {
         fields.save()
         turnipsViewModel.refreshPrediction()
-        if enableNotifications, let predictions = turnipsViewModel.predictions {
+        if enableNotifications,
+            let predictions = turnipsViewModel.predictions,
+            subscriptionManager.subscriptionStatus == .subscribed {
             NotificationManager.shared.registerTurnipsPredictionNotification(prediction: predictions)
         } else {
             NotificationManager.shared.removePendingNotifications()
@@ -49,6 +53,17 @@ struct TurnipsFormView: View {
                     Toggle(isOn: $enableNotifications) {
                         Text("Receive prices predictions notification")
                     }
+                    .opacity(subscriptionManager.subscriptionStatus == .subscribed ? 1.0 : 0.5)
+                    .disabled(subscriptionManager.subscriptionStatus != .subscribed)
+                    if subscriptionManager.subscriptionStatus != .subscribed {
+                        Button(action: {
+                            self.isSubscribePresented = true
+                        }) {
+                            Text("You can get daily notifications for your average turnip price by subscribing to AC Helper+")
+                                .foregroundColor(.secondaryText)
+                                .font(.footnote)
+                        }
+                    }
                     
                 }
                 Section(header: SectionHeaderView(text: "Your in game prices")) {
@@ -57,6 +72,11 @@ struct TurnipsFormView: View {
                         TextField("... 🔔 ...", text: $fields.buyPrice)
                             .keyboardType(.numberPad)
                     }
+                    if fields.fields.filter{ !$0.isEmpty }.count == 0 {
+                        Text("The more in game buy prices you'll add the better the predictions will be. Your buy price only won't give your correct averages. Add prices from the game as you get them.")
+                            .foregroundColor(.secondaryText)
+                            .font(.footnote)
+                    }
                     ForEach(weekdays, id: \.self, content: weekdayRow)
                 }
             }
@@ -64,6 +84,7 @@ struct TurnipsFormView: View {
             .modifier(AdaptsToSoftwareKeyboard())
             .navigationBarItems(trailing: saveButton)
             .navigationBarTitle("Add your turnip prices", displayMode: .inline)
+            .sheet(isPresented: $isSubscribePresented, content: { SubscribeView().environmentObject(self.subscriptionManager) })
         }
         .navigationViewStyle(StackNavigationViewStyle())
     }

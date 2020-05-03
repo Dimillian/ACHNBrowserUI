@@ -7,6 +7,7 @@
 //
 
 import SwiftUI
+import UI
 
 struct AboutView: View {
     private enum Sheet: Identifiable {
@@ -68,6 +69,12 @@ struct AboutView: View {
                                                       options: [:],
                                                       completionHandler: nil)
                     }
+                    makeRow(image: "lock", text: "Privacy Policy", color: .bell).onTapGesture {
+                        self.selectedSheet = .safari(URL(string: "https://github.com/Dimillian/ACHNBrowserUI/blob/master/privacy-policy.md#ac-helper-privacy-policy")!)
+                    }
+                    makeRow(image: "person", text: "Term of Use", color: .bell).onTapGesture {
+                        self.selectedSheet = .safari(URL(string: "https://www.apple.com/legal/internet-services/itunes/dev/stdeula/")!)
+                    }
                 }
                 Section(header: SectionHeaderView(text: "Acknowledgements")) {
                     makeRow(image: "suit.heart.fill", text: "Our amazing contributors", color: .red)
@@ -91,7 +98,7 @@ struct AboutView: View {
                             self.selectedSheet = .safari(URL(string: "https://twitter.com/JPEGuin")!)
                     }
                     makeRow(image: "suit.heart.fill",
-                            text: "Christian & Ninji for the turnips predictions algorithm",
+                            text: "Christian & Ninji for the turnip predictions algorithm",
                             color: .red)
                         .onTapGesture {
                             self.selectedSheet = .safari(URL(string: "https://elxris.github.io/Turnip-Calculator/")!)
@@ -102,7 +109,9 @@ struct AboutView: View {
             .environment(\.horizontalSizeClass, .regular)
             .navigationBarTitle(Text("About"), displayMode: .inline)
             .navigationBarItems(leading: dismissButton)
-        }.sheet(item: $selectedSheet, content: makeSheet)
+        }
+        .navigationViewStyle(StackNavigationViewStyle())
+        .sheet(item: $selectedSheet, content: makeSheet)
     }
 }
 

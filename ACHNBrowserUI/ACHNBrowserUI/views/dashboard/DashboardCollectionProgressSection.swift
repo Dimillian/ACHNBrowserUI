@@ -8,6 +8,7 @@
 
 import SwiftUI
 import Backend
+import UI
 
 struct DashboardCollectionProgressSection: View {
     @EnvironmentObject private var collection: UserCollection
@@ -19,8 +20,9 @@ struct DashboardCollectionProgressSection: View {
             Image(icon)
                 .resizable()
                 .frame(width: 20, height: 20)
-            ProgressView(progress:
-                Float(collection.caughtIn(list: critters)) / Float(critters.count))
+            ProgressView(progress: CGFloat(collection.caughtIn(list: critters)) / CGFloat(critters.count),
+                         trackColor: .catalogUnselected,
+                         progressColor: .grass)
             Text("\(collection.caughtIn(list: critters))/\(critters.count)")
                 .font(.caption)
                 .bold()
