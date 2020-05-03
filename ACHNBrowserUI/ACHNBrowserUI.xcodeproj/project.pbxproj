@@ -592,12 +592,12 @@
 			path = env;
 			sourceTree = "<group>";
 		};
-		693E7292245D833F00CD26F4 /* subcription */ = {
+		693E7292245D833F00CD26F4 /* subscription */ = {
 			isa = PBXGroup;
 			children = (
 				693E7293245D834C00CD26F4 /* SubscribeView.swift */,
 			);
-			path = subcription;
+			path = subscription;
 			sourceTree = "<group>";
 		};
 		6942FC35244988E90062FE8F /* representable */ = {
@@ -712,7 +712,7 @@
 		69AF8C64243E2857001DD9CB /* views */ = {
 			isa = PBXGroup;
 			children = (
-				693E7292245D833F00CD26F4 /* subcription */,
+				693E7292245D833F00CD26F4 /* subscription */,
 				69E4BBB9245B0BE4001035E2 /* about */,
 				693E0B20244C596000D20E46 /* critters */,
 				68BA5832244B9D2F00B53811 /* dashboard */,
