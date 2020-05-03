@@ -72,6 +72,9 @@ struct AboutView: View {
                     makeRow(image: "lock", text: "Privacy Policy", color: .bell).onTapGesture {
                         self.selectedSheet = .safari(URL(string: "https://github.com/Dimillian/ACHNBrowserUI/blob/master/privacy-policy.md#ac-helper-privacy-policy")!)
                     }
+                    makeRow(image: "person", text: "Term of Use", color: .bell).onTapGesture {
+                        self.selectedSheet = .safari(URL(string: "https://www.apple.com/legal/internet-services/itunes/dev/stdeula/")!)
+                    }
                 }
                 Section(header: SectionHeaderView(text: "Acknowledgements")) {
                     makeRow(image: "suit.heart.fill", text: "Our amazing contributors", color: .red)
