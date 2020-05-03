@@ -10,20 +10,23 @@ import SwiftUI
 import Backend
 
 struct TurnipsChartView: View {
+    static let verticalLinesCount: CGFloat = 9
     var predictions: TurnipPredictions
 
     var body: some View {
         VStack {
             Text("Turnips chart of the week")
             Spacer()
-            curves.padding()
+            curves
+                .padding()
+                .background(Color.red.opacity(0.1))
         }
     }
 
     var curves: some View {
-        HStack {
+        HStack(spacing: 0) {
             TurnipsLegend(predictions: predictions)
-                .frame(maxWidth: 40)
+                .frame(maxWidth: 40) // FIXME: should use something more dynamic
             ZStack {
                 TurnipsGrid(predictions: predictions)
                     .stroke()
@@ -32,31 +35,47 @@ struct TurnipsChartView: View {
                     .stroke(lineWidth: 2)
                 TurnipsBuyPrice(predictions: predictions)
                     .stroke(lineWidth: 5)
-            }.background(Color.blue.opacity(0.1))
+            }
+            .background(Color.blue.opacity(0.1))
         }
     }
 }
+
+struct TurnipsChartView_Previews: PreviewProvider {
+    static var previews: some View {
+        TurnipsChartView(predictions: TurnipPredictions(
+            minBuyPrice: 104,
+            averagePrices: averagePrices,
+            minMax: minMax)
+        )
+    }
+
+    static let averagePrices = [104, 93, 87, 88, 106, 110, 90, 74, 76, 91, 98, 96]
+
+    static let minMax = [[40, 148], [89, 148], [61, 148], [61, 86], [50, 148], [40, 210], [50, 626], [40, 626], [40, 626], [40, 626], [35, 210], [30, 209]]
+}
+
 
 struct TurnipsLegend: View {
     let predictions: TurnipPredictions
 
     var body: some View {
-        // TODO: this is ugly and should be refactored with some functions and computed var
-        GeometryReader<AnyView> { geometry in
-            let frame = geometry.frame(in: .local)
-            let (minY, maxY, ratioY) = minMaxAndRatioY(for: self.predictions, rect: frame)
-            return AnyView(
-                ZStack {
-                ForEach(Array(stride(from: minY, to: maxY, by: 50)), id: \.self) { value in
-                    Text("\(Int(value))")
-                        .offset(x: 0, y: ratioY * (value - minY))
-                        .offset(x: 0, y: -10) // FIXME: hardcoded value here! Should be computed
-                }
-                Text("\(Int(maxY))")
-                    .offset(x: 0, y: ratioY * (maxY - minY))
-                    .offset(x: 0, y: -10) // FIXME: hardcoded value here! Should be computed
-                }
-            )
+        GeometryReader(content: texts)
+            .background(Color.yellow.opacity(0.1))
+    }
+
+    func texts(for geometry: GeometryProxy) -> some View {
+        let frame = geometry.frame(in: .local)
+        let (minY, maxY, ratioY) = minMaxAndRatioY(for: predictions, rect: frame)
+        let buyPrice = predictions.minBuyPrice ?? 0
+
+        return ZStack {
+            Text("\(Int(minY))")
+                .position(x: frame.midX, y: ratioY * (maxY - minY))
+            Text("\(Int(buyPrice))")
+                .position(x: frame.midX, y: ratioY * (maxY - CGFloat(buyPrice)))
+            Text("\(Int(maxY))")
+                .position(x: frame.midX, y: 0)
         }
     }
 }
@@ -77,7 +96,8 @@ struct TurnipsGrid: Shape {
             path.addLine(to: CGPoint(x: offset * ratioX, y: ratioY * (maxY - minY)))
         }
 
-        for offset in stride(from: minY, to: maxY, by: 50) {
+        let steps = (maxY - minY)/TurnipsChartView.verticalLinesCount
+        for offset in stride(from: minY, to: maxY, by: steps) {
             let offset = CGFloat(offset)
             path.move(to: CGPoint(x: rect.minX, y: (offset - minY) * ratioY))
             path.addLine(to: CGPoint(x: rect.maxX, y: (offset - minY) * ratioY))
@@ -87,20 +107,6 @@ struct TurnipsGrid: Shape {
 
         return path
     }
-}
-
-struct TurnipsChartView_Previews: PreviewProvider {
-    static var previews: some View {
-        TurnipsChartView(predictions: TurnipPredictions(
-            minBuyPrice: 104,
-            averagePrices: averagePrices,
-            minMax: minMax)
-        )
-    }
-
-    static let averagePrices = [104, 93, 87, 88, 106, 110, 90, 74, 76, 91, 98, 96]
-
-    static let minMax = [[40, 148], [89, 148], [61, 148], [61, 86], [50, 148], [40, 210], [50, 626], [40, 626], [40, 626], [40, 626], [35, 210], [30, 209]]
 }
 
 struct TurnipsAverageCurve: Shape {
@@ -120,7 +126,7 @@ struct TurnipsAverageCurve: Shape {
 
         let points = averagePrices.enumerated().map { offset, average -> CGPoint in
             let x = ratioX * CGFloat(offset)
-            let y = ratioY * (CGFloat(average) - minY)
+            let y = ratioY * (maxY - CGFloat(average))
             return CGPoint(x: x, y: y)
         }
         path.addLines(points)
@@ -140,15 +146,16 @@ struct TurnipsBuyPrice: Shape {
             return path
         }
 
-        let (min, max, ratioY) = minMaxAndRatioY(for: predictions, rect: rect)
+        let (minY, maxY, ratioY) = minMaxAndRatioY(for: predictions, rect: rect)
 
-        let y = ratioY * (CGFloat(minBuyPrice) - min)
+        let y = ratioY * (maxY - CGFloat(minBuyPrice))
         path.move(to: CGPoint(x: rect.minX, y: y))
         path.addLine(to: CGPoint(x: rect.maxX, y: y))
         return path
     }
 }
 
+// TODO: Put this function into a namespace
 fileprivate func minMaxAndRatioY(
     for predictions: TurnipPredictions,
     rect: CGRect
