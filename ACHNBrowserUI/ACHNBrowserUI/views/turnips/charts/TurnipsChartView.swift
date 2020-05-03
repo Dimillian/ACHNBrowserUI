@@ -16,10 +16,10 @@ struct TurnipsChartView: View {
 
     var body: some View {
         HStack(spacing: 0) {
-            TurnipsLegendView(predictions: predictions)
+            TurnipsChartLegendView(predictions: predictions)
                 .frame(maxWidth: 40) // FIXME: should use something more dynamic
             ZStack {
-                TurnipsGrid(predictions: predictions)
+                TurnipsChartGridView(predictions: predictions)
                     .stroke()
                     .opacity(0.5)
                 TurnipsAverageCurve(predictions: predictions)
@@ -33,34 +33,6 @@ struct TurnipsChartView: View {
                     .opacity(0.25)
             }.background(Color.blue.opacity(0.1))
         }
-    }
-}
-
-struct TurnipsGrid: Shape {
-    static let averagesCount: CGFloat = 12
-    let predictions: TurnipPredictions
-
-    func path(in rect: CGRect) -> Path {
-        var path = Path()
-
-        let (minY, maxY, ratioY, ratioX) = predictions.minMax?.minMaxAndRatios(rect: rect) ?? (0, 0, 0, 0)
-
-        for offset in 0..<Int(Self.averagesCount) {
-            let offset = CGFloat(offset)
-            path.move(to: CGPoint(x: offset * ratioX, y: rect.minY))
-            path.addLine(to: CGPoint(x: offset * ratioX, y: ratioY * (maxY - minY)))
-        }
-
-        let steps = (maxY - minY)/TurnipsChartView.verticalLinesCount
-        for offset in stride(from: minY, to: maxY, by: steps) {
-            let offset = CGFloat(offset)
-            path.move(to: CGPoint(x: rect.minX, y: (offset - minY) * ratioY))
-            path.addLine(to: CGPoint(x: rect.maxX, y: (offset - minY) * ratioY))
-        }
-        path.move(to: CGPoint(x: rect.minX, y: (maxY - minY) * ratioY))
-        path.addLine(to: CGPoint(x: rect.maxX, y: (maxY - minY) * ratioY))
-
-        return path
     }
 }
 

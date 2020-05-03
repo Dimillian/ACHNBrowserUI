@@ -9,7 +9,7 @@
 import SwiftUI
 import Backend
 
-struct TurnipsLegendView: View {
+struct TurnipsChartLegendView: View {
     let predictions: TurnipPredictions
 
     var body: some View {
