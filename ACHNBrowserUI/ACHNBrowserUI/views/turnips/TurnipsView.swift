@@ -18,6 +18,7 @@ struct TurnipsView: View {
     @ObservedObject var viewModel = TurnipsViewModel()
     @State private var turnipsFormShown = false
     @State private var turnipsDisplay: TurnipsDisplay = .average
+    @State private var turnipsChartShown = false
     
     private let labels = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat"]
     
@@ -41,12 +42,14 @@ struct TurnipsView: View {
                         Text(TurnipFields.exist() ? "Edit your in game prices" : "Add your in game prices")
                             .foregroundColor(.blue)
                     }
+                    .sheet(isPresented: $turnipsFormShown, content: { TurnipsFormView(turnipsViewModel: self.viewModel) })
                 }
                 if viewModel.predictions != nil {
                     Section(header: SectionHeaderView(text: "Chart")) {
-                        NavigationLink(destination: TurnipsChartView(predictions: viewModel.predictions!)) {
+                        Button(action: { self.turnipsChartShown = true }) {
                             Text("Chart").foregroundColor(.blue)
                         }
+                        .sheet(isPresented: $turnipsChartShown, content: turnipsChart)
                     }
                 }
                 predictionsSection
@@ -56,7 +59,6 @@ struct TurnipsView: View {
             .environment(\.horizontalSizeClass, .regular)
             .navigationBarTitle("Turnips",
                                 displayMode: .automatic)
-            .sheet(isPresented: $turnipsFormShown, content: { TurnipsFormView(turnipsViewModel: self.viewModel) })
         }
         .navigationViewStyle(StackNavigationViewStyle())
         .onAppear(perform: NotificationManager.shared.registerForNotifications)
@@ -119,5 +121,9 @@ extension TurnipsView {
                 }
             }
         }
+    }
+
+    private func turnipsChart() -> some View {
+        TurnipsChartView(predictions: viewModel.predictions!)
     }
 }

@@ -1,5 +1,5 @@
 //
-//  TurnipsChartGridView.swift
+//  TurnipsChartGrid.swift
 //  ACHNBrowserUI
 //
 //  Created by Renaud JENNY on 03/05/2020.
@@ -9,7 +9,7 @@
 import SwiftUI
 import Backend
 
-struct TurnipsChartGridView: Shape {
+struct TurnipsChartGrid: Shape {
     let predictions: TurnipPredictions
 
     func path(in rect: CGRect) -> Path {

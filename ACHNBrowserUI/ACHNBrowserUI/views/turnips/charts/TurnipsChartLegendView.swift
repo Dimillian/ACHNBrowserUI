@@ -14,7 +14,6 @@ struct TurnipsChartLegendView: View {
 
     var body: some View {
         GeometryReader(content: texts)
-            .background(Color.yellow.opacity(0.1))
     }
 
     func texts(for geometry: GeometryProxy) -> some View {
