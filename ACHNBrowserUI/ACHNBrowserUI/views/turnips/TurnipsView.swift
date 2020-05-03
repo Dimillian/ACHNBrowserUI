@@ -93,9 +93,13 @@ extension TurnipsView {
     private var predictionsSection: some View {
         Section(header: SectionHeaderView(text: turnipsDisplay == .average ? "Average daily buy prices" : "Daily min-max prices"),
                 footer: Text(viewModel.pendingNotifications == 0 ? "" :
-                    "You'll receive prices predictions in \(viewModel.pendingNotifications - 1) upcoming daily notifications")
+                    """
+                    You'll receive prices predictions in \(viewModel.pendingNotifications - 1) upcoming
+                    daily notifications.
+                    """)
                     .font(.footnote)
-                    .foregroundColor(.catalogUnselected)) {
+                    .foregroundColor(.catalogUnselected)
+                    .lineLimit(2)) {
             if viewModel.predictions?.averagePrices != nil && viewModel.predictions?.minMax != nil {
                 Picker(selection: $turnipsDisplay, label: Text("")) {
                     ForEach(TurnipsDisplay.allCases, id: \.self) { section in

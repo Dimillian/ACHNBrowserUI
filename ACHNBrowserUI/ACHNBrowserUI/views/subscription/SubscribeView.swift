@@ -54,7 +54,7 @@ struct SubscribeView: View {
                                 .frame(width: 320)
                                 .padding()
                             Text("""
-                            Subscribing to AC Helper+ is a great way to to show support to our free and open open source project.♥️
+                            Subscribing to AC Helper+ is a great way to to show support to our free and open source project.♥️
 
                             You also get access to a great feature, turnip predictions notifications! 📈
 

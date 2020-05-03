@@ -76,7 +76,7 @@ struct TurnipsFormView: View {
                             .keyboardType(.numberPad)
                     }
                     if fields.fields.filter{ !$0.isEmpty }.count == 0 {
-                        Text("The more in game buy prices you'll add the better the predictions will be. Your buy price only won't give your correct averages")
+                        Text("The more in game buy prices you'll add the better the predictions will be. Your buy price only won't give your correct averages. Add prices from the game as you get them.")
                             .foregroundColor(.secondaryText)
                             .font(.footnote)
                     }
