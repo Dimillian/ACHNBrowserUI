@@ -23,6 +23,8 @@ public enum Category: String, CaseIterable {
             return "Fishes"
         case .wallMounted:
             return "Wall mounted"
+        case .nookmiles:
+            return "Nook Miles"
         default:
             return self.rawValue.capitalized
         }

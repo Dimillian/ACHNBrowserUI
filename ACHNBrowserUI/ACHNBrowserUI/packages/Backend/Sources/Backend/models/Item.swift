@@ -44,6 +44,8 @@ public struct Item: Codable, Equatable, Identifiable {
             return .fish
         } else if category == "Bugs - North" || category == "Buhs - South" {
             return .bugs
+        } else if category == "Nook Miles" {
+            return .nookmiles
         }
         return Category(rawValue: category.lowercased())!
     }
