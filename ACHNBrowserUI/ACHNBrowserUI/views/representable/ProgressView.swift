@@ -9,17 +9,22 @@
 import Foundation
 import SwiftUI
 
-struct ProgressView: UIViewRepresentable {
-    let progress: Float
+public struct ProgressView: View {
+    public let progress: CGFloat
+    public let trackColor: Color
+    public let progressColor: Color
     
-    func makeUIView(context: Context) -> UIProgressView {
-        let view = UIProgressView()
-        view.trackTintColor = UIColor(named: "catalog-unselected")
-        view.progressTintColor = UIColor(named: "grass")
-        return view
-    }
-    
-    func updateUIView(_ uiView: UIProgressView, context: Context) {
-        uiView.progress = progress
+    public var body: some View {
+        ZStack {
+            GeometryReader { proxy in
+                RoundedRectangle(cornerRadius: 4)
+                    .fill(self.trackColor)
+                RoundedRectangle(cornerRadius: 4)
+                    .fill(self.progressColor)
+                    .frame(width: proxy.size.width * self.progress)
+            }
+        }
+        .frame(height: 8)
+        .background(Color.clear)
     }
 }

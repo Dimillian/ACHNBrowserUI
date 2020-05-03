@@ -204,6 +204,9 @@ extension ItemDetailView {
                         ListingRow(listing: listing)
                     }
                 })
+            } else {
+                Text("No listings found on Nookazon")
+                    .foregroundColor(.secondary)
             }
         }
     }
