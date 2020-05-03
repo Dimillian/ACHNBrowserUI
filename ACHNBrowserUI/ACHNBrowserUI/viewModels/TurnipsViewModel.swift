@@ -19,6 +19,12 @@ class TurnipsViewModel: ObservableObject {
         
     var cancellable: AnyCancellable?
         
+    init() {
+        fetch()
+        refreshPrediction()
+        refreshPendingNotifications()
+    }
+    
     func refreshPrediction() {
         predictions = TurnipsPredictionService.shared.makeTurnipsPredictions()
     }
