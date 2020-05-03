@@ -75,6 +75,11 @@ struct TurnipsFormView: View {
                         TextField("... 🔔 ...", text: $fields.buyPrice)
                             .keyboardType(.numberPad)
                     }
+                    if fields.fields.filter{ !$0.isEmpty }.count == 0 {
+                        Text("The more in game buy prices you'll add the better the predictions will be. Your buy price only won't give your correct averages")
+                            .foregroundColor(.secondaryText)
+                            .font(.footnote)
+                    }
                     ForEach(weekdays, id: \.self, content: weekdayRow)
                 }
             }
