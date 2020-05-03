@@ -141,9 +141,6 @@ struct DashboardView: View {
             }
             .listStyle(GroupedListStyle())
             .environment(\.horizontalSizeClass, .regular)
-            .onAppear(perform: viewModel.fetchListings)
-            .onAppear(perform: viewModel.fetchIsland)
-            .onAppear(perform: villagersViewModel.fetch)
             .navigationBarTitle("Dashboard")
             .navigationBarItems(leading: aboutButton,
                                 trailing: preferenceButton)
