@@ -79,9 +79,6 @@ struct TurnipsView: View {
         }
         .navigationViewStyle(StackNavigationViewStyle())
         .onAppear(perform: NotificationManager.shared.registerForNotifications)
-        .onAppear(perform: viewModel.fetch)
-        .onAppear(perform: viewModel.refreshPrediction)
-        .onAppear(perform: viewModel.refreshPendingNotifications)
     }
 }
 
