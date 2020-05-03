@@ -134,13 +134,13 @@ extension ItemDetailView {
         Button(action: {
             self.selectedSheet = .share
         }) {
-            Image(systemName: "square.and.arrow.up")
+            Image(systemName: "square.and.arrow.up").imageScale(.large)
         }
     }
     
     private var navButtons: some View {
         HStack {
-            LikeButtonView(item: self.itemViewModel.item)
+            LikeButtonView(item: self.itemViewModel.item).imageScale(.large)
             Spacer(minLength: 16)
             shareButton
         }
