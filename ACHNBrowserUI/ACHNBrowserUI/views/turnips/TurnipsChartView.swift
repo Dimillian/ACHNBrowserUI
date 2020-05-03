@@ -14,16 +14,6 @@ struct TurnipsChartView: View {
     var predictions: TurnipPredictions
 
     var body: some View {
-        VStack {
-            Text("Turnips chart of the week")
-            Spacer()
-            curves
-                .padding()
-                .background(Color.red.opacity(0.1))
-        }
-    }
-
-    var curves: some View {
         HStack(spacing: 0) {
             TurnipsLegend(predictions: predictions)
                 .frame(maxWidth: 40) // FIXME: should use something more dynamic
@@ -44,21 +34,6 @@ struct TurnipsChartView: View {
         }
     }
 }
-
-struct TurnipsChartView_Previews: PreviewProvider {
-    static var previews: some View {
-        TurnipsChartView(predictions: TurnipPredictions(
-            minBuyPrice: 104,
-            averagePrices: averagePrices,
-            minMax: minMax)
-        )
-    }
-
-    static let averagePrices = [104, 93, 87, 88, 106, 110, 90, 74, 76, 91, 98, 96]
-
-    static let minMax = [[40, 148], [89, 148], [61, 148], [61, 86], [50, 148], [40, 210], [50, 626], [40, 626], [40, 626], [40, 626], [35, 210], [30, 209]]
-}
-
 
 struct TurnipsLegend: View {
     let predictions: TurnipPredictions
@@ -154,6 +129,7 @@ struct TurnipsMinMaxCurves: Shape {
             return path
         }
         let (minY, maxY, ratioY) = minMaxAndRatioY(for: predictions, rect: rect)
+        print(minMax)
 
         let ratioX = rect.maxX/(Self.minMaxCount - 1)
 
@@ -176,7 +152,6 @@ struct TurnipsMinMaxCurves: Shape {
                 return CGPoint(x: x, y: y)
             })
             .reversed()
-        dump(maxPoints)
         path.addLine(to: maxPoints.first ?? .zero)
         path.addLines(maxPoints)
 
@@ -249,4 +224,18 @@ extension Array {
     var second: Element? {
         self.count > 1 ? self[1] : nil
     }
+}
+
+struct TurnipsChartView_Previews: PreviewProvider {
+    static var previews: some View {
+        TurnipsChartView(predictions: TurnipPredictions(
+            minBuyPrice: 83,
+            averagePrices: averagePrices,
+            minMax: minMax)
+        ).padding()
+    }
+
+    static let averagePrices = [89, 85, 88, 104, 110, 111, 111, 111, 106, 98, 82, 77]
+
+    static let minMax = [[38, 142], [33, 142], [29, 202], [24, 602], [19, 602], [14, 602], [9, 602], [29, 602], [24, 602], [19, 602], [14, 202], [9, 201]]
 }
