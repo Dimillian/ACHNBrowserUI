@@ -89,6 +89,8 @@
 		02F2D4472455D81C009741DA /* simple-orange@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 02F2D3F72455D81C009741DA /* simple-orange@3x.png */; };
 		02F2D4482455D81C009741DA /* simple-mint@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 02F2D3F82455D81C009741DA /* simple-mint@3x.png */; };
 		4C2D676B245DA41E005831C4 /* TurnipsChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C2D676A245DA41E005831C4 /* TurnipsChartView.swift */; };
+		4C2D676E245F0666005831C4 /* TurnipsLegendView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C2D676D245F0666005831C4 /* TurnipsLegendView.swift */; };
+		4C2D6770245F0698005831C4 /* TurnipsChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C2D676F245F0698005831C4 /* TurnipsChart.swift */; };
 		4C382EE8244E418800F446BA /* DismissingKeyboardOnSwipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C382EE7244E418800F446BA /* DismissingKeyboardOnSwipe.swift */; };
 		4C7FE78324574FB50011E8AB /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7FE78224574FB50011E8AB /* ActivityIndicator.swift */; };
 		4C7FE789245B57A10011E8AB /* AdaptsToSoftwareKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7FE788245B57A10011E8AB /* AdaptsToSoftwareKeyboard.swift */; };
@@ -316,6 +318,8 @@
 		02F2D3F72455D81C009741DA /* simple-orange@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "simple-orange@3x.png"; sourceTree = "<group>"; };
 		02F2D3F82455D81C009741DA /* simple-mint@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "simple-mint@3x.png"; sourceTree = "<group>"; };
 		4C2D676A245DA41E005831C4 /* TurnipsChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TurnipsChartView.swift; sourceTree = "<group>"; };
+		4C2D676D245F0666005831C4 /* TurnipsLegendView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TurnipsLegendView.swift; sourceTree = "<group>"; };
+		4C2D676F245F0698005831C4 /* TurnipsChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TurnipsChart.swift; sourceTree = "<group>"; };
 		4C382EE7244E418800F446BA /* DismissingKeyboardOnSwipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DismissingKeyboardOnSwipe.swift; sourceTree = "<group>"; };
 		4C7FE78224574FB50011E8AB /* ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
 		4C7FE788245B57A10011E8AB /* AdaptsToSoftwareKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdaptsToSoftwareKeyboard.swift; sourceTree = "<group>"; };
@@ -545,6 +549,16 @@
 			path = "@3x";
 			sourceTree = "<group>";
 		};
+		4C2D676C245F063E005831C4 /* charts */ = {
+			isa = PBXGroup;
+			children = (
+				4C2D676A245DA41E005831C4 /* TurnipsChartView.swift */,
+				4C2D676D245F0666005831C4 /* TurnipsLegendView.swift */,
+				4C2D676F245F0698005831C4 /* TurnipsChart.swift */,
+			);
+			path = charts;
+			sourceTree = "<group>";
+		};
 		4C382EE6244E415800F446BA /* viewModifiers */ = {
 			isa = PBXGroup;
 			children = (
@@ -557,12 +571,12 @@
 		687B5765244A02E400C1E86F /* turnips */ = {
 			isa = PBXGroup;
 			children = (
+				4C2D676C245F063E005831C4 /* charts */,
 				6951836C245977ED005D28E0 /* rows */,
 				6951836B245977E5005D28E0 /* islands */,
 				69B13CAC24577A090089BD7B /* TurnipIslandRow.swift */,
 				687B5767244A030700C1E86F /* TurnipsView.swift */,
 				69B13CB024577BBF0089BD7B /* TurnipsFormView.swift */,
-				4C2D676A245DA41E005831C4 /* TurnipsChartView.swift */,
 			);
 			path = turnips;
 			sourceTree = "<group>";
@@ -1168,6 +1182,7 @@
 				69CA5F01244F1AD300B275B6 /* SectionHeaderView.swift in Sources */,
 				68BA5828244B646C00B53811 /* IslandDetailView.swift in Sources */,
 				6942FC3A244989530062FE8F /* ListingRow.swift in Sources */,
+				4C2D6770245F0698005831C4 /* TurnipsChart.swift in Sources */,
 				69BEA97F243E602C00F02C61 /* TabbarView.swift in Sources */,
 				69B13CA42455973F0089BD7B /* ItemsCrosslineSectionView.swift in Sources */,
 				4C2D676B245DA41E005831C4 /* TurnipsChartView.swift in Sources */,
@@ -1192,6 +1207,7 @@
 				6951837224598C8A005D28E0 /* NotificationsManager.swift in Sources */,
 				4C7FE78324574FB50011E8AB /* ActivityIndicator.swift in Sources */,
 				6942FC37244988F80062FE8F /* SafariView.swift in Sources */,
+				4C2D676E245F0666005831C4 /* TurnipsLegendView.swift in Sources */,
 				693E0B1D244C315B00D20E46 /* DashboardViewModel.swift in Sources */,
 				69AF8C7C243E4D29001DD9CB /* Color.swift in Sources */,
 				69AF8C55243E283D001DD9CB /* ItemsListView.swift in Sources */,
