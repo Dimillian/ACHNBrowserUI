@@ -33,10 +33,14 @@ struct TurnipsChartView: View {
                     .opacity(0.5)
                 TurnipsAverageCurve(predictions: predictions)
                     .stroke(lineWidth: 2)
+                    .foregroundColor(PredictionCurve.average.color)
                 TurnipsBuyPrice(predictions: predictions)
-                    .stroke(lineWidth: 5)
-            }
-            .background(Color.blue.opacity(0.1))
+                    .stroke(style: StrokeStyle(dash: [Self.verticalLinesCount]))
+                    .foregroundColor(PredictionCurve.minBuyPrice.color)
+                TurnipsMinMaxCurves(predictions: predictions)
+                    .foregroundColor(PredictionCurve.minMax.color)
+                    .opacity(0.25)
+            }.background(Color.blue.opacity(0.1))
         }
     }
 }
@@ -71,10 +75,13 @@ struct TurnipsLegend: View {
 
         return ZStack {
             Text("\(Int(minY))")
+                .foregroundColor(TurnipsChartView.PredictionCurve.minMax.color)
                 .position(x: frame.midX, y: ratioY * (maxY - minY))
             Text("\(Int(buyPrice))")
+                .foregroundColor(TurnipsChartView.PredictionCurve.minBuyPrice.color)
                 .position(x: frame.midX, y: ratioY * (maxY - CGFloat(buyPrice)))
             Text("\(Int(maxY))")
+                .foregroundColor(TurnipsChartView.PredictionCurve.minMax.color)
                 .position(x: frame.midX, y: 0)
         }
     }
@@ -135,6 +142,50 @@ struct TurnipsAverageCurve: Shape {
     }
 }
 
+struct TurnipsMinMaxCurves: Shape {
+    static let minMaxCount: CGFloat = 12
+    let predictions: TurnipPredictions
+
+    func path(in rect: CGRect) -> Path {
+        var path = Path()
+
+        guard let minMax = predictions.minMax else {
+            // Maybe we should just crash as it shouldn't happen
+            return path
+        }
+        let (minY, maxY, ratioY) = minMaxAndRatioY(for: predictions, rect: rect)
+
+        let ratioX = rect.maxX/(Self.minMaxCount - 1)
+
+        let minPoints: [CGPoint] = minMax
+            .compactMap { $0.first }
+            .enumerated()
+            .map({ offset, minValue in
+                let x = ratioX * CGFloat(offset)
+                let y = ratioY * (maxY - CGFloat(minValue))
+                return CGPoint(x: x, y: y)
+            })
+        path.addLines(minPoints)
+
+        let maxPoints: [CGPoint] = minMax
+            .compactMap { $0.second }
+            .enumerated()
+            .map({ offset, maxValue in
+                let x = ratioX * CGFloat(offset)
+                let y = ratioY * (maxY - CGFloat(maxValue))
+                return CGPoint(x: x, y: y)
+            })
+            .reversed()
+        dump(maxPoints)
+        path.addLine(to: maxPoints.first ?? .zero)
+        path.addLines(maxPoints)
+
+        path.addLine(to: minPoints.first ?? .zero)
+
+        return path
+    }
+}
+
 struct TurnipsBuyPrice: Shape {
     let predictions: TurnipPredictions
 
@@ -175,6 +226,23 @@ fileprivate func minMaxAndRatioY(
     let ratioY = rect.maxY/(max - min)
 
     return (min, max, ratioY)
+}
+
+extension TurnipsChartView {
+    enum PredictionCurve: String {
+        case minBuyPrice
+        case average
+        case minMax
+
+        var color: Color {
+            // TODO: replace by proper colors
+            switch self {
+            case .minBuyPrice: return .green
+            case .average: return .yellow
+            case .minMax: return .green
+            }
+        }
+    }
 }
 
 extension Array {
