@@ -1,4 +1,6 @@
-![Xcode build](https://github.com/Dimillian/ACHNBrowserUI/workflows/Xcode%20build/badge.svg?branch=master)
+[![Swift 5.2](https://img.shields.io/badge/swift-5.2-ED523F.svg?style=flat)](https://swift.org/download/)
+![Xcode Build](https://github.com/Dimillian/ACHNBrowserUI/workflows/Xcode%20build/badge.svg?branch=master)
+[![@dimillian](https://img.shields.io/badge/contact-@dimillian-5AA9E7.svg?style=flat)](https://twitter.com/dimillian)
 
 # Animal Crossing New Horizon SwiftUI application!
 
