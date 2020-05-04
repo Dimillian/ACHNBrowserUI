@@ -34,9 +34,7 @@ struct SubscribeView: View {
         }) {
             Text("Close")
         }
-        .padding(hoverPadding)
-        .safeHoverEffect()
-        .offset(x:hoverPadding)
+        .safeHoverEffectBarItem(position: .trailing)
     }
     
     private var upperPart: some View {

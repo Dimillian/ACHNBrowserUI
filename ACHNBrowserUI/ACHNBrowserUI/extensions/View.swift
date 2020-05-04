@@ -64,6 +64,19 @@ extension View {
             return AnyView(self)
         }
     }
+    
+    func safeHoverEffectBarItem(position: BarItemPosition) -> AnyView {
+        let hoverPadding: CGFloat = 10
+        
+        // For leading bar items, we need to apply a negative offset equal to the overall padding to imitate Apple's styling in UIKit
+        let offset = position == .leading ? -hoverPadding : hoverPadding
+        
+        return AnyView(self
+            .padding(hoverPadding)
+            .safeHoverEffect()
+            .offset(x:offset)
+        )
+    }
 }
 
 extension UIView {
@@ -85,5 +98,8 @@ enum SafeHoverEffectType {
     case highlight
 }
 
-// Constant used throughout the app to add padding around text and icon buttons for improved tapability + match Apple's default hoverEffects
-let hoverPadding: CGFloat = 10
+// To simulate Apple's default UIKit hoverEffect padding on bar items, we need to specify if it's on the left or right and apply the right offset
+enum BarItemPosition {
+    case leading
+    case trailing
+}

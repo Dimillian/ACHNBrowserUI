@@ -40,9 +40,7 @@ struct DashboardView: View {
         }, label: {
             Image(systemName: "slider.horizontal.3").imageScale(.medium)
         })
-        .padding(hoverPadding)
-        .safeHoverEffect()
-        .offset(x:hoverPadding)
+        .safeHoverEffectBarItem(position: .trailing)
     }
     
     private var aboutButton: some View {

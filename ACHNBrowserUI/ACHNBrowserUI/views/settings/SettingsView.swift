@@ -46,11 +46,9 @@ struct SettingsView: View {
         }, label: {
             Text("Dismiss")
         })
-        .padding(hoverPadding)
-        .safeHoverEffect()
-        .offset(x:-hoverPadding)
+        .safeHoverEffectBarItem(position: .leading)
     }
-        
+
     var body: some View {
         NavigationView {
             Form {
