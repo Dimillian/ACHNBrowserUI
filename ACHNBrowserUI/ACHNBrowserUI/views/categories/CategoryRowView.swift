@@ -20,8 +20,7 @@ struct CategoryRowView: View {
                     .resizable()
                     .frame(width: 46, height: 46)
                 Text(category.label())
-                    .font(.headline)
-                    .foregroundColor(.text)
+                    .style(appStyle: .rowTitle)
             }
         }
     }

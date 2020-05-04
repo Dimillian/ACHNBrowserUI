@@ -67,7 +67,7 @@ struct DashboardView: View {
         let dateString = formatter.string(from: Date())
         return Section(header: SectionHeaderView(text: "Today")) {
             VStack(alignment: .leading) {
-                Text(dateString).title()
+                Text(dateString).style(appStyle: .title)
                 DashboardEventTextView().padding(.top, 4)
             }
             .padding(.vertical, 5)

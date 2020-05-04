@@ -16,9 +16,7 @@ struct SectionHeaderView: View {
     var body: some View {
         
         Text(text)
-            .font(.system(.subheadline, design: .rounded))
-            .fontWeight(.bold)
-            .foregroundColor(Color.dialogue)
+            .style(appStyle: .sectionHeader)
             .padding(.vertical, 6)
             .padding(.horizontal, 10)
             .background(Color.bell)
