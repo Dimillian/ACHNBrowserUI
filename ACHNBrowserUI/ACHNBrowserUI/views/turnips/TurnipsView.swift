@@ -7,6 +7,7 @@
 //
 
 import SwiftUI
+import SwiftUIKit
 import Backend
 
 struct TurnipsView: View {
@@ -45,11 +46,22 @@ struct TurnipsView: View {
             List {
                 if subManager.subscriptionStatus == .notSubscribed {
                     Section(header: SectionHeaderView(text: "AC Helper+")) {
-                        Button(action: {
-                            self.presentedSheet = .subscription
-                        }) {
-                            Text("To help us support the application and get turnip predictions notification, you can try out AC Helper+")
-                                .foregroundColor(.secondaryText)
+                        VStack(spacing: 8) {
+                            Button(action: {
+                                self.presentedSheet = .subscription
+                            }) {
+                                Text("To help us support the application and get turnip predictions notification, you can try out AC Helper+")
+                                    .foregroundColor(.secondaryText)
+                            }
+                            Button(action: {
+                                self.presentedSheet = .subscription
+                            }) {
+                                Text("See more...")
+                                    .font(.headline)
+                                    .fontWeight(.bold)
+                                    .foregroundColor(.white)
+                            }.buttonStyle(PlainRoundedButton())
+                                .accentColor(.bell)
                         }
                     }
                 }

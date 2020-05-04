@@ -124,6 +124,7 @@
 		697E63FB2449DB0C008FB710 /* VillagerDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 697E63FA2449DB0C008FB710 /* VillagerDetailView.swift */; };
 		697E63FD244AD42D008FB710 /* CategoryRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 697E63FC244AD42D008FB710 /* CategoryRowView.swift */; };
 		697E6400244AD66E008FB710 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 697E63FF244AD66E008FB710 /* SettingsView.swift */; };
+		69AA9438246035FF0040A9CA /* SwiftUIKit in Frameworks */ = {isa = PBXBuildFile; productRef = 69AA9437246035FF0040A9CA /* SwiftUIKit */; };
 		69AF8C51243E283D001DD9CB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69AF8C50243E283D001DD9CB /* AppDelegate.swift */; };
 		69AF8C53243E283D001DD9CB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69AF8C52243E283D001DD9CB /* SceneDelegate.swift */; };
 		69AF8C55243E283D001DD9CB /* ItemsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69AF8C54243E283D001DD9CB /* ItemsListView.swift */; };
@@ -431,6 +432,7 @@
 				69E4BBB0245AE067001035E2 /* UI in Frameworks */,
 				68345589244E4DEF0072FC0C /* ACNHEvents in Frameworks */,
 				69CFCA34245AA62D0059C067 /* Backend in Frameworks */,
+				69AA9438246035FF0040A9CA /* SwiftUIKit in Frameworks */,
 				6951837524599C26005D28E0 /* StoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -963,6 +965,7 @@
 				68345588244E4DEF0072FC0C /* ACNHEvents */,
 				69CFCA33245AA62D0059C067 /* Backend */,
 				69E4BBAF245AE067001035E2 /* UI */,
+				69AA9437246035FF0040A9CA /* SwiftUIKit */,
 			);
 			productName = ACHNBrowserUI;
 			productReference = 69AF8C4D243E283D001DD9CB /* AC Helper.app */;
@@ -1019,6 +1022,7 @@
 			mainGroup = 69AF8C44243E283D001DD9CB;
 			packageReferences = (
 				68345587244E4DEF0072FC0C /* XCRemoteSwiftPackageReference "Date-ACNHEvents" */,
+				69AA9436246035FF0040A9CA /* XCRemoteSwiftPackageReference "SwiftUIKit" */,
 			);
 			productRefGroup = 69AF8C4E243E283D001DD9CB /* Products */;
 			projectDirPath = "";
@@ -1540,6 +1544,14 @@
 				version = 1.1.0;
 			};
 		};
+		69AA9436246035FF0040A9CA /* XCRemoteSwiftPackageReference "SwiftUIKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Dimillian/SwiftUIKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.0.1;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -1547,6 +1559,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 68345587244E4DEF0072FC0C /* XCRemoteSwiftPackageReference "Date-ACNHEvents" */;
 			productName = ACNHEvents;
+		};
+		69AA9437246035FF0040A9CA /* SwiftUIKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 69AA9436246035FF0040A9CA /* XCRemoteSwiftPackageReference "SwiftUIKit" */;
+			productName = SwiftUIKit;
 		};
 		69CFCA33245AA62D0059C067 /* Backend */ = {
 			isa = XCSwiftPackageProductDependency;
