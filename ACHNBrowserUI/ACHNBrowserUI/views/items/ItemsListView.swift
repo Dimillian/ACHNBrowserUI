@@ -33,6 +33,9 @@ struct ItemsListView: View {
             Image(systemName: viewModel.sort == nil ? "arrow.up.arrow.down.circle" : "arrow.up.arrow.down.circle.fill")
                 .imageScale(.large)
         }
+        .padding(hoverPadding)
+        .safeHoverEffect()
+        .offset(x:hoverPadding)
     }
     
     private var layoutButton: some View {
@@ -42,6 +45,9 @@ struct ItemsListView: View {
             Image(systemName: itemRowsDisplayMode == .big ? "rectangle.grid.1x2" : "list.dash")
                 .imageScale(.large)
         }
+        .padding(hoverPadding)
+        .safeHoverEffect()
+        .offset(x:hoverPadding)
     }
     
     private var sortSheet: ActionSheet {

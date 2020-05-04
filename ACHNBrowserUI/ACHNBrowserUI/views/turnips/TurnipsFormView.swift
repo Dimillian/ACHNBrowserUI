@@ -27,6 +27,9 @@ struct TurnipsFormView: View {
         Button(action: save) {
             Text("Save")
         }
+        .padding(hoverPadding)
+        .safeHoverEffect()
+        .offset(x:hoverPadding)
     }
 
     private func save() {

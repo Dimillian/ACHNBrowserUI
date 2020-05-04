@@ -30,6 +30,9 @@ struct AboutView: View {
         }, label: {
             Text("Dismiss")
         })
+        .padding(hoverPadding)
+        .safeHoverEffect()
+        .offset(x:-hoverPadding)
     }
     
     private func makeSheet(_ sheet: Sheet) -> some View {
