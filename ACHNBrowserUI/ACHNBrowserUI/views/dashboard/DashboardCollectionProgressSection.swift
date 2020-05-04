@@ -44,8 +44,7 @@ struct DashboardCollectionProgressSection: View {
                         .foregroundColor(.secondary)
                 }
             }
-            .padding(.bottom, 10)
-            .padding(.top, 5)
+            .padding(.vertical, 10)
         }
         .accentColor(.grass)
     }
