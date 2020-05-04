@@ -13,12 +13,32 @@ struct SettingsView: View {
     @EnvironmentObject private var subscriptionManager: SubcriptionManager
     @Environment(\.presentationMode) private var presentationMode
     
-    @State private var islandName = AppUserDefaults.islandName
-    @State private var selectedHemisphere = AppUserDefaults.hemisphere
-    @State private var selectedFruit = AppUserDefaults.fruit
-    @State private var selectedNookShop = AppUserDefaults.nookShop
-    @State private var selectedAbleSisters = AppUserDefaults.ableSisters
-    @State private var selectedResidentService = AppUserDefaults.residentService
+    private var islandName = Binding<String>(get: {
+        AppUserDefaults.islandName
+    }, set: {
+        AppUserDefaults.islandName = $0
+    })
+    
+    private var selectedHemisphere =
+        Binding<Hemisphere>(get: { AppUserDefaults.hemisphere }, set: { AppUserDefaults.hemisphere = $0 })
+    
+    private var selectedFruit =
+        Binding<Fruit>(get: { AppUserDefaults.fruit }, set: { AppUserDefaults.fruit = $0 })
+    
+    private var selectedNookShop =
+        Binding<Infrastructure.NookShop>(get: { AppUserDefaults.nookShop }, set: { AppUserDefaults.nookShop = $0 })
+    
+    private var selectedAbleSisters = Binding<Infrastructure.AbleSisters>(get: {
+        AppUserDefaults.ableSisters
+    }, set: {
+        AppUserDefaults.ableSisters = $0
+    })
+    
+    private var selectedResidentService = Binding<Infrastructure.ResidentService>(get: {
+        AppUserDefaults.residentService
+    }, set: {
+        AppUserDefaults.residentService = $0
+    })
     
     var closeButton: some View {
         Button(action: {
@@ -28,6 +48,7 @@ struct SettingsView: View {
         })
         .safeHoverEffectBarItem(position: .leading)
     }
+<<<<<<< HEAD
     
     var saveButton: some View {
         Button(action: {
@@ -44,6 +65,9 @@ struct SettingsView: View {
         .safeHoverEffectBarItem(position: .trailing)
     }
     
+=======
+        
+>>>>>>> Dimillian/master
     var body: some View {
         NavigationView {
             Form {
@@ -51,38 +75,38 @@ struct SettingsView: View {
                     HStack {
                         Text("Island name")
                         Spacer()
-                        TextField("Your island name", text: $islandName)
+                        TextField("Your island name", text: islandName)
                             .font(.body)
                             .foregroundColor(.secondary)
                     }
-                    Picker(selection: $selectedHemisphere,
+                    Picker(selection: selectedHemisphere,
                            label: Text("Hemisphere")) {
                             ForEach(Hemisphere.allCases, id: \.self) { hemispehere in
                                 Text(hemispehere.rawValue.capitalized).tag(hemispehere)
                             }
                     }
-                    Picker(selection: $selectedFruit,
+                    Picker(selection: selectedFruit,
                            label: Text("Starting fruit")) {
                             ForEach(Fruit.allCases, id: \.self) { fruit in
                                 Text(fruit.rawValue.capitalized).tag(fruit)
                             }
                     }
                     
-                    Picker(selection: $selectedNookShop,
+                    Picker(selection: selectedNookShop,
                            label: Text("Nook shop")) {
                             ForEach(Infrastructure.NookShop.allCases, id: \.self) { shop in
                                 Text(shop.rawValue).tag(shop)
                             }
                     }
                     
-                    Picker(selection: $selectedAbleSisters,
+                    Picker(selection: selectedAbleSisters,
                            label: Text("Able sisters")) {
                             ForEach(Infrastructure.AbleSisters.allCases, id: \.self) { sisters in
                                 Text(sisters.rawValue.capitalized).tag(sisters)
                             }
                     }
                     
-                    Picker(selection: $selectedResidentService,
+                    Picker(selection: selectedResidentService,
                            label: Text("Residents service")) {
                             ForEach(Infrastructure.ResidentService.allCases, id: \.self) { service in
                                 Text(service.rawValue.capitalized).tag(service)
@@ -108,12 +132,11 @@ struct SettingsView: View {
                     .disabled(subscriptionManager.inPaymentProgress)
                     .opacity(subscriptionManager.inPaymentProgress ? 0.5 : 1.0)
                 }
-                saveButton
             }
             .listStyle(GroupedListStyle())
             .environment(\.horizontalSizeClass, .regular)
             .navigationBarTitle(Text("Preferences"), displayMode: .inline)
-            .navigationBarItems(leading: closeButton, trailing: saveButton)
+            .navigationBarItems(leading: closeButton)
         }.navigationViewStyle(StackNavigationViewStyle())
     }
 }

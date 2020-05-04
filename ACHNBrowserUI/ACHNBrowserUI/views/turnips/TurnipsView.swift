@@ -43,6 +43,9 @@ struct TurnipsView: View {
     // MARK: - Body
     var body: some View {
         NavigationView {
+            if UIDevice.current.userInterfaceIdiom == .pad {
+                TurnipsFormView(turnipsViewModel: viewModel)
+            }
             List {
                 if subManager.subscriptionStatus == .notSubscribed {
                     Section(header: SectionHeaderView(text: "AC Helper+")) {
@@ -65,12 +68,16 @@ struct TurnipsView: View {
                         }
                     }
                 }
-                Section(header: SectionHeaderView(text: "Stalks market")) {
-                    Button(action: {
-                        self.presentedSheet = .form
-                    }) {
-                        Text(TurnipFields.exist() ? "Edit your in game prices" : "Add your in game prices")
-                            .foregroundColor(.blue)
+                if UIDevice.current.userInterfaceIdiom != .pad ||
+                    (UIDevice.current.orientation == .portrait ||
+                        UIDevice.current.orientation == .portraitUpsideDown){
+                    Section(header: SectionHeaderView(text: "Stalks market")) {
+                        Button(action: {
+                            self.presentedSheet = .form
+                        }) {
+                            Text(TurnipFields.exist() ? "Edit your in game prices" : "Add your in game prices")
+                                .foregroundColor(.blue)
+                        }
                     }
                 }
                 predictionsSection
@@ -82,7 +89,6 @@ struct TurnipsView: View {
                                 displayMode: .automatic)
             .sheet(item: $presentedSheet, content: makeSheet)
         }
-        .navigationViewStyle(StackNavigationViewStyle())
         .onAppear(perform: NotificationManager.shared.registerForNotifications)
     }
 }
@@ -93,7 +99,10 @@ extension TurnipsView {
     private func makeSheet(_ sheet: Sheet) -> some View {
         switch sheet {
         case .form:
-            return AnyView(TurnipsFormView(turnipsViewModel: viewModel).environmentObject(subManager))
+            return AnyView(NavigationView {
+                TurnipsFormView(turnipsViewModel: viewModel).environmentObject(subManager)
+                
+                }.navigationViewStyle(StackNavigationViewStyle()))
         case .subscription:
             return AnyView(SubscribeView().environmentObject(subManager))
         }
@@ -141,17 +150,19 @@ extension TurnipsView {
     }
     
     private var exchangeSection: some View {
-        Section(header: SectionHeaderView(text: "Exchange")) {
-            if viewModel.islands == nil {
-                Text("Loading Islands...")
-                    .foregroundColor(.secondary)
-            }
-            viewModel.islands.map {
-                ForEach($0) { island in
-                    NavigationLink(destination: IslandDetailView(island: island)) {
-                        TurnipIslandRow(island: island)
+        Group {
+            if viewModel.islands?.isEmpty == false {
+                Section(header: SectionHeaderView(text: "Exchange")) {
+                    viewModel.islands.map {
+                        ForEach($0) { island in
+                            NavigationLink(destination: IslandDetailView(island: island)) {
+                                TurnipIslandRow(island: island)
+                            }
+                        }
                     }
                 }
+            } else {
+                EmptyView()
             }
         }
     }
