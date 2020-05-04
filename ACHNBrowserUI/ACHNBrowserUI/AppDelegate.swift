@@ -23,8 +23,6 @@ extension ItemEntity {
         commerce.nookMiles = Int64(item.content.nookMiles ?? 0)
         newItem.commerce = commerce
         
-   
-        
         newItem.tag = item.content.tag
         newItem.category = item.content.category.rawValue
         
@@ -83,6 +81,10 @@ extension ItemEntity {
         }
         
         if let set = item.content.contentSet?.rawValue {
+            if set == "None" {
+                return
+            }
+            
             do {
                 let fetchRequest: NSFetchRequest<SetEntity> = SetEntity.fetchRequest()
                 fetchRequest.predicate = NSPredicate(format: "name = %@", set)
@@ -98,23 +100,6 @@ extension ItemEntity {
         size.column = item.content.size?.cols ?? 0
         size.row = item.content.size?.cols ?? 0
         newItem.size = size
-        
-        //
-        //        if let recipe = item.recipe {
-        //            let newRecipe = RecipeEntity(context: context)
-        //            newRecipe.name = recipe.name
-        //            newRecipe.source = recipe.source
-        //            newRecipe.category = recipe.category.rawValue
-        //            newRecipe.item = newItem
-        //
-        //            recipe.materials.forEach {
-        //                let newMaterial = RecipeItemEntity(context: context)
-        //                newMaterial.name = $0.name
-        //                newMaterial.count = Int64($0.count)
-        //                newMaterial.addToRecipe(newRecipe)
-        //            }
-        //        }
-        //
     }
     
     var variantEntities: [ItemVariantEntity]? {

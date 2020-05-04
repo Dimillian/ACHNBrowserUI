@@ -70,6 +70,7 @@
         <attribute name="row" optional="YES" attributeType="Double" defaultValueString="0" usesScalarValueType="YES"/>
         <relationship name="items" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ItemEntity" inverseName="size" inverseEntity="ItemEntity"/>
     </entity>
+    <entity name="ThemeEntity" representedClassName="ThemeEntity" syncable="YES" codeGenerationType="class"/>
     <elements>
         <element name="CollectionEntity" positionX="-232.7265625" positionY="-36.55859375" width="128" height="73"/>
         <element name="CritterInfoEntity" positionX="-276.28515625" positionY="383.078125" width="128" height="163"/>
@@ -80,5 +81,6 @@
         <element name="SizeEntity" positionX="-206.859375" positionY="149.69140625" width="128" height="88"/>
         <element name="CommerceEntity" positionX="-714.12109375" positionY="133.6171875" width="128" height="103"/>
         <element name="SetEntity" positionX="-715.671875" positionY="34.0625" width="128" height="73"/>
+        <element name="ThemeEntity" positionX="-459" positionY="162" width="128" height="43"/>
     </elements>
 </model>
