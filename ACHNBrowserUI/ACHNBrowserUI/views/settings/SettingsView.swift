@@ -19,23 +19,14 @@ struct SettingsView: View {
         AppUserDefaults.islandName = $0
     })
     
-    private var selectedHemisphere = Binding<Hemisphere>(get: {
-        AppUserDefaults.hemisphere
-    }, set: {
-        AppUserDefaults.hemisphere = $0
-    })
+    private var selectedHemisphere =
+        Binding<Hemisphere>(get: { AppUserDefaults.hemisphere }, set: { AppUserDefaults.hemisphere = $0 })
     
-    private var selectedFruit = Binding<Fruit>(get: {
-        AppUserDefaults.fruit
-    }, set: {
-        AppUserDefaults.fruit = $0
-    })
+    private var selectedFruit =
+        Binding<Fruit>(get: { AppUserDefaults.fruit }, set: { AppUserDefaults.fruit = $0 })
     
-    private var selectedNookShop = Binding<Infrastructure.NookShop>(get: {
-        AppUserDefaults.nookShop
-    }, set: {
-        AppUserDefaults.nookShop = $0
-    })
+    private var selectedNookShop =
+        Binding<Infrastructure.NookShop>(get: { AppUserDefaults.nookShop }, set: { AppUserDefaults.nookShop = $0 })
     
     private var selectedAbleSisters = Binding<Infrastructure.AbleSisters>(get: {
         AppUserDefaults.ableSisters
