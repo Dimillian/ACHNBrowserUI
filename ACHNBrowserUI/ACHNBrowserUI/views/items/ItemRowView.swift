@@ -48,9 +48,7 @@ struct ItemRowView: View {
     private var itemInfo: some View {
         Group {
             Text(item.name)
-                .font(.headline)
-                .fontWeight(.bold)
-                .foregroundColor(.text)
+                .style(appStyle: .rowTitle)
             Text(item.obtainedFrom ?? "unknown source")
                 .font(.subheadline)
                 .fontWeight(.semibold)

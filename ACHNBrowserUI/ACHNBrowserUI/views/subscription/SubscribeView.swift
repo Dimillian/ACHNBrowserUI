@@ -7,6 +7,7 @@
 //
 
 import SwiftUI
+import SwiftUIKit
 import Backend
 import Purchases
 
@@ -33,6 +34,7 @@ struct SubscribeView: View {
         }) {
             Text("Close")
         }
+        .safeHoverEffectBarItem(position: .trailing)
     }
     
     private var upperPart: some View {
@@ -86,10 +88,8 @@ struct SubscribeView: View {
                 .font(.headline)
                 .fontWeight(.bold)
                 .foregroundColor(.white)
-                .frame(width: 320, height: 50)
-                .background(Color.grass)
-                .cornerRadius(8)
-        }
+                .frame(width: 290, height: 30)
+        }.buttonStyle(PlainRoundedButton()).accentColor(.grass).safeHoverEffect()
     }
     
     private var lowerPart: some View {

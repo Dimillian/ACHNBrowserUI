@@ -38,6 +38,15 @@
         }
       },
       {
+        "package": "SwiftUIKit",
+        "repositoryURL": "https://github.com/Dimillian/SwiftUIKit",
+        "state": {
+          "branch": null,
+          "revision": "44b51c2dab831d904085f331a982ea35a1ffaa8e",
+          "version": "0.0.1"
+        }
+      },
+      {
         "package": "UIImageColors",
         "repositoryURL": "https://github.com/jathu/UIImageColors",
         "state": {

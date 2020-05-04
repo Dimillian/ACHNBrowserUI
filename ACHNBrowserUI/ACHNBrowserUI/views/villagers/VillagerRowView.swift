@@ -22,9 +22,7 @@ struct VillagerRowView: View {
                 ACNHApiService.Endpoint.villagerIcon(id: villager.id).path(),
                       size: 50)
             Text(villager.name["name-en"] ?? "")
-                .font(.body)
-                .fontWeight(.semibold)
-                .foregroundColor(.text)
+                .style(appStyle: .rowTitle)
         }
     }
 }

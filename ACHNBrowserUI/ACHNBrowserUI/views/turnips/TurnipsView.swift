@@ -7,6 +7,7 @@
 //
 
 import SwiftUI
+import SwiftUIKit
 import Backend
 
 struct TurnipsView: View {
@@ -42,23 +43,41 @@ struct TurnipsView: View {
     // MARK: - Body
     var body: some View {
         NavigationView {
+            if UIDevice.current.userInterfaceIdiom == .pad {
+                TurnipsFormView(turnipsViewModel: viewModel)
+            }
             List {
                 if subManager.subscriptionStatus == .notSubscribed {
                     Section(header: SectionHeaderView(text: "AC Helper+")) {
-                        Button(action: {
-                            self.presentedSheet = .subscription
-                        }) {
-                            Text("To help us support the application and get turnip predictions notification, you can try out AC Helper+")
-                                .foregroundColor(.secondaryText)
+                        VStack(spacing: 8) {
+                            Button(action: {
+                                self.presentedSheet = .subscription
+                            }) {
+                                Text("To help us support the application and get turnip predictions notification, you can try out AC Helper+")
+                                    .foregroundColor(.secondaryText)
+                            }
+                            Button(action: {
+                                self.presentedSheet = .subscription
+                            }) {
+                                Text("See more...")
+                                    .font(.headline)
+                                    .fontWeight(.bold)
+                                    .foregroundColor(.white)
+                            }.buttonStyle(PlainRoundedButton())
+                                .accentColor(.bell)
                         }
                     }
                 }
-                Section(header: SectionHeaderView(text: "Stalks market")) {
-                    Button(action: {
-                        self.presentedSheet = .form
-                    }) {
-                        Text(TurnipFields.exist() ? "Edit your in game prices" : "Add your in game prices")
-                            .foregroundColor(.blue)
+                if UIDevice.current.userInterfaceIdiom != .pad ||
+                    (UIDevice.current.orientation == .portrait ||
+                        UIDevice.current.orientation == .portraitUpsideDown){
+                    Section(header: SectionHeaderView(text: "Stalks market")) {
+                        Button(action: {
+                            self.presentedSheet = .form
+                        }) {
+                            Text(TurnipFields.exist() ? "Edit your in game prices" : "Add your in game prices")
+                                .foregroundColor(.blue)
+                        }
                     }
                 }
                 if viewModel.predictions != nil {
@@ -77,7 +96,6 @@ struct TurnipsView: View {
                                 displayMode: .automatic)
             .sheet(item: $presentedSheet, content: makeSheet)
         }
-        .navigationViewStyle(StackNavigationViewStyle())
         .onAppear(perform: NotificationManager.shared.registerForNotifications)
     }
 }
@@ -88,7 +106,10 @@ extension TurnipsView {
     private func makeSheet(_ sheet: Sheet) -> some View {
         switch sheet {
         case .form:
-            return AnyView(TurnipsFormView(turnipsViewModel: viewModel).environmentObject(subManager))
+            return AnyView(NavigationView {
+                TurnipsFormView(turnipsViewModel: viewModel).environmentObject(subManager)
+                
+                }.navigationViewStyle(StackNavigationViewStyle()))
         case .subscription:
             return AnyView(SubscribeView().environmentObject(subManager))
         case .chart:
@@ -138,17 +159,19 @@ extension TurnipsView {
     }
     
     private var exchangeSection: some View {
-        Section(header: SectionHeaderView(text: "Exchange")) {
-            if viewModel.islands == nil {
-                Text("Loading Islands...")
-                    .foregroundColor(.secondary)
-            }
-            viewModel.islands.map {
-                ForEach($0) { island in
-                    NavigationLink(destination: IslandDetailView(island: island)) {
-                        TurnipIslandRow(island: island)
+        Group {
+            if viewModel.islands?.isEmpty == false {
+                Section(header: SectionHeaderView(text: "Exchange")) {
+                    viewModel.islands.map {
+                        ForEach($0) { island in
+                            NavigationLink(destination: IslandDetailView(island: island)) {
+                                TurnipIslandRow(island: island)
+                            }
+                        }
                     }
                 }
+            } else {
+                EmptyView()
             }
         }
     }

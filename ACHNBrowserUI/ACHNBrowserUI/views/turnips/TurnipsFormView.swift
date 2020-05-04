@@ -24,6 +24,7 @@ struct TurnipsFormView: View {
         Button(action: save) {
             Text("Save")
         }
+        .safeHoverEffectBarItem(position: .trailing)
     }
 
     private func save() {
@@ -41,52 +42,50 @@ struct TurnipsFormView: View {
     }
     
     var body: some View {
-        NavigationView {
-            List {
-                Section(header: SectionHeaderView(text: "Configuration")) {
-                    Button(action: {
-                        self.fields.clear()
-                        self.turnipsViewModel.refreshPrediction()
-                    }) {
-                        Text("Clear all fields").foregroundColor(.secondaryText)
-                    }
-                    Toggle(isOn: $enableNotifications) {
-                        Text("Receive prices predictions notification")
-                    }
-                    .opacity(subscriptionManager.subscriptionStatus == .subscribed ? 1.0 : 0.5)
-                    .disabled(subscriptionManager.subscriptionStatus != .subscribed)
-                    if subscriptionManager.subscriptionStatus != .subscribed {
-                        Button(action: {
-                            self.isSubscribePresented = true
-                        }) {
-                            Text("You can get daily notifications for your average turnip price by subscribing to AC Helper+")
-                                .foregroundColor(.secondaryText)
-                                .font(.footnote)
-                        }
-                    }
-                    
+        List {
+            Section(header: SectionHeaderView(text: "Configuration")) {
+                Button(action: {
+                    self.fields.clear()
+                    self.turnipsViewModel.refreshPrediction()
+                }) {
+                    Text("Clear all fields").foregroundColor(.secondaryText)
                 }
-                Section(header: SectionHeaderView(text: "Your in game prices")) {
-                    HStack {
-                        Text("Buy price")
-                        TextField("... 🔔 ...", text: $fields.buyPrice)
-                            .keyboardType(.numberPad)
-                    }
-                    if fields.fields.filter{ !$0.isEmpty }.count == 0 {
-                        Text("The more in game buy prices you'll add the better the predictions will be. Your buy price only won't give your correct averages. Add prices from the game as you get them.")
+                Toggle(isOn: $enableNotifications) {
+                    Text("Receive prices predictions notification")
+                }
+                .opacity(subscriptionManager.subscriptionStatus == .subscribed ? 1.0 : 0.5)
+                .disabled(subscriptionManager.subscriptionStatus != .subscribed)
+                if subscriptionManager.subscriptionStatus != .subscribed {
+                    Button(action: {
+                        self.isSubscribePresented = true
+                    }) {
+                        Text("You can get daily notifications for your average turnip price by subscribing to AC Helper+")
                             .foregroundColor(.secondaryText)
                             .font(.footnote)
                     }
-                    ForEach(weekdays, id: \.self, content: weekdayRow)
                 }
+                
             }
-            .listStyle(GroupedListStyle())
-            .modifier(AdaptsToSoftwareKeyboard())
-            .navigationBarItems(trailing: saveButton)
-            .navigationBarTitle("Add your turnip prices", displayMode: .inline)
-            .sheet(isPresented: $isSubscribePresented, content: { SubscribeView().environmentObject(self.subscriptionManager) })
+            Section(header: SectionHeaderView(text: "Your in game prices")) {
+                HStack {
+                    Text("Buy price")
+                    TextField("... 🔔 ...", text: $fields.buyPrice)
+                        .keyboardType(.numberPad)
+                        .foregroundColor(.bell)
+                }
+                if fields.fields.filter{ !$0.isEmpty }.count == 0 {
+                    Text("The more in game buy prices you'll add the better the predictions will be. Your buy price only won't give your correct averages. Add prices from the game as you get them.")
+                        .foregroundColor(.secondaryText)
+                        .font(.footnote)
+                }
+                ForEach(weekdays, id: \.self, content: weekdayRow)
+            }
         }
-        .navigationViewStyle(StackNavigationViewStyle())
+        .listStyle(GroupedListStyle())
+        .modifier(AdaptsToSoftwareKeyboard())
+        .navigationBarItems(trailing: saveButton)
+        .navigationBarTitle("Add your turnip prices", displayMode: .inline)
+        .sheet(isPresented: $isSubscribePresented, content: { SubscribeView().environmentObject(self.subscriptionManager) })
     }
 
     private func weekdayRow(_ weekday: String) -> some View {
@@ -95,11 +94,13 @@ struct TurnipsFormView: View {
             Spacer(minLength: 40)
             TextField("AM", text: morningField(for: weekday))
                 .keyboardType(.numberPad)
+                .foregroundColor(.bell)
                 .textFieldStyle(RoundedBorderTextFieldStyle())
                 .multilineTextAlignment(.center)
                 .frame(maxWidth: 60)
             TextField("PM", text: afternoonField(for: weekday))
                 .keyboardType(.numberPad)
+                .foregroundColor(.bell)
                 .textFieldStyle(RoundedBorderTextFieldStyle())
                 .multilineTextAlignment(.center)
                 .frame(maxWidth: 60)

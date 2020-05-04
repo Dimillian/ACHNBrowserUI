@@ -43,7 +43,7 @@ struct DashboardEventTextView: View {
                 } else {
                     Text("No events today.")
                 }
-                if nextEvent.1 != nil && nextEvent.1 != todayEvents.first {
+                if nextEvent.1 != nil && !todayEvents.contains(nextEvent.1!) {
                     HStack {
                         Text("Next event: \(nextEvent.1!.title())!")
                         Spacer()
