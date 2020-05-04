@@ -40,6 +40,9 @@ struct DashboardView: View {
         }, label: {
             Image(systemName: "slider.horizontal.3").imageScale(.medium)
         })
+        .padding(hoverPadding)
+        .safeHoverEffect()
+        .offset(x:hoverPadding)
     }
     
     private var aboutButton: some View {
@@ -48,6 +51,9 @@ struct DashboardView: View {
         }, label: {
             Image(systemName: "info.circle").imageScale(.large)
         })
+        .padding(10)
+        .safeHoverEffect()
+        .offset(x:-10)
     }
     
     private func makeSheet(_ sheet: Sheet) -> some View {

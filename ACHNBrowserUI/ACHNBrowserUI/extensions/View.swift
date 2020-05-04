@@ -24,6 +24,46 @@ extension View {
         controller.view.removeFromSuperview()
         return image
     }
+    
+    func safeOnDrag(data: @escaping () -> NSItemProvider) -> AnyView {
+        if #available(iOS 13.4, *) {
+            return AnyView(onDrag(data))
+        } else {
+            return AnyView(self)
+        }
+    }
+    
+    func safeOnHover(action: @escaping (Bool) -> Void) -> AnyView {
+        if #available(iOS 13.4, *) {
+            return AnyView(onHover(perform: action))
+        } else {
+            return AnyView(self)
+        }
+    }
+    
+    func safeHoverEffect(_ type: SafeHoverEffectType = .automatic ) -> AnyView {
+        if #available(iOS 13.4, *) {
+            var hoverEffectType: HoverEffect
+            
+            switch(type) {
+            case .lift:
+                hoverEffectType = .lift
+                
+            case .highlight:
+                hoverEffectType = .highlight
+                
+            case .automatic:
+                fallthrough
+                
+            default:
+                hoverEffectType = .automatic
+            }
+            
+            return AnyView(hoverEffect(hoverEffectType))
+        } else {
+            return AnyView(self)
+        }
+    }
 }
 
 extension UIView {
@@ -37,3 +77,13 @@ extension UIView {
         }
     }
 }
+
+// These enums can be removed and safeHoverEffect converted to just hoverEffect throughout if we no longer need to support < iPadOS 13.4
+enum SafeHoverEffectType {
+    case automatic
+    case lift
+    case highlight
+}
+
+// Constant used throughout the app to add padding around text and icon buttons for improved tapability + match Apple's default hoverEffects
+let hoverPadding: CGFloat = 10

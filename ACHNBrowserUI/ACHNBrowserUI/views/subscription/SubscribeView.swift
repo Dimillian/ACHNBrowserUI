@@ -34,6 +34,9 @@ struct SubscribeView: View {
         }) {
             Text("Close")
         }
+        .padding(hoverPadding)
+        .safeHoverEffect()
+        .offset(x:hoverPadding)
     }
     
     private var upperPart: some View {
@@ -88,7 +91,7 @@ struct SubscribeView: View {
                 .fontWeight(.bold)
                 .foregroundColor(.white)
                 .frame(width: 290, height: 30)
-        }.buttonStyle(PlainRoundedButton()).accentColor(.grass)
+        }.buttonStyle(PlainRoundedButton()).accentColor(.grass).safeHoverEffect()
     }
     
     private var lowerPart: some View {
