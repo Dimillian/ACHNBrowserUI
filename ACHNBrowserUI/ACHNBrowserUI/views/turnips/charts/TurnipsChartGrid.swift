@@ -24,15 +24,6 @@ struct TurnipsChartGrid: Shape {
             path.addLine(to: CGPoint(x: offset * ratioX, y: ratioY * (maxY - minY)))
         }
 
-        let steps = (maxY - minY)/TurnipsChartView.verticalLinesCount
-        for offset in stride(from: minY, to: maxY, by: steps) {
-            let offset = CGFloat(offset)
-            path.move(to: CGPoint(x: rect.minX, y: (offset - minY) * ratioY))
-            path.addLine(to: CGPoint(x: rect.maxX, y: (offset - minY) * ratioY))
-        }
-        path.move(to: CGPoint(x: rect.minX, y: (maxY - minY) * ratioY))
-        path.addLine(to: CGPoint(x: rect.maxX, y: (maxY - minY) * ratioY))
-
         return path
     }
 }
