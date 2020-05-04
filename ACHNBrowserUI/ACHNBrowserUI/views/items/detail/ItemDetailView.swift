@@ -136,9 +136,7 @@ extension ItemDetailView {
         }) {
             Image(systemName: "square.and.arrow.up").imageScale(.large)
         }
-        .padding(hoverPadding)
-        .safeHoverEffect()
-        .offset(x:hoverPadding)
+        .safeHoverEffectBarItem(position: .trailing)
     }
     
     private var navButtons: some View {

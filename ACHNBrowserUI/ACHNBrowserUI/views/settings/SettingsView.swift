@@ -26,9 +26,7 @@ struct SettingsView: View {
         }, label: {
             Text("Dismiss")
         })
-        .padding(hoverPadding)
-        .safeHoverEffect()
-        .offset(x:-hoverPadding)
+        .safeHoverEffectBarItem(position: .leading)
     }
     
     var saveButton: some View {
@@ -43,9 +41,7 @@ struct SettingsView: View {
         }, label: {
             Text("Save")
         })
-        .padding(hoverPadding)
-        .safeHoverEffect()
-        .offset(x:hoverPadding)
+        .safeHoverEffectBarItem(position: .trailing)
     }
     
     var body: some View {
