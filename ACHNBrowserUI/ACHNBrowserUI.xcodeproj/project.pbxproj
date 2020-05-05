@@ -89,7 +89,15 @@
 		02F2D4472455D81C009741DA /* simple-orange@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 02F2D3F72455D81C009741DA /* simple-orange@3x.png */; };
 		02F2D4482455D81C009741DA /* simple-mint@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 02F2D3F82455D81C009741DA /* simple-mint@3x.png */; };
 		325C0945246054AF0043B6A7 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 325C0943246053E10043B6A7 /* SwiftUI.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		4C2D676B245DA41E005831C4 /* TurnipsChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C2D676A245DA41E005831C4 /* TurnipsChartView.swift */; };
+		4C2D676E245F0666005831C4 /* TurnipsChartBottomLegendView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C2D676D245F0666005831C4 /* TurnipsChartBottomLegendView.swift */; };
+		4C2D6770245F0698005831C4 /* TurnipsChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C2D676F245F0698005831C4 /* TurnipsChart.swift */; };
+		4C2D6772245F0C9D005831C4 /* TurnipsChartGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C2D6771245F0C9D005831C4 /* TurnipsChartGrid.swift */; };
+		4C2D6774245F4EA2005831C4 /* TurnipsChartAverageCurve.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C2D6773245F4EA2005831C4 /* TurnipsChartAverageCurve.swift */; };
+		4C2D6776245F4F55005831C4 /* TurnipsChartMinMaxCurves.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C2D6775245F4F55005831C4 /* TurnipsChartMinMaxCurves.swift */; };
+		4C2D6778245F4FE8005831C4 /* TurnipsChartMinBuyPriceCurve.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C2D6777245F4FE8005831C4 /* TurnipsChartMinBuyPriceCurve.swift */; };
 		4C382EE8244E418800F446BA /* DismissingKeyboardOnSwipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C382EE7244E418800F446BA /* DismissingKeyboardOnSwipe.swift */; };
+		4C7F2F782461F10300930928 /* TurnipsChartVerticalLegend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7F2F772461F10300930928 /* TurnipsChartVerticalLegend.swift */; };
 		4C7FE78324574FB50011E8AB /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7FE78224574FB50011E8AB /* ActivityIndicator.swift */; };
 		4C7FE789245B57A10011E8AB /* AdaptsToSoftwareKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7FE788245B57A10011E8AB /* AdaptsToSoftwareKeyboard.swift */; };
 		68345579244C994C0072FC0C /* LikeButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68345578244C994C0072FC0C /* LikeButtonView.swift */; };
@@ -222,6 +230,7 @@
 		69E4BBB7245AE60C001035E2 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69AF8C7B243E4D29001DD9CB /* Color.swift */; };
 		69E4BBB8245AE60F001035E2 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 69AF8C79243E4C78001DD9CB /* Colors.xcassets */; };
 		69E4BBBB245B0BEF001035E2 /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69E4BBBA245B0BEF001035E2 /* AboutView.swift */; };
+		69EC82EE2461E79D00CE9064 /* TurnipsChartTopLegendView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69EC82ED2461E79D00CE9064 /* TurnipsChartTopLegendView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -320,7 +329,15 @@
 		02F2D3F72455D81C009741DA /* simple-orange@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "simple-orange@3x.png"; sourceTree = "<group>"; };
 		02F2D3F82455D81C009741DA /* simple-mint@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "simple-mint@3x.png"; sourceTree = "<group>"; };
 		325C0943246053E10043B6A7 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/System/Library/Frameworks/SwiftUI.framework; sourceTree = DEVELOPER_DIR; };
+		4C2D676A245DA41E005831C4 /* TurnipsChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TurnipsChartView.swift; sourceTree = "<group>"; };
+		4C2D676D245F0666005831C4 /* TurnipsChartBottomLegendView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TurnipsChartBottomLegendView.swift; sourceTree = "<group>"; };
+		4C2D676F245F0698005831C4 /* TurnipsChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TurnipsChart.swift; sourceTree = "<group>"; };
+		4C2D6771245F0C9D005831C4 /* TurnipsChartGrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TurnipsChartGrid.swift; sourceTree = "<group>"; };
+		4C2D6773245F4EA2005831C4 /* TurnipsChartAverageCurve.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TurnipsChartAverageCurve.swift; sourceTree = "<group>"; };
+		4C2D6775245F4F55005831C4 /* TurnipsChartMinMaxCurves.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TurnipsChartMinMaxCurves.swift; sourceTree = "<group>"; };
+		4C2D6777245F4FE8005831C4 /* TurnipsChartMinBuyPriceCurve.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TurnipsChartMinBuyPriceCurve.swift; sourceTree = "<group>"; };
 		4C382EE7244E418800F446BA /* DismissingKeyboardOnSwipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DismissingKeyboardOnSwipe.swift; sourceTree = "<group>"; };
+		4C7F2F772461F10300930928 /* TurnipsChartVerticalLegend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TurnipsChartVerticalLegend.swift; sourceTree = "<group>"; };
 		4C7FE78224574FB50011E8AB /* ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
 		4C7FE788245B57A10011E8AB /* AdaptsToSoftwareKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdaptsToSoftwareKeyboard.swift; sourceTree = "<group>"; };
 		68345578244C994C0072FC0C /* LikeButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeButtonView.swift; sourceTree = "<group>"; };
@@ -422,6 +439,7 @@
 		69E4BBB3245AE472001035E2 /* ItemRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemRow.swift; sourceTree = "<group>"; };
 		69E4BBB5245AE5C9001035E2 /* ItemDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailView.swift; sourceTree = "<group>"; };
 		69E4BBBA245B0BEF001035E2 /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
+		69EC82ED2461E79D00CE9064 /* TurnipsChartTopLegendView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TurnipsChartTopLegendView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -554,6 +572,22 @@
 			path = "@3x";
 			sourceTree = "<group>";
 		};
+		4C2D676C245F063E005831C4 /* charts */ = {
+			isa = PBXGroup;
+			children = (
+				4C2D676F245F0698005831C4 /* TurnipsChart.swift */,
+				4C2D6773245F4EA2005831C4 /* TurnipsChartAverageCurve.swift */,
+				4C2D676D245F0666005831C4 /* TurnipsChartBottomLegendView.swift */,
+				4C2D6771245F0C9D005831C4 /* TurnipsChartGrid.swift */,
+				4C2D6777245F4FE8005831C4 /* TurnipsChartMinBuyPriceCurve.swift */,
+				4C2D6775245F4F55005831C4 /* TurnipsChartMinMaxCurves.swift */,
+				69EC82ED2461E79D00CE9064 /* TurnipsChartTopLegendView.swift */,
+				4C7F2F772461F10300930928 /* TurnipsChartVerticalLegend.swift */,
+				4C2D676A245DA41E005831C4 /* TurnipsChartView.swift */,
+			);
+			path = charts;
+			sourceTree = "<group>";
+		};
 		4C382EE6244E415800F446BA /* viewModifiers */ = {
 			isa = PBXGroup;
 			children = (
@@ -566,6 +600,7 @@
 		687B5765244A02E400C1E86F /* turnips */ = {
 			isa = PBXGroup;
 			children = (
+				4C2D676C245F063E005831C4 /* charts */,
 				6951836C245977ED005D28E0 /* rows */,
 				6951836B245977E5005D28E0 /* islands */,
 				69B13CAC24577A090089BD7B /* TurnipIslandRow.swift */,
@@ -1204,8 +1239,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				68DFFFAD24492D7F00DEA07F /* ItemDetailViewModel.swift in Sources */,
+				4C2D6778245F4FE8005831C4 /* TurnipsChartMinBuyPriceCurve.swift in Sources */,
 				69AF8C7E243E4DD9001DD9CB /* ItemRowView.swift in Sources */,
 				697E63F52449A58E008FB710 /* VillagersListView.swift in Sources */,
+				4C2D6774245F4EA2005831C4 /* TurnipsChartAverageCurve.swift in Sources */,
 				68BA5826244A511700B53811 /* CategoryDetailView.swift in Sources */,
 				697E6400244AD66E008FB710 /* SettingsView.swift in Sources */,
 				68BA582C244B695F00B53811 /* IslandDetailViewModel.swift in Sources */,
@@ -1214,12 +1251,16 @@
 				69CA5F01244F1AD300B275B6 /* SectionHeaderView.swift in Sources */,
 				68BA5828244B646C00B53811 /* IslandDetailView.swift in Sources */,
 				6942FC3A244989530062FE8F /* ListingRow.swift in Sources */,
+				4C2D6770245F0698005831C4 /* TurnipsChart.swift in Sources */,
 				69BEA97F243E602C00F02C61 /* TabbarView.swift in Sources */,
 				693E72A5245EBAF900CD26F4 /* ActivityControllerView.swift in Sources */,
 				69B13CA42455973F0089BD7B /* ItemsCrosslineSectionView.swift in Sources */,
+				69EC82EE2461E79D00CE9064 /* TurnipsChartTopLegendView.swift in Sources */,
+				4C2D676B245DA41E005831C4 /* TurnipsChartView.swift in Sources */,
 				693E0B22244C596D00D20E46 /* ActiveCrittersView.swift in Sources */,
 				693E72A2245EA84500CD26F4 /* View.swift in Sources */,
 				69AF8C51243E283D001DD9CB /* AppDelegate.swift in Sources */,
+				4C7F2F782461F10300930928 /* TurnipsChartVerticalLegend.swift in Sources */,
 				693E728E245D71DD00CD26F4 /* UIState.swift in Sources */,
 				68BA5834244B9D4100B53811 /* DashboardView.swift in Sources */,
 				692C0B8524517837004847A1 /* DashboardCollectionProgressSection.swift in Sources */,
@@ -1238,6 +1279,7 @@
 				6941F3882452BDDD00EC2E02 /* CategoriesSearchViewModel.swift in Sources */,
 				687B5768244A030700C1E86F /* TurnipsView.swift in Sources */,
 				4C7FE78324574FB50011E8AB /* ActivityIndicator.swift in Sources */,
+				4C2D676E245F0666005831C4 /* TurnipsChartBottomLegendView.swift in Sources */,
 				693E0B1D244C315B00D20E46 /* DashboardViewModel.swift in Sources */,
 				69AF8C7C243E4D29001DD9CB /* Color.swift in Sources */,
 				693E72A0245EA5A000CD26F4 /* Text.swift in Sources */,
@@ -1248,6 +1290,8 @@
 				697E63FD244AD42D008FB710 /* CategoryRowView.swift in Sources */,
 				693E7294245D834C00CD26F4 /* SubscribeView.swift in Sources */,
 				69B13CB124577BBF0089BD7B /* TurnipsFormView.swift in Sources */,
+				4C2D6776245F4F55005831C4 /* TurnipsChartMinMaxCurves.swift in Sources */,
+				4C2D6772245F0C9D005831C4 /* TurnipsChartGrid.swift in Sources */,
 				69AF8C76243E3545001DD9CB /* SearchField.swift in Sources */,
 				028620752454C32800795719 /* AppIconPickerView.swift in Sources */,
 				68345579244C994C0072FC0C /* LikeButtonView.swift in Sources */,

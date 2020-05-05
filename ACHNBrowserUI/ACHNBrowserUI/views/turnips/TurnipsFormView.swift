@@ -17,9 +17,6 @@ struct TurnipsFormView: View {
     @State private var fields = TurnipFields.decode()
     @State private var enableNotifications = SubcriptionManager.shared.subscriptionStatus == .subscribed
     @State private var isSubscribePresented = false
-        
-    private let labels = ["Monday AM", "Monday PM", "Tuesday AM", "Tuesday PM", "Wednesday AM", "Wednesday PM",
-                          "Thursday AM", "Thursday PM", "Friday AM", "Friday PM", "Saturday AM", "Saturday PM"]
 
     private let weekdays = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
     

@@ -13,13 +13,14 @@ import Backend
 struct TurnipsView: View {
     // MARK: - Vars
     private enum TurnipsDisplay: String, CaseIterable {
-        case average, minMax, profits
+        case average, minMax, profits, chart
         
         func title() -> String {
             switch self {
             case .average: return "Average daily buy prices"
             case .minMax: return "Daily min-max prices"
             case .profits: return "Average profits"
+            case .chart: return "Chart"
             }
         }
     }
@@ -133,13 +134,15 @@ extension TurnipsView {
                     }
                 }
                 .pickerStyle(SegmentedPickerStyle())
-                
-                HStack {
-                    Text("Day").fontWeight(.bold)
-                    Spacer()
-                    Text("AM").fontWeight(.bold)
-                    Spacer()
-                    Text("PM").fontWeight(.bold)
+
+                if turnipsDisplay != .chart {
+                    HStack {
+                        Text("Day").fontWeight(.bold)
+                        Spacer()
+                        Text("AM").fontWeight(.bold)
+                        Spacer()
+                        Text("PM").fontWeight(.bold)
+                    }
                 }
                 if turnipsDisplay == .average {
                     ForEach(0..<viewModel.averagesPrices!.count) { i in
@@ -164,6 +167,8 @@ extension TurnipsView {
                                 self.presentedSheet = .form
                         }
                     }
+                } else if turnipsDisplay == .chart {
+                    TurnipsChartView(predictions: viewModel.predictions!).padding(.top, 8)
                 }
             } else {
                 Text("Add your in game turnip prices to see predictions")
