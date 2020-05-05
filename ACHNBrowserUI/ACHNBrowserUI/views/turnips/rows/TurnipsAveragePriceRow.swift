@@ -29,7 +29,7 @@ struct TurnipsAveragePriceRow: View {
         if price <= 90 {
             return .red
         } else if price >= 150 {
-            return .grass
+            return .grass2
         } else {
             return .secondaryText
         }

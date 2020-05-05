@@ -13,7 +13,6 @@ struct TurnipsFormView: View {
     // MARK: - Properties
     @EnvironmentObject private var subscriptionManager: SubcriptionManager
     @Environment(\.presentationMode) private var presentationMode
-    let turnipsViewModel: TurnipsViewModel
     
     @State private var fields = TurnipFields.decode()
     @State private var enableNotifications = SubcriptionManager.shared.subscriptionStatus == .subscribed
@@ -145,6 +144,6 @@ extension TurnipsFormView {
 
 struct TurnipsFormView_Previews: PreviewProvider {
     static var previews: some View {
-        TurnipsFormView(turnipsViewModel: TurnipsViewModel())
+        TurnipsFormView()
     }
 }

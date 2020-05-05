@@ -15,7 +15,7 @@ import Backend
 class TurnipsViewModel: ObservableObject {
     @Published var islands: [Island]?
     @Published var pendingNotifications = 0
-    
+    @Published var predictions: TurnipPredictions?
     @Published var averagesPrices: [[Int]]?
     @Published var averagesProfits: [[Int]]?
     @Published var minMaxPrices: [[[Int]]]?
@@ -28,6 +28,7 @@ class TurnipsViewModel: ObservableObject {
         turnipsCancellable = TurnipsPredictionService.shared.$predictions
             .receive(on: RunLoop.main)
             .sink(receiveValue: { [weak self] predictions in
+                self?.predictions = predictions
                 if let predictions = predictions {
                     self?.refreshPrediction(predictions: predictions)
                     self?.refreshPendingNotifications()

@@ -44,7 +44,7 @@ struct TurnipsView: View {
     var body: some View {
         NavigationView {
             if UIDevice.current.userInterfaceIdiom == .pad {
-                TurnipsFormView(turnipsViewModel: viewModel)
+                TurnipsFormView().environmentObject(subManager)
             }
             List {
                 if subManager.subscriptionStatus == .notSubscribed {
@@ -82,7 +82,7 @@ extension TurnipsView {
         switch sheet {
         case .form:
             return AnyView(NavigationView {
-                TurnipsFormView(turnipsViewModel: viewModel).environmentObject(subManager)
+                TurnipsFormView().environmentObject(subManager)
                 
                 }.navigationViewStyle(StackNavigationViewStyle()))
         case .subscription:
