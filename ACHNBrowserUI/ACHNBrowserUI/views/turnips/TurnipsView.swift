@@ -55,6 +55,7 @@ struct TurnipsView: View {
                             }) {
                                 Text("To help us support the application and get turnip predictions notification, you can try out AC Helper+")
                                     .foregroundColor(.secondaryText)
+                                    .padding(.top, 8)
                             }
                             Button(action: {
                                 self.presentedSheet = .subscription
@@ -65,6 +66,7 @@ struct TurnipsView: View {
                                     .foregroundColor(.white)
                             }.buttonStyle(PlainRoundedButton())
                                 .accentColor(.bell)
+                                .padding(.bottom, 8)
                         }
                     }
                 }
