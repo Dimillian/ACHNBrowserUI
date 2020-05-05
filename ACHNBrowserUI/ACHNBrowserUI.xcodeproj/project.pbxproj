@@ -97,6 +97,7 @@
 		4C2D6776245F4F55005831C4 /* TurnipsChartMinMaxCurves.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C2D6775245F4F55005831C4 /* TurnipsChartMinMaxCurves.swift */; };
 		4C2D6778245F4FE8005831C4 /* TurnipsChartMinBuyPriceCurve.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C2D6777245F4FE8005831C4 /* TurnipsChartMinBuyPriceCurve.swift */; };
 		4C382EE8244E418800F446BA /* DismissingKeyboardOnSwipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C382EE7244E418800F446BA /* DismissingKeyboardOnSwipe.swift */; };
+		4C7F2F782461F10300930928 /* TurnipsChartVerticalLegend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7F2F772461F10300930928 /* TurnipsChartVerticalLegend.swift */; };
 		4C7FE78324574FB50011E8AB /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7FE78224574FB50011E8AB /* ActivityIndicator.swift */; };
 		4C7FE789245B57A10011E8AB /* AdaptsToSoftwareKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7FE788245B57A10011E8AB /* AdaptsToSoftwareKeyboard.swift */; };
 		68345579244C994C0072FC0C /* LikeButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68345578244C994C0072FC0C /* LikeButtonView.swift */; };
@@ -336,6 +337,7 @@
 		4C2D6775245F4F55005831C4 /* TurnipsChartMinMaxCurves.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TurnipsChartMinMaxCurves.swift; sourceTree = "<group>"; };
 		4C2D6777245F4FE8005831C4 /* TurnipsChartMinBuyPriceCurve.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TurnipsChartMinBuyPriceCurve.swift; sourceTree = "<group>"; };
 		4C382EE7244E418800F446BA /* DismissingKeyboardOnSwipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DismissingKeyboardOnSwipe.swift; sourceTree = "<group>"; };
+		4C7F2F772461F10300930928 /* TurnipsChartVerticalLegend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TurnipsChartVerticalLegend.swift; sourceTree = "<group>"; };
 		4C7FE78224574FB50011E8AB /* ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
 		4C7FE788245B57A10011E8AB /* AdaptsToSoftwareKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdaptsToSoftwareKeyboard.swift; sourceTree = "<group>"; };
 		68345578244C994C0072FC0C /* LikeButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeButtonView.swift; sourceTree = "<group>"; };
@@ -573,14 +575,15 @@
 		4C2D676C245F063E005831C4 /* charts */ = {
 			isa = PBXGroup;
 			children = (
-				4C2D676A245DA41E005831C4 /* TurnipsChartView.swift */,
-				69EC82ED2461E79D00CE9064 /* TurnipsChartTopLegendView.swift */,
-				4C2D676D245F0666005831C4 /* TurnipsChartBottomLegendView.swift */,
 				4C2D676F245F0698005831C4 /* TurnipsChart.swift */,
-				4C2D6771245F0C9D005831C4 /* TurnipsChartGrid.swift */,
 				4C2D6773245F4EA2005831C4 /* TurnipsChartAverageCurve.swift */,
-				4C2D6775245F4F55005831C4 /* TurnipsChartMinMaxCurves.swift */,
+				4C2D676D245F0666005831C4 /* TurnipsChartBottomLegendView.swift */,
+				4C2D6771245F0C9D005831C4 /* TurnipsChartGrid.swift */,
 				4C2D6777245F4FE8005831C4 /* TurnipsChartMinBuyPriceCurve.swift */,
+				4C2D6775245F4F55005831C4 /* TurnipsChartMinMaxCurves.swift */,
+				69EC82ED2461E79D00CE9064 /* TurnipsChartTopLegendView.swift */,
+				4C7F2F772461F10300930928 /* TurnipsChartVerticalLegend.swift */,
+				4C2D676A245DA41E005831C4 /* TurnipsChartView.swift */,
 			);
 			path = charts;
 			sourceTree = "<group>";
@@ -1257,6 +1260,7 @@
 				693E0B22244C596D00D20E46 /* ActiveCrittersView.swift in Sources */,
 				693E72A2245EA84500CD26F4 /* View.swift in Sources */,
 				69AF8C51243E283D001DD9CB /* AppDelegate.swift in Sources */,
+				4C7F2F782461F10300930928 /* TurnipsChartVerticalLegend.swift in Sources */,
 				693E728E245D71DD00CD26F4 /* UIState.swift in Sources */,
 				68BA5834244B9D4100B53811 /* DashboardView.swift in Sources */,
 				692C0B8524517837004847A1 /* DashboardCollectionProgressSection.swift in Sources */,

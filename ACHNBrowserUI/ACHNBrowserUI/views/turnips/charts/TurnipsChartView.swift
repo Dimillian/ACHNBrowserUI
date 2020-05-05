@@ -18,33 +18,41 @@ struct TurnipsChartView: View {
     var body: some View {
         VStack {
             TurnipsChartTopLegendView()
-            ScrollView(.horizontal) {
-                chart.frame(width: 600, height: 400)
+            ScrollView(.horizontal, showsIndicators: false) {
+                chart.frame(width: 600, height: 500)
             }
         }
     }
 
     private var chart: some View {
-        VStack(spacing: 0) {
-            ZStack {
-                TurnipsChartGrid(predictions: predictions)
-                    .stroke()
-                    .opacity(0.5)
-                TurnipsChartMinBuyPriceCurve(predictions: predictions)
-                    .stroke(style: StrokeStyle(dash: [Self.verticalLinesCount]))
-                    .foregroundColor(PredictionCurve.minBuyPrice.color)
-                TurnipsChartMinMaxCurves(predictions: predictions)
-                    .foregroundColor(PredictionCurve.minMax.color)
-                    .opacity(0.25)
-                TurnipsChartAverageCurve(predictions: predictions)
-                    .stroke(lineWidth: 3)
-                    .foregroundColor(PredictionCurve.average.color)
+        VStack(spacing: 10) {
+            HStack {
+                TurnipsChartVerticalLegend(predictions: predictions)
+                    .frame(width: 40)
+                curves
             }
             TurnipsChartBottomLegendView(predictions: predictions).frame(height: 50)
         }
         .padding()
         .navigationBarItems(trailing: closeButton)
         .navigationBarTitle("Turnips chart for the week", displayMode: .inline)
+    }
+
+    private var curves: some View {
+        ZStack {
+            TurnipsChartGrid(predictions: predictions)
+                .stroke()
+                .opacity(0.5)
+            TurnipsChartMinBuyPriceCurve(predictions: predictions)
+                .stroke(style: StrokeStyle(dash: [Self.verticalLinesCount]))
+                .foregroundColor(PredictionCurve.minBuyPrice.color)
+            TurnipsChartMinMaxCurves(predictions: predictions)
+                .foregroundColor(PredictionCurve.minMax.color)
+                .opacity(0.25)
+            TurnipsChartAverageCurve(predictions: predictions)
+                .stroke(lineWidth: 3)
+                .foregroundColor(PredictionCurve.average.color)
+        }
     }
 
     private var closeButton: some View {
