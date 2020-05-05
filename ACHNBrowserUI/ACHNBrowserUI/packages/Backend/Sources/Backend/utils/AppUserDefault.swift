@@ -19,6 +19,20 @@ public class AppUserDefaults: ObservableObject {
         }
     }
     
+    @UserDefault("friend_code", defaultValue: "")
+    public var friendCode: String {
+        willSet {
+            objectWillChange.send()
+        }
+    }
+    
+    @UserDefault("dodo_code", defaultValue: "")
+    public var dodoCode: String {
+        willSet {
+            objectWillChange.send()
+        }
+    }
+    
     @UserDefaultEnum("hemisphere", defaultValue: Hemisphere.north)
     public var hemisphere: Hemisphere {
         willSet {

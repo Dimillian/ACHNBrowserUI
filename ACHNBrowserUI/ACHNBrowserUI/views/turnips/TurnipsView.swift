@@ -14,6 +14,14 @@ struct TurnipsView: View {
     // MARK: - Vars
     private enum TurnipsDisplay: String, CaseIterable {
         case average, minMax, profits
+        
+        func title() -> String {
+            switch self {
+            case .average: return "Average daily buy prices"
+            case .minMax: return "Daily min-max prices"
+            case .profits: return "Average profits"
+            }
+        }
     }
     
     private enum Sheet: String, Identifiable {
@@ -109,7 +117,7 @@ extension TurnipsView {
     }
     
     private var predictionsSection: some View {
-        Section(header: SectionHeaderView(text: turnipsDisplay == .average ? "Average daily buy prices" : "Daily min-max prices"),
+        Section(header: SectionHeaderView(text: turnipsDisplay.title()),
                 footer: Text(viewModel.pendingNotifications == 0 ? "" :
                     """
                     You'll receive prices predictions in \(viewModel.pendingNotifications - 1) upcoming
@@ -123,7 +131,8 @@ extension TurnipsView {
                     ForEach(TurnipsDisplay.allCases, id: \.self) { section in
                         Text(section.rawValue.capitalized)
                     }
-                }.pickerStyle(SegmentedPickerStyle())
+                }
+                .pickerStyle(SegmentedPickerStyle())
                 
                 HStack {
                     Text("Day").fontWeight(.bold)
@@ -133,20 +142,20 @@ extension TurnipsView {
                     Text("PM").fontWeight(.bold)
                 }
                 if turnipsDisplay == .average {
-                    ForEach(viewModel.averagesPrices!, id: \.self) { day in
-                        TurnipsAveragePriceRow(label: self.labels[self.viewModel.averagesPrices!.firstIndex(of: day)!],
-                                               prices: day)
+                    ForEach(0..<viewModel.averagesPrices!.count) { i in
+                        TurnipsAveragePriceRow(label: self.labels[i],
+                                               prices: self.viewModel.averagesPrices![i])
                     }
                 } else if turnipsDisplay == .minMax {
-                    ForEach(viewModel.minMaxPrices!, id: \.self) { day in
-                        TurnipsAveragePriceRow(label: self.labels[self.viewModel.minMaxPrices!.firstIndex(of: day)!],
-                                               minMaxPrices: day)
+                    ForEach(0..<viewModel.minMaxPrices!.count) { i in
+                        TurnipsAveragePriceRow(label: self.labels[i],
+                                               minMaxPrices: self.viewModel.minMaxPrices![i])
                     }
                 } else if turnipsDisplay == .profits {
                     if viewModel.averagesProfits != nil {
-                        ForEach(viewModel.averagesProfits!, id: \.self) { day in
-                            TurnipsAveragePriceRow(label: self.labels[self.viewModel.averagesProfits!.firstIndex(of: day)!],
-                                                   prices: day)
+                        ForEach(labels, id: \.self) { day in
+                            TurnipsAveragePriceRow(label: day,
+                                                    prices: self.viewModel.averagesProfits![self.labels.firstIndex(of: day)!])
                         }
                     } else {
                         Text("Please add the amount of turnips you bought and for how much")
