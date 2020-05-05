@@ -32,8 +32,8 @@ struct TurnipsChartBottomLegendView: View {
                 ForEach(Array(weekdays.enumerated()), id: \.0) { offset, weekday in
                     // TODO: investigate AlignmentGuide instead of guessing the exact position
                     Text(weekday)
-                        .font(.footnote)
-                        .fontWeight(.semibold)
+                        .font(.callout)
+                        .fontWeight(.bold)
                         .foregroundColor(.text)
                         .position(x: CGFloat(offset + 1) * ratioX/2 + CGFloat(offset) * ratioX * 1.5, y: frame.midY)
                 }
@@ -45,8 +45,8 @@ struct TurnipsChartBottomLegendView: View {
     func yAxisText(offset: Int, ratioX: CGFloat, frame: CGRect) -> some View {
         let isAM = offset == 0 || offset.isMultiple(of: 2)
         return Text(isAM ? "AM" : "PM")
-            .font(.callout)
-            .fontWeight(.bold)
+            .font(.footnote)
+            .fontWeight(.semibold)
             .foregroundColor(.text)
             .position(x: CGFloat(offset) * ratioX, y: frame.midY)
     }
