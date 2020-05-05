@@ -30,8 +30,11 @@ struct DashboardView: View {
     
     @EnvironmentObject private var uiState: UIState
     @EnvironmentObject private var collection: UserCollection
+    @ObservedObject private var userDefaults = AppUserDefaults.shared
     @ObservedObject private var viewModel = DashboardViewModel()
     @ObservedObject private var villagersViewModel = VillagersViewModel()
+    @ObservedObject private var turnipsPredictionsService = TurnipsPredictionService.shared
+    
     @State var selectedSheet: Sheet?
     
     private var preferenceButton: some View {
@@ -65,11 +68,15 @@ struct DashboardView: View {
         }
     }
     
+    private var todayText: String {
+        "Today\(!userDefaults.islandName.isEmpty ? " on \(userDefaults.islandName)" : "")"
+    }
+    
     private func makeDateView() -> some View {
         let formatter = DateFormatter()
         formatter.dateFormat = "EEEE, dd MMMM"
         let dateString = formatter.string(from: Date())
-        return Section(header: SectionHeaderView(text: "Today")) {
+        return Section(header: SectionHeaderView(text: todayText)) {
             VStack(alignment: .leading) {
                 Text(dateString).style(appStyle: .title)
                 DashboardEventTextView().padding(.top, 4)
@@ -92,15 +99,15 @@ struct DashboardView: View {
     private func makeTurnipsPredictionsView() -> some View {
         Section(header: SectionHeaderView(text: "Turnip predictions")) {
             Group {
-                if viewModel.turnipsPredictions!.todayAverages?.isEmpty == true {
+                if turnipsPredictionsService.predictions?.todayAverages?.isEmpty == true {
                     Text("Today is sunday, don't forget to buy more turnips and fill your buy price")
                 } else {
                     Text("Today average buy prices should be ") +
-                        Text("\(viewModel.turnipsPredictions!.todayAverages![0])")
+                        Text("\(turnipsPredictionsService.predictions!.todayAverages![0])")
                             .foregroundColor(.bell)
                             .fontWeight(.semibold) +
                         Text(" for this morning and ") +
-                        Text("\(viewModel.turnipsPredictions!.todayAverages![1])")
+                        Text("\(turnipsPredictionsService.predictions!.todayAverages![1])")
                             .foregroundColor(.bell)
                             .fontWeight(.semibold) +
                         Text(" for this afternoon")
@@ -134,7 +141,7 @@ struct DashboardView: View {
                 if !villagersViewModel.todayBirthdays.isEmpty {
                     makeBirthdayView()
                 }
-                if viewModel.turnipsPredictions?.todayAverages != nil {
+                if turnipsPredictionsService.predictions?.todayAverages != nil {
                     makeTurnipsPredictionsView()
                 }
                 if viewModel.island != nil {

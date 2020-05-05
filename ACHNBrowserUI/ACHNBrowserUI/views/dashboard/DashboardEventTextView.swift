@@ -11,7 +11,7 @@ import ACNHEvents
 import Backend
 
 struct DashboardEventTextView: View {
-    let todayEvents = Date().events(for: AppUserDefaults.hemisphere == .north ? .north : .south)
+    let todayEvents = Date().events(for: AppUserDefaults.shared.hemisphere == .north ? .north : .south)
     let nextEvent = Event.nextEvent()
     
     func makeDateBadge(date: Date) -> some View {

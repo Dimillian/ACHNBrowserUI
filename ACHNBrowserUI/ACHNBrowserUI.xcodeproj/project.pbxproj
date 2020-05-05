@@ -124,7 +124,6 @@
 		6941F3882452BDDD00EC2E02 /* CategoriesSearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6941F3872452BDDD00EC2E02 /* CategoriesSearchViewModel.swift */; };
 		6942FC3A244989530062FE8F /* ListingRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6942FC39244989530062FE8F /* ListingRow.swift */; };
 		6951836A245977D1005D28E0 /* TurnipsAveragePriceRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69518369245977D1005D28E0 /* TurnipsAveragePriceRow.swift */; };
-		6951837224598C8A005D28E0 /* NotificationsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6951837124598C8A005D28E0 /* NotificationsManager.swift */; };
 		6951837524599C26005D28E0 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6951837424599C26005D28E0 /* StoreKit.framework */; };
 		697E63F52449A58E008FB710 /* VillagersListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 697E63F42449A58E008FB710 /* VillagersListView.swift */; };
 		697E63F72449A7BA008FB710 /* VillagersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 697E63F62449A7BA008FB710 /* VillagersViewModel.swift */; };
@@ -363,7 +362,6 @@
 		6941F3872452BDDD00EC2E02 /* CategoriesSearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesSearchViewModel.swift; sourceTree = "<group>"; };
 		6942FC39244989530062FE8F /* ListingRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListingRow.swift; sourceTree = "<group>"; };
 		69518369245977D1005D28E0 /* TurnipsAveragePriceRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TurnipsAveragePriceRow.swift; sourceTree = "<group>"; };
-		6951837124598C8A005D28E0 /* NotificationsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsManager.swift; sourceTree = "<group>"; };
 		6951837424599C26005D28E0 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		697E63F42449A58E008FB710 /* VillagersListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VillagersListView.swift; sourceTree = "<group>"; };
 		697E63F62449A7BA008FB710 /* VillagersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VillagersViewModel.swift; sourceTree = "<group>"; };
@@ -811,7 +809,6 @@
 			children = (
 				69CA5EFB244ED38C00B275B6 /* FeedbackGenerator.swift */,
 				69CA5F17244F447E00B275B6 /* EventsDescription.swift */,
-				6951837124598C8A005D28E0 /* NotificationsManager.swift */,
 			);
 			path = utils;
 			sourceTree = "<group>";
@@ -1273,7 +1270,6 @@
 				69C5F5EA244217FB00BF8FA4 /* CategoriesView.swift in Sources */,
 				6941F3882452BDDD00EC2E02 /* CategoriesSearchViewModel.swift in Sources */,
 				687B5768244A030700C1E86F /* TurnipsView.swift in Sources */,
-				6951837224598C8A005D28E0 /* NotificationsManager.swift in Sources */,
 				4C7FE78324574FB50011E8AB /* ActivityIndicator.swift in Sources */,
 				6942FC37244988F80062FE8F /* SafariView.swift in Sources */,
 				4C2D676E245F0666005831C4 /* TurnipsChartLegendView.swift in Sources */,

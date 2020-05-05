@@ -54,11 +54,14 @@ struct TurnipsChartView_Previews: PreviewProvider {
         TurnipsChartView(predictions: TurnipPredictions(
             minBuyPrice: 83,
             averagePrices: averagePrices,
-            minMax: minMax)
-        ).padding()
+            minMax: minMax,
+            averageProfits: averageProfits
+        )).padding()
     }
 
     static let averagePrices = [89, 85, 88, 104, 110, 111, 111, 111, 106, 98, 82, 77]
 
     static let minMax = [[38, 142], [33, 142], [29, 202], [24, 602], [19, 602], [14, 602], [9, 602], [29, 602], [24, 602], [19, 602], [14, 202], [9, 201]]
+
+    static let averageProfits = [89, 85, 88, 104, 110, 111, 111, 111, 106, 98, 82, 77]
 }

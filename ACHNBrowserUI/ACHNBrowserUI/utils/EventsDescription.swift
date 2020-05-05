@@ -47,7 +47,7 @@ extension Event {
         
         while nextDate.compare(endDate) == .orderedAscending
         {
-            event = nextDate.events(for: AppUserDefaults.hemisphere == .north ? .north : .south).first
+            event = nextDate.events(for: AppUserDefaults.shared.hemisphere == .north ? .north : .south).first
             if event != nil {
                 break
             }

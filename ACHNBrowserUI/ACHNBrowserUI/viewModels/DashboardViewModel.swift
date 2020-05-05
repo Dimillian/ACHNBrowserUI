@@ -17,9 +17,7 @@ class DashboardViewModel: ObservableObject {
     @Published var fishes: [Item] = []
     @Published var bugs: [Item] = []
     @Published var fossils: [Item] = []
-    
-    @Published var turnipsPredictions: TurnipPredictions?
-    
+        
     private var listingCancellable: AnyCancellable?
     private var islandCancellable: AnyCancellable?
     private var itemsCancellable: AnyCancellable?
@@ -30,7 +28,6 @@ class DashboardViewModel: ObservableObject {
             self?.bugs = items[.bugs] ?? []
             self?.fossils = items[.fossils] ?? []
         }
-        turnipsPredictions = TurnipsPredictionService.shared.makeTurnipsPredictions()
         fetchIsland()
         fetchListings()
     }
