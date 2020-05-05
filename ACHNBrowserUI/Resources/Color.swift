@@ -57,4 +57,16 @@ extension Color {
     public static var catalogUnselected: Color {
         Color("catalog-unselected", bundle: nil)
     }
+    
+    public static var graphAverage: Color {
+        Color("graph-average", bundle: nil)
+    }
+    
+    public static var graphMinMax: Color {
+        Color("graph-minmax", bundle: nil)
+    }
+    
+    public static var graphMinimum: Color {
+        Color("graph-minimum", bundle: nil)
+    }
 }

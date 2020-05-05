@@ -16,11 +16,10 @@ enum TurnipsChart {
         case minMax
 
         var color: Color {
-            // TODO: replace by proper colors
             switch self {
-            case .minBuyPrice: return .green
-            case .average: return .yellow
-            case .minMax: return .green
+            case .minBuyPrice: return .graphMinimum
+            case .average: return .graphAverage
+            case .minMax: return .graphMinMax
             }
         }
     }

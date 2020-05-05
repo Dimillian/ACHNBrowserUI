@@ -168,7 +168,7 @@ extension TurnipsView {
                         }
                     }
                 } else if turnipsDisplay == .chart {
-                    TurnipsChartView(predictions: viewModel.predictions!)
+                    TurnipsChartView(predictions: viewModel.predictions!).padding(.top, 8)
                 }
             } else {
                 Text("Add your in game turnip prices to see predictions")

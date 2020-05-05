@@ -9,7 +9,7 @@
 import SwiftUI
 import Backend
 
-struct TurnipsChartLegendView: View {
+struct TurnipsChartBottomLegendView: View {
     let predictions: TurnipPredictions
     private let weekdays = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
 
@@ -31,7 +31,11 @@ struct TurnipsChartLegendView: View {
             ZStack {
                 ForEach(Array(weekdays.enumerated()), id: \.0) { offset, weekday in
                     // TODO: investigate AlignmentGuide instead of guessing the exact position
-                    Text(weekday).position(x: CGFloat(offset + 1) * ratioX/2 + CGFloat(offset) * ratioX * 1.5, y: frame.midY)
+                    Text(weekday)
+                        .font(.footnote)
+                        .fontWeight(.semibold)
+                        .foregroundColor(.text)
+                        .position(x: CGFloat(offset + 1) * ratioX/2 + CGFloat(offset) * ratioX * 1.5, y: frame.midY)
                 }
             }
         }
@@ -39,10 +43,11 @@ struct TurnipsChartLegendView: View {
 
     // TODO: investigate AlignmentGuide instead of guessing the exact position
     func yAxisText(offset: Int, ratioX: CGFloat, frame: CGRect) -> some View {
-        if offset == 0 || offset.isMultiple(of: 2) {
-            return Text("AM").position(x: CGFloat(offset) * ratioX, y: frame.midY)
-        } else {
-            return Text("PM").position(x: CGFloat(offset) * ratioX, y: frame.midY)
-        }
+        let isAM = offset == 0 || offset.isMultiple(of: 2)
+        return Text(isAM ? "AM" : "PM")
+            .font(.callout)
+            .fontWeight(.bold)
+            .foregroundColor(.text)
+            .position(x: CGFloat(offset) * ratioX, y: frame.midY)
     }
 }

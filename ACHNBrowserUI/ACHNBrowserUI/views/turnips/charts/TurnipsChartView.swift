@@ -16,8 +16,11 @@ struct TurnipsChartView: View {
     @Environment(\.presentationMode) var presentation
 
     var body: some View {
-        ScrollView(.horizontal) {
-            chart.frame(width: 600, height: 400)
+        VStack {
+            TurnipsChartTopLegendView()
+            ScrollView(.horizontal) {
+                chart.frame(width: 600, height: 400)
+            }
         }
     }
 
@@ -27,17 +30,17 @@ struct TurnipsChartView: View {
                 TurnipsChartGrid(predictions: predictions)
                     .stroke()
                     .opacity(0.5)
-                TurnipsChartAverageCurve(predictions: predictions)
-                    .stroke(lineWidth: 2)
-                    .foregroundColor(PredictionCurve.average.color)
                 TurnipsChartMinBuyPriceCurve(predictions: predictions)
                     .stroke(style: StrokeStyle(dash: [Self.verticalLinesCount]))
                     .foregroundColor(PredictionCurve.minBuyPrice.color)
                 TurnipsChartMinMaxCurves(predictions: predictions)
                     .foregroundColor(PredictionCurve.minMax.color)
                     .opacity(0.25)
+                TurnipsChartAverageCurve(predictions: predictions)
+                    .stroke(lineWidth: 3)
+                    .foregroundColor(PredictionCurve.average.color)
             }
-            TurnipsChartLegendView(predictions: predictions).frame(height: 80)
+            TurnipsChartBottomLegendView(predictions: predictions).frame(height: 50)
         }
         .padding()
         .navigationBarItems(trailing: closeButton)
