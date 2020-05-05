@@ -28,10 +28,12 @@ struct TurnipsChartView: View {
         VStack(spacing: 10) {
             HStack {
                 TurnipsChartVerticalLegend(predictions: predictions)
-                    .frame(width: 40)
+                    .frame(width: 30)
                 curves
             }
-            TurnipsChartBottomLegendView(predictions: predictions).frame(height: 50)
+            TurnipsChartBottomLegendView(predictions: predictions)
+                .padding(.leading, 30)
+                .frame(height: 50)
         }.padding()
     }
 
