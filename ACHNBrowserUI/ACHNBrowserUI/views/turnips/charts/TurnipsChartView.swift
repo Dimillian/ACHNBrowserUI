@@ -32,10 +32,7 @@ struct TurnipsChartView: View {
                 curves
             }
             TurnipsChartBottomLegendView(predictions: predictions).frame(height: 50)
-        }
-        .padding()
-        .navigationBarItems(trailing: closeButton)
-        .navigationBarTitle("Turnips chart for the week", displayMode: .inline)
+        }.padding()
     }
 
     private var curves: some View {
@@ -52,12 +49,6 @@ struct TurnipsChartView: View {
             TurnipsChartAverageCurve(predictions: predictions)
                 .stroke(lineWidth: 3)
                 .foregroundColor(PredictionCurve.average.color)
-        }
-    }
-
-    private var closeButton: some View {
-        Button(action: { self.presentation.wrappedValue.dismiss() }) {
-            Text("Close")
         }
     }
 }
