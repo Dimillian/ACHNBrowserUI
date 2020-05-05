@@ -20,7 +20,7 @@ public class SubcriptionManager: ObservableObject {
     @Published public var subscription: Purchases.Package?
     @Published public var inPaymentProgress = false
     @Published public var paymentStatus: SKPaymentTransactionState?
-    @Published public var subscriptionStatus: SubscriptionStatus = AppUserDefaults.isSubscribed ? .subscribed : .notSubscribed
+    @Published public var subscriptionStatus: SubscriptionStatus = AppUserDefaults.shared.isSubscribed ? .subscribed : .notSubscribed
     
     init() {        
         Purchases.configure(withAPIKey: "glVAIPplNhAuvgOlCcUcrEaaCQwLRzQs")
@@ -54,9 +54,9 @@ public class SubcriptionManager: ObservableObject {
     private func processInfo(info: Purchases.PurchaserInfo?) {
         if info?.entitlements.all["AC+"]?.isActive == true {
             subscriptionStatus = .subscribed
-            AppUserDefaults.isSubscribed = true
+            AppUserDefaults.shared.isSubscribed = true
         } else {
-            AppUserDefaults.isSubscribed = false
+            AppUserDefaults.shared.isSubscribed = false
             subscriptionStatus = .notSubscribed
         }
         inPaymentProgress = false

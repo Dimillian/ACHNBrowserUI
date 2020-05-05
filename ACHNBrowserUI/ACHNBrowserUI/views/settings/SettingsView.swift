@@ -12,34 +12,8 @@ import Backend
 struct SettingsView: View {
     @EnvironmentObject private var subscriptionManager: SubcriptionManager
     @Environment(\.presentationMode) private var presentationMode
-    
-    private var islandName = Binding<String>(get: {
-        AppUserDefaults.islandName
-    }, set: {
-        AppUserDefaults.islandName = $0
-    })
-    
-    private var selectedHemisphere =
-        Binding<Hemisphere>(get: { AppUserDefaults.hemisphere }, set: { AppUserDefaults.hemisphere = $0 })
-    
-    private var selectedFruit =
-        Binding<Fruit>(get: { AppUserDefaults.fruit }, set: { AppUserDefaults.fruit = $0 })
-    
-    private var selectedNookShop =
-        Binding<Infrastructure.NookShop>(get: { AppUserDefaults.nookShop }, set: { AppUserDefaults.nookShop = $0 })
-    
-    private var selectedAbleSisters = Binding<Infrastructure.AbleSisters>(get: {
-        AppUserDefaults.ableSisters
-    }, set: {
-        AppUserDefaults.ableSisters = $0
-    })
-    
-    private var selectedResidentService = Binding<Infrastructure.ResidentService>(get: {
-        AppUserDefaults.residentService
-    }, set: {
-        AppUserDefaults.residentService = $0
-    })
-    
+    @ObservedObject var appUserDefaults = AppUserDefaults.shared
+        
     var closeButton: some View {
         Button(action: {
             self.presentationMode.wrappedValue.dismiss()
@@ -56,38 +30,38 @@ struct SettingsView: View {
                     HStack {
                         Text("Island name")
                         Spacer()
-                        TextField("Your island name", text: islandName)
+                        TextField("Your island name", text: $appUserDefaults.islandName)
                             .font(.body)
                             .foregroundColor(.secondary)
                     }
-                    Picker(selection: selectedHemisphere,
+                    Picker(selection: $appUserDefaults.hemisphere,
                            label: Text("Hemisphere")) {
                             ForEach(Hemisphere.allCases, id: \.self) { hemispehere in
                                 Text(hemispehere.rawValue.capitalized).tag(hemispehere)
                             }
                     }
-                    Picker(selection: selectedFruit,
+                    Picker(selection: $appUserDefaults.fruit,
                            label: Text("Starting fruit")) {
                             ForEach(Fruit.allCases, id: \.self) { fruit in
                                 Text(fruit.rawValue.capitalized).tag(fruit)
                             }
                     }
                     
-                    Picker(selection: selectedNookShop,
+                    Picker(selection: $appUserDefaults.nookShop,
                            label: Text("Nook shop")) {
                             ForEach(Infrastructure.NookShop.allCases, id: \.self) { shop in
                                 Text(shop.rawValue).tag(shop)
                             }
                     }
                     
-                    Picker(selection: selectedAbleSisters,
+                    Picker(selection: $appUserDefaults.ableSisters,
                            label: Text("Able sisters")) {
                             ForEach(Infrastructure.AbleSisters.allCases, id: \.self) { sisters in
                                 Text(sisters.rawValue.capitalized).tag(sisters)
                             }
                     }
                     
-                    Picker(selection: selectedResidentService,
+                    Picker(selection: $appUserDefaults.residentService,
                            label: Text("Residents service")) {
                             ForEach(Infrastructure.ResidentService.allCases, id: \.self) { service in
                                 Text(service.rawValue.capitalized).tag(service)

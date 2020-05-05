@@ -74,7 +74,7 @@ public extension Item {
     }()
     
     var activeMonths: [Int]? {
-        var months = AppUserDefaults.hemisphere == .north ? activeMonthsNorth : activeMonthsSouth
+        var months = AppUserDefaults.shared.hemisphere == .north ? activeMonthsNorth : activeMonthsSouth
         // Fix jan missing from API.
         if months?.count == 11 {
             months?.insert(0, at: 0)

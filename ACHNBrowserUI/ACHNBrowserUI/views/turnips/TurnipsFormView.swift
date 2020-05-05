@@ -15,7 +15,7 @@ struct TurnipsFormView: View {
     let turnipsViewModel: TurnipsViewModel
     
     @State private var fields = TurnipFields.decode()
-    @State private var enableNotifications = AppUserDefaults.isSubscribed == true
+    @State private var enableNotifications = AppUserDefaults.shared.isSubscribed == true
     @State private var isSubscribePresented = false
     
     private let labels = ["Monday AM", "Monday PM", "Tuesday AM", "Tuesday PM", "Wednesday AM", "Wednesday PM",

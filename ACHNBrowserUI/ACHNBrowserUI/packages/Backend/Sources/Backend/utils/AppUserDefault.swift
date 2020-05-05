@@ -7,27 +7,58 @@
 //
 
 import Foundation
+import Combine
 
-public struct AppUserDefaults {
+public class AppUserDefaults: ObservableObject {
+    public static let shared = AppUserDefaults()
+    
     @UserDefault("island_name", defaultValue: "")
-    public static var islandName: String
+    public var islandName: String {
+        willSet {
+            objectWillChange.send()
+        }
+    }
     
     @UserDefaultEnum("hemisphere", defaultValue: Hemisphere.north)
-    public static var hemisphere: Hemisphere
+    public var hemisphere: Hemisphere {
+        willSet {
+            objectWillChange.send()
+        }
+    }
     
     @UserDefaultEnum("fruit", defaultValue: Fruit.apple)
-    public static var fruit: Fruit
+    public var fruit: Fruit {
+        willSet {
+            objectWillChange.send()
+        }
+    }
     
     @UserDefaultEnum("nook_shop", defaultValue: Infrastructure.NookShop.tent)
-    public static var nookShop: Infrastructure.NookShop
+    public var nookShop: Infrastructure.NookShop {
+        willSet {
+            objectWillChange.send()
+        }
+    }
     
     @UserDefaultEnum("able_sisters", defaultValue: Infrastructure.AbleSisters.visiting)
-    public static var ableSisters: Infrastructure.AbleSisters
+    public var ableSisters: Infrastructure.AbleSisters {
+        willSet {
+            objectWillChange.send()
+        }
+    }
     
     @UserDefaultEnum("resident_service", defaultValue: Infrastructure.ResidentService.tent)
-    public static var residentService: Infrastructure.ResidentService
+    public var residentService: Infrastructure.ResidentService {
+        willSet {
+            objectWillChange.send()
+        }
+    }
     
     @UserDefault("is_subscribed", defaultValue: false)
-    public static var isSubscribed: Bool
+    public var isSubscribed: Bool {
+        willSet {
+            objectWillChange.send()
+        }
+    }
 }
 
