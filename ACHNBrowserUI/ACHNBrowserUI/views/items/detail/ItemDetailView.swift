@@ -142,6 +142,7 @@ extension ItemDetailView {
     private var navButtons: some View {
         HStack {
             LikeButtonView(item: self.itemViewModel.item).imageScale(.large)
+                .safeHoverEffectBarItem(position: .trailing)
             Spacer(minLength: 16)
             shareButton
         }
