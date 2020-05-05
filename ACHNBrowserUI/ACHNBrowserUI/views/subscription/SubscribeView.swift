@@ -34,6 +34,7 @@ struct SubscribeView: View {
         }) {
             Text("Close")
         }
+        .safeHoverEffectBarItem(position: .trailing)
     }
     
     private var upperPart: some View {
@@ -88,7 +89,7 @@ struct SubscribeView: View {
                 .fontWeight(.bold)
                 .foregroundColor(.white)
                 .frame(width: 290, height: 30)
-        }.buttonStyle(PlainRoundedButton()).accentColor(.grass)
+        }.buttonStyle(PlainRoundedButton()).accentColor(.grass).safeHoverEffect()
     }
     
     private var lowerPart: some View {
@@ -110,7 +111,7 @@ struct SubscribeView: View {
             
             Spacer(minLength: 16)
             makeBorderedButton(action: {
-                self.sheetURL = URL(string: "https://www.apple.com/legal/internet-services/itunes/dev/stdeula/")
+                self.sheetURL = URL(string: "https://github.com/Dimillian/ACHNBrowserUI/blob/master/term-of-use.md#ac-helper-term-of-use")
             }, label: "Term of Use")
             
             Spacer(minLength: 300)

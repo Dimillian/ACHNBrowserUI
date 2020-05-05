@@ -13,7 +13,15 @@ import Backend
 struct TurnipsView: View {
     // MARK: - Vars
     private enum TurnipsDisplay: String, CaseIterable {
-        case average, minMax
+        case average, minMax, profits
+        
+        func title() -> String {
+            switch self {
+            case .average: return "Average daily buy prices"
+            case .minMax: return "Daily min-max prices"
+            case .profits: return "Average profits"
+            }
+        }
     }
     
     private enum Sheet: String, Identifiable {
@@ -31,46 +39,27 @@ struct TurnipsView: View {
     
     private let labels = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat"]
     
-    // MARK: - Computed vars
-    private var chunkedAveragePrices: [[Int]] {
-        viewModel.predictions!.averagePrices!.chunked(into: 2)
-    }
-    
-    private var chunkedMinMaxPrices: [[[Int]]] {
-        viewModel.predictions!.minMax!.chunked(into: 2)
-    }
     
     // MARK: - Body
     var body: some View {
         NavigationView {
+            if UIDevice.current.userInterfaceIdiom == .pad {
+                TurnipsFormView().environmentObject(subManager)
+            }
             List {
                 if subManager.subscriptionStatus == .notSubscribed {
-                    Section(header: SectionHeaderView(text: "AC Helper+")) {
-                        VStack(spacing: 8) {
-                            Button(action: {
-                                self.presentedSheet = .subscription
-                            }) {
-                                Text("To help us support the application and get turnip predictions notification, you can try out AC Helper+")
-                                    .foregroundColor(.secondaryText)
-                            }
-                            Button(action: {
-                                self.presentedSheet = .subscription
-                            }) {
-                                Text("See more...")
-                                    .font(.headline)
-                                    .fontWeight(.bold)
-                                    .foregroundColor(.white)
-                            }.buttonStyle(PlainRoundedButton())
-                                .accentColor(.bell)
-                        }
-                    }
+                    subscriptionSection
                 }
-                Section(header: SectionHeaderView(text: "Stalks market")) {
-                    Button(action: {
-                        self.presentedSheet = .form
-                    }) {
-                        Text(TurnipFields.exist() ? "Edit your in game prices" : "Add your in game prices")
-                            .foregroundColor(.blue)
+                if UIDevice.current.userInterfaceIdiom != .pad ||
+                    (UIDevice.current.orientation == .portrait ||
+                        UIDevice.current.orientation == .portraitUpsideDown){
+                    Section(header: SectionHeaderView(text: "Your prices")) {
+                        Button(action: {
+                            self.presentedSheet = .form
+                        }) {
+                            Text(TurnipFields.exist() ? "Edit your in game prices" : "Add your in game prices")
+                                .foregroundColor(.bell)
+                        }
                     }
                 }
                 predictionsSection
@@ -82,7 +71,6 @@ struct TurnipsView: View {
                                 displayMode: .automatic)
             .sheet(item: $presentedSheet, content: makeSheet)
         }
-        .navigationViewStyle(StackNavigationViewStyle())
         .onAppear(perform: NotificationManager.shared.registerForNotifications)
     }
 }
@@ -93,14 +81,43 @@ extension TurnipsView {
     private func makeSheet(_ sheet: Sheet) -> some View {
         switch sheet {
         case .form:
-            return AnyView(TurnipsFormView(turnipsViewModel: viewModel).environmentObject(subManager))
+            return AnyView(NavigationView {
+                TurnipsFormView().environmentObject(subManager)
+                
+                }.navigationViewStyle(StackNavigationViewStyle()))
         case .subscription:
             return AnyView(SubscribeView().environmentObject(subManager))
         }
     }
     
+    private var subscriptionSection: some View {
+        Section(header: SectionHeaderView(text: "AC Helper+")) {
+            VStack(spacing: 8) {
+                Button(action: {
+                    self.presentedSheet = .subscription
+                }) {
+                    Text("To help us support the application and get turnip predictions notification, you can try out AC Helper+")
+                        .foregroundColor(.secondaryText)
+                        .lineLimit(nil)
+                        .fixedSize(horizontal: false, vertical: true)
+                        .padding(.top, 8)
+                }
+                Button(action: {
+                    self.presentedSheet = .subscription
+                }) {
+                    Text("See more...")
+                        .font(.headline)
+                        .fontWeight(.bold)
+                        .foregroundColor(.white)
+                }.buttonStyle(PlainRoundedButton())
+                    .accentColor(.bell)
+                    .padding(.bottom, 8)
+            }
+        }
+    }
+    
     private var predictionsSection: some View {
-        Section(header: SectionHeaderView(text: turnipsDisplay == .average ? "Average daily buy prices" : "Daily min-max prices"),
+        Section(header: SectionHeaderView(text: turnipsDisplay.title()),
                 footer: Text(viewModel.pendingNotifications == 0 ? "" :
                     """
                     You'll receive prices predictions in \(viewModel.pendingNotifications - 1) upcoming
@@ -108,13 +125,14 @@ extension TurnipsView {
                     """)
                     .font(.footnote)
                     .foregroundColor(.catalogUnselected)
-                    .lineLimit(2)) {
-            if viewModel.predictions?.averagePrices != nil && viewModel.predictions?.minMax != nil {
+                    .lineLimit(nil)) {
+            if viewModel.averagesPrices != nil && viewModel.minMaxPrices != nil {
                 Picker(selection: $turnipsDisplay, label: Text("")) {
                     ForEach(TurnipsDisplay.allCases, id: \.self) { section in
                         Text(section.rawValue.capitalized)
                     }
-                }.pickerStyle(SegmentedPickerStyle())
+                }
+                .pickerStyle(SegmentedPickerStyle())
                 
                 HStack {
                     Text("Day").fontWeight(.bold)
@@ -124,34 +142,53 @@ extension TurnipsView {
                     Text("PM").fontWeight(.bold)
                 }
                 if turnipsDisplay == .average {
-                    ForEach(chunkedAveragePrices, id: \.self) { day in
-                        TurnipsAveragePriceRow(label: self.labels[self.chunkedAveragePrices.firstIndex(of: day)!],
-                                               prices: day)
+                    ForEach(0..<viewModel.averagesPrices!.count) { i in
+                        TurnipsAveragePriceRow(label: self.labels[i],
+                                               prices: self.viewModel.averagesPrices![i])
                     }
                 } else if turnipsDisplay == .minMax {
-                    ForEach(chunkedMinMaxPrices, id: \.self) { day in
-                        TurnipsAveragePriceRow(label: self.labels[self.chunkedMinMaxPrices.firstIndex(of: day)!],
-                                               minMaxPrices: day)
+                    ForEach(0..<viewModel.minMaxPrices!.count) { i in
+                        TurnipsAveragePriceRow(label: self.labels[i],
+                                               minMaxPrices: self.viewModel.minMaxPrices![i])
+                    }
+                } else if turnipsDisplay == .profits {
+                    if viewModel.averagesProfits != nil {
+                        ForEach(labels, id: \.self) { day in
+                            TurnipsAveragePriceRow(label: day,
+                                                    prices: self.viewModel.averagesProfits![self.labels.firstIndex(of: day)!])
+                        }
+                    } else {
+                        Text("Please add the amount of turnips you bought and for how much")
+                            .foregroundColor(.bell)
+                            .onTapGesture {
+                                self.presentedSheet = .form
+                        }
                     }
                 }
             } else {
                 Text("Add your in game turnip prices to see predictions")
+                    .foregroundColor(.bell)
+                    .onTapGesture {
+                        self.presentedSheet = .form
+                }
             }
         }
     }
     
     private var exchangeSection: some View {
-        Section(header: SectionHeaderView(text: "Exchange")) {
-            if viewModel.islands == nil {
-                Text("Loading Islands...")
-                    .foregroundColor(.secondary)
-            }
-            viewModel.islands.map {
-                ForEach($0) { island in
-                    NavigationLink(destination: IslandDetailView(island: island)) {
-                        TurnipIslandRow(island: island)
+        Group {
+            if viewModel.islands?.isEmpty == false {
+                Section(header: SectionHeaderView(text: "Exchange")) {
+                    viewModel.islands.map {
+                        ForEach($0) { island in
+                            NavigationLink(destination: IslandDetailView(island: island)) {
+                                TurnipIslandRow(island: island)
+                            }
+                        }
                     }
                 }
+            } else {
+                EmptyView()
             }
         }
     }

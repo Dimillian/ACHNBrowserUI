@@ -17,13 +17,10 @@ class DashboardViewModel: ObservableObject {
     @Published var fishes: [Item] = []
     @Published var bugs: [Item] = []
     @Published var fossils: [Item] = []
-    
-    @Published var turnipsPredictions: TurnipPredictions?
-    
+        
     private var listingCancellable: AnyCancellable?
     private var islandCancellable: AnyCancellable?
-    
-    var itemsCancellable: AnyCancellable?
+    private var itemsCancellable: AnyCancellable?
     
     init() {
         itemsCancellable = Items.shared.$categories.sink { [weak self] items in
@@ -31,7 +28,6 @@ class DashboardViewModel: ObservableObject {
             self?.bugs = items[.bugs] ?? []
             self?.fossils = items[.fossils] ?? []
         }
-        turnipsPredictions = TurnipsPredictionService.shared.makeTurnipsPredictions()
         fetchIsland()
         fetchListings()
     }
@@ -49,9 +45,9 @@ class DashboardViewModel: ObservableObject {
         islandCancellable = TurnipExchangeService.shared
             .fetchIslands()
             .receive(on: RunLoop.main)
-            .sink(receiveCompletion: { _ in }) { [weak self] islands in
+            .sink(receiveValue: { [weak self] islands in
                 self?.island = islands.first
-        }
+            })
     }
     
 }

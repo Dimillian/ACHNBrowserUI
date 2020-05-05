@@ -24,6 +24,59 @@ extension View {
         controller.view.removeFromSuperview()
         return image
     }
+    
+    func safeOnDrag(data: @escaping () -> NSItemProvider) -> AnyView {
+        if #available(iOS 13.4, *) {
+            return AnyView(onDrag(data))
+        } else {
+            return AnyView(self)
+        }
+    }
+    
+    func safeOnHover(action: @escaping (Bool) -> Void) -> AnyView {
+        if #available(iOS 13.4, *) {
+            return AnyView(onHover(perform: action))
+        } else {
+            return AnyView(self)
+        }
+    }
+    
+    func safeHoverEffect(_ type: SafeHoverEffectType = .automatic ) -> AnyView {
+        if #available(iOS 13.4, *) {
+            var hoverEffectType: HoverEffect
+            
+            switch(type) {
+            case .lift:
+                hoverEffectType = .lift
+                
+            case .highlight:
+                hoverEffectType = .highlight
+                
+            case .automatic:
+                fallthrough
+                
+            default:
+                hoverEffectType = .automatic
+            }
+            
+            return AnyView(hoverEffect(hoverEffectType))
+        } else {
+            return AnyView(self)
+        }
+    }
+    
+    func safeHoverEffectBarItem(position: BarItemPosition) -> AnyView {
+        let hoverPadding: CGFloat = 10
+        
+        // For leading bar items, we need to apply a negative offset equal to the overall padding to imitate Apple's styling in UIKit
+        let offset = position == .leading ? -hoverPadding : hoverPadding
+        
+        return AnyView(self
+            .padding(hoverPadding)
+            .safeHoverEffect()
+            .offset(x:offset)
+        )
+    }
 }
 
 extension UIView {
@@ -36,4 +89,17 @@ extension UIView {
             layer.render(in: rendererContext.cgContext)
         }
     }
+}
+
+// These enums can be removed and safeHoverEffect converted to just hoverEffect throughout if we no longer need to support < iPadOS 13.4
+enum SafeHoverEffectType {
+    case automatic
+    case lift
+    case highlight
+}
+
+// To simulate Apple's default UIKit hoverEffect padding on bar items, we need to specify if it's on the left or right and apply the right offset
+enum BarItemPosition {
+    case leading
+    case trailing
 }

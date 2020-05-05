@@ -24,12 +24,21 @@ struct AboutView: View {
     @Environment(\.presentationMode) private var presentationMode
     @State private var selectedSheet: Sheet?
     
+    private var versionNumber: String {
+        Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? "Error"
+    }
+    
+    private var buildNumber: String {
+        Bundle.main.infoDictionary?["CFBundleVersion"] as? String ?? "Error"
+    }
+    
     private var dismissButton: some View {
         Button(action: {
             self.presentationMode.wrappedValue.dismiss()
         }, label: {
             Text("Dismiss")
         })
+        .safeHoverEffectBarItem(position: .leading)
     }
     
     private func makeSheet(_ sheet: Sheet) -> some View {
@@ -53,6 +62,22 @@ struct AboutView: View {
         }
     }
     
+    private func makeDetailRow(image: String, text: String, detail: String, color: Color) -> some View {
+        HStack {
+            Image(systemName: image)
+                .imageScale(.medium)
+                .foregroundColor(color)
+                .frame(width: 30)
+            Text(text)
+                .foregroundColor(.text)
+                .font(.body)
+            Spacer()
+            Text(detail)
+                .foregroundColor(.gray)
+                .font(.callout)
+        }
+    }
+    
     var body: some View {
         NavigationView {
             List {
@@ -73,8 +98,16 @@ struct AboutView: View {
                         self.selectedSheet = .safari(URL(string: "https://github.com/Dimillian/ACHNBrowserUI/blob/master/privacy-policy.md#ac-helper-privacy-policy")!)
                     }
                     makeRow(image: "person", text: "Term of Use", color: .bell).onTapGesture {
-                        self.selectedSheet = .safari(URL(string: "https://www.apple.com/legal/internet-services/itunes/dev/stdeula/")!)
+                        self.selectedSheet = .safari(URL(string: "https://github.com/Dimillian/ACHNBrowserUI/blob/master/term-of-use.md#ac-helper-term-of-use")!)
                     }
+                    makeDetailRow(image: "tag",
+                                  text: "App version",
+                                  detail: "\(versionNumber) (\(buildNumber))",
+                                  color: .bell)
+                    makeDetailRow(image: "gamecontroller",
+                                  text: "Game patch data",
+                                  detail: "1.2.0",
+                                  color: .bell)
                 }
                 Section(header: SectionHeaderView(text: "Acknowledgements")) {
                     makeRow(image: "suit.heart.fill", text: "Our amazing contributors", color: .red)

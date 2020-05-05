@@ -12,36 +12,17 @@ import Backend
 struct SettingsView: View {
     @EnvironmentObject private var subscriptionManager: SubcriptionManager
     @Environment(\.presentationMode) private var presentationMode
-    
-    @State private var islandName = AppUserDefaults.islandName
-    @State private var selectedHemisphere = AppUserDefaults.hemisphere
-    @State private var selectedFruit = AppUserDefaults.fruit
-    @State private var selectedNookShop = AppUserDefaults.nookShop
-    @State private var selectedAbleSisters = AppUserDefaults.ableSisters
-    @State private var selectedResidentService = AppUserDefaults.residentService
-    
+    @ObservedObject var appUserDefaults = AppUserDefaults.shared
+        
     var closeButton: some View {
         Button(action: {
             self.presentationMode.wrappedValue.dismiss()
         }, label: {
             Text("Dismiss")
         })
+        .safeHoverEffectBarItem(position: .leading)
     }
-    
-    var saveButton: some View {
-        Button(action: {
-            AppUserDefaults.islandName = self.islandName
-            AppUserDefaults.hemisphere = self.selectedHemisphere
-            AppUserDefaults.fruit = self.selectedFruit
-            AppUserDefaults.nookShop = self.selectedNookShop
-            AppUserDefaults.ableSisters = self.selectedAbleSisters
-            AppUserDefaults.residentService = self.selectedResidentService
-            self.presentationMode.wrappedValue.dismiss()
-        }, label: {
-            Text("Save")
-        })
-    }
-    
+
     var body: some View {
         NavigationView {
             Form {
@@ -49,38 +30,44 @@ struct SettingsView: View {
                     HStack {
                         Text("Island name")
                         Spacer()
-                        TextField("Your island name", text: $islandName)
+                        TextField("Your island name", text: $appUserDefaults.islandName)
                             .font(.body)
                             .foregroundColor(.secondary)
                     }
-                    Picker(selection: $selectedHemisphere,
+                    Picker(selection: $appUserDefaults.hemisphere,
                            label: Text("Hemisphere")) {
                             ForEach(Hemisphere.allCases, id: \.self) { hemispehere in
                                 Text(hemispehere.rawValue.capitalized).tag(hemispehere)
                             }
                     }
-                    Picker(selection: $selectedFruit,
+                    Picker(selection: $appUserDefaults.fruit,
                            label: Text("Starting fruit")) {
                             ForEach(Fruit.allCases, id: \.self) { fruit in
-                                Text(fruit.rawValue.capitalized).tag(fruit)
+                                HStack {
+                                    Image(fruit.rawValue.capitalized)
+                                        .renderingMode(.original)
+                                        .resizable()
+                                        .frame(width: 30, height: 30)
+                                    Text(fruit.rawValue.capitalized).tag(fruit)
+                                }
                             }
                     }
                     
-                    Picker(selection: $selectedNookShop,
+                    Picker(selection: $appUserDefaults.nookShop,
                            label: Text("Nook shop")) {
                             ForEach(Infrastructure.NookShop.allCases, id: \.self) { shop in
                                 Text(shop.rawValue).tag(shop)
                             }
                     }
                     
-                    Picker(selection: $selectedAbleSisters,
+                    Picker(selection: $appUserDefaults.ableSisters,
                            label: Text("Able sisters")) {
                             ForEach(Infrastructure.AbleSisters.allCases, id: \.self) { sisters in
                                 Text(sisters.rawValue.capitalized).tag(sisters)
                             }
                     }
                     
-                    Picker(selection: $selectedResidentService,
+                    Picker(selection: $appUserDefaults.residentService,
                            label: Text("Residents service")) {
                             ForEach(Infrastructure.ResidentService.allCases, id: \.self) { service in
                                 Text(service.rawValue.capitalized).tag(service)
@@ -89,8 +76,10 @@ struct SettingsView: View {
                 }
                 
                 Section(header: SectionHeaderView(text: "App Settings")) {
-                    NavigationLink(destination: AppIconPickerView()) {
-                        Text("App Icon")
+                    if UIApplication.shared.supportsAlternateIcons {
+                        NavigationLink(destination: AppIconPickerView()) {
+                            Text("App Icon")
+                        }
                     }
                     Button(action: {
                         self.subscriptionManager.restorePurchase()
@@ -106,18 +95,17 @@ struct SettingsView: View {
                     .disabled(subscriptionManager.inPaymentProgress)
                     .opacity(subscriptionManager.inPaymentProgress ? 0.5 : 1.0)
                 }
-                saveButton
             }
             .listStyle(GroupedListStyle())
             .environment(\.horizontalSizeClass, .regular)
             .navigationBarTitle(Text("Preferences"), displayMode: .inline)
-            .navigationBarItems(leading: closeButton, trailing: saveButton)
+            .navigationBarItems(leading: closeButton)
         }.navigationViewStyle(StackNavigationViewStyle())
     }
 }
 
 struct SettingsView_Previews: PreviewProvider {
     static var previews: some View {
-        SettingsView()
+        SettingsView().environmentObject(SubcriptionManager.shared)
     }
 }

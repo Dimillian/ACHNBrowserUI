@@ -136,6 +136,7 @@ extension ItemDetailView {
         }) {
             Image(systemName: "square.and.arrow.up").imageScale(.large)
         }
+        .safeHoverEffectBarItem(position: .trailing)
     }
     
     private var navButtons: some View {
@@ -150,7 +151,7 @@ extension ItemDetailView {
         Section(header: SectionHeaderView(text: "Variants")) {
             ScrollView(.horizontal, showsIndicators: false) {
                 HStack {
-                    ForEach(itemViewModel.item.variants!) { variant in
+                ForEach(itemViewModel.item.variants!) { variant in
                         ItemImage(path: variant.filename,
                                   size: 75)
                             .onTapGesture {

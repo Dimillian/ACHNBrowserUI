@@ -8,22 +8,21 @@
 
 import Foundation
 import UserNotifications
-import Backend
 
-class NotificationManager {
-    static let shared = NotificationManager()
+public class NotificationManager {
+    public static let shared = NotificationManager()
     
-    func registerForNotifications() {
+    public func registerForNotifications() {
         UNUserNotificationCenter.current().requestAuthorization(options: [.badge, .alert, .sound]) { (_, _) in
             
         }
     }
     
-    func removePendingNotifications() {
+    public func removePendingNotifications() {
         UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
     }
     
-    func registerTurnipsPredictionNotification(prediction: TurnipPredictions) {
+    public func registerTurnipsPredictionNotification(prediction: TurnipPredictions) {
         removePendingNotifications()
         if let average = prediction.averagePrices {
             var dayOfTheWeek = 2
@@ -32,7 +31,7 @@ class NotificationManager {
             for (index, day) in average.enumerated()  {
                 let isMorning = index % 2 == 0
                 
-                if (dayOfTheWeek >= today && (dayOfTheWeek != today && todayHour > 12)) || today != 2 {
+                if (dayOfTheWeek >= today && (dayOfTheWeek != today && todayHour > 12)) && today != 2 {
                     let content = UNMutableNotificationContent()
                     content.title = "Turnip prices"
                     content.body = "Your prices predictions for \(isMorning ? "this morning": "this afternoon") should be around \(day) bells"
@@ -77,7 +76,7 @@ class NotificationManager {
         }
     }
     
-    func pendingNotifications(completion: @escaping (([UNNotificationRequest]) -> Void)) {
+    public func pendingNotifications(completion: @escaping (([UNNotificationRequest]) -> Void)) {
         UNUserNotificationCenter.current().getPendingNotificationRequests { requests in
             completion(requests)
         }

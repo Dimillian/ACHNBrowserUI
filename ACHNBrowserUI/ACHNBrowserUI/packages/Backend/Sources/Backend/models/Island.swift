@@ -10,12 +10,6 @@ import Foundation
 import SwiftUI
 
 public struct Island: Decodable {
-    public enum Commerce: String, Decodable {
-        case buying
-        case neither
-        case selling
-    }
-            
     public let name: String
     public let fruit: Fruit
     public let turnipPrice: Int
@@ -23,7 +17,6 @@ public struct Island: Decodable {
     public let turnipCode: String
     public let hemisphere: Hemisphere
     public let watchlist: Int
-    public let commerce: Commerce
     public let islandTime: String
     public let creationTime: String
     public let description: String?

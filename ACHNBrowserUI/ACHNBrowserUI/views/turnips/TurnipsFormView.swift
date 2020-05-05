@@ -10,118 +10,140 @@ import SwiftUI
 import Backend
 
 struct TurnipsFormView: View {
+    // MARK: - Properties
     @EnvironmentObject private var subscriptionManager: SubcriptionManager
     @Environment(\.presentationMode) private var presentationMode
-    let turnipsViewModel: TurnipsViewModel
     
     @State private var fields = TurnipFields.decode()
-    @State private var enableNotifications = AppUserDefaults.isSubscribed == true
+    @State private var enableNotifications = SubcriptionManager.shared.subscriptionStatus == .subscribed
     @State private var isSubscribePresented = false
-    
+        
     private let labels = ["Monday AM", "Monday PM", "Tuesday AM", "Tuesday PM", "Wednesday AM", "Wednesday PM",
                           "Thursday AM", "Thursday PM", "Friday AM", "Friday PM", "Saturday AM", "Saturday PM"]
 
     private let weekdays = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
+    
+    // MARK: - Computed vars
+    private func morningField(for weekday: String) -> Binding<String> {
+        let index = weekdays.firstIndex(of: weekday) ?? 0
+        return $fields.fields[index * 2]
+    }
+    
+    private func afternoonField(for weekday: String) -> Binding<String> {
+        let index = weekdays.firstIndex(of: weekday) ?? 0
+        return $fields.fields[index * 2 + 1]
+    }
+    
+    // MARK: - Body
+    var body: some View {
+        List {
+            configurationSection
+            pricesSection
+        }
+        .listStyle(GroupedListStyle())
+        .modifier(AdaptsToSoftwareKeyboard())
+        .navigationBarItems(trailing: saveButton)
+        .navigationBarTitle("Add your turnip prices", displayMode: .inline)
+        .sheet(isPresented: $isSubscribePresented, content: { SubscribeView().environmentObject(self.subscriptionManager) })
+    }
+}
 
+// MARK: - Views
+extension TurnipsFormView {
     private var saveButton: some View {
         Button(action: save) {
             Text("Save")
         }
+        .safeHoverEffectBarItem(position: .trailing)
     }
-
+    
     private func save() {
         fields.save()
-        turnipsViewModel.refreshPrediction()
-        if enableNotifications,
-            let predictions = turnipsViewModel.predictions,
-            subscriptionManager.subscriptionStatus == .subscribed {
-            NotificationManager.shared.registerTurnipsPredictionNotification(prediction: predictions)
-        } else {
-            NotificationManager.shared.removePendingNotifications()
-        }
-        turnipsViewModel.refreshPendingNotifications()
+        TurnipsPredictionService.shared.enableNotifications = enableNotifications
+        TurnipsPredictionService.shared.fields = fields
         presentationMode.wrappedValue.dismiss()
     }
     
-    var body: some View {
-        NavigationView {
-            List {
-                Section(header: SectionHeaderView(text: "Configuration")) {
-                    Button(action: {
-                        self.fields.clear()
-                        self.turnipsViewModel.refreshPrediction()
-                    }) {
-                        Text("Clear all fields").foregroundColor(.secondaryText)
-                    }
-                    Toggle(isOn: $enableNotifications) {
-                        Text("Receive prices predictions notification")
-                    }
-                    .opacity(subscriptionManager.subscriptionStatus == .subscribed ? 1.0 : 0.5)
-                    .disabled(subscriptionManager.subscriptionStatus != .subscribed)
-                    if subscriptionManager.subscriptionStatus != .subscribed {
-                        Button(action: {
-                            self.isSubscribePresented = true
-                        }) {
-                            Text("You can get daily notifications for your average turnip price by subscribing to AC Helper+")
-                                .foregroundColor(.secondaryText)
-                                .font(.footnote)
-                        }
-                    }
-                    
-                }
-                Section(header: SectionHeaderView(text: "Your in game prices")) {
-                    HStack {
-                        Text("Buy price")
-                        TextField("... 🔔 ...", text: $fields.buyPrice)
-                            .keyboardType(.numberPad)
-                    }
-                    if fields.fields.filter{ !$0.isEmpty }.count == 0 {
-                        Text("The more in game buy prices you'll add the better the predictions will be. Your buy price only won't give your correct averages. Add prices from the game as you get them.")
-                            .foregroundColor(.secondaryText)
-                            .font(.footnote)
-                    }
-                    ForEach(weekdays, id: \.self, content: weekdayRow)
+    private var amountTextField: some View {
+        let amount = Binding<String>(
+            get: {
+                String(self.fields.amount)
+        }, set: {
+            self.fields.amount = Int($0) ?? 0
+        })
+        return TextField("... 📈 ...", text: amount)
+            .keyboardType(.numberPad)
+            .foregroundColor(.bell)
+    }
+    
+    private var configurationSection: some View {
+        Section(header: SectionHeaderView(text: "Configuration")) {
+            Button(action: {
+                self.fields.clear()
+            }) {
+                Text("Clear all fields").foregroundColor(.secondaryText)
+            }
+            Toggle(isOn: $enableNotifications) {
+                Text("Receive prices predictions notification")
+            }
+            .opacity(subscriptionManager.subscriptionStatus == .subscribed ? 1.0 : 0.5)
+            .disabled(subscriptionManager.subscriptionStatus != .subscribed)
+            if subscriptionManager.subscriptionStatus != .subscribed {
+                Button(action: {
+                    self.isSubscribePresented = true
+                }) {
+                    Text("You can get daily notifications for your average turnip price by subscribing to AC Helper+")
+                        .foregroundColor(.secondaryText)
+                        .font(.footnote)
                 }
             }
-            .listStyle(GroupedListStyle())
-            .modifier(AdaptsToSoftwareKeyboard())
-            .navigationBarItems(trailing: saveButton)
-            .navigationBarTitle("Add your turnip prices", displayMode: .inline)
-            .sheet(isPresented: $isSubscribePresented, content: { SubscribeView().environmentObject(self.subscriptionManager) })
+            
         }
-        .navigationViewStyle(StackNavigationViewStyle())
     }
-
-    private func weekdayRow(_ weekday: String) -> some View {
+    
+    private var pricesSection: some View {
+        Section(header: SectionHeaderView(text: "Your in game prices")) {
+            HStack {
+                Text("Buy price")
+                TextField("... 🔔 ...", text: $fields.buyPrice)
+                    .keyboardType(.numberPad)
+                    .foregroundColor(.bell)
+            }
+            HStack {
+                Text("Amount bought")
+                amountTextField
+            }
+            if fields.fields.filter{ !$0.isEmpty }.count == 0 {
+                Text("The more in game buy prices you'll add the better the predictions will be. Your buy price only won't give your correct averages. Add prices from the game as you get them daily.")
+                    .foregroundColor(.secondaryText)
+                    .font(.footnote)
+            }
+            ForEach(weekdays, id: \.self, content: makeWeekdayRow)
+        }
+    }
+    
+    private func makeWeekdayRow(_ weekday: String) -> some View {
         HStack {
             Text(weekday)
             Spacer(minLength: 40)
             TextField("AM", text: morningField(for: weekday))
                 .keyboardType(.numberPad)
+                .foregroundColor(.bell)
                 .textFieldStyle(RoundedBorderTextFieldStyle())
                 .multilineTextAlignment(.center)
                 .frame(maxWidth: 60)
             TextField("PM", text: afternoonField(for: weekday))
                 .keyboardType(.numberPad)
+                .foregroundColor(.bell)
                 .textFieldStyle(RoundedBorderTextFieldStyle())
                 .multilineTextAlignment(.center)
                 .frame(maxWidth: 60)
         }
     }
-
-    private func morningField(for weekday: String) -> Binding<String> {
-        let index = weekdays.firstIndex(of: weekday) ?? 0
-        return $fields.fields[index * 2]
-    }
-
-    private func afternoonField(for weekday: String) -> Binding<String> {
-        let index = weekdays.firstIndex(of: weekday) ?? 0
-        return $fields.fields[index * 2 + 1]
-    }
 }
 
 struct TurnipsFormView_Previews: PreviewProvider {
     static var previews: some View {
-        TurnipsFormView(turnipsViewModel: TurnipsViewModel())
+        TurnipsFormView()
     }
 }

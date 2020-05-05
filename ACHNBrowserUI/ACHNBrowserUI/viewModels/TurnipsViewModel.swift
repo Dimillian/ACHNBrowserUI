@@ -14,19 +14,36 @@ import Backend
 
 class TurnipsViewModel: ObservableObject {
     @Published var islands: [Island]?
-    @Published var predictions: TurnipPredictions?
     @Published var pendingNotifications = 0
+    @Published var predictions: TurnipPredictions?
+    @Published var averagesPrices: [[Int]]?
+    @Published var averagesProfits: [[Int]]?
+    @Published var minMaxPrices: [[[Int]]]?
         
-    var cancellable: AnyCancellable?
+    var turnipsCancellable: AnyCancellable?
+    var exchangeCancellable: AnyCancellable?
         
     init() {
         fetch()
-        refreshPrediction()
-        refreshPendingNotifications()
+        turnipsCancellable = TurnipsPredictionService.shared.$predictions
+            .receive(on: RunLoop.main)
+            .sink(receiveValue: { [weak self] predictions in
+                self?.predictions = predictions
+                if let predictions = predictions {
+                    self?.refreshPrediction(predictions: predictions)
+                    self?.refreshPendingNotifications()
+                } else {
+                    self?.averagesPrices = nil
+                    self?.averagesProfits = nil
+                    self?.minMaxPrices = nil
+                }
+            })
     }
     
-    func refreshPrediction() {
-        predictions = TurnipsPredictionService.shared.makeTurnipsPredictions()
+    func refreshPrediction(predictions: TurnipPredictions) {
+        averagesPrices = predictions.averagePrices?.chunked(into: 2)
+        minMaxPrices = predictions.minMax?.chunked(into: 2)
+        averagesProfits = predictions.averageProfits?.chunked(into: 2)
     }
     
     func refreshPendingNotifications() {
@@ -38,7 +55,7 @@ class TurnipsViewModel: ObservableObject {
     }
     
     func fetch() {
-        cancellable = TurnipExchangeService.shared
+        exchangeCancellable = TurnipExchangeService.shared
             .fetchIslands()
             .receive(on: RunLoop.main)
             .sink(receiveCompletion: { _ in

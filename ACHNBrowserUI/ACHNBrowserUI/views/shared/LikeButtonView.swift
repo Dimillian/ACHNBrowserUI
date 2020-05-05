@@ -66,6 +66,7 @@ struct LikeButtonView: View {
         .scaleEffect(self.isInCollection ? 1.2 : 1.0)
         .buttonStyle(BorderlessButtonStyle())
         .animation(.interactiveSpring())
+        .safeHoverEffectBarItem(position: .trailing)
     }
 }
 
