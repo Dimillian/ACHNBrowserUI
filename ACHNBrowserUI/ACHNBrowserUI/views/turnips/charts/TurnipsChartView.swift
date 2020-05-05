@@ -16,30 +16,32 @@ struct TurnipsChartView: View {
     @Environment(\.presentationMode) var presentation
 
     var body: some View {
-        NavigationView {
-            HStack(spacing: 0) {
-                TurnipsChartLegendView(predictions: predictions)
-                    .frame(maxWidth: 40) // FIXME: should use something more dynamic
-                ZStack {
-                    TurnipsChartGrid(predictions: predictions)
-                        .stroke()
-                        .opacity(0.5)
-                    TurnipsChartAverageCurve(predictions: predictions)
-                        .stroke(lineWidth: 2)
-                        .foregroundColor(PredictionCurve.average.color)
-                    TurnipsChartMinBuyPriceCurve(predictions: predictions)
-                        .stroke(style: StrokeStyle(dash: [Self.verticalLinesCount]))
-                        .foregroundColor(PredictionCurve.minBuyPrice.color)
-                    TurnipsChartMinMaxCurves(predictions: predictions)
-                        .foregroundColor(PredictionCurve.minMax.color)
-                        .opacity(0.25)
-                }
+        ScrollView(.horizontal) {
+            chart.frame(width: 600, height: 400)
+        }
+    }
+
+    private var chart: some View {
+        VStack(spacing: 0) {
+            ZStack {
+                TurnipsChartGrid(predictions: predictions)
+                    .stroke()
+                    .opacity(0.5)
+                TurnipsChartAverageCurve(predictions: predictions)
+                    .stroke(lineWidth: 2)
+                    .foregroundColor(PredictionCurve.average.color)
+                TurnipsChartMinBuyPriceCurve(predictions: predictions)
+                    .stroke(style: StrokeStyle(dash: [Self.verticalLinesCount]))
+                    .foregroundColor(PredictionCurve.minBuyPrice.color)
+                TurnipsChartMinMaxCurves(predictions: predictions)
+                    .foregroundColor(PredictionCurve.minMax.color)
+                    .opacity(0.25)
             }
-            .padding()
-            .background(Color.dialogue)
-            .navigationBarItems(trailing: closeButton)
-            .navigationBarTitle("Turnips chart for the week", displayMode: .inline)
-        }.navigationViewStyle(StackNavigationViewStyle())
+            TurnipsChartLegendView(predictions: predictions).frame(height: 80)
+        }
+        .padding()
+        .navigationBarItems(trailing: closeButton)
+        .navigationBarTitle("Turnips chart for the week", displayMode: .inline)
     }
 
     private var closeButton: some View {

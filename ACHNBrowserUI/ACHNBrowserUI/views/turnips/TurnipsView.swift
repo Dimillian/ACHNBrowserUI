@@ -13,19 +13,20 @@ import Backend
 struct TurnipsView: View {
     // MARK: - Vars
     private enum TurnipsDisplay: String, CaseIterable {
-        case average, minMax, profits
+        case average, minMax, profits, chart
         
         func title() -> String {
             switch self {
             case .average: return "Average daily buy prices"
             case .minMax: return "Daily min-max prices"
             case .profits: return "Average profits"
+            case .chart: return "Chart"
             }
         }
     }
     
     private enum Sheet: String, Identifiable {
-        case form, subscription, chart
+        case form, subscription
         
         var id: String {
             self.rawValue
@@ -62,13 +63,6 @@ struct TurnipsView: View {
                         }
                     }
                 }
-                if viewModel.predictions != nil {
-                    Section(header: SectionHeaderView(text: "Chart")) {
-                        Button(action: { self.presentedSheet = .chart }) {
-                            Text("Chart").foregroundColor(.blue)
-                        }
-                    }
-                }
                 predictionsSection
                 exchangeSection
             }
@@ -94,8 +88,6 @@ extension TurnipsView {
                 }.navigationViewStyle(StackNavigationViewStyle()))
         case .subscription:
             return AnyView(SubscribeView().environmentObject(subManager))
-        case .chart:
-            return AnyView(TurnipsChartView(predictions: viewModel.predictions!))
         }
     }
     
@@ -142,13 +134,15 @@ extension TurnipsView {
                     }
                 }
                 .pickerStyle(SegmentedPickerStyle())
-                
-                HStack {
-                    Text("Day").fontWeight(.bold)
-                    Spacer()
-                    Text("AM").fontWeight(.bold)
-                    Spacer()
-                    Text("PM").fontWeight(.bold)
+
+                if turnipsDisplay != .chart {
+                    HStack {
+                        Text("Day").fontWeight(.bold)
+                        Spacer()
+                        Text("AM").fontWeight(.bold)
+                        Spacer()
+                        Text("PM").fontWeight(.bold)
+                    }
                 }
                 if turnipsDisplay == .average {
                     ForEach(0..<viewModel.averagesPrices!.count) { i in
@@ -173,6 +167,8 @@ extension TurnipsView {
                                 self.presentedSheet = .form
                         }
                     }
+                } else if turnipsDisplay == .chart {
+                    TurnipsChartView(predictions: viewModel.predictions!)
                 }
             } else {
                 Text("Add your in game turnip prices to see predictions")

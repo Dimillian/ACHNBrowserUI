@@ -11,6 +11,7 @@ import Backend
 
 struct TurnipsChartLegendView: View {
     let predictions: TurnipPredictions
+    private let weekdays = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
 
     var body: some View {
         GeometryReader(content: texts)
@@ -18,19 +19,30 @@ struct TurnipsChartLegendView: View {
 
     func texts(for geometry: GeometryProxy) -> some View {
         let frame = geometry.frame(in: .local)
-        let (minY, maxY, ratioY, _) = predictions.minMax?.minMaxAndRatios(rect: frame) ?? (0, 0, 0, 0)
-        let buyPrice = predictions.minBuyPrice ?? 0
+        let (_, _, _, ratioX) = predictions.minMax?.minMaxAndRatios(rect: frame) ?? (0, 0, 0, 0)
+        let count = predictions.minMax?.count ?? 0
 
-        return ZStack {
-            Text("\(Int(minY))")
-                .foregroundColor(TurnipsChartView.PredictionCurve.minMax.color)
-                .position(x: frame.midX, y: ratioY * (maxY - minY))
-            Text("\(Int(buyPrice))")
-                .foregroundColor(TurnipsChartView.PredictionCurve.minBuyPrice.color)
-                .position(x: frame.midX, y: ratioY * (maxY - CGFloat(buyPrice)))
-            Text("\(Int(maxY))")
-                .foregroundColor(TurnipsChartView.PredictionCurve.minMax.color)
-                .position(x: frame.midX, y: 0)
+        return VStack {
+            ZStack {
+                ForEach(0..<count) { offset in
+                    self.yAxisText(offset: offset, ratioX: ratioX, frame: frame)
+                }
+            }
+            ZStack {
+                ForEach(Array(weekdays.enumerated()), id: \.0) { offset, weekday in
+                    // TODO: investigate AlignmentGuide instead of guessing the exact position
+                    Text(weekday).position(x: CGFloat(offset + 1) * ratioX/2 + CGFloat(offset) * ratioX * 1.5, y: frame.midY)
+                }
+            }
+        }
+    }
+
+    // TODO: investigate AlignmentGuide instead of guessing the exact position
+    func yAxisText(offset: Int, ratioX: CGFloat, frame: CGRect) -> some View {
+        if offset == 0 || offset.isMultiple(of: 2) {
+            return Text("AM").position(x: CGFloat(offset) * ratioX, y: frame.midY)
+        } else {
+            return Text("PM").position(x: CGFloat(offset) * ratioX, y: frame.midY)
         }
     }
 }

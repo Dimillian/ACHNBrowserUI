@@ -20,7 +20,6 @@ struct TurnipsChartMinMaxCurves: Shape {
             return path
         }
         let (_, maxY, ratioY, ratioX) = predictions.minMax?.minMaxAndRatios(rect: rect) ?? (0, 0, 0, 0)
-        print(minMax)
 
         let minPoints: [CGPoint] = minMax
             .compactMap { $0.first }
