@@ -96,8 +96,10 @@ struct SettingsView: View {
                 }
                 
                 Section(header: SectionHeaderView(text: "App Settings")) {
-                    NavigationLink(destination: AppIconPickerView()) {
-                        Text("App Icon")
+                    if UIApplication.shared.supportsAlternateIcons {
+                        NavigationLink(destination: AppIconPickerView()) {
+                            Text("App Icon")
+                        }
                     }
                     Button(action: {
                         self.subscriptionManager.restorePurchase()

@@ -7,6 +7,7 @@
 //
 
 import SwiftUI
+import Combine
 
 // Custom icon naming convention is {{ style }}-{{ color }}.
 struct AppIcon {
@@ -35,7 +36,31 @@ struct AppIcon {
     var name: String { return "\(self.style.rawValue)-\(self.color.rawValue)" }
 }
 
+class AppIconPickerViewModel: ObservableObject {
+    static let key = "AppIconPickerViewModelEnabled"
+    static let defaultIcon = "round-alt-lime"
+    
+    @Published var selected: String
+    
+    var cancellable: AnyCancellable?
+    
+    init() {
+        selected = UserDefaults.standard.string(forKey: Self.key) ?? Self.defaultIcon
+        cancellable = $selected
+        .receive(on: RunLoop.main)
+        .sink {
+            UserDefaults.standard.set($0, forKey: Self.key)
+        }
+    }
+    
+    deinit {
+        cancellable?.cancel()
+    }
+}
+
 struct AppIconPickerView: View {
+    @ObservedObject var viewModel = AppIconPickerViewModel()
+    
     var body: some View {
         List {
             ForEach(AppIcon.Color.allCases, id: \.self) { color in
@@ -51,6 +76,14 @@ struct AppIconPickerView: View {
                     .resizable()
                     .frame(width: 64, height: 64)
                     .mask(RoundedRectangle(cornerRadius: 14, style: .continuous))
+                    .overlay(
+                        Group {
+                            if AppIcon(style: style, color: color).name == self.viewModel.selected {
+                                RoundedRectangle(cornerRadius: 14, style: .continuous)
+                                    .stroke(Color.bell, lineWidth: 4)
+                            }
+                        }
+                    )
                     .frame(maxWidth: .infinity)
                     .onTapGesture {
                         self.setAppIcon(to: AppIcon(style: style, color: color))
@@ -62,11 +95,13 @@ struct AppIconPickerView: View {
     
     private func setAppIcon(to icon: AppIcon) {
         print("@@ Attempting to set icon: \(icon.name)")
-        if UIApplication.shared.supportsAlternateIcons {
-            UIApplication.shared.setAlternateIconName(icon.name) { (error) in
-                if let error = error {
-                    print("@@ Error setting alternate app icon: \(error)")
-                }
+        
+        self.viewModel.selected = icon.name
+        
+        UIApplication.shared.setAlternateIconName(icon.name) { (error) in
+            if let error = error {
+                print("@@ Error setting alternate app icon: \(error)")
+                self.viewModel.selected = AppIconPickerViewModel.defaultIcon
             }
         }
     }
