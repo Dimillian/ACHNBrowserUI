@@ -43,7 +43,13 @@ struct SettingsView: View {
                     Picker(selection: $appUserDefaults.fruit,
                            label: Text("Starting fruit")) {
                             ForEach(Fruit.allCases, id: \.self) { fruit in
-                                Text(fruit.rawValue.capitalized).tag(fruit)
+                                HStack {
+                                    Image(fruit.rawValue.capitalized)
+                                        .renderingMode(.original)
+                                        .resizable()
+                                        .frame(width: 30, height: 30)
+                                    Text(fruit.rawValue.capitalized).tag(fruit)
+                                }
                             }
                     }
                     
@@ -100,6 +106,6 @@ struct SettingsView: View {
 
 struct SettingsView_Previews: PreviewProvider {
     static var previews: some View {
-        SettingsView()
+        SettingsView().environmentObject(SubcriptionManager.shared)
     }
 }
