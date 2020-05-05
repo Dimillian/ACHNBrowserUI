@@ -30,6 +30,7 @@ struct DashboardView: View {
     
     @EnvironmentObject private var uiState: UIState
     @EnvironmentObject private var collection: UserCollection
+    @ObservedObject private var userDefaults = AppUserDefaults.shared
     @ObservedObject private var viewModel = DashboardViewModel()
     @ObservedObject private var villagersViewModel = VillagersViewModel()
     @State var selectedSheet: Sheet?
@@ -65,11 +66,15 @@ struct DashboardView: View {
         }
     }
     
+    private var todayText: String {
+        "Today\(!userDefaults.islandName.isEmpty ? " on \(userDefaults.islandName)" : "")"
+    }
+    
     private func makeDateView() -> some View {
         let formatter = DateFormatter()
         formatter.dateFormat = "EEEE, dd MMMM"
         let dateString = formatter.string(from: Date())
-        return Section(header: SectionHeaderView(text: "Today")) {
+        return Section(header: SectionHeaderView(text: todayText)) {
             VStack(alignment: .leading) {
                 Text(dateString).style(appStyle: .title)
                 DashboardEventTextView().padding(.top, 4)
