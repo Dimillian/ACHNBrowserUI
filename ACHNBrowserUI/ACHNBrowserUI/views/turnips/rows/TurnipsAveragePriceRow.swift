@@ -43,8 +43,7 @@ struct TurnipsAveragePriceRow: View {
         HStack {
             Text(label)
                 .font(.body)
-                .foregroundColor(.text
-            )
+                .foregroundColor(.text)
             Spacer()
             if prices != nil {
                 Text("\(prices!.first!)")
