@@ -9,7 +9,6 @@
 import SwiftUI
 import Backend
 
-// TODO: refactor by renaming this extension to TurnipsChart namespace
 enum TurnipsChart {
     enum PredictionCurve: String {
         case minBuyPrice
@@ -25,10 +24,6 @@ enum TurnipsChart {
             }
         }
     }
-}
-
-extension TurnipsChart {
-
 }
 
 extension Array {
