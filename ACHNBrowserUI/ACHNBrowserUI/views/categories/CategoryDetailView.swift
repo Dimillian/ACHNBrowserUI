@@ -14,10 +14,11 @@ struct CategoryDetailView: View {
     
     var body: some View {
         List {
-            ForEach(categories, id: \.rawValue) { category in
-                CategoryRowView(category: category)
+            Section {
+                ForEach(categories, id: \.rawValue) { category in
+                    CategoryRowView(category: category)
+                }
             }
-            
-        }
+        }.listStyle(GroupedListStyle())
     }
 }

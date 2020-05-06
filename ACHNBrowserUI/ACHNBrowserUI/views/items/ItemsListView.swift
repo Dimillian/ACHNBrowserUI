@@ -76,19 +76,21 @@ struct ItemsListView: View {
     
     var body: some View {
         List {
-            SearchField(searchText: $viewModel.searchText)
-            ForEach(currentItems) { item in
-                NavigationLink(destination: ItemDetailView(item: item)) {
-                    ItemRowView(displayMode: self.itemRowsDisplayMode, item: item)
-                        .environmentObject(ItemDetailViewModel(item: item))
-                        .listRowBackground(Color.dialogue)
+            Section(header: SearchField(searchText: $viewModel.searchText)) {
+                ForEach(currentItems) { item in
+                    NavigationLink(destination: ItemDetailView(item: item)) {
+                        ItemRowView(displayMode: self.itemRowsDisplayMode, item: item)
+                            .environmentObject(ItemDetailViewModel(item: item))
+                            .listRowBackground(Color.dialogue)
+                    }
                 }
             }
         }
+        .listStyle(GroupedListStyle())
         .id(viewModel.sort)
         .modifier(DismissingKeyboardOnSwipe())
         .navigationBarTitle(Text(viewModel.category.label()),
-                            displayMode: .inline)
+                            displayMode: .automatic)
             .navigationBarItems(trailing:
                 HStack(spacing: 16) {
                     layoutButton
