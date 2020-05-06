@@ -16,18 +16,22 @@ struct SearchField: View {
     var body: some View {
         HStack {
             Image(systemName: "magnifyingglass")
+                .imageScale(.large)
             TextField(placeholder, text: $searchText)
+                .foregroundColor(Color.text)
+                .font(.headline)
                 .accentColor(.bell)
             if !searchText.isEmpty {
                 Button(action: {
                     self.searchText = ""
                 }) {
                     Image(systemName: "xmark.circle")
-                        .font(.headline).foregroundColor(.red)
+                        .font(.headline)
+                        .foregroundColor(.red)
+                        .imageScale(.large)
                 }.buttonStyle(BorderlessButtonStyle())
             }
         }
-        .foregroundColor(Color.text)
         .padding(8)
         .background(Color.dialogue)
         .mask(RoundedRectangle(cornerRadius: 8, style: .continuous))
@@ -40,12 +44,19 @@ struct SearchField_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
             List {
-                SearchField(searchText: .constant(""),
-                            placeholder: "Placeholder")
-                SearchField(searchText: .constant("Editing"),
-                            placeholder: "test")
-                Text("An item")
-            }
+                Section(header:
+                    SearchField(searchText: .constant("Editing"),
+                                placeholder: "test"))
+                {
+                    SearchField(searchText: .constant(""),
+                                placeholder: "Placeholder")
+                    SearchField(searchText: .constant("Editing"),
+                                placeholder: "test")
+                    Text("An item")
+                                                            
+                }
+                
+            }.listStyle(GroupedListStyle())
         }
     }
 }
