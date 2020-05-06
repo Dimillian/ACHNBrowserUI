@@ -20,7 +20,7 @@ struct TurnipsChartMinBuyPriceCurve: Shape {
             return path
         }
 
-        let (_, maxY, ratioY, _) = predictions.minMax?.minMaxAndRatios(rect: rect) ?? (0, 0, 0, 0)
+        let (_, maxY, ratioY, _) = predictions.minMax?.roundedMinMaxAndRatios(rect: rect) ?? (0, 0, 0, 0)
 
         let y = ratioY * (maxY - CGFloat(minBuyPrice))
         path.move(to: CGPoint(x: rect.minX, y: y))
