@@ -13,48 +13,8 @@ enum Tabs: String, CaseIterable {
     case items, villagers, critters
 }
 
-struct CollectionListSections: View {
-    @Binding var selectedTab: Tabs
-    @EnvironmentObject private var collection: UserCollection
-
-    private var itemsList: some View {
-        List(collection.items) { item in
-            NavigationLink(destination: ItemDetailView(item: item)) {
-                ItemRowView(displayMode: .large, item: item)
-            }
-        }
-    }
-    
-    private var villagersList: some View {
-        List(collection.villagers) { villager in
-            NavigationLink(destination: VillagerDetailView(villager: villager)) {
-                VillagerRowView(villager: villager)
-            }
-        }
-    }
-    
-    private var crittersList: some View {
-        List(collection.critters) { item in
-            NavigationLink(destination: ItemDetailView(item: item)) {
-                ItemRowView(displayMode: .large, item: item)
-            }
-        }
-    }
-    
-    var body: some View {
-        Group {
-            if selectedTab == .items {
-                itemsList
-            } else if selectedTab == .villagers {
-                villagersList
-            } else if selectedTab == .critters {
-                crittersList
-            }
-        }
-    }
-}
-
 struct CollectionListView: View {
+    @EnvironmentObject private var collection: UserCollection
     @State private var selectedTab: Tabs = .items
     
     private var placeholderView: some View {
@@ -64,23 +24,47 @@ struct CollectionListView: View {
             .background(Color.dialogue)
     }
     
+    private var picker: some View {
+        Picker(selection: $selectedTab, label: Text("")) {
+            ForEach(Tabs.allCases, id: \.self) { tab in
+                Text(tab.rawValue.capitalized)
+            }
+        }
+        .pickerStyle(SegmentedPickerStyle())
+        .padding()
+    }
+    
     var body: some View {
         NavigationView {
-            VStack {
-                Picker(selection: $selectedTab, label: Text("")) {
-                    ForEach(Tabs.allCases, id: \.self) { tab in
-                        Text(tab.rawValue.capitalized)
+            List {
+                Section(header: picker) {
+                    if selectedTab == .items {
+                        ForEach(collection.items) { item in
+                            NavigationLink(destination: ItemDetailView(item: item)) {
+                                ItemRowView(displayMode: .large, item: item)
+                            }
+                        }
+                    } else if selectedTab == .critters {
+                        ForEach(collection.villagers) { villager in
+                            NavigationLink(destination: VillagerDetailView(villager: villager)) {
+                                VillagerRowView(villager: villager)
+                            }
+                        }
+                    } else if selectedTab == .villagers {
+                        ForEach(collection.critters) { critter in
+                            NavigationLink(destination: ItemDetailView(item: critter)) {
+                                ItemRowView(displayMode: .large, item: critter)
+                            }
+                        }
                     }
                 }
-                .pickerStyle(SegmentedPickerStyle())
-                .padding()
-                CollectionListSections(selectedTab: $selectedTab)
             }
-            .background(Color.dialogue)
+            .listStyle(GroupedListStyle())
             .navigationBarTitle(Text("My Stuff"),
-                                displayMode: .inline)
+                                displayMode: .automatic)
             
             placeholderView
         }
     }
 }
+
