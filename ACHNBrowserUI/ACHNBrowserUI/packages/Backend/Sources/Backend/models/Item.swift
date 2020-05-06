@@ -129,7 +129,7 @@ public extension Sequence {
 
 public let static_item = Item(name: "Acoustic guitar",
                        image: nil,
-                       filename: "Test",
+                       filename: "https://acnhcdn.com/latest/FtrIcon/FtrAcorsticguitar_Remake_0_0.png",
                        house: nil,
                        obtainedFrom: "Crafting",
                        dIY: true,

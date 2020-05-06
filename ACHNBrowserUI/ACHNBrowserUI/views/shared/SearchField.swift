@@ -40,6 +40,8 @@ struct SearchField_Previews: PreviewProvider {
         NavigationView {
             List {
                 SearchField(searchText: .constant(""),
+                            placeholder: "Placeholder")
+                SearchField(searchText: .constant("Editing"),
                             placeholder: "test")
                 Text("An item")
             }
