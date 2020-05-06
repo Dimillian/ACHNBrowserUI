@@ -45,12 +45,17 @@ struct TurnipsChartView: View {
             TurnipsChartMinBuyPriceCurve(predictions: predictions)
                 .stroke(style: StrokeStyle(dash: [Self.verticalLinesCount]))
                 .foregroundColor(PredictionCurve.minBuyPrice.color)
+                .saturation(3)
+                .blendMode(.screen)
             TurnipsChartMinMaxCurves(predictions: predictions)
                 .foregroundColor(PredictionCurve.minMax.color)
                 .opacity(0.25)
+                .blendMode(.darken)
             TurnipsChartAverageCurve(predictions: predictions)
                 .stroke(lineWidth: 3)
                 .foregroundColor(PredictionCurve.average.color)
+                .saturation(5)
+                .blendMode(.screen)
         }
     }
 }

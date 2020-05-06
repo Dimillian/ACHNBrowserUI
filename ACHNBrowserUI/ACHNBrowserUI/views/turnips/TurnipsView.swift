@@ -168,7 +168,16 @@ extension TurnipsView {
                         }
                     }
                 } else if turnipsDisplay == .chart {
-                    TurnipsChartView(predictions: viewModel.predictions!).padding(.top, 8)
+                    if viewModel.predictions != nil {
+                        TurnipsChartView(predictions: viewModel.predictions!).padding(.top, 8)
+                    } else {
+                        Text("Add your in game turnip prices to see the predictions chart")
+                            .foregroundColor(.bell)
+                            .onTapGesture {
+                                self.presentedSheet = .form
+                        }
+                    }
+                   
                 }
             } else {
                 Text("Add your in game turnip prices to see predictions")
