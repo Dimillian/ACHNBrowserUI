@@ -76,7 +76,7 @@ struct SettingsView: View {
                 }
                 
                 Section(header: SectionHeaderView(text: "App Settings")) {
-                    if UIApplication.shared.supportsAlternateIcons {
+                    if UIApplication.shared.supportsAlternateIcons && UIDevice.current.userInterfaceIdiom != .pad {
                         NavigationLink(destination: AppIconPickerView()) {
                             Text("App Icon")
                         }
