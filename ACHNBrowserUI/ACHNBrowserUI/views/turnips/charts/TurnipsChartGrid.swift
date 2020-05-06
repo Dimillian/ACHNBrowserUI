@@ -15,7 +15,7 @@ struct TurnipsChartGrid: Shape {
     func path(in rect: CGRect) -> Path {
         var path = Path()
 
-        let (minY, maxY, ratioY, ratioX) = predictions.minMax?.minMaxAndRatios(rect: rect) ?? (0, 0, 0, 0)
+        let (minY, maxY, ratioY, ratioX) = predictions.minMax?.roundedMinMaxAndRatios(rect: rect) ?? (0, 0, 0, 0)
         let count = predictions.minMax?.count ?? 0
 
         for offset in 0..<count {

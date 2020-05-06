@@ -19,7 +19,7 @@ struct TurnipsChartBottomLegendView: View {
 
     func texts(for geometry: GeometryProxy) -> some View {
         let frame = geometry.frame(in: .local)
-        let (_, _, _, ratioX) = predictions.minMax?.minMaxAndRatios(rect: frame) ?? (0, 0, 0, 0)
+        let (_, _, _, ratioX) = predictions.minMax?.roundedMinMaxAndRatios(rect: frame) ?? (0, 0, 0, 0)
         let count = predictions.minMax?.count ?? 0
 
         return VStack {

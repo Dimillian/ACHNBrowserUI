@@ -19,7 +19,7 @@ struct TurnipsChartMinMaxCurves: Shape {
             // Maybe we should just crash as it shouldn't happen
             return path
         }
-        let (_, maxY, ratioY, ratioX) = predictions.minMax?.minMaxAndRatios(rect: rect) ?? (0, 0, 0, 0)
+        let (_, maxY, ratioY, ratioX) = predictions.minMax?.roundedMinMaxAndRatios(rect: rect) ?? (0, 0, 0, 0)
 
         let minPoints: [CGPoint] = minMax
             .compactMap { $0.first }

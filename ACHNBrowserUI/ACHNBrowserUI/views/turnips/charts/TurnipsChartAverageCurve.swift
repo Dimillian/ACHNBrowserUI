@@ -20,7 +20,7 @@ struct TurnipsChartAverageCurve: Shape {
             return path
         }
 
-        let (_, maxY, ratioY, ratioX) = predictions.minMax?.minMaxAndRatios(rect: rect) ?? (0, 0, 0, 0)
+        let (_, maxY, ratioY, ratioX) = predictions.minMax?.roundedMinMaxAndRatios(rect: rect) ?? (0, 0, 0, 0)
 
         let points = averagePrices.enumerated().map { offset, average -> CGPoint in
             let x = ratioX * CGFloat(offset)

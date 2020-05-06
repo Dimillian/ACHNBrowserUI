@@ -10,6 +10,10 @@ import SwiftUI
 import Backend
 
 enum TurnipsChart {
+    static let steps = 50
+    static let extraMinSteps = 50
+    static let extraMaxSteps = 50
+
     enum PredictionCurve: String {
         case minBuyPrice
         case average
@@ -34,7 +38,7 @@ extension Array {
 extension Array where Element == [Int] {
     typealias MinMaxRatios = (min: CGFloat, max: CGFloat, ratioY: CGFloat, ratioX: CGFloat)
 
-    func minMaxAndRatios(
+    private func minMaxAndRatios(
         rect: CGRect
     ) -> (min: CGFloat, max: CGFloat, ratioY: CGFloat, ratioX: CGFloat) {
         let ratioX = rect.maxX/(CGFloat(self.count) - 1)
@@ -50,5 +54,22 @@ extension Array where Element == [Int] {
         let ratioY = rect.maxY/(max - min)
 
         return (min, max, ratioY, ratioX)
+    }
+
+    func roundedMinMaxAndRatios(
+        rect: CGRect
+    ) -> (minY: CGFloat, max: CGFloat, ratioY: CGFloat, ratioX: CGFloat) {
+        let (minY, maxY, _, ratioX) = minMaxAndRatios(rect: rect)
+
+        let steps = TurnipsChart.steps
+        let extraMinSteps = TurnipsChart.extraMinSteps
+        let extraMaxSteps = TurnipsChart.extraMaxSteps
+
+        let computedRoundedMin = Int(minY)/steps * steps - extraMinSteps
+        let roundedMin = Swift.max(0, computedRoundedMin)
+        let roundedMax = (Int(maxY) + steps)/steps * steps + extraMaxSteps
+        let ratioY = rect.maxY/CGFloat(roundedMax - roundedMin)
+
+        return (CGFloat(roundedMin), CGFloat(roundedMax), ratioY, ratioX)
     }
 }

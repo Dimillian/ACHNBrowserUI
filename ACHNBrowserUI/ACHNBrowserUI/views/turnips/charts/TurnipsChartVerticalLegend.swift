@@ -11,20 +11,17 @@ import Backend
 
 struct TurnipsChartVerticalLegend: View {
     let predictions: TurnipPredictions
-    private let steps = 50
 
     var body: some View {
-        GeometryReader(content: h)
+        GeometryReader(content: texts)
     }
 
-    func h(geometry: GeometryProxy) -> some View {
+    func texts(geometry: GeometryProxy) -> some View {
         let frame = geometry.frame(in: .local)
-        let (minY, maxY, ratioY, _) = predictions.minMax?.minMaxAndRatios(rect: frame) ?? (0, 0, 0, 0)
+        let (minY, maxY, ratioY, _) = predictions.minMax?.roundedMinMaxAndRatios(rect: frame) ?? (0, 0, 0, 0)
 
-        let roundedMin = Int(minY)/steps * steps
-        let roundedMax = (Int(maxY) + steps)/steps * steps
         return ZStack {
-            ForEach(Array(stride(from: roundedMin, to: roundedMax, by: steps)), id: \.self) { value in
+            ForEach(Array(stride(from: Int(minY), to: Int(maxY), by: TurnipsChart.steps)), id: \.self) { value in
                 Text("\(value)")
                     .font(.footnote)
                     .fontWeight(.semibold)
