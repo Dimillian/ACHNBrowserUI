@@ -17,6 +17,7 @@ struct SearchField: View {
         HStack {
             Image(systemName: "magnifyingglass")
             TextField(placeholder, text: $searchText)
+                .accentColor(.bell)
             if !searchText.isEmpty {
                 Button(action: {
                     self.searchText = ""

@@ -26,21 +26,29 @@ struct CategoriesView: View {
     // MARK: - Body
     var body: some View {
         NavigationView {
-            VStack {
-                SearchField(searchText: $viewModel.searchText)
-                    .padding(.leading, 8)
-                    .padding(.trailing, 8)
-                    .padding(.top, 8)
-                    .padding(.bottom, 4)
-                if viewModel.searchText.isEmpty {
-                    categoriesList
-                } else {
-                    searchList
+            List {
+                Section(header: SearchField(searchText: $viewModel.searchText)) {
+                        if viewModel.searchText.isEmpty {
+                            makeNatureCell()
+                            makeWardrobeCell()
+                            makeCategories()
+                        } else {
+                            if viewModel.isLoadingData {
+                                loadingView.animation(.default)
+                            } else if searchCategories.isEmpty {
+                                Text("No results for \(viewModel.searchText)")
+                                    .foregroundColor(.secondaryText)
+                            } else {
+                                ForEach(searchCategories, id: \.0, content: searchSection)
+                            }
+                        }
                 }
             }
-            .navigationBarTitle(Text("Catalog"), displayMode: .inline)
-            .background(Color.dialogueReverse)
+            .listStyle(GroupedListStyle())
+            .navigationBarTitle(Text("Catalog"), displayMode: .automatic)
             .onReceive(viewModel.$isLoadingData) { self.isLoadingData = $0 }
+            .modifier(DismissingKeyboardOnSwipe())
+      
             
             ItemsListView(viewModel: ItemsViewModel(category: .housewares))
         }
@@ -117,26 +125,6 @@ extension CategoriesView {
             ActivityIndicator(isAnimating: $isLoadingData, style: .large)
             Spacer()
         }.background(Color.dialogue)
-    }
-    
-    
-    private var categoriesList: some View {
-        List {
-            makeNatureCell()
-            makeWardrobeCell()
-            makeCategories()
-        }.modifier(DismissingKeyboardOnSwipe())
-    }
-    
-    private var searchList: some View {
-        ZStack {
-            List {
-                ForEach(searchCategories, id: \.0, content: searchSection)
-            }
-            loadingView
-                .opacity(isLoadingData ? 80/100 : 0)
-                .animation(.default)
-        }.modifier(DismissingKeyboardOnSwipe())
     }
 }
 
