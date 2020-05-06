@@ -14,7 +14,7 @@ struct ItemRowView: View {
     @EnvironmentObject private var collection: UserCollection
     
     enum DisplayMode {
-        case small, big
+        case compact, large
     }
     
     let displayMode: DisplayMode
@@ -24,9 +24,9 @@ struct ItemRowView: View {
     
     private var imageSize: CGFloat {
         switch displayMode {
-        case .small:
+        case .compact:
             return 25
-        case .big:
+        case .large:
             return 100
         }
     }
@@ -119,7 +119,7 @@ struct ItemRowView: View {
             
             VStack(alignment: .leading, spacing: 2) {
                 itemInfo
-                if displayMode == .big {
+                if displayMode == .large {
                     itemSubInfo
                     itemVariants
                 }
@@ -134,11 +134,11 @@ struct ItemRowView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
             List {
-                ItemRowView(displayMode: .big, item: static_item)
+                ItemRowView(displayMode: .large, item: static_item)
                     .environmentObject(UserCollection())
-                ItemRowView(displayMode: .small, item: static_item)
+                ItemRowView(displayMode: .compact, item: static_item)
                     .environmentObject(UserCollection())
-                ItemRowView(displayMode: .big, item: static_item)
+                ItemRowView(displayMode: .large, item: static_item)
                     .environmentObject(UserCollection())
             }
         }

@@ -17,11 +17,11 @@ class ItemsViewModel: ObservableObject {
     @Published var searchText = ""
     
     private var itemCancellable: AnyCancellable?
+    private var searchCancellable: AnyCancellable?
     
     enum Sort: String, CaseIterable {
         case name, buy, sell, from, set, similar
     }
-    
     
     var category: Backend.Category {
         didSet {
@@ -58,20 +58,22 @@ class ItemsViewModel: ObservableObject {
             }
         }
     }
-    
-    private var searchCancellable: AnyCancellable?
-    
+        
     public init(category: Backend.Category) {
         self.category = category
+
         searchCancellable = $searchText
             .debounce(for: .milliseconds(300), scheduler: DispatchQueue.main)
             .removeDuplicates()
             .filter { !$0.isEmpty }
             .map(items(with:))
-            .sink(receiveValue: { [weak self] in self?.searchItems = $0 })
+            .sink{ [weak self] in
+                self?.searchItems = $0
+        }
 
-        itemCancellable = Items.shared.$categories.sink { [weak self] items in
-            self?.items = items[category] ?? []
+        itemCancellable = Items.shared.$categories
+            .sink { [weak self] in
+            self?.items = $0[category] ?? []
         }
     }
 

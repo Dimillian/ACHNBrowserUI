@@ -20,7 +20,7 @@ struct CollectionListSections: View {
     private var itemsList: some View {
         List(collection.items) { item in
             NavigationLink(destination: ItemDetailView(item: item)) {
-                ItemRowView(displayMode: .big, item: item)
+                ItemRowView(displayMode: .large, item: item)
             }
         }
     }
@@ -36,7 +36,7 @@ struct CollectionListSections: View {
     private var crittersList: some View {
         List(collection.critters) { item in
             NavigationLink(destination: ItemDetailView(item: item)) {
-                ItemRowView(displayMode: .big, item: item)
+                ItemRowView(displayMode: .large, item: item)
             }
         }
     }

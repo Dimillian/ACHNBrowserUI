@@ -39,7 +39,7 @@ struct ActiveCritterSections: View {
     
     private func sectionContent(critter: Item) -> some View {
         NavigationLink(destination: ItemDetailView(item: critter)) {
-            ItemRowView(displayMode: .big, item: critter)
+            ItemRowView(displayMode: .large, item: critter)
         }
     }
     

@@ -12,7 +12,7 @@ import Backend
 struct ItemsListView: View {
     @ObservedObject var viewModel: ItemsViewModel
     @State private var showSortSheet = false
-    @State private var itemRowsDisplayMode: ItemRowView.DisplayMode = .big
+    @State private var itemRowsDisplayMode: ItemRowView.DisplayMode = .large
     
     var currentItems: [Item] {
         get {
@@ -38,9 +38,9 @@ struct ItemsListView: View {
     
     private var layoutButton: some View {
         Button(action: {
-            self.itemRowsDisplayMode = self.itemRowsDisplayMode == .small ? .big : .small
+            self.itemRowsDisplayMode = self.itemRowsDisplayMode == .compact ? .large : .compact
         }) {
-            Image(systemName: itemRowsDisplayMode == .big ? "rectangle.grid.1x2" : "list.dash")
+            Image(systemName: itemRowsDisplayMode == .large ? "rectangle.grid.1x2" : "list.dash")
                 .imageScale(.large)
         }
         .safeHoverEffectBarItem(position: .trailing)
