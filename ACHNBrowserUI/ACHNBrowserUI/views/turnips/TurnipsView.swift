@@ -136,6 +136,10 @@ extension TurnipsView {
                 .pickerStyle(SegmentedPickerStyle())
 
                 if turnipsDisplay != .chart {
+                    if turnipsDisplay == .profits && viewModel.averagesProfits != nil {
+                        Text("Profits estimates are computed using the average of the current period")
+                            .foregroundColor(.secondaryText)
+                    }
                     HStack {
                         Text("Day").fontWeight(.bold)
                         Spacer()
@@ -144,6 +148,7 @@ extension TurnipsView {
                         Text("PM").fontWeight(.bold)
                     }
                 }
+                
                 if turnipsDisplay == .average {
                     ForEach(0..<viewModel.averagesPrices!.count) { i in
                         TurnipsAveragePriceRow(label: self.labels[i],

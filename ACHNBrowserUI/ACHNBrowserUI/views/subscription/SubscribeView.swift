@@ -51,7 +51,11 @@ struct SubscribeView: View {
                 .resizable()
                 .aspectRatio(contentMode: .fit)
                 .frame(width: 320)
-                .padding()
+            Button(action: {
+                NotificationManager.shared.testNotification()
+            }) {
+                Text("Tap here to preview a notification").foregroundColor(.bell)
+            }
             Text("""
                             Subscribing to AC Helper+ is a great way to to show support to our free and open source project.♥️
 

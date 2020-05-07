@@ -83,7 +83,7 @@ extension TurnipsFormView {
             Toggle(isOn: $enableNotifications) {
                 Text("Receive prices predictions notification")
             }
-            .opacity(subscriptionManager.subscriptionStatus == .subscribed ? 1.0 : 0.5)
+            .opacity(subscriptionManager.subscriptionStatus == .subscribed ? 1.0 : 0.7)
             .disabled(subscriptionManager.subscriptionStatus != .subscribed)
             if subscriptionManager.subscriptionStatus != .subscribed {
                 Button(action: {
@@ -93,6 +93,11 @@ extension TurnipsFormView {
                         .foregroundColor(.secondaryText)
                         .font(.footnote)
                 }
+            }
+            Button(action: {
+                NotificationManager.shared.testNotification()
+            }) {
+                Text("Preview a notification").foregroundColor(.bell)
             }
             
         }
