@@ -2,6 +2,8 @@
 ![Xcode Build](https://github.com/Dimillian/ACHNBrowserUI/workflows/Xcode%20build/badge.svg?branch=master)
 [![@dimillian](https://img.shields.io/badge/contact-@dimillian-5AA9E7.svg?style=flat)](https://twitter.com/dimillian)
 
+[You can now download the app on the App Store!](https://apps.apple.com/us/app/ac-helper/id1508764244?ls=1)
+
 # Animal Crossing New Horizon SwiftUI application!
 
 ![Image](images/promo2.png?)
