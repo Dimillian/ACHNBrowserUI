@@ -29,7 +29,7 @@ struct TurnipsChartMinMaxCurves: Shape {
                 let y = ratioY * (maxY - CGFloat(minValue))
                 return CGPoint(x: x, y: y)
             })
-        path.addLines(minPoints)
+        path.addHermiteCurvedLines(points: minPoints)
 
         let maxPoints: [CGPoint] = minMax
             .compactMap { $0.second }
@@ -41,8 +41,7 @@ struct TurnipsChartMinMaxCurves: Shape {
             })
             .reversed()
         path.addLine(to: maxPoints.first ?? .zero)
-        path.addLines(maxPoints)
-
+        path.addHermiteCurvedLines(points: maxPoints)
         path.addLine(to: minPoints.first ?? .zero)
 
         return path
