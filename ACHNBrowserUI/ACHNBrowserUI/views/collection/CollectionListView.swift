@@ -23,7 +23,7 @@ struct CollectionListView: View {
     }
     
     private var emptyView: some View {
-        Text("When you'll stars some items, critters, or villagers, they'll be displayed here.")
+        Text("When you'll stars some \(selectedTab.rawValue), they'll be displayed here.")
             .foregroundColor(.secondaryText)
     }
     
@@ -53,7 +53,7 @@ struct CollectionListView: View {
                                 VillagerRowView(villager: villager)
                             }
                         }
-                    } else if selectedTab == .critters && !collection.villagers.isEmpty {
+                    } else if selectedTab == .critters && !collection.critters.isEmpty {
                         ForEach(collection.critters) { critter in
                             NavigationLink(destination: ItemDetailView(item: critter)) {
                                 ItemRowView(displayMode: .large, item: critter)
