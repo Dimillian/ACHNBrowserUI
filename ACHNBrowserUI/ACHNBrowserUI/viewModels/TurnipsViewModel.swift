@@ -55,6 +55,7 @@ class TurnipsViewModel: ObservableObject {
     }
     
     func fetch() {
+        /*
         exchangeCancellable = TurnipExchangeService.shared
             .fetchIslands()
             .receive(on: RunLoop.main)
@@ -63,5 +64,6 @@ class TurnipsViewModel: ObservableObject {
             }) { [weak self] islands in
                 self?.islands = islands
         }
+         */
     }
 }

@@ -42,12 +42,14 @@ class DashboardViewModel: ObservableObject {
     }
     
     private func fetchIsland() {
+        /*
         islandCancellable = TurnipExchangeService.shared
             .fetchIslands()
             .receive(on: RunLoop.main)
             .sink(receiveValue: { [weak self] islands in
                 self?.island = islands.first
             })
+        */
     }
     
 }
