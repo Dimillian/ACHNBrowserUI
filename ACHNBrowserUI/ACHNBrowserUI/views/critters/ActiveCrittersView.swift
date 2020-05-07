@@ -81,7 +81,9 @@ struct ActiveCrittersView: View {
                 ForEach(Tab.allCases, id: \.self) { tab in
                     Text(tab.rawValue).tag(tab.rawValue)
                 }
-            }.pickerStyle(SegmentedPickerStyle())
+            }
+            .pickerStyle(SegmentedPickerStyle())
+            .listRowBackground(Color.dialogueReverse)
             ActiveCritterSections(selectedTab: $selectedTab,
                                   activeFishes: activeFishes,
                                   activeBugs: activeBugs)

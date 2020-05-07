@@ -27,27 +27,28 @@ struct VillagerDetailView: View {
             Text(value)
                 .foregroundColor(secondaryTextColor)
                 .font(.subheadline)
-        }
+        }.listRowBackground(Rectangle().fill(backgroundColor))
     }
     var body: some View {
-        ScrollView {
-            VStack {
-                HStack {
-                    Spacer()
-                    ItemImage(path: ACNHApiService.BASE_URL.absoluteString +
-                        ACNHApiService.Endpoint.villagerImage(id: villager.id).path(),
-                              size: 150).cornerRadius(40)
-                    Spacer()
-                }.padding()
-                infoCell(title: "Personality", value: villager.personality).padding()
-                infoCell(title: "Birthday", value: villager.formattedBirthday ?? "Unknown").padding()
-                infoCell(title: "Species", value: villager.species).padding()
-                infoCell(title: "Gender", value: villager.gender).padding()
+        List {
+            HStack {
+                Spacer()
+                ItemImage(path: ACNHApiService.BASE_URL.absoluteString +
+                    ACNHApiService.Endpoint.villagerImage(id: villager.id).path(),
+                          size: 150).cornerRadius(40)
+                Spacer()
             }
+            .listRowBackground(Rectangle().fill(backgroundColor))
+            .padding()
+            infoCell(title: "Personality", value: villager.personality).padding()
+            infoCell(title: "Birthday", value: villager.formattedBirthday ?? "Unknown").padding()
+            infoCell(title: "Species", value: villager.species).padding()
+            infoCell(title: "Gender", value: villager.gender).padding()
         }
-        .background(backgroundColor)
+        .listStyle(GroupedListStyle())
+        .environment(\.horizontalSizeClass, .regular)
         .navigationBarItems(trailing: LikeButtonView(villager: villager).safeHoverEffectBarItem(position: .trailing))
-        .navigationBarTitle(Text(villager.name["name-en"] ?? ""), displayMode: .inline)
+        .navigationBarTitle(Text(villager.name["name-en"] ?? ""), displayMode: .automatic)
         .onAppear {
             let url = ACNHApiService.BASE_URL.absoluteString +
                 ACNHApiService.Endpoint.villagerIcon(id: self.villager.id).path()

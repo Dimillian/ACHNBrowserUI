@@ -19,9 +19,12 @@ struct CollectionListView: View {
     
     private var placeholderView: some View {
         Text("Please select or go stars some items!")
-            .foregroundColor(.secondary)
-            .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
-            .background(Color.dialogue)
+            .foregroundColor(.secondaryText)
+    }
+    
+    private var emptyView: some View {
+        Text("When you'll stars some items, critters, or villagers, they'll be displayed here.")
+            .foregroundColor(.secondaryText)
     }
     
     private var picker: some View {
@@ -38,24 +41,26 @@ struct CollectionListView: View {
         NavigationView {
             List {
                 Section(header: picker) {
-                    if selectedTab == .items {
+                    if selectedTab == .items && !collection.items.isEmpty {
                         ForEach(collection.items) { item in
                             NavigationLink(destination: ItemDetailView(item: item)) {
                                 ItemRowView(displayMode: .large, item: item)
                             }
                         }
-                    } else if selectedTab == .critters {
+                    } else if selectedTab == .villagers && !collection.villagers.isEmpty {
                         ForEach(collection.villagers) { villager in
                             NavigationLink(destination: VillagerDetailView(villager: villager)) {
                                 VillagerRowView(villager: villager)
                             }
                         }
-                    } else if selectedTab == .villagers {
+                    } else if selectedTab == .critters && !collection.villagers.isEmpty {
                         ForEach(collection.critters) { critter in
                             NavigationLink(destination: ItemDetailView(item: critter)) {
                                 ItemRowView(displayMode: .large, item: critter)
                             }
                         }
+                    } else {
+                        emptyView
                     }
                 }
             }
@@ -63,7 +68,11 @@ struct CollectionListView: View {
             .navigationBarTitle(Text("My Stuff"),
                                 displayMode: .automatic)
             
-            placeholderView
+            if collection.items.isEmpty {
+                placeholderView
+            } else {
+                ItemDetailView(item: collection.items.first!)
+            }
         }
     }
 }

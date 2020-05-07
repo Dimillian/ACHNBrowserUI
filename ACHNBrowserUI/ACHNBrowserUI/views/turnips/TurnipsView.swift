@@ -13,7 +13,7 @@ import Backend
 struct TurnipsView: View {
     // MARK: - Vars
     private enum TurnipsDisplay: String, CaseIterable {
-        case average, minMax, profits, chart
+        case minMax, average, profits, chart
         
         func title() -> String {
             switch self {
@@ -36,7 +36,7 @@ struct TurnipsView: View {
     @EnvironmentObject private var subManager: SubcriptionManager
     @ObservedObject private var viewModel = TurnipsViewModel()
     @State private var presentedSheet: Sheet?
-    @State private var turnipsDisplay: TurnipsDisplay = .average
+    @State private var turnipsDisplay: TurnipsDisplay = .minMax
     
     private let labels = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat"]
     
