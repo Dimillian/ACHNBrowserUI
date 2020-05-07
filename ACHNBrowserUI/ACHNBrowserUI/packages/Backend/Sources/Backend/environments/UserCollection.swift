@@ -10,6 +10,8 @@ import Foundation
 import Combine
 
 public class UserCollection: ObservableObject {
+    public static let shared = UserCollection()
+    
     @Published public var items: [Item] = []
     @Published public var villagers: [Villager] = []
     @Published public var critters: [Item] = []

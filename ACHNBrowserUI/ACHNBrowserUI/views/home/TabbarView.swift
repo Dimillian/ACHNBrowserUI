@@ -31,7 +31,7 @@ struct TabbarView: View {
                 TurnipsView().tabItem {
                     tabbarItem(text: "Turnips", image: "icon-turnip")
                 }.tag(UIState.Tab.turnips)
-                VillagersListView().tabItem{
+                VillagersListView().environmentObject(UserCollection.shared).tabItem{
                     self.tabbarItem(text: "Villagers", image: "icon-villager")
                 }.tag(UIState.Tab.villagers)
                 CollectionListView().tabItem{
