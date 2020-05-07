@@ -24,17 +24,19 @@ public class NotificationManager {
     
     public func registerTurnipsPredictionNotification(prediction: TurnipPredictions) {
         removePendingNotifications()
-        if let average = prediction.averagePrices {
+        if let average = prediction.averagePrices, let minMax = prediction.minMax {
             var dayOfTheWeek = 2
             let today = Calendar.current.component(.weekday, from: Date())
-            let todayHour = Calendar.current.component(.hour, from: Date())
             for (index, day) in average.enumerated()  {
                 let isMorning = index % 2 == 0
                 
-                if (dayOfTheWeek >= today && (dayOfTheWeek != today && todayHour > 12)) && today != 2 {
+                let min = minMax[index].first!
+                let max = minMax[index].last!
+                
+                if dayOfTheWeek >= today && today != 2 {
                     let content = UNMutableNotificationContent()
                     content.title = "Turnip prices"
-                    content.body = "Your prices predictions for \(isMorning ? "this morning": "this afternoon") should be around \(day) bells"
+                    content.body = "Your prices predictions for \(isMorning ? "this morning": "this afternoon") should be around \(day) bells. With a minimum of \(min) and a maximum of \(max)"
                     
                     var components = DateComponents()
                     components.calendar = Calendar(identifier: .gregorian)
