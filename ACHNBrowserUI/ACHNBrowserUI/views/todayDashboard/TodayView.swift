@@ -7,33 +7,45 @@
 //
 
 import SwiftUI
+import Combine
+import Backend
+import UI
 
 struct TodayView: View {
+    @EnvironmentObject private var uiState: UIState
+    @EnvironmentObject private var collection: UserCollection
+    @ObservedObject private var userDefaults = AppUserDefaults.shared
+    @ObservedObject private var viewModel = DashboardViewModel()
+    @ObservedObject private var villagersViewModel = VillagersViewModel()
+    @ObservedObject private var turnipsPredictionsService = TurnipsPredictionService.shared
+    
     @State private var selectedSheet: Sheet?
     @State private var showWhatsNew: Bool = true
     
     // MARK: - Body
     var body: some View {
-        List {
-            
-            if showWhatsNew { self.whatsNewSection }
-            
-            TodayCurrentlyAvailableSection()
-            TodayCollectionProgressSection()
-            TodayTurnipSection()
-            TodayTasksSection()
-            TodayEventsSection()
-            TodayBirthdaysSection()
-            
-            self.nookazonSection
-            self.arrangeSectionsButton
-            
+        NavigationView {
+            List {
+                
+                if showWhatsNew { self.whatsNewSection }
+                
+                TodayCurrentlyAvailableSection(viewModel: viewModel)
+                TodayCollectionProgressSection()
+                TodayTurnipSection()
+                TodayTasksSection()
+                TodayEventsSection()
+                TodayBirthdaysSection()
+                
+                self.nookazonSection
+                self.arrangeSectionsButton
+                
+            }
+            .listStyle(GroupedListStyle())
+            .environment(\.horizontalSizeClass, .regular)
+            .navigationBarTitle(Text("\(dateString())"))
+            .navigationBarItems(trailing: settingsButton)
+            .sheet(item: $selectedSheet, content: makeSheet)
         }
-        .listStyle(GroupedListStyle())
-        .environment(\.horizontalSizeClass, .regular)
-        .navigationBarTitle(Text("\(dateString())"))
-        .navigationBarItems(trailing: settingsButton)
-        .sheet(item: $selectedSheet, content: makeSheet)
     }
     
     var whatsNewSection: some View {
