@@ -98,14 +98,15 @@ struct UserListDetailView: View {
     
     
     private func searchItemRow(item: Item) -> some View {
-        ItemRowView(displayMode: .largeNoButton, item: item)
-            .listRowBackground(self.viewModel.selectedItems.contains(item) ? Color.graphAverage : Color.dialogue)
-            .onTapGesture {
-                if self.viewModel.selectedItems.contains(item) {
-                    self.viewModel.selectedItems.removeAll(where: { $0 == item })
-                } else {
-                    self.viewModel.selectedItems.append(item)
-                }
+        ZStack {
+            ItemRowView(displayMode: .largeNoButton, item: item)
+                .listRowBackground(self.viewModel.selectedItems.contains(item) ? Color.graphAverage : Color.dialogue)
+        }.onTapGesture {
+            if self.viewModel.selectedItems.contains(item) {
+                self.viewModel.selectedItems.removeAll(where: { $0 == item })
+            } else {
+                self.viewModel.selectedItems.append(item)
+            }
         }
     }
     

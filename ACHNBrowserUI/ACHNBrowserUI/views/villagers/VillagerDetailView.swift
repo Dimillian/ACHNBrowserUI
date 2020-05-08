@@ -13,6 +13,7 @@ import UI
 struct VillagerDetailView: View {
     let villager: Villager
     
+    @EnvironmentObject private var collection: UserCollection
     @State private var backgroundColor = Color.dialogue
     @State private var textColor = Color.text
     @State private var secondaryTextColor = Color.secondaryText
@@ -35,7 +36,9 @@ struct VillagerDetailView: View {
     
     private var navButtons: some View {
         HStack(spacing: 8) {
-            LikeButtonView(villager: villager).safeHoverEffectBarItem(position: .trailing)
+            LikeButtonView(villager: villager)
+                .environmentObject(collection)
+                .safeHoverEffectBarItem(position: .trailing)
             shareButton.padding(.top, -6)
         }
     }
