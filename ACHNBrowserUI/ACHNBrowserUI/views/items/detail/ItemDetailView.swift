@@ -13,6 +13,7 @@ import UI
 struct ItemDetailView: View {
     // MARK: - Vars
     @EnvironmentObject private var items: Items
+    @EnvironmentObject private var collection: UserCollection
 
     @ObservedObject private var itemViewModel: ItemDetailViewModel
     
@@ -119,6 +120,7 @@ extension ItemDetailView {
     private var navButtons: some View {
         HStack {
             LikeButtonView(item: self.itemViewModel.item).imageScale(.large)
+                .environmentObject(collection)
                 .safeHoverEffectBarItem(position: .trailing)
             Spacer(minLength: 12)
             shareButton

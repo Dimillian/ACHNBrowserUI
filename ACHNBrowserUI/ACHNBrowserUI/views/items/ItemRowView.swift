@@ -108,7 +108,7 @@ struct ItemRowView: View {
     var body: some View {
         HStack(spacing: 8) {
             if displayMode != .largeNoButton {
-                LikeButtonView(item: item)
+                LikeButtonView(item: item).environmentObject(collection)
             }
             if item.itemImage == nil && displayedVariant == nil {
                 Image(item.appCategory.iconName())
