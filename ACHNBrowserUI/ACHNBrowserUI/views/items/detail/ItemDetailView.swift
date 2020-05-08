@@ -49,7 +49,7 @@ struct ItemDetailView: View {
         }
         .listStyle(GroupedListStyle())
         .environment(\.horizontalSizeClass, .regular)
-        .frame(height: 330)
+        .frame(width: 350, height: 330)
         .asImage()
         
         return [ItemDetailSource(name: itemViewModel.item.name, image: image)]

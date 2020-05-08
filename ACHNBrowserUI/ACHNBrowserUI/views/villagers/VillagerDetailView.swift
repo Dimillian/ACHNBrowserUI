@@ -23,8 +23,10 @@ struct VillagerDetailView: View {
         Button(action: {
             let image = NavigationView {
                 self.makeBody()
-            }.frame(height: 650).asImage()
-            self.sheet = .share(content: [ItemDetailSource(name: self.villager.name["name-en"] ?? "", image: image), image])
+            }
+            .navigationViewStyle(StackNavigationViewStyle())
+            .frame(width: 350, height: 650).asImage()
+            self.sheet = .share(content: [ItemDetailSource(name: self.villager.name["name-en"] ?? "", image: image)])
         }) {
             Image(systemName: "square.and.arrow.up").imageScale(.large)
         }
