@@ -17,11 +17,15 @@ struct UserListRow: View {
             if list.icon != nil {
                 Image(list.icon!).resizable().frame(width: 30, height: 30)
             }
-            VStack(alignment: .leading) {
-                Text(list.name).style(appStyle: .rowTitle).lineLimit(1)
-                if (!list.description.isEmpty) {
-                    Text(list.description).style(appStyle: .rowDescription).lineLimit(1)
+            HStack {
+                VStack(alignment: .leading) {
+                    Text(list.name).style(appStyle: .rowTitle).lineLimit(1)
+                    if (!list.description.isEmpty) {
+                        Text(list.description).style(appStyle: .rowDescription).lineLimit(1)
+                    }
                 }
+                Spacer()
+                Text("\(list.items.count)").style(appStyle: .rowDescription)
             }
         }
     }
