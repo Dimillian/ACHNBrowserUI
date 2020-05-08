@@ -53,7 +53,7 @@ struct TurnipsView: View {
                         UIDevice.current.orientation == .portraitUpsideDown){
                     Section(header: SectionHeaderView(text: "Your prices")) {
                         Button(action: {
-                            self.presentedSheet = .form(subManager: self.subManager)
+                            self.presentedSheet = .turnipsForm(subManager: self.subManager)
                         }) {
                             Text(TurnipFields.exist() ? "Edit your in game prices" : "Add your in game prices")
                                 .foregroundColor(.bell)
@@ -174,7 +174,7 @@ extension TurnipsView {
                         Text("Please add the amount of turnips you bought and for how much")
                             .foregroundColor(.bell)
                             .onTapGesture {
-                                self.presentedSheet = .form(subManager: self.subManager)
+                                self.presentedSheet = .turnipsForm(subManager: self.subManager)
                         }
                     }
                 } else if turnipsDisplay == .chart {
@@ -187,7 +187,7 @@ extension TurnipsView {
                         Text("Add your in game turnip prices to see the predictions chart")
                             .foregroundColor(.bell)
                             .onTapGesture {
-                                self.presentedSheet = .form(subManager: self.subManager)
+                                self.presentedSheet = .turnipsForm(subManager: self.subManager)
                         }
                     }
                    
@@ -196,7 +196,7 @@ extension TurnipsView {
                 Text("Add your in game turnip prices to see predictions")
                     .foregroundColor(.bell)
                     .onTapGesture {
-                        self.presentedSheet = .form(subManager: self.subManager)
+                        self.presentedSheet = .turnipsForm(subManager: self.subManager)
                 }
             }
         }

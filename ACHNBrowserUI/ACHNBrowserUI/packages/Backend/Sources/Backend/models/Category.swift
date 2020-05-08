@@ -95,4 +95,11 @@ public enum Category: String, CaseIterable {
     public static func nature() -> [Category] {
         return [.fish, .bugs, .fossils]
     }
+    
+    public static func icons() -> [Category] {
+        return  [.housewares, .recipes, .floors, .rugs, .wallpapers,
+                .fencing, .music, .tools, .nookmiles, .construction, .tops,
+                 .bottoms, .dresses, .headwear, .accessories, .socks, .bags, .umbrellas,
+                 .fish, .bugs, .fossils]
+    }
 }

@@ -34,7 +34,7 @@ struct CategoriesView: View {
                             makeCategories()
                         } else {
                             if viewModel.isLoadingData {
-                                loadingView.animation(.default)
+                                RowLoadingView(isLoading: $isLoadingData)
                             } else if searchCategories.isEmpty {
                                 Text("No results for \(viewModel.searchText)")
                                     .foregroundColor(.secondaryText)
@@ -92,22 +92,8 @@ extension CategoriesView {
                 }
         }
     }
-    
-    
-    func makeSearchCategoryHeader(category: Backend.Category) -> some View {
-        HStack {
-            Image(category.iconName())
-                .renderingMode(.original)
-                .resizable()
-                .frame(width: 30, height: 30)
-            Text(category.label())
-                .font(.subheadline)
-        }
-    }
-    
-    
     private func searchSection(category: Backend.Category, items: [Item]) -> some View {
-        Section(header: self.makeSearchCategoryHeader(category: category)) {
+        Section(header: CategoryHeaderView(category: category)) {
             ForEach(items, content: self.searchItemRow)
         }
     }
@@ -116,15 +102,6 @@ extension CategoriesView {
         NavigationLink(destination: ItemDetailView(item: item)) {
             ItemRowView(displayMode: .large, item: item)
         }
-    }
-    
-    private var loadingView: some View {
-        VStack {
-            HStack { Spacer() }
-            Spacer()
-            ActivityIndicator(isAnimating: $isLoadingData, style: .large)
-            Spacer()
-        }.background(Color.dialogue)
     }
 }
 

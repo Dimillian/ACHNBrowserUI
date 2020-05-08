@@ -11,8 +11,9 @@ import SwiftUI
 
 public extension Text {
     enum AppTextStyle {
-        case title, rowTitle
+        case title, rowTitle, rowDescription
         case sectionHeader
+    
     }
     
     func style(appStyle: AppTextStyle) -> Text {
@@ -20,6 +21,7 @@ public extension Text {
         case .title: return title()
         case .rowTitle: return rowTitle()
         case .sectionHeader: return sectionHeader()
+        case .rowDescription: return rowDescription()
         }
     }
 }
@@ -40,6 +42,11 @@ extension Text {
     private func rowTitle() -> Text {
         self.font(.headline)
             .fontWeight(.bold)
+            .foregroundColor(.text)
+    }
+    
+    private func rowDescription() -> Text {
+        self.font(.subheadline)
             .foregroundColor(.text)
     }
 }
