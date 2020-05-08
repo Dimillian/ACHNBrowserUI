@@ -30,15 +30,32 @@ struct DashboardCollectionProgressSection: View {
         }
     }
     
+    private func makeArtProgressView(icon: String, art: [Item]) -> some View {
+        HStack {
+            Image(icon)
+                .resizable()
+                .frame(width: 20, height: 20)
+            ProgressView(progress: CGFloat(collection.collectedIn(list: art)) / CGFloat(art.count),
+                         trackColor: .catalogUnselected,
+                         progressColor: .grass)
+            Text("\(collection.collectedIn(list: art))/\(art.count)")
+                .font(.caption)
+                .bold()
+                .foregroundColor(.text)
+        }
+    }
+    
     var body: some View {
         Section(header: SectionHeaderView(text: "Collection Progress")) {
             VStack(alignment: .leading) {
                 if !viewModel.fishes.isEmpty &&
                     !viewModel.bugs.isEmpty &&
-                    !viewModel.fossils.isEmpty {
+                    !viewModel.fossils.isEmpty &&
+                    !viewModel.art.isEmpty {
                     makeProgressView(icon: "Fish19", critters: viewModel.fishes)
                     makeProgressView(icon: "Ins62", critters: viewModel.bugs)
                     makeProgressView(icon: "icon-fossil", critters: viewModel.fossils)
+                    makeArtProgressView(icon: "icon-leaf", art: viewModel.art)
                 } else {
                     Text("Loading...")
                         .foregroundColor(.secondary)

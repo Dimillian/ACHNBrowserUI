@@ -17,6 +17,7 @@ class DashboardViewModel: ObservableObject {
     @Published var fishes: [Item] = []
     @Published var bugs: [Item] = []
     @Published var fossils: [Item] = []
+    @Published var art: [Item] = []
         
     private var listingCancellable: AnyCancellable?
     private var islandCancellable: AnyCancellable?
@@ -27,6 +28,12 @@ class DashboardViewModel: ObservableObject {
             self?.fishes = items[.fish] ?? []
             self?.bugs = items[.bugs] ?? []
             self?.fossils = items[.fossils] ?? []
+            self?.art = []
+            items[.art]?.forEach { art in
+                if(art.sell ?? 0 > 0) {
+                    self?.art.append(art)
+                }
+            }
         }
         fetchIsland()
         fetchListings()

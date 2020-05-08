@@ -58,6 +58,16 @@ public class UserCollection: ObservableObject {
         return caught
     }
     
+    public func collectedIn(list: [Item]) -> Int {
+        var collected = 0
+        for item in items {
+            if list.contains(item) {
+                collected += 1
+            }
+        }
+        return collected
+    }
+    
     public func toggleItem(item: Item) -> Bool {
         let added = items.toggle(item: item)
         save()
