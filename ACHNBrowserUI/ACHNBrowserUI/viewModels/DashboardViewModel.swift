@@ -28,12 +28,7 @@ class DashboardViewModel: ObservableObject {
             self?.fishes = items[.fish] ?? []
             self?.bugs = items[.bugs] ?? []
             self?.fossils = items[.fossils] ?? []
-            self?.art = []
-            items[.art]?.forEach { art in
-                if(art.sell ?? 0 > 0) {
-                    self?.art.append(art)
-                }
-            }
+            self?.art = items[.art]?.filter({ !$0.name.contains("(fake)") }) ?? []
         }
         fetchIsland()
         fetchListings()

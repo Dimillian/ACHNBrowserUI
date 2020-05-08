@@ -55,17 +55,12 @@ public class UserCollection: ObservableObject {
                 caught += 1
             }
         }
-        return caught
-    }
-    
-    public func collectedIn(list: [Item]) -> Int {
-        var collected = 0
         for item in items {
-            if list.contains(item) {
-                collected += 1
+            if list.contains(item) && !item.name.contains("(fake)") {
+                caught += 1
             }
         }
-        return collected
+        return caught
     }
     
     public func toggleItem(item: Item) -> Bool {
