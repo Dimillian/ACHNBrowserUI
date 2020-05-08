@@ -7,6 +7,7 @@
 //
 
 import SwiftUI
+import SwiftUIKit
 import Backend
 
 enum Tabs: String, CaseIterable {
@@ -15,6 +16,7 @@ enum Tabs: String, CaseIterable {
 
 struct CollectionListView: View {
     @EnvironmentObject private var collection: UserCollection
+    @EnvironmentObject private var subscriptionManager: SubcriptionManager
     @State private var selectedTab: Tabs = .items
     @State private var sheet: Sheet.SheetType?
         
@@ -62,10 +64,12 @@ struct CollectionListView: View {
     
     private var userListsSections: some View {
         Group {
-            Button(action: {
-                self.sheet = .userListForm(editingList: nil)
-            }) {
-                Text("Create a new list").foregroundColor(.bell)
+            if subscriptionManager.subscriptionStatus == .subscribed || collection.lists.isEmpty {
+                Button(action: {
+                    self.sheet = .userListForm(editingList: nil)
+                }) {
+                    Text("Create a new list").foregroundColor(.bell)
+                }
             }
             ForEach(collection.lists) { list in
                 NavigationLink(destination: UserListDetailView(list: list)) {
@@ -78,6 +82,29 @@ struct CollectionListView: View {
                 }
             }.onDelete { indexes in
                 self.collection.deleteList(at: indexes.first!)
+            }
+            if subscriptionManager.subscriptionStatus != .subscribed && collection.lists.count >= 1 {
+                VStack(spacing: 8) {
+                    Button(action: {
+                        self.sheet = .subscription(subManager: self.subscriptionManager)
+                    }) {
+                        Text("In order to create more than one list, you need to subscribe to AC Helper+")
+                            .foregroundColor(.secondaryText)
+                            .lineLimit(nil)
+                            .fixedSize(horizontal: false, vertical: true)
+                            .padding(.top, 8)
+                    }
+                    Button(action: {
+                        self.sheet = .subscription(subManager: self.subscriptionManager)
+                    }) {
+                        Text("Learn more...")
+                            .font(.headline)
+                            .fontWeight(.bold)
+                            .foregroundColor(.white)
+                    }.buttonStyle(PlainRoundedButton())
+                        .accentColor(.bell)
+                        .padding(.bottom, 8)
+                }
             }
         }
     }

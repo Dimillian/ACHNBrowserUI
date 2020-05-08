@@ -13,6 +13,7 @@ public extension Text {
     enum AppTextStyle {
         case title, rowTitle
         case sectionHeader
+    
     }
     
     func style(appStyle: AppTextStyle) -> Text {
