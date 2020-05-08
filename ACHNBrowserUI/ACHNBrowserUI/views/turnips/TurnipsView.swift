@@ -23,6 +23,11 @@ struct TurnipsView: View {
             case .chart: return "Chart"
             }
         }
+
+        var isChart: Bool {
+            get { self == .chart }
+            set { }
+        }
     }
     
     private enum Sheet: String, Identifiable {
@@ -174,7 +179,10 @@ extension TurnipsView {
                     }
                 } else if turnipsDisplay == .chart {
                     if viewModel.predictions != nil {
-                        TurnipsChartView(predictions: viewModel.predictions!).padding(.top, 8)
+                        TurnipsChartView(
+                            predictions: viewModel.predictions!,
+                            animateCurves: $turnipsDisplay.isChart
+                        ).padding(.top, 8)
                     } else {
                         Text("Add your in game turnip prices to see the predictions chart")
                             .foregroundColor(.bell)

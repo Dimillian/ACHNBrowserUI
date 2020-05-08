@@ -13,6 +13,7 @@ struct TurnipsChartView: View {
     typealias PredictionCurve = TurnipsChart.PredictionCurve
     static let verticalLinesCount: CGFloat = 9
     var predictions: TurnipPredictions
+    @Binding var animateCurves: Bool
     @Environment(\.presentationMode) var presentation
 
     var body: some View {
@@ -47,7 +48,7 @@ struct TurnipsChartView: View {
                 .foregroundColor(PredictionCurve.minBuyPrice.color)
                 .saturation(3)
                 .blendMode(.screen)
-            TurnipsChartMinMaxCurves(predictions: predictions)
+            TurnipsChartMinMaxCurves(predictions: predictions, animationStep: animateCurves ? 1 : 0.1)
                 .foregroundColor(PredictionCurve.minMax.color)
                 .opacity(0.25)
                 .blendMode(.darken)
@@ -56,19 +57,24 @@ struct TurnipsChartView: View {
                 .foregroundColor(PredictionCurve.average.color)
                 .saturation(5)
                 .blendMode(.screen)
-        }
+        }.animation(.spring())
     }
 }
 
 struct TurnipsChartView_Previews: PreviewProvider {
     static var previews: some View {
-        TurnipsChartView(predictions: TurnipPredictions(
-            minBuyPrice: 83,
-            averagePrices: averagePrices,
-            minMax: minMax,
-            averageProfits: averageProfits
-        )).padding()
+        TurnipsChartView(
+            predictions: predictions,
+            animateCurves: .constant(true)
+        ).padding()
     }
+
+    static let predictions = TurnipPredictions(
+        minBuyPrice: 83,
+        averagePrices: averagePrices,
+        minMax: minMax,
+        averageProfits: averageProfits
+    )
 
     static let averagePrices = [89, 85, 88, 104, 110, 111, 111, 111, 106, 98, 82, 77]
 
