@@ -10,6 +10,55 @@ import Foundation
 import SwiftUI
 
 extension Color {
+    
+    public static var acBackground: Color {
+        Color("ACBackground")
+    }
+    
+    public static var acSecondaryBackground: Color {
+        Color("ACSecondaryBackground")
+    }
+    
+    public static var acTertiaryBackground: Color {
+        Color("ACTertiaryBackground")
+    }
+    
+    // ---
+    
+    public static var acHeaderBackground: Color {
+        Color("ACHeaderBackground")
+    }
+    
+    public static var acHeaderText: Color {
+        Color("ACHeaderText")
+    }
+    
+    // ---
+    
+    public static var acTabBarBackground: Color {
+        Color("ACTabBarBackground")
+    }
+    
+    public static var acTabBarSelected: Color {
+        Color("ACTabBarSelected")
+    }
+    
+    public static var acTabBarTint: Color {
+        Color("ACTabBarTint")
+    }
+    
+    // ----
+    
+    public static var acText: Color {
+        Color("ACText")
+    }
+    
+    public static var acSecondaryText: Color {
+        Color("ACSecondaryText")
+    }
+    
+    // ---
+    
     public static var dialogue: Color {
         Color("dialogue", bundle: nil)
     }
