@@ -59,6 +59,11 @@ public class UserCollection: ObservableObject {
                 caught += 1
             }
         }
+        for item in items {
+            if list.contains(item) && !item.name.contains("(fake)") {
+                caught += 1
+            }
+        }
         return caught
     }
     

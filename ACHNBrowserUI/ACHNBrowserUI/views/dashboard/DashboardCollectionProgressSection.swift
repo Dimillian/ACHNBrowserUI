@@ -35,10 +35,12 @@ struct DashboardCollectionProgressSection: View {
             VStack(alignment: .leading) {
                 if !viewModel.fishes.isEmpty &&
                     !viewModel.bugs.isEmpty &&
-                    !viewModel.fossils.isEmpty {
+                    !viewModel.fossils.isEmpty &&
+                    !viewModel.art.isEmpty {
                     makeProgressView(icon: "Fish19", critters: viewModel.fishes)
                     makeProgressView(icon: "Ins62", critters: viewModel.bugs)
                     makeProgressView(icon: "icon-fossil", critters: viewModel.fossils)
+                    makeProgressView(icon: "icon-leaf", critters: viewModel.art)
                 } else {
                     Text("Loading...")
                         .foregroundColor(.secondary)
