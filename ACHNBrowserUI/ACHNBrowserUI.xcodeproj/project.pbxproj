@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		024363D82465EA15006A37A0 /* TodayCurrentlyAvailableSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 024363D02465EA14006A37A0 /* TodayCurrentlyAvailableSection.swift */; };
+		024363D92465EA15006A37A0 /* TodayTurnipSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 024363D12465EA14006A37A0 /* TodayTurnipSection.swift */; };
+		024363DA2465EA15006A37A0 /* TodayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 024363D22465EA14006A37A0 /* TodayView.swift */; };
+		024363DB2465EA15006A37A0 /* TodaySectionEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 024363D32465EA14006A37A0 /* TodaySectionEditView.swift */; };
+		024363DC2465EA15006A37A0 /* TodayEventsSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 024363D42465EA14006A37A0 /* TodayEventsSection.swift */; };
+		024363DD2465EA15006A37A0 /* TodayBirthdaysSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 024363D52465EA15006A37A0 /* TodayBirthdaysSection.swift */; };
+		024363DE2465EA15006A37A0 /* TodayTasksSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 024363D62465EA15006A37A0 /* TodayTasksSection.swift */; };
+		024363DF2465EA15006A37A0 /* TodayCollectionProgressSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 024363D72465EA15006A37A0 /* TodayCollectionProgressSection.swift */; };
 		028620752454C32800795719 /* AppIconPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 028620742454C32800795719 /* AppIconPickerView.swift */; };
 		02F2D3F92455D81C009741DA /* bookmark-gold@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 02F2D3A82455D81C009741DA /* bookmark-gold@2x.png */; };
 		02F2D3FA2455D81C009741DA /* simple-blueberry@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 02F2D3A92455D81C009741DA /* simple-blueberry@2x.png */; };
@@ -256,6 +264,14 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		024363D02465EA14006A37A0 /* TodayCurrentlyAvailableSection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodayCurrentlyAvailableSection.swift; sourceTree = "<group>"; };
+		024363D12465EA14006A37A0 /* TodayTurnipSection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodayTurnipSection.swift; sourceTree = "<group>"; };
+		024363D22465EA14006A37A0 /* TodayView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodayView.swift; sourceTree = "<group>"; };
+		024363D32465EA14006A37A0 /* TodaySectionEditView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodaySectionEditView.swift; sourceTree = "<group>"; };
+		024363D42465EA14006A37A0 /* TodayEventsSection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodayEventsSection.swift; sourceTree = "<group>"; };
+		024363D52465EA15006A37A0 /* TodayBirthdaysSection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodayBirthdaysSection.swift; sourceTree = "<group>"; };
+		024363D62465EA15006A37A0 /* TodayTasksSection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodayTasksSection.swift; sourceTree = "<group>"; };
+		024363D72465EA15006A37A0 /* TodayCollectionProgressSection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodayCollectionProgressSection.swift; sourceTree = "<group>"; };
 		028620742454C32800795719 /* AppIconPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppIconPickerView.swift; sourceTree = "<group>"; };
 		02F2D3A82455D81C009741DA /* bookmark-gold@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bookmark-gold@2x.png"; sourceTree = "<group>"; };
 		02F2D3A92455D81C009741DA /* simple-blueberry@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "simple-blueberry@2x.png"; sourceTree = "<group>"; };
@@ -490,6 +506,14 @@
 		024363CF2465E7FD006A37A0 /* todayDashboard */ = {
 			isa = PBXGroup;
 			children = (
+				024363D22465EA14006A37A0 /* TodayView.swift */,
+				024363D32465EA14006A37A0 /* TodaySectionEditView.swift */,
+				024363D52465EA15006A37A0 /* TodayBirthdaysSection.swift */,
+				024363D72465EA15006A37A0 /* TodayCollectionProgressSection.swift */,
+				024363D02465EA14006A37A0 /* TodayCurrentlyAvailableSection.swift */,
+				024363D42465EA14006A37A0 /* TodayEventsSection.swift */,
+				024363D62465EA15006A37A0 /* TodayTasksSection.swift */,
+				024363D12465EA14006A37A0 /* TodayTurnipSection.swift */,
 			);
 			path = todayDashboard;
 			sourceTree = "<group>";
@@ -1291,6 +1315,7 @@
 				68BA5826244A511700B53811 /* CategoryDetailView.swift in Sources */,
 				697E6400244AD66E008FB710 /* SettingsView.swift in Sources */,
 				68BA582C244B695F00B53811 /* IslandDetailViewModel.swift in Sources */,
+				024363D92465EA15006A37A0 /* TodayTurnipSection.swift in Sources */,
 				69875F5B24655AF000B1D46C /* UserListDetailViewModel.swift in Sources */,
 				692C0B872451791E004847A1 /* DashboardNookazonListingSection.swift in Sources */,
 				692C0B83245176BF004847A1 /* DashboardAvailableCrittersSection.swift in Sources */,
@@ -1310,6 +1335,7 @@
 				4C7F2F782461F10300930928 /* TurnipsChartVerticalLegend.swift in Sources */,
 				4CF8049B24635E54005C6C63 /* Path.swift in Sources */,
 				693E728E245D71DD00CD26F4 /* UIState.swift in Sources */,
+				024363DE2465EA15006A37A0 /* TodayTasksSection.swift in Sources */,
 				68BA5834244B9D4100B53811 /* DashboardView.swift in Sources */,
 				692C0B8524517837004847A1 /* DashboardCollectionProgressSection.swift in Sources */,
 				693E72A7245EBB1200CD26F4 /* SafariView.swift in Sources */,
@@ -1321,10 +1347,12 @@
 				693E2BC02465B71000B85CB8 /* CategoryHeaderView.swift in Sources */,
 				693E729B245E9C0E00CD26F4 /* ItemDetailSource.swift in Sources */,
 				6834558B244E4E0B0072FC0C /* DashboardEventTextView.swift in Sources */,
+				024363D82465EA15006A37A0 /* TodayCurrentlyAvailableSection.swift in Sources */,
 				69AF8C53243E283D001DD9CB /* SceneDelegate.swift in Sources */,
 				69875F5724654F7100B1D46C /* UserListFormViewModel.swift in Sources */,
 				69BEA985243E639900F02C61 /* CollectionListView.swift in Sources */,
 				697E63FB2449DB0C008FB710 /* VillagerDetailView.swift in Sources */,
+				024363DA2465EA15006A37A0 /* TodayView.swift in Sources */,
 				69C5F5EA244217FB00BF8FA4 /* CategoriesView.swift in Sources */,
 				69875F5024652A4700B1D46C /* Sheet.swift in Sources */,
 				6941F3882452BDDD00EC2E02 /* CategoriesSearchViewModel.swift in Sources */,
@@ -1337,9 +1365,12 @@
 				693E72A0245EA5A000CD26F4 /* Text.swift in Sources */,
 				69AF8C55243E283D001DD9CB /* ItemsListView.swift in Sources */,
 				69BEA98B243EFE9700F02C61 /* ItemDetailView.swift in Sources */,
+				024363DD2465EA15006A37A0 /* TodayBirthdaysSection.swift in Sources */,
 				69AF8C6D243E2A18001DD9CB /* ItemsViewModel.swift in Sources */,
+				024363DC2465EA15006A37A0 /* TodayEventsSection.swift in Sources */,
 				69CA5EFC244ED38C00B275B6 /* FeedbackGenerator.swift in Sources */,
 				697E63FD244AD42D008FB710 /* CategoryRowView.swift in Sources */,
+				024363DF2465EA15006A37A0 /* TodayCollectionProgressSection.swift in Sources */,
 				693E7294245D834C00CD26F4 /* SubscribeView.swift in Sources */,
 				69B13CB124577BBF0089BD7B /* TurnipsFormView.swift in Sources */,
 				4C2D6776245F4F55005831C4 /* TurnipsChartMinMaxCurves.swift in Sources */,
@@ -1353,6 +1384,7 @@
 				6951836A245977D1005D28E0 /* TurnipsAveragePriceRow.swift in Sources */,
 				69CA5F18244F447E00B275B6 /* EventsDescription.swift in Sources */,
 				69B13CA8245599A00089BD7B /* ItemDetailInfoView.swift in Sources */,
+				024363DB2465EA15006A37A0 /* TodaySectionEditView.swift in Sources */,
 				697E63F72449A7BA008FB710 /* VillagersViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
