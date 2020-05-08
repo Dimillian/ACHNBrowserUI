@@ -13,7 +13,7 @@ import Backend
 class VillagersViewModel: ObservableObject {
     private static var cachedVillagers: [Villager] = []
     
-    @Published var villagers: [Villager] = VillagersViewModel.cachedVillagers {
+    @Published var villagers: [Villager] = [] {
         didSet {
             Self.cachedVillagers = villagers
             let formatter = DateFormatter()
@@ -43,6 +43,7 @@ class VillagersViewModel: ObservableObject {
             .map(villagers(with:))
             .sink(receiveValue: { [weak self] in self?.searchResults = $0 })
         
+        villagers = Self.cachedVillagers
         if villagers.isEmpty {
             fetch()
         }
