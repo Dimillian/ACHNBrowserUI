@@ -92,7 +92,7 @@ struct ItemsListView: View {
         .navigationBarTitle(Text(viewModel.category.label()),
                             displayMode: .automatic)
             .navigationBarItems(trailing:
-                HStack(spacing: 16) {
+                HStack(spacing: 12) {
                     layoutButton
                     sortButton
                 })
