@@ -26,7 +26,7 @@ class ACHNBrowserUI_EarlGreyUITests: XCTestCase {
         EarlGrey.element("Villagers").tap()
         EarlGrey.element("My Stuff").tap()
         EarlGrey.element("Dashboard").tap()
-        EarlGrey.element("Bugs").tap()
+        //EarlGrey.element("Bugs").tap()
 
     }
 
