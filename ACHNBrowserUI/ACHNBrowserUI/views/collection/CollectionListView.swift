@@ -73,12 +73,7 @@ struct CollectionListView: View {
             }
             ForEach(collection.lists) { list in
                 NavigationLink(destination: UserListDetailView(list: list)) {
-                    HStack {
-                        if list.icon != nil {
-                            Image(list.icon!).resizable().frame(width: 30, height: 30)
-                        }
-                        Text(list.name).style(appStyle: .rowTitle)
-                    }
+                    UserListRow(list: list)
                 }
             }.onDelete { indexes in
                 self.collection.deleteList(at: indexes.first!)

@@ -70,9 +70,11 @@ struct UserListFormView: View {
                             }.tag(icon)
                         }
                 }
-            }.navigationBarTitle("Edit your list")
+            }
+            .navigationBarTitle("Edit your list")
             .navigationBarItems(leading: dismissButton, trailing: saveButton)
         }
+        .navigationViewStyle(StackNavigationViewStyle())
     }
 }
 
