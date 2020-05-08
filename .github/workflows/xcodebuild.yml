@@ -28,4 +28,4 @@ jobs:
     - name: Xcode build iOS App
       run: |
         cd ACHNBrowserUI/
-        xcodebuild clean build -scheme ACHNBrowserUI -destination 'platform=iOS Simulator,name=iPhone 11,OS=13.4'
+        xcodebuild clean test -scheme ACHNBrowserUI -destination 'platform=iOS Simulator,name=iPhone 11,OS=13.4'
