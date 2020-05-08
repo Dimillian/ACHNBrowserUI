@@ -15,11 +15,13 @@ public class UserCollection: ObservableObject {
     @Published public var items: [Item] = []
     @Published public var villagers: [Villager] = []
     @Published public var critters: [Item] = []
+    @Published public var lists: [UserList] = []
     
     struct SavedData: Codable {
         let items: [Item]
         let villagers: [Villager]
         let critters: [Item]
+        let lists: [UserList]?
     }
     
     private let filePath: URL
@@ -39,6 +41,7 @@ public class UserCollection: ObservableObject {
                     self.items = savedData.items
                     self.villagers = savedData.villagers
                     self.critters = savedData.critters
+                    self.lists = savedData.lists ?? []
                 } catch {
                     try? FileManager.default.removeItem(at: filePath)
                 }
@@ -48,6 +51,7 @@ public class UserCollection: ObservableObject {
         }
     }
     
+    // MARK: - Critters
     public func caughtIn(list: [Item]) -> Int {
         var caught = 0
         for critter in critters {
@@ -82,9 +86,39 @@ public class UserCollection: ObservableObject {
         return added
     }
     
+    // MARK: - User items list
+    public func addList(userList: UserList) {
+        lists.append(userList)
+        save()
+    }
+    
+    public func editList(userList: UserList) {
+        let index = lists.firstIndex(where: { $0.id == userList.id} )!
+        lists[index] = userList
+        save()
+    }
+    
+    public func deleteList(at index: Int) {
+        lists.remove(at: index)
+        save()
+    }
+    
+    public func addItems(for list: UUID, items: [Item]) {
+        let index = lists.firstIndex(where: { $0.id == list })!
+        lists[index].items.append(contentsOf: items)
+        save()
+    }
+    
+    public func deleteItem(for list: UUID, at: Int) {
+        let index = lists.firstIndex(where: { $0.id == list })!
+        lists[index].items.remove(at: at)
+        save()
+    }
+    
+    // MARK: - Saving
     private func save() {
         do {
-            let savedData = SavedData(items: items, villagers: villagers, critters: critters)
+            let savedData = SavedData(items: items, villagers: villagers, critters: critters, lists: lists)
             let data = try encoder.encode(savedData)
             try data.write(to: filePath, options: .atomicWrite)
         } catch let error {
