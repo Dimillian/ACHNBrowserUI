@@ -11,6 +11,12 @@ import Backend
 
 struct TurnipsChartAverageCurve: Shape {
     let predictions: TurnipPredictions
+    var animationStep: CGFloat = 1
+
+    var animatableData: CGFloat {
+        get { animationStep }
+        set { animationStep = newValue }
+    }
 
     func path(in rect: CGRect) -> Path {
         var path = Path()
@@ -29,6 +35,30 @@ struct TurnipsChartAverageCurve: Shape {
         }
         path.addLines(points)
 
-        return path
+        return path.trimmedPath(from: 0, to: animationStep)
+    }
+}
+
+
+struct TurnipsChartAverageCurve_Previews: PreviewProvider {
+    static var previews: some View {
+        Preview().padding()
+    }
+
+    private struct Preview: View {
+        @State private var animationStep: CGFloat = 1
+
+        var body: some View {
+            VStack {
+                TurnipsChartAverageCurve(
+                    predictions: TurnipsChartView_Previews.predictions,
+                    animationStep: animationStep
+                )
+                    .stroke(lineWidth: 3)
+                    .foregroundColor(TurnipsChart.PredictionCurve.average.color)
+                    .saturation(5)
+                Slider(value: $animationStep, in: 0...1)
+            }
+        }
     }
 }

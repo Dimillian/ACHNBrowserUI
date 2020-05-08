@@ -52,7 +52,7 @@ struct TurnipsChartView: View {
                 .foregroundColor(PredictionCurve.minMax.color)
                 .opacity(0.25)
                 .blendMode(.darken)
-            TurnipsChartAverageCurve(predictions: predictions)
+            TurnipsChartAverageCurve(predictions: predictions, animationStep: animateCurves ? 1 : 0)
                 .stroke(lineWidth: 3)
                 .foregroundColor(PredictionCurve.average.color)
                 .saturation(5)
