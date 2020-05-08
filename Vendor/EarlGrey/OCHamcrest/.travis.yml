@@ -1,0 +1,15 @@
+language: objective-c
+osx_image: xcode10.2
+
+before_install:
+  - gem install slather
+
+script:
+  - set -o pipefail;
+  - xcodebuild test -project Source/OCHamcrest.xcodeproj -scheme OCHamcrest -sdk macosx | xcpretty
+  - xcodebuild test -project Source/OCHamcrest.xcodeproj -scheme libochamcrest -sdk iphonesimulator -destination "platform=iOS Simulator,OS=latest,name=iPhone 5" | xcpretty
+  - xcodebuild test -project Source/OCHamcrest.xcodeproj -scheme libochamcrest -sdk iphonesimulator -destination "platform=iOS Simulator,OS=latest,name=iPhone 5s" | xcpretty
+  - pod spec lint --quick
+
+after_success:
+  - slather
