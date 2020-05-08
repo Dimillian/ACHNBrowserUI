@@ -233,7 +233,18 @@
 		69E4BBB8245AE60F001035E2 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 69AF8C79243E4C78001DD9CB /* Colors.xcassets */; };
 		69E4BBBB245B0BEF001035E2 /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69E4BBBA245B0BEF001035E2 /* AboutView.swift */; };
 		69EC82EE2461E79D00CE9064 /* TurnipsChartTopLegendView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69EC82ED2461E79D00CE9064 /* TurnipsChartTopLegendView.swift */; };
+		78863EF924659DBC00BA3762 /* ACHNBrowserUI_UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78863EF824659DBC00BA3762 /* ACHNBrowserUI_UITests.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		78863EFB24659DBC00BA3762 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 69AF8C45243E283D001DD9CB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 69AF8C4C243E283D001DD9CB;
+			remoteInfo = ACHNBrowserUI;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		69CFCA7E245AAE530059C067 /* Embed PlugIns */ = {
@@ -444,6 +455,9 @@
 		69E4BBB5245AE5C9001035E2 /* ItemDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailView.swift; sourceTree = "<group>"; };
 		69E4BBBA245B0BEF001035E2 /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
 		69EC82ED2461E79D00CE9064 /* TurnipsChartTopLegendView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TurnipsChartTopLegendView.swift; sourceTree = "<group>"; };
+		78863EF624659DBC00BA3762 /* ACHNBrowserUI-UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ACHNBrowserUI-UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		78863EF824659DBC00BA3762 /* ACHNBrowserUI_UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ACHNBrowserUI_UITests.swift; sourceTree = "<group>"; };
+		78863EFA24659DBC00BA3762 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -467,6 +481,13 @@
 				69CFCADD245ADCCF0059C067 /* Backend in Frameworks */,
 				69E4BBB2245AE06B001035E2 /* UI in Frameworks */,
 				69CFCADF245ADCD40059C067 /* ACNHEvents in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		78863EF324659DBC00BA3762 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -737,6 +758,7 @@
 				69CFCA14245A9C400059C067 /* Backend */,
 				69E4BBAE245ADF26001035E2 /* UI */,
 				69CFCA7F245AAF300059C067 /* Resources */,
+				78863EF724659DBC00BA3762 /* ACHNBrowserUI-UITests */,
 				69AF8C4E243E283D001DD9CB /* Products */,
 				6951837324599C26005D28E0 /* Frameworks */,
 			);
@@ -747,6 +769,7 @@
 			children = (
 				69AF8C4D243E283D001DD9CB /* AC Helper.app */,
 				69CFCAC6245ADC780059C067 /* ACHNBrowserUITV.app */,
+				78863EF624659DBC00BA3762 /* ACHNBrowserUI-UITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -986,6 +1009,15 @@
 			path = about;
 			sourceTree = "<group>";
 		};
+		78863EF724659DBC00BA3762 /* ACHNBrowserUI-UITests */ = {
+			isa = PBXGroup;
+			children = (
+				78863EF824659DBC00BA3762 /* ACHNBrowserUI_UITests.swift */,
+				78863EFA24659DBC00BA3762 /* Info.plist */,
+			);
+			path = "ACHNBrowserUI-UITests";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1035,13 +1067,31 @@
 			productReference = 69CFCAC6245ADC780059C067 /* ACHNBrowserUITV.app */;
 			productType = "com.apple.product-type.application";
 		};
+		78863EF524659DBC00BA3762 /* ACHNBrowserUI-UITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 78863EFD24659DBC00BA3762 /* Build configuration list for PBXNativeTarget "ACHNBrowserUI-UITests" */;
+			buildPhases = (
+				78863EF224659DBC00BA3762 /* Sources */,
+				78863EF324659DBC00BA3762 /* Frameworks */,
+				78863EF424659DBC00BA3762 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				78863EFC24659DBC00BA3762 /* PBXTargetDependency */,
+			);
+			name = "ACHNBrowserUI-UITests";
+			productName = "ACHNBrowserUI-UITests";
+			productReference = 78863EF624659DBC00BA3762 /* ACHNBrowserUI-UITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		69AF8C45243E283D001DD9CB /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1140;
+				LastSwiftUpdateCheck = 1150;
 				LastUpgradeCheck = 1140;
 				ORGANIZATIONNAME = "Thomas Ricouard";
 				TargetAttributes = {
@@ -1050,6 +1100,10 @@
 					};
 					69CFCAC5245ADC780059C067 = {
 						CreatedOnToolsVersion = 11.4.1;
+					};
+					78863EF524659DBC00BA3762 = {
+						CreatedOnToolsVersion = 11.5;
+						TestTargetID = 69AF8C4C243E283D001DD9CB;
 					};
 				};
 			};
@@ -1072,6 +1126,7 @@
 			targets = (
 				69AF8C4C243E283D001DD9CB /* ACHNBrowserUI */,
 				69CFCAC5245ADC780059C067 /* ACHNBrowserUITV */,
+				78863EF524659DBC00BA3762 /* ACHNBrowserUI-UITests */,
 			);
 		};
 /* End PBXProject section */
@@ -1237,6 +1292,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		78863EF424659DBC00BA3762 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -1325,7 +1387,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		78863EF224659DBC00BA3762 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				78863EF924659DBC00BA3762 /* ACHNBrowserUI_UITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		78863EFC24659DBC00BA3762 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 69AF8C4C243E283D001DD9CB /* ACHNBrowserUI */;
+			targetProxy = 78863EFB24659DBC00BA3762 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		69AF8C5B243E2841001DD9CB /* LaunchScreen.storyboard */ = {
@@ -1469,7 +1547,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 050812020;
 				DEVELOPMENT_ASSET_PATHS = "\"ACHNBrowserUI/Preview Content\"";
-				DEVELOPMENT_TEAM = Z6P74P6T99;
+				DEVELOPMENT_TEAM = Y5PE65HELJ;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = ACHNBrowserUI/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -1478,7 +1556,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0.3;
-				PRODUCT_BUNDLE_IDENTIFIER = com.thomasricouard.ACNH;
+				PRODUCT_BUNDLE_IDENTIFIER = com.thomasricouard2.ACNH;
 				PRODUCT_NAME = "AC Helper";
 				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
@@ -1494,7 +1572,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 050812020;
 				DEVELOPMENT_ASSET_PATHS = "\"ACHNBrowserUI/Preview Content\"";
-				DEVELOPMENT_TEAM = Z6P74P6T99;
+				DEVELOPMENT_TEAM = Y5PE65HELJ;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = ACHNBrowserUI/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -1503,7 +1581,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0.3;
-				PRODUCT_BUNDLE_IDENTIFIER = com.thomasricouard.ACNH;
+				PRODUCT_BUNDLE_IDENTIFIER = com.thomasricouard2.ACNH;
 				PRODUCT_NAME = "AC Helper";
 				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
@@ -1555,6 +1633,46 @@
 			};
 			name = Release;
 		};
+		78863EFE24659DBC00BA3762 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Y5PE65HELJ;
+				INFOPLIST_FILE = "ACHNBrowserUI-UITests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.achn.ACHNBrowserUI-UITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = ACHNBrowserUI;
+			};
+			name = Debug;
+		};
+		78863EFF24659DBC00BA3762 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Y5PE65HELJ;
+				INFOPLIST_FILE = "ACHNBrowserUI-UITests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.achn.ACHNBrowserUI-UITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = ACHNBrowserUI;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1581,6 +1699,15 @@
 			buildConfigurations = (
 				69CFCAD6245ADC7A0059C067 /* Debug */,
 				69CFCAD7245ADC7A0059C067 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		78863EFD24659DBC00BA3762 /* Build configuration list for PBXNativeTarget "ACHNBrowserUI-UITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				78863EFE24659DBC00BA3762 /* Debug */,
+				78863EFF24659DBC00BA3762 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
