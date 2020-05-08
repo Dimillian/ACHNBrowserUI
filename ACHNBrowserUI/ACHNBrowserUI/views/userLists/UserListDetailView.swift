@@ -13,6 +13,7 @@ struct UserListDetailView: View {
     @ObservedObject private var viewModel: UserListDetailViewModel
     @ObservedObject private var searchViewModdel = CategoriesSearchViewModel()
     @State private var isLoadingData = false
+    @State private var sheet: Sheet.SheetType?
     
     init(list: UserList) {
         self.viewModel = UserListDetailViewModel(list: list)
@@ -36,6 +37,14 @@ struct UserListDetailView: View {
         }
     }
     
+    private var editButton: some View {
+        Button(action: {
+            self.sheet = .userListForm(editingList: self.viewModel.list)
+        }) {
+            Text("Edit").foregroundColor(.bell)
+        }
+    }
+    
     private var searchBar: some View {
         HStack {
             SearchField(searchText: $searchViewModdel.searchText, placeholder: "Search Items")
@@ -46,19 +55,24 @@ struct UserListDetailView: View {
     }
     
     var body: some View {
-        List(selection: $viewModel.selectedItems) {
+        List {
             Section(header: searchBar) {
                 if searchViewModdel.searchText.isEmpty {
-                    ForEach(viewModel.list.items) { item in
-                        NavigationLink(destination: ItemDetailView(item: item)) {
-                            ItemRowView(displayMode: .largeNoButton, item: item)
+                    if !viewModel.list.items.isEmpty {
+                        ForEach(viewModel.list.items) { item in
+                            NavigationLink(destination: ItemDetailView(item: item)) {
+                                ItemRowView(displayMode: .largeNoButton, item: item)
+                            }
+                        }.onDelete { indexes in
+                            self.viewModel.deleteItem(at: indexes.first!)
                         }
-                    }.onDelete { indexes in
-                        self.viewModel.deleteItem(at: indexes.first!)
+                    } else {
+                        Text("Search some items to add to your list")
+                            .foregroundColor(.secondaryText)
                     }
                 } else {
                     if searchViewModdel.isLoadingData {
-                        loadingView.animation(.default)
+                        RowLoadingView(isLoading: $isLoadingData).animation(.default)
                     } else if searchCategories.isEmpty {
                         Text("No results for \(searchViewModdel.searchText)")
                             .foregroundColor(.secondaryText)
@@ -72,38 +86,26 @@ struct UserListDetailView: View {
         .environment(\.editMode, .constant(!searchViewModdel.searchText.isEmpty ? .active : .inactive))
         .onReceive(searchViewModdel.$isLoadingData) { self.isLoadingData = $0 }
         .navigationBarTitle(Text(viewModel.list.name))
-    }
-    
-    private var loadingView: some View {
-        VStack {
-            HStack { Spacer() }
-            Spacer()
-            ActivityIndicator(isAnimating: $isLoadingData, style: .large)
-            Spacer()
-        }.background(Color.dialogue)
-    }
-    
-    private func makeSearchCategoryHeader(category: Backend.Category) -> some View {
-        HStack {
-            Image(category.iconName())
-                .renderingMode(.original)
-                .resizable()
-                .frame(width: 30, height: 30)
-            Text(category.label())
-                .font(.subheadline)
-        }
+        .navigationBarItems(trailing: editButton)
+        .sheet(item: $sheet, content: { Sheet(sheetType: $0) })
     }
     
     private func searchSection(category: Backend.Category, items: [Item]) -> some View {
-        Section(header: self.makeSearchCategoryHeader(category: category)) {
+        Section(header: CategoryHeaderView(category: category)) {
             ForEach(items, content: self.searchItemRow)
         }
     }
     
     
     private func searchItemRow(item: Item) -> some View {
-        NavigationLink(destination: ItemDetailView(item: item)) {
-            ItemRowView(displayMode: .largeNoButton, item: item)
+        ItemRowView(displayMode: .largeNoButton, item: item)
+            .listRowBackground(self.viewModel.selectedItems.contains(item) ? Color.dialogueReverse : Color.dialogue)
+            .onTapGesture {
+                if self.viewModel.selectedItems.contains(item) {
+                    self.viewModel.selectedItems.removeAll(where: { $0 == item })
+                } else {
+                    self.viewModel.selectedItems.append(item)
+                }
         }
     }
     

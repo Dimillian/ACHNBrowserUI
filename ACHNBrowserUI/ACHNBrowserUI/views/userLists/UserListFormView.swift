@@ -61,7 +61,7 @@ struct UserListFormView: View {
                 }
                 Picker(selection: $viewModel.selectedIcon,
                        label: Text("Icon")) {
-                        ForEach(Category.allCases.map{ $0.iconName() }, id: \.self) { icon in
+                        ForEach(Category.icons().map{ $0.iconName() }, id: \.self) { icon in
                             HStack {
                                 Image(icon)
                                     .renderingMode(.original)

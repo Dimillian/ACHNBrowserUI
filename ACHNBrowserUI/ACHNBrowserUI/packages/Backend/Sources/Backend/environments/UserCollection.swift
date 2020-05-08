@@ -51,6 +51,7 @@ public class UserCollection: ObservableObject {
         }
     }
     
+    // MARK: - Critters
     public func caughtIn(list: [Item]) -> Int {
         var caught = 0
         for critter in critters {
@@ -85,24 +86,36 @@ public class UserCollection: ObservableObject {
         return added
     }
     
+    // MARK: - User items list
     public func addList(userList: UserList) {
         lists.append(userList)
         save()
     }
     
-    public func addItems(for list: UUID, items: [Item]) -> UserList {
+    public func editList(userList: UserList) {
+        let index = lists.firstIndex(where: { $0.id == userList.id} )!
+        lists[index] = userList
+        save()
+    }
+    
+    public func deleteList(at index: Int) {
+        lists.remove(at: index)
+        save()
+    }
+    
+    public func addItems(for list: UUID, items: [Item]) {
         let index = lists.firstIndex(where: { $0.id == list })!
         lists[index].items.append(contentsOf: items)
         save()
-        return lists[index]
     }
     
-    public func deleteItem(for list: UUID, at: Int) -> UserList {
+    public func deleteItem(for list: UUID, at: Int) {
         let index = lists.firstIndex(where: { $0.id == list })!
         lists[index].items.remove(at: at)
-        return lists[index]
+        save()
     }
     
+    // MARK: - Saving
     private func save() {
         do {
             let savedData = SavedData(items: items, villagers: villagers, critters: critters, lists: lists)

@@ -12,7 +12,8 @@ import Backend
 struct Sheet: View {
     enum SheetType: Identifiable {
         case safari(URL), share(content: [Any])
-        case about, userListForm
+        case about
+        case userListForm(editingList: UserList?)
         case turnipsForm(subManager: SubcriptionManager)
         case subscription(subManager: SubcriptionManager)
         case settings(subManager: SubcriptionManager)
@@ -56,8 +57,8 @@ struct Sheet: View {
             }.navigationViewStyle(StackNavigationViewStyle()))
         case .subscription(let subManager):
             return AnyView(SubscribeView().environmentObject(subManager))
-        case .userListForm:
-            return AnyView(UserListFormView(editingList: nil))
+        case .userListForm(let list):
+            return AnyView(UserListFormView(editingList: list))
         }
     }
     

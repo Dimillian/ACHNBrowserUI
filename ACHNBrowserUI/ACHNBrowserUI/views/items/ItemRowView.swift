@@ -121,7 +121,7 @@ struct ItemRowView: View {
             
             VStack(alignment: .leading, spacing: 2) {
                 itemInfo
-                if displayMode == .large {
+                if displayMode != .compact {
                     itemSubInfo
                     itemVariants
                 }

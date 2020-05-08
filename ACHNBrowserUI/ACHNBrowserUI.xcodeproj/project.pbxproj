@@ -116,6 +116,8 @@
 		692C0B872451791E004847A1 /* DashboardNookazonListingSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 692C0B862451791E004847A1 /* DashboardNookazonListingSection.swift */; };
 		693E0B1D244C315B00D20E46 /* DashboardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 693E0B1C244C315B00D20E46 /* DashboardViewModel.swift */; };
 		693E0B22244C596D00D20E46 /* ActiveCrittersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 693E0B21244C596D00D20E46 /* ActiveCrittersView.swift */; };
+		693E2BBE2465B65D00B85CB8 /* RowLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 693E2BBD2465B65D00B85CB8 /* RowLoadingView.swift */; };
+		693E2BC02465B71000B85CB8 /* CategoryHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 693E2BBF2465B71000B85CB8 /* CategoryHeaderView.swift */; };
 		693E728E245D71DD00CD26F4 /* UIState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 693E728D245D71DD00CD26F4 /* UIState.swift */; };
 		693E7294245D834C00CD26F4 /* SubscribeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 693E7293245D834C00CD26F4 /* SubscribeView.swift */; };
 		693E729B245E9C0E00CD26F4 /* ItemDetailSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 693E729A245E9C0E00CD26F4 /* ItemDetailSource.swift */; };
@@ -362,6 +364,8 @@
 		692C0B862451791E004847A1 /* DashboardNookazonListingSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardNookazonListingSection.swift; sourceTree = "<group>"; };
 		693E0B1C244C315B00D20E46 /* DashboardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewModel.swift; sourceTree = "<group>"; };
 		693E0B21244C596D00D20E46 /* ActiveCrittersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveCrittersView.swift; sourceTree = "<group>"; };
+		693E2BBD2465B65D00B85CB8 /* RowLoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RowLoadingView.swift; sourceTree = "<group>"; };
+		693E2BBF2465B71000B85CB8 /* CategoryHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryHeaderView.swift; sourceTree = "<group>"; };
 		693E728D245D71DD00CD26F4 /* UIState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIState.swift; sourceTree = "<group>"; };
 		693E7293245D834C00CD26F4 /* SubscribeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscribeView.swift; sourceTree = "<group>"; };
 		693E729A245E9C0E00CD26F4 /* ItemDetailSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailSource.swift; sourceTree = "<group>"; };
@@ -873,6 +877,7 @@
 				69CA5F00244F1AD300B275B6 /* SectionHeaderView.swift */,
 				4C7FE78224574FB50011E8AB /* ActivityIndicator.swift */,
 				69875F4F24652A4700B1D46C /* Sheet.swift */,
+				693E2BBD2465B65D00B85CB8 /* RowLoadingView.swift */,
 			);
 			path = shared;
 			sourceTree = "<group>";
@@ -901,6 +906,7 @@
 				697E63FC244AD42D008FB710 /* CategoryRowView.swift */,
 				69C5F5E9244217FB00BF8FA4 /* CategoriesView.swift */,
 				68BA5825244A511700B53811 /* CategoryDetailView.swift */,
+				693E2BBF2465B71000B85CB8 /* CategoryHeaderView.swift */,
 			);
 			path = categories;
 			sourceTree = "<group>";
@@ -1265,6 +1271,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				69875F5524654EB900B1D46C /* UserListFormView.swift in Sources */,
+				693E2BBE2465B65D00B85CB8 /* RowLoadingView.swift in Sources */,
 				68DFFFAD24492D7F00DEA07F /* ItemDetailViewModel.swift in Sources */,
 				4C2D6778245F4FE8005831C4 /* TurnipsChartMinBuyPriceCurve.swift in Sources */,
 				69AF8C7E243E4DD9001DD9CB /* ItemRowView.swift in Sources */,
@@ -1300,6 +1307,7 @@
 				697E63F92449DADE008FB710 /* VillagerRowView.swift in Sources */,
 				4C7FE789245B57A10011E8AB /* AdaptsToSoftwareKeyboard.swift in Sources */,
 				69B13CAD24577A090089BD7B /* TurnipIslandRow.swift in Sources */,
+				693E2BC02465B71000B85CB8 /* CategoryHeaderView.swift in Sources */,
 				693E729B245E9C0E00CD26F4 /* ItemDetailSource.swift in Sources */,
 				6834558B244E4E0B0072FC0C /* DashboardEventTextView.swift in Sources */,
 				69AF8C53243E283D001DD9CB /* SceneDelegate.swift in Sources */,

@@ -63,7 +63,7 @@ struct CollectionListView: View {
     private var userListsSections: some View {
         Group {
             Button(action: {
-                self.sheet = .userListForm
+                self.sheet = .userListForm(editingList: nil)
             }) {
                 Text("Create a new list").foregroundColor(.bell)
             }
@@ -76,6 +76,8 @@ struct CollectionListView: View {
                         Text(list.name).style(appStyle: .rowTitle)
                     }
                 }
+            }.onDelete { indexes in
+                self.collection.deleteList(at: indexes.first!)
             }
         }
     }

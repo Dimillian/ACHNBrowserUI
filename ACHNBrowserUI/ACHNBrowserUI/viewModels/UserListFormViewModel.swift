@@ -17,7 +17,10 @@ class UserListFormViewModel: ObservableObject {
         }
     }
     
+    private var editing: Bool
+    
     init(editingList: UserList?) {
+        self.editing = editingList != nil
         if let list = editingList {
             self.list = list
         } else {
@@ -26,6 +29,10 @@ class UserListFormViewModel: ObservableObject {
     }
     
     func save() {
-        UserCollection.shared.addList(userList: list)
+        if editing {
+            UserCollection.shared.editList(userList: list)
+        } else {
+            UserCollection.shared.addList(userList: list)
+        }
     }
 }
