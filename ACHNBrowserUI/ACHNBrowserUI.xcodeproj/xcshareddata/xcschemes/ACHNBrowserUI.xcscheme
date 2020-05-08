@@ -31,7 +31,7 @@
          <EnvironmentVariable
             key = "DYLD_INSERT_LIBRARIES"
             value = "@executable_path/EarlGrey.framework/EarlGrey"
-            isEnabled = "YES">
+            isEnabled = "NO">
          </EnvironmentVariable>
       </EnvironmentVariables>
       <Testables>
@@ -54,8 +54,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "78A6FA7C2465AA0D000216F5"
-               BuildableName = "ACHNBrowserUI-EarlGreyUITestss.xctest"
-               BlueprintName = "ACHNBrowserUI-EarlGreyUITestss"
+               BuildableName = "ACHNBrowserUI-EarlGreyUITests.xctest"
+               BlueprintName = "ACHNBrowserUI-EarlGreyUITests"
                ReferencedContainer = "container:ACHNBrowserUI.xcodeproj">
             </BuildableReference>
          </TestableReference>

@@ -234,8 +234,12 @@
 		69E4BBBB245B0BEF001035E2 /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69E4BBBA245B0BEF001035E2 /* AboutView.swift */; };
 		69EC82EE2461E79D00CE9064 /* TurnipsChartTopLegendView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69EC82ED2461E79D00CE9064 /* TurnipsChartTopLegendView.swift */; };
 		78863EF924659DBC00BA3762 /* ACHNBrowserUI_UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78863EF824659DBC00BA3762 /* ACHNBrowserUI_UITests.swift */; };
-		78A6FA802465AA0D000216F5 /* ACHNBrowserUI_EarlGreyUITestss.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78A6FA7F2465AA0D000216F5 /* ACHNBrowserUI_EarlGreyUITestss.swift */; };
+		78A6FA802465AA0D000216F5 /* ACHNBrowserUI_EarlGreyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78A6FA7F2465AA0D000216F5 /* ACHNBrowserUI_EarlGreyUITests.swift */; };
 		78A6FA892465AA41000216F5 /* EarlGrey.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78A6FA782465A9F7000216F5 /* EarlGrey.framework */; };
+		78A6FA8B2465C54A000216F5 /* EarlGrey.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 78A6FA782465A9F7000216F5 /* EarlGrey.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		78A6FA8D2465C591000216F5 /* EarlGrey.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 78A6FA782465A9F7000216F5 /* EarlGrey.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		78A6FABA2465C676000216F5 /* EarlGrey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78A6FAB92465C676000216F5 /* EarlGrey.swift */; };
+		78A6FABC2465C6ED000216F5 /* EarlGreyExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78A6FABB2465C6ED000216F5 /* EarlGreyExtensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -267,6 +271,13 @@
 			remoteGlobalIDString = FD1000E81C5B466F00B2DB0A;
 			remoteInfo = EarlGrey;
 		};
+		78A6FA8E2465C59E000216F5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 78A6FA712465A9F7000216F5 /* EarlGrey.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = FD1000E81C5B466F00B2DB0A;
+			remoteInfo = EarlGrey;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -278,6 +289,26 @@
 			files = (
 			);
 			name = "Embed PlugIns";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		78A6FA8A2465C530000216F5 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(TEST_HOST)/..";
+			dstSubfolderSpec = 0;
+			files = (
+				78A6FA8B2465C54A000216F5 /* EarlGrey.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		78A6FA8C2465C583000216F5 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 12;
+			dstPath = "$(TEST_HOST)/..";
+			dstSubfolderSpec = 0;
+			files = (
+				78A6FA8D2465C591000216F5 /* EarlGrey.framework in CopyFiles */,
+			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
@@ -482,9 +513,11 @@
 		78863EF824659DBC00BA3762 /* ACHNBrowserUI_UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ACHNBrowserUI_UITests.swift; sourceTree = "<group>"; };
 		78863EFA24659DBC00BA3762 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		78A6FA712465A9F7000216F5 /* EarlGrey.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = EarlGrey.xcodeproj; path = ../../Vendor/EarlGrey/EarlGrey.xcodeproj; sourceTree = "<group>"; };
-		78A6FA7D2465AA0D000216F5 /* ACHNBrowserUI-EarlGreyUITestss.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ACHNBrowserUI-EarlGreyUITestss.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		78A6FA7F2465AA0D000216F5 /* ACHNBrowserUI_EarlGreyUITestss.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ACHNBrowserUI_EarlGreyUITestss.swift; sourceTree = "<group>"; };
+		78A6FA7D2465AA0D000216F5 /* ACHNBrowserUI-EarlGreyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ACHNBrowserUI-EarlGreyUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		78A6FA7F2465AA0D000216F5 /* ACHNBrowserUI_EarlGreyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ACHNBrowserUI_EarlGreyUITests.swift; sourceTree = "<group>"; };
 		78A6FA812465AA0D000216F5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		78A6FAB92465C676000216F5 /* EarlGrey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EarlGrey.swift; path = ../../Vendor/EarlGrey/EarlGrey.swift; sourceTree = "<group>"; };
+		78A6FABB2465C6ED000216F5 /* EarlGreyExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EarlGreyExtensions.swift; path = ../../Vendor/EarlGrey/EarlGreyExtensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -794,7 +827,7 @@
 				69E4BBAE245ADF26001035E2 /* UI */,
 				69CFCA7F245AAF300059C067 /* Resources */,
 				78863EF724659DBC00BA3762 /* ACHNBrowserUI-UITests */,
-				78A6FA7E2465AA0D000216F5 /* ACHNBrowserUI-EarlGreyUITestss */,
+				78A6FA7E2465AA0D000216F5 /* ACHNBrowserUI-EarlGreyUITests */,
 				69AF8C4E243E283D001DD9CB /* Products */,
 				6951837324599C26005D28E0 /* Frameworks */,
 			);
@@ -806,7 +839,7 @@
 				69AF8C4D243E283D001DD9CB /* AC Helper.app */,
 				69CFCAC6245ADC780059C067 /* ACHNBrowserUITV.app */,
 				78863EF624659DBC00BA3762 /* ACHNBrowserUI-UITests.xctest */,
-				78A6FA7D2465AA0D000216F5 /* ACHNBrowserUI-EarlGreyUITestss.xctest */,
+				78A6FA7D2465AA0D000216F5 /* ACHNBrowserUI-EarlGreyUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1059,6 +1092,8 @@
 		78A6FA702465A9F0000216F5 /* Vendor */ = {
 			isa = PBXGroup;
 			children = (
+				78A6FAB92465C676000216F5 /* EarlGrey.swift */,
+				78A6FABB2465C6ED000216F5 /* EarlGreyExtensions.swift */,
 				78A6FA712465A9F7000216F5 /* EarlGrey.xcodeproj */,
 			);
 			name = Vendor;
@@ -1072,13 +1107,13 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		78A6FA7E2465AA0D000216F5 /* ACHNBrowserUI-EarlGreyUITestss */ = {
+		78A6FA7E2465AA0D000216F5 /* ACHNBrowserUI-EarlGreyUITests */ = {
 			isa = PBXGroup;
 			children = (
-				78A6FA7F2465AA0D000216F5 /* ACHNBrowserUI_EarlGreyUITestss.swift */,
+				78A6FA7F2465AA0D000216F5 /* ACHNBrowserUI_EarlGreyUITests.swift */,
 				78A6FA812465AA0D000216F5 /* Info.plist */,
 			);
-			path = "ACHNBrowserUI-EarlGreyUITestss";
+			path = "ACHNBrowserUI-EarlGreyUITests";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1137,10 +1172,12 @@
 				78863EF224659DBC00BA3762 /* Sources */,
 				78863EF324659DBC00BA3762 /* Frameworks */,
 				78863EF424659DBC00BA3762 /* Resources */,
+				78A6FA8C2465C583000216F5 /* CopyFiles */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				78A6FA8F2465C59E000216F5 /* PBXTargetDependency */,
 				78863EFC24659DBC00BA3762 /* PBXTargetDependency */,
 			);
 			name = "ACHNBrowserUI-UITests";
@@ -1148,13 +1185,14 @@
 			productReference = 78863EF624659DBC00BA3762 /* ACHNBrowserUI-UITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
-		78A6FA7C2465AA0D000216F5 /* ACHNBrowserUI-EarlGreyUITestss */ = {
+		78A6FA7C2465AA0D000216F5 /* ACHNBrowserUI-EarlGreyUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 78A6FA842465AA0D000216F5 /* Build configuration list for PBXNativeTarget "ACHNBrowserUI-EarlGreyUITestss" */;
+			buildConfigurationList = 78A6FA842465AA0D000216F5 /* Build configuration list for PBXNativeTarget "ACHNBrowserUI-EarlGreyUITests" */;
 			buildPhases = (
 				78A6FA792465AA0D000216F5 /* Sources */,
 				78A6FA7A2465AA0D000216F5 /* Frameworks */,
 				78A6FA7B2465AA0D000216F5 /* Resources */,
+				78A6FA8A2465C530000216F5 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -1162,9 +1200,9 @@
 				78A6FA882465AA39000216F5 /* PBXTargetDependency */,
 				78A6FA832465AA0D000216F5 /* PBXTargetDependency */,
 			);
-			name = "ACHNBrowserUI-EarlGreyUITestss";
+			name = "ACHNBrowserUI-EarlGreyUITests";
 			productName = "ACHNBrowserUI-EarlGreyUITestss";
-			productReference = 78A6FA7D2465AA0D000216F5 /* ACHNBrowserUI-EarlGreyUITestss.xctest */;
+			productReference = 78A6FA7D2465AA0D000216F5 /* ACHNBrowserUI-EarlGreyUITests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -1219,7 +1257,7 @@
 				69AF8C4C243E283D001DD9CB /* ACHNBrowserUI */,
 				69CFCAC5245ADC780059C067 /* ACHNBrowserUITV */,
 				78863EF524659DBC00BA3762 /* ACHNBrowserUI-UITests */,
-				78A6FA7C2465AA0D000216F5 /* ACHNBrowserUI-EarlGreyUITestss */,
+				78A6FA7C2465AA0D000216F5 /* ACHNBrowserUI-EarlGreyUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -1509,7 +1547,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				78A6FA802465AA0D000216F5 /* ACHNBrowserUI_EarlGreyUITestss.swift in Sources */,
+				78A6FABA2465C676000216F5 /* EarlGrey.swift in Sources */,
+				78A6FA802465AA0D000216F5 /* ACHNBrowserUI_EarlGreyUITests.swift in Sources */,
+				78A6FABC2465C6ED000216F5 /* EarlGreyExtensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1530,6 +1570,11 @@
 			isa = PBXTargetDependency;
 			name = EarlGrey;
 			targetProxy = 78A6FA872465AA39000216F5 /* PBXContainerItemProxy */;
+		};
+		78A6FA8F2465C59E000216F5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = EarlGrey;
+			targetProxy = 78A6FA8E2465C59E000216F5 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -1805,7 +1850,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Y5PE65HELJ;
-				INFOPLIST_FILE = "ACHNBrowserUI-EarlGreyUITestss/Info.plist";
+				INFOPLIST_FILE = "ACHNBrowserUI-EarlGreyUITests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1825,7 +1870,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Y5PE65HELJ;
-				INFOPLIST_FILE = "ACHNBrowserUI-EarlGreyUITestss/Info.plist";
+				INFOPLIST_FILE = "ACHNBrowserUI-EarlGreyUITests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1878,7 +1923,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		78A6FA842465AA0D000216F5 /* Build configuration list for PBXNativeTarget "ACHNBrowserUI-EarlGreyUITestss" */ = {
+		78A6FA842465AA0D000216F5 /* Build configuration list for PBXNativeTarget "ACHNBrowserUI-EarlGreyUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				78A6FA852465AA0D000216F5 /* Debug */,

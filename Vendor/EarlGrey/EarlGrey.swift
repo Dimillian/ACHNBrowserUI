@@ -145,10 +145,6 @@ open class EarlGrey {
                                                       file: StaticString = #file,
                                                       line: UInt = #line)
         -> Bool {
-            EarlGreyTestCase.drainUntilIdleForced()
-            defer {
-                EarlGreyTestCase.drainUntilIdleForced()
-            }
             return EarlGreyImpl.invoked(fromFile: file.description, lineNumber: line)
                 .rotateDevice(to: orientation,
                               errorOrNil: errorOrNil)

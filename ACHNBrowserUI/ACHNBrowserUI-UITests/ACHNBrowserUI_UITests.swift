@@ -32,7 +32,7 @@ class ACHNBrowserUI_UITests: XCTestCase {
         tabBarsQuery.buttons["Dashboard"].tap()
 
         // Select bugs from the table
-        app.tables/*@START_MENU_TOKEN@*/.buttons["Bugs"]/*[[".cells",".segmentedControls.buttons[\"Bugs\"]",".buttons[\"Bugs\"]"],[[[-1,2],[-1,1],[-1,0,1]],[[-1,2],[-1,1]]],[0]]@END_MENU_TOKEN@*/.tap()
+        app.tables.buttons["Bugs"].tap()
     }
 
 }
