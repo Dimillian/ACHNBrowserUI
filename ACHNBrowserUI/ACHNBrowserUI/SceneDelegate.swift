@@ -45,7 +45,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             UITableViewCell.appearance().backgroundColor = UIColor(named: "dialogue")
             UITableView.appearance().tableFooterView = UIView()
             
-            
             UITabBar.appearance().unselectedItemTintColor = UIColor(named: "TabLabel")
             UITabBar.appearance().barTintColor = UIColor(named: "grass")
             UITabBar.appearance().backgroundColor = UIColor(named: "grass")
