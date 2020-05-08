@@ -13,21 +13,6 @@ import Backend
 import UI
 
 struct DashboardView: View {
-    enum Sheet: Identifiable {
-        case safari(URL), settings, about
-        
-        var id: String {
-            switch self {
-            case .safari(let url):
-                return url.absoluteString
-            case .settings:
-                return "settings"
-            case .about:
-                return "about"
-            }
-        }
-    }
-    
     @EnvironmentObject private var uiState: UIState
     @EnvironmentObject private var collection: UserCollection
     @ObservedObject private var userDefaults = AppUserDefaults.shared
@@ -35,11 +20,11 @@ struct DashboardView: View {
     @ObservedObject private var villagersViewModel = VillagersViewModel()
     @ObservedObject private var turnipsPredictionsService = TurnipsPredictionService.shared
     
-    @State var selectedSheet: Sheet?
+    @State var selectedSheet: Sheet.SheetType?
     
     private var preferenceButton: some View {
         Button(action: {
-            self.selectedSheet = .settings
+            self.selectedSheet = .settings(subManager: SubcriptionManager.shared)
         }, label: {
             Image(systemName: "slider.horizontal.3").imageScale(.medium)
         })
@@ -56,18 +41,7 @@ struct DashboardView: View {
         .safeHoverEffect()
         .offset(x:-10)
     }
-    
-    private func makeSheet(_ sheet: Sheet) -> some View {
-        switch sheet {
-        case .settings:
-            return AnyView(SettingsView().environmentObject(SubcriptionManager.shared))
-        case .safari(let url):
-            return AnyView(SafariView(url: url))
-        case .about:
-            return AnyView(AboutView())
-        }
-    }
-    
+        
     private var todayText: String {
         "Today\(!userDefaults.islandName.isEmpty ? " on \(userDefaults.islandName)" : "")"
     }
@@ -158,7 +132,9 @@ struct DashboardView: View {
             ActiveCrittersView(activeFishes: viewModel.fishes.filterActive(),
                                activeBugs: viewModel.bugs.filterActive())
         }
-        .sheet(item: $selectedSheet, content: makeSheet)
+        .sheet(item: $selectedSheet, content: {
+            Sheet(sheetType: $0)
+        })
     }
 }
 

@@ -25,17 +25,9 @@ struct TurnipsView: View {
         }
     }
     
-    private enum Sheet: String, Identifiable {
-        case form, subscription
-        
-        var id: String {
-            self.rawValue
-        }
-    }
-    
     @EnvironmentObject private var subManager: SubcriptionManager
     @ObservedObject private var viewModel = TurnipsViewModel()
-    @State private var presentedSheet: Sheet?
+    @State private var presentedSheet: Sheet.SheetType?
     @State private var turnipsDisplay: TurnipsDisplay = .minMax
     
     private let labels = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat"]
@@ -56,7 +48,7 @@ struct TurnipsView: View {
                         UIDevice.current.orientation == .portraitUpsideDown){
                     Section(header: SectionHeaderView(text: "Your prices")) {
                         Button(action: {
-                            self.presentedSheet = .form
+                            self.presentedSheet = .form(subManager: self.subManager)
                         }) {
                             Text(TurnipFields.exist() ? "Edit your in game prices" : "Add your in game prices")
                                 .foregroundColor(.bell)
@@ -70,7 +62,9 @@ struct TurnipsView: View {
             .environment(\.horizontalSizeClass, .regular)
             .navigationBarTitle("Turnips",
                                 displayMode: .automatic)
-            .sheet(item: $presentedSheet, content: makeSheet)
+                .sheet(item: $presentedSheet, content: {
+                    Sheet(sheetType: $0)
+                })
         }
         .onAppear(perform: NotificationManager.shared.registerForNotifications)
     }
@@ -79,23 +73,11 @@ struct TurnipsView: View {
 // MARK: - Views
 extension TurnipsView {
     
-    private func makeSheet(_ sheet: Sheet) -> some View {
-        switch sheet {
-        case .form:
-            return AnyView(NavigationView {
-                TurnipsFormView().environmentObject(subManager)
-                
-                }.navigationViewStyle(StackNavigationViewStyle()))
-        case .subscription:
-            return AnyView(SubscribeView().environmentObject(subManager))
-        }
-    }
-    
     private var subscriptionSection: some View {
         Section(header: SectionHeaderView(text: "AC Helper+")) {
             VStack(spacing: 8) {
                 Button(action: {
-                    self.presentedSheet = .subscription
+                    self.presentedSheet = .subscription(subManager: self.subManager)
                 }) {
                     Text("To help us support the application and get turnip predictions notification, you can try out AC Helper+")
                         .foregroundColor(.secondaryText)
@@ -104,7 +86,7 @@ extension TurnipsView {
                         .padding(.top, 8)
                 }
                 Button(action: {
-                    self.presentedSheet = .subscription
+                    self.presentedSheet = .subscription(subManager: self.subManager)
                 }) {
                     Text("See more...")
                         .font(.headline)
@@ -169,7 +151,7 @@ extension TurnipsView {
                         Text("Please add the amount of turnips you bought and for how much")
                             .foregroundColor(.bell)
                             .onTapGesture {
-                                self.presentedSheet = .form
+                                self.presentedSheet = .form(subManager: self.subManager)
                         }
                     }
                 } else if turnipsDisplay == .chart {
@@ -179,7 +161,7 @@ extension TurnipsView {
                         Text("Add your in game turnip prices to see the predictions chart")
                             .foregroundColor(.bell)
                             .onTapGesture {
-                                self.presentedSheet = .form
+                                self.presentedSheet = .form(subManager: self.subManager)
                         }
                     }
                    
@@ -188,7 +170,7 @@ extension TurnipsView {
                 Text("Add your in game turnip prices to see predictions")
                     .foregroundColor(.bell)
                     .onTapGesture {
-                        self.presentedSheet = .form
+                        self.presentedSheet = .form(subManager: self.subManager)
                 }
             }
         }

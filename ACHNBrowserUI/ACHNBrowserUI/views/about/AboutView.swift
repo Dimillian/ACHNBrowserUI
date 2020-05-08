@@ -10,19 +10,8 @@ import SwiftUI
 import UI
 
 struct AboutView: View {
-    private enum Sheet: Identifiable {
-        case safari(URL)
-        
-        var id: String {
-            switch self {
-            case .safari(let url):
-                return url.absoluteString
-            }
-        }
-    }
-    
     @Environment(\.presentationMode) private var presentationMode
-    @State private var selectedSheet: Sheet?
+    @State private var selectedSheet: Sheet.SheetType?
     
     private var versionNumber: String {
         Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? "Error"
@@ -41,13 +30,6 @@ struct AboutView: View {
         .safeHoverEffectBarItem(position: .leading)
     }
     
-    private func makeSheet(_ sheet: Sheet) -> some View {
-        switch sheet {
-        case .safari(let url):
-            return AnyView(SafariView(url: url))
-        }
-    }
-        
     private func makeRow(image: String, text: String, color: Color) -> some View {
         HStack {
             Image(systemName: image)
@@ -144,7 +126,9 @@ struct AboutView: View {
             .navigationBarItems(leading: dismissButton)
         }
         .navigationViewStyle(StackNavigationViewStyle())
-        .sheet(item: $selectedSheet, content: makeSheet)
+        .sheet(item: $selectedSheet, content: {
+            Sheet(sheetType: $0)
+        })
     }
 }
 
