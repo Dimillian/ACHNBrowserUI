@@ -15,11 +15,13 @@ public class UserCollection: ObservableObject {
     @Published public var items: [Item] = []
     @Published public var villagers: [Villager] = []
     @Published public var critters: [Item] = []
+    @Published public var lists: [UserList] = []
     
     struct SavedData: Codable {
         let items: [Item]
         let villagers: [Villager]
         let critters: [Item]
+        let lists: [UserList]?
     }
     
     private let filePath: URL
@@ -39,6 +41,7 @@ public class UserCollection: ObservableObject {
                     self.items = savedData.items
                     self.villagers = savedData.villagers
                     self.critters = savedData.critters
+                    self.lists = savedData.lists ?? []
                 } catch {
                     try? FileManager.default.removeItem(at: filePath)
                 }
@@ -82,9 +85,14 @@ public class UserCollection: ObservableObject {
         return added
     }
     
+    public func addList(userList: UserList) {
+        lists.append(userList)
+        save()
+    }
+    
     private func save() {
         do {
-            let savedData = SavedData(items: items, villagers: villagers, critters: critters)
+            let savedData = SavedData(items: items, villagers: villagers, critters: critters, lists: lists)
             let data = try encoder.encode(savedData)
             try data.write(to: filePath, options: .atomicWrite)
         } catch let error {

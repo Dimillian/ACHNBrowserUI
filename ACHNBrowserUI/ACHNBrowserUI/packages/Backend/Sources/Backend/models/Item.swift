@@ -15,6 +15,9 @@ public struct ItemResponse: Codable {
 }
 
 public struct Item: Codable, Equatable, Identifiable {
+    static public func ==(lhs: Item, rhs: Item) -> Bool {
+        return lhs.id == rhs.id
+    }
     public var id: String { name }
     
     public let name: String

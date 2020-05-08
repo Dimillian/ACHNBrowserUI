@@ -134,6 +134,9 @@
 		697E63FD244AD42D008FB710 /* CategoryRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 697E63FC244AD42D008FB710 /* CategoryRowView.swift */; };
 		697E6400244AD66E008FB710 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 697E63FF244AD66E008FB710 /* SettingsView.swift */; };
 		69875F5024652A4700B1D46C /* Sheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69875F4F24652A4700B1D46C /* Sheet.swift */; };
+		69875F5524654EB900B1D46C /* UserListFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69875F5424654EB900B1D46C /* UserListFormView.swift */; };
+		69875F5724654F7100B1D46C /* UserListFormViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69875F5624654F7100B1D46C /* UserListFormViewModel.swift */; };
+		69875F59246557D000B1D46C /* UserListDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69875F58246557D000B1D46C /* UserListDetailView.swift */; };
 		69AA9438246035FF0040A9CA /* SwiftUIKit in Frameworks */ = {isa = PBXBuildFile; productRef = 69AA9437246035FF0040A9CA /* SwiftUIKit */; };
 		69AF8C51243E283D001DD9CB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69AF8C50243E283D001DD9CB /* AppDelegate.swift */; };
 		69AF8C53243E283D001DD9CB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69AF8C52243E283D001DD9CB /* SceneDelegate.swift */; };
@@ -376,6 +379,9 @@
 		697E63FC244AD42D008FB710 /* CategoryRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryRowView.swift; sourceTree = "<group>"; };
 		697E63FF244AD66E008FB710 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		69875F4F24652A4700B1D46C /* Sheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sheet.swift; sourceTree = "<group>"; };
+		69875F5424654EB900B1D46C /* UserListFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListFormView.swift; sourceTree = "<group>"; };
+		69875F5624654F7100B1D46C /* UserListFormViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListFormViewModel.swift; sourceTree = "<group>"; };
+		69875F58246557D000B1D46C /* UserListDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListDetailView.swift; sourceTree = "<group>"; };
 		69AF8C4D243E283D001DD9CB /* AC Helper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "AC Helper.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		69AF8C50243E283D001DD9CB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		69AF8C52243E283D001DD9CB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -729,6 +735,15 @@
 			path = settings;
 			sourceTree = "<group>";
 		};
+		69875F5324654EA400B1D46C /* userLists */ = {
+			isa = PBXGroup;
+			children = (
+				69875F5424654EB900B1D46C /* UserListFormView.swift */,
+				69875F58246557D000B1D46C /* UserListDetailView.swift */,
+			);
+			path = userLists;
+			sourceTree = "<group>";
+		};
 		69AF8C44243E283D001DD9CB = {
 			isa = PBXGroup;
 			children = (
@@ -784,6 +799,7 @@
 		69AF8C64243E2857001DD9CB /* views */ = {
 			isa = PBXGroup;
 			children = (
+				69875F5324654EA400B1D46C /* userLists */,
 				693E7292245D833F00CD26F4 /* subscription */,
 				69E4BBB9245B0BE4001035E2 /* about */,
 				693E0B20244C596000D20E46 /* critters */,
@@ -805,6 +821,7 @@
 		69AF8C6B243E2A0C001DD9CB /* viewModels */ = {
 			isa = PBXGroup;
 			children = (
+				69875F5624654F7100B1D46C /* UserListFormViewModel.swift */,
 				68BA5829244B693300B53811 /* TurnipsViewModel.swift */,
 				693E0B1C244C315B00D20E46 /* DashboardViewModel.swift */,
 				69AF8C6C243E2A18001DD9CB /* ItemsViewModel.swift */,
@@ -1244,6 +1261,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				69875F5524654EB900B1D46C /* UserListFormView.swift in Sources */,
 				68DFFFAD24492D7F00DEA07F /* ItemDetailViewModel.swift in Sources */,
 				4C2D6778245F4FE8005831C4 /* TurnipsChartMinBuyPriceCurve.swift in Sources */,
 				69AF8C7E243E4DD9001DD9CB /* ItemRowView.swift in Sources */,
@@ -1256,6 +1274,7 @@
 				692C0B83245176BF004847A1 /* DashboardAvailableCrittersSection.swift in Sources */,
 				69CA5F01244F1AD300B275B6 /* SectionHeaderView.swift in Sources */,
 				68BA5828244B646C00B53811 /* IslandDetailView.swift in Sources */,
+				69875F59246557D000B1D46C /* UserListDetailView.swift in Sources */,
 				6942FC3A244989530062FE8F /* ListingRow.swift in Sources */,
 				4C2D6770245F0698005831C4 /* TurnipsChart.swift in Sources */,
 				69BEA97F243E602C00F02C61 /* TabbarView.swift in Sources */,
@@ -1280,6 +1299,7 @@
 				693E729B245E9C0E00CD26F4 /* ItemDetailSource.swift in Sources */,
 				6834558B244E4E0B0072FC0C /* DashboardEventTextView.swift in Sources */,
 				69AF8C53243E283D001DD9CB /* SceneDelegate.swift in Sources */,
+				69875F5724654F7100B1D46C /* UserListFormViewModel.swift in Sources */,
 				69BEA985243E639900F02C61 /* CollectionListView.swift in Sources */,
 				697E63FB2449DB0C008FB710 /* VillagerDetailView.swift in Sources */,
 				69C5F5EA244217FB00BF8FA4 /* CategoriesView.swift in Sources */,

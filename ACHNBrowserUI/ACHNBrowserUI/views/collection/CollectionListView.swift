@@ -10,33 +10,14 @@ import SwiftUI
 import Backend
 
 enum Tabs: String, CaseIterable {
-    case items, villagers, critters
+    case items, villagers, critters, lists
 }
 
 struct CollectionListView: View {
     @EnvironmentObject private var collection: UserCollection
     @State private var selectedTab: Tabs = .items
-    
-    private var placeholderView: some View {
-        Text("Please select or go stars some items!")
-            .foregroundColor(.secondaryText)
-    }
-    
-    private var emptyView: some View {
-        Text("When you'll stars some \(selectedTab.rawValue), they'll be displayed here.")
-            .foregroundColor(.secondaryText)
-    }
-    
-    private var picker: some View {
-        Picker(selection: $selectedTab, label: Text("")) {
-            ForEach(Tabs.allCases, id: \.self) { tab in
-                Text(tab.rawValue.capitalized)
-            }
-        }
-        .pickerStyle(SegmentedPickerStyle())
-        .padding()
-    }
-    
+    @State private var sheet: Sheet.SheetType?
+        
     var body: some View {
         NavigationView {
             List {
@@ -59,7 +40,9 @@ struct CollectionListView: View {
                                 ItemRowView(displayMode: .large, item: critter)
                             }
                         }
-                    } else {
+                    } else if selectedTab == .lists {
+                        userListsSections
+                    }  else {
                         emptyView
                     }
                 }
@@ -67,6 +50,7 @@ struct CollectionListView: View {
             .listStyle(GroupedListStyle())
             .navigationBarTitle(Text("My Stuff"),
                                 displayMode: .automatic)
+            .sheet(item: $sheet, content: { Sheet(sheetType: $0) })
             
             if collection.items.isEmpty {
                 placeholderView
@@ -74,6 +58,46 @@ struct CollectionListView: View {
                 ItemDetailView(item: collection.items.first!)
             }
         }
+    }
+    
+    private var userListsSections: some View {
+        Group {
+            Button(action: {
+                self.sheet = .userListForm
+            }) {
+                Text("Create a new list").foregroundColor(.bell)
+            }
+            ForEach(collection.lists) { list in
+                NavigationLink(destination: UserListDetailView(list: list)) {
+                    HStack {
+                        if list.icon != nil {
+                            Image(list.icon!).resizable().frame(width: 30, height: 30)
+                        }
+                        Text(list.name).style(appStyle: .rowTitle)
+                    }
+                }
+            }
+        }
+    }
+    
+    private var placeholderView: some View {
+        Text("Please select or go stars some items!")
+            .foregroundColor(.secondaryText)
+    }
+    
+    private var emptyView: some View {
+        Text("When you'll stars some \(selectedTab.rawValue), they'll be displayed here.")
+            .foregroundColor(.secondaryText)
+    }
+    
+    private var picker: some View {
+        Picker(selection: $selectedTab, label: Text("")) {
+            ForEach(Tabs.allCases, id: \.self) { tab in
+                Text(tab.rawValue.capitalized)
+            }
+        }
+        .pickerStyle(SegmentedPickerStyle())
+        .padding()
     }
 }
 
