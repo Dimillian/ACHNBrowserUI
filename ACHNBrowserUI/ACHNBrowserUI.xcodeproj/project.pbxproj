@@ -1513,7 +1513,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.3;
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.thomasricouard.ACNH;
 				PRODUCT_NAME = "AC Helper";
 				SUPPORTS_MACCATALYST = YES;
@@ -1538,7 +1538,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.3;
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.thomasricouard.ACNH;
 				PRODUCT_NAME = "AC Helper";
 				SUPPORTS_MACCATALYST = YES;
