@@ -81,13 +81,11 @@ extension View {
 
 extension UIView {
     public func asImage() -> UIImage {
-        let renderer = UIGraphicsImageRenderer(bounds: bounds)
-        return renderer.image { rendererContext in
-            rendererContext.cgContext.addPath(
-            UIBezierPath(roundedRect: bounds, cornerRadius: 20).cgPath)
-            rendererContext.cgContext.clip()
-            layer.render(in: rendererContext.cgContext)
-        }
+        UIGraphicsBeginImageContextWithOptions(bounds.size, true, UIScreen.main.scale)
+        drawHierarchy(in: bounds, afterScreenUpdates: true)
+        let image = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        return image ?? UIImage()
     }
 }
 

@@ -11,26 +11,14 @@ import Backend
 import UI
 
 struct ItemDetailView: View {
-    private enum Sheet: Identifiable {
-        case safari(URL), share
-        
-        var id: String {
-            switch self {
-            case .safari(let url):
-                return url.absoluteString
-            case .share:
-                return "share"
-            }
-        }
-    }
-    
     // MARK: - Vars
     @EnvironmentObject private var items: Items
+    @EnvironmentObject private var collection: UserCollection
 
     @ObservedObject private var itemViewModel: ItemDetailViewModel
     
     @State private var displayedVariant: Variant?
-    @State private var selectedSheet: Sheet?
+    @State private var selectedSheet: Sheet.SheetType?
 
     init(item: Item) {
         self.itemViewModel = ItemDetailViewModel(item: item)
@@ -62,7 +50,7 @@ struct ItemDetailView: View {
         }
         .listStyle(GroupedListStyle())
         .environment(\.horizontalSizeClass, .regular)
-        .frame(height: 330)
+        .frame(width: 350, height: 330)
         .asImage()
         
         return [ItemDetailSource(name: itemViewModel.item.name, image: image)]
@@ -113,26 +101,16 @@ struct ItemDetailView: View {
         .navigationBarItems(trailing: navButtons)
         .navigationBarTitle(Text(itemViewModel.item.name), displayMode: .large)
         .sheet(item: $selectedSheet) {
-            self.makeSheet($0)
+            Sheet(sheetType: $0)
         }
     }
 }
 
 // MARK: - Views
 extension ItemDetailView {
-    private func makeSheet(_ sheet: Sheet) -> some View {
-        switch sheet {
-        case .safari(let url):
-            return AnyView(SafariView(url: url))
-        case .share:
-            return AnyView(ActivityControllerView(activityItems: makeShareContent(),
-                                                  applicationActivities: nil))
-        }
-    }
-    
     private var shareButton: some View {
         Button(action: {
-            self.selectedSheet = .share
+            self.selectedSheet = .share(content: self.makeShareContent())
         }) {
             Image(systemName: "square.and.arrow.up").imageScale(.large)
         }
@@ -142,8 +120,9 @@ extension ItemDetailView {
     private var navButtons: some View {
         HStack {
             LikeButtonView(item: self.itemViewModel.item).imageScale(.large)
+                .environmentObject(collection)
                 .safeHoverEffectBarItem(position: .trailing)
-            Spacer(minLength: 16)
+            Spacer(minLength: 12)
             shareButton
         }
     }

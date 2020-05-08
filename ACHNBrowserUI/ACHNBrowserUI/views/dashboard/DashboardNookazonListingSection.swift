@@ -11,7 +11,7 @@ import Backend
 import UI
 
 struct DashboardNookazonListingSection: View {
-    @Binding var selectedSheet: DashboardView.Sheet?
+    @Binding var selectedSheet: Sheet.SheetType?
     @ObservedObject var viewModel: DashboardViewModel
     
     var body: some View {

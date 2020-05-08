@@ -9,22 +9,35 @@
 import SwiftUI
 
 struct SectionHeaderView: View {
-    @State private var curved: Bool = false
-    
     let text: String
+    var icon: String?
+    
+    init(text: String, icon: String? = nil) {
+        self.text = text
+        self.icon = icon
+    }
     
     var body: some View {
-        
-        Text(text)
-            .style(appStyle: .sectionHeader)
-            .padding(.vertical, 6)
-            .padding(.horizontal, 10)
-            .background(Color.bell)
-            .mask(RoundedRectangle(cornerRadius: 14, style: .continuous))
-            .padding(.leading, -10)
-            .padding(.bottom, -12)
-            .rotationEffect(.degrees(self.curved ? -0.5 : 0))
-            .shadow(color: Color.black.opacity(0.15), radius: 2, x: 0, y: 1)
+        HStack(spacing: 6) {
+            if icon != nil {
+                Image(systemName: icon!)
+                    .imageScale(.medium)
+                    .font(.system(.subheadline, design: .rounded))
+                    .foregroundColor(Color("ACHeaderText"))
+                    .rotationEffect(.degrees(-3))
+            }
+            
+            Text(text)
+                .font(.system(.subheadline, design: .rounded))
+                .fontWeight(.bold)
+                .foregroundColor(Color("ACHeaderText"))
+        }
+        .padding(.vertical, 8)
+        .padding(.horizontal, 14)
+        .background(Color("ACHeaderBackground"))
+        .mask(RoundedRectangle(cornerRadius: 14, style: .continuous))
+        .padding(.leading, -9)
+        .padding(.bottom, -10)
     }
 }
 

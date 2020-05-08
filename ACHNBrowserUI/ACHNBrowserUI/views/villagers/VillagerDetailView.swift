@@ -13,11 +13,37 @@ import UI
 struct VillagerDetailView: View {
     let villager: Villager
     
+    @EnvironmentObject private var collection: UserCollection
     @State private var backgroundColor = Color.dialogue
     @State private var textColor = Color.text
     @State private var secondaryTextColor = Color.secondaryText
     
-    private func infoCell(title: String, value: String) -> some View {
+    @State private var sheet: Sheet.SheetType?
+    
+    private var shareButton: some View {
+        Button(action: {
+            let image = NavigationView {
+                self.makeBody()
+            }
+            .navigationViewStyle(StackNavigationViewStyle())
+            .frame(width: 350, height: 650).asImage()
+            self.sheet = .share(content: [ItemDetailSource(name: self.villager.name["name-en"] ?? "", image: image)])
+        }) {
+            Image(systemName: "square.and.arrow.up").imageScale(.large)
+        }
+        .safeHoverEffectBarItem(position: .trailing)
+    }
+    
+    private var navButtons: some View {
+        HStack(spacing: 8) {
+            LikeButtonView(villager: villager)
+                .environmentObject(collection)
+                .safeHoverEffectBarItem(position: .trailing)
+            shareButton.padding(.top, -6)
+        }
+    }
+    
+    private func makeInfoCell(title: String, value: String) -> some View {
         HStack {
             Text(title)
                 .foregroundColor(textColor)
@@ -29,7 +55,8 @@ struct VillagerDetailView: View {
                 .font(.subheadline)
         }.listRowBackground(Rectangle().fill(backgroundColor))
     }
-    var body: some View {
+    
+    private func makeBody() -> some View {
         List {
             HStack {
                 Spacer()
@@ -40,14 +67,13 @@ struct VillagerDetailView: View {
             }
             .listRowBackground(Rectangle().fill(backgroundColor))
             .padding()
-            infoCell(title: "Personality", value: villager.personality).padding()
-            infoCell(title: "Birthday", value: villager.formattedBirthday ?? "Unknown").padding()
-            infoCell(title: "Species", value: villager.species).padding()
-            infoCell(title: "Gender", value: villager.gender).padding()
+            makeInfoCell(title: "Personality", value: villager.personality).padding()
+            makeInfoCell(title: "Birthday", value: villager.formattedBirthday ?? "Unknown").padding()
+            makeInfoCell(title: "Species", value: villager.species).padding()
+            makeInfoCell(title: "Gender", value: villager.gender).padding()
         }
         .listStyle(GroupedListStyle())
         .environment(\.horizontalSizeClass, .regular)
-        .navigationBarItems(trailing: LikeButtonView(villager: villager).safeHoverEffectBarItem(position: .trailing))
         .navigationBarTitle(Text(villager.name["name-en"] ?? ""), displayMode: .automatic)
         .onAppear {
             let url = ACNHApiService.BASE_URL.absoluteString +
@@ -62,5 +88,11 @@ struct VillagerDetailView: View {
                 }
             }
         }
+    }
+    
+    var body: some View {
+        makeBody()
+            .sheet(item: $sheet, content: { Sheet(sheetType: $0) })
+            .navigationBarItems(trailing: navButtons)
     }
 }

@@ -7,36 +7,19 @@
 //
 
 import SwiftUI
+import SwiftUIKit
 import Backend
 
 enum Tabs: String, CaseIterable {
-    case items, villagers, critters
+    case items, villagers, critters, lists
 }
 
 struct CollectionListView: View {
     @EnvironmentObject private var collection: UserCollection
+    @EnvironmentObject private var subscriptionManager: SubcriptionManager
     @State private var selectedTab: Tabs = .items
-    
-    private var placeholderView: some View {
-        Text("Please select or go stars some items!")
-            .foregroundColor(.secondaryText)
-    }
-    
-    private var emptyView: some View {
-        Text("When you'll stars some \(selectedTab.rawValue), they'll be displayed here.")
-            .foregroundColor(.secondaryText)
-    }
-    
-    private var picker: some View {
-        Picker(selection: $selectedTab, label: Text("")) {
-            ForEach(Tabs.allCases, id: \.self) { tab in
-                Text(tab.rawValue.capitalized)
-            }
-        }
-        .pickerStyle(SegmentedPickerStyle())
-        .padding()
-    }
-    
+    @State private var sheet: Sheet.SheetType?
+        
     var body: some View {
         NavigationView {
             List {
@@ -59,7 +42,9 @@ struct CollectionListView: View {
                                 ItemRowView(displayMode: .large, item: critter)
                             }
                         }
-                    } else {
+                    } else if selectedTab == .lists {
+                        userListsSections
+                    }  else {
                         emptyView
                     }
                 }
@@ -67,6 +52,7 @@ struct CollectionListView: View {
             .listStyle(GroupedListStyle())
             .navigationBarTitle(Text("My Stuff"),
                                 displayMode: .automatic)
+            .sheet(item: $sheet, content: { Sheet(sheetType: $0) })
             
             if collection.items.isEmpty {
                 placeholderView
@@ -74,6 +60,68 @@ struct CollectionListView: View {
                 ItemDetailView(item: collection.items.first!)
             }
         }
+    }
+    
+    private var userListsSections: some View {
+        Group {
+            if subscriptionManager.subscriptionStatus == .subscribed || collection.lists.isEmpty {
+                Button(action: {
+                    self.sheet = .userListForm(editingList: nil)
+                }) {
+                    Text("Create a new list").foregroundColor(.bell)
+                }
+            }
+            ForEach(collection.lists) { list in
+                NavigationLink(destination: UserListDetailView(list: list)) {
+                    UserListRow(list: list)
+                }
+            }.onDelete { indexes in
+                self.collection.deleteList(at: indexes.first!)
+            }
+            if subscriptionManager.subscriptionStatus != .subscribed && collection.lists.count >= 1 {
+                VStack(spacing: 8) {
+                    Button(action: {
+                        self.sheet = .subscription(subManager: self.subscriptionManager)
+                    }) {
+                        Text("In order to create more than one list, you need to subscribe to AC Helper+")
+                            .foregroundColor(.secondaryText)
+                            .lineLimit(nil)
+                            .fixedSize(horizontal: false, vertical: true)
+                            .padding(.top, 8)
+                    }
+                    Button(action: {
+                        self.sheet = .subscription(subManager: self.subscriptionManager)
+                    }) {
+                        Text("Learn more...")
+                            .font(.headline)
+                            .fontWeight(.bold)
+                            .foregroundColor(.white)
+                    }.buttonStyle(PlainRoundedButton())
+                        .accentColor(.bell)
+                        .padding(.bottom, 8)
+                }
+            }
+        }
+    }
+    
+    private var placeholderView: some View {
+        Text("Please select or go stars some items!")
+            .foregroundColor(.secondaryText)
+    }
+    
+    private var emptyView: some View {
+        Text("When you'll stars some \(selectedTab.rawValue), they'll be displayed here.")
+            .foregroundColor(.secondaryText)
+    }
+    
+    private var picker: some View {
+        Picker(selection: $selectedTab, label: Text("")) {
+            ForEach(Tabs.allCases, id: \.self) { tab in
+                Text(tab.rawValue.capitalized)
+            }
+        }
+        .pickerStyle(SegmentedPickerStyle())
+        .padding()
     }
 }
 
