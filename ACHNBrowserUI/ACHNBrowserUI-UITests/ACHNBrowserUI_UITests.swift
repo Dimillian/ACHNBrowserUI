@@ -23,6 +23,13 @@ class ACHNBrowserUI_UITests: XCTestCase {
         let app = XCUIApplication()
         app.launch()
 
+        // Handle the "would like to send you notifications" alert if needed
+        addUIInterruptionMonitor(withDescription: "System Dialog") {
+          (alert) -> Bool in
+          alert.buttons["Allow"].tap()
+          return true
+        }
+
         // Simply iterate over all tabs
         let tabBarsQuery = XCUIApplication().tabBars
         tabBarsQuery.buttons["Catalog"].tap()
