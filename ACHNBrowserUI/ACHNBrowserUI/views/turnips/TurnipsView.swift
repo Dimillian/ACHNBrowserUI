@@ -67,9 +67,10 @@ struct TurnipsView: View {
             .environment(\.horizontalSizeClass, .regular)
             .navigationBarTitle("Turnips",
                                 displayMode: .automatic)
-                .sheet(item: $presentedSheet, content: {
-                    Sheet(sheetType: $0)
-                })
+            .navigationBarItems(trailing: shareButton)
+            .sheet(item: $presentedSheet, content: {
+                Sheet(sheetType: $0)
+            })
         }
         .onAppear(perform: NotificationManager.shared.registerForNotifications)
     }
@@ -77,6 +78,23 @@ struct TurnipsView: View {
 
 // MARK: - Views
 extension TurnipsView {
+    private var shareButton: some View {
+        Button(action: {
+            let image = NavigationView {
+                List {
+                    self.predictionsSection
+                }
+            }
+            .listStyle(GroupedListStyle())
+            .environment(\.horizontalSizeClass, .regular)
+            .navigationViewStyle(StackNavigationViewStyle())
+            .frame(width: 350, height: 650).asImage()
+            self.presentedSheet = .share(content: [ItemDetailSource(name: "Turnips prediction", image: image)])
+        }) {
+            Image(systemName: "square.and.arrow.up").imageScale(.large)
+        }
+        .safeHoverEffectBarItem(position: .trailing)
+    }
     
     private var subscriptionSection: some View {
         Section(header: SectionHeaderView(text: "AC Helper+")) {
