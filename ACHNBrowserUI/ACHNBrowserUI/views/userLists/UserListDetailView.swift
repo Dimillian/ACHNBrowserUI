@@ -99,7 +99,7 @@ struct UserListDetailView: View {
     
     private func searchItemRow(item: Item) -> some View {
         ItemRowView(displayMode: .largeNoButton, item: item)
-            .listRowBackground(self.viewModel.selectedItems.contains(item) ? Color.dialogueReverse : Color.dialogue)
+            .listRowBackground(self.viewModel.selectedItems.contains(item) ? Color.graphAverage : Color.dialogue)
             .onTapGesture {
                 if self.viewModel.selectedItems.contains(item) {
                     self.viewModel.selectedItems.removeAll(where: { $0 == item })
