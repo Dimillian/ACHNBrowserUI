@@ -487,6 +487,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		024363CF2465E7FD006A37A0 /* todayDashboard */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = todayDashboard;
+			sourceTree = "<group>";
+		};
 		02F2D3A62455D79E009741DA /* Alternate App Icons */ = {
 			isa = PBXGroup;
 			children = (
@@ -808,6 +815,7 @@
 		69AF8C64243E2857001DD9CB /* views */ = {
 			isa = PBXGroup;
 			children = (
+				024363CF2465E7FD006A37A0 /* todayDashboard */,
 				69875F5324654EA400B1D46C /* userLists */,
 				693E7292245D833F00CD26F4 /* subscription */,
 				69E4BBB9245B0BE4001035E2 /* about */,
