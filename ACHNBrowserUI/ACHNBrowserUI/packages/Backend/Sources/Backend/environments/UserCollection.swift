@@ -90,6 +90,19 @@ public class UserCollection: ObservableObject {
         save()
     }
     
+    public func addItems(for list: UUID, items: [Item]) -> UserList {
+        let index = lists.firstIndex(where: { $0.id == list })!
+        lists[index].items.append(contentsOf: items)
+        save()
+        return lists[index]
+    }
+    
+    public func deleteItem(for list: UUID, at: Int) -> UserList {
+        let index = lists.firstIndex(where: { $0.id == list })!
+        lists[index].items.remove(at: at)
+        return lists[index]
+    }
+    
     private func save() {
         do {
             let savedData = SavedData(items: items, villagers: villagers, critters: critters, lists: lists)

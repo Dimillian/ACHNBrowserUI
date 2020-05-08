@@ -24,14 +24,37 @@ struct UserListDetailView: View {
             .sorted(by: \.key.rawValue)
     }
     
+    private var addButton: some View {
+        Button(action: {
+            self.viewModel.saveItems()
+            self.searchViewModdel.searchText = ""
+        }) {
+            Text("Add \(viewModel.selectedItems.count) items")
+                .font(.subheadline)
+                .fontWeight(.semibold)
+                .foregroundColor(.bell)
+        }
+    }
+    
+    private var searchBar: some View {
+        HStack {
+            SearchField(searchText: $searchViewModdel.searchText, placeholder: "Search Items")
+            if viewModel.selectedItems.count > 0 {
+                addButton
+            }
+        }.animation(.spring())
+    }
+    
     var body: some View {
         List(selection: $viewModel.selectedItems) {
-            Section(header: SearchField(searchText: $searchViewModdel.searchText, placeholder: "Search Items")) {
+            Section(header: searchBar) {
                 if searchViewModdel.searchText.isEmpty {
                     ForEach(viewModel.list.items) { item in
                         NavigationLink(destination: ItemDetailView(item: item)) {
-                            ItemRowView(displayMode: .large, item: item)
+                            ItemRowView(displayMode: .largeNoButton, item: item)
                         }
+                    }.onDelete { indexes in
+                        self.viewModel.deleteItem(at: indexes.first!)
                     }
                 } else {
                     if searchViewModdel.isLoadingData {
