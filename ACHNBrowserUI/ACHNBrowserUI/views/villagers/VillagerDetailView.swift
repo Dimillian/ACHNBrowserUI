@@ -87,6 +87,8 @@ struct VillagerDetailView: View {
                             ItemRowView(displayMode: .large, item: item)
                         }
                     }
+                } else {
+                    RowLoadingView(isLoading: .constant(true))
                 }
             }
         }
