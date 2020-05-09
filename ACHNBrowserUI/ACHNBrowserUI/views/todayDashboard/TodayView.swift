@@ -51,6 +51,9 @@ struct TodayView: View {
             .navigationBarTitle(Text("\(dateString())"))
             .navigationBarItems(leading: aboutButton, trailing: settingsButton)
             .sheet(item: $selectedSheet, content: { Sheet(sheetType: $0) })
+            
+            ActiveCrittersView(activeFishes: viewModel.fishes.filterActive(),
+                               activeBugs: viewModel.bugs.filterActive())
         }
     }
             
