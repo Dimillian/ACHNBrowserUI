@@ -139,6 +139,7 @@
 		6951836A245977D1005D28E0 /* TurnipsAveragePriceRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69518369245977D1005D28E0 /* TurnipsAveragePriceRow.swift */; };
 		6951837524599C26005D28E0 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6951837424599C26005D28E0 /* StoreKit.framework */; };
 		695D45F92467025000B5C313 /* villagersHouse in Resources */ = {isa = PBXBuildFile; fileRef = 695D45F82467025000B5C313 /* villagersHouse */; };
+		695D45FB24671B1800B5C313 /* VillagerDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 695D45FA24671B1800B5C313 /* VillagerDetailViewModel.swift */; };
 		697E63F52449A58E008FB710 /* VillagersListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 697E63F42449A58E008FB710 /* VillagersListView.swift */; };
 		697E63F72449A7BA008FB710 /* VillagersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 697E63F62449A7BA008FB710 /* VillagersViewModel.swift */; };
 		697E63F92449DADE008FB710 /* VillagerRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 697E63F82449DADE008FB710 /* VillagerRowView.swift */; };
@@ -397,6 +398,7 @@
 		69518369245977D1005D28E0 /* TurnipsAveragePriceRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TurnipsAveragePriceRow.swift; sourceTree = "<group>"; };
 		6951837424599C26005D28E0 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		695D45F82467025000B5C313 /* villagersHouse */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = villagersHouse; sourceTree = "<group>"; };
+		695D45FA24671B1800B5C313 /* VillagerDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VillagerDetailViewModel.swift; sourceTree = "<group>"; };
 		697E63F42449A58E008FB710 /* VillagersListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VillagersListView.swift; sourceTree = "<group>"; };
 		697E63F62449A7BA008FB710 /* VillagersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VillagersViewModel.swift; sourceTree = "<group>"; };
 		697E63F82449DADE008FB710 /* VillagerRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VillagerRowView.swift; sourceTree = "<group>"; };
@@ -864,6 +866,7 @@
 				68DFFFAC24492D7F00DEA07F /* ItemDetailViewModel.swift */,
 				697E63F62449A7BA008FB710 /* VillagersViewModel.swift */,
 				6941F3872452BDDD00EC2E02 /* CategoriesSearchViewModel.swift */,
+				695D45FA24671B1800B5C313 /* VillagerDetailViewModel.swift */,
 			);
 			path = viewModels;
 			sourceTree = "<group>";
@@ -1342,6 +1345,7 @@
 				024363D82465EA15006A37A0 /* TodayCurrentlyAvailableSection.swift in Sources */,
 				69AF8C53243E283D001DD9CB /* SceneDelegate.swift in Sources */,
 				69875F5724654F7100B1D46C /* UserListFormViewModel.swift in Sources */,
+				695D45FB24671B1800B5C313 /* VillagerDetailViewModel.swift in Sources */,
 				69BEA985243E639900F02C61 /* CollectionListView.swift in Sources */,
 				697E63FB2449DB0C008FB710 /* VillagerDetailView.swift in Sources */,
 				024363DA2465EA15006A37A0 /* TodayView.swift in Sources */,

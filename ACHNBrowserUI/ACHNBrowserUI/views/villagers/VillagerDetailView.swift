@@ -11,22 +11,19 @@ import Backend
 import UI
 
 struct VillagerDetailView: View {
-    let villager: Villager
-    var villagerItems: [Item]?
-    
+    @ObservedObject var viewModel: VillagerDetailViewModel
     @EnvironmentObject private var collection: UserCollection
     @State private var backgroundColor = Color.acSecondaryBackground
     @State private var textColor = Color.acText
     @State private var secondaryTextColor = Color.acSecondaryText
     @State private var sheet: Sheet.SheetType?
     
+    var villager: Villager {
+        viewModel.villager
+    }
+    
     init(villager: Villager) {
-        self.villager = villager
-        if let filename = villager.fileName {
-            self.villagerItems = Items.shared.matchVillagerItems(villager: filename)
-        } else {
-            self.villagerItems = nil
-        }
+        self.viewModel = VillagerDetailViewModel(villager: villager)
     }
     
     private var shareButton: some View {
@@ -82,9 +79,9 @@ struct VillagerDetailView: View {
             makeInfoCell(title: "Gender", value: villager.gender).padding()
             makeInfoCell(title: "Catch phrase", value: villager.catchPhrase ?? "").padding()
             
-            if villagerItems?.isEmpty == false {
+            if viewModel.villagerItems?.isEmpty == false {
                 Section(header: SectionHeaderView(text: "Villager items", icon: "list.bullet")) {
-                    ForEach(villagerItems!) { item in
+                    ForEach(viewModel.villagerItems!) { item in
                         NavigationLink(destination: ItemDetailView(item: item)) {
                             ItemRowView(displayMode: .large, item: item)
                         }

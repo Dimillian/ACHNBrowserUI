@@ -38,39 +38,48 @@ public class Items: ObservableObject {
             .sink(receiveValue: { [weak self] items in self?.villagersHouse = items })
     }
     
-    public func matchVillagerItems(villager: String) -> [Item]? {
+    public func matchVillagerItems(villager: String) -> AnyPublisher<[Item]?, Never> {
         if let cached = villagerItemsCache[villager] {
-            return cached
+            return Future { resolve in
+                resolve(.success(cached))
+            }.eraseToAnyPublisher()
         }
         if let villagerHouse = villagersHouse[villager] {
-            var villagerItems: [VillagerHouse.Item] = []
-            if let items = villagerHouse.items {
-                villagerItems.append(contentsOf: items)
-            }
-            if let floor = villagerHouse.floor {
-                 villagerItems.append(floor)
-            }
-            if let wallpaper = villagerHouse.wallaper {
-                 villagerItems.append(wallpaper)
-            }
-            if let music = villagerHouse.music {
-                villagerItems.append(music)
-            }
-            
-            let items = Items.shared.categories
-                .mapValues({ $0 })
-                .filter { !$0.value.isEmpty && Category.furnitures().contains($0.key) }
-                .compactMap{ $1 }
-                .flatMap{ $0 }
-            var results: [Item] = []
-            for item in villagerItems {
-                if let match = items.first(where: { $0.name.lowercased() == item.name.lowercased() }) {
-                    results.append(match)
+            return Future { [weak self] resolve in
+                DispatchQueue.global().async {
+                    var villagerItems: [VillagerHouse.Item] = []
+                    if let items = villagerHouse.items {
+                        villagerItems.append(contentsOf: items)
+                    }
+                    if let floor = villagerHouse.floor {
+                        villagerItems.append(floor)
+                    }
+                    if let wallpaper = villagerHouse.wallaper {
+                        villagerItems.append(wallpaper)
+                    }
+                    if let music = villagerHouse.music {
+                        villagerItems.append(music)
+                    }
+                    
+                    let items = Items.shared.categories
+                        .mapValues({ $0 })
+                        .filter { !$0.value.isEmpty && Category.furnitures().contains($0.key) }
+                        .compactMap{ $1 }
+                        .flatMap{ $0 }
+                    var results: [Item] = []
+                    for item in villagerItems {
+                        if let match = items.first(where: { $0.name.lowercased() == item.name.lowercased() }) {
+                            results.append(match)
+                        }
+                    }
+                    self?.villagerItemsCache[villager] = results
+                    resolve(.success(items))
                 }
-            }
-            villagerItemsCache[villager] = results
-            return results
+            }.eraseToAnyPublisher()
         }
-        return nil
+        
+        return Future { resolve in
+            resolve(.success(nil))
+        }.eraseToAnyPublisher()
     }
 }

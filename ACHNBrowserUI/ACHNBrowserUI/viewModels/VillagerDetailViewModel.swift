@@ -1,0 +1,31 @@
+//
+//  VillagerDetailViewModel.swift
+//  ACHNBrowserUI
+//
+//  Created by Thomas Ricouard on 09/05/2020.
+//  Copyright © 2020 Thomas Ricouard. All rights reserved.
+//
+
+import Foundation
+import Combine
+import Backend
+
+public class VillagerDetailViewModel: ObservableObject {
+    let villager: Villager
+    @Published var villagerItems: [Item]?
+    
+    init(villager: Villager) {
+        self.villager = villager
+        
+        if let filename = villager.fileName {
+            _ = Items.shared.matchVillagerItems(villager: filename)
+                .map({ $0 })
+                .sink(receiveValue: { items in
+                    self.villagerItems = items
+                })
+            
+        } else {
+            self.villagerItems = nil
+        }
+    }
+}
