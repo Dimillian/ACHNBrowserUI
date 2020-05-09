@@ -14,9 +14,9 @@ struct VillagerDetailView: View {
     let villager: Villager
     
     @EnvironmentObject private var collection: UserCollection
-    @State private var backgroundColor = Color.dialogue
-    @State private var textColor = Color.text
-    @State private var secondaryTextColor = Color.secondaryText
+    @State private var backgroundColor = Color.acSecondaryBackground
+    @State private var textColor = Color.acText
+    @State private var secondaryTextColor = Color.acSecondaryText
     
     @State private var sheet: Sheet.SheetType?
     

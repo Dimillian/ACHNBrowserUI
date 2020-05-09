@@ -63,7 +63,8 @@ struct TodayCurrentlyAvailableSection: View {
     // MARK: - Body
     var body: some View {
         Section(header: SectionHeaderView(text: "Currently Available", icon: "calendar")) {
-            NavigationLink(destination: NavigationView { List { Text("Event 2 Detail View") }}) {
+            NavigationLink(destination: ActiveCrittersView(activeFishes: viewModel.fishes.filterActive(),
+                                                           activeBugs: viewModel.bugs.filterActive())) {
                 HStack(alignment: .top) {
                     makeCell(for: .fish, caught: fishCaught, available: fishAvailable, numberNew: newFish)
                     Divider()
@@ -87,16 +88,16 @@ struct TodayCurrentlyAvailableSection: View {
                 type == .bugs ? Text("\(caught)/\(available) Bugs") : Text("\(caught)/\(available) Fish")
             }
             .font(.system(.headline, design: .rounded))
-            .foregroundColor(Color("ACText"))
+            .foregroundColor(.acText)
                         
             if numberNew > 0 {
                 Text("\(numberNew) NEW")
                     .font(.system(.caption, design: .rounded))
                     .fontWeight(.bold)
-                    .foregroundColor(Color("ACText"))
+                    .foregroundColor(.acText)
                     .padding(.vertical, 6)
                     .padding(.horizontal)
-                    .background(Capsule().foregroundColor(Color("ACText").opacity(0.2)))
+                    .background(Capsule().foregroundColor(Color.acText.opacity(0.2)))
                     .padding(.top)
             }
         }

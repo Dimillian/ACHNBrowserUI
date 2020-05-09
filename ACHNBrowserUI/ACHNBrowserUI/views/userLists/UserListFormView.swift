@@ -35,7 +35,7 @@ struct UserListFormView: View {
             self.viewModel.save()
             self.presentationMode.wrappedValue.dismiss()
         }) {
-            Text("Save").foregroundColor(.grass2)
+            Text("Save").foregroundColor(.acTabBarSelected)
         }
     }
     
@@ -50,14 +50,14 @@ struct UserListFormView: View {
                               onEditingChanged: {_ in
                                 self.errorBorder = .clear
                     })
-                        .foregroundColor(.text)
+                        .foregroundColor(.acText)
                 }
                 .border(errorBorder)
                 HStack {
                     Text("Description")
                     Spacer()
                     TextField("Can be nothing", text: $viewModel.list.description)
-                        .foregroundColor(.text)
+                        .foregroundColor(.acText)
                 }
                 Picker(selection: $viewModel.selectedIcon,
                        label: Text("Icon")) {

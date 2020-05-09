@@ -34,7 +34,7 @@ struct TurnipsChartBottomLegendView: View {
                     Text(weekday)
                         .font(.callout)
                         .fontWeight(.bold)
-                        .foregroundColor(.text)
+                        .foregroundColor(.acText)
                         .position(x: CGFloat(offset + 1) * ratioX/2 + CGFloat(offset) * ratioX * 1.5, y: frame.midY)
                 }
             }
@@ -47,7 +47,7 @@ struct TurnipsChartBottomLegendView: View {
         return Text(isAM ? "AM" : "PM")
             .font(.footnote)
             .fontWeight(.semibold)
-            .foregroundColor(.text)
+            .foregroundColor(.acText)
             .position(x: CGFloat(offset) * ratioX, y: frame.midY)
     }
 }

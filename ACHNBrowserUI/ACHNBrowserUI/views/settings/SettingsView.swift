@@ -86,10 +86,10 @@ struct SettingsView: View {
                     }) {
                         if self.subscriptionManager.subscriptionStatus == .subscribed {
                             Text("You're subscribed to AC Helper+")
-                                .foregroundColor(.secondaryText)
+                                .foregroundColor(.acSecondaryText)
                         } else {
                             Text("Restore purchase")
-                                .foregroundColor(.bell)
+                                .foregroundColor(.acHeaderBackground)
                         }
                     }
                     .disabled(subscriptionManager.inPaymentProgress)

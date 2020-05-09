@@ -81,10 +81,10 @@ struct TodayEventsSection: View {
             Text("\(month) \(day)")
                 .font(.system(.subheadline, design: .rounded))
                 .fontWeight(.bold)
-                .foregroundColor(Color("ACText"))
+                .foregroundColor(.acText)
                 .frame(minWidth: 50)
                 .padding(10)
-                .background(Color("ACText").opacity(0.2))
+                .background(Color.acText.opacity(0.2))
                 .mask(RoundedRectangle(cornerRadius: 18, style: .continuous))
         }
         .padding(.bottom, 4)
@@ -95,7 +95,7 @@ struct TodayEventsSection: View {
             .font(Font.system(.headline, design: .rounded))
             .fontWeight(.semibold)
             .lineLimit(2)
-            .foregroundColor(Color("ACText"))
+            .foregroundColor(.acText)
     }
 }
 

@@ -56,15 +56,15 @@ struct TodayBirthdaysSection: View {
                 Text(birthdayMonth(for: villager))
                     .font(.system(.caption, design: .rounded))
                     .fontWeight(.bold)
-                    .foregroundColor(Color("ACText"))
+                    .foregroundColor(.acText)
                 Text(birthdayDay(for: villager))
                     .font(.system(.subheadline, design: .rounded))
                     .fontWeight(.bold)
-                    .foregroundColor(Color("ACText"))
+                    .foregroundColor(.acText)
             }
             .frame(minWidth: 66)
             .padding(10)
-            .background(Color("ACText").opacity(0.2))
+            .background(Color.acText.opacity(0.2))
             .mask(RoundedRectangle(cornerRadius: 22, style: .continuous))
             .padding(.trailing, 8)
             
@@ -72,7 +72,7 @@ struct TodayBirthdaysSection: View {
                 .font(Font.system(.headline, design: .rounded))
                 .fontWeight(.semibold)
                 .lineLimit(2)
-                .foregroundColor(Color("ACText"))
+                .foregroundColor(.acText)
             
             Spacer()
 
@@ -96,7 +96,7 @@ struct TodayBirthdaysSection: View {
                     .font(Font.system(.headline, design: .rounded))
                     .fontWeight(.semibold)
                     .lineLimit(2)
-                    .foregroundColor(Color("ACText"))
+                    .foregroundColor(.acText)
                 
             }
             

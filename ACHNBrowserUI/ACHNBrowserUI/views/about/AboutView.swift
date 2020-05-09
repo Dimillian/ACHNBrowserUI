@@ -37,7 +37,7 @@ struct AboutView: View {
                 .foregroundColor(color)
                 .frame(width: 30)
             Text(text)
-                .foregroundColor(.text)
+                .foregroundColor(.acText)
                 .font(.body)
             Spacer()
             Image(systemName: "chevron.right").imageScale(.medium)
@@ -51,7 +51,7 @@ struct AboutView: View {
                 .foregroundColor(color)
                 .frame(width: 30)
             Text(text)
-                .foregroundColor(.text)
+                .foregroundColor(.acText)
                 .font(.body)
             Spacer()
             Text(detail)
@@ -65,31 +65,31 @@ struct AboutView: View {
             List {
                 Section(header: SectionHeaderView(text: "The app")) {
                     makeRow(image: "chevron.left.slash.chevron.right",
-                            text: "Souce code / report an issue", color: .bell)
+                            text: "Souce code / report an issue", color: .acHeaderBackground)
                         .onTapGesture {
                                 self.selectedSheet = .safari(URL(string: "https://github.com/Dimillian/ACHNBrowserUI")!)
                     }
                     makeRow(image: "star.fill",
-                            text: "Rate the app on the App Store", color: .bell)
+                            text: "Rate the app on the App Store", color: .acHeaderBackground)
                         .onTapGesture {
                             UIApplication.shared.open(URL(string: "https://itunes.apple.com/app/id1508764244")!,
                                                       options: [:],
                                                       completionHandler: nil)
                     }
-                    makeRow(image: "lock", text: "Privacy Policy", color: .bell).onTapGesture {
+                    makeRow(image: "lock", text: "Privacy Policy", color: .acHeaderBackground).onTapGesture {
                         self.selectedSheet = .safari(URL(string: "https://github.com/Dimillian/ACHNBrowserUI/blob/master/privacy-policy.md#ac-helper-privacy-policy")!)
                     }
-                    makeRow(image: "person", text: "Term of Use", color: .bell).onTapGesture {
+                    makeRow(image: "person", text: "Term of Use", color: .acHeaderBackground).onTapGesture {
                         self.selectedSheet = .safari(URL(string: "https://github.com/Dimillian/ACHNBrowserUI/blob/master/term-of-use.md#ac-helper-term-of-use")!)
                     }
                     makeDetailRow(image: "tag",
                                   text: "App version",
                                   detail: "\(versionNumber) (\(buildNumber))",
-                                  color: .bell)
+                                  color: .acHeaderBackground)
                     makeDetailRow(image: "gamecontroller",
                                   text: "Game patch data",
                                   detail: "1.2.0",
-                                  color: .bell)
+                                  color: .acHeaderBackground)
                 }
                 Section(header: SectionHeaderView(text: "Acknowledgements")) {
                     makeRow(image: "suit.heart.fill", text: "Our amazing contributors", color: .red)

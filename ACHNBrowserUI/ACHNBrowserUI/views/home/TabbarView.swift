@@ -15,7 +15,7 @@ struct TabbarView: View {
     var body: some View {
         TabView(selection: $uiState.selectedTab) {
 
-            DashboardView()
+            TodayView()
                 .tag(UIState.Tab.dashboard)
                 .tabItem {
                     Image("icon-bells")

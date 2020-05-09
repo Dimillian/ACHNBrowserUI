@@ -43,7 +43,7 @@ struct SubscribeView: View {
                 Text("Upgrade to +")
                     .font(.largeTitle)
                     .fontWeight(.bold)
-                    .foregroundColor(.bell)
+                    .foregroundColor(.acHeaderBackground)
                 Image("icon-bell")
             }
             .padding(.top, 32)
@@ -54,7 +54,7 @@ struct SubscribeView: View {
             Button(action: {
                 NotificationManager.shared.testNotification()
             }) {
-                Text("Tap here to preview a notification").foregroundColor(.bell)
+                Text("Tap here to preview a notification").foregroundColor(.acHeaderBackground)
             }
             Text("""
                             Subscribing to AC Helper+ is a great way to to show support to our free and open source project.♥️
@@ -64,7 +64,7 @@ struct SubscribeView: View {
                             More detail below.
                             """)
                 .font(.body)
-                .foregroundColor(.text)
+                .foregroundColor(.acText)
                 .frame(width: 320)
                 .padding()
                 .lineLimit(nil)
@@ -90,7 +90,7 @@ struct SubscribeView: View {
                 .fontWeight(.bold)
                 .foregroundColor(.white)
                 .frame(width: 290, height: 30)
-        }.buttonStyle(PlainRoundedButton()).accentColor(.grass).safeHoverEffect()
+        }.buttonStyle(PlainRoundedButton()).accentColor(.acTabBarTint).safeHoverEffect()
     }
     
     private var lowerPart: some View {
@@ -105,7 +105,7 @@ struct SubscribeView: View {
                 Once you'll be subscribed to AC Helper+ you'll be able to create any number of list you desire.
                 """)
                 .font(.body)
-                .foregroundColor(.text)
+                .foregroundColor(.acText)
                 .frame(width: 320)
                 .padding()
                 .lineLimit(nil)
@@ -116,7 +116,7 @@ struct SubscribeView: View {
                 You can cancel anytime with your iTunes account settings. Any unused portion of a free trial will be forfeited if you purchase a subscription.
                 """)
                 .font(.caption)
-                .foregroundColor(.text)
+                .foregroundColor(.acText)
                 .frame(width: 320)
                 .padding()
                 .lineLimit(nil)
@@ -130,14 +130,14 @@ struct SubscribeView: View {
                 self.sheetURL = URL(string: "https://github.com/Dimillian/ACHNBrowserUI/blob/master/term-of-use.md#ac-helper-term-of-use")
             }, label: "Term of Use")
             Spacer(minLength: 32)
-        }.background(Color.dialogueReverse.edgesIgnoringSafeArea(.all))
+        }.background(Color.acBackground.edgesIgnoringSafeArea(.all))
     }
 
     var body: some View {
         NavigationView {
             ScrollView(.vertical) {
                 ZStack {
-                    Color.dialogueReverse.edgesIgnoringSafeArea(.all)
+                    Color.acBackground.edgesIgnoringSafeArea(.all)
                     if sub != nil {
                         VStack {
                             upperPart

@@ -12,7 +12,7 @@ import Backend
 struct Sheet: View {
     enum SheetType: Identifiable {
         case safari(URL), share(content: [Any])
-        case about
+        case about, rearrange
         case userListForm(editingList: UserList?)
         case turnipsForm(subManager: SubcriptionManager)
         case subscription(subManager: SubcriptionManager)
@@ -26,6 +26,8 @@ struct Sheet: View {
                 return "share"
             case .about:
                 return "about"
+            case .rearrange:
+                return "rearrange"
             case .settings:
                 return "about"
             case .turnipsForm:
@@ -59,6 +61,11 @@ struct Sheet: View {
             return AnyView(SubscribeView().environmentObject(subManager))
         case .userListForm(let list):
             return AnyView(UserListFormView(editingList: list))
+        case .rearrange:
+            return AnyView(NavigationView {
+                TodaySectionEditView()
+            }
+            .navigationViewStyle(StackNavigationViewStyle()))
         }
     }
     

@@ -33,7 +33,7 @@ struct UserListDetailView: View {
             Text("Add \(viewModel.selectedItems.count) items")
                 .font(.subheadline)
                 .fontWeight(.semibold)
-                .foregroundColor(.bell)
+                .foregroundColor(.acHeaderBackground)
         }
     }
     
@@ -41,7 +41,7 @@ struct UserListDetailView: View {
         Button(action: {
             self.sheet = .userListForm(editingList: self.viewModel.list)
         }) {
-            Text("Edit").foregroundColor(.bell)
+            Text("Edit").foregroundColor(.acHeaderBackground)
         }
     }
     
@@ -68,14 +68,14 @@ struct UserListDetailView: View {
                         }
                     } else {
                         Text("Search some items to add to your list")
-                            .foregroundColor(.secondaryText)
+                            .foregroundColor(.acSecondaryText)
                     }
                 } else {
                     if searchViewModdel.isLoadingData {
                         RowLoadingView(isLoading: $isLoadingData).animation(.default)
                     } else if searchCategories.isEmpty {
                         Text("No results for \(searchViewModdel.searchText)")
-                            .foregroundColor(.secondaryText)
+                            .foregroundColor(.acSecondaryText)
                     } else {
                         ForEach(searchCategories, id: \.0, content: searchSection)
                     }
@@ -99,7 +99,7 @@ struct UserListDetailView: View {
     
     private func searchItemRow(item: Item) -> some View {
         ItemRowView(displayMode: .largeNoButton, item: item)
-            .listRowBackground(self.viewModel.selectedItems.contains(item) ? Color.graphAverage : Color.dialogue)
+            .listRowBackground(self.viewModel.selectedItems.contains(item) ? Color.graphAverage : Color.acSecondaryBackground)
             .onTapGesture {
                 if self.viewModel.selectedItems.contains(item) {
                     self.viewModel.selectedItems.removeAll(where: { $0 == item })

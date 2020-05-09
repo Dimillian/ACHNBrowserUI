@@ -8,6 +8,7 @@
 
 import SwiftUI
 import Backend
+import UI
 
 struct TodayCollectionProgressSection: View {
     @EnvironmentObject private var collection: UserCollection
@@ -31,7 +32,6 @@ struct TodayCollectionProgressSection: View {
                 progressRow(iconName: "Ins13", for: viewModel.bugs)
                 progressRow(iconName: "icon-fossil", for: viewModel.fossils)
                 progressRow(iconName: "icon-leaf", for: viewModel.art)
-//                shareButton.padding(.top, 4)
             } else {
                 Text("Loading...")
                     .font(.system(.body, design: .rounded))
@@ -52,23 +52,15 @@ struct TodayCollectionProgressSection: View {
                 .frame(height: 24)
             
             Group {
-                GeometryReader { g in
-                    ZStack(alignment: .leading) {
-                        Capsule()
-                            .foregroundColor(Color("ACText").opacity(0.2))
-                            .frame(width: g.size.width)
-                        Capsule()
-                            .foregroundColor(Color("ACHeaderBackground"))
-                            .frame(width: (g.size.width * caught / total) > 0 ? max(self.barHeight, (g.size.width * caught / total)) : 0)
-                        // Makes sure the bar will make a nice circle at it's smallest size
-                    }
-                }
+                ProgressView(progress: caught / total,
+                             trackColor: .acText,
+                             progressColor: .acHeaderBackground)
             }
             .frame(height: self.barHeight)
             
             Text("\(Int(caught)) / \(Int(total))")
                 .font(Font.system(size: 12, weight: Font.Weight.semibold, design: Font.Design.rounded).monospacedDigit())
-                .foregroundColor(Color("ACText"))
+                .foregroundColor(.acText)
         }
     }
 
@@ -80,7 +72,7 @@ struct TodayCollectionProgressSection: View {
             }
             .font(Font.system(size: 16, weight: .bold, design: .rounded))
         }
-        .accentColor(Color("ACText"))
+        .accentColor(.acText)
         .padding(12)
         .frame(maxWidth: .infinity)
         .background(

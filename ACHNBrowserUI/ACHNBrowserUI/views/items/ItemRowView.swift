@@ -40,7 +40,7 @@ struct ItemRowView: View {
             Text("\(price)")
                 .font(.caption)
                 .fontWeight(.bold)
-                .foregroundColor(.bell)
+                .foregroundColor(.acHeaderBackground)
                 .lineLimit(1)
         }
     }
@@ -52,7 +52,7 @@ struct ItemRowView: View {
             Text(item.obtainedFrom ?? "unknown source")
                 .font(.subheadline)
                 .fontWeight(.semibold)
-                .foregroundColor(.secondaryText)
+                .foregroundColor(.acSecondaryText)
         }
     }
     
@@ -63,9 +63,9 @@ struct ItemRowView: View {
                     Image(systemName: "clock")
                         .resizable()
                         .frame(width: 12, height: 12)
-                        .foregroundColor(.secondaryText)
+                        .foregroundColor(.acSecondaryText)
                     Text(item.formattedTimes()!)
-                        .foregroundColor(.secondaryText)
+                        .foregroundColor(.acSecondaryText)
                         .fontWeight(.semibold)
                         .font(.caption)
                 }

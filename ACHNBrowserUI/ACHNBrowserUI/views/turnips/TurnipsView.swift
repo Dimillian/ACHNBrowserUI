@@ -56,7 +56,7 @@ struct TurnipsView: View {
                             self.presentedSheet = .turnipsForm(subManager: self.subManager)
                         }) {
                             Text(TurnipFields.exist() ? "Edit your in game prices" : "Add your in game prices")
-                                .foregroundColor(.bell)
+                                .foregroundColor(.acHeaderBackground)
                         }
                     }
                 }
@@ -103,7 +103,7 @@ extension TurnipsView {
                     self.presentedSheet = .subscription(subManager: self.subManager)
                 }) {
                     Text("To help us support the application and get turnip predictions notification, you can try out AC Helper+")
-                        .foregroundColor(.secondaryText)
+                        .foregroundColor(.acSecondaryText)
                         .lineLimit(nil)
                         .fixedSize(horizontal: false, vertical: true)
                         .padding(.top, 8)
@@ -116,7 +116,7 @@ extension TurnipsView {
                         .fontWeight(.bold)
                         .foregroundColor(.white)
                 }.buttonStyle(PlainRoundedButton())
-                    .accentColor(.bell)
+                    .accentColor(.acHeaderBackground)
                     .padding(.bottom, 8)
             }
         }
@@ -143,7 +143,7 @@ extension TurnipsView {
                 if turnipsDisplay != .chart {
                     if turnipsDisplay == .profits && viewModel.averagesProfits != nil {
                         Text("Profits estimates are computed using the average of the current period")
-                            .foregroundColor(.secondaryText)
+                            .foregroundColor(.acSecondaryText)
                     }
                     HStack {
                         Text("Day").fontWeight(.bold)
@@ -172,7 +172,7 @@ extension TurnipsView {
                         }
                     } else {
                         Text("Please add the amount of turnips you bought and for how much")
-                            .foregroundColor(.bell)
+                            .foregroundColor(.acHeaderBackground)
                             .onTapGesture {
                                 self.presentedSheet = .turnipsForm(subManager: self.subManager)
                         }
@@ -185,7 +185,7 @@ extension TurnipsView {
                         ).padding(.top, 8)
                     } else {
                         Text("Add your in game turnip prices to see the predictions chart")
-                            .foregroundColor(.bell)
+                            .foregroundColor(.acHeaderBackground)
                             .onTapGesture {
                                 self.presentedSheet = .turnipsForm(subManager: self.subManager)
                         }
@@ -194,7 +194,7 @@ extension TurnipsView {
                 }
             } else {
                 Text("Add your in game turnip prices to see predictions")
-                    .foregroundColor(.bell)
+                    .foregroundColor(.acHeaderBackground)
                     .onTapGesture {
                         self.presentedSheet = .turnipsForm(subManager: self.subManager)
                 }
