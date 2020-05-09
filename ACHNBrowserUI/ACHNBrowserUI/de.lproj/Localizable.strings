@@ -45,7 +45,6 @@ Du kannst das Abonnement jederzeit in deinen iTunes Kontoeinstellungen beenden. 
 "unknown source" = "unknown source";
 "Upgrade to +" = "Upgrade auf +";
 "Visitors" = "Besucher";
-"You caught them all!" = "Du hast alle gefangen!";
 "You're subscribed to AC Helper+" = "You're subscribed to AC Helper+";
 
 // copy and paste "export"  of Text() and similar SwiftUI functions
@@ -112,7 +111,14 @@ Du kannst das Abonnement jederzeit in deinen iTunes Kontoeinstellungen beenden. 
 "If you enjoy the application, consider subscribing to AC Helper+, to get access to some awesome features and support us!" = "Wenn dir die App gefällt, abonniere AC Helper+, um Zugriff auf großartige Funktionen zu erhalten und uns zu unterstütuen!";
 
 // ActiveCittersView
-"Active Critters" = "Aktive Tierchen";
+"Active Critters" = "Aktive Tiere";
+"Fishes" = "Fische";
+"Bugs" = "Insekten";
+"You caught them all!" = "Du hast alle gefangen!";
+"New this month" = "Diesen Monat neu";
+"To catch" = "Zu fangen";
+"Leaving this month" = "Nur noch diesen Monat";
+"Caught" = "Gefangen";
 
 // SettingsView
 "Preferences" = "Einstellungen";
@@ -147,12 +153,9 @@ Du kannst das Abonnement jederzeit in deinen iTunes Kontoeinstellungen beenden. 
 "App Settings" = "App Einstellungen";
 "App version" = "App Version";
 "Available This Month" = "Diesen Monat Verfügbar";
-"Caught" = "Gefangen";
 "Christian & Ninji for the turnip predictions algorithm" = "Christian & Ninji für den Rüben Prognose Algorithmus";
 "Error" = "Fehler";
 "Game patch data" = "Spielversion Daten";
-"Leaving this month" = "Leaving this month";
-"New this month" = "New this month";
 "Nookazon for the marketplace" = "Nookazon für den Marktplatz";
 "Our amazing contributors" = "Unsere großartigen Mitwirkenden";
 "Privacy Policy" = "Datenschutzbestimmungen";
@@ -165,7 +168,6 @@ Du kannst das Abonnement jederzeit in deinen iTunes Kontoeinstellungen beenden. 
 "Thank you for your support!" = "Danke für deine Unterstützung!";
 "The app" = "Die App";
 "The NookPlaza API by Azarro" = "Die NookPlaza API von Azarro";
-"To catch" = "To catch";
 "Today" = "Heute";
 "Today on %@" = "Heute auf %@";
 "Top Turnip Island" = "Top Turnip Island";
