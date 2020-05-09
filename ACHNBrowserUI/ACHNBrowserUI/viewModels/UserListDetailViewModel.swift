@@ -15,8 +15,15 @@ class UserListDetailViewModel: ObservableObject {
     @Published var list: UserList
     @Published var selectedItems: [Item] = []
     
+    private var listUpdater: AnyCancellable?
+    
     init(list: UserList) {
         self.list = list
+        listUpdater = UserCollection.shared.$lists
+            .compactMap{ $0.first(where: { $0.id == list.id }) }
+            .sink(receiveValue: { [weak self] list in
+                self?.list = list
+            })
     }
     
     func saveItems() {

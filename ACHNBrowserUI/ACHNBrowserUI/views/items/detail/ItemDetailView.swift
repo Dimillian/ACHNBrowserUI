@@ -14,6 +14,7 @@ struct ItemDetailView: View {
     // MARK: - Vars
     @EnvironmentObject private var items: Items
     @EnvironmentObject private var collection: UserCollection
+    @EnvironmentObject private var subscriptionManager: SubscriptionManager
 
     @ObservedObject private var itemViewModel: ItemDetailViewModel
     
@@ -91,6 +92,7 @@ struct ItemDetailView: View {
             if itemViewModel.item.isCritter {
                 ItemDetailSeasonSectionView(item: itemViewModel.item)
             }
+            listsSection
             listingSection
         }
         .listStyle(GroupedListStyle())
@@ -196,8 +198,32 @@ extension ItemDetailView {
     }
     
     private var listsSection: some View {
-        Section(header: SectionHeaderView(text: "Your lists", icon: "list.bullet")) {
-            Text("Coming")
+        Section(header: SectionHeaderView(text: "Your items lists", icon: "list.bullet")) {
+            if subscriptionManager.subscriptionStatus == .subscribed || collection.lists.isEmpty {
+                Button(action: {
+                    self.selectedSheet = .userListForm(editingList: nil)
+                }) {
+                    Text("Create a new list").foregroundColor(.acHeaderBackground)
+                }
+            }
+            ForEach(collection.lists) { list in
+                HStack {
+                    Image(systemName: list.items.contains(self.itemViewModel.item) ? "checkmark.seal.fill": "checkmark.seal")
+                        .foregroundColor(list.items.contains(self.itemViewModel.item) ? Color.acTabBarBackground : Color.acText)
+                        .scaleEffect(list.items.contains(self.itemViewModel.item) ? 1.2 : 0.9)
+                        .animation(.spring())
+                    UserListRow(list: list)
+                }.onTapGesture {
+                    if let index = list.items.firstIndex(of: self.itemViewModel.item) {
+                        self.collection.deleteItem(for: list.id, at: index)
+                    } else {
+                        self.collection.addItems(for: list.id, items: [self.itemViewModel.item])
+                    }
+                }
+            }
+            if subscriptionManager.subscriptionStatus != .subscribed && collection.lists.count >= 1 {
+                UserListSubscribeCallView(sheet: $selectedSheet)
+            }
         }
     }
 }

@@ -14,9 +14,9 @@ struct Sheet: View {
         case safari(URL), share(content: [Any])
         case about, rearrange
         case userListForm(editingList: UserList?)
-        case turnipsForm(subManager: SubcriptionManager)
-        case subscription(subManager: SubcriptionManager)
-        case settings(subManager: SubcriptionManager)
+        case turnipsForm(subManager: SubscriptionManager)
+        case subscription(subManager: SubscriptionManager)
+        case settings(subManager: SubscriptionManager)
         
         var id: String {
             switch self {

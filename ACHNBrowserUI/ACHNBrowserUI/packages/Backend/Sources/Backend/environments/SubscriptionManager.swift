@@ -10,8 +10,8 @@ import Foundation
 import SwiftUI
 import Purchases
 
-public class SubcriptionManager: ObservableObject {
-    public static let shared = SubcriptionManager()
+public class SubscriptionManager: ObservableObject {
+    public static let shared = SubscriptionManager()
     
     public enum SubscriptionStatus {
         case subscribed, notSubscribed

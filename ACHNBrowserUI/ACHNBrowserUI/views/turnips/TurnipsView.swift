@@ -30,7 +30,7 @@ struct TurnipsView: View {
         }
     }
     
-    @EnvironmentObject private var subManager: SubcriptionManager
+    @EnvironmentObject private var subManager: SubscriptionManager
     @ObservedObject private var viewModel = TurnipsViewModel()
     @State private var presentedSheet: Sheet.SheetType?
     @State private var turnipsDisplay: TurnipsDisplay = .minMax

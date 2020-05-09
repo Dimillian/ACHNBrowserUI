@@ -126,6 +126,7 @@
 		693E2BC624668D8E00B85CB8 /* TodayWhatsNewSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 693E2BC524668D8E00B85CB8 /* TodayWhatsNewSection.swift */; };
 		693E2BC8246697FC00B85CB8 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 693E2BC7246697FC00B85CB8 /* Image.swift */; };
 		693E2BCA24669D2800B85CB8 /* TodaySubscribeSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 693E2BC924669D2800B85CB8 /* TodaySubscribeSection.swift */; };
+		693E2BCC2466DE9A00B85CB8 /* UserListSubscribeCallView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 693E2BCB2466DE9A00B85CB8 /* UserListSubscribeCallView.swift */; };
 		693E728E245D71DD00CD26F4 /* UIState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 693E728D245D71DD00CD26F4 /* UIState.swift */; };
 		693E7294245D834C00CD26F4 /* SubscribeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 693E7293245D834C00CD26F4 /* SubscribeView.swift */; };
 		693E729B245E9C0E00CD26F4 /* ItemDetailSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 693E729A245E9C0E00CD26F4 /* ItemDetailSource.swift */; };
@@ -382,6 +383,7 @@
 		693E2BC524668D8E00B85CB8 /* TodayWhatsNewSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayWhatsNewSection.swift; sourceTree = "<group>"; };
 		693E2BC7246697FC00B85CB8 /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
 		693E2BC924669D2800B85CB8 /* TodaySubscribeSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodaySubscribeSection.swift; sourceTree = "<group>"; };
+		693E2BCB2466DE9A00B85CB8 /* UserListSubscribeCallView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListSubscribeCallView.swift; sourceTree = "<group>"; };
 		693E728D245D71DD00CD26F4 /* UIState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIState.swift; sourceTree = "<group>"; };
 		693E7293245D834C00CD26F4 /* SubscribeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscribeView.swift; sourceTree = "<group>"; };
 		693E729A245E9C0E00CD26F4 /* ItemDetailSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailSource.swift; sourceTree = "<group>"; };
@@ -770,6 +772,7 @@
 				69875F5424654EB900B1D46C /* UserListFormView.swift */,
 				69875F58246557D000B1D46C /* UserListDetailView.swift */,
 				693E2BC12465C2C300B85CB8 /* UserListRow.swift */,
+				693E2BCB2466DE9A00B85CB8 /* UserListSubscribeCallView.swift */,
 			);
 			path = userLists;
 			sourceTree = "<group>";
@@ -1372,6 +1375,7 @@
 				6951836A245977D1005D28E0 /* TurnipsAveragePriceRow.swift in Sources */,
 				69CA5F18244F447E00B275B6 /* EventsDescription.swift in Sources */,
 				69B13CA8245599A00089BD7B /* ItemDetailInfoView.swift in Sources */,
+				693E2BCC2466DE9A00B85CB8 /* UserListSubscribeCallView.swift in Sources */,
 				024363DB2465EA15006A37A0 /* TodaySectionEditView.swift in Sources */,
 				697E63F72449A7BA008FB710 /* VillagersViewModel.swift in Sources */,
 			);
@@ -1531,7 +1535,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = ACHNBrowserUI/ACHNBrowserUI.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 050912020;
+				CURRENT_PROJECT_VERSION = 050922020;
 				DEVELOPMENT_ASSET_PATHS = "\"ACHNBrowserUI/Preview Content\"";
 				DEVELOPMENT_TEAM = Z6P74P6T99;
 				ENABLE_PREVIEWS = YES;
@@ -1556,7 +1560,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = ACHNBrowserUI/ACHNBrowserUI.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 050912020;
+				CURRENT_PROJECT_VERSION = 050922020;
 				DEVELOPMENT_ASSET_PATHS = "\"ACHNBrowserUI/Preview Content\"";
 				DEVELOPMENT_TEAM = Z6P74P6T99;
 				ENABLE_PREVIEWS = YES;

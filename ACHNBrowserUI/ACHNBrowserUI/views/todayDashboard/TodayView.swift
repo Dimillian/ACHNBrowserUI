@@ -15,7 +15,7 @@ import UI
 struct TodayView: View {
     @EnvironmentObject private var uiState: UIState
     @EnvironmentObject private var collection: UserCollection
-    @EnvironmentObject private var subManager: SubcriptionManager
+    @EnvironmentObject private var subManager: SubscriptionManager
     @ObservedObject private var userDefaults = AppUserDefaults.shared
     @ObservedObject private var viewModel = DashboardViewModel()
     @ObservedObject private var villagersViewModel = VillagersViewModel()

@@ -11,7 +11,7 @@ import SwiftUIKit
 import Backend
 
 struct SettingsView: View {
-    @EnvironmentObject private var subscriptionManager: SubcriptionManager
+    @EnvironmentObject private var subscriptionManager: SubscriptionManager
     @Environment(\.presentationMode) private var presentationMode
     @ObservedObject var appUserDefaults = AppUserDefaults.shared
         
@@ -111,6 +111,6 @@ struct SettingsView: View {
 
 struct SettingsView_Previews: PreviewProvider {
     static var previews: some View {
-        SettingsView().environmentObject(SubcriptionManager.shared)
+        SettingsView().environmentObject(SubscriptionManager.shared)
     }
 }

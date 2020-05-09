@@ -12,7 +12,7 @@ import Backend
 import Purchases
 
 struct SubscribeView: View {
-    @EnvironmentObject private var subscriptionManager: SubcriptionManager
+    @EnvironmentObject private var subscriptionManager: SubscriptionManager
     @Environment(\.presentationMode) private var presentationMode
     
     @State private var sheetURL: URL?
