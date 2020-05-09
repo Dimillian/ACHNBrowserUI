@@ -25,6 +25,16 @@ struct UserListDetailView: View {
             .sorted(by: \.key.rawValue)
     }
     
+    private var activeBarButton: some View {
+        Group {
+            if !searchViewModdel.searchText.isEmpty && !viewModel.selectedItems.isEmpty {
+                addButton
+            } else {
+                editButton
+            }
+        }
+    }
+    
     private var addButton: some View {
         Button(action: {
             self.viewModel.saveItems()
@@ -47,7 +57,7 @@ struct UserListDetailView: View {
     
     private var searchBar: some View {
         HStack {
-            SearchField(searchText: $searchViewModdel.searchText, placeholder: "Search Items")
+            SearchField(searchText: $searchViewModdel.searchText, placeholder: "Search items")
             if viewModel.selectedItems.count > 0 {
                 addButton
             }
@@ -67,7 +77,7 @@ struct UserListDetailView: View {
                             self.viewModel.deleteItem(at: indexes.first!)
                         }
                     } else {
-                        Text("Search some items to add to your list")
+                        Text("Items added to your list from the search will be added there")
                             .foregroundColor(.acSecondaryText)
                     }
                 } else {
@@ -86,7 +96,7 @@ struct UserListDetailView: View {
         .environment(\.editMode, .constant(!searchViewModdel.searchText.isEmpty ? .active : .inactive))
         .onReceive(searchViewModdel.$isLoadingData) { self.isLoadingData = $0 }
         .navigationBarTitle(Text(viewModel.list.name))
-        .navigationBarItems(trailing: editButton)
+        .navigationBarItems(trailing: activeBarButton)
         .sheet(item: $sheet, content: { Sheet(sheetType: $0) })
     }
     

@@ -43,6 +43,7 @@ struct TodayView: View {
                 }
                 //TodayTasksSection()
                 TodayNookazonSection(sheet: $selectedSheet, viewModel: viewModel)
+                TodaySubscribeCard(sheet: $selectedSheet)
                 //self.arrangeSectionsButton
                 
             }
