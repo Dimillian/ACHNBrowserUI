@@ -34,7 +34,7 @@ struct TodayView: View {
                 TodayTurnipSection()
                 TodayTasksSection()
                 TodayEventsSection()
-                TodayBirthdaysSection()
+                TodayBirthdaysSection(villagers: villagersViewModel.todayBirthdays)
                 
                 self.nookazonSection
                 self.arrangeSectionsButton
