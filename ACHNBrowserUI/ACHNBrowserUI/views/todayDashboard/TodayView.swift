@@ -35,7 +35,7 @@ struct TodayView: View {
                 
                 TodayEventsSection()
                 TodayCurrentlyAvailableSection(viewModel: viewModel)
-                TodayCollectionProgressSection(viewModel: viewModel)
+                TodayCollectionProgressSection(viewModel: viewModel, sheet: $selectedSheet)
                 TodayBirthdaysSection(villagers: villagersViewModel.todayBirthdays)
                 TodayTurnipSection(predictions: turnipsPredictionsService.predictions)
                     .onTapGesture {
