@@ -21,7 +21,7 @@ struct TodayTurnipSection: View {
                     .aspectRatio(1, contentMode: .fit)
                     .frame(maxWidth: 33)
                 Group {
-                    if predictions?.todayAverages?.isEmpty == true {
+                    if predictions?.todayAverages == nil  {
                         Text("Today is sunday, don't forget to buy more turnips and fill your buy price")
                     } else {
                         Text("Today's average price should be around ")
