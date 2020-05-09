@@ -19,7 +19,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             .environmentObject(UserCollection.shared)
             .environmentObject(Items.shared)
             .environmentObject(UIState())
-            .environmentObject(SubcriptionManager.shared)
+            .environmentObject(SubscriptionManager.shared)
         
         if let windowScene = scene as? UIWindowScene {
             

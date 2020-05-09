@@ -16,7 +16,7 @@ enum Tabs: String, CaseIterable {
 
 struct CollectionListView: View {
     @EnvironmentObject private var collection: UserCollection
-    @EnvironmentObject private var subscriptionManager: SubcriptionManager
+    @EnvironmentObject private var subscriptionManager: SubscriptionManager
     @State private var selectedTab: Tabs = .items
     @State private var sheet: Sheet.SheetType?
         
@@ -79,27 +79,7 @@ struct CollectionListView: View {
                 self.collection.deleteList(at: indexes.first!)
             }
             if subscriptionManager.subscriptionStatus != .subscribed && collection.lists.count >= 1 {
-                VStack(spacing: 8) {
-                    Button(action: {
-                        self.sheet = .subscription(subManager: self.subscriptionManager)
-                    }) {
-                        Text("In order to create more than one list, you need to subscribe to AC Helper+")
-                            .foregroundColor(.acSecondaryText)
-                            .lineLimit(nil)
-                            .fixedSize(horizontal: false, vertical: true)
-                            .padding(.top, 8)
-                    }
-                    Button(action: {
-                        self.sheet = .subscription(subManager: self.subscriptionManager)
-                    }) {
-                        Text("Learn more...")
-                            .font(.headline)
-                            .fontWeight(.bold)
-                            .foregroundColor(.white)
-                    }.buttonStyle(PlainRoundedButton())
-                        .accentColor(.acHeaderBackground)
-                        .padding(.bottom, 8)
-                }
+                UserListSubscribeCallView(sheet: $sheet)
             }
         }
     }

@@ -11,19 +11,26 @@ import Backend
 import UI
 
 struct VillagerDetailView: View {
-    let villager: Villager
-    
+    @ObservedObject var viewModel: VillagerDetailViewModel
     @EnvironmentObject private var collection: UserCollection
     @State private var backgroundColor = Color.acSecondaryBackground
     @State private var textColor = Color.acText
     @State private var secondaryTextColor = Color.acSecondaryText
-    
     @State private var sheet: Sheet.SheetType?
+    @State private var isLoadingItem = true
+    
+    var villager: Villager {
+        viewModel.villager
+    }
+    
+    init(villager: Villager) {
+        self.viewModel = VillagerDetailViewModel(villager: villager)
+    }
     
     private var shareButton: some View {
         Button(action: {
             let image = NavigationView {
-                self.makeBody()
+                self.makeBody().environmentObject(self.collection)
             }
             .navigationViewStyle(StackNavigationViewStyle())
             .frame(width: 350, height: 650).asImage()
@@ -71,6 +78,19 @@ struct VillagerDetailView: View {
             makeInfoCell(title: "Birthday", value: villager.formattedBirthday ?? "Unknown").padding()
             makeInfoCell(title: "Species", value: villager.species).padding()
             makeInfoCell(title: "Gender", value: villager.gender).padding()
+            makeInfoCell(title: "Catch phrase", value: villager.catchPhrase ?? "").padding()
+            
+            Section(header: SectionHeaderView(text: "Villager items", icon: "list.bullet")) {
+                if viewModel.villagerItems?.isEmpty == false {
+                    ForEach(viewModel.villagerItems!) { item in
+                        NavigationLink(destination: NavigationLazyView(ItemDetailView(item: item))) {
+                            ItemRowView(displayMode: .large, item: item)
+                        }
+                    }
+                } else {
+                    RowLoadingView(isLoading: .constant(true))
+                }
+            }
         }
         .listStyle(GroupedListStyle())
         .environment(\.horizontalSizeClass, .regular)

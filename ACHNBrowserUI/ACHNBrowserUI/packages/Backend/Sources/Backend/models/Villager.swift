@@ -10,6 +10,8 @@ import Foundation
 
 public struct Villager: Identifiable, Codable, Equatable {
     public let id: Int
+    public let fileName: String?
+    public let catchPhrase: String?
     public let name: [String: String]
     public let personality: String
     public let birthday: String?
@@ -24,4 +26,10 @@ public struct Villager: Identifiable, Codable, Equatable {
     
     public let gender: String
     public let species: String
+    
+    enum CodingKeys: String, CodingKey {
+        case id, name, personality, birthday, gender, species
+        case fileName = "file-name"
+        case catchPhrase = "catch-phrase"
+    }
 }

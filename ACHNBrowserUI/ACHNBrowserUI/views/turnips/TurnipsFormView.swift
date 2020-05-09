@@ -11,11 +11,11 @@ import Backend
 
 struct TurnipsFormView: View {
     // MARK: - Properties
-    @EnvironmentObject private var subscriptionManager: SubcriptionManager
+    @EnvironmentObject private var subscriptionManager: SubscriptionManager
     @Environment(\.presentationMode) private var presentationMode
     
     @State private var fields = TurnipFields.decode()
-    @State private var enableNotifications = SubcriptionManager.shared.subscriptionStatus == .subscribed
+    @State private var enableNotifications = SubscriptionManager.shared.subscriptionStatus == .subscribed
     @State private var isSubscribePresented = false
 
     private let weekdays = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]

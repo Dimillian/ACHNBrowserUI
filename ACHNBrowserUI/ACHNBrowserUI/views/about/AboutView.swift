@@ -77,7 +77,7 @@ struct AboutView: View {
                     makeRow(image: "star.fill",
                             text: "Rate the app on the App Store", color: .acHeaderBackground)
                         .onTapGesture {
-                            UIApplication.shared.open(URL(string: "https://itunes.apple.com/app/id1508764244")!,
+                            UIApplication.shared.open(URL(string: "itms-apps://itunes.apple.com/app/1508764244?action=write-review")!,
                                                       options: [:],
                                                       completionHandler: nil)
                     }

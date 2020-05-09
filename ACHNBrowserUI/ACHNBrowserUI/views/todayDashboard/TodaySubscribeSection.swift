@@ -11,7 +11,7 @@ import Backend
 
 struct TodaySubscribeSection: View {
     @Binding var sheet: Sheet.SheetType?
-    @EnvironmentObject private var subManager: SubcriptionManager
+    @EnvironmentObject private var subManager: SubscriptionManager
     
     var body: some View {
         Section(header: SectionHeaderView(text: "AC Helper+", icon: "suit.heart.fill")) {
