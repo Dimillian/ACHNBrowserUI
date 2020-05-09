@@ -66,7 +66,7 @@ struct TurnipsChartView_Previews: PreviewProvider {
         TurnipsChartView(
             predictions: predictions,
             animateCurves: .constant(true)
-        ).padding()
+        )
     }
 
     static let predictions = TurnipPredictions(

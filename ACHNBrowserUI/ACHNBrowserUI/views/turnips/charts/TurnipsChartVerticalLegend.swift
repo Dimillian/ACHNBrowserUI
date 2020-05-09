@@ -20,14 +20,18 @@ struct TurnipsChartVerticalLegend: View {
         let frame = geometry.frame(in: .local)
         let (minY, maxY, ratioY, _) = predictions.minMax?.roundedMinMaxAndRatios(rect: frame) ?? (0, 0, 0, 0)
 
-        return ZStack {
-            ForEach(Array(stride(from: Int(minY), to: Int(maxY), by: TurnipsChart.steps)), id: \.self) { value in
+        let min = Int(minY)
+        let max = Int(maxY) + TurnipsChart.steps
+        let values = Array(stride(from: min, to: max, by: TurnipsChart.steps))
+
+        return ZStack(alignment: .verticalLegendAlignment) {
+            ForEach(values, id: \.self) { value in
                 Text("\(value)")
                     .font(.footnote)
                     .fontWeight(.semibold)
                     .foregroundColor(.text)
-                    .position(x: frame.midX, y: (maxY - CGFloat(value)) * ratioY)
-            }
-        }
+                    .alignmentGuide(.verticalLegendAlignment) { d in CGFloat(value) * ratioY }
+            }.background(Color.red)
+        }.background(Color.blue)
     }
 }
