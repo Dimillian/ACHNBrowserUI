@@ -43,8 +43,8 @@ struct ActiveCritterSections: View {
         }
     }
     
-    private func makeSectionOrPlaceholder(title: String, critters: [Item]) -> some View {
-        Section(header: SectionHeaderView(text: title)) {
+    private func makeSectionOrPlaceholder(title: String, icon: String, critters: [Item]) -> some View {
+        Section(header: SectionHeaderView(text: title, icon: icon)) {
             if critters.isEmpty {
                 Text("You caught them all!").font(.body).fontWeight(.bold)
             } else {
@@ -56,12 +56,16 @@ struct ActiveCritterSections: View {
     var body: some View {
         Group {
             makeSectionOrPlaceholder(title: "New this month",
+                                     icon: "calendar.badge.plus",
                                      critters: newThisMonth(critters: selectedTab == .fishes ? activeFishes : activeBugs))
             makeSectionOrPlaceholder(title: "To catch",
+                                     icon: "calendar",
                                      critters: toCatchCritter(critters: selectedTab == .fishes ? activeFishes : activeBugs))
             makeSectionOrPlaceholder(title: "Leaving this month",
+                                     icon: "calendar.badge.minus",
                                      critters: leavingThisMonth(critters: selectedTab == .fishes ? activeFishes : activeBugs))
-            Section(header: SectionHeaderView(text: "Caught")) {
+            Section(header: SectionHeaderView(text: "Caught",
+                                              icon: "tray.2")) {
                 ForEach(caughtCritters(critters: selectedTab == .fishes ? activeFishes : activeBugs),
                         content: sectionContent)
             }
