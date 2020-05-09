@@ -67,18 +67,21 @@ struct ItemDetailView: View {
             if !setItems.isEmpty {
                 ItemsCrosslineSectionView(title: "Set items",
                                           items: setItems,
+                                          icon: "paperclip.circle.fill",
                                           currentItem: $itemViewModel.item,
                                           selectedVariant: $displayedVariant)
             }
             if !similarItems.isEmpty {
                 ItemsCrosslineSectionView(title: "Simillar items",
                                           items: similarItems,
+                                          icon: "eyedropper.full",
                                           currentItem: $itemViewModel.item,
                                           selectedVariant: $displayedVariant)
             }
             if !themeItems.isEmpty {
                 ItemsCrosslineSectionView(title: "Thematics",
                                           items: themeItems,
+                                          icon: "tag.fill",
                                           currentItem: $itemViewModel.item,
                                           selectedVariant: $displayedVariant)
             }
@@ -128,7 +131,7 @@ extension ItemDetailView {
     }
     
     private var variantsSection: some View {
-        Section(header: SectionHeaderView(text: "Variants")) {
+        Section(header: SectionHeaderView(text: "Variants", icon: "paintbrush.fill")) {
             ScrollView(.horizontal, showsIndicators: false) {
                 HStack {
                 ForEach(itemViewModel.item.variants!) { variant in
@@ -148,7 +151,7 @@ extension ItemDetailView {
     }
     
     private var materialsSection: some View {
-        Section(header: SectionHeaderView(text: "Materials")) {
+        Section(header: SectionHeaderView(text: "Materials", icon: "leaf.arrow.circlepath")) {
             ScrollView(.horizontal, showsIndicators: false) {
                 HStack {
                     ForEach(itemViewModel.item.materials!) { material in
@@ -172,7 +175,7 @@ extension ItemDetailView {
     }
     
     private var listingSection: some View {
-        Section(header: SectionHeaderView(text: "Nookazon listings")) {
+        Section(header: SectionHeaderView(text: "Nookazon listings", icon: "cart.fill")) {
             if itemViewModel.loading {
                 Text("Loading Listings...")
                     .foregroundColor(.secondary)
@@ -189,6 +192,12 @@ extension ItemDetailView {
                 Text("No listings found on Nookazon")
                     .foregroundColor(.secondary)
             }
+        }
+    }
+    
+    private var listsSection: some View {
+        Section(header: SectionHeaderView(text: "Your lists", icon: "list.bullet")) {
+            Text("Coming")
         }
     }
 }

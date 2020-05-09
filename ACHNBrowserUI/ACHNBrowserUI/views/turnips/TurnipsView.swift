@@ -51,7 +51,7 @@ struct TurnipsView: View {
                 if UIDevice.current.userInterfaceIdiom != .pad ||
                     (UIDevice.current.orientation == .portrait ||
                         UIDevice.current.orientation == .portraitUpsideDown){
-                    Section(header: SectionHeaderView(text: "Your prices")) {
+                    Section(header: SectionHeaderView(text: "Your prices", icon: "pencil")) {
                         Button(action: {
                             self.presentedSheet = .turnipsForm(subManager: self.subManager)
                         }) {
@@ -101,7 +101,7 @@ extension TurnipsView {
     }
     
     private var subscriptionSection: some View {
-        Section(header: SectionHeaderView(text: "AC Helper+")) {
+        Section(header: SectionHeaderView(text: "AC Helper+", icon: "heart.fill")) {
             VStack(spacing: 8) {
                 Button(action: {
                     self.presentedSheet = .subscription(subManager: self.subManager)
@@ -127,7 +127,7 @@ extension TurnipsView {
     }
     
     private var predictionsSection: some View {
-        Section(header: SectionHeaderView(text: turnipsDisplay.title()),
+        Section(header: SectionHeaderView(text: turnipsDisplay.title(), icon: "dollarsign.circle.fill"),
                 footer: Text(viewModel.pendingNotifications == 0 ? "" :
                     """
                     You'll receive prices predictions in \(viewModel.pendingNotifications - 1) upcoming

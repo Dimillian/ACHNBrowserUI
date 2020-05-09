@@ -13,12 +13,13 @@ import UI
 struct ItemsCrosslineSectionView: View {
     let title: String
     let items: [Item]
+    let icon: String
     
     @Binding var currentItem: Item
     @Binding var selectedVariant: Variant?
     
     var body: some View {
-        Section(header: SectionHeaderView(text: title)) {
+        Section(header: SectionHeaderView(text: title, icon: icon)) {
             ScrollView(.horizontal, showsIndicators: false) {
                 HStack {
                     ForEach(items) { item in
@@ -45,6 +46,7 @@ struct ItemsCrosslineSectionView_Previews: PreviewProvider {
     static var previews: some View {
         ItemsCrosslineSectionView(title: "Preview",
                                   items: [],
+                                  icon: "eyedropper.full",
                                   currentItem: .constant(static_item),
                                   selectedVariant: .constant(nil))
     }
