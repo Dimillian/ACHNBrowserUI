@@ -80,7 +80,7 @@ struct TodayCurrentlyAvailableSection: View {
             Image("\(type.rawValue)\(self.dayNumber())")
                 .resizable()
                 .aspectRatio(1, contentMode: .fit)
-                .frame(maxWidth: 66)
+                .frame(width: 48)
             
             Group {
                 // @TODO: Rename all the insect images from "Ins00" to "Bugs00"

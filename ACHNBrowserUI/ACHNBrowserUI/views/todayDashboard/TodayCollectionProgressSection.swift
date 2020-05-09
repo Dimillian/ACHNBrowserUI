@@ -7,56 +7,43 @@
 //
 
 import SwiftUI
+import Backend
 
 struct TodayCollectionProgressSection: View {
+    @EnvironmentObject private var collection: UserCollection
+    @ObservedObject var viewModel: DashboardViewModel
+    @State private var sheet: Sheet.SheetType?
     
-    @State private var barHeight: CGFloat = 12
+    var barHeight: CGFloat = 12
     
     var body: some View {
         Section(header: SectionHeaderView(text: "Collection Progress", icon: "chart.pie.fill")) {
-            VStack {
-                progressRow(iconName: "Fish28", has: 1, outOf: 44)
-                progressRow(iconName: "Ins13", has: 20, outOf: 38)
-                progressRow(iconName: "icon-fossil", has: 8, outOf: 77)
-                shareButton.padding(.top, 4)
-            }
-            .frame(maxWidth: .infinity)
-            .padding(.vertical)
+            generateBody()
+                .frame(maxWidth: .infinity)
+                .padding(.vertical)
         }
     }
-    
-    var shareButton: some View {
-        Button(action: { } ) {
-            HStack {
-                Image(systemName: "square.and.arrow.up").padding(.bottom, 4)
-                Text("Share")
+
+    private func generateBody() -> some View {
+        VStack(spacing: 8) {
+            if (!viewModel.fishes.isEmpty && !viewModel.bugs.isEmpty && !viewModel.fossils.isEmpty && !viewModel.art.isEmpty) {
+                progressRow(iconName: "Fish28", for: viewModel.fishes)
+                progressRow(iconName: "Ins13", for: viewModel.bugs)
+                progressRow(iconName: "icon-fossil", for: viewModel.fossils)
+                progressRow(iconName: "icon-leaf", for: viewModel.art)
+//                shareButton.padding(.top, 4)
+            } else {
+                Text("Loading...")
+                    .font(.system(.body, design: .rounded))
+                    .foregroundColor(Color.acSecondaryText)
             }
-            .font(Font.system(size: 16, weight: .bold, design: .rounded))
         }
-        .accentColor(Color("ACText"))
-        .padding(12)
-        .frame(maxWidth: .infinity)
-        .background(
-            RoundedRectangle(cornerRadius: 14, style: .continuous)
-                .foregroundColor(Color("ACBackground"))
-        )
+        .animation(.default)
     }
     
-    func progressRow(iconName: String, has: Int, outOf: Int) -> some View {
-        // So. You're going to wonder why I take values in as Ints, then convert
-        // them to CGFloats immediately.
-        //
-        // Basically:
-        // 1. You only have whole numbers of items in your collection, so that
-        //    makes sense, logically.
-        // 2. If, when calculating the bar width, I try to cast them in-line to
-        //    CGFloats, the Xcode 11 compiler totally loses it's mind, and fails
-        //    to compile.
-        //
-        // -- MATT BONNEY 2020-05-06 18:26
-        
-        let x = CGFloat(has)
-        let y = CGFloat(outOf)
+    func progressRow(iconName: String, for items: [Item]) -> some View {
+        let caught = CGFloat(collection.caughtIn(list: items))
+        let total = CGFloat(items.count)
         
         return HStack {
             Image(iconName)
@@ -72,29 +59,51 @@ struct TodayCollectionProgressSection: View {
                             .frame(width: g.size.width)
                         Capsule()
                             .foregroundColor(Color("ACHeaderBackground"))
-                            .frame(width: (g.size.width * x/y) > 0 ? max(self.barHeight, (g.size.width * x/y)) : 0)
+                            .frame(width: (g.size.width * caught / total) > 0 ? max(self.barHeight, (g.size.width * caught / total)) : 0)
                         // Makes sure the bar will make a nice circle at it's smallest size
                     }
                 }
             }
             .frame(height: self.barHeight)
             
-            Text("\(has) / \(outOf)")
+            Text("\(Int(caught)) / \(Int(total))")
                 .font(Font.system(size: 12, weight: Font.Weight.semibold, design: Font.Design.rounded).monospacedDigit())
                 .foregroundColor(Color("ACText"))
         }
     }
-}
 
-struct TodayCollectionProgressSection_Previews: PreviewProvider {
-    static var previews: some View {
-        NavigationView {
-            List {
-                TodayCollectionProgressSection()
+    var shareButton: some View {
+        Button(action: { self.generateAndShareImage() } ) {
+            HStack {
+                Image(systemName: "square.and.arrow.up").padding(.bottom, 4)
+                Text("Share")
             }
-            .listStyle(GroupedListStyle())
-            .environment(\.horizontalSizeClass, .regular)
+            .font(Font.system(size: 16, weight: .bold, design: .rounded))
         }
-        .previewLayout(.fixed(width: 375, height: 500))
+        .accentColor(Color("ACText"))
+        .padding(12)
+        .frame(maxWidth: .infinity)
+        .background(
+            RoundedRectangle(cornerRadius: 14, style: .continuous)
+                .foregroundColor(Color("ACBackground"))
+        )
+    }
+
+    private func generateAndShareImage() {
+        let image = generateBody().frame(width: 350, height: 650).asImage()
+        self.sheet = .share(content: [ItemDetailSource(name: "AC Helper+", image: image)])
     }
 }
+
+//struct TodayCollectionProgressSection_Previews: PreviewProvider {
+//    static var previews: some View {
+//        NavigationView {
+//            List {
+//                TodayCollectionProgressSection()
+//            }
+//            .listStyle(GroupedListStyle())
+//            .environment(\.horizontalSizeClass, .regular)
+//        }
+//        .previewLayout(.fixed(width: 375, height: 500))
+//    }
+//}

@@ -46,6 +46,7 @@ struct TodayBirthdaysSection: View {
                     self.makeCell(for: villager)
                 }
             }
+            .padding(.vertical)
         }
     }
     
@@ -80,7 +81,6 @@ struct TodayBirthdaysSection: View {
                       size: 44)
             
         }
-        .padding(.vertical, 8)
     }
     
     private func makeDateTitleIconCell(month: String, day: String, title: String, image: String = "") -> some View {

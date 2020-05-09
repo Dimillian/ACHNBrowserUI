@@ -7,11 +7,15 @@
 //
 
 import SwiftUI
+import ACNHEvents
+import Backend
 
 struct TodayEventsSection: View {
-    // @TODO: Need to pass in an array of some type of event object
+
+    let todaysEvents = Date().events(for: AppUserDefaults.shared.hemisphere == .north ? .north : .south)
+    let nextEvent = Event.nextEvent()
     
-    var body: some View {
+    var body_old: some View {
         Section(header: SectionHeaderView(text: "Events", icon: "flag.fill")) {
             NavigationLink(destination: Text("Event 1 Detail View")) {
                 makeCell(month: "May", day: "1-7", title: "May Day")
@@ -20,6 +24,34 @@ struct TodayEventsSection: View {
             NavigationLink(destination: Text("Event 2 Detail View")) {
                 makeCell(month: "May", day: "18-31", title: "International Museum Day")
             }
+        }
+    }
+
+    var body: some View {
+        Section(header: SectionHeaderView(text: "Events", icon: "flag.fill")) {
+
+            VStack(alignment: .leading) {
+                Text("Current")
+                    .font(.system(.caption, design: .rounded))
+                    .fontWeight(.bold)
+                    .foregroundColor(Color.acSecondaryText)
+
+                ForEach(todaysEvents, id: \.self) { event in
+                    Text(event.title())
+                }
+            }
+
+            VStack(alignment: .leading) {
+                Text("Upcoming")
+                    .font(.system(.caption, design: .rounded))
+                    .fontWeight(.bold)
+                    .foregroundColor(Color.acSecondaryText)
+
+//                ForEach(nextEvent, id: \.self) { event in
+//                    Text(event.1.title)
+//                }
+            }
+
         }
     }
 
