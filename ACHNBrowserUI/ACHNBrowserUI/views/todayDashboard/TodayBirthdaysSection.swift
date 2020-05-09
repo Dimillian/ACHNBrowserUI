@@ -7,24 +7,57 @@
 //
 
 import SwiftUI
+import Backend
+import UI
 
 struct TodayBirthdaysSection: View {
+    var villagers: [Villager]
+
+    var headerText: String {
+        villagers.count > 1 ? "Today's Birthdays" : "Today's Birthday"
+    }
+
+    func birthdayDay(for villager: Villager) -> String {
+        guard let birthday = villager.birthday else { return "" }
+        let formatter = DateFormatter()
+
+        formatter.dateFormat = "d/M"
+        let birthdayDate = formatter.date(from: birthday)!
+
+        formatter.dateFormat = "dd"
+        return formatter.string(from: birthdayDate)
+    }
+
+    func birthdayMonth(for villager: Villager) -> String {
+        guard let birthday = villager.birthday else { return "" }
+        let formatter = DateFormatter()
+
+        formatter.dateFormat = "d/M"
+        let birthdayDate = formatter.date(from: birthday)!
+
+        formatter.dateFormat = "MMM"
+        return formatter.string(from: birthdayDate)
+    }
+
     var body: some View {
-        Section(header: SectionHeaderView(text: "Birthdays", icon: "gift.fill")) {
-            NavigationLink(destination: Text("Birthdays Detail View")) {
-                makeCell(month: "Oct", day: "30", title: "Wade", image: "Wade_HD")
+        Section(header: SectionHeaderView(text: headerText, icon: "gift.fill")) {
+            ForEach(villagers, id: \.id) { villager in
+                NavigationLink(destination: VillagerDetailView(villager: villager)) {
+                    self.makeCell(for: villager)
+                }
             }
+            .padding(.vertical)
         }
     }
     
-    private func makeCell(month: String, day: String, title: String, image: String) -> some View {
+    private func makeCell(for villager: Villager) -> some View {
         HStack {
             VStack {
-                Text("\(month)")
+                Text(birthdayMonth(for: villager))
                     .font(.system(.caption, design: .rounded))
                     .fontWeight(.bold)
                     .foregroundColor(Color("ACText"))
-                Text("\(day)")
+                Text(birthdayDay(for: villager))
                     .font(.system(.subheadline, design: .rounded))
                     .fontWeight(.bold)
                     .foregroundColor(Color("ACText"))
@@ -35,21 +68,19 @@ struct TodayBirthdaysSection: View {
             .mask(RoundedRectangle(cornerRadius: 22, style: .continuous))
             .padding(.trailing, 8)
             
-            Text(title)
+            Text(villager.name["name-en"] ?? "")
                 .font(Font.system(.headline, design: .rounded))
                 .fontWeight(.semibold)
                 .lineLimit(2)
                 .foregroundColor(Color("ACText"))
             
             Spacer()
-            
-            Image(image)
-                .resizable()
-                .aspectRatio(1, contentMode: .fit)
-                .frame(width: 44)
+
+            ItemImage(path: ACNHApiService.BASE_URL.absoluteString +
+                ACNHApiService.Endpoint.villagerIcon(id: villager.id).path(),
+                      size: 44)
             
         }
-        .padding(.vertical, 8)
     }
     
     private func makeDateTitleIconCell(month: String, day: String, title: String, image: String = "") -> some View {
@@ -81,15 +112,15 @@ struct TodayBirthdaysSection: View {
     }
 }
 
-struct TodayBirthdaysSection_Previews: PreviewProvider {
-    static var previews: some View {
-        NavigationView {
-            List {
-                TodayBirthdaysSection()
-            }
-            .listStyle(GroupedListStyle())
-            .environment(\.horizontalSizeClass, .regular)
-        }
-        .previewLayout(.fixed(width: 375, height: 500))
-    }
-}
+//struct TodayBirthdaysSection_Previews: PreviewProvider {
+//    static var previews: some View {
+//        NavigationView {
+//            List {
+//                TodayBirthdaysSection(villager: Villager))
+//            }
+//            .listStyle(GroupedListStyle())
+//            .environment(\.horizontalSizeClass, .regular)
+//        }
+//        .previewLayout(.fixed(width: 375, height: 500))
+//    }
+//}

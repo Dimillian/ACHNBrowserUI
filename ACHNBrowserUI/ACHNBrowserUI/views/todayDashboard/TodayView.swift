@@ -20,7 +20,7 @@ struct TodayView: View {
     @ObservedObject private var turnipsPredictionsService = TurnipsPredictionService.shared
     
     @State private var selectedSheet: Sheet?
-    @State private var showWhatsNew: Bool = true
+    @State private var showWhatsNew: Bool = false
     
     // MARK: - Body
     var body: some View {
@@ -29,12 +29,13 @@ struct TodayView: View {
                 
                 if showWhatsNew { self.whatsNewSection }
                 
-                TodayCurrentlyAvailableSection(viewModel: viewModel)
-                TodayCollectionProgressSection()
-                TodayTurnipSection()
-                TodayTasksSection()
                 TodayEventsSection()
-                TodayBirthdaysSection()
+                TodayCurrentlyAvailableSection(viewModel: viewModel)
+                TodayCollectionProgressSection(viewModel: viewModel)
+                TodayBirthdaysSection(villagers: villagersViewModel.todayBirthdays)
+
+//                TodayTurnipSection()
+//                TodayTasksSection()
                 
                 self.nookazonSection
                 self.arrangeSectionsButton
