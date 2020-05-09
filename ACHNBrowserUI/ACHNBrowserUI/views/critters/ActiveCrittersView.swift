@@ -83,7 +83,7 @@ struct ActiveCrittersView: View {
                 }
             }
             .pickerStyle(SegmentedPickerStyle())
-            .listRowBackground(Color.dialogueReverse)
+            .listRowBackground(Color.acBackground)
             ActiveCritterSections(selectedTab: $selectedTab,
                                   activeFishes: activeFishes,
                                   activeBugs: activeBugs)

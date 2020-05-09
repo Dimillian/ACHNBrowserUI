@@ -18,9 +18,9 @@ struct ItemDetailSeasonSectionView: View {
                 if item.formattedTimes() != nil {
                     HStack {
                         Spacer()
-                        Image(systemName: "clock.fill").foregroundColor(.secondaryText)
+                        Image(systemName: "clock.fill").foregroundColor(.acSecondaryText)
                         Text("\(item.formattedTimes()!)")
-                            .foregroundColor(.secondaryText)
+                            .foregroundColor(.acSecondaryText)
                             .font(.body)
                         Spacer()
                     }.padding(.top, 4)

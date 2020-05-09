@@ -7,35 +7,38 @@
 //
 
 import SwiftUI
+import Backend
 
 struct TodayTurnipSection: View {
+    let predictions: TurnipPredictions?
+    
     var body: some View {
         // MARK: - Turnip Card
         Section(header: SectionHeaderView(text: "Turnips", icon: "dollarsign.circle.fill")) {
-            NavigationLink(destination: Text("Event 2 Detail View")) {
-                HStack {
-                    Image("icon-turnip")
-                        .resizable()
-                        .aspectRatio(1, contentMode: .fit)
-                        .frame(maxWidth: 33)
-                    
-                    Group {
+            HStack {
+                Image("icon-turnip")
+                    .resizable()
+                    .aspectRatio(1, contentMode: .fit)
+                    .frame(maxWidth: 33)
+                Group {
+                    if predictions?.todayAverages?.isEmpty == true {
+                        Text("Today is sunday, don't forget to buy more turnips and fill your buy price")
+                    } else {
                         Text("Today's average price should be around ")
-                            + Text("129 Bells")
+                            + Text("\(predictions!.todayAverages![0])")
                                 .foregroundColor(Color("ACSecondaryText"))
                             + Text(" in the morning, and ")
-                            + Text("85 Bells")
+                            + Text("\(predictions!.todayAverages![1])")
                                 .foregroundColor(Color("ACSecondaryText"))
                             + Text(" this afternoon.")
                     }
-                    .font(.system(.body, design: .rounded))
-                        //                            .fontWeight(.medium)
-                        .foregroundColor(Color("ACText"))
-                    
                 }
-                .frame(maxWidth: .infinity)
-                .padding(.vertical)
+                .font(.system(.body, design: .rounded))
+                .foregroundColor(.acText)
+                
             }
+            .frame(maxWidth: .infinity)
+            .padding(.vertical)
         }
     }
 }
@@ -44,7 +47,7 @@ struct TodayTurnipSection_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
             List {
-                TodayTurnipSection()
+                TodayTurnipSection(predictions: TurnipsPredictionService.shared.predictions)
             }
             .listStyle(GroupedListStyle())
             .environment(\.horizontalSizeClass, .regular)

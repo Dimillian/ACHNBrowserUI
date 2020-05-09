@@ -68,7 +68,7 @@ struct CollectionListView: View {
                 Button(action: {
                     self.sheet = .userListForm(editingList: nil)
                 }) {
-                    Text("Create a new list").foregroundColor(.bell)
+                    Text("Create a new list").foregroundColor(.acHeaderBackground)
                 }
             }
             ForEach(collection.lists) { list in
@@ -84,7 +84,7 @@ struct CollectionListView: View {
                         self.sheet = .subscription(subManager: self.subscriptionManager)
                     }) {
                         Text("In order to create more than one list, you need to subscribe to AC Helper+")
-                            .foregroundColor(.secondaryText)
+                            .foregroundColor(.acSecondaryText)
                             .lineLimit(nil)
                             .fixedSize(horizontal: false, vertical: true)
                             .padding(.top, 8)
@@ -97,7 +97,7 @@ struct CollectionListView: View {
                             .fontWeight(.bold)
                             .foregroundColor(.white)
                     }.buttonStyle(PlainRoundedButton())
-                        .accentColor(.bell)
+                        .accentColor(.acHeaderBackground)
                         .padding(.bottom, 8)
                 }
             }
@@ -106,12 +106,12 @@ struct CollectionListView: View {
     
     private var placeholderView: some View {
         Text("Please select or go stars some items!")
-            .foregroundColor(.secondaryText)
+            .foregroundColor(.acSecondaryText)
     }
     
     private var emptyView: some View {
         Text("When you'll stars some \(selectedTab.rawValue), they'll be displayed here.")
-            .foregroundColor(.secondaryText)
+            .foregroundColor(.acSecondaryText)
     }
     
     private var picker: some View {

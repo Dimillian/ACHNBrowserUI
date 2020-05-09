@@ -27,7 +27,7 @@ struct ItemsCrosslineSectionView: View {
                                       size: 75)
                             Text(item.name)
                                 .font(.caption)
-                                .foregroundColor(.text)
+                                .foregroundColor(.acText)
                         }.onTapGesture {
                             FeedbackGenerator.shared.triggerSelection()
                             self.selectedVariant = nil

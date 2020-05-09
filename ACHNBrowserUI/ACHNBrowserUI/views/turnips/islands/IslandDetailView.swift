@@ -23,7 +23,7 @@ struct IslandDetailView: View {
                 Button("Join Island") {
                     self.showSafari.toggle()
                 }
-                .accentColor(.grass)
+                .accentColor(.acTabBarTint)
                 Spacer()
             }
             Section(header: Text("Island")) {

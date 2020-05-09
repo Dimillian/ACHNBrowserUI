@@ -58,39 +58,6 @@ extension Color {
     }
     
     // ---
-    
-    public static var dialogue: Color {
-        Color("dialogue", bundle: nil)
-    }
-    
-    public static var dialogueReverse: Color {
-        Color("dialogue-reverse", bundle: nil)
-    }
-    
-    public static var text: Color {
-        Color("text", bundle: nil)
-    }
-    
-    public static var secondaryText: Color {
-        Color("secondaryText", bundle: nil)
-    }
-    
-    public static var bell: Color {
-        Color("bell", bundle: nil)
-    }
-    
-    public static var grass: Color {
-        Color("grass", bundle: nil)
-    }
-    
-    public static var grass2: Color {
-        Color("grass-2", bundle: nil)
-    }
-    
-    public static var grassBackground: Color {
-        Color("grass-background", bundle: nil)
-    }
-    
     public static var catalogBackground: Color {
         Color("catalog-background", bundle: nil)
     }

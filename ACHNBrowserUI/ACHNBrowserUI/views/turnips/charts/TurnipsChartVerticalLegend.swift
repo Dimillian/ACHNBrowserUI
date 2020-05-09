@@ -25,7 +25,7 @@ struct TurnipsChartVerticalLegend: View {
                 Text("\(value)")
                     .font(.footnote)
                     .fontWeight(.semibold)
-                    .foregroundColor(.text)
+                    .foregroundColor(.acText)
                     .position(x: frame.midX, y: (maxY - CGFloat(value)) * ratioY)
             }
         }

@@ -23,18 +23,18 @@ struct SectionHeaderView: View {
                 Image(systemName: icon!)
                     .imageScale(.medium)
                     .font(.system(.subheadline, design: .rounded))
-                    .foregroundColor(Color("ACHeaderText"))
+                    .foregroundColor(.acHeaderText)
                     .rotationEffect(.degrees(-3))
             }
             
             Text(text)
                 .font(.system(.subheadline, design: .rounded))
                 .fontWeight(.bold)
-                .foregroundColor(Color("ACHeaderText"))
+                .foregroundColor(.acHeaderText)
         }
         .padding(.vertical, 8)
         .padding(.horizontal, 14)
-        .background(Color("ACHeaderBackground"))
+        .background(Color.acHeaderBackground)
         .mask(RoundedRectangle(cornerRadius: 14, style: .continuous))
         .padding(.leading, -9)
         .padding(.bottom, -10)

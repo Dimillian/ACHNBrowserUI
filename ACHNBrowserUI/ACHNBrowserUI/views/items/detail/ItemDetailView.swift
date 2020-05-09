@@ -158,10 +158,10 @@ extension ItemDetailView {
                                 .frame(width: 50, height: 50)
                             Text(material.itemName)
                                 .font(.callout)
-                                .foregroundColor(.text)
+                                .foregroundColor(.acText)
                             Text("\(material.count)")
                                 .font(.footnote)
-                                .foregroundColor(.bell)
+                                .foregroundColor(.acHeaderBackground)
                             
                         }
                     }

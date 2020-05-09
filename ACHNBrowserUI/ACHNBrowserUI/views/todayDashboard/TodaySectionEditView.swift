@@ -81,7 +81,7 @@ struct TodaySectionEditView: View {
                 .font(.system(size: 16, weight: .bold, design: .rounded))
         }
         .padding(10)
-        .background(RoundedRectangle(cornerRadius: 14, style: .continuous).foregroundColor(Color("ACText").opacity(0.2)))
+        .background(RoundedRectangle(cornerRadius: 14, style: .continuous).foregroundColor(Color.acText.opacity(0.2)))
     }
     
     // @TODO: Do we need explainer text? 
