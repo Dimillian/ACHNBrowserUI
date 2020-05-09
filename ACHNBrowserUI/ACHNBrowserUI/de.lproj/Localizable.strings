@@ -45,7 +45,7 @@
 "Catalog" = "Katalog";
 "Turnips" = "Rüben";
 "Villagers" = "Bewohner";
-"My Stuff" = "Meine Sachen";
+"Collection" = "Sammlung";
 
 // TodayView
 "Change Section Order" = "Ändere die Reihenfolge";
@@ -168,5 +168,31 @@ Du kannst das Abonnement jederzeit in deinen iTunes Kontoeinstellungen beenden. 
 "App Settings" = "App Einstellungen";
 "App Icon" = "App Icon";
 "Restore purchase" = "Einkauf wiederherstellen";
+
+// UserListFormView
+"Edit your list" = "Liste Bearbeiten";
+"Name of your list" = "Name der Liste";
+"List name" = "Name";
+"Can be nothing" = "Kann leer sein";
+"Icon" = "Icon";
+
+// UserListDetailView
+"Add %lld items" = "Füge %lld Gegenstände hinzu";
+"Edit" = "Bearbeiten";
+"Search items" = "Gegenstände suchen";
+"Items added to your list from the search will be displayed there." = "Gegenstände, die du aus der Suche heraus deiner Liste hinzugefügt hast, findest du dort.";
+"No results for %@" = "Kein Ergebnis für %@";
+
+// UserListSubscribeCallView
+"In order to create more than one list, you need to subscribe to AC Helper+" = "Um mehr als eine Liste anlegen zu können, musst du AC Helper+ abonnieren";
+"Learn more..." = "Erfahre mehr...";
+
+// CollectionListView
+"Create a new list" = "Erstelle eine neue Liste";
+"Please select or go stars some items!" = "Bitte wähle oder markiere Gegenstände!";
+"When you'll stars some %@, they'll be displayed here." = "Wenn du %@ markierst, werden sie hier angezeigt.";
+"Items" = "Gegenstände";
+"Critters" = "Tiere";
+"Lists" = "Listen";
 
 // to be continued

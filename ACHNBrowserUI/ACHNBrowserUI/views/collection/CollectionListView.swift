@@ -50,7 +50,7 @@ struct CollectionListView: View {
                 }
             }
             .listStyle(GroupedListStyle())
-            .navigationBarTitle(Text("My Stuff"),
+            .navigationBarTitle(Text("Collection"),
                                 displayMode: .automatic)
             .sheet(item: $sheet, content: { Sheet(sheetType: $0) })
             
@@ -97,7 +97,7 @@ struct CollectionListView: View {
     private var picker: some View {
         Picker(selection: $selectedTab, label: Text("")) {
             ForEach(Tabs.allCases, id: \.self) { tab in
-                Text(tab.rawValue.capitalized)
+                Text(LocalizedStringKey(tab.rawValue.capitalized))
             }
         }
         .pickerStyle(SegmentedPickerStyle())
