@@ -22,15 +22,16 @@ public struct ProgressView: View {
     
     public var body: some View {
         ZStack {
-            GeometryReader { proxy in
-                RoundedRectangle(cornerRadius: 4)
-                    .fill(self.trackColor)
-                RoundedRectangle(cornerRadius: 4)
-                    .fill(self.progressColor)
-                    .frame(width: proxy.size.width * self.progress)
+            GeometryReader { g in
+                Capsule()
+                    .foregroundColor(self.trackColor.opacity(0.2))
+                    .frame(width: g.size.width)
+                Capsule()
+                    .foregroundColor(self.progressColor)
+                    .frame(width: (g.size.width * self.progress) > 0 ? max(12, (g.size.width * self.progress)) : 0)
             }
         }
-        .frame(height: 8)
+        .frame(height: 12)
         .background(Color.clear)
     }
 }

@@ -12,7 +12,7 @@ import Backend
 struct ItemsListView: View {
     @ObservedObject var viewModel: ItemsViewModel
     @State private var showSortSheet = false
-    @State private var itemRowsDisplayMode: ItemRowView.DisplayMode = .big
+    @State private var itemRowsDisplayMode: ItemRowView.DisplayMode = .large
     
     var currentItems: [Item] {
         get {
@@ -38,9 +38,9 @@ struct ItemsListView: View {
     
     private var layoutButton: some View {
         Button(action: {
-            self.itemRowsDisplayMode = self.itemRowsDisplayMode == .small ? .big : .small
+            self.itemRowsDisplayMode = self.itemRowsDisplayMode == .compact ? .large : .compact
         }) {
-            Image(systemName: itemRowsDisplayMode == .big ? "rectangle.grid.1x2" : "list.dash")
+            Image(systemName: itemRowsDisplayMode == .large ? "rectangle.grid.1x2" : "list.dash")
                 .imageScale(.large)
         }
         .safeHoverEffectBarItem(position: .trailing)
@@ -76,21 +76,23 @@ struct ItemsListView: View {
     
     var body: some View {
         List {
-            SearchField(searchText: $viewModel.searchText)
-            ForEach(currentItems) { item in
-                NavigationLink(destination: ItemDetailView(item: item)) {
-                    ItemRowView(displayMode: self.itemRowsDisplayMode, item: item)
-                        .environmentObject(ItemDetailViewModel(item: item))
-                        .listRowBackground(Color.dialogue)
+            Section(header: SearchField(searchText: $viewModel.searchText)) {
+                ForEach(currentItems) { item in
+                    NavigationLink(destination: ItemDetailView(item: item)) {
+                        ItemRowView(displayMode: self.itemRowsDisplayMode, item: item)
+                            .environmentObject(ItemDetailViewModel(item: item))
+                            .listRowBackground(Color.acSecondaryBackground)
+                    }
                 }
             }
         }
+        .listStyle(GroupedListStyle())
         .id(viewModel.sort)
         .modifier(DismissingKeyboardOnSwipe())
         .navigationBarTitle(Text(viewModel.category.label()),
-                            displayMode: .inline)
+                            displayMode: .automatic)
             .navigationBarItems(trailing:
-                HStack(spacing: 16) {
+                HStack(spacing: 12) {
                     layoutButton
                     sortButton
                 })

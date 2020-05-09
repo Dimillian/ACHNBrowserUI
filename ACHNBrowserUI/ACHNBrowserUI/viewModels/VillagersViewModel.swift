@@ -11,14 +11,18 @@ import Combine
 import Backend
 
 class VillagersViewModel: ObservableObject {
+    private static var cachedVillagers: [Villager] = []
+    
     @Published var villagers: [Villager] = [] {
         didSet {
+            Self.cachedVillagers = villagers
             let formatter = DateFormatter()
             formatter.dateFormat = "d/M"
             let today = formatter.string(from: Date())
             todayBirthdays = villagers.filter( { $0.birthday == today })
         }
     }
+    
     @Published var searchResults: [Villager] = []
     @Published var searchText = ""
     @Published var todayBirthdays: [Villager] = []
@@ -39,7 +43,10 @@ class VillagersViewModel: ObservableObject {
             .map(villagers(with:))
             .sink(receiveValue: { [weak self] in self?.searchResults = $0 })
         
-        fetch()
+        villagers = Self.cachedVillagers
+        if villagers.isEmpty {
+            fetch()
+        }
     }
     
     private func fetch() {

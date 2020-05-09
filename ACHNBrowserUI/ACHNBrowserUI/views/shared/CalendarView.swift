@@ -26,7 +26,7 @@ struct CalendarView: View {
         let isCurrentMonth = monthsArray.firstIndex(of: month) == currentMonth - 1
         let border =  RoundedRectangle(cornerRadius: 10)
             .stroke(lineWidth: isCurrentMonth ? 5 : 0)
-            .foregroundColor(isCurrentMonth ? .grass : .clear)
+            .foregroundColor(isCurrentMonth ? .acTabBarTint : .clear)
         return Text(month.capitalized)
             .font(.callout)
             .foregroundColor(.black)

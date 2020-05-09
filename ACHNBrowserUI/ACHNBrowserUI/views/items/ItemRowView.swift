@@ -14,7 +14,7 @@ struct ItemRowView: View {
     @EnvironmentObject private var collection: UserCollection
     
     enum DisplayMode {
-        case small, big
+        case compact, large, largeNoButton
     }
     
     let displayMode: DisplayMode
@@ -24,9 +24,9 @@ struct ItemRowView: View {
     
     private var imageSize: CGFloat {
         switch displayMode {
-        case .small:
+        case .compact:
             return 25
-        case .big:
+        case .large, .largeNoButton:
             return 100
         }
     }
@@ -40,7 +40,7 @@ struct ItemRowView: View {
             Text("\(price)")
                 .font(.caption)
                 .fontWeight(.bold)
-                .foregroundColor(.bell)
+                .foregroundColor(.acHeaderBackground)
                 .lineLimit(1)
         }
     }
@@ -52,7 +52,7 @@ struct ItemRowView: View {
             Text(item.obtainedFrom ?? "unknown source")
                 .font(.subheadline)
                 .fontWeight(.semibold)
-                .foregroundColor(.secondaryText)
+                .foregroundColor(.acSecondaryText)
         }
     }
     
@@ -63,9 +63,9 @@ struct ItemRowView: View {
                     Image(systemName: "clock")
                         .resizable()
                         .frame(width: 12, height: 12)
-                        .foregroundColor(.secondaryText)
+                        .foregroundColor(.acSecondaryText)
                     Text(item.formattedTimes()!)
-                        .foregroundColor(.secondaryText)
+                        .foregroundColor(.acSecondaryText)
                         .fontWeight(.semibold)
                         .font(.caption)
                 }
@@ -107,7 +107,9 @@ struct ItemRowView: View {
         
     var body: some View {
         HStack(spacing: 8) {
-            LikeButtonView(item: item)
+            if displayMode != .largeNoButton {
+                LikeButtonView(item: item).environmentObject(collection)
+            }
             if item.itemImage == nil && displayedVariant == nil {
                 Image(item.appCategory.iconName())
                     .resizable()
@@ -119,7 +121,7 @@ struct ItemRowView: View {
             
             VStack(alignment: .leading, spacing: 2) {
                 itemInfo
-                if displayMode == .big {
+                if displayMode != .compact {
                     itemSubInfo
                     itemVariants
                 }
@@ -134,11 +136,11 @@ struct ItemRowView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
             List {
-                ItemRowView(displayMode: .big, item: static_item)
+                ItemRowView(displayMode: .large, item: static_item)
                     .environmentObject(UserCollection())
-                ItemRowView(displayMode: .small, item: static_item)
+                ItemRowView(displayMode: .compact, item: static_item)
                     .environmentObject(UserCollection())
-                ItemRowView(displayMode: .big, item: static_item)
+                ItemRowView(displayMode: .large, item: static_item)
                     .environmentObject(UserCollection())
             }
         }

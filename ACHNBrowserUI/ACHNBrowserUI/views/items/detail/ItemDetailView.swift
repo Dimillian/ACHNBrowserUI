@@ -11,26 +11,14 @@ import Backend
 import UI
 
 struct ItemDetailView: View {
-    private enum Sheet: Identifiable {
-        case safari(URL), share
-        
-        var id: String {
-            switch self {
-            case .safari(let url):
-                return url.absoluteString
-            case .share:
-                return "share"
-            }
-        }
-    }
-    
     // MARK: - Vars
     @EnvironmentObject private var items: Items
+    @EnvironmentObject private var collection: UserCollection
 
     @ObservedObject private var itemViewModel: ItemDetailViewModel
     
     @State private var displayedVariant: Variant?
-    @State private var selectedSheet: Sheet?
+    @State private var selectedSheet: Sheet.SheetType?
 
     init(item: Item) {
         self.itemViewModel = ItemDetailViewModel(item: item)
@@ -62,7 +50,7 @@ struct ItemDetailView: View {
         }
         .listStyle(GroupedListStyle())
         .environment(\.horizontalSizeClass, .regular)
-        .frame(height: 330)
+        .frame(width: 350, height: 330)
         .asImage()
         
         return [ItemDetailSource(name: itemViewModel.item.name, image: image)]
@@ -79,18 +67,21 @@ struct ItemDetailView: View {
             if !setItems.isEmpty {
                 ItemsCrosslineSectionView(title: "Set items",
                                           items: setItems,
+                                          icon: "paperclip.circle.fill",
                                           currentItem: $itemViewModel.item,
                                           selectedVariant: $displayedVariant)
             }
             if !similarItems.isEmpty {
                 ItemsCrosslineSectionView(title: "Simillar items",
                                           items: similarItems,
+                                          icon: "eyedropper.full",
                                           currentItem: $itemViewModel.item,
                                           selectedVariant: $displayedVariant)
             }
             if !themeItems.isEmpty {
                 ItemsCrosslineSectionView(title: "Thematics",
                                           items: themeItems,
+                                          icon: "tag.fill",
                                           currentItem: $itemViewModel.item,
                                           selectedVariant: $displayedVariant)
             }
@@ -113,26 +104,16 @@ struct ItemDetailView: View {
         .navigationBarItems(trailing: navButtons)
         .navigationBarTitle(Text(itemViewModel.item.name), displayMode: .large)
         .sheet(item: $selectedSheet) {
-            self.makeSheet($0)
+            Sheet(sheetType: $0)
         }
     }
 }
 
 // MARK: - Views
 extension ItemDetailView {
-    private func makeSheet(_ sheet: Sheet) -> some View {
-        switch sheet {
-        case .safari(let url):
-            return AnyView(SafariView(url: url))
-        case .share:
-            return AnyView(ActivityControllerView(activityItems: makeShareContent(),
-                                                  applicationActivities: nil))
-        }
-    }
-    
     private var shareButton: some View {
         Button(action: {
-            self.selectedSheet = .share
+            self.selectedSheet = .share(content: self.makeShareContent())
         }) {
             Image(systemName: "square.and.arrow.up").imageScale(.large)
         }
@@ -142,13 +123,15 @@ extension ItemDetailView {
     private var navButtons: some View {
         HStack {
             LikeButtonView(item: self.itemViewModel.item).imageScale(.large)
-            Spacer(minLength: 16)
+                .environmentObject(collection)
+                .safeHoverEffectBarItem(position: .trailing)
+            Spacer(minLength: 12)
             shareButton
         }
     }
     
     private var variantsSection: some View {
-        Section(header: SectionHeaderView(text: "Variants")) {
+        Section(header: SectionHeaderView(text: "Variants", icon: "paintbrush.fill")) {
             ScrollView(.horizontal, showsIndicators: false) {
                 HStack {
                 ForEach(itemViewModel.item.variants!) { variant in
@@ -168,7 +151,7 @@ extension ItemDetailView {
     }
     
     private var materialsSection: some View {
-        Section(header: SectionHeaderView(text: "Materials")) {
+        Section(header: SectionHeaderView(text: "Materials", icon: "leaf.arrow.circlepath")) {
             ScrollView(.horizontal, showsIndicators: false) {
                 HStack {
                     ForEach(itemViewModel.item.materials!) { material in
@@ -178,10 +161,10 @@ extension ItemDetailView {
                                 .frame(width: 50, height: 50)
                             Text(material.itemName)
                                 .font(.callout)
-                                .foregroundColor(.text)
+                                .foregroundColor(.acText)
                             Text("\(material.count)")
                                 .font(.footnote)
-                                .foregroundColor(.bell)
+                                .foregroundColor(.acHeaderBackground)
                             
                         }
                     }
@@ -192,7 +175,7 @@ extension ItemDetailView {
     }
     
     private var listingSection: some View {
-        Section(header: SectionHeaderView(text: "Nookazon listings")) {
+        Section(header: SectionHeaderView(text: "Nookazon listings", icon: "cart.fill")) {
             if itemViewModel.loading {
                 Text("Loading Listings...")
                     .foregroundColor(.secondary)
@@ -205,10 +188,16 @@ extension ItemDetailView {
                         ListingRow(listing: listing)
                     }
                 })
-            } else {
+            } else if !itemViewModel.loading {
                 Text("No listings found on Nookazon")
                     .foregroundColor(.secondary)
             }
+        }
+    }
+    
+    private var listsSection: some View {
+        Section(header: SectionHeaderView(text: "Your lists", icon: "list.bullet")) {
+            Text("Coming")
         }
     }
 }

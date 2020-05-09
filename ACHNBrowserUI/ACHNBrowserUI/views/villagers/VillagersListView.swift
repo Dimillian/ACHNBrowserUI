@@ -21,14 +21,7 @@ struct VillagersListView: View {
             }
         }
     }
-    
-    private var loadingView: some View {
-        Text("Loading...")
-            .foregroundColor(.secondary)
-            .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
-            .background(Color.dialogue)
-    }
-    
+        
     var body: some View {
         NavigationView {
             List {
@@ -49,7 +42,7 @@ struct VillagersListView: View {
             if !viewModel.villagers.isEmpty {
                 VillagerDetailView(villager: viewModel.villagers.first!)
             } else {
-                loadingView
+                RowLoadingView(isLoading: .constant(true))
             }
         }
     }

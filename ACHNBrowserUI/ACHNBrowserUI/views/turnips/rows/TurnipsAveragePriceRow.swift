@@ -29,9 +29,9 @@ struct TurnipsAveragePriceRow: View {
         if price <= 90 {
             return .red
         } else if price >= 150 {
-            return .grass2
+            return .acTabBarBackground
         } else {
-            return .secondaryText
+            return .acSecondaryText
         }
     }
     
@@ -43,7 +43,7 @@ struct TurnipsAveragePriceRow: View {
         HStack {
             Text(label)
                 .font(.body)
-                .foregroundColor(.text)
+                .foregroundColor(.acText)
             Spacer()
             if prices != nil {
                 Text("\(prices!.first!)")

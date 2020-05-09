@@ -43,7 +43,7 @@ struct SubscribeView: View {
                 Text("Upgrade to +")
                     .font(.largeTitle)
                     .fontWeight(.bold)
-                    .foregroundColor(.bell)
+                    .foregroundColor(.acHeaderBackground)
                 Image("icon-bell")
             }
             .padding(.top, 32)
@@ -51,19 +51,20 @@ struct SubscribeView: View {
                 .resizable()
                 .aspectRatio(contentMode: .fit)
                 .frame(width: 320)
-                .padding()
+            Button(action: {
+                NotificationManager.shared.testNotification()
+            }) {
+                Text("Tap here to preview a notification").foregroundColor(.acHeaderBackground)
+            }
             Text("""
                             Subscribing to AC Helper+ is a great way to to show support to our free and open source project.♥️
 
-                            You also get access to a great feature, turnip predictions notifications! 📈
+                            You also get access more features, turnip predictions notifications and creating any number of items list! 📈
 
-                            Everyday at 8 and 12 you'll get a notification with the average buy price of your store.
-
-                            The more in game daily prices you enter after monday morning, the better next predictions will be!
-
+                            More detail below.
                             """)
                 .font(.body)
-                .foregroundColor(.text)
+                .foregroundColor(.acText)
                 .frame(width: 320)
                 .padding()
                 .lineLimit(nil)
@@ -89,18 +90,33 @@ struct SubscribeView: View {
                 .fontWeight(.bold)
                 .foregroundColor(.white)
                 .frame(width: 290, height: 30)
-        }.buttonStyle(PlainRoundedButton()).accentColor(.grass).safeHoverEffect()
+        }.buttonStyle(PlainRoundedButton()).accentColor(.acTabBarTint).safeHoverEffect()
     }
     
     private var lowerPart: some View {
         Group {
+            Text("""
+                About the notification feature:
+                Everyday at 8 and 12 you'll get a notification with the average buy price of your store.
+                The more in game daily prices you enter after monday morning, the better next predictions will be!
+
+                About the list feature:
+                In the free application you can create only one list of items in your "My stuff" tab.
+                Once you'll be subscribed to AC Helper+ you'll be able to create any number of list you desire.
+                """)
+                .font(.body)
+                .foregroundColor(.acText)
+                .frame(width: 320)
+                .padding()
+                .lineLimit(nil)
+            Spacer(minLength: 16)
             Text("""
                 A \(price) per month purchase will be applied to your iTunes account on confirmation.
                 Subscriptions will automatically renew unless canceled within 24-hours before the end of the current period.
                 You can cancel anytime with your iTunes account settings. Any unused portion of a free trial will be forfeited if you purchase a subscription.
                 """)
                 .font(.caption)
-                .foregroundColor(.text)
+                .foregroundColor(.acText)
                 .frame(width: 320)
                 .padding()
                 .lineLimit(nil)
@@ -113,16 +129,15 @@ struct SubscribeView: View {
             makeBorderedButton(action: {
                 self.sheetURL = URL(string: "https://github.com/Dimillian/ACHNBrowserUI/blob/master/term-of-use.md#ac-helper-term-of-use")
             }, label: "Term of Use")
-            
-            Spacer(minLength: 300)
-        }.background(Color.dialogueReverse.edgesIgnoringSafeArea(.all))
+            Spacer(minLength: 32)
+        }.background(Color.acBackground.edgesIgnoringSafeArea(.all))
     }
 
     var body: some View {
         NavigationView {
             ScrollView(.vertical) {
                 ZStack {
-                    Color.dialogueReverse.edgesIgnoringSafeArea(.all)
+                    Color.acBackground.edgesIgnoringSafeArea(.all)
                     if sub != nil {
                         VStack {
                             upperPart

@@ -15,10 +15,10 @@ struct TurnipIslandRow: View {
     var body: some View {
         VStack(alignment: .leading) {
             Text(island.name)
-                .foregroundColor(.text)
+                .foregroundColor(.acText)
                 .font(.headline)
             Text(island.islandTime.description)
-                .foregroundColor(.secondaryText)
+                .foregroundColor(.acSecondaryText)
                 .font(.subheadline)
             HStack {
                 Spacer()
@@ -29,7 +29,7 @@ struct TurnipIslandRow: View {
                 Text("\(island.turnipPrice)")
                     .font(.largeTitle)
                     .bold()
-                    .foregroundColor(.text)
+                    .foregroundColor(.acText)
                 Group {
                     Spacer()
                     Divider()
@@ -38,7 +38,7 @@ struct TurnipIslandRow: View {
                 Text(island.hemisphere.rawValue.localizedCapitalized)
                     .font(.largeTitle)
                     .bold()
-                    .foregroundColor(.text)
+                    .foregroundColor(.acText)
                 Spacer()
             }
         }

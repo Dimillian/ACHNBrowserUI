@@ -39,7 +39,7 @@ struct ActiveCritterSections: View {
     
     private func sectionContent(critter: Item) -> some View {
         NavigationLink(destination: ItemDetailView(item: critter)) {
-            ItemRowView(displayMode: .big, item: critter)
+            ItemRowView(displayMode: .large, item: critter)
         }
     }
     
@@ -81,7 +81,9 @@ struct ActiveCrittersView: View {
                 ForEach(Tab.allCases, id: \.self) { tab in
                     Text(tab.rawValue).tag(tab.rawValue)
                 }
-            }.pickerStyle(SegmentedPickerStyle())
+            }
+            .pickerStyle(SegmentedPickerStyle())
+            .listRowBackground(Color.acBackground)
             ActiveCritterSections(selectedTab: $selectedTab,
                                   activeFishes: activeFishes,
                                   activeBugs: activeBugs)

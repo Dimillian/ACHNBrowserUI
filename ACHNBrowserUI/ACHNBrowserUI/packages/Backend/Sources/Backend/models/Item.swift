@@ -15,6 +15,9 @@ public struct ItemResponse: Codable {
 }
 
 public struct Item: Codable, Equatable, Identifiable {
+    static public func ==(lhs: Item, rhs: Item) -> Bool {
+        return lhs.id == rhs.id && lhs.category == rhs.category
+    }
     public var id: String { name }
     
     public let name: String
@@ -129,7 +132,7 @@ public extension Sequence {
 
 public let static_item = Item(name: "Acoustic guitar",
                        image: nil,
-                       filename: "Test",
+                       filename: "https://acnhcdn.com/latest/FtrIcon/FtrAcorsticguitar_Remake_0_0.png",
                        house: nil,
                        obtainedFrom: "Crafting",
                        dIY: true,
