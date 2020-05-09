@@ -7,6 +7,7 @@
 //
 
 import SwiftUI
+import SwiftUIKit
 import Combine
 import Backend
 import UI
@@ -73,11 +74,11 @@ struct TodayView: View {
     private var settingsButton: some View {
         Button(action: { self.selectedSheet = .settings(subManager: self.subManager) } ) {
             Image(systemName: "slider.horizontal.3")
-                .font(.system(size: 16, weight: .bold, design: .rounded))
-                .imageScale(.medium)
+                .style(appStyle: .barButton)
+                .foregroundColor(.acText)
         }
-        .padding(10)
-        .background(RoundedRectangle(cornerRadius: 14, style: .continuous).foregroundColor(Color.acText.opacity(0.2)))
+        .buttonStyle(BorderedBarButtonStyle())
+        .accentColor(Color.acText.opacity(0.2))
         .safeHoverEffect()
     }
     
@@ -85,11 +86,11 @@ struct TodayView: View {
     private var aboutButton: some View {
         Button(action: { self.selectedSheet = .about } ) {
             Image(systemName: "info.circle")
-                .font(.system(size: 16, weight: .bold, design: .rounded))
-                .imageScale(.medium)
+                .style(appStyle: .barButton)
+                .foregroundColor(.acText)
         }
-        .padding(10)
-        .background(RoundedRectangle(cornerRadius: 14, style: .continuous).foregroundColor(Color.acText.opacity(0.2)))
+        .buttonStyle(BorderedBarButtonStyle())
+        .accentColor(Color.acText.opacity(0.2))
         .safeHoverEffect()
     }
     

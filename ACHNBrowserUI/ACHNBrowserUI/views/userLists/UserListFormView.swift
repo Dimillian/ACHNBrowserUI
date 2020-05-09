@@ -7,6 +7,7 @@
 //
 
 import SwiftUI
+import SwiftUIKit
 import Backend
 
 struct UserListFormView: View {
@@ -22,8 +23,12 @@ struct UserListFormView: View {
         Button(action: {
             self.presentationMode.wrappedValue.dismiss()
         }) {
-            Text("Cancel").foregroundColor(.red)
+            Image(systemName: "xmark.circle.fill")
+                .style(appStyle: .barButton)
+                .foregroundColor(.red)
         }
+        .buttonStyle(BorderedBarButtonStyle())
+        .accentColor(Color.red.opacity(0.2))
     }
     
     private var saveButton: some View {
@@ -35,8 +40,12 @@ struct UserListFormView: View {
             self.viewModel.save()
             self.presentationMode.wrappedValue.dismiss()
         }) {
-            Text("Save").foregroundColor(.acTabBarBackground)
+            Image(systemName: "checkmark.seal.fill")
+                .style(appStyle: .barButton)
+                .foregroundColor(.acTabBarBackground)
         }
+        .buttonStyle(BorderedBarButtonStyle())
+        .accentColor(Color.acTabBarBackground.opacity(0.2))
     }
     
     var body: some View {

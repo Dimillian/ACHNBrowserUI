@@ -91,8 +91,12 @@ extension TurnipsView {
             .frame(width: 350, height: 650).asImage()
             self.presentedSheet = .share(content: [ItemDetailSource(name: "Turnips prediction", image: image)])
         }) {
-            Image(systemName: "square.and.arrow.up").imageScale(.large)
+            Image(systemName: "square.and.arrow.up")
+                .style(appStyle: .barButton)
+                .foregroundColor(.acText)
         }
+        .buttonStyle(BorderedBarButtonStyle())
+        .accentColor(Color.acText.opacity(0.2))
         .safeHoverEffectBarItem(position: .trailing)
     }
     

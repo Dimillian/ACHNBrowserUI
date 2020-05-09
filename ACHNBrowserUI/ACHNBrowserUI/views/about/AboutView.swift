@@ -7,6 +7,7 @@
 //
 
 import SwiftUI
+import SwiftUIKit
 import UI
 
 struct AboutView: View {
@@ -25,8 +26,12 @@ struct AboutView: View {
         Button(action: {
             self.presentationMode.wrappedValue.dismiss()
         }, label: {
-            Text("Dismiss")
+            Image(systemName: "xmark.circle.fill")
+                .style(appStyle: .barButton)
+                .foregroundColor(.acText)
         })
+        .buttonStyle(BorderedBarButtonStyle())
+        .accentColor(Color.acText.opacity(0.2))
         .safeHoverEffectBarItem(position: .leading)
     }
     
