@@ -46,16 +46,3 @@ struct TurnipsChartGrid: Shape {
 extension TurnipsChartGrid {
     enum Display { case vertical, horizontal }
 }
-
-extension VerticalAlignment {
-    private enum VerticalLegendAlignment: AlignmentID {
-        static func defaultValue(in context: ViewDimensions) -> CGFloat {
-            context[VerticalAlignment.center]
-        }
-    }
-    static let verticalLegendAlignment = VerticalAlignment(VerticalLegendAlignment.self)
-}
-
-extension Alignment {
-    static let verticalLegendAlignment = Alignment(horizontal: .trailing, vertical: .verticalLegendAlignment)
-}
