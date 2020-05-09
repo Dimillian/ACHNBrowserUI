@@ -72,7 +72,7 @@ public class Items: ObservableObject {
                     }
                 }
                 self?.villagerItemsCache[villager] = results
-                resolve(.success(result))
+                resolve(.success(results))
             }.eraseToAnyPublisher()
         }
         
