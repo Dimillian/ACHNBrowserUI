@@ -12,13 +12,22 @@ import UI
 
 struct VillagerDetailView: View {
     let villager: Villager
+    var villagerItems: [Item]?
     
     @EnvironmentObject private var collection: UserCollection
     @State private var backgroundColor = Color.acSecondaryBackground
     @State private var textColor = Color.acText
     @State private var secondaryTextColor = Color.acSecondaryText
-    
     @State private var sheet: Sheet.SheetType?
+    
+    init(villager: Villager) {
+        self.villager = villager
+        if let filename = villager.fileName {
+            self.villagerItems = Items.shared.matchVillagerItems(villager: filename)
+        } else {
+            self.villagerItems = nil
+        }
+    }
     
     private var shareButton: some View {
         Button(action: {
@@ -71,6 +80,17 @@ struct VillagerDetailView: View {
             makeInfoCell(title: "Birthday", value: villager.formattedBirthday ?? "Unknown").padding()
             makeInfoCell(title: "Species", value: villager.species).padding()
             makeInfoCell(title: "Gender", value: villager.gender).padding()
+            makeInfoCell(title: "Catch phrase", value: villager.catchPhrase ?? "").padding()
+            
+            if villagerItems?.isEmpty == false {
+                Section(header: SectionHeaderView(text: "Villager items", icon: "list.bullet")) {
+                    ForEach(villagerItems!) { item in
+                        NavigationLink(destination: ItemDetailView(item: item)) {
+                            ItemRowView(displayMode: .large, item: item)
+                        }
+                    }
+                }
+            }
         }
         .listStyle(GroupedListStyle())
         .environment(\.horizontalSizeClass, .regular)

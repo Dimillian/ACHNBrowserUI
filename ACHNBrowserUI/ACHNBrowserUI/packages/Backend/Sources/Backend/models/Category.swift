@@ -81,6 +81,11 @@ public enum Category: String, CaseIterable {
         }
     }
     
+    public static func furnitures() -> [Category] {
+        [.housewares, .miscellaneous, .wallMounted, .art,
+         .wallpapers, .floors, .rugs, .photos, .music]
+    }
+    
     public static func items() -> [Category] {
         [.housewares, .miscellaneous, .wallMounted, .art,
          .wallpapers, .floors, .rugs, .photos, .fencing, .tools, .music, .nookmiles,

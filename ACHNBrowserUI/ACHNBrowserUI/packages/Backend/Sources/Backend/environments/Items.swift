@@ -13,6 +13,9 @@ public class Items: ObservableObject {
     public static let shared = Items()
     
     @Published public var categories: [Category: [Item]] = [:]
+    @Published public var villagersHouse: [String: VillagerHouse] = [:]
+    
+    private var villagerItemsCache: [String: [Item]] = [:]
         
     init() {
         for category in Category.allCases {
@@ -25,5 +28,49 @@ public class Items: ObservableObject {
                 .receive(on: DispatchQueue.main)
                 .sink(receiveValue: { [weak self] items in self?.categories[category] = items })
         }
+        _ = NookPlazaAPIService
+            .fetchVillagerHouse()
+            .replaceError(with: [])
+            .eraseToAnyPublisher()
+            .map{ Dictionary(uniqueKeysWithValues: $0.map{ ($0.id, $0) }) }
+            .subscribe(on: DispatchQueue.global())
+            .receive(on: DispatchQueue.main)
+            .sink(receiveValue: { [weak self] items in self?.villagersHouse = items })
+    }
+    
+    public func matchVillagerItems(villager: String) -> [Item]? {
+        if let cached = villagerItemsCache[villager] {
+            return cached
+        }
+        if let villagerHouse = villagersHouse[villager] {
+            var villagerItems: [VillagerHouse.Item] = []
+            if let items = villagerHouse.items {
+                villagerItems.append(contentsOf: items)
+            }
+            if let floor = villagerHouse.floor {
+                 villagerItems.append(floor)
+            }
+            if let wallpaper = villagerHouse.wallaper {
+                 villagerItems.append(wallpaper)
+            }
+            if let music = villagerHouse.music {
+                villagerItems.append(music)
+            }
+            
+            let items = Items.shared.categories
+                .mapValues({ $0 })
+                .filter { !$0.value.isEmpty && Category.furnitures().contains($0.key) }
+                .compactMap{ $1 }
+                .flatMap{ $0 }
+            var results: [Item] = []
+            for item in villagerItems {
+                if let match = items.first(where: { $0.name.lowercased() == item.name.lowercased() }) {
+                    results.append(match)
+                }
+            }
+            villagerItemsCache[villager] = results
+            return results
+        }
+        return nil
     }
 }

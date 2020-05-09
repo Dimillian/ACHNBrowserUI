@@ -16,17 +16,25 @@ public struct NookPlazaAPIService {
                                                 attributes: .concurrent)
             
     public static func fetch<T: Codable>(endpoint: Category) -> AnyPublisher<T ,APIError> {
+        Self.fetchFile(name: endpoint.rawValue)
+    }
+    
+    public static func fetchVillagerHouse() -> AnyPublisher<[VillagerHouse], APIError> {
+        Self.fetchFile(name: "villagersHouse")
+    }
+    
+    private static func fetchFile<T: Codable>(name: String) -> AnyPublisher<T ,APIError> {
         Result(catching: {
-            guard let url = Bundle.main.url(forResource: endpoint.rawValue, withExtension: nil) else {
+            guard let url = Bundle.main.url(forResource: name, withExtension: nil) else {
                 throw APIError.message(reason: "Error while loading local ressource")
             }
             return try Data(contentsOf: url)
         })
-        .publisher
-        .decode(type: T.self, decoder: Self.decoder)
-        .mapError{ APIError.parseError(reason: $0.localizedDescription) }
-        .subscribe(on: Self.apiQueue)
-        .eraseToAnyPublisher()
+            .publisher
+            .decode(type: T.self, decoder: Self.decoder)
+            .mapError{ APIError.parseError(reason: $0.localizedDescription) }
+            .subscribe(on: Self.apiQueue)
+            .eraseToAnyPublisher()
     }
 }
 
