@@ -81,7 +81,7 @@ struct ItemsListView: View {
                     NavigationLink(destination: ItemDetailView(item: item)) {
                         ItemRowView(displayMode: self.itemRowsDisplayMode, item: item)
                             .environmentObject(ItemDetailViewModel(item: item))
-                            .listRowBackground(Color.dialogue)
+                            .listRowBackground(Color.acSecondaryBackground)
                     }
                 }
             }

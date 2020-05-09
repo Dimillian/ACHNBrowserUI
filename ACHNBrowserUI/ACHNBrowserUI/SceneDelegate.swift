@@ -19,7 +19,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             .environmentObject(UserCollection.shared)
             .environmentObject(Items.shared)
             .environmentObject(UIState())
-            .environmentObject(SubcriptionManager.shared)
+            .environmentObject(SubscriptionManager.shared)
         
         if let windowScene = scene as? UIWindowScene {
             
@@ -29,26 +29,25 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             
             UINavigationBar.appearance().largeTitleTextAttributes = [
                 NSAttributedString.Key.font:UIFont.init(descriptor: descriptor2!, size: 34),
-                NSAttributedString.Key.foregroundColor: UIColor(named: "text")!
+                NSAttributedString.Key.foregroundColor: UIColor(named: "ACText")!
             ]
             
             UINavigationBar.appearance().titleTextAttributes = [
                 NSAttributedString.Key.font:UIFont.init(descriptor: descriptor!, size: 17),
-                NSAttributedString.Key.foregroundColor: UIColor(named: "text")!
+                NSAttributedString.Key.foregroundColor: UIColor(named: "ACText")!
             ]
             
-            UINavigationBar.appearance().barTintColor = UIColor(named: "dialogue")
-            UINavigationBar.appearance().backgroundColor = UIColor(named: "dialogue-reverse")
-            UINavigationBar.appearance().tintColor = UIColor(named: "text")
+            UINavigationBar.appearance().barTintColor = UIColor(named: "ACSecondaryBackground")
+            UINavigationBar.appearance().backgroundColor = UIColor(named: "ACBackground")
+            UINavigationBar.appearance().tintColor = UIColor(named: "ACText")
             
-            UITableView.appearance().backgroundColor = UIColor(named: "dialogue-reverse")
-            UITableViewCell.appearance().backgroundColor = UIColor(named: "dialogue")
+            UITableView.appearance().backgroundColor = UIColor(named: "ACBackground")
+            UITableViewCell.appearance().backgroundColor = UIColor(named: "ACSecondaryBackground")
             UITableView.appearance().tableFooterView = UIView()
             
-            
             UITabBar.appearance().unselectedItemTintColor = UIColor(named: "TabLabel")
-            UITabBar.appearance().barTintColor = UIColor(named: "grass")
-            UITabBar.appearance().backgroundColor = UIColor(named: "grass")
+            UITabBar.appearance().barTintColor = UIColor(named: "ACTabBarTint")
+            UITabBar.appearance().backgroundColor = UIColor(named: "ACTabBarTint")
             
             let window = UIWindow(windowScene: windowScene)
             window.rootViewController = UIHostingController(rootView: contentView)

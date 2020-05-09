@@ -11,11 +11,11 @@ import Backend
 
 struct TurnipsFormView: View {
     // MARK: - Properties
-    @EnvironmentObject private var subscriptionManager: SubcriptionManager
+    @EnvironmentObject private var subscriptionManager: SubscriptionManager
     @Environment(\.presentationMode) private var presentationMode
     
     @State private var fields = TurnipFields.decode()
-    @State private var enableNotifications = SubcriptionManager.shared.subscriptionStatus == .subscribed
+    @State private var enableNotifications = SubscriptionManager.shared.subscriptionStatus == .subscribed
     @State private var isSubscribePresented = false
 
     private let weekdays = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
@@ -70,7 +70,7 @@ extension TurnipsFormView {
         })
         return TextField("... 📈 ...", text: amount)
             .keyboardType(.numberPad)
-            .foregroundColor(.bell)
+            .foregroundColor(.acHeaderBackground)
     }
     
     private var configurationSection: some View {
@@ -78,7 +78,7 @@ extension TurnipsFormView {
             Button(action: {
                 self.fields.clear()
             }) {
-                Text("Clear all fields").foregroundColor(.secondaryText)
+                Text("Clear all fields").foregroundColor(.acSecondaryText)
             }
             Toggle(isOn: $enableNotifications) {
                 Text("Receive prices predictions notification")
@@ -90,14 +90,14 @@ extension TurnipsFormView {
                     self.isSubscribePresented = true
                 }) {
                     Text("You can get daily notifications for your average turnip price by subscribing to AC Helper+")
-                        .foregroundColor(.secondaryText)
+                        .foregroundColor(.acSecondaryText)
                         .font(.footnote)
                 }
             }
             Button(action: {
                 NotificationManager.shared.testNotification()
             }) {
-                Text("Preview a notification").foregroundColor(.bell)
+                Text("Preview a notification").foregroundColor(.acHeaderBackground)
             }
             
         }
@@ -109,7 +109,7 @@ extension TurnipsFormView {
                 Text("Buy price")
                 TextField("... 🔔 ...", text: $fields.buyPrice)
                     .keyboardType(.numberPad)
-                    .foregroundColor(.bell)
+                    .foregroundColor(.acHeaderBackground)
             }
             HStack {
                 Text("Amount bought")
@@ -117,7 +117,7 @@ extension TurnipsFormView {
             }
             if fields.fields.filter{ !$0.isEmpty }.count == 0 {
                 Text("The more in game buy prices you'll add the better the predictions will be. Your buy price only won't give your correct averages. Add prices from the game as you get them daily.")
-                    .foregroundColor(.secondaryText)
+                    .foregroundColor(.acSecondaryText)
                     .font(.footnote)
             }
             ForEach(weekdays, id: \.self, content: makeWeekdayRow)
@@ -130,13 +130,13 @@ extension TurnipsFormView {
             Spacer(minLength: 40)
             TextField("AM", text: morningField(for: weekday))
                 .keyboardType(.numberPad)
-                .foregroundColor(.bell)
+                .foregroundColor(.acHeaderBackground)
                 .textFieldStyle(RoundedBorderTextFieldStyle())
                 .multilineTextAlignment(.center)
                 .frame(maxWidth: 60)
             TextField("PM", text: afternoonField(for: weekday))
                 .keyboardType(.numberPad)
-                .foregroundColor(.bell)
+                .foregroundColor(.acHeaderBackground)
                 .textFieldStyle(RoundedBorderTextFieldStyle())
                 .multilineTextAlignment(.center)
                 .frame(maxWidth: 60)

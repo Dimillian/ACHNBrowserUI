@@ -14,7 +14,7 @@ struct ItemRowView: View {
     @EnvironmentObject private var collection: UserCollection
     
     enum DisplayMode {
-        case compact, large
+        case compact, large, largeNoButton
     }
     
     let displayMode: DisplayMode
@@ -26,7 +26,7 @@ struct ItemRowView: View {
         switch displayMode {
         case .compact:
             return 25
-        case .large:
+        case .large, .largeNoButton:
             return 100
         }
     }
@@ -40,7 +40,7 @@ struct ItemRowView: View {
             Text("\(price)")
                 .font(.caption)
                 .fontWeight(.bold)
-                .foregroundColor(.bell)
+                .foregroundColor(.acHeaderBackground)
                 .lineLimit(1)
         }
     }
@@ -52,7 +52,7 @@ struct ItemRowView: View {
             Text(item.obtainedFrom ?? "unknown source")
                 .font(.subheadline)
                 .fontWeight(.semibold)
-                .foregroundColor(.secondaryText)
+                .foregroundColor(.acSecondaryText)
         }
     }
     
@@ -63,9 +63,9 @@ struct ItemRowView: View {
                     Image(systemName: "clock")
                         .resizable()
                         .frame(width: 12, height: 12)
-                        .foregroundColor(.secondaryText)
+                        .foregroundColor(.acSecondaryText)
                     Text(item.formattedTimes()!)
-                        .foregroundColor(.secondaryText)
+                        .foregroundColor(.acSecondaryText)
                         .fontWeight(.semibold)
                         .font(.caption)
                 }
@@ -107,7 +107,9 @@ struct ItemRowView: View {
         
     var body: some View {
         HStack(spacing: 8) {
-            LikeButtonView(item: item)
+            if displayMode != .largeNoButton {
+                LikeButtonView(item: item).environmentObject(collection)
+            }
             if item.itemImage == nil && displayedVariant == nil {
                 Image(item.appCategory.iconName())
                     .resizable()
@@ -119,7 +121,7 @@ struct ItemRowView: View {
             
             VStack(alignment: .leading, spacing: 2) {
                 itemInfo
-                if displayMode == .large {
+                if displayMode != .compact {
                     itemSubInfo
                     itemVariants
                 }

@@ -30,7 +30,7 @@ struct TurnipsView: View {
         }
     }
     
-    @EnvironmentObject private var subManager: SubcriptionManager
+    @EnvironmentObject private var subManager: SubscriptionManager
     @ObservedObject private var viewModel = TurnipsViewModel()
     @State private var presentedSheet: Sheet.SheetType?
     @State private var turnipsDisplay: TurnipsDisplay = .minMax
@@ -51,12 +51,12 @@ struct TurnipsView: View {
                 if UIDevice.current.userInterfaceIdiom != .pad ||
                     (UIDevice.current.orientation == .portrait ||
                         UIDevice.current.orientation == .portraitUpsideDown){
-                    Section(header: SectionHeaderView(text: "Your prices")) {
+                    Section(header: SectionHeaderView(text: "Your prices", icon: "pencil")) {
                         Button(action: {
-                            self.presentedSheet = .form(subManager: self.subManager)
+                            self.presentedSheet = .turnipsForm(subManager: self.subManager)
                         }) {
                             Text(TurnipFields.exist() ? "Edit your in game prices" : "Add your in game prices")
-                                .foregroundColor(.bell)
+                                .foregroundColor(.acHeaderBackground)
                         }
                     }
                 }
@@ -91,19 +91,23 @@ extension TurnipsView {
             .frame(width: 350, height: 650).asImage()
             self.presentedSheet = .share(content: [ItemDetailSource(name: "Turnips prediction", image: image)])
         }) {
-            Image(systemName: "square.and.arrow.up").imageScale(.large)
+            Image(systemName: "square.and.arrow.up")
+                .style(appStyle: .barButton)
+                .foregroundColor(.acText)
         }
+        .buttonStyle(BorderedBarButtonStyle())
+        .accentColor(Color.acText.opacity(0.2))
         .safeHoverEffectBarItem(position: .trailing)
     }
     
     private var subscriptionSection: some View {
-        Section(header: SectionHeaderView(text: "AC Helper+")) {
+        Section(header: SectionHeaderView(text: "AC Helper+", icon: "heart.fill")) {
             VStack(spacing: 8) {
                 Button(action: {
                     self.presentedSheet = .subscription(subManager: self.subManager)
                 }) {
                     Text("To help us support the application and get turnip predictions notification, you can try out AC Helper+")
-                        .foregroundColor(.secondaryText)
+                        .foregroundColor(.acSecondaryText)
                         .lineLimit(nil)
                         .fixedSize(horizontal: false, vertical: true)
                         .padding(.top, 8)
@@ -116,14 +120,14 @@ extension TurnipsView {
                         .fontWeight(.bold)
                         .foregroundColor(.white)
                 }.buttonStyle(PlainRoundedButton())
-                    .accentColor(.bell)
+                    .accentColor(.acHeaderBackground)
                     .padding(.bottom, 8)
             }
         }
     }
     
     private var predictionsSection: some View {
-        Section(header: SectionHeaderView(text: turnipsDisplay.title()),
+        Section(header: SectionHeaderView(text: turnipsDisplay.title(), icon: "dollarsign.circle.fill"),
                 footer: Text(viewModel.pendingNotifications == 0 ? "" :
                     """
                     You'll receive prices predictions in \(viewModel.pendingNotifications - 1) upcoming
@@ -143,7 +147,7 @@ extension TurnipsView {
                 if turnipsDisplay != .chart {
                     if turnipsDisplay == .profits && viewModel.averagesProfits != nil {
                         Text("Profits estimates are computed using the average of the current period")
-                            .foregroundColor(.secondaryText)
+                            .foregroundColor(.acSecondaryText)
                     }
                     HStack {
                         Text("Day").fontWeight(.bold)
@@ -172,9 +176,9 @@ extension TurnipsView {
                         }
                     } else {
                         Text("Please add the amount of turnips you bought and for how much")
-                            .foregroundColor(.bell)
+                            .foregroundColor(.acHeaderBackground)
                             .onTapGesture {
-                                self.presentedSheet = .form(subManager: self.subManager)
+                                self.presentedSheet = .turnipsForm(subManager: self.subManager)
                         }
                     }
                 } else if turnipsDisplay == .chart {
@@ -185,18 +189,18 @@ extension TurnipsView {
                         ).padding(.top, 8)
                     } else {
                         Text("Add your in game turnip prices to see the predictions chart")
-                            .foregroundColor(.bell)
+                            .foregroundColor(.acHeaderBackground)
                             .onTapGesture {
-                                self.presentedSheet = .form(subManager: self.subManager)
+                                self.presentedSheet = .turnipsForm(subManager: self.subManager)
                         }
                     }
                    
                 }
             } else {
                 Text("Add your in game turnip prices to see predictions")
-                    .foregroundColor(.bell)
+                    .foregroundColor(.acHeaderBackground)
                     .onTapGesture {
-                        self.presentedSheet = .form(subManager: self.subManager)
+                        self.presentedSheet = .turnipsForm(subManager: self.subManager)
                 }
             }
         }

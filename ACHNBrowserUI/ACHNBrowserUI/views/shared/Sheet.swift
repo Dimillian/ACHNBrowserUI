@@ -12,8 +12,11 @@ import Backend
 struct Sheet: View {
     enum SheetType: Identifiable {
         case safari(URL), share(content: [Any])
-        case about, settings(subManager: SubcriptionManager)
-        case form(subManager: SubcriptionManager), subscription(subManager: SubcriptionManager)
+        case about, rearrange
+        case userListForm(editingList: UserList?)
+        case turnipsForm(subManager: SubscriptionManager)
+        case subscription(subManager: SubscriptionManager)
+        case settings(subManager: SubscriptionManager)
         
         var id: String {
             switch self {
@@ -23,12 +26,16 @@ struct Sheet: View {
                 return "share"
             case .about:
                 return "about"
+            case .rearrange:
+                return "rearrange"
             case .settings:
                 return "about"
-            case .form:
-                return "form"
+            case .turnipsForm:
+                return "turnipsForm"
             case .subscription:
                 return "sub"
+            case .userListForm:
+                return "userListForm"
             }
         }
     }
@@ -46,12 +53,19 @@ struct Sheet: View {
             return AnyView(AboutView())
         case .settings(let subManager):
             return AnyView(SettingsView().environmentObject(subManager))
-        case .form(let subManager):
+        case .turnipsForm(let subManager):
             return AnyView(NavigationView {
                 TurnipsFormView().environmentObject(subManager)
             }.navigationViewStyle(StackNavigationViewStyle()))
         case .subscription(let subManager):
             return AnyView(SubscribeView().environmentObject(subManager))
+        case .userListForm(let list):
+            return AnyView(UserListFormView(editingList: list))
+        case .rearrange:
+            return AnyView(NavigationView {
+                TodaySectionEditView()
+            }
+            .navigationViewStyle(StackNavigationViewStyle()))
         }
     }
     

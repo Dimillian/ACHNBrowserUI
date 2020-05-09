@@ -80,7 +80,7 @@ struct AppIconPickerView: View {
                         Group {
                             if AppIcon(style: style, color: color).name == self.viewModel.selected {
                                 RoundedRectangle(cornerRadius: 14, style: .continuous)
-                                    .stroke(Color.bell, lineWidth: 4)
+                                    .stroke(Color.acHeaderBackground, lineWidth: 4)
                             }
                         }
                     )

@@ -13,6 +13,8 @@ import UI
 struct ItemDetailView: View {
     // MARK: - Vars
     @EnvironmentObject private var items: Items
+    @EnvironmentObject private var collection: UserCollection
+    @EnvironmentObject private var subscriptionManager: SubscriptionManager
 
     @ObservedObject private var itemViewModel: ItemDetailViewModel
     
@@ -66,18 +68,21 @@ struct ItemDetailView: View {
             if !setItems.isEmpty {
                 ItemsCrosslineSectionView(title: "Set items",
                                           items: setItems,
+                                          icon: "paperclip.circle.fill",
                                           currentItem: $itemViewModel.item,
                                           selectedVariant: $displayedVariant)
             }
             if !similarItems.isEmpty {
                 ItemsCrosslineSectionView(title: "Simillar items",
                                           items: similarItems,
+                                          icon: "eyedropper.full",
                                           currentItem: $itemViewModel.item,
                                           selectedVariant: $displayedVariant)
             }
             if !themeItems.isEmpty {
                 ItemsCrosslineSectionView(title: "Thematics",
                                           items: themeItems,
+                                          icon: "tag.fill",
                                           currentItem: $itemViewModel.item,
                                           selectedVariant: $displayedVariant)
             }
@@ -87,6 +92,7 @@ struct ItemDetailView: View {
             if itemViewModel.item.isCritter {
                 ItemDetailSeasonSectionView(item: itemViewModel.item)
             }
+            listsSection
             listingSection
         }
         .listStyle(GroupedListStyle())
@@ -119,6 +125,7 @@ extension ItemDetailView {
     private var navButtons: some View {
         HStack {
             LikeButtonView(item: self.itemViewModel.item).imageScale(.large)
+                .environmentObject(collection)
                 .safeHoverEffectBarItem(position: .trailing)
             Spacer(minLength: 12)
             shareButton
@@ -126,7 +133,7 @@ extension ItemDetailView {
     }
     
     private var variantsSection: some View {
-        Section(header: SectionHeaderView(text: "Variants")) {
+        Section(header: SectionHeaderView(text: "Variants", icon: "paintbrush.fill")) {
             ScrollView(.horizontal, showsIndicators: false) {
                 HStack {
                 ForEach(itemViewModel.item.variants!) { variant in
@@ -146,7 +153,7 @@ extension ItemDetailView {
     }
     
     private var materialsSection: some View {
-        Section(header: SectionHeaderView(text: "Materials")) {
+        Section(header: SectionHeaderView(text: "Materials", icon: "leaf.arrow.circlepath")) {
             ScrollView(.horizontal, showsIndicators: false) {
                 HStack {
                     ForEach(itemViewModel.item.materials!) { material in
@@ -156,10 +163,10 @@ extension ItemDetailView {
                                 .frame(width: 50, height: 50)
                             Text(material.itemName)
                                 .font(.callout)
-                                .foregroundColor(.text)
+                                .foregroundColor(.acText)
                             Text("\(material.count)")
                                 .font(.footnote)
-                                .foregroundColor(.bell)
+                                .foregroundColor(.acHeaderBackground)
                             
                         }
                     }
@@ -170,7 +177,7 @@ extension ItemDetailView {
     }
     
     private var listingSection: some View {
-        Section(header: SectionHeaderView(text: "Nookazon listings")) {
+        Section(header: SectionHeaderView(text: "Nookazon listings", icon: "cart.fill")) {
             if itemViewModel.loading {
                 Text("Loading Listings...")
                     .foregroundColor(.secondary)
@@ -186,6 +193,36 @@ extension ItemDetailView {
             } else if !itemViewModel.loading {
                 Text("No listings found on Nookazon")
                     .foregroundColor(.secondary)
+            }
+        }
+    }
+    
+    private var listsSection: some View {
+        Section(header: SectionHeaderView(text: "Your items lists", icon: "list.bullet")) {
+            if subscriptionManager.subscriptionStatus == .subscribed || collection.lists.isEmpty {
+                Button(action: {
+                    self.selectedSheet = .userListForm(editingList: nil)
+                }) {
+                    Text("Create a new list").foregroundColor(.acHeaderBackground)
+                }
+            }
+            ForEach(collection.lists) { list in
+                HStack {
+                    Image(systemName: list.items.contains(self.itemViewModel.item) ? "checkmark.seal.fill": "checkmark.seal")
+                        .foregroundColor(list.items.contains(self.itemViewModel.item) ? Color.acTabBarBackground : Color.acText)
+                        .scaleEffect(list.items.contains(self.itemViewModel.item) ? 1.2 : 0.9)
+                        .animation(.spring())
+                    UserListRow(list: list)
+                }.onTapGesture {
+                    if let index = list.items.firstIndex(of: self.itemViewModel.item) {
+                        self.collection.deleteItem(for: list.id, at: index)
+                    } else {
+                        self.collection.addItems(for: list.id, items: [self.itemViewModel.item])
+                    }
+                }
+            }
+            if subscriptionManager.subscriptionStatus != .subscribed && collection.lists.count >= 1 {
+                UserListSubscribeCallView(sheet: $selectedSheet)
             }
         }
     }

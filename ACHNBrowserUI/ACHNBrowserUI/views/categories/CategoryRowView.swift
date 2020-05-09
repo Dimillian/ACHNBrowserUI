@@ -21,6 +21,9 @@ struct CategoryRowView: View {
                     .frame(width: 46, height: 46)
                 Text(category.label())
                     .style(appStyle: .rowTitle)
+                Spacer()
+                Text("\(Items.shared.categories[category]?.count ?? 0)")
+                    .style(appStyle: .rowDescription)
             }
         }
     }

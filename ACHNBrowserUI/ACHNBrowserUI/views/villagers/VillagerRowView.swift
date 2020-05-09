@@ -17,7 +17,7 @@ struct VillagerRowView: View {
     
     var body: some View {
         HStack {
-            LikeButtonView(villager: villager)
+            LikeButtonView(villager: villager).environmentObject(collection)
             ItemImage(path: ACNHApiService.BASE_URL.absoluteString +
                 ACNHApiService.Endpoint.villagerIcon(id: villager.id).path(),
                       size: 50)
