@@ -64,13 +64,14 @@ public class Items: ObservableObject {
                     .mapValues({ $0 })
                     .filter { !$0.value.isEmpty && Category.furnitures().contains($0.key) }
                     .compactMap{ $1 }
-                    .flatMap{ $0 }
+                    .flatMap{ Array(Set($0)) }
                 var results: [Item] = []
                 for item in villagerItems {
                     if let match = items.first(where: { $0.name.lowercased() == item.name.lowercased() }) {
                         results.append(match)
                     }
                 }
+                results = Array(Set(results))
                 self?.villagerItemsCache[villager] = results
                 resolve(.success(results))
             }.eraseToAnyPublisher()

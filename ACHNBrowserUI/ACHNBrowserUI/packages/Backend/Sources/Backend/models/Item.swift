@@ -14,10 +14,16 @@ public struct ItemResponse: Codable {
     let results: [Item]
 }
 
-public struct Item: Codable, Equatable, Identifiable {
+public struct Item: Codable, Equatable, Identifiable, Hashable {
     static public func ==(lhs: Item, rhs: Item) -> Bool {
         return lhs.id == rhs.id && lhs.category == rhs.category
     }
+    
+    public func hash(into hasher: inout Hasher) {
+        hasher.combine(name)
+        hasher.combine(category)
+    }
+    
     public var id: String { name }
     
     public let name: String
