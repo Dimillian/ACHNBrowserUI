@@ -30,7 +30,7 @@ struct VillagerDetailView: View {
     private var shareButton: some View {
         Button(action: {
             let image = NavigationView {
-                self.makeBody()
+                self.makeBody().environmentObject(self.collection)
             }
             .navigationViewStyle(StackNavigationViewStyle())
             .frame(width: 350, height: 650).asImage()
