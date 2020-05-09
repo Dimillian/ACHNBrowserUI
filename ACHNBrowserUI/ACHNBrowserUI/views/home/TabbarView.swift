@@ -37,6 +37,7 @@ struct TabbarView: View {
             }
 
             VillagersListView()
+                .environmentObject(UserCollection.shared)
                 .tag(UIState.Tab.villagers)
                 .tabItem {
                     Image("icon-villager")
