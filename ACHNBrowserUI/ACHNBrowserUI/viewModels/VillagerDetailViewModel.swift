@@ -21,8 +21,9 @@ public class VillagerDetailViewModel: ObservableObject {
             _ = Items.shared.matchVillagerItems(villager: filename)
                 .subscribe(on: DispatchQueue.global(qos: .userInitiated))
                 .receive(on: DispatchQueue.main)
-                .map({ $0 }).sink(receiveValue: { items in
-                    self.villagerItems = items
+                .map({ $0 })
+                .sink(receiveValue: { [weak self] items in
+                    self?.villagerItems = items
                 })
             
         } else {
