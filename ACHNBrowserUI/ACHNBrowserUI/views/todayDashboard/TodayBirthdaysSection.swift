@@ -13,8 +13,34 @@ import UI
 struct TodayBirthdaysSection: View {
     var villagers: [Villager]
 
+    var headerText: String {
+        villagers.count > 1 ? "Today's Birthdays" : "Today's Birthday"
+    }
+
+    func birthdayDay(for villager: Villager) -> String {
+        guard let birthday = villager.birthday else { return "" }
+        let formatter = DateFormatter()
+
+        formatter.dateFormat = "d/M"
+        let birthdayDate = formatter.date(from: birthday)!
+
+        formatter.dateFormat = "dd"
+        return formatter.string(from: birthdayDate)
+    }
+
+    func birthdayMonth(for villager: Villager) -> String {
+        guard let birthday = villager.birthday else { return "" }
+        let formatter = DateFormatter()
+
+        formatter.dateFormat = "d/M"
+        let birthdayDate = formatter.date(from: birthday)!
+
+        formatter.dateFormat = "MMM"
+        return formatter.string(from: birthdayDate)
+    }
+
     var body: some View {
-        Section(header: SectionHeaderView(text: "Birthdays", icon: "gift.fill")) {
+        Section(header: SectionHeaderView(text: headerText, icon: "gift.fill")) {
             ForEach(villagers, id: \.id) { villager in
                 NavigationLink(destination: VillagerDetailView(villager: villager)) {
                     self.makeCell(for: villager)
@@ -26,14 +52,14 @@ struct TodayBirthdaysSection: View {
     private func makeCell(for villager: Villager) -> some View {
         HStack {
             VStack {
-                Text(villager.formattedBirthday ?? "Unknown")
+                Text(birthdayMonth(for: villager))
                     .font(.system(.caption, design: .rounded))
                     .fontWeight(.bold)
                     .foregroundColor(Color("ACText"))
-//                Text("\(day)")
-//                    .font(.system(.subheadline, design: .rounded))
-//                    .fontWeight(.bold)
-//                    .foregroundColor(Color("ACText"))
+                Text(birthdayDay(for: villager))
+                    .font(.system(.subheadline, design: .rounded))
+                    .fontWeight(.bold)
+                    .foregroundColor(Color("ACText"))
             }
             .frame(minWidth: 66)
             .padding(10)
