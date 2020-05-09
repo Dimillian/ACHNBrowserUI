@@ -10,10 +10,13 @@ import SwiftUI
 
 struct TodayWhatsNewSection: View {
     @Binding var showWhatsNew: Bool
+    
+    let version: String = "2020.2"
+    
     var body: some View {
         Section(header: SectionHeaderView(text: "What's New", icon: "star.circle.fill")) {
             HStack {
-                Text("See what's new in update 2020.2")
+                Text("See what's new in update \(version)")
                     .font(.system(.headline, design: .rounded))
                     .fontWeight(.medium)
                     .foregroundColor(.acText)

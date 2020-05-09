@@ -87,7 +87,7 @@ struct TodaySectionEditView: View {
     // @TODO: Do we need explainer text? 
     private var footer: some View {
         VStack(alignment: .leading, spacing: 8) {
-            Text("Drag and drop").fontWeight(.bold) + Text(" to re-order sections. ")
+            Text("Drag and drop").fontWeight(.bold) + Text(" to re-order sections.")
             Text("Check or un-check").fontWeight(.bold) + Text(" rows to hide sections from the dashboard.")
             Text("Your top-most section will be the default detail view on iPad and Mac.")
         }

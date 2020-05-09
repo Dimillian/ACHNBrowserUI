@@ -21,7 +21,6 @@ Wenn du dir AC Helper+ holst, kannst du beliebig viele Listen erstellen und unte
 "ACHelperPlusPriceAndAboDetail %@" = "Ein monatliches Abo über %@ pro Monat wird nach der Bestätigung deinem iTunes Konto hinzugefügt.
 Das Abonnement verlängert sich automatisch, solange es nicht bis 24 Stunden vor der nächsten Verlängerung beendet wird.
 Du kannst das Abonnement jederzeit in deinen iTunes Kontoeinstellungen beenden. Jeder nicht genutzte Teil einer kostenlosen Testversion verfällt, wenn du ein Abonnement abschließt.";
-"Able sisters" = "Schneiderei";
 "About" = "Über";
 "AC Helper+" = "AC Helper+";
 "App Icon" = "App Icon";
@@ -29,9 +28,7 @@ Du kannst das Abonnement jederzeit in deinen iTunes Kontoeinstellungen beenden. 
 "Close" = "Schließen";
 "Description" = "Beschreibung";
 "Dismiss" = "Abbrechen";
-"Hemisphere" = "Hemisphäre";
 "Island" = "Insel";
-"Island name" = "Inselname";
 "Loading Listings..." = "Loading Listings...";
 "Loading Visitors...." = "Lade Besucher....";
 "Loading..." = "Lade...";
@@ -41,11 +38,8 @@ Du kannst das Abonnement jederzeit in deinen iTunes Kontoeinstellungen beenden. 
 "name-en" = "name-en";
 "Need Materials" = "Need Materials";
 "No listings found on Nookazon" = "No listings found on Nookazon";
-"Nook shop" = "Nooks Laden";
 "Please select or go stars some items!" = "Please select or go stars some items!";
-"Residents service" = "Service-Center";
 "Save" = "Speichern";
-"Starting fruit" = "Inselfrucht";
 "Tap here to preview a notification" = "Tippe hier für eine Vorschau";
 "To help us support the application and get turnip predictions notification, you can try out AC Helper+" = "To help us support the application and get turnip predictions notification, you can try out AC Helper+";
 "unknown source" = "unknown source";
@@ -53,36 +47,98 @@ Du kannst das Abonnement jederzeit in deinen iTunes Kontoeinstellungen beenden. 
 "Visitors" = "Besucher";
 "You caught them all!" = "Du hast alle gefangen!";
 "You're subscribed to AC Helper+" = "You're subscribed to AC Helper+";
-"Your island name" = "Name deiner Insel";
 
 // copy and paste "export"  of Text() and similar SwiftUI functions
+// Date Format
+"EEEE, dd MMMM" = "EEEE, dd. MMMM";
+"d/M" = "d.M.";
+"dd" = "dd";
+"MMM" = "MMM";
+"MMM dd" = "dd. MMM";
+"dd MMMM" = "dd. MMMM";
+
+// TabbarView
+"Dashboard" = "Startseite";
+"Catalog" = "Katalog";
+"Turnips" = "Rüben";
+"Villagers" = "Bewohner";
+"My Stuff" = "Meine Sachen";
+
 // TodayView
 "Change Section Order" = "Ändere die Reihenfolge";
-"EEEE, dd MMMM" = "EEEE, dd. MMMM";
 // TodaySectionEditView
+"Drag & Drop to Rearrange" = "Zum Anordnen halten und verschieben";
+"Hidden" = "Versteckt";
+"Today Sections" = "Heute Abschnitte";
+"Done" = "Fertig";
+" to re-order sections." = " to re-order sections.";
+"Check or un-check" = "Check or un-check";
+" rows to hide sections from the dashboard." = " rows to hide sections from the dashboard.";
+"Your top-most section will be the default detail view on iPad and Mac." = "Your top-most section will be the default detail view on iPad and Mac.";
+// TodayBirthdaySection
+"Birthdays" = "Geburtstage";
+"Today's Birthdays" = "Heutige Geburtstage";
+"Today's Birthday" = "Heutiger Geburtstag";
+// TodayCollectionProgressSection
+"Collection Progress" = "Sammelfortschritt";
+"Share" = "Teilen";
+// TodayCurrentlyAvailableSection
+"Currently Available" = "Aktuell verfügbar";
+"%lld/%lld Bugs" = "%lld/%lld Insekten";
+"%lld/%lld Fish" = "%lld/%lld Fische";
+"%lld NEW" = "%lld NEU";
+// TodayEventsSection
+"Events" = "Ereignisse";
+"Currently" = "Aktuell";
+"No Events Today" = "Heute keine Ereignisse";
+"Upcoming" = "Anstehend";
+// TodayTasksSection
+"Today's Tasks" = "Heutige Aufgaben";
+"This feature requires " = "Diese Funktion benötigt ";
+"Learn more >" = "Erfahre mehr >";
+// TodayTurnipSection
+"Today is sunday, don't forget to buy more turnips and fill your buy price" = "Heute ist Sonntag, denk daran Rüben zu kaufen und den Einkaufspreis einzutragen";
+"Today's average price should be around " = "Der heutige durchschnittliche Kaufpreis sollte bei ";
+" in the morning, and " = " am Morgen und bei ";
+" this afternoon." = " am Nachmittag liegen.";
+// TodayNookazonSection
 "New on Nookazon" = "Neu auf Nookazon";
+"Nookazon is loading..." = "Nookazon lädt...";
+// TodayWhatsNewSection
+"What's New" = "Was ist neu";
+"See what's new in update %@" = "Schau dir an, was es neues gibt in Version %@";
+// TodaySubscribeSection
+"You're subscribed to AC Helper+. Thank you so much for you support!" = "Du abonnierst AC Helper+. Vielen Dank für deine Unterstützung!";
+"If you enjoy the application, consider subscribing to AC Helper+, to get access to some awesome features and support us!" = "Wenn dir die App gefällt, abonniere AC Helper+, um Zugriff auf großartige Funktionen zu erhalten und uns zu unterstütuen!";
+
 // ActiveCittersView
 "Active Critters" = "Aktive Tierchen";
-// DashboardView
-"EEEE, dd MMMM" = "EEEE, dd. MMMM";
-"Dashboard" = "Startseite";
-"Today is sunday, don't forget to buy more turnips and fill your buy price" = "Heute ist Sonntag, denk daran Rüben zu kaufen und den Einkaufspreis einzutragen";
-"Today average buy prices should be " = "Der heutige durchschnittliche Kaufpreis sollte bei ";
-" for this morning and " = " heute Morgen und bei ";
-" for this afternoon" = " heute Nachmittag liegen";
-// DashboardEventTextView
-"dd MMMM" = "dd. MMMM";
-"Today is %@!" = "Heute ist %@!";
-"Today events are " = "Heutigen Events sind ";
-" and " = " und ";
-"No events today." = "Heute keine Events.";
-"Next event: %@!" = "Nächstes Event: %@!";
-// DashboardAvailableCrittersSection
-"%lld new fishes" = "%lld neue Fische";
-"%lld new bugs" = "%lld neue Insekten";
+
 // SettingsView
-"Restore purchase" = "Einkäufe wiederherstellen";
 "Preferences" = "Einstellungen";
+"Island name" = "Inselname";
+"Your island name" = "Name deiner Insel";
+"Hemisphere" = "Hemisphäre";
+"North" = "Nord";
+"South" = "Süd";
+"Starting fruit" = "Frucht zu Beginn";
+"Apple" = "Apfel";
+"Cherry" = "Kirsche";
+"Orange" = "Orange";
+"Peach" = "Pfirsich";
+"Pear" = "Birne";
+"Coconut" = "Kokusnuss";
+"Nook shop" = "Nepp und Schlepp";
+"Tent" = "Zelt";
+"Nook's Cranny" = "Nook's Laden";
+"Nook's Cranny upgraded" = "Nook's Laden (ausgebaut)";
+"Able sisters" = "Schneiderei";
+"Visiting" = "zu Besuch";
+"Shop" = "Laden";
+"Residents service" = "Service-Center";
+"Building" = "Gebäude";
+"Restore purchase" = "Einkauf wiederherstellen";
+
 // to be continued
 
 
@@ -92,13 +148,10 @@ Du kannst das Abonnement jederzeit in deinen iTunes Kontoeinstellungen beenden. 
 "App version" = "App Version";
 "Available This Month" = "Diesen Monat Verfügbar";
 "Caught" = "Gefangen";
-"Catalog" = "Katalog";
 "Christian & Ninji for the turnip predictions algorithm" = "Christian & Ninji für den Rüben Prognose Algorithmus";
-"Collection Progress" = "Sammelfortschritt";
 "Error" = "Fehler";
 "Game patch data" = "Spielversion Daten";
 "Leaving this month" = "Leaving this month";
-"My Stuff" = "Meine Sachen";
 "New this month" = "New this month";
 "Nookazon for the marketplace" = "Nookazon für den Marktplatz";
 "Our amazing contributors" = "Unsere großartigen Mitwirkenden";
@@ -118,6 +171,3 @@ Du kannst das Abonnement jederzeit in deinen iTunes Kontoeinstellungen beenden. 
 "Top Turnip Island" = "Top Turnip Island";
 "Turnip predictions" = "Rüben Prognose";
 "Turnip.exchange" = "Turnip.exchange";
-"Turnips" = "Rüben";
-"Villager birthday" = "Geburtstag";
-"Villagers" = "Bewohner";

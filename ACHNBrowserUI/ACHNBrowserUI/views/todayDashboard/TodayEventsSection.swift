@@ -58,7 +58,7 @@ struct TodayEventsSection: View {
     }
 
     private func subsectionHeader(_ text: String) -> some View {
-        Text(text)
+        Text(LocalizedStringKey(text))
             .font(.system(.caption, design: .rounded))
             .fontWeight(.bold)
             .foregroundColor(Color.acSecondaryText)
@@ -67,18 +67,15 @@ struct TodayEventsSection: View {
 
     private func makeCell(event: (Date, Event?)) -> some View {
         let formatter = DateFormatter()
-        formatter.dateFormat = "dd"
-        let day: String = formatter.string(from: event.0)
-
-        formatter.dateFormat = "MMM"
-        let month: String = formatter.string(from: event.0)
+        formatter.setLocalizedDateFormatFromTemplate("MMM dd")
+        let date: String = formatter.string(from: event.0)
 
         return HStack {
             makeLabel(event.1!.title())
 
             Spacer()
 
-            Text("\(month) \(day)")
+            Text("\(date)")
                 .font(.system(.subheadline, design: .rounded))
                 .fontWeight(.bold)
                 .foregroundColor(.acText)
@@ -91,7 +88,7 @@ struct TodayEventsSection: View {
     }
 
     private func makeLabel(_ text: String) -> some View {
-        Text(text)
+        Text(LocalizedStringKey(text))
             .font(Font.system(.headline, design: .rounded))
             .fontWeight(.semibold)
             .lineLimit(2)
