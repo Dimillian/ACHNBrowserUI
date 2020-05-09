@@ -37,7 +37,7 @@ struct CategoriesView: View {
                                 RowLoadingView(isLoading: $isLoadingData)
                             } else if searchCategories.isEmpty {
                                 Text("No results for \(viewModel.searchText)")
-                                    .foregroundColor(.secondaryText)
+                                    .foregroundColor(.acSecondaryText)
                             } else {
                                 ForEach(searchCategories, id: \.0, content: searchSection)
                             }
@@ -73,7 +73,7 @@ extension CategoriesView {
                         .frame(width: 46, height: 46)
                     Text("Wardrobe")
                         .font(.headline)
-                        .foregroundColor(.text)
+                        .foregroundColor(.acText)
                 }
         }
     }
@@ -88,7 +88,7 @@ extension CategoriesView {
                         .frame(width: 46, height: 46)
                     Text("Nature")
                         .font(.headline)
-                        .foregroundColor(.text)
+                        .foregroundColor(.acText)
                 }
         }
     }

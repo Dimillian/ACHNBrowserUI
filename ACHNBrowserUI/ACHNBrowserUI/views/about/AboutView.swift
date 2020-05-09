@@ -7,6 +7,7 @@
 //
 
 import SwiftUI
+import SwiftUIKit
 import UI
 
 struct AboutView: View {
@@ -25,8 +26,12 @@ struct AboutView: View {
         Button(action: {
             self.presentationMode.wrappedValue.dismiss()
         }, label: {
-            Text("Dismiss")
+            Image(systemName: "xmark.circle.fill")
+                .style(appStyle: .barButton)
+                .foregroundColor(.acText)
         })
+        .buttonStyle(BorderedBarButtonStyle())
+        .accentColor(Color.acText.opacity(0.2))
         .safeHoverEffectBarItem(position: .leading)
     }
     
@@ -36,8 +41,8 @@ struct AboutView: View {
                 .imageScale(.medium)
                 .foregroundColor(color)
                 .frame(width: 30)
-            Text(text)
-                .foregroundColor(.text)
+            Text(LocalizedStringKey(text))
+                .foregroundColor(.acText)
                 .font(.body)
             Spacer()
             Image(systemName: "chevron.right").imageScale(.medium)
@@ -50,8 +55,8 @@ struct AboutView: View {
                 .imageScale(.medium)
                 .foregroundColor(color)
                 .frame(width: 30)
-            Text(text)
-                .foregroundColor(.text)
+            Text(LocalizedStringKey(text))
+                .foregroundColor(.acText)
                 .font(.body)
             Spacer()
             Text(detail)
@@ -63,57 +68,57 @@ struct AboutView: View {
     var body: some View {
         NavigationView {
             List {
-                Section(header: SectionHeaderView(text: NSLocalizedString("The app", comment: ""))) {
+                Section(header: SectionHeaderView(text: "The app")) {
                     makeRow(image: "chevron.left.slash.chevron.right",
-                            text: NSLocalizedString("Souce code / report an issue", comment: ""), color: .bell)
+                            text: "Souce code / report an issue", color: .acHeaderBackground)
                         .onTapGesture {
                                 self.selectedSheet = .safari(URL(string: "https://github.com/Dimillian/ACHNBrowserUI")!)
                     }
                     makeRow(image: "star.fill",
-                            text: NSLocalizedString("Rate the app on the App Store", comment: ""), color: .bell)
+                            text: "Rate the app on the App Store", color: .acHeaderBackground)
                         .onTapGesture {
                             UIApplication.shared.open(URL(string: "https://itunes.apple.com/app/id1508764244")!,
                                                       options: [:],
                                                       completionHandler: nil)
                     }
-                    makeRow(image: "lock", text: NSLocalizedString("Privacy Policy", comment: ""), color: .bell).onTapGesture {
+                    makeRow(image: "lock", text: "Privacy Policy", color: .acHeaderBackground).onTapGesture {
                         self.selectedSheet = .safari(URL(string: "https://github.com/Dimillian/ACHNBrowserUI/blob/master/privacy-policy.md#ac-helper-privacy-policy")!)
                     }
-                    makeRow(image: "person", text: NSLocalizedString("Term of Use", comment: ""), color: .bell).onTapGesture {
+                    makeRow(image: "person", text: "Term of Use", color: .acHeaderBackground).onTapGesture {
                         self.selectedSheet = .safari(URL(string: "https://github.com/Dimillian/ACHNBrowserUI/blob/master/term-of-use.md#ac-helper-term-of-use")!)
                     }
                     makeDetailRow(image: "tag",
-                                  text: NSLocalizedString("App version", comment: ""),
+                                  text: "App version",
                                   detail: "\(versionNumber) (\(buildNumber))",
-                                  color: .bell)
+                                  color: .acHeaderBackground)
                     makeDetailRow(image: "gamecontroller",
-                                  text: NSLocalizedString("Game patch data", comment: ""),
+                                  text: "Game patch data",
                                   detail: "1.2.0",
-                                  color: .bell)
+                                  color: .acHeaderBackground)
                 }
-                Section(header: SectionHeaderView(text: NSLocalizedString("Acknowledgements", comment: ""))) {
-                    makeRow(image: "suit.heart.fill", text: NSLocalizedString("Our amazing contributors", comment: ""), color: .red)
+                Section(header: SectionHeaderView(text: "Acknowledgements")) {
+                    makeRow(image: "suit.heart.fill", text: "Our amazing contributors", color: .red)
                         .onTapGesture {
                             self.selectedSheet = .safari(URL(string: "https://github.com/Dimillian/ACHNBrowserUI/graphs/contributors")!)
                     }
-                    makeRow(image: "suit.heart.fill", text: NSLocalizedString("The NookPlaza API by Azarro", comment: ""), color: .red)
+                    makeRow(image: "suit.heart.fill", text: "The NookPlaza API by Azarro", color: .red)
                         .onTapGesture {
                             self.selectedSheet = .safari(URL(string: "https://nookplaza.net/")!)
                     }
-                    makeRow(image: "suit.heart.fill", text: NSLocalizedString("Turnip.exchange", comment: ""), color: .red)
+                    makeRow(image: "suit.heart.fill", text: "Turnip.exchange", color: .red)
                         .onTapGesture {
                             self.selectedSheet = .safari(URL(string: "https://turnip.exchange/")!)
                     }
-                    makeRow(image: "suit.heart.fill", text: NSLocalizedString("Nookazon for the marketplace", comment: ""), color: .red)
+                    makeRow(image: "suit.heart.fill", text: "Nookazon for the marketplace", color: .red)
                         .onTapGesture {
                             self.selectedSheet = .safari(URL(string: "https://nookazon.com/")!)
                     }
-                    makeRow(image: "suit.heart.fill", text: NSLocalizedString("Shihab / JPEGuin for the icon", comment: ""), color: .red)
+                    makeRow(image: "suit.heart.fill", text: "Shihab / JPEGuin for the icon", color: .red)
                         .onTapGesture {
                             self.selectedSheet = .safari(URL(string: "https://twitter.com/JPEGuin")!)
                     }
                     makeRow(image: "suit.heart.fill",
-                            text: NSLocalizedString("Christian & Ninji for the turnip predictions algorithm", comment: ""),
+                            text: "Christian & Ninji for the turnip predictions algorithm",
                             color: .red)
                         .onTapGesture {
                             self.selectedSheet = .safari(URL(string: "https://elxris.github.io/Turnip-Calculator/")!)

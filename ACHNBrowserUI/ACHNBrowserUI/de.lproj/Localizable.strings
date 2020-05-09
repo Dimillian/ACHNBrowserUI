@@ -56,6 +56,11 @@ Du kannst das Abonnement jederzeit in deinen iTunes Kontoeinstellungen beenden. 
 "Your island name" = "Name deiner Insel";
 
 // copy and paste "export"  of Text() and similar SwiftUI functions
+// TodayView
+"Change Section Order" = "Ändere die Reihenfolge";
+"EEEE, dd MMMM" = "EEEE, dd. MMMM";
+// TodaySectionEditView
+"New on Nookazon" = "Neu auf Nookazon";
 // ActiveCittersView
 "Active Critters" = "Aktive Tierchen";
 // DashboardView

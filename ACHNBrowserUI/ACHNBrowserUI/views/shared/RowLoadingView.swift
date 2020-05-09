@@ -16,7 +16,7 @@ struct RowLoadingView: View {
             Spacer()
             ActivityIndicator(isAnimating: $isLoading, style: .large)
             Spacer()
-        }.background(Color.dialogue)
+        }.background(Color.acSecondaryBackground)
     }
 }
 

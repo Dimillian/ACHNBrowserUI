@@ -55,13 +55,13 @@ struct ActiveCritterSections: View {
     
     var body: some View {
         Group {
-            makeSectionOrPlaceholder(title: NSLocalizedString("New this month", comment: ""),
+            makeSectionOrPlaceholder(title: "New this month",
                                      critters: newThisMonth(critters: selectedTab == .fishes ? activeFishes : activeBugs))
-            makeSectionOrPlaceholder(title: NSLocalizedString("To catch", comment: ""),
+            makeSectionOrPlaceholder(title: "To catch",
                                      critters: toCatchCritter(critters: selectedTab == .fishes ? activeFishes : activeBugs))
-            makeSectionOrPlaceholder(title: NSLocalizedString("Leaving this month", comment: ""),
+            makeSectionOrPlaceholder(title: "Leaving this month",
                                      critters: leavingThisMonth(critters: selectedTab == .fishes ? activeFishes : activeBugs))
-            Section(header: SectionHeaderView(text: NSLocalizedString("Caught", comment: ""))) {
+            Section(header: SectionHeaderView(text: "Caught")) {
                 ForEach(caughtCritters(critters: selectedTab == .fishes ? activeFishes : activeBugs),
                         content: sectionContent)
             }
@@ -83,7 +83,7 @@ struct ActiveCrittersView: View {
                 }
             }
             .pickerStyle(SegmentedPickerStyle())
-            .listRowBackground(Color.dialogueReverse)
+            .listRowBackground(Color.acBackground)
             ActiveCritterSections(selectedTab: $selectedTab,
                                   activeFishes: activeFishes,
                                   activeBugs: activeBugs)

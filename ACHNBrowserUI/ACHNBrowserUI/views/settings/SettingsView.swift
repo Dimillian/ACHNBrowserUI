@@ -7,6 +7,7 @@
 //
 
 import SwiftUI
+import SwiftUIKit
 import Backend
 
 struct SettingsView: View {
@@ -18,15 +19,19 @@ struct SettingsView: View {
         Button(action: {
             self.presentationMode.wrappedValue.dismiss()
         }, label: {
-            Text("Dismiss")
+            Image(systemName: "xmark.circle.fill")
+                .style(appStyle: .barButton)
+                .foregroundColor(.acText)
         })
+        .buttonStyle(BorderedBarButtonStyle())
+        .accentColor(Color.acText.opacity(0.2))
         .safeHoverEffectBarItem(position: .leading)
     }
 
     var body: some View {
         NavigationView {
             Form {
-                Section(header: SectionHeaderView(text: NSLocalizedString("Island", comment: ""))) {
+                Section(header: SectionHeaderView(text: "Island")) {
                     HStack {
                         Text("Island name")
                         Spacer()
@@ -75,7 +80,7 @@ struct SettingsView: View {
                     }
                 }
                 
-                Section(header: SectionHeaderView(text: NSLocalizedString("App Settings", comment: ""))) {
+                Section(header: SectionHeaderView(text: "App Settings")) {
                     if UIApplication.shared.supportsAlternateIcons && UIDevice.current.userInterfaceIdiom != .pad {
                         NavigationLink(destination: AppIconPickerView()) {
                             Text("App Icon")
@@ -86,10 +91,10 @@ struct SettingsView: View {
                     }) {
                         if self.subscriptionManager.subscriptionStatus == .subscribed {
                             Text("You're subscribed to AC Helper+")
-                                .foregroundColor(.secondaryText)
+                                .foregroundColor(.acSecondaryText)
                         } else {
                             Text("Restore purchase")
-                                .foregroundColor(.bell)
+                                .foregroundColor(.acHeaderBackground)
                         }
                     }
                     .disabled(subscriptionManager.inPaymentProgress)

@@ -40,6 +40,6 @@ class CategoriesSearchViewModel: ObservableObject {
                 $0.name.lowercased().contains(string.lowercased())
             }) })
             .filter { !$0.value.isEmpty }
-            .mapValues { Array($0.prefix(5)) }
+            .mapValues { Array($0.prefix(10)) }
     }
 }

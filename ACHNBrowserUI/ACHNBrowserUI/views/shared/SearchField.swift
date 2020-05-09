@@ -18,9 +18,9 @@ struct SearchField: View {
             Image(systemName: "magnifyingglass")
                 .imageScale(.large)
             TextField(placeholder, text: $searchText)
-                .foregroundColor(Color.text)
+                .foregroundColor(Color.acText)
                 .font(.headline)
-                .accentColor(.bell)
+                .accentColor(.acHeaderBackground)
             if !searchText.isEmpty {
                 Button(action: {
                     self.searchText = ""
@@ -33,10 +33,10 @@ struct SearchField: View {
             }
         }
         .padding(8)
-        .background(Color.dialogue)
+        .background(Color.acSecondaryBackground)
         .mask(RoundedRectangle(cornerRadius: 8, style: .continuous))
         .padding(2)
-        .listRowBackground(Color.dialogueReverse)
+        .listRowBackground(Color.acBackground)
     }
 }
 
