@@ -35,7 +35,7 @@ struct UserListFormView: View {
             self.viewModel.save()
             self.presentationMode.wrappedValue.dismiss()
         }) {
-            Text("Save").foregroundColor(.acTabBarSelected)
+            Text("Save").foregroundColor(.acTabBarBackground)
         }
     }
     
