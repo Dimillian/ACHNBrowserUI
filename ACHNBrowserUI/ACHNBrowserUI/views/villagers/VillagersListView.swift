@@ -8,6 +8,7 @@
 
 import SwiftUI
 import Backend
+import UI
 
 struct VillagersListView: View {
     @ObservedObject var viewModel = VillagersViewModel()
@@ -29,7 +30,7 @@ struct VillagersListView: View {
                                             placeholder: "Search a villager"))
                 {
                     ForEach(currentVillagers) { villager in
-                        NavigationLink(destination: VillagerDetailView(villager: villager)) {
+                        NavigationLink(destination: NavigationLazyView(VillagerDetailView(villager: villager))) {
                             VillagerRowView(villager: villager)
                         }
                     }

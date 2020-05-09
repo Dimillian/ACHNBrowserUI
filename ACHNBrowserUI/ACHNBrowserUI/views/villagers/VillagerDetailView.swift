@@ -17,6 +17,7 @@ struct VillagerDetailView: View {
     @State private var textColor = Color.acText
     @State private var secondaryTextColor = Color.acSecondaryText
     @State private var sheet: Sheet.SheetType?
+    @State private var isLoadingItem = true
     
     var villager: Villager {
         viewModel.villager
@@ -79,10 +80,10 @@ struct VillagerDetailView: View {
             makeInfoCell(title: "Gender", value: villager.gender).padding()
             makeInfoCell(title: "Catch phrase", value: villager.catchPhrase ?? "").padding()
             
-            if viewModel.villagerItems?.isEmpty == false {
-                Section(header: SectionHeaderView(text: "Villager items", icon: "list.bullet")) {
+            Section(header: SectionHeaderView(text: "Villager items", icon: "list.bullet")) {
+                if viewModel.villagerItems?.isEmpty == false {
                     ForEach(viewModel.villagerItems!) { item in
-                        NavigationLink(destination: ItemDetailView(item: item)) {
+                        NavigationLink(destination: NavigationLazyView(ItemDetailView(item: item))) {
                             ItemRowView(displayMode: .large, item: item)
                         }
                     }

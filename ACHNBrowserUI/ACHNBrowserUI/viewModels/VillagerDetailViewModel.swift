@@ -19,8 +19,9 @@ public class VillagerDetailViewModel: ObservableObject {
         
         if let filename = villager.fileName {
             _ = Items.shared.matchVillagerItems(villager: filename)
-                .map({ $0 })
-                .sink(receiveValue: { items in
+                .subscribe(on: DispatchQueue.global(qos: .userInitiated))
+                .receive(on: DispatchQueue.main)
+                .map({ $0 }).sink(receiveValue: { items in
                     self.villagerItems = items
                 })
             
