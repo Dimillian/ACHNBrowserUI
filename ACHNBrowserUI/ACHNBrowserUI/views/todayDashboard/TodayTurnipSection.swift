@@ -12,6 +12,10 @@ import Backend
 struct TodayTurnipSection: View {
     let predictions: TurnipPredictions?
     
+    var isSunday: Bool {
+        Calendar.current.component(.weekday, from: Date()) == 2
+    }
+    
     var body: some View {
         // MARK: - Turnip Card
         Section(header: SectionHeaderView(text: "Turnips", icon: "dollarsign.circle.fill")) {
@@ -21,9 +25,11 @@ struct TodayTurnipSection: View {
                     .aspectRatio(1, contentMode: .fit)
                     .frame(maxWidth: 33)
                 Group {
-                    if predictions?.todayAverages == nil  {
-                        Text("Today is sunday, don't forget to buy more turnips and fill your buy price")
-                    } else {
+                    if isSunday {
+                        Text("Today is sunday, don't forget to buy more turnips and fill your buy price.")
+                    } else if predictions?.todayAverages == nil || predictions?.todayAverages?.isEmpty == nil {
+                        Text("Your turnips predictions will be displayed here once you fill in some prices.")
+                    }  else {
                         Text("Today's average price should be around ")
                             + Text("\(predictions!.todayAverages![0])")
                                 .foregroundColor(Color("ACSecondaryText"))
