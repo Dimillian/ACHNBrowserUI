@@ -1,0 +1,119 @@
+/*
+  Localizable.strings
+  ACHNBrowserUI
+
+  Created by Jan on 09.05.20.
+  Copyright © 2020 Thomas Ricouard. All rights reserved.
+*/
+
+"ACHelperPlusDescription" = "Subscribing to AC Helper+ is a great way to to show support to our free and open source project.♥️
+
+You also get access more features, turnip predictions notifications and creating any number of items list! 📈
+
+More detail below.";
+"ACHelperPlusDetails" = "About the notification feature:
+Everyday at 8 and 12 you'll get a notification with the average buy price of your store.
+The more in game daily prices you enter after monday morning, the better next predictions will be!
+
+About the list feature:
+In the free application you can create only one list of items in your \"My stuff\" tab.
+Once you'll be subscribed to AC Helper+ you'll be able to create any number of list you desire.";
+"ACHelperPlusPriceAndAboDetail %@" = "A %@ per month purchase will be applied to your iTunes account on confirmation.
+Subscriptions will automatically renew unless canceled within 24-hours before the end of the current period.
+You can cancel anytime with your iTunes account settings. Any unused portion of a free trial will be forfeited if you purchase a subscription.";
+"Able sisters" = "Able sisters";
+"About" = "About";
+"AC Helper+" = "AC Helper+";
+"App Icon" = "App Icon";
+"Average" = "Average";
+"Close" = "Close";
+"Description" = "Description";
+"Dismiss" = "Dismiss";
+"Hemisphere" = "Hemisphere";
+"Island" = "Island";
+"Island name" = "Island name";
+"Loading Listings..." = "Loading Listings...";
+"Loading Visitors...." = "Loading Visitors....";
+"Loading..." = "Loading...";
+"Make an Offer" = "Make an Offer";
+"Minimum" = "Minimum";
+"MinMax" = "MinMax";
+"name-en" = "name-en";
+"Need Materials" = "Need Materials";
+"No listings found on Nookazon" = "No listings found on Nookazon";
+"Nook shop" = "Nook shop";
+"Please select or go stars some items!" = "Please select or go stars some items!";
+"Residents service" = "Residents service";
+"Save" = "Save";
+"Starting fruit" = "Starting fruit";
+"Tap here to preview a notification" = "Tap here to preview a notification";
+"To help us support the application and get turnip predictions notification, you can try out AC Helper+" = "To help us support the application and get turnip predictions notification, you can try out AC Helper+";
+"unknown source" = "unknown source";
+"Upgrade to +" = "Upgrade to +";
+"Visitors" = "Visitors";
+"You caught them all!" = "You caught them all!";
+"You're subscribed to AC Helper+" = "You're subscribed to AC Helper+";
+"Your island name" = "Your island name";
+
+// copy and paste "export"  of Text() and similar SwiftUI functions
+// ActiveCittersView
+"Active Critters" = "Active Critters";
+// DashboardView
+"EEEE, dd MMMM" = "EEEE, dd MMMM";
+"Dashboard" = "Startseite";
+"Today is sunday, don't forget to buy more turnips and fill your buy price" = "Today is sunday, don't forget to buy more turnips and fill your buy price";
+"Today average buy prices should be " = "Today average buy prices should be ";
+" for this morning and " = " for this morning and ";
+" for this afternoon" = " for this afternoon";
+// DashboardEventTextView
+"dd MMMM" = "dd MMMM";
+"Today is %@!" = "Today is %@!";
+"Today events are " = "Today events are ";
+" and " = " and ";
+"No events today." = "No events today.";
+"Next event: %@!" = "Next event: %@!";
+// DashboardAvailableCrittersSection
+"%lld new fishes" = "%lld new fishes";
+"%lld new bugs" = "%lld new bugs";
+// SettingsView
+"Restore purchase" = "Restore purchase";
+"Preferences" = "Preferences";
+// to be continued
+
+
+// Generated export of NSLocalizedString
+"Acknowledgements" = "Acknowledgements";
+"App Settings" = "App Settings";
+"App version" = "App version";
+"Available This Month" = "Available This Month";
+"Caught" = "Caught";
+"Catalog" = "Catalog";
+"Christian & Ninji for the turnip predictions algorithm" = "Christian & Ninji for the turnip predictions algorithm";
+"Collection Progress" = "Collection Progress";
+"Error" = "Error";
+"Game patch data" = "Game patch data";
+"Leaving this month" = "Leaving this month";
+"My Stuff" = "My Stuff";
+"New this month" = "New this month";
+"Nookazon for the marketplace" = "Nookazon for the marketplace";
+"Our amazing contributors" = "Our amazing contributors";
+"Privacy Policy" = "Privacy Policy";
+"Rate the app on the App Store" = "Rate the app on the App Store";
+"Recent Nookazon Listings" = "Recent Nookazon Listings";
+"Shihab / JPEGuin for the icon" = "Shihab / JPEGuin for the icon";
+"Souce code / report an issue" = "Souce code / report an issue";
+"Subscribe for %@ / Month" = "Subscribe for %@ / Month";
+"Term of Use" = "Term of Use";
+"Thank you for your support!" = "Thanks you for your support!";
+"The app" = "The app";
+"The NookPlaza API by Azarro" = "The NookPlaza API by Azarro";
+"To catch" = "To catch";
+"Today" = "Today";
+"Today on %@" = "Today on %@";
+"Top Turnip Island" = "Top Turnip Island";
+"Turnip predictions" = "Turnip predictions";
+"Turnip.exchange" = "Turnip.exchange";
+"Turnips" = "Turnips";
+"Villager birthday" = "Villager birthday";
+"Villagers" = "Villagers";
+

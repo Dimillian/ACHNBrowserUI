@@ -15,7 +15,7 @@ struct DashboardNookazonListingSection: View {
     @ObservedObject var viewModel: DashboardViewModel
     
     var body: some View {
-        Section(header: SectionHeaderView(text: "Recent Nookazon Listings")) {
+        Section(header: SectionHeaderView(text: NSLocalizedString("Recent Nookazon Listings", comment: ""))) {
             if viewModel.recentListings == nil {
                 Text("Loading...")
                     .foregroundColor(.secondary)

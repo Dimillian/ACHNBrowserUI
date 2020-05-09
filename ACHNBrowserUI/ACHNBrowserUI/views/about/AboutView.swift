@@ -14,11 +14,11 @@ struct AboutView: View {
     @State private var selectedSheet: Sheet.SheetType?
     
     private var versionNumber: String {
-        Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? "Error"
+        Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? NSLocalizedString("Error", comment: "")
     }
     
     private var buildNumber: String {
-        Bundle.main.infoDictionary?["CFBundleVersion"] as? String ?? "Error"
+        Bundle.main.infoDictionary?["CFBundleVersion"] as? String ?? NSLocalizedString("Error", comment: "")
     }
     
     private var dismissButton: some View {
@@ -63,57 +63,57 @@ struct AboutView: View {
     var body: some View {
         NavigationView {
             List {
-                Section(header: SectionHeaderView(text: "The app")) {
+                Section(header: SectionHeaderView(text: NSLocalizedString("The app", comment: ""))) {
                     makeRow(image: "chevron.left.slash.chevron.right",
-                            text: "Souce code / report an issue", color: .bell)
+                            text: NSLocalizedString("Souce code / report an issue", comment: ""), color: .bell)
                         .onTapGesture {
                                 self.selectedSheet = .safari(URL(string: "https://github.com/Dimillian/ACHNBrowserUI")!)
                     }
                     makeRow(image: "star.fill",
-                            text: "Rate the app on the App Store", color: .bell)
+                            text: NSLocalizedString("Rate the app on the App Store", comment: ""), color: .bell)
                         .onTapGesture {
                             UIApplication.shared.open(URL(string: "https://itunes.apple.com/app/id1508764244")!,
                                                       options: [:],
                                                       completionHandler: nil)
                     }
-                    makeRow(image: "lock", text: "Privacy Policy", color: .bell).onTapGesture {
+                    makeRow(image: "lock", text: NSLocalizedString("Privacy Policy", comment: ""), color: .bell).onTapGesture {
                         self.selectedSheet = .safari(URL(string: "https://github.com/Dimillian/ACHNBrowserUI/blob/master/privacy-policy.md#ac-helper-privacy-policy")!)
                     }
-                    makeRow(image: "person", text: "Term of Use", color: .bell).onTapGesture {
+                    makeRow(image: "person", text: NSLocalizedString("Term of Use", comment: ""), color: .bell).onTapGesture {
                         self.selectedSheet = .safari(URL(string: "https://github.com/Dimillian/ACHNBrowserUI/blob/master/term-of-use.md#ac-helper-term-of-use")!)
                     }
                     makeDetailRow(image: "tag",
-                                  text: "App version",
+                                  text: NSLocalizedString("App version", comment: ""),
                                   detail: "\(versionNumber) (\(buildNumber))",
                                   color: .bell)
                     makeDetailRow(image: "gamecontroller",
-                                  text: "Game patch data",
+                                  text: NSLocalizedString("Game patch data", comment: ""),
                                   detail: "1.2.0",
                                   color: .bell)
                 }
-                Section(header: SectionHeaderView(text: "Acknowledgements")) {
-                    makeRow(image: "suit.heart.fill", text: "Our amazing contributors", color: .red)
+                Section(header: SectionHeaderView(text: NSLocalizedString("Acknowledgements", comment: ""))) {
+                    makeRow(image: "suit.heart.fill", text: NSLocalizedString("Our amazing contributors", comment: ""), color: .red)
                         .onTapGesture {
                             self.selectedSheet = .safari(URL(string: "https://github.com/Dimillian/ACHNBrowserUI/graphs/contributors")!)
                     }
-                    makeRow(image: "suit.heart.fill", text: "The NookPlaza API by Azarro", color: .red)
+                    makeRow(image: "suit.heart.fill", text: NSLocalizedString("The NookPlaza API by Azarro", comment: ""), color: .red)
                         .onTapGesture {
                             self.selectedSheet = .safari(URL(string: "https://nookplaza.net/")!)
                     }
-                    makeRow(image: "suit.heart.fill", text: "Turnip.exchange", color: .red)
+                    makeRow(image: "suit.heart.fill", text: NSLocalizedString("Turnip.exchange", comment: ""), color: .red)
                         .onTapGesture {
                             self.selectedSheet = .safari(URL(string: "https://turnip.exchange/")!)
                     }
-                    makeRow(image: "suit.heart.fill", text: "Nookazon for the marketplace", color: .red)
+                    makeRow(image: "suit.heart.fill", text: NSLocalizedString("Nookazon for the marketplace", comment: ""), color: .red)
                         .onTapGesture {
                             self.selectedSheet = .safari(URL(string: "https://nookazon.com/")!)
                     }
-                    makeRow(image: "suit.heart.fill", text: "Shihab / JPEGuin for the icon", color: .red)
+                    makeRow(image: "suit.heart.fill", text: NSLocalizedString("Shihab / JPEGuin for the icon", comment: ""), color: .red)
                         .onTapGesture {
                             self.selectedSheet = .safari(URL(string: "https://twitter.com/JPEGuin")!)
                     }
                     makeRow(image: "suit.heart.fill",
-                            text: "Christian & Ninji for the turnip predictions algorithm",
+                            text: NSLocalizedString("Christian & Ninji for the turnip predictions algorithm", comment: ""),
                             color: .red)
                         .onTapGesture {
                             self.selectedSheet = .safari(URL(string: "https://elxris.github.io/Turnip-Calculator/")!)

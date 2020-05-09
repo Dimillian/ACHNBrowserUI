@@ -43,12 +43,12 @@ struct DashboardView: View {
     }
         
     private var todayText: String {
-        "Today\(!userDefaults.islandName.isEmpty ? " on \(userDefaults.islandName)" : "")"
+        !userDefaults.islandName.isEmpty ? NSLocalizedString("Today on \(userDefaults.islandName)", comment: "") : NSLocalizedString("Today", comment: "")
     }
     
     private func makeDateView() -> some View {
         let formatter = DateFormatter()
-        formatter.dateFormat = "EEEE, dd MMMM"
+        formatter.setLocalizedDateFormatFromTemplate("EEEE, dd MMMM")
         let dateString = formatter.string(from: Date())
         return Section(header: SectionHeaderView(text: todayText)) {
             VStack(alignment: .leading) {
@@ -60,7 +60,7 @@ struct DashboardView: View {
     }
     
     private func makeBirthdayView() -> some View {
-        Section(header: SectionHeaderView(text: "Villager birthday")) {
+        Section(header: SectionHeaderView(text: NSLocalizedString("Villager birthday", comment: ""))) {
             ForEach(villagersViewModel.todayBirthdays) { villager in
                 NavigationLink(destination: VillagerDetailView(villager: villager),
                                label: {
@@ -71,7 +71,7 @@ struct DashboardView: View {
     }
     
     private func makeTurnipsPredictionsView() -> some View {
-        Section(header: SectionHeaderView(text: "Turnip predictions")) {
+        Section(header: SectionHeaderView(text: NSLocalizedString("Turnip predictions", comment: ""))) {
             Group {
                 if turnipsPredictionsService.predictions?.todayAverages?.isEmpty == true {
                     Text("Today is sunday, don't forget to buy more turnips and fill your buy price")
@@ -95,7 +95,7 @@ struct DashboardView: View {
     }
     
     private func makeTopTurnipSection() -> some View {
-        Section(header: SectionHeaderView(text: "Top Turnip Island")) {
+        Section(header: SectionHeaderView(text: NSLocalizedString("Top Turnip Island", comment: ""))) {
             if viewModel.island == nil {
                 Text("Loading...")
                     .foregroundColor(.secondary)

@@ -59,7 +59,7 @@ struct DashboardAvailableCrittersSection: View {
     }
     
     var body: some View {
-        Section(header: SectionHeaderView(text: "Available This Month")) {
+        Section(header: SectionHeaderView(text: NSLocalizedString("Available This Month", comment: ""))) {
             NavigationLink(destination: ActiveCrittersView(activeFishes: viewModel.fishes.filterActive(),
                                                            activeBugs: viewModel.bugs.filterActive())) {
                                                             crittersView

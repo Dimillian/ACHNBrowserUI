@@ -26,7 +26,7 @@ struct SettingsView: View {
     var body: some View {
         NavigationView {
             Form {
-                Section(header: SectionHeaderView(text: "Island")) {
+                Section(header: SectionHeaderView(text: NSLocalizedString("Island", comment: ""))) {
                     HStack {
                         Text("Island name")
                         Spacer()
@@ -75,7 +75,7 @@ struct SettingsView: View {
                     }
                 }
                 
-                Section(header: SectionHeaderView(text: "App Settings")) {
+                Section(header: SectionHeaderView(text: NSLocalizedString("App Settings", comment: ""))) {
                     if UIApplication.shared.supportsAlternateIcons && UIDevice.current.userInterfaceIdiom != .pad {
                         NavigationLink(destination: AppIconPickerView()) {
                             Text("App Icon")

@@ -31,7 +31,7 @@ struct DashboardCollectionProgressSection: View {
     }
     
     var body: some View {
-        Section(header: SectionHeaderView(text: "Collection Progress")) {
+        Section(header: SectionHeaderView(text: NSLocalizedString("Collection Progress", comment: ""))) {
             VStack(alignment: .leading) {
                 if !viewModel.fishes.isEmpty &&
                     !viewModel.bugs.isEmpty &&

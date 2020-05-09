@@ -16,7 +16,7 @@ struct DashboardEventTextView: View {
     
     func makeDateBadge(date: Date) -> some View {
         let formatter = DateFormatter()
-        formatter.dateFormat = "dd MMMM"
+        formatter.setLocalizedDateFormatFromTemplate("dd MMMM")
         return Text(formatter.string(from: date))
             .foregroundColor(.white)
             .font(.caption)

@@ -55,13 +55,13 @@ struct ActiveCritterSections: View {
     
     var body: some View {
         Group {
-            makeSectionOrPlaceholder(title: "New this month",
+            makeSectionOrPlaceholder(title: NSLocalizedString("New this month", comment: ""),
                                      critters: newThisMonth(critters: selectedTab == .fishes ? activeFishes : activeBugs))
-            makeSectionOrPlaceholder(title: "To catch",
+            makeSectionOrPlaceholder(title: NSLocalizedString("To catch", comment: ""),
                                      critters: toCatchCritter(critters: selectedTab == .fishes ? activeFishes : activeBugs))
-            makeSectionOrPlaceholder(title: "Leaving this month",
+            makeSectionOrPlaceholder(title: NSLocalizedString("Leaving this month", comment: ""),
                                      critters: leavingThisMonth(critters: selectedTab == .fishes ? activeFishes : activeBugs))
-            Section(header: SectionHeaderView(text: "Caught")) {
+            Section(header: SectionHeaderView(text: NSLocalizedString("Caught", comment: ""))) {
                 ForEach(caughtCritters(critters: selectedTab == .fishes ? activeFishes : activeBugs),
                         content: sectionContent)
             }
