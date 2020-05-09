@@ -15,26 +15,30 @@ struct TurnipsChartView: View {
     var predictions: TurnipPredictions
     @Binding var animateCurves: Bool
     @Environment(\.presentationMode) var presentation
+    @State private var chartWidth: CGFloat = 0
 
     var body: some View {
         VStack {
             TurnipsChartTopLegendView()
-            ScrollView(.horizontal, showsIndicators: false) {
-                chart.frame(width: 600, height: 500)
+            HStack {
+                ScrollView(.horizontal, showsIndicators: false) {
+                    chart.frame(width: 600, height: 500)
+                }
             }
         }
     }
 
     private var chart: some View {
-        VStack(spacing: 10) {
-            HStack(spacing: 8) {
+        VStack(alignment: .custom, spacing: 10) {
+            HStack {
                 TurnipsChartVerticalLegend(predictions: predictions)
                     .frame(width: 30)
                 curves
+                    .alignmentGuide(.custom, computeValue: { $0[HorizontalAlignment.leading] })
+                    .background(curvesGeometry)
             }
             TurnipsChartBottomLegendView(predictions: predictions)
-                .padding(.leading, 38)
-                .frame(height: 50)
+                .frame(width: chartWidth, height: 50)
         }.padding()
     }
 
@@ -59,6 +63,24 @@ struct TurnipsChartView: View {
                 .blendMode(.screen)
         }.animation(.spring())
     }
+
+    private var curvesGeometry: some View {
+        GeometryReader { geometry in
+            Rectangle()
+                .fill(Color.clear)
+                .onAppear(perform: { self.chartWidth = geometry.size.width })
+        }
+    }
+}
+
+private extension HorizontalAlignment {
+    private struct CustomAlignment: AlignmentID {
+        static func defaultValue(in context: ViewDimensions) -> CGFloat {
+            return context[HorizontalAlignment.leading]
+        }
+    }
+
+    static let custom = HorizontalAlignment(CustomAlignment.self)
 }
 
 struct TurnipsChartView_Previews: PreviewProvider {

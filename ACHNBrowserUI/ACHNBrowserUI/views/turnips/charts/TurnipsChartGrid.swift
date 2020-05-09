@@ -11,8 +11,7 @@ import Backend
 
 struct TurnipsChartGrid: Shape {
     let predictions: TurnipPredictions
-    // TODO: put only .vertical after tests
-    let displays: Set<Display> = [.vertical, .horizontal]
+    let displays: Set<Display> = [.vertical]
 
     func path(in rect: CGRect) -> Path {
         var path = Path()
