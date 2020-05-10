@@ -41,7 +41,7 @@ struct TurnipsFormView: View {
         .modifier(AdaptsToSoftwareKeyboard())
         .navigationBarItems(trailing: saveButton)
         .navigationBarTitle("Add your turnip prices", displayMode: .inline)
-        .sheet(isPresented: $isSubscribePresented, content: { SubscribeView().environmentObject(self.subscriptionManager) })
+        .sheet(isPresented: $isSubscribePresented, content: { SubscribeView(source: .turnipForm).environmentObject(self.subscriptionManager) })
     }
 }
 

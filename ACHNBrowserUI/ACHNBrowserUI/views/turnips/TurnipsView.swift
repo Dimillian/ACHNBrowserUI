@@ -104,7 +104,7 @@ extension TurnipsView {
         Section(header: SectionHeaderView(text: "AC Helper+", icon: "heart.fill")) {
             VStack(spacing: 8) {
                 Button(action: {
-                    self.presentedSheet = .subscription(subManager: self.subManager)
+                    self.presentedSheet = .subscription(source: .turnip, subManager: self.subManager)
                 }) {
                     Text("To help us support the application and get turnip predictions notification, you can try out AC Helper+")
                         .foregroundColor(.acSecondaryText)
@@ -113,7 +113,7 @@ extension TurnipsView {
                         .padding(.top, 8)
                 }
                 Button(action: {
-                    self.presentedSheet = .subscription(subManager: self.subManager)
+                    self.presentedSheet = .subscription(source: .turnip, subManager: self.subManager)
                 }) {
                     Text("See more...")
                         .font(.headline)
