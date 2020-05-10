@@ -136,7 +136,7 @@ extension TurnipsView {
             if viewModel.averagesPrices != nil && viewModel.minMaxPrices != nil {
                 Picker(selection: $turnipsDisplay, label: Text("")) {
                     ForEach(TurnipsDisplay.allCases, id: \.self) { section in
-                        Text(section.rawValue.capitalized)
+                        Text(LocalizedStringKey(section.rawValue.capitalized))
                     }
                 }
                 .pickerStyle(SegmentedPickerStyle())

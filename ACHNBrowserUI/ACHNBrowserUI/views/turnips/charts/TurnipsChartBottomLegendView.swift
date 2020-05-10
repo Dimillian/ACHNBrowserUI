@@ -50,7 +50,7 @@ struct TurnipsChartBottomLegendView: View {
     }
 
     func weekdays(offset: Int, weekday: String, ratioX: CGFloat) -> some View {
-        Text(weekday)
+        Text(LocalizedStringKey(weekday))
             .font(.callout)
             .fontWeight(.bold)
             .foregroundColor(.acText)

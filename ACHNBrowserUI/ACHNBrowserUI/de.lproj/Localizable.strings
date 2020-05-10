@@ -6,15 +6,11 @@
   Copyright © 2020 Thomas Ricouard. All rights reserved.
 */
 
-"Average" = "Durchschnitt";
 "Description" = "Beschreibung";
 "Island" = "Insel";
 "Loading Visitors...." = "Lade Besucher....";
 "Loading..." = "Lade...";
 "Make an Offer" = "Angebot abgeben";
-"Minimum" = "Minimum";
-"MinMax" = "MinMax";
-"name-en" = "name-en";
 "Need Materials" = "Need Materials";
 "Please select or go stars some items!" = "Please select or go stars some items!";
 "Tap here to preview a notification" = "Tippe hier für eine Vorschau";
@@ -233,6 +229,8 @@ Du kannst das Abonnement jederzeit in deinen iTunes Kontoeinstellungen beenden. 
 "Your items lists" = "Deine Gegenstandslisten";
 
 // TurnipsView
+"Minmax" = "Min-Max";
+"Profits" = "Gewinne";
 "Average daily buy prices" = "Durchschnittliche tägliche Verkaufspreise";
 "Daily min-max prices" = "Tägliche Min-Max Preise";
 "Average profits" = "Durchschnittliche Gewinne";
@@ -274,6 +272,10 @@ Du kannst das Abonnement jederzeit in deinen iTunes Kontoeinstellungen beenden. 
 "Buy price" = "Kaufpreis";
 "Amount bought" = "Gekaufte Menge";
 "The more in game buy prices you'll add the better the predictions will be. Your buy price only won't give your correct averages. Add prices from the game as you get them daily." = "Je mehr Verkaufspreise du einträgst, um so genauer kann die Prognose sein. Der Einkaufspreis alleine kann keine gute Prognose liefern. Trag also am besten täglich die Verkaufspreise ein.";
+// TurnipsChartTopLegendView
+"Average" = "Durchschnitt";
+"Minimum" = "Minimum";
+"MinMax" = "MinMax";
 
 // Shared
 // SearchField
