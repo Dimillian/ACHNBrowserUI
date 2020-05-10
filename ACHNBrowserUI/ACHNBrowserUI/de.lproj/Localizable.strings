@@ -9,7 +9,6 @@
 "Average" = "Durchschnitt";
 "Description" = "Beschreibung";
 "Island" = "Insel";
-"Loading Listings..." = "Loading Listings...";
 "Loading Visitors...." = "Lade Besucher....";
 "Loading..." = "Lade...";
 "Make an Offer" = "Angebot abgeben";
@@ -17,7 +16,6 @@
 "MinMax" = "MinMax";
 "name-en" = "name-en";
 "Need Materials" = "Need Materials";
-"No listings found on Nookazon" = "No listings found on Nookazon";
 "Please select or go stars some items!" = "Please select or go stars some items!";
 "Tap here to preview a notification" = "Tippe hier für eine Vorschau";
 "To help us support the application and get turnip predictions notification, you can try out AC Helper+" = "To help us support the application and get turnip predictions notification, you can try out AC Helper+";
@@ -194,5 +192,43 @@ Du kannst das Abonnement jederzeit in deinen iTunes Kontoeinstellungen beenden. 
 "Items" = "Gegenstände";
 "Critters" = "Tiere";
 "Lists" = "Listen";
+
+// ItemsListView
+"Clear Selection" = "Auswahl aufheben";
+"Sort items" = "Gegenstände sortieren";
+"Current Sort: %@" = "Aktuelle Sortierung: %@";
+"name" = "Name";
+"buy" = "Kaufpreis";
+"sell" = "Verkaufspreis";
+"from" = "Von";
+"set" = "Set";
+"similar" = "Ähnliche";
+"Name" = "Name";
+"Buy" = "Kaufpreis";
+"Sell" = "Verkaufspreis";
+"From" = "Von";
+"Set" = "Set";
+"Similar" = "Ähnliche";
+// ItemDetailInfoView
+"Rarity:" = "Seltenheit:";
+"Shadow size:" = "Schatten Größe:";
+"Customizable: %@" = "Veränderbar: %@";
+"Flick:" = "Carlson:";
+"Yes" = "Ja";
+"No" = "Nein";
+// ItemsCrosslineSectionView
+"Preview" = "Vorschau";
+// ItemDetailSeasonView
+"Seasonality" = "Saisonalität";
+// ItemDetailView
+"Set items" = "Setgegenstände";
+"Simillar items" = "Ähnliche Gegenstände";
+"Thematics" = "Thematik";
+"Variants" = "Varianten";
+"Materials" = "Materialien";
+"Nookazon listings" = "Nookazon Auflistung";
+"Loading Listings..." = "Lade Auflistung...";
+"No listings found on Nookazon" = "Keine Auflistung auf Nookazon gefunden";
+"Your items lists" = "Deine Gegenstandslisten";
 
 // to be continued
