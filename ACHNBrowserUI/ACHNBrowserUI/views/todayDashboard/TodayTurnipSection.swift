@@ -53,7 +53,7 @@ struct TodayTurnipSection_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
             List {
-                TodayTurnipSection(predictions: TurnipsPredictionService.shared.predictions)
+                TodayTurnipSection(predictions: TurnipPredictionsService.shared.predictions)
             }
             .listStyle(GroupedListStyle())
             .environment(\.horizontalSizeClass, .regular)

@@ -9,8 +9,8 @@ import Foundation
 import JavaScriptCore
 import Combine
 
-public class TurnipsPredictionService: ObservableObject {
-    public static let shared = TurnipsPredictionService()
+public class TurnipPredictionsService: ObservableObject {
+    public static let shared = TurnipPredictionsService()
     
     @Published public var predictions: TurnipPredictions?
     public var fields: TurnipFields? {
@@ -18,13 +18,23 @@ public class TurnipsPredictionService: ObservableObject {
             refresh()
         }
     }
-    
     public var enableNotifications: Bool?
     
     private var turnipsCancellable: AnyCancellable?
+    private lazy var calculatorContext: JSContext? = {
+        guard let url = Bundle.main.url(forResource: "turnips", withExtension: "js"),
+            let script = try? String(contentsOf: url) else {
+                return nil
+        }
+        let context = JSContext()
+        context?.evaluateScript(script)
+        return context
+    }()
     
     private init() {
-        turnipsCancellable = $predictions.subscribe(on: RunLoop.main).sink { predictions in
+        turnipsCancellable = $predictions
+            .subscribe(on: RunLoop.main)
+            .sink { predictions in
             if let predictions = predictions {
                 if self.enableNotifications == true {
                     NotificationManager.shared.registerTurnipsPredictionNotification(prediction: predictions)
@@ -44,17 +54,7 @@ public class TurnipsPredictionService: ObservableObject {
             self.predictions = nil
         }
     }
-    
-    private lazy var calculatorContext: JSContext? = {
-        guard let url = Bundle.main.url(forResource: "turnips", withExtension: "js"),
-            let script = try? String(contentsOf: url) else {
-                return nil
-        }
-        let context = JSContext()
-        context?.evaluateScript(script)
-        return context
-    }()
-        
+            
     private func calculate(values: TurnipFields) -> TurnipPredictions {
         let call = "calculate([\(values.buyPrice),\(values.fields.filter{ !$0.isEmpty }.joined(separator: ","))])"
         let results = calculatorContext?.evaluateScript(call)
