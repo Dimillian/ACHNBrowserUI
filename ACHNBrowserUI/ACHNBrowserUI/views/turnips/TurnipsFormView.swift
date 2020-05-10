@@ -126,7 +126,7 @@ extension TurnipsFormView {
     
     private func makeWeekdayRow(_ weekday: String) -> some View {
         HStack {
-            Text(weekday)
+            Text(LocalizedStringKey(weekday))
             Spacer(minLength: 40)
             TextField("AM", text: morningField(for: weekday))
                 .keyboardType(.numberPad)

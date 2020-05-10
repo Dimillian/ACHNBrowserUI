@@ -115,7 +115,7 @@ extension TurnipsView {
                 Button(action: {
                     self.presentedSheet = .subscription(subManager: self.subManager)
                 }) {
-                    Text("See more...")
+                    Text("Learn more...")
                         .font(.headline)
                         .fontWeight(.bold)
                         .foregroundColor(.white)
@@ -129,10 +129,7 @@ extension TurnipsView {
     private var predictionsSection: some View {
         Section(header: SectionHeaderView(text: turnipsDisplay.title(), icon: "dollarsign.circle.fill"),
                 footer: Text(viewModel.pendingNotifications == 0 ? "" :
-                    """
-                    You'll receive prices predictions in \(viewModel.pendingNotifications - 1) upcoming
-                    daily notifications.
-                    """)
+                    "\(viewModel.pendingNotifications - 1) upcomingDailyNotifications")
                     .font(.footnote)
                     .foregroundColor(.catalogUnselected)
                     .lineLimit(nil)) {

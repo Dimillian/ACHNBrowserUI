@@ -18,7 +18,6 @@
 "Need Materials" = "Need Materials";
 "Please select or go stars some items!" = "Please select or go stars some items!";
 "Tap here to preview a notification" = "Tippe hier für eine Vorschau";
-"To help us support the application and get turnip predictions notification, you can try out AC Helper+" = "To help us support the application and get turnip predictions notification, you can try out AC Helper+";
 "unknown source" = "unknown source";
 "Upgrade to +" = "Upgrade auf +";
 "Visitors" = "Besucher";
@@ -232,6 +231,49 @@ Du kannst das Abonnement jederzeit in deinen iTunes Kontoeinstellungen beenden. 
 "Loading Listings..." = "Lade Auflistung...";
 "No listings found on Nookazon" = "Keine Auflistung auf Nookazon gefunden";
 "Your items lists" = "Deine Gegenstandslisten";
+
+// TurnipsView
+"Average daily buy prices" = "Durchschnittliche tägliche Verkaufspreise";
+"Daily min-max prices" = "Tägliche Min-Max Preise";
+"Average profits" = "Durchschnittliche Gewinne";
+"Chart" = "Diagramm";
+"Mon" = "Mo";
+"Tue" = "Di";
+"Wed" = "Mi";
+"Thu" = "Do";
+"Fri" = "Fr";
+"Sat" = "Sa";
+"Your prices" = "Deine Preise";
+"Edit your in game prices" = "Bearbeite deine Spiel Preise";
+"Add your in game prices" = "Füge deine Spiel Preise hinzu";
+"Turnips prediction" = "Rüben-Progrnose";
+"To help us support the application and get turnip predictions notification, you can try out AC Helper+" = "Abonniere AC Helper+, um Benachrichtigungen zur Rüben-Prognose zu bekommen und uns bei der Entwicklung der App zu unterstützen";
+"%lld upcomingDailyNotifications" = "Du bekommst Verkaufspreis Prognosen in noch %lld weiteren täglichen Benachrichtigungen.";
+"Profits estimates are computed using the average of the current period" = "Die Profite werden auf Basis des durchschnittlichen Preises der jeweiligen Periode berechnet";
+"Day" = "Tag";
+"AM" = "Vorm.";
+"PM" = "Nachm.";
+"Please add the amount of turnips you bought and for how much" = "Bitte trag ein, wie viele Rüben du gekauft hast und zu welchem Preis";
+"Add your in game turnip prices to see the predictions chart" = "Um das Prognose-Diagramm sehen zu können, trag die Verkaufspreise für Rüben ein";
+"Add your in game turnip prices to see predictions" = "Trag die Rüben-Verkaufspreise ein um eine Prognose sehen zu können";
+"Exchange" = "Wechselkurs";
+// TurnipsFormView
+"Monday" = "Montag";
+"Tuesday" = "Dienstag";
+"Wednesday" = "Mittwoch";
+"Thursday" = "Donnerstag";
+"Friday" = "Freitag";
+"Saturday" = "Samstag";
+"Add your turnip prices" = "Füge deine Rüben Verkaufspreise hinzu";
+"Configuration" = "Konfiguration";
+"Clear all fields" = "Alle Felder leeren";
+"Receive prices predictions notification" = "Erhalte Benachrichtigungen zu Verkaufspreis Prognosen";
+"You can get daily notifications for your average turnip price by subscribing to AC Helper+" = "Mit einem AC Helper+ Abonnement erhältst du tägich Benachrichtigungen zum durchschnittlichen Rüben Verkaufspreis";
+"Preview a notification" = "Zeige Vorschau-Benachrichtigung";
+"Your in game prices" = "Deine Preise";
+"Buy price" = "Kaufpreis";
+"Amount bought" = "Gekaufte Menge";
+"The more in game buy prices you'll add the better the predictions will be. Your buy price only won't give your correct averages. Add prices from the game as you get them daily." = "Je mehr Verkaufspreise du einträgst, um so genauer kann die Prognose sein. Der Einkaufspreis alleine kann keine gute Prognose liefern. Trag also am besten täglich die Verkaufspreise ein.";
 
 // Shared
 // SearchField
