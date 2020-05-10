@@ -55,7 +55,7 @@ public struct Item: Codable, Equatable, Identifiable, Hashable {
     
     public let obtainedFrom: String?
     public let obtainedFromNew: [String]?
-    public let sourceNote: String?
+    public let sourceNotes: String?
     public let dIY: Bool?
     public let customize: Bool?
     
@@ -160,7 +160,7 @@ public let static_item = Item(name: "Acoustic guitar",
                        itemImage: nil,
                        obtainedFrom: "Crafting",
                        obtainedFromNew: ["Crafting"],
-                       sourceNote: "From somewhere",
+                       sourceNotes: "From somewhere",
                        dIY: true,
                        customize: true,
                        variants: nil,
