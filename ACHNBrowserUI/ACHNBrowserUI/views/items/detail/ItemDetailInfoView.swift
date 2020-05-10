@@ -37,7 +37,7 @@ struct ItemDetailInfoView: View {
                 }
                 Spacer()
             }
-            if item.obtainedFrom != nil || item.obtainedFrom?.isEmpty == false {
+            if item.obtainedFrom != nil || item.obtainedFromNew?.isEmpty == false {
                 Text(item.obtainedFrom ?? item.obtainedFromNew?.first ?? "")
                     .foregroundColor(.acSecondaryText)
             }
