@@ -6,17 +6,12 @@
   Copyright © 2020 Thomas Ricouard. All rights reserved.
 */
 
-"Description" = "Beschreibung";
-"Island" = "Insel";
-"Loading Visitors...." = "Lade Besucher....";
-"Loading..." = "Lade...";
 "Make an Offer" = "Angebot abgeben";
 "Need Materials" = "Need Materials";
 "Please select or go stars some items!" = "Please select or go stars some items!";
 "Tap here to preview a notification" = "Tippe hier für eine Vorschau";
 "unknown source" = "unknown source";
 "Upgrade to +" = "Upgrade auf +";
-"Visitors" = "Besucher";
 "You're subscribed to AC Helper+" = "You're subscribed to AC Helper+";
 
 // copy and paste "export"  of Text() and similar SwiftUI functions
@@ -276,6 +271,13 @@ Du kannst das Abonnement jederzeit in deinen iTunes Kontoeinstellungen beenden. 
 "Average" = "Durchschnitt";
 "Minimum" = "Minimum";
 "MinMax" = "MinMax";
+
+// IslandDetailView
+"Join Island" = "Insel beitreten";
+"Island" = "Insel";
+"Description" = "Beschreibung";
+"Visitors" = "Besucher";
+"Loading Visitors...." = "Lade Besucher....";
 
 // Shared
 // SearchField
