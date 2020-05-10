@@ -63,7 +63,7 @@ public class TurnipPredictionsService: ObservableObject {
         if let averagePrices = results?.toDictionary()["avgPattern"] as? [Int],
             values.amount > 0, let buyPrice = Int(values.buyPrice){
             averageProfits = []
-            let investment = values.amount + buyPrice
+            let investment = values.amount * buyPrice
             for avg in averagePrices {
                 averageProfits?.append((avg * values.amount) - investment)
             }
