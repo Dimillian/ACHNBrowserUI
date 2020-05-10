@@ -14,6 +14,17 @@ public struct ItemResponse: Codable {
     let results: [Item]
 }
 
+public struct NewItemResponse: Codable {
+    let total: Int
+    let results: [ItemWrapper]
+    
+    public struct ItemWrapper: Codable {
+        public let id: Int
+        public let name: String
+        public let content: Item
+    }
+}
+
 public struct Item: Codable, Equatable, Identifiable, Hashable {
     static public func ==(lhs: Item, rhs: Item) -> Bool {
         return lhs.id == rhs.id && lhs.category == rhs.category
@@ -41,6 +52,7 @@ public struct Item: Codable, Equatable, Identifiable, Hashable {
     }
     
     public let obtainedFrom: String?
+    public let obtainedFromNew: [String]?
     public let dIY: Bool?
     public let customize: Bool?
     
@@ -141,6 +153,7 @@ public let static_item = Item(name: "Acoustic guitar",
                        filename: "https://acnhcdn.com/latest/FtrIcon/FtrAcorsticguitar_Remake_0_0.png",
                        house: nil,
                        obtainedFrom: "Crafting",
+                       obtainedFromNew: ["Crafting"],
                        dIY: true,
                        customize: true,
                        variants: nil,

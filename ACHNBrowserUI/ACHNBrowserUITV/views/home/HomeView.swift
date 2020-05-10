@@ -14,7 +14,6 @@ struct HomeView: View {
     
     private var categories: [(Backend.Category, [Item])] {
         items.categories
-            .map { $0 }
             .sorted(by: \.key.rawValue)
             .reversed()
     }

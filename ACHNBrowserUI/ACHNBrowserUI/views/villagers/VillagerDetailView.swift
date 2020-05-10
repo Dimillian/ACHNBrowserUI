@@ -83,7 +83,7 @@ struct VillagerDetailView: View {
             Section(header: SectionHeaderView(text: "Villager items", icon: "list.bullet")) {
                 if viewModel.villagerItems?.isEmpty == false {
                     ForEach(viewModel.villagerItems!) { item in
-                        NavigationLink(destination: NavigationLazyView(ItemDetailView(item: item))) {
+                        NavigationLink(destination: ItemDetailView(item: item)) {
                             ItemRowView(displayMode: .large, item: item)
                         }
                     }

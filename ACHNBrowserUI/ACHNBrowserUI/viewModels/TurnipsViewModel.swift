@@ -25,7 +25,7 @@ class TurnipsViewModel: ObservableObject {
         
     init() {
         fetch()
-        turnipsCancellable = TurnipsPredictionService.shared.$predictions
+        turnipsCancellable = TurnipPredictionsService.shared.$predictions
             .receive(on: RunLoop.main)
             .sink(receiveValue: { [weak self] predictions in
                 self?.predictions = predictions

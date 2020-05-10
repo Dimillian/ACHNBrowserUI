@@ -56,8 +56,8 @@ extension TurnipsFormView {
     
     private func save() {
         fields.save()
-        TurnipsPredictionService.shared.enableNotifications = enableNotifications
-        TurnipsPredictionService.shared.fields = fields
+        TurnipPredictionsService.shared.enableNotifications = enableNotifications
+        TurnipPredictionsService.shared.fields = fields
         presentationMode.wrappedValue.dismiss()
     }
     

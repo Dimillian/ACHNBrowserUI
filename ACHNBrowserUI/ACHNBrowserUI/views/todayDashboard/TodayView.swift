@@ -19,7 +19,7 @@ struct TodayView: View {
     @ObservedObject private var userDefaults = AppUserDefaults.shared
     @ObservedObject private var viewModel = DashboardViewModel()
     @ObservedObject private var villagersViewModel = VillagersViewModel()
-    @ObservedObject private var turnipsPredictionsService = TurnipsPredictionService.shared
+    @ObservedObject private var turnipsPredictionsService = TurnipPredictionsService.shared
     
     @State private var selectedSheet: Sheet.SheetType?
     @State private var showWhatsNew: Bool = false
