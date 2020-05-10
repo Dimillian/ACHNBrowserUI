@@ -30,7 +30,7 @@ struct VillagerDetailView: View {
     private var shareButton: some View {
         Button(action: {
             let image = NavigationView {
-                self.makeBody()
+                self.makeBody().environmentObject(self.collection)
             }
             .navigationViewStyle(StackNavigationViewStyle())
             .frame(width: 350, height: 650).asImage()
@@ -83,7 +83,7 @@ struct VillagerDetailView: View {
             Section(header: SectionHeaderView(text: "Villager items", icon: "list.bullet")) {
                 if viewModel.villagerItems?.isEmpty == false {
                     ForEach(viewModel.villagerItems!) { item in
-                        NavigationLink(destination: NavigationLazyView(ItemDetailView(item: item))) {
+                        NavigationLink(destination: ItemDetailView(item: item)) {
                             ItemRowView(displayMode: .large, item: item)
                         }
                     }

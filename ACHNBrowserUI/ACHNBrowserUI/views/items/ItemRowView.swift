@@ -49,7 +49,7 @@ struct ItemRowView: View {
         Group {
             Text(item.name)
                 .style(appStyle: .rowTitle)
-            Text(item.obtainedFrom ?? "unknown source")
+            Text(item.obtainedFrom ?? item.obtainedFromNew?.first ?? "unknown source")
                 .font(.subheadline)
                 .fontWeight(.semibold)
                 .foregroundColor(.acSecondaryText)

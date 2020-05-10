@@ -41,7 +41,7 @@ struct TurnipsFormView: View {
         .modifier(AdaptsToSoftwareKeyboard())
         .navigationBarItems(trailing: saveButton)
         .navigationBarTitle("Add your turnip prices", displayMode: .inline)
-        .sheet(isPresented: $isSubscribePresented, content: { SubscribeView().environmentObject(self.subscriptionManager) })
+        .sheet(isPresented: $isSubscribePresented, content: { SubscribeView(source: .turnipForm).environmentObject(self.subscriptionManager) })
     }
 }
 
@@ -56,8 +56,8 @@ extension TurnipsFormView {
     
     private func save() {
         fields.save()
-        TurnipsPredictionService.shared.enableNotifications = enableNotifications
-        TurnipsPredictionService.shared.fields = fields
+        TurnipPredictionsService.shared.enableNotifications = enableNotifications
+        TurnipPredictionsService.shared.fields = fields
         presentationMode.wrappedValue.dismiss()
     }
     

@@ -26,7 +26,7 @@ struct TodaySubscribeSection: View {
                         Text("You're subscribed to AC Helper+. Thank you so much for you support!")
                     } else {
                         Button(action: {
-                            self.sheet = .subscription(subManager: self.subManager)
+                            self.sheet = .subscription(source: .dashboard, subManager: self.subManager)
                         }) {
                             Text("If you enjoy the application, consider subscribing to AC Helper+, to get access to some awesome features and support us!")
                         }

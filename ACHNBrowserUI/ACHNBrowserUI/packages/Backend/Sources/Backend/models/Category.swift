@@ -82,6 +82,10 @@ public enum Category: String, CaseIterable {
     }
     
     public static func furnitures() -> [Category] {
+        [.housewares, .miscellaneous, .wallMounted, .art]
+    }
+        
+    public static func villagerFurnitures() -> [Category] {
         [.housewares, .miscellaneous, .wallMounted, .art,
          .wallpapers, .floors, .rugs, .photos, .music]
     }

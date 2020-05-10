@@ -12,9 +12,14 @@ import Backend
 import Purchases
 
 struct SubscribeView: View {
+    enum Source: String {
+        case dashboard, turnip, turnipForm, list
+    }
+    
     @EnvironmentObject private var subscriptionManager: SubscriptionManager
     @Environment(\.presentationMode) private var presentationMode
     
+    let source: Source
     @State private var sheetURL: URL?
     
     private var sub: Purchases.Package? {
@@ -72,7 +77,8 @@ struct SubscribeView: View {
                 if self.subscriptionManager.subscriptionStatus == .subscribed {
                     self.presentationMode.wrappedValue.dismiss()
                 } else {
-                    self.subscriptionManager.puschase(product: self.sub!)
+                    self.subscriptionManager.purchase(source: self.source.rawValue,
+                                                      product: self.sub!)
                 }
             }, label: self.subscriptionManager.subscriptionStatus == .subscribed ?
                 "Thanks you for your support!" :
@@ -160,6 +166,6 @@ struct SubscribeView: View {
 
 struct SubscribeViewPreviews: PreviewProvider {
     static var previews: some View {
-        SubscribeView()
+        SubscribeView(source: .list)
     }
 }

@@ -18,7 +18,7 @@ struct UserListSubscribeCallView: View {
     var body: some View {
         VStack(spacing: 8) {
             Button(action: {
-                self.sheet = .subscription(subManager: self.subscriptionManager)
+                self.sheet = .subscription(source: .list, subManager: self.subscriptionManager)
             }) {
                 Text("In order to create more than one list, you need to subscribe to AC Helper+")
                     .foregroundColor(.acSecondaryText)
@@ -27,7 +27,7 @@ struct UserListSubscribeCallView: View {
                     .padding(.top, 8)
             }
             Button(action: {
-                self.sheet = .subscription(subManager: self.subscriptionManager)
+                self.sheet = .subscription(source: .list, subManager: self.subscriptionManager)
             }) {
                 Text("Learn more...")
                     .font(.headline)
