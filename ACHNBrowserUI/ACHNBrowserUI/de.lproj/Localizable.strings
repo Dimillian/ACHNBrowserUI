@@ -209,6 +209,8 @@ Du kannst das Abonnement jederzeit in deinen iTunes Kontoeinstellungen beenden. 
 "From" = "Von";
 "Set" = "Set";
 "Similar" = "Ähnliche";
+// ItemRowView
+"unknown source" = "Herkunft unbekannt";
 // ItemDetailInfoView
 "Rarity:" = "Seltenheit:";
 "Shadow size:" = "Schatten Größe:";
