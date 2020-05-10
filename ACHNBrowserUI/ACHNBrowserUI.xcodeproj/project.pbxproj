@@ -97,6 +97,7 @@
 		02F2D4472455D81C009741DA /* simple-orange@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 02F2D3F72455D81C009741DA /* simple-orange@3x.png */; };
 		02F2D4482455D81C009741DA /* simple-mint@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 02F2D3F82455D81C009741DA /* simple-mint@3x.png */; };
 		325C0945246054AF0043B6A7 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 325C0943246053E10043B6A7 /* SwiftUI.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		3DB1260024686F0800E74AA5 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3DB1260224686F0800E74AA5 /* InfoPlist.strings */; };
 		3DF14B2B24664B2600438646 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3DF14B2D24664B2600438646 /* Localizable.strings */; };
 		4C2D676B245DA41E005831C4 /* TurnipsChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C2D676A245DA41E005831C4 /* TurnipsChartView.swift */; };
 		4C2D676E245F0666005831C4 /* TurnipsChartBottomLegendView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C2D676D245F0666005831C4 /* TurnipsChartBottomLegendView.swift */; };
@@ -350,6 +351,7 @@
 		02F2D3F72455D81C009741DA /* simple-orange@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "simple-orange@3x.png"; sourceTree = "<group>"; };
 		02F2D3F82455D81C009741DA /* simple-mint@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "simple-mint@3x.png"; sourceTree = "<group>"; };
 		325C0943246053E10043B6A7 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/System/Library/Frameworks/SwiftUI.framework; sourceTree = DEVELOPER_DIR; };
+		3DB1260324686F0B00E74AA5 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		3DF14B2C24664B2600438646 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		3DF14B2E24664B4A00438646 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
 		4C2D676A245DA41E005831C4 /* TurnipsChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TurnipsChartView.swift; sourceTree = "<group>"; };
@@ -815,6 +817,7 @@
 				69AF8C5E243E2841001DD9CB /* Info.plist */,
 				69AF8C58243E2841001DD9CB /* Preview Content */,
 				3DF14B2D24664B2600438646 /* Localizable.strings */,
+				3DB1260224686F0800E74AA5 /* InfoPlist.strings */,
 			);
 			path = ACHNBrowserUI;
 			sourceTree = "<group>";
@@ -1223,6 +1226,7 @@
 				02F2D43D2455D81C009741DA /* simple-cocoa@3x.png in Resources */,
 				02F2D4342455D81C009741DA /* bookmark-cocoa@3x.png in Resources */,
 				69CFCAA2245AAF520059C067 /* accessories in Resources */,
+				3DB1260024686F0800E74AA5 /* InfoPlist.strings in Resources */,
 				69CFCAA4245AAF520059C067 /* nookmiles in Resources */,
 				69CFCAB6245AAF520059C067 /* bottoms in Resources */,
 				69CFCAA8245AAF520059C067 /* fossils in Resources */,
@@ -1390,6 +1394,14 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		3DB1260224686F0800E74AA5 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3DB1260324686F0B00E74AA5 /* de */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
 		3DF14B2D24664B2600438646 /* Localizable.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
