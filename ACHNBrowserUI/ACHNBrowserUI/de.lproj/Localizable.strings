@@ -6,8 +6,6 @@
   Copyright © 2020 Thomas Ricouard. All rights reserved.
 */
 
-"Make an Offer" = "Angebot abgeben";
-"Need Materials" = "Need Materials";
 "Tap here to preview a notification" = "Tippe hier für eine Vorschau";
 "Upgrade to +" = "Upgrade auf +";
 "You're subscribed to AC Helper+" = "You're subscribed to AC Helper+";
@@ -286,6 +284,47 @@ Du kannst das Abonnement jederzeit in deinen iTunes Kontoeinstellungen beenden. 
 "Catch phrase" = "Schlagwort";
 "Unknown" = "Unbekannt";
 "Villager items" = "Gegenstände des Bewohners";
+
+// ListingRow
+"Make an Offer" = "Angebot abgeben";
+"Need Materials" = "Benötigt Materialien";
+"No Raiting" = "Keine Bewertungen";
+"Raiting" = "Bewertung";
+
+// CategoryRow
+"housewares" = "Haushaltswaren";
+"miscellaneous" = "Sonstiges";
+"wall-mounted" = "Wand Dekoration";
+"wallpapers" = "Tapeten";
+"floors" = "Fußböden";
+"rugs" = "Teppiche";
+"photos" = "Fotos";
+"posters" = "Poster";
+"fencing" = "Zäune";
+"tools" = "Werkzeuge";
+"tops" = "Oberteile";
+"bottoms" = "Unterteile";
+"dresses" = "Kleider";
+"headwear" = "Kopfbedeckungen";
+"accessories" = "Accessoires";
+"socks" = "Socken";
+"shoes" = "Schuhe";
+"bags" = "Taschen";
+"umbrellas" = "Regenschirme";
+"music" = "Musik";
+"recipes" = "Anleitungen";
+"construction" = "Bau";
+"nookmiles" = "Nook Miles";
+"other" = "Anderes";
+"art" = "Kunst";
+"bugs" = "Insekten";
+"fish" = "Fische";
+"fossils" = "Fossilien";
+// CategoriesView
+"Nature" = "Natur";
+"Wardrobe" = "Kleidung";
+"No results for %@" = "Kein Ergebnis für %@";
+
 
 // Shared
 // SearchField

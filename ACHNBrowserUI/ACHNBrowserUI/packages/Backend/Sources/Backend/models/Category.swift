@@ -17,17 +17,8 @@ public enum Category: String, CaseIterable {
     case umbrellas, music, recipes, construction, nookmiles, other
     case art, bugs, fish, fossils
     
-    public func label() -> String {
-        switch self {
-        case .fish:
-            return "Fishes"
-        case .wallMounted:
-            return "Wall mounted"
-        case .nookmiles:
-            return "Nook Miles"
-        default:
-            return self.rawValue.capitalized
-        }
+    public func label() -> LocalizedStringKey {
+        return LocalizedStringKey(self.rawValue)
     }
     
     public func iconName() -> String {
