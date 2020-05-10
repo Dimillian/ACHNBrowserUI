@@ -13,6 +13,7 @@ struct CategoriesView: View {
     // MARK: - Vars
     let categories: [Backend.Category]
     
+    @EnvironmentObject var items: Items
     @ObservedObject var viewModel = CategoriesSearchViewModel()
     @State var isLoadingData = false
 
@@ -29,8 +30,12 @@ struct CategoriesView: View {
             List {
                 Section(header: SearchField(searchText: $viewModel.searchText)) {
                         if viewModel.searchText.isEmpty {
-                            makeNatureCell()
-                            makeWardrobeCell()
+                            makeSubCategories(name: "Nature",
+                                              icon: Backend.Category.fossils.iconName(),
+                                              categories: Backend.Category.nature())
+                            makeSubCategories(name: "Wardrobe",
+                                              icon: Backend.Category.dresses.iconName(),
+                                              categories: Backend.Category.wardrobe())
                             makeCategories()
                         } else {
                             if viewModel.isLoadingData {
@@ -57,41 +62,29 @@ struct CategoriesView: View {
 
 // MARK: - Views
 extension CategoriesView {
-    func makeCategories() -> some View {
+    private func makeCategories() -> some View {
         ForEach(categories, id: \.self) { categorie in
             CategoryRowView(category: categorie)
         }
     }
     
-    func makeWardrobeCell() -> some View {
-        NavigationLink(destination: CategoryDetailView(categories: Category.wardrobe())
-            .navigationBarTitle("Wardrobe")) {
+    private func makeSubCategories(name: String, icon: String, categories: [Backend.Category]) -> some View {
+        NavigationLink(destination: CategoryDetailView(categories: categories)
+            .navigationBarTitle(name)) {
                 HStack {
-                    Image(Category.dresses.iconName())
+                    Image(icon)
                         .renderingMode(.original)
                         .resizable()
                         .frame(width: 46, height: 46)
-                    Text("Wardrobe")
-                        .font(.headline)
-                        .foregroundColor(.acText)
+                    Text(name)
+                        .style(appStyle: .rowTitle)
+                    Spacer()
+                    Text("\(items.itemsCount(for: categories))")
+                        .style(appStyle: .rowDescription)
                 }
         }
     }
-    
-    func makeNatureCell() -> some View {
-        NavigationLink(destination: CategoryDetailView(categories: Category.nature())
-            .navigationBarTitle("Nature")) {
-                HStack {
-                    Image(Category.fossils.iconName())
-                        .renderingMode(.original)
-                        .resizable()
-                        .frame(width: 46, height: 46)
-                    Text("Nature")
-                        .font(.headline)
-                        .foregroundColor(.acText)
-                }
-        }
-    }
+
     private func searchSection(category: Backend.Category, items: [Item]) -> some View {
         Section(header: CategoryHeaderView(category: category)) {
             ForEach(items, content: self.searchItemRow)

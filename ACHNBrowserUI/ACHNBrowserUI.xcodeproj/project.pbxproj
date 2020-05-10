@@ -140,6 +140,7 @@
 		6951837524599C26005D28E0 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6951837424599C26005D28E0 /* StoreKit.framework */; };
 		695D45F92467025000B5C313 /* villagersHouse in Resources */ = {isa = PBXBuildFile; fileRef = 695D45F82467025000B5C313 /* villagersHouse */; };
 		695D45FB24671B1800B5C313 /* VillagerDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 695D45FA24671B1800B5C313 /* VillagerDetailViewModel.swift */; };
+		695D45FD2467F26E00B5C313 /* furnitures in Resources */ = {isa = PBXBuildFile; fileRef = 695D45FC2467F26E00B5C313 /* furnitures */; };
 		697E63F52449A58E008FB710 /* VillagersListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 697E63F42449A58E008FB710 /* VillagersListView.swift */; };
 		697E63F72449A7BA008FB710 /* VillagersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 697E63F62449A7BA008FB710 /* VillagersViewModel.swift */; };
 		697E63F92449DADE008FB710 /* VillagerRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 697E63F82449DADE008FB710 /* VillagerRowView.swift */; };
@@ -185,13 +186,9 @@
 		69CFCAA4245AAF520059C067 /* nookmiles in Resources */ = {isa = PBXBuildFile; fileRef = 69CFCA87245AAF520059C067 /* nookmiles */; };
 		69CFCAA5245AAF520059C067 /* tops in Resources */ = {isa = PBXBuildFile; fileRef = 69CFCA88245AAF520059C067 /* tops */; };
 		69CFCAA6245AAF520059C067 /* posters in Resources */ = {isa = PBXBuildFile; fileRef = 69CFCA89245AAF520059C067 /* posters */; };
-		69CFCAA7245AAF520059C067 /* art in Resources */ = {isa = PBXBuildFile; fileRef = 69CFCA8A245AAF520059C067 /* art */; };
 		69CFCAA8245AAF520059C067 /* fossils in Resources */ = {isa = PBXBuildFile; fileRef = 69CFCA8B245AAF520059C067 /* fossils */; };
-		69CFCAA9245AAF520059C067 /* wall-mounted in Resources */ = {isa = PBXBuildFile; fileRef = 69CFCA8C245AAF520059C067 /* wall-mounted */; };
 		69CFCAAA245AAF520059C067 /* other in Resources */ = {isa = PBXBuildFile; fileRef = 69CFCA8D245AAF520059C067 /* other */; };
 		69CFCAAB245AAF520059C067 /* bugs in Resources */ = {isa = PBXBuildFile; fileRef = 69CFCA8E245AAF520059C067 /* bugs */; };
-		69CFCAAC245AAF520059C067 /* miscellaneous in Resources */ = {isa = PBXBuildFile; fileRef = 69CFCA8F245AAF520059C067 /* miscellaneous */; };
-		69CFCAAD245AAF520059C067 /* housewares in Resources */ = {isa = PBXBuildFile; fileRef = 69CFCA90245AAF520059C067 /* housewares */; };
 		69CFCAAE245AAF520059C067 /* dresses in Resources */ = {isa = PBXBuildFile; fileRef = 69CFCA91245AAF520059C067 /* dresses */; };
 		69CFCAAF245AAF520059C067 /* wallpapers in Resources */ = {isa = PBXBuildFile; fileRef = 69CFCA92245AAF520059C067 /* wallpapers */; };
 		69CFCAB0245AAF520059C067 /* recipes in Resources */ = {isa = PBXBuildFile; fileRef = 69CFCA93245AAF520059C067 /* recipes */; };
@@ -221,13 +218,9 @@
 		69CFCAE5245ADDA80059C067 /* nookmiles in Resources */ = {isa = PBXBuildFile; fileRef = 69CFCA87245AAF520059C067 /* nookmiles */; };
 		69CFCAE6245ADDA80059C067 /* tops in Resources */ = {isa = PBXBuildFile; fileRef = 69CFCA88245AAF520059C067 /* tops */; };
 		69CFCAE7245ADDA80059C067 /* posters in Resources */ = {isa = PBXBuildFile; fileRef = 69CFCA89245AAF520059C067 /* posters */; };
-		69CFCAE8245ADDA80059C067 /* art in Resources */ = {isa = PBXBuildFile; fileRef = 69CFCA8A245AAF520059C067 /* art */; };
 		69CFCAE9245ADDA80059C067 /* fossils in Resources */ = {isa = PBXBuildFile; fileRef = 69CFCA8B245AAF520059C067 /* fossils */; };
-		69CFCAEA245ADDA80059C067 /* wall-mounted in Resources */ = {isa = PBXBuildFile; fileRef = 69CFCA8C245AAF520059C067 /* wall-mounted */; };
 		69CFCAEB245ADDA80059C067 /* other in Resources */ = {isa = PBXBuildFile; fileRef = 69CFCA8D245AAF520059C067 /* other */; };
 		69CFCAEC245ADDA80059C067 /* bugs in Resources */ = {isa = PBXBuildFile; fileRef = 69CFCA8E245AAF520059C067 /* bugs */; };
-		69CFCAED245ADDA80059C067 /* miscellaneous in Resources */ = {isa = PBXBuildFile; fileRef = 69CFCA8F245AAF520059C067 /* miscellaneous */; };
-		69CFCAEE245ADDA80059C067 /* housewares in Resources */ = {isa = PBXBuildFile; fileRef = 69CFCA90245AAF520059C067 /* housewares */; };
 		69CFCAEF245ADDA80059C067 /* dresses in Resources */ = {isa = PBXBuildFile; fileRef = 69CFCA91245AAF520059C067 /* dresses */; };
 		69CFCAF0245ADDA80059C067 /* wallpapers in Resources */ = {isa = PBXBuildFile; fileRef = 69CFCA92245AAF520059C067 /* wallpapers */; };
 		69CFCAF1245ADDA80059C067 /* recipes in Resources */ = {isa = PBXBuildFile; fileRef = 69CFCA93245AAF520059C067 /* recipes */; };
@@ -399,6 +392,7 @@
 		6951837424599C26005D28E0 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		695D45F82467025000B5C313 /* villagersHouse */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = villagersHouse; sourceTree = "<group>"; };
 		695D45FA24671B1800B5C313 /* VillagerDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VillagerDetailViewModel.swift; sourceTree = "<group>"; };
+		695D45FC2467F26E00B5C313 /* furnitures */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = furnitures; sourceTree = "<group>"; };
 		697E63F42449A58E008FB710 /* VillagersListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VillagersListView.swift; sourceTree = "<group>"; };
 		697E63F62449A7BA008FB710 /* VillagersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VillagersViewModel.swift; sourceTree = "<group>"; };
 		697E63F82449DADE008FB710 /* VillagerRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VillagerRowView.swift; sourceTree = "<group>"; };
@@ -445,13 +439,9 @@
 		69CFCA87245AAF520059C067 /* nookmiles */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = nookmiles; sourceTree = "<group>"; };
 		69CFCA88245AAF520059C067 /* tops */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = tops; sourceTree = "<group>"; };
 		69CFCA89245AAF520059C067 /* posters */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = posters; sourceTree = "<group>"; };
-		69CFCA8A245AAF520059C067 /* art */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = art; sourceTree = "<group>"; };
 		69CFCA8B245AAF520059C067 /* fossils */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = fossils; sourceTree = "<group>"; };
-		69CFCA8C245AAF520059C067 /* wall-mounted */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "wall-mounted"; sourceTree = "<group>"; };
 		69CFCA8D245AAF520059C067 /* other */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = other; sourceTree = "<group>"; };
 		69CFCA8E245AAF520059C067 /* bugs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = bugs; sourceTree = "<group>"; };
-		69CFCA8F245AAF520059C067 /* miscellaneous */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = miscellaneous; sourceTree = "<group>"; };
-		69CFCA90245AAF520059C067 /* housewares */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = housewares; sourceTree = "<group>"; };
 		69CFCA91245AAF520059C067 /* dresses */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dresses; sourceTree = "<group>"; };
 		69CFCA92245AAF520059C067 /* wallpapers */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = wallpapers; sourceTree = "<group>"; };
 		69CFCA93245AAF520059C067 /* recipes */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = recipes; sourceTree = "<group>"; };
@@ -965,6 +955,7 @@
 		69CFCA82245AAF520059C067 /* json */ = {
 			isa = PBXGroup;
 			children = (
+				695D45FC2467F26E00B5C313 /* furnitures */,
 				695D45F82467025000B5C313 /* villagersHouse */,
 				69CFCA83245AAF520059C067 /* headwear */,
 				69CFCA84245AAF520059C067 /* music */,
@@ -973,13 +964,9 @@
 				69CFCA87245AAF520059C067 /* nookmiles */,
 				69CFCA88245AAF520059C067 /* tops */,
 				69CFCA89245AAF520059C067 /* posters */,
-				69CFCA8A245AAF520059C067 /* art */,
 				69CFCA8B245AAF520059C067 /* fossils */,
-				69CFCA8C245AAF520059C067 /* wall-mounted */,
 				69CFCA8D245AAF520059C067 /* other */,
 				69CFCA8E245AAF520059C067 /* bugs */,
-				69CFCA8F245AAF520059C067 /* miscellaneous */,
-				69CFCA90245AAF520059C067 /* housewares */,
 				69CFCA91245AAF520059C067 /* dresses */,
 				69CFCA92245AAF520059C067 /* wallpapers */,
 				69CFCA93245AAF520059C067 /* recipes */,
@@ -1172,7 +1159,6 @@
 				69CFCAAE245AAF520059C067 /* dresses in Resources */,
 				02F2D4052455D81C009741DA /* round-alt-sky@2x.png in Resources */,
 				02F2D41D2455D81C009741DA /* bookmark-lime@2x.png in Resources */,
-				69CFCAAD245AAF520059C067 /* housewares in Resources */,
 				02F2D3FE2455D81C009741DA /* round-alt-cocoa@2x.png in Resources */,
 				02F2D4482455D81C009741DA /* simple-mint@3x.png in Resources */,
 				02F2D4322455D81C009741DA /* round-alt-lime@3x.png in Resources */,
@@ -1201,10 +1187,10 @@
 				02F2D41C2455D81C009741DA /* simple-sky@2x.png in Resources */,
 				02F2D42D2455D81C009741DA /* bookmark-gold@3x.png in Resources */,
 				69CFCAA6245AAF520059C067 /* posters in Resources */,
-				69CFCAA7245AAF520059C067 /* art in Resources */,
 				02F2D4462455D81C009741DA /* round-alt-orange@3x.png in Resources */,
 				02F2D4402455D81C009741DA /* simple-pink@3x.png in Resources */,
 				69CFCABA245AAF520059C067 /* fish in Resources */,
+				695D45FD2467F26E00B5C313 /* furnitures in Resources */,
 				02F2D4002455D81C009741DA /* bookmark-cactus@2x.png in Resources */,
 				02F2D40A2455D81C009741DA /* round-gold@2x.png in Resources */,
 				02F2D4192455D81C009741DA /* bookmark-orange@2x.png in Resources */,
@@ -1229,7 +1215,6 @@
 				02F2D3FC2455D81C009741DA /* round-orange@2x.png in Resources */,
 				02F2D41B2455D81C009741DA /* round-cactus@2x.png in Resources */,
 				02F2D43D2455D81C009741DA /* simple-cocoa@3x.png in Resources */,
-				69CFCAA9245AAF520059C067 /* wall-mounted in Resources */,
 				02F2D4342455D81C009741DA /* bookmark-cocoa@3x.png in Resources */,
 				69CFCAA2245AAF520059C067 /* accessories in Resources */,
 				69CFCAA4245AAF520059C067 /* nookmiles in Resources */,
@@ -1241,7 +1226,6 @@
 				02F2D4112455D81C009741DA /* round-alt-blue@2x.png in Resources */,
 				02F2D40C2455D81C009741DA /* bookmark-sky@2x.png in Resources */,
 				02F2D4262455D81C009741DA /* bookmark-cactus@3x.png in Resources */,
-				69CFCAAC245AAF520059C067 /* miscellaneous in Resources */,
 				02F2D42F2455D81C009741DA /* bookmark-sky@3x.png in Resources */,
 				02F2D4182455D81C009741DA /* round-alt-orange@2x.png in Resources */,
 				02F2D4152455D81C009741DA /* round-alt-gold@2x.png in Resources */,
@@ -1263,7 +1247,6 @@
 			files = (
 				69CFCAE5245ADDA80059C067 /* nookmiles in Resources */,
 				69CFCAF2245ADDA80059C067 /* fencing in Resources */,
-				69CFCAED245ADDA80059C067 /* miscellaneous in Resources */,
 				69CFCAE2245ADDA80059C067 /* music in Resources */,
 				69CFCAE6245ADDA80059C067 /* tops in Resources */,
 				69CFCAEB245ADDA80059C067 /* other in Resources */,
@@ -1275,13 +1258,11 @@
 				69CFCAEF245ADDA80059C067 /* dresses in Resources */,
 				69CFCAF9245ADDA80059C067 /* photos in Resources */,
 				69CFCAF1245ADDA80059C067 /* recipes in Resources */,
-				69CFCAEE245ADDA80059C067 /* housewares in Resources */,
 				69CFCAF8245ADDA80059C067 /* bags in Resources */,
 				69CFCAE7245ADDA80059C067 /* posters in Resources */,
 				69CFCAF6245ADDA80059C067 /* floors in Resources */,
 				69CFCAE9245ADDA80059C067 /* fossils in Resources */,
 				69CFCAF3245ADDA80059C067 /* umbrellas in Resources */,
-				69CFCAE8245ADDA80059C067 /* art in Resources */,
 				69CFCAFC245ADDA80059C067 /* rugs in Resources */,
 				69CFCAF0245ADDA80059C067 /* wallpapers in Resources */,
 				69CFCAFB245ADDA80059C067 /* fish in Resources */,
@@ -1289,7 +1270,6 @@
 				69CFCAD0245ADC7A0059C067 /* Preview Assets.xcassets in Resources */,
 				69CFCAE0245ADDA20059C067 /* turnips.js in Resources */,
 				69CFCAE3245ADDA80059C067 /* accessories in Resources */,
-				69CFCAEA245ADDA80059C067 /* wall-mounted in Resources */,
 				69CFCAE4245ADDA80059C067 /* tools in Resources */,
 				69CFCACD245ADC7A0059C067 /* Assets.xcassets in Resources */,
 				69CFCAF4245ADDA80059C067 /* construction in Resources */,

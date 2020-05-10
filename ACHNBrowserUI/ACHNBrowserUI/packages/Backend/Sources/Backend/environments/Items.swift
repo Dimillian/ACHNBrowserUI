@@ -19,14 +19,25 @@ public class Items: ObservableObject {
         
     init() {
         for category in Category.allCases {
-            _ = NookPlazaAPIService
-                .fetch(endpoint: category)
-                .replaceError(with: ItemResponse(total: 0, results: []))
-                .eraseToAnyPublisher()
-                .map{ $0.results }
-                .subscribe(on: DispatchQueue.global())
-                .receive(on: DispatchQueue.main)
-                .sink(receiveValue: { [weak self] items in self?.categories[category] = items })
+            if Category.furnitures().contains(category) {
+                _ = NookPlazaAPIService
+                    .fetchFile(name: "furnitures")
+                    .replaceError(with: NewItemResponse(total: 0, results: []))
+                    .eraseToAnyPublisher()
+                    .map{ $0.results.filter{ $0.content.appCategory == category }.map{ $0.content }}
+                    .subscribe(on: DispatchQueue.global())
+                    .receive(on: DispatchQueue.main)
+                    .sink(receiveValue: { [weak self] items in self?.categories[category] = items })
+            } else {
+                _ = NookPlazaAPIService
+                    .fetch(endpoint: category)
+                    .replaceError(with: ItemResponse(total: 0, results: []))
+                    .eraseToAnyPublisher()
+                    .map{ $0.results }
+                    .subscribe(on: DispatchQueue.global())
+                    .receive(on: DispatchQueue.main)
+                    .sink(receiveValue: { [weak self] items in self?.categories[category] = items })
+            }
         }
         _ = NookPlazaAPIService
             .fetchVillagerHouse()
@@ -36,6 +47,16 @@ public class Items: ObservableObject {
             .subscribe(on: DispatchQueue.global())
             .receive(on: DispatchQueue.main)
             .sink(receiveValue: { [weak self] items in self?.villagersHouse = items })
+    }
+    
+    public func itemsCount(for categories: [Backend.Category]) -> Int {
+        var count = 0
+        for (_, value) in self.categories.enumerated() {
+            if categories.contains(value.key) {
+                count += value.value.count
+            }
+        }
+        return count
     }
     
     public func matchVillagerItems(villager: String) -> AnyPublisher<[Item]?, Never> {
@@ -62,7 +83,7 @@ public class Items: ObservableObject {
                 
                 let items = Items.shared.categories
                     .mapValues({ $0 })
-                    .filter { !$0.value.isEmpty && Category.furnitures().contains($0.key) }
+                    .filter { !$0.value.isEmpty && Category.villagerFurnitures().contains($0.key) }
                     .compactMap{ $1 }
                     .flatMap{ Array(Set($0)) }
                 var results: [Item] = []

@@ -37,8 +37,8 @@ struct ItemDetailInfoView: View {
                 }
                 Spacer()
             }
-            if item.obtainedFrom != nil {
-                Text(item.obtainedFrom!)
+            if item.obtainedFrom != nil || item.obtainedFrom?.isEmpty == false {
+                Text(item.obtainedFrom ?? item.obtainedFromNew?.first ?? "")
                     .foregroundColor(.acSecondaryText)
             }
             if item.isCritter {
