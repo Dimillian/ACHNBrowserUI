@@ -30,7 +30,7 @@ struct VillagersListView: View {
                                             placeholder: "Search a villager"))
                 {
                     ForEach(currentVillagers) { villager in
-                        NavigationLink(destination: NavigationLazyView(VillagerDetailView(villager: villager))) {
+                        NavigationLink(destination: VillagerDetailView(villager: villager)) {
                             VillagerRowView(villager: villager)
                         }
                     }
