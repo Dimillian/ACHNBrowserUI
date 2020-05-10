@@ -27,7 +27,7 @@ struct TodayTurnipSection: View {
                 Group {
                     if isSunday {
                         Text("Today is sunday, don't forget to buy more turnips and fill your buy price.")
-                    } else if predictions?.todayAverages == nil || predictions?.todayAverages?.isEmpty == false {
+                    } else if predictions?.todayAverages == nil || predictions?.todayAverages?.isEmpty == true {
                         Text("Your turnips predictions will be displayed here once you fill in some prices.")
                     }  else {
                         Text("Today's average price should be around ")
