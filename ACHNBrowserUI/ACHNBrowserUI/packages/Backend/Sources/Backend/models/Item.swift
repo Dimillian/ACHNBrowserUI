@@ -55,6 +55,7 @@ public struct Item: Codable, Equatable, Identifiable, Hashable {
     
     public let obtainedFrom: String?
     public let obtainedFromNew: [String]?
+    public let sourceNote: String?
     public let dIY: Bool?
     public let customize: Bool?
     
@@ -69,6 +70,8 @@ public struct Item: Codable, Equatable, Identifiable, Hashable {
             return .bugs
         } else if category == "Nook Miles" {
             return .nookmiles
+        } else if category == "Dress-Up" {
+            return .dressup
         }
         return Category(rawValue: category.lowercased())!
     }
@@ -157,6 +160,7 @@ public let static_item = Item(name: "Acoustic guitar",
                        itemImage: nil,
                        obtainedFrom: "Crafting",
                        obtainedFromNew: ["Crafting"],
+                       sourceNote: "From somewhere",
                        dIY: true,
                        customize: true,
                        variants: nil,
