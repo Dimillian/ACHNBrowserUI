@@ -10,8 +10,8 @@ import Foundation
 import SwiftUI
 import Purchases
 
-public class SubcriptionManager: ObservableObject {
-    public static let shared = SubcriptionManager()
+public class SubscriptionManager: ObservableObject {
+    public static let shared = SubscriptionManager()
     
     public enum SubscriptionStatus {
         case subscribed, notSubscribed
@@ -30,9 +30,10 @@ public class SubcriptionManager: ObservableObject {
         refreshSubscription()
     }
     
-    public func puschase(product: Purchases.Package) {
+    public func purchase(source: String, product: Purchases.Package) {
         guard !inPaymentProgress else { return }
         inPaymentProgress = true
+        Purchases.shared.setAttributes(["source": source])
         Purchases.shared.purchasePackage(product) { (_, info, _, _) in
             self.processInfo(info: info)
         }

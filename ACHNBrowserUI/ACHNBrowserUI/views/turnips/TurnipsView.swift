@@ -30,7 +30,7 @@ struct TurnipsView: View {
         }
     }
     
-    @EnvironmentObject private var subManager: SubcriptionManager
+    @EnvironmentObject private var subManager: SubscriptionManager
     @ObservedObject private var viewModel = TurnipsViewModel()
     @State private var presentedSheet: Sheet.SheetType?
     @State private var turnipsDisplay: TurnipsDisplay = .minMax
@@ -51,7 +51,7 @@ struct TurnipsView: View {
                 if UIDevice.current.userInterfaceIdiom != .pad ||
                     (UIDevice.current.orientation == .portrait ||
                         UIDevice.current.orientation == .portraitUpsideDown){
-                    Section(header: SectionHeaderView(text: "Your prices")) {
+                    Section(header: SectionHeaderView(text: "Your prices", icon: "pencil")) {
                         Button(action: {
                             self.presentedSheet = .turnipsForm(subManager: self.subManager)
                         }) {
@@ -101,10 +101,10 @@ extension TurnipsView {
     }
     
     private var subscriptionSection: some View {
-        Section(header: SectionHeaderView(text: "AC Helper+")) {
+        Section(header: SectionHeaderView(text: "AC Helper+", icon: "heart.fill")) {
             VStack(spacing: 8) {
                 Button(action: {
-                    self.presentedSheet = .subscription(subManager: self.subManager)
+                    self.presentedSheet = .subscription(source: .turnip, subManager: self.subManager)
                 }) {
                     Text("To help us support the application and get turnip predictions notification, you can try out AC Helper+")
                         .foregroundColor(.acSecondaryText)
@@ -113,9 +113,9 @@ extension TurnipsView {
                         .padding(.top, 8)
                 }
                 Button(action: {
-                    self.presentedSheet = .subscription(subManager: self.subManager)
+                    self.presentedSheet = .subscription(source: .turnip, subManager: self.subManager)
                 }) {
-                    Text("See more...")
+                    Text("Learn more...")
                         .font(.headline)
                         .fontWeight(.bold)
                         .foregroundColor(.white)
@@ -127,19 +127,16 @@ extension TurnipsView {
     }
     
     private var predictionsSection: some View {
-        Section(header: SectionHeaderView(text: turnipsDisplay.title()),
+        Section(header: SectionHeaderView(text: turnipsDisplay.title(), icon: "dollarsign.circle.fill"),
                 footer: Text(viewModel.pendingNotifications == 0 ? "" :
-                    """
-                    You'll receive prices predictions in \(viewModel.pendingNotifications - 1) upcoming
-                    daily notifications.
-                    """)
+                    "\(viewModel.pendingNotifications - 1) upcomingDailyNotifications")
                     .font(.footnote)
                     .foregroundColor(.catalogUnselected)
                     .lineLimit(nil)) {
             if viewModel.averagesPrices != nil && viewModel.minMaxPrices != nil {
                 Picker(selection: $turnipsDisplay, label: Text("")) {
                     ForEach(TurnipsDisplay.allCases, id: \.self) { section in
-                        Text(section.rawValue.capitalized)
+                        Text(LocalizedStringKey(section.rawValue.capitalized))
                     }
                 }
                 .pickerStyle(SegmentedPickerStyle())
@@ -207,19 +204,17 @@ extension TurnipsView {
     }
     
     private var exchangeSection: some View {
-        Group {
+        Section(header: SectionHeaderView(text: "Turnip.Exchange", icon: "bitcoinsign.circle.fill")) {
             if viewModel.islands?.isEmpty == false {
-                Section(header: SectionHeaderView(text: "Exchange")) {
-                    viewModel.islands.map {
-                        ForEach($0) { island in
-                            NavigationLink(destination: IslandDetailView(island: island)) {
-                                TurnipIslandRow(island: island)
-                            }
+                viewModel.islands.map {
+                    ForEach($0) { island in
+                        NavigationLink(destination: IslandDetailView(island: island)) {
+                            TurnipIslandRow(island: island)
                         }
                     }
                 }
             } else {
-                EmptyView()
+                RowLoadingView(isLoading: .constant(true))
             }
         }
     }

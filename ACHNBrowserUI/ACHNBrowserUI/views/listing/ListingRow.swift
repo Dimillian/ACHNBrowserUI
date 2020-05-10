@@ -64,7 +64,7 @@ struct ListingRow: View {
                 }
             }
             if !hideDetail {
-                Text("\(listing.username)\(listing.discord.map { $0.isEmpty ? "" : " · \($0)" } ?? "")\(listing.rating.map { $0.isEmpty ? " · No Rating" : " · \($0[..<$0.index($0.startIndex, offsetBy: 4)]) Rating" } ?? " · No Rating")")
+                Text("\(listing.username)\(listing.discord.map { $0.isEmpty ? "" : " · \($0)" } ?? "")\(listing.rating.map { $0.isEmpty ? " · "+NSLocalizedString("No Rating", comment: "") : " · \($0[..<$0.index($0.startIndex, offsetBy: 4)]) "+NSLocalizedString("Rating", comment: "") } ?? " · "+NSLocalizedString("No Rating", comment: ""))")
                     .font(.subheadline)
                     .foregroundColor(.acSecondaryText)
             }

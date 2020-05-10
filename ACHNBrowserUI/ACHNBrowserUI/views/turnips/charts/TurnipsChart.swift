@@ -41,7 +41,7 @@ extension Array where Element == [Int] {
     private func minMaxAndRatios(
         rect: CGRect
     ) -> (min: CGFloat, max: CGFloat, ratioY: CGFloat, ratioX: CGFloat) {
-        let ratioX = rect.maxX/(CGFloat(self.count) - 1)
+        let ratioX = rect.maxX/(CGFloat(self.count - 1))
 
         let min: CGFloat = self
             .compactMap { $0.first }

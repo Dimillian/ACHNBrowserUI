@@ -14,27 +14,47 @@ public struct ItemResponse: Codable {
     let results: [Item]
 }
 
-public struct Item: Codable, Equatable, Identifiable {
+public struct NewItemResponse: Codable {
+    let total: Int
+    let results: [ItemWrapper]
+    
+    public struct ItemWrapper: Codable {
+        public let id: Int
+        public let name: String
+        public let content: Item
+    }
+}
+
+public struct Item: Codable, Equatable, Identifiable, Hashable {
     static public func ==(lhs: Item, rhs: Item) -> Bool {
         return lhs.id == rhs.id && lhs.category == rhs.category
     }
+    
+    public func hash(into hasher: inout Hasher) {
+        hasher.combine(name)
+        hasher.combine(category)
+    }
+    
     public var id: String { name }
     
     public let name: String
     public let image: String?
     public let filename: String?
     public let house: String?
-    
-    public var itemImage: String? {
+    public let itemImage: String?
+    public var finalImage: String? {
         if let filename = filename {
             return filename
         } else if let image = image, !image.hasPrefix("https://storage") {
             return image
+        } else if let itemImage = itemImage {
+            return itemImage
         }
         return nil
     }
     
     public let obtainedFrom: String?
+    public let obtainedFromNew: [String]?
     public let dIY: Bool?
     public let customize: Bool?
     
@@ -134,7 +154,9 @@ public let static_item = Item(name: "Acoustic guitar",
                        image: nil,
                        filename: "https://acnhcdn.com/latest/FtrIcon/FtrAcorsticguitar_Remake_0_0.png",
                        house: nil,
+                       itemImage: nil,
                        obtainedFrom: "Crafting",
+                       obtainedFromNew: ["Crafting"],
                        dIY: true,
                        customize: true,
                        variants: nil,

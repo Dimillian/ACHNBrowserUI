@@ -39,7 +39,7 @@ public struct ACNHApiService {
             .tryMap{ data, response in
                 return try APIError.processResponse(data: data, response: response)
         }
-        .decode(type: T.self, decoder: ACNHApiService.decoder)
+        .decode(type: T.self, decoder: Self.decoder)
         .mapError{ APIError.parseError(reason: $0.localizedDescription) }
         .eraseToAnyPublisher()
     }

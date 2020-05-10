@@ -16,23 +16,15 @@ class ItemsViewModel: ObservableObject {
     @Published var searchItems: [Item] = []
     @Published var searchText = ""
     
+    public let category: Backend.Category
+    
     private var itemCancellable: AnyCancellable?
     private var searchCancellable: AnyCancellable?
     
     enum Sort: String, CaseIterable {
-        case name, buy, sell, from, set, similar
+        case name, buy, sell, set, similar
     }
-    
-    var category: Backend.Category {
-        didSet {
-            sort = nil
-            itemCancellable = Items.shared.$categories.sink { [weak self] items in
-                guard let self = self else { return }
-                self.items = items[self.category] ?? []
-            }
-        }
-    }
-    
+        
     var sort: Sort? {
         didSet {
             guard let sort = sort else { return }
@@ -46,9 +38,6 @@ class ItemsViewModel: ObservableObject {
             case .sell:
                 let compare: (Int, Int) -> Bool = sort == oldValue ? (<) : (>)
                 sortedItems = items.filter{ $0.sell != nil}.sorted{ compare($0.sell!, $1.sell!) }
-            case .from:
-                let compare: (String, String) -> Bool = sort == oldValue ? (<) : (>)
-                sortedItems = items.filter{ $0.obtainedFrom != nil}.sorted{ compare($0.obtainedFrom!, $1.obtainedFrom!) }
             case .set:
                 let compare: (String, String) -> Bool = sort == oldValue ? (<) : (>)
                 sortedItems = items.filter{ $0.set != nil}.sorted{ compare($0.set!, $1.set!) }
@@ -73,7 +62,7 @@ class ItemsViewModel: ObservableObject {
 
         itemCancellable = Items.shared.$categories
             .sink { [weak self] in
-            self?.items = $0[category] ?? []
+            self?.items = $0[category]?.sorted{ $0.name < $1.name } ?? []
         }
     }
 

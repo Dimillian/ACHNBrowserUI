@@ -15,11 +15,11 @@ struct AboutView: View {
     @State private var selectedSheet: Sheet.SheetType?
     
     private var versionNumber: String {
-        Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? "Error"
+        Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? NSLocalizedString("Error", comment: "")
     }
     
     private var buildNumber: String {
-        Bundle.main.infoDictionary?["CFBundleVersion"] as? String ?? "Error"
+        Bundle.main.infoDictionary?["CFBundleVersion"] as? String ?? NSLocalizedString("Error", comment: "")
     }
     
     private var dismissButton: some View {
@@ -41,7 +41,7 @@ struct AboutView: View {
                 .imageScale(.medium)
                 .foregroundColor(color)
                 .frame(width: 30)
-            Text(text)
+            Text(LocalizedStringKey(text))
                 .foregroundColor(.acText)
                 .font(.body)
             Spacer()
@@ -55,7 +55,7 @@ struct AboutView: View {
                 .imageScale(.medium)
                 .foregroundColor(color)
                 .frame(width: 30)
-            Text(text)
+            Text(LocalizedStringKey(text))
                 .foregroundColor(.acText)
                 .font(.body)
             Spacer()
@@ -77,7 +77,7 @@ struct AboutView: View {
                     makeRow(image: "star.fill",
                             text: "Rate the app on the App Store", color: .acHeaderBackground)
                         .onTapGesture {
-                            UIApplication.shared.open(URL(string: "https://itunes.apple.com/app/id1508764244")!,
+                            UIApplication.shared.open(URL(string: "itms-apps://itunes.apple.com/app/1508764244?action=write-review")!,
                                                       options: [:],
                                                       completionHandler: nil)
                     }

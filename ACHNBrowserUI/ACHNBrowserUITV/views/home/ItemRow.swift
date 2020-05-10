@@ -16,7 +16,7 @@ struct ItemRow: View {
     
     var body: some View {
         VStack {
-            ItemImage(path: item.itemImage, size: 150)
+            ItemImage(path: item.finalImage, size: 150)
             Text(item.name)
         }
         .scaleEffect(focused ? 1.2 : 1.0)

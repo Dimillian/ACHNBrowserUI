@@ -11,22 +11,28 @@ import Backend
 
 struct TurnipsChartVerticalLegend: View {
     let predictions: TurnipPredictions
-
     var body: some View {
-        GeometryReader(content: texts)
+        GeometryReader(content: computeTexts)
     }
 
-    func texts(geometry: GeometryProxy) -> some View {
+    func computeTexts(geometry: GeometryProxy) -> some View {
         let frame = geometry.frame(in: .local)
         let (minY, maxY, ratioY, _) = predictions.minMax?.roundedMinMaxAndRatios(rect: frame) ?? (0, 0, 0, 0)
 
-        return ZStack {
-            ForEach(Array(stride(from: Int(minY), to: Int(maxY), by: TurnipsChart.steps)), id: \.self) { value in
+        let min = Int(minY)
+        let max = Int(maxY) + TurnipsChart.steps
+        let values = Array(stride(from: min, to: max, by: TurnipsChart.steps))
+        return texts(values: values, ratioY: ratioY)
+    }
+
+    func texts(values: [Int], ratioY: CGFloat) -> some View {
+        ZStack(alignment: .topTrailing) {
+            ForEach(values, id: \.self) { value in
                 Text("\(value)")
                     .font(.footnote)
                     .fontWeight(.semibold)
                     .foregroundColor(.acText)
-                    .position(x: frame.midX, y: (maxY - CGFloat(value)) * ratioY)
+                    .alignmentGuide(.top) { d in CGFloat(value) * ratioY }
             }
         }
     }

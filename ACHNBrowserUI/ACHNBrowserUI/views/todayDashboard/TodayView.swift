@@ -15,11 +15,11 @@ import UI
 struct TodayView: View {
     @EnvironmentObject private var uiState: UIState
     @EnvironmentObject private var collection: UserCollection
-    @EnvironmentObject private var subManager: SubcriptionManager
+    @EnvironmentObject private var subManager: SubscriptionManager
     @ObservedObject private var userDefaults = AppUserDefaults.shared
     @ObservedObject private var viewModel = DashboardViewModel()
     @ObservedObject private var villagersViewModel = VillagersViewModel()
-    @ObservedObject private var turnipsPredictionsService = TurnipsPredictionService.shared
+    @ObservedObject private var turnipsPredictionsService = TurnipPredictionsService.shared
     
     @State private var selectedSheet: Sheet.SheetType?
     @State private var showWhatsNew: Bool = false
@@ -35,7 +35,7 @@ struct TodayView: View {
                 
                 TodayEventsSection()
                 TodayCurrentlyAvailableSection(viewModel: viewModel)
-                TodayCollectionProgressSection(viewModel: viewModel)
+                TodayCollectionProgressSection(viewModel: viewModel, sheet: $selectedSheet)
                 TodayBirthdaysSection(villagers: villagersViewModel.todayBirthdays)
                 TodayTurnipSection(predictions: turnipsPredictionsService.predictions)
                     .onTapGesture {
@@ -100,7 +100,7 @@ struct TodayView: View {
     
     private func dateString() -> String {
         let f = DateFormatter()
-        f.dateFormat = "EEEE, MMM d"
+        f.setLocalizedDateFormatFromTemplate("EEEE, MMM d")
         return f.string(from: Date())
     }
 }

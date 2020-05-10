@@ -8,6 +8,7 @@
 
 import SwiftUI
 import Backend
+import UI
 
 struct VillagersListView: View {
     @ObservedObject var viewModel = VillagersViewModel()

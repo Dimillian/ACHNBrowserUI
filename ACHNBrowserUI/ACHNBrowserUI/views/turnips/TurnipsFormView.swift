@@ -11,11 +11,11 @@ import Backend
 
 struct TurnipsFormView: View {
     // MARK: - Properties
-    @EnvironmentObject private var subscriptionManager: SubcriptionManager
+    @EnvironmentObject private var subscriptionManager: SubscriptionManager
     @Environment(\.presentationMode) private var presentationMode
     
     @State private var fields = TurnipFields.decode()
-    @State private var enableNotifications = SubcriptionManager.shared.subscriptionStatus == .subscribed
+    @State private var enableNotifications = SubscriptionManager.shared.subscriptionStatus == .subscribed
     @State private var isSubscribePresented = false
 
     private let weekdays = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
@@ -41,7 +41,7 @@ struct TurnipsFormView: View {
         .modifier(AdaptsToSoftwareKeyboard())
         .navigationBarItems(trailing: saveButton)
         .navigationBarTitle("Add your turnip prices", displayMode: .inline)
-        .sheet(isPresented: $isSubscribePresented, content: { SubscribeView().environmentObject(self.subscriptionManager) })
+        .sheet(isPresented: $isSubscribePresented, content: { SubscribeView(source: .turnipForm).environmentObject(self.subscriptionManager) })
     }
 }
 
@@ -56,8 +56,8 @@ extension TurnipsFormView {
     
     private func save() {
         fields.save()
-        TurnipsPredictionService.shared.enableNotifications = enableNotifications
-        TurnipsPredictionService.shared.fields = fields
+        TurnipPredictionsService.shared.enableNotifications = enableNotifications
+        TurnipPredictionsService.shared.fields = fields
         presentationMode.wrappedValue.dismiss()
     }
     
@@ -126,7 +126,7 @@ extension TurnipsFormView {
     
     private func makeWeekdayRow(_ weekday: String) -> some View {
         HStack {
-            Text(weekday)
+            Text(LocalizedStringKey(weekday))
             Spacer(minLength: 40)
             TextField("AM", text: morningField(for: weekday))
                 .keyboardType(.numberPad)

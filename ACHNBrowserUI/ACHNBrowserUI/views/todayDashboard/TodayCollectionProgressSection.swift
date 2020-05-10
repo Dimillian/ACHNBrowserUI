@@ -14,7 +14,7 @@ import UI
 struct TodayCollectionProgressSection: View {
     @EnvironmentObject private var collection: UserCollection
     @ObservedObject var viewModel: DashboardViewModel
-    @State private var sheet: Sheet.SheetType?
+    @Binding var sheet: Sheet.SheetType?
     
     var barHeight: CGFloat = 12
     
@@ -38,6 +38,7 @@ struct TodayCollectionProgressSection: View {
                     .font(.system(.body, design: .rounded))
                     .foregroundColor(Color.acSecondaryText)
             }
+            shareButton.padding(.top, 12)
         }
         .animation(.default)
     }
@@ -83,8 +84,14 @@ struct TodayCollectionProgressSection: View {
     }
 
     private func generateAndShareImage() {
-        let image = generateBody().frame(width: 350, height: 650).asImage()
-        self.sheet = .share(content: [ItemDetailSource(name: "AC Helper+", image: image)])
+        let image = List {
+            body
+        }
+        .frame(width: 350, height: 270)
+        .listStyle(GroupedListStyle())
+        .environment(\.horizontalSizeClass, .regular)
+        .asImage()
+        self.sheet = .share(content: [ItemDetailSource(name: "My collection progress", image: image)])
     }
 }
 

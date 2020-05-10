@@ -27,18 +27,18 @@ struct ItemDetailInfoView: View {
             }
             HStack(alignment: .center) {
                 Spacer()
-                if item.itemImage == nil && displayedVariant == nil {
+                if item.finalImage == nil && displayedVariant == nil {
                     Image(item.appCategory.iconName())
                         .resizable()
                         .frame(width: 150, height: 150)
                 } else {
-                    ItemImage(path: displayedVariant?.filename ?? item.itemImage,
+                    ItemImage(path: displayedVariant?.filename ?? item.finalImage,
                               size: 150)
                 }
                 Spacer()
             }
-            if item.obtainedFrom != nil {
-                Text(item.obtainedFrom!)
+            if item.obtainedFrom != nil || item.obtainedFromNew?.isEmpty == false {
+                Text(item.obtainedFrom ?? item.obtainedFromNew?.first ?? "")
                     .foregroundColor(.acSecondaryText)
             }
             if item.isCritter {
@@ -60,7 +60,7 @@ struct ItemDetailInfoView: View {
                 }
             }
             if !item.isCritter {
-                Text("Customizable: \(item.customize == true ? "Yes" : "no")")
+                Text("Customizable: \(item.customize == true ? NSLocalizedString("Yes", comment: "") : NSLocalizedString("No", comment: ""))")
                     .foregroundColor(.acText)
             }
             HStack(spacing: 16) {
@@ -75,7 +75,7 @@ struct ItemDetailInfoView: View {
                             .fontWeight(.semibold)
                             .foregroundColor(.acHeaderBackground)
                         if item.isCritter {
-                            Text("Flick: ")
+                            Text("Flick:")
                                 .foregroundColor(.acText)
                                 .padding(.leading, 8)
                             Text("\(Int(Float(item.sell!) * 1.5))")
