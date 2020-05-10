@@ -11,8 +11,29 @@ import SwiftUI
 
 class UIState: ObservableObject {
     enum Tab: Int {
-        case dashboard, items, villagers, collection, turnips
+        case dashboard = 0
+        case items = 1
+        case villagers = 3
+        case collection = 4
+        case turnips = 2
     }
     
-    @Published var selectedTab = Tab.dashboard
+    init() {
+        self.selectedTab = Tab.dashboard
+    }
+
+    var selectedTab: Tab {
+        didSet {
+            objectWillChange.send()
+        }
+    }
+
+    var selectedTabIndex: Int {
+        get {
+            return selectedTab.rawValue
+        }
+        set {
+            self.selectedTab = Tab(rawValue: newValue)!
+        }
+    }
 }

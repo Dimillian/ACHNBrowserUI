@@ -13,45 +13,145 @@ struct TabbarView: View {
     @EnvironmentObject private var uiState: UIState
 
     var body: some View {
-        TabView(selection: $uiState.selectedTab) {
+        UIKitTabView(selection: $uiState.selectedTabIndex, [
+            UIKitTabView.Tab(
+                view: TodayView(),
+                title: "Dashboard",
+                image: "icon-bells"
+            ),
+            UIKitTabView.Tab(
+                view: CategoriesView(categories: Category.items()),
+                title: "Catalog",
+                image: "icon-leaf"
+            ),
+            UIKitTabView.Tab(
+                view: TurnipsView(),
+                title: "Turnips",
+                image: "icon-turnip"
+            ),
+            UIKitTabView.Tab(
+                view: VillagersListView()
+                    .environmentObject(UserCollection.shared),
+                title: "Villagers",
+                image: "icon-villager"
+            ),
+            UIKitTabView.Tab(
+                view: CollectionListView(),
+                title: "Collection",
+                image: "icon-cardboard"
+            ),
+        ])
+    }
+}
 
-            TodayView()
-                .tag(UIState.Tab.dashboard)
-                .tabItem {
-                    Image("icon-bells")
-                    Text("Dashboard")
-            }
+/**
+ An iOS style TabView that doesn't reset it's childrens navigation stacks when tabs are switched.
 
-            CategoriesView(categories: Category.items())
-                .tag(UIState.Tab.items)
-                .tabItem {
-                    Image("icon-leaf")
-                    Text("Catalog")
-            }
+ Temporary until SwiftUI tabbar works the same as UIKit
 
-            TurnipsView()
-                .tag(UIState.Tab.turnips)
-                .tabItem {
-                    Image("icon-turnip")
-                    Text("Turnips")
-            }
+ Creates a SwiftUI -> UIKit -> SwiftUI sandwhich
 
-            VillagersListView()
-                .environmentObject(UserCollection.shared)
-                .tag(UIState.Tab.villagers)
-                .tabItem {
-                    Image("icon-villager")
-                    Text("Villagers")
-            }
+ From: https://gist.github.com/Amzd/2eb5b941865e8c5cccf149e6e07c8810
+ */
+fileprivate struct UIKitTabView: View {
+    var viewControllers: [UIHostingController<AnyView>]
+    var selectedIndex: Binding<Int>
 
-            CollectionListView()
-                .tag(UIState.Tab.collection)
-                .tabItem {
-                    Image("icon-cardboard")
-                    Text("Collection")
-            }
-
+    init(selection: Binding<Int>, _ views: [Tab]) {
+        self.selectedIndex = selection
+        self.viewControllers = views.map {
+            let host = UIHostingController(rootView: $0.view)
+            host.tabBarItem = $0.barItem
+            return host
         }
-        .accentColor(Color.white)
+    }
+
+    var body: some View {
+        TabBarController(controllers: viewControllers, selectedIndex: selectedIndex)
+            .edgesIgnoringSafeArea(.all)
+    }
+
+    struct Tab {
+        var view: AnyView
+        var barItem: UITabBarItem
+
+        init<V: View>(view: V, barItem: UITabBarItem) {
+            self.view = AnyView(view)
+            self.barItem = barItem
+        }
+
+        // convenience
+        init<V: View>(view: V, title: String?, image: String, selectedImage: String? = nil) {
+            let barItem = UITabBarItem(title: title, image: nil, selectedImage: nil)
+            barItem.image = UIImage(named: image)?.withRenderingMode(.alwaysOriginal)
+            barItem.selectedImage = UIImage(named: image)?.withRenderingMode(.alwaysOriginal)
+            barItem.setTitleTextAttributes([.foregroundColor: UIColor.white], for: .selected)
+            self.init(view: view, barItem: barItem)
+        }
+    }
+}
+
+fileprivate struct TabBarController: UIViewControllerRepresentable {
+    var controllers: [UIViewController]
+    @Binding var selectedIndex: Int
+
+    func makeUIViewController(context: Context) -> UITabBarController {
+        let tabBarController = UITabBarController()
+        tabBarController.viewControllers = controllers
+        tabBarController.delegate = context.coordinator
+        tabBarController.selectedIndex = 0
+        return tabBarController
+    }
+
+    func updateUIViewController(_ tabBarController: UITabBarController, context: Context) {
+        tabBarController.selectedIndex = selectedIndex
+    }
+
+    func makeCoordinator() -> Coordinator {
+        Coordinator(self)
+    }
+
+    class Coordinator: NSObject, UITabBarControllerDelegate {
+        var parent: TabBarController
+
+        init(_ tabBarController: TabBarController) {
+            self.parent = tabBarController
+        }
+
+        func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
+            if parent.selectedIndex == tabBarController.selectedIndex {
+                popToRootViewController(viewController: viewController)
+            }
+
+            parent.selectedIndex = tabBarController.selectedIndex
+        }
+
+        fileprivate func popToRootViewController(viewController: UIViewController) {
+            guard let navCon = getNavigationController(viewController: viewController)  else {
+                return
+            }
+
+            navCon.popToRootViewController(animated: true)
+        }
+
+        fileprivate func getNavigationController(viewController: UIViewController) -> UINavigationController? {
+            if viewController is UINavigationController {
+                return viewController as? UINavigationController
+            }
+
+            for childViewController in viewController.children {
+                if childViewController is UINavigationController {
+                    return childViewController as? UINavigationController
+                }
+
+                if childViewController.children.count > 0 {
+                    if let nav = getNavigationController(viewController: childViewController) {
+                        return nav
+                    }
+                }
+            }
+
+            return nil
+        }
     }
 }
