@@ -204,19 +204,17 @@ extension TurnipsView {
     }
     
     private var exchangeSection: some View {
-        Group {
+        Section(header: SectionHeaderView(text: "Turnip.Exchange", icon: "bitcoinsign.circle.fill")) {
             if viewModel.islands?.isEmpty == false {
-                Section(header: SectionHeaderView(text: "Exchange")) {
-                    viewModel.islands.map {
-                        ForEach($0) { island in
-                            NavigationLink(destination: IslandDetailView(island: island)) {
-                                TurnipIslandRow(island: island)
-                            }
+                viewModel.islands.map {
+                    ForEach($0) { island in
+                        NavigationLink(destination: IslandDetailView(island: island)) {
+                            TurnipIslandRow(island: island)
                         }
                     }
                 }
             } else {
-                EmptyView()
+                RowLoadingView(isLoading: .constant(true))
             }
         }
     }
