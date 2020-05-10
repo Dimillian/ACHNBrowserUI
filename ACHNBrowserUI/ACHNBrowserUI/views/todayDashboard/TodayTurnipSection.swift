@@ -13,7 +13,7 @@ struct TodayTurnipSection: View {
     let predictions: TurnipPredictions?
     
     var isSunday: Bool {
-        Calendar.current.component(.weekday, from: Date()) == 2
+        Calendar.current.component(.weekday, from: Date()) == 1
     }
     
     var body: some View {
@@ -27,7 +27,7 @@ struct TodayTurnipSection: View {
                 Group {
                     if isSunday {
                         Text("Today is sunday, don't forget to buy more turnips and fill your buy price.")
-                    } else if predictions?.todayAverages == nil || predictions?.todayAverages?.isEmpty == nil {
+                    } else if predictions?.todayAverages == nil || predictions?.todayAverages?.isEmpty == false {
                         Text("Your turnips predictions will be displayed here once you fill in some prices.")
                     }  else {
                         Text("Today's average price should be around ")
