@@ -110,12 +110,12 @@ struct ItemRowView: View {
             if displayMode != .largeNoButton {
                 LikeButtonView(item: item).environmentObject(collection)
             }
-            if item.itemImage == nil && displayedVariant == nil {
+            if item.finalImage == nil && displayedVariant == nil {
                 Image(item.appCategory.iconName())
                     .resizable()
                     .frame(width: imageSize, height: imageSize)
             } else {
-                ItemImage(path: displayedVariant?.filename ?? item.itemImage,
+                ItemImage(path: displayedVariant?.filename ?? item.finalImage,
                           size: imageSize)
             }
             

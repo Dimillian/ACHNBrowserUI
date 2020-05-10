@@ -17,6 +17,8 @@ public class Items: ObservableObject {
     
     private var villagerItemsCache: [String: [Item]] = [:]
         
+    private let migrated: [Category] = [.housewares, .art, .miscellaneous, .wallMounted, .recipes]
+    
     init() {
         for category in Category.allCases {
             if Category.furnitures().contains(category) {
@@ -25,6 +27,15 @@ public class Items: ObservableObject {
                     .replaceError(with: NewItemResponse(total: 0, results: []))
                     .eraseToAnyPublisher()
                     .map{ $0.results.filter{ $0.content.appCategory == category }.map{ $0.content }}
+                    .subscribe(on: DispatchQueue.global())
+                    .receive(on: DispatchQueue.main)
+                    .sink(receiveValue: { [weak self] items in self?.categories[category] = items })
+            } else if migrated.contains(category) {
+                _ = NookPlazaAPIService
+                    .fetch(endpoint: category)
+                    .replaceError(with: NewItemResponse(total: 0, results: []))
+                    .eraseToAnyPublisher()
+                    .map{ $0.results.map{ $0.content }}
                     .subscribe(on: DispatchQueue.global())
                     .receive(on: DispatchQueue.main)
                     .sink(receiveValue: { [weak self] items in self?.categories[category] = items })

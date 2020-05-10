@@ -27,12 +27,12 @@ struct ItemDetailInfoView: View {
             }
             HStack(alignment: .center) {
                 Spacer()
-                if item.itemImage == nil && displayedVariant == nil {
+                if item.finalImage == nil && displayedVariant == nil {
                     Image(item.appCategory.iconName())
                         .resizable()
                         .frame(width: 150, height: 150)
                 } else {
-                    ItemImage(path: displayedVariant?.filename ?? item.itemImage,
+                    ItemImage(path: displayedVariant?.filename ?? item.finalImage,
                               size: 150)
                 }
                 Spacer()

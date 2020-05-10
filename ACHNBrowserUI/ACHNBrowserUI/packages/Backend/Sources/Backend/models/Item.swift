@@ -41,12 +41,14 @@ public struct Item: Codable, Equatable, Identifiable, Hashable {
     public let image: String?
     public let filename: String?
     public let house: String?
-    
-    public var itemImage: String? {
+    public let itemImage: String?
+    public var finalImage: String? {
         if let filename = filename {
             return filename
         } else if let image = image, !image.hasPrefix("https://storage") {
             return image
+        } else if let itemImage = itemImage {
+            return itemImage
         }
         return nil
     }
@@ -152,6 +154,7 @@ public let static_item = Item(name: "Acoustic guitar",
                        image: nil,
                        filename: "https://acnhcdn.com/latest/FtrIcon/FtrAcorsticguitar_Remake_0_0.png",
                        house: nil,
+                       itemImage: nil,
                        obtainedFrom: "Crafting",
                        obtainedFromNew: ["Crafting"],
                        dIY: true,
