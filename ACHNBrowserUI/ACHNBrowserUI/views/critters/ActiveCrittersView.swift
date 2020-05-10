@@ -83,7 +83,7 @@ struct ActiveCrittersView: View {
         List {
             Picker(selection: $selectedTab, label: Text("")) {
                 ForEach(Tab.allCases, id: \.self) { tab in
-                    Text(tab.rawValue).tag(tab.rawValue)
+                    Text(LocalizedStringKey(tab.rawValue)).tag(tab.rawValue)
                 }
             }
             .pickerStyle(SegmentedPickerStyle())

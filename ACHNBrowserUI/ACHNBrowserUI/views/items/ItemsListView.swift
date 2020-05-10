@@ -49,7 +49,7 @@ struct ItemsListView: View {
     private var sortSheet: ActionSheet {
         var buttons: [ActionSheet.Button] = []
         for sort in ItemsViewModel.Sort.allCases {
-            buttons.append(.default(Text(sort.rawValue.localizedCapitalized),
+            buttons.append(.default(Text(LocalizedStringKey(sort.rawValue.localizedCapitalized)),
                                     action: {
                                         self.viewModel.sort = sort
             }))
@@ -66,8 +66,9 @@ struct ItemsListView: View {
         let title = Text("Sort items")
         
         if let currentSort = viewModel.sort {
+            let currentSortName = NSLocalizedString(currentSort.rawValue.localizedCapitalized, comment: "")
             return ActionSheet(title: title,
-                               message: Text("Current Sort: \(currentSort.rawValue.localizedCapitalized)"),
+                               message: Text("Current Sort: \(currentSortName)"),
                                buttons: buttons)
         }
         

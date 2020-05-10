@@ -76,7 +76,7 @@ extension CategoriesView {
                         .renderingMode(.original)
                         .resizable()
                         .frame(width: 46, height: 46)
-                    Text(name)
+                    Text(LocalizedStringKey(name))
                         .style(appStyle: .rowTitle)
                     Spacer()
                     Text("\(items.itemsCount(for: categories))")

@@ -60,7 +60,7 @@ struct ItemDetailInfoView: View {
                 }
             }
             if !item.isCritter {
-                Text("Customizable: \(item.customize == true ? "Yes" : "no")")
+                Text("Customizable: \(item.customize == true ? NSLocalizedString("Yes", comment: "") : NSLocalizedString("No", comment: ""))")
                     .foregroundColor(.acText)
             }
             HStack(spacing: 16) {
@@ -75,7 +75,7 @@ struct ItemDetailInfoView: View {
                             .fontWeight(.semibold)
                             .foregroundColor(.acHeaderBackground)
                         if item.isCritter {
-                            Text("Flick: ")
+                            Text("Flick:")
                                 .foregroundColor(.acText)
                                 .padding(.leading, 8)
                             Text("\(Int(Float(item.sell!) * 1.5))")

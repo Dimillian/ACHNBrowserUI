@@ -27,7 +27,7 @@ struct SectionHeaderView: View {
                     .rotationEffect(.degrees(-3))
             }
             
-            Text(text)
+            Text(LocalizedStringKey(text))
                 .font(.system(.subheadline, design: .rounded))
                 .fontWeight(.bold)
                 .foregroundColor(.acHeaderText)

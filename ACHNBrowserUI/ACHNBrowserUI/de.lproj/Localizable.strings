@@ -1,0 +1,333 @@
+/*
+  Localizable.strings
+  ACHNBrowserUI
+
+  Created by Jan on 09.05.20.
+  Copyright © 2020 Thomas Ricouard. All rights reserved.
+*/
+
+"Tap here to preview a notification" = "Tippe hier für eine Vorschau";
+"Upgrade to +" = "Upgrade auf +";
+"You're subscribed to AC Helper+" = "You're subscribed to AC Helper+";
+
+// copy and paste "export"  of Text() and similar SwiftUI functions
+// Global
+"Close" = "Schließen";
+"Dismiss" = "Abbrechen";
+"Save" = "Speichern";
+
+// Date Format
+"EEEE, dd MMMM" = "EEEE, dd. MMMM";
+"d/M" = "d.M.";
+"dd" = "dd";
+"MMM" = "MMM";
+"MMM dd" = "dd. MMM";
+"dd MMMM" = "dd. MMMM";
+
+// TabbarView
+"Dashboard" = "Startseite";
+"Catalog" = "Katalog";
+"Turnips" = "Rüben";
+"Villagers" = "Bewohner";
+"Collection" = "Sammlung";
+
+// TodayView
+"Change Section Order" = "Ändere die Reihenfolge";
+// TodaySectionEditView
+"Drag & Drop to Rearrange" = "Zum Anordnen halten und verschieben";
+"Hidden" = "Versteckt";
+"Today Sections" = "Heute Abschnitte";
+"Done" = "Fertig";
+" to re-order sections." = " to re-order sections.";
+"Check or un-check" = "Check or un-check";
+" rows to hide sections from the dashboard." = " rows to hide sections from the dashboard.";
+"Your top-most section will be the default detail view on iPad and Mac." = "Your top-most section will be the default detail view on iPad and Mac.";
+// TodayBirthdaySection
+"Birthdays" = "Geburtstage";
+"Today's Birthdays" = "Heutige Geburtstage";
+"Today's Birthday" = "Heutiger Geburtstag";
+// TodayCollectionProgressSection
+"Collection Progress" = "Sammelfortschritt";
+"Share" = "Teilen";
+// TodayCurrentlyAvailableSection
+"Currently Available" = "Aktuell verfügbar";
+"%lld/%lld Bugs" = "%lld/%lld Insekten";
+"%lld/%lld Fish" = "%lld/%lld Fische";
+"%lld NEW" = "%lld NEU";
+// TodayEventsSection
+"Events" = "Ereignisse";
+"Currently" = "Aktuell";
+"No Events Today" = "Heute keine Ereignisse";
+"Upcoming" = "Anstehend";
+// TodayTasksSection
+"Today's Tasks" = "Heutige Aufgaben";
+"This feature requires " = "Diese Funktion benötigt ";
+"Learn more >" = "Erfahre mehr >";
+// TodayTurnipSection
+"Today is sunday, don't forget to buy more turnips and fill your buy price." = "Heute ist Sonntag, denk daran Rüben zu kaufen und den Einkaufspreis einzutragen.";
+"Today's average price should be around " = "Der heutige durchschnittliche Kaufpreis sollte bei ";
+" in the morning, and " = " am Morgen und bei ";
+" this afternoon." = " am Nachmittag liegen.";
+// TodayNookazonSection
+"New on Nookazon" = "Neu auf Nookazon";
+"Nookazon is loading..." = "Nookazon lädt...";
+// TodayWhatsNewSection
+"What's New" = "Was ist neu";
+"See what's new in update %@" = "Schau dir an, was es neues gibt in Version %@";
+// TodaySubscribeSection
+"You're subscribed to AC Helper+. Thank you so much for you support!" = "Du abonnierst AC Helper+. Vielen Dank für deine Unterstützung!";
+"If you enjoy the application, consider subscribing to AC Helper+, to get access to some awesome features and support us!" = "Wenn dir die App gefällt, abonniere AC Helper+, um Zugriff auf großartige Funktionen zu erhalten und uns zu unterstütuen!";
+
+// SubscribeView
+"AC Helper+" = "AC Helper+";
+"ACHelperPlusDescription" = "Das AC Helper+ Abonnement ist ein guter Weg deine Unterstützung für unser kostenloses Open Source Projekt. ♥️
+
+Außerdem erhältst du Zugriff auf exklusive, großartige Funktionen: Rüben Prognose Benachrichtigungen und beliebig viele Gegenstands-Listen! 📈
+
+Weitere Details unten.";
+"ACHelperPlusDetails" = "Über die Benachrichtigungs-Funktion:
+Jeden Tag um 8 und 12 Uhr wirst du eine Benachrichtigung mit dem prognostizierten, durchschnittlichen Ankaufspreis bei Nepp und Schlepp erhalten.
+Je mehr Ankaufspreise du in der App ab montags morgens speicherst, um so genauer wird die nächste Prognose sein!
+
+Über die Listen-Funktion:
+Ohne Abonnement kannst du nur eine Liste mit Gegenständen im \"Meine Sachen\" Register erstellen.
+Wenn du dir AC Helper+ holst, kannst du beliebig viele Listen erstellen und unterschiedlich befüllen.";
+"ACHelperPlusPriceAndAboDetail %@" = "Ein monatliches Abo über %@ pro Monat wird nach der Bestätigung deinem iTunes Konto hinzugefügt.
+Das Abonnement verlängert sich automatisch, solange es nicht bis 24 Stunden vor der nächsten Verlängerung beendet wird.
+Du kannst das Abonnement jederzeit in deinen iTunes Kontoeinstellungen beenden. Jeder nicht genutzte Teil einer kostenlosen Testversion verfällt, wenn du ein Abonnement abschließt.";
+"Subscribe for %@ / Month" = "Abonnieren für %@ / Monat";
+"Thank you for your support!" = "Vielen Dank für deine Unterstützung!";
+
+// AboutView
+"About" = "Über";
+"The app" = "Die App";
+"Souce code / report an issue" = "Quell Code / Fehler melden";
+"Rate the app on the App Store" = "Bewerte die App im App Store";
+"Privacy Policy" = "Datenschutzbestimmungen";
+"Term of Use" = "Nutzungsbedingungen";
+"App version" = "App Version";
+"Game patch data" = "Daten Spielversion";
+"Acknowledgements" = "Danksagungen";
+"Our amazing contributors" = "Unsere großartigen Mitwirkenden";
+"The NookPlaza API by Azarro" = "Die NookPlaza API von Azarro";
+"Turnip.exchange" = "Turnip.exchange";
+"Nookazon for the marketplace" = "Nookazon für den Marktplatz";
+"Shihab / JPEGuin for the icon" = "Shihab / JPEGuin für das Icon";
+"Christian & Ninji for the turnip predictions algorithm" = "Christian & Ninji für den Rüben Prognose Algorithmus";
+"Error" = "Fehler";
+
+// ActiveCittersView
+"Active Critters" = "Aktive Tiere";
+"Fishes" = "Fische";
+"Bugs" = "Insekten";
+"You caught them all!" = "Du hast alle gefangen!";
+"New this month" = "Diesen Monat neu";
+"To catch" = "Zu fangen";
+"Leaving this month" = "Nur noch diesen Monat";
+"Caught" = "Gefangen";
+
+// SettingsView
+"Preferences" = "Einstellungen";
+"Island name" = "Inselname";
+"Your island name" = "Name deiner Insel";
+"Hemisphere" = "Hemisphäre";
+"North" = "Nord";
+"South" = "Süd";
+"Starting fruit" = "Frucht zu Beginn";
+"Apple" = "Apfel";
+"Cherry" = "Kirsche";
+"Orange" = "Orange";
+"Peach" = "Pfirsich";
+"Pear" = "Birne";
+"Coconut" = "Kokusnuss";
+"Nook shop" = "Nepp und Schlepp";
+"Tent" = "Zelt";
+"Nook's Cranny" = "Nook's Laden";
+"Nook's Cranny upgraded" = "Nook's Laden (ausgebaut)";
+"Able sisters" = "Schneiderei";
+"Visiting" = "zu Besuch";
+"Shop" = "Laden";
+"Residents service" = "Service-Center";
+"Building" = "Gebäude";
+"App Settings" = "App Einstellungen";
+"App Icon" = "App Icon";
+"Restore purchase" = "Einkauf wiederherstellen";
+
+// UserListFormView
+"Edit your list" = "Liste Bearbeiten";
+"Name of your list" = "Name der Liste";
+"List name" = "Name";
+"Can be nothing" = "Kann leer sein";
+"Icon" = "Icon";
+
+// UserListDetailView
+"Add %lld items" = "Füge %lld Gegenstände hinzu";
+"Edit" = "Bearbeiten";
+"Search items" = "Gegenstände suchen";
+"Items added to your list from the search will be displayed there." = "Gegenstände, die du aus der Suche heraus deiner Liste hinzugefügt hast, findest du dort.";
+"No results for %@" = "Kein Ergebnis für %@";
+
+// UserListSubscribeCallView
+"In order to create more than one list, you need to subscribe to AC Helper+" = "Um mehr als eine Liste anlegen zu können, musst du AC Helper+ abonnieren";
+"Learn more..." = "Erfahre mehr...";
+
+// CollectionListView
+"Create a new list" = "Erstelle eine neue Liste";
+"Please select or go stars some items!" = "Bitte wähle oder markiere Gegenstände!";
+"When you'll stars some %@, they'll be displayed here." = "Wenn du %@ markierst, werden sie hier angezeigt.";
+"Items" = "Gegenstände";
+"Critters" = "Tiere";
+"Lists" = "Listen";
+
+// ItemsListView
+"Clear Selection" = "Auswahl aufheben";
+"Sort items" = "Gegenstände sortieren";
+"Current Sort: %@" = "Aktuelle Sortierung: %@";
+"name" = "Name";
+"buy" = "Kaufpreis";
+"sell" = "Verkaufspreis";
+"from" = "Von";
+"set" = "Set";
+"similar" = "Ähnliche";
+"Name" = "Name";
+"Buy" = "Kaufpreis";
+"Sell" = "Verkaufspreis";
+"From" = "Von";
+"Set" = "Set";
+"Similar" = "Ähnliche";
+// ItemRowView
+"unknown source" = "Herkunft unbekannt";
+// ItemDetailInfoView
+"Rarity:" = "Seltenheit:";
+"Shadow size:" = "Schatten Größe:";
+"Customizable: %@" = "Veränderbar: %@";
+"Flick:" = "Carlson:";
+"Yes" = "Ja";
+"No" = "Nein";
+// ItemsCrosslineSectionView
+"Preview" = "Vorschau";
+// ItemDetailSeasonView
+"Seasonality" = "Saisonalität";
+// ItemDetailView
+"Set items" = "Setgegenstände";
+"Simillar items" = "Ähnliche Gegenstände";
+"Thematics" = "Thematik";
+"Variants" = "Varianten";
+"Materials" = "Materialien";
+"Nookazon listings" = "Nookazon Auflistung";
+"Loading Listings..." = "Lade Auflistung...";
+"No listings found on Nookazon" = "Keine Auflistung auf Nookazon gefunden";
+"Your items lists" = "Deine Gegenstandslisten";
+
+// TurnipsView
+"Minmax" = "Min-Max";
+"Profits" = "Gewinne";
+"Average daily buy prices" = "Durchschnittliche tägliche Verkaufspreise";
+"Daily min-max prices" = "Tägliche Min-Max Preise";
+"Average profits" = "Durchschnittliche Gewinne";
+"Chart" = "Diagramm";
+"Mon" = "Mo";
+"Tue" = "Di";
+"Wed" = "Mi";
+"Thu" = "Do";
+"Fri" = "Fr";
+"Sat" = "Sa";
+"Your prices" = "Deine Preise";
+"Edit your in game prices" = "Bearbeite deine Spiel Preise";
+"Add your in game prices" = "Füge deine Spiel Preise hinzu";
+"Turnips prediction" = "Rüben-Progrnose";
+"To help us support the application and get turnip predictions notification, you can try out AC Helper+" = "Abonniere AC Helper+, um Benachrichtigungen zur Rüben-Prognose zu bekommen und uns bei der Entwicklung der App zu unterstützen";
+"%lld upcomingDailyNotifications" = "Du bekommst Verkaufspreis Prognosen in noch %lld weiteren täglichen Benachrichtigungen.";
+"Profits estimates are computed using the average of the current period" = "Die Profite werden auf Basis des durchschnittlichen Preises der jeweiligen Periode berechnet";
+"Day" = "Tag";
+"AM" = "Vorm.";
+"PM" = "Nachm.";
+"Please add the amount of turnips you bought and for how much" = "Bitte trag ein, wie viele Rüben du gekauft hast und zu welchem Preis";
+"Add your in game turnip prices to see the predictions chart" = "Um das Prognose-Diagramm sehen zu können, trag die Verkaufspreise für Rüben ein";
+"Add your in game turnip prices to see predictions" = "Trag die Rüben-Verkaufspreise ein um eine Prognose sehen zu können";
+"Exchange" = "Wechselkurs";
+// TurnipsFormView
+"Monday" = "Montag";
+"Tuesday" = "Dienstag";
+"Wednesday" = "Mittwoch";
+"Thursday" = "Donnerstag";
+"Friday" = "Freitag";
+"Saturday" = "Samstag";
+"Add your turnip prices" = "Füge deine Rüben Verkaufspreise hinzu";
+"Configuration" = "Konfiguration";
+"Clear all fields" = "Alle Felder leeren";
+"Receive prices predictions notification" = "Erhalte Benachrichtigungen zu Verkaufspreis Prognosen";
+"You can get daily notifications for your average turnip price by subscribing to AC Helper+" = "Mit einem AC Helper+ Abonnement erhältst du tägich Benachrichtigungen zum durchschnittlichen Rüben Verkaufspreis";
+"Preview a notification" = "Zeige Vorschau-Benachrichtigung";
+"Your in game prices" = "Deine Preise";
+"Buy price" = "Kaufpreis";
+"Amount bought" = "Gekaufte Menge";
+"The more in game buy prices you'll add the better the predictions will be. Your buy price only won't give your correct averages. Add prices from the game as you get them daily." = "Je mehr Verkaufspreise du einträgst, um so genauer kann die Prognose sein. Der Einkaufspreis alleine kann keine gute Prognose liefern. Trag also am besten täglich die Verkaufspreise ein.";
+// TurnipsChartTopLegendView
+"Average" = "Durchschnitt";
+"Minimum" = "Minimum";
+"MinMax" = "MinMax";
+
+// IslandDetailView
+"Join Island" = "Insel beitreten";
+"Island" = "Insel";
+"Description" = "Beschreibung";
+"Visitors" = "Besucher";
+"Loading Visitors...." = "Lade Besucher....";
+
+// VillagersListView
+"Search a villager" = "Suche einen Bewohner";
+"Personality" = "Persönlichkeit";
+"Birthday" = "Geburtstag";
+"Species" = "Spezies";
+"Gender" = "Geschlecht";
+"Catch phrase" = "Schlagwort";
+"Unknown" = "Unbekannt";
+"Villager items" = "Gegenstände des Bewohners";
+
+// ListingRow
+"Make an Offer" = "Angebot abgeben";
+"Need Materials" = "Benötigt Materialien";
+"No Raiting" = "Keine Bewertungen";
+"Raiting" = "Bewertung";
+
+// CategoryRow
+"housewares" = "Haushaltswaren";
+"miscellaneous" = "Sonstiges";
+"wall-mounted" = "Wand Dekoration";
+"wallpapers" = "Tapeten";
+"floors" = "Fußböden";
+"rugs" = "Teppiche";
+"photos" = "Fotos";
+"posters" = "Poster";
+"fencing" = "Zäune";
+"tools" = "Werkzeuge";
+"tops" = "Oberteile";
+"bottoms" = "Unterteile";
+"dresses" = "Kleider";
+"headwear" = "Kopfbedeckungen";
+"accessories" = "Accessoires";
+"socks" = "Socken";
+"shoes" = "Schuhe";
+"bags" = "Taschen";
+"umbrellas" = "Regenschirme";
+"music" = "Musik";
+"recipes" = "Anleitungen";
+"construction" = "Bau";
+"nookmiles" = "Nook Miles";
+"other" = "Anderes";
+"art" = "Kunst";
+"bugs" = "Insekten";
+"fish" = "Fische";
+"fossils" = "Fossilien";
+// CategoriesView
+"Nature" = "Natur";
+"Wardrobe" = "Kleidung";
+"No results for %@" = "Kein Ergebnis für %@";
+
+
+// Shared
+// SearchField
+"Search..." = "Suchen...";
+
+// to be continued
