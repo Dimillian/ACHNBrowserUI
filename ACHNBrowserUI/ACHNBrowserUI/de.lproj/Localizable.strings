@@ -8,9 +8,7 @@
 
 "Make an Offer" = "Angebot abgeben";
 "Need Materials" = "Need Materials";
-"Please select or go stars some items!" = "Please select or go stars some items!";
 "Tap here to preview a notification" = "Tippe hier für eine Vorschau";
-"unknown source" = "unknown source";
 "Upgrade to +" = "Upgrade auf +";
 "You're subscribed to AC Helper+" = "You're subscribed to AC Helper+";
 
@@ -278,6 +276,16 @@ Du kannst das Abonnement jederzeit in deinen iTunes Kontoeinstellungen beenden. 
 "Description" = "Beschreibung";
 "Visitors" = "Besucher";
 "Loading Visitors...." = "Lade Besucher....";
+
+// VillagersListView
+"Search a villager" = "Suche einen Bewohner";
+"Personality" = "Persönlichkeit";
+"Birthday" = "Geburtstag";
+"Species" = "Spezies";
+"Gender" = "Geschlecht";
+"Catch phrase" = "Schlagwort";
+"Unknown" = "Unbekannt";
+"Villager items" = "Gegenstände des Bewohners";
 
 // Shared
 // SearchField

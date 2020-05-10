@@ -52,7 +52,7 @@ struct VillagerDetailView: View {
     
     private func makeInfoCell(title: String, value: String) -> some View {
         HStack {
-            Text(title)
+            Text(LocalizedStringKey(title))
                 .foregroundColor(textColor)
                 .font(.headline)
                 .fontWeight(.bold)
@@ -75,7 +75,7 @@ struct VillagerDetailView: View {
             .listRowBackground(Rectangle().fill(backgroundColor))
             .padding()
             makeInfoCell(title: "Personality", value: villager.personality).padding()
-            makeInfoCell(title: "Birthday", value: villager.formattedBirthday ?? "Unknown").padding()
+            makeInfoCell(title: "Birthday", value: villager.formattedBirthday ?? NSLocalizedString("Unknown", comment: "")).padding()
             makeInfoCell(title: "Species", value: villager.species).padding()
             makeInfoCell(title: "Gender", value: villager.gender).padding()
             makeInfoCell(title: "Catch phrase", value: villager.catchPhrase ?? "").padding()
