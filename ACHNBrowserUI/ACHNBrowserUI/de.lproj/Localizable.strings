@@ -178,6 +178,10 @@ Du kannst das Abonnement jederzeit in deinen iTunes Kontoeinstellungen beenden. 
 "Items" = "Gegenstände";
 "Critters" = "Tiere";
 "Lists" = "Listen";
+"items" = "Gegenstände";
+"villagers" = "Bewohner";
+"critters" = "Tiere";
+"lists" = "Listen";
 
 // ItemsListView
 "Clear Selection" = "Auswahl aufheben";
