@@ -116,7 +116,7 @@ struct SubscribeView: View {
             Spacer(minLength: 16)
             makeBorderedButton(action: {
                 self.sheetURL = URL(string: "https://github.com/Dimillian/ACHNBrowserUI/blob/master/term-of-use.md#ac-helper-term-of-use")
-            }, label: "Term of Use")
+            }, label: NSLocalizedString("Terms of Use", comment: ""))
             Spacer(minLength: 32)
         }.background(Color.acBackground.edgesIgnoringSafeArea(.all))
     }
