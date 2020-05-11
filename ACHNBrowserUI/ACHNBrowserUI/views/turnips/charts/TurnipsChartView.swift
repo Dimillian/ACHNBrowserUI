@@ -118,6 +118,7 @@ struct TurnipsChartView: View {
                     y: rect.midY
                 ))
             Text("\(min)")
+                .bold()
                 .foregroundColor(.graphMinMax)
                 .position(CGPoint(
                     x: x,
@@ -132,6 +133,7 @@ struct TurnipsChartView: View {
                     y: ratioY * (maxY - CGFloat(average)) - padding
                 ))
             Text("\(max)")
+                .bold()
                 .foregroundColor(.graphMinMax)
                 .position(CGPoint(
                     x: x,
