@@ -35,14 +35,24 @@ struct LikeButtonView: View {
     
     var imageName: String {
         if item != nil {
-            return isInCollection ? "star.fill" : "star"
+            if item?.isCritter == true {
+                return isInCollection ? "checkmark.seal.fill" : "checkmark.seal"
+            } else {
+                return isInCollection ? "star.fill" : "star"
+            }
         } else {
             return isInCollection ? "heart.fill" : "heart"
         }
     }
     
     var color: Color {
-        item != nil ? .yellow : .red
+        if item != nil {
+            if item?.isCritter == true {
+                return .acTabBarBackground
+            }
+            return .yellow
+        }
+        return .red
     }
     
     var body: some View {
