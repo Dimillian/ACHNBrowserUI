@@ -47,7 +47,7 @@ struct ItemRowView: View {
     
     private var itemInfo: some View {
         Group {
-            Text(item.name)
+            Text(item.localizedName.capitalized)
                 .style(appStyle: .rowTitle)
             Text(item.obtainedFrom ?? item.obtainedFromNew?.first ?? "unknown source")
                 .font(.subheadline)

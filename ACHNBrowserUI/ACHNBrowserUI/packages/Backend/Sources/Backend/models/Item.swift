@@ -36,6 +36,14 @@ public struct Item: Codable, Equatable, Identifiable, Hashable {
     }
     
     public var id: String { name }
+    public var internalID: Int?
+    
+    public var localizedName: String {
+        if let id = internalID {
+            return LocalizedItemService.shared.localizedNameFor(itemId: id) ?? name
+        }
+        return name
+    }
     
     public let name: String
     public let image: String?

@@ -31,7 +31,7 @@ class ItemsViewModel: ObservableObject {
             switch sort {
             case .name:
                 let compare: (String, String) -> Bool = sort == oldValue ? (<) : (>)
-                sortedItems = items.sorted{ compare($0.name, $1.name) }
+                sortedItems = items.sorted{ compare($0.localizedName, $1.localizedName) }
             case .buy:
                 let compare: (Int, Int) -> Bool = sort == oldValue ? (<) : (>)
                 sortedItems = items.filter{ $0.buy != nil}.sorted{ compare($0.buy!, $1.buy!) }
@@ -62,13 +62,13 @@ class ItemsViewModel: ObservableObject {
 
         itemCancellable = Items.shared.$categories
             .sink { [weak self] in
-            self?.items = $0[category]?.sorted{ $0.name < $1.name } ?? []
+            self?.items = $0[category]?.sorted{ $0.localizedName < $1.localizedName } ?? []
         }
     }
 
     private func items(with string: String) -> [Item] {
         items.filter {
-            $0.name.lowercased().contains(string.lowercased())
+            $0.localizedName.lowercased().contains(string.lowercased())
         }
     }
 }
