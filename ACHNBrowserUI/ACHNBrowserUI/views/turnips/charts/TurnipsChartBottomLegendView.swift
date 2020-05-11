@@ -10,12 +10,24 @@ import SwiftUI
 import Backend
 
 struct TurnipsChartBottomLegendView: View {
+    private struct TextsHeightPreferenceKey: PreferenceKey {
+        static var defaultValue: CGFloat?
+        static func reduce(value: inout CGFloat?, nextValue: () -> CGFloat?) {
+            if let newValue = nextValue() { value = newValue }
+        }
+    }
+    
     let predictions: TurnipPredictions
     let positionPress: (Int) -> Void
     private let weekdays = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
+    
+    @State private var textsHeight: CGFloat?
 
     var body: some View {
         GeometryReader(content: computeTexts)
+            .onHeightPreferenceChange(TextsHeightPreferenceKey.self, storeValueIn: $textsHeight)
+            .frame(height: self.textsHeight)
+            .fixedSize(horizontal: false, vertical: true)
     }
 
     func computeTexts(for geometry: GeometryProxy) -> some View {
@@ -23,6 +35,7 @@ struct TurnipsChartBottomLegendView: View {
         let (_, _, _, ratioX) = predictions.minMax?.roundedMinMaxAndRatios(rect: rect) ?? (0, 0, 0, 0)
         let count = predictions.minMax?.count ?? 0
         return texts(count: count, ratioX: ratioX)
+            .propagateHeight(TextsHeightPreferenceKey.self)
     }
 
     func texts(count: Int, ratioX: CGFloat) -> some View {
@@ -65,4 +78,13 @@ struct TurnipsChartBottomLegendView: View {
 
 private extension Int {
     var isAM: Bool { self == 0 || isMultiple(of: 2) }
+}
+
+struct TurnipsChartBottomLegendView_Previews: PreviewProvider {
+    static var previews: some View {
+        TurnipsChartBottomLegendView(
+            predictions: TurnipsChartView_Previews.predictions,
+            positionPress: { _ in }
+        )
+    }
 }

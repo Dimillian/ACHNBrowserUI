@@ -28,24 +28,34 @@ struct TodayView: View {
     var body: some View {
         NavigationView {
             List {
-                
                 if showWhatsNew {
                     TodayWhatsNewSection(showWhatsNew: $showWhatsNew)
                 }
                 
-                TodayEventsSection()
-                TodayCurrentlyAvailableSection(viewModel: viewModel)
-                TodayCollectionProgressSection(viewModel: viewModel, sheet: $selectedSheet)
-                TodayBirthdaysSection(villagers: villagersViewModel.todayBirthdays)
-                TodayTurnipSection(predictions: turnipsPredictionsService.predictions)
-                    .onTapGesture {
-                        self.uiState.selectedTab = .turnips
+                //ItemDetail route
+                if uiState.routeEnabled {
+                    uiState.route.map { route in
+                        NavigationLink(destination: route.makeDetailView(),
+                                       isActive: $uiState.routeEnabled) {
+                                        EmptyView()
+                        }.hidden()
+                    }
                 }
-                //TodayTasksSection()
-                TodayNookazonSection(sheet: $selectedSheet, viewModel: viewModel)
-                TodaySubscribeSection(sheet: $selectedSheet)
-                //self.arrangeSectionsButton
-                
+
+                Group {
+                    TodayEventsSection()
+                    TodayCurrentlyAvailableSection(viewModel: viewModel)
+                    TodayCollectionProgressSection(viewModel: viewModel, sheet: $selectedSheet)
+                    TodayBirthdaysSection(villagers: villagersViewModel.todayBirthdays)
+                    TodayTurnipSection(predictions: turnipsPredictionsService.predictions)
+                        .onTapGesture {
+                            self.uiState.selectedTab = .turnips
+                    }
+                    //TodayTasksSection()
+                    TodayNookazonSection(sheet: $selectedSheet, viewModel: viewModel)
+                    TodaySubscribeSection(sheet: $selectedSheet)
+                    //self.arrangeSectionsButton
+                }
             }
             .listStyle(GroupedListStyle())
             .environment(\.horizontalSizeClass, .regular)

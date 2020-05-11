@@ -74,5 +74,8 @@ public class AppUserDefaults: ObservableObject {
             objectWillChange.send()
         }
     }
+    
+    @UserDefault("spotlight_index_version", defaultValue: "")
+    public var spotlightIndexVersion: String
 }
 

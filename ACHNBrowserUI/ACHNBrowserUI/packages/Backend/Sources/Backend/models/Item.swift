@@ -72,16 +72,7 @@ public struct Item: Codable, Equatable, Identifiable, Hashable {
     public let category: String
     
     public var appCategory: Category {
-        if category == "Fish - North" || category == "Fish - South" {
-            return .fish
-        } else if category == "Bugs - North" || category == "Buhs - South" {
-            return .bugs
-        } else if category == "Nook Miles" {
-            return .nookmiles
-        } else if category == "Dress-Up" {
-            return .dressup
-        }
-        return Category(rawValue: category.lowercased())!
+        Category(itemCategory: category)
     }
         
     public let materials: [Material]?
@@ -139,7 +130,7 @@ public extension Item {
                 return nil
         }
         if startTime == 0 && endTime == 0 {
-            return "All day"
+            return NSLocalizedString("All day", comment: "")
         }
         return "\(startTime) - \(endTime)h"
     }
