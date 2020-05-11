@@ -1,0 +1,9 @@
+/* 
+  InfoPlist.strings
+  ACHNBrowserUI
+
+  Created by Jan on 10.05.20.
+  Copyright © 2020 Thomas Ricouard. All rights reserved.
+*/
+
+NSPhotoLibraryAddUsageDescription = "Speichern von Bildern wie beispielsweise Möbel oder generierte Bilder aus der \"Teilen\"-Funktion";

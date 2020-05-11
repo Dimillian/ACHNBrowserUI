@@ -36,6 +36,14 @@ public struct Item: Codable, Equatable, Identifiable, Hashable {
     }
     
     public var id: String { name }
+    public var internalID: Int?
+    
+    public var localizedName: String {
+        if let id = internalID {
+            return LocalizedItemService.shared.localizedNameFor(itemId: id) ?? name
+        }
+        return name
+    }
     
     public let name: String
     public let image: String?
@@ -55,6 +63,7 @@ public struct Item: Codable, Equatable, Identifiable, Hashable {
     
     public let obtainedFrom: String?
     public let obtainedFromNew: [String]?
+    public let sourceNotes: String?
     public let dIY: Bool?
     public let customize: Bool?
     
@@ -69,6 +78,8 @@ public struct Item: Codable, Equatable, Identifiable, Hashable {
             return .bugs
         } else if category == "Nook Miles" {
             return .nookmiles
+        } else if category == "Dress-Up" {
+            return .dressup
         }
         return Category(rawValue: category.lowercased())!
     }
@@ -157,6 +168,7 @@ public let static_item = Item(name: "Acoustic guitar",
                        itemImage: nil,
                        obtainedFrom: "Crafting",
                        obtainedFromNew: ["Crafting"],
+                       sourceNotes: "From somewhere",
                        dIY: true,
                        customize: true,
                        variants: nil,

@@ -40,20 +40,26 @@ struct ItemDetailInfoView: View {
             if item.obtainedFrom != nil || item.obtainedFromNew?.isEmpty == false {
                 Text(item.obtainedFrom ?? item.obtainedFromNew?.first ?? "")
                     .foregroundColor(.acSecondaryText)
+                    .fontWeight(.semibold)
+            }
+            item.sourceNotes.map{
+                Text($0)
+                    .foregroundColor(.acSecondaryText)
+                    .font(.footnote)
             }
             if item.isCritter {
                 HStack(spacing: 8) {
-                    if item.rarity != nil {
+                    item.rarity.map { rarity in
                         HStack(spacing: 4) {
                             Text("Rarity:")
-                            Text(item.rarity!)
+                            Text(rarity)
                                 .foregroundColor(.acSecondaryText)
                         }
                     }
-                    if item.shadow != nil {
+                    item.shadow.map { shadow in
                         HStack(spacing: 4) {
                             Text("Shadow size:")
-                            Text(item.shadow!)
+                            Text(shadow)
                                 .foregroundColor(.acSecondaryText)
                         }
                     }
@@ -64,13 +70,13 @@ struct ItemDetailInfoView: View {
                     .foregroundColor(.acText)
             }
             HStack(spacing: 16) {
-                if item.sell != nil {
+                item.sell.map { sell in
                     HStack(spacing: 2) {
                         Image("icon-bell")
                             .resizable()
                             .aspectRatio(contentMode: .fit)
                             .frame(width: 25, height: 25)
-                        Text("\(item.sell!)")
+                        Text("\(sell)")
                             .font(.body)
                             .fontWeight(.semibold)
                             .foregroundColor(.acHeaderBackground)
@@ -78,7 +84,7 @@ struct ItemDetailInfoView: View {
                             Text("Flick:")
                                 .foregroundColor(.acText)
                                 .padding(.leading, 8)
-                            Text("\(Int(Float(item.sell!) * 1.5))")
+                            Text("\(Int(Float(sell) * 1.5))")
                                 .font(.body)
                                 .fontWeight(.semibold)
                                 .foregroundColor(.acHeaderBackground)
@@ -86,13 +92,13 @@ struct ItemDetailInfoView: View {
                         }
                     }
                 }
-                if item.buy != nil {
+                item.buy.map { buy in
                     HStack(spacing: 2) {
                         Image("icon-bells")
                             .resizable()
                             .aspectRatio(contentMode: .fit)
                             .frame(width: 25, height: 25)
-                        Text("\(item.buy!)")
+                        Text("\(buy)")
                             .foregroundColor(.acHeaderBackground)
                     }
                 }

@@ -36,10 +36,14 @@ struct SubscribeView: View {
     private var dismissButton: some View {
         Button(action: {
             self.presentationMode.wrappedValue.dismiss()
-        }) {
-            Text("Close")
-        }
-        .safeHoverEffectBarItem(position: .trailing)
+        }, label: {
+            Image(systemName: "xmark.circle.fill")
+                .style(appStyle: .barButton)
+                .foregroundColor(.acText)
+        })
+        .buttonStyle(BorderedBarButtonStyle())
+        .accentColor(Color.acText.opacity(0.2))
+        .safeHoverEffectBarItem(position: .leading)
     }
     
     private var upperPart: some View {
@@ -116,7 +120,7 @@ struct SubscribeView: View {
             Spacer(minLength: 16)
             makeBorderedButton(action: {
                 self.sheetURL = URL(string: "https://github.com/Dimillian/ACHNBrowserUI/blob/master/term-of-use.md#ac-helper-term-of-use")
-            }, label: "Term of Use")
+            }, label: NSLocalizedString("Terms of Use", comment: ""))
             Spacer(minLength: 32)
         }.background(Color.acBackground.edgesIgnoringSafeArea(.all))
     }
@@ -139,7 +143,7 @@ struct SubscribeView: View {
                 }
             }
             .sheet(item: $sheetURL, content: { SafariView(url: $0) })
-            .navigationBarItems(trailing: dismissButton)
+            .navigationBarItems(leading: dismissButton)
             .navigationBarTitle(Text("AC Helper+"),
                                 displayMode: .inline)
         }.navigationViewStyle(StackNavigationViewStyle())

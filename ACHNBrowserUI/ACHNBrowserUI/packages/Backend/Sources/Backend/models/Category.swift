@@ -13,7 +13,8 @@ public enum Category: String, CaseIterable {
     case housewares, miscellaneous
     case wallMounted = "wall-mounted"
     case wallpapers, floors, rugs, photos, posters, fencing, tools
-    case tops, bottoms, dresses, headwear, accessories, socks, shoes, bags
+    case tops, bottoms, headwear, accessories, socks, shoes, bags
+    case dressup = "Dress-Up"
     case umbrellas, music, recipes, construction, nookmiles, other
     case art, bugs, fish, fossils
     
@@ -65,15 +66,30 @@ public enum Category: String, CaseIterable {
             return "icon-fish"
         case .tools:
             return "icon-tool"
-        case .dresses:
+        case .dressup:
             return "icon-top"
         case .shoes:
             return "icon-shoes"
         }
     }
     
-    public static func furnitures() -> [Category] {
+    public static func dataFilename(category: Category) -> String? {
+        if APIFurnitures().contains(category) {
+            return "furnitures"
+        } else if APIClothing().contains(category) {
+            return "clothing"
+        } else if category == .recipes {
+            return category.rawValue
+        }
+        return nil
+    }
+    
+    public static func APIFurnitures() -> [Category] {
         [.housewares, .miscellaneous, .wallMounted, .art]
+    }
+    
+    public static func APIClothing() -> [Category] {
+        [.accessories, .headwear, .tops, .bottoms, .dressup, .socks, .shoes, .bags]
     }
         
     public static func villagerFurnitures() -> [Category] {
@@ -88,7 +104,7 @@ public enum Category: String, CaseIterable {
     }
     
     public static func wardrobe() -> [Category] {
-        [.tops, .bottoms, .dresses, .headwear,
+        [.tops, .bottoms, .dressup, .headwear,
          .accessories, .socks, .shoes, .bags, .umbrellas]
     }
     
@@ -99,7 +115,7 @@ public enum Category: String, CaseIterable {
     public static func icons() -> [Category] {
         return  [.housewares, .recipes, .floors, .rugs, .wallpapers,
                 .fencing, .music, .tools, .nookmiles, .construction, .tops,
-                 .bottoms, .dresses, .headwear, .accessories, .socks, .bags, .umbrellas,
+                 .bottoms, .dressup, .headwear, .accessories, .socks, .bags, .umbrellas,
                  .fish, .bugs, .fossils]
     }
 }
