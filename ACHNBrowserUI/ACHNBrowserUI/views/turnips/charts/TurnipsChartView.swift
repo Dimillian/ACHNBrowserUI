@@ -15,16 +15,16 @@ struct TurnipsChartView: View {
     var predictions: TurnipPredictions
     @Binding var animateCurves: Bool
     @Environment(\.presentationMode) var presentation
-    @State private var chartSize: CGSize = .zero
+    @State private var curvesFrame: CGRect = .zero
+    @State private var chartFrame: CGRect = .zero
 
     var body: some View {
         VStack {
             TurnipsChartTopLegendView()
-            HStack(alignment: .chartVerticalAlignment) {
+            HStack(alignment: .top) {
                 TurnipsChartVerticalLegend(predictions: predictions)
-                    .frame(width: 30, height: chartSize.height)
-                    .background(Color.blue.opacity(0.15))
-                Rectangle().fill(Color.red).frame(width: 10, height: 3)
+                    .frame(width: 30, height: curvesFrame.height)
+                    .alignmentGuide(VerticalAlignment.top, computeValue: legendVerticalAlignment)
                 ScrollView(.horizontal, showsIndicators: false) {
                     chart.frame(width: 600, height: 500)
                 }
@@ -36,16 +36,15 @@ struct TurnipsChartView: View {
         VStack(spacing: 10) {
             curves
                 .background(curvesGeometry)
-                .alignmentGuide(.chartVerticalAlignment, computeValue: { $0[VerticalAlignment.center] })
-                .background(Color.blue.opacity(0.15))
             TurnipsChartBottomLegendView(predictions: predictions)
-                .frame(width: chartSize.width, height: 50)
-        }.padding()
+                .frame(width: curvesFrame.width, height: 50)
+        }
+        .padding()
+        .background(chartGeometry)
     }
 
     private var curves: some View {
         ZStack(alignment: .leading) {
-            Rectangle().fill(Color.red).frame(width: 20, height: 5)
             TurnipsChartGrid(predictions: predictions)
                 .stroke()
                 .opacity(0.5)
@@ -70,19 +69,21 @@ struct TurnipsChartView: View {
         GeometryReader { geometry in
             Rectangle()
                 .fill(Color.clear)
-                .onAppear(perform: { self.chartSize = geometry.size })
-        }
-    }
-}
-
-private extension VerticalAlignment {
-    private enum ChartVerticalAlignment: AlignmentID {
-        static func defaultValue(in context: ViewDimensions) -> CGFloat {
-            return context[VerticalAlignment.center]
+                .onAppear(perform: { self.curvesFrame = geometry.frame(in: .global) })
         }
     }
 
-    static let chartVerticalAlignment = VerticalAlignment(ChartVerticalAlignment.self)
+    private var chartGeometry: some View {
+        GeometryReader { geometry in
+            Rectangle()
+                .fill(Color.clear)
+                .onAppear(perform: { self.chartFrame = geometry.frame(in: .global) })
+        }
+    }
+
+    private func legendVerticalAlignment(_ d: ViewDimensions) -> CGFloat {
+        return -(self.curvesFrame.minY - self.chartFrame.minY)
+    }
 }
 
 struct TurnipsChartView_Previews: PreviewProvider {
