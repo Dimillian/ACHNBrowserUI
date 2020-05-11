@@ -49,7 +49,7 @@ struct TodayView: View {
             }
             .listStyle(GroupedListStyle())
             .environment(\.horizontalSizeClass, .regular)
-            .navigationBarTitle(Text("\(dateString())"))
+            .navigationBarTitle(Text("\(dateString().capitalized)"))
             .navigationBarItems(leading: aboutButton, trailing: settingsButton)
             .sheet(item: $selectedSheet, content: { Sheet(sheetType: $0) })
             

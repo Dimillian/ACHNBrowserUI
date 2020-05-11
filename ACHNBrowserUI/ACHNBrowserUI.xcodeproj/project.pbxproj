@@ -400,6 +400,7 @@
 		69875F5624654F7100B1D46C /* UserListFormViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListFormViewModel.swift; sourceTree = "<group>"; };
 		69875F58246557D000B1D46C /* UserListDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListDetailView.swift; sourceTree = "<group>"; };
 		69875F5A24655AF000B1D46C /* UserListDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListDetailViewModel.swift; sourceTree = "<group>"; };
+		69AE062824683429006856E4 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		699425D624688C200089C21B /* clothing */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = clothing; sourceTree = "<group>"; };
 		699425E5246927C40089C21B /* items_EUes.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = items_EUes.json; sourceTree = "<group>"; };
 		699425E6246927C40089C21B /* items_EUen.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = items_EUen.json; sourceTree = "<group>"; };
@@ -1113,6 +1114,7 @@
 				en,
 				Base,
 				de,
+				fr,
 			);
 			mainGroup = 69AF8C44243E283D001DD9CB;
 			packageReferences = (
@@ -1397,6 +1399,7 @@
 			children = (
 				3DF14B2C24664B2600438646 /* en */,
 				3DF14B2E24664B4A00438646 /* de */,
+				69AE062824683429006856E4 /* fr */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
