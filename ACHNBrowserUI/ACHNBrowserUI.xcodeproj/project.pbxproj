@@ -156,7 +156,6 @@
 		69875F5B24655AF000B1D46C /* UserListDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69875F5A24655AF000B1D46C /* UserListDetailViewModel.swift */; };
 		699425D724688C200089C21B /* clothing in Resources */ = {isa = PBXBuildFile; fileRef = 699425D624688C200089C21B /* clothing */; };
 		699425EC246927C50089C21B /* items_EUes.json in Resources */ = {isa = PBXBuildFile; fileRef = 699425E5246927C40089C21B /* items_EUes.json */; };
-		699425ED246927C50089C21B /* items_EUen.json in Resources */ = {isa = PBXBuildFile; fileRef = 699425E6246927C40089C21B /* items_EUen.json */; };
 		699425EE246927C50089C21B /* items_EUru.json in Resources */ = {isa = PBXBuildFile; fileRef = 699425E7246927C40089C21B /* items_EUru.json */; };
 		699425EF246927C50089C21B /* items_EUit.json in Resources */ = {isa = PBXBuildFile; fileRef = 699425E8246927C40089C21B /* items_EUit.json */; };
 		699425F0246927C50089C21B /* items_EUnl.json in Resources */ = {isa = PBXBuildFile; fileRef = 699425E9246927C50089C21B /* items_EUnl.json */; };
@@ -1229,7 +1228,6 @@
 				69CFCAA4245AAF520059C067 /* nookmiles in Resources */,
 				69CFCAA8245AAF520059C067 /* fossils in Resources */,
 				02F2D4372455D81C009741DA /* bookmark-blueberry@3x.png in Resources */,
-				699425ED246927C50089C21B /* items_EUen.json in Resources */,
 				69CFCAB0245AAF520059C067 /* recipes in Resources */,
 				699425EC246927C50089C21B /* items_EUes.json in Resources */,
 				02F2D43F2455D81C009741DA /* round-cocoa@3x.png in Resources */,
