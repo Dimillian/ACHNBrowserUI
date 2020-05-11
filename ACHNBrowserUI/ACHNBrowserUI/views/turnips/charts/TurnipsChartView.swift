@@ -82,7 +82,7 @@ struct TurnipsChartView: View {
     }
 
     private func legendVerticalAlignment(_ d: ViewDimensions) -> CGFloat {
-        return -(self.curvesFrame.minY - self.chartFrame.minY)
+        return -(curvesFrame.minY - chartFrame.minY)
     }
 }
 
