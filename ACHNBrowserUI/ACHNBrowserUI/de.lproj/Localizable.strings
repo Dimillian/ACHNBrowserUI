@@ -334,4 +334,35 @@ Du kannst das Abonnement jederzeit in deinen iTunes Kontoeinstellungen beenden. 
 // SearchField
 "Search..." = "Suchen...";
 
+// Fish sources
+// Added 2020-05-11:
+"River" = "Fluss";
+"Pier" = "Pier";
+"Pond" = "Teich";
+"Sea" = "Meer";
+"River (clifftop)" = "Fluss (Klippe)";
+"Sea (raining)" = "Meer (bei Regen)";
+
+// Bug sources
+// Added 2020-05-11
+"Flying" = "Fliegt";
+"On rivers/ponds" = "Auf Flüssen/Teichen";
+"Flying near flowers" = "Fliegt in der nähe von Blumen";
+"On tree stumps" = "Auf Baumstümpfen";
+"On the ground" = "Auf dem Boden";
+"On rotten turnips" = "Auf faulen Rüben";
+"On trees (any kind)" = "An Bäumen (jeglicher Art)";
+"Shaking trees (hardwood or cedar only)" = "Bäume schütteln (nur Hartholz oder Tanne)";
+"From hitting rocks" = "Felsen schlagen";
+"On villagers" = "Auf Bewohnern";
+"Flying near trash (boots, tires, cans)" = "Fliegt in der Nähe von Müll (Stiefel, Reifen, Dosen)";
+"Disguised on shoreline" = "An der Küste, getarnt als Muschel";
+"On flowers" = "Auf Blumen";
+"Underground (dig where noise is loudest)" = "Boden (graben, wo das Zirpen am lautesten ist)";
+"Flying near light sources" = "Fliegt in der nähe von Lichtquellen";
+"On white flowers" = "Auf weißen Blumen";
+"Flying near blue/purple/black flowers" = "Fliegt in der Nähe von blauen/lila/schwarzen Blumen";
+"On rocks" = "Auf Felsen";
+"On beach rocks" = "Auf Stranfelsen";
+
 // to be continued
