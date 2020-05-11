@@ -25,8 +25,7 @@ fileprivate struct LocalizedItem: Codable {
 public struct LocalizedItemService {
     static let shared = LocalizedItemService()
     private static let filePrefix = "items_EU"
-    private static let root = "STR_ItemName_00_Ftr"
-    
+
     private let currentLocale: Locale
     private var localizationItems: [Int: LocalizedItem] = [:]
     private var localizationDYI: [Int: LocalizedItem] = [:]
