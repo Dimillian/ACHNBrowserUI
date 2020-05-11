@@ -38,28 +38,28 @@ struct ItemDetailInfoView: View {
                 Spacer()
             }
             if item.obtainedFrom != nil || item.obtainedFromNew?.isEmpty == false {
-                Text(item.obtainedFrom ?? item.obtainedFromNew?.first ?? "")
+                Text(LocalizedStringKey(item.obtainedFrom ?? item.obtainedFromNew?.first ?? ""))
                     .foregroundColor(.acSecondaryText)
                     .fontWeight(.semibold)
             }
             item.sourceNotes.map{
-                Text($0)
+                Text(LocalizedStringKey($0))
                     .foregroundColor(.acSecondaryText)
                     .font(.footnote)
             }
             if item.isCritter {
-                HStack(spacing: 8) {
+                VStack(spacing: 4) {
                     item.rarity.map { rarity in
                         HStack(spacing: 4) {
                             Text("Rarity:")
-                            Text(rarity)
+                            Text(LocalizedStringKey(rarity))
                                 .foregroundColor(.acSecondaryText)
                         }
                     }
                     item.shadow.map { shadow in
                         HStack(spacing: 4) {
                             Text("Shadow size:")
-                            Text(shadow)
+                            Text(LocalizedStringKey(shadow))
                                 .foregroundColor(.acSecondaryText)
                         }
                     }
