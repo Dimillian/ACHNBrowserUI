@@ -38,7 +38,7 @@ public class NotificationManager: NSObject {
                 let min = minMax[index].first!
                 let max = minMax[index].last!
                 
-                if dayOfTheWeek >= today && today != 2 {
+                if dayOfTheWeek >= today {
                     let content = UNMutableNotificationContent()
                     content.title = "Turnip prices"
                     content.body = "Your prices predictions for \(isMorning ? "this morning": "this afternoon") should be around \(day) bells. With a minimum of \(min) and a maximum of \(max)."
