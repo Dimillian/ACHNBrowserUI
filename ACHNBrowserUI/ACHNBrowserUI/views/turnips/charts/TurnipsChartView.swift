@@ -17,6 +17,7 @@ struct TurnipsChartView: View {
     @Environment(\.presentationMode) var presentation
     @State private var curvesFrame: CGRect = .zero
     @State private var chartFrame: CGRect = .zero
+    @State private var positionPressed: Int = -1
 
     var body: some View {
         VStack {
@@ -36,7 +37,7 @@ struct TurnipsChartView: View {
         VStack(spacing: 10) {
             curves
                 .background(curvesGeometry)
-            TurnipsChartBottomLegendView(predictions: predictions)
+            TurnipsChartBottomLegendView(predictions: predictions, positionPress: positionPress)
                 .frame(width: curvesFrame.width, height: 50)
         }
         .padding()
@@ -62,7 +63,11 @@ struct TurnipsChartView: View {
                 .foregroundColor(PredictionCurve.average.color)
                 .saturation(5)
                 .blendMode(.screen)
+            if positionPressed > -1 {
+                values(for: positionPressed)
+            }
         }.animation(.spring())
+            .background(Color.blue.opacity(0.10))
     }
 
     private var curvesGeometry: some View {
@@ -83,6 +88,56 @@ struct TurnipsChartView: View {
 
     private func legendVerticalAlignment(_ d: ViewDimensions) -> CGFloat {
         return -(curvesFrame.minY - chartFrame.minY)
+    }
+
+    private func positionPress(_ position: Int) {
+        positionPressed = position
+    }
+
+    private func values(for position: Int) -> some View {
+        let min = predictions.minMax?
+            .compactMap { $0.first }[position] ?? 0
+        let max = predictions.minMax?
+            .compactMap { $0.second }[position] ?? 0
+        let average = predictions.averagePrices?[position] ?? 0
+
+        let rect = curvesFrame.offsetBy(
+            dx: -curvesFrame.minX,
+            dy: -curvesFrame.minY
+        )
+        let (_, maxY, ratioY, ratioX) = predictions.minMax?.roundedMinMaxAndRatios(rect: rect) ?? (0, 0, 0, 0)
+
+        let x = CGFloat(position) * ratioX
+        let padding: CGFloat = 16
+
+        return ZStack {
+            Color.red.opacity(1/20)
+                .frame(width: 5)
+                .position(CGPoint(
+                    x: x,
+                    y: rect.midY
+                ))
+            Text("\(min)")
+                .foregroundColor(.graphMinMax)
+                .position(CGPoint(
+                    x: x,
+                    y: ratioY * (maxY - CGFloat(min)) + padding
+                ))
+            Text("\(average)")
+                .bold()
+                .foregroundColor(.graphAverage)
+                .saturation(5)
+                .position(CGPoint(
+                    x: x,
+                    y: ratioY * (maxY - CGFloat(average)) - padding
+                ))
+            Text("\(max)")
+                .foregroundColor(.graphMinMax)
+                .position(CGPoint(
+                    x: x,
+                    y: ratioY * (maxY - CGFloat(max)) - padding
+                ))
+        }
     }
 }
 
