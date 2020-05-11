@@ -18,7 +18,7 @@ public struct Villager: Identifiable, Codable, Equatable {
     public var formattedBirthday: String? {
         guard let birthday = birthday else { return nil }
         let formatter = DateFormatter()
-        formatter.setLocalizedDateFormatFromTemplate("d/M")
+        formatter.dateFormat = "d/M"
         let day = formatter.date(from: birthday)!
         formatter.setLocalizedDateFormatFromTemplate("dd MMMM")
         return formatter.string(from: day)
