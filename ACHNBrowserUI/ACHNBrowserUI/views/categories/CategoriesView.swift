@@ -34,7 +34,7 @@ struct CategoriesView: View {
                                               icon: Backend.Category.fossils.iconName(),
                                               categories: Backend.Category.nature())
                             makeSubCategories(name: "Wardrobe",
-                                              icon: Backend.Category.dresses.iconName(),
+                                              icon: Backend.Category.dressup.iconName(),
                                               categories: Backend.Category.wardrobe())
                             makeCategories()
                         } else {

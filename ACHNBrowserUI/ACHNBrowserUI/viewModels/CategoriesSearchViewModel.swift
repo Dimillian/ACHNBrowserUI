@@ -37,7 +37,7 @@ class CategoriesSearchViewModel: ObservableObject {
     private func itemsInCategory(with string: String) -> [Backend.Category: [Item]] {
         Items.shared.categories
             .mapValues({ $0.filter({
-                $0.name.lowercased().contains(string.lowercased())
+                $0.localizedName.lowercased().contains(string.lowercased())
             }) })
             .filter { !$0.value.isEmpty }
             .mapValues { Array($0.prefix(10)) }

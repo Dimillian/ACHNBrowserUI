@@ -57,22 +57,23 @@ public class TurnipExchangeService: NSObject, WKScriptMessageHandler {
     
     /// Get a list of all the islands
     public func fetchIslands() -> AnyPublisher<[Island], Never> {
-        Future { [weak self] resolve in
-            self?.islandCallback = {
-                resolve(.success($0))
-            }
-            
-            self?.config.userContentController.addUserScript(
-                WKUserScript(
-                    source: "fetch('https://api.turnip.exchange/islands/', { method: 'POST'} ).then(r => r.json()).then((r) => {window.webkit.messageHandlers.island.postMessage(r)})",
-                    injectionTime: .atDocumentEnd,
-                    forMainFrameOnly: true
+        Deferred {
+            Future { [weak self] resolve in
+                self?.islandCallback = {
+                    resolve(.success($0))
+                }
+                
+                self?.config.userContentController.addUserScript(
+                    WKUserScript(
+                        source: "fetch('https://api.turnip.exchange/islands/', { method: 'POST'} ).then(r => r.json()).then((r) => {window.webkit.messageHandlers.island.postMessage(r)})",
+                        injectionTime: .atDocumentEnd,
+                        forMainFrameOnly: true
+                    )
                 )
-            )
-            
-            self?.webview.load(URLRequest(url: URL(string: "https://turnip.exchange/islands")!))
-        }
-        .eraseToAnyPublisher()
+                
+                self?.webview.load(URLRequest(url: URL(string: "https://turnip.exchange/islands")!))
+            }
+        }.eraseToAnyPublisher()
     }
     
     public func fetchQueue(turnipCode: String) -> AnyPublisher<QueueContainer, Never> {

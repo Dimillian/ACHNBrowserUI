@@ -38,3 +38,5 @@ Thanks to [ACNH API](http://acnhapi.com/) for the API that allow us to display v
 Thanks to [Nookazon](https://nookazon.com/) for item listings and trading platform. 
 
 Thanks to [Shihab](https://twitter.com/JPEGuin) for the app icons.
+
+Thanks to [imthe666st](https://github.com/imthe666st/ACNH) for the repository with localized data.

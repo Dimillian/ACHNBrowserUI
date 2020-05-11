@@ -17,7 +17,7 @@ struct TurnipIslandRow: View {
             Text(island.name)
                 .foregroundColor(.acText)
                 .font(.headline)
-            Text(island.islandTime.description)
+            Text(island.islandTime)
                 .foregroundColor(.acSecondaryText)
                 .font(.subheadline)
             HStack {

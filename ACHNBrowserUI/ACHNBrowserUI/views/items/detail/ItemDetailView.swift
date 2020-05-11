@@ -54,7 +54,7 @@ struct ItemDetailView: View {
         .frame(width: 350, height: 330)
         .asImage()
         
-        return [ItemDetailSource(name: itemViewModel.item.name, image: image)]
+        return [ItemDetailSource(name: itemViewModel.item.localizedName.capitalized, image: image)]
     }
     
     // MARK: - Boby
@@ -104,7 +104,7 @@ struct ItemDetailView: View {
             self.itemViewModel.cancellable?.cancel()
         }
         .navigationBarItems(trailing: navButtons)
-        .navigationBarTitle(Text(itemViewModel.item.name), displayMode: .large)
+        .navigationBarTitle(Text(itemViewModel.item.localizedName.capitalized), displayMode: .large)
         .sheet(item: $selectedSheet) {
             Sheet(sheetType: $0)
         }
