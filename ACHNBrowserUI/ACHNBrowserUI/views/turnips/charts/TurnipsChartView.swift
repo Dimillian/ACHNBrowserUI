@@ -9,40 +9,48 @@
 import SwiftUI
 import Backend
 
+
 struct TurnipsChartView: View {
+    private struct ChartHeightPreferenceKey: PreferenceKey {
+        static var defaultValue: CGFloat?
+        static func reduce(value: inout CGFloat?, nextValue: () -> CGFloat?) {
+            if let newValue = nextValue() { value = newValue }
+        }
+    }
+    
     typealias PredictionCurve = TurnipsChart.PredictionCurve
     static let verticalLinesCount: CGFloat = 9
     var predictions: TurnipPredictions
     @Binding var animateCurves: Bool
     @Environment(\.presentationMode) var presentation
-    @State private var curvesFrame: CGRect = .zero
-    @State private var chartFrame: CGRect = .zero
-
+    
+    @State private var chartFrame: CGRect?
+    @State private var chartHeight: CGFloat?
+    
     var body: some View {
         VStack {
             TurnipsChartTopLegendView()
             HStack(alignment: .top) {
                 TurnipsChartVerticalLegend(predictions: predictions)
-                    .frame(width: 30, height: curvesFrame.height)
-                    .alignmentGuide(VerticalAlignment.top, computeValue: legendVerticalAlignment)
+                    .frame(width: 30, height: chartHeight)
+                    .padding(.top)
                 ScrollView(.horizontal, showsIndicators: false) {
                     chart.frame(width: 600, height: 500)
                 }
             }
         }
+        .onHeightPreferenceChange(ChartHeightPreferenceKey.self, storeValueIn: $chartHeight)
     }
-
+    
     private var chart: some View {
         VStack(spacing: 10) {
             curves
-                .background(curvesGeometry)
+                .propagateHeight(ChartHeightPreferenceKey.self)
             TurnipsChartBottomLegendView(predictions: predictions)
-                .frame(width: curvesFrame.width, height: 50)
         }
         .padding()
-        .background(chartGeometry)
     }
-
+    
     private var curves: some View {
         ZStack(alignment: .leading) {
             TurnipsChartGrid(predictions: predictions)
@@ -64,26 +72,6 @@ struct TurnipsChartView: View {
                 .blendMode(.screen)
         }.animation(.spring())
     }
-
-    private var curvesGeometry: some View {
-        GeometryReader { geometry in
-            Rectangle()
-                .fill(Color.clear)
-                .onAppear(perform: { self.curvesFrame = geometry.frame(in: .global) })
-        }
-    }
-
-    private var chartGeometry: some View {
-        GeometryReader { geometry in
-            Rectangle()
-                .fill(Color.clear)
-                .onAppear(perform: { self.chartFrame = geometry.frame(in: .global) })
-        }
-    }
-
-    private func legendVerticalAlignment(_ d: ViewDimensions) -> CGFloat {
-        return -(curvesFrame.minY - chartFrame.minY)
-    }
 }
 
 struct TurnipsChartView_Previews: PreviewProvider {
@@ -93,17 +81,17 @@ struct TurnipsChartView_Previews: PreviewProvider {
             animateCurves: .constant(true)
         )
     }
-
+    
     static let predictions = TurnipPredictions(
         minBuyPrice: 83,
         averagePrices: averagePrices,
         minMax: minMax,
         averageProfits: averageProfits
     )
-
+    
     static let averagePrices = [89, 85, 88, 104, 110, 111, 111, 111, 106, 98, 82, 77]
-
+    
     static let minMax = [[38, 142], [33, 142], [29, 202], [24, 602], [19, 602], [14, 602], [9, 602], [29, 602], [24, 602], [19, 602], [14, 202], [9, 201]]
-
+    
     static let averageProfits = [89, 85, 88, 104, 110, 111, 111, 111, 106, 98, 82, 77]
 }
