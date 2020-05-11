@@ -139,7 +139,7 @@ public extension Item {
                 return nil
         }
         if startTime == 0 && endTime == 0 {
-            return "All day"
+            return NSLocalizedString("All day", comment: "")
         }
         return "\(startTime) - \(endTime)h"
     }
