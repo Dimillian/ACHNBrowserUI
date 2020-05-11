@@ -8,6 +8,8 @@
 
 import Foundation
 import Combine
+import CoreSpotlight
+import SDWebImage
 
 public class Items: ObservableObject {
     public static let shared = Items()
@@ -16,8 +18,16 @@ public class Items: ObservableObject {
     @Published public var villagersHouse: [String: VillagerHouse] = [:]
     
     private var villagerItemsCache: [String: [Item]] = [:]
+    private let spotlightIndex: [Category] = [.fish, .bugs, .fossils, .art]
+    private let spotlightQueue = DispatchQueue(label: "ac.spotlight", qos: .background)
     
     init() {
+        var shouldIndex = false
+        if let version = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String, AppUserDefaults.shared.spotlightIndexVersion != version {
+            AppUserDefaults.shared.spotlightIndexVersion = version
+            shouldIndex = true
+        }
+        
         for category in Category.allCases {
             // Migrated to new JSOn format
             if let filename = Category.dataFilename(category: category) {
@@ -28,7 +38,13 @@ public class Items: ObservableObject {
                     .map{ $0.results.filter{ $0.content.appCategory == category }.map{ $0.content }}
                     .subscribe(on: DispatchQueue.global())
                     .receive(on: DispatchQueue.main)
-                    .sink(receiveValue: { [weak self] items in self?.categories[category] = items })
+                    .sink { [weak self] items in
+                        self?.categories[category] = items
+                        if self?.spotlightIndex.contains(category) == true, shouldIndex {
+                            self?.indexItems(category: category, items: items)
+                        }
+                        
+                }
             } else {
                 // Old JSON format
                 _ = NookPlazaAPIService
@@ -38,7 +54,12 @@ public class Items: ObservableObject {
                     .map{ $0.results }
                     .subscribe(on: DispatchQueue.global())
                     .receive(on: DispatchQueue.main)
-                    .sink(receiveValue: { [weak self] items in self?.categories[category] = items })
+                    .sink { [weak self] items in
+                        self?.categories[category] = items
+                        if self?.spotlightIndex.contains(category) == true, shouldIndex {
+                            self?.indexItems(category: category, items: items)
+                        }
+                }
             }
         }
         _ = NookPlazaAPIService
@@ -101,5 +122,28 @@ public class Items: ObservableObject {
         }
         
         return Just(nil).eraseToAnyPublisher()
+    }
+    
+    private func indexItems(category: Category, items: [Item]) {
+        self.spotlightQueue.async {
+            for item in items {
+                if let image = item.finalImage {
+                    let set = CSSearchableItemAttributeSet(itemContentType: "Text")
+                    set.title = item.name
+                    set.identifier = "\(item.category)#\(item.name)"
+                    set.contentDescription = "\(category.rawValue.capitalized)\n\(item.obtainedFrom ?? item.obtainedFromNew?.first ?? "")\n\(item.formattedTimes() ?? "")"
+                    SDWebImageDownloader.shared.downloadImage(with:  ImageService.computeUrl(key: image))
+                    { (_, data, _, _) in
+                        if let data = data {
+                            set.thumbnailData = data
+                            let item = CSSearchableItem(uniqueIdentifier: "\(item.category)#\(item.name)",
+                                domainIdentifier: category.rawValue,
+                                attributeSet: set)
+                            CSSearchableIndex.default().indexSearchableItems([item], completionHandler: nil)
+                        }
+                    }
+                }
+            }
+        }
     }
 }

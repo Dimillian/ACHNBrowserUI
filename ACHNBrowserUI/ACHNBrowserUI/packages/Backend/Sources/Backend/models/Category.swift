@@ -18,6 +18,23 @@ public enum Category: String, CaseIterable {
     case umbrellas, music, recipes, construction, nookmiles, other
     case art, bugs, fish, fossils
     
+    public init(itemCategory: String) {
+        if itemCategory == "Fish - North" || itemCategory == "Fish - South" {
+            self = .fish
+            return
+        } else if itemCategory == "Bugs - North" || itemCategory == "Buhs - South" {
+            self = .bugs
+            return
+        } else if itemCategory == "Nook Miles" {
+            self = .nookmiles
+            return
+        } else if itemCategory == "Dress-Up" {
+            self = .dressup
+            return
+        }
+        self = Category(rawValue: itemCategory.lowercased())!
+    }
+    
     public func label() -> LocalizedStringKey {
         return LocalizedStringKey(self.rawValue)
     }

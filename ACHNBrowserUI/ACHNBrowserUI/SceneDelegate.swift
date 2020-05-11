@@ -9,16 +9,19 @@
 import UIKit
 import SwiftUI
 import Backend
+import CoreSpotlight
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
     
+    let uiState = UIState()
+    
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         let contentView = TabbarView()
             .environmentObject(UserCollection.shared)
             .environmentObject(Items.shared)
-            .environmentObject(UIState())
+            .environmentObject(uiState)
             .environmentObject(SubscriptionManager.shared)
         
         if let windowScene = scene as? UIWindowScene {
@@ -56,6 +59,28 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 			window.windowScene?.titlebar?.titleVisibility = .hidden
 			#endif
             window.makeKeyAndVisible()
+        }
+        
+        if let activity = connectionOptions.userActivities.first {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.4) {
+                self.routeUserActivity(userActivity: activity)
+            }
+        }
+    }
+    
+    func scene(_ scene: UIScene, continue userActivity: NSUserActivity) {
+        routeUserActivity(userActivity: userActivity)
+    }
+    
+    func routeUserActivity(userActivity: NSUserActivity) {
+        if userActivity.activityType == CSSearchableItemActionType {
+            if let infos = userActivity.userInfo,
+                let id = infos[CSSearchableItemActivityIdentifier] as? String,
+                let name = id.components(separatedBy: "#").last,
+                let item = Items.shared.categories[Backend.Category(itemCategory: id.components(separatedBy: "#").first!)]?.first(where: { $0.name == name }) {
+                self.uiState.route = UIState.Route.item(item: item)
+                self.uiState.routeEnabled = true
+            }
         }
     }
 }
