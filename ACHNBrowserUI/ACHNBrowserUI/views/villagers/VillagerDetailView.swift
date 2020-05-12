@@ -34,7 +34,7 @@ struct VillagerDetailView: View {
             }
             .navigationViewStyle(StackNavigationViewStyle())
             .frame(width: 350, height: 650).asImage()
-            self.sheet = .share(content: [ItemDetailSource(name: self.villager.name["name-en"] ?? "", image: image)])
+            self.sheet = .share(content: [ItemDetailSource(name: self.villager.localizedName, image: image)])
         }) {
             Image(systemName: "square.and.arrow.up").imageScale(.large)
         }
@@ -50,9 +50,9 @@ struct VillagerDetailView: View {
         }
     }
     
-    private func makeInfoCell(title: String, value: String) -> some View {
+    private func makeInfoCell(title: LocalizedStringKey, value: String) -> some View {
         HStack {
-            Text(LocalizedStringKey(title))
+            Text(title)
                 .foregroundColor(textColor)
                 .font(.headline)
                 .fontWeight(.bold)
