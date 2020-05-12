@@ -21,7 +21,8 @@ public struct NookazonService {
     }()
     
     public static func fetchListings(item: Item) -> AnyPublisher<[Listing], Error> {
-        var components = URLComponents(string: "https://acnh.ericlewis.dev/")
+        var components = URLComponents(string: "https://ericlewis-nookazon.builtwithdark
+  .com/")
         components?.queryItems = [URLQueryItem(name: "search", value: item.id)]
         
         return URLSession.shared.dataTaskPublisher(for: components!.url!)
