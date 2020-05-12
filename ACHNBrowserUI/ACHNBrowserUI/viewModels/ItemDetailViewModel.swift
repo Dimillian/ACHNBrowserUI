@@ -35,6 +35,7 @@ class ItemDetailViewModel: ObservableObject {
                 guard let weakself = self else { return }
                 self?.cancellable?.cancel()
                 self?.listings = []
+                self?.fetchListings()
                 
                 let items = Items.shared.categories[weakself.item.appCategory] ?? []
                 if let set = $0.set, set != "None" {
@@ -60,7 +61,7 @@ class ItemDetailViewModel: ObservableObject {
         }
     }
     
-    func fetchListings() {
+    private func fetchListings() {
         loading = true
         cancellable = NookazonService.fetchListings(item: item)
             .catch { _ in Just([]) }
@@ -68,7 +69,7 @@ class ItemDetailViewModel: ObservableObject {
             .sink { [weak self] listings in
                 self?.loading = false
                 self?.listings = listings
-            }
+        }
     }
     
     deinit {

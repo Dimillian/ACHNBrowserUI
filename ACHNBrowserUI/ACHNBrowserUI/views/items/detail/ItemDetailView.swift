@@ -87,7 +87,6 @@ struct ItemDetailView: View {
         .environment(\.horizontalSizeClass, .regular)
         .onAppear(perform: {
             self.itemViewModel.setupItems()
-            self.itemViewModel.fetchListings()
         })
         .onDisappear {
             self.itemViewModel.cancellable?.cancel()
