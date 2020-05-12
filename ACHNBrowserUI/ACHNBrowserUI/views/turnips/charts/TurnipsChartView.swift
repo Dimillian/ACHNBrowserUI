@@ -11,9 +11,9 @@ import Backend
 
 
 struct TurnipsChartView: View {
-    private struct ChartHeightPreferenceKey: PreferenceKey {
-        static var defaultValue: CGFloat?
-        static func reduce(value: inout CGFloat?, nextValue: () -> CGFloat?) {
+    private struct ChartSizePreferenceKey: PreferenceKey {
+        static var defaultValue: CGSize?
+        static func reduce(value: inout CGSize?, nextValue: () -> CGSize?) {
             if let newValue = nextValue() { value = newValue }
         }
     }
@@ -23,24 +23,24 @@ struct TurnipsChartView: View {
     var predictions: TurnipPredictions
     @Binding var animateCurves: Bool
     @Environment(\.presentationMode) var presentation
-    @State private var chartHeight: CGFloat?
+    @State private var chartSize: CGSize?
     @State private var verticalLegendWidth: CGFloat?
     @State private var bottomLegendHeight: CGFloat?
-    @State private var positionPressed: Int = -1
+    @State private var positionPressed: Int = 0
 
     var body: some View {
         VStack {
             TurnipsChartTopLegendView()
             HStack(alignment: .top) {
                 TurnipsChartVerticalLegend(predictions: predictions)
-                    .frame(width: verticalLegendWidth, height: chartHeight)
+                    .frame(width: verticalLegendWidth, height: chartSize?.height)
                     .padding(.top)
                 ScrollView(.horizontal, showsIndicators: false) {
                     chart.frame(width: 600, height: 500)
                 }
             }
         }
-        .onHeightPreferenceChange(ChartHeightPreferenceKey.self, storeValueIn: $chartHeight)
+        .onSizePreferenceChange(ChartSizePreferenceKey.self, storeValueIn: $chartSize)
         .onHeightPreferenceChange(TurnipsChartBottomLegendView.HeightPreferenceKey.self, storeValueIn: $bottomLegendHeight)
         .onWidthPreferenceChange(TurnipsChartVerticalLegend.WidthPreferenceKey.self, storeValueIn: $verticalLegendWidth)
     }
@@ -48,7 +48,7 @@ struct TurnipsChartView: View {
     private var chart: some View {
         VStack(spacing: 10) {
             curves
-                .propagateHeight(ChartHeightPreferenceKey.self)
+                .propagateSize(ChartSizePreferenceKey.self, storeValueIn: $chartSize)
             TurnipsChartBottomLegendView(predictions: predictions, positionPress: positionPress)
                 .frame(height: bottomLegendHeight)
         }
@@ -74,60 +74,13 @@ struct TurnipsChartView: View {
                 .foregroundColor(PredictionCurve.average.color)
                 .saturation(5)
                 .blendMode(.screen)
-//            if positionPressed > -1 {
-//                values(for: positionPressed)
-//            }
+            TurnipsChartValuesView(predictions: predictions, position: positionPressed)
         }.animation(.spring())
             .background(Color.blue.opacity(0.10))
     }
 
     private func positionPress(_ position: Int) {
         positionPressed = position
-    }
-
-    private func values(for position: Int) -> some View {
-        let min = predictions.minMax?
-            .compactMap { $0.first }[position] ?? 0
-        let max = predictions.minMax?
-            .compactMap { $0.second }[position] ?? 0
-        let average = predictions.averagePrices?[position] ?? 0
-
-        let rect = CGRect(x: 0, y: 0, width: 500, height: 50)
-        let (_, maxY, ratioY, ratioX) = predictions.minMax?.roundedMinMaxAndRatios(rect: rect) ?? (0, 0, 0, 0)
-
-        let x = CGFloat(position) * ratioX
-        let padding: CGFloat = 16
-
-        return ZStack {
-            Color.red.opacity(1/20)
-                .frame(width: 5)
-                .position(CGPoint(
-                    x: x,
-                    y: rect.midY
-                ))
-            Text("\(min)")
-                .bold()
-                .foregroundColor(.graphMinMax)
-                .position(CGPoint(
-                    x: x,
-                    y: ratioY * (maxY - CGFloat(min)) + padding
-                ))
-            Text("\(average)")
-                .bold()
-                .foregroundColor(.graphAverage)
-                .saturation(5)
-                .position(CGPoint(
-                    x: x,
-                    y: ratioY * (maxY - CGFloat(average)) - padding
-                ))
-            Text("\(max)")
-                .bold()
-                .foregroundColor(.graphMinMax)
-                .position(CGPoint(
-                    x: x,
-                    y: ratioY * (maxY - CGFloat(max)) - padding
-                ))
-        }
     }
 }
 
