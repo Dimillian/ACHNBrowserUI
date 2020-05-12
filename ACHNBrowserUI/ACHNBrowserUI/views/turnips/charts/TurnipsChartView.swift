@@ -76,7 +76,6 @@ struct TurnipsChartView: View {
                 .blendMode(.screen)
             TurnipsChartValuesView(predictions: predictions, position: positionPressed)
         }.animation(.spring())
-            .background(Color.blue.opacity(0.10))
     }
 
     private func positionPress(_ position: Int) {
