@@ -61,7 +61,7 @@ class VillagersViewModel: ObservableObject {
 
     private func villagers(with string: String) -> [Villager] {
         villagers.filter {
-            $0.name["name-en"]?.lowercased().contains(string.lowercased()) == true
+            $0.localizedName.lowercased().contains(string.lowercased()) == true
         }
     }
 }

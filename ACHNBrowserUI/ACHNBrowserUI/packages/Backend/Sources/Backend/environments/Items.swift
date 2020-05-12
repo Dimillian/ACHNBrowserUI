@@ -35,13 +35,18 @@ public class Items: ObservableObject {
                     .fetchFile(name: filename)
                     .replaceError(with: NewItemResponse(total: 0, results: []))
                     .eraseToAnyPublisher()
-                    .map{ $0.results.filter{ $0.content.appCategory == category }.map{ $0.content }}
+                    .map{ $0.results.filter{ $0.content.appCategory == category } }
                     .subscribe(on: DispatchQueue.global())
                     .receive(on: DispatchQueue.main)
                     .sink { [weak self] items in
-                        self?.categories[category] = items
+                        var items = items
+                        for (index, item) in items.enumerated() where item.variations?.isEmpty == false {
+                            items[index].content.variations = item.variations
+                        }
+                        let finalItems = items.map{ $0.content }
+                        self?.categories[category] = finalItems
                         if self?.spotlightIndex.contains(category) == true, shouldIndex {
-                            self?.indexItems(category: category, items: items)
+                            self?.indexItems(category: category, items: finalItems)
                         }
                         
                 }
@@ -129,9 +134,9 @@ public class Items: ObservableObject {
             for item in items {
                 if let image = item.finalImage {
                     let set = CSSearchableItemAttributeSet(itemContentType: "Text")
-                    set.title = item.name
+                    set.title = item.localizedName
                     set.identifier = "\(item.category)#\(item.name)"
-                    set.contentDescription = "\(category.rawValue.capitalized)\n\(item.obtainedFrom ?? item.obtainedFromNew?.first ?? "")\n\(item.formattedTimes() ?? "")"
+                    set.contentDescription = "\(NSLocalizedString(category.rawValue, comment: ""))\n\(NSLocalizedString(item.obtainedFrom ?? item.obtainedFromNew?.first ?? "", comment: ""))\n\(item.formattedTimes() ?? "")"
                     SDWebImageDownloader.shared.downloadImage(with:  ImageService.computeUrl(key: image))
                     { (_, data, _, _) in
                         if let data = data {

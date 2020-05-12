@@ -34,7 +34,7 @@ struct VillagerDetailView: View {
             }
             .navigationViewStyle(StackNavigationViewStyle())
             .frame(width: 350, height: 650).asImage()
-            self.sheet = .share(content: [ItemDetailSource(name: self.villager.name["name-en"] ?? "", image: image)])
+            self.sheet = .share(content: [ItemDetailSource(name: self.villager.localizedName, image: image)])
         }) {
             Image(systemName: "square.and.arrow.up").imageScale(.large)
         }
@@ -50,14 +50,14 @@ struct VillagerDetailView: View {
         }
     }
     
-    private func makeInfoCell(title: String, value: String) -> some View {
+    private func makeInfoCell(title: LocalizedStringKey, value: String) -> some View {
         HStack {
-            Text(LocalizedStringKey(title))
+            Text(title)
                 .foregroundColor(textColor)
                 .font(.headline)
                 .fontWeight(.bold)
             Spacer()
-            Text(value)
+            Text(LocalizedStringKey(value))
                 .foregroundColor(secondaryTextColor)
                 .font(.subheadline)
         }.listRowBackground(Rectangle().fill(backgroundColor))
@@ -75,7 +75,7 @@ struct VillagerDetailView: View {
             .listRowBackground(Rectangle().fill(backgroundColor))
             .padding()
             makeInfoCell(title: "Personality", value: villager.personality).padding()
-            makeInfoCell(title: "Birthday", value: villager.formattedBirthday ?? NSLocalizedString("Unknown", comment: "")).padding()
+            makeInfoCell(title: "Birthday", value: villager.formattedBirthday ?? "Unknown").padding()
             makeInfoCell(title: "Species", value: villager.species).padding()
             makeInfoCell(title: "Gender", value: villager.gender).padding()
             makeInfoCell(title: "Catch phrase", value: villager.catchPhrase ?? "").padding()
@@ -94,8 +94,10 @@ struct VillagerDetailView: View {
         }
         .listStyle(GroupedListStyle())
         .environment(\.horizontalSizeClass, .regular)
-        .navigationBarTitle(Text(villager.name["name-en"] ?? ""), displayMode: .automatic)
+        .navigationBarTitle(Text(villager.localizedName), displayMode: .automatic)
         .onAppear {
+            self.viewModel.fetchItems()
+            
             let url = ACNHApiService.BASE_URL.absoluteString +
                 ACNHApiService.Endpoint.villagerIcon(id: self.villager.id).path()
             ImageService.getImageColors(key: url) { colors in

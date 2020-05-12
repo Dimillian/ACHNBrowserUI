@@ -70,7 +70,7 @@ extension CategoriesView {
     
     private func makeSubCategories(name: String, icon: String, categories: [Backend.Category]) -> some View {
         NavigationLink(destination: CategoryDetailView(categories: categories)
-            .navigationBarTitle(name)) {
+            .navigationBarTitle(LocalizedStringKey(name))) {
                 HStack {
                     Image(icon)
                         .renderingMode(.original)

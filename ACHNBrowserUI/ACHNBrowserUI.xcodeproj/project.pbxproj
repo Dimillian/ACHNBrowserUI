@@ -697,13 +697,6 @@
 			path = representables;
 			sourceTree = "<group>";
 		};
-		6942FC35244988E90062FE8F /* representable */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = representable;
-			sourceTree = "<group>";
-		};
 		6942FC38244989470062FE8F /* listing */ = {
 			isa = PBXGroup;
 			children = (
@@ -848,7 +841,6 @@
 				687B5765244A02E400C1E86F /* turnips */,
 				697E63F32449A488008FB710 /* villagers */,
 				6942FC38244989470062FE8F /* listing */,
-				6942FC35244988E90062FE8F /* representable */,
 				69C5F5E8244217EF00BF8FA4 /* categories */,
 				69BEA983243E638C00F02C61 /* collection */,
 				69BEA982243E609400F02C61 /* items */,
@@ -1545,7 +1537,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = ACHNBrowserUI/ACHNBrowserUI.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 051132020;
+				CURRENT_PROJECT_VERSION = 051222020;
 				DEVELOPMENT_ASSET_PATHS = "\"ACHNBrowserUI/Preview Content\"";
 				DEVELOPMENT_TEAM = Z6P74P6T99;
 				ENABLE_PREVIEWS = YES;
@@ -1555,7 +1547,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2.1;
+				MARKETING_VERSION = 1.2.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.thomasricouard.ACNH;
 				PRODUCT_NAME = "AC Helper";
 				SUPPORTS_MACCATALYST = YES;
@@ -1570,7 +1562,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = ACHNBrowserUI/ACHNBrowserUI.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 051132020;
+				CURRENT_PROJECT_VERSION = 051222020;
 				DEVELOPMENT_ASSET_PATHS = "\"ACHNBrowserUI/Preview Content\"";
 				DEVELOPMENT_TEAM = Z6P74P6T99;
 				ENABLE_PREVIEWS = YES;
@@ -1580,7 +1572,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2.1;
+				MARKETING_VERSION = 1.2.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.thomasricouard.ACNH;
 				PRODUCT_NAME = "AC Helper";
 				SUPPORTS_MACCATALYST = YES;

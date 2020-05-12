@@ -21,7 +21,7 @@ struct VillagerRowView: View {
             ItemImage(path: ACNHApiService.BASE_URL.absoluteString +
                 ACNHApiService.Endpoint.villagerIcon(id: villager.id).path(),
                       size: 50)
-            Text(villager.name["name-en"] ?? "")
+            Text(villager.localizedName)
                 .style(appStyle: .rowTitle)
         }
     }

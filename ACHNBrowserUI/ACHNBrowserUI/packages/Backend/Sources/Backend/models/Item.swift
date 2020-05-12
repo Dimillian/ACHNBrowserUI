@@ -21,7 +21,8 @@ public struct NewItemResponse: Codable {
     public struct ItemWrapper: Codable {
         public let id: Int
         public let name: String
-        public let content: Item
+        public var content: Item
+        public let variations: [Variant]?
     }
 }
 
@@ -67,7 +68,7 @@ public struct Item: Codable, Equatable, Identifiable, Hashable {
     public let dIY: Bool?
     public let customize: Bool?
     
-    public let variants: [Variant]?
+    public var variations: [Variant]?
     
     public let category: String
     
@@ -88,6 +89,7 @@ public struct Item: Codable, Equatable, Identifiable, Hashable {
     public let set: String?
     public let tag: String?
     public let themes: [String]?
+    public let colors: [String]?
 }
 
 // MARK: - Calendar
@@ -162,7 +164,7 @@ public let static_item = Item(name: "Acoustic guitar",
                        sourceNotes: "From somewhere",
                        dIY: true,
                        customize: true,
-                       variants: nil,
+                       variations: nil,
                        category: "Housewares",
                        materials: nil,
                        buy: 200,
@@ -174,4 +176,5 @@ public let static_item = Item(name: "Acoustic guitar",
                        activeTimes: nil,
                        set: nil,
                        tag: "Instrument",
-                       themes: nil)
+                       themes: nil,
+                       colors: nil)

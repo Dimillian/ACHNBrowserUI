@@ -24,26 +24,7 @@ struct ItemDetailView: View {
     init(item: Item) {
         self.itemViewModel = ItemDetailViewModel(item: item)
     }
-    
-    // MARK: - Computed vars
-    var setItems: [Item] {
-        guard let set = itemViewModel.item.set, set != "None",
-            let items = items.categories[itemViewModel.item.appCategory] else { return [] }
-        return items.filter({ $0.set == set })
-    }
-    
-    var similarItems: [Item] {
-        guard let tag = itemViewModel.item.tag, tag != "None",
-            let items = items.categories[itemViewModel.item.appCategory] else { return [] }
-        return items.filter({ $0.tag == tag })
-    }
-    
-    var themeItems: [Item] {
-        guard let theme = itemViewModel.item.themes?.filter({ $0 != "None" }).first,
-            let items = items.categories[itemViewModel.item.appCategory] else { return [] }
-        return items.filter({ $0.themes?.contains(theme) == true })
-    }
-    
+
     private func makeShareContent() -> [Any] {
         let image = List {
             ItemDetailInfoView(item: itemViewModel.item,
@@ -62,27 +43,34 @@ struct ItemDetailView: View {
         List {
             ItemDetailInfoView(item: itemViewModel.item,
                                displayedVariant: $displayedVariant)
-            if itemViewModel.item.variants != nil {
+            if itemViewModel.item.variations != nil {
                 variantsSection
             }
-            if !setItems.isEmpty {
+            if !itemViewModel.setItems.isEmpty {
                 ItemsCrosslineSectionView(title: "Set items",
-                                          items: setItems,
+                                          items: itemViewModel.setItems,
                                           icon: "paperclip.circle.fill",
                                           currentItem: $itemViewModel.item,
                                           selectedVariant: $displayedVariant)
             }
-            if !similarItems.isEmpty {
+            if !itemViewModel.similarItems.isEmpty {
                 ItemsCrosslineSectionView(title: "Simillar items",
-                                          items: similarItems,
+                                          items: itemViewModel.similarItems,
                                           icon: "eyedropper.full",
                                           currentItem: $itemViewModel.item,
                                           selectedVariant: $displayedVariant)
             }
-            if !themeItems.isEmpty {
+            if !itemViewModel.thematicItems.isEmpty {
                 ItemsCrosslineSectionView(title: "Thematics",
-                                          items: themeItems,
+                                          items: itemViewModel.thematicItems,
                                           icon: "tag.fill",
+                                          currentItem: $itemViewModel.item,
+                                          selectedVariant: $displayedVariant)
+            }
+            if !itemViewModel.colorsItems.isEmpty {
+                ItemsCrosslineSectionView(title: "Same color",
+                                          items: itemViewModel.colorsItems,
+                                          icon: "pencil.tip",
                                           currentItem: $itemViewModel.item,
                                           selectedVariant: $displayedVariant)
             }
@@ -98,7 +86,7 @@ struct ItemDetailView: View {
         .listStyle(GroupedListStyle())
         .environment(\.horizontalSizeClass, .regular)
         .onAppear(perform: {
-            self.itemViewModel.fetch(item: self.itemViewModel.item)
+            self.itemViewModel.setupItems()
         })
         .onDisappear {
             self.itemViewModel.cancellable?.cancel()
@@ -136,14 +124,16 @@ extension ItemDetailView {
         Section(header: SectionHeaderView(text: "Variants", icon: "paintbrush.fill")) {
             ScrollView(.horizontal, showsIndicators: false) {
                 HStack {
-                ForEach(itemViewModel.item.variants!) { variant in
-                        ItemImage(path: variant.filename,
-                                  size: 75)
-                            .onTapGesture {
-                                withAnimation {
-                                    FeedbackGenerator.shared.triggerSelection()
-                                    self.displayedVariant = variant
-                                }
+                    itemViewModel.item.variations.map { variants in
+                        ForEach(variants) { variant in
+                            ItemImage(path: variant.content.image,
+                                      size: 75)
+                                .onTapGesture {
+                                    withAnimation {
+                                        FeedbackGenerator.shared.triggerSelection()
+                                        self.displayedVariant = variant
+                                    }
+                            }
                         }
                     }
                 }.padding()
@@ -156,18 +146,20 @@ extension ItemDetailView {
         Section(header: SectionHeaderView(text: "Materials", icon: "leaf.arrow.circlepath")) {
             ScrollView(.horizontal, showsIndicators: false) {
                 HStack {
-                    ForEach(itemViewModel.item.materials!) { material in
-                        VStack {
-                            Image(material.iconName)
-                                .resizable()
-                                .frame(width: 50, height: 50)
-                            Text(material.itemName)
-                                .font(.callout)
-                                .foregroundColor(.acText)
-                            Text("\(material.count)")
-                                .font(.footnote)
-                                .foregroundColor(.acHeaderBackground)
-                            
+                    itemViewModel.item.materials.map { materials in
+                        ForEach(materials) { material in
+                            VStack {
+                                Image(material.iconName)
+                                    .resizable()
+                                    .frame(width: 50, height: 50)
+                                Text(material.itemName)
+                                    .font(.callout)
+                                    .foregroundColor(.acText)
+                                Text("\(material.count)")
+                                    .font(.footnote)
+                                    .foregroundColor(.acHeaderBackground)
+                                
+                            }
                         }
                     }
                 }.padding()

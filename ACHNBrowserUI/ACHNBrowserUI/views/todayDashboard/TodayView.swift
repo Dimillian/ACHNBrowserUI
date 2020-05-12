@@ -32,7 +32,6 @@ struct TodayView: View {
                     TodayWhatsNewSection(showWhatsNew: $showWhatsNew)
                 }
                 
-                //ItemDetail route
                 if uiState.routeEnabled {
                     uiState.route.map { route in
                         NavigationLink(destination: route.makeDetailView(),
@@ -62,6 +61,7 @@ struct TodayView: View {
             .navigationBarTitle(Text("\(dateString().capitalized)"))
             .navigationBarItems(leading: aboutButton, trailing: settingsButton)
             .sheet(item: $selectedSheet, content: { Sheet(sheetType: $0) })
+            .onAppear(perform: viewModel.fetchListings)
             
             ActiveCrittersView(activeFishes: viewModel.fishes.filterActive(),
                                activeBugs: viewModel.bugs.filterActive())

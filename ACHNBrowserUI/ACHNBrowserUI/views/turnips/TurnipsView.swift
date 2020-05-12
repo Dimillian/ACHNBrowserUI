@@ -73,6 +73,7 @@ struct TurnipsView: View {
             })
         }
         .onAppear(perform: NotificationManager.shared.registerForNotifications)
+        .onAppear(perform: viewModel.fetchIslands)
     }
 }
 
