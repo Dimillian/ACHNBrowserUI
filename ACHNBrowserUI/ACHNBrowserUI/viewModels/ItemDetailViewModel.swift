@@ -12,6 +12,12 @@ import Backend
 
 class ItemDetailViewModel: ObservableObject {
     @Published var item: Item
+    
+    @Published var setItems: [Item] = []
+    @Published var similarItems: [Item] = []
+    @Published var thematicItems: [Item] = []
+    @Published var colorsItems: [Item] = []
+    
     @Published var listings: [Listing] = []
     @Published var loading: Bool = true
     
@@ -21,11 +27,33 @@ class ItemDetailViewModel: ObservableObject {
     init(item: Item) {
         self.item = item
         self.itemCancellable = self.$item
-            .receive(on: RunLoop.main)
+            .receive(on: DispatchQueue.main)
             .sink { [weak self] in
                 self?.cancellable?.cancel()
                 self?.listings = []
                 self?.fetch(item: $0)
+                
+                let items = Items.shared.categories[item.appCategory] ?? []
+                if let set = $0.set, set != "None" {
+                    self?.setItems = items.filter({ $0.set == set })
+                } else {
+                    self?.setItems = []
+                }
+                if let tag = $0.tag, tag != "None" {
+                    self?.similarItems = items.filter({ $0.tag == tag }).prefix(30).map{ $0 }
+                } else {
+                    self?.similarItems = []
+                }
+                if let theme = $0.themes?.filter({ $0 != "None" }).first {
+                    self?.thematicItems = items.filter({ $0.themes?.contains(theme) == true }).prefix(30).map{ $0 }
+                } else {
+                    self?.thematicItems = []
+                }
+                if let color = $0.colors?.first {
+                    self?.colorsItems = items.filter({ $0.colors?.contains(color) == true }).prefix(30).map{ $0 }
+                } else {
+                    self?.colorsItems = []
+                }
             }
     }
     

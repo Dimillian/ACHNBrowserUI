@@ -89,6 +89,7 @@ public struct Item: Codable, Equatable, Identifiable, Hashable {
     public let set: String?
     public let tag: String?
     public let themes: [String]?
+    public let colors: [String]?
 }
 
 // MARK: - Calendar
@@ -175,4 +176,5 @@ public let static_item = Item(name: "Acoustic guitar",
                        activeTimes: nil,
                        set: nil,
                        tag: "Instrument",
-                       themes: nil)
+                       themes: nil,
+                       colors: nil)
