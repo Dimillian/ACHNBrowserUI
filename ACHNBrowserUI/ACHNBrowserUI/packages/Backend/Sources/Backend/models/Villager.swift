@@ -27,6 +27,16 @@ public struct Villager: Identifiable, Codable, Equatable {
     public let gender: String
     public let species: String
     
+    public var localizedName: String { 
+        guard let languageCode = Locale.current.languageCode,
+            let localizedName = self.name["name-" + languageCode]
+            else {
+                return self.name["name-en"] ?? ""
+        }
+        
+        return localizedName
+    }
+    
     enum CodingKeys: String, CodingKey {
         case id, name, personality, birthday, gender, species
         case fileName = "file-name"

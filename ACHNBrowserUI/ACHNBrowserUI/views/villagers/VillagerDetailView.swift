@@ -34,7 +34,7 @@ struct VillagerDetailView: View {
             }
             .navigationViewStyle(StackNavigationViewStyle())
             .frame(width: 350, height: 650).asImage()
-            self.sheet = .share(content: [ItemDetailSource(name: self.villager.name["name-en"] ?? "", image: image)])
+            self.sheet = .share(content: [ItemDetailSource(name: self.villager.localizedName, image: image)])
         }) {
             Image(systemName: "square.and.arrow.up").imageScale(.large)
         }
@@ -94,7 +94,7 @@ struct VillagerDetailView: View {
         }
         .listStyle(GroupedListStyle())
         .environment(\.horizontalSizeClass, .regular)
-        .navigationBarTitle(Text(villager.name["name-en"] ?? ""), displayMode: .automatic)
+        .navigationBarTitle(Text(villager.localizedName), displayMode: .automatic)
         .onAppear {
             let url = ACNHApiService.BASE_URL.absoluteString +
                 ACNHApiService.Endpoint.villagerIcon(id: self.villager.id).path()
