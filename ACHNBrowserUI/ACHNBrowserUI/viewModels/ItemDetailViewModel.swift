@@ -26,14 +26,17 @@ class ItemDetailViewModel: ObservableObject {
 
     init(item: Item) {
         self.item = item
+    }
+    
+    func setupItems() {
         self.itemCancellable = self.$item
             .receive(on: DispatchQueue.main)
             .sink { [weak self] in
+                guard let weakself = self else { return }
                 self?.cancellable?.cancel()
                 self?.listings = []
-                self?.fetch(item: $0)
                 
-                let items = Items.shared.categories[item.appCategory] ?? []
+                let items = Items.shared.categories[weakself.item.appCategory] ?? []
                 if let set = $0.set, set != "None" {
                     self?.setItems = items.filter({ $0.set == set })
                 } else {
@@ -54,10 +57,10 @@ class ItemDetailViewModel: ObservableObject {
                 } else {
                     self?.colorsItems = []
                 }
-            }
+        }
     }
     
-    func fetch(item: Item) {
+    func fetchListings() {
         loading = true
         cancellable = NookazonService.fetchListings(item: item)
             .catch { _ in Just([]) }

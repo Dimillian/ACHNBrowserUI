@@ -86,7 +86,8 @@ struct ItemDetailView: View {
         .listStyle(GroupedListStyle())
         .environment(\.horizontalSizeClass, .regular)
         .onAppear(perform: {
-            self.itemViewModel.fetch(item: self.itemViewModel.item)
+            self.itemViewModel.setupItems()
+            self.itemViewModel.fetchListings()
         })
         .onDisappear {
             self.itemViewModel.cancellable?.cancel()

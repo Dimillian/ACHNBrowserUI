@@ -30,11 +30,9 @@ class DashboardViewModel: ObservableObject {
             self?.fossils = items[.fossils] ?? []
             self?.art = items[.art]?.filter({ !$0.name.contains("(fake)") }) ?? []
         }
-        fetchIsland()
-        fetchListings()
     }
     
-    private func fetchListings() {
+    func fetchListings() {
         listingCancellable = NookazonService
             .recentListings()
             .receive(on: RunLoop.main)
@@ -53,5 +51,4 @@ class DashboardViewModel: ObservableObject {
             })
         */
     }
-    
 }

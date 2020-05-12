@@ -16,7 +16,9 @@ public class VillagerDetailViewModel: ObservableObject {
     
     init(villager: Villager) {
         self.villager = villager
-        
+    }
+    
+    func fetchItems() {
         if let filename = villager.fileName {
             _ = Items.shared.matchVillagerItems(villager: filename)
                 .subscribe(on: DispatchQueue.global(qos: .userInitiated))
