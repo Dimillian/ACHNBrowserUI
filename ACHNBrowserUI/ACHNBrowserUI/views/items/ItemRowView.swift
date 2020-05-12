@@ -84,19 +84,21 @@ struct ItemRowView: View {
     
     private var itemVariants: some View {
         Group {
-            if item.variants != nil {
+            if item.variations != nil {
                 ScrollView(.horizontal, showsIndicators: false) {
                     HStack(spacing: 2) {
-                        ForEach(item.variants!) { variant in
-                            ItemImage(path: variant.filename,
-                                      size: 25)
-                                .cornerRadius(4)
-                                .background(Rectangle()
+                        item.variations.map { variations in
+                            ForEach(variations) { variant in
+                                ItemImage(path: variant.content.image,
+                                          size: 25)
                                     .cornerRadius(4)
-                                    .foregroundColor(self.displayedVariant == variant ? Color.gray : Color.clear))
-                                .onTapGesture {
-                                    FeedbackGenerator.shared.triggerSelection()
-                                    self.displayedVariant = variant
+                                    .background(Rectangle()
+                                        .cornerRadius(4)
+                                        .foregroundColor(self.displayedVariant == variant ? Color.gray : Color.clear))
+                                    .onTapGesture {
+                                        FeedbackGenerator.shared.triggerSelection()
+                                        self.displayedVariant = variant
+                                }
                             }
                         }
                     }.frame(height: 30)
@@ -115,7 +117,7 @@ struct ItemRowView: View {
                     .resizable()
                     .frame(width: imageSize, height: imageSize)
             } else {
-                ItemImage(path: displayedVariant?.filename ?? item.finalImage,
+                ItemImage(path: displayedVariant?.content.image ?? item.finalImage,
                           size: imageSize)
             }
             

@@ -61,7 +61,9 @@ struct TodayCollectionProgressSection: View {
             .frame(height: self.barHeight)
             
             Text("\(Int(caught)) / \(Int(total))")
-                .font(Font.system(size: 12, weight: Font.Weight.semibold, design: Font.Design.rounded).monospacedDigit())
+                .font(Font.system(size: 12,
+                                  weight: Font.Weight.semibold,
+                                  design: Font.Design.rounded).monospacedDigit())
                 .foregroundColor(.acText)
         }
     }
@@ -81,6 +83,7 @@ struct TodayCollectionProgressSection: View {
             RoundedRectangle(cornerRadius: 14, style: .continuous)
                 .foregroundColor(Color("ACBackground"))
         )
+        .buttonStyle(PlainButtonStyle())
     }
 
     private func generateAndShareImage() {

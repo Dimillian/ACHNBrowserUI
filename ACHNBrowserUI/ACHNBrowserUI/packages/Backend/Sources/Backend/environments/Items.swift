@@ -35,13 +35,18 @@ public class Items: ObservableObject {
                     .fetchFile(name: filename)
                     .replaceError(with: NewItemResponse(total: 0, results: []))
                     .eraseToAnyPublisher()
-                    .map{ $0.results.filter{ $0.content.appCategory == category }.map{ $0.content }}
+                    .map{ $0.results.filter{ $0.content.appCategory == category } }
                     .subscribe(on: DispatchQueue.global())
                     .receive(on: DispatchQueue.main)
                     .sink { [weak self] items in
-                        self?.categories[category] = items
+                        var items = items
+                        for (index, item) in items.enumerated() where item.variations?.isEmpty == false {
+                            items[index].content.variations = item.variations
+                        }
+                        let finalItems = items.map{ $0.content }
+                        self?.categories[category] = finalItems
                         if self?.spotlightIndex.contains(category) == true, shouldIndex {
-                            self?.indexItems(category: category, items: items)
+                            self?.indexItems(category: category, items: finalItems)
                         }
                         
                 }

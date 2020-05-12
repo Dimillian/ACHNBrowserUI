@@ -62,7 +62,7 @@ struct ItemDetailView: View {
         List {
             ItemDetailInfoView(item: itemViewModel.item,
                                displayedVariant: $displayedVariant)
-            if itemViewModel.item.variants != nil {
+            if itemViewModel.item.variations != nil {
                 variantsSection
             }
             if !setItems.isEmpty {
@@ -136,14 +136,16 @@ extension ItemDetailView {
         Section(header: SectionHeaderView(text: "Variants", icon: "paintbrush.fill")) {
             ScrollView(.horizontal, showsIndicators: false) {
                 HStack {
-                ForEach(itemViewModel.item.variants!) { variant in
-                        ItemImage(path: variant.filename,
-                                  size: 75)
-                            .onTapGesture {
-                                withAnimation {
-                                    FeedbackGenerator.shared.triggerSelection()
-                                    self.displayedVariant = variant
-                                }
+                    itemViewModel.item.variations.map { variants in
+                        ForEach(variants) { variant in
+                            ItemImage(path: variant.content.image,
+                                      size: 75)
+                                .onTapGesture {
+                                    withAnimation {
+                                        FeedbackGenerator.shared.triggerSelection()
+                                        self.displayedVariant = variant
+                                    }
+                            }
                         }
                     }
                 }.padding()
@@ -156,18 +158,20 @@ extension ItemDetailView {
         Section(header: SectionHeaderView(text: "Materials", icon: "leaf.arrow.circlepath")) {
             ScrollView(.horizontal, showsIndicators: false) {
                 HStack {
-                    ForEach(itemViewModel.item.materials!) { material in
-                        VStack {
-                            Image(material.iconName)
-                                .resizable()
-                                .frame(width: 50, height: 50)
-                            Text(material.itemName)
-                                .font(.callout)
-                                .foregroundColor(.acText)
-                            Text("\(material.count)")
-                                .font(.footnote)
-                                .foregroundColor(.acHeaderBackground)
-                            
+                    itemViewModel.item.materials.map { materials in
+                        ForEach(materials) { material in
+                            VStack {
+                                Image(material.iconName)
+                                    .resizable()
+                                    .frame(width: 50, height: 50)
+                                Text(material.itemName)
+                                    .font(.callout)
+                                    .foregroundColor(.acText)
+                                Text("\(material.count)")
+                                    .font(.footnote)
+                                    .foregroundColor(.acHeaderBackground)
+                                
+                            }
                         }
                     }
                 }.padding()

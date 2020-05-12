@@ -32,7 +32,6 @@ struct TodayView: View {
                     TodayWhatsNewSection(showWhatsNew: $showWhatsNew)
                 }
                 
-                //ItemDetail route
                 if uiState.routeEnabled {
                     uiState.route.map { route in
                         NavigationLink(destination: route.makeDetailView(),

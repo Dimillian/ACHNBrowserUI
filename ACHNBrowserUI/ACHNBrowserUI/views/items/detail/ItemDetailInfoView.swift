@@ -32,7 +32,7 @@ struct ItemDetailInfoView: View {
                         .resizable()
                         .frame(width: 150, height: 150)
                 } else {
-                    ItemImage(path: displayedVariant?.filename ?? item.finalImage,
+                    ItemImage(path: displayedVariant?.content.image ?? item.finalImage,
                               size: 150)
                 }
                 Spacer()

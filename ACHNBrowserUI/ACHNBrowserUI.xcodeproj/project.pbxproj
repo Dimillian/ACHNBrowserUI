@@ -697,13 +697,6 @@
 			path = representables;
 			sourceTree = "<group>";
 		};
-		6942FC35244988E90062FE8F /* representable */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = representable;
-			sourceTree = "<group>";
-		};
 		6942FC38244989470062FE8F /* listing */ = {
 			isa = PBXGroup;
 			children = (
@@ -848,7 +841,6 @@
 				687B5765244A02E400C1E86F /* turnips */,
 				697E63F32449A488008FB710 /* villagers */,
 				6942FC38244989470062FE8F /* listing */,
-				6942FC35244988E90062FE8F /* representable */,
 				69C5F5E8244217EF00BF8FA4 /* categories */,
 				69BEA983243E638C00F02C61 /* collection */,
 				69BEA982243E609400F02C61 /* items */,

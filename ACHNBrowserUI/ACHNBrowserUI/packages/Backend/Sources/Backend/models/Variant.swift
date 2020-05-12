@@ -10,10 +10,10 @@ import Foundation
 import SwiftUI
 
 public struct Variant: Codable, Equatable, Identifiable {
-    public var id: String { filename }
-    public let filename: String
-    public let bodyTitle: String?
-    public let colors: [String]?
-    public let tag: String?
-    public let themes: [String]?
+    public let id: Int
+    public let content: Content
+    
+    public struct Content: Codable, Equatable {
+        public let image: String
+    }
 }
