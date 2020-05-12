@@ -68,7 +68,7 @@ struct TodayBirthdaysSection: View {
             .mask(RoundedRectangle(cornerRadius: 22, style: .continuous))
             .padding(.trailing, 8)
             
-            Text(villager.name["name-en"] ?? "")
+            Text(villager.localizedName)
                 .font(Font.system(.headline, design: .rounded))
                 .fontWeight(.semibold)
                 .lineLimit(2)
