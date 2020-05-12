@@ -10,7 +10,7 @@ import SwiftUI
 import Backend
 
 struct TurnipsChartBottomLegendView: View {
-    private struct TextsHeightPreferenceKey: PreferenceKey {
+    struct HeightPreferenceKey: PreferenceKey {
         static var defaultValue: CGFloat?
         static func reduce(value: inout CGFloat?, nextValue: () -> CGFloat?) {
             if let newValue = nextValue() { value = newValue }
@@ -24,14 +24,6 @@ struct TurnipsChartBottomLegendView: View {
 
     var body: some View {
         GeometryReader(content: computeTexts)
-            // TOOD: actually use onHeightPreferenceChange instead of hardcoded value.
-            // Put back hardcoded value to fix a bump that occurs when the view appears.
-            // In the debugger we see a `Bound preference TextsHeightPreferenceKey tried to update multiple times per frame.` problem
-            // maybe it's related, we should dive deeper into Anchor Preference.
-            .frame(height: 50)
-//            .onHeightPreferenceChange(TextsHeightPreferenceKey.self, storeValueIn: $textsHeight)
-//            .frame(height: self.textsHeight)
-//            .fixedSize(horizontal: false, vertical: true)
     }
 
     func computeTexts(for geometry: GeometryProxy) -> some View {
@@ -40,7 +32,7 @@ struct TurnipsChartBottomLegendView: View {
         let (_, _, _, ratioX) = predictions.minMax?.roundedMinMaxAndRatios(rect: rect) ?? (0, 0, 0, 0)
         let count = predictions.minMax?.count ?? 0
         return texts(count: count, ratioX: ratioX)
-            .propagateHeight(TextsHeightPreferenceKey.self)
+            .propagateHeight(HeightPreferenceKey.self)
     }
 
     func texts(count: Int, ratioX: CGFloat) -> some View {
