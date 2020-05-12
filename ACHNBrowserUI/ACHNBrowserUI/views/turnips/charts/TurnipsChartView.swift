@@ -23,16 +23,17 @@ struct TurnipsChartView: View {
     var predictions: TurnipPredictions
     @Binding var animateCurves: Bool
     @Environment(\.presentationMode) var presentation
-    
-    @State private var chartFrame: CGRect?
+
     @State private var chartHeight: CGFloat?
+    @State private var verticalLegendWidth: CGFloat?
+    @State private var bottomLegendHeight: CGFloat?
     
     var body: some View {
         VStack {
             TurnipsChartTopLegendView()
             HStack(alignment: .top) {
                 TurnipsChartVerticalLegend(predictions: predictions)
-                    .frame(width: 30, height: chartHeight)
+                    .frame(width: verticalLegendWidth, height: chartHeight)
                     .padding(.top)
                 ScrollView(.horizontal, showsIndicators: false) {
                     chart.frame(width: 600, height: 500)
@@ -40,6 +41,8 @@ struct TurnipsChartView: View {
             }
         }
         .onHeightPreferenceChange(ChartHeightPreferenceKey.self, storeValueIn: $chartHeight)
+        .onHeightPreferenceChange(TurnipsChartBottomLegendView.HeightPreferenceKey.self, storeValueIn: $bottomLegendHeight)
+        .onWidthPreferenceChange(TurnipsChartVerticalLegend.WidthPreferenceKey.self, storeValueIn: $verticalLegendWidth)
     }
     
     private var chart: some View {
@@ -47,6 +50,7 @@ struct TurnipsChartView: View {
             curves
                 .propagateHeight(ChartHeightPreferenceKey.self)
             TurnipsChartBottomLegendView(predictions: predictions)
+                .frame(height: bottomLegendHeight)
         }
         .padding()
     }
