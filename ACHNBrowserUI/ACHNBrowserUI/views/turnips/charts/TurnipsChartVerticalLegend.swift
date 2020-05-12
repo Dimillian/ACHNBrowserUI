@@ -10,6 +10,13 @@ import SwiftUI
 import Backend
 
 struct TurnipsChartVerticalLegend: View {
+    struct WidthPreferenceKey: PreferenceKey {
+        static var defaultValue: CGFloat?
+        static func reduce(value: inout CGFloat?, nextValue: () -> CGFloat?) {
+            if let newValue = nextValue() { value = newValue }
+        }
+    }
+
     let predictions: TurnipPredictions
     var body: some View {
         GeometryReader(content: computeTexts)
@@ -23,6 +30,8 @@ struct TurnipsChartVerticalLegend: View {
         let max = Int(maxY) + TurnipsChart.steps
         let values = Array(stride(from: min, to: max, by: TurnipsChart.steps))
         return texts(values: values, ratioY: ratioY)
+            .propagateWidth(WidthPreferenceKey.self)
+        
     }
 
     func texts(values: [Int], ratioY: CGFloat) -> some View {
@@ -31,6 +40,7 @@ struct TurnipsChartVerticalLegend: View {
                 Text("\(value)")
                     .font(.footnote)
                     .fontWeight(.semibold)
+                    .fixedSize()
                     .foregroundColor(.acText)
                     .alignmentGuide(.top) { d in CGFloat(value) * ratioY }
             }

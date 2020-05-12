@@ -23,15 +23,17 @@ struct TurnipsChartView: View {
     var predictions: TurnipPredictions
     @Binding var animateCurves: Bool
     @Environment(\.presentationMode) var presentation
-    @State private var positionPressed: Int = -1
     @State private var chartHeight: CGFloat?
+    @State private var verticalLegendWidth: CGFloat?
+    @State private var bottomLegendHeight: CGFloat?
+    @State private var positionPressed: Int = -1
 
     var body: some View {
         VStack {
             TurnipsChartTopLegendView()
             HStack(alignment: .top) {
                 TurnipsChartVerticalLegend(predictions: predictions)
-                    .frame(width: 30, height: chartHeight)
+                    .frame(width: verticalLegendWidth, height: chartHeight)
                     .padding(.top)
                 ScrollView(.horizontal, showsIndicators: false) {
                     chart.frame(width: 600, height: 500)
@@ -39,6 +41,8 @@ struct TurnipsChartView: View {
             }
         }
         .onHeightPreferenceChange(ChartHeightPreferenceKey.self, storeValueIn: $chartHeight)
+        .onHeightPreferenceChange(TurnipsChartBottomLegendView.HeightPreferenceKey.self, storeValueIn: $bottomLegendHeight)
+        .onWidthPreferenceChange(TurnipsChartVerticalLegend.WidthPreferenceKey.self, storeValueIn: $verticalLegendWidth)
     }
     
     private var chart: some View {
@@ -46,6 +50,7 @@ struct TurnipsChartView: View {
             curves
                 .propagateHeight(ChartHeightPreferenceKey.self)
             TurnipsChartBottomLegendView(predictions: predictions, positionPress: positionPress)
+                .frame(height: bottomLegendHeight)
         }
         .padding()
     }
@@ -69,9 +74,9 @@ struct TurnipsChartView: View {
                 .foregroundColor(PredictionCurve.average.color)
                 .saturation(5)
                 .blendMode(.screen)
-            if positionPressed > -1 {
-                values(for: positionPressed)
-            }
+//            if positionPressed > -1 {
+//                values(for: positionPressed)
+//            }
         }.animation(.spring())
             .background(Color.blue.opacity(0.10))
     }
