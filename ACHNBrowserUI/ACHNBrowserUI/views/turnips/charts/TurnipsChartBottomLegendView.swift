@@ -24,9 +24,14 @@ struct TurnipsChartBottomLegendView: View {
 
     var body: some View {
         GeometryReader(content: computeTexts)
-            .onHeightPreferenceChange(TextsHeightPreferenceKey.self, storeValueIn: $textsHeight)
-            .frame(height: self.textsHeight)
-            .fixedSize(horizontal: false, vertical: true)
+            // TOOD: actually use onHeightPreferenceChange instead of hardcoded value.
+            // Put back hardcoded value to fix a bump that occurs when the view appears.
+            // In the debugger we see a `Bound preference TextsHeightPreferenceKey tried to update multiple times per frame.` problem
+            // maybe it's related, we should dive deeper into Anchor Preference.
+            .frame(height: 50)
+//            .onHeightPreferenceChange(TextsHeightPreferenceKey.self, storeValueIn: $textsHeight)
+//            .frame(height: self.textsHeight)
+//            .fixedSize(horizontal: false, vertical: true)
     }
 
     func computeTexts(for geometry: GeometryProxy) -> some View {
