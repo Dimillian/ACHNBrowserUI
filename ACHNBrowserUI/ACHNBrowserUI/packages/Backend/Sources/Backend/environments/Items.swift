@@ -130,7 +130,7 @@ public class Items: ObservableObject {
                 if let image = item.finalImage {
                     let set = CSSearchableItemAttributeSet(itemContentType: "Text")
                     set.title = item.localizedName
-                    set.identifier = "\(item.category)#\(item.localizedName)"
+                    set.identifier = "\(item.category)#\(item.name)"
                     set.contentDescription = "\(NSLocalizedString(category.rawValue, comment: ""))\n\(NSLocalizedString(item.obtainedFrom ?? item.obtainedFromNew?.first ?? "", comment: ""))\n\(item.formattedTimes() ?? "")"
                     SDWebImageDownloader.shared.downloadImage(with:  ImageService.computeUrl(key: image))
                     { (_, data, _, _) in
