@@ -84,8 +84,8 @@ struct SubscribeView: View {
                                                       product: self.sub!)
                 }
             }, label: self.subscriptionManager.subscriptionStatus == .subscribed ?
-                NSLocalizedString("Thank you for your support!", comment: "") :
-                NSLocalizedString("Subscribe for \(formattedPrice(for: sub!)) / Month", comment: ""))
+                "Thank you for your support!" :
+                "Subscribe for \(formattedPrice(for: sub!)) / Month")
             .opacity(subscriptionManager.inPaymentProgress ? 0.5 : 1.0)
             .disabled(subscriptionManager.inPaymentProgress)
             
@@ -97,8 +97,8 @@ struct SubscribeView: View {
                                                       product: self.lifetime!)
                 }
             }, label: self.subscriptionManager.subscriptionStatus == .subscribed ?
-                NSLocalizedString("Thank you for your support!", comment: "") :
-                NSLocalizedString("Buy lifetime AC Helper+ for \(formattedPrice(for: lifetime!))", comment: ""))
+                "Thank you for your support!" :
+                "Buy lifetime AC Helper+ for \(formattedPrice(for: lifetime!))")
                 .opacity(subscriptionManager.inPaymentProgress ? 0.5 : 1.0)
                 .disabled(subscriptionManager.inPaymentProgress)
                 .padding(.top, 16)
@@ -106,7 +106,7 @@ struct SubscribeView: View {
         }
     }
     
-    private func makeBorderedButton(action: @escaping () -> Void, label: String) -> some View {
+    private func makeBorderedButton(action: @escaping () -> Void, label: LocalizedStringKey) -> some View {
         Button(action: action) {
             Text(label)
                 .font(.headline)
@@ -134,12 +134,12 @@ struct SubscribeView: View {
             Spacer(minLength: 16)
             makeBorderedButton(action: {
                 self.sheetURL = URL(string: "https://github.com/Dimillian/ACHNBrowserUI/blob/master/privacy-policy.md#ac-helper-privacy-policy")
-            }, label: NSLocalizedString("Privacy Policy", comment: ""))
+            }, label: "Privacy Policy")
             
             Spacer(minLength: 16)
             makeBorderedButton(action: {
                 self.sheetURL = URL(string: "https://github.com/Dimillian/ACHNBrowserUI/blob/master/term-of-use.md#ac-helper-term-of-use")
-            }, label: NSLocalizedString("Terms of Use", comment: ""))
+            }, label: "Terms of Use")
             Spacer(minLength: 32)
         }.background(Color.acBackground.edgesIgnoringSafeArea(.all))
     }
