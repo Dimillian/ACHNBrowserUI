@@ -15,17 +15,6 @@ struct TodayEventsSection: View {
     let todaysEvents = Date().events(for: AppUserDefaults.shared.hemisphere == .north ? .north : .south)
     let nextEvent = Event.nextEvent()
     
-//    var body_old: some View {
-//        Section(header: SectionHeaderView(text: "Events", icon: "flag.fill")) {
-//            NavigationLink(destination: Text("Event 1 Detail View")) {
-//                makeCell(month: "May", day: "1-7", title: "May Day")
-//            }
-//
-//            NavigationLink(destination: Text("Event 2 Detail View")) {
-//                makeCell(month: "May", day: "18-31", title: "International Museum Day")
-//            }
-//        }
-//    }
 
     var body: some View {
         Section(header: SectionHeaderView(text: "Events", icon: "flag.fill")) {
