@@ -172,5 +172,6 @@ struct SubscribeView: View {
 struct SubscribeViewPreviews: PreviewProvider {
     static var previews: some View {
         SubscribeView(source: .list)
+            .environmentObject(SubscriptionManager.shared)
     }
 }

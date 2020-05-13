@@ -106,3 +106,14 @@ struct CollectionListView: View {
     }
 }
 
+struct CollectionListView_Previews: PreviewProvider {
+    static var previews: some View {
+        NavigationView {
+            CollectionListView()
+        }
+        .environmentObject(UserCollection.shared)
+        .environmentObject(SubscriptionManager.shared)
+    }
+}
+
+
