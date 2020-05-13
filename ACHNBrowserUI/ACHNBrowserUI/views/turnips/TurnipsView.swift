@@ -220,3 +220,10 @@ extension TurnipsView {
         }
     }
 }
+
+struct TurnipsView_Previews: PreviewProvider {
+    static var previews: some View {
+        TurnipsView()
+            .environmentObject(SubscriptionManager.shared)
+    }
+}

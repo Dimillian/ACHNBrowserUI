@@ -51,6 +51,10 @@ struct CollectionProgressRow: View {
 
 struct CollectionProgressRow_Previews: PreviewProvider {
     static var previews: some View {
-        CollectionProgressRow(category: .housewares, barHeight: 12)
+        List {
+            CollectionProgressRow(category: .housewares, barHeight: 12)
+                .environmentObject(UserCollection.shared)
+                .environmentObject(Items.shared)
+        }
     }
 }

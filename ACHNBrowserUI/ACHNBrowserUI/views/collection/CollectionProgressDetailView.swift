@@ -29,6 +29,10 @@ struct CollectionProgressDetailView: View {
 
 struct CollectionProgressDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        CollectionProgressDetailView()
+        NavigationView {
+            CollectionProgressDetailView()
+                .environmentObject(Items.shared)
+                .environmentObject(UserCollection.shared)
+        }
     }
 }
