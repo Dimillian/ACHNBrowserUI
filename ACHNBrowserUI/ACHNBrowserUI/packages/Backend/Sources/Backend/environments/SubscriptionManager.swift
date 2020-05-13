@@ -18,6 +18,7 @@ public class SubscriptionManager: ObservableObject {
     }
     
     @Published public var subscription: Purchases.Package?
+    @Published public var lifetime: Purchases.Package?
     @Published public var inPaymentProgress = false
     @Published public var paymentStatus: SKPaymentTransactionState?
     @Published public var subscriptionStatus: SubscriptionStatus = AppUserDefaults.shared.isSubscribed ? .subscribed : .notSubscribed
@@ -26,6 +27,7 @@ public class SubscriptionManager: ObservableObject {
         Purchases.configure(withAPIKey: "glVAIPplNhAuvgOlCcUcrEaaCQwLRzQs")
         Purchases.shared.offerings { (offerings, error) in
             self.subscription = offerings?.current?.monthly
+            self.lifetime = offerings?.current?.lifetime
         }
         refreshSubscription()
     }
