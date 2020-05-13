@@ -24,7 +24,7 @@ struct ItemsCrosslineSectionView: View {
                 HStack {
                     ForEach(items) { item in
                         VStack(alignment: .center, spacing: 4) {
-                            ItemImage(path: item.filename,
+                            ItemImage(path: item.finalImage,
                                       size: 75)
                             Text(item.localizedName)
                                 .font(.caption)

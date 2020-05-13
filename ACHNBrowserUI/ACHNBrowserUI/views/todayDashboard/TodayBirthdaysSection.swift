@@ -21,7 +21,7 @@ struct TodayBirthdaysSection: View {
         guard let birthday = villager.birthday else { return "" }
         let formatter = DateFormatter()
 
-        formatter.setLocalizedDateFormatFromTemplate("d/M")
+        formatter.dateFormat = "d/M"
         let birthdayDate = formatter.date(from: birthday)!
 
         formatter.setLocalizedDateFormatFromTemplate("dd")
@@ -32,7 +32,7 @@ struct TodayBirthdaysSection: View {
         guard let birthday = villager.birthday else { return "" }
         let formatter = DateFormatter()
 
-        formatter.setLocalizedDateFormatFromTemplate("d/M")
+        formatter.dateFormat = "d/M"
         let birthdayDate = formatter.date(from: birthday)!
 
         formatter.setLocalizedDateFormatFromTemplate("MMM")
