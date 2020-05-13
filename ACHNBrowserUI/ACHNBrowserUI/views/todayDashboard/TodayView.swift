@@ -37,7 +37,7 @@ struct TodayView: View {
                 TodayCurrentlyAvailableSection(viewModel: viewModel)
                 TodayCollectionProgressSection(viewModel: viewModel, sheet: $selectedSheet)
                 TodayBirthdaysSection(villagers: villagersViewModel.todayBirthdays)
-                TodayTurnipSection(predictions: turnipsPredictionsService.predictions)
+                TodayTurnipSection(predictions: turnipsPredictionsService.predictions, todaysEntries: turnipsPredictionsService.fields?.todaySell)
                     .onTapGesture {
                         self.uiState.selectedTab = .turnips
                 }

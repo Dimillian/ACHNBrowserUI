@@ -44,6 +44,18 @@ public struct TurnipFields: Codable {
     public var fields = [String](repeating: "", count: 12)
     public var amount: Int = 0
     
+    private var days: [[String]] {
+        return [[fields[0], fields[1]], [fields[2], fields[3]], [fields[4], fields[5]], [fields[6], fields[7]], [fields[8], fields[9]], [fields[10], fields[11]]]
+    }
+    
+    public var todaySell: [String]? {
+        let today = Calendar.current.component(.weekday, from: Date())
+        if today == 1 {
+            return []
+        }
+        return days[today - 2]
+    }
+    
     public static func exist() -> Bool {
         FileManager.default.fileExists(atPath: savePath.path)
         
