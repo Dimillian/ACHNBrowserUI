@@ -18,6 +18,7 @@ struct TurnipsChartBottomLegendView: View {
     }
     
     let predictions: TurnipPredictions
+    let positionPress: (Int) -> Void
     private let weekdays = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
     
     @State private var textsHeight: CGFloat?
@@ -27,7 +28,6 @@ struct TurnipsChartBottomLegendView: View {
     }
 
     func computeTexts(for geometry: GeometryProxy) -> some View {
-        
         let rect = geometry.frame(in: .local)
         let (_, _, _, ratioX) = predictions.minMax?.roundedMinMaxAndRatios(rect: rect) ?? (0, 0, 0, 0)
         let count = predictions.minMax?.count ?? 0
@@ -48,17 +48,18 @@ struct TurnipsChartBottomLegendView: View {
                 }
             }
         }
-        
     }
 
     func meridiem(offset: Int, ratioX: CGFloat) -> some View {
-        Text(offset.isAM ? "AM" : "PM")
-            .font(.footnote)
-            .fontWeight(.semibold)
-            .foregroundColor(.acText)
-            .alignmentGuide(.leading, computeValue: { d in
-                -CGFloat(offset) * ratioX
-            })
+        Button(action: { self.positionPress(offset) }) {
+            Text(offset.isAM ? "AM" : "PM")
+                .font(.footnote)
+                .fontWeight(.semibold)
+                .foregroundColor(.acText)
+                .alignmentGuide(.leading, computeValue: { d in
+                    -CGFloat(offset) * ratioX
+                })
+        }
     }
 
     func weekdays(offset: Int, weekday: String, ratioX: CGFloat) -> some View {
@@ -78,6 +79,9 @@ private extension Int {
 
 struct TurnipsChartBottomLegendView_Previews: PreviewProvider {
     static var previews: some View {
-        TurnipsChartBottomLegendView(predictions: TurnipsChartView_Previews.predictions)
+        TurnipsChartBottomLegendView(
+            predictions: TurnipsChartView_Previews.predictions,
+            positionPress: { _ in }
+        )
     }
 }
