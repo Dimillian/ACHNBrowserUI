@@ -78,9 +78,9 @@ public enum Category: String, CaseIterable {
         case .other:
             return "icon-leaf"
         case .bugs:
-            return "icon-insect"
+            return "Ins13"
         case .fish:
-            return "icon-fish"
+            return "Fish28"
         case .tools:
             return "icon-tool"
         case .dressup:
@@ -107,6 +107,13 @@ public enum Category: String, CaseIterable {
     
     public static func APIClothing() -> [Category] {
         [.accessories, .headwear, .tops, .bottoms, .dressup, .socks, .shoes, .bags]
+    }
+    
+    public static func collectionCategories() -> [Category] {
+        var base: [Category]  = [.fish, .bugs, .fossils, .art]
+        base.append(contentsOf: Self.items())
+        base.append(contentsOf: Self.wardrobe())
+        return base
     }
         
     public static func villagerFurnitures() -> [Category] {

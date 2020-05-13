@@ -22,3 +22,9 @@ public extension Collection where Element: Numeric {
 public extension Collection where Element: BinaryInteger {
     var average: Double { isEmpty ? 0 : Double(total) / Double(count) }
 }
+
+extension Collection {
+    func count(where test: (Element) throws -> Bool) rethrows -> Int {
+        return try self.filter(test).count
+    }
+}

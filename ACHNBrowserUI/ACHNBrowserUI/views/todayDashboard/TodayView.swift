@@ -16,6 +16,7 @@ struct TodayView: View {
     @EnvironmentObject private var uiState: UIState
     @EnvironmentObject private var collection: UserCollection
     @EnvironmentObject private var subManager: SubscriptionManager
+    @EnvironmentObject private var items: Items
     @ObservedObject private var userDefaults = AppUserDefaults.shared
     @ObservedObject private var viewModel = DashboardViewModel()
     @ObservedObject private var villagersViewModel = VillagersViewModel()
@@ -23,6 +24,15 @@ struct TodayView: View {
     
     @State private var selectedSheet: Sheet.SheetType?
     @State private var showWhatsNew: Bool = false
+    
+    private var bugsAvailable: [Item] {
+        items.categories[.bugs]?.filterActive() ?? []
+    }
+    
+    // MARK: - Fish Calculations
+    private var fishAvailable: [Item] {
+        items.categories[.fish]?.filterActive() ?? []
+    }
     
     // MARK: - Body
     var body: some View {
@@ -63,8 +73,8 @@ struct TodayView: View {
             .sheet(item: $selectedSheet, content: { Sheet(sheetType: $0) })
             .onAppear(perform: viewModel.fetchListings)
             
-            ActiveCrittersView(activeFishes: viewModel.fishes.filterActive(),
-                               activeBugs: viewModel.bugs.filterActive())
+            ActiveCrittersView(activeFishes: fishAvailable,
+                               activeBugs: bugsAvailable)
         }
     }
             

@@ -10,6 +10,7 @@ import SwiftUI
 import Backend
 
 struct TodayCurrentlyAvailableSection: View {
+    @EnvironmentObject private var items: Items
     @EnvironmentObject private var collection: UserCollection
     @ObservedObject var viewModel: DashboardViewModel
     
@@ -19,58 +20,40 @@ struct TodayCurrentlyAvailableSection: View {
     }
     
     // MARK: - Bug Calculations
-    private var bugsCaught: Int {
-        if !viewModel.bugs.isEmpty {
-            return collection.caughtIn(list: viewModel.bugs)
-        } else {
-            return 0
-        }
+    private var bugsAvailable: [Item] {
+        items.categories[.bugs]?.filterActive() ?? []
     }
     
-    private var bugsAvailable: Int {
-        if !viewModel.bugs.isEmpty {
-            return viewModel.bugs.filterActive().count
-        } else {
-            return 0
-        }
-    }
-    
-    private var newBugs: Int {
-        viewModel.bugs.filterActive().filter{ $0.isNewThisMonth() }.count
+    private var newBugs: [Item] {
+        items.categories[.bugs]?.filterActive().filter{ $0.isNewThisMonth() } ?? []
     }
     
     // MARK: - Fish Calculations
-    private var fishCaught: Int {
-        if !viewModel.fishes.isEmpty {
-            return collection.caughtIn(list: viewModel.fishes)
-        } else {
-            return 0
-        }
+    private var fishAvailable: [Item] {
+        items.categories[.fish]?.filterActive() ?? []
     }
     
-    private var fishAvailable: Int {
-        if !viewModel.fishes.isEmpty {
-            return viewModel.fishes.filterActive().count
-        } else {
-            return 0
-        }
-    }
-    
-    private var newFish: Int {
-        viewModel.fishes.filterActive().filter{ $0.isNewThisMonth() }.count
+    private var newFish: [Item] {
+        items.categories[.fish]?.filterActive().filter{ $0.isNewThisMonth() } ?? []
     }
     
     // MARK: - Body
     var body: some View {
         Section(header: SectionHeaderView(text: "Currently Available", icon: "calendar")) {
-            if fishAvailable != 0 && bugsAvailable != 0 {
-                NavigationLink(destination: ActiveCrittersView(activeFishes: viewModel.fishes.filterActive(),
-                                                               activeBugs: viewModel.bugs.filterActive()))
+            if !fishAvailable.isEmpty && !bugsAvailable.isEmpty {
+                NavigationLink(destination: ActiveCrittersView(activeFishes: fishAvailable,
+                                                               activeBugs: bugsAvailable))
                 {
                     HStack(alignment: .top) {
-                        makeCell(for: .fish, caught: fishCaught, available: fishAvailable, numberNew: newFish)
+                        makeCell(for: .fish,
+                                 caught: collection.itemsIn(category: .fish),
+                                 available: fishAvailable.count,
+                                 numberNew: newFish.count)
                         Divider()
-                        makeCell(for: .bugs, caught: bugsCaught, available: bugsAvailable, numberNew: newBugs)
+                        makeCell(for: .bugs,
+                                 caught: collection.itemsIn(category: .bugs),
+                                 available: bugsAvailable.count,
+                                 numberNew: newBugs.count)
                     }
                 }
                 .frame(maxWidth: .infinity)
