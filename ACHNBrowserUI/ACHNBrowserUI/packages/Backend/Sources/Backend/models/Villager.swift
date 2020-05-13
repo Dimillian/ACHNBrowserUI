@@ -43,3 +43,12 @@ public struct Villager: Identifiable, Codable, Equatable {
         case catchPhrase = "catch-phrase"
     }
 }
+
+public let static_villager = Villager(id: 0,
+                                      fileName: "test",
+                                      catchPhrase: "Hello world",
+                                      name: ["name-en": "Test villager"],
+                                      personality: "Boring",
+                                      birthday: "2/4",
+                                      gender: "Male",
+                                      species: "Ant")

@@ -86,15 +86,15 @@ struct TodayBirthdaysSection: View {
     }
 }
 
-//struct TodayBirthdaysSection_Previews: PreviewProvider {
-//    static var previews: some View {
-//        NavigationView {
-//            List {
-//                TodayBirthdaysSection(villager: Villager))
-//            }
-//            .listStyle(GroupedListStyle())
-//            .environment(\.horizontalSizeClass, .regular)
-//        }
-//        .previewLayout(.fixed(width: 375, height: 500))
-//    }
-//}
+struct TodayBirthdaysSection_Previews: PreviewProvider {
+    static var previews: some View {
+        NavigationView {
+            List {
+                TodayBirthdaysSection(villagers: [static_villager])
+            }
+            .listStyle(GroupedListStyle())
+            .environment(\.horizontalSizeClass, .regular)
+        }
+        .previewLayout(.fixed(width: 375, height: 500))
+    }
+}

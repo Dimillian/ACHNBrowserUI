@@ -106,6 +106,8 @@ struct TodayCurrentlyAvailableSection_Previews: PreviewProvider {
             .listStyle(GroupedListStyle())
             .environment(\.horizontalSizeClass, .regular)
         }
+        .environmentObject(UserCollection.shared)
+        .environmentObject(Items.shared)
         .previewLayout(.fixed(width: 375, height: 500))
     }
 }

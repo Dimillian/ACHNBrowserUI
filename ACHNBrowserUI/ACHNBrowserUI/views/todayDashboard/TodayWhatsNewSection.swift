@@ -42,6 +42,10 @@ struct TodayWhatsNewSection: View {
 
 struct TodayWhatsNewSection_Previews: PreviewProvider {
     static var previews: some View {
-        TodayWhatsNewSection(showWhatsNew: .constant(true))
+        List {
+            TodayWhatsNewSection(showWhatsNew: .constant(true))
+        }
+        .listStyle(GroupedListStyle())
+        .environment(\.horizontalSizeClass, .regular)
     }
 }

@@ -44,6 +44,11 @@ struct TodaySubscribeSection: View {
 
 struct TodaySubscribeCard_Previews: PreviewProvider {
     static var previews: some View {
-        TodaySubscribeSection(sheet: .constant(nil))
+        List {
+            TodaySubscribeSection(sheet: .constant(nil))
+                .environmentObject(SubscriptionManager.shared)
+        }
+        .listStyle(GroupedListStyle())
+        .environment(\.horizontalSizeClass, .regular)
     }
 }
