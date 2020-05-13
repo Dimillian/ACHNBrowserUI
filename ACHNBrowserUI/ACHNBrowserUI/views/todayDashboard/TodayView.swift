@@ -130,5 +130,9 @@ struct TodayView_Previews: PreviewProvider {
         NavigationView {
             TodayView()
         }
+        .environmentObject(Items.shared)
+        .environmentObject(UIState())
+        .environmentObject(UserCollection.shared)
+        .environmentObject(SubscriptionManager.shared)
     }
 }

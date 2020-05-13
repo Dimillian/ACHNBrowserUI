@@ -70,20 +70,26 @@ struct TodayCollectionProgressSection: View {
         .frame(width: 350, height: 270)
         .listStyle(GroupedListStyle())
         .environment(\.horizontalSizeClass, .regular)
+        .environmentObject(UserCollection.shared)
+        .environmentObject(Items.shared)
         .asImage()
         self.sheet = .share(content: [ItemDetailSource(name: "My collection progress", image: image)])
     }
 }
 
-//struct TodayCollectionProgressSection_Previews: PreviewProvider {
-//    static var previews: some View {
-//        NavigationView {
-//            List {
-//                TodayCollectionProgressSection()
-//            }
-//            .listStyle(GroupedListStyle())
-//            .environment(\.horizontalSizeClass, .regular)
-//        }
-//        .previewLayout(.fixed(width: 375, height: 500))
-//    }
-//}
+struct TodayCollectionProgressSection_Previews: PreviewProvider {
+    static var previews: some View {
+        NavigationView {
+            List {
+                TodayCollectionProgressSection(viewModel: DashboardViewModel(),
+                                               sheet: .constant(nil))
+            }
+            .listStyle(GroupedListStyle())
+            .environment(\.horizontalSizeClass, .regular)
+        }
+        .previewLayout(.fixed(width: 375, height: 500))
+        .environmentObject(UserCollection.shared)
+        .environmentObject(Items.shared)
+        
+    }
+}
