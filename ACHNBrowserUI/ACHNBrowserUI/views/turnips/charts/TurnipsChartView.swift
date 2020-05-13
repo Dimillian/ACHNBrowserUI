@@ -26,7 +26,7 @@ struct TurnipsChartView: View {
     @State private var chartSize: CGSize?
     @State private var verticalLegendWidth: CGFloat?
     @State private var bottomLegendHeight: CGFloat?
-    @State private var positionPressed: Int = 0
+    @State private var positionPressed: Int?
 
     var body: some View {
         VStack {
@@ -48,7 +48,6 @@ struct TurnipsChartView: View {
     private var chart: some View {
         VStack(spacing: 10) {
             curves
-                .propagateSize(ChartSizePreferenceKey.self, storeValueIn: $chartSize)
             TurnipsChartBottomLegendView(predictions: predictions, positionPress: positionPress)
                 .frame(height: bottomLegendHeight)
         }
@@ -60,6 +59,7 @@ struct TurnipsChartView: View {
             TurnipsChartGrid(predictions: predictions)
                 .stroke()
                 .opacity(0.5)
+                .propagateSize(ChartSizePreferenceKey.self, storeValueIn: $chartSize)
             TurnipsChartMinBuyPriceCurve(predictions: predictions)
                 .stroke(style: StrokeStyle(dash: [Self.verticalLinesCount]))
                 .foregroundColor(PredictionCurve.minBuyPrice.color)
@@ -74,7 +74,9 @@ struct TurnipsChartView: View {
                 .foregroundColor(PredictionCurve.average.color)
                 .saturation(5)
                 .blendMode(.screen)
-            TurnipsChartValuesView(predictions: predictions, position: positionPressed)
+            positionPressed.map {
+                TurnipsChartValuesView(predictions: predictions, position: $0)
+            }
         }.animation(.spring())
     }
 
