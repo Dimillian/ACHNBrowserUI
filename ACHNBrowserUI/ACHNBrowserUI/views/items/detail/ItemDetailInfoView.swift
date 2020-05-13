@@ -70,6 +70,16 @@ struct ItemDetailInfoView: View {
                     .foregroundColor(.acText)
             }
             HStack(spacing: 16) {
+                item.buy.map { buy in
+                    HStack(spacing: 2) {
+                        Image("icon-bells")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 25, height: 25)
+                        Text("\(buy)")
+                            .foregroundColor(.acHeaderBackground)
+                    }
+                }
                 item.sell.map { sell in
                     HStack(spacing: 2) {
                         Image("icon-bell")
@@ -90,16 +100,6 @@ struct ItemDetailInfoView: View {
                                 .foregroundColor(.acHeaderBackground)
                             
                         }
-                    }
-                }
-                item.buy.map { buy in
-                    HStack(spacing: 2) {
-                        Image("icon-bells")
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .frame(width: 25, height: 25)
-                        Text("\(buy)")
-                            .foregroundColor(.acHeaderBackground)
                     }
                 }
             }
