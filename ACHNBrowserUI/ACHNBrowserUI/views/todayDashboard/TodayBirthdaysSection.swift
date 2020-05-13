@@ -39,12 +39,16 @@ struct TodayBirthdaysSection: View {
 
     var body: some View {
         Section(header: SectionHeaderView(text: headerText, icon: "gift.fill")) {
-            ForEach(villagers, id: \.id) { villager in
-                NavigationLink(destination: VillagerDetailView(villager: villager)) {
-                    self.makeCell(for: villager)
+            if villagers.isEmpty {
+                RowLoadingView(isLoading: .constant(true))
+            } else {
+                ForEach(villagers, id: \.id) { villager in
+                    NavigationLink(destination: VillagerDetailView(villager: villager)) {
+                        self.makeCell(for: villager)
+                    }
                 }
+                .padding(.vertical)
             }
-            .padding(.vertical)
         }
     }
     

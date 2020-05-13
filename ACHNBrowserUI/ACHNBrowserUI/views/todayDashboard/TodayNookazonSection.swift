@@ -40,7 +40,7 @@ struct TodayNookazonSection: View {
                 .frame(maxWidth: .infinity)
                 .padding(.vertical)
             } else {
-                Text("Nookazon is loading...")
+                RowLoadingView(isLoading: .constant(true))
             }
         }
     }

@@ -23,7 +23,7 @@ struct TodayCurrentlyAvailableSection: View {
         if !viewModel.bugs.isEmpty {
             return collection.caughtIn(list: viewModel.bugs)
         } else {
-            return 1
+            return 0
         }
     }
     
@@ -31,7 +31,7 @@ struct TodayCurrentlyAvailableSection: View {
         if !viewModel.bugs.isEmpty {
             return viewModel.bugs.filterActive().count
         } else {
-            return 1
+            return 0
         }
     }
     
@@ -44,7 +44,7 @@ struct TodayCurrentlyAvailableSection: View {
         if !viewModel.fishes.isEmpty {
             return collection.caughtIn(list: viewModel.fishes)
         } else {
-            return 1
+            return 0
         }
     }
     
@@ -52,7 +52,7 @@ struct TodayCurrentlyAvailableSection: View {
         if !viewModel.fishes.isEmpty {
             return viewModel.fishes.filterActive().count
         } else {
-            return 1
+            return 0
         }
     }
     
@@ -63,16 +63,21 @@ struct TodayCurrentlyAvailableSection: View {
     // MARK: - Body
     var body: some View {
         Section(header: SectionHeaderView(text: "Currently Available", icon: "calendar")) {
-            NavigationLink(destination: ActiveCrittersView(activeFishes: viewModel.fishes.filterActive(),
-                                                           activeBugs: viewModel.bugs.filterActive())) {
-                HStack(alignment: .top) {
-                    makeCell(for: .fish, caught: fishCaught, available: fishAvailable, numberNew: newFish)
-                    Divider()
-                    makeCell(for: .bugs, caught: bugsCaught, available: bugsAvailable, numberNew: newBugs)
+            if fishAvailable != 0 && bugsAvailable != 0 {
+                NavigationLink(destination: ActiveCrittersView(activeFishes: viewModel.fishes.filterActive(),
+                                                               activeBugs: viewModel.bugs.filterActive()))
+                {
+                    HStack(alignment: .top) {
+                        makeCell(for: .fish, caught: fishCaught, available: fishAvailable, numberNew: newFish)
+                        Divider()
+                        makeCell(for: .bugs, caught: bugsCaught, available: bugsAvailable, numberNew: newBugs)
+                    }
                 }
+                .frame(maxWidth: .infinity)
+                .padding(.vertical)
+            } else {
+                RowLoadingView(isLoading: .constant(true))
             }
-            .frame(maxWidth: .infinity)
-            .padding(.vertical)
         }
     }
     

@@ -33,14 +33,12 @@ struct TodayCollectionProgressSection: View {
                 progressRow(iconName: "Ins13", for: viewModel.bugs)
                 progressRow(iconName: "icon-fossil", for: viewModel.fossils)
                 progressRow(iconName: "icon-leaf", for: viewModel.art)
+                shareButton.padding(.top, 12)
             } else {
-                Text("Loading...")
-                    .font(.system(.body, design: .rounded))
-                    .foregroundColor(Color.acSecondaryText)
+                RowLoadingView(isLoading: .constant(true))
             }
-            shareButton.padding(.top, 12)
         }
-        .animation(.default)
+        .animation(.interactiveSpring())
     }
     
     func progressRow(iconName: String, for items: [Item]) -> some View {
