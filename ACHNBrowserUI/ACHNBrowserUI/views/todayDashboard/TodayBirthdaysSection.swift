@@ -16,27 +16,25 @@ struct TodayBirthdaysSection: View {
     var headerText: String {
         villagers.count > 1 ? "Today's Birthdays" : "Today's Birthday"
     }
-
-    func birthdayDay(for villager: Villager) -> String {
-        guard let birthday = villager.birthday else { return "" }
+    
+    private func formattedDate(for villager: Villager) -> Date {
+        guard let birthday = villager.birthday else { return Date() }
         let formatter = DateFormatter()
-
+        
         formatter.dateFormat = "d/M"
-        let birthdayDate = formatter.date(from: birthday)!
-
-        formatter.setLocalizedDateFormatFromTemplate("dd")
-        return formatter.string(from: birthdayDate)
+        return formatter.date(from: birthday) ?? Date()
     }
 
-    func birthdayMonth(for villager: Villager) -> String {
-        guard let birthday = villager.birthday else { return "" }
+    private func birthdayDay(for villager: Villager) -> String {
         let formatter = DateFormatter()
+        formatter.setLocalizedDateFormatFromTemplate("dd")
+        return formatter.string(from: formattedDate(for: villager))
+    }
 
-        formatter.dateFormat = "d/M"
-        let birthdayDate = formatter.date(from: birthday)!
-
+    private func birthdayMonth(for villager: Villager) -> String {
+        let formatter = DateFormatter()
         formatter.setLocalizedDateFormatFromTemplate("MMM")
-        return formatter.string(from: birthdayDate)
+        return formatter.string(from: formattedDate(for: villager))
     }
 
     var body: some View {
@@ -81,34 +79,6 @@ struct TodayBirthdaysSection: View {
                       size: 44)
             
         }
-    }
-    
-    private func makeDateTitleIconCell(month: String, day: String, title: String, image: String = "") -> some View {
-        HStack {
-            VStack(alignment: .leading) {
-                Text("\(month) \(day)")
-                    .font(.system(.subheadline, design: .rounded))
-                    .fontWeight(.bold)
-                    .foregroundColor(Color("ACSecondaryText"))
-                    .padding(.bottom, 4)
-                
-                Text(title)
-                    .font(Font.system(.headline, design: .rounded))
-                    .fontWeight(.semibold)
-                    .lineLimit(2)
-                    .foregroundColor(.acText)
-                
-            }
-            
-            if image != "" {
-                Spacer()
-                Image(image)
-                    .resizable()
-                    .aspectRatio(1, contentMode: .fit)
-                    .frame(width: 44)
-            }
-        }
-        .padding(.vertical)
     }
 }
 
