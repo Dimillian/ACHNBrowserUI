@@ -13,11 +13,13 @@ public struct ProgressView: View {
     public let progress: CGFloat
     public let trackColor: Color
     public let progressColor: Color
+    public let height: CGFloat
     
-    public init(progress: CGFloat, trackColor: Color, progressColor: Color) {
+    public init(progress: CGFloat, trackColor: Color, progressColor: Color, height: CGFloat) {
         self.progress = progress
         self.trackColor = trackColor
         self.progressColor = progressColor
+        self.height = height
     }
     
     public var body: some View {
@@ -31,7 +33,7 @@ public struct ProgressView: View {
                     .frame(width: (g.size.width * self.progress) > 0 ? max(12, (g.size.width * self.progress)) : 0)
             }
         }
-        .frame(height: 12)
+        .frame(height: height)
         .background(Color.clear)
     }
 }
