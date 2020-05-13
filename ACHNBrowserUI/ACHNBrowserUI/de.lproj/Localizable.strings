@@ -683,4 +683,8 @@ Du kannst das Abonnement jederzeit in deinen iTunes Kontoeinstellungen beenden. 
 "Sea" = "Meer";
 "Sea (raining)" = "Meer (bei Regen)";
 
+// Added 2020-05-13
+"See more" = "Mehr anzeigen";
+"See less" = "Weniger anzeigen";
+
 // to be continued

@@ -12,11 +12,14 @@ import Backend
 import UI
 
 struct TodayCollectionProgressSection: View {
+    @EnvironmentObject private var items: Items
     @EnvironmentObject private var collection: UserCollection
+    
     @ObservedObject var viewModel: DashboardViewModel
     @Binding var sheet: Sheet.SheetType?
     
-    var barHeight: CGFloat = 12
+    @State private var isExpanded = false
+    private let barHeight: CGFloat = 12
     
     var body: some View {
         Section(header: SectionHeaderView(text: "Collection Progress", icon: "chart.pie.fill")) {
@@ -28,12 +31,20 @@ struct TodayCollectionProgressSection: View {
 
     private func generateBody() -> some View {
         VStack(spacing: 8) {
-            if (!viewModel.fishes.isEmpty && !viewModel.bugs.isEmpty && !viewModel.fossils.isEmpty && !viewModel.art.isEmpty) {
-                progressRow(iconName: "Fish28", for: viewModel.fishes)
-                progressRow(iconName: "Ins13", for: viewModel.bugs)
-                progressRow(iconName: "icon-fossil", for: viewModel.fossils)
-                progressRow(iconName: "icon-leaf", for: viewModel.art)
-                shareButton.padding(.top, 12)
+            if items.categories.isEmpty == false {
+                Group {
+                    if isExpanded {
+                        ForEach(Category.collectionCategories(), id: \.self) { category in
+                            self.progressRow(iconName: category.iconName(), for: category)
+                        }
+                    } else {
+                        ForEach(Category.collectionCategories().prefix(4).map{ $0 }, id: \.self) { category in
+                            self.progressRow(iconName: category.iconName(), for: category)
+                        }
+                    }
+                    seeMoreButton
+                    shareButton.padding(.top, 12)
+                }
             } else {
                 RowLoadingView(isLoading: .constant(true))
             }
@@ -41,9 +52,14 @@ struct TodayCollectionProgressSection: View {
         .animation(.interactiveSpring())
     }
     
-    func progressRow(iconName: String, for items: [Item]) -> some View {
-        let caught = CGFloat(collection.caughtIn(list: items))
-        let total = CGFloat(items.count)
+    func progressRow(iconName: String, for category: Backend.Category) -> some View {
+        let caught = CGFloat(collection.itemsIn(category: category))
+        var total: CGFloat = 0
+        if category == .art {
+            total = CGFloat(items.categories[category]?.filter({ !$0.name.contains("(fake)") }).count ?? 0)
+        } else {
+            total = CGFloat(items.categories[category]?.count ?? 0)
+        }
         
         return HStack {
             Image(iconName)
@@ -65,8 +81,18 @@ struct TodayCollectionProgressSection: View {
                 .foregroundColor(.acText)
         }
     }
+    
+    private var seeMoreButton: some View {
+        Button(action: {
+            self.isExpanded.toggle()
+        }) {
+            Text(isExpanded ? "See less" : "See more")
+                .foregroundColor(.acHeaderBackground)
+        }
+        .buttonStyle(PlainButtonStyle())
+    }
 
-    var shareButton: some View {
+    private var shareButton: some View {
         Button(action: { self.generateAndShareImage() } ) {
             HStack {
                 Image(systemName: "square.and.arrow.up").padding(.bottom, 4)
