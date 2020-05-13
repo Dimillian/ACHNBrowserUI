@@ -11,9 +11,9 @@ import Backend
 
 
 struct TurnipsChartView: View {
-    private struct ChartHeightPreferenceKey: PreferenceKey {
-        static var defaultValue: CGFloat?
-        static func reduce(value: inout CGFloat?, nextValue: () -> CGFloat?) {
+    private struct ChartSizePreferenceKey: PreferenceKey {
+        static var defaultValue: CGSize?
+        static func reduce(value: inout CGSize?, nextValue: () -> CGSize?) {
             if let newValue = nextValue() { value = newValue }
         }
     }
@@ -23,24 +23,24 @@ struct TurnipsChartView: View {
     var predictions: TurnipPredictions
     @Binding var animateCurves: Bool
     @Environment(\.presentationMode) var presentation
-
-    @State private var chartHeight: CGFloat?
+    @State private var chartSize: CGSize?
     @State private var verticalLegendWidth: CGFloat?
     @State private var bottomLegendHeight: CGFloat?
-    
+    @State private var positionPressed: Int?
+
     var body: some View {
         VStack {
             TurnipsChartTopLegendView()
             HStack(alignment: .top) {
                 TurnipsChartVerticalLegend(predictions: predictions)
-                    .frame(width: verticalLegendWidth, height: chartHeight)
+                    .frame(width: verticalLegendWidth, height: chartSize?.height)
                     .padding(.top)
                 ScrollView(.horizontal, showsIndicators: false) {
                     chart.frame(width: 600, height: 500)
                 }
             }
         }
-        .onHeightPreferenceChange(ChartHeightPreferenceKey.self, storeValueIn: $chartHeight)
+        .onSizePreferenceChange(ChartSizePreferenceKey.self, storeValueIn: $chartSize)
         .onHeightPreferenceChange(TurnipsChartBottomLegendView.HeightPreferenceKey.self, storeValueIn: $bottomLegendHeight)
         .onWidthPreferenceChange(TurnipsChartVerticalLegend.WidthPreferenceKey.self, storeValueIn: $verticalLegendWidth)
     }
@@ -48,8 +48,7 @@ struct TurnipsChartView: View {
     private var chart: some View {
         VStack(spacing: 10) {
             curves
-                .propagateHeight(ChartHeightPreferenceKey.self)
-            TurnipsChartBottomLegendView(predictions: predictions)
+            TurnipsChartBottomLegendView(predictions: predictions, positionPress: positionPress)
                 .frame(height: bottomLegendHeight)
         }
         .padding()
@@ -57,9 +56,11 @@ struct TurnipsChartView: View {
     
     private var curves: some View {
         ZStack(alignment: .leading) {
+            TurnipsChartGridInteractiveVerticalLines(predictions: predictions, positionPress: positionPress)
             TurnipsChartGrid(predictions: predictions)
                 .stroke()
                 .opacity(0.5)
+                .propagateSize(ChartSizePreferenceKey.self, storeValueIn: $chartSize)
             TurnipsChartMinBuyPriceCurve(predictions: predictions)
                 .stroke(style: StrokeStyle(dash: [Self.verticalLinesCount]))
                 .foregroundColor(PredictionCurve.minBuyPrice.color)
@@ -74,7 +75,14 @@ struct TurnipsChartView: View {
                 .foregroundColor(PredictionCurve.average.color)
                 .saturation(5)
                 .blendMode(.screen)
+            positionPressed.map {
+                TurnipsChartValuesView(predictions: predictions, position: $0)
+            }
         }.animation(.spring())
+    }
+
+    private func positionPress(_ position: Int) {
+        positionPressed = position
     }
 }
 
@@ -85,17 +93,17 @@ struct TurnipsChartView_Previews: PreviewProvider {
             animateCurves: .constant(true)
         )
     }
-    
+
     static let predictions = TurnipPredictions(
         minBuyPrice: 83,
         averagePrices: averagePrices,
         minMax: minMax,
         averageProfits: averageProfits
     )
-    
+
     static let averagePrices = [89, 85, 88, 104, 110, 111, 111, 111, 106, 98, 82, 77]
-    
+
     static let minMax = [[38, 142], [33, 142], [29, 202], [24, 602], [19, 602], [14, 602], [9, 602], [29, 602], [24, 602], [19, 602], [14, 202], [9, 201]]
-    
+
     static let averageProfits = [89, 85, 88, 104, 110, 111, 111, 111, 106, 98, 82, 77]
 }

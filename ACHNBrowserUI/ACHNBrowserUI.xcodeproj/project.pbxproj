@@ -110,6 +110,7 @@
 		4C7F2F782461F10300930928 /* TurnipsChartVerticalLegend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7F2F772461F10300930928 /* TurnipsChartVerticalLegend.swift */; };
 		4C7FE78324574FB50011E8AB /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7FE78224574FB50011E8AB /* ActivityIndicator.swift */; };
 		4C7FE789245B57A10011E8AB /* AdaptsToSoftwareKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7FE788245B57A10011E8AB /* AdaptsToSoftwareKeyboard.swift */; };
+		4CF14B75246B3E9E00F740BF /* TurnipsChartValuesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF14B74246B3E9E00F740BF /* TurnipsChartValuesView.swift */; };
 		4CF8049B24635E54005C6C63 /* Path.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF8049A24635E54005C6C63 /* Path.swift */; };
 		68345579244C994C0072FC0C /* LikeButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68345578244C994C0072FC0C /* LikeButtonView.swift */; };
 		68345589244E4DEF0072FC0C /* ACNHEvents in Frameworks */ = {isa = PBXBuildFile; productRef = 68345588244E4DEF0072FC0C /* ACNHEvents */; };
@@ -358,6 +359,7 @@
 		4C7F2F772461F10300930928 /* TurnipsChartVerticalLegend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TurnipsChartVerticalLegend.swift; sourceTree = "<group>"; };
 		4C7FE78224574FB50011E8AB /* ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
 		4C7FE788245B57A10011E8AB /* AdaptsToSoftwareKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdaptsToSoftwareKeyboard.swift; sourceTree = "<group>"; };
+		4CF14B74246B3E9E00F740BF /* TurnipsChartValuesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TurnipsChartValuesView.swift; sourceTree = "<group>"; };
 		4CF8049A24635E54005C6C63 /* Path.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Path.swift; sourceTree = "<group>"; };
 		68345578244C994C0072FC0C /* LikeButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeButtonView.swift; sourceTree = "<group>"; };
 		687B5767244A030700C1E86F /* TurnipsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TurnipsView.swift; sourceTree = "<group>"; };
@@ -629,6 +631,7 @@
 				4C2D6777245F4FE8005831C4 /* TurnipsChartMinBuyPriceCurve.swift */,
 				4C2D6775245F4F55005831C4 /* TurnipsChartMinMaxCurves.swift */,
 				69EC82ED2461E79D00CE9064 /* TurnipsChartTopLegendView.swift */,
+				4CF14B74246B3E9E00F740BF /* TurnipsChartValuesView.swift */,
 				4C7F2F772461F10300930928 /* TurnipsChartVerticalLegend.swift */,
 				4C2D676A245DA41E005831C4 /* TurnipsChartView.swift */,
 			);
@@ -1317,6 +1320,7 @@
 				693E72A7245EBB1200CD26F4 /* SafariView.swift in Sources */,
 				4C382EE8244E418800F446BA /* DismissingKeyboardOnSwipe.swift in Sources */,
 				69B13CA6245598E80089BD7B /* ItemDetailSeasonSectionView.swift in Sources */,
+				4CF14B75246B3E9E00F740BF /* TurnipsChartValuesView.swift in Sources */,
 				697E63F92449DADE008FB710 /* VillagerRowView.swift in Sources */,
 				4C7FE789245B57A10011E8AB /* AdaptsToSoftwareKeyboard.swift in Sources */,
 				6903CD11246C7EB800150FA1 /* CollectionProgressRow.swift in Sources */,
