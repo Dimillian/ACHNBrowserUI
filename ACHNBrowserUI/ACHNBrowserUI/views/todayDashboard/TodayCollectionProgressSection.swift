@@ -12,13 +12,10 @@ import Backend
 import UI
 
 struct TodayCollectionProgressSection: View {
-    @EnvironmentObject private var items: Items
-    @EnvironmentObject private var collection: UserCollection
-    
+    @EnvironmentObject private var items: Items    
     @ObservedObject var viewModel: DashboardViewModel
     @Binding var sheet: Sheet.SheetType?
     
-    @State private var isExpanded = false
     private let barHeight: CGFloat = 12
     
     var body: some View {
@@ -30,68 +27,24 @@ struct TodayCollectionProgressSection: View {
     }
 
     private func generateBody() -> some View {
-        VStack(spacing: 8) {
-            if items.categories.isEmpty == false {
-                Group {
-                    if isExpanded {
-                        ForEach(Category.collectionCategories(), id: \.self) { category in
-                            self.progressRow(iconName: category.iconName(), for: category)
-                        }
-                    } else {
+        VStack(spacing: 4) {
+            if items.categories[.housewares]?.isEmpty == false {
+                NavigationLink(destination: CollectionProgressDetailView()) {
+                    VStack(spacing: 4) {
                         ForEach(Category.collectionCategories().prefix(4).map{ $0 }, id: \.self) { category in
-                            self.progressRow(iconName: category.iconName(), for: category)
+                            CollectionProgressRow(category: category, barHeight: 12)
+                                .padding(.trailing, 8)
                         }
                     }
-                    seeMoreButton
-                    shareButton.padding(.top, 12)
                 }
+                shareButton.padding(.top, 12)
             } else {
                 RowLoadingView(isLoading: .constant(true))
             }
         }
         .animation(.interactiveSpring())
     }
-    
-    func progressRow(iconName: String, for category: Backend.Category) -> some View {
-        let caught = CGFloat(collection.itemsIn(category: category))
-        var total: CGFloat = 0
-        if category == .art {
-            total = CGFloat(items.categories[category]?.filter({ !$0.name.contains("(fake)") }).count ?? 0)
-        } else {
-            total = CGFloat(items.categories[category]?.count ?? 0)
-        }
         
-        return HStack {
-            Image(iconName)
-                .resizable()
-                .aspectRatio(1, contentMode: .fit)
-                .frame(height: 24)
-            
-            Group {
-                ProgressView(progress: caught / total,
-                             trackColor: .acText,
-                             progressColor: .acHeaderBackground)
-            }
-            .frame(height: self.barHeight)
-            
-            Text("\(Int(caught)) / \(Int(total))")
-                .font(Font.system(size: 12,
-                                  weight: Font.Weight.semibold,
-                                  design: Font.Design.rounded).monospacedDigit())
-                .foregroundColor(.acText)
-        }
-    }
-    
-    private var seeMoreButton: some View {
-        Button(action: {
-            self.isExpanded.toggle()
-        }) {
-            Text(isExpanded ? "See less" : "See more")
-                .foregroundColor(.acHeaderBackground)
-        }
-        .buttonStyle(PlainButtonStyle())
-    }
-
     private var shareButton: some View {
         Button(action: { self.generateAndShareImage() } ) {
             HStack {

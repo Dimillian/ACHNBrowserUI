@@ -121,7 +121,9 @@ public enum Category: String, CaseIterable {
     
     public static func collectionCategories() -> [Category] {
         var base: [Category]  = [.fish, .bugs, .fossils, .art]
-        base.append(contentsOf: Self.items())
+        var items = Self.items()
+        items.removeAll(where: { $0 == .art })
+        base.append(contentsOf: items)
         base.append(contentsOf: Self.wardrobe())
         return base
     }
