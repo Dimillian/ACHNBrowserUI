@@ -26,11 +26,15 @@ struct SubscribeView: View {
         subscriptionManager.subscription
     }
     
-    private var price: String {
+    private var lifetime: Purchases.Package? {
+        subscriptionManager.lifetime
+    }
+    
+    private func formattedPrice(for package: Purchases.Package) -> String {
         let formatter = NumberFormatter()
         formatter.numberStyle = .currency
         formatter.locale = sub!.product.priceLocale
-        return formatter.string(from: sub!.product.price)!
+        return formatter.string(from: package.product.price)!
     }
     
     private var dismissButton: some View {
@@ -71,6 +75,7 @@ struct SubscribeView: View {
                 .frame(width: 320)
                 .padding()
                 .lineLimit(nil)
+            
             makeBorderedButton(action: {
                 if self.subscriptionManager.subscriptionStatus == .subscribed {
                     self.presentationMode.wrappedValue.dismiss()
@@ -80,9 +85,23 @@ struct SubscribeView: View {
                 }
             }, label: self.subscriptionManager.subscriptionStatus == .subscribed ?
                 NSLocalizedString("Thank you for your support!", comment: "") :
-                NSLocalizedString("Subscribe for \(price) / Month", comment: ""))
+                NSLocalizedString("Subscribe for \(formattedPrice(for: sub!)) / Month", comment: ""))
             .opacity(subscriptionManager.inPaymentProgress ? 0.5 : 1.0)
             .disabled(subscriptionManager.inPaymentProgress)
+            
+            makeBorderedButton(action: {
+                if self.subscriptionManager.subscriptionStatus == .subscribed {
+                    self.presentationMode.wrappedValue.dismiss()
+                } else {
+                    self.subscriptionManager.purchase(source: self.source.rawValue,
+                                                      product: self.lifetime!)
+                }
+            }, label: self.subscriptionManager.subscriptionStatus == .subscribed ?
+                NSLocalizedString("Thank you for your support!", comment: "") :
+                NSLocalizedString("Buy lifetime AC Helper+ for \(formattedPrice(for: lifetime!))", comment: ""))
+                .opacity(subscriptionManager.inPaymentProgress ? 0.5 : 1.0)
+                .disabled(subscriptionManager.inPaymentProgress)
+                .padding(.top, 16)
 
         }
     }
@@ -106,7 +125,7 @@ struct SubscribeView: View {
                 .padding()
                 .lineLimit(nil)
             Spacer(minLength: 16)
-            Text("ACHelperPlusPriceAndAboDetail \(price)")
+            Text("ACHelperPlusPriceAndAboDetail \(formattedPrice(for: sub!))")
                 .font(.caption)
                 .foregroundColor(.acText)
                 .frame(width: 320)
@@ -130,14 +149,14 @@ struct SubscribeView: View {
             ScrollView(.vertical) {
                 ZStack {
                     Color.acBackground.edgesIgnoringSafeArea(.all)
-                    if sub != nil {
+                    if sub != nil && lifetime != nil {
                         VStack {
                             upperPart
                             Spacer(minLength: 32)
                             lowerPart
                         }
                     } else {
-                        Text("Loading...")
+                        RowLoadingView(isLoading: .constant(true))
                         Spacer()
                     }
                 }
