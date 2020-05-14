@@ -19,6 +19,8 @@ This is a full featured Animal Crossing helper application entirely in SwiftUI.
 * Full catalog browser with filter, sorting and search.
 * Villagers list.
 * Bookmark anything in the app to add it to your collection.
+* Spotlight support for fishes, bugs, fossils and art
+* Localized to English, French, German; Japanese and Chinese (TW) in progress - see [#68](https://github.com/Dimillian/ACHNBrowserUI/issues/68) to help us extend localization to missing languages
 * iOS, iPad and macOS (Catalyst support)!
 
 You can use this application for learning about SwiftUI and Combine. It uses a very standard view, and view model architecture with full use of @State, @Binding, @Published, Observed and Observable object. 
