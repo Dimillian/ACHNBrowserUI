@@ -16,7 +16,7 @@ struct Sheet: View {
         case userListForm(editingList: UserList?)
         case turnipsForm(subManager: SubscriptionManager)
         case subscription(source: SubscribeView.Source, subManager: SubscriptionManager)
-        case settings(subManager: SubscriptionManager)
+        case settings(subManager: SubscriptionManager, collection: UserCollection)
         
         var id: String {
             switch self {
@@ -51,8 +51,10 @@ struct Sheet: View {
                                                   applicationActivities: nil))
         case .about:
             return AnyView(AboutView())
-        case .settings(let subManager):
-            return AnyView(SettingsView().environmentObject(subManager))
+        case .settings(let subManager, let collection):
+            return AnyView(SettingsView()
+                .environmentObject(subManager)
+                .environmentObject(collection))
         case .turnipsForm(let subManager):
             return AnyView(NavigationView {
                 TurnipsFormView().environmentObject(subManager)
