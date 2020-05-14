@@ -28,3 +28,11 @@ struct CategoryRowView: View {
         }
     }
 }
+
+struct CategoryRowView_Previews: PreviewProvider {
+    static var previews: some View {
+        List {
+            CategoryRowView(category: .housewares)
+        }
+    }
+}

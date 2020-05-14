@@ -12,11 +12,11 @@ import Backend
 import UI
 
 struct TodayCollectionProgressSection: View {
-    @EnvironmentObject private var collection: UserCollection
+    @EnvironmentObject private var items: Items    
     @ObservedObject var viewModel: DashboardViewModel
     @Binding var sheet: Sheet.SheetType?
     
-    var barHeight: CGFloat = 12
+    private let barHeight: CGFloat = 12
     
     var body: some View {
         Section(header: SectionHeaderView(text: "Collection Progress", icon: "chart.pie.fill")) {
@@ -27,12 +27,16 @@ struct TodayCollectionProgressSection: View {
     }
 
     private func generateBody() -> some View {
-        VStack(spacing: 8) {
-            if (!viewModel.fishes.isEmpty && !viewModel.bugs.isEmpty && !viewModel.fossils.isEmpty && !viewModel.art.isEmpty) {
-                progressRow(iconName: "Fish28", for: viewModel.fishes)
-                progressRow(iconName: "Ins13", for: viewModel.bugs)
-                progressRow(iconName: "icon-fossil", for: viewModel.fossils)
-                progressRow(iconName: "icon-leaf", for: viewModel.art)
+        VStack(spacing: 4) {
+            if items.categories[.housewares]?.isEmpty == false {
+                NavigationLink(destination: CollectionProgressDetailView()) {
+                    VStack(spacing: 4) {
+                        ForEach(Category.collectionCategories().prefix(4).map{ $0 }, id: \.self) { category in
+                            CollectionProgressRow(category: category, barHeight: 12)
+                                .padding(.trailing, 8)
+                        }
+                    }
+                }
                 shareButton.padding(.top, 12)
             } else {
                 RowLoadingView(isLoading: .constant(true))
@@ -40,33 +44,8 @@ struct TodayCollectionProgressSection: View {
         }
         .animation(.interactiveSpring())
     }
-    
-    func progressRow(iconName: String, for items: [Item]) -> some View {
-        let caught = CGFloat(collection.caughtIn(list: items))
-        let total = CGFloat(items.count)
         
-        return HStack {
-            Image(iconName)
-                .resizable()
-                .aspectRatio(1, contentMode: .fit)
-                .frame(height: 24)
-            
-            Group {
-                ProgressView(progress: caught / total,
-                             trackColor: .acText,
-                             progressColor: .acHeaderBackground)
-            }
-            .frame(height: self.barHeight)
-            
-            Text("\(Int(caught)) / \(Int(total))")
-                .font(Font.system(size: 12,
-                                  weight: Font.Weight.semibold,
-                                  design: Font.Design.rounded).monospacedDigit())
-                .foregroundColor(.acText)
-        }
-    }
-
-    var shareButton: some View {
+    private var shareButton: some View {
         Button(action: { self.generateAndShareImage() } ) {
             HStack {
                 Image(systemName: "square.and.arrow.up").padding(.bottom, 4)
@@ -91,20 +70,26 @@ struct TodayCollectionProgressSection: View {
         .frame(width: 350, height: 270)
         .listStyle(GroupedListStyle())
         .environment(\.horizontalSizeClass, .regular)
+        .environmentObject(UserCollection.shared)
+        .environmentObject(Items.shared)
         .asImage()
         self.sheet = .share(content: [ItemDetailSource(name: "My collection progress", image: image)])
     }
 }
 
-//struct TodayCollectionProgressSection_Previews: PreviewProvider {
-//    static var previews: some View {
-//        NavigationView {
-//            List {
-//                TodayCollectionProgressSection()
-//            }
-//            .listStyle(GroupedListStyle())
-//            .environment(\.horizontalSizeClass, .regular)
-//        }
-//        .previewLayout(.fixed(width: 375, height: 500))
-//    }
-//}
+struct TodayCollectionProgressSection_Previews: PreviewProvider {
+    static var previews: some View {
+        NavigationView {
+            List {
+                TodayCollectionProgressSection(viewModel: DashboardViewModel(),
+                                               sheet: .constant(nil))
+            }
+            .listStyle(GroupedListStyle())
+            .environment(\.horizontalSizeClass, .regular)
+        }
+        .previewLayout(.fixed(width: 375, height: 500))
+        .environmentObject(UserCollection.shared)
+        .environmentObject(Items.shared)
+        
+    }
+}

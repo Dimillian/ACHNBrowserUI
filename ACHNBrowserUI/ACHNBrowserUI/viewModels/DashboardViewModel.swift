@@ -13,25 +13,10 @@ import Backend
 class DashboardViewModel: ObservableObject {
     @Published var recentListings: [Listing]?
     @Published var island: Island?
-    
-    @Published var fishes: [Item] = []
-    @Published var bugs: [Item] = []
-    @Published var fossils: [Item] = []
-    @Published var art: [Item] = []
-        
+            
     private var listingCancellable: AnyCancellable?
     private var islandCancellable: AnyCancellable?
-    private var itemsCancellable: AnyCancellable?
-    
-    init() {
-        itemsCancellable = Items.shared.$categories.sink { [weak self] items in
-            self?.fishes = items[.fish] ?? []
-            self?.bugs = items[.bugs] ?? []
-            self?.fossils = items[.fossils] ?? []
-            self?.art = items[.art]?.filter({ !$0.name.contains("(fake)") }) ?? []
-        }
-    }
-    
+        
     func fetchListings() {
         listingCancellable = NookazonService
             .recentListings()

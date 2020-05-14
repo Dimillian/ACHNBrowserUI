@@ -100,3 +100,11 @@ struct ItemsListView: View {
         .actionSheet(isPresented: $showSortSheet, content: { self.sortSheet })
     }
 }
+
+struct ItemsListView_Previews: PreviewProvider {
+    static var previews: some View {
+        ItemsListView(viewModel: ItemsViewModel(category: .housewares))
+            .environmentObject(Items.shared)
+            .environmentObject(UserCollection.shared)
+    }
+}

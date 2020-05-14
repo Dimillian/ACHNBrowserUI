@@ -26,3 +26,12 @@ struct VillagerRowView: View {
         }
     }
 }
+
+struct VillagerRowView_Previews: PreviewProvider {
+    static var previews: some View {
+        List {
+            VillagerRowView(villager: static_villager)
+                .environmentObject(UserCollection.shared)
+        }
+    }
+}

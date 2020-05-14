@@ -20,7 +20,11 @@ class CategoriesSearchViewModel: ObservableObject {
     
     init() {
         searchCancellable = $searchText
-            .handleEvents(receiveOutput: { [weak self] _ in self?.isLoadingData = true })
+            .handleEvents(receiveOutput: { [weak self] _ in
+                DispatchQueue.main.async {
+                    self?.isLoadingData = true
+                }
+            })
             .debounce(for: .milliseconds(500), scheduler: DispatchQueue.main)
             .removeDuplicates()
             .filter { !$0.isEmpty }
