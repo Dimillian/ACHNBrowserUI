@@ -34,18 +34,7 @@ public class UserCollection: ObservableObject {
                                                    in: .userDomainMask,
                                                    appropriateFor: nil,
                                                    create: false).appendingPathComponent("collection")
-            if let data = try? Data(contentsOf: filePath) {
-                decoder.dataDecodingStrategy = .base64
-                do {
-                    let savedData = try decoder.decode(SavedData.self, from: data)
-                    self.items = savedData.items
-                    self.villagers = savedData.villagers
-                    self.critters = savedData.critters
-                    self.lists = savedData.lists ?? []
-                } catch {
-                    try? FileManager.default.removeItem(at: filePath)
-                }
-            }
+            _ = loadCollection(file: filePath)
         } catch let error {
             fatalError(error.localizedDescription)
         }
@@ -111,7 +100,7 @@ public class UserCollection: ObservableObject {
         save()
     }
     
-    // MARK: - Saving
+    // MARK: - Import / Export
     private func save() {
         do {
             let savedData = SavedData(items: items, villagers: villagers, critters: critters, lists: lists)
@@ -121,5 +110,73 @@ public class UserCollection: ObservableObject {
             print("Error while saving collection: \(error.localizedDescription)")
         }
         encoder.dataEncodingStrategy = .base64
+    }
+    
+    private func loadCollection(file: URL) -> Bool {
+        if let data = try? Data(contentsOf: file) {
+            decoder.dataDecodingStrategy = .base64
+            do {
+                let savedData = try decoder.decode(SavedData.self, from: data)
+                self.items = savedData.items
+                self.villagers = savedData.villagers
+                self.critters = savedData.critters
+                self.lists = savedData.lists ?? []
+                return true
+            } catch {
+                return false
+            }
+        }
+        return false
+    }
+    
+    public func deleteCollection() -> Bool {
+        do {
+            try FileManager.default.removeItem(at: filePath)
+            self.items = []
+            self.villagers = []
+            self.critters = []
+            self.lists = []
+            save()
+            return true
+        } catch {
+            return false
+        }
+    }
+    
+    public func generateExportURL() -> URL? {
+        do {
+            var sharedURL = try FileManager.default.url(for: .documentDirectory,
+                                                                    in: .userDomainMask,
+                                                                    appropriateFor: nil,
+                                                                    create: false)
+            sharedURL.appendPathComponent("exported-collection")
+            sharedURL.appendPathExtension("achelper")
+            try? FileManager.default.removeItem(at: sharedURL)
+            try FileManager.default.copyItem(at: filePath, to: sharedURL)
+            return sharedURL
+        } catch let error {
+            print(error.localizedDescription)
+            return nil
+        }
+    }
+    
+    public func sizeOfArchivedState() -> String {
+        do {
+            let resources = try filePath.resourceValues(forKeys:[.fileSizeKey])
+            let formatter = ByteCountFormatter()
+            formatter.allowedUnits = .useKB
+            formatter.countStyle = .file
+            return formatter.string(fromByteCount: Int64(resources.fileSize ?? 0))
+        } catch {
+            return "0"
+        }
+    }
+    
+    public func processImportedFile(url: URL) -> Bool {
+        let success = loadCollection(file: url)
+        if success {
+            save()
+        }
+        return success
     }
 }

@@ -96,7 +96,8 @@ struct TodayView: View {
     
     // MARK: - Navigation Bar Button(s)
     private var settingsButton: some View {
-        Button(action: { self.selectedSheet = .settings(subManager: self.subManager) } ) {
+        Button(action: { self.selectedSheet = .settings(subManager: self.subManager,
+                                                        collection: self.collection) } ) {
             Image(systemName: "slider.horizontal.3")
                 .style(appStyle: .barButton)
                 .foregroundColor(.acText)
