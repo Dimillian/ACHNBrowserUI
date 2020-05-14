@@ -347,6 +347,7 @@
 		02F2D3F62455D81C009741DA /* round-alt-orange@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "round-alt-orange@3x.png"; sourceTree = "<group>"; };
 		02F2D3F72455D81C009741DA /* simple-orange@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "simple-orange@3x.png"; sourceTree = "<group>"; };
 		02F2D3F82455D81C009741DA /* simple-mint@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "simple-mint@3x.png"; sourceTree = "<group>"; };
+		22EB1DC0246D4D1F00C62F76 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		325C0943246053E10043B6A7 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/System/Library/Frameworks/SwiftUI.framework; sourceTree = DEVELOPER_DIR; };
 		3DB1260324686F0B00E74AA5 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		3DF14B2C24664B2600438646 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -1126,6 +1127,7 @@
 				fr,
 				ZH_TW,
 				zh_TW,
+				ru,
 			);
 			mainGroup = 69AF8C44243E283D001DD9CB;
 			packageReferences = (
@@ -1418,6 +1420,7 @@
 				3DF14B2E24664B4A00438646 /* de */,
 				69AE062824683429006856E4 /* fr */,
 				69933E0B246D1CDD00528B51 /* ZH_TW */,
+				22EB1DC0246D4D1F00C62F76 /* ru */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
