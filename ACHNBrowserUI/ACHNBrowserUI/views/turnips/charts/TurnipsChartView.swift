@@ -11,13 +11,6 @@ import Backend
 
 
 struct TurnipsChartView: View {
-    private struct ChartSizePreferenceKey: PreferenceKey {
-        static var defaultValue: CGSize?
-        static func reduce(value: inout CGSize?, nextValue: () -> CGSize?) {
-            if let newValue = nextValue() { value = newValue }
-        }
-    }
-    
     typealias PredictionCurve = TurnipsChart.PredictionCurve
     static let verticalLinesCount: CGFloat = 9
     var predictions: TurnipPredictions
@@ -83,6 +76,15 @@ struct TurnipsChartView: View {
 
     private func positionPress(_ position: Int) {
         positionPressed = position
+    }
+}
+
+extension TurnipsChartView {
+    private struct ChartSizePreferenceKey: PreferenceKey {
+        static var defaultValue: CGSize?
+        static func reduce(value: inout CGSize?, nextValue: () -> CGSize?) {
+            if let newValue = nextValue() { value = newValue }
+        }
     }
 }
 

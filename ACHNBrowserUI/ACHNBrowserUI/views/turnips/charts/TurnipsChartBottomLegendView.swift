@@ -10,13 +10,6 @@ import SwiftUI
 import Backend
 
 struct TurnipsChartBottomLegendView: View {
-    struct HeightPreferenceKey: PreferenceKey {
-        static var defaultValue: CGFloat?
-        static func reduce(value: inout CGFloat?, nextValue: () -> CGFloat?) {
-            if let newValue = nextValue() { value = newValue }
-        }
-    }
-    
     let predictions: TurnipPredictions
     let positionPress: (Int) -> Void
     private let weekdays = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
@@ -70,6 +63,15 @@ struct TurnipsChartBottomLegendView: View {
             .alignmentGuide(.leading, computeValue: { d in
                 -CGFloat(offset * 2 + 1) * ratioX + d.width/2
             })
+    }
+}
+
+extension TurnipsChartBottomLegendView {
+    struct HeightPreferenceKey: PreferenceKey {
+        static var defaultValue: CGFloat?
+        static func reduce(value: inout CGFloat?, nextValue: () -> CGFloat?) {
+            if let newValue = nextValue() { value = newValue }
+        }
     }
 }
 
