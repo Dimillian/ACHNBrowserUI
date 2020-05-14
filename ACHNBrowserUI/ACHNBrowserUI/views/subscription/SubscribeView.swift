@@ -112,6 +112,8 @@ struct SubscribeView: View {
                 .font(.headline)
                 .fontWeight(.bold)
                 .foregroundColor(.white)
+                .minimumScaleFactor(0.01)
+                .lineLimit(1)
                 .frame(width: 290, height: 30)
         }.buttonStyle(PlainRoundedButton()).accentColor(.acTabBarTint).safeHoverEffect()
     }
