@@ -118,3 +118,10 @@ struct VillagerDetailView: View {
             .navigationBarItems(trailing: navButtons)
     }
 }
+
+struct VillagerDetailView_Previews: PreviewProvider {
+    static var previews: some View {
+        VillagerDetailView(villager: static_villager)
+            .environmentObject(UserCollection.shared)
+    }
+}

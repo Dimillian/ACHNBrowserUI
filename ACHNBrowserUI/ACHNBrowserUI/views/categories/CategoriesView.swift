@@ -102,5 +102,6 @@ extension CategoriesView {
 struct CategoriesView_Previews: PreviewProvider {
     static var previews: some View {
         CategoriesView(categories: Category.items())
+            .environmentObject(Items.shared)
     }
 }

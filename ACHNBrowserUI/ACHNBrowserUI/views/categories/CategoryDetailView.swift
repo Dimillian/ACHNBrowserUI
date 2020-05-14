@@ -22,3 +22,9 @@ struct CategoryDetailView: View {
         }.listStyle(GroupedListStyle())
     }
 }
+
+struct CategoryDetailView_Previews: PreviewProvider {
+    static var previews: some View {
+        CategoryDetailView(categories: Category.wardrobe())
+    }
+}

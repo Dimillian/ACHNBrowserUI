@@ -41,8 +41,18 @@ public enum Category: String, CaseIterable {
     
     public func iconName() -> String {
         switch self {
-        case .housewares, .miscellaneous, .wallMounted, .photos, .posters, .art:
+        case .miscellaneous:
             return "icon-leaf"
+        case .posters:
+            return "icon-posters"
+        case .wallMounted:
+            return "icon-wallmounted"
+        case .housewares:
+            return "icon-housewares"
+        case .photos:
+            return "icon-photos"
+        case .art:
+            return "icon-art"
         case .recipes:
             return "icon-recipe"
         case .wallpapers:
@@ -78,9 +88,9 @@ public enum Category: String, CaseIterable {
         case .other:
             return "icon-leaf"
         case .bugs:
-            return "icon-insect"
+            return "Ins13"
         case .fish:
-            return "icon-fish"
+            return "Fish28"
         case .tools:
             return "icon-tool"
         case .dressup:
@@ -108,6 +118,15 @@ public enum Category: String, CaseIterable {
     public static func APIClothing() -> [Category] {
         [.accessories, .headwear, .tops, .bottoms, .dressup, .socks, .shoes, .bags]
     }
+    
+    public static func collectionCategories() -> [Category] {
+        var base: [Category]  = [.fish, .bugs, .fossils, .art]
+        var items = Self.items()
+        items.removeAll(where: { $0 == .art })
+        base.append(contentsOf: items)
+        base.append(contentsOf: Self.wardrobe())
+        return base
+    }
         
     public static func villagerFurnitures() -> [Category] {
         [.housewares, .miscellaneous, .wallMounted, .art,
@@ -116,7 +135,7 @@ public enum Category: String, CaseIterable {
     
     public static func items() -> [Category] {
         [.housewares, .miscellaneous, .wallMounted, .art,
-         .wallpapers, .floors, .rugs, .photos, .fencing, .tools, .music, .nookmiles,
+         .wallpapers, .floors, .rugs, .photos, .posters, .fencing, .tools, .music, .nookmiles,
          .recipes, .construction, .other]
     }
     
@@ -130,7 +149,7 @@ public enum Category: String, CaseIterable {
     }
     
     public static func icons() -> [Category] {
-        return  [.housewares, .recipes, .floors, .rugs, .wallpapers,
+        return  [.housewares, .recipes, .floors, .rugs, .wallpapers, .posters,
                 .fencing, .music, .tools, .nookmiles, .construction, .tops,
                  .bottoms, .dressup, .headwear, .accessories, .socks, .bags, .umbrellas,
                  .fish, .bugs, .fossils]

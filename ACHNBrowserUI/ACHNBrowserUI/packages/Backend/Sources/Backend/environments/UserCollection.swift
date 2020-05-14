@@ -51,22 +51,13 @@ public class UserCollection: ObservableObject {
         }
     }
     
-    // MARK: - Critters
-    public func caughtIn(list: [Item]) -> Int {
-        var caught = 0
-        for critter in critters {
-            if list.contains(critter) {
-                caught += 1
-            }
-        }
-        for item in items {
-            if list.contains(item) && !item.name.contains("(fake)") {
-                caught += 1
-            }
-        }
+    public func itemsIn(category: Category) -> Int {
+        let items = Items.shared.categories[category] ?? []
+        var caught = self.critters.count(where: { items.contains($0) } )
+        caught += self.items.count(where: { items.contains($0) && $0.name.contains("(fake)") })
         return caught
     }
-    
+
     public func toggleItem(item: Item) -> Bool {
         let added = items.toggle(item: item)
         save()

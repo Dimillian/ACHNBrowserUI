@@ -49,6 +49,11 @@ struct TodayNookazonSection: View {
 
 struct TodayNookazonSection_Previews: PreviewProvider {
     static var previews: some View {
-        TodayNookazonSection(sheet: .constant(nil), viewModel: DashboardViewModel())
+        List {
+            TodayNookazonSection(sheet: .constant(nil),
+                                 viewModel: DashboardViewModel())
+        }
+        .listStyle(GroupedListStyle())
+        .environment(\.horizontalSizeClass, .regular)
     }
 }

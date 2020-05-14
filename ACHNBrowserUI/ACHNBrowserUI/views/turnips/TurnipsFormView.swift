@@ -147,5 +147,6 @@ extension TurnipsFormView {
 struct TurnipsFormView_Previews: PreviewProvider {
     static var previews: some View {
         TurnipsFormView()
+            .environmentObject(SubscriptionManager.shared)
     }
 }

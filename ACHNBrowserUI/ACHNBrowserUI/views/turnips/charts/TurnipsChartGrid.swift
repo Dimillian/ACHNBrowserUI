@@ -45,3 +45,28 @@ struct TurnipsChartGrid: Shape {
 extension TurnipsChartGrid {
     enum Display { case vertical, horizontal }
 }
+
+struct TurnipsChartGridInteractiveVerticalLines: View {
+    let predictions: TurnipPredictions
+    let positionPress: (Int) -> Void
+    let touchWidth: CGFloat = 20
+
+    var body: some View {
+        GeometryReader(content: lines)
+    }
+
+    func lines(geometry: GeometryProxy) -> some View {
+        let (_, _, _, ratioX) = predictions.minMax?.roundedMinMaxAndRatios(rect: geometry.frame(in: .local)) ?? (0, 0, 0, 0)
+        let count = predictions.minMax?.count ?? 0
+
+        return ZStack(alignment: .leading) {
+            ForEach(0..<count) { offset in
+                Button(action: { self.positionPress(offset) }) {
+                    Color.clear
+                        .frame(width: self.touchWidth)
+                        .alignmentGuide(.leading, computeValue: { d in -CGFloat(offset) * ratioX })
+                }
+            }
+        }
+    }
+}
