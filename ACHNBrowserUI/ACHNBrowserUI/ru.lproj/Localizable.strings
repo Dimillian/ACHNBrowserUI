@@ -1,0 +1,690 @@
+/*
+  Localizable.strings
+  ACHNBrowserUI
+
+  Created by Jan on 09.05.20.
+  Copyright © 2020 Thomas Ricouard. All rights reserved.
+*/
+
+"Tap here to preview a notification" = "Нажмите здесь, чтобы просмотреть уведомление";
+"Upgrade to +" = "Обновить до +";
+"You're subscribed to AC Helper+" = "Вы подписаны на AC Helper+";
+
+// copy and paste "export"  of Text() and similar SwiftUI functions
+// Global
+"Close" = "Зкрыть";
+"Dismiss" = "Зкрыть";
+"Save" = "Сохранить";
+
+// Date Format
+"EEEE, dd MMMM" = "EEEE, dd. MMMM";
+"d/M" = "d.M.";
+"dd" = "dd";
+"MMM" = "MMM";
+"MMM dd" = "dd. MMM";
+"dd MMMM" = "dd. MMMM";
+
+// TabbarView
+"Dashboard" = "Главная";
+"Catalog" = "Каталог";
+"Turnips" = "Репа";
+"Villagers" = "Жители";
+"Collection" = "Коллекция";
+
+// TodayView
+"Change Section Order" = "Ändere die Reihenfolge";
+// TodaySectionEditView
+"Drag & Drop to Rearrange" = "Zum Anordnen halten und verschieben";
+"Hidden" = "Versteckt";
+"Today Sections" = "Heute Abschnitte";
+"Done" = "Fertig";
+" to re-order sections." = " to re-order sections.";
+"Check or un-check" = "Check or un-check";
+" rows to hide sections from the dashboard." = " rows to hide sections from the dashboard.";
+"Your top-most section will be the default detail view on iPad and Mac." = "Your top-most section will be the default detail view on iPad and Mac.";
+// TodayBirthdaySection
+"Birthdays" = "Дни рождения";
+"Today's Birthdays" = "Дни рождения сегодня";
+"Today's Birthday" = "День рождения сегодня";
+// TodayCollectionProgressSection
+"Collection Progress" = "Sammelfortschritt";
+"Share" = "Поделиться";
+// TodayCurrentlyAvailableSection
+"Currently Available" = "Aktuell verfügbar";
+"%lld/%lld Bugs" = "%lld/%lld Насекомые";
+"%lld/%lld Fish" = "%lld/%lld Рыбы";
+"%lld NEW" = "%lld Новинка";
+// TodayEventsSection
+"Events" = "События";
+"Currently" = "В настоящее время";
+"No Events Today" = "Сегодня нету событий";
+"Upcoming" = "Предстоящие";
+// TodayTasksSection
+"Today's Tasks" = "Задания на сегодня";
+"This feature requires " = "Эта функция требует ";
+"Learn more >" = "Узнать больше >";
+// TodayTurnipSection
+"Today is sunday, don't forget to buy more turnips and fill your buy price." = "Heute ist Sonntag, denk daran Rüben zu kaufen und den Einkaufspreis einzutragen.";
+"Today's average price should be around " = "Der heutige durchschnittliche Kaufpreis sollte bei ";
+" in the morning, and " = " утром и ";
+" this afternoon." = " после 12-ти.";
+// TodayNookazonSection
+"New on Nookazon" = "Neu auf Nookazon";
+"Nookazon is loading..." = "Nookazon lädt...";
+// TodayWhatsNewSection
+"What's New" = "Was ist neu";
+"See what's new in update %@" = "Schau dir an, was es neues gibt in Version %@";
+// TodaySubscribeSection
+"You're subscribed to AC Helper+. Thank you so much for you support!" = "Du abonnierst AC Helper+. Vielen Dank für deine Unterstützung!";
+"If you enjoy the application, consider subscribing to AC Helper+, to get access to some awesome features and support us!" = "Wenn dir die App gefällt, abonniere AC Helper+, um Zugriff auf großartige Funktionen zu erhalten und uns zu unterstütuen!";
+
+// SubscribeView
+"AC Helper+" = "AC Helper+";
+"ACHelperPlusDescription" = "Das AC Helper+ Abonnement ist ein guter Weg deine Unterstützung für unser kostenloses Open Source Projekt. ♥️
+
+Außerdem erhältst du Zugriff auf exklusive, großartige Funktionen: Rüben Prognose Benachrichtigungen und beliebig viele Gegenstands-Listen! 📈
+
+Weitere Details unten.";
+"ACHelperPlusDetails" = "Über die Benachrichtigungs-Funktion:
+Jeden Tag um 8 und 12 Uhr wirst du eine Benachrichtigung mit dem prognostizierten, durchschnittlichen Ankaufspreis bei Nepp und Schlepp erhalten.
+Je mehr Ankaufspreise du in der App ab montags morgens speicherst, um so genauer wird die nächste Prognose sein!
+
+Über die Listen-Funktion:
+Ohne Abonnement kannst du nur eine Liste mit Gegenständen im \"Meine Sachen\" Register erstellen.
+Wenn du dir AC Helper+ holst, kannst du beliebig viele Listen erstellen und unterschiedlich befüllen.";
+"ACHelperPlusPriceAndAboDetail %@" = "Ein monatliches Abo über %@ pro Monat wird nach der Bestätigung deinem iTunes Konto hinzugefügt.
+Das Abonnement verlängert sich automatisch, solange es nicht bis 24 Stunden vor der nächsten Verlängerung beendet wird.
+Du kannst das Abonnement jederzeit in deinen iTunes Kontoeinstellungen beenden. Jeder nicht genutzte Teil einer kostenlosen Testversion verfällt, wenn du ein Abonnement abschließt.";
+"Subscribe for %@ / Month" = "Abonnieren für %@ / Monat";
+"Buy lifetime AC Helper+ for %@" = "Lebenslang für %@ kaufen";
+"Thank you for your support!" = "Vielen Dank für deine Unterstützung!";
+
+// AboutView
+"About" = "Über";
+"The app" = "Die App";
+"Souce code / report an issue" = "Quell Code / Fehler melden";
+"Rate the app on the App Store" = "Bewerte die App im App Store";
+"Privacy Policy" = "Datenschutzbestimmungen";
+"Terms of Use" = "Nutzungsbedingungen";
+"App version" = "App Version";
+"Game patch data" = "Daten Spielversion";
+"Acknowledgements" = "Danksagungen";
+"Our amazing contributors" = "Unsere großartigen Mitwirkenden";
+"The NookPlaza API by Azarro" = "Die NookPlaza API von Azarro";
+"Turnip.exchange" = "Turnip.exchange";
+"Nookazon for the marketplace" = "Nookazon für den Marktplatz";
+"Shihab / JPEGuin for the icon" = "Shihab / JPEGuin für das Icon";
+"Christian & Ninji for the turnip predictions algorithm" = "Christian & Ninji für den Rüben Prognose Algorithmus";
+"Error" = "Fehler";
+
+// ActiveCittersView
+"Active Critters" = "Aktive Tiere";
+"Fishes" = "Fische";
+"Bugs" = "Insekten";
+"You caught them all!" = "Du hast alle gefangen!";
+"New this month" = "Diesen Monat neu";
+"To catch" = "Zu fangen";
+"Leaving this month" = "Nur noch diesen Monat";
+"Caught" = "Gefangen";
+"All day" = "Ganztägig";
+
+// SettingsView
+"Preferences" = "Einstellungen";
+"Island name" = "Inselname";
+"Your island name" = "Name deiner Insel";
+"Hemisphere" = "Hemisphäre";
+"North" = "Nord";
+"South" = "Süd";
+"Starting fruit" = "Frucht zu Beginn";
+"Apple" = "Apfel";
+"Cherry" = "Kirsche";
+"Orange" = "Orange";
+"Peach" = "Pfirsich";
+"Pear" = "Birne";
+"Coconut" = "Kokusnuss";
+"Nook shop" = "Nepp und Schlepp";
+"Tent" = "Zelt";
+"Nook's Cranny" = "Nooks Laden";
+"Nook's Cranny upgraded" = "Nooks Laden (ausgebaut)";
+"Able sisters" = "Schneiderei";
+"Visiting" = "zu Besuch";
+"Shop" = "Laden";
+"Residents service" = "Service-Center";
+"Building" = "Gebäude";
+"App Settings" = "App Einstellungen";
+"App Icon" = "App Icon";
+"Restore purchase" = "Einkauf wiederherstellen";
+
+// UserListFormView
+"Edit your list" = "Liste Bearbeiten";
+"Name of your list" = "Name der Liste";
+"List name" = "Name";
+"Can be nothing" = "Kann leer sein";
+"Icon" = "Icon";
+
+// UserListDetailView
+"Add %lld items" = "Füge %lld Gegenstände hinzu";
+"Edit" = "Bearbeiten";
+"Search items" = "Gegenstände suchen";
+"Items added to your list from the search will be displayed there." = "Gegenstände, die du aus der Suche heraus deiner Liste hinzugefügt hast, findest du dort.";
+"No results for %@" = "Kein Ergebnis für %@";
+
+// UserListSubscribeCallView
+"In order to create more than one list, you need to subscribe to AC Helper+" = "Um mehr als eine Liste anlegen zu können, musst du AC Helper+ abonnieren";
+"Learn more..." = "Erfahre mehr...";
+
+// CollectionListView
+"Create a new list" = "Erstelle eine neue Liste";
+"Please select or go stars some items!" = "Bitte wähle oder markiere Gegenstände!";
+"When you'll stars some %@, they'll be displayed here." = "Wenn du %@ markierst, werden sie hier angezeigt.";
+"Items" = "Gegenstände";
+"Critters" = "Tiere";
+"Lists" = "Listen";
+"items" = "Gegenstände";
+"villagers" = "Bewohner";
+"critters" = "Tiere";
+"lists" = "Listen";
+
+// ItemsListView
+"Clear Selection" = "Auswahl aufheben";
+"Sort items" = "Gegenstände sortieren";
+"Current Sort: %@" = "Aktuelle Sortierung: %@";
+"name" = "Name";
+"buy" = "Kaufpreis";
+"sell" = "Verkaufspreis";
+"from" = "Von";
+"set" = "Set";
+"similar" = "Ähnliche";
+"Name" = "Name";
+"Buy" = "Kaufpreis";
+"Sell" = "Verkaufspreis";
+"From" = "Von";
+"Set" = "Set";
+"Similar" = "Ähnliche";
+// ItemRowView
+"unknown source" = "Herkunft unbekannt";
+// ItemDetailInfoView
+"Rarity:" = "Seltenheit:";
+"Common" = "Gewöhnlich";
+"Uncommon" = "Ungewöhnlich";
+"Rare" = "Selten";
+"Shadow size:" = "Schatten Größe:";
+"X-Small" = "Sehr klein";
+"Small" = "Klein";
+"Medium" = "Mittel";
+"Large" = "Groß";
+"X-Large" = "Sehr groß";
+"Customizable: %@" = "Veränderbar: %@";
+"Flick:" = "Carlson:";
+"Yes" = "Ja";
+"No" = "Nein";
+// ItemsCrosslineSectionView
+"Preview" = "Vorschau";
+// ItemDetailSeasonView
+"Seasonality" = "Saisonalität";
+// ItemDetailView
+"Set items" = "Setgegenstände";
+"Simillar items" = "Ähnliche Gegenstände";
+"Thematics" = "Thematik";
+"Variants" = "Varianten";
+"Materials" = "Materialien";
+"Nookazon listings" = "Nookazon Auflistung";
+"Loading Listings..." = "Lade Auflistung...";
+"No listings found on Nookazon" = "Keine Auflistung auf Nookazon gefunden";
+"Your items lists" = "Deine Gegenstandslisten";
+
+// TurnipsView
+"Minmax" = "Min-Max";
+"Profits" = "Gewinne";
+"Average daily buy prices" = "Durchschnittliche tägliche Verkaufspreise";
+"Daily min-max prices" = "Tägliche Min-Max Preise";
+"Average profits" = "Durchschnittliche Gewinne";
+"Chart" = "Diagramm";
+"Mon" = "Mo";
+"Tue" = "Di";
+"Wed" = "Mi";
+"Thu" = "Do";
+"Fri" = "Fr";
+"Sat" = "Sa";
+"Your prices" = "Deine Preise";
+"Edit your in game prices" = "Bearbeite deine Spiel Preise";
+"Add your in game prices" = "Füge deine Spiel Preise hinzu";
+"Turnips prediction" = "Rüben-Progrnose";
+"To help us support the application and get turnip predictions notification, you can try out AC Helper+" = "Abonniere AC Helper+, um Benachrichtigungen zur Rüben-Prognose zu bekommen und uns bei der Entwicklung der App zu unterstützen";
+"%lld upcomingDailyNotifications" = "Du bekommst Verkaufspreis Prognosen in noch %lld weiteren täglichen Benachrichtigungen.";
+"Profits estimates are computed using the average of the current period" = "Die Profite werden auf Basis des durchschnittlichen Preises der jeweiligen Periode berechnet";
+"Day" = "Tag";
+"AM" = "Vorm.";
+"PM" = "Nachm.";
+"Please add the amount of turnips you bought and for how much" = "Bitte trag ein, wie viele Rüben du gekauft hast und zu welchem Preis";
+"Add your in game turnip prices to see the predictions chart" = "Um das Prognose-Diagramm sehen zu können, trag die Verkaufspreise für Rüben ein";
+"Add your in game turnip prices to see predictions" = "Trag die Rüben-Verkaufspreise ein um eine Prognose sehen zu können";
+"Exchange" = "Wechselkurs";
+// TurnipsFormView
+"Monday" = "Montag";
+"Tuesday" = "Dienstag";
+"Wednesday" = "Mittwoch";
+"Thursday" = "Donnerstag";
+"Friday" = "Freitag";
+"Saturday" = "Samstag";
+"Add your turnip prices" = "Füge deine Rüben Verkaufspreise hinzu";
+"Configuration" = "Konfiguration";
+"Clear all fields" = "Alle Felder leeren";
+"Receive prices predictions notification" = "Erhalte Benachrichtigungen zu Verkaufspreis Prognosen";
+"You can get daily notifications for your average turnip price by subscribing to AC Helper+" = "Mit einem AC Helper+ Abonnement erhältst du tägich Benachrichtigungen zum durchschnittlichen Rüben Verkaufspreis";
+"Preview a notification" = "Zeige Vorschau-Benachrichtigung";
+"Your in game prices" = "Deine Preise";
+"Buy price" = "Kaufpreis";
+"Amount bought" = "Gekaufte Menge";
+"The more in game buy prices you'll add the better the predictions will be. Your buy price only won't give your correct averages. Add prices from the game as you get them daily." = "Je mehr Verkaufspreise du einträgst, um so genauer kann die Prognose sein. Der Einkaufspreis alleine kann keine gute Prognose liefern. Trag also am besten täglich die Verkaufspreise ein.";
+// TurnipsChartTopLegendView
+"Average" = "Durchschnitt";
+"Minimum" = "Minimum";
+"MinMax" = "MinMax";
+
+// IslandDetailView
+"Join Island" = "Insel beitreten";
+"Island" = "Insel";
+"Description" = "Beschreibung";
+"Visitors" = "Besucher";
+"Loading Visitors...." = "Lade Besucher....";
+
+// VillagersListView
+"Search a villager" = "Suche einen Bewohner";
+"Personality" = "Persönlichkeit";
+"Birthday" = "Geburtstag";
+"Species" = "Spezies";
+"Gender" = "Geschlecht";
+"Catch phrase" = "Schlagwort";
+"Unknown" = "Unbekannt";
+"Villager items" = "Gegenstände des Bewohners";
+// VillagersDetailView
+"Unkown" = "Unbekannt";
+"Lazy" = "Schlafmütze";
+"Jock" = "Sportlich";
+"Cranky" = "Miesepeter";
+"Smug" = "Selbstzufrieden";
+"Normal" = "Ausgeglichen";
+"Peppy" = "Schwungvoll";
+"Snooty" = "Hochnäsig";
+"Uchi" = "Große Schwester";
+"Male" = "Männlich";
+"Female" = "Weiblich";
+"Alligator" = "Krokodil";
+"Anteater" = "Ameisenbär";
+"Bear" = "Bär";
+"Bird" = "Vogel";
+"Bull" = "Stier";
+"Cat" = "Katze";
+"Chicken" = "Huhn";
+"Cow" = "Kuh";
+"Cub" = "Teddybär";
+"Deer" = "Reh";
+"Dog" = "Hund";
+"Duck" = "Ente";
+"Eagle" = "Adler";
+"Elephant" = "Elefant";
+"Frog" = "Frosch";
+"Goat" = "Ziege";
+"Gorilla" = "Gorilla";
+"Hamster" = "Hamster";
+"Hippo" = "Nielpferd";
+"Horse" = "Pferd";
+"Kangaroo" = "Känguru";
+"Koala" = "Koala";
+"Lion" = "Löwe";
+"Monkey" = "Affe";
+"Mouse" = "Maus";
+"Octopus" = "Oktopus";
+"Ostrich" = "Strauß";
+"Penguin" = "Pinguin";
+"Pig" = "Schwein";
+"Rabbit" = "Hase";
+"Rhino" = "Nashorn";
+"Sheep" = "Schaf";
+"Squirrel" = "Eichhörnchen";
+"Tiger" = "Tieger";
+"Wolf" = "Wolf";
+
+// ListingRow
+"Make an Offer" = "Angebot abgeben";
+"Need Materials" = "Benötigt Materialien";
+
+// CategoryRow
+"housewares" = "Haushaltswaren";
+"miscellaneous" = "Sonstiges";
+"wall-mounted" = "Wand Dekoration";
+"wallpapers" = "Tapeten";
+"floors" = "Fußböden";
+"rugs" = "Teppiche";
+"photos" = "Fotos";
+"posters" = "Poster";
+"fencing" = "Zäune";
+"tools" = "Werkzeuge";
+"tops" = "Oberteile";
+"bottoms" = "Unterteile";
+"dresses" = "Kleider";
+"Dress-Up" = "Verkleidungen";
+"headwear" = "Kopfbedeckungen";
+"accessories" = "Accessoires";
+"socks" = "Socken";
+"shoes" = "Schuhe";
+"bags" = "Taschen";
+"umbrellas" = "Regenschirme";
+"music" = "Musik";
+"recipes" = "Anleitungen";
+"construction" = "Bau";
+"nookmiles" = "Nook Miles";
+"other" = "Anderes";
+"art" = "Kunst";
+"bugs" = "Insekten";
+"fish" = "Fische";
+"fossils" = "Fossilien";
+// CategoriesView
+"Nature" = "Natur";
+"Wardrobe" = "Kleidung";
+"No results for %@" = "Kein Ergebnis für %@";
+
+
+// Shared
+// SearchField
+"Search..." = "Suchen...";
+
+// item sources
+// Added 2020-05-11:
+"3rd House Upgrade (Left Room)" = "3. Haus Ausbau (linker Raum)";
+"4th House Upgrade (Right Room)" = "4. Haus Ausbau (rechter Raum)";
+"5-star town evaluation" = "5-Sterne Inselbewertung";
+"5-star town status" = "5-Sterne Inselbewertung";
+"5th House Upgrade (2nd Floor)" = "5. Haus Ausbau (Obergeschoss)";
+"Able Sisters" = "Schneiderschwestern";
+"All Villagers (while stung)" = "Alle Bewohner (während gestochen)";
+"All Villagers" = "Alle Bewohner";
+"All villagers" = "Alle Bewohner";
+"Also obtained from digging up an existing pitfall" = "Auch durch Ausgraben einer vorhandenen Falle";
+"Amiibo" = "Amiibo";
+"Apple tree" = "Apfelbaum";
+"Available after unlocking the axe in the story" = "Verfügbar nach dem Entsperren der Axt in der Geschichte";
+"Available after unlocking the ladder in the story" = "Verfügbar nach dem Entsperren der Leiter in der Geschichte";
+"Available after unlocking the shovel in the story" = "Verfügbar nach dem Entsperren der Schaufel in der Geschichte";
+"Available from Able Sisters shop only during Festive Season" = "Nur während der Weihnachtszeit in der Schneiderei erhältlich";
+"Available from Able Sisters shop only" = "Nur in der Schneiderei erhältlich";
+"Available from either Mable's temporary shop or Able Sisters shop during Festive Season" = "Während der Weihnachtszeit erhältlich an Tinas Verkaufsstand oder in der Schneiderei.";
+"Available from either Mable's temporary shop or Able Sisters shop" = "Erhältlich an Tinas Verkaufsstand oder in der Schneiderei";
+"Available in all tiers of shops, including Timmy & Tommy before the shop is opened" = "Erhältlich bei Nepp & Schlepp in jeder Stufe des Ladens";
+"Available in Nook's Cranny (either upgrade tier) in the unique furniture slot" = "Erhältlich in Nooks Laden auf dem \"Einzigarige-Möbel\" Platz";
+"Available in Nook's Cranny (upgraded only)" = "Verfügbar in Nooks Laden (ausgebaut)";
+"Available in Nook's Cranny (upgraded only), in the third unique furniture slot" = "Verfügbar in Nooks Laden (ausgebaut), auf dem dritten \"Einzigarige-Möbel\" Platz";
+"Available in Nook's Cranny (upgraded only), in the unique furniture slot" = "Verfügbar in Nooks Laden (ausgebaut), auf einem \"Einzigarige-Möbel\" Platz";
+"Available in the re-buyable slot in Nook's Cranny" = "Erhältlich auf einem wiederkaufbaren Platz in Nooks Laden";
+"Balloons" = "Luftballons";
+"Beach (Bunny Day)" = "Strand (Häschen-Tag)";
+"Beach (Summer)" = "Strand (Sommer)";
+"Beach" = "Strand";
+"Big Sister villagers" = "\"Große Schwester\" Bewohner";
+"Big sister villagers" = "\"Große Schwester\" Bewohner";
+"Black/black roses\nWater with gold watering can" = "Schwarz/schwarze Rosen\nGewässert mit goldener Gießkanne";
+"Blathers" = "Eugen";
+"Blue/blue hyacinths" = "Blaue/blaue Hyazinthen";
+"Blue/blue pansies" = "Blaue/blaue Stiefmütterchen";
+"Blue/blue windflowers\nBlue/pink windflowers" = "Blaue/blaue Windblumen\nBlaue/rosa Windblumen";
+"Breaking 100 axes" = "100 Äxte zerbrochen";
+"Bug-Off" = "Insektikus-Turnier";
+"Bunny Day" = "Häschen-Tag";
+"Burying bells in a glowing spot" = "Sternis an einer leuchtenden Stelle vergraben";
+"C.J." = "Lomeus";
+"Catching with a net (Cherry-Blossom Season)" = "Mit Kescher fangen (Kirschblüten-Saison)";
+"Catching with a net (Fall)" = "Mit Kescher fangen (Herbst)";
+"Catching with a net (Winter)" = "Mit Kescher fangen (Winter)";
+"Catching with a net while on a quest for Wisp" = "Mit Kescher fangen während der Aufgabe von Buhu";
+"Celeste" = "Eufemia";
+"Cherry blossom seasonal DIY using cherry-blossom petals (caught with net)" = "Bastelanleitung aus der Kirschblüten-Saison; benötigt Kirschblüten (mit Kescher fangen)";
+"Cherry tree" = "Kirschbaum";
+"Chopping a bamboo tree (Spring)" = "Bambusbaum fällen (Frühling)";
+"Chopping a bamboo tree" = "Baumbusbaum fällen";
+"Chopping a tree (Bunny Day)" = "Baum fällen (Häschen-Tag)";
+"Chopping a tree" = "Baum fällen";
+"Clam dig spot while on a quest for Gulliver" = "Muschelstelle, während der Aufgabe von Gulliver";
+"Clam dig spot" = "Muschelstelle";
+"Coconut tree" = "Kokusnussbaum";
+"Collecting earth eggs" = "Erd-Glücksei sammeln";
+"Collecting leaf eggs" = "Laub-Glücksei sammeln";
+"Collecting sky eggs" = "Luft-Glücksei sammeln";
+"Collecting stone eggs" = "Fels-Glücksei sammeln";
+"Collecting water eggs" = "Wasser-Glücksei sammeln";
+"Collecting wood eggs" = "Holz-Glücksei sammeln";
+"Colorful balloon (Bunny Day)" = "Bunter Ballon (Häschen-Tag)";
+"Completing bug Critterpedia" = "Insekten-Faunapädie vervollständigen";
+"Completing fish Critterpedia" = "Fisch-Faunapädie vervollständigen";
+"Crafting" = "Basteln";
+"Cranky villagers" = "\"Miesepeter\" Bewohner";
+"Cyrus" = "Björn";
+"Daisy Mae (Sundays)" = "Jorna (sonntags)";
+"Delivering item for a villager" = "Gegenstand einem Bewohner bringen";
+"Dig spot (Bunny Day)" = "Grabungsstelle (Häschen-Tag)";
+"Dig spot near a bamboo tree" = "Grabungsstelle in der nähe eines Baumbusbaums";
+"Dig spot" = "Grabungsstelle";
+"Digging up clams" = "Muscheln ausgrauben";
+"Digging up treasure for a villager's quest" = "Schätze ausgraben für die Aufgabe eines Dorfbewohners";
+"Disguised on shoreline" = "Getarnt als Muschel an der Küste";
+"Disguised under trees" = "Getarnt unter Bäumen";
+"Dodo Airlines" = "Dodo Airlines";
+"Don't return lost item" = "Gibt verlorene Gegenstände nicht zurück";
+"Egg balloon" = "Eier-Ballon";
+"Egg bottle" = "Eier-Flasche";
+"Expired turnips" = "Verrottete Rüben";
+"Fall seasonal DIY using autumn leaves (caught with net)" = "Bastelanleitung im Herbst; benötigt Herbstblätter (mit Kescher fangen)";
+"Festive seasonal DIY using ornaments (from shaking trees)" = "Bastelanleitung aus der Weihnachtszeit; benötigt Ornamente (Bäume schütteln)";
+"Fishing (Bunny Day)" = "Angeln (Häschen-Tag)";
+"Fishing Tourney" = "Angel-Turnier";
+"Fishing up a boot" = "Stiefel angeln";
+"Fishing up all 3 trash items" = "Alle 3 Müllgegenstände geangelt";
+"Fishing up an empty can" = "Leere Dose angeln";
+"Fishing up an old tire" = "Alten Reifen angeln";
+"Fishing up three old tires" = "Drei alte Reifen angeln";
+"Fishing up trash" = "Müll angeln";
+"Fishing" = "Angeln";
+"Flick" = "Carlson";
+"Flying near blue/purple/black flowers" = "Fliegt in der Nähe von blauen/lila/schwarzen Blumen";
+"Flying near flowers" = "Fliegt in der nähe von Blumen";
+"Flying near light sources" = "Fliegt in der nähe von Lichtquellen";
+"Flying near trash (boots, tires, cans)" = "Fliegt in der Nähe von Müll (Stiefel, Reifen, Dosen)";
+"Flying" = "Fliegt";
+"From hitting rocks" = "Felsen schlagen";
+"From Zipper after trading one of every egg (all 6 types) during Bunny Day." = "Von Ohs T. Hase nach dem Handel mit einem von jedem Ei (alle 6 Arten) während des Häschen-Tages.";
+"Glowing dig spot" = "Leuchtende Grabungsstelle";
+"Gulliver" = "Gulliver";
+"Harvey" = "Harvey";
+"Helping Gulliver 30 times" = "Gulliver 30 mal helfen";
+"HHA" = "AdsH";
+"Hidden song - only by request" = "Verstecktes Lied - nur auf Anfrage";
+"High Friendship" = "Hohe Freundschaftsstufe";
+"Hitting a rock (Bunny Day)" = "Felsen schlagen (Häschen-Tag)";
+"Hitting a rock" = "Felsen schlagen";
+"Hitting a rock, Fishing" = "Felsen schlagen, Angeln";
+"In the Special Items section in Nook Shopping, after scanning the related Amiibo on Photopia" = "Im Abschnitt \"Besondere Gegenstände\" in Nook Shopping nach dem Scannen des zugehörigen Amiibo auf Fotopia";
+"International Children's Day" = "Internationaler Kindertag";
+"International Museum Day" = "Internationaler Museumstag";
+"Isabelle" = "Melinda";
+"Jock villagers" = "\"Sportliche\" Bewohner";
+"Jolly Redd's Treasure Trawler" = "Reiners Schatzkutter";
+"K.K. concert" = "K.K. Konzert";
+"K.K. concert, Nook Shopping Catalog" = "K.K. Konzert, Nook Shopping Katalog";
+"Kicks" = "Schubert";
+"Label" = "Minna";
+"Labelle" = "Minna";
+"Large rug" = "Großer Teppich";
+"Large shadow" = "Großer Schatten";
+"Lazy villagers" = "\"Schlafmütze\" Bewohner";
+"Learning all egg outfit DIYs" = "Alle Eier-Outfit Bastelanleitungen lernen";
+"Link Nintendo Account to Pocket Camp, then redeem a 16-digit code on your Nintendo Switch" = "Verknüpfe deinen Nintendo Account mit Pocket Camp, löse dann den 16-stelligen Code auf deiner Nintendo Switch ein.";
+"Mail" = "Post";
+"Medium rug" = "Mittlerer Teppich";
+"Medium shadow" = "Mittlerer Schatten";
+"Mom" = "Mama";
+"Mushroom seasonal DIY" = "Pilz-Saison Bastelanleitung";
+"New Year's Eve" = "Silvester";
+"Nintendo" = "Nintendo";
+"Nook Miles Exchange" = "Nook Meilen Austausch";
+"Nook Miles Shop" = "Nook Meilen Shop";
+"Nook Shopping Catalog" = "Nook Shopping Katalog";
+"Nook Shopping Promotion" = "Nook Shopping Werbung";
+"Nook Shopping Seasonal" = "Nook Shopping Saisonal";
+"Nook Shopping" = "Nook Shopping";
+"Nook's Cranny" = "Nooks Laden";
+"Nook's Cranny\nCrafting" = "Nooks Laden\nBasteln";
+"Normal villagers" = "\"Ausgeglichene\" Bewohner";
+"Obtained from Tom Nook after completing one Nature Day Nook Miles+ task" = "Erhalten von Tom Nook nach Abschluss einer Tag der Natur Nook Meilen+ Aufgabe";
+"Obtained from Zipper on Bunny Day after collecting most Bunny Day recipes (third gift)" = "Erhalten von Ohs T. Hase am Häschen-Tag nach dem Sammeln der meisten Häschen-Tag Anleitungen (drittes Geschenk)";
+"Obtained randomly from villager, egg message bottle or egg balloon during Bunny Day event" = "Wird zufällig vom Dorfbewohner, Eier-Flaschenpost oder Eier-Ballon während des Häschen-Tag-Ereignisses erhalten.";
+"On beach rocks" = "Auf Strandfelsen";
+"On flowers" = "Auf Blumen";
+"On ground (Mushroom Season)" = "Auf dem Boden (Pilz-Saison)";
+"On ground" = "Auf dem Boden";
+"On hardwood/cedar trees" = "Auf Hartholz-Bäumen/Nadelbäumen";
+"On palm trees" = "Auf Palmen";
+"On rivers/ponds" = "An Flüssen/Teichen";
+"On rocks" = "Auf Felsen";
+"On rotten turnips" = "An faulen Rüben";
+"On the ground" = "Auf dem Boden";
+"On tree stumps" = "Auf Baumstümpfen";
+"On trees (any kind)" = "Auf Bäumen (jeglicher Art)";
+"On villagers" = "Auf Bewohnern";
+"On white flowers" = "Auf weißen Blumen";
+"Only available close to new year holiday" = "Nur kurz vor den Neujahrsferien";
+"Only available during Bunny Day" = "Nur während des Häschen-Tag";
+"Only available during Cherry-Blossom Season" = "Nur während der Kirschblüten-Saison";
+"Only available during Fall" = "Nur im Herbst";
+"Only available during Festive Season" = "Nur während der Weihnachtszeit";
+"Only available during Maple Leaf Season" = "Nur während der Ahornblatt-Saison";
+"Only available during Mushroom Season" = "Nur während der Pilz-Saison";
+"Only available during Spring" = "Nur im Frühling";
+"Only available during Summer" = "Nur im Sommer";
+"Only available during the month Father's Day occurs, region dependant" = "Nur in dem Monat, in dem Muttertag stattfindet, Regionsabhängig";
+"Only available during the month Mother's Day occurs, region dependant" = "Nur in dem Monat, in dem Vatertag stattfindet, Regionsabhängig";
+"Only available during Wedding Season" = "Nur während der Hochzeitssaison";
+"Only available during Winter" = "Nur im Winter";
+"Orange tree" = "Orangenbaum";
+"Orange/orange roses" = "Orangene/orangene Rosen";
+"Orange/orange tulips" = "Orangene/orangene Tulpen";
+"Peach tree" = "Pfirsichbaum";
+"Pear tree" = "Birnenbaum";
+"Peppy villagers" = "\"Schwungvolle\" Bewohner";
+"Perfect Snowboy" = "Perfekter Schneejunge";
+"Picking flowers" = "Blumen pflücken";
+"Pier" = "Steg";
+"Planting a bamboo shoot" = "Einen Bambusspross pflanzen";
+"Planting a cedar start" = "Einen Nadelbaumsetzling pflanzen";
+"Planting a cherry" = "Eine Kirsche einpflanzen";
+"Planting a coconut" = "Eine Kokusnuss einpflanzen";
+"Planting a peach" = "Einen Pfirsich einpflanzen";
+"Planting a pear" = "Eine Birne einpflanzen";
+"Planting a sapling" = "Einen Schössling einpflanzen";
+"Planting an apple" = "Einen Apfel einpflanzen";
+"Planting an orange" = "Eine Orange einpflanzen";
+"Pond" = "Teich";
+"Possible song KK will play when choosing \"A little blue...\" as your mood" = "Mögliches Lied, das K.K. spielt, wenn \"Ein wenig Blau ...\" als Stimmung gewählt wird.";
+"Possible song KK will play when choosing \"A little grumpy...\" as your mood" = "Mögliches Lied, das K.K. spielt, wenn \"Ein wenig mürrisch ...\" als Stimmung gewählt wird.";
+"Possible song KK will play when choosing \"I feel good!\" as your mood" = "Mögliches Lied, das K.K. spielt, wenn \"Ich fühle mich gut!\" als Stimmung gewählt wird.";
+"Possible song KK will play when choosing \"It's hard to say.\" as your mood" = "Mögliches Lied, das K.K. spielt, wenn \"Es ist schwer zu sagen\" als Stimmung gewählt wird.";
+"Possible song KK will play when choosing \"Laid-back.\" as your mood" = "Mögliches Lied, das K.K. spielt, wenn \"Entspannt\" als Stimmung gewählt wird.";
+"Purchased from Tom Nook on New Year's Eve" = "Verkauft Tom Nook an Silvester";
+"Purple/purple mums" = "Lila/lila Chrysanthemen";
+"Pushing snowballs" = "Schneebälle rollen";
+"Received in mail from DAL after taking certain numbers of flights" = "Erhalten von DAL per Post nach einer bestimmten Anzahl von Flügen";
+"Received on your first time seeing KK perform" = "Erhalten bei Ihrem ersten Auftritt von K.K.";
+"Recycle bin" = "Papierkorb";
+"Recycle Box" = "Recycling-Box";
+"Red/orange windflowers" = "Rote/orangene Windblumen";
+"Red/red cosmos" = "Roter/roter Kosmos";
+"Red/red lilies" = "Rote/rote Lilien";
+"Red/red roses" = "Rote/rote Rosen";
+"Red/red tulips" = "Rote/rote Tulpen";
+"Red/white cosmos" = "Roter/weißer Kosmos";
+"Red/white hyacinths" = "Rote/weiße Hyazinthen";
+"Red/white lilies" = "Rote/weiße Lilien";
+"Red/white mums" = "Roter/weißer Chrysanthemen";
+"Red/white roses" = "Roter/weißer Rosen";
+"Red/white tulips" = "Roter/weißer Tulpen";
+"Red/yellow cosmos" = "Roter/weißer Kosmos";
+"Red/yellow hyacinths" = "Roter/weißer Hyazinthen";
+"Red/yellow lilies" = "Roter/weißer Lilien";
+"Red/yellow pansies" = "Roter/weißer Stiefmütterchen";
+"Red/yellow roses" = "Roter/weißer Rosen";
+"Red/yellow tulips" = "Roter/weißer Tulpen";
+"Resident Services Upgrade" = "Service-Center Aufwertung";
+"Reward for completing the Stamp Rally in the bug exhibit" = "Belohnung für den Abschluss der Briefmarken-Rallye in der Insekten-Ausstellung";
+"Reward for completing the Stamp Rally in the fish gallery" = "Belohnung für den Abschluss der Briefmarken-Rallye in der Fisch-Ausstellung";
+"Reward for completing the Stamp Rally in the fossil gallery" = "Belohnung für den Abschluss der Briefmarken-Rallye in der Fossilien-Ausstellung";
+"Reward for making a perfect snow-person" = "Belohnung für die Herstellung einer perfekten Schneeperson";
+"Reward for making a perfect Snowboy; Only available during Winter" = "Belohnung für die Herstellung eines perfekten Schneejungen; nur im Winter verfügbar";
+"Reward for solving May Day maze" = "Belohnung für das Lösen des Labyrinths am 1. Mai";
+"Reward from Zipper after collecting all 6 egg types; Only available during Bunny Day" = "Belohnung von Ohs T. Hase nach dem Sammeln aller 6 Eiersorten; Nur während des Häschen-Tag verfügbar";
+"Reward from Zipper after crafting all Bunny Day recipes; Only available during Bunny Day" = "Belohnung von Ohs T. Hase nach der Herstellung aller Häschen-Tag-Rezepte; Nur während des Häschen-Tag verfügbar";
+"Reward from Zipper after crafting wobbling Zipper toy; Only available during Bunny Day" = "Belohnung von Ohs T. Hase nach der Herstellung eines wackelnden Ohs T. Hase-Spielzeugs; Nur während des Häschen-Tag erhältlich.";
+"River (clifftop)" = "Fluss (Klippe)";
+"River (mouth)" = "Flussmündung";
+"River" = "Fluss";
+"Rover" = "Olli";
+"Saharah" = "Aziza";
+"Season sale item" = "Saisonverkaufsartikel";
+"Season sale item\n*Not available in Europe" = "Saisonverkaufsartikel\n*Nicht in Europa verfügbar";
+"Seed bag" = "Saatgutbeutel";
+"Shaking a cedar tree (Fall)" = "Nadelbaum schütteln (Herbst)";
+"Shaking a cedar tree (Festive Season)" = "Nadelbaum schütteln (Weihnachtszeit)";
+"Shaking a hardwood or cedar tree" = "Hartholzbaum oder Nadelbaum schüttlen";
+"Shaking a hardwood tree (Bunny Day)" = "Hartholzbaum schütteln (Häschen-Tag)";
+"Shaking a hardwood tree (Fall)" = "Hartholzbaum schütteln (Herbst)";
+"Shaking a tree" = "Baum schütteln";
+"Shaking trees (hardwood or cedar only)" = "Baum schütteln (nur Hartholz- oder Nadelbaum)";
+"Shaking trees" = "Baum schütteln";
+"Shooting 300 balloons" = "300 Ballons vom Himmel holen";
+"Small rug" = "Kleiner Teppich";
+"Small shadow" = "Kleiner Schatten";
+"Smug villagers" = "\"Selbstzufriedene\" Bewohner";
+"Snooty villagers" = "\"Hochnäsige\" Bewohner";
+"Snowboy" = "Schneejunge";
+"Snowman" = "Schneemann";
+"Spring seasonal DIY using bamboo (from bamboo trees)" = "Frühlings-Bastelanleitung mit Bambus (von Bambusbäumen)";
+"Starting items" = "Startgegenstände";
+"Summer seasonal DIY using summer shells (found on beach)" = "Sommer-Bastelanleitung mit Sommermuscheln (am Strand zu finden)";
+"Summer Solstice Festival" = "Sommersonnenwende Festival";
+"Tom Nook (Story)" = "Tom Nook (Geschichte)";
+"Tom Nook" = "Tom Nook";
+"Trade 3 fish to receive a model in the mail the next day" = "Tauschen Sie 3 Fische, um am nächsten Tag ein Modell per Post zu erhalten.";
+"Trade 3 insects to receive a model in the mail the next day" = "Tauschen Sie 3 Insekten aus, um am nächsten Tag ein Modell per Post zu erhalten.";
+"Underground (dig where noise is loudest)" = "Boden (graben, wo das Zirpen am lautesten ist)";
+"Villager House Development (Tom Nook)" = "Bewohner Hausentwicklung (Tom Nook)";
+"Wedding Season" = "Hochzeitssaison";
+"White/white hyacinths" = "Weiße/weiße Hyazinthen";
+"White/white mums" = "Weiße/weiße Chrysanthemen";
+"White/white pansies" = "Weiße/weiße Stiefmütterchen";
+"White/white roses" = "Weiße/weiße Rosen";
+"White/white windflowers\nOrange/white windflowers" = "Weiße/weiße Windblumen\nOrangene/weiße Windblumen";
+"Winter seasonal DIY using snowflakes (caught with net)" = "Winter-Bastelanleitung mit Schneeflocken (mit Kescher fangen)";
+"Winter Solstice Festival" = "Wintersonnenwende Festival";
+"Wishing on shooting stars (April 20 - May 20)" = "Wunsch an Sternschnuppen (20. April - 20. Mai)";
+"Wishing on shooting stars (August 23 - September 22)" = "Wunsch an Sternschnuppen (23. August - 22. September)";
+"Wishing on shooting stars (Dec 22 - Jan 19)" = "Wunsch an Sternschnuppen (22. Dezember - 19. Januar)";
+"Wishing on shooting stars (February 19 - March 20)" = "Wunsch an Sternschnuppen (19. Februar - 20. März)";
+"Wishing on shooting stars (January 20 - February 18)" = "Wunsch an Sternschnuppen (20. Januar - 18. Februar)";
+"Wishing on shooting stars (July 23 - August 22)" = "Wunsch an Sternschnuppen (23. Juli - 22. August)";
+"Wishing on shooting stars (June 21 - July 22)" = "Wunsch an Sternschnuppen (21. Juni - 22. Juli)";
+"Wishing on shooting stars (March 21 - April 19)" = "Wunsch an Sternschnuppen (21. März - 19. April)";
+"Wishing on shooting stars (May 21 - June 20)" = "Wunsch an Sternschnuppen (21. Mai - 20. Juni)";
+"Wishing on shooting stars (November 22 - December 21)" = "Wunsch an Sternschnuppen (22. November - 21. Dezember)";
+"Wishing on shooting stars (October 23 - November 21)" = "Wunsch an Sternschnuppen (23. Oktober - 21. November)";
+"Wishing on shooting stars (September 23 - October 22)" = "Wunsch an Sternschnuppen (23. September - 22. Oktober)";
+"Wishing on shooting stars" = "Wunsch an Sternschnuppen";
+"Wrapping a present" = "Geschenk verpacken";
+"X-Small shadow when fishing" = "Sehr kleiner Schatten beim Angeln";
+"Zipper" = "Ohs T. Hase";
+// Added 2020-05-12
+"Sea" = "Meer";
+"Sea (raining)" = "Meer (bei Regen)";
+
+// Added 2020-05-13
+"See more" = "Mehr anzeigen";
+"See less" = "Weniger anzeigen";
+
+// to be continued
