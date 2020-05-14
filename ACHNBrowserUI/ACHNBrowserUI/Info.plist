@@ -465,12 +465,12 @@
 	<key>UTExportedTypeDeclarations</key>
 	<array>
 		<dict>
-			<key>UTTypeDescription</key>
-			<string>User collection</string>
 			<key>UTTypeConformsTo</key>
 			<array>
 				<string>public.data</string>
 			</array>
+			<key>UTTypeDescription</key>
+			<string>User collection</string>
 			<key>UTTypeIconFiles</key>
 			<array>
 				<string>round-lime@2x.png</string>
@@ -487,12 +487,12 @@
 	<key>UTImportedTypeDeclarations</key>
 	<array>
 		<dict>
-			<key>UTTypeDescription</key>
-			<string>User collection</string>
 			<key>UTTypeConformsTo</key>
 			<array>
 				<string>public.data</string>
 			</array>
+			<key>UTTypeDescription</key>
+			<string>User collection</string>
 			<key>UTTypeIconFiles</key>
 			<array>
 				<string>round-lime@2x.png</string>
