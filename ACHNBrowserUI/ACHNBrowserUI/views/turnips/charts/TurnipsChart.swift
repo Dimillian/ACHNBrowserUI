@@ -13,19 +13,83 @@ enum TurnipsChart {
     static let steps = 50
     static let extraMinSteps = 50
     static let extraMaxSteps = 50
+}
 
-    enum PredictionCurve: String {
-        case minBuyPrice
-        case average
-        case minMax
+extension TurnipsChart {
+    struct YAxis {
+        var min: (value: Int, position: CGPoint)
+        var max: (value: Int, position: CGPoint)
+        var average: (value: Int, position: CGPoint)
+        var minBuyPrice: (value: Int, position: CGPoint)
+    }
 
-        var color: Color {
-            switch self {
-            case .minBuyPrice: return .graphMinimum
-            case .average: return .graphAverage
-            case .minMax: return .graphMinMax
-            }
+    static func data(for predictions: TurnipPredictions, size: CGSize) -> [YAxis] {
+        guard
+            let minMax = predictions.minMax,
+            let averages = predictions.averagePrices,
+            let minimumBuyPrice = predictions.minBuyPrice
+            else {
+                return []
         }
+
+        let minimums = minMax.compactMap { $0.first }
+        let maximums = minMax.compactMap { $0.second }
+
+        let min = minimums.min() ?? 0
+        let max = maximums.max() ?? 0
+
+        let count = minMax.count
+
+        let (ratioX, ratioY, maxY) = ratios(size: size, count: count, min: min, max: max)
+
+        return Array(0..<count)
+            .map({ index in
+                yAxis(for: index, minimums: minimums, maximums: maximums, averages: averages, minimumBuyPrice: minimumBuyPrice, ratioX: ratioX, ratioY: ratioY, maxY: maxY)
+            })
+    }
+
+    private static func yAxis(
+        for index: Int,
+        minimums: [Int],
+        maximums: [Int],
+        averages: [Int],
+        minimumBuyPrice: Int,
+        ratioX: CGFloat,
+        ratioY: CGFloat,
+        maxY: CGFloat
+    ) -> YAxis {
+        let x = CGFloat(index) * ratioX
+        let minPosition = CGPoint(x: x, y: (maxY - CGFloat(minimums[index])) * ratioY)
+        let maxPosition = CGPoint(x: x, y: (maxY - CGFloat(maximums[index])) * ratioY)
+        let averagePosition = CGPoint(x: x, y: (maxY - CGFloat(averages[index])) * ratioY)
+        let minimumBuyPricePosition = CGPoint(x: x, y: (maxY - CGFloat(minimumBuyPrice)) * ratioY)
+
+        return YAxis(
+            min: (value: minimums[index], position: minPosition),
+            max: (value: maximums[index], position: maxPosition),
+            average: (value: averages[index], position: averagePosition),
+            minBuyPrice: (value: minimumBuyPrice, position: minimumBuyPricePosition)
+        )
+    }
+
+    private static func ratios(
+        size: CGSize,
+        count: Int,
+        min: Int,
+        max: Int
+    ) -> (ratioX: CGFloat, ratioY: CGFloat, maxY: CGFloat) {
+        let ratioX = size.width/(CGFloat(count - 1))
+
+        let steps = TurnipsChart.steps
+        let extraMinSteps = TurnipsChart.extraMinSteps
+        let extraMaxSteps = TurnipsChart.extraMaxSteps
+
+        let computedRoundedMin = Int(min)/steps * steps - extraMinSteps
+        let roundedMin = Swift.max(0, computedRoundedMin)
+        let roundedMax = (Int(max) + steps)/steps * steps + extraMaxSteps
+        let ratioY = size.height/CGFloat(roundedMax - roundedMin)
+
+        return (ratioX, ratioY, CGFloat(roundedMax))
     }
 }
 

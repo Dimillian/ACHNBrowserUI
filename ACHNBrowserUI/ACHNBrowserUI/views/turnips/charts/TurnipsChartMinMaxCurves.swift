@@ -68,7 +68,7 @@ struct TurnipsChartMinMaxCurves_Previews: PreviewProvider {
                     predictions: TurnipsChartView_Previews.predictions,
                     animationStep: animationStep
                 )
-                    .foregroundColor(TurnipsChart.PredictionCurve.minMax.color)
+                    .foregroundColor(.graphMinMax)
                     .opacity(0.25)
                     .blendMode(.darken)
                 Slider(value: $animationStep, in: 0.1...1)

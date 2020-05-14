@@ -11,7 +11,6 @@ import Backend
 
 
 struct TurnipsChartView: View {
-    typealias PredictionCurve = TurnipsChart.PredictionCurve
     static let verticalLinesCount: CGFloat = 9
     var predictions: TurnipPredictions
     @Binding var animateCurves: Bool
@@ -56,16 +55,16 @@ struct TurnipsChartView: View {
                 .propagateSize(ChartSizePreferenceKey.self, storeValueIn: $chartSize)
             TurnipsChartMinBuyPriceCurve(predictions: predictions)
                 .stroke(style: StrokeStyle(dash: [Self.verticalLinesCount]))
-                .foregroundColor(PredictionCurve.minBuyPrice.color)
+                .foregroundColor(.graphMinimum)
                 .saturation(3)
                 .blendMode(.screen)
             TurnipsChartMinMaxCurves(predictions: predictions, animationStep: animateCurves ? 1 : 0.1)
-                .foregroundColor(PredictionCurve.minMax.color)
+                .foregroundColor(.graphMinMax)
                 .opacity(0.25)
                 .blendMode(.darken)
-            TurnipsChartAverageCurve(predictions: predictions, animationStep: animateCurves ? 1 : 0)
+            TurnipsChartAverageCurve(data: yAxisData, animationStep: animateCurves ? 1 : 0)
                 .stroke(lineWidth: 3)
-                .foregroundColor(PredictionCurve.average.color)
+                .foregroundColor(.graphAverage)
                 .saturation(5)
                 .blendMode(.screen)
             positionPressed.map {
@@ -77,6 +76,13 @@ struct TurnipsChartView: View {
     private func positionPress(_ position: Int) {
         positionPressed = position
     }
+
+    private var yAxisData: [TurnipsChart.YAxis] {
+        TurnipsChart.data(
+            for: predictions,
+            size: chartSize ?? .zero
+        )
+    }
 }
 
 extension TurnipsChartView {
@@ -84,6 +90,15 @@ extension TurnipsChartView {
         static var defaultValue: CGSize?
         static func reduce(value: inout CGSize?, nextValue: () -> CGSize?) {
             if let newValue = nextValue() { value = newValue }
+        }
+    }
+
+    private struct ChartValuesPreferenceKey: PreferenceKey {
+        typealias Value = [Int: TurnipsChart.YAxis]
+        static var defaultValue: Value = [:]
+
+        static func reduce(value: inout Value, nextValue: () -> Value) {
+            value.merge(nextValue()) { $1 }
         }
     }
 }
@@ -94,6 +109,10 @@ struct TurnipsChartView_Previews: PreviewProvider {
             predictions: predictions,
             animateCurves: .constant(true)
         )
+    }
+
+    static func yAxisData(for geometry: GeometryProxy) -> [TurnipsChart.YAxis] {
+        TurnipsChart.data(for: predictions, size: geometry.size)
     }
 
     static let predictions = TurnipPredictions(
