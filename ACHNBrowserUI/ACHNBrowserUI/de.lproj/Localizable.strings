@@ -65,6 +65,7 @@
 "Learn more >" = "Erfahre mehr >";
 // TodayTurnipSection
 "Today is sunday, don't forget to buy more turnips and fill your buy price." = "Heute ist Sonntag, denk daran Rüben zu kaufen und den Einkaufspreis einzutragen.";
+"Your turnips predictions will be displayed here once you fill in some prices." = "Deine Kaufpreis-Prognose wird hier angezeigt, sobald du Kaufpreise eingetragen hast.";
 "Today's average price should be around " = "Der heutige durchschnittliche Kaufpreis sollte bei ";
 " in the morning, and " = " am Morgen und bei ";
 " this afternoon." = " am Nachmittag liegen.";
@@ -154,6 +155,17 @@ Du kannst das Abonnement jederzeit in deinen iTunes Kontoeinstellungen beenden. 
 "App Settings" = "App Einstellungen";
 "App Icon" = "App Icon";
 "Restore purchase" = "Einkauf wiederherstellen";
+
+// NotificationManager
+"Turnip prices" = "Rüben Preise";
+"this morning" = "morgens";
+"this afternoon" = "nachmittags";
+"Your prices predictions for %@ should be around %lld bells. With a minimum of %lld and a maximum of %lld." = "Dein Rüben-Preis sollte heute %@ bei etwa %lld Sternis liegen. Mit einem Minimum von %lld und einem Maximum von %lld Sternis.";
+"Turnip prices" = "Rüben Preise (Test)";
+"Your prices predictions for this morning should be around 100 bells. With a minimum of 50 and a maximum of 650." = "Dein Rüben-Preis sollte heute morgen bei etwa 100 Sternis liegen. Mit einem Minimum von 50 und einem Maximum von 650 Sternis.";
+"Friendly reminder" = "Erinnerung";
+"It's time to buy turnips and add the buy price in the app." = "Es ist an der Zeit Rüben zu kaufen und den Einkaufspreis in die App einzutragen.";
+"It's the start of the week, don't forget to add your store buy prices in the app as you play the game. You'll get more accurate predictions." = "Die Woche hat begonnen - denk daran, die Ankaufpreise der Rüben zu erfragen und in die App einzutragen. Das sorgt für eine genauere Prognose.";
 
 // UserListFormView
 "Edit your list" = "Liste Bearbeiten";

@@ -40,8 +40,8 @@ public class NotificationManager: NSObject {
                 
                 if dayOfTheWeek >= today {
                     let content = UNMutableNotificationContent()
-                    content.title = "Turnip prices"
-                    content.body = "Your prices predictions for \(isMorning ? "this morning": "this afternoon") should be around \(day) bells. With a minimum of \(min) and a maximum of \(max)."
+                    content.title = NSLocalizedString("Turnip prices", comment: "")
+                    content.body = NSLocalizedString("Your prices predictions for \(isMorning ? NSLocalizedString("this morning", comment: "") : NSLocalizedString("this afternoon", comment: "")) should be around \(day) bells. With a minimum of \(min) and a maximum of \(max).", comment: "")
                     
                     var components = DateComponents()
                     components.calendar = Calendar(identifier: .gregorian)
@@ -62,8 +62,8 @@ public class NotificationManager: NSObject {
     
     public func testNotification() {
         let content = UNMutableNotificationContent()
-        content.title = "Turnip prices (test)"
-        content.body = "Your prices predictions for this morning should be around 100 bells. With a minimum of 50 and a maximum of 650."
+        content.title = NSLocalizedString("Turnip prices (test)", comment: "")
+        content.body = NSLocalizedString("Your prices predictions for this morning should be around 100 bells. With a minimum of 50 and a maximum of 650.", comment: "")
         let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: nil)
         UNUserNotificationCenter.current().add(request) { error in
             if let error = error {
@@ -75,8 +75,8 @@ public class NotificationManager: NSObject {
     
     private func registerReminderNotifications() {
         var content = UNMutableNotificationContent()
-        content.title = "Friendly reminder "
-        content.body = "It's time to buy turnips and add the buy price in the app."
+        content.title = NSLocalizedString("Friendly reminder", comment: "")
+        content.body = NSLocalizedString("It's time to buy turnips and add the buy price in the app.", comment: "")
         
         var components = DateComponents()
         components.calendar = Calendar(identifier: .gregorian)
@@ -86,8 +86,8 @@ public class NotificationManager: NSObject {
         registerNotification(content: content, date: components)
         
         content = UNMutableNotificationContent()
-        content.title = "Friendly reminder"
-        content.body = "It's the start of the week, don't forget to add your store buy prices in the app as you play the game. You'll get more accurate predictions"
+        content.title = NSLocalizedString("Friendly reminder", comment: "")
+        content.body = NSLocalizedString("It's the start of the week, don't forget to add your store buy prices in the app as you play the game. You'll get more accurate predictions.", comment: "")
         
         components = DateComponents()
         components.calendar = Calendar(identifier: .gregorian)
