@@ -41,7 +41,9 @@ public class NotificationManager: NSObject {
                 if dayOfTheWeek >= today {
                     let content = UNMutableNotificationContent()
                     content.title = NSLocalizedString("Turnip prices", comment: "")
-                    content.body = NSLocalizedString("Your prices predictions for \(isMorning ? NSLocalizedString("this morning", comment: "") : NSLocalizedString("this afternoon", comment: "")) should be around \(day) bells. With a minimum of \(min) and a maximum of \(max).", comment: "")
+                    let timeString = isMorning ? NSLocalizedString("this morning", comment: "") : NSLocalizedString("this afternoon", comment: "")
+                    content.body = String.init(format: NSLocalizedString("Your prices predictions for %@ should be around %lld bells. With a minimum of %lld and a maximum of %lld.", comment: ""),
+                                               timeString, day, min, max)
                     
                     var components = DateComponents()
                     components.calendar = Calendar(identifier: .gregorian)
