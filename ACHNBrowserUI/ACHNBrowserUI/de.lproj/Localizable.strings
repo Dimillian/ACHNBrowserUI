@@ -699,4 +699,13 @@ Du kannst das Abonnement jederzeit in deinen iTunes Kontoeinstellungen beenden. 
 "See more" = "Mehr anzeigen";
 "See less" = "Weniger anzeigen";
 
-// to be continued
+//Added 05-14-2020
+"My data" = "Meine Daten";
+"Collection size" = "Größe der Sammlung";
+"Export my collection" = "Sammlung exportieren";
+"Import a collection" = "Sammlung importieren";
+"Imported with success" = "Erfolgreich importiert";
+"Reset my collection" = "Sammlung zurücksetzen";
+"Your AC Helper collection file was imported with success." = "Deine AC Helper Sammlung wurde erfolgreich importiert."
+"Are you sure?" = "Bist du sicher?"
+"This will delete all your collected critters, items, villagers and items lists" = "Diese Aktion wird all deine gesammelt Tiere, Gegenstände, Besucher und persönliche Listen löschen.""
