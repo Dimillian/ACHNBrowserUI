@@ -63,6 +63,6 @@ public struct LocalizedItemService {
     }
     
     private static func supportsLanguage(_ landuageCode: String) -> Bool {
-        return Bundle.main.url(forResource: Self.filePrefix + landuageCode, withExtension: "json") != nil
+        return Bundle.main.url(forResource: Self.filePrefix + landuageCode.prefix(2), withExtension: "json") != nil
     }
 }
