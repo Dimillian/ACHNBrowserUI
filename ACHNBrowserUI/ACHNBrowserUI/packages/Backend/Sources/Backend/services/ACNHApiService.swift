@@ -11,6 +11,7 @@ import Combine
 
 public struct ACNHApiService {
     public static let BASE_URL = URL(string: "http://acnhapi.com/")!
+    private static var cache: [String: Codable] = [:]
     
     public enum Endpoint {
         case villagers
@@ -32,6 +33,11 @@ public struct ACNHApiService {
     private static let decoder = JSONDecoder()
     
     public static func fetch<T: Codable>(endpoint: Endpoint) -> AnyPublisher<T ,APIError> {
+        if let cached = Self.cache[endpoint.path()] as? T {
+            return Just(cached)
+                .setFailureType(to: APIError.self)
+                .eraseToAnyPublisher()
+        }
         let component = URLComponents(url: BASE_URL.appendingPathComponent(endpoint.path()),
                                       resolvingAgainstBaseURL: false)!
         let request = URLRequest(url: component.url!)
@@ -41,6 +47,10 @@ public struct ACNHApiService {
         }
         .decode(type: T.self, decoder: Self.decoder)
         .mapError{ APIError.parseError(reason: $0.localizedDescription) }
+        .map({ result in
+            Self.cache[endpoint.path()] = result
+            return result
+        })
         .eraseToAnyPublisher()
     }
 }

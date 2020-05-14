@@ -105,6 +105,11 @@ struct AboutView: View {
                         .onTapGesture {
                             self.selectedSheet = .safari(URL(string: "https://nookplaza.net/")!)
                     }
+                    makeRow(image: "suit.heart.fill", text: "The ACHNAPI for villagers data and images",
+                            color: .red)
+                        .onTapGesture {
+                            self.selectedSheet = .safari(URL(string: "http://acnhapi.com")!)
+                    }
                     makeRow(image: "suit.heart.fill", text: "Turnip.exchange", color: .red)
                         .onTapGesture {
                             self.selectedSheet = .safari(URL(string: "https://turnip.exchange/")!)
