@@ -161,7 +161,7 @@ Du kannst das Abonnement jederzeit in deinen iTunes Kontoeinstellungen beenden. 
 "this morning" = "morgens";
 "this afternoon" = "nachmittags";
 "Your prices predictions for %@ should be around %lld bells. With a minimum of %lld and a maximum of %lld." = "Dein Rüben-Preis sollte heute %@ bei etwa %lld Sternis liegen. Mit einem Minimum von %lld und einem Maximum von %lld Sternis.";
-"Turnip prices" = "Rüben Preise (Test)";
+"Turnip prices (test)" = "Rüben Preise (Test)";
 "Your prices predictions for this morning should be around 100 bells. With a minimum of 50 and a maximum of 650." = "Dein Rüben-Preis sollte heute morgen bei etwa 100 Sternis liegen. Mit einem Minimum von 50 und einem Maximum von 650 Sternis.";
 "Friendly reminder" = "Erinnerung";
 "It's time to buy turnips and add the buy price in the app." = "Es ist an der Zeit Rüben zu kaufen und den Einkaufspreis in die App einzutragen.";
@@ -706,6 +706,6 @@ Du kannst das Abonnement jederzeit in deinen iTunes Kontoeinstellungen beenden. 
 "Import a collection" = "Sammlung importieren";
 "Imported with success" = "Erfolgreich importiert";
 "Reset my collection" = "Sammlung zurücksetzen";
-"Your AC Helper collection file was imported with success." = "Deine AC Helper Sammlung wurde erfolgreich importiert."
-"Are you sure?" = "Bist du sicher?"
-"This will delete all your collected critters, items, villagers and items lists" = "Diese Aktion wird all deine gesammelt Tiere, Gegenstände, Besucher und persönliche Listen löschen.""
+"Your AC Helper collection file was imported with success." = "Deine AC Helper Sammlung wurde erfolgreich importiert.";
+"Are you sure?" = "Bist du sicher?";
+"This will delete all your collected critters, items, villagers and items lists" = "Diese Aktion wird all deine gesammelt Tiere, Gegenstände, Besucher und persönliche Listen löschen.";
