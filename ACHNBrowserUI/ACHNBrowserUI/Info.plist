@@ -13,9 +13,10 @@
 			</array>
 			<key>CFBundleTypeName</key>
 			<string>AC Helper user collection</string>
+			<key>LSHandlerRank</key>
+			<string>Alternate</string>
 			<key>LSItemContentTypes</key>
 			<array>
-				<string>public.data</string>
 				<string>com.thomasricouard.ACNH.achelper</string>
 			</array>
 		</dict>
