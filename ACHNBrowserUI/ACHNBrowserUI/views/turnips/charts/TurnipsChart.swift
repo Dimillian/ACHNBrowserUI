@@ -44,32 +44,19 @@ extension TurnipsChart {
 
         return Array(0..<count)
             .map({ index in
-                yAxis(for: index, minimums: minimums, maximums: maximums, averages: averages, minimumBuyPrice: minimumBuyPrice, ratioX: ratioX, ratioY: ratioY, maxY: maxY)
+                let x = CGFloat(index) * ratioX
+                let minPosition = CGPoint(x: x, y: (maxY - CGFloat(minimums[index])) * ratioY)
+                let maxPosition = CGPoint(x: x, y: (maxY - CGFloat(maximums[index])) * ratioY)
+                let averagePosition = CGPoint(x: x, y: (maxY - CGFloat(averages[index])) * ratioY)
+                let minimumBuyPricePosition = CGPoint(x: x, y: (maxY - CGFloat(minimumBuyPrice)) * ratioY)
+
+                return YAxis(
+                    min: (value: minimums[index], position: minPosition),
+                    max: (value: maximums[index], position: maxPosition),
+                    average: (value: averages[index], position: averagePosition),
+                    minBuyPrice: (value: minimumBuyPrice, position: minimumBuyPricePosition)
+                )
             })
-    }
-
-    private static func yAxis(
-        for index: Int,
-        minimums: [Int],
-        maximums: [Int],
-        averages: [Int],
-        minimumBuyPrice: Int,
-        ratioX: CGFloat,
-        ratioY: CGFloat,
-        maxY: CGFloat
-    ) -> YAxis {
-        let x = CGFloat(index) * ratioX
-        let minPosition = CGPoint(x: x, y: (maxY - CGFloat(minimums[index])) * ratioY)
-        let maxPosition = CGPoint(x: x, y: (maxY - CGFloat(maximums[index])) * ratioY)
-        let averagePosition = CGPoint(x: x, y: (maxY - CGFloat(averages[index])) * ratioY)
-        let minimumBuyPricePosition = CGPoint(x: x, y: (maxY - CGFloat(minimumBuyPrice)) * ratioY)
-
-        return YAxis(
-            min: (value: minimums[index], position: minPosition),
-            max: (value: maximums[index], position: maxPosition),
-            average: (value: averages[index], position: averagePosition),
-            minBuyPrice: (value: minimumBuyPrice, position: minimumBuyPricePosition)
-        )
     }
 
     private static func ratios(
@@ -99,6 +86,27 @@ extension Array {
     }
 }
 
+extension Array where Element == TurnipsChart.YAxis {
+    func ratios(in rect: CGRect) -> (x: CGFloat, y: CGFloat, minY: CGFloat, maxY: CGFloat) {
+        let ratioX = rect.maxX/(CGFloat(self.count - 1))
+
+        let minY = CGFloat(self.compactMap { $0.min.value }.min() ?? 0)
+        let maxY = CGFloat(self.compactMap { $0.max.value }.max() ?? 0)
+
+        let steps = CGFloat(TurnipsChart.steps)
+        let extraMinSteps = CGFloat(TurnipsChart.extraMinSteps)
+        let extraMaxSteps = CGFloat(TurnipsChart.extraMaxSteps)
+
+        let computedRoundedMin = minY/steps * steps - extraMinSteps
+        let roundedMin = Swift.max(0, computedRoundedMin)
+        let roundedMax = (maxY + steps)/steps * steps + extraMaxSteps
+        let roundedRatioY = rect.maxY/(roundedMax - roundedMin)
+
+        return (ratioX, roundedRatioY, roundedMin, roundedMax)
+    }
+}
+
+// TODO: Remove this, should be useless after the refactoring
 extension Array where Element == [Int] {
     typealias MinMaxRatios = (min: CGFloat, max: CGFloat, ratioY: CGFloat, ratioX: CGFloat)
 

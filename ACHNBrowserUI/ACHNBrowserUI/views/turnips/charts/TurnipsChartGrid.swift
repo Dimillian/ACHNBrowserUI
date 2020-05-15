@@ -10,14 +10,14 @@ import SwiftUI
 import Backend
 
 struct TurnipsChartGrid: Shape {
-    let predictions: TurnipPredictions
-    let displays: Set<Display> = [.vertical]
+    let data: [TurnipsChart.YAxis]
+    let displays: Set<Display> = [.vertical, .horizontal]
 
     func path(in rect: CGRect) -> Path {
         var path = Path()
 
-        let (minY, maxY, ratioY, ratioX) = predictions.minMax?.roundedMinMaxAndRatios(rect: rect) ?? (0, 0, 0, 0)
-        let count = predictions.minMax?.count ?? 0
+        let (ratioX, ratioY, minY, maxY) = data.ratios(in: rect)
+        let count = data.count
 
         if displays.contains(.vertical) {
             for offset in 0..<count {
@@ -28,11 +28,9 @@ struct TurnipsChartGrid: Shape {
         }
 
         if displays.contains(.horizontal) {
-            let min = Int(minY)
-            let max = Int(maxY) + TurnipsChart.steps
-            let lines = Array(stride(from: min, to: max, by: TurnipsChart.steps))
+            let steps = CGFloat(TurnipsChart.steps)
+            let lines = Array(stride(from: minY, to: maxY, by: steps))
             for line in lines {
-                let line = CGFloat(line)
                 path.move(to: CGPoint(x: rect.minX, y: ratioY * line))
                 path.addLine(to: CGPoint(x: rect.maxX, y: ratioY * line))
             }
