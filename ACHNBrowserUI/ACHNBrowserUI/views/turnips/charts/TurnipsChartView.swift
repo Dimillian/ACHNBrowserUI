@@ -40,8 +40,8 @@ struct TurnipsChartView: View {
     private var chart: some View {
         VStack(spacing: 10) {
             curves
-            TurnipsChartBottomLegendView(predictions: predictions, positionPress: positionPress)
-                .frame(height: bottomLegendHeight)
+            TurnipsChartBottomLegendView(data: yAxisData, positionPress: positionPress)
+                .frame(width: chartSize?.width, height: bottomLegendHeight)
         }
         .padding()
     }
