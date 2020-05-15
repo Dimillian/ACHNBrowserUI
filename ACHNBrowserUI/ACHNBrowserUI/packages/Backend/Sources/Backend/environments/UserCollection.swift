@@ -43,7 +43,7 @@ public class UserCollection: ObservableObject {
     public func itemsIn(category: Category) -> Int {
         let items = Items.shared.categories[category] ?? []
         var caught = self.critters.count(where: { items.contains($0) } )
-        caught += self.items.count(where: { items.contains($0) && $0.name.contains("(fake)") })
+        caught += self.items.count(where: { items.contains($0) && !$0.name.contains("(fake)") })
         return caught
     }
 
