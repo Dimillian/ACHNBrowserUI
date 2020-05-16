@@ -24,7 +24,7 @@ struct TurnipsChartView: View {
         VStack {
             TurnipsChartTopLegendView()
             HStack(alignment: .top) {
-                TurnipsChartVerticalLegend(predictions: predictions)
+                TurnipsChartVerticalLegend(data: yAxisData)
                     .frame(width: verticalLegendWidth, height: chartSize?.height)
                     .padding(.top)
                 ScrollView(.horizontal, showsIndicators: false) {
