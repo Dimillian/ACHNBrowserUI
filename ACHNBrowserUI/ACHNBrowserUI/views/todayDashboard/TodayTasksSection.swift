@@ -10,8 +10,6 @@ import SwiftUI
 import Backend
 
 struct TodayTasksSection: View {
-    @Binding var sheet: Sheet.SheetType?
-    @EnvironmentObject private var subManager: SubscriptionManager
     @ObservedObject var appUserDefaults = AppUserDefaults.shared
     
     var isSunday: Bool {
@@ -60,24 +58,6 @@ struct TodayTasksSection: View {
             }
             .frame(maxWidth: .infinity)
             .padding(.vertical)
-            .disabled(subManager.subscriptionStatus != .subscribed)
-            .opacity(subManager.subscriptionStatus != .subscribed ? 0.15 : 1.0)
-            .overlay(premiumOverlay)
-        }
-    }
-    
-    var premiumOverlay: some View {
-        if subManager.subscriptionStatus != .subscribed {
-            return AnyView(Button(action: {
-                self.sheet = .subscription(source: .dashboard, subManager: self.subManager)
-            }) {
-                Text("This feature requires ") + Text("AC Helper+").fontWeight(.bold)
-                Text("Learn more >")
-            }
-            .font(.system(.body, design: .rounded))
-            .foregroundColor(.acText))
-        } else {
-            return AnyView(EmptyView())
         }
     }
     
@@ -105,8 +85,7 @@ struct TodayTasksSection_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
             List {
-                TodayTasksSection(sheet: .constant(nil))
-                    .environmentObject(SubscriptionManager.shared)
+                TodayTasksSection()
             }
             .listStyle(GroupedListStyle())
             .environment(\.horizontalSizeClass, .regular)
