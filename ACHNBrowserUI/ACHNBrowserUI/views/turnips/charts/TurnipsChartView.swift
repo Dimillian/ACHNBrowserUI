@@ -68,7 +68,7 @@ struct TurnipsChartView: View {
                 .saturation(5)
                 .blendMode(.screen)
             positionPressed.map {
-                TurnipsChartValuesView(predictions: predictions, position: $0)
+                TurnipsChartValuesView(data: yAxisData, position: $0)
             }
         }.animation(.spring())
     }
