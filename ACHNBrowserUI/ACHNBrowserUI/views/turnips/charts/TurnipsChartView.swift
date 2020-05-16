@@ -58,7 +58,7 @@ struct TurnipsChartView: View {
                 .foregroundColor(.graphMinimum)
                 .saturation(3)
                 .blendMode(.screen)
-            TurnipsChartMinMaxCurves(predictions: predictions, animationStep: animateCurves ? 1 : 0.1)
+            TurnipsChartMinMaxCurves(data: yAxisData, animationStep: animateCurves ? 1 : 0.1)
                 .foregroundColor(.graphMinMax)
                 .opacity(0.25)
                 .blendMode(.darken)
