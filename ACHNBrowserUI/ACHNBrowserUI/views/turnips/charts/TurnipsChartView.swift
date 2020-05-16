@@ -53,7 +53,7 @@ struct TurnipsChartView: View {
                 .stroke()
                 .opacity(0.5)
                 .propagateSize(ChartSizePreferenceKey.self, storeValueIn: $chartSize)
-            TurnipsChartMinBuyPriceCurve(predictions: predictions)
+            TurnipsChartMinBuyPriceCurve(data: yAxisData)
                 .stroke(style: StrokeStyle(dash: [Self.verticalLinesCount]))
                 .foregroundColor(.graphMinimum)
                 .saturation(3)
