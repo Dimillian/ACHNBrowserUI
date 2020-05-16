@@ -29,7 +29,12 @@ struct TodayNookazonSection: View {
                                         .padding(.bottom, 4)
                                 }
                                 .padding(.horizontal)
-                                .onTapGesture { self.sheet = .safari(URL.nookazon(listing: listing)!) }
+                                .onTapGesture {
+                                    //self.sheet = .safari(URL.nookazon(listing: listing)!)
+                                    UIApplication.shared.open(URL.nookazon(listing: listing)!,
+                                                               options: [:],
+                                                               completionHandler: nil)
+                                }
                                 
                                 Divider()
                             }
