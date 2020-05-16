@@ -48,6 +48,11 @@ class ItemsViewModel: ObservableObject {
         }
     }
         
+    public init(category: Backend.Category, items: [Item]) {
+        self.category = category
+        self.items = items
+    }
+    
     public init(category: Backend.Category) {
         self.category = category
 
