@@ -31,7 +31,9 @@ public struct LocalizedItemService {
     private var localizationDYI: [Int: LocalizedItem] = [:]
     
     init() {
-        if let preferredIdentifier = Locale.preferredLanguages.first(where: LocalizedItemService.supportsLanguage) {
+        if let lang = Locale.current.languageCode, Self.supportsLanguage(lang) {
+            self.currentLocale = Locale.current
+        } else if let preferredIdentifier = Locale.preferredLanguages.first(where: Self.supportsLanguage) {
             self.currentLocale = Locale(identifier: preferredIdentifier)
         } else {
             self.currentLocale = Locale.current
@@ -63,6 +65,10 @@ public struct LocalizedItemService {
     }
     
     private static func supportsLanguage(_ landuageCode: String) -> Bool {
-        return Bundle.main.url(forResource: Self.filePrefix + landuageCode.prefix(2), withExtension: "json") != nil
+        if landuageCode.prefix(2).lowercased() == "en" {
+            return true
+        }
+        return Bundle.main.url(forResource: Self.filePrefix + landuageCode.prefix(2).lowercased(),
+                               withExtension: "json") != nil
     }
 }
