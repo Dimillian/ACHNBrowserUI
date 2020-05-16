@@ -171,13 +171,15 @@ extension ItemDetailView {
     private var listingSection: some View {
         Section(header: SectionHeaderView(text: "Nookazon listings", icon: "cart.fill")) {
             if itemViewModel.loading {
-                Text("Loading Listings...")
-                    .foregroundColor(.secondary)
+                RowLoadingView(isLoading: .constant(true))
             }
             if !itemViewModel.listings.isEmpty {
                 ForEach(itemViewModel.listings.filter { $0.active && $0.selling }, content: { listing in
                     Button(action: {
-                        self.selectedSheet = .safari(URL.nookazon(listing: listing)!)
+                        UIApplication.shared.open(URL.nookazon(listing: listing)!,
+                                                  options: [:],
+                                                  completionHandler: nil)
+                        // self.selectedSheet = .safari(URL.nookazon(listing: listing)!)
                     }) {
                         ListingRow(listing: listing)
                     }

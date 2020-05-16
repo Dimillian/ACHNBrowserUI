@@ -19,7 +19,7 @@ class ItemDetailViewModel: ObservableObject {
     @Published var colorsItems: [Item] = []
     
     @Published var listings: [Listing] = []
-    @Published var loading: Bool = true
+    @Published var loading: Bool = false
     
     var cancellable: AnyCancellable?
     var itemCancellable: AnyCancellable?
