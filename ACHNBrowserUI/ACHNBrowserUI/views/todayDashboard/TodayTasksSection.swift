@@ -7,80 +7,106 @@
 //
 
 import SwiftUI
+import Backend
 
 struct TodayTasksSection: View {
-    // @TODO: Check for AC Helper+ subscription
-    @State private var userHasSubscription: Bool = true
+    @Binding var sheet: Sheet.SheetType?
+    @EnvironmentObject private var subManager: SubscriptionManager
+    @ObservedObject var appUserDefaults = AppUserDefaults.shared
     
+    var isSunday: Bool {
+        Calendar.current.component(.weekday, from: Date()) == 1
+    }
+    
+    // MARK: - Task Bubble
+    private func makeTaskBubble(icon: String, task: Tasks.TaskProgress) -> some View {
+        ZStack {
+            Circle()
+                .foregroundColor(Color("ACBackground"))
+            Image(icon)
+                .resizable()
+                .aspectRatio(1, contentMode: .fit)
+            if task.hasProgress || icon.elementsEqual("icon-turnip") && !self.isSunday {
+                ProgressCircle(progress: task.progress)
+            }
+        }
+        .frame(maxHeight: 44)
+        .onTapGesture {
+            if !task.hasProgress || icon.elementsEqual("icon-turnip") && !self.isSunday {
+                return
+            }
+            // task.curProgress.updateProgress()
+            // self.appUserDefaults.tasks.lastUpdate = Date.init()
+            debugPrint(task.curProgress)
+        }
+    }
     
     var body: some View {
         Section(header: SectionHeaderView(text: "Today's Tasks", icon: "checkmark.seal.fill")) {
-            NavigationLink(destination: Text("Event 2 Detail View")) {
+            VStack(spacing: 15) {
                 HStack {
-                    
-                    ZStack {
-                        Circle()
-                            .foregroundColor(Color("ACBackground"))
-                        Image("icon-iron")
-                            .resizable()
-                            .aspectRatio(1, contentMode: .fit)
-                    }
-                    .frame(maxHeight: 44)
-                    
-                    ZStack {
-                        Circle()
-                            .foregroundColor(Color("ACBackground"))
-                        Image("icon-bell")
-                            .resizable()
-                            .aspectRatio(1, contentMode: .fit)
-                    }
-                    .frame(maxHeight: 44)
-                    
-                    ZStack {
-                        Circle()
-                            .foregroundColor(Color("ACBackground"))
-                        Image("icon-hardwood")
-                            .resizable()
-                            .aspectRatio(1, contentMode: .fit)
-                    }
-                    .frame(maxHeight: 44)
-                    
-                    ZStack {
-                        Circle()
-                            .foregroundColor(Color("ACBackground"))
-                        Image("icon-fossil")
-                            .resizable()
-                            .aspectRatio(1, contentMode: .fit)
-                    }
-                    .frame(maxHeight: 44)
-                    
+                    makeTaskBubble(icon: "icon-iron", task: appUserDefaults.tasks.Rocks)
+                    makeTaskBubble(icon: "icon-wood", task: appUserDefaults.tasks.Wood)
+                    makeTaskBubble(icon: "icon-weed", task: appUserDefaults.tasks.Weed)
+                    makeTaskBubble(icon: "icon-fossil", task: appUserDefaults.tasks.Fossils)
                 }
-                .frame(maxWidth: .infinity)
-                .padding(.vertical)
-                .opacity(userHasSubscription ? 1.0 : 0.2)
-                .overlay(premiumOverlay)
+                HStack {
+                    makeTaskBubble(icon: "icon-bell", task: appUserDefaults.tasks.Bell)
+                    makeTaskBubble(icon: "icon-miles", task: appUserDefaults.tasks.Miles)
+                    makeTaskBubble(icon: "icon-helmet", task: appUserDefaults.tasks.VillagerHouses)
+                    makeTaskBubble(icon: "icon-turnip", task: appUserDefaults.tasks.Turnip)
+                        .opacity(isSunday ? 1.0 : 0.25)
+                }
             }
+            .frame(maxWidth: .infinity)
+            .padding(.vertical)
+            .disabled(subManager.subscriptionStatus != .subscribed)
+            .opacity(subManager.subscriptionStatus != .subscribed ? 0.15 : 1.0)
+            .overlay(premiumOverlay)
         }
     }
     
     var premiumOverlay: some View {
-        if userHasSubscription {
-            return AnyView(EmptyView())
-        } else {
-            return AnyView(VStack {
+        if subManager.subscriptionStatus != .subscribed {
+            return AnyView(Button(action: {
+                self.sheet = .subscription(source: .dashboard, subManager: self.subManager)
+            }) {
                 Text("This feature requires ") + Text("AC Helper+").fontWeight(.bold)
                 Text("Learn more >")
-            })
+            }
+            .font(.system(.body, design: .rounded))
+            .foregroundColor(.acText))
+        } else {
+            return AnyView(EmptyView())
         }
     }
     
+}
+
+struct ProgressCircle: View {
+    var progress: Float
+    
+    var body: some View {
+        ZStack {
+            Circle()
+                .stroke(lineWidth: 4.0)
+                .opacity(0.3)
+                .foregroundColor(Color.red)
+            Circle()
+                .trim(from: 0.0, to: CGFloat(self.progress))
+                .stroke(style: StrokeStyle(lineWidth: 4.0, lineCap: .round, lineJoin: .round))
+                .foregroundColor(Color.green)
+                .rotationEffect(Angle(degrees: 270.0))
+        }
+    }
 }
 
 struct TodayTasksSection_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
             List {
-                TodayTasksSection()
+                TodayTasksSection(sheet: .constant(nil))
+                    .environmentObject(SubscriptionManager.shared)
             }
             .listStyle(GroupedListStyle())
             .environment(\.horizontalSizeClass, .regular)
