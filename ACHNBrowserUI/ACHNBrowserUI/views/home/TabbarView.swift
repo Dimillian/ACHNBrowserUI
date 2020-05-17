@@ -18,21 +18,21 @@ struct TabbarView: View {
             TodayView()
                 .tag(UIState.Tab.dashboard)
                 .tabItem {
-                    Image("icon-bells")
+                    Image("icon-bells-tabbar")
                     Text("Dashboard")
             }
 
             CategoriesView(categories: Category.items())
                 .tag(UIState.Tab.items)
                 .tabItem {
-                    Image("icon-leaf")
+                    Image("icon-leaf-tabbar")
                     Text("Catalog")
             }
 
             TurnipsView()
                 .tag(UIState.Tab.turnips)
                 .tabItem {
-                    Image("icon-turnip")
+                    Image("icon-turnip-tabbar")
                     Text("Turnips")
             }
 
@@ -40,14 +40,14 @@ struct TabbarView: View {
                 .environmentObject(UserCollection.shared)
                 .tag(UIState.Tab.villagers)
                 .tabItem {
-                    Image("icon-villager")
+                    Image("icon-villager-tabbar")
                     Text("Villagers")
             }
 
             CollectionListView()
                 .tag(UIState.Tab.collection)
                 .tabItem {
-                    Image("icon-cardboard")
+                    Image("icon-cardboard-tabbar")
                     Text("Collection")
             }
 
