@@ -35,13 +35,13 @@ struct AboutView: View {
         .safeHoverEffectBarItem(position: .leading)
     }
     
-    private func makeRow(image: String, text: String, color: Color) -> some View {
+    private func makeRow(image: String, text: LocalizedStringKey, color: Color) -> some View {
         HStack {
             Image(systemName: image)
                 .imageScale(.medium)
                 .foregroundColor(color)
                 .frame(width: 30)
-            Text(LocalizedStringKey(text))
+            Text(text)
                 .foregroundColor(.acText)
                 .font(.body)
             Spacer()
@@ -49,13 +49,13 @@ struct AboutView: View {
         }
     }
     
-    private func makeDetailRow(image: String, text: String, detail: String, color: Color) -> some View {
+    private func makeDetailRow(image: String, text: LocalizedStringKey, detail: String, color: Color) -> some View {
         HStack {
             Image(systemName: image)
                 .imageScale(.medium)
                 .foregroundColor(color)
                 .frame(width: 30)
-            Text(LocalizedStringKey(text))
+            Text(text)
                 .foregroundColor(.acText)
                 .font(.body)
             Spacer()
@@ -105,7 +105,7 @@ struct AboutView: View {
                         .onTapGesture {
                             self.selectedSheet = .safari(URL(string: "https://nookplaza.net/")!)
                     }
-                    makeRow(image: "suit.heart.fill", text: "The ACHNAPI for villagers data and images",
+                    makeRow(image: "suit.heart.fill", text: "The ACNHAPI for villagers data and images",
                             color: .red)
                         .onTapGesture {
                             self.selectedSheet = .safari(URL(string: "http://acnhapi.com")!)

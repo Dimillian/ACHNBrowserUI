@@ -20,15 +20,17 @@ struct CollectionListView: View {
     @State private var selectedTab: Tabs = .items
     @State private var sheet: Sheet.SheetType?
         
+    private var categories: [String] {
+        Array(Set(collection.items.map({ $0.category })))
+    }
+    
     var body: some View {
         NavigationView {
             List {
                 Section(header: picker) {
                     if selectedTab == .items && !collection.items.isEmpty {
-                        ForEach(collection.items) { item in
-                            NavigationLink(destination: ItemDetailView(item: item)) {
-                                ItemRowView(displayMode: .large, item: item)
-                            }
+                        ForEach(categories, id: \.self) { category in
+                            CollectionRowView(category: Category(itemCategory: category))
                         }
                     } else if selectedTab == .villagers && !collection.villagers.isEmpty {
                         ForEach(collection.villagers) { villager in

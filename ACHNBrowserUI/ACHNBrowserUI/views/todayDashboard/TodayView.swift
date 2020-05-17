@@ -60,10 +60,11 @@ struct TodayView: View {
                         .onTapGesture {
                             self.uiState.selectedTab = .turnips
                     }
-                    //TodayTasksSection()
-                    TodayNookazonSection(sheet: $selectedSheet, viewModel: viewModel)
+                    // TodayTasksSection()
+                    // TodayNookazonSection(sheet: $selectedSheet, viewModel: viewModel)
                     TodaySubscribeSection(sheet: $selectedSheet)
-                    //self.arrangeSectionsButton
+                    TodayMysteryIslandsSection()
+                    // self.arrangeSectionsButton
                 }
             }
             .listStyle(GroupedListStyle())
@@ -71,7 +72,6 @@ struct TodayView: View {
             .navigationBarTitle(Text("\(dateString().capitalized)"))
             .navigationBarItems(leading: aboutButton, trailing: settingsButton)
             .sheet(item: $selectedSheet, content: { Sheet(sheetType: $0) })
-            .onAppear(perform: viewModel.fetchListings)
             
             ActiveCrittersView(activeFishes: fishAvailable,
                                activeBugs: bugsAvailable)

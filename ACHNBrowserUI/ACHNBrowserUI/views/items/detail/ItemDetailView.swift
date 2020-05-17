@@ -81,7 +81,7 @@ struct ItemDetailView: View {
                 ItemDetailSeasonSectionView(item: itemViewModel.item)
             }
             listsSection
-            listingSection
+            //listingSection
         }
         .listStyle(GroupedListStyle())
         .environment(\.horizontalSizeClass, .regular)
@@ -171,8 +171,7 @@ extension ItemDetailView {
     private var listingSection: some View {
         Section(header: SectionHeaderView(text: "Nookazon listings", icon: "cart.fill")) {
             if itemViewModel.loading {
-                Text("Loading Listings...")
-                    .foregroundColor(.secondary)
+                RowLoadingView(isLoading: .constant(true))
             }
             if !itemViewModel.listings.isEmpty {
                 ForEach(itemViewModel.listings.filter { $0.active && $0.selling }, content: { listing in

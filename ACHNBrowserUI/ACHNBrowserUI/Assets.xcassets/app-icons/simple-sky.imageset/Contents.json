@@ -1,11 +1,11 @@
 {
   "images" : [
     {
-      "filename" : "simple-sky.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "filename" : "simple-sky.png",
       "idiom" : "universal",
       "scale" : "2x"
     },

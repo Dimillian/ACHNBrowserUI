@@ -8,7 +8,7 @@
 
 ![Image](images/promo2.png?)
 
-This is a full featured Animal Crossing helper application entirely in SwiftUI.
+This is a full featured Animal Crossing helper application written entirely in SwiftUI.
 
 # Features
 * Dashboard to track your fishes, bugs, collection progress and active events.
@@ -23,11 +23,11 @@ This is a full featured Animal Crossing helper application entirely in SwiftUI.
 * Localized to English, French, German; Japanese and Chinese (TW) in progress - see [#68](https://github.com/Dimillian/ACHNBrowserUI/issues/68) to help us extend localization to missing languages
 * iOS, iPad and macOS (Catalyst support)!
 
-You can use this application for learning about SwiftUI and Combine. It uses a very standard view, and view model architecture with full use of @State, @Binding, @Published, Observed and Observable object. 
+You can use this application to learn about SwiftUI and Combine. It uses a very standard view, and view model architecture with full use of @State, @Binding, @Published, Observed and Observable object. 
 
 ## Credits
 
-This is just a very simple SwiftUI application, all the database hard work have been done on the [master sheet](https://docs.google.com/spreadsheets/d/1Hxrdp7oxtK-J5x9u1-rzChUpLtkv3t0_kNGdS6dtyWI/edit#gid=2031086626) by the community. 
+This is just a very simple SwiftUI application, all the database hard work has been done on the [master sheet](https://docs.google.com/spreadsheets/d/1Hxrdp7oxtK-J5x9u1-rzChUpLtkv3t0_kNGdS6dtyWI/edit#gid=2031086626) by the community. 
 
 And [u/Azarro](https://www.reddit.com/user/Azarro/) made an awesome JSON API from that google sheet. (private for now).
 

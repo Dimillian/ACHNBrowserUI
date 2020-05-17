@@ -30,7 +30,7 @@ struct VillagerDetailView: View {
     private var shareButton: some View {
         Button(action: {
             let image = NavigationView {
-                self.makeBody().environmentObject(self.collection)
+                self.makeBody(items: false).environmentObject(self.collection)
             }
             .navigationViewStyle(StackNavigationViewStyle())
             .frame(width: 350, height: 650).asImage()
@@ -63,7 +63,7 @@ struct VillagerDetailView: View {
         }.listRowBackground(Rectangle().fill(backgroundColor))
     }
     
-    private func makeBody() -> some View {
+    private func makeBody(items: Bool) -> some View {
         List {
             HStack {
                 Spacer()
@@ -80,15 +80,17 @@ struct VillagerDetailView: View {
             makeInfoCell(title: "Gender", value: villager.gender).padding()
             makeInfoCell(title: "Catch phrase", value: villager.catchPhrase ?? "").padding()
             
-            Section(header: SectionHeaderView(text: "Villager items", icon: "list.bullet")) {
-                if viewModel.villagerItems?.isEmpty == false {
-                    ForEach(viewModel.villagerItems!) { item in
-                        NavigationLink(destination: ItemDetailView(item: item)) {
-                            ItemRowView(displayMode: .large, item: item)
+            if items {
+                Section(header: SectionHeaderView(text: "Villager items", icon: "list.bullet")) {
+                    if viewModel.villagerItems?.isEmpty == false {
+                        ForEach(viewModel.villagerItems!) { item in
+                            NavigationLink(destination: ItemDetailView(item: item)) {
+                                ItemRowView(displayMode: .large, item: item)
+                            }
                         }
+                    } else {
+                        RowLoadingView(isLoading: .constant(true))
                     }
-                } else {
-                    RowLoadingView(isLoading: .constant(true))
                 }
             }
         }
@@ -113,7 +115,7 @@ struct VillagerDetailView: View {
     }
     
     var body: some View {
-        makeBody()
+        makeBody(items: true)
             .sheet(item: $sheet, content: { Sheet(sheetType: $0) })
             .navigationBarItems(trailing: navButtons)
     }
