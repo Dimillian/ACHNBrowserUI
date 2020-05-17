@@ -11,7 +11,7 @@ import Backend
 
 enum TurnipsChart {
     static let steps = 50
-    static let extraMinSteps = 50
+    static let extraMinSteps = 0
     static let extraMaxSteps = 50
 }
 
@@ -40,7 +40,7 @@ extension TurnipsChart {
 
         let count = minMax.count
 
-        let (ratioX, ratioY, maxY) = ratios(size: size, count: count, min: min, max: max)
+        let (ratioX, ratioY, _, maxY) = ratios(size: size, count: count, min: min, max: max)
 
         return Array(0..<count)
             .map({ index in
@@ -58,25 +58,22 @@ extension TurnipsChart {
                 )
             })
     }
+}
 
-    private static func ratios(
-        size: CGSize,
-        count: Int,
-        min: Int,
-        max: Int
-    ) -> (ratioX: CGFloat, ratioY: CGFloat, maxY: CGFloat) {
+extension TurnipsChart {
+    typealias Ratios = (ratioX: CGFloat, ratioY: CGFloat, minY: CGFloat, maxY: CGFloat)
+
+    static func ratios(size: CGSize, count: Int, min: Int, max: Int) -> Ratios {
         let ratioX = size.width/(CGFloat(count - 1))
 
         let steps = TurnipsChart.steps
-        let extraMinSteps = TurnipsChart.extraMinSteps
-        let extraMaxSteps = TurnipsChart.extraMaxSteps
 
-        let computedRoundedMin = Int(min)/steps * steps - extraMinSteps
+        let computedRoundedMin = Int(min)/steps * steps - TurnipsChart.extraMinSteps
         let roundedMin = Swift.max(0, computedRoundedMin)
-        let roundedMax = (Int(max) + steps)/steps * steps + extraMaxSteps
+        let roundedMax = Int(max)/steps * steps + TurnipsChart.extraMaxSteps
         let ratioY = size.height/CGFloat(roundedMax - roundedMin)
 
-        return (ratioX, ratioY, CGFloat(roundedMax))
+        return (ratioX, ratioY, CGFloat(roundedMin), CGFloat(roundedMax))
     }
 }
 
@@ -87,21 +84,10 @@ extension Array {
 }
 
 extension Array where Element == TurnipsChart.YAxis {
-    func ratios(in rect: CGRect) -> (x: CGFloat, y: CGFloat, minY: CGFloat, maxY: CGFloat) {
-        let ratioX = rect.maxX/(CGFloat(self.count - 1))
+    func ratios(in rect: CGRect) -> TurnipsChart.Ratios {
+        let min = self.compactMap { $0.min.value }.min() ?? 0
+        let max = self.compactMap { $0.max.value }.max() ?? 0
 
-        let minY = CGFloat(self.compactMap { $0.min.value }.min() ?? 0)
-        let maxY = CGFloat(self.compactMap { $0.max.value }.max() ?? 0)
-
-        let steps = CGFloat(TurnipsChart.steps)
-        let extraMinSteps = CGFloat(TurnipsChart.extraMinSteps)
-        let extraMaxSteps = CGFloat(TurnipsChart.extraMaxSteps)
-
-        let computedRoundedMin = minY/steps * steps - extraMinSteps
-        let roundedMin = Swift.max(0, computedRoundedMin)
-        let roundedMax = (maxY + steps)/steps * steps + extraMaxSteps
-        let roundedRatioY = rect.maxY/(roundedMax - roundedMin)
-
-        return (ratioX, roundedRatioY, roundedMin, roundedMax)
+        return TurnipsChart.ratios(size: rect.size, count: count, min: min, max: max)
     }
 }

@@ -16,20 +16,21 @@ struct TurnipsChartGrid: Shape {
     func path(in rect: CGRect) -> Path {
         var path = Path()
 
-        let (ratioX, ratioY, minY, maxY) = data.ratios(in: rect)
+        let (ratioX, ratioY, _, maxY) = data.ratios(in: rect)
         let count = data.count
 
         if displays.contains(.vertical) {
             for offset in 0..<count {
                 let offset = CGFloat(offset)
                 path.move(to: CGPoint(x: offset * ratioX, y: rect.minY))
-                path.addLine(to: CGPoint(x: offset * ratioX, y: ratioY * (maxY - minY)))
+                path.addLine(to: CGPoint(x: offset * ratioX, y: rect.maxY))
             }
         }
 
         if displays.contains(.horizontal) {
             let steps = CGFloat(TurnipsChart.steps)
-            let lines = Array(stride(from: minY, to: maxY, by: steps))
+            let maxY = maxY + CGFloat(TurnipsChart.extraMaxSteps)
+            let lines = Array(stride(from: 0, to: maxY, by: steps))
             for line in lines {
                 path.move(to: CGPoint(x: rect.minX, y: ratioY * line))
                 path.addLine(to: CGPoint(x: rect.maxX, y: ratioY * line))
