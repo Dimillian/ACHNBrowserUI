@@ -87,7 +87,7 @@
         "id": 10,
         "name": "Fruit Island",
         "chance": 9,
-        "trees": "other fruits",
+        "trees": "exotic fruits",
         "flowers": "normal",
         "rocks": 4,
         "rocks_type": "normal",
