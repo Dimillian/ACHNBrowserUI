@@ -38,7 +38,7 @@ struct MysteryIslandDetail: View {
                 }
             }
         }
-        .navigationBarTitle(Text(island.name))
+        .navigationBarTitle(Text(LocalizedStringKey(island.name)))
         .listStyle(GroupedListStyle())
         .environment(\.horizontalSizeClass, .regular)
     }

@@ -181,7 +181,7 @@
         "flowers": "normal",
         "rocks": 4,
         "rocks_type": "normal",
-        "insects": "rare",
+        "insects": "uncommon",
         "fish": "normal",
         "description": "There is one square cliff at the north east, a few flowers and rocks and a small amount of fruit trees. Only insects associated with water spawn here."
     },
