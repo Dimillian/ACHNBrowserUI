@@ -19,7 +19,7 @@ struct MysteryIslandRow: View {
                 .frame(width: 75, height: 75)
                 .cornerRadius(8)
             VStack(alignment: .leading, spacing: 4) {
-                Text(island.name)
+                Text(LocalizedStringKey(island.name))
                     .style(appStyle: .rowTitle)
                 HStack(spacing: 0) {
                     Text("\(island.chance)% chance")
