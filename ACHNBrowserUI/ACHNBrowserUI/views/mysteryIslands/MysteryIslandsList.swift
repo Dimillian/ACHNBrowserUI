@@ -18,7 +18,7 @@ struct MysteryIslandsList: View {
                 MysteryIslandRow(island: island)
             }
         }
-        .navigationBarTitle(Text("Mystery islands"))
+        .navigationBarTitle(Text("Mystery Islands"))
         .listStyle(GroupedListStyle())
         .environment(\.horizontalSizeClass, .regular)
     }
