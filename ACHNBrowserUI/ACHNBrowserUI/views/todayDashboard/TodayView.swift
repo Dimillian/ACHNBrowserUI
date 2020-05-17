@@ -60,10 +60,11 @@ struct TodayView: View {
                         .onTapGesture {
                             self.uiState.selectedTab = .turnips
                     }
-                    //TodayTasksSection()
+                    // TodayTasksSection()
                     // TodayNookazonSection(sheet: $selectedSheet, viewModel: viewModel)
                     TodaySubscribeSection(sheet: $selectedSheet)
-                    //self.arrangeSectionsButton
+                    TodayMysteryIslandsSection()
+                    // self.arrangeSectionsButton
                 }
             }
             .listStyle(GroupedListStyle())
