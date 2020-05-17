@@ -10,14 +10,14 @@ import SwiftUI
 import Backend
 
 struct TodayTasksSection: View {
-    @ObservedObject var appUserDefaults = AppUserDefaults.shared
+    @EnvironmentObject var tasks: Tasks
     
     var isSunday: Bool {
         Calendar.current.component(.weekday, from: Date()) == 1
     }
     
     // MARK: - Task Bubble
-    private func makeTaskBubble(icon: String, task: Tasks.TaskProgress) -> some View {
+    private func makeTaskBubble(icon: String, task: Tasks.Task) -> some View {
         ZStack {
             Circle()
                 .foregroundColor(Color("ACBackground"))
@@ -25,7 +25,7 @@ struct TodayTasksSection: View {
                 .resizable()
                 .aspectRatio(1, contentMode: .fit)
             if task.hasProgress || icon.elementsEqual("icon-turnip") && !self.isSunday {
-                ProgressCircle(progress: task.progress)
+                ProgressCircle(task: task)
             }
         }
         .frame(maxHeight: 44)
@@ -33,9 +33,7 @@ struct TodayTasksSection: View {
             if !task.hasProgress || icon.elementsEqual("icon-turnip") && !self.isSunday {
                 return
             }
-            // task.curProgress.updateProgress()
-            // self.appUserDefaults.tasks.lastUpdate = Date.init()
-            debugPrint(task.curProgress)
+            self.tasks.updateProgress(task: task)
         }
     }
     
@@ -43,16 +41,16 @@ struct TodayTasksSection: View {
         Section(header: SectionHeaderView(text: "Today's Tasks", icon: "checkmark.seal.fill")) {
             VStack(spacing: 15) {
                 HStack {
-                    makeTaskBubble(icon: "icon-iron", task: appUserDefaults.tasks.Rocks)
-                    makeTaskBubble(icon: "icon-wood", task: appUserDefaults.tasks.Wood)
-                    makeTaskBubble(icon: "icon-weed", task: appUserDefaults.tasks.Weed)
-                    makeTaskBubble(icon: "icon-fossil", task: appUserDefaults.tasks.Fossils)
+                    makeTaskBubble(icon: "icon-iron", task: self.tasks.Rocks)
+                    makeTaskBubble(icon: "icon-wood", task: self.tasks.Wood)
+                    makeTaskBubble(icon: "icon-weed", task: self.tasks.Weed)
+                    makeTaskBubble(icon: "icon-fossil", task: self.tasks.Fossils)
                 }
                 HStack {
-                    makeTaskBubble(icon: "icon-bell", task: appUserDefaults.tasks.Bell)
-                    makeTaskBubble(icon: "icon-miles", task: appUserDefaults.tasks.Miles)
-                    makeTaskBubble(icon: "icon-helmet", task: appUserDefaults.tasks.VillagerHouses)
-                    makeTaskBubble(icon: "icon-turnip", task: appUserDefaults.tasks.Turnip)
+                    makeTaskBubble(icon: "icon-bell", task: self.tasks.Bell)
+                    makeTaskBubble(icon: "icon-miles", task: self.tasks.Miles)
+                    makeTaskBubble(icon: "icon-helmet", task: self.tasks.VillagerHouses)
+                    makeTaskBubble(icon: "icon-turnip", task: self.tasks.Turnip)
                         .opacity(isSunday ? 1.0 : 0.25)
                 }
             }
@@ -64,7 +62,7 @@ struct TodayTasksSection: View {
 }
 
 struct ProgressCircle: View {
-    var progress: Float
+    @ObservedObject var task: Tasks.Task
     
     var body: some View {
         ZStack {
@@ -73,7 +71,7 @@ struct ProgressCircle: View {
                 .opacity(0.3)
                 .foregroundColor(Color.red)
             Circle()
-                .trim(from: 0.0, to: CGFloat(self.progress))
+                .trim(from: 0.0, to: CGFloat(self.task.curProgress)/CGFloat(self.task.maxProgress))
                 .stroke(style: StrokeStyle(lineWidth: 4.0, lineCap: .round, lineJoin: .round))
                 .foregroundColor(Color.green)
                 .rotationEffect(Angle(degrees: 270.0))
@@ -91,5 +89,6 @@ struct TodayTasksSection_Previews: PreviewProvider {
             .environment(\.horizontalSizeClass, .regular)
         }
         .previewLayout(.fixed(width: 375, height: 500))
+        .environmentObject(Tasks.shared)
     }
 }

@@ -78,11 +78,5 @@ public class AppUserDefaults: ObservableObject {
     @UserDefault("spotlight_index_version", defaultValue: "")
     public var spotlightIndexVersion: String
     
-    @UserDefault("tasks", defaultValue: Tasks(lastUpdate: Date.init()))
-    public var tasks: Tasks {
-        willSet {
-            objectWillChange.send()
-        }
-    }
 }
 

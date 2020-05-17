@@ -60,7 +60,7 @@ struct TodayView: View {
                         .onTapGesture {
                             self.uiState.selectedTab = .turnips
                     }
-                    TodayTasksSection(sheet: $selectedSheet)
+                    TodayTasksSection()
                     TodayNookazonSection(sheet: $selectedSheet, viewModel: viewModel)
                     TodaySubscribeSection(sheet: $selectedSheet)
                     //self.arrangeSectionsButton
