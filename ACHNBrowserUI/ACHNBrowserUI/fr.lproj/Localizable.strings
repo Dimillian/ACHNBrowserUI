@@ -56,7 +56,7 @@ Localizable.strings
 "%lld/%lld Fish" = "%lld/%lld Poissons";
 "%lld NEW" = "%lld NOUVEAUX";
 // TodayEventsSection
-"Events" = "Èvenements";
+"Events" = "Évènements";
 "Currently" = "En ce moment";
 "No Events Today" = "Pas d'èvenement aujourd'hui";
 "Upcoming" = "Bientôt";
