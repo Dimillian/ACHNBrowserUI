@@ -709,3 +709,6 @@ Du kannst das Abonnement jederzeit in deinen iTunes Kontoeinstellungen beenden. 
 "Your AC Helper collection file was imported with success." = "Deine AC Helper Sammlung wurde erfolgreich importiert.";
 "Are you sure?" = "Bist du sicher?";
 "This will delete all your collected critters, items, villagers and items lists" = "Diese Aktion wird all deine gesammelt Tiere, Gegenstände, Besucher und persönliche Listen löschen.";
+
+// Added 2020-05-17
+"The ACNHAPI for villagers data and images" = "ACNHAPI für die Bewohnerdaten und Bilder";
