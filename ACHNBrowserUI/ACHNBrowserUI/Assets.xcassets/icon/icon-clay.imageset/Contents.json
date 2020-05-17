@@ -1,11 +1,11 @@
 {
   "images" : [
     {
-      "filename" : "OreClay.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "filename" : "OreClay.png",
       "idiom" : "universal",
       "scale" : "2x"
     },

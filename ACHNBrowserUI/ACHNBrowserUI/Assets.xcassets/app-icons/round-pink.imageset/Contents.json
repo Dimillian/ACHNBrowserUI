@@ -1,11 +1,11 @@
 {
   "images" : [
     {
-      "filename" : "round-pink.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "filename" : "round-pink.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
