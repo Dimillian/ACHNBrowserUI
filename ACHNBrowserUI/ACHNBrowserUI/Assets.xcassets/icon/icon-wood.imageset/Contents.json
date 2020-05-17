@@ -1,11 +1,11 @@
 {
   "images" : [
     {
-      "filename" : "DIYWoodNormal.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "filename" : "DIYWoodNormal.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
