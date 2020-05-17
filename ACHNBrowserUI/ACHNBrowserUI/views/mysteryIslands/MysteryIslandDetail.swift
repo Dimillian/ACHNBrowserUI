@@ -34,7 +34,7 @@ struct MysteryIslandDetail: View {
                 makeInfoCell(title: "Insects", detail: island.insects.capitalized)
                 VStack(alignment: .leading, spacing: 8) {
                     Text("Description").style(appStyle: .rowTitle)
-                    Text(island.description).style(appStyle: .rowDescription)
+                    Text(LocalizedStringKey(island.description)).style(appStyle: .rowDescription)
                 }
             }
         }
