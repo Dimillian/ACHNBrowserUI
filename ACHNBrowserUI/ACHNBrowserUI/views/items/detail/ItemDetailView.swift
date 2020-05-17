@@ -81,7 +81,7 @@ struct ItemDetailView: View {
                 ItemDetailSeasonSectionView(item: itemViewModel.item)
             }
             listsSection
-            listingSection
+            //listingSection
         }
         .listStyle(GroupedListStyle())
         .environment(\.horizontalSizeClass, .regular)
@@ -176,10 +176,7 @@ extension ItemDetailView {
             if !itemViewModel.listings.isEmpty {
                 ForEach(itemViewModel.listings.filter { $0.active && $0.selling }, content: { listing in
                     Button(action: {
-                        UIApplication.shared.open(URL.nookazon(listing: listing)!,
-                                                  options: [:],
-                                                  completionHandler: nil)
-                        // self.selectedSheet = .safari(URL.nookazon(listing: listing)!)
+                        self.selectedSheet = .safari(URL.nookazon(listing: listing)!)
                     }) {
                         ListingRow(listing: listing)
                     }

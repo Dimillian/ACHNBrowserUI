@@ -35,7 +35,7 @@ class ItemDetailViewModel: ObservableObject {
                 guard let weakself = self else { return }
                 self?.cancellable?.cancel()
                 self?.listings = []
-                self?.fetchListings()
+                // self?.fetchListings()
                 
                 let items = Items.shared.categories[weakself.item.appCategory] ?? []
                 if let set = $0.set, set != "None" {
