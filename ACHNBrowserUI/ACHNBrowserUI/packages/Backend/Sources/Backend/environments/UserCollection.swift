@@ -8,6 +8,7 @@
 
 import Foundation
 import Combine
+import CloudKit
 
 public class UserCollection: ObservableObject {
     public static let shared = UserCollection()
