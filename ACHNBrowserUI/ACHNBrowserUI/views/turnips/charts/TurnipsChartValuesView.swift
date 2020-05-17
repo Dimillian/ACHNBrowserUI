@@ -15,10 +15,6 @@ struct TurnipsChartValuesView: View {
     let padding: CGFloat = 16
 
     var body: some View {
-        GeometryReader(content: values)
-    }
-
-    func values(geometry: GeometryProxy) -> some View {
         ZStack {
             Text("\(data[position].min.value)")
                 .bold()
