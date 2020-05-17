@@ -123,6 +123,11 @@
 		68DFFFAD24492D7F00DEA07F /* ItemDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68DFFFAC24492D7F00DEA07F /* ItemDetailViewModel.swift */; };
 		6903CD0F246C7E0300150FA1 /* CollectionProgressDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6903CD0E246C7E0300150FA1 /* CollectionProgressDetailView.swift */; };
 		6903CD11246C7EB800150FA1 /* CollectionProgressRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6903CD10246C7EB800150FA1 /* CollectionProgressRow.swift */; };
+		69157B5E24711F6D005B9002 /* islands.json in Resources */ = {isa = PBXBuildFile; fileRef = 69157B4924711F6C005B9002 /* islands.json */; };
+		69157B6E247121ED005B9002 /* TodayMysteryIslandsSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69157B6D247121ED005B9002 /* TodayMysteryIslandsSection.swift */; };
+		69157B71247122A5005B9002 /* MysteryIslandRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69157B70247122A5005B9002 /* MysteryIslandRow.swift */; };
+		69157B73247125AD005B9002 /* MysteryIslandsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69157B72247125AD005B9002 /* MysteryIslandsList.swift */; };
+		69157B7524712769005B9002 /* MysteryIslandDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69157B7424712769005B9002 /* MysteryIslandDetail.swift */; };
 		693E0B1D244C315B00D20E46 /* DashboardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 693E0B1C244C315B00D20E46 /* DashboardViewModel.swift */; };
 		693E0B22244C596D00D20E46 /* ActiveCrittersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 693E0B21244C596D00D20E46 /* ActiveCrittersView.swift */; };
 		693E2BBE2465B65D00B85CB8 /* RowLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 693E2BBD2465B65D00B85CB8 /* RowLoadingView.swift */; };
@@ -377,6 +382,11 @@
 		6903CD0E246C7E0300150FA1 /* CollectionProgressDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionProgressDetailView.swift; sourceTree = "<group>"; };
 		6903CD10246C7EB800150FA1 /* CollectionProgressRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionProgressRow.swift; sourceTree = "<group>"; };
 		690BD65324404F4300DEECD3 /* ACHNBrowserUI.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ACHNBrowserUI.entitlements; sourceTree = "<group>"; };
+		69157B4924711F6C005B9002 /* islands.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = islands.json; sourceTree = "<group>"; };
+		69157B6D247121ED005B9002 /* TodayMysteryIslandsSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayMysteryIslandsSection.swift; sourceTree = "<group>"; };
+		69157B70247122A5005B9002 /* MysteryIslandRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MysteryIslandRow.swift; sourceTree = "<group>"; };
+		69157B72247125AD005B9002 /* MysteryIslandsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MysteryIslandsList.swift; sourceTree = "<group>"; };
+		69157B7424712769005B9002 /* MysteryIslandDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MysteryIslandDetail.swift; sourceTree = "<group>"; };
 		693E0B1C244C315B00D20E46 /* DashboardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewModel.swift; sourceTree = "<group>"; };
 		693E0B21244C596D00D20E46 /* ActiveCrittersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveCrittersView.swift; sourceTree = "<group>"; };
 		693E2BBD2465B65D00B85CB8 /* RowLoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RowLoadingView.swift; sourceTree = "<group>"; };
@@ -523,6 +533,7 @@
 				693E2BC3246689C500B85CB8 /* TodayNookazonSection.swift */,
 				693E2BC524668D8E00B85CB8 /* TodayWhatsNewSection.swift */,
 				693E2BC924669D2800B85CB8 /* TodaySubscribeSection.swift */,
+				69157B6D247121ED005B9002 /* TodayMysteryIslandsSection.swift */,
 			);
 			path = todayDashboard;
 			sourceTree = "<group>";
@@ -667,6 +678,24 @@
 				69B13CB024577BBF0089BD7B /* TurnipsFormView.swift */,
 			);
 			path = turnips;
+			sourceTree = "<group>";
+		};
+		69157B4224711F40005B9002 /* islands */ = {
+			isa = PBXGroup;
+			children = (
+				69157B4924711F6C005B9002 /* islands.json */,
+			);
+			path = islands;
+			sourceTree = "<group>";
+		};
+		69157B6F2471226B005B9002 /* mysteryIslands */ = {
+			isa = PBXGroup;
+			children = (
+				69157B70247122A5005B9002 /* MysteryIslandRow.swift */,
+				69157B72247125AD005B9002 /* MysteryIslandsList.swift */,
+				69157B7424712769005B9002 /* MysteryIslandDetail.swift */,
+			);
+			path = mysteryIslands;
 			sourceTree = "<group>";
 		};
 		693E0B20244C596000D20E46 /* critters */ = {
@@ -850,6 +879,7 @@
 		69AF8C64243E2857001DD9CB /* views */ = {
 			isa = PBXGroup;
 			children = (
+				69157B6F2471226B005B9002 /* mysteryIslands */,
 				024363CF2465E7FD006A37A0 /* todayDashboard */,
 				69875F5324654EA400B1D46C /* userLists */,
 				693E7292245D833F00CD26F4 /* subscription */,
@@ -981,6 +1011,7 @@
 		69CFCA82245AAF520059C067 /* json */ = {
 			isa = PBXGroup;
 			children = (
+				69157B4224711F40005B9002 /* islands */,
 				699425D8246927190089C21B /* localized */,
 				699425D624688C200089C21B /* clothing */,
 				695D45FC2467F26E00B5C313 /* furnitures */,
@@ -1162,6 +1193,7 @@
 				02F2D4082455D81C009741DA /* round-pink@2x.png in Resources */,
 				02F2D4472455D81C009741DA /* simple-orange@3x.png in Resources */,
 				02F2D4302455D81C009741DA /* round-sky@3x.png in Resources */,
+				69157B5E24711F6D005B9002 /* islands.json in Resources */,
 				02F2D4132455D81C009741DA /* bookmark-blueberry@2x.png in Resources */,
 				02F2D4232455D81C009741DA /* simple-lime@3x.png in Resources */,
 				02F2D42E2455D81C009741DA /* round-mint@3x.png in Resources */,
@@ -1304,6 +1336,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				69157B6E247121ED005B9002 /* TodayMysteryIslandsSection.swift in Sources */,
 				693E2BC4246689C500B85CB8 /* TodayNookazonSection.swift in Sources */,
 				69875F5524654EB900B1D46C /* UserListFormView.swift in Sources */,
 				693E2BBE2465B65D00B85CB8 /* RowLoadingView.swift in Sources */,
@@ -1311,6 +1344,7 @@
 				4C2D6778245F4FE8005831C4 /* TurnipsChartMinBuyPriceCurve.swift in Sources */,
 				69AF8C7E243E4DD9001DD9CB /* ItemRowView.swift in Sources */,
 				697E63F52449A58E008FB710 /* VillagersListView.swift in Sources */,
+				69157B71247122A5005B9002 /* MysteryIslandRow.swift in Sources */,
 				4C2D6774245F4EA2005831C4 /* TurnipsChartAverageCurve.swift in Sources */,
 				68BA5826244A511700B53811 /* CategoryDetailView.swift in Sources */,
 				697E6400244AD66E008FB710 /* SettingsView.swift in Sources */,
@@ -1338,6 +1372,7 @@
 				693E72A7245EBB1200CD26F4 /* SafariView.swift in Sources */,
 				4C382EE8244E418800F446BA /* DismissingKeyboardOnSwipe.swift in Sources */,
 				69B13CA6245598E80089BD7B /* ItemDetailSeasonSectionView.swift in Sources */,
+				69157B73247125AD005B9002 /* MysteryIslandsList.swift in Sources */,
 				4CF14B75246B3E9E00F740BF /* TurnipsChartValuesView.swift in Sources */,
 				697E63F92449DADE008FB710 /* VillagerRowView.swift in Sources */,
 				4C7FE789245B57A10011E8AB /* AdaptsToSoftwareKeyboard.swift in Sources */,
@@ -1363,6 +1398,7 @@
 				693E0B1D244C315B00D20E46 /* DashboardViewModel.swift in Sources */,
 				693E2BC8246697FC00B85CB8 /* Image.swift in Sources */,
 				69AF8C7C243E4D29001DD9CB /* Color.swift in Sources */,
+				69157B7524712769005B9002 /* MysteryIslandDetail.swift in Sources */,
 				693E72A0245EA5A000CD26F4 /* Text.swift in Sources */,
 				69AF8C55243E283D001DD9CB /* ItemsListView.swift in Sources */,
 				69BEA98B243EFE9700F02C61 /* ItemDetailView.swift in Sources */,
