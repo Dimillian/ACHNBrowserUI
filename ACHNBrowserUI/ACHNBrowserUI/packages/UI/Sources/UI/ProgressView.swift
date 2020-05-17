@@ -15,6 +15,8 @@ public struct ProgressView: View {
     public let progressColor: Color
     public let height: CGFloat
     
+    @State private var appeared = false
+    
     public init(progress: CGFloat, trackColor: Color, progressColor: Color, height: CGFloat) {
         self.progress = progress
         self.trackColor = trackColor
@@ -30,9 +32,17 @@ public struct ProgressView: View {
                     .frame(width: g.size.width)
                 Capsule()
                     .foregroundColor(self.progressColor)
-                    .frame(width: (g.size.width * self.progress) > 0 ? max(12, (g.size.width * self.progress)) : 0)
+                    .frame(width: (g.size.width * self.progress) > 0 && self.appeared
+                        ? max(self.height, (g.size.width * self.progress))
+                        : 0)
+                    .animation(.spring())
             }
         }
+        .onAppear(perform: {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
+                self.appeared = true
+            }
+        })
         .frame(height: height)
         .background(Color.clear)
     }
