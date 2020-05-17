@@ -45,7 +45,7 @@ extension TurnipsChartGrid {
 }
 
 struct TurnipsChartGridInteractiveVerticalLines: View {
-    let predictions: TurnipPredictions
+    let data: [TurnipsChart.YAxis]
     let positionPress: (Int) -> Void
     let touchWidth: CGFloat = 20
 
@@ -54,11 +54,10 @@ struct TurnipsChartGridInteractiveVerticalLines: View {
     }
 
     func lines(geometry: GeometryProxy) -> some View {
-        let (_, _, _, ratioX) = predictions.minMax?.roundedMinMaxAndRatios(rect: geometry.frame(in: .local)) ?? (0, 0, 0, 0)
-        let count = predictions.minMax?.count ?? 0
+        let (ratioX, _, _, _) = data.ratios(in: geometry.frame(in: .local))
 
         return ZStack(alignment: .leading) {
-            ForEach(0..<count) { offset in
+            ForEach(0..<data.count) { offset in
                 Button(action: { self.positionPress(offset) }) {
                     Color.clear
                         .frame(width: self.touchWidth)

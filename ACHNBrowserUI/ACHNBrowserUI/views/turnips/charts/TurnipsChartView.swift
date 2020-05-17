@@ -48,7 +48,7 @@ struct TurnipsChartView: View {
     
     private var curves: some View {
         ZStack(alignment: .leading) {
-            TurnipsChartGridInteractiveVerticalLines(predictions: predictions, positionPress: positionPress)
+            TurnipsChartGridInteractiveVerticalLines(data: yAxisData, positionPress: positionPress)
             TurnipsChartGrid(data: yAxisData)
                 .stroke()
                 .opacity(0.5)
