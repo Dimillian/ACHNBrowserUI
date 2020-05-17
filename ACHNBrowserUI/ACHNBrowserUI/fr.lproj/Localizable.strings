@@ -58,7 +58,7 @@ Localizable.strings
 // TodayEventsSection
 "Events" = "Évènements";
 "Currently" = "En ce moment";
-"No Events Today" = "Pas d'èvenement aujourd'hui";
+"No Events Today" = "Pas d'évènement aujourd'hui";
 "Upcoming" = "Bientôt";
 // TodayTasksSection
 "Today's Tasks" = "Today's Tasks";
