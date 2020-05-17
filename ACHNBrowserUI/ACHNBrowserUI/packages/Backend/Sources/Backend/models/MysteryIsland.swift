@@ -24,16 +24,23 @@ public struct MysteryIsland: Codable, Identifiable {
         "mapthumb\(id)"
     }
     
+    private static var islands: [MysteryIsland]?
+    
     public static func loadMysteryIslands() -> [MysteryIsland]? {
-        if let jsonFile = Bundle.main.url(forResource: "islands", withExtension: "json"),
-            let data = try? Data(contentsOf: jsonFile) {
-            let decoder = JSONDecoder()
-            do {
-                return try decoder.decode([MysteryIsland].self, from: data)
-            } catch {
-                return nil
+        guard let islands = Self.islands else {
+            if let jsonFile = Bundle.main.url(forResource: "islands", withExtension: "json"),
+                let data = try? Data(contentsOf: jsonFile) {
+                let decoder = JSONDecoder()
+                do {
+                    let islands = try decoder.decode([MysteryIsland].self, from: data)
+                    Self.islands = islands
+                    return islands
+                } catch {
+                    return nil
+                }
             }
+            return nil
         }
-        return nil
+        return islands
     }
 }
