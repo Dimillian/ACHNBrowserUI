@@ -179,7 +179,6 @@
 		69AF8C55243E283D001DD9CB /* ItemsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69AF8C54243E283D001DD9CB /* ItemsListView.swift */; };
 		69AF8C57243E2841001DD9CB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 69AF8C56243E2841001DD9CB /* Assets.xcassets */; };
 		69AF8C5A243E2841001DD9CB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 69AF8C59243E2841001DD9CB /* Preview Assets.xcassets */; };
-		69AF8C5D243E2841001DD9CB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 69AF8C5B243E2841001DD9CB /* LaunchScreen.storyboard */; };
 		69AF8C6D243E2A18001DD9CB /* ItemsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69AF8C6C243E2A18001DD9CB /* ItemsViewModel.swift */; };
 		69AF8C76243E3545001DD9CB /* SearchField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69AF8C75243E3545001DD9CB /* SearchField.swift */; };
 		69AF8C7A243E4C78001DD9CB /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 69AF8C79243E4C78001DD9CB /* Colors.xcassets */; };
@@ -248,6 +247,7 @@
 		69E4BBB8245AE60F001035E2 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 69AF8C79243E4C78001DD9CB /* Colors.xcassets */; };
 		69E4BBBB245B0BEF001035E2 /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69E4BBBA245B0BEF001035E2 /* AboutView.swift */; };
 		69EC82EE2461E79D00CE9064 /* TurnipsChartTopLegendView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69EC82ED2461E79D00CE9064 /* TurnipsChartTopLegendView.swift */; };
+		CE0531E92471D712007F0FF7 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE0531E72471D712007F0FF7 /* LaunchScreen.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -440,7 +440,6 @@
 		69AF8C54243E283D001DD9CB /* ItemsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsListView.swift; sourceTree = "<group>"; };
 		69AF8C56243E2841001DD9CB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		69AF8C59243E2841001DD9CB /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		69AF8C5C243E2841001DD9CB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		69AF8C5E243E2841001DD9CB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		69AF8C6C243E2A18001DD9CB /* ItemsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsViewModel.swift; sourceTree = "<group>"; };
 		69AF8C75243E3545001DD9CB /* SearchField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchField.swift; sourceTree = "<group>"; };
@@ -490,6 +489,7 @@
 		69E4BBB5245AE5C9001035E2 /* ItemDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailView.swift; sourceTree = "<group>"; };
 		69E4BBBA245B0BEF001035E2 /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
 		69EC82ED2461E79D00CE9064 /* TurnipsChartTopLegendView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TurnipsChartTopLegendView.swift; sourceTree = "<group>"; };
+		CE0531E82471D712007F0FF7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -859,7 +859,7 @@
 				69AF8C52243E283D001DD9CB /* SceneDelegate.swift */,
 				69AF8C56243E2841001DD9CB /* Assets.xcassets */,
 				02F2D3A62455D79E009741DA /* Alternate App Icons */,
-				69AF8C5B243E2841001DD9CB /* LaunchScreen.storyboard */,
+				CE0531E72471D712007F0FF7 /* LaunchScreen.xib */,
 				69AF8C5E243E2841001DD9CB /* Info.plist */,
 				69AF8C58243E2841001DD9CB /* Preview Content */,
 				3DF14B2D24664B2600438646 /* Localizable.strings */,
@@ -1203,7 +1203,6 @@
 				02F2D41E2455D81C009741DA /* simple-pink@2x.png in Resources */,
 				02F2D40D2455D81C009741DA /* round-mint@2x.png in Resources */,
 				02F2D4202455D81C009741DA /* simple-blue@2x.png in Resources */,
-				69AF8C5D243E2841001DD9CB /* LaunchScreen.storyboard in Resources */,
 				02F2D40E2455D81C009741DA /* simple-cocoa@2x.png in Resources */,
 				69CFCAB3245AAF520059C067 /* construction in Resources */,
 				02F2D42B2455D81C009741DA /* round-blueberry@3x.png in Resources */,
@@ -1275,6 +1274,7 @@
 				02F2D41B2455D81C009741DA /* round-cactus@2x.png in Resources */,
 				699425F0246927C50089C21B /* items_nl.json in Resources */,
 				02F2D43D2455D81C009741DA /* simple-cocoa@3x.png in Resources */,
+				CE0531E92471D712007F0FF7 /* LaunchScreen.xib in Resources */,
 				02F2D4342455D81C009741DA /* bookmark-cocoa@3x.png in Resources */,
 				3DB1260024686F0800E74AA5 /* InfoPlist.strings in Resources */,
 				69CFCAA4245AAF520059C067 /* nookmiles in Resources */,
@@ -1465,20 +1465,20 @@
 			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
-		69AF8C5B243E2841001DD9CB /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				69AF8C5C243E2841001DD9CB /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
 		69CFCAD1245ADC7A0059C067 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				69CFCAD2245ADC7A0059C067 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		CE0531E72471D712007F0FF7 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CE0531E82471D712007F0FF7 /* Base */,
+			);
+			name = LaunchScreen.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -1617,7 +1617,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.3.1;
+				MARKETING_VERSION = 1.3.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.thomasricouard.ACNH;
 				PRODUCT_NAME = "AC Helper";
 				STRINGS_FILE_OUTPUT_ENCODING = "UTF-16";
@@ -1644,7 +1644,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.3.1;
+				MARKETING_VERSION = 1.3.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.thomasricouard.ACNH;
 				PRODUCT_NAME = "AC Helper";
 				STRINGS_FILE_OUTPUT_ENCODING = "UTF-16";
