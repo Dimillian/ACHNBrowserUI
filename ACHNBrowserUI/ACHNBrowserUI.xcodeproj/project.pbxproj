@@ -611,7 +611,6 @@
 		69157B72247125AD005B9002 /* MysteryIslandsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MysteryIslandsList.swift; sourceTree = "<group>"; };
 		69157B7424712769005B9002 /* MysteryIslandDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MysteryIslandDetail.swift; sourceTree = "<group>"; };
 		69157C582471A5A1005B9002 /* ACHNBrowserUIStore.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ACHNBrowserUIStore.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		69157C592471A5A2005B9002 /* ACHNBrowserUI copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "ACHNBrowserUI copy-Info.plist"; path = "/Users/thomasricouard/Documents/Glose/dev/ACHNBrowserUI/ACHNBrowserUI/ACHNBrowserUI copy-Info.plist"; sourceTree = "<absolute>"; };
 		69157C5A2471A5BC005B9002 /* ACHNBrowserUIStoreRelease.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ACHNBrowserUIStoreRelease.entitlements; sourceTree = "<group>"; };
 		69157C5B2471A5C1005B9002 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		693E0B1C244C315B00D20E46 /* DashboardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewModel.swift; sourceTree = "<group>"; };
@@ -1074,7 +1073,6 @@
 				69CFCA7F245AAF300059C067 /* Resources */,
 				69AF8C4E243E283D001DD9CB /* Products */,
 				6951837324599C26005D28E0 /* Frameworks */,
-				69157C592471A5A2005B9002 /* ACHNBrowserUI copy-Info.plist */,
 			);
 			sourceTree = "<group>";
 		};
@@ -1985,7 +1983,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"ACHNBrowserUI/Preview Content\"";
 				DEVELOPMENT_TEAM = Z6P74P6T99;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = "ACHNBrowserUI copy-Info.plist";
+				INFOPLIST_FILE = ACHNBrowserUI/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2012,7 +2010,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"ACHNBrowserUI/Preview Content\"";
 				DEVELOPMENT_TEAM = Z6P74P6T99;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = "ACHNBrowserUI copy-Info.plist";
+				INFOPLIST_FILE = ACHNBrowserUI/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
