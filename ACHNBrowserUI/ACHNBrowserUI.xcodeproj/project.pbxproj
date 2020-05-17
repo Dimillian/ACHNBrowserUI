@@ -433,7 +433,7 @@
 		699425E9246927C50089C21B /* items_nl.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = items_nl.json; sourceTree = "<group>"; };
 		699425EA246927C50089C21B /* items_de.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = items_de.json; sourceTree = "<group>"; };
 		699425EB246927C50089C21B /* items_fr.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = items_fr.json; sourceTree = "<group>"; };
-		69AE062824683429006856E4 /* fr */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
+		69AE062824683429006856E4 /* fr */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; lineEnding = 0; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		69AF8C4D243E283D001DD9CB /* AC Helper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "AC Helper.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		69AF8C50243E283D001DD9CB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		69AF8C52243E283D001DD9CB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -1603,6 +1603,7 @@
 		69AF8C62243E2841001DD9CB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				APPLY_RULES_IN_COPY_FILES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = ACHNBrowserUI/ACHNBrowserUI.entitlements;
 				CODE_SIGN_STYLE = Automatic;
@@ -1619,6 +1620,7 @@
 				MARKETING_VERSION = 1.3.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.thomasricouard.ACNH;
 				PRODUCT_NAME = "AC Helper";
+				STRINGS_FILE_OUTPUT_ENCODING = "UTF-16";
 				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1628,6 +1630,7 @@
 		69AF8C63243E2841001DD9CB /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				APPLY_RULES_IN_COPY_FILES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = ACHNBrowserUI/ACHNBrowserUI.entitlements;
 				CODE_SIGN_STYLE = Automatic;
@@ -1644,6 +1647,7 @@
 				MARKETING_VERSION = 1.3.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.thomasricouard.ACNH;
 				PRODUCT_NAME = "AC Helper";
+				STRINGS_FILE_OUTPUT_ENCODING = "UTF-16";
 				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
