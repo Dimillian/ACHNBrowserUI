@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "69157B762471A5A1005B9002"
-               BuildableName = "ACHNBrowserUIStore.app"
+               BuildableName = "AC Helper.app"
                BlueprintName = "ACHNBrowserUIStore"
                ReferencedContainer = "container:ACHNBrowserUI.xcodeproj">
             </BuildableReference>
@@ -45,7 +45,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "69157B762471A5A1005B9002"
-            BuildableName = "ACHNBrowserUIStore.app"
+            BuildableName = "AC Helper.app"
             BlueprintName = "ACHNBrowserUIStore"
             ReferencedContainer = "container:ACHNBrowserUI.xcodeproj">
          </BuildableReference>
@@ -62,7 +62,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "69157B762471A5A1005B9002"
-            BuildableName = "ACHNBrowserUIStore.app"
+            BuildableName = "AC Helper.app"
             BlueprintName = "ACHNBrowserUIStore"
             ReferencedContainer = "container:ACHNBrowserUI.xcodeproj">
          </BuildableReference>

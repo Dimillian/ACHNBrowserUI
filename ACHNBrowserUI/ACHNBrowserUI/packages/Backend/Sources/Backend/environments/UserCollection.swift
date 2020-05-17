@@ -29,13 +29,29 @@ public class UserCollection: ObservableObject {
     private let encoder = JSONEncoder()
     private let decoder = JSONDecoder()
     
+    private static let recordType = "UserCollection"
+    private static let recordId = CKRecord.ID(recordName: "CurrentUserCollection")
+    private let cloudKitDatabase = CKContainer.default().privateCloudDatabase
+    private var currentRecord: CKRecord? = nil
+    
     public init() {
         do {
             filePath = try FileManager.default.url(for: .documentDirectory,
                                                    in: .userDomainMask,
                                                    appropriateFor: nil,
                                                    create: false).appendingPathComponent("collection")
-            _ = loadCollection(file: filePath)
+            _ = self.loadCollection(file: filePath)
+            
+            cloudKitDatabase.fetch(withRecordID: Self.recordId) { (record, error) in
+                self.currentRecord = record
+                if let asset = record?["data"] as? CKAsset,
+                    let url = asset.fileURL {
+                    DispatchQueue.main.async {
+                        _ = self.loadCollection(file: url)
+                    }
+                }
+            }
+            
         } catch let error {
             fatalError(error.localizedDescription)
         }
@@ -107,6 +123,23 @@ public class UserCollection: ObservableObject {
             let savedData = SavedData(items: items, villagers: villagers, critters: critters, lists: lists)
             let data = try encoder.encode(savedData)
             try data.write(to: filePath, options: .atomicWrite)
+            
+            if currentRecord == nil {
+                let record = CKRecord(recordType: Self.recordType,
+                                      recordID: Self.recordId)
+                let asset = CKAsset(fileURL: filePath)
+                record["data"] = asset
+                
+                cloudKitDatabase.save(record) { (_, error) in
+                    print(error?.localizedDescription ?? "")
+                }
+                
+            } else if let record = currentRecord {
+                record["data"] = CKAsset(fileURL: filePath)
+                let modified = CKModifyRecordsOperation(recordsToSave: [record], recordIDsToDelete: nil)
+                modified.savePolicy = .allKeys
+                cloudKitDatabase.add(modified)
+            }
         } catch let error {
             print("Error while saving collection: \(error.localizedDescription)")
         }
