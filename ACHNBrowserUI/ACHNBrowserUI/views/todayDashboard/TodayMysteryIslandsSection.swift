@@ -18,6 +18,7 @@ struct TodayMysteryIslandsSection: View {
                 Text("Take your chance and go visit some mystery island!")
                     .style(appStyle: .rowDescription)
                     .lineLimit(2)
+                    .frame(maxHeight: .infinity)
                     .padding(.top, 8)
                 randomIsland.map{ island in
                     NavigationLink(destination: MysteryIslandsList()) {
