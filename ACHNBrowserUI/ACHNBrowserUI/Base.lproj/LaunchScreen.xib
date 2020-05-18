@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="ACHelperLogo" translatesAutoresizingMaskIntoConstraints="NO" id="xqZ-YD-BbK">
+                    <rect key="frame" x="57" y="64" width="367" height="353"/>
+                </imageView>
+            </subviews>
+            <color key="backgroundColor" red="0.027450980392156862" green="0.57647058823529407" blue="0.35686274509803922" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="xqZ-YD-BbK" secondAttribute="bottom" constant="63" id="C0W-SD-xmd"/>
+                <constraint firstItem="xqZ-YD-BbK" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="64" id="M8f-I1-JbS"/>
+                <constraint firstItem="xqZ-YD-BbK" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="57" id="ixg-tQ-6eA"/>
+                <constraint firstAttribute="trailing" secondItem="xqZ-YD-BbK" secondAttribute="trailing" constant="56" id="waX-DM-jah"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <nil key="simulatedTopBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="508.80000000000001" y="445.27736131934034"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="ACHelperLogo" width="727" height="698"/>
+    </resources>
+</document>

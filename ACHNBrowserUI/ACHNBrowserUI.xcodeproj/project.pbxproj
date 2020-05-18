@@ -124,7 +124,6 @@
 		69157BF22471A5A1005B9002 /* simple-pink@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 02F2D3CD2455D81C009741DA /* simple-pink@2x.png */; };
 		69157BF32471A5A1005B9002 /* round-mint@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 02F2D3BC2455D81C009741DA /* round-mint@2x.png */; };
 		69157BF42471A5A1005B9002 /* simple-blue@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 02F2D3CF2455D81C009741DA /* simple-blue@2x.png */; };
-		69157BF52471A5A1005B9002 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 69AF8C5B243E2841001DD9CB /* LaunchScreen.storyboard */; };
 		69157BF62471A5A1005B9002 /* simple-cocoa@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 02F2D3BD2455D81C009741DA /* simple-cocoa@2x.png */; };
 		69157BF72471A5A1005B9002 /* construction in Resources */ = {isa = PBXBuildFile; fileRef = 69CFCA96245AAF520059C067 /* construction */; };
 		69157BF82471A5A1005B9002 /* round-blueberry@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 02F2D3DB2455D81C009741DA /* round-blueberry@3x.png */; };
@@ -249,6 +248,7 @@
 		69E4BBB6245AE5C9001035E2 /* ItemDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69E4BBB5245AE5C9001035E2 /* ItemDetailView.swift */; };
 		69E4BBB7245AE60C001035E2 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69AF8C7B243E4D29001DD9CB /* Color.swift */; };
 		69E4BBB8245AE60F001035E2 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 69AF8C79243E4C78001DD9CB /* Colors.xcassets */; };
+		CE15C8DF2472EC4B000BD7BD /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE15C8DD2472EC4B000BD7BD /* LaunchScreen.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -443,7 +443,6 @@
 		69AF8C54243E283D001DD9CB /* ItemsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsListView.swift; sourceTree = "<group>"; };
 		69AF8C56243E2841001DD9CB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		69AF8C59243E2841001DD9CB /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		69AF8C5C243E2841001DD9CB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		69AF8C5E243E2841001DD9CB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		69AF8C6C243E2A18001DD9CB /* ItemsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsViewModel.swift; sourceTree = "<group>"; };
 		69AF8C75243E3545001DD9CB /* SearchField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchField.swift; sourceTree = "<group>"; };
@@ -493,6 +492,7 @@
 		69E4BBB5245AE5C9001035E2 /* ItemDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailView.swift; sourceTree = "<group>"; };
 		69E4BBBA245B0BEF001035E2 /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
 		69EC82ED2461E79D00CE9064 /* TurnipsChartTopLegendView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TurnipsChartTopLegendView.swift; sourceTree = "<group>"; };
+		CE15C8DE2472EC4B000BD7BD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -864,8 +864,8 @@
 				69AF8C52243E283D001DD9CB /* SceneDelegate.swift */,
 				69AF8C56243E2841001DD9CB /* Assets.xcassets */,
 				02F2D3A62455D79E009741DA /* Alternate App Icons */,
-				69AF8C5B243E2841001DD9CB /* LaunchScreen.storyboard */,
 				69AF8C5E243E2841001DD9CB /* Info.plist */,
+				CE15C8DD2472EC4B000BD7BD /* LaunchScreen.xib */,
 				69AF8C58243E2841001DD9CB /* Preview Content */,
 				3DF14B2D24664B2600438646 /* Localizable.strings */,
 				3DB1260224686F0800E74AA5 /* InfoPlist.strings */,
@@ -1201,12 +1201,12 @@
 				69157BED2471A5A1005B9002 /* simple-lime@3x.png in Resources */,
 				69157BEE2471A5A1005B9002 /* round-mint@3x.png in Resources */,
 				69157BEF2471A5A1005B9002 /* bookmark-gold@2x.png in Resources */,
+				CE15C8DF2472EC4B000BD7BD /* LaunchScreen.xib in Resources */,
 				69157BF02471A5A1005B9002 /* round-cactus@3x.png in Resources */,
 				69157BF12471A5A1005B9002 /* simple-sky@3x.png in Resources */,
 				69157BF22471A5A1005B9002 /* simple-pink@2x.png in Resources */,
 				69157BF32471A5A1005B9002 /* round-mint@2x.png in Resources */,
 				69157BF42471A5A1005B9002 /* simple-blue@2x.png in Resources */,
-				69157BF52471A5A1005B9002 /* LaunchScreen.storyboard in Resources */,
 				69157BF62471A5A1005B9002 /* simple-cocoa@2x.png in Resources */,
 				69157BF72471A5A1005B9002 /* construction in Resources */,
 				69157BF82471A5A1005B9002 /* round-blueberry@3x.png in Resources */,
@@ -1469,20 +1469,20 @@
 			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
-		69AF8C5B243E2841001DD9CB /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				69AF8C5C243E2841001DD9CB /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
 		69CFCAD1245ADC7A0059C067 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				69CFCAD2245ADC7A0059C067 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		CE15C8DD2472EC4B000BD7BD /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CE15C8DE2472EC4B000BD7BD /* Base */,
+			);
+			name = LaunchScreen.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -1496,7 +1496,7 @@
 				CODE_SIGN_ENTITLEMENTS = ACHNBrowserUI/ACHNBrowserUI.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development: Thomas Ricouard (7MB55D6BJ5)";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 051832020;
+				CURRENT_PROJECT_VERSION = 051842020;
 				DEVELOPMENT_ASSET_PATHS = "\"ACHNBrowserUI/Preview Content\"";
 				DEVELOPMENT_TEAM = Z6P74P6T99;
 				ENABLE_PREVIEWS = YES;
@@ -1506,7 +1506,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.4;
+				MARKETING_VERSION = 1.4.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.thomasricouard.ACNH;
 				PRODUCT_NAME = "AC Helper";
 				PROVISIONING_PROFILE_SPECIFIER = "AC Dev";
@@ -1526,7 +1526,7 @@
 				CODE_SIGN_IDENTITY = "Apple Distribution";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Distribution";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 051832020;
+				CURRENT_PROJECT_VERSION = 051842020;
 				DEVELOPMENT_ASSET_PATHS = "\"ACHNBrowserUI/Preview Content\"";
 				DEVELOPMENT_TEAM = Z6P74P6T99;
 				ENABLE_PREVIEWS = YES;
@@ -1536,7 +1536,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.4;
+				MARKETING_VERSION = 1.4.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.thomasricouard.ACNH;
 				PRODUCT_NAME = "AC Helper";
 				PROVISIONING_PROFILE_SPECIFIER = "AC prod";
