@@ -32,13 +32,10 @@ struct TodayEventsSection: View {
                     }
                 }
 
-
-                Divider()
-
-                VStack(alignment: .leading) {
-                    subsectionHeader("Upcoming")
-
-                    if nextEvent.1 != nil && !todaysEvents.contains(nextEvent.1!) {
+                if nextEvent.1 != nil && !todaysEvents.contains(nextEvent.1!) {
+                    Divider()
+                    VStack(alignment: .leading) {
+                        subsectionHeader("Upcoming")
                         self.makeCell(event: nextEvent)
                     }
                 }

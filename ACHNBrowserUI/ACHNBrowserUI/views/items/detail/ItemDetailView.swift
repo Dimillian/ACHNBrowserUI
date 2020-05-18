@@ -224,7 +224,7 @@ struct ItemDetailView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
             ItemDetailView(item: static_item)
-                .environmentObject(UserCollection())
+                .environmentObject(UserCollection.shared)
         }
     }
 }
