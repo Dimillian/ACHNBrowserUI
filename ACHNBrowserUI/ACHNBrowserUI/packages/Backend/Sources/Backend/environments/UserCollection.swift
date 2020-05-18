@@ -17,6 +17,8 @@ public class UserCollection: ObservableObject {
     @Published public var villagers: [Villager] = []
     @Published public var critters: [Item] = []
     @Published public var lists: [UserList] = []
+    @Published public var isCloudEnabled = true
+    @Published public var isSynched = false
     
     struct SavedData: Codable {
         let items: [Item]
@@ -29,12 +31,12 @@ public class UserCollection: ObservableObject {
     private let encoder = JSONEncoder()
     private let decoder = JSONDecoder()
     
+    private static let recordZone = "UserZone"
     private static let recordType = "UserCollection"
     private static let recordId = CKRecord.ID(recordName: "CurrentUserCollection")
     private static let assetKey = "data"
     private let cloudKitDatabase = CKContainer.default().privateCloudDatabase
     private var currentRecord: CKRecord? = nil
-    private var isCloudEnabled = true
     
     public init() {
         do {
@@ -117,13 +119,15 @@ public class UserCollection: ObservableObject {
     private func checkiCloudStatus() {
         CKContainer.default().accountStatus { (status, error) in
             if error != nil || status != .available {
-                self.isCloudEnabled = false
+                DispatchQueue.main.async {
+                    self.isCloudEnabled = false
+                }
             }
         }
     }
     
     private func subscribeToCloudKit() {
-        let zone = CKRecordZone(zoneName: "UserZone")
+        let zone = CKRecordZone(zoneName: Self.recordZone)
         cloudKitDatabase.save(zone) { (_, _) in }
         
         cloudKitDatabase.fetchAllSubscriptions { (sub, _) in
@@ -157,7 +161,10 @@ public class UserCollection: ObservableObject {
             if let asset = record?[Self.assetKey] as? CKAsset,
                 let url = asset.fileURL {
                 DispatchQueue.main.async {
+                    self.isSynched = true
                     _ = self.loadCollection(file: url)
+                    try? FileManager.default.removeItem(at: self.filePath)
+                    try? FileManager.default.copyItem(at: url, to: self.filePath)
                 }
             }
         }
@@ -168,6 +175,9 @@ public class UserCollection: ObservableObject {
             record[Self.assetKey] = CKAsset(fileURL: filePath)
             let modified = CKModifyRecordsOperation(recordsToSave: [record], recordIDsToDelete: nil)
             modified.savePolicy = .allKeys
+            modified.completionBlock = {
+                self.isSynched = true
+            }
             cloudKitDatabase.add(modified)
         } else {
             let record = CKRecord(recordType: Self.recordType,
@@ -177,6 +187,7 @@ public class UserCollection: ObservableObject {
             
             cloudKitDatabase.save(record) { (record, error) in
                 self.currentRecord = record
+                self.isSynched = true
             }
         }
     }
@@ -189,6 +200,7 @@ public class UserCollection: ObservableObject {
             try data.write(to: filePath, options: .atomicWrite)
         
             if isCloudEnabled {
+                isSynched = false
                 saveToCloudKit()
             }
         } catch let error {
