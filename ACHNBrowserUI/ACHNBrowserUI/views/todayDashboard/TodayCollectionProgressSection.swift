@@ -28,7 +28,7 @@ struct TodayCollectionProgressSection: View {
 
     private func generateBody() -> some View {
         VStack(spacing: 4) {
-            if items.categories[.housewares]?.isEmpty == false {
+            if items.categories.keys.count == Category.allCases.count {
                 NavigationLink(destination: CollectionProgressDetailView()) {
                     VStack(spacing: 4) {
                         ForEach(Category.collectionCategories().prefix(4).map{ $0 }, id: \.self) { category in
