@@ -34,6 +34,7 @@ public class UserCollection: ObservableObject {
     private static let assetKey = "data"
     private let cloudKitDatabase = CKContainer.default().privateCloudDatabase
     private var currentRecord: CKRecord? = nil
+    private var isCloudEnabled = true
     
     public init() {
         do {
@@ -43,6 +44,7 @@ public class UserCollection: ObservableObject {
                                                    create: false).appendingPathComponent("collection")
             _ = self.loadCollection(file: filePath)
             
+            checkiCloudStatus()
             reloadFromCloudKit()
             subscribeToCloudKit()
                         
@@ -112,6 +114,14 @@ public class UserCollection: ObservableObject {
     }
     
     // MARK: - CloudKit
+    private func checkiCloudStatus() {
+        CKContainer.default().accountStatus { (status, error) in
+            if error != nil || status != .available {
+                self.isCloudEnabled = false
+            }
+        }
+    }
+    
     private func subscribeToCloudKit() {
         let sub = CKQuerySubscription(recordType: Self.recordType,
                                       predicate: NSPredicate(value: true),
@@ -158,8 +168,10 @@ public class UserCollection: ObservableObject {
             let savedData = SavedData(items: items, villagers: villagers, critters: critters, lists: lists)
             let data = try encoder.encode(savedData)
             try data.write(to: filePath, options: .atomicWrite)
-            
-            saveToCloudKit()
+        
+            if isCloudEnabled {
+                saveToCloudKit()
+            }
         } catch let error {
             print("Error while saving collection: \(error.localizedDescription)")
         }
