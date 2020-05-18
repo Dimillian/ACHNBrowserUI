@@ -2,7 +2,7 @@
     {
         "id": 0,
         "name": "Normal Island 1",
-        "chance": 9,
+        "chance": 10,
         "trees": "native",
         "flowers": "normal",
         "rocks": 4,
@@ -14,7 +14,7 @@
     {
         "id": 1,
         "name": "Normal Island 2",
-        "chance": 9,
+        "chance": 10,
         "trees": "native",
         "flowers": "normal",
         "rocks": 4,
@@ -26,7 +26,7 @@
     {
         "id": 2,
         "name": "Spiral Island",
-        "chance": 9,
+        "chance": 10,
         "trees": "native",
         "flowers": "normal",
         "rocks": 4,
@@ -38,7 +38,7 @@
     {
         "id": 4,
         "name": "Fidget Spinner Island",
-        "chance": 9,
+        "chance": 10,
         "trees": "native",
         "flowers": "normal",
         "rocks": 4,
@@ -50,7 +50,7 @@
     {
         "id": 6,
         "name": "Mountain Island",
-        "chance": 9,
+        "chance": 8,
         "trees": "native",
         "flowers": "normal",
         "rocks": 5,
@@ -96,23 +96,10 @@
         "description": "There are 19 fruit trees on this island and all will be your 'sister fruit'. This will be different from your native fruit - but every time you come here, it will be the same one."
     },
     {
-        "id": 11,
-        "max_visit": 1,
-        "name": "Flower Island",
-        "chance": 2,
-        "trees": "hardwood",
-        "flowers": "rare",
-        "rocks": 4,
-        "rocks_type": "normal",
-        "insects": "uncommon",
-        "fish": "normal",
-        "description": "This island has a pond surrounded by rare flowers and the only insects that will spawn are those that hang around flowers."
-    },
-    {
         "id": 12,
         "max_visit": 1,
         "name": "Bell Island 2",
-        "chance": 2,
+        "chance": 1,
         "trees": "native",
         "flowers": "normal",
         "rocks": 7,
@@ -148,19 +135,6 @@
         "description": "This island has no river or pond and has tons of hardwood and coconut trees, and the only insects that spawn are those that are associated with trees."
     },
     {
-        "id": 16,
-        "max_visit": 1,
-        "name": "Big fish Island",
-        "chance": 3,
-        "trees": "native",
-        "flowers": "rare",
-        "rocks": 4,
-        "rocks_type": "normal",
-        "insects": "uncommon",
-        "fish": "rare",
-        "description": "Big Fish Island. This island has rare hybrid flowers and the only fish available are larger ones, including some of the more rare ones."
-    },
-    {
         "id": 17,
         "max_visit": 1,
         "name": "Tree Island 2",
@@ -176,7 +150,7 @@
     {
         "id": 18,
         "name": "Curvy River Island",
-        "chance": 5,
+        "chance": 8,
         "trees": "native",
         "flowers": "normal",
         "rocks": 4,
@@ -189,7 +163,7 @@
         "id": 19,
         "max_visit": 1,
         "name": "Big Fish Island 2",
-        "chance": 2,
+        "chance": 3,
         "trees": "native",
         "flowers": "normal",
         "rocks": 4,
@@ -201,7 +175,7 @@
     {
         "id": 20,
         "name": "Trash Island",
-        "chance": 5,
+        "chance": 1,
         "trees": "native",
         "flowers": "normal",
         "rocks": 4,
@@ -226,7 +200,7 @@
     {
         "id": 23,
         "name": "Falls Island",
-        "chance": 5,
+        "chance": 10,
         "trees": "native",
         "flowers": "normal",
         "rocks": 4,
@@ -239,7 +213,7 @@
         "id": 24,
         "max_visit": 1,
         "name": "Gold Island",
-        "chance": 5,
+        "chance": 1,
         "trees": "native",
         "flowers": "normal",
         "rocks": 1,
