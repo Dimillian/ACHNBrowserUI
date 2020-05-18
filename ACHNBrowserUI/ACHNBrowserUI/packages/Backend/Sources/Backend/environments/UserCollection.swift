@@ -123,6 +123,25 @@ public class UserCollection: ObservableObject {
     }
     
     private func subscribeToCloudKit() {
+        let zone = CKRecordZone(zoneName: "UserZone")
+        cloudKitDatabase.save(zone) { (_, _) in }
+        
+        cloudKitDatabase.fetchAllSubscriptions { (sub, _) in
+            if let sub = sub?.first {
+                let notif = CKSubscription.NotificationInfo()
+                notif.shouldSendContentAvailable = true
+                sub.notificationInfo = notif
+                
+                let operation = CKModifySubscriptionsOperation(subscriptionsToSave: [sub],
+                                                               subscriptionIDsToDelete: nil)
+                self.cloudKitDatabase.add(operation)
+            } else {
+                self.createSubscription()
+            }
+        }
+    }
+    
+    private func createSubscription() {
         let sub = CKQuerySubscription(recordType: Self.recordType,
                                       predicate: NSPredicate(value: true),
                                       options: .firesOnRecordUpdate)
