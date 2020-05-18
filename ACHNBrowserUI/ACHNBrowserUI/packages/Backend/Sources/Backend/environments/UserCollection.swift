@@ -119,9 +119,7 @@ public class UserCollection: ObservableObject {
         let notif = CKSubscription.NotificationInfo()
         notif.shouldSendContentAvailable = true
         sub.notificationInfo = notif
-        cloudKitDatabase.save(sub) { (_, _) in
-            print("subscription saved")
-        }
+        cloudKitDatabase.save(sub) { (_, _) in }
     }
     
     public func reloadFromCloudKit() {
@@ -162,7 +160,6 @@ public class UserCollection: ObservableObject {
             try data.write(to: filePath, options: .atomicWrite)
             
             saveToCloudKit()
-            
         } catch let error {
             print("Error while saving collection: \(error.localizedDescription)")
         }
