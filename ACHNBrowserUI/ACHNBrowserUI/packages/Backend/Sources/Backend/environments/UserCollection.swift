@@ -11,8 +11,9 @@ import Combine
 import CloudKit
 
 public class UserCollection: ObservableObject {
-    public static let shared = UserCollection()
+    public static let shared = UserCollection(iCloudDisabled: false)
     
+    // MARK: - Published properties
     @Published public var items: [Item] = []
     @Published public var villagers: [Villager] = []
     @Published public var critters: [Item] = []
@@ -20,7 +21,8 @@ public class UserCollection: ObservableObject {
     @Published public var isCloudEnabled = true
     @Published public var isSynched = false
     
-    struct SavedData: Codable {
+    // MARK: - Private properties
+    private struct SavedData: Codable {
         let items: [Item]
         let villagers: [Villager]
         let critters: [Item]
@@ -35,10 +37,10 @@ public class UserCollection: ObservableObject {
     private static let recordType = "UserCollection"
     private static let recordId = CKRecord.ID(recordName: "CurrentUserCollection")
     private static let assetKey = "data"
-    private let cloudKitDatabase = CKContainer.default().privateCloudDatabase
+    private var cloudKitDatabase: CKDatabase? = nil
     private var currentRecord: CKRecord? = nil
     
-    public init() {
+    public init(iCloudDisabled: Bool) {
         do {
             filePath = try FileManager.default.url(for: .documentDirectory,
                                                    in: .userDomainMask,
@@ -46,15 +48,18 @@ public class UserCollection: ObservableObject {
                                                    create: false).appendingPathComponent("collection")
             _ = self.loadCollection(file: filePath)
             
-            checkiCloudStatus()
-            reloadFromCloudKit()
-            subscribeToCloudKit()
+            if !iCloudDisabled {
+                checkiCloudStatus()
+            } else {
+                isCloudEnabled = false
+            }
                         
         } catch let error {
             fatalError(error.localizedDescription)
         }
     }
-        
+    
+    // MARK: - Items management
     public func itemsIn(category: Category) -> Int {
         let items = Items.shared.categories[category] ?? []
         var caught = self.critters.count(where: { items.contains($0) } )
@@ -122,15 +127,19 @@ public class UserCollection: ObservableObject {
                 DispatchQueue.main.async {
                     self.isCloudEnabled = false
                 }
+            } else {
+                self.cloudKitDatabase = CKContainer.default().privateCloudDatabase
+                self.reloadFromCloudKit()
+                self.subscribeToCloudKit()
             }
         }
     }
     
     private func subscribeToCloudKit() {
         let zone = CKRecordZone(zoneName: Self.recordZone)
-        cloudKitDatabase.save(zone) { (_, _) in }
+        cloudKitDatabase?.save(zone) { (_, _) in }
         
-        cloudKitDatabase.fetchAllSubscriptions { (sub, _) in
+        cloudKitDatabase?.fetchAllSubscriptions { (sub, _) in
             if let sub = sub?.first {
                 let notif = CKSubscription.NotificationInfo()
                 notif.shouldSendContentAvailable = true
@@ -138,7 +147,7 @@ public class UserCollection: ObservableObject {
                 
                 let operation = CKModifySubscriptionsOperation(subscriptionsToSave: [sub],
                                                                subscriptionIDsToDelete: nil)
-                self.cloudKitDatabase.add(operation)
+                self.cloudKitDatabase?.add(operation)
             } else {
                 self.createSubscription()
             }
@@ -152,11 +161,11 @@ public class UserCollection: ObservableObject {
         let notif = CKSubscription.NotificationInfo()
         notif.shouldSendContentAvailable = true
         sub.notificationInfo = notif
-        cloudKitDatabase.save(sub) { (_, _) in }
+        cloudKitDatabase?.save(sub) { (_, _) in }
     }
     
     public func reloadFromCloudKit() {
-        cloudKitDatabase.fetch(withRecordID: Self.recordId) { (record, error) in
+        cloudKitDatabase?.fetch(withRecordID: Self.recordId) { (record, error) in
             self.currentRecord = record
             if let asset = record?[Self.assetKey] as? CKAsset,
                 let url = asset.fileURL {
@@ -176,16 +185,18 @@ public class UserCollection: ObservableObject {
             let modified = CKModifyRecordsOperation(recordsToSave: [record], recordIDsToDelete: nil)
             modified.savePolicy = .allKeys
             modified.completionBlock = {
-                self.isSynched = true
+                DispatchQueue.main.async {
+                    self.isSynched = true
+                }
             }
-            cloudKitDatabase.add(modified)
+            cloudKitDatabase?.add(modified)
         } else {
             let record = CKRecord(recordType: Self.recordType,
                                   recordID: Self.recordId)
             let asset = CKAsset(fileURL: filePath)
             record[Self.assetKey] = asset
             
-            cloudKitDatabase.save(record) { (record, error) in
+            cloudKitDatabase?.save(record) { (record, error) in
                 self.currentRecord = record
                 self.isSynched = true
             }
