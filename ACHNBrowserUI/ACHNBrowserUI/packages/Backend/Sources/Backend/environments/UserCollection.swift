@@ -8,6 +8,7 @@
 
 import Foundation
 import Combine
+import CloudKit
 
 public class UserCollection: ObservableObject {
     public static let shared = UserCollection()
@@ -28,18 +29,30 @@ public class UserCollection: ObservableObject {
     private let encoder = JSONEncoder()
     private let decoder = JSONDecoder()
     
+    private static let recordType = "UserCollection"
+    private static let recordId = CKRecord.ID(recordName: "CurrentUserCollection")
+    private static let assetKey = "data"
+    private let cloudKitDatabase = CKContainer.default().privateCloudDatabase
+    private var currentRecord: CKRecord? = nil
+    private var isCloudEnabled = true
+    
     public init() {
         do {
             filePath = try FileManager.default.url(for: .documentDirectory,
                                                    in: .userDomainMask,
                                                    appropriateFor: nil,
                                                    create: false).appendingPathComponent("collection")
-            _ = loadCollection(file: filePath)
+            _ = self.loadCollection(file: filePath)
+            
+            checkiCloudStatus()
+            reloadFromCloudKit()
+            subscribeToCloudKit()
+                        
         } catch let error {
             fatalError(error.localizedDescription)
         }
     }
-    
+        
     public func itemsIn(category: Category) -> Int {
         let items = Items.shared.categories[category] ?? []
         var caught = self.critters.count(where: { items.contains($0) } )
@@ -100,12 +113,84 @@ public class UserCollection: ObservableObject {
         save()
     }
     
+    // MARK: - CloudKit
+    private func checkiCloudStatus() {
+        CKContainer.default().accountStatus { (status, error) in
+            if error != nil || status != .available {
+                self.isCloudEnabled = false
+            }
+        }
+    }
+    
+    private func subscribeToCloudKit() {
+        let zone = CKRecordZone(zoneName: "UserZone")
+        cloudKitDatabase.save(zone) { (_, _) in }
+        
+        cloudKitDatabase.fetchAllSubscriptions { (sub, _) in
+            if let sub = sub?.first {
+                let notif = CKSubscription.NotificationInfo()
+                notif.shouldSendContentAvailable = true
+                sub.notificationInfo = notif
+                
+                let operation = CKModifySubscriptionsOperation(subscriptionsToSave: [sub],
+                                                               subscriptionIDsToDelete: nil)
+                self.cloudKitDatabase.add(operation)
+            } else {
+                self.createSubscription()
+            }
+        }
+    }
+    
+    private func createSubscription() {
+        let sub = CKQuerySubscription(recordType: Self.recordType,
+                                      predicate: NSPredicate(value: true),
+                                      options: .firesOnRecordUpdate)
+        let notif = CKSubscription.NotificationInfo()
+        notif.shouldSendContentAvailable = true
+        sub.notificationInfo = notif
+        cloudKitDatabase.save(sub) { (_, _) in }
+    }
+    
+    public func reloadFromCloudKit() {
+        cloudKitDatabase.fetch(withRecordID: Self.recordId) { (record, error) in
+            self.currentRecord = record
+            if let asset = record?[Self.assetKey] as? CKAsset,
+                let url = asset.fileURL {
+                DispatchQueue.main.async {
+                    _ = self.loadCollection(file: url)
+                }
+            }
+        }
+    }
+    
+    private func saveToCloudKit() {
+        if let record = currentRecord {
+            record[Self.assetKey] = CKAsset(fileURL: filePath)
+            let modified = CKModifyRecordsOperation(recordsToSave: [record], recordIDsToDelete: nil)
+            modified.savePolicy = .allKeys
+            cloudKitDatabase.add(modified)
+        } else {
+            let record = CKRecord(recordType: Self.recordType,
+                                  recordID: Self.recordId)
+            let asset = CKAsset(fileURL: filePath)
+            record[Self.assetKey] = asset
+            
+            cloudKitDatabase.save(record) { (record, error) in
+                self.currentRecord = record
+            }
+        }
+    }
+    
     // MARK: - Import / Export
     private func save() {
         do {
             let savedData = SavedData(items: items, villagers: villagers, critters: critters, lists: lists)
             let data = try encoder.encode(savedData)
             try data.write(to: filePath, options: .atomicWrite)
+        
+            if isCloudEnabled {
+                saveToCloudKit()
+            }
         } catch let error {
             print("Error while saving collection: \(error.localizedDescription)")
         }
