@@ -13,15 +13,15 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ACHelperLogo" translatesAutoresizingMaskIntoConstraints="NO" id="MzG-c9-Oyq">
-                    <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
+                    <rect key="frame" x="40" y="40" width="400" height="400"/>
                 </imageView>
             </subviews>
             <color key="backgroundColor" red="0.027450980392156862" green="0.57647058823529407" blue="0.35686274509803922" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="MzG-c9-Oyq" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="Ohh-Wp-6NQ"/>
-                <constraint firstAttribute="bottom" secondItem="MzG-c9-Oyq" secondAttribute="bottom" id="bFN-2y-cRN"/>
-                <constraint firstItem="MzG-c9-Oyq" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="fo6-qJ-NMe"/>
-                <constraint firstAttribute="trailing" secondItem="MzG-c9-Oyq" secondAttribute="trailing" id="vGI-Yu-C4b"/>
+                <constraint firstAttribute="trailing" secondItem="MzG-c9-Oyq" secondAttribute="trailing" constant="40" id="X2i-XF-r8e"/>
+                <constraint firstItem="MzG-c9-Oyq" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="40" id="Zdg-Ws-ymk"/>
+                <constraint firstAttribute="bottom" secondItem="MzG-c9-Oyq" secondAttribute="bottom" constant="40" id="py6-CP-BJy"/>
+                <constraint firstItem="MzG-c9-Oyq" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="40" id="w95-AM-ZAG"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <nil key="simulatedTopBarMetrics"/>
