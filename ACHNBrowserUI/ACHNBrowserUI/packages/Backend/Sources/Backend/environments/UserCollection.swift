@@ -43,21 +43,14 @@ public class UserCollection: ObservableObject {
                                                    create: false).appendingPathComponent("collection")
             _ = self.loadCollection(file: filePath)
             
-            cloudKitDatabase.fetch(withRecordID: Self.recordId) { (record, error) in
-                self.currentRecord = record
-                if let asset = record?[Self.assetKey] as? CKAsset,
-                    let url = asset.fileURL {
-                    DispatchQueue.main.async {
-                        _ = self.loadCollection(file: url)
-                    }
-                }
-            }
-            
+            reloadFromCloudKit()
+            subscribeToCloudKit()
+                        
         } catch let error {
             fatalError(error.localizedDescription)
         }
     }
-    
+        
     public func itemsIn(category: Category) -> Int {
         let items = Items.shared.categories[category] ?? []
         var caught = self.critters.count(where: { items.contains($0) } )
@@ -118,6 +111,49 @@ public class UserCollection: ObservableObject {
         save()
     }
     
+    // MARK: - CloudKit
+    private func subscribeToCloudKit() {
+        let sub = CKQuerySubscription(recordType: Self.recordType,
+                                      predicate: NSPredicate(value: true),
+                                      options: .firesOnRecordUpdate)
+        let notif = CKSubscription.NotificationInfo()
+        notif.shouldSendContentAvailable = true
+        sub.notificationInfo = notif
+        cloudKitDatabase.save(sub) { (_, _) in
+            print("subscription saved")
+        }
+    }
+    
+    public func reloadFromCloudKit() {
+        cloudKitDatabase.fetch(withRecordID: Self.recordId) { (record, error) in
+            self.currentRecord = record
+            if let asset = record?[Self.assetKey] as? CKAsset,
+                let url = asset.fileURL {
+                DispatchQueue.main.async {
+                    _ = self.loadCollection(file: url)
+                }
+            }
+        }
+    }
+    
+    private func saveToCloudKit() {
+        if let record = currentRecord {
+            record[Self.assetKey] = CKAsset(fileURL: filePath)
+            let modified = CKModifyRecordsOperation(recordsToSave: [record], recordIDsToDelete: nil)
+            modified.savePolicy = .allKeys
+            cloudKitDatabase.add(modified)
+        } else {
+            let record = CKRecord(recordType: Self.recordType,
+                                  recordID: Self.recordId)
+            let asset = CKAsset(fileURL: filePath)
+            record[Self.assetKey] = asset
+            
+            cloudKitDatabase.save(record) { (record, error) in
+                self.currentRecord = record
+            }
+        }
+    }
+    
     // MARK: - Import / Export
     private func save() {
         do {
@@ -125,21 +161,8 @@ public class UserCollection: ObservableObject {
             let data = try encoder.encode(savedData)
             try data.write(to: filePath, options: .atomicWrite)
             
-            if let record = currentRecord {
-                record[Self.assetKey] = CKAsset(fileURL: filePath)
-                let modified = CKModifyRecordsOperation(recordsToSave: [record], recordIDsToDelete: nil)
-                modified.savePolicy = .allKeys
-                cloudKitDatabase.add(modified)
-            } else {
-                let record = CKRecord(recordType: Self.recordType,
-                                      recordID: Self.recordId)
-                let asset = CKAsset(fileURL: filePath)
-                record[Self.assetKey] = asset
-                
-                cloudKitDatabase.save(record) { (record, error) in
-                    self.currentRecord = record
-                }
-            }
+            saveToCloudKit()
+            
         } catch let error {
             print("Error while saving collection: \(error.localizedDescription)")
         }

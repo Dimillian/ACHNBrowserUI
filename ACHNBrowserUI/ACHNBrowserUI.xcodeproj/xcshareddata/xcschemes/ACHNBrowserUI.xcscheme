@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "69AF8C4C243E283D001DD9CB"
+               BlueprintIdentifier = "69157B762471A5A1005B9002"
                BuildableName = "AC Helper.app"
                BlueprintName = "ACHNBrowserUI"
                ReferencedContainer = "container:ACHNBrowserUI.xcodeproj">
@@ -44,7 +44,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "69AF8C4C243E283D001DD9CB"
+            BlueprintIdentifier = "69157B762471A5A1005B9002"
             BuildableName = "AC Helper.app"
             BlueprintName = "ACHNBrowserUI"
             ReferencedContainer = "container:ACHNBrowserUI.xcodeproj">
@@ -61,7 +61,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "69AF8C4C243E283D001DD9CB"
+            BlueprintIdentifier = "69157B762471A5A1005B9002"
             BuildableName = "AC Helper.app"
             BlueprintName = "ACHNBrowserUI"
             ReferencedContainer = "container:ACHNBrowserUI.xcodeproj">
