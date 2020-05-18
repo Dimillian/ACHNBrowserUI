@@ -28,10 +28,11 @@ public struct Villager: Identifiable, Codable, Equatable {
     public let species: String
     
     public var localizedName: String { 
-        guard let languageCode = Locale.preferredLanguages.first?.prefix(2).lowercased(),
-            let localizedName = self.name["name-\(languageCode == "ja" ? "jp" : languageCode)"]
+        guard let languageCode = Locale.current.languageCode,
+            let key = self.name.keys.first(where: { $0.suffix(2) == languageCode }),
+            let localizedName = self.name[key]
             else {
-                return self.name["name-en"] ?? ""
+                return self.name["name-en"] ?? self.name["name-USen"] ?? ""
         }
         
         return localizedName
