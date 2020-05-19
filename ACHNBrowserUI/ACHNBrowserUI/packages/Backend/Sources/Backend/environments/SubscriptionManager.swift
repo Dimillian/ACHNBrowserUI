@@ -17,7 +17,8 @@ public class SubscriptionManager: ObservableObject {
         case subscribed, notSubscribed
     }
     
-    @Published public var subscription: Purchases.Package?
+    @Published public var monthlySubscription: Purchases.Package?
+    @Published public var yearlySubscription: Purchases.Package?
     @Published public var lifetime: Purchases.Package?
     @Published public var inPaymentProgress = false
     @Published public var paymentStatus: SKPaymentTransactionState?
@@ -26,8 +27,9 @@ public class SubscriptionManager: ObservableObject {
     init() {        
         Purchases.configure(withAPIKey: "glVAIPplNhAuvgOlCcUcrEaaCQwLRzQs")
         Purchases.shared.offerings { (offerings, error) in
-            self.subscription = offerings?.current?.monthly
+            self.monthlySubscription = offerings?.current?.monthly
             self.lifetime = offerings?.current?.lifetime
+            self.yearlySubscription = offerings?.current?.annual
         }
         refreshSubscription()
     }
