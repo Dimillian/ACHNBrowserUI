@@ -27,12 +27,4 @@ final class CollectionTests: XCTestCase {
         _ = collection.toggleVillager(villager: static_villager)
         XCTAssert(collection.villagers.isEmpty, "villagers should be empty")
     }
-    
-    func testUserCollectionIntegrity() {
-        _ = collection.toggleVillager(villager: static_villager)
-        XCTAssert(collection.villagers.count == 1, "villagers should have one item")
-        
-        let newCollection = UserCollection(iCloudDisabled: true)
-        XCTAssert(newCollection.villagers.count == 1, "The decoded collection should be thes same as the one saved")
-    }
 }

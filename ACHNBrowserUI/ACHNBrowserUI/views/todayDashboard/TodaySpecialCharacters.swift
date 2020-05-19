@@ -7,9 +7,12 @@
 //
 
 import SwiftUI
+import SwiftUIKit
 import Backend
 
 struct TodaySpecialCharacters: View {
+    @State private var selectedCharacter: SpecialCharacters?
+    
     private var timeString: String {
         let f = DateFormatter()
         f.setLocalizedDateFormatFromTemplate("HH:mm")
@@ -31,14 +34,16 @@ struct TodaySpecialCharacters: View {
     
     var body: some View {
         Section(header: SectionHeaderView(text: "Possible visitors", icon: "clock")) {
-            VStack(alignment: .leading) {
-                timeCard
-                    .padding(.leading)
-                    .padding(.trailing)
-                
-                charactersCard
-            }
-            .listRowInsets(EdgeInsets())
+            ZStack {
+                VStack(alignment: .leading) {
+                    timeCard
+                        .padding(.leading)
+                        .padding(.trailing)
+                    
+                    charactersCard
+                }
+                selectedCharacterPopup
+            }.listRowInsets(EdgeInsets())
         }
     }
     
@@ -77,11 +82,44 @@ struct TodaySpecialCharacters: View {
                         .resizable()
                         .aspectRatio(contentMode: .fit)
                         .frame(width: 50, height: 50)
+                        .onTapGesture {
+                            withAnimation(.spring(response: 0.30, dampingFraction: 0.6, blendDuration: 0)) {
+                                self.selectedCharacter = character
+                            }
+                    }
                 }
             }
             .padding(.leading)
             .padding(.trailing)
         }.padding(.bottom)
+    }
+    
+    private var selectedCharacterPopup: some View {
+        Group {
+            if selectedCharacter != nil {
+                VStack(spacing: 12) {
+                    Text(selectedCharacter!.rawValue.capitalized)
+                        .style(appStyle: .sectionHeader)
+                    Text(selectedCharacter!.timeOfTheDay())
+                        .style(appStyle: .rowDetail)
+                    Button(action: {
+                        self.selectedCharacter = nil
+                    }){
+                        Text("Close")
+                            .fontWeight(.semibold)
+                            .foregroundColor(.white)
+                    }
+                    .buttonStyle(PlainRoundedButton())
+                    .accentColor(.acTabBarTint)
+                }
+                .frame(width: 200)
+                .padding(16)
+                .background(Color.acText.opacity(0.95).cornerRadius(16))
+                .transition(.scale)
+            } else {
+                EmptyView()
+            }
+        }
     }
 }
 

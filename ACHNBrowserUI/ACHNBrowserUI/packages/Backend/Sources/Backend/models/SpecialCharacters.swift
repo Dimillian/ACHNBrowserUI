@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SwiftUI
 
 public enum SpecialCharacters: String, CaseIterable {
     case kk, daisy, cj, flick, kicks, saharah, gulliver, label, leif, redd, wisp, celeste
@@ -31,5 +32,18 @@ public enum SpecialCharacters: String, CaseIterable {
     
     private static func standard() -> [SpecialCharacters] {
         return [.saharah, .leif, .kicks, .redd, .label, .gulliver, .cj, .flick]
+    }
+    
+    public func timeOfTheDay() -> LocalizedStringKey {
+        switch self {
+        case .kk, .cj, .flick, .kicks, .gulliver, .label, .redd, .leif, .saharah:
+            return LocalizedStringKey("All day")
+        case .celeste:
+            return LocalizedStringKey("From 6pm to 5am")
+        case .wisp:
+            return LocalizedStringKey("From 8pm to 5am")
+        case .daisy:
+            return LocalizedStringKey("From 5am to 12pm")
+        }
     }
 }
