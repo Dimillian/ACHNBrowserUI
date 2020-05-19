@@ -734,7 +734,7 @@ Du kannst das Abonnement jederzeit in deinen iTunes Kontoeinstellungen beenden. 
 "Normal Island 1" = "Normale Insel 1";
 "Normal Island 2" = "Normale Insel 2";
 "Spiral Island" = "Spiral-Insel";
-"Fidget Spinner Island" = "Fidget-Spinner-Insel;
+"Fidget Spinner Island" = "Fidget-Spinner-Insel";
 "Mountain Island" = "Berg-Insel";
 "Bells Island" = "Sterni-Insel";
 "Bamboo Island" = "Bambus-Insel";
@@ -773,3 +773,7 @@ Du kannst das Abonnement jederzeit in deinen iTunes Kontoeinstellungen beenden. 
 "A rectangular pond with rectangular cliffs inside, the tallest one being too tall to climb up to. The only fish that spawn here are the largest finned fish." = "Ein rechteckiger Teich mit einer rechteckigen Insel mit rechteckigen Klippen. Hier gibt es ausschließlich große Fische die nur in Teichen erscheinen.";
 "Lots of cliffs, waterfalls and river forks. Normal resource spawns." = "Viele Klippen, Wasserfälle und Flussverzweigungen. Die verkommenden Ressourcen sind normal.";
 "A very rare island with flowers, scorpions and a rectangular pond. If you climb up onto the cliff and climb down from the back, you can vault over to a tiny island in the middle and get 8 gold nuggets from a single rock." = "Eine sehr seltene Insel mit Blumen, Skorpionen und einem rechteckigen Teich. Wenn du die Klippe hinauf kletters und auf der Rückseite wieder herunter, kannst du mit dem Sprungstab eine kleine Insel erreichen auf der du vom Fels 8 Golderz bekommst.";
+
+"Possible visitors" = "Mögliche Besucher";
+"On" = "Au";
+" your island" = " deiner Insel";
