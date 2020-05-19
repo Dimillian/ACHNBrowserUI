@@ -220,6 +220,7 @@
 		69157C522471A5A1005B9002 /* round-blue@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 02F2D3B52455D81C009741DA /* round-blue@2x.png */; };
 		69157C532471A5A1005B9002 /* tools in Resources */ = {isa = PBXBuildFile; fileRef = 69CFCA86245AAF520059C067 /* tools */; };
 		69157C5C2471A5C1005B9002 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69157C5B2471A5C1005B9002 /* CloudKit.framework */; };
+		693352842473C4B5007EF9AB /* TodaySpecialCharacters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 693352832473C4B5007EF9AB /* TodaySpecialCharacters.swift */; };
 		69CFCAC9245ADC780059C067 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69CFCAC8245ADC780059C067 /* AppDelegate.swift */; };
 		69CFCACD245ADC7A0059C067 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 69CFCACC245ADC7A0059C067 /* Assets.xcassets */; };
 		69CFCAD0245ADC7A0059C067 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 69CFCACF245ADC7A0059C067 /* Preview Assets.xcassets */; };
@@ -391,6 +392,7 @@
 		69157B7424712769005B9002 /* MysteryIslandDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MysteryIslandDetail.swift; sourceTree = "<group>"; };
 		69157C582471A5A1005B9002 /* AC Helper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "AC Helper.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		69157C5B2471A5C1005B9002 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
+		693352832473C4B5007EF9AB /* TodaySpecialCharacters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodaySpecialCharacters.swift; sourceTree = "<group>"; };
 		693E0B1C244C315B00D20E46 /* DashboardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewModel.swift; sourceTree = "<group>"; };
 		693E0B21244C596D00D20E46 /* ActiveCrittersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveCrittersView.swift; sourceTree = "<group>"; };
 		693E2BBD2465B65D00B85CB8 /* RowLoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RowLoadingView.swift; sourceTree = "<group>"; };
@@ -538,6 +540,7 @@
 				693E2BC524668D8E00B85CB8 /* TodayWhatsNewSection.swift */,
 				693E2BC924669D2800B85CB8 /* TodaySubscribeSection.swift */,
 				69157B6D247121ED005B9002 /* TodayMysteryIslandsSection.swift */,
+				693352832473C4B5007EF9AB /* TodaySpecialCharacters.swift */,
 			);
 			path = todayDashboard;
 			sourceTree = "<group>";
@@ -1416,6 +1419,7 @@
 				69157BC82471A5A1005B9002 /* TurnipsChartMinMaxCurves.swift in Sources */,
 				69157BC92471A5A1005B9002 /* TurnipsChartGrid.swift in Sources */,
 				69157BCA2471A5A1005B9002 /* CollectionRowView.swift in Sources */,
+				693352842473C4B5007EF9AB /* TodaySpecialCharacters.swift in Sources */,
 				69157BCB2471A5A1005B9002 /* SearchField.swift in Sources */,
 				69157BCC2471A5A1005B9002 /* CollectionProgressDetailView.swift in Sources */,
 				69157BCD2471A5A1005B9002 /* AppIconPickerView.swift in Sources */,
