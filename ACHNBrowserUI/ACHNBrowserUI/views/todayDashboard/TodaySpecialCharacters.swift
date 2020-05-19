@@ -64,8 +64,10 @@ struct TodaySpecialCharacters: View {
                     .aspectRatio(contentMode: .fit)
                     .frame(width: 25)
                     .foregroundColor(.acHeaderBackground)
-                Text(timeString).style(appStyle: .rowDetail)
+                Text(timeString)
+                    .style(appStyle: .rowDetail)
             }
+            .frame(width: 90)
             .padding(16)
             .background(Color.acText.opacity(0.2))
             .mask(RoundedRectangle(cornerRadius: 16, style: .continuous))
