@@ -3,7 +3,6 @@
   ACHNBrowserUI
 
 
-  Created by MrOgeid on 10.05.20.
   Copy template from de.lproj/Localizable.strings
  
 */
@@ -266,104 +265,104 @@ Puoi annullare il tuo abbonamento in ogni momento dalle impostazioni del tuo acc
 "Add your in game prices" = "Aggiungi prezzi del gioco";
 "Turnips prediction" = "Previsioni rape";
 "To help us support the application and get turnip predictions notification, you can try out AC Helper+" = "Per aiutarci a supportare l’app e avere le notifiche con le previsioni rape puoi provare AC Helper+";
-"%lld upcomingDailyNotifications" = "Du bekommst Verkaufspreis Prognosen in noch %lld weiteren täglichen Benachrichtigungen.";
-"Profits estimates are computed using the average of the current period" = "Die Profite werden auf Basis des durchschnittlichen Preises der jeweiligen Periode berechnet";
-"Day" = "Tag";
-"AM" = "Vorm.";
-"PM" = "Nachm.";
-"Please add the amount of turnips you bought and for how much" = "Bitte trag ein, wie viele Rüben du gekauft hast und zu welchem Preis";
-"Add your in game turnip prices to see the predictions chart" = "Um das Prognose-Diagramm sehen zu können, trag die Verkaufspreise für Rüben ein";
-"Add your in game turnip prices to see predictions" = "Trag die Rüben-Verkaufspreise ein um eine Prognose sehen zu können";
-"Exchange" = "Wechselkurs";
+"%lld upcomingDailyNotifications" = "Riceverai %lld notifiche.";
+"Profits estimates are computed using the average of the current period" = "I profitti sono calcolati usando la media del periodo attuale";
+"Day" = "Giorno";
+"AM" = "AM";
+"PM" = "PM";
+"Please add the amount of turnips you bought and for how much" = "Per favore aggiungi quante rape hai acquistato e a quanto";
+"Add your in game turnip prices to see the predictions chart" = "Aggiungi il prezzo delle rape per vedere il grafico con la previsione";
+"Add your in game turnip prices to see predictions" = "Aggiungi il prezzo delle rape per vedere le previsioni";
+"Exchange" = "Scambio";
 // TurnipsFormView
-"Monday" = "Montag";
-"Tuesday" = "Dienstag";
-"Wednesday" = "Mittwoch";
-"Thursday" = "Donnerstag";
-"Friday" = "Freitag";
-"Saturday" = "Samstag";
-"Add your turnip prices" = "Füge deine Rüben Verkaufspreise hinzu";
-"Configuration" = "Konfiguration";
-"Clear all fields" = "Alle Felder leeren";
-"Receive prices predictions notification" = "Erhalte Benachrichtigungen zu Verkaufspreis Prognosen";
-"You can get daily notifications for your average turnip price by subscribing to AC Helper+" = "Mit einem AC Helper+ Abonnement erhältst du tägich Benachrichtigungen zum durchschnittlichen Rüben Verkaufspreis";
-"Preview a notification" = "Zeige Vorschau-Benachrichtigung";
-"Your in game prices" = "Deine Preise";
-"Buy price" = "Kaufpreis";
-"Amount bought" = "Gekaufte Menge";
-"The more in game buy prices you'll add the better the predictions will be. Your buy price only won't give your correct averages. Add prices from the game as you get them daily." = "Je mehr Verkaufspreise du einträgst, um so genauer kann die Prognose sein. Der Einkaufspreis alleine kann keine gute Prognose liefern. Trag also am besten täglich die Verkaufspreise ein.";
+"Monday" = "Lunedì";
+"Tuesday" = "Martedì";
+"Wednesday" = "Mercoledì";
+"Thursday" = "Giovedì";
+"Friday" = "Venerdì";
+"Saturday" = "Sabato";
+"Add your turnip prices" = "Aggiungi prezzo delle rape";
+"Configuration" = "Configurazione";
+"Clear all fields" = "Reimposta tutti i campi";
+"Receive prices predictions notification" = "Ricevi notifiche con previsione dei prezzi";
+"You can get daily notifications for your average turnip price by subscribing to AC Helper+" = "Puoi ricevere notifiche con le previsioni dei prezzi abbonandoti a AC Helper+";
+"Preview a notification" = "Anteprima notifica";
+"Your in game prices" = "I tuoi prezzi";
+"Buy price" = "Prezzo acquisto";
+"Amount bought" = "Quantità comprate";
+"The more in game buy prices you'll add the better the predictions will be. Your buy price only won't give your correct averages. Add prices from the game as you get them daily." = "Più prezzi giornalieri aggiungi più le previsioni saranno precise. Inserendo solo il prezzo di acquisto non avrai la media corretta. Aggiungi i prezzi delle rape ogni giorno.";
 // TurnipsChartTopLegendView
-"Average" = "Durchschnitt";
-"Minimum" = "Minimum";
+"Average" = "Media";
+"Minimum" = "Minimo";
 "MinMax" = "MinMax";
 
 // IslandDetailView
-"Join Island" = "Insel beitreten";
-"Island" = "Insel";
-"Description" = "Beschreibung";
-"Visitors" = "Besucher";
-"Loading Visitors...." = "Lade Besucher....";
+"Join Island" = "Unisciti all'isola";
+"Island" = "Isola";
+"Description" = "Descrizione";
+"Visitors" = "Visitatori";
+"Loading Visitors...." = "Caricamento visitatori...";
 
 // VillagersListView
-"Search a villager" = "Suche einen Bewohner";
-"Personality" = "Persönlichkeit";
-"Birthday" = "Geburtstag";
-"Species" = "Spezies";
-"Gender" = "Geschlecht";
-"Catch phrase" = "Schlagwort";
-"Unknown" = "Unbekannt";
-"Villager items" = "Gegenstände des Bewohners";
+"Search a villager" = "Cerca un abitante";
+"Personality" = "Carattere";
+"Birthday" = "Compleanno";
+"Species" = "Specie";
+"Gender" = "Genere";
+"Catch phrase" = "Intercalare";
+"Unknown" = "Sconosciuto";
+"Villager items" = "Oggetti abitante";
 // VillagersDetailView
-"Unkown" = "Unbekannt";
-"Lazy" = "Schlafmütze";
-"Jock" = "Sportlich";
-"Cranky" = "Miesepeter";
-"Smug" = "Selbstzufrieden";
-"Normal" = "Ausgeglichen";
-"Peppy" = "Schwungvoll";
-"Snooty" = "Hochnäsig";
-"Uchi" = "Große Schwester";
-"Male" = "Männlich";
-"Female" = "Weiblich";
-"Alligator" = "Krokodil";
-"Anteater" = "Ameisenbär";
-"Bear" = "Bär";
-"Bird" = "Vogel";
-"Bull" = "Stier";
-"Cat" = "Katze";
-"Chicken" = "Huhn";
-"Cow" = "Kuh";
-"Cub" = "Teddybär";
-"Deer" = "Reh";
-"Dog" = "Hund";
-"Duck" = "Ente";
-"Eagle" = "Adler";
-"Elephant" = "Elefant";
-"Frog" = "Frosch";
-"Goat" = "Ziege";
+"Unkown" = "Sconosciuto";
+"Lazy" = "Pigro";
+"Jock" = "Sportivo";
+"Cranky" = "Bisbetico";
+"Smug" = "Spavaldo";
+"Normal" = "Normale";
+"Peppy" = "Solare";
+"Snooty" = "Snob";
+"Uchi" = "Gentile";
+"Male" = "Maschio";
+"Female" = "Femmina";
+"Alligator" = "Coccodrillo";
+"Anteater" = "Formichiere";
+"Bear" = "Orso";
+"Bird" = "Uccello";
+"Bull" = "Toro";
+"Cat" = "Gatto";
+"Chicken" = "Gallo";
+"Cow" = "Mucca";
+"Cub" = "Orsetto";
+"Deer" = "Cervo";
+"Dog" = "Cane";
+"Duck" = "Anatra";
+"Eagle" = "Aquila";
+"Elephant" = "Elefante";
+"Frog" = "Rana";
+"Goat" = "Capra";
 "Gorilla" = "Gorilla";
-"Hamster" = "Hamster";
-"Hippo" = "Nielpferd";
-"Horse" = "Pferd";
-"Kangaroo" = "Känguru";
+"Hamster" = "Criceto";
+"Hippo" = "Ippopotamo";
+"Horse" = "Cavallo";
+"Kangaroo" = "Canguro";
 "Koala" = "Koala";
-"Lion" = "Löwe";
-"Monkey" = "Affe";
-"Mouse" = "Maus";
-"Octopus" = "Oktopus";
-"Ostrich" = "Strauß";
-"Penguin" = "Pinguin";
-"Pig" = "Schwein";
-"Rabbit" = "Hase";
-"Rhino" = "Nashorn";
-"Sheep" = "Schaf";
-"Squirrel" = "Eichhörnchen";
-"Tiger" = "Tieger";
-"Wolf" = "Wolf";
+"Lion" = "Leone";
+"Monkey" = "Scimmia";
+"Mouse" = "Topo";
+"Octopus" = "Polpo";
+"Ostrich" = "Struzzo";
+"Penguin" = "Pinguino";
+"Pig" = "Maiale";
+"Rabbit" = "Coniglio";
+"Rhino" = "Rinoceronte";
+"Sheep" = "Pecora";
+"Squirrel" = "Scoiattolo";
+"Tiger" = "Tigre";
+"Wolf" = "Lupo";
 
 // ListingRow
-"Make an Offer" = "Angebot abgeben";
-"Need Materials" = "Benötigt Materialien";
+"Make an Offer" = "Fai un'offerta";
+"Need Materials" = "Necessita materiali";
 
 // CategoryRow
 "housewares" = "Haushaltswaren";
