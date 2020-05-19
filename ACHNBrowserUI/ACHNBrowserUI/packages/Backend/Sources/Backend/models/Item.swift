@@ -41,7 +41,7 @@ public struct Item: Codable, Equatable, Identifiable, Hashable {
     
     public var localizedName: String {
         if let id = internalID {
-            return LocalizedItemService.shared.localizedNameFor(itemId: id) ?? name
+            return LocalizedItemService.shared.localizedNameFor(category: appCategory, itemId: id) ?? name
         }
         return name
     }
