@@ -43,8 +43,11 @@ public struct LocalizedItemService {
         self.localizationDYI = tables.1
     }
     
-    public func localizedNameFor(itemId: Int) -> String? {
-        return localizationItems[itemId]?.name ?? localizationDYI[itemId]?.name
+    public func localizedNameFor(category: Category, itemId: Int) -> String? {
+        if category == .recipes {
+            return localizationDYI[itemId]?.name
+        }
+        return localizationItems[itemId]?.name
     }
     
     private func loadCurrentLocalization() -> ([Int: LocalizedItem], [Int: LocalizedItem]) {
