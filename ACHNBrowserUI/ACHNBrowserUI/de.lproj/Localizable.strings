@@ -93,7 +93,7 @@ Je mehr Ankaufspreise du in der App ab montags morgens speicherst, um so genauer
 Über die Listen-Funktion:
 Ohne Abonnement kannst du nur eine Liste mit Gegenständen im \"Meine Sachen\" Register erstellen.
 Wenn du dir AC Helper+ holst, kannst du beliebig viele Listen erstellen und unterschiedlich befüllen.";
-"ACHelperPlusPriceAndAboDetail %@" = "Ein monatliches Abo über %@ pro Monat wird nach der Bestätigung deinem iTunes Konto hinzugefügt.
+"ACHelperPlusPriceAndAboDetail %@ %@" = "Ein monatliches Abo über %@ pro Monat wird nach der Bestätigung deinem iTunes Konto hinzugefügt.
 Das Abonnement verlängert sich automatisch, solange es nicht bis 24 Stunden vor der nächsten Verlängerung beendet wird.
 Du kannst das Abonnement jederzeit in deinen iTunes Kontoeinstellungen beenden. Jeder nicht genutzte Teil einer kostenlosen Testversion verfällt, wenn du ein Abonnement abschließt.";
 "Subscribe for %@ / Month" = "Abonnieren für %@ / Monat";
