@@ -99,6 +99,8 @@ Du kannst das Abonnement jederzeit in deinen iTunes Kontoeinstellungen beenden. 
 "Subscribe for %@ / Month" = "Abonnieren für %@ / Monat";
 "Buy lifetime AC Helper+ for %@" = "Lebenslang für %@ kaufen";
 "Thank you for your support!" = "Vielen Dank für deine Unterstützung!";
+"%@ Monthly" = "%@ / Monat";
+"%@ Yearly" = "%@ / Jahr";
 
 // AboutView
 "About" = "Über";
