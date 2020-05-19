@@ -278,7 +278,7 @@
 "Your in game prices" = "Ваши цены";
 "Buy price" = "Цена покупки";
 "Amount bought" = "Количество купленного";
-"The more in game buy prices you'll add the better the predictions will be. Your buy price only won't give your correct averages. Add prices from the game as you get them daily." = "Большее количество добавленных цен за покупку даст вам возможность видеть более точные прогнозоы. Добавляйте цены из игры, которые вы получаете ежедневно, единоразовая цена покупки не даст правильных средних значений.";
+"The more in game buy prices you'll add the better the predictions will be. Your buy price only won't give your correct averages. Add prices from the game as you get them daily." = "Большее количество добавленных цен за покупку даст вам возможность видеть более точные прогнозы. Добавляйте цены из игры, которые вы получаете ежедневно, единоразовая цена покупки не даст правильных средних значений.";
 // TurnipsChartTopLegendView
 "Average" = "Средняя";
 "Minimum" = "Минимальная";
