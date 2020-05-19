@@ -98,7 +98,7 @@ struct TodaySpecialCharacters: View {
         Group {
             if selectedCharacter != nil {
                 VStack(spacing: 12) {
-                    Text(selectedCharacter!.rawValue.capitalized)
+                    Text(selectedCharacter!.localizedName())
                         .style(appStyle: .sectionHeader)
                     Text(selectedCharacter!.timeOfTheDay())
                         .style(appStyle: .rowDetail)
