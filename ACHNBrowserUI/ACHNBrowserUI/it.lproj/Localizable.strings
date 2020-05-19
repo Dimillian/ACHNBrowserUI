@@ -2,67 +2,66 @@
   Localizable.strings
   ACHNBrowserUI
 
-  Created by Jan on 09.05.20.
-  Copyright © 2020 Thomas Ricouard. All rights reserved.
+ 
 */
 
-"Tap here to preview a notification" = "Tippe hier für eine Vorschau";
-"Upgrade to +" = "Upgrade auf +";
-"You're subscribed to AC Helper+" = "You're subscribed to AC Helper+";
+"Tap here to preview a notification" = "Tocca per un anteprima della notifica";
+"Upgrade to +" = "Aggiorna a +";
+"You're subscribed to AC Helper+" = "Ti sei abbonato a AC Helper+";
 
 // copy and paste "export"  of Text() and similar SwiftUI functions
 // Global
-"Close" = "Schließen";
-"Dismiss" = "Abbrechen";
-"Save" = "Speichern";
+"Close" = "Chiudi";
+"Dismiss" = "Annulla";
+"Save" = "Salva";
 
 // Date Format
-"EEEE, dd MMMM" = "EEEE, dd. MMMM";
-"d/M" = "d.M.";
+"EEEE, dd MMMM" = "EEEE, dd MMMM";
+"d/M" = "d/M";
 "dd" = "dd";
 "MMM" = "MMM";
-"MMM dd" = "dd. MMM";
-"dd MMMM" = "dd. MMMM";
+"MMM dd" = "dd MMM";
+"dd MMMM" = "dd MMMM";
 
 // TabbarView
-"Dashboard" = "Startseite";
-"Catalog" = "Katalog";
-"Turnips" = "Rüben";
-"Villagers" = "Bewohner";
-"Collection" = "Sammlung";
+"Dashboard" = "Bacheca";
+"Catalog" = "Catalogo";
+"Turnips" = "Rape";
+"Villagers" = "Abitanti";
+"Collection" = "Collezione";
 
 // TodayView
-"Change Section Order" = "Ändere die Reihenfolge";
+"Change Section Order" = "Cambia ordine sezioni";
 // TodaySectionEditView
-"Drag & Drop to Rearrange" = "Zum Anordnen halten und verschieben";
-"Hidden" = "Versteckt";
-"Today Sections" = "Heute Abschnitte";
-"Done" = "Fertig";
-" to re-order sections." = " to re-order sections.";
-"Check or un-check" = "Check or un-check";
-" rows to hide sections from the dashboard." = " rows to hide sections from the dashboard.";
-"Your top-most section will be the default detail view on iPad and Mac." = "Your top-most section will be the default detail view on iPad and Mac.";
+"Drag & Drop to Rearrange" = "Trascina e rilascia per riordinare";
+"Hidden" = "Nascosto";
+"Today Sections" = "Sezioni Oggi";
+"Done" = "Fatto";
+" to re-order sections." = " per riordinare le sezioni.";
+"Check or un-check" = "Seleziona o deseleziona";
+" rows to hide sections from the dashboard." = " righe per nascondere le sezioni dalla bacheca.";
+"Your top-most section will be the default detail view on iPad and Mac." = "La sezione più in alto sarà la vista Dettagli predefinita su iPad e Mac.";
 // TodayBirthdaySection
-"Birthdays" = "Geburtstage";
-"Today's Birthdays" = "Heutige Geburtstage";
-"Today's Birthday" = "Heutiger Geburtstag";
+"Birthdays" = "Compleanni";
+"Today's Birthdays" = "Compleanni di oggi";
+"Today's Birthday" = "Compleanno di oggi";
 // TodayCollectionProgressSection
-"Collection Progress" = "Sammelfortschritt";
-"Share" = "Teilen";
+"Collection Progress" = "Collezione";
+"Share" = "Condividi";
 // TodayCurrentlyAvailableSection
-"Currently Available" = "Aktuell verfügbar";
-"%lld/%lld Bugs" = "%lld/%lld Insekten";
-"%lld/%lld Fish" = "%lld/%lld Fische";
-"%lld NEW" = "%lld NEU";
+"Currently Available" = "Disponibili adesso";
+"%lld/%lld Bugs" = "%lld/%lld Insetti";
+"%lld/%lld Fish" = "%lld/%lld Pesci";
+"%lld NEW" = "%lld NOVITÀ";
 // TodayEventsSection
-"Events" = "Ereignisse";
-"Currently" = "Aktuell";
-"No Events Today" = "Heute keine Ereignisse";
-"Upcoming" = "Anstehend";
+"Events" = "Eventi";
+"Currently" = "In corso";
+"No Events Today" = "Nessun evento oggi";
+"Upcoming" = "Prossimamente";
 // TodayTasksSection
-"Today's Tasks" = "Heutige Aufgaben";
-"This feature requires " = "Diese Funktion benötigt ";
-"Learn more >" = "Erfahre mehr >";
+"Today's Tasks" = "Obiettivi giornalieri";
+"This feature requires " = "Questa funzione richiede ";
+"Learn more >" = "Per saperne di più >";
 // TodayTurnipSection
 "Today is sunday, don't forget to buy more turnips and fill your buy price." = "Heute ist Sonntag, denk daran Rüben zu kaufen und den Einkaufspreis einzutragen.";
 "Your turnips predictions will be displayed here once you fill in some prices." = "Deine Kaufpreis-Prognose wird hier angezeigt, sobald du Kaufpreise eingetragen hast.";
