@@ -2,6 +2,9 @@
   Localizable.strings
   ACHNBrowserUI
 
+
+  Created by MrOgeid on 10.05.20.
+  Copy template from de.lproj/Localizable.strings
  
 */
 
@@ -247,22 +250,22 @@ Puoi annullare il tuo abbonamento in ogni momento dalle impostazioni del tuo acc
 
 // TurnipsView
 "Minmax" = "Min-Max";
-"Profits" = "Gewinne";
-"Average daily buy prices" = "Durchschnittliche tägliche Verkaufspreise";
-"Daily min-max prices" = "Tägliche Min-Max Preise";
-"Average profits" = "Durchschnittliche Gewinne";
-"Chart" = "Diagramm";
-"Mon" = "Mo";
-"Tue" = "Di";
-"Wed" = "Mi";
-"Thu" = "Do";
-"Fri" = "Fr";
-"Sat" = "Sa";
-"Your prices" = "Deine Preise";
-"Edit your in game prices" = "Bearbeite deine Spiel Preise";
-"Add your in game prices" = "Füge deine Spiel Preise hinzu";
-"Turnips prediction" = "Rüben-Progrnose";
-"To help us support the application and get turnip predictions notification, you can try out AC Helper+" = "Abonniere AC Helper+, um Benachrichtigungen zur Rüben-Prognose zu bekommen und uns bei der Entwicklung der App zu unterstützen";
+"Profits" = "Profitti";
+"Average daily buy prices" = "Media prezzi giornaliera";
+"Daily min-max prices" = "Prezzi Min-Max giornaliera";
+"Average profits" = "Profitti medi";
+"Chart" = "Grafico";
+"Mon" = "Lun";
+"Tue" = "Mar";
+"Wed" = "Mer";
+"Thu" = "Gio";
+"Fri" = "Ven";
+"Sat" = "Sab";
+"Your prices" = "I tuoi prezzi";
+"Edit your in game prices" = "Modifica prezzi del gioco";
+"Add your in game prices" = "Aggiungi prezzi del gioco";
+"Turnips prediction" = "Previsioni rape";
+"To help us support the application and get turnip predictions notification, you can try out AC Helper+" = "Per aiutarci a supportare l’app e avere le notifiche con le previsioni rape puoi provare AC Helper+";
 "%lld upcomingDailyNotifications" = "Du bekommst Verkaufspreis Prognosen in noch %lld weiteren täglichen Benachrichtigungen.";
 "Profits estimates are computed using the average of the current period" = "Die Profite werden auf Basis des durchschnittlichen Preises der jeweiligen Periode berechnet";
 "Day" = "Tag";
