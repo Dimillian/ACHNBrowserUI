@@ -63,138 +63,138 @@
 "This feature requires " = "Questa funzione richiede ";
 "Learn more >" = "Per saperne di più >";
 // TodayTurnipSection
-"Today is sunday, don't forget to buy more turnips and fill your buy price." = "Heute ist Sonntag, denk daran Rüben zu kaufen und den Einkaufspreis einzutragen.";
-"Your turnips predictions will be displayed here once you fill in some prices." = "Deine Kaufpreis-Prognose wird hier angezeigt, sobald du Kaufpreise eingetragen hast.";
-"Today's average price should be around " = "Der heutige durchschnittliche Kaufpreis sollte bei ";
-" in the morning, and " = " am Morgen und bei ";
-" this afternoon." = " am Nachmittag liegen.";
+"Today is sunday, don't forget to buy more turnips and fill your buy price." = "Oggi è domenica, ricordati di comprare delle rape e inserire il prezzo d'acquisto.";
+"Your turnips predictions will be displayed here once you fill in some prices." = "La previsione del prezzo delle rape sarà mostrata qui appena avrai aggiunto dei prezzi.";
+"Today's average price should be around " = "Il prezzo medio di oggi dovrebbe essere circa ";
+" in the morning, and " = " al mattino e ";
+" this afternoon." = " alla sera.";
 // TodayNookazonSection
-"New on Nookazon" = "Neu auf Nookazon";
-"Nookazon is loading..." = "Nookazon lädt...";
+"New on Nookazon" = "Novità su Nookazon";
+"Nookazon is loading..." = "Caricamento di Nookazon...";
 // TodayWhatsNewSection
-"What's New" = "Was ist neu";
-"See what's new in update %@" = "Schau dir an, was es neues gibt in Version %@";
+"What's New" = "Cosa c'è di nuovo";
+"See what's new in update %@" = "Scopri cosa c'è di nuovo in questo aggiornamento %@";
 // TodaySubscribeSection
-"You're subscribed to AC Helper+. Thank you so much for you support!" = "Du abonnierst AC Helper+. Vielen Dank für deine Unterstützung!";
-"If you enjoy the application, consider subscribing to AC Helper+, to get access to some awesome features and support us!" = "Wenn dir die App gefällt, abonniere AC Helper+, um Zugriff auf großartige Funktionen zu erhalten und uns zu unterstütuen!";
+"You're subscribed to AC Helper+. Thank you so much for you support!" = "Ti sei abbonato a AC Helper+. Grazie mille per il tuo sostegno!";
+"If you enjoy the application, consider subscribing to AC Helper+, to get access to some awesome features and support us!" = "Se ti piace l'app, considera di abbonarti a AC Helper+ per avere accesso a fantastiche funzionalità e supportarci!";
 
 // SubscribeView
 "AC Helper+" = "AC Helper+";
-"ACHelperPlusDescription" = "Das AC Helper+ Abonnement ist ein guter Weg deine Unterstützung für unser kostenloses Open Source Projekt. ♥️
+"ACHelperPlusDescription" = "Abbonarsi a AC Helper+ è un bel modo per dimostrare il tuo sostegno al nostro progetto gratuito e a codice aperto. ♥️
 
-Außerdem erhältst du Zugriff auf exklusive, großartige Funktionen: Rüben Prognose Benachrichtigungen und beliebig viele Gegenstands-Listen! 📈
+Avrai anche accesso a maggiori funzioni, notifiche con previsioni del prezzo delle rape e potrai creare infinite liste ogetti! 📈
 
-Weitere Details unten.";
-"ACHelperPlusDetails" = "Über die Benachrichtigungs-Funktion:
-Jeden Tag um 8 und 12 Uhr wirst du eine Benachrichtigung mit dem prognostizierten, durchschnittlichen Ankaufspreis bei Nepp und Schlepp erhalten.
-Je mehr Ankaufspreise du in der App ab montags morgens speicherst, um so genauer wird die nächste Prognose sein!
+Maggiori dettagli qui sotto.";
+"ACHelperPlusDetails" = "Funzione Notifica:
+Tutti i giorni alle ore 8 e alle 12 riceverai una notifica con il prezzo medio del tuo negozio.
+Più prezzi inserirai ogni giorno, dopo il lunedì mattina, migliori saranno le previsioni!
 
-Über die Listen-Funktion:
-Ohne Abonnement kannst du nur eine Liste mit Gegenständen im \"Meine Sachen\" Register erstellen.
-Wenn du dir AC Helper+ holst, kannst du beliebig viele Listen erstellen und unterschiedlich befüllen.";
-"ACHelperPlusPriceAndAboDetail %@" = "Ein monatliches Abo über %@ pro Monat wird nach der Bestätigung deinem iTunes Konto hinzugefügt.
-Das Abonnement verlängert sich automatisch, solange es nicht bis 24 Stunden vor der nächsten Verlängerung beendet wird.
-Du kannst das Abonnement jederzeit in deinen iTunes Kontoeinstellungen beenden. Jeder nicht genutzte Teil einer kostenlosen Testversion verfällt, wenn du ein Abonnement abschließt.";
-"Subscribe for %@ / Month" = "Abonnieren für %@ / Monat";
-"Buy lifetime AC Helper+ for %@" = "Lebenslang für %@ kaufen";
-"Thank you for your support!" = "Vielen Dank für deine Unterstützung!";
+Funzione Liste:
+Senza abbonamento puoi creare solo una lista oggetti nella scheda \"Mie cose\".
+Se ti abbonerai potrai invece creare tutte le liste oggetti che desideri.";
+"ACHelperPlusPriceAndAboDetail %@" = "Un abbonamento di %@  al mese sarà aggiunto al tuo account iTunes una volta data la conferma.
+Gli abbonamenti si rinnovano automaticamente se non vengono annullati 24 ore prima della loro scadenza.
+Puoi annullare il tuo abbonamento in ogni momento dalle impostazioni del tuo account iTunes. I periodi di prova gratuita saranno annullati se acquisti un abbonamento.";
+"Subscribe for %@ / Month" = "Abbonati per %@ / Mese";
+"Buy lifetime AC Helper+ for %@" = "Acquista AC Helper+ per sempre per %@ ";
+"Thank you for your support!" = "Grazie mille per il tuo sostegno!";
 
 // AboutView
-"About" = "Über";
-"The app" = "Die App";
-"Souce code / report an issue" = "Quell Code / Fehler melden";
-"Rate the app on the App Store" = "Bewerte die App im App Store";
-"Privacy Policy" = "Datenschutzbestimmungen";
-"Terms of Use" = "Nutzungsbedingungen";
-"App version" = "App Version";
-"Game patch data" = "Daten Spielversion";
-"Acknowledgements" = "Danksagungen";
-"Our amazing contributors" = "Unsere großartigen Mitwirkenden";
-"The NookPlaza API by Azarro" = "Die NookPlaza API von Azarro";
+"About" = "Informazoni su";
+"The app" = "L'App";
+"Souce code / report an issue" = "Codice sorgente / segnala un problema";
+"Rate the app on the App Store" = "Valuta l'app sull'App Store";
+"Privacy Policy" = "Norme della Privacy";
+"Terms of Use" = "Termini d'utilizzo";
+"App version" = "Versione App";
+"Game patch data" = "Dati di gioco";
+"Acknowledgements" = "Riconoscimenti";
+"Our amazing contributors" = "I nostri formidabili collaboratori";
+"The NookPlaza API by Azarro" = "NookPlaza API di Azarro";
 "Turnip.exchange" = "Turnip.exchange";
-"Nookazon for the marketplace" = "Nookazon für den Marktplatz";
-"Shihab / JPEGuin for the icon" = "Shihab / JPEGuin für das Icon";
-"Christian & Ninji for the turnip predictions algorithm" = "Christian & Ninji für den Rüben Prognose Algorithmus";
-"Error" = "Fehler";
+"Nookazon for the marketplace" = "Nookazon per il mercato";
+"Shihab / JPEGuin for the icon" = "Shihab / JPEGuin per l'icona";
+"Christian & Ninji for the turnip predictions algorithm" = "Christian & Ninji l'algoritmo predittivo delle rape";
+"Error" = "Errore";
 
 // ActiveCittersView
-"Active Critters" = "Aktive Tiere";
-"Fishes" = "Fische";
-"Bugs" = "Insekten";
-"You caught them all!" = "Du hast alle gefangen!";
-"New this month" = "Diesen Monat neu";
-"To catch" = "Zu fangen";
-"Leaving this month" = "Nur noch diesen Monat";
-"Caught" = "Gefangen";
-"All day" = "Ganztägig";
+"Active Critters" = "Animaletti attuali";
+"Fishes" = "Pesci";
+"Bugs" = "Insetti";
+"You caught them all!" = "Li hai catturati tutti!";
+"New this month" = "Novità del mese";
+"To catch" = "Da catturare";
+"Leaving this month" = "Andranno via questo mese";
+"Caught" = "Catturato";
+"All day" = "Tutto il giorno";
 
 // SettingsView
-"Preferences" = "Einstellungen";
-"Island name" = "Inselname";
-"Your island name" = "Name deiner Insel";
-"Hemisphere" = "Hemisphäre";
+"Preferences" = "Impostazioni";
+"Island name" = "Nome isola";
+"Your island name" = "Il nome della tua isola";
+"Hemisphere" = "Emisfero";
 "North" = "Nord";
-"South" = "Süd";
-"Starting fruit" = "Frucht zu Beginn";
-"Apple" = "Apfel";
-"Cherry" = "Kirsche";
-"Orange" = "Orange";
-"Peach" = "Pfirsich";
-"Pear" = "Birne";
-"Coconut" = "Kokusnuss";
-"Nook shop" = "Nepp und Schlepp";
-"Tent" = "Zelt";
-"Nook's Cranny" = "Nooks Laden";
-"Nook's Cranny upgraded" = "Nooks Laden (ausgebaut)";
-"Able sisters" = "Schneiderei";
-"Visiting" = "zu Besuch";
-"Shop" = "Laden";
-"Residents service" = "Service-Center";
-"Building" = "Gebäude";
-"App Settings" = "App Einstellungen";
-"App Icon" = "App Icon";
-"Restore purchase" = "Einkauf wiederherstellen";
+"South" = "Sud";
+"Starting fruit" = "Frutto nativo";
+"Apple" = "Mela";
+"Cherry" = "Ciliegia";
+"Orange" = "Arancia";
+"Peach" = "Pesca";
+"Pear" = "Pera";
+"Coconut" = "Cocco";
+"Nook shop" = "Negozio";
+"Tent" = "Tenda";
+"Nook's Cranny" = "Bottega Nook";
+"Nook's Cranny upgraded" = "Bottega di Nook (ampliata)";
+"Able sisters" = "Sorelle Ago & Filo";
+"Visiting" = "In visita";
+"Shop" = "Negozio";
+"Residents service" = "Centro servizi";
+"Building" = "Edificio";
+"App Settings" = "Impostazioni App";
+"App Icon" = "Icona App";
+"Restore purchase" = "Ripristina acquisti";
 
 // NotificationManager
-"Turnip prices" = "Rüben Preise";
-"this morning" = "morgens";
-"this afternoon" = "nachmittags";
-"Your prices predictions for %@ should be around %lld bells. With a minimum of %lld and a maximum of %lld." = "Dein Rüben-Preis sollte heute %@ bei etwa %lld Sternis liegen. Mit einem Minimum von %lld und einem Maximum von %lld Sternis.";
-"Turnip prices (test)" = "Rüben Preise (Test)";
-"Your prices predictions for this morning should be around 100 bells. With a minimum of 50 and a maximum of 650." = "Dein Rüben-Preis sollte heute morgen bei etwa 100 Sternis liegen. Mit einem Minimum von 50 und einem Maximum von 650 Sternis.";
-"Friendly reminder" = "Erinnerung";
-"It's time to buy turnips and add the buy price in the app." = "Es ist an der Zeit Rüben zu kaufen und den Einkaufspreis in die App einzutragen.";
-"It's the start of the week, don't forget to add your store buy prices in the app as you play the game. You'll get more accurate predictions." = "Die Woche hat begonnen - denk daran, die Ankaufpreise der Rüben zu erfragen und in die App einzutragen. Das sorgt für eine genauere Prognose.";
+"Turnip prices" = "Prezzi rape";
+"this morning" = "questa mattina";
+"this afternoon" = "questa sera";
+"Your prices predictions for %@ should be around %lld bells. With a minimum of %lld and a maximum of %lld." = "Il prezzo previsto per %@ dovrebbe essere all'incirca di %lld stelline. Con un minimo di %lld e un massimo di %lld stelline.";
+"Turnip prices (test)" = "Prezzi rape (Test)";
+"Your prices predictions for this morning should be around 100 bells. With a minimum of 50 and a maximum of 650." = "Il prezzo previsto per questa mattina dovrebbe essere all'incirca di 100 stelline. Con un minimo di 50 e un massimo di 650 stelline.";
+"Friendly reminder" = "Promemoria";
+"It's time to buy turnips and add the buy price in the app." = "È il momento di acquistare delle rape e inserire il prezzo nell'app.";
+"It's the start of the week, don't forget to add your store buy prices in the app as you play the game. You'll get more accurate predictions." = "Inizia la settimana! Mentre giochi non dimenticare di inserire il prezzo delle rape del tuo negozio. Otterrai previsioni più accurate.";
 
 // UserListFormView
-"Edit your list" = "Liste Bearbeiten";
-"Name of your list" = "Name der Liste";
-"List name" = "Name";
-"Can be nothing" = "Kann leer sein";
-"Icon" = "Icon";
+"Edit your list" = "Modifica la tua lista";
+"Name of your list" = "Nome della lista";
+"List name" = "Nome";
+"Can be nothing" = "Puoi lasciarlo vuoto";
+"Icon" = "Icona";
 
 // UserListDetailView
-"Add %lld items" = "Füge %lld Gegenstände hinzu";
-"Edit" = "Bearbeiten";
-"Search items" = "Gegenstände suchen";
-"Items added to your list from the search will be displayed there." = "Gegenstände, die du aus der Suche heraus deiner Liste hinzugefügt hast, findest du dort.";
-"No results for %@" = "Kein Ergebnis für %@";
+"Add %lld items" = "Aggiungi %lld oggetti";
+"Edit" = "Modifica";
+"Search items" = "Cerca oggetti";
+"Items added to your list from the search will be displayed there." = "Gli oggetti aggiunti alla tua lista dalla ricerca saranno mostrati qui.";
+"No results for %@" = "Nessun risultato per %@";
 
 // UserListSubscribeCallView
-"In order to create more than one list, you need to subscribe to AC Helper+" = "Um mehr als eine Liste anlegen zu können, musst du AC Helper+ abonnieren";
-"Learn more..." = "Erfahre mehr...";
+"In order to create more than one list, you need to subscribe to AC Helper+" = "Per creare più di una lista è necessario abbonarsi a AC Helper+";
+"Learn more..." = "Maggiori informazioni...";
 
 // CollectionListView
-"Create a new list" = "Erstelle eine neue Liste";
-"Please select or go stars some items!" = "Bitte wähle oder markiere Gegenstände!";
-"When you'll stars some %@, they'll be displayed here." = "Wenn du %@ markierst, werden sie hier angezeigt.";
-"Items" = "Gegenstände";
-"Critters" = "Tiere";
-"Lists" = "Listen";
-"items" = "Gegenstände";
-"villagers" = "Bewohner";
-"critters" = "Tiere";
-"lists" = "Listen";
+"Create a new list" = "Crea una nuova lista";
+"Please select or go stars some items!" = "Per favore scegli o metti la stella a degli oggetti!";
+"When you'll stars some %@, they'll be displayed here." = "Quando metterai la stella a degli %@, saranno mostrati qui.";
+"Items" = "Oggetti";
+"Critters" = "Animaletti";
+"Lists" = "Liste";
+"items" = "oggetti";
+"villagers" = "abitanti";
+"critters" = "animaletti";
+"lists" = "liste";
 
 // ItemsListView
 "Clear Selection" = "Auswahl aufheben";
