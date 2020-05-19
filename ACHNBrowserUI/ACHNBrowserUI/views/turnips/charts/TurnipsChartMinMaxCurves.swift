@@ -10,7 +10,7 @@ import SwiftUI
 import Backend
 
 struct TurnipsChartMinMaxCurves: Shape {
-    let predictions: TurnipPredictions
+    let data: [TurnipsChart.YAxis]
     var animationStep: CGFloat = 1
 
     var animatableData: CGFloat {
@@ -21,31 +21,20 @@ struct TurnipsChartMinMaxCurves: Shape {
     func path(in rect: CGRect) -> Path {
         var path = Path()
 
-        guard let minMax = predictions.minMax else {
-            // Maybe we should just crash as it shouldn't happen
-            return path
-        }
-        let (_, maxY, ratioY, ratioX) = predictions.minMax?.roundedMinMaxAndRatios(rect: rect) ?? (0, 0, 0, 0)
+        let animationYTranslation = rect.maxY - rect.maxY * animatableData
+        let animationTransform = CGAffineTransform.identity
+            .translatedBy(x: 0, y: animationYTranslation)
+            .scaledBy(x: 1, y: animatableData)
 
-        let minPoints: [CGPoint] = minMax
-            .compactMap { $0.first }
-            .enumerated()
-            .map({ offset, minValue in
-                let x = ratioX * CGFloat(offset)
-                let y = ratioY * (maxY - CGFloat(minValue) * animationStep)
-                return CGPoint(x: x, y: y)
-            })
+        let minPoints: [CGPoint] = data
+            .map(\.min.position)
+            .map({ $0.applying(animationTransform) })
         path.addHermiteCurvedLines(points: minPoints)
 
-        let maxPoints: [CGPoint] = minMax
-            .compactMap { $0.second }
-            .enumerated()
-            .map({ offset, maxValue in
-                let x = ratioX * CGFloat(offset)
-                let y = ratioY * (maxY - CGFloat(maxValue) * animationStep)
-                return CGPoint(x: x, y: y)
-            })
+        let maxPoints: [CGPoint] = data
+            .map(\.max.position)
             .reversed()
+            .map({ $0.applying(animationTransform) })
         path.addLine(to: maxPoints.first ?? .zero)
         path.addHermiteCurvedLines(points: maxPoints)
         path.addLine(to: minPoints.first ?? .zero)
@@ -64,13 +53,15 @@ struct TurnipsChartMinMaxCurves_Previews: PreviewProvider {
 
         var body: some View {
             VStack {
-                TurnipsChartMinMaxCurves(
-                    predictions: TurnipsChartView_Previews.predictions,
-                    animationStep: animationStep
-                )
-                    .foregroundColor(TurnipsChart.PredictionCurve.minMax.color)
-                    .opacity(0.25)
-                    .blendMode(.darken)
+                GeometryReader {
+                    TurnipsChartMinMaxCurves(
+                        data: TurnipsChartView_Previews.yAxisData(for: $0),
+                        animationStep: self.animationStep
+                    )
+                        .foregroundColor(.graphMinMax)
+                        .opacity(0.25)
+                        .blendMode(.darken)
+                }
                 Slider(value: $animationStep, in: 0.1...1)
             }
         }

@@ -157,6 +157,28 @@ struct SettingsView: View {
                     .font(.footnote)
                     .foregroundColor(.acSecondaryText)
             }
+            
+            HStack {
+                Text("Using iCloud sync")
+                Spacer()
+                Image(systemName: collection.isCloudEnabled ? "icloud.fill" : "icloud.slash")
+                    .foregroundColor(collection.isCloudEnabled ? .acTabBarBackground : .red)
+                
+            }
+            
+            if collection.isCloudEnabled {
+                HStack {
+                    Text("Synchronized with iCloud")
+                    Spacer()
+                    if !collection.isSynched {
+                        ActivityIndicator(isAnimating: .constant(true), style: .medium)
+                    } else {
+                        Image(systemName: "checkmark.seal.fill")
+                            .foregroundColor(.acTabBarBackground)
+                    }
+                }
+            }
+            
             Button(action: {
                 self.documentPickderMode = .exportToService
                 self.isDocumentPickerPresented = true

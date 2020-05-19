@@ -1,0 +1,377 @@
+/*
+  Localizable.strings
+  ACHNBrowserUI
+
+  Created by Jan on 09.05.20.
+  Copyright © 2020 Thomas Ricouard. All rights reserved.
+*/
+
+"Tap here to preview a notification" = "点击预览通知";
+"Upgrade to +" = "升级到 +";
+"You're subscribed to AC Helper+" = "你已经订阅 AC Helper+";
+
+"ACHelperPlusPriceAndAboDetail %@" = "确认订阅之后 %@ 每个月购买将会出现在您的 iTunes 账号中。
+订阅将会自动更新除非你在期间结束的 24 小时前取消订阅。
+您能够随时在您的 iTunes 账号中取消订阅，你过你在使用期间内取消，可能会立即无法使用+功能。";
+
+// copy and paste "export"  of Text() and similar SwiftUI functions
+// Global
+"Close" = "关闭";
+"Dismiss" = "取消";
+"Save" = "保存";
+
+// Date Format
+"EEEE, dd MMMM" = "EEEE, dd. MMMM";
+"d/M" = "d.M.";
+"dd" = "dd";
+"MMM" = "MMM";
+"MMM dd" = "dd. MMM";
+"dd MMMM" = "dd. MMMM";
+
+// TabbarView
+"Dashboard" = "主页";
+"Catalog" = "目录";
+"Turnips" = "大头菜";
+"Villagers" = "村民";
+"Collection" = "收藏";
+
+// TodayView
+"Change Section Order" = "调整板块顺序";
+// TodaySectionEditView
+"Drag & Drop to Rearrange" = "拖拽以重新排列";
+"Hidden" = "隐藏";
+"Today Sections" = "今天部分";
+"Done" = "完成";
+" to re-order sections." = " 以重新排列。";
+"Check or un-check" = "点击左侧按钮";
+" rows to hide sections from the dashboard." = " 来隐藏或显示主页内容。";
+"Your top-most section will be the default detail view on iPad and Mac." = "在iPad和Mac上，最上方的部分将会是默认的显示";
+// TodayBirthdaySection
+"Birthdays" = "生日";
+"Today's Birthdays" = "今天过生日";
+"Today's Birthday" = "今天过生日";
+// TodayCollectionProgressSection
+"Collection Progress" = "收集进度";
+"Share" = "分享";
+// TodayCurrentlyAvailableSection
+"Currently Available" = "当前可捕捉";
+"%lld/%lld Bugs" = "%lld/%lld 昆虫";
+"%lld/%lld Fish" = "%lld/%lld 鱼类";
+"%lld NEW" = "%lld 个新品";
+// TodayEventsSection
+"Events" = "活动";
+"Currently" = "当前";
+"No Events Today" = "今天没有活动";
+"Upcoming" = "即将到来";
+// TodayTasksSection
+"Today's Tasks" = "今日任务";
+"This feature requires " = "这个功能需要 ";
+"Learn more >" = "查看更多 >";
+// TodayTurnipSection
+"Today is sunday, don't forget to buy more turnips and fill your buy price." = "今天是星期天，不要忘记买大头菜和填写你的价格哦。";
+"Your turnips predictions will be displayed here once you fill in some prices." = "当你填入你的大头菜价格之后，价格预测将会显示在这里";
+"Today's average price should be around " = "今天的平均价格会是 ";
+" in the morning, and " = " 在上午， ";
+" this afternoon." = " 在下午。";
+// TodayNookazonSection
+"New on Nookazon" = "Nookazon新品";
+"Nookazon is loading..." = "Nookazon 正在加载...";
+
+// TodaySubscribeSection
+"You're subscribed to AC Helper+. Thank you so much for you support!" = "您已订阅 AC Helper+. 非常感谢您的支持!";
+"If you enjoy the application, consider subscribing to AC Helper+, to get access to some awesome features and support us!" = "如果你喜欢我们的应用，考虑一下订阅我们的 AC Helper+，获得更多的功能和支持我们";
+
+// SubscribeView
+"AC Helper+" = "AC Helper+";
+"ACHelperPlusDescription" = "订阅AC Helper+是最好的方式支持我们的开源项目♥️
+
+通过订阅也可以获得更多的功能：大头菜通知提醒，创建任意数量的物品列表 📈
+
+更多信息在下面";
+"ACHelperPlusDetails" = "关于大头菜通知提醒功能:
+每天早上8:00和中午12:00，你会收到你的狸克商店的平均大头菜价格。
+你填的每日大头菜价格越多，下次的预测就会更准确！
+
+关于列表功能：
+在免费应用中，你只可以创建一个物品列表在 \"我的物品\" 选项。
+在你订阅 AC Helper+之后你可以创建任何数量的列表。";
+
+"Subscribe for %@ / Month" = "订阅只需 %@ / 每月";
+"Buy lifetime AC Helper+ for %@" = "购买永久 AC Helper+ 只需 %@";
+"Thank you for your support!" = "感谢你的支持!";
+
+// AboutView
+"About" = "关于";
+"The app" = "应用";
+"Souce code / report an issue" = "源代码 / 报告问题";
+"Rate the app on the App Store" = "在App Store上评价应用";
+"Privacy Policy" = "隐私政策";
+"Terms of Use" = "使用条款";
+"App version" = "应用版本";
+"Game patch data" = "游戏版本";
+"Acknowledgements" = "致谢";
+"Our amazing contributors" = "我们的贡献者";
+"The NookPlaza API by Azarro" = "NookPlaza API by Azarro";
+"Turnip.exchange" = "Turnip.exchange";
+"Nookazon for the marketplace" = "Nookazon 市场";
+"The ACNHAPI for villagers data and images" = "ACNHAPI 提供的村民数据和图片";
+"Shihab / JPEGuin for the icon" = "Shihab / JPEGuin for the icon";
+"Christian & Ninji for the turnip predictions algorithm" = "Christian & Ninji 的大头菜预测算法";
+"Error" = "错误";
+
+// ActiveCittersView
+"Active Critters" = "当前可以捕捉";
+"Fishes" = "鱼类";
+"Bugs" = "昆虫";
+"You caught them all!" = "你已经抓到了所有!";
+"New this month" = "本月新品";
+"To catch" = "可捕捉";
+"Leaving this month" = "本月即将到期";
+"Caught" = "已拥有";
+"All day" = "全天";
+
+// SettingsView
+"Preferences" = "设置";
+"Island name" = "小岛名称";
+"Your island name" = "你的小岛名称";
+"Hemisphere" = "地区";
+"North" = "北半球";
+"South" = "南半球";
+"Starting fruit" = "岛屿水果";
+"Apple" = "苹果";
+"Cherry" = "樱桃";
+"Orange" = "橘子";
+"Peach" = "桃子";
+"Pear" = "梨子";
+"Coconut" = "椰子";
+"Nook shop" = "狸克商店";
+"Tent" = "帐篷";
+"Nook's Cranny" = "狸克商店";
+"Nook's Cranny upgraded" = "狸克商店 (升级版)";
+"Able sisters" = "服装店";
+"Visiting" = "露营地";
+"Shop" = "商店";
+"Residents service" = "服务处";
+"Building" = "建筑";
+"App Settings" = "应用设置";
+"App Icon" = "应用图标";
+"Restore purchase" = "恢复购买";
+
+// NotificationManager
+"Turnip prices" = "大头菜价格";
+"this morning" = "早上";
+"this afternoon" = "下午";
+
+
+// UserListFormView
+"Edit your list" = "编辑列表";
+"Name of your list" = "列表名称";
+"List name" = "名称";
+"Can be nothing" = "可以为空";
+"Icon" = "Icon";
+
+// UserListDetailView
+"Add %lld items" = "添加 %lld 个物品";
+"Edit" = "编辑";
+"Search items" = "搜索";
+"Items added to your list from the search will be displayed there." = "你列表中搜索到的物品会显示在这里。";
+"No results for %@" = "没有找到 %@";
+
+// UserListSubscribeCallView
+"In order to create more than one list, you need to subscribe to AC Helper+" = "为了创建更多列表，你需要订阅 AC Helper+";
+"Learn more..." = "了解更多...";
+
+// CollectionListView
+"Create a new list" = "创建一个新列表";
+"Please select or go stars some items!" = "请选择或者收藏一些物品!";
+"When you'll stars some %@, they'll be displayed here." = "当你收藏一些%@之后，它们会显示在这里。";
+"Items" = "物品";
+"Critters" = "生物";
+"Lists" = "列表";
+"items" = "物品";
+"villagers" = "村民";
+"critters" = "生物";
+"lists" = "列表";
+
+// ItemsListView
+"Clear Selection" = "清空选择";
+"Sort items" = "Sort items";
+"Current Sort: %@" = "Current Sort: %@";
+"name" = "名称";
+"buy" = "购买";
+"sell" = "出售";
+"from" = "from";
+"set" = "set";
+"similar" = "similar";
+"Name" = "名称";
+"Buy" = "购买";
+"Sell" = "出售";
+"From" = "From";
+"Set" = "Set";
+"Similar" = "Similar";
+// ItemRowView
+"unknown source" = "unknown source";
+// ItemDetailInfoView
+"Rarity:" = "稀有度:";
+"Common" = "普通";
+"Uncommon" = "稀有";
+"Rare" = "非常稀有";
+"Shadow size:" = "影子大小:";
+"X-Small" = "非常小";
+"Small" = "小";
+"Medium" = "中";
+"Large" = "大";
+"X-Large" = "非常大";
+"Customizable: %@" = "可以改造: %@";
+"Flick:" = "Flick:";
+"C.J:" = "C.J:";
+"Yes" = "Yes";
+"No" = "No";
+// ItemsCrosslineSectionView
+"Preview" = "预览";
+// ItemDetailSeasonView
+"Seasonality" = "季节性";
+// ItemDetailView
+"Set items" = "Set items";
+"Simillar items" = "相似物品";
+"Thematics" = "Thematics";
+"Variants" = "Variants";
+"Materials" = "Materials";
+"Nookazon listings" = "Nookazon listings";
+"Loading Listings..." = "Loading Listings...";
+"No listings found on Nookazon" = "No listings found on Nookazon";
+"Your items lists" = "Your items lists";
+
+// TurnipsChartTopLegendView
+"Average" = "平均";
+"Minimum" = "最低";
+"MinMax" = "最高";
+
+// IslandDetailView
+"Join Island" = "加入岛屿";
+"Island" = "小岛";
+"Description" = "描述";
+"Visitors" = "访客";
+"Loading Visitors...." = "加载访客....";
+
+// VillagersListView
+"Search a villager" = "搜索村民";
+"Personality" = "个性";
+"Birthday" = "生日";
+"Gender" = "性别";
+"Unknown" = "Unknown";
+"Villager items" = "村民物品";
+// VillagersDetailView
+"Unkown" = "Unknown";
+"Lazy" = "懒惰";
+"Male" = "男";
+"Female" = "女";
+"Bear" = "熊";
+"Bird" = "小鸟";
+"Bull" = "公牛";
+"Cat" = "猫";
+"Chicken" = "鸡";
+"Cow" = "奶牛";
+"Cub" = "Teddybär";
+"Deer" = "鹿";
+"Dog" = "狗";
+"Duck" = "鸭子";
+"Eagle" = "鹰";
+"Elephant" = "大象";
+"Frog" = "青蛙";
+"Goat" = "山羊";
+"Gorilla" = "Gorilla";
+"Hamster" = "Hamster";
+"Hippo" = "河马";
+"Horse" = "马";
+"Kangaroo" = "袋鼠";
+"Koala" = "考拉";
+"Lion" = "狮子";
+"Monkey" = "猴子";
+"Mouse" = "老鼠";
+"Octopus" = "章鱼";
+"Ostrich" = "Ostrich";
+"Penguin" = "企鹅";
+"Pig" = "猪";
+"Rabbit" = "兔子";
+"Rhino" = "Rhino";
+"Sheep" = "绵羊";
+"Squirrel" = "Squirrel";
+"Tiger" = "老虎";
+"Wolf" = "狼";
+
+// ListingRow
+"Make an Offer" = "Make an Offer";
+"Need Materials" = "Need Materials";
+
+// CategoryRow
+"housewares" = "家具";
+"miscellaneous" = "小物件";
+"wall-mounted" = "壁挂物";
+"wallpapers" = "壁纸";
+"floors" = "地板";
+"rugs" = "地毯";
+"photos" = "照片";
+"posters" = "海报";
+"fencing" = "栅栏";
+"tools" = "工具";
+"tops" = "衣服";
+"bottoms" = "裤子";
+"dresses" = "裙子";
+"Dress-Up" = "套装";
+"headwear" = "帽子";
+"accessories" = "饰品";
+"socks" = "袜子";
+"shoes" = "鞋子";
+"bags" = "包包";
+"umbrellas" = "雨伞";
+"music" = "音乐";
+"recipes" = "DIY图纸";
+"construction" = "建筑物";
+"nookmiles" = "Nook里程";
+"other" = "其他";
+"art" = "艺术品";
+"bugs" = "昆虫";
+"fish" = "鱼类";
+"fossils" = "化石";
+// CategoriesView
+"Nature" = "图鉴";
+"Wardrobe" = "衣橱";
+"No results for %@" = "没有找到%@";
+
+
+// Shared
+// SearchField
+"Search..." = "搜索...";
+
+// item sources
+// Added 2020-05-11:
+"3rd House Upgrade (Left Room)" = "第三次房屋扩建 (左侧房间)";
+"4th House Upgrade (Right Room)" = "第四次房屋扩建 (右侧房间)";
+"5-star town evaluation" = "5星岛屿评价";
+"5-star town status" = "5-star town status";
+"5th House Upgrade (2nd Floor)" = "第五次房屋扩建 (二楼)";
+"Able Sisters" = "Able Sisters";
+"All Villagers (while stung)" = "所有村民 (while stun)";
+"All Villagers" = "所有村民";
+"All villagers" = "所有村民";
+// Added 2020-05-12
+"Sea" = "大海";
+"Sea (raining)" = "大海 (雨天)";
+
+// Added 2020-05-13
+"See more" = "查看更多";
+"See less" = "查看更少";
+
+//Added 05-14-2020
+"My data" = "我的数据";
+"Collection size" = "收藏集大小";
+"Export my collection" = "导出我的收藏集";
+"Import a collection" = "导入一个收藏集";
+"Imported with success" = "成功导入";
+"Reset my collection" = "重置我的收藏集";
+"Your AC Helper collection file was imported with success." = "你的AC Helper收集文件已经成功导入";
+"Are you sure?" = "你确定吗?";
+"This will delete all your collected critters, items, villagers and items lists" = "这将会删除你所有收集的生物，村民和物品列表";
+
+

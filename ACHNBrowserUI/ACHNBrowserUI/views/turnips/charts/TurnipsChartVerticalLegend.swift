@@ -10,40 +10,42 @@ import SwiftUI
 import Backend
 
 struct TurnipsChartVerticalLegend: View {
-    struct WidthPreferenceKey: PreferenceKey {
-        static var defaultValue: CGFloat?
-        static func reduce(value: inout CGFloat?, nextValue: () -> CGFloat?) {
-            if let newValue = nextValue() { value = newValue }
-        }
-    }
+    let data: [TurnipsChart.YAxis]
 
-    let predictions: TurnipPredictions
     var body: some View {
         GeometryReader(content: computeTexts)
     }
 
     func computeTexts(geometry: GeometryProxy) -> some View {
-        let frame = geometry.frame(in: .local)
-        let (minY, maxY, ratioY, _) = predictions.minMax?.roundedMinMaxAndRatios(rect: frame) ?? (0, 0, 0, 0)
+        let rect = geometry.frame(in: .local)
+        let (_, ratioY, minY, maxY) = data.ratios(in: rect)
 
-        let min = Int(minY)
-        let max = Int(maxY) + TurnipsChart.steps
-        let values = Array(stride(from: min, to: max, by: TurnipsChart.steps))
+        let steps = CGFloat(TurnipsChart.steps)
+        let values = Array(stride(from: minY, to: maxY + CGFloat(TurnipsChart.extraMaxSteps), by: steps))
         return texts(values: values, ratioY: ratioY)
             .propagateWidth(WidthPreferenceKey.self)
         
     }
 
-    func texts(values: [Int], ratioY: CGFloat) -> some View {
+    func texts(values: [CGFloat], ratioY: CGFloat) -> some View {
         ZStack(alignment: .topTrailing) {
             ForEach(values, id: \.self) { value in
-                Text("\(value)")
+                Text("\(Int(value))")
                     .font(.footnote)
                     .fontWeight(.semibold)
                     .fixedSize()
                     .foregroundColor(.acText)
-                    .alignmentGuide(.top) { d in CGFloat(value) * ratioY }
+                    .alignmentGuide(.top) { d in value * ratioY }
             }
+        }
+    }
+}
+
+extension TurnipsChartVerticalLegend {
+    struct WidthPreferenceKey: PreferenceKey {
+        static var defaultValue: CGFloat?
+        static func reduce(value: inout CGFloat?, nextValue: () -> CGFloat?) {
+            if let newValue = nextValue() { value = newValue }
         }
     }
 }

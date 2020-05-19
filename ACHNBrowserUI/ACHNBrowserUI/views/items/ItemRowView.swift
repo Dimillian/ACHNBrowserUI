@@ -139,11 +139,11 @@ struct ItemRowView_Previews: PreviewProvider {
         NavigationView {
             List {
                 ItemRowView(displayMode: .large, item: static_item)
-                    .environmentObject(UserCollection())
+                    .environmentObject(UserCollection.shared)
                 ItemRowView(displayMode: .compact, item: static_item)
-                    .environmentObject(UserCollection())
+                    .environmentObject(UserCollection.shared)
                 ItemRowView(displayMode: .large, item: static_item)
-                    .environmentObject(UserCollection())
+                    .environmentObject(UserCollection.shared)
             }
         }
     }

@@ -10,66 +10,57 @@ import SwiftUI
 import Backend
 
 struct TurnipsChartBottomLegendView: View {
-    struct HeightPreferenceKey: PreferenceKey {
-        static var defaultValue: CGFloat?
-        static func reduce(value: inout CGFloat?, nextValue: () -> CGFloat?) {
-            if let newValue = nextValue() { value = newValue }
-        }
-    }
-    
-    let predictions: TurnipPredictions
+    let data: [TurnipsChart.YAxis]
     let positionPress: (Int) -> Void
     private let weekdays = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
     
     @State private var textsHeight: CGFloat?
 
     var body: some View {
-        GeometryReader(content: computeTexts)
-    }
-
-    func computeTexts(for geometry: GeometryProxy) -> some View {
-        let rect = geometry.frame(in: .local)
-        let (_, _, _, ratioX) = predictions.minMax?.roundedMinMaxAndRatios(rect: rect) ?? (0, 0, 0, 0)
-        let count = predictions.minMax?.count ?? 0
-        return texts(count: count, ratioX: ratioX)
+        texts(xValues: data.map { $0.minBuyPrice.position.x })
             .propagateHeight(HeightPreferenceKey.self)
     }
 
-    func texts(count: Int, ratioX: CGFloat) -> some View {
+    func texts(xValues: [CGFloat]) -> some View {
         VStack {
             ZStack(alignment: .leading) {
-                ForEach(0..<count) { offset in
-                    self.meridiem(offset: offset, ratioX: ratioX)
+                ForEach(Array(xValues.enumerated()), id: \.0) { offset, x in
+                    self.meridiem(offset: offset, x: -x)
                 }
             }
             ZStack(alignment: .leading) {
                 ForEach(Array(weekdays.enumerated()), id: \.0) { offset, weekday in
-                    self.weekdays(offset: offset, weekday: weekday, ratioX: ratioX)
+                    self.weekdays(offset: offset, weekday: weekday, x: -xValues[offset * 2 + 1])
                 }
             }
         }
     }
 
-    func meridiem(offset: Int, ratioX: CGFloat) -> some View {
+    func meridiem(offset: Int, x: CGFloat) -> some View {
         Button(action: { self.positionPress(offset) }) {
             Text(offset.isAM ? "AM" : "PM")
                 .font(.footnote)
                 .fontWeight(.semibold)
                 .foregroundColor(.acText)
-                .alignmentGuide(.leading, computeValue: { d in
-                    -CGFloat(offset) * ratioX
-                })
+                .alignmentGuide(.leading, computeValue: { _ in x })
         }
     }
 
-    func weekdays(offset: Int, weekday: String, ratioX: CGFloat) -> some View {
+    func weekdays(offset: Int, weekday: String, x: CGFloat) -> some View {
         Text(LocalizedStringKey(weekday))
             .font(.callout)
             .fontWeight(.bold)
             .foregroundColor(.acText)
-            .alignmentGuide(.leading, computeValue: { d in
-                -CGFloat(offset * 2 + 1) * ratioX + d.width/2
-            })
+            .alignmentGuide(.leading, computeValue: { d in x + d.width/2 })
+    }
+}
+
+extension TurnipsChartBottomLegendView {
+    struct HeightPreferenceKey: PreferenceKey {
+        static var defaultValue: CGFloat?
+        static func reduce(value: inout CGFloat?, nextValue: () -> CGFloat?) {
+            if let newValue = nextValue() { value = newValue }
+        }
     }
 }
 
@@ -79,9 +70,11 @@ private extension Int {
 
 struct TurnipsChartBottomLegendView_Previews: PreviewProvider {
     static var previews: some View {
-        TurnipsChartBottomLegendView(
-            predictions: TurnipsChartView_Previews.predictions,
-            positionPress: { _ in }
-        )
+        GeometryReader { geometry in
+            TurnipsChartBottomLegendView(
+                data: TurnipsChartView_Previews.yAxisData(for: geometry),
+                positionPress: { _ in }
+            )
+        }
     }
 }

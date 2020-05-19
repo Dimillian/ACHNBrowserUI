@@ -53,6 +53,7 @@ struct TodayView: View {
 
                 Group {
                     TodayEventsSection()
+                    TodaySpecialCharacters()
                     TodayCurrentlyAvailableSection(viewModel: viewModel)
                     TodayCollectionProgressSection(viewModel: viewModel, sheet: $selectedSheet)
                     TodayBirthdaysSection(villagers: villagersViewModel.todayBirthdays)
@@ -60,18 +61,18 @@ struct TodayView: View {
                         .onTapGesture {
                             self.uiState.selectedTab = .turnips
                     }
-                    //TodayTasksSection()
-                    TodayNookazonSection(sheet: $selectedSheet, viewModel: viewModel)
+                    // TodayTasksSection()
+                    // TodayNookazonSection(sheet: $selectedSheet, viewModel: viewModel)
                     TodaySubscribeSection(sheet: $selectedSheet)
-                    //self.arrangeSectionsButton
+                    TodayMysteryIslandsSection()
+                    // self.arrangeSectionsButton
                 }
             }
             .listStyle(GroupedListStyle())
             .environment(\.horizontalSizeClass, .regular)
-            .navigationBarTitle(Text("\(dateString().capitalized)"))
+            .navigationBarTitle(Text("\(dateString.capitalized)"))
             .navigationBarItems(leading: aboutButton, trailing: settingsButton)
             .sheet(item: $selectedSheet, content: { Sheet(sheetType: $0) })
-            .onAppear(perform: viewModel.fetchListings)
             
             ActiveCrittersView(activeFishes: fishAvailable,
                                activeBugs: bugsAvailable)
@@ -119,7 +120,7 @@ struct TodayView: View {
         .safeHoverEffect()
     }
     
-    private func dateString() -> String {
+    private var dateString: String {
         let f = DateFormatter()
         f.setLocalizedDateFormatFromTemplate("EEEE, MMM d")
         return f.string(from: Date())

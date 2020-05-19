@@ -10,29 +10,28 @@ import SwiftUI
 import Backend
 
 struct TurnipsChartGrid: Shape {
-    let predictions: TurnipPredictions
+    let data: [TurnipsChart.YAxis]
     let displays: Set<Display> = [.vertical]
 
     func path(in rect: CGRect) -> Path {
         var path = Path()
 
-        let (minY, maxY, ratioY, ratioX) = predictions.minMax?.roundedMinMaxAndRatios(rect: rect) ?? (0, 0, 0, 0)
-        let count = predictions.minMax?.count ?? 0
+        let (ratioX, ratioY, _, maxY) = data.ratios(in: rect)
+        let count = data.count
 
         if displays.contains(.vertical) {
             for offset in 0..<count {
                 let offset = CGFloat(offset)
                 path.move(to: CGPoint(x: offset * ratioX, y: rect.minY))
-                path.addLine(to: CGPoint(x: offset * ratioX, y: ratioY * (maxY - minY)))
+                path.addLine(to: CGPoint(x: offset * ratioX, y: rect.maxY))
             }
         }
 
         if displays.contains(.horizontal) {
-            let min = Int(minY)
-            let max = Int(maxY) + TurnipsChart.steps
-            let lines = Array(stride(from: min, to: max, by: TurnipsChart.steps))
+            let steps = CGFloat(TurnipsChart.steps)
+            let maxY = maxY + CGFloat(TurnipsChart.extraMaxSteps)
+            let lines = Array(stride(from: 0, to: maxY, by: steps))
             for line in lines {
-                let line = CGFloat(line)
                 path.move(to: CGPoint(x: rect.minX, y: ratioY * line))
                 path.addLine(to: CGPoint(x: rect.maxX, y: ratioY * line))
             }
@@ -47,7 +46,7 @@ extension TurnipsChartGrid {
 }
 
 struct TurnipsChartGridInteractiveVerticalLines: View {
-    let predictions: TurnipPredictions
+    let data: [TurnipsChart.YAxis]
     let positionPress: (Int) -> Void
     let touchWidth: CGFloat = 20
 
@@ -56,11 +55,10 @@ struct TurnipsChartGridInteractiveVerticalLines: View {
     }
 
     func lines(geometry: GeometryProxy) -> some View {
-        let (_, _, _, ratioX) = predictions.minMax?.roundedMinMaxAndRatios(rect: geometry.frame(in: .local)) ?? (0, 0, 0, 0)
-        let count = predictions.minMax?.count ?? 0
+        let (ratioX, _, _, _) = data.ratios(in: geometry.frame(in: .local))
 
         return ZStack(alignment: .leading) {
-            ForEach(0..<count) { offset in
+            ForEach(0..<data.count) { offset in
                 Button(action: { self.positionPress(offset) }) {
                     Color.clear
                         .frame(width: self.touchWidth)
