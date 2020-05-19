@@ -206,8 +206,6 @@ You can cancel anytime with your iTunes account settings. Any unused portion of 
 "Rarity:" = "Rareté:";
 "Shadow size:" = "Ombre:";
 "Customizable: %@" = "Customisable: %@";
-"Flick:" = "Djason:";
-"C.J:" = "Pollux:";
 "Yes" = "Oui";
 "No" = "Non";
 "Common" = "Commun";
@@ -520,3 +518,17 @@ You can cancel anytime with your iTunes account settings. Any unused portion of 
 "From 6pm to 5am" = "De 18H à 5H";
 "From 8pm to 5am" = "De 20H à 5H";
 "From 5am to 12pm" = "De 5H à 12H";
+
+
+//Special characters
+"K.K Slider" = "Kéké Laglisse";
+"Daisy Mae" = "Porcelette";
+"C.J" = "Pollux";
+"Flick" = "Djason";
+"Kicks" = "Blaise";
+"Saharah" = "Sarah";
+"Label" = "Maria";
+"Leif" = "Racine";
+"Redd" = "Rounard";
+"Wisp" = "Follet";
+"Celeste" = "Céleste";

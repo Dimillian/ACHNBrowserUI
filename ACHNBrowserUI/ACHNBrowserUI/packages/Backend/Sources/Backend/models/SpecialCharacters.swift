@@ -30,6 +30,35 @@ public enum SpecialCharacters: String, CaseIterable {
         }
     }
     
+    public func localizedName() -> LocalizedStringKey {
+        switch self {
+        case .kk:
+            return LocalizedStringKey("K.K Slider")
+        case .daisy:
+            return LocalizedStringKey("Daisy Mae")
+        case .cj:
+            return LocalizedStringKey("C.J")
+        case .flick:
+            return LocalizedStringKey("Flick")
+        case .kicks:
+            return LocalizedStringKey("Kicks")
+        case .saharah:
+            return LocalizedStringKey("Saharah")
+        case .gulliver:
+            return LocalizedStringKey("Gulliver")
+        case .label:
+            return LocalizedStringKey("Label")
+        case .leif:
+            return LocalizedStringKey("Leif")
+        case .redd:
+            return LocalizedStringKey("Redd")
+        case .wisp:
+            return LocalizedStringKey("Wisp")
+        case .celeste:
+            return LocalizedStringKey("Celeste")
+        }
+    }
+    
     private static func standard() -> [SpecialCharacters] {
         return [.saharah, .leif, .kicks, .redd, .label, .gulliver, .cj, .flick]
     }
