@@ -13,7 +13,7 @@ struct ItemDetailSeasonSectionView: View {
     let item: Item
     
     var body: some View {
-        Section(header: SectionHeaderView(text: "Seasonality")) {
+        Section(header: SectionHeaderView(text: "Seasonality", icon: "cloud.sun.rain.fill")) {
             VStack(spacing: 8) {
                 if item.formattedTimes() != nil {
                     HStack {

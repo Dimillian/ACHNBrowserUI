@@ -74,9 +74,15 @@ struct ItemDetailView: View {
                             .fontWeight(.semibold)
                             .foregroundColor(.acHeaderBackground)
                         if item.isCritter {
-                            Text("Flick: ")
-                                .foregroundColor(.acText)
-                                .padding(.leading, 8)
+                            if item.appCategory == .bugs {
+                                Text("Flick: ")
+                                    .foregroundColor(.acText)
+                                    .padding(.leading, 8)
+                            } else {
+                                Text("C.J: ")
+                                    .foregroundColor(.acText)
+                                    .padding(.leading, 8)
+                            }
                             Text("\(Int(Float(item.sell!) * 1.5))")
                                 .font(.body)
                                 .fontWeight(.semibold)
