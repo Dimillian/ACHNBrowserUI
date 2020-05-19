@@ -365,44 +365,44 @@ Puoi annullare il tuo abbonamento in ogni momento dalle impostazioni del tuo acc
 "Need Materials" = "Necessita materiali";
 
 // CategoryRow
-"housewares" = "Haushaltswaren";
-"miscellaneous" = "Sonstiges";
-"wall-mounted" = "Wand Dekoration";
-"wallpapers" = "Tapeten";
-"floors" = "Fußböden";
-"rugs" = "Teppiche";
-"photos" = "Fotos";
+"housewares" = "Arredi";
+"miscellaneous" = "Varie";
+"wall-mounted" = "Da muro";
+"wallpapers" = "Carta da parati";
+"floors" = "Pavimenti";
+"rugs" = "Tappeti";
+"photos" = "Foto";
 "posters" = "Poster";
-"fencing" = "Zäune";
-"tools" = "Werkzeuge";
-"tops" = "Oberteile";
-"bottoms" = "Unterteile";
-"dresses" = "Kleider";
-"Dress-Up" = "Verkleidungen";
-"headwear" = "Kopfbedeckungen";
-"accessories" = "Accessoires";
-"socks" = "Socken";
-"shoes" = "Schuhe";
-"bags" = "Taschen";
-"umbrellas" = "Regenschirme";
-"music" = "Musik";
-"recipes" = "Anleitungen";
-"construction" = "Bau";
-"nookmiles" = "Nook Miles";
-"other" = "Anderes";
-"art" = "Kunst";
-"bugs" = "Insekten";
-"fish" = "Fische";
-"fossils" = "Fossilien";
+"fencing" = "Recinzioni";
+"tools" = "Strumenti";
+"tops" = "Maglie";
+"bottoms" = "Pantaloni";
+"dresses" = "Vestiti";
+"Dress-Up" = "Completi";
+"headwear" = "Cappelli";
+"accessories" = "Accessori";
+"socks" = "Calzini";
+"shoes" = "Scarpe";
+"bags" = "Borse";
+"umbrellas" = "Ombrelli";
+"music" = "Canzoni";
+"recipes" = "Schemi";
+"construction" = "Costruzione";
+"nookmiles" = "Miglia Nook";
+"other" = "Altro";
+"art" = "Arte";
+"bugs" = "Insetti";
+"fish" = "Pesci";
+"fossils" = "Fossili";
 // CategoriesView
-"Nature" = "Natur";
-"Wardrobe" = "Kleidung";
-"No results for %@" = "Kein Ergebnis für %@";
+"Nature" = "Natura";
+"Wardrobe" = "Guardaroba";
+"No results for %@" = "Nessun risultato per %@";
 
 
 // Shared
 // SearchField
-"Search..." = "Suchen...";
+"Search..." = "Cerca...";
 
 // item sources
 // Added 2020-05-11:
