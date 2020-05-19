@@ -197,53 +197,53 @@ Puoi annullare il tuo abbonamento in ogni momento dalle impostazioni del tuo acc
 "lists" = "liste";
 
 // ItemsListView
-"Clear Selection" = "Auswahl aufheben";
-"Sort items" = "Gegenstände sortieren";
-"Current Sort: %@" = "Aktuelle Sortierung: %@";
-"name" = "Name";
+"Clear Selection" = "Cancella selezione";
+"Sort items" = "Ordina oggetti";
+"Current Sort: %@" = "Ordine attuale: %@";
+"name" = "nome";
 "buy" = "Kaufpreis";
 "sell" = "Verkaufspreis";
-"from" = "Von";
-"set" = "Set";
-"similar" = "Ähnliche";
-"Name" = "Name";
-"Buy" = "Kaufpreis";
-"Sell" = "Verkaufspreis";
-"From" = "Von";
+"from" = "da";
+"set" = "set";
+"similar" = "simile";
+"Name" = "Nome";
+"Buy" = "Compra";
+"Sell" = "Vendi";
+"From" = "Da";
 "Set" = "Set";
-"Similar" = "Ähnliche";
+"Similar" = "Simile";
 // ItemRowView
-"unknown source" = "Herkunft unbekannt";
+"unknown source" = "origine sconosciuta";
 // ItemDetailInfoView
-"Rarity:" = "Seltenheit:";
-"Common" = "Gewöhnlich";
-"Uncommon" = "Ungewöhnlich";
-"Rare" = "Selten";
-"Shadow size:" = "Schatten Größe:";
-"X-Small" = "Sehr klein";
-"Small" = "Klein";
-"Medium" = "Mittel";
-"Large" = "Groß";
-"X-Large" = "Sehr groß";
-"Customizable: %@" = "Veränderbar: %@";
-"Flick:" = "Carlson:";
-"C.J:" = "Lomeus:";
-"Yes" = "Ja";
-"No" = "Nein";
+"Rarity:" = "Rarità:";
+"Common" = "Comune";
+"Uncommon" = "Non comune";
+"Rare" = "Raro";
+"Shadow size:" = "Grandezza ombra:";
+"X-Small" = "Piccolissima";
+"Small" = "Piccola";
+"Medium" = "Media";
+"Large" = "Grande";
+"X-Large" = "Enorme";
+"Customizable: %@" = "Personalizzabile: %@";
+"Flick:" = "Ivano:";
+"C.J:" = "Castorino:";
+"Yes" = "Sì";
+"No" = "No";
 // ItemsCrosslineSectionView
-"Preview" = "Vorschau";
+"Preview" = "Anteprima";
 // ItemDetailSeasonView
-"Seasonality" = "Saisonalität";
+"Seasonality" = "Stagionalità";
 // ItemDetailView
-"Set items" = "Setgegenstände";
-"Simillar items" = "Ähnliche Gegenstände";
-"Thematics" = "Thematik";
-"Variants" = "Varianten";
-"Materials" = "Materialien";
-"Nookazon listings" = "Nookazon Auflistung";
-"Loading Listings..." = "Lade Auflistung...";
-"No listings found on Nookazon" = "Keine Auflistung auf Nookazon gefunden";
-"Your items lists" = "Deine Gegenstandslisten";
+"Set items" = "Imposta oggetti";
+"Simillar items" = "Oggetti simili";
+"Thematics" = "Temi";
+"Variants" = "Varianti";
+"Materials" = "Materiali";
+"Nookazon listings" = "Annunci Nookazon";
+"Loading Listings..." = "Caricamento annunci...";
+"No listings found on Nookazon" = "Nessun annuncio trovato su Nookazon";
+"Your items lists" = "La tua lista";
 
 // TurnipsView
 "Minmax" = "Min-Max";
