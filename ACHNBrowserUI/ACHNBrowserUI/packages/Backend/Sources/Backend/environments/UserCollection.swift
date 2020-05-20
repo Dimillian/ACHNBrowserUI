@@ -99,6 +99,14 @@ public class UserCollection: ObservableObject {
         save()
     }
     
+    public func resetTasks() {
+        dailyTasks.lastUpdate = Date()
+        for(taskName, _) in dailyTasks.tasks {
+            dailyTasks.tasks[taskName]?.curProgress = 0
+        }
+        save()
+    }
+    
     // MARK: - User items list
     public func addList(userList: UserList) {
         lists.append(userList)

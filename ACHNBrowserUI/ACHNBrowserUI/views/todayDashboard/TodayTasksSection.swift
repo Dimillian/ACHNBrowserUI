@@ -67,9 +67,20 @@ struct TodayTasksSection: View {
                     makeTaskBubble(icon: "icon-bottle-message", taskName: DailyTasks.taskName.bottle)
                     makeTaskBubble(icon: "icon-villager", taskName: DailyTasks.taskName.villagerHouses)
                 }
+                HStack {
+                    Text("Reset")
+                        .onTapGesture {
+                            self.collection.resetTasks()
+                    }
+                    .foregroundColor(.acText)
+                    .padding(.vertical, 8)
+                    .padding(.horizontal, 14)
+                    .background(Color.acText.opacity(0.2))
+                    .mask(RoundedRectangle(cornerRadius: 14, style: .continuous))
+                }
             }
             .frame(maxWidth: .infinity)
-            .padding(.vertical)
+            .padding(.vertical, 8)
         }
     }
     
