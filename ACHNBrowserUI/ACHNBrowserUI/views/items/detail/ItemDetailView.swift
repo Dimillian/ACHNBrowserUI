@@ -18,10 +18,12 @@ struct ItemDetailView: View {
 
     @ObservedObject private var itemViewModel: ItemDetailViewModel
     
+    let item: Item
     @State private var displayedVariant: Variant?
     @State private var selectedSheet: Sheet.SheetType?
 
     init(item: Item) {
+        self.item = item
         self.itemViewModel = ItemDetailViewModel(item: item)
     }
 
@@ -86,6 +88,8 @@ struct ItemDetailView: View {
         .listStyle(GroupedListStyle())
         .environment(\.horizontalSizeClass, .regular)
         .onAppear(perform: {
+            self.itemViewModel.item = self.item
+            self.displayedVariant = nil
             self.itemViewModel.setupItems()
         })
         .onDisappear {
