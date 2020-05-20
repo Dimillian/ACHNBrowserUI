@@ -1,5 +1,5 @@
 //
-//  File.swift
+//  DailyTasks.swift
 //  
 //
 //  Created by Jan on 19.05.20.
@@ -27,24 +27,24 @@ public struct DailyTasks: Codable {
     
     public enum taskName: String, Codable, CaseIterable {
         case rocks
-        case wood
         case fossils
         case weed
+        case furniture
         case bell
         case nookmiles
         case villagerHouses
-        case turnip
+        case bottle
     }
 
     public var lastUpdate = Date()
     public var tasks = [
         taskName.rocks: Task(hasProgress: true, maxProgress: 8),
-        taskName.wood: Task(hasProgress: false, maxProgress: 1),
         taskName.fossils: Task(hasProgress: true, maxProgress: 4),
         taskName.weed: Task(hasProgress: true, maxProgress: 3),
+        taskName.furniture: Task(hasProgress: true, maxProgress: 1),
         taskName.bell: Task(hasProgress: true, maxProgress: 1),
         taskName.nookmiles: Task(hasProgress: true, maxProgress: 1),
         taskName.villagerHouses: Task(hasProgress: true, maxProgress: 3),
-        taskName.turnip: Task(hasProgress: true, maxProgress: 1)
+        taskName.bottle: Task(hasProgress: true, maxProgress: 1)
     ]
 }

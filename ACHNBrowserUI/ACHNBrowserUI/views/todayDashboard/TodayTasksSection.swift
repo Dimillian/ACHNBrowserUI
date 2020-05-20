@@ -27,8 +27,8 @@ struct TodayTasksSection: View {
                 .foregroundColor(Color("ACBackground"))
             Image(icon)
                 .resizable()
-                .aspectRatio(1, contentMode: .fit)
-            if task.hasProgress || taskName == DailyTasks.taskName.turnip && !self.isSunday {
+                .aspectRatio(taskName == DailyTasks.taskName.villagerHouses ? 0.8 : 1, contentMode: .fit)
+            if task.hasProgress {
                 ZStack {
                     Circle()
                         .stroke(lineWidth: 4.0)
@@ -45,7 +45,7 @@ struct TodayTasksSection: View {
         }
         .frame(maxHeight: 44)
         .onTapGesture {
-            if !task.hasProgress || taskName == DailyTasks.taskName.turnip && !self.isSunday {
+            if !task.hasProgress {
                 return
             }
             self.collection.updateProgress(taskName: taskName)
@@ -57,16 +57,15 @@ struct TodayTasksSection: View {
             VStack(spacing: 15) {
                 HStack {
                     makeTaskBubble(icon: "icon-iron", taskName: DailyTasks.taskName.rocks)
-                    makeTaskBubble(icon: "icon-wood", taskName: DailyTasks.taskName.wood)
                     makeTaskBubble(icon: "icon-weed", taskName: DailyTasks.taskName.weed)
                     makeTaskBubble(icon: "icon-fossil", taskName: DailyTasks.taskName.fossils)
+                    makeTaskBubble(icon: "icon-leaf", taskName: DailyTasks.taskName.furniture)
                 }
                 HStack {
                     makeTaskBubble(icon: "icon-bell", taskName: DailyTasks.taskName.bell)
                     makeTaskBubble(icon: "icon-miles", taskName: DailyTasks.taskName.nookmiles)
-                    makeTaskBubble(icon: "icon-helmet", taskName: DailyTasks.taskName.villagerHouses)
-                    makeTaskBubble(icon: "icon-turnip", taskName: DailyTasks.taskName.turnip)
-                        .opacity(isSunday ? 1.0 : 0.25)
+                    makeTaskBubble(icon: "icon-bottle-message", taskName: DailyTasks.taskName.bottle)
+                    makeTaskBubble(icon: "icon-villager", taskName: DailyTasks.taskName.villagerHouses)
                 }
             }
             .frame(maxWidth: .infinity)
