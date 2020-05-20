@@ -17,21 +17,27 @@ struct TodayTasksSection: View {
     }
     
     // MARK: - Task Bubble
-    private func makeTaskBubble(icon: String, taskName: String) -> some View {
-        ZStack {
+    private func makeTaskBubble(icon: String, taskName: DailyTasks.taskName) -> some View {
+        var task: DailyTasks.Task {
+            get {
+                return self.collection.dailyTasks.tasks[taskName]!
+            }
+        }
+        
+        return ZStack {
             Circle()
                 .foregroundColor(Color("ACBackground"))
             Image(icon)
                 .resizable()
                 .aspectRatio(1, contentMode: .fit)
-            if collection.dailyTasks.tasks[taskName]!.hasProgress || taskName.elementsEqual("turnip") && !self.isSunday {
+            if task.hasProgress || taskName == DailyTasks.taskName.turnip && !self.isSunday {
                 ZStack {
                     Circle()
                         .stroke(lineWidth: 4.0)
                         .opacity(0.3)
                         .foregroundColor(Color.red)
                     Circle()
-                        .trim(from: 0.0, to: CGFloat(self.collection.dailyTasks.tasks[taskName]!.curProgress)/CGFloat(self.collection.dailyTasks.tasks[taskName]!.maxProgress))
+                        .trim(from: 0.0, to: CGFloat(task.curProgress)/CGFloat(task.maxProgress))
                         .stroke(style: StrokeStyle(lineWidth: 4.0, lineCap: .round, lineJoin: .round))
                         .foregroundColor(Color.green)
                         .rotationEffect(Angle(degrees: 270.0))
@@ -40,11 +46,10 @@ struct TodayTasksSection: View {
         }
         .frame(maxHeight: 44)
         .onTapGesture {
-            if !self.collection.dailyTasks.tasks[taskName]!.hasProgress || taskName.elementsEqual("turnip") && !self.isSunday {
+            if !task.hasProgress || taskName == DailyTasks.taskName.turnip && !self.isSunday {
                 return
             }
-            self.collection.dailyTasks.tasks[taskName]!.curProgress += 1
-            self.collection.dailyTasks.updated()
+            self.collection.updateProgress(taskName: taskName)
         }
     }
     
@@ -52,16 +57,16 @@ struct TodayTasksSection: View {
         Section(header: SectionHeaderView(text: "Today's Tasks", icon: "checkmark.seal.fill")) {
             VStack(spacing: 15) {
                 HStack {
-                    makeTaskBubble(icon: "icon-iron", taskName: "rocks")
-                    makeTaskBubble(icon: "icon-wood", taskName: "wood")
-                    makeTaskBubble(icon: "icon-weed", taskName: "weed")
-                    makeTaskBubble(icon: "icon-fossil", taskName: "fossils")
+                    makeTaskBubble(icon: "icon-iron", taskName: DailyTasks.taskName.rocks)
+                    makeTaskBubble(icon: "icon-wood", taskName: DailyTasks.taskName.wood)
+                    makeTaskBubble(icon: "icon-weed", taskName: DailyTasks.taskName.weed)
+                    makeTaskBubble(icon: "icon-fossil", taskName: DailyTasks.taskName.fossils)
                 }
                 HStack {
-                    makeTaskBubble(icon: "icon-bell", taskName: "bell")
-                    makeTaskBubble(icon: "icon-miles", taskName: "nookmiles")
-                    makeTaskBubble(icon: "icon-helmet", taskName: "villagerHouses")
-                    makeTaskBubble(icon: "icon-turnip", taskName: "turnip")
+                    makeTaskBubble(icon: "icon-bell", taskName: DailyTasks.taskName.bell)
+                    makeTaskBubble(icon: "icon-miles", taskName: DailyTasks.taskName.nookmiles)
+                    makeTaskBubble(icon: "icon-helmet", taskName: DailyTasks.taskName.villagerHouses)
+                    makeTaskBubble(icon: "icon-turnip", taskName: DailyTasks.taskName.turnip)
                         .opacity(isSunday ? 1.0 : 0.25)
                 }
             }

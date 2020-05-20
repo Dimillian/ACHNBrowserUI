@@ -33,17 +33,28 @@ public struct DailyTasks: Codable {
             }
         }
     }
+    
+    public enum taskName: String, Codable, CaseIterable {
+        case rocks
+        case wood
+        case fossils
+        case weed
+        case bell
+        case nookmiles
+        case villagerHouses
+        case turnip
+    }
 
     public var lastUpdate = Date.init()
     public var tasks = [
-        "rocks": Task(hasProgress: true, maxProgress: 8),
-        "wood": Task(hasProgress: false, maxProgress: 1),
-        "fossils": Task(hasProgress: true, maxProgress: 4),
-        "weed": Task(hasProgress: true, maxProgress: 3),
-        "bell": Task(hasProgress: true, maxProgress: 1),
-        "nookmiles": Task(hasProgress: true, maxProgress: 1),
-        "villagerHouses": Task(hasProgress: true, maxProgress: 3),
-        "turnip": Task(hasProgress: true, maxProgress: 1)
+        taskName.rocks: Task(hasProgress: true, maxProgress: 8),
+        taskName.wood: Task(hasProgress: false, maxProgress: 1),
+        taskName.fossils: Task(hasProgress: true, maxProgress: 4),
+        taskName.weed: Task(hasProgress: true, maxProgress: 3),
+        taskName.bell: Task(hasProgress: true, maxProgress: 1),
+        taskName.nookmiles: Task(hasProgress: true, maxProgress: 1),
+        taskName.villagerHouses: Task(hasProgress: true, maxProgress: 3),
+        taskName.turnip: Task(hasProgress: true, maxProgress: 1)
     ]
 
     public mutating func updated() {
