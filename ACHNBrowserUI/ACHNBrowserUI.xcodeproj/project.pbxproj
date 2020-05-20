@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		690A72C924752BF4001E7294 /* villagersLikes in Resources */ = {isa = PBXBuildFile; fileRef = 690A72C824752BF4001E7294 /* villagersLikes */; };
 		69157B7E2471A5A1005B9002 /* TodayMysteryIslandsSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69157B6D247121ED005B9002 /* TodayMysteryIslandsSection.swift */; };
 		69157B7F2471A5A1005B9002 /* TodayNookazonSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 693E2BC3246689C500B85CB8 /* TodayNookazonSection.swift */; };
 		69157B802471A5A1005B9002 /* UserListFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69875F5424654EB900B1D46C /* UserListFormView.swift */; };
@@ -384,6 +385,7 @@
 		68DFFFAC24492D7F00DEA07F /* ItemDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailViewModel.swift; sourceTree = "<group>"; };
 		6903CD0E246C7E0300150FA1 /* CollectionProgressDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionProgressDetailView.swift; sourceTree = "<group>"; };
 		6903CD10246C7EB800150FA1 /* CollectionProgressRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionProgressRow.swift; sourceTree = "<group>"; };
+		690A72C824752BF4001E7294 /* villagersLikes */ = {isa = PBXFileReference; lastKnownFileType = text; path = villagersLikes; sourceTree = "<group>"; };
 		690BD65324404F4300DEECD3 /* ACHNBrowserUI.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ACHNBrowserUI.entitlements; sourceTree = "<group>"; };
 		69157B4924711F6C005B9002 /* islands.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = islands.json; sourceTree = "<group>"; };
 		69157B6D247121ED005B9002 /* TodayMysteryIslandsSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayMysteryIslandsSection.swift; sourceTree = "<group>"; };
@@ -1024,7 +1026,6 @@
 				699425D8246927190089C21B /* localized */,
 				699425D624688C200089C21B /* clothing */,
 				695D45FC2467F26E00B5C313 /* furnitures */,
-				695D45F82467025000B5C313 /* villagersHouse */,
 				69CFCA84245AAF520059C067 /* music */,
 				69CFCA86245AAF520059C067 /* tools */,
 				69CFCA87245AAF520059C067 /* nookmiles */,
@@ -1041,6 +1042,8 @@
 				69CFCA9B245AAF520059C067 /* photos */,
 				69CFCA9D245AAF520059C067 /* fish */,
 				69CFCA9E245AAF520059C067 /* rugs */,
+				695D45F82467025000B5C313 /* villagersHouse */,
+				690A72C824752BF4001E7294 /* villagersLikes */,
 			);
 			path = json;
 			sourceTree = "<group>";
@@ -1297,6 +1300,7 @@
 				69157C482471A5A1005B9002 /* bookmark-sky@3x.png in Resources */,
 				69157C492471A5A1005B9002 /* round-alt-orange@2x.png in Resources */,
 				69157C4A2471A5A1005B9002 /* round-alt-gold@2x.png in Resources */,
+				690A72C924752BF4001E7294 /* villagersLikes in Resources */,
 				69157C4B2471A5A1005B9002 /* round-lime@2x.png in Resources */,
 				69157C4C2471A5A1005B9002 /* simple-orange@2x.png in Resources */,
 				69157C4D2471A5A1005B9002 /* bookmark-pink@2x.png in Resources */,
@@ -1503,7 +1507,7 @@
 				CODE_SIGN_ENTITLEMENTS = ACHNBrowserUI/ACHNBrowserUI.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development: Thomas Ricouard (7MB55D6BJ5)";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 051952020;
+				CURRENT_PROJECT_VERSION = 052012020;
 				DEVELOPMENT_ASSET_PATHS = "\"ACHNBrowserUI/Preview Content\"";
 				DEVELOPMENT_TEAM = Z6P74P6T99;
 				ENABLE_PREVIEWS = YES;
@@ -1513,7 +1517,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.4.1;
+				MARKETING_VERSION = 1.4.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.thomasricouard.ACNH;
 				PRODUCT_NAME = "AC Helper";
 				PROVISIONING_PROFILE_SPECIFIER = "AC Dev";
@@ -1534,7 +1538,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 051952020;
+				CURRENT_PROJECT_VERSION = 052012020;
 				DEVELOPMENT_ASSET_PATHS = "\"ACHNBrowserUI/Preview Content\"";
 				DEVELOPMENT_TEAM = Z6P74P6T99;
 				ENABLE_PREVIEWS = YES;
@@ -1544,7 +1548,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.4.1;
+				MARKETING_VERSION = 1.4.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.thomasricouard.ACNH;
 				PRODUCT_NAME = "AC Helper";
 				PROVISIONING_PROFILE_SPECIFIER = "AC Dev";

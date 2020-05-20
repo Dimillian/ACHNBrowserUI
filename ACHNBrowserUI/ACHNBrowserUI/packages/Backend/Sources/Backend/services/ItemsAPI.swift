@@ -1,5 +1,5 @@
 //
-//  NookPlazaAPIService.swift
+//  ItemsAPI.swift
 //  ACHNBrowserUI
 //
 //  Created by Thomas Ricouard on 08/04/2020.
@@ -9,7 +9,7 @@
 import Foundation
 import Combine
 
-public struct NookPlazaAPIService {
+public struct ItemsAPI {
     private static let decoder = JSONDecoder()
     private static let apiQueue = DispatchQueue(label: "nookazon_api",
                                                 qos: .userInitiated,
@@ -21,6 +21,10 @@ public struct NookPlazaAPIService {
     
     public static func fetchVillagerHouse() -> AnyPublisher<[VillagerHouse], APIError> {
         Self.fetchFile(name: "villagersHouse")
+    }
+    
+    public static func fetchVillagerLikes() -> AnyPublisher<[String: VillagerLike], APIError> {
+        Self.fetchFile(name: "villagersLikes")
     }
     
     public static func fetchFile<T: Codable>(name: String) -> AnyPublisher<T ,APIError> {

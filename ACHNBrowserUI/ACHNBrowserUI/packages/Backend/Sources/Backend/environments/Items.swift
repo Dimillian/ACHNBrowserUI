@@ -16,8 +16,11 @@ public class Items: ObservableObject {
     
     @Published public var categories: [Category: [Item]] = [:]
     @Published public var villagersHouse: [String: VillagerHouse] = [:]
+    @Published public var villagersLike: [String: VillagerLike] = [:]
     
-    private var villagerItemsCache: [String: [Item]] = [:]
+    private var villagersHouseCache: [String: [Item]] = [:]
+    private var villagersLikeCache: [String: [Item]] = [:]
+    
     private let spotlightIndex: [Category] = [.fish, .bugs, .fossils, .art]
     private let spotlightQueue = DispatchQueue(label: "ac.spotlight", qos: .background)
     
@@ -31,7 +34,7 @@ public class Items: ObservableObject {
         for category in Category.allCases {
             // Migrated to new JSOn format
             if let filename = Category.dataFilename(category: category) {
-                _ = NookPlazaAPIService
+                _ = ItemsAPI
                     .fetchFile(name: filename)
                     .replaceError(with: NewItemResponse(total: 0, results: []))
                     .eraseToAnyPublisher()
@@ -52,7 +55,7 @@ public class Items: ObservableObject {
                 }
             } else {
                 // Old JSON format
-                _ = NookPlazaAPIService
+                _ = ItemsAPI
                     .fetch(endpoint: category)
                     .replaceError(with: ItemResponse(total: 0, results: []))
                     .eraseToAnyPublisher()
@@ -67,7 +70,7 @@ public class Items: ObservableObject {
                 }
             }
         }
-        _ = NookPlazaAPIService
+        _ = ItemsAPI
             .fetchVillagerHouse()
             .replaceError(with: [])
             .eraseToAnyPublisher()
@@ -75,6 +78,14 @@ public class Items: ObservableObject {
             .subscribe(on: DispatchQueue.global())
             .receive(on: DispatchQueue.main)
             .sink(receiveValue: { [weak self] items in self?.villagersHouse = items })
+        
+        _ = ItemsAPI
+            .fetchVillagerLikes()
+            .replaceError(with: [:])
+            .eraseToAnyPublisher()
+            .subscribe(on: DispatchQueue.global())
+            .receive(on: DispatchQueue.main)
+            .sink(receiveValue: { [weak self] items in self?.villagersLike = items })
     }
     
     public func itemsCount(for categories: [Backend.Category]) -> Int {
@@ -88,7 +99,7 @@ public class Items: ObservableObject {
     }
     
     public func matchVillagerItems(villager: String) -> AnyPublisher<[Item]?, Never> {
-        if let cached = villagerItemsCache[villager] {
+        if let cached = villagersHouseCache[villager] {
             return Just(cached).eraseToAnyPublisher()
         }
         if let villagerHouse = villagersHouse[villager] {
@@ -120,12 +131,49 @@ public class Items: ObservableObject {
                         }
                     }
                     results = Array(Set(results))
-                    self?.villagerItemsCache[villager] = results
+                    self?.villagersHouseCache[villager] = results
                     return resolve(.success(results))
                 }
             }.eraseToAnyPublisher()
         }
         
+        return Just(nil).eraseToAnyPublisher()
+    }
+    
+    public func matchVillagerPreferredGifts(villager: String) -> AnyPublisher<[Item]?, Never> {
+        if let cached = villagersLikeCache[villager] {
+            return Just(cached).eraseToAnyPublisher()
+        }
+        if let likes = villagersLike.values.first(where: { $0.id == villager })?.likes {
+            return Deferred {
+                Future { [weak self] resolve in
+                    var categories = Category.APIFurnitures()
+                    categories.append(contentsOf: Category.wardrobe())
+                    guard let weakself = self else {
+                        return resolve(.success([]))
+                    }
+                    
+                    var results: [Item] = []
+                    for (_, dic) in weakself.categories.enumerated() where categories.contains(dic.key) {
+                        let items = dic.value
+                            .filter{ $0.colors?.isEmpty == false }
+                        var added = 0
+                        for item in items {
+                            let colorsMatch = item.colors!.filter{ likes.contains($0.lowercased()) }
+                            if colorsMatch.count >= 2 {
+                                results.append(item)
+                                added += 1
+                            }
+                            if added >= 4 {
+                                break
+                            }
+                        }
+                    }
+                    self?.villagersLikeCache[villager] = results
+                    return resolve(.success(results))
+                }
+            }.eraseToAnyPublisher()
+        }
         return Just(nil).eraseToAnyPublisher()
     }
     

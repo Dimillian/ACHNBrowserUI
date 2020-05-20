@@ -18,6 +18,8 @@ struct VillagerDetailView: View {
     @State private var secondaryTextColor = Color.acSecondaryText
     @State private var sheet: Sheet.SheetType?
     @State private var isLoadingItem = true
+    @State private var expandedHouseItems = false
+    @State private var expandedLikeItems = false
     
     var villager: Villager {
         viewModel.villager
@@ -76,6 +78,7 @@ struct VillagerDetailView: View {
             .padding()
             makeInfoCell(title: "Personality", value: villager.personality).padding()
             makeInfoCell(title: "Birthday", value: villager.formattedBirthday ?? "Unknown").padding()
+            makeInfoCell(title: "Like", value: viewModel.likes?.map{ $0.capitalized }.joined(separator: ", ") ?? "Unknown").padding()
             makeInfoCell(title: "Species", value: villager.species).padding()
             makeInfoCell(title: "Gender", value: villager.gender).padding()
             makeInfoCell(title: "Catch phrase", value: villager.catchPhrase ?? "").padding()
@@ -83,9 +86,39 @@ struct VillagerDetailView: View {
             if items {
                 Section(header: SectionHeaderView(text: "Villager items", icon: "list.bullet")) {
                     if viewModel.villagerItems?.isEmpty == false {
-                        ForEach(viewModel.villagerItems!) { item in
+                        ForEach(expandedHouseItems ? viewModel.villagerItems! : viewModel.villagerItems!.prefix(3).map{ $0 }) { item in
                             NavigationLink(destination: ItemDetailView(item: item)) {
                                 ItemRowView(displayMode: .large, item: item)
+                            }
+                        }
+                        if !expandedHouseItems {
+                            Button(action: {
+                                self.expandedHouseItems = true
+                            }) {
+                                Text("See more")
+                                    .fontWeight(.bold)
+                                    .foregroundColor(.acHeaderBackground)
+                            }
+                        }
+                    } else {
+                        RowLoadingView(isLoading: .constant(true))
+                    }
+                }
+                
+                Section(header: SectionHeaderView(text: "Gifts ideas", icon: "gift")) {
+                    if viewModel.preferredItems?.isEmpty == false {
+                        ForEach(expandedLikeItems ? viewModel.preferredItems! : viewModel.preferredItems!.prefix(3).map{ $0 }) { item in
+                            NavigationLink(destination: ItemDetailView(item: item)) {
+                                ItemRowView(displayMode: .large, item: item)
+                            }
+                        }
+                        if !expandedLikeItems {
+                            Button(action: {
+                                self.expandedLikeItems = true
+                            }) {
+                                Text("See more")
+                                    .fontWeight(.bold)
+                                    .foregroundColor(.acHeaderBackground)
                             }
                         }
                     } else {
