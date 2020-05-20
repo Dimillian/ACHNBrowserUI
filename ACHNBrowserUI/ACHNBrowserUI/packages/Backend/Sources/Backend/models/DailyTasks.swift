@@ -24,14 +24,6 @@ public struct DailyTasks: Codable {
             self.hasProgress = hasProgress
             self.maxProgress = maxProgress
         }
-        
-        public mutating func increaseProgress() {
-            curProgress += 1
-            
-            if curProgress > maxProgress {
-                curProgress = 1
-            }
-        }
     }
     
     public enum taskName: String, Codable, CaseIterable {
