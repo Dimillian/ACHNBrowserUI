@@ -8,7 +8,7 @@
 
 "Tap here to preview a notification" = "Tippe hier für eine Vorschau";
 "Upgrade to +" = "Upgrade auf +";
-"You're subscribed to AC Helper+" = "You're subscribed to AC Helper+";
+"You're subscribed to AC Helper+" = "Du abonnierst AC Helper+";
 
 // copy and paste "export"  of Text() and similar SwiftUI functions
 // Global
@@ -227,7 +227,7 @@ Du kannst das Abonnement jederzeit in deinen iTunes Kontoeinstellungen beenden. 
 "Small" = "Klein";
 "Medium" = "Mittel";
 "Large" = "Groß";
-"X-Large" = "Sehr groß";
+"X-Large" = "Sehr groß";
 "Customizable: %@" = "Veränderbar: %@";
 "Flick:" = "Carlson:";
 "C.J:" = "Lomeus:";
@@ -360,6 +360,8 @@ Du kannst das Abonnement jederzeit in deinen iTunes Kontoeinstellungen beenden. 
 "Squirrel" = "Eichhörnchen";
 "Tiger" = "Tieger";
 "Wolf" = "Wolf";
+"Mag" = "Aime";
+"Gifts ideas" = "Geschenkideen";
 
 // ListingRow
 "Make an Offer" = "Angebot abgeben";
@@ -777,6 +779,7 @@ Du kannst das Abonnement jederzeit in deinen iTunes Kontoeinstellungen beenden. 
 "A very rare island with flowers, scorpions and a rectangular pond. If you climb up onto the cliff and climb down from the back, you can vault over to a tiny island in the middle and get 8 gold nuggets from a single rock." = "Eine sehr seltene Insel mit Blumen, Skorpionen und einem rechteckigen Teich. Wenn du die Klippe hinauf kletters und auf der Rückseite wieder herunter, kannst du mit dem Sprungstab eine kleine Insel erreichen auf der du vom Fels 8 Golderz bekommst.";
 
 // Added 2020-05-20
+"Same color" = "Gleiche Farbe";
 // New settings
 "Using iCloud sync" = "iCloud Synchronisierung aktiv";
 "Synchronized with iCloud" = "Mit iCloud synchronisiert";
@@ -788,7 +791,6 @@ Du kannst das Abonnement jederzeit in deinen iTunes Kontoeinstellungen beenden. 
 "From 6pm to 5am" = "Von 18 bis 5 Uhr";
 "From 8pm to 5am" = "Von 20 bis 5 Uhr";
 "From 5am to 12pm" = "Von 5 bis 0 Uhr";
-
 
 //Special characters
 "K.K Slider" = "K.K. Slider";
