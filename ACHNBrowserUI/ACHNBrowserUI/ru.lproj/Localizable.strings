@@ -12,8 +12,8 @@
 
 // copy and paste "export"  of Text() and similar SwiftUI functions
 // Global
-"Close" = "Зкрыть";
-"Dismiss" = "Зкрыть";
+"Close" = "Закрыть";
+"Dismiss" = "Закрыть";
 "Save" = "Сохранить";
 
 // Date Format
@@ -34,7 +34,7 @@
 // TodayView
 "Change Section Order" = "Изменить порядок раздела";
 // TodaySectionEditView
-"Drag & Drop to Rearrange" = "Для изменения порядка перетяните и оставте";
+"Drag & Drop to Rearrange" = "Для изменения порядка перетяните и оставьте";
 "Hidden" = "Скрытый";
 "Today Sections" = "Разделы сегодня";
 "Done" = "Выполнено";
@@ -64,7 +64,7 @@
 "This feature requires " = "Эта функция требует ";
 "Learn more >" = "Узнать больше >";
 // TodayTurnipSection
-"Today is sunday, don't forget to buy more turnips and fill your buy price." = " Сегодня воскркесенье, не забудте купить больше репы и внести вашу цену.";
+"Today is sunday, don't forget to buy more turnips and fill your buy price." = " Сегодня воскркесенье, не забудьте купить больше репы и внести вашу цену.";
 "Today's average price should be around " = "Средняя цена на сегодня составит ";
 " in the morning, and " = " утром и ";
 " this afternoon." = " после 12-ти";
@@ -135,7 +135,7 @@
 "Preferences" = "Предпочтения";
 "Island name" = "Название острова";
 "Your island name" = "Название вашего острова";
-"Hemisphere" = "Полушание";
+"Hemisphere" = "Полушарие";
 "North" = "Север";
 "South" = "Юг";
 "Starting fruit" = "Изначальный фрукт";
@@ -232,9 +232,9 @@
 "Thematics" = "Тематика";
 "Variants" = "Варианты";
 "Materials" = "Материалы";
-"Nookazon listings" = "Nookazon обьявления";
-"Loading Listings..." = "Загрузка обьявлений...";
-"No listings found on Nookazon" = "Не обнаружено обьявлений в Nookazon";
+"Nookazon listings" = "Nookazon объявления";
+"Loading Listings..." = "Загрузка объявлений...";
+"No listings found on Nookazon" = "Не обнаружено объявлений в Nookazon";
 "Your items lists" = "Ваши списки предметов";
 
 // TurnipsView
@@ -252,7 +252,7 @@
 "Sat" = "Сб";
 "Your prices" = "Ваши цены";
 "Edit your in game prices" = "Редактируйте ваши цены в игре";
-"Add your in game prices" = "Добавте ваши цены в игре";
+"Add your in game prices" = "Добавьте ваши цены в игре";
 "Turnips prediction" = "Прогноз репы";
 "To help us support the application and get turnip predictions notification, you can try out AC Helper+" = "Чтобы поддержать приложение и получать уведомления о прогнозах репы, вы можете попробовать AC Helper +";
 "%lld upcomingDailyNotifications" = "Вы получите уведомления о прогнозах репы в %lld последующих уведомлениях.";
@@ -280,7 +280,7 @@
 "Your in game prices" = "Ваши цены";
 "Buy price" = "Цена покупки";
 "Amount bought" = "Количество купленного";
-"The more in game buy prices you'll add the better the predictions will be. Your buy price only won't give your correct averages. Add prices from the game as you get them daily." = "Большее количество добавленных цен за покупку даст вам возможность видеть более точные  прогнозоы. Добавляйте цены из игры, которые вы получаете ежедневно, единоразовая цена покупки не даст правильных средних значений.";
+"The more in game buy prices you'll add the better the predictions will be. Your buy price only won't give your correct averages. Add prices from the game as you get them daily." = "Большее количество добавленных цен за покупку даст вам возможность видеть более точные прогнозы. Добавляйте цены из игры, которые вы получаете ежедневно, единоразовая цена покупки не даст правильных средних значений.";
 // TurnipsChartTopLegendView
 "Average" = "Средняя";
 "Minimum" = "Минимальная";
@@ -305,7 +305,7 @@
 // VillagersDetailView
 "Unkown" = "Неизвестно";
 "Lazy" = "Ленивый(ая)";
-"Jock" = "Спорнтивный(ая)";
+"Jock" = "Спортивный(ая)";
 "Cranky" = "Капризный(ая)";
 "Smug" = "Самодовольный(ая)";
 "Normal" = "Нормальный(ая)";
