@@ -19,9 +19,7 @@ struct TodayTasksSection: View {
     // MARK: - Task Bubble
     private func makeTaskBubble(icon: String, taskName: DailyTasks.taskName) -> some View {
         var task: DailyTasks.Task {
-            get {
-                return self.collection.dailyTasks.tasks[taskName]!
-            }
+            collection.dailyTasks.tasks[taskName]!
         }
         
         return ZStack {
@@ -41,6 +39,7 @@ struct TodayTasksSection: View {
                         .stroke(style: StrokeStyle(lineWidth: 4.0, lineCap: .round, lineJoin: .round))
                         .foregroundColor(Color.green)
                         .rotationEffect(Angle(degrees: 270.0))
+                        .animation(.easeInOut)
                 }
             }
         }

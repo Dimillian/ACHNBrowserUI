@@ -8,7 +8,6 @@
 import Foundation
 
 public struct DailyTasks: Codable {
-    
     public struct Task: Codable {
         public let hasProgress: Bool
         public let maxProgress: Int
@@ -37,7 +36,7 @@ public struct DailyTasks: Codable {
         case turnip
     }
 
-    public var lastUpdate = Date.init()
+    public var lastUpdate = Date()
     public var tasks = [
         taskName.rocks: Task(hasProgress: true, maxProgress: 8),
         taskName.wood: Task(hasProgress: false, maxProgress: 1),
@@ -48,8 +47,4 @@ public struct DailyTasks: Codable {
         taskName.villagerHouses: Task(hasProgress: true, maxProgress: 3),
         taskName.turnip: Task(hasProgress: true, maxProgress: 1)
     ]
-
-    public mutating func updated() {
-        lastUpdate = Date.init()
-    }
 }
