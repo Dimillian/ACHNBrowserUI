@@ -41,7 +41,7 @@ public struct DailyTasks: Codable {
         taskName.rocks: Task(hasProgress: true, maxProgress: 8),
         taskName.fossils: Task(hasProgress: true, maxProgress: 4),
         taskName.weed: Task(hasProgress: true, maxProgress: 3),
-        taskName.furniture: Task(hasProgress: true, maxProgress: 1),
+        taskName.furniture: Task(hasProgress: true, maxProgress: 2),
         taskName.bell: Task(hasProgress: true, maxProgress: 1),
         taskName.nookmiles: Task(hasProgress: true, maxProgress: 1),
         taskName.villagerHouses: Task(hasProgress: true, maxProgress: 3),
