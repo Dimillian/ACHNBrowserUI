@@ -147,8 +147,7 @@ public class Items: ObservableObject {
         if let likes = villagersLike.values.first(where: { $0.id == villager })?.likes {
             return Deferred {
                 Future { [weak self] resolve in
-                    var categories = Category.APIFurnitures()
-                    categories.append(contentsOf: Category.wardrobe())
+                    var categories = Category.villagersGifts()
                     guard let weakself = self else {
                         return resolve(.success([]))
                     }
@@ -156,16 +155,12 @@ public class Items: ObservableObject {
                     var results: [Item] = []
                     for (_, dic) in weakself.categories.enumerated() where categories.contains(dic.key) {
                         let items = dic.value
-                            .filter{ $0.colors?.isEmpty == false }
-                        var added = 0
+                            .filter{ $0.colors?.isEmpty == false && $0.styles?.isEmpty == false }
                         for item in items {
                             let colorsMatch = item.colors!.filter{ likes.contains($0.lowercased()) }
-                            if colorsMatch.count >= 2 {
+                            let styleMatch = item.styles!.filter{ likes.contains($0.lowercased()) }
+                            if colorsMatch.count >= 1 && styleMatch.count >= 1 {
                                 results.append(item)
-                                added += 1
-                            }
-                            if added >= 4 {
-                                break
                             }
                         }
                     }
