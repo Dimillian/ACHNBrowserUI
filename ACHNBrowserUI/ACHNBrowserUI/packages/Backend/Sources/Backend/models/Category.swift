@@ -145,13 +145,17 @@ public enum Category: String, CaseIterable {
     }
     
     public static func nature() -> [Category] {
-        return [.fish, .bugs, .fossils]
+        [.fish, .bugs, .fossils]
     }
     
     public static func icons() -> [Category] {
-        return  [.housewares, .recipes, .floors, .rugs, .wallpapers, .posters,
+        [.housewares, .recipes, .floors, .rugs, .wallpapers, .posters,
                 .fencing, .music, .tools, .nookmiles, .construction, .tops,
                  .bottoms, .dressup, .headwear, .accessories, .socks, .bags, .umbrellas,
                  .fish, .bugs, .fossils]
+    }
+    
+    public static func villagersGifts() -> [Category] {
+        [.tops, .dressup, .headwear, .accessories]
     }
 }
