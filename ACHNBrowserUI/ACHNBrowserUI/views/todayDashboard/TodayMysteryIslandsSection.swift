@@ -10,7 +10,7 @@ import SwiftUI
 import Backend
 
 struct TodayMysteryIslandsSection: View {
-    let randomIsland = MysteryIsland.loadMysteryIslands()?.randomElement()
+    @State var randomIsland = MysteryIsland.loadMysteryIslands()?.randomElement()
     
     var body: some View {
         Section(header: SectionHeaderView(text: "Mystery Islands", icon: "sun.haze.fill")) {
