@@ -1,0 +1,4303 @@
+{
+    "Admiral": {
+        "name": "Admiral",
+        "pers": "cranky",
+        "likes": [
+            "cool",
+            "cool",
+            "black",
+            "blue"
+        ],
+        "id": "brd06"
+    },
+    "Angus": {
+        "name": "Angus",
+        "pers": "cranky",
+        "likes": [
+            "cool",
+            "cool",
+            "red",
+            "black"
+        ],
+        "id": "bul00"
+    },
+    "Apollo": {
+        "name": "Apollo",
+        "pers": "cranky",
+        "likes": [
+            "cool",
+            "simple",
+            "black",
+            "black"
+        ],
+        "id": "pbr00"
+    },
+    "Avery": {
+        "name": "Avery",
+        "pers": "cranky",
+        "likes": [
+            "simple",
+            "gorgeous",
+            "orange",
+            "brown"
+        ],
+        "id": "pbr05"
+    },
+    "Boris": {
+        "name": "Boris",
+        "pers": "cranky",
+        "likes": [
+            "cool",
+            "gorgeous",
+            "purple",
+            "black"
+        ],
+        "id": "pig09"
+    },
+    "Boyd": {
+        "name": "Boyd",
+        "pers": "cranky",
+        "likes": [
+            "simple",
+            "cool",
+            "red",
+            "black"
+        ],
+        "id": "gor05"
+    },
+    "Bruce": {
+        "name": "Bruce",
+        "pers": "cranky",
+        "likes": [
+            "cool",
+            "simple",
+            "black",
+            "red"
+        ],
+        "id": "der03"
+    },
+    "Butch": {
+        "name": "Butch",
+        "pers": "cranky",
+        "likes": [
+            "cool",
+            "simple",
+            "blue",
+            "gray"
+        ],
+        "id": "dog01"
+    },
+    "Buzz": {
+        "name": "Buzz",
+        "pers": "cranky",
+        "likes": [
+            "simple",
+            "active",
+            "yellow",
+            "red"
+        ],
+        "id": "pbr03"
+    },
+    "Camofrog": {
+        "name": "Camofrog",
+        "pers": "cranky",
+        "likes": [
+            "cool",
+            "active",
+            "blue",
+            "white"
+        ],
+        "id": "flg03"
+    },
+    "Cesar": {
+        "name": "Cesar",
+        "pers": "cranky",
+        "likes": [
+            "cool",
+            "elegant",
+            "blue",
+            "light blue"
+        ],
+        "id": "gor00"
+    },
+    "Chief": {
+        "name": "Chief",
+        "pers": "cranky",
+        "likes": [
+            "cool",
+            "simple",
+            "white",
+            "gray"
+        ],
+        "id": "wol00"
+    },
+    "Chow": {
+        "name": "Chow",
+        "pers": "cranky",
+        "likes": [
+            "cool",
+            "gorgeous",
+            "black",
+            "white"
+        ],
+        "id": "bea03"
+    },
+    "Croque": {
+        "name": "Croque",
+        "pers": "cranky",
+        "likes": [
+            "elegant",
+            "cool",
+            "red",
+            "orange"
+        ],
+        "id": "flg17"
+    },
+    "Curt": {
+        "name": "Curt",
+        "pers": "cranky",
+        "likes": [
+            "cool",
+            "cool",
+            "blue",
+            "white"
+        ],
+        "id": "bea02"
+    },
+    "Cyd": {
+        "name": "Cyd",
+        "pers": "cranky",
+        "likes": [
+            "cool",
+            "active",
+            "black",
+            "yellow"
+        ],
+        "id": "elp12"
+    },
+    "Cyrano": {
+        "name": "Cyrano",
+        "pers": "cranky",
+        "likes": [
+            "cool",
+            "active",
+            "yellow",
+            "beige"
+        ],
+        "id": "ant00"
+    },
+    "Del": {
+        "name": "Del",
+        "pers": "cranky",
+        "likes": [
+            "cool",
+            "simple",
+            "blue",
+            "white"
+        ],
+        "id": "crd04"
+    },
+    "Dobie": {
+        "name": "Dobie",
+        "pers": "cranky",
+        "likes": [
+            "simple",
+            "cool",
+            "brown",
+            "beige"
+        ],
+        "id": "wol04"
+    },
+    "Elvis": {
+        "name": "Elvis",
+        "pers": "cranky",
+        "likes": [
+            "gorgeous",
+            "elegant",
+            "red",
+            "black"
+        ],
+        "id": "lon01"
+    },
+    "Fang": {
+        "name": "Fang",
+        "pers": "cranky",
+        "likes": [
+            "simple",
+            "cool",
+            "white",
+            "light blue"
+        ],
+        "id": "wol06"
+    },
+    "Frank": {
+        "name": "Frank",
+        "pers": "cranky",
+        "likes": [
+            "gorgeous",
+            "cool",
+            "brown",
+            "yellow"
+        ],
+        "id": "pbr06"
+    },
+    "Gaston": {
+        "name": "Gaston",
+        "pers": "cranky",
+        "likes": [
+            "simple",
+            "gorgeous",
+            "brown",
+            "orange"
+        ],
+        "id": "rbt04"
+    },
+    "Gonzo": {
+        "name": "Gonzo",
+        "pers": "cranky",
+        "likes": [
+            "simple",
+            "cool",
+            "black",
+            "green"
+        ],
+        "id": "kal04"
+    },
+    "Grizzly": {
+        "name": "Grizzly",
+        "pers": "cranky",
+        "likes": [
+            "cool",
+            "simple",
+            "red",
+            "black"
+        ],
+        "id": "bea09"
+    },
+    "Groucho": {
+        "name": "Groucho",
+        "pers": "cranky",
+        "likes": [
+            "cool",
+            "simple",
+            "black",
+            "gray"
+        ],
+        "id": "bea06"
+    },
+    "Gruff": {
+        "name": "Gruff",
+        "pers": "cranky",
+        "likes": [
+            "cool",
+            "gorgeous",
+            "purple",
+            "black"
+        ],
+        "id": "goa04"
+    },
+    "Hamphrey": {
+        "name": "Hamphrey",
+        "pers": "cranky",
+        "likes": [
+            "cool",
+            "simple",
+            "gray",
+            "beige"
+        ],
+        "id": "ham07"
+    },
+    "Harry": {
+        "name": "Harry",
+        "pers": "cranky",
+        "likes": [
+            "cool",
+            "simple",
+            "green",
+            "orange"
+        ],
+        "id": "hip08"
+    },
+    "Hopper": {
+        "name": "Hopper",
+        "pers": "cranky",
+        "likes": [
+            "cool",
+            "simple",
+            "yellow",
+            "red"
+        ],
+        "id": "pgn03"
+    },
+    "Ike": {
+        "name": "Ike",
+        "pers": "cranky",
+        "likes": [
+            "cool",
+            "cool",
+            "green",
+            "blue"
+        ],
+        "id": "bea11"
+    },
+    "Kabuki": {
+        "name": "Kabuki",
+        "pers": "cranky",
+        "likes": [
+            "simple",
+            "simple",
+            "purple",
+            "red"
+        ],
+        "id": "cat09"
+    },
+    "Knox": {
+        "name": "Knox",
+        "pers": "cranky",
+        "likes": [
+            "elegant",
+            "gorgeous",
+            "brown",
+            "red"
+        ],
+        "id": "chn11"
+    },
+    "Limberg": {
+        "name": "Limberg",
+        "pers": "cranky",
+        "likes": [
+            "simple",
+            "cool",
+            "green",
+            "blue"
+        ],
+        "id": "mus01"
+    },
+    "Lobo": {
+        "name": "Lobo",
+        "pers": "cranky",
+        "likes": [
+            "cool",
+            "active",
+            "black",
+            "beige"
+        ],
+        "id": "wol01"
+    },
+    "Monty": {
+        "name": "Monty",
+        "pers": "cranky",
+        "likes": [
+            "cool",
+            "cool",
+            "yellow",
+            "gray"
+        ],
+        "id": "mnk04"
+    },
+    "Murphy": {
+        "name": "Murphy",
+        "pers": "cranky",
+        "likes": [
+            "simple",
+            "cool",
+            "blue",
+            "white"
+        ],
+        "id": "cbr07"
+    },
+    "Octavian": {
+        "name": "Octavian",
+        "pers": "cranky",
+        "likes": [
+            "cool",
+            "simple",
+            "black",
+            "white"
+        ],
+        "id": "ocp00"
+    },
+    "Peewee": {
+        "name": "Peewee",
+        "pers": "cranky",
+        "likes": [
+            "active",
+            "cool",
+            "orange",
+            "blue"
+        ],
+        "id": "gor01"
+    },
+    "Rasher": {
+        "name": "Rasher",
+        "pers": "cranky",
+        "likes": [
+            "cool",
+            "simple",
+            "blue",
+            "black"
+        ],
+        "id": "pig02"
+    },
+    "Ricky": {
+        "name": "Ricky",
+        "pers": "cranky",
+        "likes": [
+            "cool",
+            "simple",
+            "blue",
+            "red"
+        ],
+        "id": "squ10"
+    },
+    "Rizzo": {
+        "name": "Rizzo",
+        "pers": "cranky",
+        "likes": [
+            "simple",
+            "cool",
+            "black",
+            "gray"
+        ],
+        "id": "mus09"
+    },
+    "Rocco": {
+        "name": "Rocco",
+        "pers": "cranky",
+        "likes": [
+            "simple",
+            "cool",
+            "yellow",
+            "black"
+        ],
+        "id": "hip00"
+    },
+    "Rolf": {
+        "name": "Rolf",
+        "pers": "cranky",
+        "likes": [
+            "cool",
+            "active",
+            "blue",
+            "black"
+        ],
+        "id": "tig00"
+    },
+    "Rooney": {
+        "name": "Rooney",
+        "pers": "cranky",
+        "likes": [
+            "active",
+            "active",
+            "gray",
+            "black"
+        ],
+        "id": "kgr09"
+    },
+    "Roscoe": {
+        "name": "Roscoe",
+        "pers": "cranky",
+        "likes": [
+            "cool",
+            "gorgeous",
+            "black",
+            "gray"
+        ],
+        "id": "hrs04"
+    },
+    "Spike": {
+        "name": "Spike",
+        "pers": "cranky",
+        "likes": [
+            "cool",
+            "gorgeous",
+            "black",
+            "gray"
+        ],
+        "id": "rhn02"
+    },
+    "Static": {
+        "name": "Static",
+        "pers": "cranky",
+        "likes": [
+            "cool",
+            "active",
+            "black",
+            "yellow"
+        ],
+        "id": "squ08"
+    },
+    "T-Bone": {
+        "name": "T-Bone",
+        "pers": "cranky",
+        "likes": [
+            "cool",
+            "simple",
+            "blue",
+            "black"
+        ],
+        "id": "bul05"
+    },
+    "Tom": {
+        "name": "Tom",
+        "pers": "cranky",
+        "likes": [
+            "cool",
+            "simple",
+            "black",
+            "gray"
+        ],
+        "id": "cat15"
+    },
+    "Vic": {
+        "name": "Vic",
+        "pers": "cranky",
+        "likes": [
+            "cool",
+            "active",
+            "light blue",
+            "blue"
+        ],
+        "id": "bul08"
+    },
+    "Vladimir": {
+        "name": "Vladimir",
+        "pers": "cranky",
+        "likes": [
+            "simple",
+            "cool",
+            "yellow",
+            "colorful"
+        ],
+        "id": "cbr06"
+    },
+    "Walt": {
+        "name": "Walt",
+        "pers": "cranky",
+        "likes": [
+            "cool",
+            "cool",
+            "black",
+            "gray"
+        ],
+        "id": "kgr08"
+    },
+    "Wart Jr.": {
+        "name": "Wart Jr.",
+        "pers": "cranky",
+        "likes": [
+            "simple",
+            "simple",
+            "blue",
+            "purple"
+        ],
+        "id": "flg05"
+    },
+    "Wolfgang": {
+        "name": "Wolfgang",
+        "pers": "cranky",
+        "likes": [
+            "cool",
+            "active",
+            "black",
+            "green"
+        ],
+        "id": "wol02"
+    },
+    "Antonio": {
+        "name": "Antonio",
+        "pers": "jock",
+        "likes": [
+            "simple",
+            "simple",
+            "light blue",
+            "blue"
+        ],
+        "id": "ant01"
+    },
+    "Axel": {
+        "name": "Axel",
+        "pers": "jock",
+        "likes": [
+            "active",
+            "simple",
+            "green",
+            "white"
+        ],
+        "id": "elp06"
+    },
+    "Bam": {
+        "name": "Bam",
+        "pers": "jock",
+        "likes": [
+            "active",
+            "simple",
+            "green",
+            "brown"
+        ],
+        "id": "der01"
+    },
+    "Biff": {
+        "name": "Biff",
+        "pers": "jock",
+        "likes": [
+            "gorgeous",
+            "active",
+            "black",
+            "blue"
+        ],
+        "id": "hip04"
+    },
+    "Bill": {
+        "name": "Bill",
+        "pers": "jock",
+        "likes": [
+            "active",
+            "active",
+            "blue",
+            "purple"
+        ],
+        "id": "duk00"
+    },
+    "Billy": {
+        "name": "Billy",
+        "pers": "jock",
+        "likes": [
+            "simple",
+            "active",
+            "blue",
+            "purple"
+        ],
+        "id": "goa02"
+    },
+    "Boone": {
+        "name": "Boone",
+        "pers": "jock",
+        "likes": [
+            "elegant",
+            "cool",
+            "colorful",
+            "red"
+        ],
+        "id": "gor02"
+    },
+    "Boots": {
+        "name": "Boots",
+        "pers": "jock",
+        "likes": [
+            "gorgeous",
+            "active",
+            "colorful",
+            "purple"
+        ],
+        "id": "crd02"
+    },
+    "Buck": {
+        "name": "Buck",
+        "pers": "jock",
+        "likes": [
+            "active",
+            "simple",
+            "gray",
+            "brown"
+        ],
+        "id": "hrs00"
+    },
+    "Bud": {
+        "name": "Bud",
+        "pers": "jock",
+        "likes": [
+            "active",
+            "simple",
+            "green",
+            "yellow"
+        ],
+        "id": "lon00"
+    },
+    "Coach": {
+        "name": "Coach",
+        "pers": "jock",
+        "likes": [
+            "active",
+            "active",
+            "blue",
+            "red"
+        ],
+        "id": "bul07"
+    },
+    "Cobb": {
+        "name": "Cobb",
+        "pers": "jock",
+        "likes": [
+            "simple",
+            "active",
+            "white",
+            "blue"
+        ],
+        "id": "pig08"
+    },
+    "Cousteau": {
+        "name": "Cousteau",
+        "pers": "jock",
+        "likes": [
+            "elegant",
+            "gorgeous",
+            "green",
+            "red"
+        ],
+        "id": "flg10"
+    },
+    "Curly": {
+        "name": "Curly",
+        "pers": "jock",
+        "likes": [
+            "simple",
+            "active",
+            "yellow",
+            "colorful"
+        ],
+        "id": "pig00"
+    },
+    "Dom": {
+        "name": "Dom",
+        "pers": "jock",
+        "likes": [
+            "active",
+            "cute",
+            "red",
+            "colorful"
+        ],
+        "id": "shp15"
+    },
+    "Drift": {
+        "name": "Drift",
+        "pers": "jock",
+        "likes": [
+            "simple",
+            "active",
+            "orange",
+            "red"
+        ],
+        "id": "flg04"
+    },
+    "Flip": {
+        "name": "Flip",
+        "pers": "jock",
+        "likes": [
+            "active",
+            "simple",
+            "blue",
+            "yellow"
+        ],
+        "id": "mnk06"
+    },
+    "Frobert": {
+        "name": "Frobert",
+        "pers": "jock",
+        "likes": [
+            "active",
+            "simple",
+            "blue",
+            "colorful"
+        ],
+        "id": "flg02"
+    },
+    "Genji": {
+        "name": "Genji",
+        "pers": "jock",
+        "likes": [
+            "elegant",
+            "simple",
+            "green",
+            "purple"
+        ],
+        "id": "rbt08"
+    },
+    "Goose": {
+        "name": "Goose",
+        "pers": "jock",
+        "likes": [
+            "simple",
+            "active",
+            "blue",
+            "white"
+        ],
+        "id": "chn00"
+    },
+    "Hamlet": {
+        "name": "Hamlet",
+        "pers": "jock",
+        "likes": [
+            "simple",
+            "active",
+            "purple",
+            "blue"
+        ],
+        "id": "ham00"
+    },
+    "Iggly": {
+        "name": "Iggly",
+        "pers": "jock",
+        "likes": [
+            "active",
+            "simple",
+            "red",
+            "blue"
+        ],
+        "id": "pgn11"
+    },
+    "Jay": {
+        "name": "Jay",
+        "pers": "jock",
+        "likes": [
+            "active",
+            "active",
+            "blue",
+            "light blue"
+        ],
+        "id": "brd00"
+    },
+    "Jitters": {
+        "name": "Jitters",
+        "pers": "jock",
+        "likes": [
+            "active",
+            "active",
+            "yellow",
+            "orange"
+        ],
+        "id": "brd04"
+    },
+    "Kevin": {
+        "name": "Kevin",
+        "pers": "jock",
+        "likes": [
+            "active",
+            "simple",
+            "black",
+            "red"
+        ],
+        "id": "pig15"
+    },
+    "Kid Cat": {
+        "name": "Kid Cat",
+        "pers": "jock",
+        "likes": [
+            "active",
+            "simple",
+            "red",
+            "red"
+        ],
+        "id": "cat10"
+    },
+    "Kody": {
+        "name": "Kody",
+        "pers": "jock",
+        "likes": [
+            "active",
+            "simple",
+            "colorful",
+            "white"
+        ],
+        "id": "cbr04"
+    },
+    "Leonardo": {
+        "name": "Leonardo",
+        "pers": "jock",
+        "likes": [
+            "active",
+            "gorgeous",
+            "red",
+            "blue"
+        ],
+        "id": "tig04"
+    },
+    "Louie": {
+        "name": "Louie",
+        "pers": "jock",
+        "likes": [
+            "active",
+            "simple",
+            "gray",
+            "red"
+        ],
+        "id": "gor04"
+    },
+    "Lyman": {
+        "name": "Lyman",
+        "pers": "jock",
+        "likes": [
+            "simple",
+            "active",
+            "light blue",
+            "yellow"
+        ],
+        "id": "kal09"
+    },
+    "Mac": {
+        "name": "Mac",
+        "pers": "jock",
+        "likes": [
+            "active",
+            "cool",
+            "red",
+            "black"
+        ],
+        "id": "dog14"
+    },
+    "Moose": {
+        "name": "Moose",
+        "pers": "jock",
+        "likes": [
+            "cool",
+            "gorgeous",
+            "purple",
+            "red"
+        ],
+        "id": "mus14"
+    },
+    "Mott": {
+        "name": "Mott",
+        "pers": "jock",
+        "likes": [
+            "active",
+            "elegant",
+            "blue",
+            "green"
+        ],
+        "id": "lon06"
+    },
+    "Peck": {
+        "name": "Peck",
+        "pers": "jock",
+        "likes": [
+            "simple",
+            "active",
+            "beige",
+            "red"
+        ],
+        "id": "brd17"
+    },
+    "Pierce": {
+        "name": "Pierce",
+        "pers": "jock",
+        "likes": [
+            "elegant",
+            "active",
+            "orange",
+            "yellow"
+        ],
+        "id": "pbr02"
+    },
+    "Poncho": {
+        "name": "Poncho",
+        "pers": "jock",
+        "likes": [
+            "simple",
+            "simple",
+            "orange",
+            "yellow"
+        ],
+        "id": "cbr02"
+    },
+    "Ribbot": {
+        "name": "Ribbot",
+        "pers": "jock",
+        "likes": [
+            "simple",
+            "active",
+            "blue",
+            "light blue"
+        ],
+        "id": "flg01"
+    },
+    "Roald": {
+        "name": "Roald",
+        "pers": "jock",
+        "likes": [
+            "active",
+            "simple",
+            "red",
+            "yellow"
+        ],
+        "id": "pgn01"
+    },
+    "Rod": {
+        "name": "Rod",
+        "pers": "jock",
+        "likes": [
+            "active",
+            "cool",
+            "blue",
+            "light blue"
+        ],
+        "id": "mus05"
+    },
+    "Rory": {
+        "name": "Rory",
+        "pers": "jock",
+        "likes": [
+            "simple",
+            "active",
+            "blue",
+            "red"
+        ],
+        "id": "lon07"
+    },
+    "Rowan": {
+        "name": "Rowan",
+        "pers": "jock",
+        "likes": [
+            "active",
+            "simple",
+            "light blue",
+            "gray"
+        ],
+        "id": "tig01"
+    },
+    "Rudy": {
+        "name": "Rudy",
+        "pers": "jock",
+        "likes": [
+            "active",
+            "simple",
+            "yellow",
+            "beige"
+        ],
+        "id": "cat20"
+    },
+    "Samson": {
+        "name": "Samson",
+        "pers": "jock",
+        "likes": [
+            "simple",
+            "active",
+            "red",
+            "yellow"
+        ],
+        "id": "mus04"
+    },
+    "Scoot": {
+        "name": "Scoot",
+        "pers": "jock",
+        "likes": [
+            "active",
+            "simple",
+            "beige",
+            "blue"
+        ],
+        "id": "duk10"
+    },
+    "Sheldon": {
+        "name": "Sheldon",
+        "pers": "jock",
+        "likes": [
+            "active",
+            "cool",
+            "green",
+            "yellow"
+        ],
+        "id": "squ16"
+    },
+    "Sly": {
+        "name": "Sly",
+        "pers": "jock",
+        "likes": [
+            "cool",
+            "simple",
+            "brown",
+            "green"
+        ],
+        "id": "crd06"
+    },
+    "Snake": {
+        "name": "Snake",
+        "pers": "jock",
+        "likes": [
+            "active",
+            "simple",
+            "black",
+            "blue"
+        ],
+        "id": "rbt03"
+    },
+    "Sparro": {
+        "name": "Sparro",
+        "pers": "jock",
+        "likes": [
+            "active",
+            "simple",
+            "green",
+            "gray"
+        ],
+        "id": "brd18"
+    },
+    "Sprocket": {
+        "name": "Sprocket",
+        "pers": "jock",
+        "likes": [
+            "simple",
+            "active",
+            "orange",
+            "green"
+        ],
+        "id": "ost03"
+    },
+    "Sterling": {
+        "name": "Sterling",
+        "pers": "jock",
+        "likes": [
+            "simple",
+            "elegant",
+            "blue",
+            "red"
+        ],
+        "id": "pbr07"
+    },
+    "Stinky": {
+        "name": "Stinky",
+        "pers": "jock",
+        "likes": [
+            "active",
+            "simple",
+            "red",
+            "blue"
+        ],
+        "id": "cat13"
+    },
+    "Tad": {
+        "name": "Tad",
+        "pers": "jock",
+        "likes": [
+            "active",
+            "simple",
+            "yellow",
+            "colorful"
+        ],
+        "id": "flg09"
+    },
+    "Tank": {
+        "name": "Tank",
+        "pers": "jock",
+        "likes": [
+            "active",
+            "simple",
+            "red",
+            "green"
+        ],
+        "id": "rhn00"
+    },
+    "Teddy": {
+        "name": "Teddy",
+        "pers": "jock",
+        "likes": [
+            "simple",
+            "simple",
+            "yellow",
+            "orange"
+        ],
+        "id": "bea00"
+    },
+    "Tybalt": {
+        "name": "Tybalt",
+        "pers": "jock",
+        "likes": [
+            "active",
+            "simple",
+            "blue",
+            "purple"
+        ],
+        "id": "tig02"
+    },
+    "Al": {
+        "name": "Al",
+        "pers": "lazy",
+        "likes": [
+            "active",
+            "active",
+            "red",
+            "white"
+        ],
+        "id": "gor08"
+    },
+    "Alfonso": {
+        "name": "Alfonso",
+        "pers": "lazy",
+        "likes": [
+            "simple",
+            "simple",
+            "red",
+            "blue"
+        ],
+        "id": "crd00"
+    },
+    "Anchovy": {
+        "name": "Anchovy",
+        "pers": "lazy",
+        "likes": [
+            "simple",
+            "simple",
+            "colorful",
+            "orange"
+        ],
+        "id": "brd02"
+    },
+    "Barold": {
+        "name": "Barold",
+        "pers": "lazy",
+        "likes": [
+            "simple",
+            "cool",
+            "yellow",
+            "black"
+        ],
+        "id": "cbr16"
+    },
+    "Beau": {
+        "name": "Beau",
+        "pers": "lazy",
+        "likes": [
+            "simple",
+            "cute",
+            "beige",
+            "orange"
+        ],
+        "id": "der07"
+    },
+    "Benedict": {
+        "name": "Benedict",
+        "pers": "lazy",
+        "likes": [
+            "simple",
+            "simple",
+            "blue",
+            "purple"
+        ],
+        "id": "chn01"
+    },
+    "Benjamin": {
+        "name": "Benjamin",
+        "pers": "lazy",
+        "likes": [
+            "simple",
+            "simple",
+            "red",
+            "white"
+        ],
+        "id": "dog16"
+    },
+    "Big Top": {
+        "name": "Big Top",
+        "pers": "lazy",
+        "likes": [
+            "simple",
+            "active",
+            "green",
+            "green"
+        ],
+        "id": "elp02"
+    },
+    "Biskit": {
+        "name": "Biskit",
+        "pers": "lazy",
+        "likes": [
+            "gorgeous",
+            "simple",
+            "purple",
+            "colorful"
+        ],
+        "id": "dog03"
+    },
+    "Bob": {
+        "name": "Bob",
+        "pers": "lazy",
+        "likes": [
+            "simple",
+            "cute",
+            "colorful",
+            "red"
+        ],
+        "id": "cat00"
+    },
+    "Bones": {
+        "name": "Bones",
+        "pers": "lazy",
+        "likes": [
+            "simple",
+            "cute",
+            "beige",
+            "brown"
+        ],
+        "id": "dog04"
+    },
+    "Boomer": {
+        "name": "Boomer",
+        "pers": "lazy",
+        "likes": [
+            "simple",
+            "cool",
+            "brown",
+            "beige"
+        ],
+        "id": "pgn10"
+    },
+    "Broccolo": {
+        "name": "Broccolo",
+        "pers": "lazy",
+        "likes": [
+            "simple",
+            "cute",
+            "colorful",
+            "yellow"
+        ],
+        "id": "mus12"
+    },
+    "Chester": {
+        "name": "Chester",
+        "pers": "lazy",
+        "likes": [
+            "simple",
+            "simple",
+            "yellow",
+            "green"
+        ],
+        "id": "cbr15"
+    },
+    "Claude": {
+        "name": "Claude",
+        "pers": "lazy",
+        "likes": [
+            "simple",
+            "simple",
+            "black",
+            "colorful"
+        ],
+        "id": "rbt11"
+    },
+    "Clay": {
+        "name": "Clay",
+        "pers": "lazy",
+        "likes": [
+            "elegant",
+            "simple",
+            "beige",
+            "brown"
+        ],
+        "id": "ham05"
+    },
+    "Clyde": {
+        "name": "Clyde",
+        "pers": "lazy",
+        "likes": [
+            "simple",
+            "cute",
+            "green",
+            "white"
+        ],
+        "id": "hrs10"
+    },
+    "Cole": {
+        "name": "Cole",
+        "pers": "lazy",
+        "likes": [
+            "simple",
+            "cute",
+            "orange",
+            "colorful"
+        ],
+        "id": "rbt18"
+    },
+    "Cranston": {
+        "name": "Cranston",
+        "pers": "lazy",
+        "likes": [
+            "simple",
+            "cool",
+            "beige",
+            "brown"
+        ],
+        "id": "ost06"
+    },
+    "Cube": {
+        "name": "Cube",
+        "pers": "lazy",
+        "likes": [
+            "simple",
+            "cute",
+            "yellow",
+            "colorful"
+        ],
+        "id": "pgn02"
+    },
+    "Deli": {
+        "name": "Deli",
+        "pers": "lazy",
+        "likes": [
+            "gorgeous",
+            "elegant",
+            "purple",
+            "brown"
+        ],
+        "id": "mnk08"
+    },
+    "Derwin": {
+        "name": "Derwin",
+        "pers": "lazy",
+        "likes": [
+            "simple",
+            "elegant",
+            "yellow",
+            "beige"
+        ],
+        "id": "duk08"
+    },
+    "Dizzy": {
+        "name": "Dizzy",
+        "pers": "lazy",
+        "likes": [
+            "simple",
+            "simple",
+            "yellow",
+            "blue"
+        ],
+        "id": "elp01"
+    },
+    "Doc": {
+        "name": "Doc",
+        "pers": "lazy",
+        "likes": [
+            "simple",
+            "elegant",
+            "gray",
+            "beige"
+        ],
+        "id": "rbt10"
+    },
+    "Drago": {
+        "name": "Drago",
+        "pers": "lazy",
+        "likes": [
+            "elegant",
+            "gorgeous",
+            "orange",
+            "red"
+        ],
+        "id": "crd08"
+    },
+    "Drake": {
+        "name": "Drake",
+        "pers": "lazy",
+        "likes": [
+            "cool",
+            "simple",
+            "brown",
+            "red"
+        ],
+        "id": "duk09"
+    },
+    "Egbert": {
+        "name": "Egbert",
+        "pers": "lazy",
+        "likes": [
+            "simple",
+            "simple",
+            "beige",
+            "brown"
+        ],
+        "id": "chn02"
+    },
+    "Elmer": {
+        "name": "Elmer",
+        "pers": "lazy",
+        "likes": [
+            "simple",
+            "cool",
+            "blue",
+            "white"
+        ],
+        "id": "hrs03"
+    },
+    "Erik": {
+        "name": "Erik",
+        "pers": "lazy",
+        "likes": [
+            "simple",
+            "simple",
+            "beige",
+            "red"
+        ],
+        "id": "der09"
+    },
+    "Filbert": {
+        "name": "Filbert",
+        "pers": "lazy",
+        "likes": [
+            "simple",
+            "cute",
+            "blue",
+            "white"
+        ],
+        "id": "squ02"
+    },
+    "Hopkins": {
+        "name": "Hopkins",
+        "pers": "lazy",
+        "likes": [
+            "simple",
+            "active",
+            "blue",
+            "yellow"
+        ],
+        "id": "rbt14"
+    },
+    "Hornsby": {
+        "name": "Hornsby",
+        "pers": "lazy",
+        "likes": [
+            "simple",
+            "simple",
+            "green",
+            "brown"
+        ],
+        "id": "rhn04"
+    },
+    "Hugh": {
+        "name": "Hugh",
+        "pers": "lazy",
+        "likes": [
+            "simple",
+            "active",
+            "beige",
+            "yellow"
+        ],
+        "id": "pig03"
+    },
+    "Jacob": {
+        "name": "Jacob",
+        "pers": "lazy",
+        "likes": [
+            "simple",
+            "simple",
+            "green",
+            "red"
+        ],
+        "id": "brd11"
+    },
+    "Jeremiah": {
+        "name": "Jeremiah",
+        "pers": "lazy",
+        "likes": [
+            "simple",
+            "simple",
+            "orange",
+            "yellow"
+        ],
+        "id": "flg07"
+    },
+    "Joey": {
+        "name": "Joey",
+        "pers": "lazy",
+        "likes": [
+            "simple",
+            "simple",
+            "green",
+            "blue"
+        ],
+        "id": "duk01"
+    },
+    "Lucky": {
+        "name": "Lucky",
+        "pers": "lazy",
+        "likes": [
+            "simple",
+            "simple",
+            "beige",
+            "white"
+        ],
+        "id": "dog02"
+    },
+    "Marcel": {
+        "name": "Marcel",
+        "pers": "lazy",
+        "likes": [
+            "simple",
+            "cool",
+            "green",
+            "blue"
+        ],
+        "id": "dog15"
+    },
+    "Moe": {
+        "name": "Moe",
+        "pers": "lazy",
+        "likes": [
+            "active",
+            "simple",
+            "black",
+            "gray"
+        ],
+        "id": "cat08"
+    },
+    "Nate": {
+        "name": "Nate",
+        "pers": "lazy",
+        "likes": [
+            "simple",
+            "simple",
+            "white",
+            "green"
+        ],
+        "id": "bea05"
+    },
+    "Ozzie": {
+        "name": "Ozzie",
+        "pers": "lazy",
+        "likes": [
+            "simple",
+            "cute",
+            "yellow",
+            "orange"
+        ],
+        "id": "kal05"
+    },
+    "Paolo": {
+        "name": "Paolo",
+        "pers": "lazy",
+        "likes": [
+            "simple",
+            "elegant",
+            "gray",
+            "light blue"
+        ],
+        "id": "elp05"
+    },
+    "Papi": {
+        "name": "Papi",
+        "pers": "lazy",
+        "likes": [
+            "simple",
+            "simple",
+            "orange",
+            "light blue"
+        ],
+        "id": "hrs12"
+    },
+    "Prince": {
+        "name": "Prince",
+        "pers": "lazy",
+        "likes": [
+            "simple",
+            "active",
+            "yellow",
+            "white"
+        ],
+        "id": "flg12"
+    },
+    "Puck": {
+        "name": "Puck",
+        "pers": "lazy",
+        "likes": [
+            "active",
+            "simple",
+            "blue",
+            "red"
+        ],
+        "id": "pgn06"
+    },
+    "Pudge": {
+        "name": "Pudge",
+        "pers": "lazy",
+        "likes": [
+            "simple",
+            "simple",
+            "green",
+            "blue"
+        ],
+        "id": "cbr03"
+    },
+    "Punchy": {
+        "name": "Punchy",
+        "pers": "lazy",
+        "likes": [
+            "simple",
+            "simple",
+            "blue",
+            "light blue"
+        ],
+        "id": "cat06"
+    },
+    "Raddle": {
+        "name": "Raddle",
+        "pers": "lazy",
+        "likes": [
+            "elegant",
+            "simple",
+            "white",
+            "gray"
+        ],
+        "id": "flg15"
+    },
+    "Rex": {
+        "name": "Rex",
+        "pers": "lazy",
+        "likes": [
+            "simple",
+            "cute",
+            "blue",
+            "light blue"
+        ],
+        "id": "lon02"
+    },
+    "Rodeo": {
+        "name": "Rodeo",
+        "pers": "lazy",
+        "likes": [
+            "simple",
+            "cool",
+            "black",
+            "red"
+        ],
+        "id": "bul01"
+    },
+    "Sherb": {
+        "name": "Sherb",
+        "pers": "lazy",
+        "likes": [
+            "simple",
+            "cute",
+            "gray",
+            "blue"
+        ],
+        "id": "goa09"
+    },
+    "Simon": {
+        "name": "Simon",
+        "pers": "lazy",
+        "likes": [
+            "simple",
+            "active",
+            "red",
+            "colorful"
+        ],
+        "id": "mnk02"
+    },
+    "Spork": {
+        "name": "Spork",
+        "pers": "lazy",
+        "likes": [
+            "simple",
+            "active",
+            "green",
+            "colorful"
+        ],
+        "id": "pig05"
+    },
+    "Stitches": {
+        "name": "Stitches",
+        "pers": "lazy",
+        "likes": [
+            "simple",
+            "cute",
+            "colorful",
+            "white"
+        ],
+        "id": "cbr05"
+    },
+    "Stu": {
+        "name": "Stu",
+        "pers": "lazy",
+        "likes": [
+            "simple",
+            "simple",
+            "brown",
+            "beige"
+        ],
+        "id": "bul03"
+    },
+    "Tucker": {
+        "name": "Tucker",
+        "pers": "lazy",
+        "likes": [
+            "active",
+            "simple",
+            "yellow",
+            "orange"
+        ],
+        "id": "elp09"
+    },
+    "Wade": {
+        "name": "Wade",
+        "pers": "lazy",
+        "likes": [
+            "simple",
+            "gorgeous",
+            "light blue",
+            "blue"
+        ],
+        "id": "pgn09"
+    },
+    "Walker": {
+        "name": "Walker",
+        "pers": "lazy",
+        "likes": [
+            "simple",
+            "simple",
+            "orange",
+            "red"
+        ],
+        "id": "dog06"
+    },
+    "Weber": {
+        "name": "Weber",
+        "pers": "lazy",
+        "likes": [
+            "cool",
+            "simple",
+            "blue",
+            "black"
+        ],
+        "id": "duk11"
+    },
+    "Zucker": {
+        "name": "Zucker",
+        "pers": "lazy",
+        "likes": [
+            "simple",
+            "cute",
+            "blue",
+            "yellow"
+        ],
+        "id": "ocp02"
+    },
+    "Alice": {
+        "name": "Alice",
+        "pers": "normal",
+        "likes": [
+            "cute",
+            "cute",
+            "red",
+            "pink"
+        ],
+        "id": "kal01"
+    },
+    "Annalisa": {
+        "name": "Annalisa",
+        "pers": "normal",
+        "likes": [
+            "elegant",
+            "gorgeous",
+            "red",
+            "pink"
+        ],
+        "id": "ant08"
+    },
+    "Aurora": {
+        "name": "Aurora",
+        "pers": "normal",
+        "likes": [
+            "cute",
+            "elegant",
+            "pink",
+            "red"
+        ],
+        "id": "pgn00"
+    },
+    "Ava": {
+        "name": "Ava",
+        "pers": "normal",
+        "likes": [
+            "elegant",
+            "cute",
+            "red",
+            "gray"
+        ],
+        "id": "chn05"
+    },
+    "Bea": {
+        "name": "Bea",
+        "pers": "normal",
+        "likes": [
+            "simple",
+            "cool",
+            "light blue",
+            "green"
+        ],
+        "id": "dog10"
+    },
+    "Bertha": {
+        "name": "Bertha",
+        "pers": "normal",
+        "likes": [
+            "cute",
+            "elegant",
+            "pink",
+            "white"
+        ],
+        "id": "hip03"
+    },
+    "Bettina": {
+        "name": "Bettina",
+        "pers": "normal",
+        "likes": [
+            "simple",
+            "elegant",
+            "white",
+            "red"
+        ],
+        "id": "mus15"
+    },
+    "Cally": {
+        "name": "Cally",
+        "pers": "normal",
+        "likes": [
+            "cute",
+            "elegant",
+            "red",
+            "green"
+        ],
+        "id": "squ11"
+    },
+    "Caroline": {
+        "name": "Caroline",
+        "pers": "normal",
+        "likes": [
+            "cute",
+            "gorgeous",
+            "colorful",
+            "white"
+        ],
+        "id": "squ06"
+    },
+    "Carrie": {
+        "name": "Carrie",
+        "pers": "normal",
+        "likes": [
+            "cute",
+            "cute",
+            "red",
+            "colorful"
+        ],
+        "id": "kgr02"
+    },
+    "Celia": {
+        "name": "Celia",
+        "pers": "normal",
+        "likes": [
+            "elegant",
+            "cute",
+            "pink",
+            "green"
+        ],
+        "id": "pbr09"
+    },
+    "Chevre": {
+        "name": "Chevre",
+        "pers": "normal",
+        "likes": [
+            "cute",
+            "elegant",
+            "red",
+            "pink"
+        ],
+        "id": "goa00"
+    },
+    "Coco": {
+        "name": "Coco",
+        "pers": "normal",
+        "likes": [
+            "simple",
+            "cute",
+            "beige",
+            "green"
+        ],
+        "id": "rbt02"
+    },
+    "Daisy": {
+        "name": "Daisy",
+        "pers": "normal",
+        "likes": [
+            "simple",
+            "cute",
+            "colorful",
+            "blue"
+        ],
+        "id": "dog07"
+    },
+    "Deena": {
+        "name": "Deena",
+        "pers": "normal",
+        "likes": [
+            "simple",
+            "cute",
+            "colorful",
+            "blue"
+        ],
+        "id": "duk04"
+    },
+    "Dora": {
+        "name": "Dora",
+        "pers": "normal",
+        "likes": [
+            "simple",
+            "elegant",
+            "blue",
+            "light blue"
+        ],
+        "id": "mus00"
+    },
+    "Ellie": {
+        "name": "Ellie",
+        "pers": "normal",
+        "likes": [
+            "simple",
+            "cute",
+            "gray",
+            "pink"
+        ],
+        "id": "elp07"
+    },
+    "Eunice": {
+        "name": "Eunice",
+        "pers": "normal",
+        "likes": [
+            "simple",
+            "elegant",
+            "beige",
+            "orange"
+        ],
+        "id": "shp02"
+    },
+    "Fauna": {
+        "name": "Fauna",
+        "pers": "normal",
+        "likes": [
+            "simple",
+            "cute",
+            "beige",
+            "white"
+        ],
+        "id": "der00"
+    },
+    "Flurry": {
+        "name": "Flurry",
+        "pers": "normal",
+        "likes": [
+            "elegant",
+            "cute",
+            "red",
+            "pink"
+        ],
+        "id": "ham06"
+    },
+    "Gala": {
+        "name": "Gala",
+        "pers": "normal",
+        "likes": [
+            "cute",
+            "elegant",
+            "pink",
+            "white"
+        ],
+        "id": "pig13"
+    },
+    "Gayle": {
+        "name": "Gayle",
+        "pers": "normal",
+        "likes": [
+            "cute",
+            "cute",
+            "pink",
+            "white"
+        ],
+        "id": "crd07"
+    },
+    "Gladys": {
+        "name": "Gladys",
+        "pers": "normal",
+        "likes": [
+            "elegant",
+            "cute",
+            "green",
+            "pink"
+        ],
+        "id": "ost01"
+    },
+    "Goldie": {
+        "name": "Goldie",
+        "pers": "normal",
+        "likes": [
+            "simple",
+            "cute",
+            "yellow",
+            "orange"
+        ],
+        "id": "dog00"
+    },
+    "Jambette": {
+        "name": "Jambette",
+        "pers": "normal",
+        "likes": [
+            "cool",
+            "cool",
+            "brown",
+            "brown"
+        ],
+        "id": "flg13"
+    },
+    "June": {
+        "name": "June",
+        "pers": "normal",
+        "likes": [
+            "cute",
+            "simple",
+            "white",
+            "red"
+        ],
+        "id": "cbr13"
+    },
+    "Kiki": {
+        "name": "Kiki",
+        "pers": "normal",
+        "likes": [
+            "simple",
+            "simple",
+            "brown",
+            "beige"
+        ],
+        "id": "cat04"
+    },
+    "Kitt": {
+        "name": "Kitt",
+        "pers": "normal",
+        "likes": [
+            "elegant",
+            "simple",
+            "purple",
+            "red"
+        ],
+        "id": "kgr00"
+    },
+    "Lily": {
+        "name": "Lily",
+        "pers": "normal",
+        "likes": [
+            "cute",
+            "simple",
+            "white",
+            "yellow"
+        ],
+        "id": "flg00"
+    },
+    "Lolly": {
+        "name": "Lolly",
+        "pers": "normal",
+        "likes": [
+            "simple",
+            "simple",
+            "gray",
+            "pink"
+        ],
+        "id": "cat18"
+    },
+    "Lucy": {
+        "name": "Lucy",
+        "pers": "normal",
+        "likes": [
+            "cute",
+            "elegant",
+            "pink",
+            "red"
+        ],
+        "id": "pig04"
+    },
+    "Maggie": {
+        "name": "Maggie",
+        "pers": "normal",
+        "likes": [
+            "cute",
+            "elegant",
+            "green",
+            "yellow"
+        ],
+        "id": "pig10"
+    },
+    "Maple": {
+        "name": "Maple",
+        "pers": "normal",
+        "likes": [
+            "simple",
+            "cute",
+            "beige",
+            "green"
+        ],
+        "id": "cbr01"
+    },
+    "Marcie": {
+        "name": "Marcie",
+        "pers": "normal",
+        "likes": [
+            "cute",
+            "elegant",
+            "pink",
+            "beige"
+        ],
+        "id": "kgr10"
+    },
+    "Margie": {
+        "name": "Margie",
+        "pers": "normal",
+        "likes": [
+            "elegant",
+            "cute",
+            "pink",
+            "red"
+        ],
+        "id": "elp04"
+    },
+    "Marina": {
+        "name": "Marina",
+        "pers": "normal",
+        "likes": [
+            "cute",
+            "cute",
+            "pink",
+            "red"
+        ],
+        "id": "ocp01"
+    },
+    "Megan": {
+        "name": "Megan",
+        "pers": "normal",
+        "likes": [
+            "cute",
+            "simple",
+            "yellow",
+            "light blue"
+        ],
+        "id": "bea15"
+    },
+    "Melba": {
+        "name": "Melba",
+        "pers": "normal",
+        "likes": [
+            "cute",
+            "cute",
+            "white",
+            "green"
+        ],
+        "id": "kal02"
+    },
+    "Merengue": {
+        "name": "Merengue",
+        "pers": "normal",
+        "likes": [
+            "cute",
+            "simple",
+            "white",
+            "red"
+        ],
+        "id": "rhn07"
+    },
+    "Midge": {
+        "name": "Midge",
+        "pers": "normal",
+        "likes": [
+            "cute",
+            "simple",
+            "pink",
+            "pink"
+        ],
+        "id": "brd08"
+    },
+    "Mitzi": {
+        "name": "Mitzi",
+        "pers": "normal",
+        "likes": [
+            "simple",
+            "simple",
+            "brown",
+            "beige"
+        ],
+        "id": "cat01"
+    },
+    "Molly": {
+        "name": "Molly",
+        "pers": "normal",
+        "likes": [
+            "cute",
+            "simple",
+            "yellow",
+            "pink"
+        ],
+        "id": "duk16"
+    },
+    "Nan": {
+        "name": "Nan",
+        "pers": "normal",
+        "likes": [
+            "simple",
+            "elegant",
+            "orange",
+            "yellow"
+        ],
+        "id": "goa01"
+    },
+    "Nana": {
+        "name": "Nana",
+        "pers": "normal",
+        "likes": [
+            "cute",
+            "cute",
+            "pink",
+            "white"
+        ],
+        "id": "mnk01"
+    },
+    "Norma": {
+        "name": "Norma",
+        "pers": "normal",
+        "likes": [
+            "cute",
+            "simple",
+            "white",
+            "light blue"
+        ],
+        "id": "cow06"
+    },
+    "Olive": {
+        "name": "Olive",
+        "pers": "normal",
+        "likes": [
+            "simple",
+            "simple",
+            "brown",
+            "yellow"
+        ],
+        "id": "cbr09"
+    },
+    "Peaches": {
+        "name": "Peaches",
+        "pers": "normal",
+        "likes": [
+            "cute",
+            "simple",
+            "colorful",
+            "light blue"
+        ],
+        "id": "hrs08"
+    },
+    "Pekoe": {
+        "name": "Pekoe",
+        "pers": "normal",
+        "likes": [
+            "elegant",
+            "cute",
+            "red",
+            "beige"
+        ],
+        "id": "cbr14"
+    },
+    "Poppy": {
+        "name": "Poppy",
+        "pers": "normal",
+        "likes": [
+            "cute",
+            "elegant",
+            "green",
+            "yellow"
+        ],
+        "id": "squ15"
+    },
+    "Rhonda": {
+        "name": "Rhonda",
+        "pers": "normal",
+        "likes": [
+            "elegant",
+            "gorgeous",
+            "purple",
+            "black"
+        ],
+        "id": "rhn01"
+    },
+    "Sally": {
+        "name": "Sally",
+        "pers": "normal",
+        "likes": [
+            "simple",
+            "elegant",
+            "white",
+            "beige"
+        ],
+        "id": "squ07"
+    },
+    "Sandy": {
+        "name": "Sandy",
+        "pers": "normal",
+        "likes": [
+            "simple",
+            "cool",
+            "light blue",
+            "white"
+        ],
+        "id": "ost02"
+    },
+    "Savannah": {
+        "name": "Savannah",
+        "pers": "normal",
+        "likes": [
+            "cool",
+            "simple",
+            "light blue",
+            "blue"
+        ],
+        "id": "hrs02"
+    },
+    "Skye": {
+        "name": "Skye",
+        "pers": "normal",
+        "likes": [
+            "cute",
+            "cute",
+            "blue",
+            "white"
+        ],
+        "id": "wol09"
+    },
+    "Stella": {
+        "name": "Stella",
+        "pers": "normal",
+        "likes": [
+            "simple",
+            "simple",
+            "yellow",
+            "beige"
+        ],
+        "id": "shp03"
+    },
+    "Sydney": {
+        "name": "Sydney",
+        "pers": "normal",
+        "likes": [
+            "cute",
+            "simple",
+            "beige",
+            "yellow"
+        ],
+        "id": "kal03"
+    },
+    "Sylvana": {
+        "name": "Sylvana",
+        "pers": "normal",
+        "likes": [
+            "cute",
+            "simple",
+            "green",
+            "purple"
+        ],
+        "id": "squ14"
+    },
+    "Tia": {
+        "name": "Tia",
+        "pers": "normal",
+        "likes": [
+            "cute",
+            "elegant",
+            "black",
+            "white"
+        ],
+        "id": "elp10"
+    },
+    "Vesta": {
+        "name": "Vesta",
+        "pers": "normal",
+        "likes": [
+            "simple",
+            "cute",
+            "orange",
+            "red"
+        ],
+        "id": "shp00"
+    },
+    "Agent S": {
+        "name": "Agent S",
+        "pers": "peppy",
+        "likes": [
+            "active",
+            "simple",
+            "blue",
+            "black"
+        ],
+        "id": "squ05"
+    },
+    "Anabelle": {
+        "name": "Anabelle",
+        "pers": "peppy",
+        "likes": [
+            "cute",
+            "simple",
+            "green",
+            "blue"
+        ],
+        "id": "ant03"
+    },
+    "Anicotti": {
+        "name": "Anicotti",
+        "pers": "peppy",
+        "likes": [
+            "simple",
+            "elegant",
+            "red",
+            "pink"
+        ],
+        "id": "mus10"
+    },
+    "Apple": {
+        "name": "Apple",
+        "pers": "peppy",
+        "likes": [
+            "cute",
+            "simple",
+            "colorful",
+            "red"
+        ],
+        "id": "ham01"
+    },
+    "Audie": {
+        "name": "Audie",
+        "pers": "peppy",
+        "likes": [
+            "cute",
+            "active",
+            "green",
+            "white"
+        ],
+        "id": "wol12"
+    },
+    "Bangle": {
+        "name": "Bangle",
+        "pers": "peppy",
+        "likes": [
+            "gorgeous",
+            "cute",
+            "yellow",
+            "green"
+        ],
+        "id": "tig03"
+    },
+    "Bella": {
+        "name": "Bella",
+        "pers": "peppy",
+        "likes": [
+            "cool",
+            "active",
+            "black",
+            "purple"
+        ],
+        "id": "mus02"
+    },
+    "Bianca": {
+        "name": "Bianca",
+        "pers": "peppy",
+        "likes": [
+            "cute",
+            "cute",
+            "pink",
+            "orange"
+        ],
+        "id": "tig06"
+    },
+    "Bluebear": {
+        "name": "Bluebear",
+        "pers": "peppy",
+        "likes": [
+            "cute",
+            "simple",
+            "white",
+            "blue"
+        ],
+        "id": "cbr00"
+    },
+    "Bonbon": {
+        "name": "Bonbon",
+        "pers": "peppy",
+        "likes": [
+            "cute",
+            "elegant",
+            "light blue",
+            "yellow"
+        ],
+        "id": "rbt17"
+    },
+    "Bubbles": {
+        "name": "Bubbles",
+        "pers": "peppy",
+        "likes": [
+            "active",
+            "cute",
+            "purple",
+            "pink"
+        ],
+        "id": "hip02"
+    },
+    "Bunnie": {
+        "name": "Bunnie",
+        "pers": "peppy",
+        "likes": [
+            "cute",
+            "cute",
+            "green",
+            "pink"
+        ],
+        "id": "rbt00"
+    },
+    "Candi": {
+        "name": "Candi",
+        "pers": "peppy",
+        "likes": [
+            "simple",
+            "cute",
+            "light blue",
+            "yellow"
+        ],
+        "id": "mus08"
+    },
+    "Carmen": {
+        "name": "Carmen",
+        "pers": "peppy",
+        "likes": [
+            "elegant",
+            "cute",
+            "green",
+            "beige"
+        ],
+        "id": "rbt16"
+    },
+    "Cheri": {
+        "name": "Cheri",
+        "pers": "peppy",
+        "likes": [
+            "simple",
+            "cute",
+            "yellow",
+            "light blue"
+        ],
+        "id": "cbr10"
+    },
+    "Chrissy": {
+        "name": "Chrissy",
+        "pers": "peppy",
+        "likes": [
+            "cute",
+            "cute",
+            "pink",
+            "white"
+        ],
+        "id": "rbt13"
+    },
+    "Cookie": {
+        "name": "Cookie",
+        "pers": "peppy",
+        "likes": [
+            "cute",
+            "cute",
+            "green",
+            "light blue"
+        ],
+        "id": "dog08"
+    },
+    "Dotty": {
+        "name": "Dotty",
+        "pers": "peppy",
+        "likes": [
+            "simple",
+            "cute",
+            "blue",
+            "black"
+        ],
+        "id": "rbt01"
+    },
+    "Felicity": {
+        "name": "Felicity",
+        "pers": "peppy",
+        "likes": [
+            "cute",
+            "cute",
+            "yellow",
+            "orange"
+        ],
+        "id": "cat17"
+    },
+    "Flora": {
+        "name": "Flora",
+        "pers": "peppy",
+        "likes": [
+            "cute",
+            "active",
+            "colorful",
+            "pink"
+        ],
+        "id": "ost09"
+    },
+    "Freckles": {
+        "name": "Freckles",
+        "pers": "peppy",
+        "likes": [
+            "simple",
+            "cute",
+            "green",
+            "colorful"
+        ],
+        "id": "duk07"
+    },
+    "Gabi": {
+        "name": "Gabi",
+        "pers": "peppy",
+        "likes": [
+            "cute",
+            "gorgeous",
+            "brown",
+            "red"
+        ],
+        "id": "rbt05"
+    },
+    "Ketchup": {
+        "name": "Ketchup",
+        "pers": "peppy",
+        "likes": [
+            "cute",
+            "cute",
+            "light blue",
+            "white"
+        ],
+        "id": "duk13"
+    },
+    "Maddie": {
+        "name": "Maddie",
+        "pers": "peppy",
+        "likes": [
+            "simple",
+            "cute",
+            "purple",
+            "pink"
+        ],
+        "id": "dog09"
+    },
+    "Merry": {
+        "name": "Merry",
+        "pers": "peppy",
+        "likes": [
+            "cute",
+            "cute",
+            "pink",
+            "light blue"
+        ],
+        "id": "cat16"
+    },
+    "Nibbles": {
+        "name": "Nibbles",
+        "pers": "peppy",
+        "likes": [
+            "cute",
+            "active",
+            "red",
+            "yellow"
+        ],
+        "id": "squ04"
+    },
+    "Pango": {
+        "name": "Pango",
+        "pers": "peppy",
+        "likes": [
+            "elegant",
+            "cool",
+            "orange",
+            "purple"
+        ],
+        "id": "ant02"
+    },
+    "Pate": {
+        "name": "Pate",
+        "pers": "peppy",
+        "likes": [
+            "simple",
+            "cute",
+            "yellow",
+            "white"
+        ],
+        "id": "duk02"
+    },
+    "Patty": {
+        "name": "Patty",
+        "pers": "peppy",
+        "likes": [
+            "simple",
+            "cute",
+            "orange",
+            "red"
+        ],
+        "id": "cow00"
+    },
+    "Peanut": {
+        "name": "Peanut",
+        "pers": "peppy",
+        "likes": [
+            "cute",
+            "cute",
+            "red",
+            "colorful"
+        ],
+        "id": "squ00"
+    },
+    "Peggy": {
+        "name": "Peggy",
+        "pers": "peppy",
+        "likes": [
+            "cute",
+            "active",
+            "blue",
+            "red"
+        ],
+        "id": "pig11"
+    },
+    "Penelope": {
+        "name": "Penelope",
+        "pers": "peppy",
+        "likes": [
+            "cute",
+            "gorgeous",
+            "pink",
+            "red"
+        ],
+        "id": "mus17"
+    },
+    "Pinky": {
+        "name": "Pinky",
+        "pers": "peppy",
+        "likes": [
+            "cute",
+            "simple",
+            "red",
+            "pink"
+        ],
+        "id": "bea01"
+    },
+    "Piper": {
+        "name": "Piper",
+        "pers": "peppy",
+        "likes": [
+            "elegant",
+            "gorgeous",
+            "black",
+            "white"
+        ],
+        "id": "brd05"
+    },
+    "Pippy": {
+        "name": "Pippy",
+        "pers": "peppy",
+        "likes": [
+            "cute",
+            "simple",
+            "green",
+            "brown"
+        ],
+        "id": "rbt06"
+    },
+    "Pompom": {
+        "name": "Pompom",
+        "pers": "peppy",
+        "likes": [
+            "cute",
+            "simple",
+            "pink",
+            "light blue"
+        ],
+        "id": "duk05"
+    },
+    "Puddles": {
+        "name": "Puddles",
+        "pers": "peppy",
+        "likes": [
+            "cute",
+            "gorgeous",
+            "green",
+            "pink"
+        ],
+        "id": "flg06"
+    },
+    "Rosie": {
+        "name": "Rosie",
+        "pers": "peppy",
+        "likes": [
+            "cute",
+            "cute",
+            "pink",
+            "red"
+        ],
+        "id": "cat02"
+    },
+    "Ruby": {
+        "name": "Ruby",
+        "pers": "peppy",
+        "likes": [
+            "cute",
+            "active",
+            "light blue",
+            "pink"
+        ],
+        "id": "rbt09"
+    },
+    "Sprinkle": {
+        "name": "Sprinkle",
+        "pers": "peppy",
+        "likes": [
+            "cute",
+            "elegant",
+            "light blue",
+            "white"
+        ],
+        "id": "pgn14"
+    },
+    "Tabby": {
+        "name": "Tabby",
+        "pers": "peppy",
+        "likes": [
+            "active",
+            "cool",
+            "black",
+            "gray"
+        ],
+        "id": "cat12"
+    },
+    "Tammi": {
+        "name": "Tammi",
+        "pers": "peppy",
+        "likes": [
+            "cute",
+            "active",
+            "purple",
+            "green"
+        ],
+        "id": "mnk03"
+    },
+    "Tangy": {
+        "name": "Tangy",
+        "pers": "peppy",
+        "likes": [
+            "simple",
+            "cute",
+            "green",
+            "yellow"
+        ],
+        "id": "cat05"
+    },
+    "Truffles": {
+        "name": "Truffles",
+        "pers": "peppy",
+        "likes": [
+            "cute",
+            "gorgeous",
+            "green",
+            "red"
+        ],
+        "id": "pig01"
+    },
+    "Tutu": {
+        "name": "Tutu",
+        "pers": "peppy",
+        "likes": [
+            "cute",
+            "simple",
+            "pink",
+            "red"
+        ],
+        "id": "bea07"
+    },
+    "Twiggy": {
+        "name": "Twiggy",
+        "pers": "peppy",
+        "likes": [
+            "simple",
+            "cute",
+            "pink",
+            "blue"
+        ],
+        "id": "brd03"
+    },
+    "Victoria": {
+        "name": "Victoria",
+        "pers": "peppy",
+        "likes": [
+            "active",
+            "simple",
+            "yellow",
+            "orange"
+        ],
+        "id": "hrs01"
+    },
+    "Wendy": {
+        "name": "Wendy",
+        "pers": "peppy",
+        "likes": [
+            "cool",
+            "gorgeous",
+            "red",
+            "green"
+        ],
+        "id": "shp09"
+    },
+    "Winnie": {
+        "name": "Winnie",
+        "pers": "peppy",
+        "likes": [
+            "cool",
+            "simple",
+            "white",
+            "gray"
+        ],
+        "id": "hrs05"
+    },
+    "Beardo": {
+        "name": "Beardo",
+        "pers": "smug",
+        "likes": [
+            "elegant",
+            "elegant",
+            "brown",
+            "blue"
+        ],
+        "id": "bea13"
+    },
+    "Chadder": {
+        "name": "Chadder",
+        "pers": "smug",
+        "likes": [
+            "elegant",
+            "gorgeous",
+            "black",
+            "gray"
+        ],
+        "id": "mus18"
+    },
+    "Chops": {
+        "name": "Chops",
+        "pers": "smug",
+        "likes": [
+            "gorgeous",
+            "elegant",
+            "red",
+            "green"
+        ],
+        "id": "pig14"
+    },
+    "Colton": {
+        "name": "Colton",
+        "pers": "smug",
+        "likes": [
+            "gorgeous",
+            "elegant",
+            "blue",
+            "red"
+        ],
+        "id": "hrs11"
+    },
+    "Curlos": {
+        "name": "Curlos",
+        "pers": "smug",
+        "likes": [
+            "active",
+            "gorgeous",
+            "red",
+            "green"
+        ],
+        "id": "shp08"
+    },
+    "Ed": {
+        "name": "Ed",
+        "pers": "smug",
+        "likes": [
+            "gorgeous",
+            "elegant",
+            "black",
+            "gray"
+        ],
+        "id": "hrs06"
+    },
+    "Eugene": {
+        "name": "Eugene",
+        "pers": "smug",
+        "likes": [
+            "cool",
+            "gorgeous",
+            "black",
+            "gray"
+        ],
+        "id": "kal10"
+    },
+    "Graham": {
+        "name": "Graham",
+        "pers": "smug",
+        "likes": [
+            "simple",
+            "cool",
+            "green",
+            "orange"
+        ],
+        "id": "ham02"
+    },
+    "Hans": {
+        "name": "Hans",
+        "pers": "smug",
+        "likes": [
+            "elegant",
+            "gorgeous",
+            "gray",
+            "blue"
+        ],
+        "id": "gor10"
+    },
+    "Henry": {
+        "name": "Henry",
+        "pers": "smug",
+        "likes": [
+            "cool",
+            "simple",
+            "light blue",
+            "blue"
+        ],
+        "id": "flg19"
+    },
+    "Hippeux": {
+        "name": "Hippeux",
+        "pers": "smug",
+        "likes": [
+            "elegant",
+            "gorgeous",
+            "brown",
+            "green"
+        ],
+        "id": "hip09"
+    },
+    "Huck": {
+        "name": "Huck",
+        "pers": "smug",
+        "likes": [
+            "simple",
+            "cool",
+            "green",
+            "yellow"
+        ],
+        "id": "flg11"
+    },
+    "Jacques": {
+        "name": "Jacques",
+        "pers": "smug",
+        "likes": [
+            "cool",
+            "simple",
+            "green",
+            "black"
+        ],
+        "id": "brd16"
+    },
+    "Julian": {
+        "name": "Julian",
+        "pers": "smug",
+        "likes": [
+            "gorgeous",
+            "cool",
+            "purple",
+            "blue"
+        ],
+        "id": "hrs13"
+    },
+    "Keaton": {
+        "name": "Keaton",
+        "pers": "smug",
+        "likes": [
+            "gorgeous",
+            "cool",
+            "blue",
+            "white"
+        ],
+        "id": "pbr08"
+    },
+    "Ken": {
+        "name": "Ken",
+        "pers": "smug",
+        "likes": [
+            "cool",
+            "simple",
+            "purple",
+            "blue"
+        ],
+        "id": "chn13"
+    },
+    "Kidd": {
+        "name": "Kidd",
+        "pers": "smug",
+        "likes": [
+            "elegant",
+            "cool",
+            "gray",
+            "white"
+        ],
+        "id": "goa07"
+    },
+    "Klaus": {
+        "name": "Klaus",
+        "pers": "smug",
+        "likes": [
+            "simple",
+            "simple",
+            "gray",
+            "white"
+        ],
+        "id": "bea14"
+    },
+    "Kyle": {
+        "name": "Kyle",
+        "pers": "smug",
+        "likes": [
+            "gorgeous",
+            "cool",
+            "black",
+            "white"
+        ],
+        "id": "wol10"
+    },
+    "Leopold": {
+        "name": "Leopold",
+        "pers": "smug",
+        "likes": [
+            "elegant",
+            "gorgeous",
+            "purple",
+            "green"
+        ],
+        "id": "lon04"
+    },
+    "Lionel": {
+        "name": "Lionel",
+        "pers": "smug",
+        "likes": [
+            "gorgeous",
+            "active",
+            "green",
+            "gray"
+        ],
+        "id": "lon08"
+    },
+    "Lopez": {
+        "name": "Lopez",
+        "pers": "smug",
+        "likes": [
+            "gorgeous",
+            "gorgeous",
+            "gray",
+            "gray"
+        ],
+        "id": "der05"
+    },
+    "Lucha": {
+        "name": "Lucha",
+        "pers": "smug",
+        "likes": [
+            "active",
+            "cool",
+            "black",
+            "gray"
+        ],
+        "id": "brd15"
+    },
+    "Marshal": {
+        "name": "Marshal",
+        "pers": "smug",
+        "likes": [
+            "elegant",
+            "cool",
+            "light blue",
+            "blue"
+        ],
+        "id": "squ17"
+    },
+    "O'Hare": {
+        "name": "O'Hare",
+        "pers": "smug",
+        "likes": [
+            "active",
+            "cool",
+            "blue",
+            "light blue"
+        ],
+        "id": "rbt15"
+    },
+    "Olaf": {
+        "name": "Olaf",
+        "pers": "smug",
+        "likes": [
+            "elegant",
+            "gorgeous",
+            "red",
+            "black"
+        ],
+        "id": "ant09"
+    },
+    "Phil": {
+        "name": "Phil",
+        "pers": "smug",
+        "likes": [
+            "elegant",
+            "cool",
+            "green",
+            "red"
+        ],
+        "id": "ost07"
+    },
+    "Pietro": {
+        "name": "Pietro",
+        "pers": "smug",
+        "likes": [
+            "gorgeous",
+            "simple",
+            "colorful",
+            "red"
+        ],
+        "id": "shp13"
+    },
+    "Quillson": {
+        "name": "Quillson",
+        "pers": "smug",
+        "likes": [
+            "elegant",
+            "cool",
+            "beige",
+            "orange"
+        ],
+        "id": "duk17"
+    },
+    "Raymond": {
+        "name": "Raymond",
+        "pers": "smug",
+        "likes": [
+            "elegant",
+            "cool",
+            "black",
+            "gray"
+        ],
+        "id": "cat23"
+    },
+    "Rodney": {
+        "name": "Rodney",
+        "pers": "smug",
+        "likes": [
+            "gorgeous",
+            "cool",
+            "pink",
+            "colorful"
+        ],
+        "id": "ham03"
+    },
+    "Shep": {
+        "name": "Shep",
+        "pers": "smug",
+        "likes": [
+            "simple",
+            "cool",
+            "light blue",
+            "blue"
+        ],
+        "id": "dog18"
+    },
+    "Tex": {
+        "name": "Tex",
+        "pers": "smug",
+        "likes": [
+            "cool",
+            "elegant",
+            "black",
+            "gray"
+        ],
+        "id": "pgn12"
+    },
+    "Zell": {
+        "name": "Zell",
+        "pers": "smug",
+        "likes": [
+            "cool",
+            "gorgeous",
+            "purple",
+            "gray"
+        ],
+        "id": "der02"
+    },
+    "Alli": {
+        "name": "Alli",
+        "pers": "snooty",
+        "likes": [
+            "gorgeous",
+            "elegant",
+            "yellow",
+            "brown"
+        ],
+        "id": "crd01"
+    },
+    "Amelia": {
+        "name": "Amelia",
+        "pers": "snooty",
+        "likes": [
+            "cool",
+            "elegant",
+            "black",
+            "white"
+        ],
+        "id": "pbr01"
+    },
+    "Ankha": {
+        "name": "Ankha",
+        "pers": "snooty",
+        "likes": [
+            "gorgeous",
+            "simple",
+            "colorful",
+            "brown"
+        ],
+        "id": "cat19"
+    },
+    "Annalise": {
+        "name": "Annalise",
+        "pers": "snooty",
+        "likes": [
+            "elegant",
+            "active",
+            "blue",
+            "purple"
+        ],
+        "id": "hrs09"
+    },
+    "Astrid": {
+        "name": "Astrid",
+        "pers": "snooty",
+        "likes": [
+            "cool",
+            "active",
+            "black",
+            "colorful"
+        ],
+        "id": "kgr05"
+    },
+    "Baabara": {
+        "name": "Baabara",
+        "pers": "snooty",
+        "likes": [
+            "gorgeous",
+            "elegant",
+            "purple",
+            "blue"
+        ],
+        "id": "shp01"
+    },
+    "Becky": {
+        "name": "Becky",
+        "pers": "snooty",
+        "likes": [
+            "gorgeous",
+            "elegant",
+            "purple",
+            "pink"
+        ],
+        "id": "chn09"
+    },
+    "Bitty": {
+        "name": "Bitty",
+        "pers": "snooty",
+        "likes": [
+            "cute",
+            "elegant",
+            "pink",
+            "orange"
+        ],
+        "id": "hip05"
+    },
+    "Blaire": {
+        "name": "Blaire",
+        "pers": "snooty",
+        "likes": [
+            "gorgeous",
+            "elegant",
+            "orange",
+            "brown"
+        ],
+        "id": "squ01"
+    },
+    "Blanche": {
+        "name": "Blanche",
+        "pers": "snooty",
+        "likes": [
+            "elegant",
+            "gorgeous",
+            "black",
+            "brown"
+        ],
+        "id": "ost08"
+    },
+    "Bree": {
+        "name": "Bree",
+        "pers": "snooty",
+        "likes": [
+            "elegant",
+            "gorgeous",
+            "black",
+            "blue"
+        ],
+        "id": "mus03"
+    },
+    "Broffina": {
+        "name": "Broffina",
+        "pers": "snooty",
+        "likes": [
+            "gorgeous",
+            "elegant",
+            "black",
+            "red"
+        ],
+        "id": "chn12"
+    },
+    "Cashmere": {
+        "name": "Cashmere",
+        "pers": "snooty",
+        "likes": [
+            "gorgeous",
+            "elegant",
+            "purple",
+            "beige"
+        ],
+        "id": "shp04"
+    },
+    "Claudia": {
+        "name": "Claudia",
+        "pers": "snooty",
+        "likes": [
+            "gorgeous",
+            "elegant",
+            "purple",
+            "white"
+        ],
+        "id": "tig05"
+    },
+    "Cleo": {
+        "name": "Cleo",
+        "pers": "snooty",
+        "likes": [
+            "cute",
+            "elegant",
+            "light blue",
+            "white"
+        ],
+        "id": "hrs07"
+    },
+    "Diana": {
+        "name": "Diana",
+        "pers": "snooty",
+        "likes": [
+            "elegant",
+            "gorgeous",
+            "purple",
+            "pink"
+        ],
+        "id": "der08"
+    },
+    "Elise": {
+        "name": "Elise",
+        "pers": "snooty",
+        "likes": [
+            "elegant",
+            "gorgeous",
+            "purple",
+            "red"
+        ],
+        "id": "mnk05"
+    },
+    "Eloise": {
+        "name": "Eloise",
+        "pers": "snooty",
+        "likes": [
+            "elegant",
+            "simple",
+            "green",
+            "orange"
+        ],
+        "id": "elp03"
+    },
+    "Francine": {
+        "name": "Francine",
+        "pers": "snooty",
+        "likes": [
+            "elegant",
+            "gorgeous",
+            "blue",
+            "black"
+        ],
+        "id": "rbt12"
+    },
+    "Freya": {
+        "name": "Freya",
+        "pers": "snooty",
+        "likes": [
+            "elegant",
+            "cool",
+            "green",
+            "blue"
+        ],
+        "id": "wol05"
+    },
+    "Friga": {
+        "name": "Friga",
+        "pers": "snooty",
+        "likes": [
+            "elegant",
+            "gorgeous",
+            "pink",
+            "black"
+        ],
+        "id": "pgn04"
+    },
+    "Gigi": {
+        "name": "Gigi",
+        "pers": "snooty",
+        "likes": [
+            "gorgeous",
+            "elegant",
+            "black",
+            "white"
+        ],
+        "id": "flg16"
+    },
+    "Gloria": {
+        "name": "Gloria",
+        "pers": "snooty",
+        "likes": [
+            "gorgeous",
+            "elegant",
+            "black",
+            "gray"
+        ],
+        "id": "duk15"
+    },
+    "Greta": {
+        "name": "Greta",
+        "pers": "snooty",
+        "likes": [
+            "elegant",
+            "simple",
+            "pink",
+            "purple"
+        ],
+        "id": "mus16"
+    },
+    "Gwen": {
+        "name": "Gwen",
+        "pers": "snooty",
+        "likes": [
+            "gorgeous",
+            "elegant",
+            "green",
+            "white"
+        ],
+        "id": "pgn05"
+    },
+    "Judy": {
+        "name": "Judy",
+        "pers": "snooty",
+        "likes": [
+            "cute",
+            "elegant",
+            "pink",
+            "white"
+        ],
+        "id": "cbr19"
+    },
+    "Julia": {
+        "name": "Julia",
+        "pers": "snooty",
+        "likes": [
+            "elegant",
+            "gorgeous",
+            "purple",
+            "red"
+        ],
+        "id": "ost05"
+    },
+    "Kitty": {
+        "name": "Kitty",
+        "pers": "snooty",
+        "likes": [
+            "elegant",
+            "gorgeous",
+            "green",
+            "gray"
+        ],
+        "id": "cat14"
+    },
+    "Maelle": {
+        "name": "Maelle",
+        "pers": "snooty",
+        "likes": [
+            "cool",
+            "simple",
+            "pink",
+            "white"
+        ],
+        "id": "duk03"
+    },
+    "Mallary": {
+        "name": "Mallary",
+        "pers": "snooty",
+        "likes": [
+            "cool",
+            "gorgeous",
+            "blue",
+            "white"
+        ],
+        "id": "duk06"
+    },
+    "Mathilda": {
+        "name": "Mathilda",
+        "pers": "snooty",
+        "likes": [
+            "cool",
+            "gorgeous",
+            "white",
+            "red"
+        ],
+        "id": "kgr01"
+    },
+    "Mint": {
+        "name": "Mint",
+        "pers": "snooty",
+        "likes": [
+            "gorgeous",
+            "cute",
+            "pink",
+            "purple"
+        ],
+        "id": "squ09"
+    },
+    "Miranda": {
+        "name": "Miranda",
+        "pers": "snooty",
+        "likes": [
+            "elegant",
+            "gorgeous",
+            "blue",
+            "purple"
+        ],
+        "id": "duk12"
+    },
+    "Monique": {
+        "name": "Monique",
+        "pers": "snooty",
+        "likes": [
+            "gorgeous",
+            "elegant",
+            "purple",
+            "pink"
+        ],
+        "id": "cat11"
+    },
+    "Naomi": {
+        "name": "Naomi",
+        "pers": "snooty",
+        "likes": [
+            "elegant",
+            "gorgeous",
+            "colorful",
+            "purple"
+        ],
+        "id": "cow07"
+    },
+    "Olivia": {
+        "name": "Olivia",
+        "pers": "snooty",
+        "likes": [
+            "cool",
+            "elegant",
+            "white",
+            "black"
+        ],
+        "id": "cat03"
+    },
+    "Opal": {
+        "name": "Opal",
+        "pers": "snooty",
+        "likes": [
+            "elegant",
+            "cool",
+            "black",
+            "orange"
+        ],
+        "id": "elp00"
+    },
+    "Pancetti": {
+        "name": "Pancetti",
+        "pers": "snooty",
+        "likes": [
+            "cute",
+            "gorgeous",
+            "red",
+            "yellow"
+        ],
+        "id": "pig16"
+    },
+    "Pecan": {
+        "name": "Pecan",
+        "pers": "snooty",
+        "likes": [
+            "elegant",
+            "gorgeous",
+            "purple",
+            "beige"
+        ],
+        "id": "squ03"
+    },
+    "Portia": {
+        "name": "Portia",
+        "pers": "snooty",
+        "likes": [
+            "elegant",
+            "gorgeous",
+            "purple",
+            "black"
+        ],
+        "id": "dog05"
+    },
+    "Purrl": {
+        "name": "Purrl",
+        "pers": "snooty",
+        "likes": [
+            "cool",
+            "elegant",
+            "gray",
+            "blue"
+        ],
+        "id": "cat07"
+    },
+    "Queenie": {
+        "name": "Queenie",
+        "pers": "snooty",
+        "likes": [
+            "gorgeous",
+            "elegant",
+            "black",
+            "gray"
+        ],
+        "id": "ost00"
+    },
+    "Robin": {
+        "name": "Robin",
+        "pers": "snooty",
+        "likes": [
+            "elegant",
+            "cool",
+            "light blue",
+            "purple"
+        ],
+        "id": "brd01"
+    },
+    "Snooty": {
+        "name": "Snooty",
+        "pers": "snooty",
+        "likes": [
+            "simple",
+            "simple",
+            "green",
+            "yellow"
+        ],
+        "id": "ant06"
+    },
+    "Soleil": {
+        "name": "Soleil",
+        "pers": "snooty",
+        "likes": [
+            "cool",
+            "gorgeous",
+            "red",
+            "yellow"
+        ],
+        "id": "ham04"
+    },
+    "Tasha": {
+        "name": "Tasha",
+        "pers": "snooty",
+        "likes": [
+            "elegant",
+            "gorgeous",
+            "beige",
+            "gray"
+        ],
+        "id": "squ13"
+    },
+    "Tiffany": {
+        "name": "Tiffany",
+        "pers": "snooty",
+        "likes": [
+            "gorgeous",
+            "cool",
+            "black",
+            "red"
+        ],
+        "id": "rbt07"
+    },
+    "Timbra": {
+        "name": "Timbra",
+        "pers": "snooty",
+        "likes": [
+            "elegant",
+            "gorgeous",
+            "green",
+            "brown"
+        ],
+        "id": "shp10"
+    },
+    "Tipper": {
+        "name": "Tipper",
+        "pers": "snooty",
+        "likes": [
+            "gorgeous",
+            "cute",
+            "colorful",
+            "pink"
+        ],
+        "id": "cow01"
+    },
+    "Velma": {
+        "name": "Velma",
+        "pers": "snooty",
+        "likes": [
+            "elegant",
+            "gorgeous",
+            "light blue",
+            "purple"
+        ],
+        "id": "goa06"
+    },
+    "Violet": {
+        "name": "Violet",
+        "pers": "snooty",
+        "likes": [
+            "gorgeous",
+            "cool",
+            "purple",
+            "pink"
+        ],
+        "id": "gor07"
+    },
+    "Vivian": {
+        "name": "Vivian",
+        "pers": "snooty",
+        "likes": [
+            "gorgeous",
+            "elegant",
+            "gray",
+            "purple"
+        ],
+        "id": "wol08"
+    },
+    "Whitney": {
+        "name": "Whitney",
+        "pers": "snooty",
+        "likes": [
+            "elegant",
+            "cool",
+            "blue",
+            "light blue"
+        ],
+        "id": "wol03"
+    },
+    "Willow": {
+        "name": "Willow",
+        "pers": "snooty",
+        "likes": [
+            "cute",
+            "gorgeous",
+            "white",
+            "pink"
+        ],
+        "id": "shp07"
+    },
+    "Yuka": {
+        "name": "Yuka",
+        "pers": "snooty",
+        "likes": [
+            "cool",
+            "elegant",
+            "orange",
+            "yellow"
+        ],
+        "id": "kal00"
+    },
+    "Agnes": {
+        "name": "Agnes",
+        "pers": "sisterly",
+        "likes": [
+            "simple",
+            "elegant",
+            "pink",
+            "white"
+        ],
+        "id": "pig17"
+    },
+    "Canberra": {
+        "name": "Canberra",
+        "pers": "sisterly",
+        "likes": [
+            "active",
+            "cool",
+            "green",
+            "light blue"
+        ],
+        "id": "kal08"
+    },
+    "Charlise": {
+        "name": "Charlise",
+        "pers": "sisterly",
+        "likes": [
+            "active",
+            "cute",
+            "red",
+            "orange"
+        ],
+        "id": "bea12"
+    },
+    "Cherry": {
+        "name": "Cherry",
+        "pers": "sisterly",
+        "likes": [
+            "cool",
+            "elegant",
+            "black",
+            "purple"
+        ],
+        "id": "dog17"
+    },
+    "Deirdre": {
+        "name": "Deirdre",
+        "pers": "sisterly",
+        "likes": [
+            "simple",
+            "simple",
+            "orange",
+            "orange"
+        ],
+        "id": "der04"
+    },
+    "Diva": {
+        "name": "Diva",
+        "pers": "sisterly",
+        "likes": [
+            "gorgeous",
+            "elegant",
+            "purple",
+            "light blue"
+        ],
+        "id": "flg18"
+    },
+    "Flo": {
+        "name": "Flo",
+        "pers": "sisterly",
+        "likes": [
+            "cool",
+            "gorgeous",
+            "red",
+            "purple"
+        ],
+        "id": "pgn13"
+    },
+    "Frita": {
+        "name": "Frita",
+        "pers": "sisterly",
+        "likes": [
+            "active",
+            "cute",
+            "yellow",
+            "red"
+        ],
+        "id": "shp11"
+    },
+    "Fuchsia": {
+        "name": "Fuchsia",
+        "pers": "sisterly",
+        "likes": [
+            "cool",
+            "cool",
+            "pink",
+            "pink"
+        ],
+        "id": "der06"
+    },
+    "Hazel": {
+        "name": "Hazel",
+        "pers": "sisterly",
+        "likes": [
+            "active",
+            "cute",
+            "red",
+            "yellow"
+        ],
+        "id": "squ18"
+    },
+    "Katt": {
+        "name": "Katt",
+        "pers": "sisterly",
+        "likes": [
+            "cool",
+            "cool",
+            "purple",
+            "black"
+        ],
+        "id": "cat21"
+    },
+    "Mira": {
+        "name": "Mira",
+        "pers": "sisterly",
+        "likes": [
+            "active",
+            "cool",
+            "red",
+            "yellow"
+        ],
+        "id": "rbt19"
+    },
+    "Muffy": {
+        "name": "Muffy",
+        "pers": "sisterly",
+        "likes": [
+            "gorgeous",
+            "elegant",
+            "black",
+            "purple"
+        ],
+        "id": "shp12"
+    },
+    "Pashmina": {
+        "name": "Pashmina",
+        "pers": "sisterly",
+        "likes": [
+            "cool",
+            "elegant",
+            "red",
+            "colorful"
+        ],
+        "id": "goa08"
+    },
+    "Paula": {
+        "name": "Paula",
+        "pers": "sisterly",
+        "likes": [
+            "cute",
+            "active",
+            "orange",
+            "green"
+        ],
+        "id": "bea10"
+    },
+    "Phoebe": {
+        "name": "Phoebe",
+        "pers": "sisterly",
+        "likes": [
+            "gorgeous",
+            "cool",
+            "black",
+            "red"
+        ],
+        "id": "ost10"
+    },
+    "Plucky": {
+        "name": "Plucky",
+        "pers": "sisterly",
+        "likes": [
+            "cool",
+            "simple",
+            "light blue",
+            "yellow"
+        ],
+        "id": "chn10"
+    },
+    "Reneigh": {
+        "name": "Reneigh",
+        "pers": "sisterly",
+        "likes": [
+            "cool",
+            "gorgeous",
+            "black",
+            "purple"
+        ],
+        "id": "hrs16"
+    },
+    "Renée": {
+        "name": "Renée",
+        "pers": "sisterly",
+        "likes": [
+            "cool",
+            "active",
+            "purple",
+            "yellow"
+        ],
+        "id": "rhn08"
+    },
+    "Rocket": {
+        "name": "Rocket",
+        "pers": "sisterly",
+        "likes": [
+            "active",
+            "cool",
+            "pink",
+            "red"
+        ],
+        "id": "gor09"
+    },
+    "Shari": {
+        "name": "Shari",
+        "pers": "sisterly",
+        "likes": [
+            "cute",
+            "active",
+            "light blue",
+            "yellow"
+        ],
+        "id": "mnk07"
+    },
+    "Sylvia": {
+        "name": "Sylvia",
+        "pers": "sisterly",
+        "likes": [
+            "simple",
+            "gorgeous",
+            "yellow",
+            "green"
+        ],
+        "id": "kgr06"
+    },
+    "Tammy": {
+        "name": "Tammy",
+        "pers": "sisterly",
+        "likes": [
+            "cool",
+            "active",
+            "red",
+            "purple"
+        ],
+        "id": "cbr17"
+    },
+    "Ursala": {
+        "name": "Ursala",
+        "pers": "sisterly",
+        "likes": [
+            "simple",
+            "cute",
+            "red",
+            "orange"
+        ],
+        "id": "bea08"
+    }
+}
