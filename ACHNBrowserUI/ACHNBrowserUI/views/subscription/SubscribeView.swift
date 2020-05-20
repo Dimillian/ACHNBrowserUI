@@ -80,37 +80,44 @@ struct SubscribeView: View {
                 .padding()
                 .lineLimit(nil)
             
-            HStack {
-                makeBorderedButton(large: false,
-                                   action: {
-                    self.buttonAction(purchase: self.sub!)
-                }, label: self.subscriptionManager.subscriptionStatus == .subscribed ?
-                    "Thanks!" :
-                    "\(formattedPrice(for: sub!)) Monthly")
-                    .opacity(subscriptionManager.inPaymentProgress ? 0.5 : 1.0)
-                    .disabled(subscriptionManager.inPaymentProgress)
-                Spacer(minLength: 18)
-                makeBorderedButton(large: false,
-                                   action: {
-                    self.buttonAction(purchase: self.yearlySub!)
-                }, label: self.subscriptionManager.subscriptionStatus == .subscribed ?
-                    "Thanks!" :
-                    "\(formattedPrice(for: yearlySub!)) Yearly")
-                    .opacity(subscriptionManager.inPaymentProgress ? 0.5 : 1.0)
-                    .disabled(subscriptionManager.inPaymentProgress)
-            }
-            .frame(width: 320)
+                HStack {
+                    sub.map{ sub in
+                        makeBorderedButton(large: false,
+                                           action: {
+                                            self.buttonAction(purchase: sub)
+                        }, label: self.subscriptionManager.subscriptionStatus == .subscribed ?
+                            "Thanks!" :
+                            "\(formattedPrice(for: sub)) Monthly")
+                            .opacity(subscriptionManager.inPaymentProgress ? 0.5 : 1.0)
+                            .disabled(subscriptionManager.inPaymentProgress)
+                    }
+                    
+                    Spacer(minLength: 18)
+                
+                    yearlySub.map{ yearlySub in
+                        makeBorderedButton(large: false,
+                                           action: {
+                                            self.buttonAction(purchase: yearlySub)
+                        }, label: self.subscriptionManager.subscriptionStatus == .subscribed ?
+                            "Thanks!" :
+                            "\(formattedPrice(for: yearlySub)) Yearly")
+                            .opacity(subscriptionManager.inPaymentProgress ? 0.5 : 1.0)
+                            .disabled(subscriptionManager.inPaymentProgress)
+                    }
+                }
+                .frame(width: 320)
             
-            makeBorderedButton(large: true,
-                               action: {
-                                self.buttonAction(purchase: self.lifetime!)
-            }, label: self.subscriptionManager.subscriptionStatus == .subscribed ?
-                "Thank you for your support!" :
-                "Buy lifetime AC Helper+ for \(formattedPrice(for: lifetime!))")
-                .opacity(subscriptionManager.inPaymentProgress ? 0.5 : 1.0)
-                .disabled(subscriptionManager.inPaymentProgress)
-                .padding(.top, 16)
-
+            lifetime.map{ lifetime in
+                makeBorderedButton(large: true,
+                                   action: {
+                                    self.buttonAction(purchase: lifetime)
+                }, label: self.subscriptionManager.subscriptionStatus == .subscribed ?
+                    "Thank you for your support!" :
+                    "Buy lifetime AC Helper+ for \(formattedPrice(for: lifetime))")
+                    .opacity(subscriptionManager.inPaymentProgress ? 0.5 : 1.0)
+                    .disabled(subscriptionManager.inPaymentProgress)
+                    .padding(.top, 16)
+            }
         }
     }
     
@@ -144,12 +151,14 @@ struct SubscribeView: View {
                 .padding()
                 .lineLimit(nil)
             Spacer(minLength: 16)
-            Text("ACHelperPlusPriceAndAboDetail \(formattedPrice(for: sub!)) \(formattedPrice(for: yearlySub!))")
-                .font(.caption)
-                .foregroundColor(.acText)
-                .frame(width: 320)
-                .padding()
-                .lineLimit(nil)
+            if sub != nil && yearlySub != nil {
+                Text("ACHelperPlusPriceAndAboDetail \(formattedPrice(for: sub!)) \(formattedPrice(for: yearlySub!))")
+                    .font(.caption)
+                    .foregroundColor(.acText)
+                    .frame(width: 320)
+                    .padding()
+                    .lineLimit(nil)
+            }
             Spacer(minLength: 16)
             makeBorderedButton(large: true,
                                action: {
@@ -170,15 +179,10 @@ struct SubscribeView: View {
             ScrollView(.vertical) {
                 ZStack {
                     Color.acBackground.edgesIgnoringSafeArea(.all)
-                    if sub != nil && yearlySub != nil && lifetime != nil {
-                        VStack {
-                            upperPart
-                            Spacer(minLength: 32)
-                            lowerPart
-                        }
-                    } else {
-                        RowLoadingView(isLoading: .constant(true))
-                        Spacer()
+                    VStack {
+                        upperPart
+                        Spacer(minLength: 32)
+                        lowerPart
                     }
                 }
             }
