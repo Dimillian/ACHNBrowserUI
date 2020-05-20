@@ -18,6 +18,7 @@ public class UserCollection: ObservableObject {
     @Published public var villagers: [Villager] = []
     @Published public var critters: [Item] = []
     @Published public var lists: [UserList] = []
+    @Published public var dailyTasks = DailyTasks()
     @Published public var isCloudEnabled = true
     @Published public var isSynched = false
     
@@ -27,6 +28,7 @@ public class UserCollection: ObservableObject {
         let villagers: [Villager]
         let critters: [Item]
         let lists: [UserList]?
+        let dailyTasks: DailyTasks?
     }
     
     private let filePath: URL
@@ -206,7 +208,7 @@ public class UserCollection: ObservableObject {
     // MARK: - Import / Export
     private func save() {
         do {
-            let savedData = SavedData(items: items, villagers: villagers, critters: critters, lists: lists)
+            let savedData = SavedData(items: items, villagers: villagers, critters: critters, lists: lists, dailyTasks: dailyTasks)
             let data = try encoder.encode(savedData)
             try data.write(to: filePath, options: .atomicWrite)
         
@@ -229,6 +231,7 @@ public class UserCollection: ObservableObject {
                 self.villagers = savedData.villagers
                 self.critters = savedData.critters
                 self.lists = savedData.lists ?? []
+                self.dailyTasks = savedData.dailyTasks ?? DailyTasks()
                 return true
             } catch {
                 return false
@@ -244,6 +247,7 @@ public class UserCollection: ObservableObject {
             self.villagers = []
             self.critters = []
             self.lists = []
+            self.dailyTasks = DailyTasks()
             save()
             return true
         } catch {
