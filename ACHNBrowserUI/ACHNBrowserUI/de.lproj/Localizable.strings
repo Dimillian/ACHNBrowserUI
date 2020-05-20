@@ -776,6 +776,29 @@ Du kannst das Abonnement jederzeit in deinen iTunes Kontoeinstellungen beenden. 
 "Lots of cliffs, waterfalls and river forks. Normal resource spawns." = "Viele Klippen, Wasserfälle und Flussverzweigungen. Die verkommenden Ressourcen sind normal.";
 "A very rare island with flowers, scorpions and a rectangular pond. If you climb up onto the cliff and climb down from the back, you can vault over to a tiny island in the middle and get 8 gold nuggets from a single rock." = "Eine sehr seltene Insel mit Blumen, Skorpionen und einem rechteckigen Teich. Wenn du die Klippe hinauf kletters und auf der Rückseite wieder herunter, kannst du mit dem Sprungstab eine kleine Insel erreichen auf der du vom Fels 8 Golderz bekommst.";
 
+// Added 2020-05-20
+// New settings
+"Using iCloud sync" = "iCloud Synchronisierung aktiv";
+"Synchronized with iCloud" = "Mit iCloud synchronisiert";
+
+// New card
 "Possible visitors" = "Mögliche Besucher";
-"On" = "Au";
+"On" = "Auf";
 " your island" = " deiner Insel";
+"From 6pm to 5am" = "Von 18 bis 5 Uhr";
+"From 8pm to 5am" = "Von 20 bis 5 Uhr";
+"From 5am to 12pm" = "Von 5 bis 0 Uhr";
+
+
+//Special characters
+"K.K Slider" = "K.K. Slider";
+"Daisy Mae" = "Jorna";
+"C.J" = "Lomeus";
+"Flick" = "Carlson";
+"Kicks" = "Schubert";
+"Saharah" = "Aziza";
+"Label" = "Minna";
+"Leif" = "Gerd";
+"Redd" = "Reiner";
+"Wisp" = "Buh";
+"Celeste" = "Eufemia";
