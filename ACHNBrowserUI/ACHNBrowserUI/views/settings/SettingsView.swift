@@ -127,11 +127,13 @@ struct SettingsView: View {
     
     private var appSection: some View {
         Section(header: SectionHeaderView(text: "App Settings", icon: "bag")) {
+            /*
             if UIApplication.shared.supportsAlternateIcons && UIDevice.current.userInterfaceIdiom != .pad {
                 NavigationLink(destination: AppIconPickerView()) {
                     Text("App Icon")
                 }
             }
+             */
             Button(action: {
                 self.subscriptionManager.restorePurchase()
             }) {
