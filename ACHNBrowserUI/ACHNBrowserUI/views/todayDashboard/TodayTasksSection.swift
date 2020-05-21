@@ -7,70 +7,80 @@
 //
 
 import SwiftUI
+import Backend
 
 struct TodayTasksSection: View {
-    // @TODO: Check for AC Helper+ subscription
-    @State private var userHasSubscription: Bool = true
+    @EnvironmentObject private var collection: UserCollection
     
+    var isSunday: Bool {
+        Calendar.current.component(.weekday, from: Date()) == 1
+    }
     
-    var body: some View {
-        Section(header: SectionHeaderView(text: "Today's Tasks", icon: "checkmark.seal.fill")) {
-            NavigationLink(destination: Text("Event 2 Detail View")) {
-                HStack {
-                    
-                    ZStack {
-                        Circle()
-                            .foregroundColor(Color("ACBackground"))
-                        Image("icon-iron")
-                            .resizable()
-                            .aspectRatio(1, contentMode: .fit)
-                    }
-                    .frame(maxHeight: 44)
-                    
-                    ZStack {
-                        Circle()
-                            .foregroundColor(Color("ACBackground"))
-                        Image("icon-bell")
-                            .resizable()
-                            .aspectRatio(1, contentMode: .fit)
-                    }
-                    .frame(maxHeight: 44)
-                    
-                    ZStack {
-                        Circle()
-                            .foregroundColor(Color("ACBackground"))
-                        Image("icon-hardwood")
-                            .resizable()
-                            .aspectRatio(1, contentMode: .fit)
-                    }
-                    .frame(maxHeight: 44)
-                    
-                    ZStack {
-                        Circle()
-                            .foregroundColor(Color("ACBackground"))
-                        Image("icon-fossil")
-                            .resizable()
-                            .aspectRatio(1, contentMode: .fit)
-                    }
-                    .frame(maxHeight: 44)
-                    
+    // MARK: - Task Bubble
+    private func makeTaskBubble(icon: String, taskName: DailyTasks.taskName) -> some View {
+        var task: DailyTasks.Task {
+            collection.dailyTasks.tasks[taskName]!
+        }
+        
+        return ZStack {
+            Circle()
+                .foregroundColor(Color("ACBackground"))
+            Image(icon)
+                .resizable()
+                .aspectRatio(taskName == DailyTasks.taskName.villagerHouses ? 0.8 : 1, contentMode: .fit)
+            if task.hasProgress {
+                ZStack {
+                    Circle()
+                        .stroke(lineWidth: 4.0)
+                        .opacity(0.3)
+                        .foregroundColor(Color.red)
+                    Circle()
+                        .trim(from: 0.0, to: CGFloat(task.curProgress)/CGFloat(task.maxProgress))
+                        .stroke(style: StrokeStyle(lineWidth: 4.0, lineCap: .round, lineJoin: .round))
+                        .foregroundColor(Color.green)
+                        .rotationEffect(Angle(degrees: 270.0))
+                        .animation(.easeInOut)
                 }
-                .frame(maxWidth: .infinity)
-                .padding(.vertical)
-                .opacity(userHasSubscription ? 1.0 : 0.2)
-                .overlay(premiumOverlay)
             }
+        }
+        .frame(maxHeight: 44)
+        .onTapGesture {
+            if !task.hasProgress {
+                return
+            }
+            self.collection.updateProgress(taskName: taskName)
         }
     }
     
-    var premiumOverlay: some View {
-        if userHasSubscription {
-            return AnyView(EmptyView())
-        } else {
-            return AnyView(VStack {
-                Text("This feature requires ") + Text("AC Helper+").fontWeight(.bold)
-                Text("Learn more >")
-            })
+    var body: some View {
+        Section(header: SectionHeaderView(text: "Today's Tasks", icon: "checkmark.seal.fill")) {
+            VStack(spacing: 15) {
+                HStack {
+                    makeTaskBubble(icon: "icon-iron", taskName: DailyTasks.taskName.rocks)
+                    makeTaskBubble(icon: "icon-weed", taskName: DailyTasks.taskName.weed)
+                    makeTaskBubble(icon: "icon-fossil", taskName: DailyTasks.taskName.fossils)
+                    makeTaskBubble(icon: "icon-leaf", taskName: DailyTasks.taskName.furniture)
+                }
+                HStack {
+                    makeTaskBubble(icon: "icon-bell", taskName: DailyTasks.taskName.bell)
+                    makeTaskBubble(icon: "icon-miles", taskName: DailyTasks.taskName.nookmiles)
+                    makeTaskBubble(icon: "icon-bottle-message", taskName: DailyTasks.taskName.bottle)
+                    makeTaskBubble(icon: "icon-villager", taskName: DailyTasks.taskName.villagerHouses)
+                }
+                HStack {
+                    Text("Reset")
+                        .onTapGesture {
+                            self.collection.resetTasks()
+                    }
+                    .foregroundColor(.acText)
+                    .padding(.vertical, 8)
+                    .padding(.horizontal, 14)
+                    .background(Color.acText.opacity(0.2))
+                    .mask(RoundedRectangle(cornerRadius: 14, style: .continuous))
+                }
+            }
+            .frame(maxWidth: .infinity)
+            .padding(.vertical, 8)
         }
     }
     
