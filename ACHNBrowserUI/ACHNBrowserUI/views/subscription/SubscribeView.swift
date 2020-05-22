@@ -53,7 +53,7 @@ struct SubscribeView: View {
                     }
                     self.paymentButtons
                         .frame(width: proxy.size.width,
-                               height: 150)
+                               height: 170)
                         .background(Color.acSecondaryBackground)
                 }
             }
