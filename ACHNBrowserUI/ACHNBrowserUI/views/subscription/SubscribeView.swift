@@ -41,6 +41,30 @@ struct SubscribeView: View {
         return formatter.string(from: package.product.price)!
     }
     
+    
+    var body: some View {
+        NavigationView {
+            GeometryReader { proxy in
+                ZStack(alignment: .bottom) {
+                    Color.acBackground.edgesIgnoringSafeArea(.all)
+                    ScrollView(.vertical, showsIndicators: false) {
+                        self.content
+                            .frame(width: proxy.size.width * 0.9)
+                    }
+                    self.paymentButtons
+                        .frame(width: proxy.size.width,
+                               height: 150)
+                        .background(Color.acSecondaryBackground)
+                }
+            }
+            .edgesIgnoringSafeArea(.bottom)
+            .sheet(item: $sheetURL, content: { SafariView(url: $0) })
+            .navigationBarItems(leading: dismissButton)
+            .navigationBarTitle(Text("AC Helper+"),
+                                displayMode: .inline)
+        }.navigationViewStyle(StackNavigationViewStyle())
+    }
+    
     private var dismissButton: some View {
         Button(action: {
             self.presentationMode.wrappedValue.dismiss()
@@ -54,58 +78,89 @@ struct SubscribeView: View {
         .safeHoverEffectBarItem(position: .leading)
     }
     
-    private var upperPart: some View {
-        Group {
-            HStack(alignment: .center, spacing: 4) {
-                Text("Upgrade to +")
-                    .font(.largeTitle)
-                    .fontWeight(.bold)
-                    .foregroundColor(.acHeaderBackground)
-                Image("icon-bell")
-            }
-            .padding(.top, 32)
-            Image("notification")
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-                .frame(width: 320)
-            Button(action: {
-                NotificationManager.shared.testNotification()
-            }) {
-                Text("Tap here to preview a notification").foregroundColor(.acHeaderBackground)
-            }
-            Text("ACHelperPlusDescription")
-                .font(.body)
-                .foregroundColor(.acText)
-                .frame(width: 320)
-                .padding()
-                .lineLimit(nil)
-            
-                HStack {
-                    sub.map{ sub in
-                        makeBorderedButton(large: false,
-                                           action: {
-                                            self.buttonAction(purchase: sub)
-                        }, label: self.subscriptionManager.subscriptionStatus == .subscribed ?
-                            "Thanks!" :
-                            "\(formattedPrice(for: sub)) Monthly")
-                            .opacity(subscriptionManager.inPaymentProgress ? 0.5 : 1.0)
-                            .disabled(subscriptionManager.inPaymentProgress)
-                    }
-                    
-                    Spacer(minLength: 18)
-                
-                    yearlySub.map{ yearlySub in
-                        makeBorderedButton(large: false,
-                                           action: {
-                                            self.buttonAction(purchase: yearlySub)
-                        }, label: self.subscriptionManager.subscriptionStatus == .subscribed ?
-                            "Thanks!" :
-                            "\(formattedPrice(for: yearlySub)) Yearly")
-                            .opacity(subscriptionManager.inPaymentProgress ? 0.5 : 1.0)
-                            .disabled(subscriptionManager.inPaymentProgress)
-                    }
+    private var content: some View {
+        VStack {
+            Group {
+                HStack(alignment: .center, spacing: 4) {
+                    Text("Upgrade to +")
+                        .font(.largeTitle)
+                        .fontWeight(.bold)
+                        .foregroundColor(.acHeaderBackground)
+                    Image("icon-bell")
                 }
-                .frame(width: 320)
+                .padding(.top, 32)
+                Image("notification")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                Button(action: {
+                    NotificationManager.shared.testNotification()
+                }) {
+                    Text("Tap here to preview a notification").foregroundColor(.acHeaderBackground)
+                }
+                Text("ACHelperPlusDescription")
+                    .font(.body)
+                    .foregroundColor(.acText)
+                    .padding()
+                    .lineLimit(nil)
+            }
+            
+            Group {
+                Text("ACHelperPlusDetails")
+                    .font(.body)
+                    .foregroundColor(.acText)
+                    .padding()
+                    .lineLimit(nil)
+                Spacer(minLength: 16)
+                if sub != nil && yearlySub != nil {
+                    Text("ACHelperPlusPriceAndAboDetail \(formattedPrice(for: sub!)) \(formattedPrice(for: yearlySub!))")
+                        .font(.caption)
+                        .foregroundColor(.acText)
+                        .padding()
+                        .lineLimit(nil)
+                }
+                Spacer(minLength: 16)
+                makeBorderedButton(large: true,
+                                   action: {
+                                    self.sheetURL = URL(string: "https://github.com/Dimillian/ACHNBrowserUI/blob/master/privacy-policy.md#ac-helper-privacy-policy")
+                }, label: "Privacy Policy")
+                
+                Spacer(minLength: 16)
+                makeBorderedButton(large: true,
+                                   action: {
+                                    self.sheetURL = URL(string: "https://github.com/Dimillian/ACHNBrowserUI/blob/master/term-of-use.md#ac-helper-term-of-use")
+                }, label: "Terms of Use")
+            }
+            Spacer(minLength: 200)
+        }
+    }
+    
+    private var paymentButtons: some View {
+        VStack {
+            HStack {
+                sub.map{ sub in
+                    makeBorderedButton(large: false,
+                                       action: {
+                                        self.buttonAction(purchase: sub)
+                    }, label: self.subscriptionManager.subscriptionStatus == .subscribed ?
+                        "Thanks!" :
+                        "\(formattedPrice(for: sub)) Monthly")
+                        .opacity(subscriptionManager.inPaymentProgress ? 0.5 : 1.0)
+                        .disabled(subscriptionManager.inPaymentProgress)
+                }
+                
+                Spacer(minLength: 18)
+                
+                yearlySub.map{ yearlySub in
+                    makeBorderedButton(large: false,
+                                       action: {
+                                        self.buttonAction(purchase: yearlySub)
+                    }, label: self.subscriptionManager.subscriptionStatus == .subscribed ?
+                        "Thanks!" :
+                        "\(formattedPrice(for: yearlySub)) Yearly")
+                        .opacity(subscriptionManager.inPaymentProgress ? 0.5 : 1.0)
+                        .disabled(subscriptionManager.inPaymentProgress)
+                }
+            }.frame(width: 320)
             
             lifetime.map{ lifetime in
                 makeBorderedButton(large: true,
@@ -140,57 +195,6 @@ struct SubscribeView: View {
                 .lineLimit(1)
                 .frame(width: large ? 290 : 100, height: 30)
         }.buttonStyle(PlainRoundedButton()).accentColor(.acTabBarTint).safeHoverEffect()
-    }
-    
-    private var lowerPart: some View {
-        Group {
-            Text("ACHelperPlusDetails")
-                .font(.body)
-                .foregroundColor(.acText)
-                .frame(width: 320)
-                .padding()
-                .lineLimit(nil)
-            Spacer(minLength: 16)
-            if sub != nil && yearlySub != nil {
-                Text("ACHelperPlusPriceAndAboDetail \(formattedPrice(for: sub!)) \(formattedPrice(for: yearlySub!))")
-                    .font(.caption)
-                    .foregroundColor(.acText)
-                    .frame(width: 320)
-                    .padding()
-                    .lineLimit(nil)
-            }
-            Spacer(minLength: 16)
-            makeBorderedButton(large: true,
-                               action: {
-                self.sheetURL = URL(string: "https://github.com/Dimillian/ACHNBrowserUI/blob/master/privacy-policy.md#ac-helper-privacy-policy")
-            }, label: "Privacy Policy")
-            
-            Spacer(minLength: 16)
-            makeBorderedButton(large: true,
-                               action: {
-                self.sheetURL = URL(string: "https://github.com/Dimillian/ACHNBrowserUI/blob/master/term-of-use.md#ac-helper-term-of-use")
-            }, label: "Terms of Use")
-            Spacer(minLength: 32)
-        }.background(Color.acBackground.edgesIgnoringSafeArea(.all))
-    }
-
-    var body: some View {
-        NavigationView {
-            ScrollView(.vertical) {
-                ZStack {
-                    Color.acBackground.edgesIgnoringSafeArea(.all)
-                    VStack {
-                        upperPart
-                        Spacer(minLength: 32)
-                        lowerPart
-                    }
-                }
-            }
-            .sheet(item: $sheetURL, content: { SafariView(url: $0) })
-            .navigationBarItems(leading: dismissButton)
-            .navigationBarTitle(Text("AC Helper+"),
-                                displayMode: .inline)
-        }.navigationViewStyle(StackNavigationViewStyle())
     }
 }
 
