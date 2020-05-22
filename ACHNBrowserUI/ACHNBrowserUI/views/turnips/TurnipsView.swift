@@ -155,26 +155,14 @@ extension TurnipsView {
                         Text("PM").fontWeight(.bold)
                     }
                 }
-                
                 if turnipsDisplay == .average {
-                    ForEach(0..<viewModel.averagesPrices!.count) { i in
-                        TurnipsAveragePriceRow(label: self.labels[i],
-                                               prices: self.viewModel.averagesPrices![i],
-                                               minMaxPrices: self.viewModel.minMaxPrices![i])
-                    }
-                } else if turnipsDisplay == .minMax {
-                    ForEach(0..<viewModel.minMaxPrices!.count) { i in
-                        TurnipsMinMaxPriceRow(label: self.labels[i],
-                                              prices: self.viewModel.minMaxPrices![i],
-                                              averagePrices: self.viewModel.averagesPrices![i])
-                    }
+                    ForEach(labels, id: \.self, content: averagePriceRow(day:))
+                }
+                else if turnipsDisplay == .minMax {
+                    ForEach(labels, id: \.self, content: minMaxPriceRow(day:))
                 } else if turnipsDisplay == .profits {
                     if viewModel.averagesProfits != nil {
-                        ForEach(labels, id: \.self) { day in
-                            TurnipsAveragePriceRow(label: day,
-                                                    prices: self.viewModel.averagesProfits![self.labels.firstIndex(of: day)!],
-                                                    minMaxPrices: [])
-                        }
+                        ForEach(labels, id: \.self, content: averageProfitRow(day:))
                     } else {
                         Text("Please add the amount of turnips you bought and for how much")
                             .foregroundColor(.acHeaderBackground)
@@ -221,6 +209,37 @@ extension TurnipsView {
                 RowLoadingView(isLoading: .constant(true))
             }
         }
+    }
+}
+
+extension TurnipsView {
+    private func averagePriceRow(day: String) -> some View {
+        guard let dayNumber = labels.firstIndex(of: day),
+            let prices = viewModel.averagesPrices?[dayNumber],
+            let minMaxPrices = viewModel.minMaxPrices?[dayNumber] else {
+                return EmptyView().eraseToAnyView()
+        }
+        return TurnipsAveragePriceRow(label: day, prices: prices, minMaxPrices: minMaxPrices)
+            .eraseToAnyView()
+    }
+
+    private func minMaxPriceRow(day: String) -> some View {
+        guard let dayNumber = labels.firstIndex(of: day),
+            let prices = viewModel.minMaxPrices?[dayNumber],
+            let averagePrices = viewModel.averagesPrices?[dayNumber] else {
+                return EmptyView().eraseToAnyView()
+        }
+        return TurnipsMinMaxPriceRow(label: day, prices: prices, averagePrices: averagePrices)
+            .eraseToAnyView()
+    }
+
+    private func averageProfitRow(day: String) -> some View {
+        guard let dayNumber = labels.firstIndex(of: day),
+            let prices = viewModel.averagesProfits?[dayNumber] else {
+                return EmptyView().eraseToAnyView()
+        }
+        return TurnipsAveragePriceRow(label: day, prices: prices, minMaxPrices: [])
+            .eraseToAnyView()
     }
 }
 
