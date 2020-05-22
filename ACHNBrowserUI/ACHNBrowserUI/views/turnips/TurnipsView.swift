@@ -159,18 +159,21 @@ extension TurnipsView {
                 if turnipsDisplay == .average {
                     ForEach(0..<viewModel.averagesPrices!.count) { i in
                         TurnipsAveragePriceRow(label: self.labels[i],
-                                               prices: self.viewModel.averagesPrices![i])
+                                               prices: self.viewModel.averagesPrices![i],
+                                               minMaxPrices: self.viewModel.minMaxPrices![i])
                     }
                 } else if turnipsDisplay == .minMax {
                     ForEach(0..<viewModel.minMaxPrices!.count) { i in
-                        TurnipsAveragePriceRow(label: self.labels[i],
-                                               minMaxPrices: self.viewModel.minMaxPrices![i])
+                        TurnipsMinMaxPriceRow(label: self.labels[i],
+                                              prices: self.viewModel.minMaxPrices![i],
+                                              averagePrices: self.viewModel.averagesPrices![i])
                     }
                 } else if turnipsDisplay == .profits {
                     if viewModel.averagesProfits != nil {
                         ForEach(labels, id: \.self) { day in
                             TurnipsAveragePriceRow(label: day,
-                                                    prices: self.viewModel.averagesProfits![self.labels.firstIndex(of: day)!])
+                                                    prices: self.viewModel.averagesProfits![self.labels.firstIndex(of: day)!],
+                                                    minMaxPrices: [])
                         }
                     } else {
                         Text("Please add the amount of turnips you bought and for how much")

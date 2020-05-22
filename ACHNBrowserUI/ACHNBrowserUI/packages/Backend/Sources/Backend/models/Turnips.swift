@@ -31,7 +31,12 @@ public struct TurnipPredictions {
         return [averagePrices[base], averagePrices[base + 1]]
     }
         
-    public init(minBuyPrice: Int?, averagePrices: [Int]?, minMax: [[Int]]?, averageProfits: [Int]?) {
+    public init(
+        minBuyPrice: Int?,
+        averagePrices: [Int]?,
+        minMax: [[Int]]?,
+        averageProfits: [Int]?
+    ) {
         self.minBuyPrice = minBuyPrice
         self.averagePrices = averagePrices
         self.minMax = minMax
