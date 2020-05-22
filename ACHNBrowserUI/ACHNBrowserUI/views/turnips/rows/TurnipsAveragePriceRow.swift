@@ -39,7 +39,7 @@ extension TurnipsAveragePriceRow: TurnipsPriceRow {
 
     func color(meridian: Meridian) -> Color {
         if isEntered(meridian: meridian) {
-            return .black
+            return .acText
         } else if let price = meridian == .am ? prices.first : prices.last {
             return color(price: price)
         } else {

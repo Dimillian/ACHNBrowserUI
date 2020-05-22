@@ -43,7 +43,7 @@ extension TurnipsMinMaxPriceRow: TurnipsPriceRow {
         guard let averagedPrice = meridian == .am ? amAveragedPrices : pmAveragedPrices else {
             return .clear
         }
-        return isEntered(meridian: meridian) ? .black : color(price: Int(averagedPrice))
+        return isEntered(meridian: meridian) ? .acText : color(price: Int(averagedPrice))
     }
 
     private var amMinMaxPrices: String {
