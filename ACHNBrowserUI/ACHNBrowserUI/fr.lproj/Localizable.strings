@@ -29,7 +29,7 @@ Localizable.strings
 "Dashboard" = "Dashboard";
 "Catalog" = "Catalogue";
 "Turnips" = "Navets";
-"Villagers" = "Habitants";
+"Villagers" = "Villageois";
 "Collection" = "Collection";
 
 // TodayView
@@ -84,9 +84,7 @@ Localizable.strings
 "AC Helper+" = "AC Helper+";
 "ACHelperPlusDescription" = "Souscrire à AC Helper+ est une très bonne façon de montrer votre support à notre projet open source et gratuit.♥️
 
-Vous aurez aussi accès à d'autres fonctionnalités, comme les prédictions sur le prix des navets et la possibilité de créer plus d'une liste d'objets!  📈
-
-Plus d'information plus en dessous.";
+Vous aurez aussi accès à d'autres fonctionnalités, comme les prédictions sur le prix des navets et la possibilité de créer plus d'une liste d'objets!  📈";
 
 "ACHelperPlusDetails" = "À propos de la fonctionnalité de notification:
 Tous les jours à 8H et 12H vous allez recevoir une notification avec le prix moyen d'achat dans votre magasin.
@@ -284,14 +282,14 @@ You can cancel anytime with your iTunes account settings. Any unused portion of 
 "Loading Visitors...." = "Chargement des visiteurs....";
 
 // VillagersListView
-"Search a villager" = "Rechercher un habitant";
+"Search a villager" = "Rechercher un villageoi";
 "Personality" = "Personnalité";
 "Birthday" = "Anniversaire";
 "Species" = "Espèce";
 "Gender" = "Genre";
 "Catch phrase" = "Slogan";
 "Unknown" = "Inconnu";
-"Villager items" = "Objets de l'habitant";
+"Villager items" = "Objets du villageoi";
 
 // VillagersDetailView
 "Unkown" = "Inconnu";
@@ -408,7 +406,7 @@ You can cancel anytime with your iTunes account settings. Any unused portion of 
 "Reset my collection" = "Supprimer ma collection";
 "Your AC Helper collection file was imported with success." = "Votre collection AC Helper a été importée avec succès.";
 "Are you sure?" = "Êtes-vous-sûr ?";
-"This will delete all your collected critters, items, villagers and items lists" = "Cette action va supprimer tous vos poissons, insectes, objets, habitants, ainsi que vos listes d'objets.";
+"This will delete all your collected critters, items, villagers and items lists" = "Cette action va supprimer tous vos poissons, insectes, objets, villageois, ainsi que vos listes d'objets.";
 
 //Added 05-17-2020
 "Mystery Islands" = "Îles Mystères";

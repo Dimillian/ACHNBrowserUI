@@ -11,13 +11,7 @@ public struct DailyTasks: Codable {
     public struct Task: Codable {
         public let hasProgress: Bool
         public let maxProgress: Int
-        public var curProgress = 0 {
-            didSet {
-                if curProgress > maxProgress {
-                    curProgress = 0
-                }
-            }
-        }
+        public var curProgress = 0
         
         public init(hasProgress: Bool, maxProgress: Int) {
             self.hasProgress = hasProgress
@@ -28,7 +22,7 @@ public struct DailyTasks: Codable {
     public enum taskName: String, Codable, CaseIterable {
         case rocks
         case fossils
-        case weed
+        case villagers
         case furniture
         case bell
         case nookmiles
@@ -40,7 +34,7 @@ public struct DailyTasks: Codable {
     public var tasks = [
         taskName.rocks: Task(hasProgress: true, maxProgress: 8),
         taskName.fossils: Task(hasProgress: true, maxProgress: 4),
-        taskName.weed: Task(hasProgress: true, maxProgress: 3),
+        taskName.villagers: Task(hasProgress: true, maxProgress: 10),
         taskName.furniture: Task(hasProgress: true, maxProgress: 2),
         taskName.bell: Task(hasProgress: true, maxProgress: 1),
         taskName.nookmiles: Task(hasProgress: true, maxProgress: 1),
