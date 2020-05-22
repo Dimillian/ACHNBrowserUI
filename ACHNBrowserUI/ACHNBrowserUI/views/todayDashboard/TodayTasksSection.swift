@@ -57,7 +57,7 @@ struct TodayTasksSection: View {
             VStack(spacing: 15) {
                 HStack {
                     makeTaskBubble(icon: "icon-iron", taskName: DailyTasks.taskName.rocks)
-                    makeTaskBubble(icon: "icon-weed", taskName: DailyTasks.taskName.weed)
+                    makeTaskBubble(icon: "icon-villager", taskName: DailyTasks.taskName.villagers)
                     makeTaskBubble(icon: "icon-fossil", taskName: DailyTasks.taskName.fossils)
                     makeTaskBubble(icon: "icon-leaf", taskName: DailyTasks.taskName.furniture)
                 }
@@ -65,7 +65,7 @@ struct TodayTasksSection: View {
                     makeTaskBubble(icon: "icon-bell", taskName: DailyTasks.taskName.bell)
                     makeTaskBubble(icon: "icon-miles", taskName: DailyTasks.taskName.nookmiles)
                     makeTaskBubble(icon: "icon-bottle-message", taskName: DailyTasks.taskName.bottle)
-                    makeTaskBubble(icon: "icon-villager", taskName: DailyTasks.taskName.villagerHouses)
+                    makeTaskBubble(icon: "icon-recipe", taskName: DailyTasks.taskName.villagerHouses)
                 }
                 HStack {
                     Text("Reset")
