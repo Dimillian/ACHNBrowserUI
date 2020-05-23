@@ -30,6 +30,7 @@ struct TurnipsView: View {
         }
     }
     
+    @EnvironmentObject private var turnipService: TurnipPredictionsService
     @EnvironmentObject private var subManager: SubscriptionManager
     @ObservedObject private var viewModel = TurnipsViewModel()
     @State private var presentedSheet: Sheet.SheetType?
@@ -61,6 +62,9 @@ struct TurnipsView: View {
                     }
                 }
                 predictionsSection
+                if turnipService.turnipProhetUrl != nil {
+                    prophetSection
+                }
                 exchangeSection
             }
             .listStyle(GroupedListStyle())
@@ -190,6 +194,18 @@ extension TurnipsView {
                     .onTapGesture {
                         self.presentedSheet = .turnipsForm(subManager: self.subManager)
                 }
+            }
+        }
+    }
+    
+    private var prophetSection: some View {
+        Section(header: SectionHeaderView(text: "Services", icon: "link.icloud")) {
+            Button(action: {
+                if let url = self.turnipService.turnipProhetUrl {
+                    self.presentedSheet = .safari(url)
+                }
+            }) {
+                Text("View on TurnipProphet").foregroundColor(.acHeaderBackground)
             }
         }
     }
