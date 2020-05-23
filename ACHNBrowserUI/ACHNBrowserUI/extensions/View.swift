@@ -77,6 +77,9 @@ extension View {
             .offset(x:offset)
         )
     }
+
+    func eraseToAnyView() -> AnyView { AnyView(self) }
+    func eraseToAnyViewForRow() -> VStack<AnyView> { VStack { eraseToAnyView() } }
 }
 
 extension View {

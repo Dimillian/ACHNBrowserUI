@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4CEEFBD92477D9E900663590 /* TurnipsMinMaxPriceRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CEEFBD82477D9E900663590 /* TurnipsMinMaxPriceRow.swift */; };
+		4CEEFBDB2477E58500663590 /* TurnipsPriceRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CEEFBDA2477E58500663590 /* TurnipsPriceRow.swift */; };
 		690A72C924752BF4001E7294 /* villagersLikes in Resources */ = {isa = PBXBuildFile; fileRef = 690A72C824752BF4001E7294 /* villagersLikes */; };
 		69157B7E2471A5A1005B9002 /* TodayMysteryIslandsSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69157B6D247121ED005B9002 /* TodayMysteryIslandsSection.swift */; };
 		69157B7F2471A5A1005B9002 /* TodayNookazonSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 693E2BC3246689C500B85CB8 /* TodayNookazonSection.swift */; };
@@ -213,6 +215,8 @@
 		4C7F2F772461F10300930928 /* TurnipsChartVerticalLegend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TurnipsChartVerticalLegend.swift; sourceTree = "<group>"; };
 		4C7FE78224574FB50011E8AB /* ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
 		4C7FE788245B57A10011E8AB /* AdaptsToSoftwareKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdaptsToSoftwareKeyboard.swift; sourceTree = "<group>"; };
+		4CEEFBD82477D9E900663590 /* TurnipsMinMaxPriceRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TurnipsMinMaxPriceRow.swift; sourceTree = "<group>"; };
+		4CEEFBDA2477E58500663590 /* TurnipsPriceRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TurnipsPriceRow.swift; sourceTree = "<group>"; };
 		4CF14B74246B3E9E00F740BF /* TurnipsChartValuesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TurnipsChartValuesView.swift; sourceTree = "<group>"; };
 		4CF8049A24635E54005C6C63 /* Path.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Path.swift; sourceTree = "<group>"; };
 		4F92A4522470AC01003A2911 /* CollectionRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionRowView.swift; sourceTree = "<group>"; };
@@ -511,6 +515,8 @@
 			isa = PBXGroup;
 			children = (
 				69518369245977D1005D28E0 /* TurnipsAveragePriceRow.swift */,
+				4CEEFBD82477D9E900663590 /* TurnipsMinMaxPriceRow.swift */,
+				4CEEFBDA2477E58500663590 /* TurnipsPriceRow.swift */,
 			);
 			path = rows;
 			sourceTree = "<group>";
@@ -1010,6 +1016,7 @@
 				69157B812471A5A1005B9002 /* RowLoadingView.swift in Sources */,
 				69157B822471A5A1005B9002 /* ItemDetailViewModel.swift in Sources */,
 				69157B832471A5A1005B9002 /* TurnipsChartMinBuyPriceCurve.swift in Sources */,
+				4CEEFBD92477D9E900663590 /* TurnipsMinMaxPriceRow.swift in Sources */,
 				69157B842471A5A1005B9002 /* ItemRowView.swift in Sources */,
 				69157B852471A5A1005B9002 /* VillagersListView.swift in Sources */,
 				69157B862471A5A1005B9002 /* MysteryIslandRow.swift in Sources */,
@@ -1081,6 +1088,7 @@
 				69157BC82471A5A1005B9002 /* TurnipsChartMinMaxCurves.swift in Sources */,
 				69157BC92471A5A1005B9002 /* TurnipsChartGrid.swift in Sources */,
 				69157BCA2471A5A1005B9002 /* CollectionRowView.swift in Sources */,
+				4CEEFBDB2477E58500663590 /* TurnipsPriceRow.swift in Sources */,
 				693352842473C4B5007EF9AB /* TodaySpecialCharacters.swift in Sources */,
 				69157BCB2471A5A1005B9002 /* SearchField.swift in Sources */,
 				69157BCC2471A5A1005B9002 /* CollectionProgressDetailView.swift in Sources */,
