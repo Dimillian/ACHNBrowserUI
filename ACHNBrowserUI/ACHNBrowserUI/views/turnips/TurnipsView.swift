@@ -35,6 +35,7 @@ struct TurnipsView: View {
     @ObservedObject private var viewModel = TurnipsViewModel()
     @State private var presentedSheet: Sheet.SheetType?
     @State private var turnipsDisplay: TurnipsDisplay = .minMax
+    @State private var enableTurnipsExchange = false
     
     private let labels = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat"]
     
@@ -77,7 +78,11 @@ struct TurnipsView: View {
             })
         }
         .onAppear(perform: NotificationManager.shared.registerForNotifications)
-        .onAppear(perform: viewModel.fetchIslands)
+        .onAppear {
+            if self.enableTurnipsExchange {
+                self.viewModel.fetchIslands()
+            }
+        }
     }
 }
 
@@ -212,16 +217,26 @@ extension TurnipsView {
     
     private var exchangeSection: some View {
         Section(header: SectionHeaderView(text: "Turnip.Exchange", icon: "bitcoinsign.circle.fill")) {
-            if viewModel.islands?.isEmpty == false {
-                viewModel.islands.map {
-                    ForEach($0) { island in
-                        NavigationLink(destination: IslandDetailView(island: island)) {
-                            TurnipIslandRow(island: island)
+            if enableTurnipsExchange {
+                if viewModel.islands?.isEmpty == false {
+                    viewModel.islands.map {
+                        ForEach($0) { island in
+                            NavigationLink(destination: IslandDetailView(island: island)) {
+                                TurnipIslandRow(island: island)
+                            }
                         }
                     }
+                } else {
+                    RowLoadingView(isLoading: .constant(true))
                 }
             } else {
-                RowLoadingView(isLoading: .constant(true))
+                Button(action: {
+                    self.enableTurnipsExchange = true
+                    self.viewModel.fetchIslands()
+                }) {
+                    Text("View Turnip.Exchange islands")
+                        .foregroundColor(.acHeaderBackground)
+                }
             }
         }
     }

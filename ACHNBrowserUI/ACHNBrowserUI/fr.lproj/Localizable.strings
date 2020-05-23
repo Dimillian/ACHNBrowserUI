@@ -270,6 +270,8 @@ You can cancel anytime with your iTunes account settings. Any unused portion of 
 "Amount bought" = "Nombre acheté";
 "The more in game buy prices you'll add the better the predictions will be. Your buy price only won't give your correct averages. Add prices from the game as you get them daily." = "Plus vous aller rajouter vos prix d'achat dans le jeu plus les prochaines prédictions seront précises.";
 "View on TurnipProphet" = "Voir sur TurnipProphet";
+"View Turnip.Exchange islands" = "Voir les îles de Turnip.Exchange";
+
 // TurnipsChartTopLegendView
 "Average" = "Moyenne";
 "Minimum" = "Minimum";
