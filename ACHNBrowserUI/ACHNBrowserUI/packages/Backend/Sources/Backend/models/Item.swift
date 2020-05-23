@@ -52,11 +52,11 @@ public struct Item: Codable, Equatable, Identifiable, Hashable {
     public let house: String?
     public let itemImage: String?
     public var finalImage: String? {
-        if let filename = filename {
-            return filename
-        } else if let image = image, !image.hasPrefix("https://storage") {
+        if let image = image, image.hasPrefix("https://acnhcdn") {
             return image
-        } else if let itemImage = itemImage {
+        } else if let filename = filename {
+            return filename
+        }  else if let itemImage = itemImage {
             return itemImage
         }
         return nil
