@@ -35,7 +35,7 @@ struct VillagerDetailView: View {
                 self.makeBody(items: false).environmentObject(self.collection)
             }
             .navigationViewStyle(StackNavigationViewStyle())
-            .frame(width: 350, height: 650).asImage()
+            .frame(width: 350, height: 750).asImage()
             self.sheet = .share(content: [ItemDetailSource(name: self.villager.localizedName, image: image)])
         }) {
             Image(systemName: "square.and.arrow.up").imageScale(.large)
