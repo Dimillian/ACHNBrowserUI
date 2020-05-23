@@ -359,7 +359,7 @@ Du kannst das Abonnement jederzeit in deinen iTunes Kontoeinstellungen beenden. 
 "Squirrel" = "Eichhörnchen";
 "Tiger" = "Tieger";
 "Wolf" = "Wolf";
-"Mag" = "Aime";
+"Like" = "Mag";
 "Gifts ideas" = "Geschenkideen";
 
 // ListingRow
@@ -390,7 +390,7 @@ Du kannst das Abonnement jederzeit in deinen iTunes Kontoeinstellungen beenden. 
 "music" = "Musik";
 "recipes" = "Anleitungen";
 "construction" = "Bau";
-"nookmiles" = "Nook Miles";
+"nookmiles" = "Nook Meilen";
 "other" = "Anderes";
 "art" = "Kunst";
 "bugs" = "Insekten";
@@ -809,3 +809,8 @@ Du kannst das Abonnement jederzeit in deinen iTunes Kontoeinstellungen beenden. 
 "Wedding Season" = "Hochzeitssaison";
 "Bug-Off contest" = "Insektikus-Turnier";
 "Meteor shower" =  "Sternschnuppen";
+
+// Added 2020-05-23
+"Reset" = "Zurücksetzen";
+"View Turnip.Exchange islands" = "Zeige Turnip.Exchange Inseln";
+"View on TurnipProphet" = "Auf TurnipProphet ansehen";
