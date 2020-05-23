@@ -32,7 +32,7 @@ public class Items: ObservableObject {
         }
         
         for category in Category.allCases {
-            // Migrated to new JSOn format
+            // Migrated to new JSON format
             if let filename = Category.dataFilename(category: category) {
                 _ = ItemsAPI
                     .fetchFile(name: filename)

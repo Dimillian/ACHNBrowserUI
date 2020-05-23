@@ -109,7 +109,6 @@
 		69157BDF2471A5A1005B9002 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6951837424599C26005D28E0 /* StoreKit.framework */; };
 		69157BEB2471A5A1005B9002 /* islands.json in Resources */ = {isa = PBXBuildFile; fileRef = 69157B4924711F6C005B9002 /* islands.json */; };
 		69157BF52471A5A1005B9002 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 69AF8C5B243E2841001DD9CB /* LaunchScreen.storyboard */; };
-		69157BF72471A5A1005B9002 /* construction in Resources */ = {isa = PBXBuildFile; fileRef = 69CFCA96245AAF520059C067 /* construction */; };
 		69157BF92471A5A1005B9002 /* umbrellas in Resources */ = {isa = PBXBuildFile; fileRef = 69CFCA95245AAF520059C067 /* umbrellas */; };
 		69157BFD2471A5A1005B9002 /* items_de.json in Resources */ = {isa = PBXBuildFile; fileRef = 699425EA246927C50089C21B /* items_de.json */; };
 		69157BFE2471A5A1005B9002 /* items_it.json in Resources */ = {isa = PBXBuildFile; fileRef = 699425E8246927C40089C21B /* items_it.json */; };
@@ -119,7 +118,6 @@
 		69157C092471A5A1005B9002 /* floors in Resources */ = {isa = PBXBuildFile; fileRef = 69CFCA98245AAF520059C067 /* floors */; };
 		69157C0A2471A5A1005B9002 /* bugs in Resources */ = {isa = PBXBuildFile; fileRef = 69CFCA8E245AAF520059C067 /* bugs */; };
 		69157C0F2471A5A1005B9002 /* villagersHouse in Resources */ = {isa = PBXBuildFile; fileRef = 695D45F82467025000B5C313 /* villagersHouse */; };
-		69157C102471A5A1005B9002 /* other in Resources */ = {isa = PBXBuildFile; fileRef = 69CFCA8D245AAF520059C067 /* other */; };
 		69157C112471A5A1005B9002 /* wallpapers in Resources */ = {isa = PBXBuildFile; fileRef = 69CFCA92245AAF520059C067 /* wallpapers */; };
 		69157C122471A5A1005B9002 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 69AF8C59243E2841001DD9CB /* Preview Assets.xcassets */; };
 		69157C132471A5A1005B9002 /* items_ru.json in Resources */ = {isa = PBXBuildFile; fileRef = 699425E7246927C40089C21B /* items_ru.json */; };
@@ -133,7 +131,6 @@
 		69157C2D2471A5A1005B9002 /* turnips.js in Resources */ = {isa = PBXBuildFile; fileRef = 69CFCA81245AAF520059C067 /* turnips.js */; };
 		69157C312471A5A1005B9002 /* photos in Resources */ = {isa = PBXBuildFile; fileRef = 69CFCA9B245AAF520059C067 /* photos */; };
 		69157C322471A5A1005B9002 /* clothing in Resources */ = {isa = PBXBuildFile; fileRef = 699425D624688C200089C21B /* clothing */; };
-		69157C342471A5A1005B9002 /* fencing in Resources */ = {isa = PBXBuildFile; fileRef = 69CFCA94245AAF520059C067 /* fencing */; };
 		69157C372471A5A1005B9002 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 69AF8C56243E2841001DD9CB /* Assets.xcassets */; };
 		69157C3B2471A5A1005B9002 /* items_nl.json in Resources */ = {isa = PBXBuildFile; fileRef = 699425E9246927C50089C21B /* items_nl.json */; };
 		69157C3E2471A5A1005B9002 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3DB1260224686F0800E74AA5 /* InfoPlist.strings */; };
@@ -144,6 +141,7 @@
 		69157C532471A5A1005B9002 /* tools in Resources */ = {isa = PBXBuildFile; fileRef = 69CFCA86245AAF520059C067 /* tools */; };
 		69157C5C2471A5C1005B9002 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69157C5B2471A5C1005B9002 /* CloudKit.framework */; };
 		693352842473C4B5007EF9AB /* TodaySpecialCharacters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 693352832473C4B5007EF9AB /* TodaySpecialCharacters.swift */; };
+		696B454824791EDE00E16252 /* islanddevelopment in Resources */ = {isa = PBXBuildFile; fileRef = 696B454724791EDE00E16252 /* islanddevelopment */; };
 		69CFCAC9245ADC780059C067 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69CFCAC8245ADC780059C067 /* AppDelegate.swift */; };
 		69CFCACD245ADC7A0059C067 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 69CFCACC245ADC7A0059C067 /* Assets.xcassets */; };
 		69CFCAD0245ADC7A0059C067 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 69CFCACF245ADC7A0059C067 /* Preview Assets.xcassets */; };
@@ -157,13 +155,10 @@
 		69CFCAE5245ADDA80059C067 /* nookmiles in Resources */ = {isa = PBXBuildFile; fileRef = 69CFCA87245AAF520059C067 /* nookmiles */; };
 		69CFCAE7245ADDA80059C067 /* posters in Resources */ = {isa = PBXBuildFile; fileRef = 69CFCA89245AAF520059C067 /* posters */; };
 		69CFCAE9245ADDA80059C067 /* fossils in Resources */ = {isa = PBXBuildFile; fileRef = 69CFCA8B245AAF520059C067 /* fossils */; };
-		69CFCAEB245ADDA80059C067 /* other in Resources */ = {isa = PBXBuildFile; fileRef = 69CFCA8D245AAF520059C067 /* other */; };
 		69CFCAEC245ADDA80059C067 /* bugs in Resources */ = {isa = PBXBuildFile; fileRef = 69CFCA8E245AAF520059C067 /* bugs */; };
 		69CFCAF0245ADDA80059C067 /* wallpapers in Resources */ = {isa = PBXBuildFile; fileRef = 69CFCA92245AAF520059C067 /* wallpapers */; };
 		69CFCAF1245ADDA80059C067 /* recipes in Resources */ = {isa = PBXBuildFile; fileRef = 69CFCA93245AAF520059C067 /* recipes */; };
-		69CFCAF2245ADDA80059C067 /* fencing in Resources */ = {isa = PBXBuildFile; fileRef = 69CFCA94245AAF520059C067 /* fencing */; };
 		69CFCAF3245ADDA80059C067 /* umbrellas in Resources */ = {isa = PBXBuildFile; fileRef = 69CFCA95245AAF520059C067 /* umbrellas */; };
-		69CFCAF4245ADDA80059C067 /* construction in Resources */ = {isa = PBXBuildFile; fileRef = 69CFCA96245AAF520059C067 /* construction */; };
 		69CFCAF6245ADDA80059C067 /* floors in Resources */ = {isa = PBXBuildFile; fileRef = 69CFCA98245AAF520059C067 /* floors */; };
 		69CFCAF9245ADDA80059C067 /* photos in Resources */ = {isa = PBXBuildFile; fileRef = 69CFCA9B245AAF520059C067 /* photos */; };
 		69CFCAFB245ADDA80059C067 /* fish in Resources */ = {isa = PBXBuildFile; fileRef = 69CFCA9D245AAF520059C067 /* fish */; };
@@ -263,6 +258,7 @@
 		695D45F82467025000B5C313 /* villagersHouse */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = villagersHouse; sourceTree = "<group>"; };
 		695D45FA24671B1800B5C313 /* VillagerDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VillagerDetailViewModel.swift; sourceTree = "<group>"; };
 		695D45FC2467F26E00B5C313 /* furnitures */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = furnitures; sourceTree = "<group>"; };
+		696B454724791EDE00E16252 /* islanddevelopment */ = {isa = PBXFileReference; lastKnownFileType = text; path = islanddevelopment; sourceTree = "<group>"; };
 		697E63F42449A58E008FB710 /* VillagersListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VillagersListView.swift; sourceTree = "<group>"; };
 		697E63F62449A7BA008FB710 /* VillagersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VillagersViewModel.swift; sourceTree = "<group>"; };
 		697E63F82449DADE008FB710 /* VillagerRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VillagerRowView.swift; sourceTree = "<group>"; };
@@ -318,13 +314,10 @@
 		69CFCA87245AAF520059C067 /* nookmiles */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = nookmiles; sourceTree = "<group>"; };
 		69CFCA89245AAF520059C067 /* posters */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = posters; sourceTree = "<group>"; };
 		69CFCA8B245AAF520059C067 /* fossils */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = fossils; sourceTree = "<group>"; };
-		69CFCA8D245AAF520059C067 /* other */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = other; sourceTree = "<group>"; };
 		69CFCA8E245AAF520059C067 /* bugs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = bugs; sourceTree = "<group>"; };
 		69CFCA92245AAF520059C067 /* wallpapers */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = wallpapers; sourceTree = "<group>"; };
 		69CFCA93245AAF520059C067 /* recipes */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = recipes; sourceTree = "<group>"; };
-		69CFCA94245AAF520059C067 /* fencing */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = fencing; sourceTree = "<group>"; };
 		69CFCA95245AAF520059C067 /* umbrellas */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = umbrellas; sourceTree = "<group>"; };
-		69CFCA96245AAF520059C067 /* construction */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = construction; sourceTree = "<group>"; };
 		69CFCA98245AAF520059C067 /* floors */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = floors; sourceTree = "<group>"; };
 		69CFCA9B245AAF520059C067 /* photos */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = photos; sourceTree = "<group>"; };
 		69CFCA9D245AAF520059C067 /* fish */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = fish; sourceTree = "<group>"; };
@@ -773,19 +766,17 @@
 				69CFCA87245AAF520059C067 /* nookmiles */,
 				69CFCA89245AAF520059C067 /* posters */,
 				69CFCA8B245AAF520059C067 /* fossils */,
-				69CFCA8D245AAF520059C067 /* other */,
 				69CFCA8E245AAF520059C067 /* bugs */,
 				69CFCA92245AAF520059C067 /* wallpapers */,
 				69CFCA93245AAF520059C067 /* recipes */,
-				69CFCA94245AAF520059C067 /* fencing */,
 				69CFCA95245AAF520059C067 /* umbrellas */,
-				69CFCA96245AAF520059C067 /* construction */,
 				69CFCA98245AAF520059C067 /* floors */,
 				69CFCA9B245AAF520059C067 /* photos */,
 				69CFCA9D245AAF520059C067 /* fish */,
 				69CFCA9E245AAF520059C067 /* rugs */,
 				695D45F82467025000B5C313 /* villagersHouse */,
 				690A72C824752BF4001E7294 /* villagersLikes */,
+				696B454724791EDE00E16252 /* islanddevelopment */,
 			);
 			path = json;
 			sourceTree = "<group>";
@@ -938,7 +929,6 @@
 			files = (
 				69157BEB2471A5A1005B9002 /* islands.json in Resources */,
 				69157BF52471A5A1005B9002 /* LaunchScreen.storyboard in Resources */,
-				69157BF72471A5A1005B9002 /* construction in Resources */,
 				69157BF92471A5A1005B9002 /* umbrellas in Resources */,
 				69157BFD2471A5A1005B9002 /* items_de.json in Resources */,
 				69157BFE2471A5A1005B9002 /* items_it.json in Resources */,
@@ -948,13 +938,13 @@
 				69157C092471A5A1005B9002 /* floors in Resources */,
 				69157C0A2471A5A1005B9002 /* bugs in Resources */,
 				69157C0F2471A5A1005B9002 /* villagersHouse in Resources */,
-				69157C102471A5A1005B9002 /* other in Resources */,
 				69157C112471A5A1005B9002 /* wallpapers in Resources */,
 				69157C122471A5A1005B9002 /* Preview Assets.xcassets in Resources */,
 				69157C132471A5A1005B9002 /* items_ru.json in Resources */,
 				69157C162471A5A1005B9002 /* items_ja.json in Resources */,
 				69157C182471A5A1005B9002 /* music in Resources */,
 				69157C192471A5A1005B9002 /* items_zh.json in Resources */,
+				696B454824791EDE00E16252 /* islanddevelopment in Resources */,
 				69157C1D2471A5A1005B9002 /* posters in Resources */,
 				69157C202471A5A1005B9002 /* fish in Resources */,
 				69157C212471A5A1005B9002 /* furnitures in Resources */,
@@ -962,7 +952,6 @@
 				69157C2D2471A5A1005B9002 /* turnips.js in Resources */,
 				69157C312471A5A1005B9002 /* photos in Resources */,
 				69157C322471A5A1005B9002 /* clothing in Resources */,
-				69157C342471A5A1005B9002 /* fencing in Resources */,
 				69157C372471A5A1005B9002 /* Assets.xcassets in Resources */,
 				69157C3B2471A5A1005B9002 /* items_nl.json in Resources */,
 				69157C3E2471A5A1005B9002 /* InfoPlist.strings in Resources */,
@@ -980,9 +969,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				69CFCAE5245ADDA80059C067 /* nookmiles in Resources */,
-				69CFCAF2245ADDA80059C067 /* fencing in Resources */,
 				69CFCAE2245ADDA80059C067 /* music in Resources */,
-				69CFCAEB245ADDA80059C067 /* other in Resources */,
 				69CFCAD3245ADC7A0059C067 /* LaunchScreen.storyboard in Resources */,
 				69CFCAEC245ADDA80059C067 /* bugs in Resources */,
 				69CFCAF9245ADDA80059C067 /* photos in Resources */,
@@ -999,7 +986,6 @@
 				69CFCAE0245ADDA20059C067 /* turnips.js in Resources */,
 				69CFCAE4245ADDA80059C067 /* tools in Resources */,
 				69CFCACD245ADC7A0059C067 /* Assets.xcassets in Resources */,
-				69CFCAF4245ADDA80059C067 /* construction in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
