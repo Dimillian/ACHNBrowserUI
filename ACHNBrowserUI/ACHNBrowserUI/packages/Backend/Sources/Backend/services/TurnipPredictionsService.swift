@@ -19,6 +19,17 @@ public class TurnipPredictionsService: ObservableObject {
         }
     }
     public var enableNotifications: Bool?
+    public var turnipProhetUrl: URL? {
+        guard let fields = fields, !fields.buyPrice.isEmpty else {
+            return nil
+        }
+        var base = "https://turnipprophet.io/?prices=\(fields.buyPrice)."
+        for field in fields.fields {
+            base += field.isEmpty ? "." : "\(field)."
+        }
+        base += "&first=false&pattern=-1&achelper"
+        return URL(string: base)
+    }
     
     private var turnipsCancellable: AnyCancellable?
     private lazy var calculatorContext: JSContext? = {
