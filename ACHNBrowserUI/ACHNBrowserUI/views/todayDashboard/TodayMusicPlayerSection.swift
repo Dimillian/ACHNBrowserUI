@@ -13,7 +13,6 @@ import Backend
 
 struct TodayMusicPlayerSection: View {
     @EnvironmentObject private var musicPlayerManager: MusicPlayerManager
-    @EnvironmentObject private var subscriptionManager: SubscriptionManager
     @EnvironmentObject private var items: Items
     
     @State private var presentedSheet: Sheet.SheetType?
@@ -82,10 +81,6 @@ struct TodayMusicPlayerSection: View {
     
     private var songsList: some View {
         List {
-            if subscriptionManager.subscriptionStatus != .subscribed {
-                subscriptionSection
-            }
-            
             Section {
                 ForEach(items.categories[.music] ?? []) { item in
                     ItemRowView(displayMode: .largeNoButton, item: item)
@@ -113,32 +108,6 @@ struct TodayMusicPlayerSection: View {
             return Image(systemName: "forward.end.alt.fill")
         case .stopEnd:
             return Image(systemName: "stop.fill")
-        }
-    }
-    
-    private var subscriptionSection: some View {
-        Section(header: SectionHeaderView(text: "AC Helper+", icon: "heart.fill")) {
-            VStack(spacing: 8) {
-                Button(action: {
-                    self.presentedSheet = .subscription(source: .musics, subManager: self.subscriptionManager)
-                }) {
-                    Text("To help us support the application and get background playing of all the musics, you can try out AC Helper+")
-                        .foregroundColor(.acSecondaryText)
-                        .lineLimit(nil)
-                        .fixedSize(horizontal: false, vertical: true)
-                        .padding(.top, 8)
-                }
-                Button(action: {
-                    self.presentedSheet = .subscription(source: .musics, subManager: self.subscriptionManager)
-                }) {
-                    Text("Learn more...")
-                        .font(.headline)
-                        .fontWeight(.bold)
-                        .foregroundColor(.white)
-                }.buttonStyle(PlainRoundedButton())
-                    .accentColor(.acHeaderBackground)
-                    .padding(.bottom, 8)
-            }
         }
     }
 }
