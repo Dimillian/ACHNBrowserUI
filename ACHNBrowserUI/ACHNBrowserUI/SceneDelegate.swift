@@ -24,6 +24,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             .environmentObject(uiState)
             .environmentObject(SubscriptionManager.shared)
             .environmentObject(TurnipPredictionsService.shared)
+            .environmentObject(MusicPlayerManager.shared)
         
         if let windowScene = scene as? UIWindowScene {
             

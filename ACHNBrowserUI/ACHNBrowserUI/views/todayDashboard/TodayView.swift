@@ -53,7 +53,7 @@ struct TodayView: View {
 
                 Group {
                     TodayEventsSection()
-                    TodaySpecialCharacters()
+                    TodaySpecialCharactersSection()
                     TodayCurrentlyAvailableSection(viewModel: viewModel)
                     TodayCollectionProgressSection(viewModel: viewModel, sheet: $selectedSheet)
                     TodayBirthdaysSection(villagers: villagersViewModel.todayBirthdays)
@@ -64,6 +64,7 @@ struct TodayView: View {
                     TodayTasksSection()
                     // TodayNookazonSection(sheet: $selectedSheet, viewModel: viewModel)
                     TodaySubscribeSection(sheet: $selectedSheet)
+                    TodayMusicPlayerSection()
                     TodayMysteryIslandsSection()
                     // self.arrangeSectionsButton
                 }
