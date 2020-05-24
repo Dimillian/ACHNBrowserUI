@@ -19,7 +19,7 @@ public struct TodaySection: Codable, Hashable, Equatable {
     public static let nameMusic = "music"
     public static let nameTasks = "tasks"
     public static let nameNookazon = "nookazon"
-    
+
     public static let defaultSectionList: [TodaySection] = [
         TodaySection(name: Self.nameEvents, enabled: true),
         TodaySection(name: Self.nameSpecialCharacters, enabled: true),
@@ -37,7 +37,7 @@ public struct TodaySection: Codable, Hashable, Equatable {
     public static func == (lhs: TodaySection, rhs: TodaySection) -> Bool {
         return lhs.name == rhs.name
     }
-    
+
     public init(name: String, enabled: Bool) {
         self.name = name
         self.enabled = enabled
