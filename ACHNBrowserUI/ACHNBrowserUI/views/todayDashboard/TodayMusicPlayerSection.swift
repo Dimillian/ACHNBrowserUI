@@ -65,6 +65,14 @@ struct TodayMusicPlayerSection: View {
                     .foregroundColor(.acText)
             }
             .buttonStyle(PlainButtonStyle())
+            Button(action: {
+                self.musicPlayerManager.playmode.toggle()
+            }) {
+                playModeIcon
+                    .imageScale(.large)
+                    .foregroundColor(.acText)
+            }
+            .buttonStyle(PlainButtonStyle())
             Spacer()
         }
     }
@@ -80,6 +88,17 @@ struct TodayMusicPlayerSection: View {
                     }
             }
         }.navigationBarTitle(Text("Musics"))
+    }
+
+    private var playModeIcon: Image {
+        switch musicPlayerManager.playmode {
+        case .random:
+            return Image(systemName: "shuffle")
+        case .ordered:
+            return Image(systemName: "forward.end.alt.fill")
+        case .stopEnd:
+            return Image(systemName: "stop.fill")
+        }
     }
 }
 

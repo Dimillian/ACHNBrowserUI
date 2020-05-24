@@ -12,9 +12,9 @@ import UI
 
 struct ItemDetailView: View {
     // MARK: - Vars
-    @EnvironmentObject private var items: Items
     @EnvironmentObject private var collection: UserCollection
     @EnvironmentObject private var subscriptionManager: SubscriptionManager
+    @EnvironmentObject private var musicPlayer: MusicPlayerManager
 
     @ObservedObject private var itemViewModel: ItemDetailViewModel
     
@@ -47,6 +47,9 @@ struct ItemDetailView: View {
                                displayedVariant: $displayedVariant)
             if itemViewModel.item.variations != nil {
                 variantsSection
+            }
+            if itemViewModel.item.appCategory == .music {
+                musicPlayerSection
             }
             if !itemViewModel.setItems.isEmpty {
                 ItemsCrosslineSectionView(title: "Set items",
@@ -221,6 +224,30 @@ extension ItemDetailView {
             }
         }
     }
+    
+    private var musicPlayerSection: some View {
+        Section(header: SectionHeaderView(text: "Music player", icon: "music.note")) {
+            HStack {
+                Spacer()
+                Button(action: {
+                    if self.musicPlayer.isPlaying {
+                        self.musicPlayer.isPlaying = false
+                        return
+                    }
+                    if let song = self.musicPlayer.matchSongFrom(item: self.itemViewModel.item) {
+                        self.musicPlayer.currentSong = song
+                        self.musicPlayer.isPlaying = true
+                    }
+                }) {
+                    Image(systemName: musicPlayer.isPlaying ? "pause.fill" : "play.fill")
+                        .imageScale(.large)
+                        .foregroundColor(.acText)
+                }
+                .buttonStyle(PlainButtonStyle())
+                Spacer()
+            }
+        }
+    }
 }
 
 // MARK: - Preview
@@ -229,6 +256,8 @@ struct ItemDetailView_Previews: PreviewProvider {
         NavigationView {
             ItemDetailView(item: static_item)
                 .environmentObject(UserCollection.shared)
+                .environmentObject(MusicPlayerManager.shared)
+                .environmentObject(SubscriptionManager.shared)
         }
     }
 }
