@@ -21,17 +21,17 @@ struct TurnipsChartValuesView: View {
                 .foregroundColor(.graphMinMax)
                 .modifier(ValueModifier(backgroundColor: Color.acBackground))
                 .position(data[position].min.position)
+            Text("\(data[position].max.value)")
+                .bold()
+                .foregroundColor(.graphMinMax)
+                .modifier(ValueModifier(backgroundColor: Color.acBackground))
+                .position(data[position].max.position)
             Text("\(data[position].average.value)")
                 .bold()
                 .foregroundColor(.graphAverage)
                 .saturation(5)
                 .modifier(ValueModifier(backgroundColor: Color.acHeaderBackground))
                 .position(data[position].average.position)
-            Text("\(data[position].max.value)")
-                .bold()
-                .foregroundColor(.graphMinMax)
-                .modifier(ValueModifier(backgroundColor: Color.acBackground))
-                .position(data[position].max.position)
         }
     }
 }
