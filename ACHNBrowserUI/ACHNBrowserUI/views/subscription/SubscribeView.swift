@@ -13,7 +13,7 @@ import Purchases
 
 struct SubscribeView: View {
     enum Source: String {
-        case dashboard, turnip, turnipForm, list
+        case dashboard, turnip, turnipForm, list, musics
     }
     
     @EnvironmentObject private var subscriptionManager: SubscriptionManager
@@ -92,6 +92,7 @@ struct SubscribeView: View {
                 Image("notification")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
+                    .frame(maxHeight: 100)
                 Button(action: {
                     NotificationManager.shared.testNotification()
                 }) {

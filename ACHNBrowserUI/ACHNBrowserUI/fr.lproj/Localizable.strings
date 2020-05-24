@@ -84,7 +84,7 @@ Localizable.strings
 "AC Helper+" = "AC Helper+";
 "ACHelperPlusDescription" = "Souscrire à AC Helper+ est une très bonne façon de montrer votre support à notre projet open source et gratuit.♥️
 
-Vous aurez aussi accès à d'autres fonctionnalités, comme les prédictions sur le prix des navets et la possibilité de créer plus d'une liste d'objets!  📈";
+Vous aurez aussi accès à d'autres fonctionnalités, comme les prédictions sur le prix des navets, la possibilité de créer plus d'une liste d'objets, et aussi d'écouter les musiques en arrière-plan! 📈";
 
 "ACHelperPlusDetails" = "À propos de la fonctionnalité de notification:
 Tous les jours à 8H et 12H vous allez recevoir une notification avec le prix moyen d'achat dans votre magasin.
@@ -92,7 +92,10 @@ Plus vous rajouté de prix du jeux après lundi matin dans l'application, plus l
 
 À propos de la fonctionnalité liste d'objets:
 Dans l'application gratuite, vous pouvez créer seulement une seule liste d'objets dans votre onglet collection.
-Une fois que vous aurez souscrit à AC Helper +, vous pourrez créer autant de liste que vous voudrez.";
+Une fois que vous aurez souscrit à AC Helper +, vous pourrez créer autant de liste que vous voudrez.
+
+À propos de la fonctionnalité de musique:
+Vous pourrez continuer à écouter la musique que vous avez lancé depuis l'application même quand l'application est en arrière-plan. Il vous sera également possible de passer à la musique suivante et précédente.";
 
 "ACHelperPlusPriceAndAboDetail %@ %@" = "A %@ per month or %@ per year purchase will be applied to your iTunes account on confirmation.
 Subscriptions will automatically renew unless canceled within 24-hours before the end of the current period.
@@ -243,6 +246,7 @@ You can cancel anytime with your iTunes account settings. Any unused portion of 
 "Add your in game prices" = "Ajouter vos prix du jeu";
 "Turnips prediction" = "Prédition des navets";
 "To help us support the application and get turnip predictions notification, you can try out AC Helper+" = "Pour nous aider à supporter l'application et recevoir des notifications sur les prédictions du prix des navets, vous pouvez souscrire à AC Helper+";
+"To help us support the application and get background playing of all the musics, you can try out AC Helper+" = "Pour nous aider à supporter l'application et pouvoir jouer les musiques en arrière-plan, vous pouvez souscrire à AC Helper+";
 "%lld upcomingDailyNotifications" = "Vous allez recevoir %lld prochaines notifications.";
 "Profits estimates are computed using the average of the current period" = "Les bénéfices sont calculés par rapport au prix moyen de la période courante";
 "Day" = "Day";

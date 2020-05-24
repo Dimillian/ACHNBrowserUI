@@ -9,6 +9,8 @@ import Foundation
 import SwiftUI
 import Combine
 import AVFoundation
+import MediaPlayer
+import SDWebImage
 
 public class MusicPlayerManager: ObservableObject {
     public static let shared = MusicPlayerManager()
@@ -37,12 +39,20 @@ public class MusicPlayerManager: ObservableObject {
                 let musicURL = ACNHApiService.makeURL(endpoint: .music(id: song.id))
                 player?.pause()
                 player = AVPlayer(url: musicURL)
+                
+                if SubscriptionManager.shared.subscriptionStatus == .subscribed {
+                    setupBackgroundPlay()
+                    if !remoteCommandsEnabled {
+                        setupRemoteCommands()
+                    }
+                }
             }
         }
     }
     @Published public var isPlaying = false {
         didSet {
             isPlaying ? player?.play() : player?.pause()
+            MPNowPlayingInfoCenter.default().playbackState = isPlaying ? .playing : .paused
         }
     }
     
@@ -50,6 +60,7 @@ public class MusicPlayerManager: ObservableObject {
     
     private var songsCancellable: AnyCancellable?
     private var player: AVPlayer?
+    private var remoteCommandsEnabled = false
     
     init() {
         songsCancellable = ACNHApiService
@@ -75,6 +86,9 @@ public class MusicPlayerManager: ObservableObject {
                                                     self?.isPlaying = false
                                                     self?.next()
                                                 }
+        }
+        if SubscriptionManager.shared.subscriptionStatus == .subscribed {
+            self.setupRemoteCommands()
         }
     }
     
@@ -107,5 +121,59 @@ public class MusicPlayerManager: ObservableObject {
     
     public func matchItemFrom(song: Song) -> Item? {
         Items.shared.categories[.music]?.first(where: { $0.filename == song.fileName })
+    }
+    
+    private func setupRemoteCommands() {
+        remoteCommandsEnabled = true
+        
+        MPRemoteCommandCenter.shared().playCommand.addTarget { [weak self] event in
+            if self?.isPlaying == false {
+                self?.isPlaying = true
+                return .success
+            }
+            return .commandFailed
+        }
+        
+        MPRemoteCommandCenter.shared().pauseCommand.addTarget { [weak self] event in
+            if self?.isPlaying == true {
+                self?.isPlaying = false
+                return .success
+            }
+            return .commandFailed
+        }
+        
+        MPRemoteCommandCenter.shared().nextTrackCommand.addTarget { [weak self] event in
+            self?.next()
+            return .success
+        }
+        
+        MPRemoteCommandCenter.shared().previousTrackCommand.addTarget { [weak self] event in
+            self?.previous()
+            return .success
+        }
+    }
+    
+    private func setupBackgroundPlay() {
+        if let item = currentSongItem,
+            let filename = item.finalImage {
+            SDWebImageDownloader.shared.downloadImage(with: ImageService.computeUrl(key: filename)) { (image, _, _, _) in
+                if let image = image {
+                    try? AVAudioSession.sharedInstance().setCategory(.playback, mode: .default, policy: .longFormAudio, options: [])
+                    try? AVAudioSession.sharedInstance().setActive(true, options: [])
+                    
+                    UIApplication.shared.beginReceivingRemoteControlEvents()
+                    
+                    let info: [String: Any] =
+                        [MPMediaItemPropertyArtist: "K.K Slider",
+                         MPMediaItemPropertyAlbumTitle: "K.K Slider",
+                         MPMediaItemPropertyTitle: self.currentSongItem?.name ?? "",
+                         MPMediaItemPropertyArtwork: MPMediaItemArtwork(boundsSize: CGSize(width: 100, height: 100),
+                                                                        requestHandler: { (size: CGSize) -> UIImage in
+                            return image
+                         })]
+                    MPNowPlayingInfoCenter.default().nowPlayingInfo = info
+                }
+            }
+        }
     }
 }

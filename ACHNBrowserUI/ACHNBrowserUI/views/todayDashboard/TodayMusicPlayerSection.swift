@@ -7,13 +7,16 @@
 //
 
 import SwiftUI
+import SwiftUIKit
 import Combine
 import Backend
 
 struct TodayMusicPlayerSection: View {
     @EnvironmentObject private var musicPlayerManager: MusicPlayerManager
+    @EnvironmentObject private var subscriptionManager: SubscriptionManager
     @EnvironmentObject private var items: Items
     
+    @State private var presentedSheet: Sheet.SheetType?
     @State private var isNavigationActive = false
     
     var body: some View {
@@ -78,16 +81,28 @@ struct TodayMusicPlayerSection: View {
     }
     
     private var songsList: some View {
-        List(items.categories[.music] ?? []) { item in
-            ItemRowView(displayMode: .largeNoButton, item: item)
-                .onTapGesture {
-                    if let song = self.musicPlayerManager.matchSongFrom(item: item) {
-                        self.musicPlayerManager.currentSong = song
-                        self.musicPlayerManager.isPlaying = true
-                        self.isNavigationActive = false
-                    }
+        List {
+            if subscriptionManager.subscriptionStatus != .subscribed {
+                subscriptionSection
             }
-        }.navigationBarTitle(Text("Musics"))
+            
+            Section {
+                ForEach(items.categories[.music] ?? []) { item in
+                    ItemRowView(displayMode: .largeNoButton, item: item)
+                        .onTapGesture {
+                            if let song = self.musicPlayerManager.matchSongFrom(item: item) {
+                                self.musicPlayerManager.currentSong = song
+                                self.musicPlayerManager.isPlaying = true
+                                self.isNavigationActive = false
+                            }
+                    }
+                }
+            }
+        }
+        .navigationBarTitle(Text("Musics"))
+        .listStyle(GroupedListStyle())
+        .environment(\.horizontalSizeClass, .regular)
+        .sheet(item: $presentedSheet, content: { Sheet(sheetType: $0) })
     }
 
     private var playModeIcon: Image {
@@ -98,6 +113,32 @@ struct TodayMusicPlayerSection: View {
             return Image(systemName: "forward.end.alt.fill")
         case .stopEnd:
             return Image(systemName: "stop.fill")
+        }
+    }
+    
+    private var subscriptionSection: some View {
+        Section(header: SectionHeaderView(text: "AC Helper+", icon: "heart.fill")) {
+            VStack(spacing: 8) {
+                Button(action: {
+                    self.presentedSheet = .subscription(source: .musics, subManager: self.subscriptionManager)
+                }) {
+                    Text("To help us support the application and get background playing of all the musics, you can try out AC Helper+")
+                        .foregroundColor(.acSecondaryText)
+                        .lineLimit(nil)
+                        .fixedSize(horizontal: false, vertical: true)
+                        .padding(.top, 8)
+                }
+                Button(action: {
+                    self.presentedSheet = .subscription(source: .musics, subManager: self.subscriptionManager)
+                }) {
+                    Text("Learn more...")
+                        .font(.headline)
+                        .fontWeight(.bold)
+                        .foregroundColor(.white)
+                }.buttonStyle(PlainRoundedButton())
+                    .accentColor(.acHeaderBackground)
+                    .padding(.bottom, 8)
+            }
         }
     }
 }
