@@ -13,6 +13,8 @@ import Backend
 import UI
 
 struct TodayView: View {
+    
+    // MARK: - Vars
     @EnvironmentObject private var uiState: UIState
     @EnvironmentObject private var collection: UserCollection
     @EnvironmentObject private var subManager: SubscriptionManager
@@ -24,14 +26,14 @@ struct TodayView: View {
     
     @State private var selectedSheet: Sheet.SheetType?
     @State private var showWhatsNew: Bool = false
+        
+    // MARK: - Critters Calculations
+    private var fishAvailable: [Item] {
+        items.categories[.fish]?.filterActive() ?? []
+    }
     
     private var bugsAvailable: [Item] {
         items.categories[.bugs]?.filterActive() ?? []
-    }
-    
-    // MARK: - Fish Calculations
-    private var fishAvailable: [Item] {
-        items.categories[.fish]?.filterActive() ?? []
     }
     
     // MARK: - Body
@@ -109,7 +111,6 @@ struct TodayView: View {
         .safeHoverEffect()
     }
     
-    // MARK: - Navigation Bar Button(s)
     private var aboutButton: some View {
         Button(action: { self.selectedSheet = .about } ) {
             Image(systemName: "info.circle")
@@ -121,6 +122,7 @@ struct TodayView: View {
         .safeHoverEffect()
     }
     
+    // MARK: - Others
     private var dateString: String {
         let f = DateFormatter()
         f.setLocalizedDateFormatFromTemplate("EEEE, MMM d")
