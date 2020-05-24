@@ -47,7 +47,7 @@ struct CollectionListView: View {
                     } else if selectedTab == .lists {
                         userListsSections
                     } else if selectedTab == .designs {
-                        designsSections
+                        designView
                     } else {
                         emptyView
                     }
@@ -88,7 +88,7 @@ struct CollectionListView: View {
         }
     }
 
-    private var designsSections: some View {
+    private var designView: some View {
         Group {
             Button(action: {
                 self.sheet = .designForm(editingDesign: nil)
