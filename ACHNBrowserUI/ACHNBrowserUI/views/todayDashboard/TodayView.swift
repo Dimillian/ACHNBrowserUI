@@ -52,20 +52,14 @@ struct TodayView: View {
                 }
 
                 Group {
-                    TodayEventsSection()
-                    TodaySpecialCharacters()
-                    TodayCurrentlyAvailableSection(viewModel: viewModel)
-                    TodayCollectionProgressSection(viewModel: viewModel, sheet: $selectedSheet)
-                    TodayBirthdaysSection(villagers: villagersViewModel.todayBirthdays)
-                    TodayTurnipSection(predictions: turnipsPredictionsService.predictions)
-                        .onTapGesture {
-                            self.uiState.selectedTab = .turnips
+                    ForEach(viewModel.sectionOrder, id: \.self) { section in
+                        // The required data could be refactored into the model.
+                        TodaySectionView(section: section, viewModel: self.viewModel, selectedSheet: self.$selectedSheet, villagers: self.villagersViewModel.todayBirthdays, turnipPredictionsService: self.turnipsPredictionsService, uiState: self.uiState)
                     }
+
                     // TodayTasksSection()
                     // TodayNookazonSection(sheet: $selectedSheet, viewModel: viewModel)
-                    TodaySubscribeSection(sheet: $selectedSheet)
-                    TodayMysteryIslandsSection()
-                    // self.arrangeSectionsButton
+                    self.arrangeSectionsButton
                 }
             }
             .listStyle(GroupedListStyle())
@@ -78,10 +72,10 @@ struct TodayView: View {
                                activeBugs: bugsAvailable)
         }
     }
-            
+
     var arrangeSectionsButton: some View {
         Section {
-            Button(action: { self.selectedSheet = .rearrange }) {
+            Button(action: { self.selectedSheet = .rearrange(viewModel: self.viewModel) }) {
                 HStack {
                     Image(systemName: "arrow.up.arrow.down")
                         .font(.system(.body, design: .rounded))

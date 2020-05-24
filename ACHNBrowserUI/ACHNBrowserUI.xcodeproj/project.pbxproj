@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		157C03E7247AE56600568917 /* TodaySectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 157C03E6247AE56600568917 /* TodaySectionView.swift */; };
 		690A72C924752BF4001E7294 /* villagersLikes in Resources */ = {isa = PBXBuildFile; fileRef = 690A72C824752BF4001E7294 /* villagersLikes */; };
 		69157B7E2471A5A1005B9002 /* TodayMysteryIslandsSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69157B6D247121ED005B9002 /* TodayMysteryIslandsSection.swift */; };
 		69157B7F2471A5A1005B9002 /* TodayNookazonSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 693E2BC3246689C500B85CB8 /* TodayNookazonSection.swift */; };
@@ -356,6 +357,7 @@
 		02F2D3F62455D81C009741DA /* round-alt-orange@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "round-alt-orange@3x.png"; sourceTree = "<group>"; };
 		02F2D3F72455D81C009741DA /* simple-orange@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "simple-orange@3x.png"; sourceTree = "<group>"; };
 		02F2D3F82455D81C009741DA /* simple-mint@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "simple-mint@3x.png"; sourceTree = "<group>"; };
+		157C03E6247AE56600568917 /* TodaySectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TodaySectionView.swift; path = ACHNBrowserUI/views/todayDashboard/TodaySectionView.swift; sourceTree = SOURCE_ROOT; };
 		22EB1DC0246D4D1F00C62F76 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		3246F93724725C37001A1E06 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		325C0943246053E10043B6A7 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/System/Library/Frameworks/SwiftUI.framework; sourceTree = DEVELOPER_DIR; };
@@ -544,6 +546,7 @@
 				693E2BC924669D2800B85CB8 /* TodaySubscribeSection.swift */,
 				69157B6D247121ED005B9002 /* TodayMysteryIslandsSection.swift */,
 				693352832473C4B5007EF9AB /* TodaySpecialCharacters.swift */,
+				157C03E6247AE56600568917 /* TodaySectionView.swift */,
 			);
 			path = todayDashboard;
 			sourceTree = "<group>";
@@ -1352,6 +1355,7 @@
 				69157B7F2471A5A1005B9002 /* TodayNookazonSection.swift in Sources */,
 				69157B802471A5A1005B9002 /* UserListFormView.swift in Sources */,
 				69157B812471A5A1005B9002 /* RowLoadingView.swift in Sources */,
+				157C03E7247AE56600568917 /* TodaySectionView.swift in Sources */,
 				69157B822471A5A1005B9002 /* ItemDetailViewModel.swift in Sources */,
 				69157B832471A5A1005B9002 /* TurnipsChartMinBuyPriceCurve.swift in Sources */,
 				69157B842471A5A1005B9002 /* ItemRowView.swift in Sources */,
