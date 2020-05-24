@@ -136,7 +136,7 @@ struct SubscribeView: View {
     
     private var paymentButtons: some View {
         VStack {
-            HStack {
+            HStack(spacing: 0) {
                 sub.map{ sub in
                     makeBorderedButton(large: false,
                                        action: {
@@ -160,7 +160,8 @@ struct SubscribeView: View {
                         .opacity(subscriptionManager.inPaymentProgress ? 0.5 : 1.0)
                         .disabled(subscriptionManager.inPaymentProgress)
                 }
-            }.frame(width: 320)
+            }
+            .frame(width: 320)
             
             lifetime.map{ lifetime in
                 makeBorderedButton(large: true,
@@ -185,7 +186,8 @@ struct SubscribeView: View {
         }
     }
     
-    private func makeBorderedButton(large: Bool, action: @escaping () -> Void, label: LocalizedStringKey) -> some View {
+    private func makeBorderedButton(large: Bool, action: @escaping () -> Void, label:
+        LocalizedStringKey) -> some View {
         Button(action: action) {
             Text(label)
                 .font(.headline)
@@ -193,7 +195,8 @@ struct SubscribeView: View {
                 .foregroundColor(.white)
                 .minimumScaleFactor(0.01)
                 .lineLimit(1)
-                .frame(width: large ? 290 : 100, height: 30)
+                .frame(minWidth: large ? 290 : 100,
+                       minHeight: 30)
         }.buttonStyle(PlainRoundedButton()).accentColor(.acTabBarTint).safeHoverEffect()
     }
 }

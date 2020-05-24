@@ -147,7 +147,7 @@ public class Items: ObservableObject {
         if let likes = villagersLike.values.first(where: { $0.id == villager })?.likes {
             return Deferred {
                 Future { [weak self] resolve in
-                    var categories = Category.villagersGifts()
+                    let categories = Category.villagersGifts()
                     guard let weakself = self else {
                         return resolve(.success([]))
                     }

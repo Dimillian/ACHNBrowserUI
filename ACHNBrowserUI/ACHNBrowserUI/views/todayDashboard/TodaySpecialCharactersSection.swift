@@ -1,5 +1,5 @@
 //
-//  TodaySpecialCharacters.swift
+//  TodaySpecialCharactersSection.swift
 //  ACHNBrowserUI
 //
 //  Created by Thomas Ricouard on 19/05/2020.
@@ -10,7 +10,7 @@ import SwiftUI
 import SwiftUIKit
 import Backend
 
-struct TodaySpecialCharacters: View {
+struct TodaySpecialCharactersSection: View {
     @State private var selectedCharacter: SpecialCharacters?
     
     private var timeString: String {
@@ -129,7 +129,7 @@ struct TodaySpecialCharacters_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
             List {
-                TodaySpecialCharacters()
+                TodaySpecialCharactersSection()
             }
             .listStyle(GroupedListStyle())
             .environment(\.horizontalSizeClass, .regular)

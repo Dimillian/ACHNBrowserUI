@@ -17,6 +17,8 @@ public struct ACNHApiService {
         case villagers
         case villagerIcon(id: Int)
         case villagerImage(id: Int)
+        case songs
+        case music(id: Int)
         
         public func path() -> String {
             switch self {
@@ -26,11 +28,21 @@ public struct ACNHApiService {
                 return "icons/villagers/\(id)"
             case let .villagerImage(id):
                 return "images/villagers/\(id)"
+            case .songs:
+                return "songs"
+            case let .music(id):
+                return "music/\(id)"
             }
         }
     }
     
     private static let decoder = JSONDecoder()
+    
+    public static func makeURL(endpoint: Endpoint) -> URL {
+        let component = URLComponents(url: BASE_URL.appendingPathComponent(endpoint.path()),
+                                      resolvingAgainstBaseURL: false)!
+        return component.url!
+    }
     
     public static func fetch<T: Codable>(endpoint: Endpoint) -> AnyPublisher<T ,APIError> {
         if let cached = Self.cache[endpoint.path()] as? T {
@@ -38,9 +50,7 @@ public struct ACNHApiService {
                 .setFailureType(to: APIError.self)
                 .eraseToAnyPublisher()
         }
-        let component = URLComponents(url: BASE_URL.appendingPathComponent(endpoint.path()),
-                                      resolvingAgainstBaseURL: false)!
-        let request = URLRequest(url: component.url!)
+        let request = URLRequest(url: makeURL(endpoint: endpoint))
         return URLSession.shared.dataTaskPublisher(for: request)
             .tryMap{ data, response in
                 return try APIError.processResponse(data: data, response: response)
