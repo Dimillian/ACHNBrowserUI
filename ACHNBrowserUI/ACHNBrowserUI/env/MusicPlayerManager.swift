@@ -41,12 +41,7 @@ public class MusicPlayerManager: ObservableObject {
                 player?.pause()
                 player = AVPlayer(url: musicURL)
                 
-                if SubscriptionManager.shared.subscriptionStatus == .subscribed {
-                    setupBackgroundPlay()
-                    if !remoteCommandsEnabled {
-                        setupRemoteCommands()
-                    }
-                }
+                setupBackgroundPlay()
             }
         }
     }
@@ -61,7 +56,6 @@ public class MusicPlayerManager: ObservableObject {
     
     private var songsCancellable: AnyCancellable?
     private var player: AVPlayer?
-    private var remoteCommandsEnabled = false
     
     init() {
         songsCancellable = ACNHApiService
@@ -88,9 +82,7 @@ public class MusicPlayerManager: ObservableObject {
                                                     self?.next()
                                                 }
         }
-        if SubscriptionManager.shared.subscriptionStatus == .subscribed {
-            self.setupRemoteCommands()
-        }
+        self.setupRemoteCommands()
     }
     
     public func next() {
@@ -125,8 +117,6 @@ public class MusicPlayerManager: ObservableObject {
     }
     
     private func setupRemoteCommands() {
-        remoteCommandsEnabled = true
-        
         MPRemoteCommandCenter.shared().playCommand.addTarget { [weak self] event in
             if self?.isPlaying == false {
                 self?.isPlaying = true
