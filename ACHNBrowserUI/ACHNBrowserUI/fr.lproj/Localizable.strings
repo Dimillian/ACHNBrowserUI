@@ -285,14 +285,14 @@ You can cancel anytime with your iTunes account settings. Any unused portion of 
 "Loading Visitors...." = "Chargement des visiteurs....";
 
 // VillagersListView
-"Search a villager" = "Rechercher un villageoi";
+"Search a villager" = "Rechercher un villageois";
 "Personality" = "Personnalité";
 "Birthday" = "Anniversaire";
 "Species" = "Espèce";
 "Gender" = "Genre";
 "Catch phrase" = "Slogan";
 "Unknown" = "Inconnu";
-"Villager items" = "Objets du villageoi";
+"Villager items" = "Objets du villageois";
 
 // VillagersDetailView
 "Unkown" = "Inconnu";
