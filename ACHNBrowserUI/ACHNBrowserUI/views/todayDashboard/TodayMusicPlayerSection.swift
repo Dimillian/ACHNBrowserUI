@@ -94,7 +94,7 @@ struct TodayMusicPlayerSection: View {
                 }
             }
         }
-        .navigationBarTitle(Text("Musics"))
+        .navigationBarTitle(Text("Tracks"))
         .listStyle(GroupedListStyle())
         .environment(\.horizontalSizeClass, .regular)
         .sheet(item: $presentedSheet, content: { Sheet(sheetType: $0) })
