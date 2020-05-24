@@ -99,7 +99,7 @@ struct CollectionListView: View {
             ForEach(collection.designs) { design in
                 DesignRowView(designRowViewModel: DesignRowViewModel(design: design))
             }.onDelete { indexes in
-                self.collection.deleteDesignItem(at: indexes.first!)
+                self.collection.deleteDesign(at: indexes.first!)
             }
         }
     }

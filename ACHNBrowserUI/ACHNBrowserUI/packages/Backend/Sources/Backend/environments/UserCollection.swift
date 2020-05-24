@@ -181,13 +181,13 @@ public class UserCollection: ObservableObject {
 
     // MARK: - Custom Designs
 
-    public func addDesignItem(_ item: Design) {
-        designs.append(item)
+    public func addDesign(_ design: Design) {
+        designs.append(design)
         save()
     }
 
-    public func deleteDesignItem(at index: Int) {
-        designs.remove(at: index)
+    public func deleteDesign(at design: Int) {
+        designs.remove(at: design)
         save()
     }
 

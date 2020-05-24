@@ -28,6 +28,6 @@ class DesignFormViewModel: ObservableObject {
     // MARK: - Public
 
     func save() {
-        UserCollection.shared.addDesignItem(design)
+        UserCollection.shared.addDesign(design)
     }
 }
