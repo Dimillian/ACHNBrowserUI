@@ -14,6 +14,14 @@ struct ItemsListView: View {
     @State private var showSortSheet = false
     @State private var itemRowsDisplayMode: ItemRowView.DisplayMode = .large
     
+    init(category: Backend.Category, items: [Item]? = nil) {
+        if let items = items {
+            viewModel = ItemsViewModel(category: category, items: items)
+        } else {
+            viewModel = ItemsViewModel(category: category)
+        }
+    }
+    
     var currentItems: [Item] {
         get {
             if !viewModel.searchText.isEmpty {
@@ -103,7 +111,7 @@ struct ItemsListView: View {
 
 struct ItemsListView_Previews: PreviewProvider {
     static var previews: some View {
-        ItemsListView(viewModel: ItemsViewModel(category: .housewares))
+        ItemsListView(category: .housewares)
             .environmentObject(Items.shared)
             .environmentObject(UserCollection.shared)
     }
