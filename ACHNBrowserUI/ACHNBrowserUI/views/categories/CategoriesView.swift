@@ -55,7 +55,7 @@ struct CategoriesView: View {
             .modifier(DismissingKeyboardOnSwipe())
       
             
-            ItemsListView(viewModel: ItemsViewModel(category: .housewares))
+            ItemsListView(category: .housewares)
         }
     }
 }
