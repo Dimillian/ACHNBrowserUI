@@ -13,6 +13,21 @@ import AVFoundation
 public class MusicPlayerManager: ObservableObject {
     public static let shared = MusicPlayerManager()
     
+    public enum PlayMode {
+        case stopEnd, random, ordered
+        
+        mutating public func toggle() {
+            switch self {
+            case .stopEnd:
+                self = .random
+            case .random:
+                self = .ordered
+            case .ordered:
+                self = .stopEnd
+            }
+        }
+    }
+    
     @Published public var songs: [String: Song] = [:]
     @Published public var currentSongItem: Item?
     @Published public var currentSong: Song? {
@@ -31,6 +46,8 @@ public class MusicPlayerManager: ObservableObject {
         }
     }
     
+    @Published public var playmode = PlayMode.stopEnd
+    
     private var songsCancellable: AnyCancellable?
     private var player: AVPlayer?
     
@@ -46,7 +63,18 @@ public class MusicPlayerManager: ObservableObject {
         NotificationCenter.default.addObserver(forName: .AVPlayerItemDidPlayToEndTime,
                                                object: player?.currentItem,
                                                queue: .main) { [weak self] _ in
-                                                self?.isPlaying = false
+                                                guard let weakself = self else { return }
+                                                switch weakself.playmode {
+                                                case .stopEnd:
+                                                    self?.isPlaying = false
+                                                case .random:
+                                                    self?.isPlaying = false
+                                                    self?.currentSong = self?.songs.randomElement()?.value
+                                                    self?.isPlaying = true
+                                                case .ordered:
+                                                    self?.isPlaying = false
+                                                    self?.next()
+                                                }
         }
     }
     
