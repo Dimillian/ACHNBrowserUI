@@ -11,6 +11,7 @@ import Combine
 import AVFoundation
 import MediaPlayer
 import SDWebImage
+import Backend
 
 public class MusicPlayerManager: ObservableObject {
     public static let shared = MusicPlayerManager()
