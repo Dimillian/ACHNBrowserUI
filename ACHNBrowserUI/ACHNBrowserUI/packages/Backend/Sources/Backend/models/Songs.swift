@@ -8,8 +8,8 @@
 import Foundation
 
 public struct Song: Codable {
-    let id: Int
-    let fileName: String
+    public let id: Int
+    public let fileName: String
     
     enum CodingKeys: String, CodingKey {
         case id
