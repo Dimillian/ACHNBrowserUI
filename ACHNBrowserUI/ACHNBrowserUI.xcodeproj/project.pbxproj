@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4C16FB41247AC9B0009F24E3 /* GridStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C16FB40247AC9B0009F24E3 /* GridStack.swift */; };
 		4CEEFBD92477D9E900663590 /* TurnipsMinMaxPriceRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CEEFBD82477D9E900663590 /* TurnipsMinMaxPriceRow.swift */; };
 		4CEEFBDB2477E58500663590 /* TurnipsPriceRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CEEFBDA2477E58500663590 /* TurnipsPriceRow.swift */; };
 		690A72C924752BF4001E7294 /* villagersLikes in Resources */ = {isa = PBXBuildFile; fileRef = 690A72C824752BF4001E7294 /* villagersLikes */; };
@@ -201,6 +202,7 @@
 		3DB1260324686F0B00E74AA5 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		3DF14B2C24664B2600438646 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		3DF14B2E24664B4A00438646 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
+		4C16FB40247AC9B0009F24E3 /* GridStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridStack.swift; sourceTree = "<group>"; };
 		4C2D676A245DA41E005831C4 /* TurnipsChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TurnipsChartView.swift; sourceTree = "<group>"; };
 		4C2D676D245F0666005831C4 /* TurnipsChartBottomLegendView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TurnipsChartBottomLegendView.swift; sourceTree = "<group>"; };
 		4C2D676F245F0698005831C4 /* TurnipsChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TurnipsChart.swift; sourceTree = "<group>"; };
@@ -705,6 +707,7 @@
 				4C7FE78224574FB50011E8AB /* ActivityIndicator.swift */,
 				69875F4F24652A4700B1D46C /* Sheet.swift */,
 				693E2BBD2465B65D00B85CB8 /* RowLoadingView.swift */,
+				4C16FB40247AC9B0009F24E3 /* GridStack.swift */,
 			);
 			path = shared;
 			sourceTree = "<group>";
@@ -1038,6 +1041,7 @@
 				69157B9C2471A5A1005B9002 /* Path.swift in Sources */,
 				69157B9D2471A5A1005B9002 /* UIState.swift in Sources */,
 				69157B9E2471A5A1005B9002 /* TodayTasksSection.swift in Sources */,
+				4C16FB41247AC9B0009F24E3 /* GridStack.swift in Sources */,
 				69157B9F2471A5A1005B9002 /* SafariView.swift in Sources */,
 				69157BA02471A5A1005B9002 /* DismissingKeyboardOnSwipe.swift in Sources */,
 				69157BA12471A5A1005B9002 /* ItemDetailSeasonSectionView.swift in Sources */,
