@@ -119,7 +119,8 @@ extension ItemDetailView {
     
     private var navButtons: some View {
         HStack {
-            LikeButtonView(item: self.itemViewModel.item).imageScale(.large)
+            LikeButtonView(item: itemViewModel.item,
+                           variant: displayedVariant).imageScale(.large)
                 .environmentObject(collection)
                 .safeHoverEffectBarItem(position: .trailing)
             Spacer(minLength: 12)
@@ -132,20 +133,30 @@ extension ItemDetailView {
             ScrollView(.horizontal, showsIndicators: false) {
                 HStack {
                     itemViewModel.item.variations.map { variants in
-                        ForEach(variants) { variant in
-                            ItemImage(path: variant.content.image,
-                                      size: 75)
-                                .onTapGesture {
-                                    withAnimation {
-                                        FeedbackGenerator.shared.triggerSelection()
-                                        self.displayedVariant = variant
-                                    }
-                            }
-                        }
+                        ForEach(variants, content: makeVariantRow(variant:))
                     }
                 }.padding()
             }
             .listRowInsets(EdgeInsets())
+        }
+    }
+    
+    private func makeVariantRow(variant: Variant) -> some View {
+        ZStack(alignment: .topLeading) {
+            ItemImage(path: variant.content.image,
+                      size: 75)
+                .onTapGesture {
+                    withAnimation {
+                        if self.itemViewModel.item.variations?.firstIndex(of: variant) == 0 {
+                            self.displayedVariant = nil
+                        } else {
+                            self.displayedVariant = variant
+                        }
+                        FeedbackGenerator.shared.triggerSelection()
+                    }
+            }
+            LikeButtonView(item: item,
+                           variant: self.itemViewModel.item.variations?.firstIndex(of: variant) == 0 ? nil : variant)
         }
     }
     

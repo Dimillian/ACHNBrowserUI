@@ -15,16 +15,19 @@ public class UserCollection: ObservableObject {
     
     // MARK: - Published properties
     @Published public var items: [Item] = []
+    @Published public var variants: [String: [Variant]] = [:]
     @Published public var villagers: [Villager] = []
     @Published public var critters: [Item] = []
     @Published public var lists: [UserList] = []
     @Published public var dailyTasks = DailyTasks()
+    
     @Published public var isCloudEnabled = true
     @Published public var isSynched = false
     
     // MARK: - Private properties
     private struct SavedData: Codable {
         let items: [Item]
+        let variants: [String: [Variant]]?
         let villagers: [Villager]
         let critters: [Item]
         let lists: [UserList]?
@@ -78,6 +81,31 @@ public class UserCollection: ObservableObject {
         let added = items.toggle(item: item)
         save()
         return added
+    }
+    
+    public func containVariant(item: Item, variant: Variant) -> Bool {
+        guard let filename = item.filename else {
+            return false
+        }
+        return variants[filename]?.contains(variant) == true
+    }
+    
+    public func toggleVariant(item: Item, variant: Variant) -> Bool {
+        guard let filename = item.filename else {
+            return false
+        }
+        if variants[filename]?.contains(variant) == true {
+            variants[filename]?.removeAll(where: { $0 == variant })
+            save()
+            return false
+        } else {
+            if variants[filename] == nil {
+                variants[filename] = []
+            }
+            variants[filename]?.append(variant)
+            save()
+            return true
+        }
     }
     
     public func toggleCritters(critter: Item) -> Bool {
@@ -230,7 +258,12 @@ public class UserCollection: ObservableObject {
     // MARK: - Import / Export
     private func save() {
         do {
-            let savedData = SavedData(items: items, villagers: villagers, critters: critters, lists: lists, dailyTasks: dailyTasks)
+            let savedData = SavedData(items: items,
+                                      variants: variants,
+                                      villagers: villagers,
+                                      critters: critters,
+                                      lists: lists,
+                                      dailyTasks: dailyTasks)
             let data = try encoder.encode(savedData)
             try data.write(to: filePath, options: .atomicWrite)
         
@@ -250,6 +283,7 @@ public class UserCollection: ObservableObject {
             do {
                 let savedData = try decoder.decode(SavedData.self, from: data)
                 self.items = savedData.items
+                self.variants = savedData.variants ?? [:]
                 self.villagers = savedData.villagers
                 self.critters = savedData.critters
                 self.lists = savedData.lists ?? []
