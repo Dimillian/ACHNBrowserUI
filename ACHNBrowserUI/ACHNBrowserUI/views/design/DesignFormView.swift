@@ -19,7 +19,7 @@ struct DesignFormView: View {
     @State private var nameErrorBorderColor: Color = .clear
     @State private var codeErrorBorderColor: Color = .clear
 
-    // MARK: - Life cycle0
+    // MARK: - Life cycle
 
     init(viewModel: DesignFormViewModel) {
         self.viewModel = viewModel
