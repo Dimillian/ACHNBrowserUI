@@ -1,12 +1,3 @@
-/*
-  Localizable.strings
-  ACHNBrowserUI
-
-
-  Copy template from de.lproj/Localizable.strings
- 
-*/
-
 "Tap here to preview a notification" = "Tocca per un anteprima della notifica";
 "Upgrade to +" = "Aggiorna a +";
 "You're subscribed to AC Helper+" = "Ti sei abbonato a AC Helper+";
@@ -429,8 +420,8 @@ Puoi annullare il tuo abbonamento in ogni momento dalle impostazioni del tuo acc
 "Available in Nook's Cranny (either upgrade tier) in the unique furniture slot" = "Disponibile alla Bottega di Nook (ogni versione) nello spazio mobili unici";
 "Available in Nook's Cranny (upgraded only)" = "Disponibile alla Bottega di Nook (ampliata)";
 "Available in Nook's Cranny (upgraded only), in the third unique furniture slot" = "Disponibile alla Bottega di Nook (ampliata) nel 3° spazio mobili unici";
-"Available in Nook's Cranny (upgraded only), in the unique furniture slot" = ""Disponibile alla Bottega di Nook (ampliata) nello spazio mobili unici";
-"Available in the re-buyable slot in Nook's Cranny" = ""Disponibile alla Bottega di Nook nello spazio oggetti riacquistabili";
+"Available in Nook's Cranny (upgraded only), in the unique furniture slot" = "Disponibile alla Bottega di Nook (ampliata) nello spazio mobili unici";
+"Available in the re-buyable slot in Nook's Cranny" = "Disponibile alla Bottega di Nook nello spazio oggetti riacquistabili";
 "Balloons" = "Palloncini";
 "Beach (Bunny Day)" = "Spiaggia (Caccia all'uovo)";
 "Beach (Summer)" = "Spiaggia (Estate)";
@@ -570,7 +561,7 @@ Puoi annullare il tuo abbonamento in ogni momento dalle impostazioni del tuo acc
 "Only available during Fall" = "Disponibile solo in Autunno";
 "Only available during Festive Season" = "Disponibile solo durante il periodo delle Festività";
 "Only available during Maple Leaf Season" = "Disponibile solo durante il periodo delle Foglie d'acero";
-"Only available during Mushroom Season" = Disponibile solo durante il periodo dei Funghi";
+"Only available during Mushroom Season" = "Disponibile solo durante il periodo dei Funghi";
 "Only available during Spring" = "Disponibile solo in Primavera";
 "Only available during Summer" = "Disponibile solo in Estate";
 "Only available during the month Father's Day occurs, region dependant" = "Disponibile solo durante il mese della Festa del Papà, dipende dalla nazione";
@@ -602,7 +593,7 @@ Puoi annullare il tuo abbonamento in ogni momento dalle impostazioni del tuo acc
 "Possible song KK will play when choosing \"It's hard to say.\" as your mood" = "Una delle possibili canzoni di K.K. se si sceglie \"Difficile da dire\" come stato d'animo..";
 "Possible song KK will play when choosing \"Laid-back.\" as your mood" = "Una delle possibili canzoni di K.K. se si sceglie \"Rilassato\" come stato d'animo..";
 "Purchased from Tom Nook on New Year's Eve" = "Acquisto da Tom Nook l'Ultimo dell'Anno";
-"Purple/purple mums" = Crisantemi Viola/Viola";
+"Purple/purple mums" = "Crisantemi Viola/Viola";
 "Pushing snowballs" = "Spingere palle di neve";
 "Received in mail from DAL after taking certain numbers of flights" = "Ricevuto via posta da DAL dopo alcuni voli";
 "Received on your first time seeing KK perform" = "Ricevuto al primo concerto di K.K.";
@@ -627,8 +618,8 @@ Puoi annullare il tuo abbonamento in ogni momento dalle impostazioni del tuo acc
 "Red/yellow tulips" = "Tulipani Rossi/Gialli";
 "Resident Services Upgrade" = "Ampliamento Centro Servizi";
 "Reward for completing the Stamp Rally in the bug exhibit" = "Ricompensa per Raccolta timbri nell'esposizione insetti";
-"Reward for completing the Stamp Rally in the fish gallery" = "Ricompensa per Raccolta timbri nell'esposizione pesci;
-"Reward for completing the Stamp Rally in the fossil gallery" = ""Ricompensa per Raccolta timbri nell'esposizione fossili";
+"Reward for completing the Stamp Rally in the fish gallery" = "Ricompensa per Raccolta timbri nell'esposizione pesci";
+"Reward for completing the Stamp Rally in the fossil gallery" = "Ricompensa per Raccolta timbri nell'esposizione fossili";
 "Reward for making a perfect snow-person" = "Ricompensa per aver fatto un pupazzo di neve perfetto";
 "Reward for making a perfect Snowboy; Only available during Winter" = "Ricompensa per aver fatto un Pallino perfetto; Disponibile solo in Inverno";
 "Reward for solving May Day maze" = "Ricompensa per il viaggio del Primo Maggio";
@@ -754,26 +745,26 @@ Puoi annullare il tuo abbonamento in ogni momento dalle impostazioni del tuo acc
 "Gold Island" = "Isola Oro";
 " - max %lld visit" = " - max %lld visita";
 // Island Description
-"A fairly normal island which you can get on your first tour, with one cliff, native fruit, coconuts, a river and a pond." = “Un’isola piuttosto normale che puoi trovare al tuo primo viaggio, con un rilievo, frutta nativa, palme da cocco, un fiume e uno stagno.”;
-"Practically the same as Normal Island 1, but without the pond, and with a slightly bigger cliff." = “Come l’Isola Normale 1 ma senza lo stagno e con un rilievo leggermente più grande.”;
-"Somewhat more interesting in layout but it has nothing special about the resources you can get." = “Un po’ più interessante come disposizione ma niente di speciale riguardo le risorse naturali che puoi trovarci.”;
-"The last of the four starter islands. No river, just a pond and the sea." = “L’ultima delle quattro isole di partenza. Nessun fiume, solo uno stagno e il mare.”;
-"Multiple levels, no river. The base level has regular trees, the middle level has your native fruit, and the top level has five rocks with materials." = “Livelli multipli, nessun fiume. Il livello base ha alberi latifoglia, il livello intermedio ha la tua frutta nativa e il livello in alto ha cinque rocce con materiali.”;
-"Breaking the rock at the far north will let you vault over into the island with five money rocks on it." = “Rompere la roccia al limite nord ti permetterà di saltare con l’asta sull’isola con 5 rocce piene di stelline.”;
-"Every tree on this island is bamboo and you can get to it at any time of year. The most common island you can get out of the 20, statistically." = “Ogni albero su quest’isola è bambù e puoi trovarla in ogni periodo dell’anno. Statisticamente è l’isola con la probabilità più alta tra tutte e 20.”;
-"There are 19 fruit trees on this island and all will be your 'sister fruit'. This will be different from your native fruit - but every time you come here, it will be the same one." = “Ci sono 19 alberi da frutto in questa isola e sono tutti del tipo “gemello” della tua isola. Sarà frutta diversa da quella nativa della tua isola, ma ogni volta che visiterai quest’isola, troverai sempre lo stesso tipo di frutta.”;
-"This island has a pond surrounded by rare flowers and the only insects that will spawn are those that hang around flowers." = “L’isola ha uno stagno circondato da fiori rari e gli unici insetti che troverai saranno quelli che volano intorno ai fiori.”;
-"There are four small triangular cliffs, one in each corner, and the ground level is full of flowers and money rocks." = “Ci sono 4 piccoli rilievi triangolari, uno in ogni angolo. Il terreno base è pieno di fiori e rocce con stelline.”;
-"Yes, the infamous one. The only insects that spawn here are tarantulas (as long as it is night time in a Tarantula month), and the rocks have crafting materials if you can get to them. The river is thin enough that you can jump over it without a vaulting pole." = “Esatto, è quell’isola famigerata! Gli unici insetti che troverai sono le tarantole (purché sia notte e nel periodo delle tarantole). Le rocce hanno materiali di costruzione se riesci a prenderli. Il fiume è stretto abbastanza da essere saltato senza asta.”;
-"This island has no river or pond and has tons of hardwood and coconut trees, and the only insects that spawn are those that are associated with trees." = “Quest’isola non ha un fiume o uno stagno ma tanti alberi latifoglia e palme da cocco. Gli unici insetti che troverai sono quelli relativi agli alberi.”;
-"Big Fish Island. This island has rare hybrid flowers and the only fish available are larger ones, including some of the more rare ones." = “Quest’isola ha rari fiori ibridi e gli unici pesci disponibili sono quelli grandi, compresi alcuni di quelli più rari.”;
-"This island is exactly the same as Bamboo Island but the trees are all just regular hardwood trees." = “Identica all’Isola Bambù ma gli alberi sono tutti semplici latifoglie.”;
-"There is one square cliff at the north east, a few flowers and rocks and a small amount of fruit trees. Only insects associated with water spawn here." = “C’è un rilievo quadrato a nord-est, pochi fiori, rocce e alberi da frutto. Gli unici insetti di quest’isola sono quelli relativi all’acqua.”;
-"This rare island only spawns big fish. Otherwise it is quite normal, with less flowers and a lower chance of appearing than the other big fish island." = “Quest’isola rara ha solo pesci grandi. Per il resto è piuttosto normale, con meno fiori dell’altra e una probabilità minore di trovarla.”;
-"Everything you can fish here is trash. Only water-related insects spawn." = “Tutto quello che riuscirai a pescare qui saranno dei rifiuti. Ci sono inoltre solo insetti relativi all’acqua.”;
-"A rectangular pond with rectangular cliffs inside, the tallest one being too tall to climb up to. The only fish that spawn here are the largest finned fish." = “Uno stagno rettangolare con all’interno un rilievo rettangolare. Il rilievo più alto è impossibile da scalare. L’unico tipo di pesce che troverai sono i pesci grandi con la pinna.”;
-"Lots of cliffs, waterfalls and river forks. Normal resource spawns." = “Tanti rilievi, cascate e biforcazioni del fiume. Risorse naturali normali”;
-"A very rare island with flowers, scorpions and a rectangular pond. If you climb up onto the cliff and climb down from the back, you can vault over to a tiny island in the middle and get 8 gold nuggets from a single rock." = “Un’isola molto rara con fiori, scorpioni e uno stagno rettangolare. Se ti arrampichi sul rilievo e poi scendi dietro dall’altra parte puoi saltare con l’asta su di una piccola isola che sta nel mezzo. Lì puoi prendere 8 minerali d’oro da una roccia.”;
+"A fairly normal island which you can get on your first tour, with one cliff, native fruit, coconuts, a river and a pond." = "Un’isola piuttosto normale che puoi trovare al tuo primo viaggio, con un rilievo, frutta nativa, palme da cocco, un fiume e uno stagno.";
+"Practically the same as Normal Island 1, but without the pond, and with a slightly bigger cliff." = "Come l’Isola Normale 1 ma senza lo stagno e con un rilievo leggermente più grande.";
+"Somewhat more interesting in layout but it has nothing special about the resources you can get." = "Un po’ più interessante come disposizione ma niente di speciale riguardo le risorse naturali che puoi trovarci.";
+"The last of the four starter islands. No river, just a pond and the sea." = "L’ultima delle quattro isole di partenza. Nessun fiume, solo uno stagno e il mare.";
+"Multiple levels, no river. The base level has regular trees, the middle level has your native fruit, and the top level has five rocks with materials." = "Livelli multipli, nessun fiume. Il livello base ha alberi latifoglia, il livello intermedio ha la tua frutta nativa e il livello in alto ha cinque rocce con materiali.";
+"Breaking the rock at the far north will let you vault over into the island with five money rocks on it." = "Rompere la roccia al limite nord ti permetterà di saltare con l’asta sull’isola con 5 rocce piene di stelline.";
+"Every tree on this island is bamboo and you can get to it at any time of year. The most common island you can get out of the 20, statistically." = "Ogni albero su quest’isola è bambù e puoi trovarla in ogni periodo dell’anno. Statisticamente è l’isola con la probabilità più alta tra tutte e 20.";
+"There are 19 fruit trees on this island and all will be your 'sister fruit'. This will be different from your native fruit - but every time you come here, it will be the same one." = "Ci sono 19 alberi da frutto in questa isola e sono tutti del tipo “gemello” della tua isola. Sarà frutta diversa da quella nativa della tua isola, ma ogni volta che visiterai quest’isola, troverai sempre lo stesso tipo di frutta.";
+"This island has a pond surrounded by rare flowers and the only insects that will spawn are those that hang around flowers." = "L’isola ha uno stagno circondato da fiori rari e gli unici insetti che troverai saranno quelli che volano intorno ai fiori.";
+"There are four small triangular cliffs, one in each corner, and the ground level is full of flowers and money rocks." = "Ci sono 4 piccoli rilievi triangolari, uno in ogni angolo. Il terreno base è pieno di fiori e rocce con stelline.";
+"Yes, the infamous one. The only insects that spawn here are tarantulas (as long as it is night time in a Tarantula month), and the rocks have crafting materials if you can get to them. The river is thin enough that you can jump over it without a vaulting pole." = "Esatto, è quell’isola famigerata! Gli unici insetti che troverai sono le tarantole (purché sia notte e nel periodo delle tarantole). Le rocce hanno materiali di costruzione se riesci a prenderli. Il fiume è stretto abbastanza da essere saltato senza asta.";
+"This island has no river or pond and has tons of hardwood and coconut trees, and the only insects that spawn are those that are associated with trees." = "Quest’isola non ha un fiume o uno stagno ma tanti alberi latifoglia e palme da cocco. Gli unici insetti che troverai sono quelli relativi agli alberi.";
+"Big Fish Island. This island has rare hybrid flowers and the only fish available are larger ones, including some of the more rare ones." = "Quest’isola ha rari fiori ibridi e gli unici pesci disponibili sono quelli grandi, compresi alcuni di quelli più rari.";
+"This island is exactly the same as Bamboo Island but the trees are all just regular hardwood trees." = "Identica all’Isola Bambù ma gli alberi sono tutti semplici latifoglie.";
+"There is one square cliff at the north east, a few flowers and rocks and a small amount of fruit trees. Only insects associated with water spawn here." = "C’è un rilievo quadrato a nord-est, pochi fiori, rocce e alberi da frutto. Gli unici insetti di quest’isola sono quelli relativi all’acqua.";
+"This rare island only spawns big fish. Otherwise it is quite normal, with less flowers and a lower chance of appearing than the other big fish island." = "Quest’isola rara ha solo pesci grandi. Per il resto è piuttosto normale, con meno fiori dell’altra e una probabilità minore di trovarla.";
+"Everything you can fish here is trash. Only water-related insects spawn." = "Tutto quello che riuscirai a pescare qui saranno dei rifiuti. Ci sono inoltre solo insetti relativi all’acqua.";
+"A rectangular pond with rectangular cliffs inside, the tallest one being too tall to climb up to. The only fish that spawn here are the largest finned fish." = "Uno stagno rettangolare con all’interno un rilievo rettangolare. Il rilievo più alto è impossibile da scalare. L’unico tipo di pesce che troverai sono i pesci grandi con la pinna.";
+"Lots of cliffs, waterfalls and river forks. Normal resource spawns." = "Tanti rilievi, cascate e biforcazioni del fiume. Risorse naturali normali";
+"A very rare island with flowers, scorpions and a rectangular pond. If you climb up onto the cliff and climb down from the back, you can vault over to a tiny island in the middle and get 8 gold nuggets from a single rock." = "Un’isola molto rara con fiori, scorpioni e uno stagno rettangolare. Se ti arrampichi sul rilievo e poi scendi dietro dall’altra parte puoi saltare con l’asta su di una piccola isola che sta nel mezzo. Lì puoi prendere 8 minerali d’oro da una roccia.";
 
 "Possible visitors" = "Visitatori possibili";
 "On" = "della";

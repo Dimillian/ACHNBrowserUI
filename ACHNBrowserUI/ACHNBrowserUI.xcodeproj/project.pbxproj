@@ -338,7 +338,7 @@
 		69E4BBB3245AE472001035E2 /* ItemRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemRow.swift; sourceTree = "<group>"; };
 		69E4BBB5245AE5C9001035E2 /* ItemDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailView.swift; sourceTree = "<group>"; };
 		69E4BBBA245B0BEF001035E2 /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
-		69E98C6E247439AD00A200FE /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/Localizable.strings; sourceTree = "<group>"; };
+		69E98C6E247439AD00A200FE /* it */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; lineEnding = 0; name = it; path = it.lproj/Localizable.strings; sourceTree = "<group>"; };
 		69EC82ED2461E79D00CE9064 /* TurnipsChartTopLegendView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TurnipsChartTopLegendView.swift; sourceTree = "<group>"; };
 		FA0EC270247B77E400447D7E /* VillagersSortView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VillagersSortView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
