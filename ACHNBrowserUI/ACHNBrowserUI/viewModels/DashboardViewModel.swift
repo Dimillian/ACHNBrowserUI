@@ -13,15 +13,12 @@ import Backend
 class DashboardViewModel: ObservableObject {
     @Published var recentListings: [Listing]?
     @Published var island: Island?
-
     @Published var sectionOrder: [TodaySection]
+    
     public var selection = Set<String>()
-
     private var listingCancellable: AnyCancellable?
     private var islandCancellable: AnyCancellable?
     
-    let objectWillChange = ObjectWillChangePublisher()
-
     init() {
         self.sectionOrder = AppUserDefaults.shared.todaySectionList
         loadSectionList()
@@ -60,7 +57,6 @@ class DashboardViewModel: ObservableObject {
             .sink(receiveCompletion: { _ in }) { [weak self] listings in
                 self?.recentListings = listings
         }
-        objectWillChange.send()
     }
     
     private func fetchIsland() {
