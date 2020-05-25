@@ -1,0 +1,7 @@
+/* 
+  InfoPlist.strings
+  ACHNBrowserUI
+
+*/
+
+NSPhotoLibraryAddUsageDescription = "Salva immagini dei mobili o le immagini create per la condivisione.";
