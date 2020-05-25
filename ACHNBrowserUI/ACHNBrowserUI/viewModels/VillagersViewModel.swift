@@ -26,7 +26,8 @@ class VillagersViewModel: ObservableObject {
     @Published var searchResults: [Villager] = []
     @Published var searchText = ""
     @Published var todayBirthdays: [Villager] = []
-    
+    @Published var sortedVillagers: [Villager] = []
+
     private var apiPublisher: AnyPublisher<[String: Villager], Never>?
     private var searchCancellable: AnyCancellable?
     private var apiCancellable: AnyCancellable? {
@@ -62,6 +63,29 @@ class VillagersViewModel: ObservableObject {
     private func villagers(with string: String) -> [Villager] {
         villagers.filter {
             $0.localizedName.lowercased().contains(string.lowercased()) == true
+        }
+    }
+    
+    // MARK: - Sort
+    
+    enum Sort: String, CaseIterable {
+        case name, species
+    }
+        
+    var sort: Sort? {
+        didSet {
+            guard let sort = sort else {
+                sortedVillagers = []
+                return
+            }
+            switch sort {
+            case .name:
+                let order: ComparisonResult = sort == oldValue ? .orderedDescending : .orderedAscending
+                sortedVillagers = villagers.sorted{ $0.localizedName.localizedCompare($1.localizedName) == order }
+            case .species:
+                let order: ComparisonResult = sort == oldValue ? .orderedDescending : .orderedAscending
+                sortedVillagers = villagers.sorted{ $0.species.localizedCompare($1.species) == order }
+            }
         }
     }
 }

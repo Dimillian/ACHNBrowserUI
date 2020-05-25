@@ -170,6 +170,7 @@
 		69E4BBB6245AE5C9001035E2 /* ItemDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69E4BBB5245AE5C9001035E2 /* ItemDetailView.swift */; };
 		69E4BBB7245AE60C001035E2 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69AF8C7B243E4D29001DD9CB /* Color.swift */; };
 		69E4BBB8245AE60F001035E2 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 69AF8C79243E4C78001DD9CB /* Colors.xcassets */; };
+		FA0EC271247B77E400447D7E /* VillagersSortView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0EC270247B77E400447D7E /* VillagersSortView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -339,6 +340,7 @@
 		69E4BBBA245B0BEF001035E2 /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
 		69E98C6E247439AD00A200FE /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/Localizable.strings; sourceTree = "<group>"; };
 		69EC82ED2461E79D00CE9064 /* TurnipsChartTopLegendView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TurnipsChartTopLegendView.swift; sourceTree = "<group>"; };
+		FA0EC270247B77E400447D7E /* VillagersSortView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VillagersSortView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -533,6 +535,7 @@
 		697E63F32449A488008FB710 /* villagers */ = {
 			isa = PBXGroup;
 			children = (
+				FA0EC270247B77E400447D7E /* VillagersSortView.swift */,
 				697E63F42449A58E008FB710 /* VillagersListView.swift */,
 				697E63F82449DADE008FB710 /* VillagerRowView.swift */,
 				697E63FA2449DB0C008FB710 /* VillagerDetailView.swift */,
@@ -1098,6 +1101,7 @@
 				69157BD62471A5A1005B9002 /* UserListSubscribeCallView.swift in Sources */,
 				69157BD72471A5A1005B9002 /* TodaySectionEditView.swift in Sources */,
 				69157BD82471A5A1005B9002 /* VillagersViewModel.swift in Sources */,
+				FA0EC271247B77E400447D7E /* VillagersSortView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
