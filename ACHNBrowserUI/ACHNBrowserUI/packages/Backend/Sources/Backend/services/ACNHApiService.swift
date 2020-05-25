@@ -10,7 +10,7 @@ import Foundation
 import Combine
 
 public struct ACNHApiService {
-    public static let BASE_URL = URL(string: "http://acnhapi.com/")!
+    public static let BASE_URL = URL(string: "http://acnhapi.com/v1/")!
     private static var cache: [String: Codable] = [:]
     
     public enum Endpoint {

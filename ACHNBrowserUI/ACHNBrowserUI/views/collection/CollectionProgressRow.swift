@@ -14,37 +14,46 @@ struct CollectionProgressRow: View {
     @EnvironmentObject private var items: Items
     @EnvironmentObject private var collection: UserCollection
     
+    @State private var inCollection = 0
+    @State private var total = 0
+    
     let category: Backend.Category
     let barHeight: CGFloat
     
     var body: some View {
-        let caught = CGFloat(collection.itemsIn(category: category))
-        var total: CGFloat = 0
-        if category == .art {
-            total = CGFloat(items.categories[category]?.filter({ !$0.name.contains("(fake)") }).count ?? 0)
-        } else {
-            total = CGFloat(items.categories[category]?.count ?? 0)
-        }
-        
-        return HStack {
+        HStack {
             Image(category.iconName())
                 .resizable()
                 .aspectRatio(1, contentMode: .fit)
                 .frame(height: barHeight + 12)
             
             Group {
-                ProgressView(progress: caught / total,
+                ProgressView(progress: CGFloat(inCollection) / CGFloat(total),
                              trackColor: .acText,
                              progressColor: .acHeaderBackground,
                              height: barHeight)
             }
             .frame(height: self.barHeight)
             
-            Text("\(Int(caught)) / \(Int(total))")
+            Text("\(inCollection) / \(total)")
                 .font(Font.system(size: 12,
                                   weight: Font.Weight.semibold,
                                   design: Font.Design.rounded).monospacedDigit())
                 .foregroundColor(.acText)
+        }.onAppear {
+            DispatchQueue.global().async {
+                let caught = self.collection.itemsIn(category: self.category)
+                var total = 0
+                if self.category == .art {
+                    total = self.items.categories[self.category]?.filter({ !$0.name.contains("(fake)") }).count ?? 0
+                } else {
+                    total = self.items.categories[self.category]?.count ?? 0
+                }
+                DispatchQueue.main.async {
+                    self.inCollection = caught
+                    self.total = total
+                }
+            }
         }
     }
 }

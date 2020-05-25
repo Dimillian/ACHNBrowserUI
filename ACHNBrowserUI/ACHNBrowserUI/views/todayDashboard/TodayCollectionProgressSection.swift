@@ -40,7 +40,7 @@ struct TodayCollectionProgressSection: View {
                 shareButton.padding(.top, 12)
             } else {
                 RowLoadingView(isLoading: .constant(true))
-                    .frame(height: 100)
+                    .frame(height: 150)
             }
         }
         .animation(.interactiveSpring())

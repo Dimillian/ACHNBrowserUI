@@ -30,12 +30,6 @@ struct TodayMusicPlayerSection: View {
             } else {
                 RowLoadingView(isLoading: .constant(true))
             }
-        }.onAppear {
-            if self.musicPlayerManager.currentSong == nil,
-                let random = self.items.categories[.music]?.randomElement(),
-                let song = self.musicPlayerManager.matchSongFrom(item: random) {
-                self.musicPlayerManager.currentSong = song
-            }
         }
     }
     
@@ -94,7 +88,7 @@ struct TodayMusicPlayerSection: View {
                 }
             }
         }
-        .navigationBarTitle(Text("Musics"))
+        .navigationBarTitle(Text("Tracks"))
         .listStyle(GroupedListStyle())
         .environment(\.horizontalSizeClass, .regular)
         .sheet(item: $presentedSheet, content: { Sheet(sheetType: $0) })

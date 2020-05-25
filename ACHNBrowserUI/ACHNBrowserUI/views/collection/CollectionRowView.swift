@@ -11,7 +11,7 @@ struct CollectionRowView: View {
     }
     
     var body: some View {
-        NavigationLink(destination: ItemsListView(viewModel: ItemsViewModel(category: category, items: items))) {
+        NavigationLink(destination: ItemsListView(category: category, items: items)) {
             HStack {
                 Image(category.iconName())
                     .renderingMode(.original)

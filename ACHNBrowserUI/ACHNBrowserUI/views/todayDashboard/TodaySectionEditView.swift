@@ -7,38 +7,55 @@
 //
 
 import SwiftUI
+import Backend
 
 struct TodaySectionEditView: View {
-    
     @Environment(\.presentationMode) private var presentationMode
+
+    @ObservedObject var viewModel: DashboardViewModel
+
     @State private var editMode = EditMode.active
-    @State private var selection = Set<String>()
-    
-    @State private var sections: [SectionHeaderView] = [
-        SectionHeaderView(text: "New on Nookazon", icon: "cart.fill"),
-        SectionHeaderView(text: "Currently Available", icon: "calendar"),
-        SectionHeaderView(text: "Collection Progress", icon: "chart.pie.fill"),
-        SectionHeaderView(text: "Turnips", icon: "dollarsign.circle.fill"),
-        SectionHeaderView(text: "Today's Tasks", icon: "checkmark.seal.fill"),
-        SectionHeaderView(text: "Events", icon: "flag.fill"),
-        SectionHeaderView(text: "Birthdays", icon: "gift.fill")
+
+    private let textForSectionName = [
+        TodaySection.nameEvents: "Events",
+        TodaySection.nameSpecialCharacters: "Possible visitors",
+        TodaySection.nameCurrentlyAvailable: "Currently Available",
+        TodaySection.nameCollectionProgress: "Collection Progress",
+        TodaySection.nameBirthdays: "Today's Birthdays",
+        TodaySection.nameTurnips: "Turnips",
+        TodaySection.nameSubscribe: "Subscribe",
+        TodaySection.nameMysteryIsland: "Mystery Islands",
+        TodaySection.nameMusic: "Music player",
+        TodaySection.nameTasks: "Today's Tasks",
+        TodaySection.nameNookazon: "New on Nookazon"
     ]
     
-    @State private var hiddenSections: [SectionHeaderView] = []
-        
+    private let iconForSectionName = [
+        TodaySection.nameEvents: "flag.fill",
+        TodaySection.nameSpecialCharacters: "clock",
+        TodaySection.nameCurrentlyAvailable: "calendar",
+        TodaySection.nameCollectionProgress: "chart.pie.fill",
+        TodaySection.nameBirthdays: "gift.fill",
+        TodaySection.nameTurnips: "dollarsign.circle.fill",
+        TodaySection.nameSubscribe: "suit.heart.fill",
+        TodaySection.nameMysteryIsland: "sun.haze.fill",
+        TodaySection.nameMusic: "music.note",
+        TodaySection.nameTasks: "checkmark.seal.fill",
+        TodaySection.nameNookazon: "cart.fill"
+    ]
+
     var body: some View {
-        List(selection: $selection) {
-            
+        List(selection: self.$viewModel.selection) {
             Section(header: SectionHeaderView(text: "Drag & Drop to Rearrange", icon: "arrow.up.arrow.down.circle.fill"), footer: self.footer) {
-                ForEach(sections, id: \.text) { section in
+                ForEach(viewModel.sectionOrder, id: \.name) { section in
                     HStack {
-                        Image(systemName: section.icon ?? "")
+                        Image(systemName: self.iconForSectionName[section.name] ?? "")
                             .resizable()
                             .aspectRatio(1, contentMode: .fit)
                             .frame(width: 22)
                             .foregroundColor(Color("ACSecondaryText"))
                         
-                        Text(section.text)
+                        Text(LocalizedStringKey(self.textForSectionName[section.name] ?? ""))
                             .font(.system(.body, design: .rounded))
                         
                         Spacer()
@@ -47,28 +64,8 @@ struct TodaySectionEditView: View {
                 }
                 .onMove(perform: onMove)
             }
-            
-            if hiddenSections.count > 0 {
-                Section(header: SectionHeaderView(text: "Hidden", icon: "eye.slash.fill")) {
-                    ForEach(hiddenSections, id: \.text) { section in
-                        HStack {
-                            Image(systemName: section.icon ?? "")
-                                .resizable()
-                                .aspectRatio(1, contentMode: .fit)
-                                .frame(width: 22)
-                                .foregroundColor(Color("ACSecondaryText"))
-                            
-                            Text(section.text)
-                                .font(.system(.body, design: .rounded))
-                            
-                            Spacer()
-                        }
-                    }
-                    .onMove(perform: onMove)
-                }
-            }
-            
         }
+        .onDisappear(perform: self.viewModel.saveSectionList)
         .listStyle(GroupedListStyle())
         .environment(\.editMode, $editMode)
         .navigationBarTitle("Today Sections")
@@ -89,18 +86,18 @@ struct TodaySectionEditView: View {
         VStack(alignment: .leading, spacing: 8) {
             Text("Drag and drop").fontWeight(.bold) + Text(" to re-order sections.")
             Text("Check or un-check").fontWeight(.bold) + Text(" rows to hide sections from the dashboard.")
-            Text("Your top-most section will be the default detail view on iPad and Mac.")
         }
         .padding(.vertical)
     }
     
     private func onMove(source: IndexSet, destination: Int) {
-        sections.move(fromOffsets: source, toOffset: destination)
+        print("Moving \(source.startIndex) to \(destination)")
+        viewModel.sectionOrder.move(fromOffsets: source, toOffset: destination)
     }
 }
 
 struct TodaySectionEditView_Previews: PreviewProvider {
     static var previews: some View {
-        TodaySectionEditView()
+        TodaySectionEditView(viewModel: DashboardViewModel())
     }
 }

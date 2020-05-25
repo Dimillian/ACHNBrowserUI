@@ -209,7 +209,7 @@ extension ItemDetailView {
                     Image(systemName: list.items.contains(self.itemViewModel.item) ? "checkmark.seal.fill": "checkmark.seal")
                         .foregroundColor(list.items.contains(self.itemViewModel.item) ? Color.acTabBarBackground : Color.acText)
                         .scaleEffect(list.items.contains(self.itemViewModel.item) ? 1.2 : 0.9)
-                        .animation(.spring())
+                        .animation(.spring(response: 0.5, dampingFraction: 0.3, blendDuration: 0.5))
                     UserListRow(list: list)
                 }.onTapGesture {
                     if let index = list.items.firstIndex(of: self.itemViewModel.item) {

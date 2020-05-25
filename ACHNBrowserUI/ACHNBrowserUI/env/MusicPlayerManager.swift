@@ -31,7 +31,14 @@ public class MusicPlayerManager: ObservableObject {
         }
     }
     
-    @Published public var songs: [String: Song] = [:]
+    @Published public var songs: [String: Song] = [:] {
+        didSet {
+            if currentSong == nil,
+                let random = songs.values.map({ $0 }).randomElement() {
+                currentSong = random
+            }
+        }
+    }
     @Published public var currentSongItem: Item?
     @Published public var currentSong: Song? {
         didSet {
@@ -55,6 +62,7 @@ public class MusicPlayerManager: ObservableObject {
     @Published public var playmode = PlayMode.stopEnd
     
     private var songsCancellable: AnyCancellable?
+    private var itemsCancellable: AnyCancellable?
     private var player: AVPlayer?
     
     init() {
@@ -64,8 +72,10 @@ public class MusicPlayerManager: ObservableObject {
             .eraseToAnyPublisher()
             .subscribe(on: DispatchQueue.global())
             .receive(on: DispatchQueue.main)
-            .sink(receiveValue: { [weak self] songs in self?.songs = songs })
-        
+            .sink(receiveValue: { [weak self] songs in
+                self?.songs = songs
+            })
+
         NotificationCenter.default.addObserver(forName: .AVPlayerItemDidPlayToEndTime,
                                                object: player?.currentItem,
                                                queue: .main) { [weak self] _ in
