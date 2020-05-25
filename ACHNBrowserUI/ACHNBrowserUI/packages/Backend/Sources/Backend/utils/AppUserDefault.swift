@@ -84,5 +84,8 @@ public class AppUserDefaults: ObservableObject {
 
     @UserDefault("spotlight_index_version", defaultValue: "")
     public var spotlightIndexVersion: String
+    
+    @UserDefault("number_of_launch", defaultValue: 0)
+    public var numberOfLaunch: Int
 }
 
