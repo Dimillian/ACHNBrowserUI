@@ -68,7 +68,8 @@ struct Sheet: View {
         case .userListForm(let list):
             return AnyView(UserListFormView(editingList: list))
         case .designForm(let design):
-            return AnyView(DesignFormView(design: design))
+            let viewModel = DesignFormViewModel(design: design)
+            return AnyView(DesignFormView(viewModel: viewModel))
         case .rearrange(let viewModel):
             return AnyView(NavigationView {
                 TodaySectionEditView(viewModel: viewModel)

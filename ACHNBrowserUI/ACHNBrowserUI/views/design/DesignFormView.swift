@@ -21,8 +21,8 @@ struct DesignFormView: View {
 
     // MARK: - Life cycle0
 
-    init(design: Design?) {
-        self.viewModel = DesignFormViewModel(design: design)
+    init(viewModel: DesignFormViewModel) {
+        self.viewModel = viewModel
     }
 
     var body: some View {
@@ -106,6 +106,13 @@ struct DesignFormView: View {
 
 struct DesignFormView_Previews: PreviewProvider {
     static var previews: some View {
-        DesignFormView(design: nil)
+        Group {
+            DesignFormView(viewModel: DesignFormViewModel(design: nil))
+
+            DesignFormView(viewModel: DesignFormViewModel(design: Design(title: "Jedi",
+                                                                         code: "MOPJ15LTDSXC4T",
+                                                                         description: "Jedi Tunic")))
+                .preferredColorScheme(.dark)
+        }
     }
 }
