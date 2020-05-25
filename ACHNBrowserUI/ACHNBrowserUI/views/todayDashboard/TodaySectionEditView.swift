@@ -8,6 +8,7 @@
 
 import SwiftUI
 import Backend
+import Combine
 
 struct TodaySectionEditView: View {
     @Environment(\.presentationMode) private var presentationMode
@@ -16,34 +17,6 @@ struct TodaySectionEditView: View {
 
     @State private var editMode = EditMode.active
 
-    private let textForSectionName = [
-        TodaySection.nameEvents: "Events",
-        TodaySection.nameSpecialCharacters: "Possible visitors",
-        TodaySection.nameCurrentlyAvailable: "Currently Available",
-        TodaySection.nameCollectionProgress: "Collection Progress",
-        TodaySection.nameBirthdays: "Today's Birthdays",
-        TodaySection.nameTurnips: "Turnips",
-        TodaySection.nameSubscribe: "Subscribe",
-        TodaySection.nameMysteryIsland: "Mystery Islands",
-        TodaySection.nameMusic: "Music player",
-        TodaySection.nameTasks: "Today's Tasks",
-        TodaySection.nameNookazon: "New on Nookazon"
-    ]
-    
-    private let iconForSectionName = [
-        TodaySection.nameEvents: "flag.fill",
-        TodaySection.nameSpecialCharacters: "clock",
-        TodaySection.nameCurrentlyAvailable: "calendar",
-        TodaySection.nameCollectionProgress: "chart.pie.fill",
-        TodaySection.nameBirthdays: "gift.fill",
-        TodaySection.nameTurnips: "dollarsign.circle.fill",
-        TodaySection.nameSubscribe: "suit.heart.fill",
-        TodaySection.nameMysteryIsland: "sun.haze.fill",
-        TodaySection.nameMusic: "music.note",
-        TodaySection.nameTasks: "checkmark.seal.fill",
-        TodaySection.nameNookazon: "cart.fill"
-    ]
-
     var body: some View {
         List(selection: self.$viewModel.selection) {
             Section(header: SectionHeaderView(text: "Drag & Drop to Rearrange",
@@ -51,13 +24,13 @@ struct TodaySectionEditView: View {
                     footer: self.footer) {
                 ForEach(viewModel.sectionOrder, id: \.name) { section in
                     HStack {
-                        Image(systemName: self.iconForSectionName[section.name] ?? "")
+                        Image(systemName: section.iconName)
                             .resizable()
                             .aspectRatio(1, contentMode: .fit)
                             .frame(width: 22)
-                            .foregroundColor(Color("ACSecondaryText"))
+                            .foregroundColor(.acSecondaryText)
                         
-                        Text(LocalizedStringKey(self.textForSectionName[section.name] ?? ""))
+                        Text(LocalizedStringKey(section.sectionName))
                             .font(.system(.body, design: .rounded))
                         
                         Spacer()
@@ -94,6 +67,40 @@ struct TodaySectionEditView: View {
     
     private func onMove(source: IndexSet, destination: Int) {
         viewModel.sectionOrder.move(fromOffsets: source, toOffset: destination)
+    }
+}
+
+extension TodaySection {
+    var sectionName: String {
+        switch name {
+        case .events: return "Events"
+        case .specialCharacters: return "Possible visitors"
+        case .currentlyAvailable: return "Currently Available"
+        case .collectionProgress: return "Collection Progress"
+        case .birthdays: return "Today's Birthdays"
+        case .turnips: return "Turnips"
+        case .subscribe: return "Subscribe"
+        case .mysteryIsland: return "Mystery Islands"
+        case .music: return "Music player"
+        case .tasks: return "Today's Tasks"
+        case .nookazon: return "New on Nookazon"
+        }
+    }
+
+    var iconName: String {
+        switch name {
+        case .events: return "flag.fill"
+        case .specialCharacters: return "clock"
+        case .currentlyAvailable: return "calendar"
+        case .collectionProgress: return "chart.pie.fill"
+        case .birthdays: return "gift.fill"
+        case .turnips: return "dollarsign.circle.fill"
+        case .subscribe: return "suit.heart.fill"
+        case .mysteryIsland: return "sun.haze.fill"
+        case .music: return "music.note"
+        case .tasks: return "checkmark.seal.fill"
+        case .nookazon: return "cart.fill"
+        }
     }
 }
 
