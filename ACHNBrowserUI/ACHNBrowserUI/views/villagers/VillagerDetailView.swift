@@ -13,6 +13,7 @@ import UI
 struct VillagerDetailView: View {
     @ObservedObject var viewModel: VillagerDetailViewModel
     @EnvironmentObject private var collection: UserCollection
+    
     @State private var backgroundColor = Color.acSecondaryBackground
     @State private var textColor = Color.acText
     @State private var secondaryTextColor = Color.acSecondaryText
