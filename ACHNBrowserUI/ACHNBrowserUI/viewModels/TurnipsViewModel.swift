@@ -22,7 +22,7 @@ class TurnipsViewModel: ObservableObject {
         
     var turnipsCancellable: AnyCancellable?
     var exchangeCancellable: AnyCancellable?
-        
+
     init() {
         turnipsCancellable = TurnipPredictionsService.shared.$predictions
             .receive(on: RunLoop.main)

@@ -25,9 +25,6 @@ public enum Category: String, CaseIterable {
         } else if itemCategory == "Bugs - North" || itemCategory == "Buhs - South" {
             self = .bugs
             return
-        } else if itemCategory == "Nook Miles" {
-            self = .nookmiles
-            return
         } else if itemCategory == "Dress-Up" {
             self = .dressup
             return
@@ -105,7 +102,9 @@ public enum Category: String, CaseIterable {
             return "furnitures"
         } else if APIClothing().contains(category) {
             return "clothing"
-        } else if category == .recipes {
+        } else if APIIslandDevelopment().contains(category) {
+            return "islanddevelopment"
+        } else if category == .recipes || category == .nookmiles || category == .construction {
             return category.rawValue
         }
         return nil
@@ -117,6 +116,10 @@ public enum Category: String, CaseIterable {
     
     public static func APIClothing() -> [Category] {
         [.accessories, .headwear, .tops, .bottoms, .dressup, .socks, .shoes, .bags]
+    }
+    
+    public static func APIIslandDevelopment() -> [Category] {
+        [.construction, .other, .fencing]
     }
     
     public static func collectionCategories() -> [Category] {
@@ -145,13 +148,17 @@ public enum Category: String, CaseIterable {
     }
     
     public static func nature() -> [Category] {
-        return [.fish, .bugs, .fossils]
+        [.fish, .bugs, .fossils]
     }
     
     public static func icons() -> [Category] {
-        return  [.housewares, .recipes, .floors, .rugs, .wallpapers, .posters,
+        [.housewares, .recipes, .floors, .rugs, .wallpapers, .posters,
                 .fencing, .music, .tools, .nookmiles, .construction, .tops,
                  .bottoms, .dressup, .headwear, .accessories, .socks, .bags, .umbrellas,
                  .fish, .bugs, .fossils]
+    }
+    
+    public static func villagersGifts() -> [Category] {
+        [.tops, .dressup, .headwear, .accessories]
     }
 }

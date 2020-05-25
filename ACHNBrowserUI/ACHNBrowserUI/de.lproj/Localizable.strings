@@ -8,7 +8,7 @@
 
 "Tap here to preview a notification" = "Tippe hier für eine Vorschau";
 "Upgrade to +" = "Upgrade auf +";
-"You're subscribed to AC Helper+" = "You're subscribed to AC Helper+";
+"You're subscribed to AC Helper+" = "Du abonnierst AC Helper+";
 
 // copy and paste "export"  of Text() and similar SwiftUI functions
 // Global
@@ -83,9 +83,8 @@
 "AC Helper+" = "AC Helper+";
 "ACHelperPlusDescription" = "Das AC Helper+ Abonnement ist ein guter Weg deine Unterstützung für unser kostenloses Open Source Projekt. ♥️
 
-Außerdem erhältst du Zugriff auf exklusive, großartige Funktionen: Rüben Prognose Benachrichtigungen und beliebig viele Gegenstands-Listen! 📈
+Außerdem erhältst du Zugriff auf exklusive, großartige Funktionen: Rüben Prognose Benachrichtigungen und beliebig viele Gegenstands-Listen! 📈";
 
-Weitere Details unten.";
 "ACHelperPlusDetails" = "Über die Benachrichtigungs-Funktion:
 Jeden Tag um 8 und 12 Uhr wirst du eine Benachrichtigung mit dem prognostizierten, durchschnittlichen Ankaufspreis bei Nepp und Schlepp erhalten.
 Je mehr Ankaufspreise du in der App ab montags morgens speicherst, um so genauer wird die nächste Prognose sein!
@@ -93,12 +92,14 @@ Je mehr Ankaufspreise du in der App ab montags morgens speicherst, um so genauer
 Über die Listen-Funktion:
 Ohne Abonnement kannst du nur eine Liste mit Gegenständen im \"Meine Sachen\" Register erstellen.
 Wenn du dir AC Helper+ holst, kannst du beliebig viele Listen erstellen und unterschiedlich befüllen.";
-"ACHelperPlusPriceAndAboDetail %@" = "Ein monatliches Abo über %@ pro Monat wird nach der Bestätigung deinem iTunes Konto hinzugefügt.
+"ACHelperPlusPriceAndAboDetail %@ %@" = "Ein monatliches Abo über %@ pro Monat wird nach der Bestätigung deinem iTunes Konto hinzugefügt.
 Das Abonnement verlängert sich automatisch, solange es nicht bis 24 Stunden vor der nächsten Verlängerung beendet wird.
 Du kannst das Abonnement jederzeit in deinen iTunes Kontoeinstellungen beenden. Jeder nicht genutzte Teil einer kostenlosen Testversion verfällt, wenn du ein Abonnement abschließt.";
 "Subscribe for %@ / Month" = "Abonnieren für %@ / Monat";
 "Buy lifetime AC Helper+ for %@" = "Lebenslang für %@ kaufen";
 "Thank you for your support!" = "Vielen Dank für deine Unterstützung!";
+"%@ Monthly" = "%@ / Monat";
+"%@ Yearly" = "%@ / Jahr";
 
 // AboutView
 "About" = "Über";
@@ -225,7 +226,7 @@ Du kannst das Abonnement jederzeit in deinen iTunes Kontoeinstellungen beenden. 
 "Small" = "Klein";
 "Medium" = "Mittel";
 "Large" = "Groß";
-"X-Large" = "Sehr groß";
+"X-Large" = "Sehr groß";
 "Customizable: %@" = "Veränderbar: %@";
 "Flick:" = "Carlson:";
 "C.J:" = "Lomeus:";
@@ -358,6 +359,8 @@ Du kannst das Abonnement jederzeit in deinen iTunes Kontoeinstellungen beenden. 
 "Squirrel" = "Eichhörnchen";
 "Tiger" = "Tieger";
 "Wolf" = "Wolf";
+"Like" = "Mag";
+"Gifts ideas" = "Geschenkideen";
 
 // ListingRow
 "Make an Offer" = "Angebot abgeben";
@@ -387,7 +390,7 @@ Du kannst das Abonnement jederzeit in deinen iTunes Kontoeinstellungen beenden. 
 "music" = "Musik";
 "recipes" = "Anleitungen";
 "construction" = "Bau";
-"nookmiles" = "Nook Miles";
+"nookmiles" = "Nook Meilen";
 "other" = "Anderes";
 "art" = "Kunst";
 "bugs" = "Insekten";
@@ -774,6 +777,44 @@ Du kannst das Abonnement jederzeit in deinen iTunes Kontoeinstellungen beenden. 
 "Lots of cliffs, waterfalls and river forks. Normal resource spawns." = "Viele Klippen, Wasserfälle und Flussverzweigungen. Die verkommenden Ressourcen sind normal.";
 "A very rare island with flowers, scorpions and a rectangular pond. If you climb up onto the cliff and climb down from the back, you can vault over to a tiny island in the middle and get 8 gold nuggets from a single rock." = "Eine sehr seltene Insel mit Blumen, Skorpionen und einem rechteckigen Teich. Wenn du die Klippe hinauf kletters und auf der Rückseite wieder herunter, kannst du mit dem Sprungstab eine kleine Insel erreichen auf der du vom Fels 8 Golderz bekommst.";
 
+// Added 2020-05-20
+"Same color" = "Gleiche Farbe";
+// New settings
+"Using iCloud sync" = "iCloud Synchronisierung aktiv";
+"Synchronized with iCloud" = "Mit iCloud synchronisiert";
+
+// New card
 "Possible visitors" = "Mögliche Besucher";
-"On" = "Au";
+"On" = "Auf";
 " your island" = " deiner Insel";
+"From 6pm to 5am" = "Von 18 bis 5 Uhr";
+"From 8pm to 5am" = "Von 20 bis 5 Uhr";
+"From 5am to 12pm" = "Von 5 bis 0 Uhr";
+
+//Special characters
+"K.K Slider" = "K.K. Slider";
+"Daisy Mae" = "Jorna";
+"C.J" = "Lomeus";
+"Flick" = "Carlson";
+"Kicks" = "Schubert";
+"Saharah" = "Aziza";
+"Label" = "Minna";
+"Leif" = "Gerd";
+"Redd" = "Reiner";
+"Wisp" = "Buh";
+"Celeste" = "Eufemia";
+
+// Added 2020-05-23
+"Museum Day" = "Internationaler Museumstag";
+"Wedding Season" = "Hochzeitssaison";
+"Bug-Off contest" = "Insektikus-Turnier";
+"Meteor shower" =  "Sternschnuppen";
+
+// Added 2020-05-23
+"Reset" = "Zurücksetzen";
+"View Turnip.Exchange islands" = "Zeige Turnip.Exchange Inseln";
+"View on TurnipProphet" = "Auf TurnipProphet ansehen";
+
+// Added 2020-05-24
+"Music player" = "Musikplayer";
+"Tracks" = "Lieder";

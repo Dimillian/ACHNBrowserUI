@@ -19,6 +19,17 @@ public class TurnipPredictionsService: ObservableObject {
         }
     }
     public var enableNotifications: Bool?
+    public var turnipProhetUrl: URL? {
+        guard let fields = fields, !fields.buyPrice.isEmpty else {
+            return nil
+        }
+        var base = "https://turnipprophet.io/?prices=\(fields.buyPrice)."
+        for field in fields.fields {
+            base += field.isEmpty ? "." : "\(field)."
+        }
+        base += "&first=false&pattern=-1&achelper"
+        return URL(string: base)
+    }
     
     private var turnipsCancellable: AnyCancellable?
     private lazy var calculatorContext: JSContext? = {
@@ -58,10 +69,29 @@ public class TurnipPredictionsService: ObservableObject {
     private func calculate(values: TurnipFields) -> TurnipPredictions {
         let call = "calculate([\(values.buyPrice),\(values.fields.filter{ !$0.isEmpty }.joined(separator: ","))])"
         let results = calculatorContext?.evaluateScript(call)
-        
+
+        let averagePrices: [Int]? = (results?.toDictionary()["avgPattern"] as? [Int])?
+            .enumerated()
+            .map({ index, value in
+                guard let enteredValue = Int(values.fields[index]) else {
+                    return value
+                }
+                return enteredValue
+        })
+
+        let minMax: [[Int]]? = (results?.toDictionary()["minMaxPattern"] as? [[Int]])?
+            .enumerated()
+            .map({ index, value in
+                guard let enteredValue = Int(values.fields[index]) else {
+                    return value
+                }
+                return [enteredValue, enteredValue]
+            })
+
         var averageProfits: [Int]?
-        if let averagePrices = results?.toDictionary()["avgPattern"] as? [Int],
-            values.amount > 0, let buyPrice = Int(values.buyPrice){
+        if let averagePrices = averagePrices,
+            values.amount > 0,
+            let buyPrice = Int(values.buyPrice) {
             averageProfits = []
             let investment = values.amount * buyPrice
             for avg in averagePrices {
@@ -70,8 +100,8 @@ public class TurnipPredictionsService: ObservableObject {
         }
         
         return TurnipPredictions(minBuyPrice: results?.toDictionary()["minWeekValue"] as? Int,
-                                 averagePrices: results?.toDictionary()["avgPattern"] as? [Int],
-                                 minMax: results?.toDictionary()["minMaxPattern"] as? [[Int]],
+                                 averagePrices: averagePrices,
+                                 minMax: minMax,
                                  averageProfits: averageProfits)
     }
 }

@@ -81,16 +81,20 @@ struct ActiveCrittersView: View {
     
     var body: some View {
         List {
-            Picker(selection: $selectedTab, label: Text("")) {
-                ForEach(Tab.allCases, id: \.self) { tab in
-                    Text(LocalizedStringKey(tab.rawValue)).tag(tab.rawValue)
+            if activeBugs.isEmpty || activeFishes.isEmpty {
+                RowLoadingView(isLoading: .constant(true))
+            } else {
+                Picker(selection: $selectedTab, label: Text("")) {
+                    ForEach(Tab.allCases, id: \.self) { tab in
+                        Text(LocalizedStringKey(tab.rawValue)).tag(tab.rawValue)
+                    }
                 }
+                .pickerStyle(SegmentedPickerStyle())
+                .listRowBackground(Color.acBackground)
+                ActiveCritterSections(selectedTab: $selectedTab,
+                                      activeFishes: activeFishes,
+                                      activeBugs: activeBugs)
             }
-            .pickerStyle(SegmentedPickerStyle())
-            .listRowBackground(Color.acBackground)
-            ActiveCritterSections(selectedTab: $selectedTab,
-                                  activeFishes: activeFishes,
-                                  activeBugs: activeBugs)
         }
         .listStyle(GroupedListStyle())
         .environment(\.horizontalSizeClass, .regular)

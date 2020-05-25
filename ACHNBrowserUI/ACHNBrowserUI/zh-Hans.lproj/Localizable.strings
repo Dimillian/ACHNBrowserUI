@@ -10,7 +10,7 @@
 "Upgrade to +" = "升级到 +";
 "You're subscribed to AC Helper+" = "你已经订阅 AC Helper+";
 
-"ACHelperPlusPriceAndAboDetail %@" = "确认订阅之后 %@ 每个月购买将会出现在您的 iTunes 账号中。
+"ACHelperPlusPriceAndAboDetail %@ %@" = "确认订阅之后 %@ 每个月购买将会出现在您的 iTunes 账号中。
 订阅将会自动更新除非你在期间结束的 24 小时前取消订阅。
 您能够随时在您的 iTunes 账号中取消订阅，你过你在使用期间内取消，可能会立即无法使用+功能。";
 

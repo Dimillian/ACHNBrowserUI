@@ -73,14 +73,15 @@ struct LikeButtonView: View {
         }) {
             Image(systemName: imageName).foregroundColor(color)
         }
-        .scaleEffect(self.isInCollection ? 1.2 : 1.0)
+        .scaleEffect(self.isInCollection ? 1.3 : 1.0)
         .buttonStyle(BorderlessButtonStyle())
-        .animation(.interactiveSpring())
+        .animation(.spring(response: 0.5, dampingFraction: 0.3, blendDuration: 0.5))
     }
 }
 
 struct StarButtonView_Previews: PreviewProvider {
     static var previews: some View {
         LikeButtonView(item: static_item)
+            .environmentObject(UserCollection.shared)
     }
 }

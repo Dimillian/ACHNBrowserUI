@@ -77,6 +77,8 @@ extension View {
             .offset(x:offset)
         )
     }
+
+    func eraseToAnyView() -> AnyView { AnyView(self) }
 }
 
 extension View {

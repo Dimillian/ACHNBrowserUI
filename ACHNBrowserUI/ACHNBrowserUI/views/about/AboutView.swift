@@ -93,7 +93,7 @@ struct AboutView: View {
                                   color: .acHeaderBackground)
                     makeDetailRow(image: "gamecontroller",
                                   text: "Game patch data",
-                                  detail: "1.2.0",
+                                  detail: "1.2.1",
                                   color: .acHeaderBackground)
                 }
                 Section(header: SectionHeaderView(text: "Acknowledgements")) {

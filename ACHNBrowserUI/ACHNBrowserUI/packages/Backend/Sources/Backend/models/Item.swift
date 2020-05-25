@@ -41,7 +41,7 @@ public struct Item: Codable, Equatable, Identifiable, Hashable {
     
     public var localizedName: String {
         if let id = internalID {
-            return LocalizedItemService.shared.localizedNameFor(itemId: id) ?? name
+            return LocalizedItemService.shared.localizedNameFor(category: appCategory, itemId: id) ?? name
         }
         return name
     }
@@ -52,11 +52,11 @@ public struct Item: Codable, Equatable, Identifiable, Hashable {
     public let house: String?
     public let itemImage: String?
     public var finalImage: String? {
-        if let filename = filename {
-            return filename
-        } else if let image = image, !image.hasPrefix("https://storage") {
+        if let image = image, image.hasPrefix("https://acnhcdn") || image.hasPrefix("https://i.imgur")  {
             return image
-        } else if let itemImage = itemImage {
+        } else if let filename = filename {
+            return filename
+        }  else if let itemImage = itemImage {
             return itemImage
         }
         return nil
@@ -88,6 +88,7 @@ public struct Item: Codable, Equatable, Identifiable, Hashable {
     public let activeTimes: [[String: Int]]?
     public let set: String?
     public let tag: String?
+    public let styles: [String]?
     public let themes: [String]?
     public let colors: [String]?
 }
@@ -176,5 +177,6 @@ public let static_item = Item(name: "Acoustic guitar",
                        activeTimes: nil,
                        set: nil,
                        tag: "Instrument",
+                       styles: nil,
                        themes: nil,
                        colors: nil)

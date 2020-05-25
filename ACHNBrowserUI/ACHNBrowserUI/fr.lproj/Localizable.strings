@@ -29,7 +29,7 @@ Localizable.strings
 "Dashboard" = "Dashboard";
 "Catalog" = "Catalogue";
 "Turnips" = "Navets";
-"Villagers" = "Habitants";
+"Villagers" = "Villageois";
 "Collection" = "Collection";
 
 // TodayView
@@ -37,12 +37,11 @@ Localizable.strings
 // TodaySectionEditView
 "Drag & Drop to Rearrange" = "Glisser-déposer pour réorganiser";
 "Hidden" = "Caché";
-"Today Sections" = "Sections d'aujourd'hui";
+"Today Sections" = "Sections du dashboard";
 "Done" = "Terminé";
 " to re-order sections." = " pour réorganiser les sections.";
 "Check or un-check" = "Cochez ou décochez";
-" rows to hide sections from the dashboard." = " rows to hide sections from the dashboard.";
-"Your top-most section will be the default detail view on iPad and Mac." = "Your top-most section will be the default detail view on iPad and Mac.";
+" rows to hide sections from the dashboard." = " pour cacher les sections du dashboard";
 // TodayBirthdaySection
 "Birthdays" = "Anniversaires";
 "Today's Birthdays" = "Anniversaires aujourd'hui";
@@ -84,9 +83,7 @@ Localizable.strings
 "AC Helper+" = "AC Helper+";
 "ACHelperPlusDescription" = "Souscrire à AC Helper+ est une très bonne façon de montrer votre support à notre projet open source et gratuit.♥️
 
-Vous aurez aussi accès à d'autres fonctionnalités, comme les prédictions sur le prix des navets et la possibilité de créer plus d'une liste d'objets!  📈
-
-Plus d'information plus en dessous.";
+Vous aurez aussi accès à d'autres fonctionnalités, comme les prédictions sur le prix des navets et la possibilité de créer plus d'une liste d'objets! 📈";
 
 "ACHelperPlusDetails" = "À propos de la fonctionnalité de notification:
 Tous les jours à 8H et 12H vous allez recevoir une notification avec le prix moyen d'achat dans votre magasin.
@@ -96,12 +93,15 @@ Plus vous rajouté de prix du jeux après lundi matin dans l'application, plus l
 Dans l'application gratuite, vous pouvez créer seulement une seule liste d'objets dans votre onglet collection.
 Une fois que vous aurez souscrit à AC Helper +, vous pourrez créer autant de liste que vous voudrez.";
 
-"ACHelperPlusPriceAndAboDetail %@" = "A %@ per month purchase will be applied to your iTunes account on confirmation.
+"ACHelperPlusPriceAndAboDetail %@ %@" = "A %@ per month or %@ per year purchase will be applied to your iTunes account on confirmation.
 Subscriptions will automatically renew unless canceled within 24-hours before the end of the current period.
 You can cancel anytime with your iTunes account settings. Any unused portion of a free trial will be forfeited if you purchase a subscription.";
 "Subscribe for %@ / Month" = "Souscrire pour %@ / Mois";
+"%@ Monthly" = "%@ / Mois";
+"%@ Yearly" = "%@ / An";
 "Buy lifetime AC Helper+ for %@" = "Acheter à vie pour %@";
 "Thank you for your support!" = "Merci pour votre soutien !";
+"Thanks!" = "Merci !";
 
 // AboutView
 "About" = "À propos";
@@ -206,8 +206,6 @@ You can cancel anytime with your iTunes account settings. Any unused portion of 
 "Rarity:" = "Rareté:";
 "Shadow size:" = "Ombre:";
 "Customizable: %@" = "Customisable: %@";
-"Flick:" = "Djason:";
-"C.J:" = "Pollux:";
 "Yes" = "Oui";
 "No" = "Non";
 "Common" = "Commun";
@@ -244,6 +242,7 @@ You can cancel anytime with your iTunes account settings. Any unused portion of 
 "Add your in game prices" = "Ajouter vos prix du jeu";
 "Turnips prediction" = "Prédition des navets";
 "To help us support the application and get turnip predictions notification, you can try out AC Helper+" = "Pour nous aider à supporter l'application et recevoir des notifications sur les prédictions du prix des navets, vous pouvez souscrire à AC Helper+";
+"To help us support the application and get background playing of all the musics, you can try out AC Helper+" = "Pour nous aider à supporter l'application et pouvoir jouer les musiques en arrière-plan, vous pouvez souscrire à AC Helper+";
 "%lld upcomingDailyNotifications" = "Vous allez recevoir %lld prochaines notifications.";
 "Profits estimates are computed using the average of the current period" = "Les bénéfices sont calculés par rapport au prix moyen de la période courante";
 "Day" = "Day";
@@ -270,6 +269,9 @@ You can cancel anytime with your iTunes account settings. Any unused portion of 
 "Buy price" = "Prix d'achat";
 "Amount bought" = "Nombre acheté";
 "The more in game buy prices you'll add the better the predictions will be. Your buy price only won't give your correct averages. Add prices from the game as you get them daily." = "Plus vous aller rajouter vos prix d'achat dans le jeu plus les prochaines prédictions seront précises.";
+"View on TurnipProphet" = "Voir sur TurnipProphet";
+"View Turnip.Exchange islands" = "Voir les îles de Turnip.Exchange";
+
 // TurnipsChartTopLegendView
 "Average" = "Moyenne";
 "Minimum" = "Minimum";
@@ -283,14 +285,15 @@ You can cancel anytime with your iTunes account settings. Any unused portion of 
 "Loading Visitors...." = "Chargement des visiteurs....";
 
 // VillagersListView
-"Search a villager" = "Rechercher un habitant";
+"Search a villager" = "Rechercher un villageois";
 "Personality" = "Personnalité";
 "Birthday" = "Anniversaire";
 "Species" = "Espèce";
 "Gender" = "Genre";
 "Catch phrase" = "Slogan";
 "Unknown" = "Inconnu";
-"Villager items" = "Objets de l'habitant";
+"Villager items" = "Objets du villageois";
+"Sort villagers" = "Trier les villageois";
 
 // VillagersDetailView
 "Unkown" = "Inconnu";
@@ -339,6 +342,8 @@ You can cancel anytime with your iTunes account settings. Any unused portion of 
 "Squirrel" = "Écureuil";
 "Tiger" = "Tigre";
 "Wolf" = "Loup";
+"Like" = "Aime";
+"Gifts ideas" = "Idées de cadeaux";
 
 // ListingRow
 "Make an Offer" = "Faire une offre";
@@ -405,7 +410,7 @@ You can cancel anytime with your iTunes account settings. Any unused portion of 
 "Reset my collection" = "Supprimer ma collection";
 "Your AC Helper collection file was imported with success." = "Votre collection AC Helper a été importée avec succès.";
 "Are you sure?" = "Êtes-vous-sûr ?";
-"This will delete all your collected critters, items, villagers and items lists" = "Cette action va supprimer tous vos poissons, insectes, objets, habitants, ainsi que vos listes d'objets.";
+"This will delete all your collected critters, items, villagers and items lists" = "Cette action va supprimer tous vos poissons, insectes, objets, villageois, ainsi que vos listes d'objets.";
 
 //Added 05-17-2020
 "Mystery Islands" = "Îles Mystères";
@@ -516,3 +521,32 @@ You can cancel anytime with your iTunes account settings. Any unused portion of 
 "Possible visitors" = "Visiteurs possible";
 "On" = "Sur";
 " your island" = " votre île";
+"All day" = "Toute la journée";
+"From 6pm to 5am" = "De 18H à 5H";
+"From 8pm to 5am" = "De 20H à 5H";
+"From 5am to 12pm" = "De 5H à 12H";
+
+
+//Special characters
+"K.K Slider" = "Kéké Laglisse";
+"Daisy Mae" = "Porcelette";
+"C.J" = "Pollux";
+"Flick" = "Djason";
+"Kicks" = "Blaise";
+"Saharah" = "Sarah";
+"Label" = "Maria";
+"Leif" = "Racine";
+"Redd" = "Rounard";
+"Wisp" = "Follet";
+"Celeste" = "Céleste";
+
+// Events
+"Museum Day" = "Journée internationale des musées";
+"Wedding Season" = "Saison des mariages";
+"Bug-Off contest" = "Insectosafari";
+"Meteor shower" =  "Pluie d´étoiles filantes";
+
+// Musics
+"Music player" = "Lecteur de musique";
+"Tracks" = "Musiques";
+

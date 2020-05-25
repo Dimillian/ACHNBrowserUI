@@ -13,7 +13,7 @@ struct CategoryRowView: View {
     let category: Backend.Category
     
     var body: some View {
-        NavigationLink(destination: ItemsListView(viewModel: ItemsViewModel(category: category))) {
+        NavigationLink(destination: ItemsListView(category: category)) {
             HStack {
                 Image(category.iconName())
                     .renderingMode(.original)
