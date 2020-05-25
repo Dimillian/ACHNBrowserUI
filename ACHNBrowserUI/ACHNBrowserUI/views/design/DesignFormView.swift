@@ -53,7 +53,6 @@ struct DesignFormView: View {
                     Spacer()
                     TextField("Short description about creator/item", text: $viewModel.design.description)
                         .foregroundColor(.acText)
-                        .lineLimit(3)
                 }
             }
             .navigationBarTitle("Add design")
