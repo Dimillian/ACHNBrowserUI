@@ -19,11 +19,10 @@ struct TodayView: View {
     @EnvironmentObject private var collection: UserCollection
     @EnvironmentObject private var subManager: SubscriptionManager
     @EnvironmentObject private var items: Items
-    @ObservedObject private var userDefaults = AppUserDefaults.shared
-    @ObservedObject private var viewModel = DashboardViewModel()
-    @ObservedObject private var villagersViewModel = VillagersViewModel()
-    @ObservedObject private var turnipsPredictionsService = TurnipPredictionsService.shared
+    @EnvironmentObject private var userDefaults: AppUserDefaults
     
+    @ObservedObject private var viewModel = DashboardViewModel()
+
     @State private var selectedSheet: Sheet.SheetType?
     @State private var showWhatsNew: Bool = false
         
@@ -54,21 +53,14 @@ struct TodayView: View {
                 }
 
                 Group {
-                    TodayEventsSection()
-                    TodaySpecialCharactersSection()
-                    TodayCurrentlyAvailableSection(viewModel: viewModel)
-                    TodayCollectionProgressSection(viewModel: viewModel, sheet: $selectedSheet)
-                    TodayBirthdaysSection(villagers: villagersViewModel.todayBirthdays)
-                    TodayTurnipSection(predictions: turnipsPredictionsService.predictions)
-                        .onTapGesture {
-                            self.uiState.selectedTab = .turnips
+                    ForEach(viewModel.sectionOrder, id: \.self) { section in
+                        // The required data could be refactored into the model.
+                        TodaySectionView(section: section,
+                                         viewModel: self.viewModel,
+                                         selectedSheet: self.$selectedSheet)
                     }
-                    TodayTasksSection()
-                    // TodayNookazonSection(sheet: $selectedSheet, viewModel: viewModel)
-                    TodaySubscribeSection(sheet: $selectedSheet)
-                    TodayMusicPlayerSection()
-                    TodayMysteryIslandsSection()
-                    // self.arrangeSectionsButton
+
+                    self.arrangeSectionsButton
                 }
             }
             .listStyle(GroupedListStyle())
@@ -81,10 +73,10 @@ struct TodayView: View {
                                activeBugs: bugsAvailable)
         }
     }
-            
+
     var arrangeSectionsButton: some View {
         Section {
-            Button(action: { self.selectedSheet = .rearrange }) {
+            Button(action: { self.selectedSheet = .rearrange(viewModel: self.viewModel) }) {
                 HStack {
                     Image(systemName: "arrow.up.arrow.down")
                         .font(.system(.body, design: .rounded))

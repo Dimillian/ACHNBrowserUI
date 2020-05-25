@@ -11,10 +11,10 @@ import Backend
 import UI
 
 struct TodayBirthdaysSection: View {
-    var villagers: [Villager]
+    @ObservedObject private var viewModel = VillagersViewModel()
 
     var headerText: String {
-        villagers.count > 1 ? "Today's Birthdays" : "Today's Birthday"
+        viewModel.todayBirthdays.count > 1 ? "Today's Birthdays" : "Today's Birthday"
     }
     
     private func formattedDate(for villager: Villager) -> Date {
@@ -39,10 +39,10 @@ struct TodayBirthdaysSection: View {
 
     var body: some View {
         Section(header: SectionHeaderView(text: headerText, icon: "gift.fill")) {
-            if villagers.isEmpty {
+            if viewModel.todayBirthdays.isEmpty {
                 RowLoadingView(isLoading: .constant(true))
             } else {
-                ForEach(villagers, id: \.id) { villager in
+                ForEach(viewModel.todayBirthdays, id: \.id) { villager in
                     NavigationLink(destination: VillagerDetailView(villager: villager)) {
                         self.makeCell(for: villager)
                     }
@@ -90,7 +90,7 @@ struct TodayBirthdaysSection_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
             List {
-                TodayBirthdaysSection(villagers: [static_villager])
+                TodayBirthdaysSection()
             }
             .listStyle(GroupedListStyle())
             .environment(\.horizontalSizeClass, .regular)
