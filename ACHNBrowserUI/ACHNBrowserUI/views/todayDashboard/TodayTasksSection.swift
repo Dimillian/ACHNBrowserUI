@@ -50,6 +50,10 @@ struct TodayTasksSection: View {
             }
             self.collection.updateProgress(taskName: taskName)
         }
+        .onLongPressGesture {
+            guard task.hasProgress else { return }
+            self.collection.resetProgress(taskName: taskName)
+        }
     }
     
     var body: some View {

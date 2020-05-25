@@ -92,9 +92,14 @@ public class UserCollection: ObservableObject {
         return added
     }
     
-    public func
-        updateProgress(taskName: DailyTasks.taskName) {
+    public func updateProgress(taskName: DailyTasks.taskName) {
         dailyTasks.tasks[taskName]?.curProgress += 1
+        dailyTasks.lastUpdate = Date()
+        save()
+    }
+
+    public func resetProgress(taskName: DailyTasks.taskName) {
+        dailyTasks.tasks[taskName]?.curProgress = 0
         dailyTasks.lastUpdate = Date()
         save()
     }
