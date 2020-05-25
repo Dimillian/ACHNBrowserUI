@@ -28,25 +28,24 @@ struct CategoriesView: View {
     var body: some View {
         NavigationView {
             List {
-                Section(header: SearchField(searchText: $viewModel.searchText)) {
-                        if viewModel.searchText.isEmpty {
-                            makeSubCategories(name: "Nature",
-                                              icon: Backend.Category.fossils.iconName(),
-                                              categories: Backend.Category.nature())
-                            makeSubCategories(name: "Wardrobe",
-                                              icon: Backend.Category.dressup.iconName(),
-                                              categories: Backend.Category.wardrobe())
-                            makeCategories()
-                        } else {
-                            if viewModel.isLoadingData {
-                                RowLoadingView(isLoading: $isLoadingData)
-                            } else if searchCategories.isEmpty {
-                                Text("No results for \(viewModel.searchText)")
-                                    .foregroundColor(.acSecondaryText)
-                            } else {
-                                ForEach(searchCategories, id: \.0, content: searchSection)
-                            }
-                        }
+                SearchField(searchText: $viewModel.searchText)
+                if viewModel.searchText.isEmpty {
+                    makeSubCategories(name: "Nature",
+                                      icon: Backend.Category.fossils.iconName(),
+                                      categories: Backend.Category.nature())
+                    makeSubCategories(name: "Wardrobe",
+                                      icon: Backend.Category.dressup.iconName(),
+                                      categories: Backend.Category.wardrobe())
+                    makeCategories()
+                } else {
+                    if viewModel.isLoadingData {
+                        RowLoadingView(isLoading: $isLoadingData)
+                    } else if searchCategories.isEmpty {
+                        Text("No results for \(viewModel.searchText)")
+                            .foregroundColor(.acSecondaryText)
+                    } else {
+                        ForEach(searchCategories, id: \.0, content: searchSection)
+                    }
                 }
             }
             .listStyle(GroupedListStyle())
