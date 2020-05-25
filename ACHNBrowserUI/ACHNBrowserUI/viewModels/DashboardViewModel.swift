@@ -37,7 +37,6 @@ class DashboardViewModel: ObservableObject {
             }
         }
         AppUserDefaults.shared.todaySectionList = sectionOrder
-        objectWillChange.send()
     }
 
     private func loadSectionList() {

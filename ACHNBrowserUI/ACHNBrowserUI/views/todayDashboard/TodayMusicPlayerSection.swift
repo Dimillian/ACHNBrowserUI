@@ -30,12 +30,6 @@ struct TodayMusicPlayerSection: View {
             } else {
                 RowLoadingView(isLoading: .constant(true))
             }
-        }.onAppear {
-            if self.musicPlayerManager.currentSong == nil,
-                let random = self.items.categories[.music]?.randomElement(),
-                let song = self.musicPlayerManager.matchSongFrom(item: random) {
-                self.musicPlayerManager.currentSong = song
-            }
         }
     }
     
