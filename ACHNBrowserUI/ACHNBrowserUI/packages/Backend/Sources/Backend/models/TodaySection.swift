@@ -7,42 +7,43 @@
 
 import Foundation
 
-public struct TodaySection: Codable, Hashable, Equatable {
-    public static let nameEvents = "events"
-    public static let nameSpecialCharacters = "specialCharacters"
-    public static let nameCurrentlyAvailable = "currentlyAvailable"
-    public static let nameCollectionProgress = "collectionProgress"
-    public static let nameBirthdays = "birthdays"
-    public static let nameTurnips = "turnips"
-    public static let nameSubscribe = "subscribe"
-    public static let nameMysteryIsland = "mysteryIsland"
-    public static let nameMusic = "music"
-    public static let nameTasks = "tasks"
-    public static let nameNookazon = "nookazon"
+public struct TodaySection: Codable, Hashable, Identifiable {
+    public let name: Name
+    public var enabled: Bool
+    public var id: Name { name }
 
-    public static let defaultSectionList: [TodaySection] = [
-        TodaySection(name: Self.nameEvents, enabled: true),
-        TodaySection(name: Self.nameSpecialCharacters, enabled: true),
-        TodaySection(name: Self.nameCurrentlyAvailable, enabled: true),
-        TodaySection(name: Self.nameCollectionProgress, enabled: true),
-        TodaySection(name: Self.nameBirthdays, enabled: true),
-        TodaySection(name: Self.nameTurnips, enabled: true),
-        TodaySection(name: Self.nameTasks, enabled: true),
-        TodaySection(name: Self.nameSubscribe, enabled: true),
-        TodaySection(name: Self.nameMusic, enabled: true),
-        //TodaySection(name: Self.nameNookazon, enabled: true)
-        TodaySection(name: Self.nameMysteryIsland, enabled: true),
-    ]
-    
-    public static func == (lhs: TodaySection, rhs: TodaySection) -> Bool {
-        return lhs.name == rhs.name
-    }
-
-    public init(name: String, enabled: Bool) {
+    public init(name: Name, enabled: Bool) {
         self.name = name
         self.enabled = enabled
     }
+}
 
-    public let name: String
-    public var enabled: Bool
+extension TodaySection {
+    public enum Name: String, Codable {
+        case events
+        case specialCharacters
+        case currentlyAvailable
+        case collectionProgress
+        case birthdays
+        case turnips
+        case subscribe
+        case mysteryIsland
+        case music
+        case tasks
+        case nookazon
+    }
+
+    public static let defaultSectionList: [TodaySection] = [
+        TodaySection(name: .events, enabled: true),
+        TodaySection(name: .specialCharacters, enabled: true),
+        TodaySection(name: .currentlyAvailable, enabled: true),
+        TodaySection(name: .collectionProgress, enabled: true),
+        TodaySection(name: .birthdays, enabled: true),
+        TodaySection(name: .turnips, enabled: true),
+        TodaySection(name: .tasks, enabled: true),
+        TodaySection(name: .subscribe, enabled: true),
+        TodaySection(name: .music, enabled: true),
+        //TodaySection(name: .nameNookazon, enabled: true)
+        TodaySection(name: .mysteryIsland, enabled: true),
+    ]
 }

@@ -15,7 +15,7 @@ class DashboardViewModel: ObservableObject {
     @Published var island: Island?
     @Published var sectionOrder: [TodaySection]
     
-    public var selection = Set<String>()
+    public var selection = Set<TodaySection.Name>()
     private var listingCancellable: AnyCancellable?
     private var islandCancellable: AnyCancellable?
     
@@ -25,9 +25,8 @@ class DashboardViewModel: ObservableObject {
     }
 
     public func saveSectionList() {
-        for index in 0..<sectionOrder.count {
-            let name = sectionOrder[index].name
-            if !selection.contains(name) && name != TodaySection.nameSubscribe {
+        for (index, section) in sectionOrder.enumerated() {
+            if !selection.contains(section.name) && section.name != .subscribe {
                 sectionOrder[index].enabled = false
             } else {
                 sectionOrder[index].enabled = true
@@ -43,11 +42,7 @@ class DashboardViewModel: ObservableObject {
                 sectionOrder.append(TodaySection(name: section.name, enabled: true))
             }
         }
-        sectionOrder.forEach { (section) in
-            if section.enabled {
-                selection.insert(section.name)
-            }
-        }
+        selection = Set(sectionOrder.filter(\.enabled).map(\.name))
     }
         
     func fetchListings() {

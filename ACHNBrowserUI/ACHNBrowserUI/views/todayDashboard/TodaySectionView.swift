@@ -23,39 +23,36 @@ struct TodaySectionView: View {
     }
 
     func makeView() -> some View {
-       if !section.enabled {
+        if !section.enabled {
             return AnyView(EmptyView())
         }
 
         switch(section.name) {
-            case TodaySection.nameEvents:
-                return AnyView(TodayEventsSection())
-            case TodaySection.nameSpecialCharacters:
-                return AnyView(TodaySpecialCharactersSection())
-            case TodaySection.nameCurrentlyAvailable:
-                return AnyView(TodayCurrentlyAvailableSection(viewModel: viewModel))
-            case TodaySection.nameCollectionProgress:
-                return AnyView(TodayCollectionProgressSection(viewModel: viewModel, sheet: $selectedSheet))
-            case TodaySection.nameBirthdays:
-                return AnyView(TodayBirthdaysSection())
-            case TodaySection.nameTurnips:
-                return AnyView(TodayTurnipSection()
-                    .onTapGesture {
-                        self.uiState.selectedTab = .turnips
-                })
-            case TodaySection.nameSubscribe:
-                return AnyView(TodaySubscribeSection(sheet: $selectedSheet))
-            case TodaySection.nameMysteryIsland:
-                return AnyView(TodayMysteryIslandsSection())
-            case TodaySection.nameMusic:
-                return AnyView(TodayMusicPlayerSection())
-            case TodaySection.nameTasks:
-                return AnyView(TodayTasksSection())
-            case TodaySection.nameNookazon:
-                return AnyView(TodayNookazonSection(sheet: $selectedSheet, viewModel: viewModel))
-            default:
-                return AnyView(EmptyView())
+        case .events:
+            return AnyView(TodayEventsSection())
+        case .specialCharacters:
+            return AnyView(TodaySpecialCharactersSection())
+        case .currentlyAvailable:
+            return AnyView(TodayCurrentlyAvailableSection(viewModel: viewModel))
+        case .collectionProgress:
+            return AnyView(TodayCollectionProgressSection(viewModel: viewModel, sheet: $selectedSheet))
+        case .birthdays:
+            return AnyView(TodayBirthdaysSection())
+        case .turnips:
+            return AnyView(TodayTurnipSection()
+                .onTapGesture {
+                    self.uiState.selectedTab = .turnips
+            })
+        case .subscribe:
+            return AnyView(TodaySubscribeSection(sheet: $selectedSheet))
+        case .mysteryIsland:
+            return AnyView(TodayMysteryIslandsSection())
+        case .music:
+            return AnyView(TodayMusicPlayerSection())
+        case .tasks:
+            return AnyView(TodayTasksSection())
+        case .nookazon:
+            return AnyView(TodayNookazonSection(sheet: $selectedSheet, viewModel: viewModel))
         }
-
     }
 }
