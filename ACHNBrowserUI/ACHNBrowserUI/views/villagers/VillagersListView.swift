@@ -50,7 +50,9 @@ struct VillagersListView: View {
             if !viewModel.villagers.isEmpty {
                 VillagerDetailView(villager: viewModel.villagers.first!)
             } else {
-                RowLoadingView(isLoading: .constant(true))
+                List {
+                    RowLoadingView(isLoading: .constant(true))
+                }
             }
         }
     }

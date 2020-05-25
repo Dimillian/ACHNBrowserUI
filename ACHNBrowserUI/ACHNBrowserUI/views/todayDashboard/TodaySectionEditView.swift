@@ -46,7 +46,9 @@ struct TodaySectionEditView: View {
 
     var body: some View {
         List(selection: self.$viewModel.selection) {
-            Section(header: SectionHeaderView(text: "Drag & Drop to Rearrange", icon: "arrow.up.arrow.down.circle.fill"), footer: self.footer) {
+            Section(header: SectionHeaderView(text: "Drag & Drop to Rearrange",
+                                              icon: "arrow.up.arrow.down.circle.fill"),
+                    footer: self.footer) {
                 ForEach(viewModel.sectionOrder, id: \.name) { section in
                     HStack {
                         Image(systemName: self.iconForSectionName[section.name] ?? "")
@@ -91,7 +93,6 @@ struct TodaySectionEditView: View {
     }
     
     private func onMove(source: IndexSet, destination: Int) {
-        print("Moving \(source.startIndex) to \(destination)")
         viewModel.sectionOrder.move(fromOffsets: source, toOffset: destination)
     }
 }
