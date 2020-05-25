@@ -18,7 +18,8 @@ struct Sheet: View {
         case turnipsForm(subManager: SubscriptionManager)
         case subscription(source: SubscribeView.Source, subManager: SubscriptionManager)
         case settings(subManager: SubscriptionManager, collection: UserCollection)
-        
+        case designForm(editingDesign: Design?)
+
         var id: String {
             switch self {
             case .safari(let url):
@@ -37,6 +38,8 @@ struct Sheet: View {
                 return "sub"
             case .userListForm:
                 return "userListForm"
+            case .designForm:
+                return "designForm"
             }
         }
     }
@@ -64,6 +67,8 @@ struct Sheet: View {
             return AnyView(SubscribeView(source: source).environmentObject(subManager))
         case .userListForm(let list):
             return AnyView(UserListFormView(editingList: list))
+        case .designForm(let design):
+            return AnyView(DesignFormView(editingDesign: design))
         case .rearrange(let viewModel):
             return AnyView(NavigationView {
                 TodaySectionEditView(viewModel: viewModel)

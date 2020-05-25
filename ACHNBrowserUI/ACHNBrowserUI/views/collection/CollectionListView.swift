@@ -11,7 +11,7 @@ import SwiftUIKit
 import Backend
 
 enum Tabs: String, CaseIterable {
-    case items, villagers, critters, lists
+    case items, villagers, critters, lists, designs
 }
 
 struct CollectionListView: View {
@@ -19,11 +19,11 @@ struct CollectionListView: View {
     @EnvironmentObject private var subscriptionManager: SubscriptionManager
     @State private var selectedTab: Tabs = .items
     @State private var sheet: Sheet.SheetType?
-        
+
     private var categories: [String] {
         Array(Set(collection.items.map(\.category))).sorted()
     }
-    
+
     var body: some View {
         NavigationView {
             List {
@@ -46,7 +46,9 @@ struct CollectionListView: View {
                         }
                     } else if selectedTab == .lists {
                         userListsSections
-                    }  else {
+                    } else if selectedTab == .designs {
+                        designsSections
+                    } else {
                         emptyView
                     }
                 }
@@ -63,7 +65,7 @@ struct CollectionListView: View {
             }
         }
     }
-    
+
     private var userListsSections: some View {
         Group {
             if subscriptionManager.subscriptionStatus == .subscribed || collection.lists.isEmpty {
@@ -85,18 +87,34 @@ struct CollectionListView: View {
             }
         }
     }
-    
+
+    private var designsSections: some View {
+        Group {
+            Button(action: {
+                self.sheet = .designForm(editingDesign: nil)
+            }) {
+                Text("Add Creator/Design Item").foregroundColor(.acHeaderBackground)
+            }
+
+            ForEach(collection.designs) { design in
+                DesignRowView(designRowViewModel: DesignRowViewModel(design: design))
+            }.onDelete { indexes in
+                self.collection.deleteDesignItem(at: indexes.first!)
+            }
+        }
+    }
+
     private var placeholderView: some View {
         Text("Please select or go stars some items!")
             .foregroundColor(.acSecondaryText)
     }
-    
+
     private var emptyView: some View {
         let selectedTabName = NSLocalizedString(selectedTab.rawValue, comment: "")
         return Text("When you stars some \(selectedTabName), they'll be displayed here.")
             .foregroundColor(.acSecondaryText)
     }
-    
+
     private var picker: some View {
         Picker(selection: $selectedTab, label: Text("")) {
             ForEach(Tabs.allCases, id: \.self) { tab in
@@ -117,5 +135,3 @@ struct CollectionListView_Previews: PreviewProvider {
         .environmentObject(SubscriptionManager.shared)
     }
 }
-
-
