@@ -77,7 +77,7 @@ struct DesignRowViewModel {
     ///
     /// - Parameter code: The code to be categorized.
     /// - Returns: The category based on the given code.
-    public func category(for code: String) -> String {
+    private func category(for code: String) -> String {
         let prefix = String(code.uppercased().prefix(2))
 
         switch prefix {

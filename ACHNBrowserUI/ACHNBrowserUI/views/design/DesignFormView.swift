@@ -51,7 +51,8 @@ struct DesignFormView: View {
                 HStack {
                     Text("Description")
                     Spacer()
-                    TextField("Short description about creator/item", text: $viewModel.design.description)
+                    TextField("Short description about creator/item",
+                              text: $viewModel.design.description)
                         .foregroundColor(.acText)
                 }
             }
