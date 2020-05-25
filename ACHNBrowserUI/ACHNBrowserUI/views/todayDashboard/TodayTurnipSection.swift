@@ -10,7 +10,7 @@ import SwiftUI
 import Backend
 
 struct TodayTurnipSection: View {
-    let predictions: TurnipPredictions?
+    @EnvironmentObject private var turnipService: TurnipPredictionsService
     
     var isSunday: Bool {
         Calendar.current.component(.weekday, from: Date()) == 1
@@ -27,14 +27,14 @@ struct TodayTurnipSection: View {
                 Group {
                     if isSunday {
                         Text("Today is sunday, don't forget to buy more turnips and fill your buy price.")
-                    } else if predictions?.todayAverages == nil || predictions?.todayAverages?.isEmpty == true {
+                    } else if turnipService.predictions?.todayAverages == nil || turnipService.predictions?.todayAverages?.isEmpty == true {
                         Text("Your turnips predictions will be displayed here once you fill in some prices.")
                     }  else {
                         Text("Today's average price should be around ")
-                            + Text("\(predictions!.todayAverages![0])")
+                            + Text("\(turnipService.predictions!.todayAverages![0])")
                                 .foregroundColor(Color("ACSecondaryText"))
                             + Text(" in the morning, and ")
-                            + Text("\(predictions!.todayAverages![1])")
+                            + Text("\(turnipService.predictions!.todayAverages![1])")
                                 .foregroundColor(Color("ACSecondaryText"))
                             + Text(" this afternoon.")
                     }
@@ -53,7 +53,7 @@ struct TodayTurnipSection_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
             List {
-                TodayTurnipSection(predictions: TurnipPredictionsService.shared.predictions)
+                TodayTurnipSection()
             }
             .listStyle(GroupedListStyle())
             .environment(\.horizontalSizeClass, .regular)

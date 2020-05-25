@@ -46,7 +46,6 @@ struct TodaySectionEditView: View {
 
     var body: some View {
         List(selection: self.$viewModel.selection) {
-
             Section(header: SectionHeaderView(text: "Drag & Drop to Rearrange", icon: "arrow.up.arrow.down.circle.fill"), footer: self.footer) {
                 ForEach(viewModel.sectionOrder, id: \.name) { section in
                     HStack {
@@ -87,7 +86,6 @@ struct TodaySectionEditView: View {
         VStack(alignment: .leading, spacing: 8) {
             Text("Drag and drop").fontWeight(.bold) + Text(" to re-order sections.")
             Text("Check or un-check").fontWeight(.bold) + Text(" rows to hide sections from the dashboard.")
-            Text("Your top-most section will be the default detail view on iPad and Mac.")
         }
         .padding(.vertical)
     }

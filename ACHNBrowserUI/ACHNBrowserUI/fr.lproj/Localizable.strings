@@ -37,12 +37,11 @@ Localizable.strings
 // TodaySectionEditView
 "Drag & Drop to Rearrange" = "Glisser-déposer pour réorganiser";
 "Hidden" = "Caché";
-"Today Sections" = "Sections d'aujourd'hui";
+"Today Sections" = "Sections du dashboard";
 "Done" = "Terminé";
 " to re-order sections." = " pour réorganiser les sections.";
 "Check or un-check" = "Cochez ou décochez";
-" rows to hide sections from the dashboard." = " rows to hide sections from the dashboard.";
-"Your top-most section will be the default detail view on iPad and Mac." = "Your top-most section will be the default detail view on iPad and Mac.";
+" rows to hide sections from the dashboard." = " pour cacher les sections du dashboard";
 // TodayBirthdaySection
 "Birthdays" = "Anniversaires";
 "Today's Birthdays" = "Anniversaires aujourd'hui";

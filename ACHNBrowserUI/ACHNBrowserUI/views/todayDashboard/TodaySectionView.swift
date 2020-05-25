@@ -10,12 +10,12 @@ import SwiftUI
 import Backend
 
 struct TodaySectionView: View {
+    @EnvironmentObject var uiState: UIState
+    
     let section: TodaySection
-    let viewModel: DashboardViewModel
+    
+    @ObservedObject var viewModel: DashboardViewModel
     @Binding var selectedSheet: Sheet.SheetType?
-    let villagers: [Villager]
-    let turnipPredictionsService: TurnipPredictionsService
-    let uiState: UIState
 
 
     var body: some View {
@@ -37,9 +37,9 @@ struct TodaySectionView: View {
             case TodaySection.nameCollectionProgress:
                 return AnyView(TodayCollectionProgressSection(viewModel: viewModel, sheet: $selectedSheet))
             case TodaySection.nameBirthdays:
-                return AnyView(TodayBirthdaysSection(villagers: villagers))
+                return AnyView(TodayBirthdaysSection())
             case TodaySection.nameTurnips:
-                return AnyView(TodayTurnipSection(predictions: turnipPredictionsService.predictions)
+                return AnyView(TodayTurnipSection()
                     .onTapGesture {
                         self.uiState.selectedTab = .turnips
                 })

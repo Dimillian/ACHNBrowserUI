@@ -19,11 +19,10 @@ struct TodayView: View {
     @EnvironmentObject private var collection: UserCollection
     @EnvironmentObject private var subManager: SubscriptionManager
     @EnvironmentObject private var items: Items
-    @ObservedObject private var userDefaults = AppUserDefaults.shared
-    @ObservedObject private var viewModel = DashboardViewModel()
-    @ObservedObject private var villagersViewModel = VillagersViewModel()
-    @ObservedObject private var turnipsPredictionsService = TurnipPredictionsService.shared
+    @EnvironmentObject private var userDefaults: AppUserDefaults
     
+    @ObservedObject private var viewModel = DashboardViewModel()
+
     @State private var selectedSheet: Sheet.SheetType?
     @State private var showWhatsNew: Bool = false
         
@@ -56,7 +55,9 @@ struct TodayView: View {
                 Group {
                     ForEach(viewModel.sectionOrder, id: \.self) { section in
                         // The required data could be refactored into the model.
-                        TodaySectionView(section: section, viewModel: self.viewModel, selectedSheet: self.$selectedSheet, villagers: self.villagersViewModel.todayBirthdays, turnipPredictionsService: self.turnipsPredictionsService, uiState: self.uiState)
+                        TodaySectionView(section: section,
+                                         viewModel: self.viewModel,
+                                         selectedSheet: self.$selectedSheet)
                     }
 
                     self.arrangeSectionsButton
