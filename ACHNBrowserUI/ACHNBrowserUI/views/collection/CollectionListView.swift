@@ -97,7 +97,7 @@ struct CollectionListView: View {
             }
 
             ForEach(collection.designs) { design in
-                DesignRowView(designRowViewModel: DesignRowViewModel(design: design))
+                DesignRowView(viewModel: DesignRowViewModel(design: design))
             }.onDelete { indexes in
                 self.collection.deleteDesign(at: indexes.first!)
             }

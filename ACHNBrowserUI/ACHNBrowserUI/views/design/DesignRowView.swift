@@ -13,33 +13,33 @@ struct DesignRowView: View {
 
     // MARK: - Properties
 
-    let designRowViewModel: DesignRowViewModel
+    let viewModel: DesignRowViewModel
 
     // MARK: - Life cycle
 
-    init(designRowViewModel: DesignRowViewModel) {
-        self.designRowViewModel = designRowViewModel
+    init(viewModel: DesignRowViewModel) {
+        self.viewModel = viewModel
     }
 
     var body: some View {
         HStack {
             VStack(alignment: .leading, spacing: 2) {
-                Text(designRowViewModel.title.capitalized)
+                Text(viewModel.title.capitalized)
                     .style(appStyle: .rowTitle)
 
-                Text(designRowViewModel.code)
+                Text(viewModel.code)
                     .fontWeight(.semibold)
                     .font(.subheadline)
 
-                if !designRowViewModel.description.isEmpty {
-                    Text(designRowViewModel.description.capitalized)
+                if !viewModel.description.isEmpty {
+                    Text(viewModel.description.capitalized)
                         .style(appStyle: .rowDescription)
                 }
             }
 
             Spacer()
 
-            Text(designRowViewModel.category)
+            Text(viewModel.category)
                 .font(.caption)
                 .fontWeight(.bold)
                 .foregroundColor(.acHeaderBackground)
@@ -55,10 +55,10 @@ struct DesignRowView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
             List {
-                DesignRowView(designRowViewModel:
+                DesignRowView(viewModel:
                     DesignRowViewModel(design: Design(title: "Jedi", code: "MOPJ15LTDSXC4T", description: "Jedi Tunic")))
 
-                DesignRowView(designRowViewModel:
+                DesignRowView(viewModel:
                     DesignRowViewModel(design: Design(title: "Sam",
                                                       code: "MA667931515180",
                                                       description: "Sokola Island. Might have more StarWars designs"))

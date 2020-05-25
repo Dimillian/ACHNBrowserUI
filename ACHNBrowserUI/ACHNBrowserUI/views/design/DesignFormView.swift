@@ -21,7 +21,7 @@ struct DesignFormView: View {
 
     // MARK: - Life cycle0
 
-    init(editingDesign design: Design?) {
+    init(design: Design?) {
         self.viewModel = DesignFormViewModel(design: design)
     }
 
@@ -106,6 +106,6 @@ struct DesignFormView: View {
 
 struct DesignFormView_Previews: PreviewProvider {
     static var previews: some View {
-        DesignFormView(editingDesign: nil)
+        DesignFormView(design: nil)
     }
 }
