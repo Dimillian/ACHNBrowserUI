@@ -44,7 +44,7 @@ struct VillagersSortView: View {
         
         buttons.append(.cancel())
         
-        let title = Text("Sort items")
+        let title = Text("Sort villagers")
         
         if let currentSort = sort {
             let currentSortName = NSLocalizedString(currentSort.rawValue.localizedCapitalized, comment: "")
