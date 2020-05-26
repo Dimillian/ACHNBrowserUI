@@ -28,14 +28,20 @@ struct ItemDetailView: View {
     }
 
     private func makeShareContent() -> [Any] {
-        let image = List {
-            ItemDetailInfoView(item: itemViewModel.item,
-                               displayedVariant: $displayedVariant)
-        }
-        .listStyle(GroupedListStyle())
-        .environment(\.horizontalSizeClass, .regular)
-        .frame(width: 350, height: 330)
-        .asImage()
+        let image =
+            NavigationView {
+                List {
+                    ItemDetailInfoView(item: itemViewModel.item,
+                                       displayedVariant: $displayedVariant)
+                }
+                .listStyle(GroupedListStyle())
+                .environment(\.horizontalSizeClass, .regular)
+                .navigationBarTitle(Text(itemViewModel.item.localizedName.capitalized),
+                                    displayMode: .large)
+            }
+            .navigationViewStyle(StackNavigationViewStyle())
+            .frame(width: 350, height: 450)
+            .asImage()
         
         return [ItemDetailSource(name: itemViewModel.item.localizedName.capitalized, image: image)]
     }
@@ -264,11 +270,21 @@ extension ItemDetailView {
 // MARK: - Preview
 struct ItemDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        NavigationView {
-            ItemDetailView(item: static_item)
-                .environmentObject(UserCollection.shared)
-                .environmentObject(MusicPlayerManager.shared)
-                .environmentObject(SubscriptionManager.shared)
+        Group {
+            NavigationView {
+                ItemDetailView(item: static_item)
+                    .environmentObject(UserCollection.shared)
+                    .environmentObject(MusicPlayerManager.shared)
+                    .environmentObject(SubscriptionManager.shared)
+            }
+            
+            NavigationView {
+                ItemDetailView(item: static_item)
+                    .environmentObject(UserCollection.shared)
+                    .environmentObject(MusicPlayerManager.shared)
+                    .environmentObject(SubscriptionManager.shared)
+            }
+            .environment(\.colorScheme, .dark)
         }
     }
 }
