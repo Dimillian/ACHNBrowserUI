@@ -10,10 +10,11 @@ import SwiftUI
 import Backend
 
 struct LikeButtonView: View {
+    @EnvironmentObject private var collection: UserCollection
+    
     let item: Item?
     let variant: Variant?
     let villager: Villager?
-    @EnvironmentObject private var collection: UserCollection
     
     init(item: Item, variant: Variant?) {
         self.item = item
@@ -30,7 +31,7 @@ struct LikeButtonView: View {
     private var isInCollection: Bool {
         if let item = item {
             if let variant = variant {
-                return collection.containVariant(item: item, variant: variant)
+                return collection.variantIn(item: item, variant: variant)
             }
             return collection.items.contains(item) || collection.critters.contains(item)
         } else if let villager = villager {

@@ -21,7 +21,7 @@ struct CollectionListView: View {
     @State private var sheet: Sheet.SheetType?
         
     private var categories: [String] {
-        Array(Set(collection.items.map({ $0.category })))
+        Array(Set(collection.items.map(\.category))).sorted()
     }
     
     var body: some View {
