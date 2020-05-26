@@ -189,7 +189,7 @@ Du kannst das Abonnement jederzeit in deinen iTunes Kontoeinstellungen beenden. 
 // CollectionListView
 "Create a new list" = "Erstelle eine neue Liste";
 "Please select or go stars some items!" = "Bitte wähle oder markiere Gegenstände!";
-"When you'll stars some %@, they'll be displayed here." = "Wenn du %@ markierst, werden sie hier angezeigt.";
+"When you stars some %@, they'll be displayed here." = "Wenn du %@ markierst, werden sie hier angezeigt.";
 "Items" = "Gegenstände";
 "Critters" = "Tiere";
 "Lists" = "Listen";

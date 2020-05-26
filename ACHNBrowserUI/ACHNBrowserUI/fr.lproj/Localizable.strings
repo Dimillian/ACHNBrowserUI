@@ -179,7 +179,7 @@ You can cancel anytime with your iTunes account settings. Any unused portion of 
 // CollectionListView
 "Create a new list" = "Créer une nouvelle liste";
 "Please select or go stars some items!" = "Sélectionner ou ajouter des objets à votre collection !";
-"When you'll stars some \%@, they'll be displayed here." = "Quand vous aller liker des \%@, ils seront affichés ici.";
+"When you stars some \%@, they'll be displayed here." = "Quand vous aller liker des \%@, ils seront affichés ici.";
 "Items" = "Objets";
 "Critters" = "Créatures";
 "Lists" = "Listes";

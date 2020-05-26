@@ -93,7 +93,7 @@ struct CollectionListView: View {
     
     private var emptyView: some View {
         let selectedTabName = NSLocalizedString(selectedTab.rawValue, comment: "")
-        return Text("When you'll stars some \(selectedTabName), they'll be displayed here.")
+        return Text("When you stars some \(selectedTabName), they'll be displayed here.")
             .foregroundColor(.acSecondaryText)
     }
     
