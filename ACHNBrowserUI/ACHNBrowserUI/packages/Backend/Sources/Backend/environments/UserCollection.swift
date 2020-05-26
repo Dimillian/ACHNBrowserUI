@@ -83,7 +83,7 @@ public class UserCollection: ObservableObject {
         return added
     }
     
-    public func containVariant(item: Item, variant: Variant) -> Bool {
+    public func variantIn(item: Item, variant: Variant) -> Bool {
         guard let filename = item.filename else {
             return false
         }
