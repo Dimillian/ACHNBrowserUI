@@ -69,52 +69,36 @@ struct ItemDetailInfoView: View {
                 Text("Customizable: \(item.customize == true ? NSLocalizedString("Yes", comment: "") : NSLocalizedString("No", comment: ""))")
                     .foregroundColor(.acText)
             }
-            HStack(spacing: 16) {
+            
+            HStack(alignment: .center, spacing: 16) {
                 item.buy.map { buy in
-                    HStack(spacing: 2) {
-                        Image("icon-bells")
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .frame(width: 25, height: 25)
-                        Text("\(buy)")
-                            .foregroundColor(.acHeaderBackground)
-                    }
+                    ItemBellsView(mode: .buy, price: buy)
                 }
                 item.sell.map { sell in
-                    HStack(spacing: 2) {
-                        Image("icon-bell")
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .frame(width: 25, height: 25)
-                        Text("\(sell)")
-                            .font(.body)
-                            .fontWeight(.semibold)
-                            .foregroundColor(.acHeaderBackground)
+                    Group {
+                        ItemBellsView(mode: .sell, price: sell)
                         if item.isCritter {
                             if item.appCategory == .bugs {
-                                Text("Flick:")
-                                    .foregroundColor(.acText)
-                                    .padding(.leading, 8)
+                                ItemBellsView(mode: .flick,
+                                              price: Int(Float(sell) * 1.5))
                             } else {
-                                Text("C.J:")
-                                    .foregroundColor(.acText)
-                                    .padding(.leading, 8)
+                                ItemBellsView(mode: .cj,
+                                              price: Int(Float(sell) * 1.5))
                             }
-                            Text("\(Int(Float(sell) * 1.5))")
-                                .font(.body)
-                                .fontWeight(.semibold)
-                                .foregroundColor(.acHeaderBackground)
-                            
                         }
                     }
                 }
             }
+            .padding(.top, 4)
+            .padding(.bottom, 4)
         }
     }
 }
 
 struct ItemDetailInfoView_Previews: PreviewProvider {
     static var previews: some View {
-        ItemDetailInfoView(item: static_item, displayedVariant: .constant(nil))
+        List {
+            ItemDetailInfoView(item: static_item, displayedVariant: .constant(nil))
+        }
     }
 }

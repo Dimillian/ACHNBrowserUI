@@ -30,20 +30,6 @@ struct ItemRowView: View {
             return 100
         }
     }
-
-    private func bellsView(icon: String, price: Int) -> some View {
-        HStack(spacing: 2) {
-            Image(icon)
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-                .frame(width: 20, height: 20)
-            Text("\(price)")
-                .font(.caption)
-                .fontWeight(.bold)
-                .foregroundColor(.acHeaderBackground)
-                .lineLimit(1)
-        }
-    }
     
     private var itemInfo: some View {
         Group {
@@ -71,12 +57,10 @@ struct ItemRowView: View {
                 }
             }
             if item.buy != nil {
-                bellsView(icon: "icon-bells",
-                          price: item.buy!)
+                ItemBellsView(mode: .buy, price: item.buy!)
             }
             if item.sell != nil {
-                bellsView(icon: "icon-bell",
-                          price: item.sell!)
+                ItemBellsView(mode: .buy, price: item.sell!)
             }
             Spacer()
         }
@@ -126,6 +110,7 @@ struct ItemRowView: View {
                 itemInfo
                 if displayMode != .compact {
                     itemSubInfo
+                        .padding(.top, 4)
                     itemVariants
                 }
             }
@@ -138,13 +123,25 @@ struct ItemRowView: View {
 struct ItemRowView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
-            List {
-                ItemRowView(displayMode: .large, item: static_item)
-                    .environmentObject(UserCollection.shared)
-                ItemRowView(displayMode: .compact, item: static_item)
-                    .environmentObject(UserCollection.shared)
-                ItemRowView(displayMode: .large, item: static_item)
-                    .environmentObject(UserCollection.shared)
+            VStack {
+                List {
+                    ItemRowView(displayMode: .large, item: static_item)
+                        .environmentObject(UserCollection.shared)
+                    ItemRowView(displayMode: .compact, item: static_item)
+                        .environmentObject(UserCollection.shared)
+                    ItemRowView(displayMode: .large, item: static_item)
+                        .environmentObject(UserCollection.shared)
+                }
+                
+                List {
+                    ItemRowView(displayMode: .large, item: static_item)
+                        .environmentObject(UserCollection.shared)
+                    ItemRowView(displayMode: .compact, item: static_item)
+                        .environmentObject(UserCollection.shared)
+                    ItemRowView(displayMode: .large, item: static_item)
+                        .environmentObject(UserCollection.shared)
+                }
+                .environment(\.colorScheme, .dark)
             }
         }
     }

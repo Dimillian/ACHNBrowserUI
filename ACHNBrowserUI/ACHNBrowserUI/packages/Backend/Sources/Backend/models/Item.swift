@@ -91,6 +91,26 @@ public struct Item: Codable, Equatable, Identifiable, Hashable {
     public let styles: [String]?
     public let themes: [String]?
     public let colors: [String]?
+    
+    public var metas: [String] {
+        var metas: [String] = []
+        if let tag = tag {
+            metas.append(tag)
+        }
+        if let set = set {
+            metas.append(set)
+        }
+        if let styles = styles {
+            metas.append(contentsOf: styles)
+        }
+        if let themes = themes {
+            metas.append(contentsOf: themes)
+        }
+        if let colors = colors {
+            metas.append(contentsOf: colors)
+        }
+        return Array(Set(metas.map{ $0.capitalized })).filter({ $0.lowercased() != "none"}).sorted()
+    }
 }
 
 // MARK: - Calendar

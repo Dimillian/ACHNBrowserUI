@@ -120,14 +120,12 @@ struct SubscribeView: View {
                         .lineLimit(nil)
                 }
                 Spacer(minLength: 16)
-                makeBorderedButton(large: true,
-                                   action: {
+                makeBorderedButton(action: {
                                     self.sheetURL = URL(string: "https://github.com/Dimillian/ACHNBrowserUI/blob/master/privacy-policy.md#ac-helper-privacy-policy")
                 }, label: "Privacy Policy")
                 
                 Spacer(minLength: 16)
-                makeBorderedButton(large: true,
-                                   action: {
+                makeBorderedButton(action: {
                                     self.sheetURL = URL(string: "https://github.com/Dimillian/ACHNBrowserUI/blob/master/term-of-use.md#ac-helper-term-of-use")
                 }, label: "Terms of Use")
             }
@@ -139,8 +137,7 @@ struct SubscribeView: View {
         VStack {
             HStack(spacing: 0) {
                 sub.map{ sub in
-                    makeBorderedButton(large: false,
-                                       action: {
+                    makeBorderedButton(action: {
                                         self.buttonAction(purchase: sub)
                     }, label: self.subscriptionManager.subscriptionStatus == .subscribed ?
                         "Thanks!" :
@@ -152,8 +149,7 @@ struct SubscribeView: View {
                 Spacer(minLength: 18)
                 
                 yearlySub.map{ yearlySub in
-                    makeBorderedButton(large: false,
-                                       action: {
+                    makeBorderedButton(action: {
                                         self.buttonAction(purchase: yearlySub)
                     }, label: self.subscriptionManager.subscriptionStatus == .subscribed ?
                         "Thanks!" :
@@ -161,12 +157,10 @@ struct SubscribeView: View {
                         .opacity(subscriptionManager.inPaymentProgress ? 0.5 : 1.0)
                         .disabled(subscriptionManager.inPaymentProgress)
                 }
-            }
-            .frame(width: 320)
+            }.frame(maxWidth: 320)
             
             lifetime.map{ lifetime in
-                makeBorderedButton(large: true,
-                                   action: {
+                makeBorderedButton(action: {
                                     self.buttonAction(purchase: lifetime)
                 }, label: self.subscriptionManager.subscriptionStatus == .subscribed ?
                     "Thank you for your support!" :
@@ -174,7 +168,7 @@ struct SubscribeView: View {
                     .opacity(subscriptionManager.inPaymentProgress ? 0.5 : 1.0)
                     .disabled(subscriptionManager.inPaymentProgress)
                     .padding(.top, 16)
-            }
+            }.frame(maxWidth: 320)
         }
     }
     
@@ -187,7 +181,7 @@ struct SubscribeView: View {
         }
     }
     
-    private func makeBorderedButton(large: Bool, action: @escaping () -> Void, label:
+    private func makeBorderedButton(action: @escaping () -> Void, label:
         LocalizedStringKey) -> some View {
         Button(action: action) {
             Text(label)
@@ -196,8 +190,8 @@ struct SubscribeView: View {
                 .foregroundColor(.white)
                 .minimumScaleFactor(0.01)
                 .lineLimit(1)
-                .frame(minWidth: large ? 290 : 100,
-                       minHeight: 30)
+                .frame(maxWidth: .infinity,
+                       maxHeight: 30)
         }.buttonStyle(PlainRoundedButton()).accentColor(.acTabBarTint).safeHoverEffect()
     }
 }
