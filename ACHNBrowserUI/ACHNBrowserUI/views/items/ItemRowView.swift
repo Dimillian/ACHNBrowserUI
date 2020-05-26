@@ -44,25 +44,13 @@ struct ItemRowView: View {
     
     private var itemSubInfo: some View {
         HStack {
-            if (item.isCritter && item.formattedTimes() != nil) {
-                HStack(spacing: 4) {
-                    Image(systemName: "clock")
-                        .resizable()
-                        .frame(width: 12, height: 12)
-                        .foregroundColor(.acSecondaryText)
-                    Text(item.formattedTimes()!)
-                        .foregroundColor(.acSecondaryText)
-                        .fontWeight(.semibold)
-                        .font(.caption)
-                }
-            }
             if item.buy != nil {
                 ItemBellsView(mode: .buy, price: item.buy!)
             }
             if item.sell != nil {
                 ItemBellsView(mode: .buy, price: item.sell!)
             }
-            Spacer()
+            Spacer(minLength: 0)
         }
     }
     
@@ -109,13 +97,24 @@ struct ItemRowView: View {
             VStack(alignment: .leading, spacing: 2) {
                 itemInfo
                 if displayMode != .compact {
+                    if (item.isCritter && item.formattedTimes() != nil) {
+                        HStack(spacing: 4) {
+                            Image(systemName: "clock")
+                                .resizable()
+                                .frame(width: 12, height: 12)
+                                .foregroundColor(.acSecondaryText)
+                            Text(item.formattedTimes()!)
+                                .foregroundColor(.acSecondaryText)
+                                .fontWeight(.semibold)
+                                .font(.caption)
+                        }
+                    }
                     itemSubInfo
                         .padding(.top, 4)
                     itemVariants
                 }
             }
-            
-            Spacer()
+            Spacer(minLength: 0)
         }
     }
 }

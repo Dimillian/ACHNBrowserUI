@@ -23,7 +23,7 @@ final class CrittersTests: XCTestCase {
         XCTAssertTrue(fish.isCritter, "This item should be a critter")
         XCTAssertTrue(fish.isActive(), "This fish should be active all year")
         XCTAssertTrue(fish.appCategory == .fish, "This item should be a fish")
-        XCTAssertTrue(fish.formattedTimes() == "4 - 21h", "This fish should display all day")
+        XCTAssertTrue(fish.formattedTimes() == "4AM - 9PM", "This fish should display all day")
     }
     
 }
