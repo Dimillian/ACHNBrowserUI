@@ -78,7 +78,7 @@ struct ItemRowView: View {
                 bellsView(icon: "icon-bell",
                           price: item.sell!)
             }
-            Spacer()
+            Spacer(minLength: 0)
         }
     }
     
