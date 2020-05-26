@@ -29,7 +29,7 @@ public enum Category: String, CaseIterable {
             self = .dressup
             return
         }
-        self = Category(rawValue: itemCategory.lowercased())!
+        self = Category(rawValue: itemCategory.lowercased()) ?? .other
     }
     
     public func label() -> LocalizedStringKey {
