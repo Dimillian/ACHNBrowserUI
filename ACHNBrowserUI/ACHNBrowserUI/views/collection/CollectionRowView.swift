@@ -7,7 +7,7 @@ struct CollectionRowView: View {
     
     private var items: [Item] {
         return collection.items
-            .filter({ Category(itemCategory: $0.category) == category })
+            .filter({ Backend.Category(itemCategory: $0.category) == category })
     }
     
     var body: some View {

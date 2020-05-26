@@ -54,13 +54,12 @@ struct TodayView: View {
 
                 Group {
                     ForEach(viewModel.sectionOrder, id: \.self) { section in
-                        // The required data could be refactored into the model.
                         TodaySectionView(section: section,
                                          viewModel: self.viewModel,
                                          selectedSheet: self.$selectedSheet)
                     }
 
-                    self.arrangeSectionsButton
+                    arrangeSectionsButton
                 }
             }
             .listStyle(GroupedListStyle())
