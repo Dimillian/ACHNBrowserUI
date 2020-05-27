@@ -24,8 +24,6 @@ struct CollectionListView: View {
         Array(Set(collection.items.map(\.category))).sorted()
     }
 
-    private var moreViewModel = CollectionMoreDetailViewModel()
-
     var body: some View {
         NavigationView {
             List {
