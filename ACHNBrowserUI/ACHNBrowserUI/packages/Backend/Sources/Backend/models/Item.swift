@@ -27,7 +27,7 @@ public struct NewItemResponse: Codable {
 }
 
 public struct ActiveMonth: Codable, Equatable {
-    let activeTimes: [[Int]]
+    let activeTimes: [String]
 }
 
 public struct Item: Codable, Equatable, Identifiable, Hashable {
@@ -165,17 +165,33 @@ public extension Item {
     }
     
     func formattedTimes() -> String? {
-        guard let activeTimes = activeMonths?.first?.value.activeTimes.first,
+        guard let activeTimes = activeMonths?.first?.value.activeTimes,
             let startTime = activeTimes.first,
             let endTime = activeTimes.last else {
                 return nil
         }
-        if startTime == 0 && endTime == 0 {
+        if Int(startTime) == 0 && Int(endTime) == 0 {
             return NSLocalizedString("All day", comment: "")
         }
         
-        let startDate = DateComponents(calendar: .current, hour: startTime).date!
-        let endDate = DateComponents(calendar: .current, hour: endTime).date!
+        var startHourInt = 0
+        var endHourInt = 0
+        if let hour = Int(startTime.prefix(1)) {
+            startHourInt = hour
+            if startTime.suffix(2)  == "pm" {
+                startHourInt += 12
+            }
+        }
+        
+        if let hour = Int(endTime.prefix(1)) {
+            endHourInt = hour
+            if endTime.suffix(2) == "pm" {
+                endHourInt += 12
+            }
+        }
+        
+        let startDate = DateComponents(calendar: .current, hour: startHourInt).date!
+        let endDate = DateComponents(calendar: .current, hour: endHourInt).date!
         
         let startHour = formatter.string(from: startDate)
         let endHour = formatter.string(from: endDate)
