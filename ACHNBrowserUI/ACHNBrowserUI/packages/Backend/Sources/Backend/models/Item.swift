@@ -26,9 +26,13 @@ public struct NewItemResponse: Codable {
     }
 }
 
+public struct ActiveMonth: Codable, Equatable {
+    let activeTimes: [String]
+}
+
 public struct Item: Codable, Equatable, Identifiable, Hashable {
     static public func ==(lhs: Item, rhs: Item) -> Bool {
-        return lhs.id == rhs.id && lhs.category == rhs.category
+        return lhs.id == rhs.id && lhs.appCategory == rhs.appCategory
     }
     
     public func hash(into hasher: inout Hasher) {
@@ -61,6 +65,8 @@ public struct Item: Codable, Equatable, Identifiable, Hashable {
         }
         return nil
     }
+    public let iconImage: String?
+    public let furnitureImage: String?
     
     public let obtainedFrom: String?
     public let obtainedFromNew: [String]?
@@ -82,10 +88,7 @@ public struct Item: Codable, Equatable, Identifiable, Hashable {
     public let sell: Int?
     
     public let shadow: String?
-    public let rarity: String?
-    public let activeMonthsNorth: [Int]?
-    public let activeMonthsSouth: [Int]?
-    public let activeTimes: [[String: Int]]?
+    public let activeMonths: [String: ActiveMonth]?
     public let set: String?
     public let tag: String?
     public let styles: [String]?
@@ -134,43 +137,61 @@ public extension Item {
         return formatter
     }()
     
-    var activeMonths: [Int]? {
-        var months = AppUserDefaults.shared.hemisphere == .north ? activeMonthsNorth : activeMonthsSouth
-        // Fix jan missing from API.
-        if months?.count == 11 {
-            months?.insert(0, at: 0)
+    var activeMonthsCalendar: [Int]? {
+        let isSouth = AppUserDefaults.shared.hemisphere == .south
+        if var keys = activeMonths?.keys.compactMap({ Int($0) }) {
+            if isSouth {
+                keys = keys.map{ ($0 + 6) % 12 }
+            }
+            return keys
         }
-        return months
+        return nil
     }
     
     func isActive() -> Bool {
         let currentMonth = Int(Item.monthFormatter.string(from: Date()))!
-        return activeMonths?.contains(currentMonth - 1) == true
+        return activeMonthsCalendar?.contains(currentMonth - 1) == true
            
     }
     
     func isNewThisMonth() -> Bool {
         let currentMonth = Int(Item.monthFormatter.string(from: Date()))!
-        return activeMonths?.contains(currentMonth - 2) == false
+        return activeMonthsCalendar?.contains(currentMonth - 2) == false
     }
     
     func leavingThisMonth() -> Bool {
         let currentMonth = Int(Item.monthFormatter.string(from: Date()))!
-        return activeMonths?.contains(currentMonth) == false
+        return activeMonthsCalendar?.contains(currentMonth) == false
     }
     
     func formattedTimes() -> String? {
-        guard let activeTimes = activeTimes,
-            let startTime = activeTimes.first?["startTime"],
-            let endTime = activeTimes.first?["endTime"] else {
+        guard let activeTimes = activeMonths?.first?.value.activeTimes,
+            let startTime = activeTimes.first,
+            let endTime = activeTimes.last else {
                 return nil
         }
-        if startTime == 0 && endTime == 0 {
+        if Int(startTime) == 0 && Int(endTime) == 0 {
             return NSLocalizedString("All day", comment: "")
         }
         
-        let startDate = DateComponents(calendar: .current, hour: startTime).date!
-        let endDate = DateComponents(calendar: .current, hour: endTime).date!
+        var startHourInt = 0
+        var endHourInt = 0
+        if let hour = Int(startTime.prefix(1)) {
+            startHourInt = hour
+            if startTime.suffix(2)  == "pm" {
+                startHourInt += 12
+            }
+        }
+        
+        if let hour = Int(endTime.prefix(1)) {
+            endHourInt = hour
+            if endTime.suffix(2) == "pm" {
+                endHourInt += 12
+            }
+        }
+        
+        let startDate = DateComponents(calendar: .current, hour: startHourInt).date!
+        let endDate = DateComponents(calendar: .current, hour: endHourInt).date!
         
         let startHour = formatter.string(from: startDate)
         let endHour = formatter.string(from: endDate)
@@ -200,6 +221,8 @@ public let static_item = Item(name: "Acoustic guitar",
                        filename: "https://acnhcdn.com/latest/FtrIcon/FtrAcorsticguitar_Remake_0_0.png",
                        house: nil,
                        itemImage: nil,
+                       iconImage: nil,
+                       furnitureImage: nil,
                        obtainedFrom: "Crafting",
                        obtainedFromNew: ["Crafting"],
                        sourceNotes: "From somewhere",
@@ -211,10 +234,7 @@ public let static_item = Item(name: "Acoustic guitar",
                        buy: 200,
                        sell: 300,
                        shadow: nil,
-                       rarity: nil,
-                       activeMonthsNorth: nil,
-                       activeMonthsSouth: nil,
-                       activeTimes: nil,
+                       activeMonths: nil,
                        set: nil,
                        tag: "Instrument",
                        styles: nil,

@@ -205,6 +205,11 @@ You can cancel anytime with your iTunes account settings. Any unused portion of 
 // ItemDetailInfoView
 "Rarity:" = "Rareté:";
 "Shadow size:" = "Ombre:";
+"X-Small" = "Très Petite";
+"Small" = "Petite";
+"Medium" = "Moyenne";
+"Large" = "Grade";
+"X-Large" = "Très Grande";
 "Customizable: %@" = "Customisable: %@";
 "Yes" = "Oui";
 "No" = "Non";

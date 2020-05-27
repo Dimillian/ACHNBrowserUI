@@ -25,10 +25,10 @@ struct ItemDetailSeasonSectionView: View {
                         Spacer()
                     }.padding(.top, 4)
                 }
-                if item.activeMonths != nil {
+                if item.activeMonthsCalendar != nil {
                     HStack(alignment: .center) {
                         Spacer()
-                        CalendarView(activeMonths: item.activeMonths!)
+                        CalendarView(activeMonths: item.activeMonthsCalendar!)
                         Spacer()
                     }
                 }

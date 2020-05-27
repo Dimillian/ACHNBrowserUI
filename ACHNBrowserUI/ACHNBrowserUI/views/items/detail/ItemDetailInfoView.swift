@@ -49,13 +49,6 @@ struct ItemDetailInfoView: View {
             }
             if item.isCritter {
                 VStack(spacing: 4) {
-                    item.rarity.map { rarity in
-                        HStack(spacing: 4) {
-                            Text("Rarity:")
-                            Text(LocalizedStringKey(rarity))
-                                .foregroundColor(.acSecondaryText)
-                        }
-                    }
                     item.shadow.map { shadow in
                         HStack(spacing: 4) {
                             Text("Shadow size:")
