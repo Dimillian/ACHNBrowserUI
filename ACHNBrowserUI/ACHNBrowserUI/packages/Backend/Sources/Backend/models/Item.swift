@@ -9,19 +9,6 @@
 import Foundation
 import SwiftUI
 
-// Formatter used for the start / end times of critters
-fileprivate let formatter: DateFormatter = {
-    let formatter = DateFormatter()
-    formatter.dateFormat = is24Hour() ? "h" : "ha"
-    return formatter
-}()
-
-/// Determine if the device is set to 24 or 12 hour time
-fileprivate func is24Hour() -> Bool {
-    let dateFormat = DateFormatter.dateFormat(fromTemplate: "j", options: 0, locale: Locale.current)!
-    return dateFormat.firstIndex(of: "a") == nil
-}
-
 public struct ItemResponse: Codable {
     let total: Int
     let results: [Item]
@@ -124,6 +111,19 @@ public struct Item: Codable, Equatable, Identifiable, Hashable {
         }
         return Array(Set(metas.map{ $0.capitalized })).filter({ $0.lowercased() != "none"}).sorted()
     }
+}
+
+// Formatter used for the start / end times of critters
+fileprivate let formatter: DateFormatter = {
+    let formatter = DateFormatter()
+    formatter.dateFormat = is24Hour() ? "HH" : "ha"
+    return formatter
+}()
+
+/// Determine if the device is set to 24 or 12 hour time
+fileprivate func is24Hour() -> Bool {
+    let dateFormat = DateFormatter.dateFormat(fromTemplate: "j", options: 0, locale: Locale.current)!
+    return dateFormat.firstIndex(of: "a") == nil
 }
 
 // MARK: - Calendar
