@@ -21,11 +21,12 @@ struct MessageView: View {
     }
 
     init(collectionName: String) {
-        self.string = "When you stars some \(collectionName), they'll be displayed here."
+        self.string = String.init(format: NSLocalizedString("When you stars some %@, they'll be displayed here.",
+                                                            comment: ""), collectionName)
     }
 
     init(noResultsFor string: String) {
-        self.string = "No results for \(string)"
+        self.string = String.init(format: NSLocalizedString("No results for %@", comment: ""), string)
     }
 
     // MARK: - Public
