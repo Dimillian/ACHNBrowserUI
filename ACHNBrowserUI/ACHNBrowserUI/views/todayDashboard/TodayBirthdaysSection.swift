@@ -43,13 +43,13 @@ struct TodayBirthdaysSection: View {
                 RowLoadingView(isLoading: .constant(true))
             } else {
                 ForEach(viewModel.todayBirthdays, id: \.id) { villager in
-                    NavigationLink(destination: VillagerDetailView(villager: villager)) {
+                    NavigationLink(destination: LazyView(VillagerDetailView(villager: villager))) {
                         self.makeCell(for: villager)
                     }
                 }
                 .padding(.vertical)
             }
-        }.onAppear(perform: viewModel.fetch)
+        }
     }
     
     private func makeCell(for villager: Villager) -> some View {

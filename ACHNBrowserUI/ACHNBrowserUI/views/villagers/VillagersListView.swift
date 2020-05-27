@@ -54,7 +54,7 @@ struct VillagersListView: View {
                     RowLoadingView(isLoading: .constant(true))
                 }
             }
-        }.onAppear(perform: viewModel.fetch)
+        }
     }
 }
 

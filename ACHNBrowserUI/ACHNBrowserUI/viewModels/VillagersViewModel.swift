@@ -13,16 +13,7 @@ import Backend
 class VillagersViewModel: ObservableObject {
     private static var cachedVillagers: [Villager] = []
     
-    @Published var villagers: [Villager] = [] {
-        didSet {
-            Self.cachedVillagers = villagers
-            let formatter = DateFormatter()
-            formatter.dateFormat = "d/M"
-            let today = formatter.string(from: Date())
-            todayBirthdays = villagers.filter( { $0.birthday == today })
-        }
-    }
-    
+    @Published var villagers: [Villager] = []
     @Published var searchResults: [Villager] = []
     @Published var searchText = ""
     @Published var todayBirthdays: [Villager] = []
@@ -36,6 +27,12 @@ class VillagersViewModel: ObservableObject {
         }
     }
     
+    private var today: String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "d/M"
+        return formatter.string(from: Date())
+    }
+    
     init() {
         searchCancellable = $searchText
             .debounce(for: .milliseconds(300), scheduler: DispatchQueue.main)
@@ -43,10 +40,11 @@ class VillagersViewModel: ObservableObject {
             .filter { !$0.isEmpty }
             .map(villagers(with:))
             .sink(receiveValue: { [weak self] in self?.searchResults = $0 })
-    }
-    
-    func fetch() {
-        villagers = Self.cachedVillagers
+        
+        if villagers.isEmpty {
+            villagers = Self.cachedVillagers
+            todayBirthdays = villagers.filter( { $0.birthday == today } )
+        }
         if !villagers.isEmpty {
             return
         }
@@ -58,9 +56,13 @@ class VillagersViewModel: ObservableObject {
             .subscribe(on: DispatchQueue.global())
             .map{ $0.map{ $0.1}.sorted(by: { $0.id > $1.id }) }
             .receive(on: DispatchQueue.main)
-            .assign(to: \.villagers, on: self)
+            .sink(receiveValue: { [weak self] in
+                Self.cachedVillagers = $0
+                self?.villagers = $0
+                self?.todayBirthdays = $0.filter( { $0.birthday == self?.today })
+            })
     }
-
+    
     private func villagers(with string: String) -> [Villager] {
         villagers.filter {
             $0.localizedName.lowercased().contains(string.lowercased()) == true
