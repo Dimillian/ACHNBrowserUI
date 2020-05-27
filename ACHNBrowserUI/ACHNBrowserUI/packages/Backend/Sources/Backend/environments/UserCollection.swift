@@ -38,6 +38,8 @@ public class UserCollection: ObservableObject {
     private let encoder = JSONEncoder()
     private let decoder = JSONDecoder()
     
+    private let saveQueue = DispatchQueue(label: "achelper.save.queue")
+    
     private static let recordType = "UserCollection"
     private static let recordId = CKRecord.ID(recordName: "CurrentUserCollection")
     private static let assetKey = "data"
@@ -257,24 +259,29 @@ public class UserCollection: ObservableObject {
     
     // MARK: - Import / Export
     private func save() {
-        do {
-            let savedData = SavedData(items: items,
-                                      variants: variants,
-                                      villagers: villagers,
-                                      critters: critters,
-                                      lists: lists,
-                                      dailyTasks: dailyTasks)
-            let data = try encoder.encode(savedData)
-            try data.write(to: filePath, options: .atomicWrite)
-        
-            if isCloudEnabled {
-                isSynched = false
-                saveToCloudKit()
+        saveQueue.async { [weak self] in
+            guard let weakself = self else { return }
+            do {
+                let savedData = SavedData(items: weakself.items,
+                                          variants: weakself.variants,
+                                          villagers: weakself.villagers,
+                                          critters: weakself.critters,
+                                          lists: weakself.lists,
+                                          dailyTasks: weakself.dailyTasks)
+                let data = try weakself.encoder.encode(savedData)
+                try data.write(to: weakself.filePath, options: .atomicWrite)
+                
+                if weakself.isCloudEnabled {
+                    DispatchQueue.main.async {
+                        weakself.isSynched = false
+                        weakself.saveToCloudKit()
+                    }
+                }
+            } catch let error {
+                print("Error while saving collection: \(error.localizedDescription)")
             }
-        } catch let error {
-            print("Error while saving collection: \(error.localizedDescription)")
+            weakself.encoder.dataEncodingStrategy = .base64
         }
-        encoder.dataEncodingStrategy = .base64
     }
     
     private func loadCollection(file: URL) -> Bool {

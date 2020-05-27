@@ -37,6 +37,16 @@ struct ItemDetailInfoView: View {
                 }
                 Spacer()
             }
+            if item.furnitureImage != nil && item.iconImage != nil {
+                HStack(alignment: .center, spacing: 12) {
+                    Spacer()
+                    ItemImage(path: item.furnitureImage!,
+                              size: 100)
+                    ItemImage(path: item.iconImage!,
+                              size: 100)
+                    Spacer()
+                }
+            }
             if item.obtainedFrom != nil || item.obtainedFromNew?.isEmpty == false {
                 Text(LocalizedStringKey(item.obtainedFrom ?? item.obtainedFromNew?.first ?? ""))
                     .foregroundColor(.acSecondaryText)

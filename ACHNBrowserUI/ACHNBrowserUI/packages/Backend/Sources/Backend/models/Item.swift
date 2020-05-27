@@ -95,7 +95,11 @@ public struct Item: Codable, Equatable, Identifiable, Hashable {
     public let themes: [String]?
     public let colors: [String]?
     
+    private static var METAS_CACHE: [String: [String]] = [:]
     public var metas: [String] {
+        if let metas = Self.METAS_CACHE[id] {
+            return metas
+        }
         var metas: [String] = []
         if let tag = tag {
             metas.append(tag)
@@ -112,7 +116,9 @@ public struct Item: Codable, Equatable, Identifiable, Hashable {
         if let colors = colors {
             metas.append(contentsOf: colors)
         }
-        return Array(Set(metas.map{ $0.capitalized })).filter({ $0.lowercased() != "none"}).sorted()
+        metas = Array(Set(metas.map{ $0.capitalized })).filter({ $0.lowercased() != "none"}).sorted()
+        Self.METAS_CACHE[id] = metas
+        return metas
     }
 }
 

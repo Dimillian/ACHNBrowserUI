@@ -12,14 +12,17 @@ struct ItemStyleBadgeView: View {
     let title: String
     
     var body: some View {
-        HStack(spacing: 2) {
+        HStack(spacing: 8) {
             Text(NSLocalizedString(title, comment: "").capitalized)
                 .font(.footnote)
                 .fontWeight(.bold)
                 .foregroundColor(.white)
                 .lineLimit(1)
+            Image(systemName: "chevron.right")
+                .imageScale(.small)
+                .foregroundColor(.white)
         }
-        .padding(EdgeInsets(top: 8, leading: 8, bottom: 8, trailing: 8))
+        .padding(EdgeInsets(top: 8, leading: 12, bottom: 8, trailing: 12))
         .background(RoundedRectangle(cornerRadius: 16)
         .foregroundColor(.acTabBarBackground))
     }

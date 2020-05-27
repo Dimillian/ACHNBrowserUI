@@ -8,6 +8,7 @@
 
 import SwiftUI
 import Backend
+import UI
 
 struct CategoriesView: View {
     // MARK: - Vars
@@ -68,7 +69,7 @@ extension CategoriesView {
     }
     
     private func makeSubCategories(name: String, icon: String, categories: [Backend.Category]) -> some View {
-        NavigationLink(destination: CategoryDetailView(categories: categories)
+        NavigationLink(destination: LazyView(CategoryDetailView(categories: categories))
             .navigationBarTitle(LocalizedStringKey(name))) {
                 HStack {
                     Image(icon)
@@ -91,7 +92,7 @@ extension CategoriesView {
     }
     
     private func searchItemRow(item: Item) -> some View {
-        NavigationLink(destination: ItemDetailView(item: item)) {
+        NavigationLink(destination: LazyView(ItemDetailView(item: item))) {
             ItemRowView(displayMode: .large, item: item)
         }
     }

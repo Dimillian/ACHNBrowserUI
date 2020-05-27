@@ -18,12 +18,10 @@ struct ItemDetailView: View {
 
     @ObservedObject private var itemViewModel: ItemDetailViewModel
     
-    let item: Item
     @State private var displayedVariant: Variant?
     @State private var selectedSheet: Sheet.SheetType?
 
     init(item: Item) {
-        self.item = item
         self.itemViewModel = ItemDetailViewModel(item: item)
     }
 
@@ -51,53 +49,62 @@ struct ItemDetailView: View {
         List {
             ItemDetailInfoView(item: itemViewModel.item,
                                displayedVariant: $displayedVariant)
-            if itemViewModel.item.variations != nil {
-                variantsSection
+            Group {
+                if itemViewModel.item.variations != nil {
+                    variantsSection
+                }
+                
+                if itemViewModel.item.appCategory == .music {
+                    musicPlayerSection
+                }
+                
+                if !itemViewModel.item.metas.isEmpty {
+                    keywordsSection
+                }
             }
-            if itemViewModel.item.appCategory == .music {
-                musicPlayerSection
+            
+            Group {
+                if !itemViewModel.setItems.isEmpty {
+                    ItemsCrosslineSectionView(title: "Set items",
+                                              items: itemViewModel.setItems,
+                                              icon: "paperclip.circle.fill",
+                                              currentItem: $itemViewModel.item,
+                                              selectedVariant: $displayedVariant)
+                }
+                if !itemViewModel.similarItems.isEmpty {
+                    ItemsCrosslineSectionView(title: "Simillar items",
+                                              items: itemViewModel.similarItems,
+                                              icon: "eyedropper.full",
+                                              currentItem: $itemViewModel.item,
+                                              selectedVariant: $displayedVariant)
+                }
+                if !itemViewModel.thematicItems.isEmpty {
+                    ItemsCrosslineSectionView(title: "Thematics",
+                                              items: itemViewModel.thematicItems,
+                                              icon: "tag.fill",
+                                              currentItem: $itemViewModel.item,
+                                              selectedVariant: $displayedVariant)
+                }
+                if !itemViewModel.colorsItems.isEmpty && !itemViewModel.item.isCritter {
+                    ItemsCrosslineSectionView(title: "Same color",
+                                              items: itemViewModel.colorsItems,
+                                              icon: "pencil.tip",
+                                              currentItem: $itemViewModel.item,
+                                              selectedVariant: $displayedVariant)
+                }
+                if itemViewModel.item.materials != nil {
+                    materialsSection
+                }
+                if itemViewModel.item.isCritter {
+                    ItemDetailSeasonSectionView(item: itemViewModel.item)
+                }
             }
-            if !itemViewModel.setItems.isEmpty {
-                ItemsCrosslineSectionView(title: "Set items",
-                                          items: itemViewModel.setItems,
-                                          icon: "paperclip.circle.fill",
-                                          currentItem: $itemViewModel.item,
-                                          selectedVariant: $displayedVariant)
-            }
-            if !itemViewModel.similarItems.isEmpty {
-                ItemsCrosslineSectionView(title: "Simillar items",
-                                          items: itemViewModel.similarItems,
-                                          icon: "eyedropper.full",
-                                          currentItem: $itemViewModel.item,
-                                          selectedVariant: $displayedVariant)
-            }
-            if !itemViewModel.thematicItems.isEmpty {
-                ItemsCrosslineSectionView(title: "Thematics",
-                                          items: itemViewModel.thematicItems,
-                                          icon: "tag.fill",
-                                          currentItem: $itemViewModel.item,
-                                          selectedVariant: $displayedVariant)
-            }
-            if !itemViewModel.colorsItems.isEmpty {
-                ItemsCrosslineSectionView(title: "Same color",
-                                          items: itemViewModel.colorsItems,
-                                          icon: "pencil.tip",
-                                          currentItem: $itemViewModel.item,
-                                          selectedVariant: $displayedVariant)
-            }
-            if itemViewModel.item.materials != nil {
-                materialsSection
-            }
-            if itemViewModel.item.isCritter {
-                ItemDetailSeasonSectionView(item: itemViewModel.item)
-            }
+            
             listsSection
-            //listingSection
         }
         .listStyle(GroupedListStyle())
         .environment(\.horizontalSizeClass, .regular)
         .onAppear(perform: {
-            self.itemViewModel.item = self.item
             self.displayedVariant = nil
             self.itemViewModel.setupItems()
         })
@@ -134,6 +141,20 @@ extension ItemDetailView {
         }
     }
     
+    private var keywordsSection: some View {
+        Section(header: SectionHeaderView(text: "Keywords", icon: "link")) {
+            ScrollView(.horizontal, showsIndicators: false) {
+                HStack(spacing: 16) {
+                    ForEach(itemViewModel.item.metas, id: \.self) { meta in
+                        NavigationLink(destination: LazyView(ItemsListView(category: .other, keyword: meta))) {
+                                                                    ItemStyleBadgeView(title: meta)
+                        }
+                    }
+                }.padding()
+            }.listRowInsets(EdgeInsets())
+        }
+    }
+    
     private var variantsSection: some View {
         Section(header: SectionHeaderView(text: "Variants", icon: "paintbrush.fill")) {
             ScrollView(.horizontal, showsIndicators: false) {
@@ -161,7 +182,7 @@ extension ItemDetailView {
                         FeedbackGenerator.shared.triggerSelection()
                     }
             }
-            LikeButtonView(item: item,
+            LikeButtonView(item: itemViewModel.item,
                            variant: self.itemViewModel.item.variations?.firstIndex(of: variant) == 0 ? nil : variant)
         }
     }

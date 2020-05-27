@@ -8,12 +8,13 @@
 
 import SwiftUI
 import Backend
+import UI
 
 struct CategoryRowView: View {
     let category: Backend.Category
     
     var body: some View {
-        NavigationLink(destination: ItemsListView(category: category)) {
+        NavigationLink(destination: LazyView(ItemsListView(category: self.category))) {
             HStack {
                 Image(category.iconName())
                     .renderingMode(.original)
