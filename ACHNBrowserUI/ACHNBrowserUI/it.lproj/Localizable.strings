@@ -85,16 +85,18 @@ Più prezzi inserirai ogni giorno, dopo il lunedì mattina, migliori saranno le 
 Funzione Liste:
 Senza abbonamento puoi creare solo una lista oggetti nella scheda \"Mie cose\".
 Se ti abbonerai potrai invece creare tutte le liste oggetti che desideri.";
-"ACHelperPlusPriceAndAboDetail %@" = "Un abbonamento di %@  al mese sarà aggiunto al tuo account iTunes una volta data la conferma.
+"ACHelperPlusPriceAndAboDetail %@ %@" = "Un abbonamento di %@  al mese sarà aggiunto al tuo account iTunes una volta data la conferma.
 Gli abbonamenti si rinnovano automaticamente se non vengono annullati 24 ore prima della loro scadenza.
 Puoi annullare il tuo abbonamento in ogni momento dalle impostazioni del tuo account iTunes. I periodi di prova gratuita saranno annullati se acquisti un abbonamento.";
 "Subscribe for %@ / Month" = "Abbonati per %@ / Mese";
 "Buy lifetime AC Helper+ for %@" = "Acquista AC Helper+ per sempre per %@ ";
 "Thank you for your support!" = "Grazie mille per il tuo sostegno!";
+"%@ Monthly" = "%@ al mese";
+"%@ Yearly" = "%@ all'anno";
 
 // AboutView
 "About" = "Informazoni su";
-"The app" = "L'App";
+"The app" = "App";
 "Souce code / report an issue" = "Codice sorgente / segnala un problema";
 "Rate the app on the App Store" = "Valuta l'app sull'App Store";
 "Privacy Policy" = "Norme della Privacy";
@@ -107,7 +109,7 @@ Puoi annullare il tuo abbonamento in ogni momento dalle impostazioni del tuo acc
 "Turnip.exchange" = "Turnip.exchange";
 "Nookazon for the marketplace" = "Nookazon per il mercato";
 "Shihab / JPEGuin for the icon" = "Shihab / JPEGuin per l'icona";
-"Christian & Ninji for the turnip predictions algorithm" = "Christian & Ninji l'algoritmo predittivo delle rape";
+"Christian & Ninji for the turnip predictions algorithm" = "Christian & Ninji per l'algoritmo predittivo delle rape";
 "Error" = "Errore";
 
 // ActiveCittersView
@@ -139,7 +141,7 @@ Puoi annullare il tuo abbonamento in ogni momento dalle impostazioni del tuo acc
 "Tent" = "Tenda";
 "Nook's Cranny" = "Bottega Nook";
 "Nook's Cranny upgraded" = "Bottega di Nook (ampliata)";
-"Able sisters" = "Sorelle Ago & Filo";
+"Able sisters" = "Sartoria";
 "Visiting" = "In visita";
 "Shop" = "Negozio";
 "Residents service" = "Centro servizi";
@@ -303,6 +305,7 @@ Puoi annullare il tuo abbonamento in ogni momento dalle impostazioni del tuo acc
 "Catch phrase" = "Intercalare";
 "Unknown" = "Sconosciuto";
 "Villager items" = "Oggetti abitante";
+"Sort villagers" = "Ordina abitanti";
 // VillagersDetailView
 "Unkown" = "Sconosciuto";
 "Lazy" = "Pigro";
@@ -350,6 +353,8 @@ Puoi annullare il tuo abbonamento in ogni momento dalle impostazioni del tuo acc
 "Squirrel" = "Scoiattolo";
 "Tiger" = "Tigre";
 "Wolf" = "Lupo";
+"Like" = "Gusti";
+"Gifts ideas" = "Idee regalo";
 
 // ListingRow
 "Make an Offer" = "Fai un'offerta";
@@ -508,7 +513,7 @@ Puoi annullare il tuo abbonamento in ogni momento dalle impostazioni del tuo acc
 "Hitting a rock, Fishing" = "Colpire una roccia, Pescare";
 "In the Special Items section in Nook Shopping, after scanning the related Amiibo on Photopia" = "Tra gli Articoli Speciali del Catalogo Nook, dopo scansione del relativo Amiibo sull'Isola Fiorilio";
 "International Children's Day" = "Giornata internazionale dei bambini";
-"International Museum Day" = "Giornata internazionale dei musei";
+"International Museum Day" = "Giornata internazionale dei Musei";
 "Isabelle" = "Fuffi";
 "Jock villagers" = "Abitanti Sportivi";
 "Jolly Redd's Treasure Trawler" = "Il mare dei tesori di Volpolo";
@@ -692,7 +697,7 @@ Puoi annullare il tuo abbonamento in ogni momento dalle impostazioni del tuo acc
 "See less" = "Meno info";
 
 //Added 05-14-2020
-"My data" = "La mia data";
+"My data" = "I miei dati";
 "Collection size" = "Dimensione collezione";
 "Export my collection" = "Esporta la mia collezione";
 "Import a collection" = "Importa una collezione";
@@ -766,13 +771,18 @@ Puoi annullare il tuo abbonamento in ogni momento dalle impostazioni del tuo acc
 "Lots of cliffs, waterfalls and river forks. Normal resource spawns." = "Tanti rilievi, cascate e biforcazioni del fiume. Risorse naturali normali";
 "A very rare island with flowers, scorpions and a rectangular pond. If you climb up onto the cliff and climb down from the back, you can vault over to a tiny island in the middle and get 8 gold nuggets from a single rock." = "Un’isola molto rara con fiori, scorpioni e uno stagno rettangolare. Se ti arrampichi sul rilievo e poi scendi dietro dall’altra parte puoi saltare con l’asta su di una piccola isola che sta nel mezzo. Lì puoi prendere 8 minerali d’oro da una roccia.";
 
+// Added 2020-05-20
+"Same color" = "Stesso colore";
+// New settings
+"Using iCloud sync" = "Utilizza sincronizzazione iCloud";
+"Synchronized with iCloud" = "Sincronizzato con iCloud";
+
 "Possible visitors" = "Visitatori possibili";
-"On" = "della";
-" your island" = " tua isola";
+"On" = "di";
+" your island" = " oggi";
 "From 6pm to 5am" = "Dalle 18:00 alle 05:00";
 "From 8pm to 5am" = "Dalle 20:00 alle 05:00";
 "From 5am to 12pm" = "Dalle 05:00 alle 12:00";
-
 
 
 //Special characters
@@ -780,51 +790,32 @@ Puoi annullare il tuo abbonamento in ogni momento dalle impostazioni del tuo acc
 "K.K Slider" = "K.K. Slider";
 "Daisy Mae" = "Brunella";
 "C.J" = "Castorino";
-
 "Flick" = "Ivano";
-
 "Kicks" = "Sciuscià";
-
 "Saharah" = "Sahara";
-
 "Label" = "Beatrice";
-
 "Leif" = "Florindo";
-
 "Redd" = "Volpolo";
-
 "Wisp" = "Spirideo";
-
 "Celeste" = "Celeste";
-
 
 
 // Added 2020-05-23
 
-"Museum Day" = "Giornata internazionale dei musei";
-
+"Museum Day" = "Giornata internazionale dei Musei";
 "Wedding Season" = "Stagione dei matrimoni";
-
 "Bug-Off contest" = "Insettomania";
-
 "Meteor shower" =  "Pioggia di stelle";
-
 
 
 // Added 2020-05-23
 
 "Reset" = "Reimposta";
-
 "View Turnip.Exchange islands" = "Guarda isole Turnip.Exchange";
-
 "View on TurnipProphet" = "Guarda su TurnipProphet";
-
 
 
 // Added 2020-05-24
 
 "Music player" = "Player musicale";
-
 "Tracks" = "Brani";
-
-
