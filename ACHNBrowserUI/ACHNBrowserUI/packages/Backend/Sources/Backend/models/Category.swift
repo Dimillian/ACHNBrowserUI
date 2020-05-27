@@ -22,7 +22,7 @@ public enum Category: String, CaseIterable {
         if itemCategory == "Fish - North" || itemCategory == "Fish - South" {
             self = .fish
             return
-        } else if itemCategory == "Bugs - North" || itemCategory == "Buhs - South" {
+        } else if itemCategory == "Bugs - North" || itemCategory == "Bugs - South" || itemCategory == "Insects" {
             self = .bugs
             return
         } else if itemCategory == "Dress-Up" {
@@ -104,7 +104,12 @@ public enum Category: String, CaseIterable {
             return "clothing"
         } else if APIIslandDevelopment().contains(category) {
             return "islanddevelopment"
-        } else if category == .recipes || category == .nookmiles || category == .construction {
+        } else if category == .recipes ||
+            category == .nookmiles ||
+            category == .construction ||
+            category == .fish ||
+            category == .bugs ||
+            category == .fossils {
             return category.rawValue
         }
         return nil
