@@ -24,14 +24,7 @@ public class Items: ObservableObject {
     
     private let spotlightIndex: [Category] = [.fish, .bugs, .fossils, .art]
     private let spotlightQueue = DispatchQueue(label: "ac.spotlight", qos: .background)
-     
-    struct Scene {
-        func place(graphic: String, at: CGPoint) {
-            
-        }
-    }
-    
-    
+         
     init() {
         let itemLogHandler = OSLog(subsystem: "com.achelper.items", category: "qos-measuring")
         let itemProgressHandler = OSLog(subsystem: "com.achelper.items", category: .pointsOfInterest)
