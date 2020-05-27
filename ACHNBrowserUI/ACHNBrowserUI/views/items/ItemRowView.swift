@@ -11,8 +11,6 @@ import Backend
 import UI
 
 struct ItemRowView: View {
-    @EnvironmentObject private var collection: UserCollection
-    
     enum DisplayMode {
         case compact, large, largeNoButton
     }
@@ -82,8 +80,7 @@ struct ItemRowView: View {
     var body: some View {
         HStack(spacing: 8) {
             if displayMode != .largeNoButton {
-                LikeButtonView(item: item,
-                               variant: displayedVariant).environmentObject(collection)
+                LikeButtonView(item: item, variant: displayedVariant)
             }
             if item.finalImage == nil && displayedVariant == nil {
                 Image(item.appCategory.iconName())

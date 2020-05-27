@@ -93,15 +93,10 @@ struct ItemsListView: View {
     var body: some View {
         List {
             Section(header: SearchField(searchText: $viewModel.searchText)) {
-                if currentItems.isEmpty {
-                    RowLoadingView(isLoading: .constant(true))
-                } else {
-                    ForEach(currentItems) { item in
-                        NavigationLink(destination: LazyView(ItemDetailView(item: item))) {
-                            ItemRowView(displayMode: self.itemRowsDisplayMode, item: item)
-                                .environmentObject(ItemDetailViewModel(item: item))
-                                .listRowBackground(Color.acSecondaryBackground)
-                        }
+                ForEach(currentItems) { item in
+                    NavigationLink(destination: LazyView(ItemDetailView(item: item))) {
+                        ItemRowView(displayMode: self.itemRowsDisplayMode, item: item)
+                            .listRowBackground(Color.acSecondaryBackground)
                     }
                 }
             }
