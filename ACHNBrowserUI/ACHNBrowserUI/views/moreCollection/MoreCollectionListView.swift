@@ -9,17 +9,17 @@
 import SwiftUI
 import Backend
 
-struct MoreView: View {
+struct MoreCollectionListView: View {
 
     // MARK: - Properties
 
     @EnvironmentObject private var collection: UserCollection
 
-    let viewModel: MoreViewModel
+    let viewModel: MoreCollectionListViewModel
 
     // MARK: - Life cycle
 
-    init(viewModel: MoreViewModel) {
+    init(viewModel: MoreCollectionListViewModel) {
         self.viewModel = viewModel
     }
 
@@ -33,7 +33,7 @@ struct MoreView: View {
 
     // MARK: - Private
 
-    private func makeListRow(row: MoreViewModel.Row) -> some View {
+    private func makeListRow(row: MoreCollectionListViewModel.Row) -> some View {
         switch row {
         case .critters:
             return NavigationLink(destination: CrittersListView()) {
@@ -54,7 +54,7 @@ struct MoreView: View {
 struct MoreView_Previews: PreviewProvider {
     static var previews: some View {
         List {
-            MoreView(viewModel: MoreViewModel())
+            MoreCollectionListView(viewModel: MoreCollectionListViewModel())
         }
         .previewLayout(.sizeThatFits)
     }

@@ -104,6 +104,9 @@ struct DesignFormView: View {
     }
 }
 
+// MARK: - Preview
+
+#if DEBUG
 struct DesignFormView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
@@ -116,3 +119,4 @@ struct DesignFormView_Previews: PreviewProvider {
         }
     }
 }
+#endif
