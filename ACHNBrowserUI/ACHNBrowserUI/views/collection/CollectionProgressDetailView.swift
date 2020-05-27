@@ -12,7 +12,6 @@ import UI
 
 struct CollectionProgressDetailView: View {
     @EnvironmentObject private var items: Items
-    @EnvironmentObject private var collection: UserCollection
         
     var body: some View {
         List {

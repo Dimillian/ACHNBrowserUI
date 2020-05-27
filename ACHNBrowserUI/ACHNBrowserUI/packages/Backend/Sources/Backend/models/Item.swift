@@ -81,6 +81,8 @@ public struct Item: Codable, Equatable, Identifiable, Hashable {
     public var appCategory: Category {
         Category(itemCategory: category)
     }
+    
+    public var itemCategory: String?
         
     public let materials: [Material]?
     

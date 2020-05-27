@@ -140,6 +140,18 @@ public class Items: ObservableObject {
         return Just(nil).eraseToAnyPublisher()
     }
     
+    public func matchItemRecipe(item: Item) -> Item? {
+        return categories[.recipes]?.first(where: { $0.name == item.name })
+    }
+    
+    public func matchFinalItem(recipe: Item) -> Item? {
+        if let stringCategory = recipe.itemCategory {
+            let category = Category(itemCategory: stringCategory)
+            return categories[category]?.first(where: { $0.name == recipe.name })
+        }
+        return nil
+    }
+    
     public func matchVillagerPreferredGifts(villager: String) -> AnyPublisher<[Item]?, Never> {
         if let cached = villagersLikeCache[villager] {
             return Just(cached).eraseToAnyPublisher()

@@ -15,6 +15,7 @@ class ItemsViewModel: ObservableObject {
     @Published var sortedItems: [Item] = []
     @Published var searchItems: [Item] = []
     @Published var searchText = ""
+    @Published var allowSearch = false
     
     public let category: Backend.Category
     
@@ -57,7 +58,8 @@ class ItemsViewModel: ObservableObject {
     
     public init(category: Backend.Category) {
         self.category = category
-
+        self.allowSearch = true
+        
         searchCancellable = $searchText
             .debounce(for: .milliseconds(300), scheduler: DispatchQueue.main)
             .removeDuplicates()

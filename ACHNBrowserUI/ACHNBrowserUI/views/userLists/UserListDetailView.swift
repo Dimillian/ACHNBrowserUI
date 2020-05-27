@@ -62,28 +62,29 @@ struct UserListDetailView: View {
     
     var body: some View {
         List {
-            searchBar
-            if searchViewModdel.searchText.isEmpty {
-                if !viewModel.list.items.isEmpty {
-                    ForEach(viewModel.list.items) { item in
-                        NavigationLink(destination: ItemDetailView(item: item)) {
-                            ItemRowView(displayMode: .largeNoButton, item: item)
+            Section(header: searchBar) {
+                if searchViewModdel.searchText.isEmpty {
+                    if !viewModel.list.items.isEmpty {
+                        ForEach(viewModel.list.items) { item in
+                            NavigationLink(destination: ItemDetailView(item: item)) {
+                                ItemRowView(displayMode: .largeNoButton, item: item)
+                            }
+                        }.onDelete { indexes in
+                            self.viewModel.deleteItem(at: indexes.first!)
                         }
-                    }.onDelete { indexes in
-                        self.viewModel.deleteItem(at: indexes.first!)
+                    } else {
+                        Text("Items added to your list from the search will be displayed there.")
+                            .foregroundColor(.acSecondaryText)
                     }
                 } else {
-                    Text("Items added to your list from the search will be displayed there.")
-                        .foregroundColor(.acSecondaryText)
-                }
-            } else {
-                if searchViewModdel.isLoadingData {
-                    RowLoadingView(isLoading: $isLoadingData).animation(.default)
-                } else if searchCategories.isEmpty {
-                    Text("No results for \(searchViewModdel.searchText)")
-                        .foregroundColor(.acSecondaryText)
-                } else {
-                    ForEach(searchCategories, id: \.0, content: searchSection)
+                    if searchViewModdel.isLoadingData {
+                        RowLoadingView(isLoading: $isLoadingData).animation(.default)
+                    } else if searchCategories.isEmpty {
+                        Text("No results for \(searchViewModdel.searchText)")
+                            .foregroundColor(.acSecondaryText)
+                    } else {
+                        ForEach(searchCategories, id: \.0, content: searchSection)
+                    }
                 }
             }
         }
@@ -96,7 +97,8 @@ struct UserListDetailView: View {
     }
     
     private func searchSection(category: Backend.Category, items: [Item]) -> some View {
-        Section(header: CategoryHeaderView(category: category)) {
+        Group {
+            CategoryHeaderView(category: category).listRowBackground(Color.acBackground)
             ForEach(items, content: self.searchItemRow)
         }
     }

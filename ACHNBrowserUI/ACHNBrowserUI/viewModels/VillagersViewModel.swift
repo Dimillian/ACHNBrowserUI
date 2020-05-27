@@ -43,18 +43,19 @@ class VillagersViewModel: ObservableObject {
             .filter { !$0.isEmpty }
             .map(villagers(with:))
             .sink(receiveValue: { [weak self] in self?.searchResults = $0 })
-        
-        villagers = Self.cachedVillagers
-        if villagers.isEmpty {
-            fetch()
-        }
     }
     
-    private func fetch() {
+    func fetch() {
+        villagers = Self.cachedVillagers
+        if !villagers.isEmpty {
+            return
+        }
         apiPublisher = ACNHApiService.fetch(endpoint: .villagers)
+            .subscribe(on: DispatchQueue.global())
             .replaceError(with: [:])
             .eraseToAnyPublisher()
         apiCancellable = apiPublisher?
+            .subscribe(on: DispatchQueue.global())
             .map{ $0.map{ $0.1}.sorted(by: { $0.id > $1.id }) }
             .receive(on: DispatchQueue.main)
             .assign(to: \.villagers, on: self)

@@ -49,7 +49,7 @@ struct TodayBirthdaysSection: View {
                 }
                 .padding(.vertical)
             }
-        }
+        }.onAppear(perform: viewModel.fetch)
     }
     
     private func makeCell(for villager: Villager) -> some View {

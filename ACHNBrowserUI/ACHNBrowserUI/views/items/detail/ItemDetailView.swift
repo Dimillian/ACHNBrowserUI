@@ -30,6 +30,7 @@ struct ItemDetailView: View {
             NavigationView {
                 List {
                     ItemDetailInfoView(item: itemViewModel.item,
+                                       recipe: itemViewModel.recipe,
                                        displayedVariant: $displayedVariant)
                 }
                 .listStyle(GroupedListStyle())
@@ -48,6 +49,7 @@ struct ItemDetailView: View {
     var body: some View {
         List {
             ItemDetailInfoView(item: itemViewModel.item,
+                               recipe: itemViewModel.recipe,
                                displayedVariant: $displayedVariant)
             Group {
                 if itemViewModel.item.variations != nil {
@@ -92,7 +94,7 @@ struct ItemDetailView: View {
                                               currentItem: $itemViewModel.item,
                                               selectedVariant: $displayedVariant)
                 }
-                if itemViewModel.item.materials != nil {
+                if itemViewModel.item.materials != nil || itemViewModel.recipe?.materials != nil {
                     materialsSection
                 }
                 if itemViewModel.item.isCritter {
@@ -191,7 +193,7 @@ extension ItemDetailView {
         Section(header: SectionHeaderView(text: "Materials", icon: "leaf.arrow.circlepath")) {
             ScrollView(.horizontal, showsIndicators: false) {
                 HStack {
-                    itemViewModel.item.materials.map { materials in
+                    (itemViewModel.item.materials ?? itemViewModel.recipe?.materials).map { materials in
                         ForEach(materials) { material in
                             VStack {
                                 Image(material.iconName)

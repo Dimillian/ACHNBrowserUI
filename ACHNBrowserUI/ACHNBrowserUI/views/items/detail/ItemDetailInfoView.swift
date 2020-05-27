@@ -12,6 +12,7 @@ import UI
 
 struct ItemDetailInfoView: View {
     let item: Item
+    let recipe: Item?
     @Binding var displayedVariant: Variant?
     
     var body: some View {
@@ -69,7 +70,7 @@ struct ItemDetailInfoView: View {
                 }
             }
             if !item.isCritter {
-                Text("Customizable: \(item.customize == true ? NSLocalizedString("Yes", comment: "") : NSLocalizedString("No", comment: ""))")
+                Text("Customizable: \(item.customize == true || recipe?.customize == true ? NSLocalizedString("Yes", comment: "") : NSLocalizedString("No", comment: ""))")
                     .foregroundColor(.acText)
             }
             
@@ -101,7 +102,9 @@ struct ItemDetailInfoView: View {
 struct ItemDetailInfoView_Previews: PreviewProvider {
     static var previews: some View {
         List {
-            ItemDetailInfoView(item: static_item, displayedVariant: .constant(nil))
+            ItemDetailInfoView(item: static_item,
+                               recipe: nil,
+                               displayedVariant: .constant(nil))
         }
     }
 }
