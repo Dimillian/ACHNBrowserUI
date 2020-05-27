@@ -19,6 +19,7 @@ public class UserCollection: ObservableObject {
     @Published public var villagers: [Villager] = []
     @Published public var critters: [Item] = []
     @Published public var lists: [UserList] = []
+    @Published public var designs: [Design] = []
     @Published public var dailyTasks = DailyTasks()
     
     @Published public var isCloudEnabled = true
@@ -32,6 +33,7 @@ public class UserCollection: ObservableObject {
         let critters: [Item]
         let lists: [UserList]?
         let dailyTasks: DailyTasks?
+        let designs: [Design]?
     }
     
     private let filePath: URL
@@ -176,7 +178,19 @@ public class UserCollection: ObservableObject {
         lists[index].items.remove(at: at)
         save()
     }
-    
+
+    // MARK: - Custom Designs
+
+    public func addDesign(_ design: Design) {
+        designs.append(design)
+        save()
+    }
+
+    public func deleteDesign(at design: Int) {
+        designs.remove(at: design)
+        save()
+    }
+
     // MARK: - CloudKit
     private func checkiCloudStatus() {
         CKContainer.default().accountStatus { (status, error) in
@@ -267,7 +281,8 @@ public class UserCollection: ObservableObject {
                                           villagers: weakself.villagers,
                                           critters: weakself.critters,
                                           lists: weakself.lists,
-                                          dailyTasks: weakself.dailyTasks)
+                                          dailyTasks: weakself.dailyTasks,
+                                          designs: weakself.designs)
                 let data = try weakself.encoder.encode(savedData)
                 try data.write(to: weakself.filePath, options: .atomicWrite)
                 
@@ -295,6 +310,7 @@ public class UserCollection: ObservableObject {
                 self.critters = savedData.critters
                 self.lists = savedData.lists ?? []
                 self.dailyTasks = savedData.dailyTasks ?? DailyTasks()
+                self.designs = savedData.designs ?? []
                 return true
             } catch {
                 return false
@@ -311,6 +327,7 @@ public class UserCollection: ObservableObject {
             self.critters = []
             self.lists = []
             self.dailyTasks = DailyTasks()
+            self.designs = []
             save()
             return true
         } catch {
