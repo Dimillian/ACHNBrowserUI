@@ -180,7 +180,7 @@ Puoi annullare il tuo abbonamento in ogni momento dalle impostazioni del tuo acc
 // CollectionListView
 "Create a new list" = "Crea una nuova lista";
 "Please select or go stars some items!" = "Per favore scegli o metti la stella a degli oggetti!";
-"When you'll stars some %@, they'll be displayed here." = "Quando metterai la stella a degli %@, saranno mostrati qui.";
+"When you stars some %@, they'll be displayed here." = "Quando metterai la stella a degli %@, saranno mostrati qui.";
 "Items" = "Oggetti";
 "Critters" = "Animaletti";
 "Lists" = "Liste";
