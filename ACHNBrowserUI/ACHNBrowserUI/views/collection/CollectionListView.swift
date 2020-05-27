@@ -24,7 +24,7 @@ struct CollectionListView: View {
         Array(Set(collection.items.map(\.category))).sorted()
     }
 
-    private var moreViewModel = MoreCollectionListViewModel()
+    private var moreViewModel = CollectionMoreDetailViewModel()
 
     var body: some View {
         NavigationView {
@@ -43,7 +43,7 @@ struct CollectionListView: View {
                     } else if selectedTab == .lists {
                         userListsSections
                     } else if selectedTab == .more {
-                        MoreCollectionListView(viewModel: MoreCollectionListViewModel())
+                        CollectionMoreDetailView(viewModel: CollectionMoreDetailViewModel())
                     } else {
                         emptyView
                     }

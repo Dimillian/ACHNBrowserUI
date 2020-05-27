@@ -9,7 +9,7 @@
 import Backend
 import Combine
 
-final class MoreCollectionListViewModel: ObservableObject {
+final class CollectionMoreDetailViewModel: ObservableObject {
 
     // MARK: - Types
 
