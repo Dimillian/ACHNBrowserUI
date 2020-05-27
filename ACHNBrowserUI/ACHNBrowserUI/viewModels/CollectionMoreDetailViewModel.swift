@@ -7,9 +7,8 @@
 //
 
 import Backend
-import Combine
 
-final class CollectionMoreDetailViewModel: ObservableObject {
+struct CollectionMoreDetailViewModel {
 
     // MARK: - Types
 
