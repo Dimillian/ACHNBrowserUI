@@ -10,6 +10,7 @@ import Foundation
 import Combine
 import CoreSpotlight
 import SDWebImage
+import os.log
 
 public class Items: ObservableObject {
     public static let shared = Items()
@@ -23,13 +24,27 @@ public class Items: ObservableObject {
     
     private let spotlightIndex: [Category] = [.fish, .bugs, .fossils, .art]
     private let spotlightQueue = DispatchQueue(label: "ac.spotlight", qos: .background)
+     
+    struct Scene {
+        func place(graphic: String, at: CGPoint) {
+            
+        }
+    }
+    
     
     init() {
+        let itemLogHandler = OSLog(subsystem: "com.achelper.items", category: "qos-measuring")
+        let itemProgressHandler = OSLog(subsystem: "com.achelper.items", category: .pointsOfInterest)
+        
+        os_signpost(.begin, log: itemLogHandler, name: "Processing items", "Begin processing items")
+        
         var shouldIndex = false
         if let version = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String, AppUserDefaults.shared.spotlightIndexVersion != version {
             AppUserDefaults.shared.spotlightIndexVersion = version
             shouldIndex = true
         }
+        
+        var processedCategories = 0
         
         for category in Category.allCases {
             // Migrated to new JSON format
@@ -51,6 +66,12 @@ public class Items: ObservableObject {
                         if self?.spotlightIndex.contains(category) == true, shouldIndex {
                             self?.indexItems(category: category, items: finalItems)
                         }
+                        os_signpost(.event, log: itemProgressHandler,
+                                    name: "Processing Items", "Processed categories %{public}s with items %{public}d", category.rawValue, items.count)
+                        processedCategories += 1
+                        if processedCategories == Category.allCases.count - 1 {
+                            os_signpost(.end, log: itemLogHandler, name: "Processing Items", "Done processing categories %{public}d", processedCategories)
+                        }
                         
                 }
             } else {
@@ -66,6 +87,13 @@ public class Items: ObservableObject {
                         self?.categories[category] = items
                         if self?.spotlightIndex.contains(category) == true, shouldIndex {
                             self?.indexItems(category: category, items: items)
+                        }
+                        os_signpost(.event, log: itemProgressHandler,
+                                    name: "Processing Items", "Processed categories %{public}s with items %{public}d", category.rawValue, items.count)
+                        processedCategories += 1
+                        
+                        if processedCategories == Category.allCases.count - 1 {
+                            os_signpost(.end, log: itemLogHandler, name: "Processing Items", "Done all processing items categories %{public}d", processedCategories)
                         }
                 }
             }
