@@ -9,6 +9,19 @@
 import Foundation
 import SwiftUI
 
+// Formatter used for the start / end times of critters
+fileprivate let formatter: DateFormatter = {
+    let formatter = DateFormatter()
+    formatter.dateFormat = is24Hour() ? "h" : "ha"
+    return formatter
+}()
+
+/// Determine if the device is set to 24 or 12 hour time
+fileprivate func is24Hour() -> Bool {
+    let dateFormat = DateFormatter.dateFormat(fromTemplate: "j", options: 0, locale: Locale.current)!
+    return dateFormat.firstIndex(of: "a") == nil
+}
+
 public struct ItemResponse: Codable {
     let total: Int
     let results: [Item]
@@ -155,7 +168,14 @@ public extension Item {
         if startTime == 0 && endTime == 0 {
             return NSLocalizedString("All day", comment: "")
         }
-        return "\(startTime) - \(endTime)h"
+        
+        let startDate = DateComponents(calendar: .current, hour: startTime).date!
+        let endDate = DateComponents(calendar: .current, hour: endTime).date!
+        
+        let startHour = formatter.string(from: startDate)
+        let endHour = formatter.string(from: endDate)
+        
+        return "\(startHour) - \(endHour)\(is24Hour() ? "h" : "")"
     }
 }
 
