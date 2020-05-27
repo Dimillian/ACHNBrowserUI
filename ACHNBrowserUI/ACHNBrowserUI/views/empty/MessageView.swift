@@ -24,6 +24,10 @@ struct MessageView: View {
         self.string = "When you stars some \(collectionName), they'll be displayed here."
     }
 
+    init(noResultsFor string: String) {
+        self.string = "No results for \(string)"
+    }
+
     // MARK: - Public
 
     var body: some View {
