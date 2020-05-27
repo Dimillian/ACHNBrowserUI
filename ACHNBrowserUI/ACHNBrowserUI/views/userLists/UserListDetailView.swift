@@ -73,15 +73,13 @@ struct UserListDetailView: View {
                             self.viewModel.deleteItem(at: indexes.first!)
                         }
                     } else {
-                        Text("Items added to your list from the search will be displayed there.")
-                            .foregroundColor(.acSecondaryText)
+                        MessageView(string: "Items added to your list from the search will be displayed there.")
                     }
                 } else {
                     if searchViewModdel.isLoadingData {
                         RowLoadingView(isLoading: $isLoadingData).animation(.default)
                     } else if searchCategories.isEmpty {
-                        Text("No results for \(searchViewModdel.searchText)")
-                            .foregroundColor(.acSecondaryText)
+                        MessageView(noResultsFor: searchViewModdel.searchText)
                     } else {
                         ForEach(searchCategories, id: \.0, content: searchSection)
                     }

@@ -21,6 +21,8 @@ struct DesignRowView: View {
         self.viewModel = viewModel
     }
 
+    // MARK: - Public
+
     var body: some View {
         HStack {
             VStack(alignment: .leading, spacing: 2) {
@@ -51,6 +53,7 @@ struct DesignRowView: View {
 
 // MARK: - Preview
 
+#if DEBUG
 struct DesignRowView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
@@ -67,3 +70,4 @@ struct DesignRowView_Previews: PreviewProvider {
         }
     }
 }
+#endif

@@ -11,7 +11,7 @@ import SwiftUIKit
 import Backend
 
 enum Tabs: String, CaseIterable {
-    case items, villagers, critters, lists, designs
+    case items, villagers, lists, more
 }
 
 struct CollectionListView: View {
@@ -23,6 +23,8 @@ struct CollectionListView: View {
     private var categories: [String] {
         Array(Set(collection.items.map(\.category))).sorted()
     }
+
+    private var moreViewModel = MoreViewModel()
 
     var body: some View {
         NavigationView {
@@ -38,16 +40,10 @@ struct CollectionListView: View {
                                 VillagerRowView(villager: villager)
                             }
                         }
-                    } else if selectedTab == .critters && !collection.critters.isEmpty {
-                        ForEach(collection.critters) { critter in
-                            NavigationLink(destination: ItemDetailView(item: critter)) {
-                                ItemRowView(displayMode: .large, item: critter)
-                            }
-                        }
                     } else if selectedTab == .lists {
                         userListsSections
-                    } else if selectedTab == .designs {
-                        designView
+                    } else if selectedTab == .more {
+                        MoreView(viewModel: MoreViewModel())
                     } else {
                         emptyView
                     }
@@ -88,22 +84,6 @@ struct CollectionListView: View {
         }
     }
 
-    private var designView: some View {
-        Group {
-            Button(action: {
-                self.sheet = .designForm(editingDesign: nil)
-            }) {
-                Text("Add Creator/Design Item").foregroundColor(.acHeaderBackground)
-            }
-
-            ForEach(collection.designs) { design in
-                DesignRowView(viewModel: DesignRowViewModel(design: design))
-            }.onDelete { indexes in
-                self.collection.deleteDesign(at: indexes.first!)
-            }
-        }
-    }
-
     private var placeholderView: some View {
         Text("Please select or go stars some items!")
             .foregroundColor(.acSecondaryText)
@@ -111,8 +91,7 @@ struct CollectionListView: View {
 
     private var emptyView: some View {
         let selectedTabName = NSLocalizedString(selectedTab.rawValue, comment: "")
-        return Text("When you stars some \(selectedTabName), they'll be displayed here.")
-            .foregroundColor(.acSecondaryText)
+        return MessageView(collectionName: selectedTabName)
     }
 
     private var picker: some View {
