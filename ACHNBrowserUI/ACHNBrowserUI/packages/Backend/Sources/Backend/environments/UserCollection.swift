@@ -9,6 +9,7 @@
 import Foundation
 import Combine
 import CloudKit
+import os.log
 
 public class UserCollection: ObservableObject {
     public static let shared = UserCollection(iCloudDisabled: false)
@@ -48,6 +49,9 @@ public class UserCollection: ObservableObject {
     private var cloudKitDatabase: CKDatabase? = nil
     private var currentRecord: CKRecord? = nil
     
+    private let logHandler = OSLog(subsystem: "com.achelper.collection", category: "ac-perf")
+    private let progressHandler = OSLog(subsystem: "com.achelper.collection", category: .pointsOfInterest)
+    
     public init(iCloudDisabled: Bool) {
         do {
             filePath = try FileManager.default.url(for: .documentDirectory,
@@ -69,15 +73,41 @@ public class UserCollection: ObservableObject {
     
     // MARK: - Items management
     public func itemsIn(category: Category, items: [Item]) -> Int {
+        os_signpost(.begin,
+                    log: logHandler,
+                    name: "Counting collection items",
+                    "Begin counting items for category %{public}s",
+                    category.rawValue)
+        
         let allItems = Items.shared.categories[category] ?? []
         let inCollection = items.count(where: { allItems.contains($0) && !$0.name.contains("(fake)") })
+        
+        os_signpost(.end,
+                    log: logHandler,
+                    name: "Counting collection items",
+                    "Done counting items for category %{public}s",
+                    category.rawValue)
+        
         return inCollection
     }
     
     public func itemsIn(category: Category) -> Int {
+        os_signpost(.begin,
+                    log: logHandler,
+                    name: "Counting collection items",
+                    "Begin counting items for category %{public}s",
+                    category.rawValue)
+        
         let items = Items.shared.categories[category] ?? []
         var caught = self.critters.count(where: { items.contains($0) } )
         caught += self.items.count(where: { items.contains($0) && !$0.name.contains("(fake)") })
+        
+        os_signpost(.end,
+                    log: logHandler,
+                    name: "Counting collection items",
+                    "Done counting items for category %{public}s",
+                    category.rawValue)
+        
         return caught
     }
 
