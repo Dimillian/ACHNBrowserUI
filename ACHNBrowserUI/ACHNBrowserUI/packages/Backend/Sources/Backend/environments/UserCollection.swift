@@ -50,7 +50,6 @@ public class UserCollection: ObservableObject {
     private var currentRecord: CKRecord? = nil
     
     private let logHandler = OSLog(subsystem: "com.achelper.collection", category: "ac-perf")
-    private let progressHandler = OSLog(subsystem: "com.achelper.collection", category: .pointsOfInterest)
     
     public init(iCloudDisabled: Bool) {
         do {
@@ -75,8 +74,8 @@ public class UserCollection: ObservableObject {
     public func itemsIn(category: Category, items: [Item]) -> Int {
         os_signpost(.begin,
                     log: logHandler,
-                    name: "Counting collection items",
-                    "Begin counting items for category %{public}s",
+                    name: "Counting items with passed array",
+                    "Begin for category %{public}s",
                     category.rawValue)
         
         let allItems = Items.shared.categories[category] ?? []
@@ -84,8 +83,8 @@ public class UserCollection: ObservableObject {
         
         os_signpost(.end,
                     log: logHandler,
-                    name: "Counting collection items",
-                    "Done counting items for category %{public}s",
+                    name: "Counting items with passed array",
+                    "Done for category %{public}s",
                     category.rawValue)
         
         return inCollection
@@ -94,8 +93,8 @@ public class UserCollection: ObservableObject {
     public func itemsIn(category: Category) -> Int {
         os_signpost(.begin,
                     log: logHandler,
-                    name: "Counting collection items",
-                    "Begin counting items for category %{public}s",
+                    name: "Counting items",
+                    "Begin for category %{public}s",
                     category.rawValue)
         
         let items = Items.shared.categories[category] ?? []
@@ -104,8 +103,8 @@ public class UserCollection: ObservableObject {
         
         os_signpost(.end,
                     log: logHandler,
-                    name: "Counting collection items",
-                    "Done counting items for category %{public}s",
+                    name: "Counting items",
+                    "Done for category %{public}s",
                     category.rawValue)
         
         return caught
