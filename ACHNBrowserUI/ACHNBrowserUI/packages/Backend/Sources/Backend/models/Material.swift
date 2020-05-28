@@ -19,6 +19,8 @@ public struct Material: Codable, Equatable, Identifiable {
         switch itemName {
         case "Softwood":
             return "icon-softwood"
+        case "Stone":
+            return "icon-stone"
         case "Wood":
             return "icon-wood"
         case "Hardwood":
