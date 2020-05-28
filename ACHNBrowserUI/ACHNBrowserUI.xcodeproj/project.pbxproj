@@ -180,6 +180,13 @@
 		AE2D7EFC247E9726006C1F1A /* DesignListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE2D7EFB247E9726006C1F1A /* DesignListView.swift */; };
 		AE2D7EFE247EAF05006C1F1A /* CrittersListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE2D7EFD247EAF05006C1F1A /* CrittersListView.swift */; };
 		AE2D7F01247EB2A8006C1F1A /* MessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE2D7F00247EB2A8006C1F1A /* MessageView.swift */; };
+		AE38E4A72482D772000DFED3 /* ChoreListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE38E4A62482D772000DFED3 /* ChoreListViewModel.swift */; };
+		AE51C2E1247F39B900F074EC /* ChoreListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE51C2E0247F39B900F074EC /* ChoreListView.swift */; };
+		AE51C2E324801D5D00F074EC /* ChoreListRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE51C2E224801D5D00F074EC /* ChoreListRowView.swift */; };
+		AE51C2E7248117EC00F074EC /* ChoreFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE51C2E6248117EC00F074EC /* ChoreFormView.swift */; };
+		AE51C2E92481185900F074EC /* ChoreFormViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE51C2E82481185900F074EC /* ChoreFormViewModel.swift */; };
+		AE96184824816B7200CC073C /* TodayChoresSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE96184724816B7200CC073C /* TodayChoresSection.swift */; };
+		AE96184A2482B1F300CC073C /* TodayChoresSectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE9618492482B1F300CC073C /* TodayChoresSectionViewModel.swift */; };
 		AEEEC4C6247AB1F400894C02 /* DesignRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEEEC4C5247AB1F400894C02 /* DesignRowView.swift */; };
 		FA0EC271247B77E400447D7E /* VillagersSortView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0EC270247B77E400447D7E /* VillagersSortView.swift */; };
 /* End PBXBuildFile section */
@@ -364,6 +371,13 @@
 		AE2D7EFB247E9726006C1F1A /* DesignListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignListView.swift; sourceTree = "<group>"; };
 		AE2D7EFD247EAF05006C1F1A /* CrittersListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrittersListView.swift; sourceTree = "<group>"; };
 		AE2D7F00247EB2A8006C1F1A /* MessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageView.swift; sourceTree = "<group>"; };
+		AE38E4A62482D772000DFED3 /* ChoreListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoreListViewModel.swift; sourceTree = "<group>"; };
+		AE51C2E0247F39B900F074EC /* ChoreListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoreListView.swift; sourceTree = "<group>"; };
+		AE51C2E224801D5D00F074EC /* ChoreListRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoreListRowView.swift; sourceTree = "<group>"; };
+		AE51C2E6248117EC00F074EC /* ChoreFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoreFormView.swift; sourceTree = "<group>"; };
+		AE51C2E82481185900F074EC /* ChoreFormViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoreFormViewModel.swift; sourceTree = "<group>"; };
+		AE96184724816B7200CC073C /* TodayChoresSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayChoresSection.swift; sourceTree = "<group>"; };
+		AE9618492482B1F300CC073C /* TodayChoresSectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayChoresSectionViewModel.swift; sourceTree = "<group>"; };
 		AEEEC4C5247AB1F400894C02 /* DesignRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignRowView.swift; sourceTree = "<group>"; };
 		FA0EC270247B77E400447D7E /* VillagersSortView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VillagersSortView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -399,21 +413,22 @@
 		024363CF2465E7FD006A37A0 /* todayDashboard */ = {
 			isa = PBXGroup;
 			children = (
-				024363D22465EA14006A37A0 /* TodayView.swift */,
-				024363D32465EA14006A37A0 /* TodaySectionEditView.swift */,
 				024363D52465EA15006A37A0 /* TodayBirthdaysSection.swift */,
+				AE96184724816B7200CC073C /* TodayChoresSection.swift */,
 				024363D72465EA15006A37A0 /* TodayCollectionProgressSection.swift */,
 				024363D02465EA14006A37A0 /* TodayCurrentlyAvailableSection.swift */,
 				024363D42465EA14006A37A0 /* TodayEventsSection.swift */,
+				696B4549247A633D00E16252 /* TodayMusicPlayerSection.swift */,
+				69157B6D247121ED005B9002 /* TodayMysteryIslandsSection.swift */,
+				693E2BC3246689C500B85CB8 /* TodayNookazonSection.swift */,
+				024363D32465EA14006A37A0 /* TodaySectionEditView.swift */,
+				157C03E6247AE56600568917 /* TodaySectionView.swift */,
+				693352832473C4B5007EF9AB /* TodaySpecialCharactersSection.swift */,
+				693E2BC924669D2800B85CB8 /* TodaySubscribeSection.swift */,
 				024363D62465EA15006A37A0 /* TodayTasksSection.swift */,
 				024363D12465EA14006A37A0 /* TodayTurnipSection.swift */,
-				693E2BC3246689C500B85CB8 /* TodayNookazonSection.swift */,
+				024363D22465EA14006A37A0 /* TodayView.swift */,
 				693E2BC524668D8E00B85CB8 /* TodayWhatsNewSection.swift */,
-				693E2BC924669D2800B85CB8 /* TodaySubscribeSection.swift */,
-				69157B6D247121ED005B9002 /* TodayMysteryIslandsSection.swift */,
-				696B4549247A633D00E16252 /* TodayMusicPlayerSection.swift */,
-				693352832473C4B5007EF9AB /* TodaySpecialCharactersSection.swift */,
-				157C03E6247AE56600568917 /* TodaySectionView.swift */,
 			);
 			path = todayDashboard;
 			sourceTree = "<group>";
@@ -664,6 +679,7 @@
 				69BEA981243E608E00F02C61 /* shared */,
 				693E7292245D833F00CD26F4 /* subscription */,
 				024363CF2465E7FD006A37A0 /* todayDashboard */,
+				AE51C2DF247F399300F074EC /* chores */,
 				687B5765244A02E400C1E86F /* turnips */,
 				69875F5324654EA400B1D46C /* userLists */,
 				697E63F32449A488008FB710 /* villagers */,
@@ -675,6 +691,8 @@
 			isa = PBXGroup;
 			children = (
 				6941F3872452BDDD00EC2E02 /* CategoriesSearchViewModel.swift */,
+				AE51C2E82481185900F074EC /* ChoreFormViewModel.swift */,
+				AE38E4A62482D772000DFED3 /* ChoreListViewModel.swift */,
 				AE2D7EF9247E8CBD006C1F1A /* CollectionMoreDetailViewModel.swift */,
 				69867DF0247C136900C6A759 /* CollectionProgressRowViewModel.swift */,
 				693E0B1C244C315B00D20E46 /* DashboardViewModel.swift */,
@@ -682,6 +700,7 @@
 				AE0B5B5D247B14120075CF16 /* DesignRowViewModel.swift */,
 				68DFFFAC24492D7F00DEA07F /* ItemDetailViewModel.swift */,
 				69AF8C6C243E2A18001DD9CB /* ItemsViewModel.swift */,
+				AE9618492482B1F300CC073C /* TodayChoresSectionViewModel.swift */,
 				68BA5829244B693300B53811 /* TurnipsViewModel.swift */,
 				69875F5A24655AF000B1D46C /* UserListDetailViewModel.swift */,
 				69875F5624654F7100B1D46C /* UserListFormViewModel.swift */,
@@ -869,6 +888,16 @@
 				AE2D7F00247EB2A8006C1F1A /* MessageView.swift */,
 			);
 			path = message;
+			sourceTree = "<group>";
+		};
+		AE51C2DF247F399300F074EC /* chores */ = {
+			isa = PBXGroup;
+			children = (
+				AE51C2E6248117EC00F074EC /* ChoreFormView.swift */,
+				AE51C2E224801D5D00F074EC /* ChoreListRowView.swift */,
+				AE51C2E0247F39B900F074EC /* ChoreListView.swift */,
+			);
+			path = chores;
 			sourceTree = "<group>";
 		};
 		AEEEC4C4247AB1B100894C02 /* design */ = {
@@ -1082,7 +1111,9 @@
 				69157B942471A5A1005B9002 /* ActivityControllerView.swift in Sources */,
 				69157B952471A5A1005B9002 /* ItemsCrosslineSectionView.swift in Sources */,
 				69867DF1247C136900C6A759 /* CollectionProgressRowViewModel.swift in Sources */,
+				AE51C2E7248117EC00F074EC /* ChoreFormView.swift in Sources */,
 				69157B962471A5A1005B9002 /* TurnipsChartTopLegendView.swift in Sources */,
+				AE38E4A72482D772000DFED3 /* ChoreListViewModel.swift in Sources */,
 				69157B972471A5A1005B9002 /* TurnipsChartView.swift in Sources */,
 				696B454C247A948A00E16252 /* MusicPlayerManager.swift in Sources */,
 				69157B982471A5A1005B9002 /* ActiveCrittersView.swift in Sources */,
@@ -1104,6 +1135,7 @@
 				69157BA52471A5A1005B9002 /* AdaptsToSoftwareKeyboard.swift in Sources */,
 				AE2D7EF8247E8C9A006C1F1A /* CollectionMoreDetailView.swift in Sources */,
 				69157BA62471A5A1005B9002 /* CollectionProgressRow.swift in Sources */,
+				AE51C2E92481185900F074EC /* ChoreFormViewModel.swift in Sources */,
 				69157BA72471A5A1005B9002 /* TurnipIslandRow.swift in Sources */,
 				69157BA82471A5A1005B9002 /* CategoryHeaderView.swift in Sources */,
 				69157BA92471A5A1005B9002 /* ItemDetailSource.swift in Sources */,
@@ -1129,6 +1161,8 @@
 				69157BBD2471A5A1005B9002 /* Text.swift in Sources */,
 				69CCD28C247DA4D100DF381B /* ItemStyleBadgeView.swift in Sources */,
 				69157BBE2471A5A1005B9002 /* ItemsListView.swift in Sources */,
+				AE96184824816B7200CC073C /* TodayChoresSection.swift in Sources */,
+				AE51C2E1247F39B900F074EC /* ChoreListView.swift in Sources */,
 				69157BBF2471A5A1005B9002 /* ItemDetailView.swift in Sources */,
 				69157BC02471A5A1005B9002 /* TodayBirthdaysSection.swift in Sources */,
 				AE2D7EFC247E9726006C1F1A /* DesignListView.swift in Sources */,
@@ -1144,12 +1178,14 @@
 				69157BC92471A5A1005B9002 /* TurnipsChartGrid.swift in Sources */,
 				69157BCA2471A5A1005B9002 /* CollectionRowView.swift in Sources */,
 				AE0B5B5C247AD7590075CF16 /* DesignFormViewModel.swift in Sources */,
+				AE51C2E324801D5D00F074EC /* ChoreListRowView.swift in Sources */,
 				69157BCB2471A5A1005B9002 /* SearchField.swift in Sources */,
 				69157BCC2471A5A1005B9002 /* CollectionProgressDetailView.swift in Sources */,
 				69157BCD2471A5A1005B9002 /* AppIconPickerView.swift in Sources */,
 				69157BCE2471A5A1005B9002 /* LikeButtonView.swift in Sources */,
 				69157BCF2471A5A1005B9002 /* CalendarView.swift in Sources */,
 				69157BD02471A5A1005B9002 /* AboutView.swift in Sources */,
+				AE96184A2482B1F300CC073C /* TodayChoresSectionViewModel.swift in Sources */,
 				69157BD12471A5A1005B9002 /* TurnipsViewModel.swift in Sources */,
 				69157BD22471A5A1005B9002 /* TodayWhatsNewSection.swift in Sources */,
 				69157BD42471A5A1005B9002 /* EventsDescription.swift in Sources */,
