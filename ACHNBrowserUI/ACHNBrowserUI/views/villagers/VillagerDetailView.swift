@@ -82,7 +82,7 @@ struct VillagerDetailView: View {
             makeInfoCell(title: "Like", value: viewModel.likes?.map{ $0.capitalized }.joined(separator: ", ") ?? "Unknown").padding()
             makeInfoCell(title: "Species", value: villager.species).padding()
             makeInfoCell(title: "Gender", value: villager.gender).padding()
-            makeInfoCell(title: "Catch phrase", value: villager.catchPhrase ?? "").padding()
+            makeInfoCell(title: "Catch phrase", value: villager.localizedCatchPhrase.capitalized).padding()
             
             if items {
                 Section(header: SectionHeaderView(text: "Villager items", icon: "list.bullet")) {
