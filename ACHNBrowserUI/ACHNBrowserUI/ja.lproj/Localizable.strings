@@ -1,0 +1,805 @@
+/*
+  Localizable.strings
+  ACHNBrowserUI
+
+  Created by mimikun on 14.05.20.
+  Copy template from de.lproj/Localizable.strings
+*/
+
+"Tap here to preview a notification" = "ここをタップして通知をプレビューする";
+"Upgrade to +" = "+にアップグレード";
+"You're subscribed to AC Helper+" = "AC Helper+に登録しています";
+
+// copy and paste "export"  of Text() and similar SwiftUI functions
+// Global
+"Close" = "閉じる";
+"Dismiss" = "Dismiss";  // TODO
+"Save" = "保存";
+
+// Date Format
+"EEEE, dd MMMM" = "M月d日(EEEE)";
+"d/M" = "M/d";
+"dd" = "dd";
+"MMM" = "M月";
+"MMM dd" = "M月dd日";
+"dd MMMM" = "M月dd日";
+
+// TabbarView
+"Dashboard" = "ダッシュボード";
+"Catalog" = "カタログ";
+"Turnips" = "カブ";
+"Villagers" = "村人";
+"Collection" = "コレクション";
+
+// TodayView
+"Change Section Order" = "セクションの順序を変更";
+// TodaySectionEditView
+"Drag & Drop to Rearrange" = "ドラッグ & ドロップで並び替え";
+"Hidden" = "隠された";
+"Today Sections" = "今日のセクション";
+"Done" = "完了";
+" to re-order sections." = " セクションを並び替える";
+"Check or un-check" = "チェックまたはチェック解除";
+" rows to hide sections from the dashboard." = " rows to hide sections from the dashboard.";  // TODO
+"Your top-most section will be the default detail view on iPad and Mac." = "一番上のセクションがiPadとMacのデフォルトの詳細ビューになります。";
+// TodayBirthdaySection
+"Birthdays" = "誕生日";
+"Today's Birthdays" = "誕生日";
+"Today's Birthday" = "誕生日";
+// TodayCollectionProgressSection
+"Collection Progress" = "コレクションの進捗";
+"Share" = "シェア";
+// TodayCurrentlyAvailableSection
+"Currently Available" = "現在利用可能";
+"%lld/%lld Bugs" = "%lld/%lld 匹のムシ";
+"%lld/%lld Fish" = "%lld/%lld 匹のサカナ";
+"%lld NEW" = "新規 %lld 匹";
+// TodayEventsSection
+"Events" = "イベント";
+"Currently" = "現在";
+"No Events Today" = "今日はイベントがありません";
+"Upcoming" = "今後";
+// TodayTasksSection
+"Today's Tasks" = "今日のタスク";
+"This feature requires " = "This feature requires ";  // TODO
+"Learn more >" = "詳しく >";
+// TodayTurnipSection
+"Today is sunday, don't forget to buy more turnips and fill your buy price." = "今日は日曜日。カブを買って大儲けだ。";
+"Today's average price should be around " = "Today's average price should be around ";  // TODO
+" in the morning, and " = " in the morning, and ";  // TODO
+" this afternoon." = " this afternoon.";  // TODO
+// TodayNookazonSection
+"New on Nookazon" = "Nookazon新着情報";
+"Nookazon is loading..." = "Nookazonロード中...";
+// TodayWhatsNewSection
+"What's New" = "新着情報";
+"See what's new in update %@" = "See what's new in update %@";  // TODO
+// TodaySubscribeSection
+"You're subscribed to AC Helper+. Thank you so much for you support!" = "AC Helper+を購読中。応援ありがとうございます。";
+"If you enjoy the application, consider subscribing to AC Helper+, to get access to some awesome features and support us!" = "もしあなたがアプリケーションを楽しんでいるのであれば、AC Helper+の購読を検討して、いくつかの素晴らしい機能にアクセスし、私たちをサポートしてください!";
+
+// SubscribeView
+"AC Helper+" = "AC Helper+";
+"ACHelperPlusDescription" = "Subscribing to AC Helper+ is a great way to to show support to our free and open source project.♥️
+
+You also get access more features, turnip predictions notifications and creating any number of items list! 📈
+
+More detail below.";  // TODO
+"ACHelperPlusDetails" = "About the notification feature:
+Everyday at 8 and 12 you'll get a notification with the average buy price of your store.
+The more in game daily prices you enter after monday morning, the better next predictions will be!
+
+About the list feature:
+In the free application you can create only one list of items in your \"My stuff\" tab.
+Once you'll be subscribed to AC Helper+ you'll be able to create any number of list you desire."; // TODO
+"ACHelperPlusPriceAndAboDetail %@" = "A %@ per month purchase will be applied to your iTunes account on confirmation.
+Subscriptions will automatically renew unless canceled within 24-hours before the end of the current period.
+You can cancel anytime with your iTunes account settings. Any unused portion of a free trial will be forfeited if you purchase a subscription.";  // TODO
+"Subscribe for %@ / Month" = "Subscribe for %@ / Month";  // TODO
+"Buy lifetime AC Helper+ for %@" = "Buy lifetime AC Helper+ for %@";  // TODO
+"Thank you for your support!" = "あなたのサポートに感謝します!";
+
+// AboutView
+"About" = "詳細";
+"The app" = "アプリ";
+"Souce code / report an issue" = "ソースコード / 問題の報告";
+"Rate the app on the App Store" = "App Storeでアプリを評価";
+"Privacy Policy" = "プライバシーポリシー";
+"Terms of Use" = "利用規約";
+"App version" = "Appのバージョン";
+"Game patch data" = "ゲームのバージョン";
+"Acknowledgements" = "謝辞";
+"Our amazing contributors" = "素晴らしい貢献者たち";
+"The NookPlaza API by Azarro" = "AzarroによるNookPlaza API";
+"Turnip.exchange" = "Turnip.exchange";  // TODO
+"Nookazon for the marketplace" = "Nookazon for the marketplace";  // TODO
+"Shihab / JPEGuin for the icon" = "アイコン: Shihab / JPEGuin";
+"Christian & Ninji for the turnip predictions algorithm" = "カブ価予測アルゴリズム: Christian & Ninji";
+"Error" = "エラー";
+
+// ActiveCittersView
+"Active Critters" = "アクティブな生き物";
+"Fishes" = "サカナ";
+"Bugs" = "ムシ";
+"You caught them all!" = "全て捕まえた!";
+"New this month" = "今月の新着";
+"To catch" = "捕まえる";
+"Leaving this month" = "今月でいなくなる";
+"Caught" = "捕獲済み";
+"All day" = "終日";
+
+// SettingsView
+"Preferences" = "設定";
+"Island name" = "島の名前";
+"Your island name" = "あなたの島の名前";
+"Hemisphere" = "半球";
+"North" = "北半球";
+"South" = "南半球";
+"Starting fruit" = "特産品(フルーツ)";
+"Apple" = "リンゴ";
+"Cherry" = "さくらんぼ";
+"Orange" = "オレンジ";
+"Peach" = "モモ";
+"Pear" = "ナシ";
+"Coconut" = "ヤシのみ";
+"Nook shop" = "たぬき商店";
+"Tent" = "テント";
+"Nook's Cranny" = "たぬき商店";
+"Nook's Cranny upgraded" = "たぬき商店(改装)";
+"Able sisters" = "エイブルシスターズ";
+"Visiting" = "訪問者";
+"Shop" = "ショップ";
+"Residents service" = "案内所";
+"Building" = "建物";
+"App Settings" = "Appの設定";
+"App Icon" = "Appアイコン";
+"Restore purchase" = "購入情報を復元";
+
+// UserListFormView
+"Edit your list" = "リストを編集する";
+"Name of your list" = "リストの名前";
+"List name" = "リスト名";
+"Can be nothing" = "Can be nothing";  // TODO
+"Icon" = "アイコン";
+
+// UserListDetailView
+"Add %lld items" = "%lld アイテムを追加";
+"Edit" = "編集";
+"Search items" = "アイテムを検索";
+"Items added to your list from the search will be displayed there." = "検索でリストに追加されたアイテムが表示されます。";
+"No results for %@" = "%@ の結果はありません";
+
+// UserListSubscribeCallView
+"In order to create more than one list, you need to subscribe to AC Helper+" = "複数のリストを作成するには、AC Helper +に登録する必要があります";
+"Learn more..." = "もっと詳しく知る";
+
+// CollectionListView
+"Create a new list" = "新しいリストを作成する";
+"Please select or go stars some items!" = "アイテムを選択するかスターを付けてください!";
+"When you'll stars some %@, they'll be displayed here." = "%@ にスターを付けると、ここに表示されます。";
+"Items" = "アイテム";
+"Critters" = "生き物";
+"Lists" = "リスト";
+"items" = "アイテム";
+"villagers" = "村人";
+"critters" = "生き物";
+"lists" = "リスト";
+
+// ItemsListView
+"Clear Selection" = "Clear Selection";  // TODO
+"Sort items" = "アイテムをソート";
+"Current Sort: %@" = "現在のソート: %@";
+"name" = "名前";
+"buy" = "買値";
+"sell" = "売値";
+"from" = "from";  // TODO
+"set" = "set";  // TODO
+"similar" = "類似";
+"Name" = "名前";
+"Buy" = "買値";
+"Sell" = "売値";
+"From" = "From";  // TODO
+"Set" = "Set";  // TODO
+"Similar" = "類似";
+// ItemRowView
+"unknown source" = "ソース不明";
+// ItemDetailInfoView
+"Rarity:" = "レアリティ:";
+"Common" = "コモン";
+"Uncommon" = "アンコモン";
+"Rare" = "レア";
+"Shadow size:" = "魚影:";
+"X-Small" = "XS";
+"Small" = "S";
+"Medium" = "M";
+"Large" = "L";
+"X-Large" = "XL";
+"Customizable: %@" = "カスタマイズ可能: %@";
+"Flick:" = "Flick:";  // TODO
+"Yes" = "Yes";
+"No" = "No";
+// ItemsCrosslineSectionView
+"Preview" = "プレビュー";
+// ItemDetailSeasonView
+"Seasonality" = "季節";
+// ItemDetailView
+"Set items" = "Set items";  // TODO
+"Simillar items" = "類似アイテム";
+"Thematics" = "テーマ";
+"Variants" = "数量";
+"Materials" = "材料";
+"Nookazon listings" = "Nookazon listings";  // TODO
+"Loading Listings..." = "リストを読込中...";
+"No listings found on Nookazon" = "No listings found on Nookazon";  // TODO
+"Your items lists" = "アイテムリスト";
+
+// TurnipsView
+"Minmax" = "最小-最大";
+"Profits" = "利益";
+"Average daily buy prices" = "1日の平均購入価格";
+"Daily min-max prices" = "Daily min-max prices";  // TODO
+"Average profits" = "平均利益";
+"Chart" = "チャート";
+"Mon" = "月";
+"Tue" = "火";
+"Wed" = "水";
+"Thu" = "木";
+"Fri" = "金";
+"Sat" = "土";
+"Your prices" = "あなたの価格";
+"Edit your in game prices" = "ゲーム内の価格を編集";
+"Add your in game prices" = "ゲーム内の価格を追加";
+"Turnips prediction" = "カブ予測";
+"To help us support the application and get turnip predictions notification, you can try out AC Helper+" = "アプリのサポートとカブ予測の通知受け取るために、AC Helper +を試すことができます";
+"%lld upcomingDailyNotifications" = "%lld upcomingDailyNotifications";  // TODO
+"Profits estimates are computed using the average of the current period" = "利益の見積もりは、現在の期間の平均を使用して計算されます";
+"Day" = "日";
+"AM" = "AM";
+"PM" = "PM";
+"Please add the amount of turnips you bought and for how much" = "購入したカブの量と金額を追加してください";
+"Add your in game turnip prices to see the predictions chart" = "ゲーム内のカブ価格を追加して、予測グラフを表示します";
+"Add your in game turnip prices to see predictions" = "ゲーム内のカブ価格を追加して、予測を確認します";
+"Exchange" = "両替";
+// TurnipsFormView
+"Monday" = "月曜日";
+"Tuesday" = "火曜日";
+"Wednesday" = "水曜日";
+"Thursday" = "木曜日";
+"Friday" = "金曜日";
+"Saturday" = "土曜日";
+"Add your turnip prices" = "カブの価格を追加";
+"Configuration" = "構成";
+"Clear all fields" = "全てのフィールドをクリア";
+"Receive prices predictions notification" = "価格予測通知を受け取る";
+"You can get daily notifications for your average turnip price by subscribing to AC Helper+" = "AC Helper +に登録すると、平均カブ価格の通知を毎日受け取ることができます";
+"Preview a notification" = "通知をプレビューする";
+"Your in game prices" = "ゲーム内価格";
+"Buy price" = "購入価格";
+"Amount bought" = "購入金額";
+"The more in game buy prices you'll add the better the predictions will be. Your buy price only won't give your correct averages. Add prices from the game as you get them daily." = "ゲーム内の購入価格が多ければ多いほど、より良い予測が可能になります。 あなたの購入価格だけでは、あなたの正しい平均を与えることはありません。あなたが毎日それらを得るようにゲームから価格を追加します。";
+// TurnipsChartTopLegendView
+"Average" = "平均";
+"Minimum" = "最小";
+"MinMax" = "MinMax";  // TODO
+
+// IslandDetailView
+"Join Island" = "島に参加";
+"Island" = "島";
+"Description" = "解説";
+"Visitors" = "訪問者";
+"Loading Visitors...." = "訪問者を読み込み中....";
+
+// VillagersListView
+"Search a villager" = "村人を探す";
+"Personality" = "パーソナリティ";
+"Birthday" = "誕生日";
+"Species" = "種別";
+"Gender" = "性別";
+"Catch phrase" = "口癖";
+"Unknown" = "不明";
+"Villager items" = "村人のアイテム";
+// VillagersDetailView
+"Unkown" = "不明";
+"Lazy" = "Lazy";  // TODO
+"Jock" = "Jock";  // TODO
+"Cranky" = "Cranky";  // TODO
+"Smug" = "Smug";  // TODO
+"Normal" = "Normal";  // TODO
+"Peppy" = "Peppy";  // TODO
+"Snooty" = "Snooty";  // TODO
+"Uchi" = "Uchi";  // TODO
+"Male" = "男";
+"Female" = "女";
+"Alligator" = "ワニ";
+"Anteater" = "アリクイ";
+"Bear" = "クマ";
+"Bird" = "トリ";
+"Bull" = "Bull";  // TODO
+"Cat" = "ネコ";
+"Chicken" = "Chicken";  // TODO
+"Cow" = "ウシ";
+"Cub" = "Cub";  // TODO
+"Deer" = "シカ";
+"Dog" = "イヌ";
+"Duck" = "アヒル";
+"Eagle" = "ワシ";
+"Elephant" = "ゾウ";
+"Frog" = "カエル";
+"Goat" = "ヤギ";
+"Gorilla" = "ゴリラ";
+"Hamster" = "ハムスター";
+"Hippo" = "カバ";
+"Horse" = "ウマ";
+"Kangaroo" = "カンガルー";
+"Koala" = "コアラ";
+"Lion" = "ライオン";
+"Monkey" = "サル";
+"Mouse" = "マウス";
+"Octopus" = "タコ";
+"Ostrich" = "ダチョウ";
+"Penguin" = "ペンギン";
+"Pig" = "ブタ";
+"Rabbit" = "ウサギ";
+"Rhino" = "サイ";
+"Sheep" = "ヒツジ";
+"Squirrel" = "リス";
+"Tiger" = "トラ";
+"Wolf" = "オオカミ";
+
+// ListingRow
+"Make an Offer" = "申し出る";
+"Need Materials" = "材料が必要";
+
+// CategoryRow
+"housewares" = "家庭用品";
+"miscellaneous" = "miscellaneous";  // TODO
+"wall-mounted" = "かべかけ";
+"wallpapers" = "かべがみ";
+"floors" = "ゆかいた";
+"rugs" = "ラグ";
+"photos" = "しゃしん";
+"posters" = "ポスター";
+"fencing" = "さく";
+"tools" = "どうぐ";
+"tops" = "トップス";
+"bottoms" = "ボトムス";
+"dresses" = "ドレス";
+"Dress-Up" = "ドレスアップ";
+"headwear" = "帽子";
+"accessories" = "アクセサリー";
+"socks" = "くつした";
+"shoes" = "くつ";
+"bags" = "かばん";
+"umbrellas" = "カサ";
+"music" = "音楽";
+"recipes" = "DIYレシピ";
+"construction" = "建設";
+"nookmiles" = "たぬきマイル";
+"other" = "その他";
+"art" = "美術品";
+"bugs" = "ムシ";
+"fish" = "サカナ";
+"fossils" = "カセキ";
+// CategoriesView
+"Nature" = "自然";
+"Wardrobe" = "Wardrobe";  // TODO
+"No results for %@" = "%@ の結果はありません";
+
+
+// Shared
+// SearchField
+"Search..." = "検索中...";
+
+// item sources
+// Added 2020-05-11:
+"3rd House Upgrade (Left Room)" = "家のアップグレード3回目 (左の部屋)";
+"4th House Upgrade (Right Room)" = "家のアップグレード4回目 (右の部屋)";
+"5-star town evaluation" = "島の評価 星5";
+"5-star town status" = "島の評価 星5";
+"5th House Upgrade (2nd Floor)" = "家のアップグレード5回目 (2F))";
+"Able Sisters" = "エイブルシスターズ";
+"All Villagers (while stung)" = "全ての村人 (while stung)";
+"All Villagers" = "全ての村人";
+"All villagers" = "全ての村人";
+"Also obtained from digging up an existing pitfall" = "既存の落とし穴を掘り起こすことからも得られる";
+"Amiibo" = "Amiibo";
+"Apple tree" = "リンゴの木";
+"Available after unlocking the axe in the story" = "ストーリーでオノをアンロックしたあとに利用可能";
+"Available after unlocking the ladder in the story" = "ストーリーでハシゴをアンロックしたあとに利用可能";
+"Available after unlocking the shovel in the story" = "ストーリーでスコップをアンロックしたあとに利用可能";
+"Available from Able Sisters shop only during Festive Season" = "フェスティバルシーズン中のみエイブルシスターズで購入可能";
+"Available from Able Sisters shop only" = "エイブルシスターズでのみ入手可能";
+"Available from either Mable's temporary shop or Able Sisters shop during Festive Season" = "お祭りシーズン中にきぬよの臨時ショップまたはエイブルシスターズから入手可能";
+"Available from either Mable's temporary shop or Able Sisters shop" = "きぬよの臨時ショップまたはエイブルシスターズから入手可能";
+"Available in all tiers of shops, including Timmy & Tommy before the shop is opened" = "ショップの全てのティアでつぶきち & まめきちから入手可能";
+"Available in Nook's Cranny (either upgrade tier) in the unique furniture slot" = "タヌキ商店の一品物の家具売り場で入手可能";
+"Available in Nook's Cranny (upgraded only)" = "タヌキ商店(改装後)で入手可能";
+"Available in Nook's Cranny (upgraded only), in the third unique furniture slot" = "タヌキ商店(改装後)の一品物の家具売り場(3番目)で入手可能";
+"Available in Nook's Cranny (upgraded only), in the unique furniture slot" = "タヌキ商店(改装後)の一品物の家具売り場で入手可能";
+"Available in the re-buyable slot in Nook's Cranny" = "タヌキ商店の再購入可能な家具売り場で入手可能";
+"Balloons" = "風船";
+"Beach (Bunny Day)" = "海岸(イースター)";
+"Beach (Summer)" = "海岸(夏)";
+"Beach" = "海岸";
+"Big Sister villagers" = "Big Sister villagers";  // TODO
+"Big sister villagers" = "Big sister villagers";  // TODO
+"Black/black roses\nWater with gold watering can" = "黒いバラに\nきんのジョウロで水やり";
+"Blathers" = "Blathers";  // TODO
+"Blue/blue hyacinths" = "あおい/あおい ヒヤシンス";
+"Blue/blue pansies" = "あおい/あおい パンジー";
+"Blue/blue windflowers\nBlue/pink windflowers" = "あおい/あおい アネモネ\nあおい/ピンクの アネモネ";
+"Breaking 100 axes" = "オノを100個壊す";
+"Bug-Off" = "Bug-Off";  // TODO
+"Bunny Day" = "イースター";
+"Burying bells in a glowing spot" = "光る穴にベルを埋める";
+"C.J." = "ジャスティン";
+"Catching with a net (Cherry-Blossom Season)" = "あみで捕まえる(桜の季節)";
+"Catching with a net (Fall)" = "あみで捕まえる(秋)";
+"Catching with a net (Winter)" = "あみで捕まえる(冬)";
+"Catching with a net while on a quest for Wisp" = "ゆうたろうのお願い中にあみで捕まえる";
+"Celeste" = "フーコ";
+"Cherry blossom seasonal DIY using cherry-blossom petals (caught with net)" = "桜の花びら(あみで捕まえる)を使って桜の季節にDIY";
+"Cherry tree" = "桜の木";
+"Chopping a bamboo tree (Spring)" = "竹を切る(春)";
+"Chopping a bamboo tree" = "竹を切る";
+"Chopping a tree (Bunny Day)" = "木を切る(イースター)";
+"Chopping a tree" = "木を切る";
+"Clam dig spot while on a quest for Gulliver" = "ジョニーのお願い中にアサリの穴を掘る";
+"Clam dig spot" = "アサリの穴を掘る";
+"Coconut tree" = "ヤシの木";
+"Collecting earth eggs" = "じめんのたまごを集める";
+"Collecting leaf eggs" = "はっぱのたまごを集める";
+"Collecting sky eggs" = "そらとぶたまごを集める";
+"Collecting stone eggs" = "いわのたまごを集める";
+"Collecting water eggs" = "サカナのたまごを集める";
+"Collecting wood eggs" = "ウッディなたまごを集める";
+"Colorful balloon (Bunny Day)" = "カラフルな風船(イースター)";
+"Completing bug Critterpedia" = "ムシ図鑑をコンプリート";
+"Completing fish Critterpedia" = "サカナ図鑑をコンプリート";
+"Crafting" = "クラフト";
+"Cranky villagers" = "Cranky villagers";  // TODO
+"Cyrus" = "Cyrus";  // TODO
+"Daisy Mae (Sundays)" = "ウリ(日曜日)";
+"Delivering item for a villager" = "村人にアイテムを届ける";
+"Dig spot (Bunny Day)" = "穴を掘る(イースター)";
+"Dig spot near a bamboo tree" = "竹の木の近くの穴を掘る";
+"Dig spot" = "穴を掘る";
+"Digging up clams" = "アサリを掘る";
+"Digging up treasure for a villager's quest" = "村人のお願いで宝物を掘り起こす";
+"Disguised on shoreline" = "海岸の貝殻に擬態";
+"Disguised under trees" = "木の下で擬態";
+"Dodo Airlines" = "ドードー・エアラインズ";
+"Don't return lost item" = "なくしたアイテムはかえってこない";
+"Egg balloon" = "Egg balloon";  // TODO
+"Egg bottle" = "Egg bottle";  // TODO
+"Expired turnips" = "期限切れのカブ";
+"Fall seasonal DIY using autumn leaves (caught with net)" = "もみじのはっぱを使った秋の季節のDIY(あみで捕まえる)";
+"Festive seasonal DIY using ornaments (from shaking trees)" = "装飾品を使ったお祭りの季節のDIY(木を揺らす)";
+"Fishing (Bunny Day)" = "サカナ釣り(イースター)";
+"Fishing Tourney" = "釣りツアー";
+"Fishing up a boot" = "ながぐつを釣る";
+"Fishing up all 3 trash items" = "3種類のゴミをすべて釣る";
+"Fishing up an empty can" = "あきカンを釣る";
+"Fishing up an old tire" = "タイヤを釣る";
+"Fishing up three old tires" = "タイヤを3つ釣る";
+"Fishing up trash" = "ゴミを釣る";
+"Fishing" = "釣り";
+"Flick" = "Flick";  // TODO
+"Flying near blue/purple/black flowers" = "青/紫/黒の花の近くを飛ぶ";
+"Flying near flowers" = "花の近くを飛ぶ";
+"Flying near light sources" = "明かりの近くを飛ぶ";
+"Flying near trash (boots, tires, cans)" = "ゴミ(ながぐつ, タイヤ, あきカン)の近くを飛ぶ";
+"Flying" = "飛ぶ";
+"From hitting rocks" = "岩を叩く";
+"From Zipper after trading one of every egg (all 6 types) during Bunny Day." = "From Zipper after trading one of every egg (all 6 types) during Bunny Day.";  // TODO
+"Glowing dig spot" = "輝く穴";
+"Gulliver" = "ジョニー";
+"Harvey" = "Harvey";  // TODO
+"Helping Gulliver 30 times" = "ジョニーを30回助ける";
+"HHA" = "ハッピーホームアカデミー";  // TODO
+"Hidden song - only by request" = "隠し曲 - リクエスト限定";
+"High Friendship" = "高い友情";
+"Hitting a rock (Bunny Day)" = "岩を叩く(イースター)";
+"Hitting a rock" = "岩を叩く";
+"Hitting a rock, Fishing" = "岩を叩く, 釣り";
+"In the Special Items section in Nook Shopping, after scanning the related Amiibo on Photopia" = "In the Special Items section in Nook Shopping, after scanning the related Amiibo on Photopia";  // TODO
+"International Children's Day" = "国際こどもの日";
+"International Museum Day" = "国際博物館の日";
+"Isabelle" = "しずえ";
+"Jock villagers" = "Jock villagers";  // TODO
+"Jolly Redd's Treasure Trawler" = "Jolly Redd's Treasure Trawler";  // TODO
+"K.K. concert" = "とたけけコンサート";
+"K.K. concert, Nook Shopping Catalog" = "とたけけコンサート, たぬきショッピングカタログ";
+"Kicks" = "シャンク";
+"Label" = "ことの";
+"Labelle" = "ことの";
+"Large rug" = "大きなラグ";
+"Large shadow" = "影(Lサイズ)";  // TODO
+"Lazy villagers" = "Lazy villagers";  // TODO
+"Learning all egg outfit DIYs" = "全てのたまごのふくのDIYを覚える";
+"Link Nintendo Account to Pocket Camp, then redeem a 16-digit code on your Nintendo Switch" = "Nintendoアカウントをポケットキャンプにリンクし、Nintendo Switchで16桁のコードを利用する";
+"Mail" = "メール";
+"Medium rug" = "ラグ(Mサイズ)";
+"Medium shadow" = "影(Mサイズ)";
+"Mom" = "はは";
+"Mushroom seasonal DIY" = "きのこの季節のDIY";
+"New Year's Eve" = "おおみそか";
+"Nintendo" = "Nintendo";
+"Nook Miles Exchange" = "たぬきマイルこうかん";
+"Nook Miles Shop" = "たぬきマイルショップ";
+"Nook Shopping Catalog" = "たぬきショッピングカタログ";
+"Nook Shopping Promotion" = "たぬきショッピングプロモーション";
+"Nook Shopping Seasonal" = "たぬきショッピング(シーズン)";
+"Nook Shopping" = "たぬきショッピング";
+"Nook's Cranny" = "タヌキ商店";
+"Nook's Cranny\nCrafting" = "タヌキ商店\n手作り";
+"Normal villagers" = "Normal villagers";  // TODO kokomade
+"Obtained from Tom Nook after completing one Nature Day Nook Miles+ task" = "アースデーのたぬきマイル+タスクを1つ完了した後にたぬきちから入手";
+"Obtained from Zipper on Bunny Day after collecting most Bunny Day recipes (third gift)" = "ほとんどのイースターレシピを収集した後にぴょんたろうから入手(3番目のギフト)";
+"Obtained randomly from villager, egg message bottle or egg balloon during Bunny Day event" = "イースターイベント中に村人、卵のメッセージボトル、または卵の風船からランダムに入手";
+"On beach rocks" = "海岸の岩の上";
+"On flowers" = "花の上";
+"On ground (Mushroom Season)" = "地面の上(きのこの季節)";
+"On ground" = "地面の上";
+"On hardwood/cedar trees" = "こうようじゅ/しんようじゅの上";
+"On palm trees" = "ヤシの木の上";
+"On rivers/ponds" = "川/池の上";
+"On rocks" = "岩の上";
+"On rotten turnips" = "くさったカブの上";
+"On the ground" = "地面の上";
+"On tree stumps" = "きりかぶの上";
+"On trees (any kind)" = "木の上(種類問わず)";
+"On villagers" = "村人の上";
+"On white flowers" = "白い花の上";
+"Only available close to new year holiday" = "年末年始にのみ利用可能";
+"Only available during Bunny Day" = "イースター中にのみ利用可能";
+"Only available during Cherry-Blossom Season" = "さくらの季節中にのみ利用可能";
+"Only available during Fall" = "秋にのみ利用可能";
+"Only available during Festive Season" = "お祭りの季節中にのみ利用可能";
+"Only available during Maple Leaf Season" = "もみじの季節中にのみ利用可能";
+"Only available during Mushroom Season" = "きのこの季節中にのみ利用可能";
+"Only available during Spring" = "春にのみ利用可能";
+"Only available during Summer" = "夏にのみ利用可能";
+"Only available during the month Father's Day occurs, region dependant" = "父の日が発生する月にのみ利用可能(地域によって異なる)";
+"Only available during the month Mother's Day occurs, region dependant" = "母の日が発生する月にのみ利用可能(地域によって異なる)";
+"Only available during Wedding Season" = "ウェディングシーズン中のみ利用可能";
+"Only available during Winter" = "冬にのみ利用可能";
+"Orange tree" = "オレンジの木";
+"Orange/orange roses" = "オレンジの/オレンジの バラ";
+"Orange/orange tulips" = "オレンジの/オレンジの チューリップ";
+"Peach tree" = "モモの木";
+"Pear tree" = "ナシの木";
+"Peppy villagers" = "Peppy villagers";  // TODO
+"Perfect Snowboy" = "Perfect Snowboy";  // TODO
+"Picking flowers" = "花を摘む";
+"Pier" = "埠頭";
+"Planting a bamboo shoot" = "たけのこを植える";
+"Planting a cedar start" = "Planting a cedar start";  // TODO
+"Planting a cherry" = "さくらんぼを植える";
+"Planting a coconut" = "ヤシのみを植える";
+"Planting a peach" = "モモを植える";
+"Planting a pear" = "ナシを植える";
+"Planting a sapling" = "苗木を植える";
+"Planting an apple" = "リンゴを植える";
+"Planting an orange" = "オレンジを植える";
+"Pond" = "池";  //wip
+"Possible song KK will play when choosing \"A little blue...\" as your mood" = "Possible song KK will play when choosing \"A little blue...\" as your mood";  // TODO
+"Possible song KK will play when choosing \"A little grumpy...\" as your mood" = "Possible song KK will play when choosing \"A little grumpy...\" as your mood";  // TODO
+"Possible song KK will play when choosing \"I feel good!\" as your mood" = "Possible song KK will play when choosing \"I feel good!\" as your mood";  // TODO
+"Possible song KK will play when choosing \"It's hard to say.\" as your mood" = "Possible song KK will play when choosing \"It's hard to say.\" as your mood";  // TODO
+"Possible song KK will play when choosing \"Laid-back.\" as your mood" = "Possible song KK will play when choosing \"Laid-back.\" as your mood";  // TODO
+"Purchased from Tom Nook on New Year's Eve" = "おおみそかにたぬきちから購入";
+"Purple/purple mums" = "むらさきの/むらさきの キク";
+"Pushing snowballs" = "雪玉を押す";
+"Received in mail from DAL after taking certain numbers of flights" = "一定数のフライトの後にDALからメールで受け取る";
+"Received on your first time seeing KK perform" = "とたけけのライブを初めて見たときに受け取る";
+"Recycle bin" = "ごみ箱";
+"Recycle Box" = "リサイクルBOX";
+"Red/orange windflowers" = "あかい/オレンジの アネモネ";
+"Red/red cosmos" = "あかい/あかい コスモス";
+"Red/red lilies" = "あかい/あかい ユリ";
+"Red/red roses" = "あかい/あかい バラ";
+"Red/red tulips" = "あかい/あかい チューリップ";
+"Red/white cosmos" = "あかい/しろい コスモス";
+"Red/white hyacinths" = "あかい/しろい ヒヤシンス";
+"Red/white lilies" = "あかい/しろい ユリ";
+"Red/white mums" = "あかい/しろい キク";
+"Red/white roses" = "あかい/しろい バラ";
+"Red/white tulips" = "あかい/しろい チューリップ";
+"Red/yellow cosmos" = "あかい/きいろい コスモス";
+"Red/yellow hyacinths" = "あかい/きいろい ヒヤシンス";
+"Red/yellow lilies" = "あかい/きいろい ユリ";
+"Red/yellow pansies" = "あかい/きいろい パンジー";
+"Red/yellow roses" = "あかい/きいろい バラ";
+"Red/yellow tulips" = "あかい/きいろい チューリップ";
+"Resident Services Upgrade" = "案内所のアップグレード";
+"Reward for completing the Stamp Rally in the bug exhibit" = "ムシの展示でスタンプラリーをコンプリートした報酬";
+"Reward for completing the Stamp Rally in the fish gallery" = "サカナの展示でスタンプラリーをコンプリートした報酬";
+"Reward for completing the Stamp Rally in the fossil gallery" = "カセキの展示でスタンプラリーをコンプリートした報酬";
+"Reward for making a perfect snow-person" = "完璧な雪の人を作ったときのご褒美";  // TODO
+"Reward for making a perfect Snowboy; Only available during Winter" = "完璧なスノーボーイを作ったときのご褒美(冬季限定)";  // TODO
+"Reward for solving May Day maze" = "メーデーの迷路を解いたときのご褒美";
+"Reward from Zipper after collecting all 6 egg types; Only available during Bunny Day" = "全6種類の卵を集めたときぴょんたろうからもらえる報酬(イースター期間中のみ入手可能)";
+"Reward from Zipper after crafting all Bunny Day recipes; Only available during Bunny Day" = "イースターのレシピをすべて作成した後、ぴょんたろうからもらえる報酬(イースター期間中のみ入手可能)";
+"Reward from Zipper after crafting wobbling Zipper toy; Only available during Bunny Day" = "「ぴょんたろうのおきあがりこぼし」を作成したあと、ぴょんたろうからもらえる報酬(イースター期間中のみ入手可能)";
+"River (clifftop)" = "川(崖上)";
+"River (mouth)" = "川(河口)";
+"River" = "川";
+"Rover" = "Rover";  // TODO
+"Saharah" = "ローラン";
+"Season sale item" = "季節のセール品";
+"Season sale item\n*Not available in Europe" = "季節のセール品\n*ヨーロッパでは販売していません";
+"Seed bag" = "種袋";  // TODO
+"Shaking a cedar tree (Fall)" = "しんようじゅを揺らす(秋)";
+"Shaking a cedar tree (Festive Season)" = "しんようじゅを揺らす(お祭りの季節)";
+"Shaking a hardwood or cedar tree" = "こうようじゅもしくはしんようじゅを揺らす";
+"Shaking a hardwood tree (Bunny Day)" = "こうようじゅを揺らす(イースター)";
+"Shaking a hardwood tree (Fall)" = "こうようじゅを揺らす(秋)";
+"Shaking a tree" = "木を揺らす";
+"Shaking trees (hardwood or cedar only)" = "揺れる木(こうようじゅまたはしんようじゅのみ)";
+"Shaking trees" = "揺れる木";
+"Shooting 300 balloons" = "300個の風船を撃ち落とす";
+"Small rug" = "ラグ(Sサイズ)";
+"Small shadow" = "影(Sサイズ)";
+"Smug villagers" = "Smug villagers";  // TODO
+"Snooty villagers" = "Snooty villagers";
+"Snowboy" = "Snowboy";  // TODO
+"Snowman" = "Snowman";  // TODO
+"Spring seasonal DIY using bamboo (from bamboo trees)" = "竹を使った春の季節のDIY(竹の木から);
+"Starting items" = "開始アイテム";
+"Summer seasonal DIY using summer shells (found on beach)" = "夏の貝殻を使用した夏の季節のDIY(海岸で見つける)";
+"Summer Solstice Festival" = "Summer Solstice Festival";  // TODO
+"Tom Nook (Story)" = "たぬきち(ストーリー)";
+"Tom Nook" = "たぬきち";
+"Trade 3 fish to receive a model in the mail the next day" = "3匹のサカナを交換し、翌日に模型をメールで受け取ることができる";
+"Trade 3 insects to receive a model in the mail the next day" = "3匹のムシを交換し、翌日に模型をメールで受け取ることができる";
+"Underground (dig where noise is loudest)" = "地中(騒音が一番うるさいところを掘る)";
+"Villager House Development (Tom Nook)" = "Villager House Development (たぬきち)";  // TODO
+"Wedding Season" = "ウエディングシーズン";
+"White/white hyacinths" = "しろい/しろい ヒヤシンス";
+"White/white mums" = "しろい/しろい キク";
+"White/white pansies" = "しろい/しろい パンジー";
+"White/white roses" = "しろい/しろい バラ";
+"White/white windflowers\nOrange/white windflowers" = "しろい/しろい アネモネ\nオレンジの/しろい アネモネ";
+"Winter seasonal DIY using snowflakes (caught with net)" = "ゆきのけっしょうを使った冬の季節のDIY(あみで捕まえる)";
+"Winter Solstice Festival" = "Winter Solstice Festival";  // TODO
+"Wishing on shooting stars (April 20 - May 20)" = "流れ星にお祈り(4月20日から5月20日)";
+"Wishing on shooting stars (August 23 - September 22)" = "流れ星にお祈り(8月23日から9月22日)";
+"Wishing on shooting stars (Dec 22 - Jan 19)" = "流れ星にお祈り(12月22日から1月19日)";
+"Wishing on shooting stars (February 19 - March 20)" = "流れ星にお祈り(2月19日から3月20日)";
+"Wishing on shooting stars (January 20 - February 18)" = "流れ星にお祈り(1月20日から2月18日)";
+"Wishing on shooting stars (July 23 - August 22)" = "流れ星にお祈り(7月23日から8月22日)";
+"Wishing on shooting stars (June 21 - July 22)" = "流れ星にお祈り(6月21日から7月22日)";
+"Wishing on shooting stars (March 21 - April 19)" = "流れ星にお祈り(3月21日から4月19日)";
+"Wishing on shooting stars (May 21 - June 20)" = "流れ星にお祈り(5月21日から6月20日)";
+"Wishing on shooting stars (November 22 - December 21)" = "流れ星にお祈り(11月22日から12月21日)";
+"Wishing on shooting stars (October 23 - November 21)" = "流れ星にお祈り(10月23日から11月21日)";
+"Wishing on shooting stars (September 23 - October 22)" = "流れ星にお祈り(9月23日から10月22日)";
+"Wishing on shooting stars" = "流れ星にお祈り";
+"Wrapping a present" = "プレゼントをラッピングする";
+"X-Small shadow when fishing" = "釣りの際の影(XSサイズ)";
+"Zipper" = "ぴょんたろう";
+// Added 2020-05-12
+"Sea" = "海";
+"Sea (raining)" = "海(雨)";
+
+// Added 2020-05-13
+"See more" = "もっと見る";
+"See less" = "少なく表示";
+
+//Added 05-14-2020
+"My data" = "データ";
+"Collection size" = "コレクションサイズs";
+"Export my collection" = "コレクションをエクスポート";
+"Import a collection" = "コレクションをインポート";
+"Imported with success" = "インポート成功";
+"Reset my collection" = "コレクションをリセット";
+"Your AC Helper collection file was imported with success." = "AC Helper コレクションファイルのインポートに成功しました";
+"Are you sure?" = "本当にいいですか？";
+"This will delete all your collected critters, items, villagers and items lists" = "これにより、収集した生き物、アイテム、村人、アイテムのリストがすべて削除されます";
+
+// Added 2020-05-17
+"The ACNHAPI for villagers data and images" = "住民データ, 画像用 ACNHAPI";  // TODO
+// Islands
+"Mystery Islands" = "謎の島";
+"Trees: %@" = "木: %@";
+"Trees" = "木";
+"Flowers" = "花";
+"Flowers: %@" = "花: %@";
+"Fish" = "サカナ";
+"Insects" = "ムシ";
+"Rocks Type" = "岩のタイプ";
+"Rocks" = "岩";
+"Take your chance and go visit some mystery island!" = "この機会に謎の島に行ってみよう!";  // TODO
+"Native" = "Native"; // TODO
+"Normal" = "普通";
+"Uncommon" = "アンコモン";
+"Gold" = "きんこうせき";
+"Trash" = "ゴミ";
+"Bamboos" = "バンブー";
+"Hardwood" = "こうようじゅ";
+"Exotic fruits" = "エキゾチックなフルーツ";
+"Normal Island 1" = "普通の島 1";
+"Normal Island 2" = "普通の島 2";
+"Spiral Island" = "うずまきの島";
+"Fidget Spinner Island" = "Fidget Spinner Island";  // TODO
+"Mountain Island" = "Mountain Island";  // TODO
+"Bells Island" = "ベルの島";
+"Bamboo Island" = "バンブーの島";
+"Fruit Island" = "フルーツの島";
+"Flower Island" = "花の島";
+"Bell Island 2" = "ベルの島 2";
+"Tarantula Island" = "タランチュラの島";
+"Tree Island" = "木の島";
+"Big fish Island" = "巨大魚の島";
+"Tree Island 2" = "木の島 2";
+"Curvy River Island" = "Curvy River Island";  // TODO
+"Big Fish Island 2" = "巨大魚の島 2";
+"Trash Island" = "ゴミの島";
+"Fins Island" = "サカナの島";
+"Falls Island" = "秋の島";
+"Gold Island" = "きんこうせきの島";
+" - max %lld visit" = " - max %lld visit";  // TODO
+// Island Description
+"A fairly normal island which you can get on your first tour, with one cliff, native fruit, coconuts, a river and a pond." = "最初のツアーで参加できるかなり普通の島です。崖が1つ、原産のフルーツ、ヤシのみ、川、池があります。";
+"Practically the same as Normal Island 1, but without the pond, and with a slightly bigger cliff." = "普通の島1とほぼ同じですが、池がなく、少し大きな崖があります。";
+"Somewhat more interesting in layout but it has nothing special about the resources you can get." = "なんとなくレイアウトは面白いが、手に入る資源については特に何もない。";
+"The last of the four starter islands. No river, just a pond and the sea." = "4つの最初の島の最後の1つ。川はなく、池と海だけ。";
+"Multiple levels, no river. The base level has regular trees, the middle level has your native fruit, and the top level has five rocks with materials." = "複数の層があり、川はありません。一番下の層には普通の木があり、中層にはあなたの特産フルーツがあり、最上層には素材の石が5つあります。";
+"Breaking the rock at the far north will let you vault over into the island with five money rocks on it." = "北にある岩を壊すと、その上にある5つのベルの出る石がある島に飛び込むことができます。";
+"Every tree on this island is bamboo and you can get to it at any time of year. The most common island you can get out of the 20, statistically." = "この島の木はすべて竹で、いつでも手に入れることができます。統計的には20個の島の中で一番多く取れる島です。";
+"There are 19 fruit trees on this island and all will be your 'sister fruit'. This will be different from your native fruit - but every time you come here, it will be the same one." = "この島には19本の果樹があり、その全てがあなたの「姉妹フルーツ」になります。これはあなたの特産品の果物とは違うものになりますが、ここに来るたびに同じものになります。";
+"This island has a pond surrounded by rare flowers and the only insects that will spawn are those that hang around flowers." = "この島には珍しい花に囲まれた池があり、スポーンする虫は花の周りをうろつく虫だけです。";
+"There are four small triangular cliffs, one in each corner, and the ground level is full of flowers and money rocks." = "小さな三角形の断崖が四隅に一つずつあり、地上には花やベルの出る石がたくさんあります。";
+"Yes, the infamous one. The only insects that spawn here are tarantulas (as long as it is night time in a Tarantula month), and the rocks have crafting materials if you can get to them. The river is thin enough that you can jump over it without a vaulting pole." = "そう、悪名高い島です。ここでスポーンする虫はタランチュラだけで(タランチュラが出る月の夜の時間帯であれば)、岩には手が届く範囲でクラフト素材があります。川は細いので、たかとびぼうがなくても飛び越えることができます。";
+"This island has no river or pond and has tons of hardwood and coconut trees, and the only insects that spawn are those that are associated with trees." = "この島には川も池もなく、広葉樹やヤシの木がたくさんあり、スポーンする虫は木に関連したものだけです。";
+"Big Fish Island. This island has rare hybrid flowers and the only fish available are larger ones, including some of the more rare ones." = "巨大魚の島。この島には珍しい雑種の花が咲いていて、魚は大型のものしかいませんが、その中には珍しいものもあります。";
+"This island is exactly the same as Bamboo Island but the trees are all just regular hardwood trees." = "この島は竹の島と全く同じですが、木は普通の広葉樹ばかりです。";
+"There is one square cliff at the north east, a few flowers and rocks and a small amount of fruit trees. Only insects associated with water spawn here." = "北東には四角い崖が1つあり、花や岩が数本あり、果樹も少ない。ここでは水に関係する昆虫のみがスポーンする。";
+"This rare island only spawns big fish. Otherwise it is quite normal, with less flowers and a lower chance of appearing than the other big fish island." = "このレアな島は巨大魚しかスポーンしない。それ以外はごく普通で、他の巨大魚の島に比べて花が少なく、出現確率も低い。";
+"Everything you can fish here is trash. Only water-related insects spawn." = "ここで釣れるものは全てゴミだけ。水に関係する昆虫だけがスポーンする。";
+"A rectangular pond with rectangular cliffs inside, the tallest one being too tall to climb up to. The only fish that spawn here are the largest finned fish." = "長方形の池の中には長方形の断崖絶壁があり、一番高いものは登りきれないほどの高さがある。ここでスポーンする魚は、XLサイズのヒレのある魚だけ。";
+"Lots of cliffs, waterfalls and river forks. Normal resource spawns." = "崖、滝、川の分岐点が多い。通常の資源がスポーン。";
+"A very rare island with flowers, scorpions and a rectangular pond. If you climb up onto the cliff and climb down from the back, you can vault over to a tiny island in the middle and get 8 gold nuggets from a single rock." = "花とサソリと長方形の池がある超レアな島。崖の上に登って奥から降りると、真ん中にある小さな島に飛び降りることができ、一個の岩から8個のきんこうせきを入手することができます。";
+
+// Added 2020-05-20
+"Same color" = "同じ色";
+// New settings
+"Using iCloud sync" = "iCloud 同期を使う";
+"Synchronized with iCloud" = "iCloud 同期完了";
+
+// New card
+"Possible visitors" = "可能性のある訪問者";
+"On" = "On";  // TODO
+" your island" = " your island";  // TODO
+"From 6pm to 5am" = "18時から翌5時まで";
+"From 8pm to 5am" = "20時から翌5時まで";
+"From 5am to 12pm" = "5時から12時まで";
+
+//Special characters
+"K.K Slider" = "とたけけ";
+"Daisy Mae" = "ウリ";
+"C.J" = "ジャスティン";
+"Flick" = "レックス";
+"Kicks" = "シャンク";
+"Saharah" = "ローラン";
+"Label" = "ことの";
+"Leif" = "レイジ";
+"Redd" = "つねきち";
+"Wisp" = "ゆうたろう";
+"Celeste" = "フーコ";
+
+// Added 2020-05-23
+"Museum Day" = "ミュージアムデー";
+"Wedding Season" = "ウエディングシーズン";
+"Bug-Off contest" = "むしとりたいかい";
+"Meteor shower" =  "流星群";
+
+// Added 2020-05-23
+"Reset" = "リセット";
+"View Turnip.Exchange islands" = "View Turnip.Exchange islands";  // TODO
+"View on TurnipProphet" = "View on TurnipProphet";  // TODO
+
+// Added 2020-05-24
+"Music player" = "ミュージックプレイヤー";
+"Tracks" = "曲";

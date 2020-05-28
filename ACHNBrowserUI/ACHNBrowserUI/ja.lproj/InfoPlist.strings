@@ -1,0 +1,9 @@
+/*
+  InfoPlist.strings
+  ACHNBrowserUI
+
+  Created by mimikun on 14.05.20.
+  Copy template from de.lproj/InfoPlist.strings
+*/
+
+NSPhotoLibraryAddUsageDescription = "Speichern von Bildern wie beispielsweise Möbel oder generierte Bilder aus der \"Teilen\"-Funktion";
