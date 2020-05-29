@@ -3,7 +3,10 @@
 [![@dimillian](https://img.shields.io/badge/contact-@dimillian-5AA9E7.svg?style=flat)](https://twitter.com/dimillian)
 
 [You can now download the app on the App Store!](https://apps.apple.com/us/app/ac-helper/id1508764244?ls=1)
-The best Animal Crossing New Horizons companion app / 最高の「あつまれ どうぶつの森」コンパニオンアプリ
+
+The best Animal Crossing New Horizons companion app! 
+
+最高の「あつまれ どうぶつの森」コンパニオンアプリ
 
 # Animal Crossing New Horizon SwiftUI application!
 
