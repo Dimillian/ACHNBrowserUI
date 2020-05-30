@@ -53,11 +53,53 @@ public class MusicPlayerManager: ObservableObject {
     @Published public var isPlaying = false {
         didSet {
             isPlaying ? player?.play() : player?.pause()
+            if isPlaying {
+                if timeTimer != nil {
+                    timeTimer?.invalidate()
+                    timeTimer = nil
+                }
+                timeTimer = Timer.scheduledTimer(withTimeInterval: 0.5,
+                                                 repeats: true,
+                                                 block:
+                { [weak self] timer in
+                    if let duration = self?.player?.currentItem?.duration.seconds,
+                        let playTime = self?.player?.currentItem?.currentTime().seconds,
+                        !duration.isNaN, !playTime.isNaN {
+                        let durationSecs = Int(duration)
+                        let durationSeconds = Int(durationSecs % 3600 ) % 60
+                        let durationMinutes = Int(durationSecs % 3600) / 60
+                        let durationString = "\(durationMinutes):\(String(format: "%02d", durationSeconds))"
+                        self?.duration = durationString
+                        
+                        let playTimeSecs = Int(playTime)
+                        let playTimeSeconds = Int(playTimeSecs % 3600) % 60
+                        let playTimeMinutes = Int(playTimeSecs % 3600) / 60
+                        let timeElapsedString = "\(playTimeMinutes):\(String(format: "%02d", playTimeSeconds))"
+                        self?.timeElasped = timeElapsedString
+                        
+                        self?.playProgress = Float(playTime) / Float(duration)
+                        
+                        var infos = MPNowPlayingInfoCenter.default().nowPlayingInfo
+                        infos?[MPMediaItemPropertyPlaybackDuration] = duration
+                        infos?[MPNowPlayingInfoPropertyElapsedPlaybackTime] = playTime
+                        MPNowPlayingInfoCenter.default().nowPlayingInfo = infos
+                    }
+                })
+            } else {
+                timeTimer?.invalidate()
+                timeTimer = nil
+            }
             MPNowPlayingInfoCenter.default().playbackState = isPlaying ? .playing : .paused
         }
     }
     
     @Published public var playmode = PlayMode.random
+    
+    private var timeTimer: Timer?
+    
+    @Published public var duration = "0:00"
+    @Published public var timeElasped = "0:00"
+    @Published public var playProgress: Float = 0
     
     private var songsCancellable: AnyCancellable?
     private var itemsCancellable: AnyCancellable?
@@ -152,8 +194,9 @@ public class MusicPlayerManager: ObservableObject {
     
     private func setupBackgroundPlay() {
         if let item = currentSongItem,
-            let filename = item.finalImage {
-            SDWebImageDownloader.shared.downloadImage(with: ImageService.computeUrl(key: filename)) { (image, _, _, _) in
+            let song = currentSong {
+            SDWebImageDownloader.shared.downloadImage(with:
+            ACNHApiService.Endpoint.songsImage(id: song.id).url()) { (image, _, _, _) in
                 if let image = image {
                     try? AVAudioSession.sharedInstance().setCategory(.playback, mode: .default, policy: .longFormAudio, options: [])
                     try? AVAudioSession.sharedInstance().setActive(true, options: [])
@@ -163,7 +206,7 @@ public class MusicPlayerManager: ObservableObject {
                     let info: [String: Any] =
                         [MPMediaItemPropertyArtist: "K.K Slider",
                          MPMediaItemPropertyAlbumTitle: "K.K Slider",
-                         MPMediaItemPropertyTitle: self.currentSongItem?.name ?? "",
+                         MPMediaItemPropertyTitle: item.name,
                          MPMediaItemPropertyArtwork: MPMediaItemArtwork(boundsSize: CGSize(width: 100, height: 100),
                                                                         requestHandler: { (size: CGSize) -> UIImage in
                             return image

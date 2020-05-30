@@ -18,6 +18,7 @@ public struct ACNHApiService {
         case villagerIcon(id: Int)
         case villagerImage(id: Int)
         case songs
+        case songsImage(id: Int)
         case music(id: Int)
         
         public func path() -> String {
@@ -30,9 +31,15 @@ public struct ACNHApiService {
                 return "images/villagers/\(id)"
             case .songs:
                 return "songs"
+            case let .songsImage(id):
+                return "images/songs/\(id)"
             case let .music(id):
                 return "music/\(id)"
             }
+        }
+        
+        public func url() -> URL {
+            ACNHApiService.BASE_URL.appendingPathComponent(path())
         }
     }
     
