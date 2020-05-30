@@ -21,7 +21,6 @@ public class SubscriptionManager: ObservableObject {
     @Published public var yearlySubscription: Purchases.Package?
     @Published public var lifetime: Purchases.Package?
     @Published public var inPaymentProgress = false
-    @Published public var paymentStatus: SKPaymentTransactionState?
     @Published public var subscriptionStatus: SubscriptionStatus = AppUserDefaults.shared.isSubscribed ? .subscribed : .notSubscribed
     
     init() {        
@@ -37,7 +36,8 @@ public class SubscriptionManager: ObservableObject {
     public func purchase(source: String, product: Purchases.Package) {
         guard !inPaymentProgress else { return }
         inPaymentProgress = true
-        Purchases.shared.setAttributes(["source": source])
+        Purchases.shared.setAttributes(["source": source,
+                                        "number_of_launch": "\(AppUserDefaults.shared.numberOfLaunch)"])
         Purchases.shared.purchasePackage(product) { (_, info, _, _) in
             self.processInfo(info: info)
         }

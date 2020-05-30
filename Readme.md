@@ -4,6 +4,10 @@
 
 [You can now download the app on the App Store!](https://apps.apple.com/us/app/ac-helper/id1508764244?ls=1)
 
+The best Animal Crossing New Horizons companion app! 
+
+最高の「あつまれ どうぶつの森」コンパニオンアプリ
+
 # Animal Crossing New Horizon SwiftUI application!
 
 ![Image](images/promo2.png?)
@@ -24,6 +28,17 @@ This is a full featured Animal Crossing helper application written entirely in S
 * iOS, iPad and macOS (Catalyst support)!
 
 You can use this application to learn about SwiftUI and Combine. It uses a very standard view, and view model architecture with full use of @State, @Binding, @Published, Observed and Observable object. 
+
+## Localizations Credits
+
+* **Chinese, Simplified**: kartbnb [Github](https://github.com/kartbnb)
+* **Chinese, Taiwan**: klin0816 [Github](https://github.com/klin0816)
+* **French**: Dimillian [Github](https://github.com/Dimillian) | [Twitter](https://mobile.twitter.com/Dimillian) 
+* **German**: TheVaan [Github](https://github.com/TheVaan) | [Twitter](https://mobile.twitter.com/TheVaan)
+* **Italian**: MrOgeid [Github](https://github.com/MrOgeid)
+* **Japanese**: mimikun [Github](https://github.com/mimikun) | [Mastodon](https://mstdn.mimikun.jp/@mimikun) | [Twitter](https://twitter.com/mimikun_Dev)
+* **Spanish**: Mauro [Twitter](https://mobile.twitter.com/mauroocb_)
+* **Russian**: MariaFeodora [Github](https://github.com/MariaFeodora)
 
 ## Credits
 

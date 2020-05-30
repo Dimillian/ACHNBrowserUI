@@ -10,6 +10,7 @@ import SwiftUI
 import SwiftUIKit
 import Combine
 import Backend
+import UI
 
 struct TodayMusicPlayerSection: View {
     @EnvironmentObject private var musicPlayerManager: MusicPlayerManager
@@ -30,52 +31,61 @@ struct TodayMusicPlayerSection: View {
             } else {
                 RowLoadingView(isLoading: .constant(true))
             }
-        }.onAppear {
-            if self.musicPlayerManager.currentSong == nil,
-                let random = self.items.categories[.music]?.randomElement(),
-                let song = self.musicPlayerManager.matchSongFrom(item: random) {
-                self.musicPlayerManager.currentSong = song
-            }
         }
     }
     
     
     private var playerView: some View {
-        HStack(alignment: .center, spacing: 32) {
-            Spacer()
-            Button(action: {
-                self.musicPlayerManager.previous()
-            }) {
-                Image(systemName: "backward.fill")
-                    .imageScale(.large)
+        VStack(spacing: 8) {
+            ProgressView(progress: CGFloat(musicPlayerManager.playProgress),
+                         trackColor: .acText,
+                         progressColor: .acHeaderBackground,
+                         height: 5)
+            HStack {
+                Text(musicPlayerManager.timeElasped)
                     .foregroundColor(.acText)
-            }
-            .buttonStyle(PlainButtonStyle())
-            Button(action: {
-                self.musicPlayerManager.isPlaying.toggle()
-            }) {
-                Image(systemName: musicPlayerManager.isPlaying ? "pause.fill" : "play.fill")
-                    .imageScale(.large)
+                    .font(.callout)
+                Spacer()
+                Text(musicPlayerManager.duration)
                     .foregroundColor(.acText)
+                    .font(.callout)
             }
-            .buttonStyle(PlainButtonStyle())
-            Button(action: {
-                self.musicPlayerManager.next()
-            }) {
-                Image(systemName: "forward.fill")
-                    .imageScale(.large)
-                    .foregroundColor(.acText)
-            }
-            .buttonStyle(PlainButtonStyle())
-            Button(action: {
-                self.musicPlayerManager.playmode.toggle()
-            }) {
-                playModeIcon
-                    .imageScale(.large)
-                    .foregroundColor(.acText)
-            }
-            .buttonStyle(PlainButtonStyle())
-            Spacer()
+            HStack(alignment: .center, spacing: 32) {
+                Spacer()
+                Button(action: {
+                    self.musicPlayerManager.previous()
+                }) {
+                    Image(systemName: "backward.fill")
+                        .imageScale(.large)
+                        .foregroundColor(.acText)
+                }
+                .buttonStyle(PlainButtonStyle())
+                Button(action: {
+                    self.musicPlayerManager.isPlaying.toggle()
+                }) {
+                    Image(systemName: musicPlayerManager.isPlaying ? "pause.fill" : "play.fill")
+                        .imageScale(.large)
+                        .foregroundColor(.acText)
+                }
+                .buttonStyle(PlainButtonStyle())
+                Button(action: {
+                    self.musicPlayerManager.next()
+                }) {
+                    Image(systemName: "forward.fill")
+                        .imageScale(.large)
+                        .foregroundColor(.acText)
+                }
+                .buttonStyle(PlainButtonStyle())
+                Button(action: {
+                    self.musicPlayerManager.playmode.toggle()
+                }) {
+                    playModeIcon
+                        .imageScale(.large)
+                        .foregroundColor(.acText)
+                }
+                .buttonStyle(PlainButtonStyle())
+                Spacer()
+            }.padding(.bottom, 16)
         }
     }
     
@@ -94,7 +104,7 @@ struct TodayMusicPlayerSection: View {
                 }
             }
         }
-        .navigationBarTitle(Text("Musics"))
+        .navigationBarTitle(Text("Tracks"))
         .listStyle(GroupedListStyle())
         .environment(\.horizontalSizeClass, .regular)
         .sheet(item: $presentedSheet, content: { Sheet(sheetType: $0) })
@@ -105,9 +115,7 @@ struct TodayMusicPlayerSection: View {
         case .random:
             return Image(systemName: "shuffle")
         case .ordered:
-            return Image(systemName: "forward.end.alt.fill")
-        case .stopEnd:
-            return Image(systemName: "stop.fill")
+            return Image(systemName: "list.number")
         }
     }
 }

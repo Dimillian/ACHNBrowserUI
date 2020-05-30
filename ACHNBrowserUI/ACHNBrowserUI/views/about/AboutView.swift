@@ -72,7 +72,14 @@ struct AboutView: View {
                     makeRow(image: "chevron.left.slash.chevron.right",
                             text: "Souce code / report an issue", color: .acHeaderBackground)
                         .onTapGesture {
-                                self.selectedSheet = .safari(URL(string: "https://github.com/Dimillian/ACHNBrowserUI")!)
+                            self.selectedSheet = .safari(URL(string: "https://github.com/Dimillian/ACHNBrowserUI")!)
+                    }
+                    makeRow(image: "envelope.fill",
+                            text: "Contact / follow us on Twitter", color: .acHeaderBackground)
+                        .onTapGesture {
+                            UIApplication.shared.open(URL(string: "https://twitter.com/achelperapp")!,
+                                                      options: [:],
+                                                      completionHandler: nil)
                     }
                     makeRow(image: "star.fill",
                             text: "Rate the app on the App Store", color: .acHeaderBackground)

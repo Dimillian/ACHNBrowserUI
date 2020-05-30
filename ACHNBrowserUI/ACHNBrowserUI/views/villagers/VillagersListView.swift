@@ -17,6 +17,8 @@ struct VillagersListView: View {
         get {
             if !viewModel.searchText.isEmpty {
                 return viewModel.searchResults
+            } else if viewModel.sort != nil {
+                return viewModel.sortedVillagers
             } else {
                 return viewModel.villagers
             }
@@ -37,13 +39,20 @@ struct VillagersListView: View {
                 }
             }
             .listStyle(GroupedListStyle())
+            .id(viewModel.sort)
             .navigationBarTitle(Text("Villagers"),
                                 displayMode: .automatic)
+                .navigationBarItems(trailing:
+                    HStack(spacing: 12) {
+                        VillagersSortView(sort: $viewModel.sort)
+                })
             .modifier(DismissingKeyboardOnSwipe())
             if !viewModel.villagers.isEmpty {
                 VillagerDetailView(villager: viewModel.villagers.first!)
             } else {
-                RowLoadingView(isLoading: .constant(true))
+                List {
+                    RowLoadingView(isLoading: .constant(true))
+                }
             }
         }
     }

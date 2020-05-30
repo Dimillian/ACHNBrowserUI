@@ -13,9 +13,37 @@ import Backend
 class DashboardViewModel: ObservableObject {
     @Published var recentListings: [Listing]?
     @Published var island: Island?
-            
+    @Published var sectionOrder: [TodaySection]
+    
+    public var selection = Set<TodaySection.Name>()
     private var listingCancellable: AnyCancellable?
     private var islandCancellable: AnyCancellable?
+    
+    init() {
+        self.sectionOrder = AppUserDefaults.shared.todaySectionList
+        loadSectionList()
+    }
+
+    public func saveSectionList() {
+        for (index, section) in sectionOrder.enumerated() {
+            if !selection.contains(section.name) && section.name != .subscribe {
+                sectionOrder[index].enabled = false
+            } else {
+                sectionOrder[index].enabled = true
+            }
+        }
+        AppUserDefaults.shared.todaySectionList = sectionOrder
+    }
+
+    private func loadSectionList() {
+        // If new items were added since the last update, append them to the list
+        TodaySection.defaultSectionList.forEach { (section) in
+            if !sectionOrder.contains(section) {
+                sectionOrder.append(TodaySection(name: section.name, enabled: true))
+            }
+        }
+        selection = Set(sectionOrder.filter(\.enabled).map(\.name))
+    }
         
     func fetchListings() {
         listingCancellable = NookazonService

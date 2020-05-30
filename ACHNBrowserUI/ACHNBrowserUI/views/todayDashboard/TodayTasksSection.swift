@@ -55,7 +55,13 @@ struct TodayTasksSection: View {
             if !task.hasProgress {
                 return
             }
-            self.collection.updateProgress(taskId: taskId)
+            self.collection.updateProgress(taskName: taskName)
+            FeedbackGenerator.shared.triggerSelection()
+        }
+        .onLongPressGesture {
+            guard task.hasProgress else { return }
+            self.collection.resetProgress(taskName: taskName)
+            FeedbackGenerator.shared.triggerSelection()
         }
     }
     
@@ -94,7 +100,6 @@ struct TodayTasksSection: View {
             .padding(.vertical, 8)
         }
     }
-    
 }
 
 struct TodayTasksSection_Previews: PreviewProvider {

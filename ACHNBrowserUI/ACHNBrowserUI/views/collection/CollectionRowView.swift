@@ -7,11 +7,11 @@ struct CollectionRowView: View {
     
     private var items: [Item] {
         return collection.items
-            .filter({ Category(itemCategory: $0.category) == category })
+            .filter({ Backend.Category(itemCategory: $0.category) == category })
     }
     
     var body: some View {
-        NavigationLink(destination: ItemsListView(viewModel: ItemsViewModel(category: category, items: items))) {
+        NavigationLink(destination: ItemsListView(category: category, items: items)) {
             HStack {
                 Image(category.iconName())
                     .renderingMode(.original)

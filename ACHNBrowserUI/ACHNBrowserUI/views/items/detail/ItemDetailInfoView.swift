@@ -12,6 +12,7 @@ import UI
 
 struct ItemDetailInfoView: View {
     let item: Item
+    let recipe: Item?
     @Binding var displayedVariant: Variant?
     
     var body: some View {
@@ -37,6 +38,16 @@ struct ItemDetailInfoView: View {
                 }
                 Spacer()
             }
+            if item.furnitureImage != nil && item.iconImage != nil {
+                HStack(alignment: .center, spacing: 12) {
+                    Spacer()
+                    ItemImage(path: item.furnitureImage!,
+                              size: 100)
+                    ItemImage(path: item.iconImage!,
+                              size: 100)
+                    Spacer()
+                }
+            }
             if item.obtainedFrom != nil || item.obtainedFromNew?.isEmpty == false {
                 Text(LocalizedStringKey(item.obtainedFrom ?? item.obtainedFromNew?.first ?? ""))
                     .foregroundColor(.acSecondaryText)
@@ -49,13 +60,6 @@ struct ItemDetailInfoView: View {
             }
             if item.isCritter {
                 VStack(spacing: 4) {
-                    item.rarity.map { rarity in
-                        HStack(spacing: 4) {
-                            Text("Rarity:")
-                            Text(LocalizedStringKey(rarity))
-                                .foregroundColor(.acSecondaryText)
-                        }
-                    }
                     item.shadow.map { shadow in
                         HStack(spacing: 4) {
                             Text("Shadow size:")
@@ -66,55 +70,41 @@ struct ItemDetailInfoView: View {
                 }
             }
             if !item.isCritter {
-                Text("Customizable: \(item.customize == true ? NSLocalizedString("Yes", comment: "") : NSLocalizedString("No", comment: ""))")
+                Text("Customizable: \(item.customize == true || recipe?.customize == true ? NSLocalizedString("Yes", comment: "") : NSLocalizedString("No", comment: ""))")
                     .foregroundColor(.acText)
             }
-            HStack(spacing: 16) {
+            
+            HStack(alignment: .center, spacing: 16) {
                 item.buy.map { buy in
-                    HStack(spacing: 2) {
-                        Image("icon-bells")
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .frame(width: 25, height: 25)
-                        Text("\(buy)")
-                            .foregroundColor(.acHeaderBackground)
-                    }
+                    ItemBellsView(mode: .buy, price: buy)
                 }
                 item.sell.map { sell in
-                    HStack(spacing: 2) {
-                        Image("icon-bell")
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .frame(width: 25, height: 25)
-                        Text("\(sell)")
-                            .font(.body)
-                            .fontWeight(.semibold)
-                            .foregroundColor(.acHeaderBackground)
+                    Group {
+                        ItemBellsView(mode: .sell, price: sell)
                         if item.isCritter {
                             if item.appCategory == .bugs {
-                                Text("Flick:")
-                                    .foregroundColor(.acText)
-                                    .padding(.leading, 8)
+                                ItemBellsView(mode: .flick,
+                                              price: Int(Float(sell) * 1.5))
                             } else {
-                                Text("C.J:")
-                                    .foregroundColor(.acText)
-                                    .padding(.leading, 8)
+                                ItemBellsView(mode: .cj,
+                                              price: Int(Float(sell) * 1.5))
                             }
-                            Text("\(Int(Float(sell) * 1.5))")
-                                .font(.body)
-                                .fontWeight(.semibold)
-                                .foregroundColor(.acHeaderBackground)
-                            
                         }
                     }
                 }
             }
+            .padding(.top, 4)
+            .padding(.bottom, 4)
         }
     }
 }
 
 struct ItemDetailInfoView_Previews: PreviewProvider {
     static var previews: some View {
-        ItemDetailInfoView(item: static_item, displayedVariant: .constant(nil))
+        List {
+            ItemDetailInfoView(item: static_item,
+                               recipe: nil,
+                               displayedVariant: .constant(nil))
+        }
     }
 }

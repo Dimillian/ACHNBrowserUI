@@ -8,11 +8,26 @@
 
 import SwiftUI
 import Backend
+import UI
 
 struct ItemsListView: View {
     @ObservedObject var viewModel: ItemsViewModel
     @State private var showSortSheet = false
     @State private var itemRowsDisplayMode: ItemRowView.DisplayMode = .large
+    let customTitle: String?
+    
+    init(category: Backend.Category, items: [Item]? = nil, keyword: String? = nil) {
+        if let items = items {
+            viewModel = ItemsViewModel(category: category, items: items)
+            customTitle = nil
+        } else if let keyword = keyword {
+            viewModel = ItemsViewModel(meta: keyword)
+            customTitle = keyword
+        } else {
+            viewModel = ItemsViewModel(category: category)
+            customTitle = nil
+        }
+    }
     
     var currentItems: [Item] {
         get {
@@ -75,13 +90,20 @@ struct ItemsListView: View {
         return ActionSheet(title: title, buttons: buttons)
     }
     
+    private var searchView: some View {
+        Group {
+            if viewModel.allowSearch {
+                SearchField(searchText: $viewModel.searchText)
+            }
+        }
+    }
+    
     var body: some View {
         List {
-            Section(header: SearchField(searchText: $viewModel.searchText)) {
+            Section(header: searchView) {
                 ForEach(currentItems) { item in
-                    NavigationLink(destination: ItemDetailView(item: item)) {
+                    NavigationLink(destination: LazyView(ItemDetailView(item: item))) {
                         ItemRowView(displayMode: self.itemRowsDisplayMode, item: item)
-                            .environmentObject(ItemDetailViewModel(item: item))
                             .listRowBackground(Color.acSecondaryBackground)
                     }
                 }
@@ -90,7 +112,9 @@ struct ItemsListView: View {
         .listStyle(GroupedListStyle())
         .id(viewModel.sort)
         .modifier(DismissingKeyboardOnSwipe())
-        .navigationBarTitle(Text(viewModel.category.label()),
+        .navigationBarTitle(customTitle != nil ?
+            Text(LocalizedStringKey(customTitle!)) :
+            Text(viewModel.category.label()),
                             displayMode: .automatic)
             .navigationBarItems(trailing:
                 HStack(spacing: 12) {
@@ -103,7 +127,7 @@ struct ItemsListView: View {
 
 struct ItemsListView_Previews: PreviewProvider {
     static var previews: some View {
-        ItemsListView(viewModel: ItemsViewModel(category: .housewares))
+        ItemsListView(category: .housewares)
             .environmentObject(Items.shared)
             .environmentObject(UserCollection.shared)
     }

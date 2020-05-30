@@ -178,7 +178,7 @@
 // CollectionListView
 "Create a new list" = "Создать новый список";
 "Please select or go stars some items!" = "Пожалуйста, выберите или нажмите на звездочку!";
-"When you'll stars some %@, they'll be displayed here." = "Когда вы отметите несколько предметов, они будут отображаться здесь.";
+"When you stars some %@, they'll be displayed here." = "Когда вы отметите несколько предметов, они будут отображаться здесь.";
 "Items" = "Предметы";
 "Critters" = "Существа";
 "Lists" = "Списки";

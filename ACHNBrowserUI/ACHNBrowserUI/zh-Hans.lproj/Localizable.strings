@@ -184,7 +184,7 @@
 // CollectionListView
 "Create a new list" = "创建一个新列表";
 "Please select or go stars some items!" = "请选择或者收藏一些物品!";
-"When you'll stars some %@, they'll be displayed here." = "当你收藏一些%@之后，它们会显示在这里。";
+"When you stars some %@, they'll be displayed here." = "当你收藏一些%@之后，它们会显示在这里。";
 "Items" = "物品";
 "Critters" = "生物";
 "Lists" = "列表";

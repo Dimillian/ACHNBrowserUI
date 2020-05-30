@@ -12,6 +12,7 @@ public struct Villager: Identifiable, Codable, Equatable {
     public let id: Int
     public let fileName: String?
     public let catchPhrase: String?
+    public let catchTranslations: [String: String]?
     public let name: [String: String]
     public let personality: String
     public let birthday: String?
@@ -38,16 +39,30 @@ public struct Villager: Identifiable, Codable, Equatable {
         return localizedName
     }
     
+    public var localizedCatchPhrase: String {
+        guard let catchTranslations = catchTranslations,
+            let languageCode = Locale.current.languageCode,
+            let key = catchTranslations.keys.first(where: { $0.suffix(2) == languageCode }),
+            let localizedPhrase = catchTranslations[key]
+            else {
+                return catchPhrase ?? ""
+        }
+        
+        return localizedPhrase
+    }
+    
     enum CodingKeys: String, CodingKey {
         case id, name, personality, birthday, gender, species
         case fileName = "file-name"
         case catchPhrase = "catch-phrase"
+        case catchTranslations = "catch-translations"
     }
 }
 
 public let static_villager = Villager(id: 0,
                                       fileName: "test",
                                       catchPhrase: "Hello world",
+                                      catchTranslations: [:],
                                       name: ["name-en": "Test villager"],
                                       personality: "Boring",
                                       birthday: "2/4",

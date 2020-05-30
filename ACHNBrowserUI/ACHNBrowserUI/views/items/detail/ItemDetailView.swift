@@ -18,24 +18,29 @@ struct ItemDetailView: View {
 
     @ObservedObject private var itemViewModel: ItemDetailViewModel
     
-    let item: Item
     @State private var displayedVariant: Variant?
     @State private var selectedSheet: Sheet.SheetType?
 
     init(item: Item) {
-        self.item = item
         self.itemViewModel = ItemDetailViewModel(item: item)
     }
 
     private func makeShareContent() -> [Any] {
-        let image = List {
-            ItemDetailInfoView(item: itemViewModel.item,
-                               displayedVariant: $displayedVariant)
-        }
-        .listStyle(GroupedListStyle())
-        .environment(\.horizontalSizeClass, .regular)
-        .frame(width: 350, height: 330)
-        .asImage()
+        let image =
+            NavigationView {
+                List {
+                    ItemDetailInfoView(item: itemViewModel.item,
+                                       recipe: itemViewModel.recipe,
+                                       displayedVariant: $displayedVariant)
+                }
+                .listStyle(GroupedListStyle())
+                .environment(\.horizontalSizeClass, .regular)
+                .navigationBarTitle(Text(itemViewModel.item.localizedName.capitalized),
+                                    displayMode: .large)
+            }
+            .navigationViewStyle(StackNavigationViewStyle())
+            .frame(width: 350, height: 450)
+            .asImage()
         
         return [ItemDetailSource(name: itemViewModel.item.localizedName.capitalized, image: image)]
     }
@@ -44,54 +49,64 @@ struct ItemDetailView: View {
     var body: some View {
         List {
             ItemDetailInfoView(item: itemViewModel.item,
+                               recipe: itemViewModel.recipe,
                                displayedVariant: $displayedVariant)
-            if itemViewModel.item.variations != nil {
-                variantsSection
+            Group {
+                if itemViewModel.item.variations != nil {
+                    variantsSection
+                }
+                
+                if itemViewModel.item.appCategory == .music {
+                    musicPlayerSection
+                }
+                
+                if !itemViewModel.item.metas.isEmpty {
+                    keywordsSection
+                }
             }
-            if itemViewModel.item.appCategory == .music {
-                musicPlayerSection
+            
+            Group {
+                if !itemViewModel.setItems.isEmpty {
+                    ItemsCrosslineSectionView(title: "Set items",
+                                              items: itemViewModel.setItems,
+                                              icon: "paperclip.circle.fill",
+                                              currentItem: $itemViewModel.item,
+                                              selectedVariant: $displayedVariant)
+                }
+                if !itemViewModel.similarItems.isEmpty {
+                    ItemsCrosslineSectionView(title: "Simillar items",
+                                              items: itemViewModel.similarItems,
+                                              icon: "eyedropper.full",
+                                              currentItem: $itemViewModel.item,
+                                              selectedVariant: $displayedVariant)
+                }
+                if !itemViewModel.thematicItems.isEmpty {
+                    ItemsCrosslineSectionView(title: "Thematics",
+                                              items: itemViewModel.thematicItems,
+                                              icon: "tag.fill",
+                                              currentItem: $itemViewModel.item,
+                                              selectedVariant: $displayedVariant)
+                }
+                if !itemViewModel.colorsItems.isEmpty && !itemViewModel.item.isCritter {
+                    ItemsCrosslineSectionView(title: "Same color",
+                                              items: itemViewModel.colorsItems,
+                                              icon: "pencil.tip",
+                                              currentItem: $itemViewModel.item,
+                                              selectedVariant: $displayedVariant)
+                }
+                if itemViewModel.item.materials != nil || itemViewModel.recipe?.materials != nil {
+                    materialsSection
+                }
+                if itemViewModel.item.isCritter {
+                    ItemDetailSeasonSectionView(item: itemViewModel.item)
+                }
             }
-            if !itemViewModel.setItems.isEmpty {
-                ItemsCrosslineSectionView(title: "Set items",
-                                          items: itemViewModel.setItems,
-                                          icon: "paperclip.circle.fill",
-                                          currentItem: $itemViewModel.item,
-                                          selectedVariant: $displayedVariant)
-            }
-            if !itemViewModel.similarItems.isEmpty {
-                ItemsCrosslineSectionView(title: "Simillar items",
-                                          items: itemViewModel.similarItems,
-                                          icon: "eyedropper.full",
-                                          currentItem: $itemViewModel.item,
-                                          selectedVariant: $displayedVariant)
-            }
-            if !itemViewModel.thematicItems.isEmpty {
-                ItemsCrosslineSectionView(title: "Thematics",
-                                          items: itemViewModel.thematicItems,
-                                          icon: "tag.fill",
-                                          currentItem: $itemViewModel.item,
-                                          selectedVariant: $displayedVariant)
-            }
-            if !itemViewModel.colorsItems.isEmpty {
-                ItemsCrosslineSectionView(title: "Same color",
-                                          items: itemViewModel.colorsItems,
-                                          icon: "pencil.tip",
-                                          currentItem: $itemViewModel.item,
-                                          selectedVariant: $displayedVariant)
-            }
-            if itemViewModel.item.materials != nil {
-                materialsSection
-            }
-            if itemViewModel.item.isCritter {
-                ItemDetailSeasonSectionView(item: itemViewModel.item)
-            }
+            
             listsSection
-            //listingSection
         }
         .listStyle(GroupedListStyle())
         .environment(\.horizontalSizeClass, .regular)
         .onAppear(perform: {
-            self.itemViewModel.item = self.item
             self.displayedVariant = nil
             self.itemViewModel.setupItems()
         })
@@ -119,11 +134,26 @@ extension ItemDetailView {
     
     private var navButtons: some View {
         HStack {
-            LikeButtonView(item: self.itemViewModel.item).imageScale(.large)
+            LikeButtonView(item: itemViewModel.item,
+                           variant: displayedVariant).imageScale(.large)
                 .environmentObject(collection)
                 .safeHoverEffectBarItem(position: .trailing)
             Spacer(minLength: 12)
             shareButton
+        }
+    }
+    
+    private var keywordsSection: some View {
+        Section(header: SectionHeaderView(text: "Keywords", icon: "link")) {
+            ScrollView(.horizontal, showsIndicators: false) {
+                HStack(spacing: 16) {
+                    ForEach(itemViewModel.item.metas, id: \.self) { meta in
+                        NavigationLink(destination: LazyView(ItemsListView(category: .other, keyword: meta))) {
+                                                                    ItemStyleBadgeView(title: meta)
+                        }
+                    }
+                }.padding()
+            }.listRowInsets(EdgeInsets())
         }
     }
     
@@ -132,16 +162,7 @@ extension ItemDetailView {
             ScrollView(.horizontal, showsIndicators: false) {
                 HStack {
                     itemViewModel.item.variations.map { variants in
-                        ForEach(variants) { variant in
-                            ItemImage(path: variant.content.image,
-                                      size: 75)
-                                .onTapGesture {
-                                    withAnimation {
-                                        FeedbackGenerator.shared.triggerSelection()
-                                        self.displayedVariant = variant
-                                    }
-                            }
-                        }
+                        ForEach(variants, content: makeVariantRow(variant:))
                     }
                 }.padding()
             }
@@ -149,11 +170,30 @@ extension ItemDetailView {
         }
     }
     
+    private func makeVariantRow(variant: Variant) -> some View {
+        ZStack(alignment: .topLeading) {
+            ItemImage(path: variant.content.image,
+                      size: 75)
+                .onTapGesture {
+                    withAnimation {
+                        if self.itemViewModel.item.variations?.firstIndex(of: variant) == 0 {
+                            self.displayedVariant = nil
+                        } else {
+                            self.displayedVariant = variant
+                        }
+                        FeedbackGenerator.shared.triggerSelection()
+                    }
+            }
+            LikeButtonView(item: itemViewModel.item,
+                           variant: self.itemViewModel.item.variations?.firstIndex(of: variant) == 0 ? nil : variant)
+        }
+    }
+    
     private var materialsSection: some View {
         Section(header: SectionHeaderView(text: "Materials", icon: "leaf.arrow.circlepath")) {
             ScrollView(.horizontal, showsIndicators: false) {
                 HStack {
-                    itemViewModel.item.materials.map { materials in
+                    (itemViewModel.item.materials ?? itemViewModel.recipe?.materials).map { materials in
                         ForEach(materials) { material in
                             VStack {
                                 Image(material.iconName)
@@ -209,7 +249,7 @@ extension ItemDetailView {
                     Image(systemName: list.items.contains(self.itemViewModel.item) ? "checkmark.seal.fill": "checkmark.seal")
                         .foregroundColor(list.items.contains(self.itemViewModel.item) ? Color.acTabBarBackground : Color.acText)
                         .scaleEffect(list.items.contains(self.itemViewModel.item) ? 1.2 : 0.9)
-                        .animation(.spring())
+                        .animation(.spring(response: 0.5, dampingFraction: 0.3, blendDuration: 0.5))
                     UserListRow(list: list)
                 }.onTapGesture {
                     if let index = list.items.firstIndex(of: self.itemViewModel.item) {
@@ -253,11 +293,21 @@ extension ItemDetailView {
 // MARK: - Preview
 struct ItemDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        NavigationView {
-            ItemDetailView(item: static_item)
-                .environmentObject(UserCollection.shared)
-                .environmentObject(MusicPlayerManager.shared)
-                .environmentObject(SubscriptionManager.shared)
+        Group {
+            NavigationView {
+                ItemDetailView(item: static_item)
+                    .environmentObject(UserCollection.shared)
+                    .environmentObject(MusicPlayerManager.shared)
+                    .environmentObject(SubscriptionManager.shared)
+            }
+            
+            NavigationView {
+                ItemDetailView(item: static_item)
+                    .environmentObject(UserCollection.shared)
+                    .environmentObject(MusicPlayerManager.shared)
+                    .environmentObject(SubscriptionManager.shared)
+            }
+            .environment(\.colorScheme, .dark)
         }
     }
 }

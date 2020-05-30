@@ -26,7 +26,7 @@ struct ItemsCrosslineSectionView: View {
                         VStack(alignment: .center, spacing: 4) {
                             ItemImage(path: item.finalImage,
                                       size: 75)
-                            Text(item.localizedName)
+                            Text(item.localizedName.capitalized)
                                 .font(.caption)
                                 .foregroundColor(.acText)
                         }.onTapGesture {

@@ -10,22 +10,29 @@ import SwiftUI
 import Backend
 
 struct LikeButtonView: View {
-    let item: Item?
-    let villager: Villager?
     @EnvironmentObject private var collection: UserCollection
     
-    init(item: Item) {
+    let item: Item?
+    let variant: Variant?
+    let villager: Villager?
+    
+    init(item: Item, variant: Variant?) {
         self.item = item
+        self.variant = variant
         self.villager = nil
     }
     
     init(villager: Villager) {
         self.villager = villager
+        self.variant = nil
         self.item = nil
     }
     
     private var isInCollection: Bool {
         if let item = item {
+            if let variant = variant {
+                return collection.variantIn(item: item, variant: variant)
+            }
             return collection.items.contains(item) || collection.critters.contains(item)
         } else if let villager = villager {
             return collection.villagers.contains(villager)
@@ -63,6 +70,11 @@ struct LikeButtonView: View {
                     let added = self.collection.toggleCritters(critter: item)
                     FeedbackGenerator.shared.triggerNotification(type: added ? .success : .warning)
                 default:
+                    if let variant = self.variant {
+                        let added = self.collection.toggleVariant(item: item, variant: variant)
+                        FeedbackGenerator.shared.triggerNotification(type: added ? .success : .warning)
+                        return
+                    }
                     let added = self.collection.toggleItem(item: item)
                     FeedbackGenerator.shared.triggerNotification(type: added ? .success : .warning)
                 }
@@ -73,14 +85,15 @@ struct LikeButtonView: View {
         }) {
             Image(systemName: imageName).foregroundColor(color)
         }
-        .scaleEffect(self.isInCollection ? 1.2 : 1.0)
+        .scaleEffect(self.isInCollection ? 1.3 : 1.0)
         .buttonStyle(BorderlessButtonStyle())
-        .animation(.interactiveSpring())
+        .animation(.spring(response: 0.5, dampingFraction: 0.3, blendDuration: 0.5))
     }
 }
 
 struct StarButtonView_Previews: PreviewProvider {
     static var previews: some View {
-        LikeButtonView(item: static_item)
+        LikeButtonView(item: static_item, variant: nil)
+            .environmentObject(UserCollection.shared)
     }
 }
