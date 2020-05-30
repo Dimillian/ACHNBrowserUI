@@ -36,7 +36,7 @@ You can use this application to learn about SwiftUI and Combine. It uses a very 
 * **French**: Dimillian [Github](https://github.com/Dimillian) | [Twitter](https://mobile.twitter.com/Dimillian) 
 * **German**: TheVaan [Github](https://github.com/TheVaan) | [Twitter](https://mobile.twitter.com/TheVaan)
 * **Italian**: MrOgeid [Github](https://github.com/MrOgeid)
-* **Japanese**: Mimikun [Github](https://github.com/mimikun) | [Mastodon](https://mstdn.mimikun.jp/@mimikun) | [Twitter](https://twitter.com/mimikun_Dev)
+* **Japanese**: mimikun [Github](https://github.com/mimikun) | [Mastodon](https://mstdn.mimikun.jp/@mimikun) | [Twitter](https://twitter.com/mimikun_Dev)
 * **Spanish**: Mauro [Twitter](https://mobile.twitter.com/mauroocb_)
 * **Russian**: MariaFeodora [Github](https://github.com/MariaFeodora)
 
