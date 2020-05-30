@@ -135,41 +135,45 @@ struct SubscribeView: View {
     
     private var paymentButtons: some View {
         VStack {
-            HStack(spacing: 0) {
-                sub.map{ sub in
-                    makeBorderedButton(action: {
-                                        self.buttonAction(purchase: sub)
-                    }, label: self.subscriptionManager.subscriptionStatus == .subscribed ?
-                        "Thanks!" :
-                        "\(formattedPrice(for: sub)) Monthly")
-                        .opacity(subscriptionManager.inPaymentProgress ? 0.5 : 1.0)
-                        .disabled(subscriptionManager.inPaymentProgress)
+            if sub == nil && yearlySub == nil && lifetime == nil {
+                RowLoadingView(isLoading: .constant(true))
+            } else {
+                HStack(spacing: 0) {
+                    sub.map{ sub in
+                        makeBorderedButton(action: {
+                            self.buttonAction(purchase: sub)
+                        }, label: self.subscriptionManager.subscriptionStatus == .subscribed ?
+                            "Thanks!" :
+                            "\(formattedPrice(for: sub)) Monthly")
+                            .opacity(subscriptionManager.inPaymentProgress ? 0.5 : 1.0)
+                            .disabled(subscriptionManager.inPaymentProgress)
+                    }
+                    
+                    Spacer(minLength: 18)
+                    
+                    yearlySub.map{ yearlySub in
+                        makeBorderedButton(action: {
+                            self.buttonAction(purchase: yearlySub)
+                        }, label: self.subscriptionManager.subscriptionStatus == .subscribed ?
+                            "Thanks!" :
+                            "\(formattedPrice(for: yearlySub)) Yearly")
+                            .opacity(subscriptionManager.inPaymentProgress ? 0.5 : 1.0)
+                            .disabled(subscriptionManager.inPaymentProgress)
+                    }
                 }
                 
-                Spacer(minLength: 18)
-                
-                yearlySub.map{ yearlySub in
+                lifetime.map{ lifetime in
                     makeBorderedButton(action: {
-                                        self.buttonAction(purchase: yearlySub)
+                        self.buttonAction(purchase: lifetime)
                     }, label: self.subscriptionManager.subscriptionStatus == .subscribed ?
-                        "Thanks!" :
-                        "\(formattedPrice(for: yearlySub)) Yearly")
+                        "Thank you for your support!" :
+                        "Buy lifetime AC Helper+ for \(formattedPrice(for: lifetime))")
                         .opacity(subscriptionManager.inPaymentProgress ? 0.5 : 1.0)
                         .disabled(subscriptionManager.inPaymentProgress)
+                        .padding(.top, 16)
                 }
-            }.frame(maxWidth: 320)
-            
-            lifetime.map{ lifetime in
-                makeBorderedButton(action: {
-                                    self.buttonAction(purchase: lifetime)
-                }, label: self.subscriptionManager.subscriptionStatus == .subscribed ?
-                    "Thank you for your support!" :
-                    "Buy lifetime AC Helper+ for \(formattedPrice(for: lifetime))")
-                    .opacity(subscriptionManager.inPaymentProgress ? 0.5 : 1.0)
-                    .disabled(subscriptionManager.inPaymentProgress)
-                    .padding(.top, 16)
-            }.frame(maxWidth: 320)
-        }
+            }
+        }.frame(maxWidth: 320)
     }
     
     private func buttonAction(purchase: Purchases.Package) {

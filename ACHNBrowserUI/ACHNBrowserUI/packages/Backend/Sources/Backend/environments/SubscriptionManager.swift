@@ -21,7 +21,6 @@ public class SubscriptionManager: ObservableObject {
     @Published public var yearlySubscription: Purchases.Package?
     @Published public var lifetime: Purchases.Package?
     @Published public var inPaymentProgress = false
-    @Published public var paymentStatus: SKPaymentTransactionState?
     @Published public var subscriptionStatus: SubscriptionStatus = AppUserDefaults.shared.isSubscribed ? .subscribed : .notSubscribed
     
     init() {        
