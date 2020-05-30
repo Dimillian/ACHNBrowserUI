@@ -15,6 +15,7 @@ struct Sheet: View {
         case about
         case rearrange(viewModel: DashboardViewModel)
         case userListForm(editingList: UserList?)
+        case customTasks(collection: UserCollection)
         case turnipsForm(subManager: SubscriptionManager)
         case subscription(source: SubscribeView.Source, subManager: SubscriptionManager)
         case settings(subManager: SubscriptionManager, collection: UserCollection)
@@ -38,6 +39,8 @@ struct Sheet: View {
                 return "sub"
             case .userListForm:
                 return "userListForm"
+            case .customTasks:
+                return "customTasks"
             case .designForm:
                 return "designForm"
             }
@@ -67,6 +70,8 @@ struct Sheet: View {
             return AnyView(SubscribeView(source: source).environmentObject(subManager))
         case .userListForm(let list):
             return AnyView(UserListFormView(editingList: list))
+        case .customTasks(let collection):
+            return AnyView(CustomTasksListView().environmentObject(collection))
         case .designForm(let design):
             let viewModel = DesignFormViewModel(design: design)
             return AnyView(DesignFormView(viewModel: viewModel))

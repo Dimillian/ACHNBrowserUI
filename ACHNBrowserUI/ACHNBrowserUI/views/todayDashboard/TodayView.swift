@@ -58,7 +58,6 @@ struct TodayView: View {
                                          viewModel: self.viewModel,
                                          selectedSheet: self.$selectedSheet)
                     }
-
                     arrangeSectionsButton
                 }
             }
