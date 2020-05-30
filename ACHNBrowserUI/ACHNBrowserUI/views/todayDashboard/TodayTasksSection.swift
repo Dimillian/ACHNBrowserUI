@@ -11,23 +11,30 @@ import Backend
 
 struct TodayTasksSection: View {
     @EnvironmentObject private var collection: UserCollection
+    @Binding var sheet: Sheet.SheetType?
     
-    var isSunday: Bool {
-        Calendar.current.component(.weekday, from: Date()) == 1
+    private var tasksCount: Int {
+        collection.dailyCustomTasks.tasks.count
+    }
+    
+    private var rows: Int {
+        var rowsFloat = CGFloat(tasksCount) / 4.0
+        rowsFloat.round(.up)
+        return Int(rowsFloat)
     }
     
     // MARK: - Task Bubble
-    private func makeTaskBubble(icon: String, taskName: DailyTasks.taskName) -> some View {
-        var task: DailyTasks.Task {
-            collection.dailyTasks.tasks[taskName]!
+    private func makeTaskBubble(taskId: Int) -> some View {
+        var task: DailyCustomTasks.CustomTask {
+            collection.dailyCustomTasks.tasks[taskId]
         }
         
         return ZStack {
             Circle()
                 .foregroundColor(Color("ACBackground"))
-            Image(icon)
+            Image(task.icon)
                 .resizable()
-                .aspectRatio(taskName == DailyTasks.taskName.villagerHouses ? 0.8 : 1, contentMode: .fit)
+                .aspectRatio(1, contentMode: .fit)
             if task.hasProgress {
                 ZStack {
                     Circle()
@@ -48,26 +55,30 @@ struct TodayTasksSection: View {
             if !task.hasProgress {
                 return
             }
-            self.collection.updateProgress(taskName: taskName)
+            self.collection.updateProgress(taskId: taskId)
         }
     }
     
     var body: some View {
         Section(header: SectionHeaderView(text: "Today's Tasks", icon: "checkmark.seal.fill")) {
             VStack(spacing: 15) {
-                HStack {
-                    makeTaskBubble(icon: "icon-iron", taskName: DailyTasks.taskName.rocks)
-                    makeTaskBubble(icon: "icon-villager", taskName: DailyTasks.taskName.villagers)
-                    makeTaskBubble(icon: "icon-fossil", taskName: DailyTasks.taskName.fossils)
-                    makeTaskBubble(icon: "icon-leaf", taskName: DailyTasks.taskName.furniture)
+                ForEach(0 ..< self.rows) { row in
+                    HStack {
+                        ForEach(row*4 ..< min(row*4+4, self.tasksCount)) { index in
+                            self.makeTaskBubble(taskId: index)
+                        }
+                    }
                 }
                 HStack {
-                    makeTaskBubble(icon: "icon-bell", taskName: DailyTasks.taskName.bell)
-                    makeTaskBubble(icon: "icon-miles", taskName: DailyTasks.taskName.nookmiles)
-                    makeTaskBubble(icon: "icon-bottle-message", taskName: DailyTasks.taskName.bottle)
-                    makeTaskBubble(icon: "icon-recipe", taskName: DailyTasks.taskName.villagerHouses)
-                }
-                HStack {
+                    Text("Edit")
+                    .onTapGesture {
+                        self.sheet = .customTasks(collection: self.collection)
+                    }
+                    .foregroundColor(.acText)
+                    .padding(.vertical, 8)
+                    .padding(.horizontal, 14)
+                    .background(Color.acText.opacity(0.2))
+                    .mask(RoundedRectangle(cornerRadius: 14, style: .continuous))
                     Text("Reset")
                         .onTapGesture {
                             self.collection.resetTasks()
@@ -90,7 +101,7 @@ struct TodayTasksSection_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
             List {
-                TodayTasksSection()
+                TodayTasksSection(sheet: .constant(nil))
             }
             .listStyle(GroupedListStyle())
             .environment(\.horizontalSizeClass, .regular)

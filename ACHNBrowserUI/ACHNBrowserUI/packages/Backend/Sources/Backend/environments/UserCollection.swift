@@ -19,6 +19,7 @@ public class UserCollection: ObservableObject {
     @Published public var critters: [Item] = []
     @Published public var lists: [UserList] = []
     @Published public var dailyTasks = DailyTasks()
+    @Published public var dailyCustomTasks = DailyCustomTasks()
     @Published public var isCloudEnabled = true
     @Published public var isSynched = false
     
@@ -29,6 +30,7 @@ public class UserCollection: ObservableObject {
         let critters: [Item]
         let lists: [UserList]?
         let dailyTasks: DailyTasks?
+        let dailyCustomTasks: DailyCustomTasks?
     }
     
     private let filePath: URL
@@ -92,17 +94,33 @@ public class UserCollection: ObservableObject {
         return added
     }
     
-    public func
-        updateProgress(taskName: DailyTasks.taskName) {
-        dailyTasks.tasks[taskName]?.curProgress += 1
-        dailyTasks.lastUpdate = Date()
+    // MARK: - Todays Tasks
+    public func addCustomTask(task: DailyCustomTasks.CustomTask) {
+        dailyCustomTasks.tasks.append(task)
+        save()
+    }
+    
+    public func editCustomTask(task: DailyCustomTasks.CustomTask) {
+        let index = dailyCustomTasks.tasks.firstIndex(where: { $0.id == task.id} )!
+        dailyCustomTasks.tasks[index] = task
+        save()
+    }
+    
+    public func deleteCustomTask(at index: Int) {
+        dailyCustomTasks.tasks.remove(at: index)
+        save()
+    }
+    
+    public func updateProgress(taskId: Int) {
+        dailyCustomTasks.tasks[taskId].curProgress += 1
+        dailyCustomTasks.lastUpdate = Date()
         save()
     }
     
     public func resetTasks() {
-        dailyTasks.lastUpdate = Date()
-        for(taskName, _) in dailyTasks.tasks {
-            dailyTasks.tasks[taskName]?.curProgress = 0
+        dailyCustomTasks.lastUpdate = Date()
+        for(taskId, _) in dailyCustomTasks.tasks.enumerated() {
+            dailyCustomTasks.tasks[taskId].curProgress = 0
         }
         save()
     }
@@ -219,7 +237,7 @@ public class UserCollection: ObservableObject {
     // MARK: - Import / Export
     private func save() {
         do {
-            let savedData = SavedData(items: items, villagers: villagers, critters: critters, lists: lists, dailyTasks: dailyTasks)
+            let savedData = SavedData(items: items, villagers: villagers, critters: critters, lists: lists, dailyTasks: dailyTasks, dailyCustomTasks: dailyCustomTasks)
             let data = try encoder.encode(savedData)
             try data.write(to: filePath, options: .atomicWrite)
         
@@ -243,6 +261,7 @@ public class UserCollection: ObservableObject {
                 self.critters = savedData.critters
                 self.lists = savedData.lists ?? []
                 self.dailyTasks = savedData.dailyTasks ?? DailyTasks()
+                self.dailyCustomTasks = savedData.dailyCustomTasks ?? DailyCustomTasks()
                 return true
             } catch {
                 return false
@@ -259,6 +278,7 @@ public class UserCollection: ObservableObject {
             self.critters = []
             self.lists = []
             self.dailyTasks = DailyTasks()
+            self.dailyCustomTasks = DailyCustomTasks()
             save()
             return true
         } catch {

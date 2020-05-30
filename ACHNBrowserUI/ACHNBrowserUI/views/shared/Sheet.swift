@@ -14,6 +14,7 @@ struct Sheet: View {
         case safari(URL), share(content: [Any])
         case about, rearrange
         case userListForm(editingList: UserList?)
+        case customTasks(collection: UserCollection)
         case turnipsForm(subManager: SubscriptionManager)
         case subscription(source: SubscribeView.Source, subManager: SubscriptionManager)
         case settings(subManager: SubscriptionManager, collection: UserCollection)
@@ -36,6 +37,8 @@ struct Sheet: View {
                 return "sub"
             case .userListForm:
                 return "userListForm"
+            case .customTasks:
+                return "customTasks"
             }
         }
     }
@@ -63,6 +66,8 @@ struct Sheet: View {
             return AnyView(SubscribeView(source: source).environmentObject(subManager))
         case .userListForm(let list):
             return AnyView(UserListFormView(editingList: list))
+        case .customTasks(let collection):
+            return AnyView(CustomTasksListView().environmentObject(collection))
         case .rearrange:
             return AnyView(NavigationView {
                 TodaySectionEditView()
