@@ -29,6 +29,17 @@ This is a full featured Animal Crossing helper application written entirely in S
 
 You can use this application to learn about SwiftUI and Combine. It uses a very standard view, and view model architecture with full use of @State, @Binding, @Published, Observed and Observable object. 
 
+## Localizations Credits
+
+* **Chinese, Simplified**: kartbnb [Github](https://github.com/kartbnb)
+* **Chinese, Taiwan**: klin0816 [Github](https://github.com/klin0816)
+* **French**: Dimillian [Github](https://github.com/Dimillian) | [Twitter](https://mobile.twitter.com/Dimillian) 
+* **German**: TheVaan [Github](https://github.com/TheVaan) | [Twitter](https://mobile.twitter.com/TheVaan)
+* **Italian**: MrOgeid [Github](https://github.com/MrOgeid)
+* **Japanese**: Mimikun [Github](https://github.com/mimikun) | [Mastodon](https://mstdn.mimikun.jp/@mimikun) | [Twitter](https://twitter.com/mimikun_Dev)
+* **Spanish**: Mauro [Twitter](https://mobile.twitter.com/mauroocb_)
+* **Russian**: MariaFeodora [Github](https://github.com/MariaFeodora)
+
 ## Credits
 
 This is just a very simple SwiftUI application, all the database hard work has been done on the [master sheet](https://docs.google.com/spreadsheets/d/1Hxrdp7oxtK-J5x9u1-rzChUpLtkv3t0_kNGdS6dtyWI/edit#gid=2031086626) by the community. 
