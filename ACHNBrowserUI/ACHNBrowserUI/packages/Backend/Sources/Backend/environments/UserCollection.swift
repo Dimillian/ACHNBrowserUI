@@ -184,8 +184,8 @@ public class UserCollection: ObservableObject {
         save()
     }
 
-    public func resetProgress(taskName: DailyTasks.taskName) {
-        dailyTasks.tasks[taskName]?.curProgress = 0
+    public func resetProgress(taskId: Int) {
+        dailyCustomTasks.tasks[taskId].curProgress = 0
         dailyTasks.lastUpdate = Date()
         save()
     }

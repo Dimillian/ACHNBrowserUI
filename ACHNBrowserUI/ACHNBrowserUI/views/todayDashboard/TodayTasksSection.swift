@@ -55,12 +55,12 @@ struct TodayTasksSection: View {
             if !task.hasProgress {
                 return
             }
-            self.collection.updateProgress(taskName: taskName)
+            self.collection.updateProgress(taskId: taskId)
             FeedbackGenerator.shared.triggerSelection()
         }
         .onLongPressGesture {
             guard task.hasProgress else { return }
-            self.collection.resetProgress(taskName: taskName)
+            self.collection.resetProgress(taskId: taskId)
             FeedbackGenerator.shared.triggerSelection()
         }
     }
