@@ -12,12 +12,14 @@ import Backend
 struct Sheet: View {
     enum SheetType: Identifiable {
         case safari(URL), share(content: [Any])
-        case about, rearrange
+        case about
+        case rearrange(viewModel: DashboardViewModel)
         case userListForm(editingList: UserList?)
         case turnipsForm(subManager: SubscriptionManager)
         case subscription(source: SubscribeView.Source, subManager: SubscriptionManager)
         case settings(subManager: SubscriptionManager, collection: UserCollection)
-        
+        case designForm(editingDesign: Design?)
+
         var id: String {
             switch self {
             case .safari(let url):
@@ -36,6 +38,8 @@ struct Sheet: View {
                 return "sub"
             case .userListForm:
                 return "userListForm"
+            case .designForm:
+                return "designForm"
             }
         }
     }
@@ -63,9 +67,12 @@ struct Sheet: View {
             return AnyView(SubscribeView(source: source).environmentObject(subManager))
         case .userListForm(let list):
             return AnyView(UserListFormView(editingList: list))
-        case .rearrange:
+        case .designForm(let design):
+            let viewModel = DesignFormViewModel(design: design)
+            return AnyView(DesignFormView(viewModel: viewModel))
+        case .rearrange(let viewModel):
             return AnyView(NavigationView {
-                TodaySectionEditView()
+                TodaySectionEditView(viewModel: viewModel)
             }
             .navigationViewStyle(StackNavigationViewStyle()))
         }

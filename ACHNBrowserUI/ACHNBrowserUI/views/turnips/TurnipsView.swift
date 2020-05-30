@@ -156,22 +156,23 @@ extension TurnipsView {
                         Text("Profits estimates are computed using the average of the current period")
                             .foregroundColor(.acSecondaryText)
                     }
-                    HStack {
-                        Text("Day").fontWeight(.bold)
-                        Spacer()
-                        Text("AM").fontWeight(.bold)
-                        Spacer()
-                        Text("PM").fontWeight(.bold)
+                    GridStack<AnyView>(rows: 1, columns: 3) { _, column in
+                        switch column {
+                        case 0: return Text("Day").fontWeight(.bold).eraseToAnyView()
+                        case 1: return Text("AM").fontWeight(.bold).eraseToAnyView()
+                        case 2: return Text("PM").fontWeight(.bold).eraseToAnyView()
+                        default: return EmptyView().eraseToAnyView()
+                        }
                     }
                 }
                 if turnipsDisplay == .average {
-                    ForEach(uniqueLabels(for: "average"), id: \.1, content: averagePriceRow(day:identifier:))
+                    GridStack(rows: labels.count, columns: 3, spacing: 16, content: averageGridValues)
                 }
                 else if turnipsDisplay == .minMax {
-                    ForEach(uniqueLabels(for: "min max"), id: \.1, content: minMaxPriceRow(day:identifier:))
+                    GridStack(rows: labels.count, columns: 3, spacing: 16, content: minMaxGridValues)
                 } else if turnipsDisplay == .profits {
                     if viewModel.averagesProfits != nil {
-                        ForEach(uniqueLabels(for: "profits"), id: \.1, content: averageProfitRow(day:identifier:))
+                        GridStack(rows: labels.count, columns: 3, spacing: 16, content: averageProfitGridValues)
                     } else {
                         Text("Please add the amount of turnips you bought and for how much")
                             .foregroundColor(.acHeaderBackground)
@@ -243,37 +244,117 @@ extension TurnipsView {
 }
 
 extension TurnipsView {
-    private func averagePriceRow(day: String, identifier: String) -> some View {
-        guard let dayNumber = labels.firstIndex(of: day),
-            let prices = viewModel.averagesPrices?[dayNumber],
-            let minMaxPrices = viewModel.minMaxPrices?[dayNumber] else {
-                return EmptyView().eraseToAnyViewForRow()
+    private enum Meridian { case am, pm }
+
+    private func gridHeader(column: Int) -> some View {
+        switch column {
+        case 0: return Text("Day").fontWeight(.bold)
+        case 1: return Text("AM").fontWeight(.bold)
+        case 2: return Text("PM").fontWeight(.bold)
+        default: return Text("").fontWeight(.bold)
         }
-        return TurnipsAveragePriceRow(label: day, prices: prices, minMaxPrices: minMaxPrices)
-            .eraseToAnyViewForRow()
     }
 
-    private func minMaxPriceRow(day: String, identifier: String) -> some View {
-        guard let dayNumber = labels.firstIndex(of: day),
-            let prices = viewModel.minMaxPrices?[dayNumber],
-            let averagePrices = viewModel.averagesPrices?[dayNumber] else {
-                return EmptyView().eraseToAnyViewForRow()
-        }
-        return TurnipsMinMaxPriceRow(label: day, prices: prices, averagePrices: averagePrices)
-            .eraseToAnyViewForRow()
+    private func weekDaysText(row: Int) -> some View {
+        Text(LocalizedStringKey(labels[row]))
+            .font(.body)
+            .foregroundColor(.acText)
+            .eraseToAnyView()
     }
 
-    private func averageProfitRow(day: String, identifier: String) -> some View {
-        guard let dayNumber = labels.firstIndex(of: day),
-            let prices = viewModel.averagesProfits?[dayNumber] else {
-                return EmptyView().eraseToAnyViewForRow()
+    private func averageGridValues(row: Int, column: Int) -> some View {
+        switch column {
+        case 0: return weekDaysText(row: row).eraseToAnyView()
+        case 1: return averagePriceText(dayNumber: row, meridian: .am).eraseToAnyView()
+        case 2: return averagePriceText(dayNumber: row, meridian: .pm).eraseToAnyView()
+        default: return EmptyView().eraseToAnyView()
         }
-        return TurnipsAveragePriceRow(label: day, prices: prices, minMaxPrices: [])
-            .eraseToAnyViewForRow()
     }
 
-    private func uniqueLabels(for uniqueIdentifier: String) -> [(String, String)] {
-        labels.map { ($0, uniqueIdentifier + $0) }
+    private func minMaxGridValues(row: Int, column: Int) -> some View {
+        switch column {
+        case 0: return weekDaysText(row: row).eraseToAnyView()
+        case 1: return minMaxPriceText(dayNumber: row, meridian: .am).eraseToAnyView()
+        case 2: return minMaxPriceText(dayNumber: row, meridian: .pm).eraseToAnyView()
+        default: return EmptyView().eraseToAnyView()
+        }
+    }
+
+    private func averageProfitGridValues(row: Int, column: Int) -> some View {
+        switch column {
+        case 0: return weekDaysText(row: row).eraseToAnyView()
+        case 1: return averageProfitText(dayNumber: row, meridian: .am).eraseToAnyView()
+        case 2: return averageProfitText(dayNumber: row, meridian: .pm).eraseToAnyView()
+        default: return EmptyView().eraseToAnyView()
+        }
+    }
+
+    private func averagePriceText(dayNumber: Int, meridian: Meridian) -> some View {
+        guard let averagePrices = viewModel.averagesPrices?[dayNumber],
+            let averagePrice = meridian == .am ? averagePrices.first : averagePrices.last,
+            let minMaxPricesForTheDay = viewModel.minMaxPrices?[dayNumber],
+            let minMaxPrices = meridian == .am ? minMaxPricesForTheDay.first : minMaxPricesForTheDay.last else {
+                return EmptyView().eraseToAnyView()
+        }
+
+        return Text("\(averagePrice)")
+            .font(.headline)
+            .fontWeight(.bold)
+            .foregroundColor(color(averagePrice: averagePrice, minMaxPrices: minMaxPrices))
+            .eraseToAnyView()
+    }
+
+    private func minMaxPriceText(dayNumber: Int, meridian: Meridian) -> some View {
+        guard let averagePrices = viewModel.averagesPrices?[dayNumber],
+            let averagePrice = meridian == .am ? averagePrices.first : averagePrices.last,
+            let minMaxPricesForTheDay = viewModel.minMaxPrices?[dayNumber],
+            let minMaxPrices = meridian == .am ? minMaxPricesForTheDay.first : minMaxPricesForTheDay.last else {
+                return EmptyView().eraseToAnyView()
+        }
+
+        let isEntered = averagePrice == minMaxPrices.first && averagePrice == minMaxPrices.last
+        let minMaxText: String
+        if isEntered {
+            minMaxText = "\(minMaxPrices.first ?? 0)"
+        } else {
+            minMaxText = minMaxPrices.map(String.init).joined(separator: " - ")
+        }
+
+        return Text(minMaxText)
+            .font(.headline)
+            .fontWeight(.bold)
+            .foregroundColor(color(averagePrice: averagePrice, minMaxPrices: minMaxPrices))
+            .eraseToAnyView()
+    }
+
+    private func averageProfitText(dayNumber: Int, meridian: Meridian) -> some View {
+        guard let averageProfitsPrices = viewModel.averagesProfits?[dayNumber],
+            let averageProfitsPrice = meridian == .am ? averageProfitsPrices.first : averageProfitsPrices.last else {
+                return EmptyView().eraseToAnyView()
+        }
+
+        return Text("\(averageProfitsPrice)")
+            .font(.headline)
+            .fontWeight(.bold)
+            .foregroundColor(color(averagePrice: averageProfitsPrice, minMaxPrices: []))
+            .eraseToAnyView()
+    }
+
+    private func color(averagePrice: Int, minMaxPrices: [Int]) -> Color {
+        let isEntered = averagePrice == minMaxPrices.first && averagePrice == minMaxPrices.last
+        let price = turnipsDisplay == .minMax ? Int(minMaxPrices.average) : averagePrice
+
+        return isEntered ? .acText : color(price: price)
+    }
+
+    private func color(price: Int) -> Color {
+        if price <= 90 {
+            return .red
+        } else if price >= 150 {
+            return .acTabBarBackground
+        } else {
+            return .acSecondaryText
+        }
     }
 }
 

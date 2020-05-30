@@ -8,6 +8,7 @@
 
 import SwiftUI
 import Backend
+import UI
 
 struct CategoriesView: View {
     // MARK: - Vars
@@ -28,25 +29,25 @@ struct CategoriesView: View {
     var body: some View {
         NavigationView {
             List {
-                Section(header: SearchField(searchText: $viewModel.searchText)) {
-                        if viewModel.searchText.isEmpty {
-                            makeSubCategories(name: "Nature",
-                                              icon: Backend.Category.fossils.iconName(),
-                                              categories: Backend.Category.nature())
-                            makeSubCategories(name: "Wardrobe",
-                                              icon: Backend.Category.dressup.iconName(),
-                                              categories: Backend.Category.wardrobe())
-                            makeCategories()
+                Section(header: SearchField(searchText: $viewModel.searchText).id("searchField")) {
+                    if viewModel.searchText.isEmpty {
+                        makeSubCategories(name: "Nature",
+                                          icon: Backend.Category.fossils.iconName(),
+                                          categories: Backend.Category.nature())
+                        makeSubCategories(name: "Wardrobe",
+                                          icon: Backend.Category.dressup.iconName(),
+                                          categories: Backend.Category.wardrobe())
+                        makeCategories()
+                    } else {
+                        if viewModel.isLoadingData {
+                            RowLoadingView(isLoading: $isLoadingData)
+                        } else if searchCategories.isEmpty {
+                            Text("No results for \(viewModel.searchText)")
+                                .foregroundColor(.acSecondaryText)
                         } else {
-                            if viewModel.isLoadingData {
-                                RowLoadingView(isLoading: $isLoadingData)
-                            } else if searchCategories.isEmpty {
-                                Text("No results for \(viewModel.searchText)")
-                                    .foregroundColor(.acSecondaryText)
-                            } else {
-                                ForEach(searchCategories, id: \.0, content: searchSection)
-                            }
+                            ForEach(searchCategories, id: \.0, content: searchSection)
                         }
+                    }
                 }
             }
             .listStyle(GroupedListStyle())
@@ -55,7 +56,7 @@ struct CategoriesView: View {
             .modifier(DismissingKeyboardOnSwipe())
       
             
-            ItemsListView(viewModel: ItemsViewModel(category: .housewares))
+            ItemsListView(category: .housewares)
         }
     }
 }
@@ -69,7 +70,7 @@ extension CategoriesView {
     }
     
     private func makeSubCategories(name: String, icon: String, categories: [Backend.Category]) -> some View {
-        NavigationLink(destination: CategoryDetailView(categories: categories)
+        NavigationLink(destination: LazyView(CategoryDetailView(categories: categories))
             .navigationBarTitle(LocalizedStringKey(name))) {
                 HStack {
                     Image(icon)
@@ -86,13 +87,14 @@ extension CategoriesView {
     }
 
     private func searchSection(category: Backend.Category, items: [Item]) -> some View {
-        Section(header: CategoryHeaderView(category: category)) {
+        Group {
+            CategoryHeaderView(category: category).listRowBackground(Color.acBackground)
             ForEach(items, content: self.searchItemRow)
         }
     }
     
     private func searchItemRow(item: Item) -> some View {
-        NavigationLink(destination: ItemDetailView(item: item)) {
+        NavigationLink(destination: LazyView(ItemDetailView(item: item))) {
             ItemRowView(displayMode: .large, item: item)
         }
     }

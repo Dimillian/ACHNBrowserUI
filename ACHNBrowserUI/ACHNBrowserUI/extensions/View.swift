@@ -79,7 +79,6 @@ extension View {
     }
 
     func eraseToAnyView() -> AnyView { AnyView(self) }
-    func eraseToAnyViewForRow() -> VStack<AnyView> { VStack { eraseToAnyView() } }
 }
 
 extension View {

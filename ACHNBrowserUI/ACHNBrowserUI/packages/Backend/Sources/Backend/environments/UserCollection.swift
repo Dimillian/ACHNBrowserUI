@@ -9,37 +9,47 @@
 import Foundation
 import Combine
 import CloudKit
+import os.log
 
 public class UserCollection: ObservableObject {
     public static let shared = UserCollection(iCloudDisabled: false)
     
     // MARK: - Published properties
     @Published public var items: [Item] = []
+    @Published public var variants: [String: [Variant]] = [:]
     @Published public var villagers: [Villager] = []
     @Published public var critters: [Item] = []
     @Published public var lists: [UserList] = []
+    @Published public var designs: [Design] = []
     @Published public var dailyTasks = DailyTasks()
+    
     @Published public var isCloudEnabled = true
     @Published public var isSynched = false
     
     // MARK: - Private properties
     private struct SavedData: Codable {
         let items: [Item]
+        let variants: [String: [Variant]]?
         let villagers: [Villager]
         let critters: [Item]
         let lists: [UserList]?
         let dailyTasks: DailyTasks?
+        let designs: [Design]?
     }
     
     private let filePath: URL
     private let encoder = JSONEncoder()
     private let decoder = JSONDecoder()
     
+    private let saveQueue = DispatchQueue(label: "achelper.save.queue")
+    
     private static let recordType = "UserCollection"
     private static let recordId = CKRecord.ID(recordName: "CurrentUserCollection")
     private static let assetKey = "data"
     private var cloudKitDatabase: CKDatabase? = nil
     private var currentRecord: CKRecord? = nil
+    
+    private let logHandler = OSLog(subsystem: "com.achelper.collection", category: "ac-perf")
     
     public init(iCloudDisabled: Bool) {
         do {
@@ -61,10 +71,42 @@ public class UserCollection: ObservableObject {
     }
     
     // MARK: - Items management
+    public func itemsIn(category: Category, items: [Item]) -> Int {
+        os_signpost(.begin,
+                    log: logHandler,
+                    name: "Counting items with passed array",
+                    "Begin for category %{public}s",
+                    category.rawValue)
+        
+        let allItems = Items.shared.categories[category] ?? []
+        let inCollection = items.count(where: { allItems.contains($0) && !$0.name.contains("(fake)") })
+        
+        os_signpost(.end,
+                    log: logHandler,
+                    name: "Counting items with passed array",
+                    "Done for category %{public}s",
+                    category.rawValue)
+        
+        return inCollection
+    }
+    
     public func itemsIn(category: Category) -> Int {
+        os_signpost(.begin,
+                    log: logHandler,
+                    name: "Counting items",
+                    "Begin for category %{public}s",
+                    category.rawValue)
+        
         let items = Items.shared.categories[category] ?? []
         var caught = self.critters.count(where: { items.contains($0) } )
         caught += self.items.count(where: { items.contains($0) && !$0.name.contains("(fake)") })
+        
+        os_signpost(.end,
+                    log: logHandler,
+                    name: "Counting items",
+                    "Done for category %{public}s",
+                    category.rawValue)
+        
         return caught
     }
 
@@ -72,6 +114,31 @@ public class UserCollection: ObservableObject {
         let added = items.toggle(item: item)
         save()
         return added
+    }
+    
+    public func variantIn(item: Item, variant: Variant) -> Bool {
+        guard let filename = item.filename else {
+            return false
+        }
+        return variants[filename]?.contains(variant) == true
+    }
+    
+    public func toggleVariant(item: Item, variant: Variant) -> Bool {
+        guard let filename = item.filename else {
+            return false
+        }
+        if variants[filename]?.contains(variant) == true {
+            variants[filename]?.removeAll(where: { $0 == variant })
+            save()
+            return false
+        } else {
+            if variants[filename] == nil {
+                variants[filename] = []
+            }
+            variants[filename]?.append(variant)
+            save()
+            return true
+        }
     }
     
     public func toggleCritters(critter: Item) -> Bool {
@@ -92,9 +159,14 @@ public class UserCollection: ObservableObject {
         return added
     }
     
-    public func
-        updateProgress(taskName: DailyTasks.taskName) {
+    public func updateProgress(taskName: DailyTasks.taskName) {
         dailyTasks.tasks[taskName]?.curProgress += 1
+        dailyTasks.lastUpdate = Date()
+        save()
+    }
+
+    public func resetProgress(taskName: DailyTasks.taskName) {
+        dailyTasks.tasks[taskName]?.curProgress = 0
         dailyTasks.lastUpdate = Date()
         save()
     }
@@ -135,7 +207,19 @@ public class UserCollection: ObservableObject {
         lists[index].items.remove(at: at)
         save()
     }
-    
+
+    // MARK: - Custom Designs
+
+    public func addDesign(_ design: Design) {
+        designs.append(design)
+        save()
+    }
+
+    public func deleteDesign(at design: Int) {
+        designs.remove(at: design)
+        save()
+    }
+
     // MARK: - CloudKit
     private func checkiCloudStatus() {
         CKContainer.default().accountStatus { (status, error) in
@@ -218,19 +302,30 @@ public class UserCollection: ObservableObject {
     
     // MARK: - Import / Export
     private func save() {
-        do {
-            let savedData = SavedData(items: items, villagers: villagers, critters: critters, lists: lists, dailyTasks: dailyTasks)
-            let data = try encoder.encode(savedData)
-            try data.write(to: filePath, options: .atomicWrite)
-        
-            if isCloudEnabled {
-                isSynched = false
-                saveToCloudKit()
+        saveQueue.async { [weak self] in
+            guard let weakself = self else { return }
+            do {
+                let savedData = SavedData(items: weakself.items,
+                                          variants: weakself.variants,
+                                          villagers: weakself.villagers,
+                                          critters: weakself.critters,
+                                          lists: weakself.lists,
+                                          dailyTasks: weakself.dailyTasks,
+                                          designs: weakself.designs)
+                let data = try weakself.encoder.encode(savedData)
+                try data.write(to: weakself.filePath, options: .atomicWrite)
+                
+                if weakself.isCloudEnabled {
+                    DispatchQueue.main.async {
+                        weakself.isSynched = false
+                        weakself.saveToCloudKit()
+                    }
+                }
+            } catch let error {
+                print("Error while saving collection: \(error.localizedDescription)")
             }
-        } catch let error {
-            print("Error while saving collection: \(error.localizedDescription)")
+            weakself.encoder.dataEncodingStrategy = .base64
         }
-        encoder.dataEncodingStrategy = .base64
     }
     
     private func loadCollection(file: URL) -> Bool {
@@ -239,10 +334,12 @@ public class UserCollection: ObservableObject {
             do {
                 let savedData = try decoder.decode(SavedData.self, from: data)
                 self.items = savedData.items
+                self.variants = savedData.variants ?? [:]
                 self.villagers = savedData.villagers
                 self.critters = savedData.critters
                 self.lists = savedData.lists ?? []
                 self.dailyTasks = savedData.dailyTasks ?? DailyTasks()
+                self.designs = savedData.designs ?? []
                 return true
             } catch {
                 return false
@@ -259,6 +356,7 @@ public class UserCollection: ObservableObject {
             self.critters = []
             self.lists = []
             self.dailyTasks = DailyTasks()
+            self.designs = []
             save()
             return true
         } catch {

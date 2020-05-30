@@ -7,38 +7,30 @@
 //
 
 import SwiftUI
+import Backend
+import Combine
 
 struct TodaySectionEditView: View {
-    
     @Environment(\.presentationMode) private var presentationMode
+
+    @ObservedObject var viewModel: DashboardViewModel
+
     @State private var editMode = EditMode.active
-    @State private var selection = Set<String>()
-    
-    @State private var sections: [SectionHeaderView] = [
-        SectionHeaderView(text: "New on Nookazon", icon: "cart.fill"),
-        SectionHeaderView(text: "Currently Available", icon: "calendar"),
-        SectionHeaderView(text: "Collection Progress", icon: "chart.pie.fill"),
-        SectionHeaderView(text: "Turnips", icon: "dollarsign.circle.fill"),
-        SectionHeaderView(text: "Today's Tasks", icon: "checkmark.seal.fill"),
-        SectionHeaderView(text: "Events", icon: "flag.fill"),
-        SectionHeaderView(text: "Birthdays", icon: "gift.fill")
-    ]
-    
-    @State private var hiddenSections: [SectionHeaderView] = []
-        
+
     var body: some View {
-        List(selection: $selection) {
-            
-            Section(header: SectionHeaderView(text: "Drag & Drop to Rearrange", icon: "arrow.up.arrow.down.circle.fill"), footer: self.footer) {
-                ForEach(sections, id: \.text) { section in
+        List(selection: self.$viewModel.selection) {
+            Section(header: SectionHeaderView(text: "Drag & Drop to Rearrange",
+                                              icon: "arrow.up.arrow.down.circle.fill"),
+                    footer: self.footer) {
+                ForEach(viewModel.sectionOrder, id: \.name) { section in
                     HStack {
-                        Image(systemName: section.icon ?? "")
+                        Image(systemName: section.iconName)
                             .resizable()
                             .aspectRatio(1, contentMode: .fit)
                             .frame(width: 22)
-                            .foregroundColor(Color("ACSecondaryText"))
+                            .foregroundColor(.acSecondaryText)
                         
-                        Text(section.text)
+                        Text(LocalizedStringKey(section.sectionName))
                             .font(.system(.body, design: .rounded))
                         
                         Spacer()
@@ -47,28 +39,8 @@ struct TodaySectionEditView: View {
                 }
                 .onMove(perform: onMove)
             }
-            
-            if hiddenSections.count > 0 {
-                Section(header: SectionHeaderView(text: "Hidden", icon: "eye.slash.fill")) {
-                    ForEach(hiddenSections, id: \.text) { section in
-                        HStack {
-                            Image(systemName: section.icon ?? "")
-                                .resizable()
-                                .aspectRatio(1, contentMode: .fit)
-                                .frame(width: 22)
-                                .foregroundColor(Color("ACSecondaryText"))
-                            
-                            Text(section.text)
-                                .font(.system(.body, design: .rounded))
-                            
-                            Spacer()
-                        }
-                    }
-                    .onMove(perform: onMove)
-                }
-            }
-            
         }
+        .onDisappear(perform: self.viewModel.saveSectionList)
         .listStyle(GroupedListStyle())
         .environment(\.editMode, $editMode)
         .navigationBarTitle("Today Sections")
@@ -89,18 +61,51 @@ struct TodaySectionEditView: View {
         VStack(alignment: .leading, spacing: 8) {
             Text("Drag and drop").fontWeight(.bold) + Text(" to re-order sections.")
             Text("Check or un-check").fontWeight(.bold) + Text(" rows to hide sections from the dashboard.")
-            Text("Your top-most section will be the default detail view on iPad and Mac.")
         }
         .padding(.vertical)
     }
     
     private func onMove(source: IndexSet, destination: Int) {
-        sections.move(fromOffsets: source, toOffset: destination)
+        viewModel.sectionOrder.move(fromOffsets: source, toOffset: destination)
+    }
+}
+
+extension TodaySection {
+    var sectionName: String {
+        switch name {
+        case .events: return "Events"
+        case .specialCharacters: return "Possible visitors"
+        case .currentlyAvailable: return "Currently Available"
+        case .collectionProgress: return "Collection Progress"
+        case .birthdays: return "Today's Birthdays"
+        case .turnips: return "Turnips"
+        case .subscribe: return "Subscribe"
+        case .mysteryIsland: return "Mystery Islands"
+        case .music: return "Music player"
+        case .tasks: return "Today's Tasks"
+        case .nookazon: return "New on Nookazon"
+        }
+    }
+
+    var iconName: String {
+        switch name {
+        case .events: return "flag.fill"
+        case .specialCharacters: return "clock"
+        case .currentlyAvailable: return "calendar"
+        case .collectionProgress: return "chart.pie.fill"
+        case .birthdays: return "gift.fill"
+        case .turnips: return "dollarsign.circle.fill"
+        case .subscribe: return "suit.heart.fill"
+        case .mysteryIsland: return "sun.haze.fill"
+        case .music: return "music.note"
+        case .tasks: return "checkmark.seal.fill"
+        case .nookazon: return "cart.fill"
+        }
     }
 }
 
 struct TodaySectionEditView_Previews: PreviewProvider {
     static var previews: some View {
-        TodaySectionEditView()
+        TodaySectionEditView(viewModel: DashboardViewModel())
     }
 }

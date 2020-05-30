@@ -10,6 +10,7 @@ import UIKit
 import SwiftUI
 import Backend
 import CoreSpotlight
+import StoreKit
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
@@ -25,6 +26,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             .environmentObject(SubscriptionManager.shared)
             .environmentObject(TurnipPredictionsService.shared)
             .environmentObject(MusicPlayerManager.shared)
+            .environmentObject(AppUserDefaults.shared)
         
         if let windowScene = scene as? UIWindowScene {
             
@@ -67,6 +69,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.4) {
                 self.routeUserActivity(userActivity: activity)
             }
+        }
+        
+        AppUserDefaults.shared.numberOfLaunch += 1
+        if AppUserDefaults.shared.numberOfLaunch == 3 {
+            SKStoreReviewController.requestReview()
         }
     }
     

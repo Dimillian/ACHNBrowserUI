@@ -75,7 +75,17 @@ public class AppUserDefaults: ObservableObject {
         }
     }
     
+    @UserDefaultCodable("today_sections", defaultValue: TodaySection.defaultSectionList)
+    public var todaySectionList: [TodaySection] {
+        willSet {
+            objectWillChange.send()
+        }
+    }
+
     @UserDefault("spotlight_index_version", defaultValue: "")
     public var spotlightIndexVersion: String
+    
+    @UserDefault("number_of_launch", defaultValue: 0)
+    public var numberOfLaunch: Int
 }
 

@@ -13,25 +13,26 @@ import Backend
 import UI
 
 struct TodayView: View {
+    
+    // MARK: - Vars
     @EnvironmentObject private var uiState: UIState
     @EnvironmentObject private var collection: UserCollection
     @EnvironmentObject private var subManager: SubscriptionManager
     @EnvironmentObject private var items: Items
-    @ObservedObject private var userDefaults = AppUserDefaults.shared
-    @ObservedObject private var viewModel = DashboardViewModel()
-    @ObservedObject private var villagersViewModel = VillagersViewModel()
-    @ObservedObject private var turnipsPredictionsService = TurnipPredictionsService.shared
+    @EnvironmentObject private var userDefaults: AppUserDefaults
     
+    @ObservedObject private var viewModel = DashboardViewModel()
+
     @State private var selectedSheet: Sheet.SheetType?
     @State private var showWhatsNew: Bool = false
+        
+    // MARK: - Critters Calculations
+    private var fishAvailable: [Item] {
+        items.categories[.fish]?.filterActive() ?? []
+    }
     
     private var bugsAvailable: [Item] {
         items.categories[.bugs]?.filterActive() ?? []
-    }
-    
-    // MARK: - Fish Calculations
-    private var fishAvailable: [Item] {
-        items.categories[.fish]?.filterActive() ?? []
     }
     
     // MARK: - Body
@@ -52,21 +53,13 @@ struct TodayView: View {
                 }
 
                 Group {
-                    TodayEventsSection()
-                    TodaySpecialCharactersSection()
-                    TodayCurrentlyAvailableSection(viewModel: viewModel)
-                    TodayCollectionProgressSection(viewModel: viewModel, sheet: $selectedSheet)
-                    TodayBirthdaysSection(villagers: villagersViewModel.todayBirthdays)
-                    TodayTurnipSection(predictions: turnipsPredictionsService.predictions)
-                        .onTapGesture {
-                            self.uiState.selectedTab = .turnips
+                    ForEach(viewModel.sectionOrder, id: \.self) { section in
+                        TodaySectionView(section: section,
+                                         viewModel: self.viewModel,
+                                         selectedSheet: self.$selectedSheet)
                     }
-                    TodayTasksSection()
-                    // TodayNookazonSection(sheet: $selectedSheet, viewModel: viewModel)
-                    TodaySubscribeSection(sheet: $selectedSheet)
-                    TodayMusicPlayerSection()
-                    TodayMysteryIslandsSection()
-                    // self.arrangeSectionsButton
+
+                    arrangeSectionsButton
                 }
             }
             .listStyle(GroupedListStyle())
@@ -79,10 +72,10 @@ struct TodayView: View {
                                activeBugs: bugsAvailable)
         }
     }
-            
+
     var arrangeSectionsButton: some View {
         Section {
-            Button(action: { self.selectedSheet = .rearrange }) {
+            Button(action: { self.selectedSheet = .rearrange(viewModel: self.viewModel) }) {
                 HStack {
                     Image(systemName: "arrow.up.arrow.down")
                         .font(.system(.body, design: .rounded))
@@ -109,7 +102,6 @@ struct TodayView: View {
         .safeHoverEffect()
     }
     
-    // MARK: - Navigation Bar Button(s)
     private var aboutButton: some View {
         Button(action: { self.selectedSheet = .about } ) {
             Image(systemName: "info.circle")
@@ -121,6 +113,7 @@ struct TodayView: View {
         .safeHoverEffect()
     }
     
+    // MARK: - Others
     private var dateString: String {
         let f = DateFormatter()
         f.setLocalizedDateFormatFromTemplate("EEEE, MMM d")

@@ -20,6 +20,7 @@ class CategoriesSearchViewModel: ObservableObject {
     
     init() {
         searchCancellable = $searchText
+            .subscribe(on: DispatchQueue.global())
             .handleEvents(receiveOutput: { [weak self] _ in
                 DispatchQueue.main.async {
                     self?.isLoadingData = true
@@ -29,7 +30,6 @@ class CategoriesSearchViewModel: ObservableObject {
             .removeDuplicates()
             .filter { !$0.isEmpty }
             .map(itemsInCategory(with:))
-            .subscribe(on: DispatchQueue.global())
             .receive(on: DispatchQueue.main)
             .sink(receiveValue: { [weak self] in
                 guard let self = self else { return }

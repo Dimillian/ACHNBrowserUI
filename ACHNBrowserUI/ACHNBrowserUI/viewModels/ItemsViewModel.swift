@@ -15,11 +15,14 @@ class ItemsViewModel: ObservableObject {
     @Published var sortedItems: [Item] = []
     @Published var searchItems: [Item] = []
     @Published var searchText = ""
+    @Published var allowSearch = false
     
     public let category: Backend.Category
     
     private var itemCancellable: AnyCancellable?
     private var searchCancellable: AnyCancellable?
+    
+    private static var META_KEYWORD_CACHE: [String: [Item]] = [:]
     
     enum Sort: String, CaseIterable {
         case name, buy, sell, set, similar
@@ -55,7 +58,8 @@ class ItemsViewModel: ObservableObject {
     
     public init(category: Backend.Category) {
         self.category = category
-
+        self.allowSearch = true
+        
         searchCancellable = $searchText
             .debounce(for: .milliseconds(300), scheduler: DispatchQueue.main)
             .removeDuplicates()
@@ -66,8 +70,27 @@ class ItemsViewModel: ObservableObject {
         }
 
         itemCancellable = Items.shared.$categories
+            .subscribe(on: DispatchQueue.global())
+            .map{ $0[category]?.sorted{ $0.localizedName.localizedCompare($1.localizedName) == .orderedAscending } ?? [] }
+            .receive(on: DispatchQueue.main)
             .sink { [weak self] in
-                self?.items = $0[category]?.sorted{ $0.localizedName.localizedCompare($1.localizedName) == .orderedAscending } ?? []
+                self?.items = $0
+        }
+    }
+    
+    public init(meta: String) {
+        self.category = .other
+        if let items = Self.META_KEYWORD_CACHE[meta] {
+            self.items = items
+        } else {
+            itemCancellable = Items.shared.$categories
+                .subscribe(on: DispatchQueue.global())
+                .map{ $0.values.flatMap{ $0 }.filter({ $0.metas.contains(meta) }) }
+                .receive(on: DispatchQueue.main)
+                .sink { [weak self] items in
+                    Self.META_KEYWORD_CACHE[meta] = items
+                    self?.items = items
+            }
         }
     }
 

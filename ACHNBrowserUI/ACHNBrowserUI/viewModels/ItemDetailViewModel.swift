@@ -12,6 +12,7 @@ import Backend
 
 class ItemDetailViewModel: ObservableObject {
     @Published var item: Item
+    @Published var recipe: Item?
     
     @Published var setItems: [Item] = []
     @Published var similarItems: [Item] = []
@@ -57,6 +58,12 @@ class ItemDetailViewModel: ObservableObject {
                     self?.colorsItems = items.filter({ $0.colors?.contains(color) == true }).prefix(30).map{ $0 }
                 } else {
                     self?.colorsItems = []
+                }
+                
+                if $0.appCategory != .recipes {
+                    self?.recipe = Items.shared.matchItemRecipe(item: $0)
+                } else if let item = Items.shared.matchFinalItem(recipe: $0) {
+                    self?.recipe = item
                 }
         }
     }
