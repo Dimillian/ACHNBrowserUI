@@ -17,16 +17,14 @@ public class MusicPlayerManager: ObservableObject {
     public static let shared = MusicPlayerManager()
     
     public enum PlayMode {
-        case stopEnd, random, ordered
+        case random, ordered
         
         mutating public func toggle() {
             switch self {
-            case .stopEnd:
-                self = .random
             case .random:
                 self = .ordered
             case .ordered:
-                self = .stopEnd
+                self = .random
             }
         }
     }
@@ -59,7 +57,7 @@ public class MusicPlayerManager: ObservableObject {
         }
     }
     
-    @Published public var playmode = PlayMode.stopEnd
+    @Published public var playmode = PlayMode.random
     
     private var songsCancellable: AnyCancellable?
     private var itemsCancellable: AnyCancellable?
@@ -81,8 +79,6 @@ public class MusicPlayerManager: ObservableObject {
                                                queue: .main) { [weak self] _ in
                                                 guard let weakself = self else { return }
                                                 switch weakself.playmode {
-                                                case .stopEnd:
-                                                    self?.isPlaying = false
                                                 case .random:
                                                     self?.isPlaying = false
                                                     self?.currentSong = self?.songs.randomElement()?.value

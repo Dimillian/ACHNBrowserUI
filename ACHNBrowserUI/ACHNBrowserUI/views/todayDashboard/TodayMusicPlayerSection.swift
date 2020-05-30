@@ -99,9 +99,7 @@ struct TodayMusicPlayerSection: View {
         case .random:
             return Image(systemName: "shuffle")
         case .ordered:
-            return Image(systemName: "forward.end.alt.fill")
-        case .stopEnd:
-            return Image(systemName: "stop.fill")
+            return Image(systemName: "list.number")
         }
     }
 }
