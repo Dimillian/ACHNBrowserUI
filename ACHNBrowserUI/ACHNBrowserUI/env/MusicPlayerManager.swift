@@ -53,50 +53,12 @@ public class MusicPlayerManager: ObservableObject {
     @Published public var isPlaying = false {
         didSet {
             isPlaying ? player?.play() : player?.pause()
-            if isPlaying {
-                if timeTimer != nil {
-                    timeTimer?.invalidate()
-                    timeTimer = nil
-                }
-                timeTimer = Timer.scheduledTimer(withTimeInterval: 0.5,
-                                                 repeats: true,
-                                                 block:
-                { [weak self] timer in
-                    if let duration = self?.player?.currentItem?.duration.seconds,
-                        let playTime = self?.player?.currentItem?.currentTime().seconds,
-                        !duration.isNaN, !playTime.isNaN {
-                        let durationSecs = Int(duration)
-                        let durationSeconds = Int(durationSecs % 3600 ) % 60
-                        let durationMinutes = Int(durationSecs % 3600) / 60
-                        let durationString = "\(durationMinutes):\(String(format: "%02d", durationSeconds))"
-                        self?.duration = durationString
-                        
-                        let playTimeSecs = Int(playTime)
-                        let playTimeSeconds = Int(playTimeSecs % 3600) % 60
-                        let playTimeMinutes = Int(playTimeSecs % 3600) / 60
-                        let timeElapsedString = "\(playTimeMinutes):\(String(format: "%02d", playTimeSeconds))"
-                        self?.timeElasped = timeElapsedString
-                        
-                        self?.playProgress = Float(playTime) / Float(duration)
-                        
-                        var infos = MPNowPlayingInfoCenter.default().nowPlayingInfo
-                        infos?[MPMediaItemPropertyPlaybackDuration] = duration
-                        infos?[MPNowPlayingInfoPropertyElapsedPlaybackTime] = playTime
-                        MPNowPlayingInfoCenter.default().nowPlayingInfo = infos
-                    }
-                })
-            } else {
-                timeTimer?.invalidate()
-                timeTimer = nil
-            }
+            setupPlayTimer()
             MPNowPlayingInfoCenter.default().playbackState = isPlaying ? .playing : .paused
         }
     }
     
     @Published public var playmode = PlayMode.random
-    
-    private var timeTimer: Timer?
-    
     @Published public var duration = "0:00"
     @Published public var timeElasped = "0:00"
     @Published public var playProgress: Float = 0
@@ -104,6 +66,7 @@ public class MusicPlayerManager: ObservableObject {
     private var songsCancellable: AnyCancellable?
     private var itemsCancellable: AnyCancellable?
     private var player: AVPlayer?
+    private var timeTimer: Timer?
     
     init() {
         songsCancellable = ACNHApiService
@@ -214,6 +177,49 @@ public class MusicPlayerManager: ObservableObject {
                     MPNowPlayingInfoCenter.default().nowPlayingInfo = info
                 }
             }
+        }
+    }
+    
+    private func setupPlayTimer() {
+        if isPlaying {
+            if timeTimer != nil {
+                timeTimer?.invalidate()
+                timeTimer = nil
+            }
+            timeTimer = Timer.scheduledTimer(withTimeInterval: 0.5,
+                                             repeats: true,
+                                             block:
+                { [weak self] timer in
+                    self?.refreshPlayingInfo()
+                })
+        } else {
+            timeTimer?.invalidate()
+            timeTimer = nil
+        }
+    }
+    
+    private func refreshPlayingInfo() {
+        if let duration = player?.currentItem?.duration.seconds,
+            let playTime = player?.currentItem?.currentTime().seconds,
+            !duration.isNaN, !playTime.isNaN {
+            let durationSecs = Int(duration)
+            let durationSeconds = Int(durationSecs % 3600 ) % 60
+            let durationMinutes = Int(durationSecs % 3600) / 60
+            let durationString = "\(durationMinutes):\(String(format: "%02d", durationSeconds))"
+            self.duration = durationString
+            
+            let playTimeSecs = Int(playTime)
+            let playTimeSeconds = Int(playTimeSecs % 3600) % 60
+            let playTimeMinutes = Int(playTimeSecs % 3600) / 60
+            let timeElapsedString = "\(playTimeMinutes):\(String(format: "%02d", playTimeSeconds))"
+            self.timeElasped = timeElapsedString
+            
+            self.playProgress = Float(playTime) / Float(duration)
+            
+            var infos = MPNowPlayingInfoCenter.default().nowPlayingInfo
+            infos?[MPMediaItemPropertyPlaybackDuration] = duration
+            infos?[MPNowPlayingInfoPropertyElapsedPlaybackTime] = playTime
+            MPNowPlayingInfoCenter.default().nowPlayingInfo = infos
         }
     }
 }
