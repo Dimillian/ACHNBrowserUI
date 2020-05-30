@@ -178,6 +178,11 @@ public class UserCollection: ObservableObject {
         save()
     }
     
+    public func moveCustomTask(from: IndexSet, to: Int) {
+        dailyCustomTasks.tasks.move(fromOffsets: from, toOffset: to)
+        save()
+    }
+    
     public func updateProgress(taskId: Int) {
         dailyCustomTasks.tasks[taskId].curProgress += 1
         dailyCustomTasks.lastUpdate = Date()

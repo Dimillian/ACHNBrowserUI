@@ -12,6 +12,7 @@ import Backend
 
 struct CustomTaskFormView: View {
     @ObservedObject private var viewModel: CustomTaskFormViewModel
+    @Environment(\.presentationMode) private var presentationMode
     @State private var errorBorder: Color = .clear
     
     init(editingTask: DailyCustomTasks.CustomTask?) {
@@ -25,6 +26,7 @@ struct CustomTaskFormView: View {
                 return
             }
             self.viewModel.save()
+            self.presentationMode.wrappedValue.dismiss()
         }) {
             Image(systemName: "checkmark.seal.fill")
                 .style(appStyle: .barButton)
@@ -44,10 +46,11 @@ struct CustomTaskFormView: View {
                           onEditingChanged: {_ in
                             self.errorBorder = .clear
                 })
+                .multilineTextAlignment(.trailing)
                 .foregroundColor(.acText)
             }
             .border(errorBorder)
-            Picker(selection: $viewModel.selectedIcon,
+            Picker(selection: $viewModel.task.icon,
                label: Text("Icon")) {
                 ForEach(DailyCustomTasks.icons().map{ $0 }, id: \.self) { icon in
                     HStack {
@@ -56,6 +59,20 @@ struct CustomTaskFormView: View {
                             .resizable()
                             .frame(width: 40, height: 40)
                     }.tag(icon)
+                }
+            }
+            Toggle(isOn: $viewModel.task.hasProgress) {
+                Text("Has progress")
+            }
+            if self.viewModel.task.hasProgress {
+                HStack {
+                    Text("Max amount")
+                    Spacer()
+                    TextField("Amount",
+                              value: $viewModel.task.maxProgress,
+                              formatter: NumberFormatter())
+                    .keyboardType(.numberPad)
+                    .multilineTextAlignment(.trailing)
                 }
             }
         }

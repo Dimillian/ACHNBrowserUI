@@ -24,7 +24,7 @@ public struct DailyCustomTasks: Codable {
         }
         
         public init() {
-            self.init(name: "", icon: "icon-leaf", hasProgress: true, maxProgress: 1)
+            self.init(name: "", icon: "", hasProgress: true, maxProgress: 1)
         }
     }
 

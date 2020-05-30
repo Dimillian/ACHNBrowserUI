@@ -13,6 +13,7 @@ import Backend
 struct CustomTasksListView: View {
     @EnvironmentObject private var collection: UserCollection
     @Environment(\.presentationMode) private var presentationMode
+    @State private var editMode = EditMode.inactive
     
     private var closeButton: some View {
         Button(action: {
@@ -27,15 +28,42 @@ struct CustomTasksListView: View {
         .safeHoverEffectBarItem(position: .leading)
     }
     
+    private var orderButton: some View {
+        Button(action: {
+            if (self.editMode == EditMode.active) {
+                self.editMode = EditMode.inactive
+            }
+            else {
+                self.editMode = EditMode.active
+            }
+        }, label: {
+            if self.editMode == EditMode.active {
+                Image(systemName: "checkmark.seal.fill")
+                    .style(appStyle: .barButton)
+                    .foregroundColor(.acText)
+            }
+            else {
+                Image(systemName: "arrow.up.arrow.down.circle.fill")
+                    .style(appStyle: .barButton)
+                    .foregroundColor(.acText)
+            }
+        })
+        .buttonStyle(BorderedBarButtonStyle())
+        .accentColor(Color.acText.opacity(0.2))
+        .safeHoverEffectBarItem(position: .leading)
+    }
+    
     var body: some View {
         NavigationView {
             List {
                 Group {
                     ForEach(collection.dailyCustomTasks.tasks) { task in
-                        NavigationLink(destination: CustomTaskFormView(editingTask: nil)) {
+                        NavigationLink(destination: CustomTaskFormView(editingTask: task)) {
                             CustomTaskRow(task: task)
                         }
-                    }.onDelete { indexes in
+                    }
+                    .onMove(perform: onMove)
+                    .onDelete { indexes in
                         self.collection.deleteCustomTask(at: indexes.first!)
                     }
                     NavigationLink(destination: CustomTaskFormView(editingTask: nil)) {
@@ -44,8 +72,13 @@ struct CustomTasksListView: View {
                 }
             }
             .environment(\.horizontalSizeClass, .regular)
-                .navigationBarTitle(Text("Custom tasks"), displayMode: .inline)
-                .navigationBarItems(leading: closeButton)
+            .environment(\.editMode, $editMode)
+            .navigationBarTitle(Text("Custom tasks"), displayMode: .inline)
+            .navigationBarItems(leading: closeButton, trailing: orderButton)
         }.navigationViewStyle(StackNavigationViewStyle())
+    }
+    
+    private func onMove(source: IndexSet, destination: Int) {
+        self.collection.moveCustomTask(from: source, to: destination)
     }
 }
