@@ -43,7 +43,7 @@ struct CustomTaskFormView: View {
                 Spacer()
                 TextField("Task name",
                           text: $viewModel.task.name,
-                          onEditingChanged: {_ in
+                          onEditingChanged: { _ in
                             self.errorBorder = .clear
                 })
                 .multilineTextAlignment(.trailing)
@@ -52,7 +52,7 @@ struct CustomTaskFormView: View {
             .border(errorBorder)
             Picker(selection: $viewModel.task.icon,
                label: Text("Icon")) {
-                ForEach(DailyCustomTasks.icons().map{ $0 }, id: \.self) { icon in
+                ForEach(DailyCustomTasks.icons().map { $0 }, id: \.self) { icon in
                     HStack {
                         Image(icon)
                             .renderingMode(.original)

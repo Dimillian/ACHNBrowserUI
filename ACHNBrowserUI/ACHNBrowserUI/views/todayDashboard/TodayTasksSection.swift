@@ -70,7 +70,7 @@ struct TodayTasksSection: View {
             VStack(spacing: 15) {
                 ForEach(0 ..< self.rows) { row in
                     HStack {
-                        ForEach(row*4 ..< min(row*4+4, self.tasksCount)) { index in
+                        ForEach(row * 4 ..< min(row * 4 + 4, self.tasksCount)) { index in
                             self.makeTaskBubble(taskId: index)
                         }
                     }

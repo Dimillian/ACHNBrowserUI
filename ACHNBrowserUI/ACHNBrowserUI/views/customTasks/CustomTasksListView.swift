@@ -64,7 +64,8 @@ struct CustomTasksListView: View {
                     }
                     .onMove(perform: onMove)
                     .onDelete { indexes in
-                        self.collection.deleteCustomTask(at: indexes.first!)
+                        guard let index = indexes.first else { return }
+                        self.collection.deleteCustomTask(at: index)
                     }
                     NavigationLink(destination: CustomTaskFormView(editingTask: nil)) {
                         Text("Add a custom task").foregroundColor(.acHeaderBackground)
