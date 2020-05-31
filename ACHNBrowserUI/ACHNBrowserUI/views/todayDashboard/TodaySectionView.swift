@@ -51,6 +51,8 @@ struct TodaySectionView: View {
             return AnyView(TodayMusicPlayerSection())
         case .tasks:
             return AnyView(TodayTasksSection(sheet: $selectedSheet))
+        case .chores:
+            return AnyView(TodayChoresSection())
         case .nookazon:
             return AnyView(TodayNookazonSection(sheet: $selectedSheet, viewModel: viewModel))
         }

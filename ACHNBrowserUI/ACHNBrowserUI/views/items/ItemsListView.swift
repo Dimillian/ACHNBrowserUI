@@ -63,7 +63,7 @@ struct ItemsListView: View {
     
     private var sortSheet: ActionSheet {
         var buttons: [ActionSheet.Button] = []
-        for sort in ItemsViewModel.Sort.allCases {
+        for sort in ItemsViewModel.Sort.allCases(for: viewModel.category) {
             buttons.append(.default(Text(LocalizedStringKey(sort.rawValue.localizedCapitalized)),
                                     action: {
                                         self.viewModel.sort = sort

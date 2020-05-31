@@ -23,6 +23,7 @@ public class UserCollection: ObservableObject {
     @Published public var designs: [Design] = []
     @Published public var dailyTasks = DailyTasks()
     @Published public var dailyCustomTasks = DailyCustomTasks()
+    @Published public var chores: [Chore] = []
     
     @Published public var isCloudEnabled = true
     @Published public var isSynched = false
@@ -37,6 +38,7 @@ public class UserCollection: ObservableObject {
         let dailyTasks: DailyTasks?
         let dailyCustomTasks: DailyCustomTasks?
         let designs: [Design]?
+        let chores: [Chore]?
     }
     
     private let filePath: URL
@@ -240,8 +242,33 @@ public class UserCollection: ObservableObject {
         save()
     }
 
-    public func deleteDesign(at design: Int) {
-        designs.remove(at: design)
+    public func deleteDesign(at index: Int) {
+        designs.remove(at: index)
+        save()
+    }
+
+    // MARK: - Chores
+
+    public func addChore(_ task: Chore) {
+        chores.append(task)
+        save()
+    }
+
+    public func deleteChore(at index: Int) {
+        chores.remove(at: index)
+        save()
+    }
+
+    public func toggleChore(_ task: Chore) {
+        guard let index = chores.firstIndex(of: task) else { return }
+        chores[index].isFinished.toggle()
+        save()
+    }
+
+    public func resetChores() {
+        for index in 0..<chores.count {
+            chores[index].isFinished = false
+        }
         save()
     }
 
@@ -337,7 +364,8 @@ public class UserCollection: ObservableObject {
                                           lists: weakself.lists,
                                           dailyTasks: weakself.dailyTasks,
                                           dailyCustomTasks: weakself.dailyCustomTasks,
-                                          designs: weakself.designs)
+                                          designs: weakself.designs,
+                                          chores: weakself.chores)
                 let data = try weakself.encoder.encode(savedData)
                 try data.write(to: weakself.filePath, options: .atomicWrite)
                 
@@ -365,9 +393,9 @@ public class UserCollection: ObservableObject {
                 self.critters = savedData.critters
                 self.lists = savedData.lists ?? []
                 self.dailyTasks = savedData.dailyTasks ?? DailyTasks()
-                self.dailyCustomTasks = savedData.dailyCustomTasks ?? DailyCustomTasks()
                 self.designs = savedData.designs ?? []
                 self.dailyCustomTasks = savedData.dailyCustomTasks ?? DailyCustomTasks()
+                self.chores = savedData.chores ?? []
                 return true
             } catch {
                 return false
@@ -386,6 +414,7 @@ public class UserCollection: ObservableObject {
             self.dailyTasks = DailyTasks()
             self.dailyCustomTasks = DailyCustomTasks()
             self.designs = []
+            self.chores = []
             save()
             return true
         } catch {

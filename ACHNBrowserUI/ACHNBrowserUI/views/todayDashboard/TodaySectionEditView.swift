@@ -83,6 +83,7 @@ extension TodaySection {
         case .mysteryIsland: return "Mystery Islands"
         case .music: return "Music player"
         case .tasks: return "Today's Tasks"
+        case .chores: return "Chores"
         case .nookazon: return "New on Nookazon"
         }
     }
@@ -99,6 +100,7 @@ extension TodaySection {
         case .mysteryIsland: return "sun.haze.fill"
         case .music: return "music.note"
         case .tasks: return "checkmark.seal.fill"
+        case .chores: return "checkmark.seal.fill"
         case .nookazon: return "cart.fill"
         }
     }
