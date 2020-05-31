@@ -14,6 +14,12 @@ public extension Array {
             Array(self[$0 ..< Swift.min($0 + size, count)])
         }
     }
+
+    func sortedByLocalizedString(using keyPath: KeyPath<Element, String>, direction: ComparisonResult) -> [Element] {
+        return sorted {
+            $0[keyPath: keyPath].localizedCompare($1[keyPath: keyPath]) == direction
+        }
+    }
 }
 
 
