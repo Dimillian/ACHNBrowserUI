@@ -37,6 +37,7 @@ public class MusicPlayerManager: ObservableObject {
             }
         }
     }
+    
     @Published public var currentSongItem: Item?
     @Published public var currentSong: Song? {
         didSet {
