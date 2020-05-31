@@ -18,11 +18,7 @@ class ChoreFormViewModel: ObservableObject {
     // MARK: - Life cycle
 
     init(chore: Chore?) {
-        if let chore = chore {
-            self.chore = chore
-        } else {
-            self.chore = Chore()
-        }
+        self.chore = chore ?? Chore()
     }
 
     // MARK: - Public
