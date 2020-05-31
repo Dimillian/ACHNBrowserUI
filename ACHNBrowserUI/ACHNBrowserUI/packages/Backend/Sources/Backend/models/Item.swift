@@ -42,6 +42,7 @@ public struct Item: Codable, Equatable, Identifiable, Hashable {
     
     public var id: String { name }
     public var internalID: Int?
+    public var critterId: Int?
     
     public var localizedName: String {
         if let id = internalID {
