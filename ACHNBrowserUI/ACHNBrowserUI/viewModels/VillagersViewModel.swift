@@ -72,7 +72,7 @@ class VillagersViewModel: ObservableObject {
     // MARK: - Sort
     
     enum Sort: String, CaseIterable {
-        case name, species
+        case name, species, personality
     }
         
     var sort: Sort? {
@@ -81,13 +81,16 @@ class VillagersViewModel: ObservableObject {
                 sortedVillagers = []
                 return
             }
+
+            let order: ComparisonResult = sort == oldValue ? .orderedDescending : .orderedAscending
+
             switch sort {
             case .name:
-                let order: ComparisonResult = sort == oldValue ? .orderedDescending : .orderedAscending
-                sortedVillagers = villagers.sorted{ $0.localizedName.localizedCompare($1.localizedName) == order }
+                sortedVillagers = villagers.sortedByLocalizedString(using: \Villager.localizedName, direction: order)
             case .species:
-                let order: ComparisonResult = sort == oldValue ? .orderedDescending : .orderedAscending
-                sortedVillagers = villagers.sorted{ $0.species.localizedCompare($1.species) == order }
+                sortedVillagers = villagers.sortedByLocalizedString(using: \Villager.species, direction: order)
+            case .personality:
+                sortedVillagers = villagers.sortedByLocalizedString(using: \Villager.personality, direction: order)
             }
         }
     }
