@@ -14,20 +14,18 @@ class DesignFormViewModel: ObservableObject {
     // MARK: - Properties
 
     @Published var design: Design
+    private let userCollection: UserCollection
 
     // MARK: - Life cycle
 
-    init(design: Design?) {
-        if let design = design {
-            self.design = design
-        } else {
-            self.design = Design()
-        }
+    init(design: Design?, userCollection: UserCollection = .shared) {
+        self.design = design ?? Design()
+        self.userCollection = userCollection
     }
 
     // MARK: - Public
 
     func save() {
-        UserCollection.shared.addDesign(design)
+        userCollection.addDesign(design)
     }
 }
