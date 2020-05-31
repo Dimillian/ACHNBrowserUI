@@ -25,7 +25,22 @@ class ItemsViewModel: ObservableObject {
     private static var META_KEYWORD_CACHE: [String: [Item]] = [:]
     
     enum Sort: String, CaseIterable {
-        case name, buy, sell, set, similar
+        case name, buy, sell, set, similar, critterpedia
+
+        static func allCases(for category: Backend.Category) -> [Sort] {
+            allCases.filter { $0.canSort(category) }
+        }
+
+        private func canSort(_ category: Backend.Category) -> Bool {
+            switch self {
+            case .buy, .similar, .set:
+                return ![.bugs, .fish, .fossils].contains(category)
+            case .critterpedia:
+                return [.bugs, .fish].contains(category)
+            default:
+                return true
+            }
+        }
     }
         
     var sort: Sort? {
@@ -47,6 +62,10 @@ class ItemsViewModel: ObservableObject {
             case .similar:
                 let compare: (String, String) -> Bool = sort == oldValue ? (<) : (>)
                 sortedItems = items.filter{ $0.tag != nil}.sorted{ compare($0.tag!, $1.tag!) }
+            case .critterpedia:
+                let compare: (Int, Int) -> Bool = sort == oldValue ? (>) : (<)
+                sortedItems = items.filter{ $0.critterId != nil}
+                                .sorted{ compare($0.critterId!, $1.critterId!) }
             }
         }
     }
