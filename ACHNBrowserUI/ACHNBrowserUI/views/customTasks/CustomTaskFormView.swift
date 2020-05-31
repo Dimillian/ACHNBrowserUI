@@ -13,7 +13,8 @@ import Backend
 struct CustomTaskFormView: View {
     @ObservedObject private var viewModel: CustomTaskFormViewModel
     @Environment(\.presentationMode) private var presentationMode
-    @State private var errorBorder: Color = .clear
+    @State private var errorBorderTaskName: Color = .clear
+    @State private var errorBorderIcon: Color = .clear
     
     init(editingTask: DailyCustomTasks.CustomTask?) {
         self.viewModel = CustomTaskFormViewModel(editingTask: editingTask)
@@ -22,7 +23,11 @@ struct CustomTaskFormView: View {
     private var saveButton: some View {
         Button(action: {
             guard !self.viewModel.task.name.isEmpty else {
-                self.errorBorder = .red
+                self.errorBorderTaskName = .red
+                return
+            }
+            guard !self.viewModel.task.icon.isEmpty else {
+                self.errorBorderIcon = .red
                 return
             }
             self.viewModel.save()
@@ -44,15 +49,15 @@ struct CustomTaskFormView: View {
                 TextField("Task name",
                           text: $viewModel.task.name,
                           onEditingChanged: { _ in
-                            self.errorBorder = .clear
+                            self.errorBorderTaskName = .clear
                 })
                 .multilineTextAlignment(.trailing)
                 .foregroundColor(.acText)
             }
-            .border(errorBorder)
+            .border(errorBorderTaskName)
             Picker(selection: $viewModel.task.icon,
                label: Text("Icon")) {
-                ForEach(DailyCustomTasks.icons().map { $0 }, id: \.self) { icon in
+                ForEach(DailyCustomTasks.icons.map { $0 }, id: \.self) { icon in
                     HStack {
                         Image(icon)
                             .renderingMode(.original)
@@ -61,6 +66,7 @@ struct CustomTaskFormView: View {
                     }.tag(icon)
                 }
             }
+            .border(self.viewModel.task.icon.isEmpty ? errorBorderIcon : .clear)
             Toggle(isOn: $viewModel.task.hasProgress) {
                 Text("Has progress")
             }

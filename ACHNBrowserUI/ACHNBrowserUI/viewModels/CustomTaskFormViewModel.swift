@@ -17,11 +17,11 @@ class CustomTaskFormViewModel: ObservableObject {
         }
     }
     
-    private var editing: Bool
+    private var editing = false
     
     init(editingTask: DailyCustomTasks.CustomTask?) {
-        self.editing = editingTask != nil
         if let task = editingTask {
+            self.editing = true
             self.task = task
         } else {
             self.task = DailyCustomTasks.CustomTask()

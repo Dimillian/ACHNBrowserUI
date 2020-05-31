@@ -40,22 +40,20 @@ public struct DailyCustomTasks: Codable {
         CustomTask(name: "Obtain DIY from villager", icon: "icon-recipe", hasProgress: true, maxProgress: 1)
     ]
     
-    public static func icons() -> [String] {
-        return [
-            "icon-leaf", "icon-mapple-leaf", "icon-miles", "icon-mushroom1",
-            "icon-art", "icon-mushroom2", "icon-bag", "icon-mushroom3",
-            "icon-bamboo-spring", "icon-mushroom4", "icon-bamboo", "icon-paint",
-            "icon-bell", "icon-pant", "icon-bells-tabbar", "icon-photos",
-            "icon-bells", "icon-posters", "icon-bottle-message", "icon-present",
-            "icon-branch", "icon-present2", "icon-cardboard-tabbar", "icon-recipe",
-            "icon-cardboard", "icon-rug", "icon-clay", "icon-shoes",
-            "icon-fence", "icon-socks", "icon-fish", "icon-softwood",
-            "icon-floor", "icon-song", "icon-fossil", "icon-tool",
-            "icon-glasses", "icon-top", "icon-gold", "icon-turnip-tabbar",
-            "icon-hardwood", "icon-turnip", "icon-helm", "icon-umbrella",
-            "icon-helmet", "icon-villager-tabbar", "icon-housewares", "icon-villager",
-            "icon-insect", "icon-wallmounted", "icon-iron", "icon-wallpaper",
-            "icon-leaf-design", "icon-weed", "icon-leaf-tabbar", "icon-wood"
-        ]
-    }
+    public static let icons: [String] = [
+        "icon-leaf", "icon-mapple-leaf", "icon-miles", "icon-mushroom1",
+        "icon-art", "icon-mushroom2", "icon-bag", "icon-mushroom3",
+        "icon-bamboo-spring", "icon-mushroom4", "icon-bamboo", "icon-paint",
+        "icon-bell", "icon-pant", "icon-bells-tabbar", "icon-photos",
+        "icon-bells", "icon-posters", "icon-bottle-message", "icon-present",
+        "icon-branch", "icon-present2", "icon-cardboard-tabbar", "icon-recipe",
+        "icon-cardboard", "icon-rug", "icon-clay", "icon-shoes",
+        "icon-fence", "icon-socks", "icon-fish", "icon-softwood",
+        "icon-floor", "icon-song", "icon-fossil", "icon-tool",
+        "icon-glasses", "icon-top", "icon-gold", "icon-turnip-tabbar",
+        "icon-hardwood", "icon-turnip", "icon-helm", "icon-umbrella",
+        "icon-helmet", "icon-villager-tabbar", "icon-housewares", "icon-villager",
+        "icon-insect", "icon-wallmounted", "icon-iron", "icon-wallpaper",
+        "icon-leaf-design", "icon-weed", "icon-leaf-tabbar", "icon-wood"
+    ]
 }

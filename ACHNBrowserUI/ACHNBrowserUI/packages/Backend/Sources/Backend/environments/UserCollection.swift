@@ -168,7 +168,8 @@ public class UserCollection: ObservableObject {
     }
     
     public func editCustomTask(task: DailyCustomTasks.CustomTask) {
-        let index = dailyCustomTasks.tasks.firstIndex(where: { $0.id == task.id} )!
+        guard let index = dailyCustomTasks.tasks.firstIndex(where: { $0.id == task.id } )
+            else { return }
         dailyCustomTasks.tasks[index] = task
         save()
     }

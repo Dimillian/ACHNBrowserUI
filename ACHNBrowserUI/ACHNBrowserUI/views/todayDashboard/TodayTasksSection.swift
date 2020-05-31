@@ -34,7 +34,7 @@ struct TodayTasksSection: View {
                 .foregroundColor(Color("ACBackground"))
             Image(task.icon)
                 .resizable()
-                .aspectRatio(1, contentMode: .fit)
+                .aspectRatio(contentMode: .fit)
             if task.hasProgress {
                 ZStack {
                     Circle()
@@ -76,6 +76,7 @@ struct TodayTasksSection: View {
                     }
                 }
                 HStack {
+                    Spacer()
                     Text("Edit")
                     .onTapGesture {
                         self.sheet = .customTasks(collection: self.collection)
@@ -85,6 +86,7 @@ struct TodayTasksSection: View {
                     .padding(.horizontal, 14)
                     .background(Color.acText.opacity(0.2))
                     .mask(RoundedRectangle(cornerRadius: 14, style: .continuous))
+                    Spacer()
                     Text("Reset")
                         .onTapGesture {
                             self.collection.resetTasks()
@@ -94,6 +96,7 @@ struct TodayTasksSection: View {
                     .padding(.horizontal, 14)
                     .background(Color.acText.opacity(0.2))
                     .mask(RoundedRectangle(cornerRadius: 14, style: .continuous))
+                    Spacer()
                 }
             }
             .frame(maxWidth: .infinity)

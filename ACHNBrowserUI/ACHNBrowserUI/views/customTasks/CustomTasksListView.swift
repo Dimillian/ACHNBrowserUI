@@ -29,14 +29,7 @@ struct CustomTasksListView: View {
     }
     
     private var orderButton: some View {
-        Button(action: {
-            if (self.editMode == EditMode.active) {
-                self.editMode = EditMode.inactive
-            }
-            else {
-                self.editMode = EditMode.active
-            }
-        }, label: {
+        Button(action: { self.editMode.toggle() }, label: {
             if self.editMode == EditMode.active {
                 Image(systemName: "checkmark.seal.fill")
                     .style(appStyle: .barButton)
