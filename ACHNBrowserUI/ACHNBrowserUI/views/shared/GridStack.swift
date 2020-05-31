@@ -13,6 +13,7 @@ struct GridStack<Content: View>: View {
     let rows: Int
     let columns: Int
     let spacing: CGFloat?
+    let showDivider: Bool
     let content: (Int, Int) -> Content
 
     var body: some View {
@@ -32,7 +33,7 @@ struct GridStack<Content: View>: View {
                     if row == self.rows - 1 {
                         Spacer()
                     } else {
-                        Divider()
+                        self.divider
                     }
                 }
             }
@@ -43,11 +44,17 @@ struct GridStack<Content: View>: View {
         rows: Int,
         columns: Int,
         spacing: CGFloat? = nil,
+        showDivider: Bool = true,
         @ViewBuilder content: @escaping (Int, Int) -> Content
     ) {
         self.rows = rows
         self.columns = columns
         self.content = content
         self.spacing = spacing
+        self.showDivider = showDivider
+    }
+
+    var divider: some View {
+        self.showDivider ? Divider().eraseToAnyView() : Color.clear.frame(height: 1).eraseToAnyView()
     }
 }
