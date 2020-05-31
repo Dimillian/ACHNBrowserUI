@@ -26,6 +26,21 @@ class ItemsViewModel: ObservableObject {
     
     enum Sort: String, CaseIterable {
         case name, buy, sell, set, similar, critterpedia
+
+        static func allCases(for category: Backend.Category) -> [Sort] {
+            allCases.filter { $0.canSort(category) }
+        }
+
+        private func canSort(_ category: Backend.Category) -> Bool {
+            switch self {
+            case .buy, .similar, .set:
+                return ![Backend.Category.bugs, .fish, .fossils].contains(category)
+            case .critterpedia:
+                return [Backend.Category.bugs, .fish].contains(category)
+            default:
+                return true
+            }
+        }
     }
         
     var sort: Sort? {
