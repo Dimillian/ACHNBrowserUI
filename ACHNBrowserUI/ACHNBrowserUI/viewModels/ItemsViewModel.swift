@@ -34,9 +34,9 @@ class ItemsViewModel: ObservableObject {
         private func canSort(_ category: Backend.Category) -> Bool {
             switch self {
             case .buy, .similar, .set:
-                return ![Backend.Category.bugs, .fish, .fossils].contains(category)
+                return ![.bugs, .fish, .fossils].contains(category)
             case .critterpedia:
-                return [Backend.Category.bugs, .fish].contains(category)
+                return [.bugs, .fish].contains(category)
             default:
                 return true
             }
