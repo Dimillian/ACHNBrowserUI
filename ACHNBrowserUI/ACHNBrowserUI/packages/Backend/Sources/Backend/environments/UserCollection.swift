@@ -235,7 +235,7 @@ public class UserCollection: ObservableObject {
     }
 
     public func toggleChore(_ task: Chore) {
-        let index = chores.firstIndex(where: { $0.id == task.id })!
+        guard let index = chores.firstIndex(of: task) else { return }
         chores[index].isFinished.toggle()
         save()
     }
