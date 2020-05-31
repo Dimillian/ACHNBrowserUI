@@ -7,14 +7,19 @@
 //
 
 import SwiftUI
-import Backend
 
 struct DesignListView: View {
 
     // MARK: - Properties
 
-    @EnvironmentObject private var collection: UserCollection
+    @ObservedObject private var viewModel: DesignListViewModel
     @State private var sheet: Sheet.SheetType?
+
+    // MARK: - Life cycle
+
+    init(viewModel: DesignListViewModel = DesignListViewModel()) {
+        self.viewModel = viewModel
+    }
 
     // MARK: - Public
 
@@ -27,10 +32,10 @@ struct DesignListView: View {
                     .foregroundColor(.acHeaderBackground)
             })
 
-            ForEach(collection.designs) { design in
+            ForEach(viewModel.designs) { design in
                 DesignRowView(viewModel: DesignRowViewModel(design: design))
             }.onDelete { indexes in
-                self.collection.deleteDesign(at: indexes.first!)
+                self.viewModel.deleteDesign(at: indexes.first!)
             }
         }
         .navigationBarTitle(Text("Designs"), displayMode: .automatic)
@@ -46,7 +51,6 @@ struct DesignListView_Previews: PreviewProvider {
         NavigationView {
             DesignListView()
         }
-        .environmentObject(UserCollection.shared)
     }
 }
 #endif

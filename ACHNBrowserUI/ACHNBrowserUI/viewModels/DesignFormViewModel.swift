@@ -9,11 +9,14 @@
 import Foundation
 import Backend
 
-class DesignFormViewModel: ObservableObject {
+final class DesignFormViewModel: ObservableObject {
 
-    // MARK: - Properties
+    // MARK: - Public properties
 
     @Published var design: Design
+
+    // MARK: - Private properties
+
     private let userCollection: UserCollection
 
     // MARK: - Life cycle
