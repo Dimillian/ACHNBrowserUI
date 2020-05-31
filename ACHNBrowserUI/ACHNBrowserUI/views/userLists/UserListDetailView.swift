@@ -12,7 +12,7 @@ import Backend
 struct UserListDetailView: View {
     @EnvironmentObject private var collection: UserCollection
     @ObservedObject private var viewModel: UserListDetailViewModel
-    @ObservedObject private var searchViewModdel = CategoriesSearchViewModel()
+    @ObservedObject private var searchViewModel = CategoriesSearchViewModel()
     @State private var isLoadingData = false
     @State private var sheet: Sheet.SheetType?
     
@@ -21,14 +21,14 @@ struct UserListDetailView: View {
     }
     
     private var searchCategories: [(Backend.Category, [Item])] {
-        searchViewModdel.searchResults
+        searchViewModel.searchResults
             .map { $0 }
             .sorted(by: \.key.rawValue)
     }
     
     private var activeBarButton: some View {
         Group {
-            if !searchViewModdel.searchText.isEmpty && !viewModel.selectedItems.isEmpty {
+            if !searchViewModel.searchText.isEmpty && !viewModel.selectedItems.isEmpty {
                 addButton
             } else {
                 editButton
@@ -39,7 +39,7 @@ struct UserListDetailView: View {
     private var addButton: some View {
         Button(action: {
             self.viewModel.saveItems()
-            self.searchViewModdel.searchText = ""
+            self.searchViewModel.searchText = ""
         }) {
             Text("Add \(viewModel.selectedItems.count) items")
                 .font(.subheadline)
@@ -57,13 +57,13 @@ struct UserListDetailView: View {
     }
     
     private var searchBar: some View {
-        SearchField(searchText: $searchViewModdel.searchText, placeholder: "Search items")
+        SearchField(searchText: $searchViewModel.searchText, placeholder: "Search items")
     }
     
     var body: some View {
         List {
             Section(header: searchBar) {
-                if searchViewModdel.searchText.isEmpty {
+                if searchViewModel.searchText.isEmpty {
                     if !viewModel.list.items.isEmpty {
                         ForEach(viewModel.list.items) { item in
                             NavigationLink(destination: ItemDetailView(item: item)) {
@@ -76,10 +76,10 @@ struct UserListDetailView: View {
                         MessageView(string: "Items added to your list from the search will be displayed there.")
                     }
                 } else {
-                    if searchViewModdel.isLoadingData {
+                    if searchViewModel.isLoadingData {
                         RowLoadingView(isLoading: $isLoadingData).animation(.default)
                     } else if searchCategories.isEmpty {
-                        MessageView(noResultsFor: searchViewModdel.searchText)
+                        MessageView(noResultsFor: searchViewModel.searchText)
                     } else {
                         ForEach(searchCategories, id: \.0, content: searchSection)
                     }
@@ -87,8 +87,8 @@ struct UserListDetailView: View {
             }
         }
         .listStyle(GroupedListStyle())
-        .environment(\.editMode, .constant(!searchViewModdel.searchText.isEmpty ? .active : .inactive))
-        .onReceive(searchViewModdel.$isLoadingData) { self.isLoadingData = $0 }
+        .environment(\.editMode, .constant(!searchViewModel.searchText.isEmpty ? .active : .inactive))
+        .onReceive(searchViewModel.$isLoadingData) { self.isLoadingData = $0 }
         .navigationBarTitle(Text(viewModel.list.name))
         .navigationBarItems(trailing: activeBarButton)
         .sheet(item: $sheet, content: { Sheet(sheetType: $0) })
