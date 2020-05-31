@@ -19,6 +19,7 @@ struct Sheet: View {
         case subscription(source: SubscribeView.Source, subManager: SubscriptionManager)
         case settings(subManager: SubscriptionManager, collection: UserCollection)
         case designForm(editingDesign: Design?)
+        case choreForm(chore: Chore?)
 
         var id: String {
             switch self {
@@ -40,6 +41,8 @@ struct Sheet: View {
                 return "userListForm"
             case .designForm:
                 return "designForm"
+            case .choreForm:
+                return "choreForm"
             }
         }
     }
@@ -75,9 +78,12 @@ struct Sheet: View {
                 TodaySectionEditView(viewModel: viewModel)
             }
             .navigationViewStyle(StackNavigationViewStyle()))
+        case .choreForm(let chore):
+            let viewModel = ChoreFormViewModel(chore: chore)
+            return AnyView(ChoreFormView(viewModel: viewModel))
         }
     }
-    
+
     var body: some View {
         make()
     }

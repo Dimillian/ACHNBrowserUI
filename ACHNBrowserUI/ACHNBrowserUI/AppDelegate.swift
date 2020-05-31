@@ -29,4 +29,3 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UserCollection.shared.reloadFromCloudKit()
     }
 }
-

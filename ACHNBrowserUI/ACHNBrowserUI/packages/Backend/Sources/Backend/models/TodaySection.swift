@@ -30,6 +30,7 @@ extension TodaySection {
         case mysteryIsland
         case music
         case tasks
+        case chores
         case nookazon
     }
 
@@ -41,6 +42,7 @@ extension TodaySection {
         TodaySection(name: .birthdays, enabled: true),
         TodaySection(name: .turnips, enabled: true),
         TodaySection(name: .tasks, enabled: true),
+        TodaySection(name: .chores, enabled: true),
         TodaySection(name: .subscribe, enabled: true),
         TodaySection(name: .music, enabled: true),
         //TodaySection(name: .nameNookazon, enabled: true)
