@@ -17,23 +17,15 @@ struct TodayTasksSection: View {
         collection.dailyCustomTasks.tasks.count
     }
     
-    private var rows: [Int] {
+    private var rows: {
         var rowsFloat = CGFloat(tasksCount) / 4.0
         rowsFloat.round(.up)
-        var rows: [Int] = []
-        for i in 0..<Int(rowsFloat) {
-            rows.append(i)
-        }
-        return rows
+        return Int(rowsFloat)
     }
         
     // MARK: - Task Bubble
-    private func makeTaskBubble(taskId: Int) -> some View {
-        var task: DailyCustomTasks.CustomTask {
-            collection.dailyCustomTasks.tasks[taskId]
-        }
-        
-        return ZStack {
+    private func makeTaskBubble(task: DailyCustomTasks.CustomTask, index: Int) -> some View {
+        ZStack {
             Circle()
                 .foregroundColor(Color("ACBackground"))
             Image(task.icon)
@@ -56,15 +48,13 @@ struct TodayTasksSection: View {
         }
         .frame(maxHeight: 44)
         .onTapGesture {
-            if !task.hasProgress {
-                return
-            }
-            self.collection.updateProgress(taskId: taskId)
+            guard task.hasProgress else { return }
+            self.collection.updateProgress(taskId: index)
             FeedbackGenerator.shared.triggerSelection()
         }
         .onLongPressGesture {
             guard task.hasProgress else { return }
-            self.collection.resetProgress(taskId: taskId)
+            self.collection.resetProgress(taskId: index)
             FeedbackGenerator.shared.triggerSelection()
         }
     }
@@ -72,12 +62,12 @@ struct TodayTasksSection: View {
     var body: some View {
         Section(header: SectionHeaderView(text: "Today's Tasks", icon: "checkmark.seal.fill")) {
             VStack(spacing: 15) {
-                ForEach(rows, id: \.self) { row in
-                    HStack {
-                        ForEach(row * 4 ..< min(row * 4 + 4, self.tasksCount)) { index in
-                            self.makeTaskBubble(taskId: index)
-                        }
+                GridStack<AnyView>(rows: rows, columns: 4, showDivider: false) { (row, column) in
+                    let taskId = row * 4 + column
+                    guard let task = self.collection.dailyCustomTasks.tasks[safe: taskId] else {
+                        return EmptyView().eraseToAnyView()
                     }
+                    return self.makeTaskBubble(task: task, index: taskId).eraseToAnyView()
                 }
                 HStack {
                     Spacer()
