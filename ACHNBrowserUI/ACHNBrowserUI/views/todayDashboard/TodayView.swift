@@ -16,22 +16,12 @@ struct TodayView: View {
     
     // MARK: - Vars
     @EnvironmentObject private var uiState: UIState
-    @EnvironmentObject private var items: Items
     
     @ObservedObject private var viewModel = DashboardViewModel()
 
     @State private var selectedSheet: Sheet.SheetType?
     @State private var showWhatsNew: Bool = false
-        
-    // MARK: - Critters Calculations
-    private var fishAvailable: [Item] {
-        items.categories[.fish]?.filterActive() ?? []
-    }
-    
-    private var bugsAvailable: [Item] {
-        items.categories[.bugs]?.filterActive() ?? []
-    }
-    
+            
     // MARK: - Body
     var body: some View {
         NavigationView {
@@ -64,8 +54,7 @@ struct TodayView: View {
             .navigationBarItems(leading: aboutButton, trailing: settingsButton)
             .sheet(item: $selectedSheet, content: { Sheet(sheetType: $0) })
             
-            ActiveCrittersView(activeFishes: fishAvailable,
-                               activeBugs: bugsAvailable)
+            ActiveCrittersView()
         }
     }
 
