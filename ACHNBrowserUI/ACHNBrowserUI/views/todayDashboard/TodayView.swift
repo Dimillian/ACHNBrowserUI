@@ -16,10 +16,7 @@ struct TodayView: View {
     
     // MARK: - Vars
     @EnvironmentObject private var uiState: UIState
-    @EnvironmentObject private var collection: UserCollection
-    @EnvironmentObject private var subManager: SubscriptionManager
     @EnvironmentObject private var items: Items
-    @EnvironmentObject private var userDefaults: AppUserDefaults
     
     @ObservedObject private var viewModel = DashboardViewModel()
 
@@ -90,8 +87,8 @@ struct TodayView: View {
     
     // MARK: - Navigation Bar Button(s)
     private var settingsButton: some View {
-        Button(action: { self.selectedSheet = .settings(subManager: self.subManager,
-                                                        collection: self.collection) } ) {
+        Button(action: { self.selectedSheet = .settings(subManager: SubscriptionManager.shared,
+                                                        collection: UserCollection.shared) } ) {
             Image(systemName: "slider.horizontal.3")
                 .style(appStyle: .barButton)
                 .foregroundColor(.acText)
@@ -127,7 +124,5 @@ struct TodayView_Previews: PreviewProvider {
         }
         .environmentObject(Items.shared)
         .environmentObject(UIState())
-        .environmentObject(UserCollection.shared)
-        .environmentObject(SubscriptionManager.shared)
     }
 }

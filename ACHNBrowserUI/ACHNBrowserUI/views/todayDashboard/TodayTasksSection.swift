@@ -17,12 +17,12 @@ struct TodayTasksSection: View {
         collection.dailyCustomTasks.tasks.count
     }
     
-    private var rows: Int {
+    private var rows: {
         var rowsFloat = CGFloat(tasksCount) / 4.0
         rowsFloat.round(.up)
         return Int(rowsFloat)
     }
-    
+        
     // MARK: - Task Bubble
     private func makeTaskBubble(task: DailyCustomTasks.CustomTask, index: Int) -> some View {
         ZStack {
@@ -62,13 +62,6 @@ struct TodayTasksSection: View {
     var body: some View {
         Section(header: SectionHeaderView(text: "Today's Tasks", icon: "checkmark.seal.fill")) {
             VStack(spacing: 15) {
-//                ForEach(0 ..< self.rows) { row in
-//                    HStack {
-//                        ForEach(row * 4 ..< min(row * 4 + 4, self.tasksCount - 1)) { index in
-//                            self.makeTaskBubble(taskId: index)
-//                        }
-//                    }
-//                }
                 GridStack<AnyView>(rows: rows, columns: 4, showDivider: false) { (row, column) in
                     let taskId = row * 4 + column
                     guard let task = self.collection.dailyCustomTasks.tasks[safe: taskId] else {
