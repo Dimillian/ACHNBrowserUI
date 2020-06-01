@@ -10,42 +10,46 @@ import SwiftUI
 import Backend
 
 struct TodayCurrentlyAvailableSection: View {
-    @ObservedObject private var viewModel = ActiveCrittersViewModel()
-    
-    private enum CellType: String {
-        case fish = "Fish"
-        case bugs = "Ins"
-    }
-    
     // MARK: - Body
     var body: some View {
         Section(header: SectionHeaderView(text: "Currently Available", icon: "calendar")) {
-            if !viewModel.activeBugs.isEmpty && !viewModel.activeFish.isEmpty {
-                NavigationLink(destination: ActiveCrittersView())
-                {
-                    HStack(alignment: .top) {
-                        makeCell(for: .fish,
-                                 caught: viewModel.caughFish.count,
-                                 available: viewModel.activeFish.count,
-                                 numberNew: viewModel.newFishThisMonth.count)
-                        Divider()
-                        makeCell(for: .bugs,
-                                 caught: viewModel.caughBugs.count,
-                                 available: viewModel.activeBugs.count,
-                                 numberNew: viewModel.newBugsThisMonth.count)
-                    }
+            NavigationLink(destination: ActiveCrittersView()) {
+               TodayCurrentlyAvailableSectionContent()
+            }
+            .padding(.vertical)
+        }
+    }
+}
+
+struct TodayCurrentlyAvailableSectionContent: View {
+    @ObservedObject private var viewModel = ActiveCrittersViewModel()
+        
+    var body: some View {
+        Group {
+            if viewModel.crittersInfo[.bugs]?.active.isEmpty == false &&
+                viewModel.crittersInfo[.fish]?.active.isEmpty == false {
+                HStack(alignment: .top) {
+                    makeCell(for: .fish,
+                             caught: viewModel.crittersInfo[.fish]?.caught.count ?? 0,
+                             available: viewModel.crittersInfo[.fish]?.active.count ?? 0 ,
+                             numberNew: viewModel.crittersInfo[.fish]?.new.count ?? 0)
+                    Divider()
+                    makeCell(for: .bugs,
+                             caught: viewModel.crittersInfo[.bugs]?.caught.count ?? 0,
+                             available: viewModel.crittersInfo[.bugs]?.active.count ?? 0,
+                             numberNew: viewModel.crittersInfo[.bugs]?.new.count ?? 0)
                 }
-                .frame(maxWidth: .infinity)
-                .padding(.vertical)
             } else {
                 RowLoadingView(isLoading: .constant(true))
             }
         }
     }
     
-    private func makeCell(for type: CellType, caught: Int, available: Int, numberNew: Int = 0) -> some View {
+    
+    private func makeCell(for type: ActiveCrittersViewModel.CritterType,
+                          caught: Int, available: Int, numberNew: Int = 0) -> some View {
         VStack(spacing: 0) {
-            Image("\(type.rawValue)\(self.dayNumber())")
+            Image("\(type.imagePrefix())\(dayNumber())")
                 .resizable()
                 .aspectRatio(1, contentMode: .fit)
                 .frame(width: 48)
@@ -55,7 +59,7 @@ struct TodayCurrentlyAvailableSection: View {
             }
             .font(.system(.headline, design: .rounded))
             .foregroundColor(.acText)
-                        
+            
             if numberNew > 0 {
                 Text("\(numberNew) NEW")
                     .font(.system(.caption, design: .rounded))

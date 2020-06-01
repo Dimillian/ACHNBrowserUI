@@ -9,14 +9,9 @@
 import SwiftUI
 import Backend
 
-enum Tab: String, CaseIterable {
-    case fishes = "Fishes"
-    case bugs = "Bugs"
-}
-
 struct ActiveCritterSections: View {
     @ObservedObject var viewModel: ActiveCrittersViewModel
-    @Binding var selectedTab: Tab
+    @Binding var selectedTab: ActiveCrittersViewModel.CritterType
     
     private func sectionContent(critter: Item) -> some View {
         NavigationLink(destination: ItemDetailView(item: critter)) {
@@ -38,17 +33,17 @@ struct ActiveCritterSections: View {
         Group {
             makeSectionOrPlaceholder(title: "New this month",
                                      icon: "calendar.badge.plus",
-                                     critters: selectedTab == .fishes ? viewModel.newFishThisMonth : viewModel.newBugsThisMonth)
+                                     critters: viewModel.crittersInfo[selectedTab]?.new ?? [])
             makeSectionOrPlaceholder(title: "To catch",
                                      icon: "calendar",
-                                     critters: selectedTab == .fishes ? viewModel.toCatchFish : viewModel.toCatchBugs)
+                                     critters: viewModel.crittersInfo[selectedTab]?.toCatch ?? [])
             makeSectionOrPlaceholder(title: "Leaving this month",
                                      icon: "calendar.badge.minus",
-                                     critters: selectedTab == .fishes ? viewModel.leavingFishThisMonth : viewModel.leavingBugsThisMonth)
+                                     critters: viewModel.crittersInfo[selectedTab]?.leaving ?? [])
             Section(header: SectionHeaderView(text: "Caught",
                                               icon: "tray.2"))
             {
-                ForEach(selectedTab == .fishes ? viewModel.caughFish : viewModel.caughBugs,
+                ForEach(viewModel.crittersInfo[selectedTab]?.caught ?? [],
                         content: sectionContent)
             }
         }
@@ -57,16 +52,17 @@ struct ActiveCritterSections: View {
 
 struct ActiveCrittersView: View {
     @ObservedObject private var viewModel = ActiveCrittersViewModel(filterOutInCollection: true)
-    @State private var selectedTab = Tab.fishes
+    @State private var selectedTab = ActiveCrittersViewModel.CritterType.fish
     
     var body: some View {
         List {
-            if (viewModel.activeFish.isEmpty || viewModel.activeBugs.isEmpty) &&
-                (viewModel.caughBugs.isEmpty || viewModel.caughFish.isEmpty) {
+            if (viewModel.crittersInfo[.fish]?.toCatch.isEmpty == true || viewModel.crittersInfo[.bugs]?.toCatch.isEmpty == true) &&
+                (viewModel.crittersInfo[.fish]?.caught.isEmpty == true || viewModel.crittersInfo[.bugs]?.caught.isEmpty == true) {
                 RowLoadingView(isLoading: .constant(true))
             } else {
                 Picker(selection: $selectedTab, label: Text("")) {
-                    ForEach(Tab.allCases, id: \.self) { tab in
+                    ForEach(ActiveCrittersViewModel.CritterType.allCases, id: \.self)
+                    { tab in
                         Text(LocalizedStringKey(tab.rawValue)).tag(tab.rawValue)
                     }
                 }

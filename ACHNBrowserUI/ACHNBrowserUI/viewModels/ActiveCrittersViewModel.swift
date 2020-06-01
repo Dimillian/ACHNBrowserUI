@@ -13,20 +13,37 @@ import Backend
 
 class ActiveCrittersViewModel: ObservableObject {
     
-    @Published var activeFish: [Item] = []
-    @Published var activeBugs: [Item] = []
-    @Published var newFishThisMonth: [Item] = []
-    @Published var newBugsThisMonth: [Item] = []
-    @Published var leavingFishThisMonth: [Item] = []
-    @Published var leavingBugsThisMonth: [Item] = []
+    enum CritterType: String, CaseIterable {
+        case fish = "Fishes"
+        case bugs = "Bugs"
+        
+        func category() -> Backend.Category {
+            switch self {
+            case .fish: return .fish
+            case .bugs: return .bugs
+            }
+        }
+        
+        func imagePrefix() -> String {
+            switch self {
+            case .fish: return "Fish"
+            case .bugs: return "Ins"
+            }
+        }
+    }
     
-    @Published var caughFish: [Item] = []
-    @Published var caughBugs: [Item] = []
-    @Published var toCatchFish: [Item] = []
-    @Published var toCatchBugs: [Item] = []
+    struct CritterInfo {
+        let active: [Item]
+        let new: [Item]
+        let leaving: [Item]
+        let caught: [Item]
+        let toCatch: [Item]
+    }
     
-    @ObservedObject private var items: Items
-    @ObservedObject private var collection: UserCollection
+    @Published var crittersInfo: [CritterType: CritterInfo] = [:]
+    
+    private let items: Items
+    private let collection: UserCollection
     
     private var cancellable: AnyCancellable?
     
@@ -37,28 +54,24 @@ class ActiveCrittersViewModel: ObservableObject {
         cancellable = Publishers.CombineLatest(items.$categories, collection.$critters)
             .receive(on: DispatchQueue.main)
             .sink { [weak self] (items, critters) in
-                self?.activeFish = items[.fish]?.filterActive() ?? []
-                self?.activeBugs = items[.bugs]?.filterActive() ?? []
-                self?.newFishThisMonth = self?.activeFish.filter{ $0.isNewThisMonth() } ?? []
-                self?.newBugsThisMonth = self?.activeBugs.filter{ $0.isNewThisMonth() } ?? []
-                self?.leavingFishThisMonth = self?.activeFish.filter{ $0.leavingThisMonth() } ?? []
-                self?.leavingBugsThisMonth = self?.activeBugs.filter{ $0.leavingThisMonth() } ?? []
-                
-                self?.caughFish = self?.activeFish.filter{ critters.contains($0) } ?? []
-                self?.caughBugs = self?.activeBugs.filter{ critters.contains($0) } ?? []
-                
-                self?.toCatchFish = self?.activeFish.filter{ !critters.contains($0) } ?? []
-                self?.toCatchBugs = self?.activeBugs.filter{ !critters.contains($0) } ?? []
-                
-                if filterOutInCollection {
-                    self?.newBugsThisMonth = self?.newBugsThisMonth.filter{ !critters.contains($0) } ?? []
-                    self?.newFishThisMonth = self?.newFishThisMonth.filter{ !critters.contains($0) } ?? []
+                for type in CritterType.allCases {
+                    var active = items[type.category()]?.filterActive() ?? []
+                    var new = active.filter{ $0.isNewThisMonth() }
+                    var leaving = active.filter{ $0.leavingThisMonth() }
+                    let caught = active.filter{ critters.contains($0) }
+                    let toCatch = active.filter{ !critters.contains($0) }
                     
-                    self?.leavingBugsThisMonth = self?.leavingBugsThisMonth.filter{ !critters.contains($0) } ?? []
-                    self?.leavingFishThisMonth = self?.leavingFishThisMonth.filter{ !critters.contains($0) } ?? []
+                    if filterOutInCollection {
+                        new = new.filter{ !critters.contains($0) }
+                        leaving = leaving.filter{ !critters.contains($0) }
+                        active = active.filter{ !critters.contains($0) }
+                    }
                     
-                    self?.activeBugs = self?.activeBugs.filter{ !critters.contains($0) } ?? []
-                    self?.activeFish = self?.activeFish.filter{ !critters.contains($0) } ?? []
+                    self?.crittersInfo[type] = CritterInfo(active: active,
+                                                           new: new,
+                                                           leaving: leaving,
+                                                           caught: caught,
+                                                           toCatch: toCatch)
                 }
         }
     }
