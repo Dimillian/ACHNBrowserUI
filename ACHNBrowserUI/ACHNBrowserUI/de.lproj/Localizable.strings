@@ -819,3 +819,15 @@ Du kannst das Abonnement jederzeit in deinen iTunes Kontoeinstellungen beenden. 
 // Added 2020-05-24
 "Music player" = "Musikplayer";
 "Tracks" = "Lieder";
+
+// Added 2020-06-01
+// Chore
+"Title" = "Titel";
+"Chore title" = "Titel der Aufgabe";
+"Description" = "Beschreibung";
+"Short description about the chore" = "Eine kurze Beschreibung der Aufgabe";
+"Add Chore" = "Aufgabe hinzufügen";
+"Chores" = "Aufgaben";
+"Have a friend to visit? A gift to a villager? Track your chores and to-dos here." = "Du willst einen Freund besuchen? Einem Bewohner ein bestimmtes Geschenk überreichen? Verwalte hier deine Augaben und To-Dos.";
+"Reset" = "Zurücksetzen";
+"Manage and keep track of your chores and to-dos." = "Verwalte und beobachte deine Aufgaben und To-Dos.";
