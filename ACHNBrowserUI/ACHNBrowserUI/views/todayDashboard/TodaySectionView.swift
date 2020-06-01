@@ -33,7 +33,7 @@ struct TodaySectionView: View {
         case .specialCharacters:
             return AnyView(TodaySpecialCharactersSection())
         case .currentlyAvailable:
-            return AnyView(TodayCurrentlyAvailableSection(viewModel: viewModel))
+            return AnyView(TodayCurrentlyAvailableSection())
         case .collectionProgress:
             return AnyView(TodayCollectionProgressSection(viewModel: viewModel, sheet: $selectedSheet))
         case .birthdays:

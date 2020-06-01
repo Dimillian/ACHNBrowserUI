@@ -16,25 +16,12 @@ struct TodayView: View {
     
     // MARK: - Vars
     @EnvironmentObject private var uiState: UIState
-    @EnvironmentObject private var collection: UserCollection
-    @EnvironmentObject private var subManager: SubscriptionManager
-    @EnvironmentObject private var items: Items
-    @EnvironmentObject private var userDefaults: AppUserDefaults
     
     @ObservedObject private var viewModel = DashboardViewModel()
 
     @State private var selectedSheet: Sheet.SheetType?
     @State private var showWhatsNew: Bool = false
-        
-    // MARK: - Critters Calculations
-    private var fishAvailable: [Item] {
-        items.categories[.fish]?.filterActive() ?? []
-    }
-    
-    private var bugsAvailable: [Item] {
-        items.categories[.bugs]?.filterActive() ?? []
-    }
-    
+            
     // MARK: - Body
     var body: some View {
         NavigationView {
@@ -68,8 +55,7 @@ struct TodayView: View {
             .navigationBarItems(leading: aboutButton, trailing: settingsButton)
             .sheet(item: $selectedSheet, content: { Sheet(sheetType: $0) })
             
-            ActiveCrittersView(activeFishes: fishAvailable,
-                               activeBugs: bugsAvailable)
+            ActiveCrittersView()
         }
     }
 
@@ -91,8 +77,8 @@ struct TodayView: View {
     
     // MARK: - Navigation Bar Button(s)
     private var settingsButton: some View {
-        Button(action: { self.selectedSheet = .settings(subManager: self.subManager,
-                                                        collection: self.collection) } ) {
+        Button(action: { self.selectedSheet = .settings(subManager: SubscriptionManager.shared,
+                                                        collection: UserCollection.shared) } ) {
             Image(systemName: "slider.horizontal.3")
                 .style(appStyle: .barButton)
                 .foregroundColor(.acText)

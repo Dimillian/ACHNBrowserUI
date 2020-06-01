@@ -15,27 +15,8 @@ enum Tab: String, CaseIterable {
 }
 
 struct ActiveCritterSections: View {
-    @EnvironmentObject private var collection: UserCollection
+    @ObservedObject var viewModel: ActiveCrittersViewModel
     @Binding var selectedTab: Tab
-
-    let activeFishes: [Item]
-    let activeBugs: [Item]
-    
-    func toCatchCritter(critters: [Item]) -> [Item] {
-        critters.filter{ !collection.critters.contains($0) }
-    }
-    
-    func caughtCritters(critters: [Item]) -> [Item] {
-        critters.filter{ collection.critters.contains($0) }
-    }
-    
-    func newThisMonth(critters: [Item]) -> [Item] {
-        critters.filter{ $0.isNewThisMonth() && !collection.critters.contains($0) }
-    }
-    
-    func leavingThisMonth(critters: [Item]) -> [Item] {
-        critters.filter{ $0.leavingThisMonth() && !collection.critters.contains($0) }
-    }
     
     private func sectionContent(critter: Item) -> some View {
         NavigationLink(destination: ItemDetailView(item: critter)) {
@@ -57,16 +38,17 @@ struct ActiveCritterSections: View {
         Group {
             makeSectionOrPlaceholder(title: "New this month",
                                      icon: "calendar.badge.plus",
-                                     critters: newThisMonth(critters: selectedTab == .fishes ? activeFishes : activeBugs))
+                                     critters: selectedTab == .fishes ? viewModel.newFishThisMonth : viewModel.newBugsThisMonth)
             makeSectionOrPlaceholder(title: "To catch",
                                      icon: "calendar",
-                                     critters: toCatchCritter(critters: selectedTab == .fishes ? activeFishes : activeBugs))
+                                     critters: selectedTab == .fishes ? viewModel.toCatchFish : viewModel.toCatchBugs)
             makeSectionOrPlaceholder(title: "Leaving this month",
                                      icon: "calendar.badge.minus",
-                                     critters: leavingThisMonth(critters: selectedTab == .fishes ? activeFishes : activeBugs))
+                                     critters: selectedTab == .fishes ? viewModel.leavingFishThisMonth : viewModel.leavingBugsThisMonth)
             Section(header: SectionHeaderView(text: "Caught",
-                                              icon: "tray.2")) {
-                ForEach(caughtCritters(critters: selectedTab == .fishes ? activeFishes : activeBugs),
+                                              icon: "tray.2"))
+            {
+                ForEach(selectedTab == .fishes ? viewModel.caughFish : viewModel.caughBugs,
                         content: sectionContent)
             }
         }
@@ -74,14 +56,13 @@ struct ActiveCritterSections: View {
 }
 
 struct ActiveCrittersView: View {
-    let activeFishes: [Item]
-    let activeBugs: [Item]
-    
+    @ObservedObject private var viewModel = ActiveCrittersViewModel(filterOutInCollection: true)
     @State private var selectedTab = Tab.fishes
     
     var body: some View {
         List {
-            if activeBugs.isEmpty || activeFishes.isEmpty {
+            if (viewModel.activeFish.isEmpty || viewModel.activeBugs.isEmpty) &&
+                (viewModel.caughBugs.isEmpty || viewModel.caughFish.isEmpty) {
                 RowLoadingView(isLoading: .constant(true))
             } else {
                 Picker(selection: $selectedTab, label: Text("")) {
@@ -91,9 +72,7 @@ struct ActiveCrittersView: View {
                 }
                 .pickerStyle(SegmentedPickerStyle())
                 .listRowBackground(Color.acBackground)
-                ActiveCritterSections(selectedTab: $selectedTab,
-                                      activeFishes: activeFishes,
-                                      activeBugs: activeBugs)
+                ActiveCritterSections(viewModel: viewModel, selectedTab: $selectedTab)
             }
         }
         .listStyle(GroupedListStyle())
@@ -104,6 +83,6 @@ struct ActiveCrittersView: View {
 
 struct ActiveCrittersView_Previews: PreviewProvider {
     static var previews: some View {
-        ActiveCrittersView(activeFishes: [], activeBugs: [])
+        ActiveCrittersView()
     }
 }

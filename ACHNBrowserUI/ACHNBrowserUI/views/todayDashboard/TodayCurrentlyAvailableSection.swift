@@ -10,50 +10,29 @@ import SwiftUI
 import Backend
 
 struct TodayCurrentlyAvailableSection: View {
-    @EnvironmentObject private var items: Items
-    @EnvironmentObject private var collection: UserCollection
-    @ObservedObject var viewModel: DashboardViewModel
+    @ObservedObject private var viewModel = ActiveCrittersViewModel()
     
     private enum CellType: String {
         case fish = "Fish"
         case bugs = "Ins"
     }
     
-    // MARK: - Bug Calculations
-    private var bugsAvailable: [Item] {
-        items.categories[.bugs]?.filterActive() ?? []
-    }
-    
-    private var newBugs: [Item] {
-        items.categories[.bugs]?.filterActive().filter{ $0.isNewThisMonth() } ?? []
-    }
-    
-    // MARK: - Fish Calculations
-    private var fishAvailable: [Item] {
-        items.categories[.fish]?.filterActive() ?? []
-    }
-    
-    private var newFish: [Item] {
-        items.categories[.fish]?.filterActive().filter{ $0.isNewThisMonth() } ?? []
-    }
-    
     // MARK: - Body
     var body: some View {
         Section(header: SectionHeaderView(text: "Currently Available", icon: "calendar")) {
-            if !fishAvailable.isEmpty && !bugsAvailable.isEmpty {
-                NavigationLink(destination: ActiveCrittersView(activeFishes: fishAvailable,
-                                                               activeBugs: bugsAvailable))
+            if !viewModel.activeBugs.isEmpty && !viewModel.activeFish.isEmpty {
+                NavigationLink(destination: ActiveCrittersView())
                 {
                     HStack(alignment: .top) {
                         makeCell(for: .fish,
-                                 caught: collection.itemsIn(category: .fish),
-                                 available: fishAvailable.count,
-                                 numberNew: newFish.count)
+                                 caught: viewModel.caughFish.count,
+                                 available: viewModel.activeFish.count,
+                                 numberNew: viewModel.newFishThisMonth.count)
                         Divider()
                         makeCell(for: .bugs,
-                                 caught: collection.itemsIn(category: .bugs),
-                                 available: bugsAvailable.count,
-                                 numberNew: newBugs.count)
+                                 caught: viewModel.caughBugs.count,
+                                 available: viewModel.activeBugs.count,
+                                 numberNew: viewModel.newBugsThisMonth.count)
                     }
                 }
                 .frame(maxWidth: .infinity)
@@ -72,7 +51,6 @@ struct TodayCurrentlyAvailableSection: View {
                 .frame(width: 48)
             
             Group {
-                // @TODO: Rename all the insect images from "Ins00" to "Bugs00"
                 type == .bugs ? Text("\(caught)/\(available) Bugs") : Text("\(caught)/\(available) Fish")
             }
             .font(.system(.headline, design: .rounded))
@@ -101,13 +79,11 @@ struct TodayCurrentlyAvailableSection_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
             List {
-                TodayCurrentlyAvailableSection(viewModel: DashboardViewModel())
+                TodayCurrentlyAvailableSection()
             }
             .listStyle(GroupedListStyle())
             .environment(\.horizontalSizeClass, .regular)
         }
-        .environmentObject(UserCollection.shared)
-        .environmentObject(Items.shared)
         .previewLayout(.fixed(width: 375, height: 500))
     }
 }
