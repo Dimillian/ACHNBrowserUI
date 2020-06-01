@@ -9,25 +9,26 @@
 import Foundation
 import Backend
 
-class DesignFormViewModel: ObservableObject {
+final class DesignFormViewModel: ObservableObject {
 
-    // MARK: - Properties
+    // MARK: - Public properties
 
     @Published var design: Design
 
+    // MARK: - Private properties
+
+    private let userCollection: UserCollection
+
     // MARK: - Life cycle
 
-    init(design: Design?) {
-        if let design = design {
-            self.design = design
-        } else {
-            self.design = Design()
-        }
+    init(design: Design?, userCollection: UserCollection = .shared) {
+        self.design = design ?? Design()
+        self.userCollection = userCollection
     }
 
     // MARK: - Public
 
     func save() {
-        UserCollection.shared.addDesign(design)
+        userCollection.addDesign(design)
     }
 }
