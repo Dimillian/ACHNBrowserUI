@@ -59,6 +59,9 @@ struct VillagerRowView: View {
     }
 }
 
+// MARK: - Preview
+
+#if DEBUG
 struct VillagerRowView_Previews: PreviewProvider {
     static var previews: some View {
         List {
@@ -73,3 +76,4 @@ struct VillagerRowView_Previews: PreviewProvider {
         }
     }
 }
+#endif
