@@ -17,7 +17,7 @@ struct TodayTasksSection: View {
         collection.dailyCustomTasks.tasks.count
     }
     
-    private var rows: {
+    private var rows: Int {
         var rowsFloat = CGFloat(tasksCount) / 4.0
         rowsFloat.round(.up)
         return Int(rowsFloat)
