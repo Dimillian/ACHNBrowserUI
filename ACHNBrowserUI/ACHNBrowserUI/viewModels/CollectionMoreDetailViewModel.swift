@@ -7,19 +7,20 @@
 //
 
 import Backend
+import SwiftUI
 
 struct CollectionMoreDetailViewModel {
 
     // MARK: - Types
 
-    enum Row: String, CaseIterable, CustomStringConvertible {
+    enum Row: String, CaseIterable {
         case critters
         case designs
-
-        var description: String {
+        
+        var description: LocalizedStringKey {
             switch self {
-            case .critters: return "Critters"
-            case .designs: return "Creators and Designs"
+            case .critters: return LocalizedStringKey("Critters")
+            case .designs: return LocalizedStringKey("Creators and Designs")
             }
         }
     }

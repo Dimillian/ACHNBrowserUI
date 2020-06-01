@@ -44,8 +44,8 @@ class ActiveCrittersViewModel: ObservableObject {
                 self?.leavingFishThisMonth = self?.activeFish.filter{ $0.leavingThisMonth() } ?? []
                 self?.leavingBugsThisMonth = self?.activeBugs.filter{ $0.leavingThisMonth() } ?? []
                 
-                self?.caughFish = critters.filterActive().filter{ $0.appCategory == .fish}
-                self?.caughBugs = critters.filterActive().filter{ $0.appCategory == .bugs}
+                self?.caughFish = self?.activeFish.filter{ critters.contains($0) } ?? []
+                self?.caughBugs = self?.activeBugs.filter{ critters.contains($0) } ?? []
                 
                 self?.toCatchFish = self?.activeFish.filter{ !critters.contains($0) } ?? []
                 self?.toCatchBugs = self?.activeBugs.filter{ !critters.contains($0) } ?? []
