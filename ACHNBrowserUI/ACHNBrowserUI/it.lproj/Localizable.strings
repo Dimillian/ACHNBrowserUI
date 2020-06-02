@@ -85,7 +85,7 @@ Più prezzi inserirai ogni giorno, dopo il lunedì mattina, migliori saranno le 
 Funzione Liste:
 Senza abbonamento puoi creare solo una lista oggetti nella scheda \"Mie cose\".
 Se ti abbonerai potrai invece creare tutte le liste oggetti che desideri.";
-"ACHelperPlusPriceAndAboDetail %@ %@" = "Un abbonamento di %@  al mese sarà aggiunto al tuo account iTunes una volta data la conferma.
+"ACHelperPlusPriceAndAboDetail %@" = "Un abbonamento di %@ al mese sarà aggiunto al tuo account iTunes una volta data la conferma.
 Gli abbonamenti si rinnovano automaticamente se non vengono annullati 24 ore prima della loro scadenza.
 Puoi annullare il tuo abbonamento in ogni momento dalle impostazioni del tuo account iTunes. I periodi di prova gratuita saranno annullati se acquisti un abbonamento.";
 "Subscribe for %@ / Month" = "Abbonati per %@ / Mese";
@@ -182,7 +182,7 @@ Puoi annullare il tuo abbonamento in ogni momento dalle impostazioni del tuo acc
 // CollectionListView
 "Create a new list" = "Crea una nuova lista";
 "Please select or go stars some items!" = "Per favore scegli o metti la stella a degli oggetti!";
-"When you stars some %@, they'll be displayed here." = "Quando metterai la stella a degli %@, saranno mostrati qui.";
+"When you stars some %@, they'll be displayed here." = "Quando metterai la stella a degli %@ saranno mostrati qui.";
 "Items" = "Oggetti";
 "Critters" = "Animaletti";
 "Lists" = "Liste";
@@ -190,6 +190,7 @@ Puoi annullare il tuo abbonamento in ogni momento dalle impostazioni del tuo acc
 "villagers" = "abitanti";
 "critters" = "animaletti";
 "lists" = "liste";
+"More" = "Altro";
 
 // ItemsListView
 "Clear Selection" = "Cancella selezione";
@@ -219,7 +220,11 @@ Puoi annullare il tuo abbonamento in ogni momento dalle impostazioni del tuo acc
 "Small" = "Piccola";
 "Medium" = "Media";
 "Large" = "Grande";
-"X-Large" = "Enorme";
+"X-Large" = "Grandissima";
+"XX-Large" = "Enorme";
+"Long" = "Lunga";
+"Large w/Fin" = "Grande senza pinna";
+"Medium w/Fin" = "Media senza pinna";
 "Customizable: %@" = "Personalizzabile: %@";
 "Flick:" = "Ivano:";
 "C.J:" = "Castorino:";
@@ -229,8 +234,9 @@ Puoi annullare il tuo abbonamento in ogni momento dalle impostazioni del tuo acc
 "Preview" = "Anteprima";
 // ItemDetailSeasonView
 "Seasonality" = "Stagionalità";
+
 // ItemDetailView
-"Set items" = "Imposta oggetti";
+"Set items" = "Oggetti del set";
 "Simillar items" = "Oggetti simili";
 "Thematics" = "Temi";
 "Variants" = "Varianti";
@@ -239,6 +245,7 @@ Puoi annullare il tuo abbonamento in ogni momento dalle impostazioni del tuo acc
 "Loading Listings..." = "Caricamento annunci...";
 "No listings found on Nookazon" = "Nessun annuncio trovato su Nookazon";
 "Your items lists" = "La tua lista";
+"Keywords" = "Parole chiave";
 
 // TurnipsView
 "Minmax" = "Min-Max";
@@ -306,6 +313,7 @@ Puoi annullare il tuo abbonamento in ogni momento dalle impostazioni del tuo acc
 "Unknown" = "Sconosciuto";
 "Villager items" = "Oggetti abitante";
 "Sort villagers" = "Ordina abitanti";
+
 // VillagersDetailView
 "Unkown" = "Sconosciuto";
 "Lazy" = "Pigro";
@@ -419,8 +427,8 @@ Puoi annullare il tuo abbonamento in ogni momento dalle impostazioni del tuo acc
 "Available after unlocking the shovel in the story" = "Disponibile dopo aver ottenuto la pala nella storia";
 "Available from Able Sisters shop only during Festive Season" = "Disponibile da Ago e Filo solo durante il periodo delle festività";
 "Available from Able Sisters shop only" = "Disponibile solo da Ago e Filo";
-"Available from either Mable's temporary shop or Able Sisters shop during Festive Season" = "Disponibile da Filomena o da Ago e Filo solo durante il periodo delle festività";
-"Available from either Mable's temporary shop or Able Sisters shop" = "Disponibile da Filomena o da Ago e Filo";
+"Available from either Mable's temporary shop or Able Sisters shop during Festive Season" = "Disponibile dal negozio itinerante di Agostina o da Ago e Filo solo durante il periodo delle festività";
+"Available from either Mable's temporary shop or Able Sisters shop" = "Disponibile dal negozio itinerante di Agostina o da Ago e Filo";
 "Available in all tiers of shops, including Timmy & Tommy before the shop is opened" = "Disponibile in ogni versione del negozio di Marco e Mirco";
 "Available in Nook's Cranny (either upgrade tier) in the unique furniture slot" = "Disponibile alla Bottega di Nook (ogni versione) nello spazio mobili unici";
 "Available in Nook's Cranny (upgraded only)" = "Disponibile alla Bottega di Nook (ampliata)";
@@ -474,7 +482,7 @@ Puoi annullare il tuo abbonamento in ogni momento dalle impostazioni del tuo acc
 "Dig spot (Bunny Day)" = "Segno da scavare (Caccia all'uovo)";
 "Dig spot near a bamboo tree" = "Segno da scavare vicino una pianta di bambù";
 "Dig spot" = "Segno da scavare";
-"Digging up clams" = "Dissotterare vongole";
+"Digging up clams" = "Dissotterrare vongole";
 "Digging up treasure for a villager's quest" = "Dissotterrare un tesoro durante il gioco con un abitante";
 "Disguised on shoreline" = "Camuffato sulla costa";
 "Disguised under trees" = "Camuffato sotto gli alberi";
@@ -499,6 +507,8 @@ Puoi annullare il tuo abbonamento in ogni momento dalle impostazioni del tuo acc
 "Flying near light sources" = "Vola vicino fonti luminose";
 "Flying near trash (boots, tires, cans)" = "Vola vicino rifiuti (Scarponi, copertoni, scatolette)";
 "Flying" = "Vola";
+"Assessing fossils" = "Dissotterrare fossili"
+"Flying near water" = "Vola vicino all'acqua"
 "From hitting rocks" = "Colpire le rocce";
 "From Zipper after trading one of every egg (all 6 types) during Bunny Day." = "Da Ovidio scambiando un uovo per tipo (6 tipi) durante la Caccia all'uovo";
 "Glowing dig spot" = "Punto luccicante nel terreno";
@@ -513,7 +523,7 @@ Puoi annullare il tuo abbonamento in ogni momento dalle impostazioni del tuo acc
 "Hitting a rock, Fishing" = "Colpire una roccia, Pescare";
 "In the Special Items section in Nook Shopping, after scanning the related Amiibo on Photopia" = "Tra gli Articoli Speciali del Catalogo Nook, dopo scansione del relativo Amiibo sull'Isola Fiorilio";
 "International Children's Day" = "Giornata internazionale dei bambini";
-"International Museum Day" = "Giornata internazionale dei Musei";
+"International Museum Day" = "Giornata internazionale dei musei";
 "Isabelle" = "Fuffi";
 "Jock villagers" = "Abitanti Sportivi";
 "Jolly Redd's Treasure Trawler" = "Il mare dei tesori di Volpolo";
@@ -637,7 +647,7 @@ Puoi annullare il tuo abbonamento in ogni momento dalle impostazioni del tuo acc
 "Rover" = "Girolamo";
 "Saharah" = "Sahara";
 "Season sale item" = "Oggetto stagione saldi";
-"Season sale item\n*Not available in Europe" = "Oggetto Statione saldi\n*Non disponibile in Europa";
+"Season sale item\n*Not available in Europe" = "Oggetto Stagione saldi\n*Non disponibile in Europa";
 "Seed bag" = "Sacchetto semi";
 "Shaking a cedar tree (Fall)" = "Scuotere un cedro (Autunno)";
 "Shaking a cedar tree (Festive Season)" = "Scuotere un cedro (Stagione Festività)";
@@ -691,6 +701,8 @@ Puoi annullare il tuo abbonamento in ogni momento dalle impostazioni del tuo acc
 // Added 2020-05-12
 "Sea" = "Mare";
 "Sea (raining)" = "Mare (Pioggia)";
+"Sea (rainy days)" = "Mare (Quando piove)";
+
 
 // Added 2020-05-13
 "See more" = "Più info";
@@ -771,22 +783,21 @@ Puoi annullare il tuo abbonamento in ogni momento dalle impostazioni del tuo acc
 "Lots of cliffs, waterfalls and river forks. Normal resource spawns." = "Tanti rilievi, cascate e biforcazioni del fiume. Risorse naturali normali";
 "A very rare island with flowers, scorpions and a rectangular pond. If you climb up onto the cliff and climb down from the back, you can vault over to a tiny island in the middle and get 8 gold nuggets from a single rock." = "Un’isola molto rara con fiori, scorpioni e uno stagno rettangolare. Se ti arrampichi sul rilievo e poi scendi dietro dall’altra parte puoi saltare con l’asta su di una piccola isola che sta nel mezzo. Lì puoi prendere 8 minerali d’oro da una roccia.";
 
-// Added 2020-05-20
-"Same color" = "Stesso colore";
-// New settings
-"Using iCloud sync" = "Utilizza sincronizzazione iCloud";
+// Added 2020-05-20		
+"Same color" = "Stesso colore";		
+// New settings		
+"Using iCloud sync" = "Utilizza sincronizzazione iCloud";		
 "Synchronized with iCloud" = "Sincronizzato con iCloud";
 
 "Possible visitors" = "Visitatori possibili";
 "On" = "di";
 " your island" = " oggi";
+
 "From 6pm to 5am" = "Dalle 18:00 alle 05:00";
 "From 8pm to 5am" = "Dalle 20:00 alle 05:00";
 "From 5am to 12pm" = "Dalle 05:00 alle 12:00";
 
-
 //Special characters
-
 "K.K Slider" = "K.K. Slider";
 "Daisy Mae" = "Brunella";
 "C.J" = "Castorino";
@@ -801,21 +812,267 @@ Puoi annullare il tuo abbonamento in ogni momento dalle impostazioni del tuo acc
 
 
 // Added 2020-05-23
-
 "Museum Day" = "Giornata internazionale dei Musei";
 "Wedding Season" = "Stagione dei matrimoni";
 "Bug-Off contest" = "Insettomania";
 "Meteor shower" =  "Pioggia di stelle";
 
-
 // Added 2020-05-23
-
 "Reset" = "Reimposta";
 "View Turnip.Exchange islands" = "Guarda isole Turnip.Exchange";
 "View on TurnipProphet" = "Guarda su TurnipProphet";
 
-
 // Added 2020-05-24
-
 "Music player" = "Player musicale";
 "Tracks" = "Brani";
+
+"Vacation" = "Vacanze";
+"Stripe Walls" = "Muri a Strisce";
+"Office" = "Ufficio";
+"Tile Walls" = "Muri mattonelle";
+"Tea Room Walls" = "Muri Sala da té";
+"Zen" = "Zen";
+"Deco Wood" = "Deco Legno";
+"Rubber" = "Gomma";
+"Picture" = "Foto";
+"Cloth Floors" = "Cloth Floors";
+"Audio" = "Audio";
+"Fruits" = "Frutta";
+"Antique" = "Antico";
+"Honeycomb" = "Alveare";
+"Japanese Style" = "Stile Giapponese";
+"Simple Walls" = "Muri semplici";
+"Golden" = "Dorato";
+"Simple" = "Semplice";
+"Country" = "Country";
+"Sports Floor" = "Pavimento sportivo";
+"Bamboo" = "Bambù";
+"Art Deco Walls" = "Muri Art Deco";
+"Outdoors" = "All'aperto";
+"Rose Rug" = "Tappeto Rosa";
+"Fish" = "Pesce";
+"shop" = "Negozio";
+"Wood Plank Walls" = "Muri liste legno";
+"Party" = "Festa";
+"Special Inorganic Floors" = "Pavimenti speciali inorganici";
+"Frozen" = "Ghiacciato";
+"TV" = "TV";
+"Home Appliances" = "Elettrodomestici";
+"Shop" = "Negozio";
+"Decadence" = "Decadenza";
+"Orange" = "Arancione";
+"Kitchen Things" = "Da cucina";
+"Herringbone" = "Spina di pesce";
+"Brown" = "Marrone";
+"Expensive" = "Costoso";
+"Fancy" = "Raffinato";
+"Playground" = "Area giochi";
+"Manor Walls" = "Muri Maniero";
+"Garage" = "Garage";
+"Animal" = "Animale";
+"Wood Rugs" = "Tappeti in legno";
+"Heating" = "Riscaldamento";
+"Outdoor Tools" = "Strumenti da giardino";
+"Special Insect" = "Insetto speciale";
+"Bed" = "Letto";
+"Heart Walls" = "Muri Cuore";
+"Rattan" = "Rattan";
+"Kitchen Rugs" = "Tappeti cucina";
+"Purple" = "Viola";
+"Asia" = "Asia";
+"Sewing Table" = "Macchina da cucire";
+"Log" = "Tronco";
+"Pattern Rugs" = "Tappeto con motivo";
+"Flower Pop Walls" = "Muri Fiori";
+"Nature - Fallen Leaves" = "Natura - Foglie cadute";
+"Chair" = "Sedia";
+"Pink" = "Rosa";
+"Facility Decor" = "Decorazione Struttura";
+"Cute" = "Carino";
+"Neta" = "Materiale";
+"Metro Walls" = "Muri Metro";
+"Puzzle Walls" = "Muri Puzzle";
+"Gray" = "Grigio";
+"Diner" = "Bar";
+"Brick" = "Mattone";
+"Den" = "Tana";
+"Formal" = "Formale";
+"Bathtub" = "Bagno";
+"Compass" = "Bussola";
+"Stucco Walls" = "Muri Stucco";
+"garden" = "Giardino";
+"Ironwood" = "Legno e ferro";
+"Painted Wood" = "Legno dipinto";
+"Animal Floor" = "Pavimento Animale";
+"Fan" = "Ventilatore";
+"Bathroom Things" = "Da bagno";
+"Sculpture" = "Scultura";
+"Clock" = "Orologio";
+"Bunny Day" = "Caccia all'uovo";
+"Fireplace" = "Caminetto";
+"Garden" = "Giardino";
+"Easter" = "Pasqua";
+"Green" = "Verde";
+"Kitchen" = "Cucina";
+"Black" = "Nero";
+"Diner Walls" = "Muri da Bar";
+"Mush" = "Poltiglia";
+"Seaside" = "Spiaggia";
+"Screen" = "Schermo";
+"office" = "ufficio";
+"Shaggy Round Rugs" = "Tappeti rotondi pelosi";
+"Vehicle" = "Veicolo";
+"Rose Walls" = "Muri Rosa";
+"Beauty" = "Bellezza";
+"Tatami" = "Tatami";
+"Camouflage" = "Mimetico";
+"School" = "Scuola";
+"Throwback" = "Nostalgico";
+"Colorful" = "Colorato";
+"Flower Walls" = "Muri Fiori";
+"Dot" = "A pois";
+"Nature - Green" = "Natura - Verde";
+"Cute" = "Carino";
+"Hall Walls" = "Muri da Sala";
+"Theatrical" = "Teatrale";
+"Air Conditioning" = "Aria condizionata";
+"Parquet" = "Parquet";
+"Colorful Tools" = "Strumenti Colorati";
+"Horror" = "Horror";
+"Game Console" = "Console da gioco";
+"Tatami Panel" = "Pannello Tatami";
+"Shell" = "Conchiglia";
+"Simple Rugs" = "Tappeti Semplici";
+"Sports" = "Sport";
+"cherry Blossoms" = "Ciliegio in fiore";
+"bathroom" = "bagno";
+"Musical Instrument" = "Strumento musicale";
+"Living Room" = "Salotto";
+"Wooden block" = "Blocchi di legno";
+"Wood Walls" = "Muri di Legno";
+"Ranch" = "Ranch";
+"Special Walls" = "Muri Speciali";
+"Outdoorsy" = "All'aperto";
+"Facility" = "Struttura";
+"Plants" = "Piante";
+"Festive" = "Festivo";
+"Insect" = "Insetto";
+"Iron Walls" = "Muri di Ferro";
+"Table" = "Tavolo";
+"Tile Checker" = "Piastrella";
+"Message Mats" = "Lettino Massaggi";
+"Concert" = "Concerto";
+"Motherly" = "Della mamma";
+"Iron Parquet" = "Parquet di Ferro";
+"Chocolate" = "Cioccolato";
+"NA" = "ND";
+"Fairy tale" = "Favola";
+"Special Warm Nature Walls" = "Muri speciali Natura Calda";
+"Iron" = "Ferro";
+"Elegant" = "Élegante";
+"Dining" = "Sala da pranzo";
+"Wood Tile Walls" = "Muri Piastrelle di Legno";
+"Tile Floors" = Pavimenti a Piastrelle";
+"School" = "Scuola";
+"Cardboard" = "Cartone";
+"Tin Walls" = "Muri di Latta";
+"Desk" = "Scrivania";
+"Arched Brick" = "Mattone arcuato";
+"Blue" = "Blu";
+"Special Inorganic Walls" = "Muri speciali inorganici";
+"Puzzle Mat" = "Tappeto Puzzle";
+"Toy Walls" = "Muri Giocattolo";
+"Music" = "Musica";
+"Red" = "Rosso";
+"Active" = "Attivo";
+"Cloth Walls" = "Muri Tessuto";
+"Panel Mold Walls" = "Muri Pannello Stampato";
+"Special Cool Nature Walls" = "Muri speciali Natura fredda";
+"Museum" = "Museo";
+"Panel" = "Pannello";
+"Slender Rugs" = "Tappeti sottili";
+"Chest" = "Scrigno";
+"Lamp" = "Lampada";
+"Pegboard Walls" = "Muri cartone forato";
+"Seasonal Decor" = "Decorazione di stagione";
+"Fruit Rugs" = "Tappeti Frutta";
+"Wooden" = "Di legno";
+"Folk art" = "Arte Folk";
+"Zen-style" = "Stile Zen";
+"Crown Walls" = "Muri Corona";
+"Sofa" = "Divano";
+"Colorful Wood" = "Legno Colorato";
+"Kitchen Floors" = "Pavimenti Cucina";
+"Machine Floor" = "Pavimenti Macchina";
+"Wedding" = "Matrimonio";
+"Luxury" = "Lussuoso";
+"Sporty" = "Sportivo";
+"Light blue" = "Azzurro";
+"Freezing Cold" = "Freddo glaciale";
+"Two-Tone Tile Walls" = "Muri Piastrelle Duetoni";
+"Ocean" = "Oceano";
+"Dresser" = "Comò";
+"Nature - White" = "Natura - Bianco";
+"Fitness" = "Fitness";
+"Library Walls" = "Muri Libreria";
+"Sidewalk" = "Marciapiede";
+"Cool" = "Cool";
+"Hospital" = "Ospedale";
+"Morocco" = "Marocco";
+"Flowers" = "Fiori";
+"Everyday" = "Tutti i giorni";
+"Study" = "Studio";
+"Work Bench" = "Banco da lavoro";
+"House Door Decor" = "Decorazione porta";
+"Space" = "Spazio";
+"Comfy" = "Confortevole";
+"Arch" = "Arco";
+"Stone Floors" = "Pavimenti Pietra";
+"Nature - Brown" = "Natura - Marrone";
+"Simple Parquet" = "Parquet semplice";
+"Yellow" = "Giallo";
+"Stars" = "Stelle";
+"Cute Walls" = "Muri Carini";
+"Icon Rugs" = "Tappeti Icona";
+"Stone Walls" = "Muri Pietra";
+"Fruit Walls" = "Muri Frutta";
+"Argyle" = "Losanghe";
+"Dollhouse Walls" = "Muri Stanza Bambole";
+"Shelf" = "Scaffale";
+"Wood Floors" = "Pavimenti Legno";
+"Toilet" = "Toilette";
+"Iron" = "Ferro";
+"Special Fish" = "Pesce Speciale";
+"Beige" = "Beige";
+"Nature Walls" = "Muri natura";
+"Simple Carpet" = "Tappeto semplice";
+"Neta Walls" = "Muri Neta";
+"work" = "lavoro";
+"Special Nature Floors" = "Pavimento Speciale Natura";
+"White" = "Bianco";
+"Outdoors Decor" = "Decorazione da esterni";
+"Park Rugs" = "Tappeti Parco";
+"Grassland" = "Prato";
+"Heart Rugs" = "Tappeti Cuore";
+"Slender Pattern Rugs" = "Tappeti Motivo Sottile";
+"Supplies" = "Forniture";
+"kitchen" = "Cucina";
+"Goth" = "Gotico";
+"Toy" = "Gioco";
+"Folk Craft Decor" = "Decorazione Folk";
+"Gorgeous" = "Magnifico";
+
+// Chore
+"Title" = "Titolo";
+"Chore title" = "Nome attività";
+"Description" = "Descrizione";
+"Short description about the chore" = "Una breve descrizione dell'attività";
+"Add Chore" = "Aggiungere una attività";
+"Chores" = "Attività";
+"Have a friend to visit? A gift to a villager? Track your chores and to-dos here." = "Devi andare a trovare un amico? Dare un regalo ad un abitante? Tieni traccia qui delle tue attività e delle cose da fare.";
+"Reset" = "Reimposta";
+"Manage and keep track of your chores and to-dos." = "Tieni traccia e gestisci le tue attività e le cose da fare.";
+
+// Design
+"Creators and Designs" = "Stilisti e Modelli";
+"Add Creator/Design Item" = "Aggiungi uno stilista o un modello";
