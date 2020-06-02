@@ -1,0 +1,59 @@
+/*
+  Localizable.strings
+  ACHNBrowserUI
+
+  zh.tw
+  Created by Thus on 14.05.20.
+  First created by klin0816
+  Copy template from en.lproj/Localizable.strings
+*/
+
+// SubscribeView
+"ACHelperPlusDescription" = " 訂閱 AC Helper+ 是對我們這個免費和開源計畫最好的支持。♥️
+ 
+您能獲取更多功能，大頭菜價格預測通知和創建無數個物品清單！ 📈
+
+以後有更多介紹";
+"ACHelperPlusDetails" = "關於價格預測：
+每天早上8點和12點您會收到您的商店的平均收購價格通知。
+輸入越多從星期一早上開始的價格, 價格會預測得越準確！
+
+關於清單功能：
+在免費的版本中, 您只能在 \"我的東西\" 中創建一個清單。
+只要您訂閱了 AC Helper+ 就能夠創建無數個您想要的清單。";
+
+"ACHelperPlusPriceAndAboDetail %@ %@" = "確認訂閱後 %@ 個月購買會出現在您的 iTunes 帳戶。
+訂閱將會自動更新除非你在該期間結束的 24 小時前取消訂閱。
+你能夠隨時在您的 iTunes 帳戶中取消訂閱，如果你在試用期間內取消，可能會立即無法享用內容。";
+
+// CategoryRow
+"housewares" = "傢俱";
+"miscellaneous" = "雜物";
+"wall-mounted" = "壁掛物";
+"wallpapers" = "壁紙";
+"floors" = "地板";
+"rugs" = "地毯";
+"photos" = "照片";
+"posters" = "海報";
+"fencing" = "柵欄";
+"tools" = "工具";
+"tops" = "上身";
+"bottoms" = "下身";
+"dresses" = "套裝";
+"headwear" = "頭戴物";
+"accessories" = "飾品";
+"socks" = "襪子";
+"shoes" = "鞋子";
+"bags" = "包包";
+"umbrellas" = "雨傘";
+"music" = "音樂";
+"recipes" = "方程式";
+"construction" = "建築物";
+"nookmiles" = "里程";
+"other" = "其他";
+"art" = "藝術品";
+"bugs" = "蟲";
+"fish" = "魚";
+"fossils" = "化石";
+
+"%lld upcomingDailyNotifications" = "你會在接下來的 %lld 個通知中收到大頭菜價錢預測";
