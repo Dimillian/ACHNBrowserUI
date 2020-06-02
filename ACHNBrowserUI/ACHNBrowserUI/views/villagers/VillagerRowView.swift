@@ -36,7 +36,6 @@ struct VillagerRowView: View {
     var body: some View {
         HStack {
             LikeButtonView(villager: villager)
-                .environmentObject(collection)
             ItemImage(path: ACNHApiService.BASE_URL.absoluteString +
                 ACNHApiService.Endpoint.villagerIcon(id: villager.id).path(),
                       size: 50)
@@ -66,13 +65,10 @@ struct VillagerRowView_Previews: PreviewProvider {
     static var previews: some View {
         List {
             VillagerRowView(villager: static_villager, style: .none)
-                .environmentObject(UserCollection.shared)
 
             VillagerRowView(villager: static_villager, style: .species)
-                .environmentObject(UserCollection.shared)
 
             VillagerRowView(villager: static_villager, style: .personality)
-                .environmentObject(UserCollection.shared)
         }
     }
 }
