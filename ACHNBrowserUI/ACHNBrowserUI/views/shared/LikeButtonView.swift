@@ -10,51 +10,31 @@ import SwiftUI
 import Backend
 
 struct LikeButtonView: View {
-    @EnvironmentObject private var collection: UserCollection
-    
-    let item: Item?
-    let variant: Variant?
-    let villager: Villager?
+    @ObservedObject private var viewModel: LikeButtonViewModel
     
     init(item: Item, variant: Variant?) {
-        self.item = item
-        self.variant = variant
-        self.villager = nil
+        viewModel = LikeButtonViewModel(item: item, variant: variant)
     }
     
     init(villager: Villager) {
-        self.villager = villager
-        self.variant = nil
-        self.item = nil
+        viewModel = LikeButtonViewModel(villager: villager)
     }
-    
-    private var isInCollection: Bool {
-        if let item = item {
-            if let variant = variant {
-                return collection.variantIn(item: item, variant: variant)
-            }
-            return collection.items.contains(item) || collection.critters.contains(item)
-        } else if let villager = villager {
-            return collection.villagers.contains(villager)
-        }
-        return false
-    }
-    
+        
     var imageName: String {
-        if item != nil {
-            if item?.isCritter == true {
-                return isInCollection ? "checkmark.seal.fill" : "checkmark.seal"
+        if viewModel.item != nil {
+            if viewModel.item?.isCritter == true {
+                return viewModel.isInCollection ? "checkmark.seal.fill" : "checkmark.seal"
             } else {
-                return isInCollection ? "star.fill" : "star"
+                return viewModel.isInCollection ? "star.fill" : "star"
             }
         } else {
-            return isInCollection ? "heart.fill" : "heart"
+            return viewModel.isInCollection ? "heart.fill" : "heart"
         }
     }
     
     var color: Color {
-        if item != nil {
-            if item?.isCritter == true {
+        if viewModel.item != nil {
+            if viewModel.item?.isCritter == true {
                 return .acTabBarBackground
             }
             return .yellow
@@ -64,28 +44,12 @@ struct LikeButtonView: View {
     
     var body: some View {
         Button(action: {
-            if let item = self.item {
-                switch item.appCategory {
-                case .fish, .bugs, .fossils:
-                    let added = self.collection.toggleCritters(critter: item)
-                    FeedbackGenerator.shared.triggerNotification(type: added ? .success : .warning)
-                default:
-                    if let variant = self.variant {
-                        let added = self.collection.toggleVariant(item: item, variant: variant)
-                        FeedbackGenerator.shared.triggerNotification(type: added ? .success : .warning)
-                        return
-                    }
-                    let added = self.collection.toggleItem(item: item)
-                    FeedbackGenerator.shared.triggerNotification(type: added ? .success : .warning)
-                }
-            } else if let villager = self.villager {
-                let added =  self.collection.toggleVillager(villager: villager)
-                FeedbackGenerator.shared.triggerNotification(type: added ? .success : .warning)
-            }
+            let added = self.viewModel.toggleCollection()
+            FeedbackGenerator.shared.triggerNotification(type: added ? .success : .warning)
         }) {
             Image(systemName: imageName).foregroundColor(color)
         }
-        .scaleEffect(self.isInCollection ? 1.3 : 1.0)
+        .scaleEffect(viewModel.isInCollection ? 1.3 : 1.0)
         .buttonStyle(BorderlessButtonStyle())
         .animation(.spring(response: 0.5, dampingFraction: 0.3, blendDuration: 0.5))
     }
@@ -94,6 +58,5 @@ struct LikeButtonView: View {
 struct StarButtonView_Previews: PreviewProvider {
     static var previews: some View {
         LikeButtonView(item: static_item, variant: nil)
-            .environmentObject(UserCollection.shared)
     }
 }
