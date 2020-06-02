@@ -152,7 +152,6 @@ You can cancel anytime with your iTunes account settings. Any unused portion of 
 "Nook's Cranny upgraded" = "Boutique Nook améliorée";
 "Able sisters" = "Soeur Doigts de Fée";
 "Visiting" = "En tant que visiteur";
-"Shop" = "Magasin";
 "Residents service" = "Mairie";
 "Building" = "Batîment";
 "App Settings" = "Réglages de l'application";
@@ -171,7 +170,7 @@ You can cancel anytime with your iTunes account settings. Any unused portion of 
 "Edit" = "Éditer";
 "Search items" = "Chercher des objets";
 "Items added to your list from the search will be displayed there." = "Les objets ajoutés à votre liste vont apparaitre ici";
-"No results for %@" = "Aucun résultat pour %@";
+"No results for %@" = "Pas de résultats pour %@";
 
 // UserListSubscribeCallView
 "In order to create more than one list, you need to subscribe to AC Helper+" = "Pour pouvoir créer plus d'une liste, vous devez souscrire à AC Helper+";
@@ -310,7 +309,6 @@ You can cancel anytime with your iTunes account settings. Any unused portion of 
 "Jock" = "Sportif";
 "Cranky" = "Grincheux";
 "Smug" = "Suffisant";
-"Normal" = "Normal";
 "Peppy" = "Énergique";
 "Snooty" = "Prétentieux";
 "Uchi" = "Big sister";
@@ -401,7 +399,6 @@ You can cancel anytime with your iTunes account settings. Any unused portion of 
 // CategoriesView
 "Nature" = "Nature";
 "Wardrobe" = "Garde-robe";
-"No results for %@" = "Pas de résultats pour %@";
 
 // Shared
 // SearchField
@@ -583,7 +580,6 @@ You can cancel anytime with your iTunes account settings. Any unused portion of 
 "Art Deco Walls" = "Murs Art Deco";
 "Outdoors" = "pleine air";
 "Rose Rug" = "Tapis Rose";
-"Fish" = "Poisson";
 "shop" = "magasin";
 "Wood Plank Walls" = "Murs en planches de bois";
 "Party" = "fête";
@@ -593,7 +589,6 @@ You can cancel anytime with your iTunes account settings. Any unused portion of 
 "Home Appliances" = "Appareils électroménagers";
 "Shop" = "Magazin";
 "Decadence" = "Décadence";
-"Orange" = "Orange";
 "Kitchen Things" = "Choses de cuisine";
 "Herringbone" = "Chevrons";
 "Brown" = "Marron";
@@ -659,13 +654,11 @@ You can cancel anytime with your iTunes account settings. Any unused portion of 
 "Beauty" = "Jolie";
 "Tatami" = "Tamami";
 "Camouflage" = "Camouflage";
-"School" = "école";
 "Throwback" = "nostalique";
 "Colorful" = "coloré";
 "Flower Walls" = "Murs Fleurs";
 "Dot" = "Poid";
 "Nature - Green" = "Nature - Vert";
-"Cute" = "mignon";
 "Hall Walls" = "Murs de Hall";
 "Theatrical" = "théâtrale";
 "Air Conditioning" = "Air conditionnée";
@@ -701,7 +694,6 @@ You can cancel anytime with your iTunes account settings. Any unused portion of 
 "NA" = "NA";
 "Fairy tale" = "compte de fée";
 "Special Warm Nature Walls" = "Murs spéciale chaud";
-"Iron" = "fer";
 "Elegant" = "Élégant";
 "Dining" = "Manger";
 "Wood Tile Walls" = "Murs en bois";
@@ -752,12 +744,10 @@ You can cancel anytime with your iTunes account settings. Any unused portion of 
 "Cool" = "Cool";
 "Hospital" = "Hopital";
 "Morocco" = "Maroc";
-"Flowers" = "fleurs";
 "Everyday" = "tous les jours";
 "Study" = "Étude";
 "Work Bench" = "Table de travail";
 "House Door Decor" = "Décor de porte";
-"Space" = "espace";
 "Comfy" = "confortable";
 "Arch" = "Arche";
 "Space" = "Éspace";
@@ -799,7 +789,6 @@ You can cancel anytime with your iTunes account settings. Any unused portion of 
 // Chore
 "Title" = "Titre";
 "Chore title" = "Nom de la tâche";
-"Description" = "Description";
 "Short description about the chore" = "Une petite description de la tâche";
 "Add Chore" = "Ajouter une tâche";
 "Chores" = "Tâches";

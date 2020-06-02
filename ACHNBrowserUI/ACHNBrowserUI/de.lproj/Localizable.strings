@@ -299,7 +299,6 @@ Du kannst das Abonnement jederzeit in deinen iTunes Kontoeinstellungen beenden. 
 // IslandDetailView
 "Join Island" = "Insel beitreten";
 "Island" = "Insel";
-"Description" = "Beschreibung";
 "Visitors" = "Besucher";
 "Loading Visitors...." = "Lade Besucher....";
 
@@ -400,8 +399,6 @@ Du kannst das Abonnement jederzeit in deinen iTunes Kontoeinstellungen beenden. 
 // CategoriesView
 "Nature" = "Natur";
 "Wardrobe" = "Kleidung";
-"No results for %@" = "Kein Ergebnis für %@";
-
 
 // Shared
 // SearchField
@@ -454,7 +451,6 @@ Du kannst das Abonnement jederzeit in deinen iTunes Kontoeinstellungen beenden. 
 "Catching with a net (Fall)" = "Mit Kescher fangen (Herbst)";
 "Catching with a net (Winter)" = "Mit Kescher fangen (Winter)";
 "Catching with a net while on a quest for Wisp" = "Mit Kescher fangen während der Aufgabe von Buhu";
-"Celeste" = "Eufemia";
 "Cherry blossom seasonal DIY using cherry-blossom petals (caught with net)" = "Bastelanleitung aus der Kirschblüten-Saison; benötigt Kirschblüten (mit Kescher fangen)";
 "Cherry tree" = "Kirschbaum";
 "Chopping a bamboo tree (Spring)" = "Bambusbaum fällen (Frühling)";
@@ -526,8 +522,6 @@ Du kannst das Abonnement jederzeit in deinen iTunes Kontoeinstellungen beenden. 
 "Jolly Redd's Treasure Trawler" = "Reiners Schatzkutter";
 "K.K. concert" = "K.K. Konzert";
 "K.K. concert, Nook Shopping Catalog" = "K.K. Konzert, Nook Shopping Katalog";
-"Kicks" = "Schubert";
-"Label" = "Minna";
 "Labelle" = "Minna";
 "Large rug" = "Großer Teppich";
 "Large shadow" = "Großer Schatten";
@@ -547,7 +541,6 @@ Du kannst das Abonnement jederzeit in deinen iTunes Kontoeinstellungen beenden. 
 "Nook Shopping Promotion" = "Nook Shopping Werbung";
 "Nook Shopping Seasonal" = "Nook Shopping Saisonal";
 "Nook Shopping" = "Nook Shopping";
-"Nook's Cranny" = "Nooks Laden";
 "Nook's Cranny\nCrafting" = "Nooks Laden\nBasteln";
 "Normal villagers" = "\"Ausgeglichene\" Bewohner";
 "Obtained from Tom Nook after completing one Nature Day Nook Miles+ task" = "Erhalten von Tom Nook nach Abschluss einer Tag der Natur Nook Meilen+ Aufgabe";
@@ -642,7 +635,6 @@ Du kannst das Abonnement jederzeit in deinen iTunes Kontoeinstellungen beenden. 
 "River (mouth)" = "Flussmündung";
 "River" = "Fluss";
 "Rover" = "Olli";
-"Saharah" = "Aziza";
 "Season sale item" = "Saisonverkaufsartikel";
 "Season sale item\n*Not available in Europe" = "Saisonverkaufsartikel\n*Nicht in Europa verfügbar";
 "Seed bag" = "Saatgutbeutel";
@@ -729,7 +721,6 @@ Du kannst das Abonnement jederzeit in deinen iTunes Kontoeinstellungen beenden. 
 "Take your chance and go visit some mystery island!" = "Nutz deine Chance und besuche mysteriöse Inseln!";
 "Native" = "Nativ"; // TODO needs a better one
 "Normal" = "Normal";
-"Uncommon" = "Ungewöhnlich";
 "Gold" = "Gold";
 "Trash" = "Müll";
 "Bamboos" = "Bambus";
@@ -807,7 +798,7 @@ Du kannst das Abonnement jederzeit in deinen iTunes Kontoeinstellungen beenden. 
 
 // Added 2020-05-23
 "Museum Day" = "Internationaler Museumstag";
-"Wedding Season" = "Hochzeitssaison";
+"Wedding season" = "Hochzeitssaison";
 "Bug-Off contest" = "Insektikus-Turnier";
 "Meteor shower" =  "Sternschnuppen";
 
@@ -829,7 +820,6 @@ Du kannst das Abonnement jederzeit in deinen iTunes Kontoeinstellungen beenden. 
 "Add Chore" = "Aufgabe hinzufügen";
 "Chores" = "Aufgaben";
 "Have a friend to visit? A gift to a villager? Track your chores and to-dos here." = "Du willst einen Freund besuchen? Einem Bewohner ein bestimmtes Geschenk überreichen? Verwalte hier deine Augaben und To-Dos.";
-"Reset" = "Zurücksetzen";
 "Manage and keep track of your chores and to-dos." = "Verwalte und beobachte deine Aufgaben und To-Dos.";
 
 // Design
