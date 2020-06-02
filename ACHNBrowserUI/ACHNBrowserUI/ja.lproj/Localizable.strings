@@ -437,7 +437,6 @@ You can cancel anytime with your iTunes account settings. Any unused portion of 
 "Catching with a net (Fall)" = "あみで捕まえる(秋)";
 "Catching with a net (Winter)" = "あみで捕まえる(冬)";
 "Catching with a net while on a quest for Wisp" = "ゆうたろうのお願い中にあみで捕まえる";
-"Celeste" = "フーコ";
 "Cherry blossom seasonal DIY using cherry-blossom petals (caught with net)" = "桜の花びら(あみで捕まえる)を使って桜の季節にDIY";
 "Cherry tree" = "桜の木";
 "Chopping a bamboo tree (Spring)" = "竹を切る(春)";
@@ -484,7 +483,6 @@ You can cancel anytime with your iTunes account settings. Any unused portion of 
 "Fishing up three old tires" = "タイヤを3つ釣る";
 "Fishing up trash" = "ゴミを釣る";
 "Fishing" = "釣り";
-"Flick" = "Flick";  // TODO
 "Flying near blue/purple/black flowers" = "青/紫/黒の花の近くを飛ぶ";
 "Flying near flowers" = "花の近くを飛ぶ";
 "Flying near light sources" = "明かりの近くを飛ぶ";
@@ -510,8 +508,6 @@ You can cancel anytime with your iTunes account settings. Any unused portion of 
 "Jolly Redd's Treasure Trawler" = "Jolly Redd's Treasure Trawler";  // TODO
 "K.K. concert" = "とたけけコンサート";
 "K.K. concert, Nook Shopping Catalog" = "とたけけコンサート, たぬきショッピングカタログ";
-"Kicks" = "シャンク";
-"Label" = "ことの";
 "Labelle" = "ことの";
 "Large rug" = "大きなラグ";
 "Large shadow" = "影(Lサイズ)";  // TODO
@@ -531,7 +527,6 @@ You can cancel anytime with your iTunes account settings. Any unused portion of 
 "Nook Shopping Promotion" = "たぬきショッピングプロモーション";
 "Nook Shopping Seasonal" = "たぬきショッピング(シーズン)";
 "Nook Shopping" = "たぬきショッピング";
-"Nook's Cranny" = "タヌキ商店";
 "Nook's Cranny\nCrafting" = "タヌキ商店\n手作り";
 "Normal villagers" = "Normal villagers";  // TODO kokomade
 "Obtained from Tom Nook after completing one Nature Day Nook Miles+ task" = "アースデーのたぬきマイル+タスクを1つ完了した後にたぬきちから入手";
@@ -713,7 +708,6 @@ You can cancel anytime with your iTunes account settings. Any unused portion of 
 "Take your chance and go visit some mystery island!" = "この機会に謎の島に行ってみよう!";  // TODO
 "Native" = "Native"; // TODO
 "Normal" = "普通";
-"Uncommon" = "アンコモン";
 "Gold" = "きんこうせき";
 "Trash" = "ゴミ";
 "Bamboos" = "バンブー";
