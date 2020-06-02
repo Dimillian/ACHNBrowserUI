@@ -337,8 +337,6 @@
 // CategoriesView
 "Nature" = "图鉴";
 "Wardrobe" = "衣橱";
-"No results for %@" = "没有找到%@";
-
 
 // Shared
 // SearchField
