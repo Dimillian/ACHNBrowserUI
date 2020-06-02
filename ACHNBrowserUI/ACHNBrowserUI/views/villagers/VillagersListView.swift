@@ -33,7 +33,7 @@ struct VillagersListView: View {
                 {
                     ForEach(currentVillagers) { villager in
                         NavigationLink(destination: VillagerDetailView(villager: villager)) {
-                            VillagerRowView(villager: villager)
+                            self.makeRowView(villager: villager)
                         }
                     }
                 }
@@ -55,6 +55,20 @@ struct VillagersListView: View {
                 }
             }
         }
+    }
+
+    // MARK: - Private
+
+    private func makeRowView(villager: Villager) -> some View {
+        let style: VillagerRowView.Style
+
+        switch viewModel.sort {
+        case .species: style = .species
+        case .personality: style = .personality
+        default: style = .none
+        }
+
+        return VillagerRowView(villager: villager, style: style)
     }
 }
 
