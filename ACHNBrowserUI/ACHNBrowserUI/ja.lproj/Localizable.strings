@@ -213,7 +213,7 @@ You can cancel anytime with your iTunes account settings. Any unused portion of 
 "Small" = "S";
 "Medium" = "M";
 "Large" = "L";
-"X-Large" = "XL";
+"X-Large" = "XL";
 "Customizable: %@" = "カスタマイズ可能: %@";
 "Flick:" = "Flick:";  // TODO
 "Yes" = "Yes";
