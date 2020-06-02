@@ -194,10 +194,10 @@ public class Items: ObservableObject {
         if let villagerHouse = villagersHouse[villager] {
             return Deferred {
                 Future { [weak self] resolve in
-                    guard let weakself = self else { return }
+                    guard let self = self else { return }
                     
                     os_signpost(.begin,
-                                log: weakself.itemLogHandler,
+                                log: self.itemLogHandler,
                                 name: "Matching villagers items",
                                 "Begin to match villagers items")
                     
@@ -222,7 +222,7 @@ public class Items: ObservableObject {
                         .flatMap{ Array(Set($0)) }
                     
                     os_signpost(.event,
-                                log: weakself.itemProgressHandler,
+                                log: self.itemProgressHandler,
                                 name: "Matching villagers items",
                                 "Found %{public}d items in categories", items.count)
                     
@@ -235,14 +235,14 @@ public class Items: ObservableObject {
                     results = Array(Set(results))
                     
                     os_signpost(.event,
-                                log: weakself.itemProgressHandler,
+                                log: self.itemProgressHandler,
                                 name: "Matching villagers items",
                                 "Converted matched items to set")
                     
-                    self?.villagersHouseCache[villager] = results
+                    self.villagersHouseCache[villager] = results
                     
                     os_signpost(.end,
-                                log: weakself.itemLogHandler,
+                                log: self.itemLogHandler,
                                 name: "Matching villagers items",
                                 "Done matching villagers items for %{public}s items %{public}d",
                                 villager, results.count)
@@ -275,12 +275,12 @@ public class Items: ObservableObject {
             return Deferred {
                 Future { [weak self] resolve in
                     let categories = Category.villagersGifts()
-                    guard let weakself = self else {
+                    guard let self = self else {
                         return resolve(.success([]))
                     }
                     
                     var results: [Item] = []
-                    for (_, dic) in weakself.categories.enumerated() where categories.contains(dic.key) {
+                    for (_, dic) in self.categories.enumerated() where categories.contains(dic.key) {
                         let items = dic.value
                             .filter{ $0.colors?.isEmpty == false && $0.styles?.isEmpty == false }
                         for item in items {
@@ -291,7 +291,7 @@ public class Items: ObservableObject {
                             }
                         }
                     }
-                    self?.villagersLikeCache[villager] = results
+                    self.villagersLikeCache[villager] = results
                     return resolve(.success(results))
                 }
             }.eraseToAnyPublisher()

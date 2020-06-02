@@ -330,29 +330,29 @@ public class UserCollection: ObservableObject {
     // MARK: - Import / Export
     private func save() {
         saveQueue.async { [weak self] in
-            guard let weakself = self else { return }
+            guard let self = self else { return }
             do {
-                let savedData = SavedData(items: weakself.items,
-                                          variants: weakself.variants,
-                                          villagers: weakself.villagers,
-                                          critters: weakself.critters,
-                                          lists: weakself.lists,
-                                          dailyTasks: weakself.dailyTasks,
-                                          designs: weakself.designs,
-                                          chores: weakself.chores)
-                let data = try weakself.encoder.encode(savedData)
-                try data.write(to: weakself.filePath, options: .atomicWrite)
+                let savedData = SavedData(items: self.items,
+                                          variants: self.variants,
+                                          villagers: self.villagers,
+                                          critters: self.critters,
+                                          lists: self.lists,
+                                          dailyTasks: self.dailyTasks,
+                                          designs: self.designs,
+                                          chores: self.chores)
+                let data = try self.encoder.encode(savedData)
+                try data.write(to: self.filePath, options: .atomicWrite)
                 
-                if weakself.isCloudEnabled {
+                if self.isCloudEnabled {
                     DispatchQueue.main.async {
-                        weakself.isSynched = false
-                        weakself.saveToCloudKit()
+                        self.isSynched = false
+                        self.saveToCloudKit()
                     }
                 }
             } catch let error {
                 print("Error while saving collection: \(error.localizedDescription)")
             }
-            weakself.encoder.dataEncodingStrategy = .base64
+            self.encoder.dataEncodingStrategy = .base64
         }
     }
     

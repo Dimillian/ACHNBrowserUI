@@ -33,37 +33,37 @@ class ItemDetailViewModel: ObservableObject {
         self.itemCancellable = self.$item
             .receive(on: DispatchQueue.main)
             .sink { [weak self] in
-                guard let weakself = self else { return }
-                self?.cancellable?.cancel()
-                self?.listings = []
+                guard let self = self else { return }
+                self.cancellable?.cancel()
+                self.listings = []
                 // self?.fetchListings()
                 
-                let items = Items.shared.categories[weakself.item.appCategory] ?? []
+                let items = Items.shared.categories[self.item.appCategory] ?? []
                 if let set = $0.set, set != "None" {
-                    self?.setItems = items.filter({ $0.set == set })
+                    self.setItems = items.filter({ $0.set == set })
                 } else {
-                    self?.setItems = []
+                    self.setItems = []
                 }
                 if let tag = $0.tag, tag != "None" {
-                    self?.similarItems = items.filter({ $0.tag == tag }).prefix(30).map{ $0 }
+                    self.similarItems = items.filter({ $0.tag == tag }).prefix(30).map{ $0 }
                 } else {
-                    self?.similarItems = []
+                    self.similarItems = []
                 }
                 if let theme = $0.themes?.filter({ $0 != "None" }).first {
-                    self?.thematicItems = items.filter({ $0.themes?.contains(theme) == true }).prefix(30).map{ $0 }
+                    self.thematicItems = items.filter({ $0.themes?.contains(theme) == true }).prefix(30).map{ $0 }
                 } else {
-                    self?.thematicItems = []
+                    self.thematicItems = []
                 }
                 if let color = $0.colors?.first {
-                    self?.colorsItems = items.filter({ $0.colors?.contains(color) == true }).prefix(30).map{ $0 }
+                    self.colorsItems = items.filter({ $0.colors?.contains(color) == true }).prefix(30).map{ $0 }
                 } else {
-                    self?.colorsItems = []
+                    self.colorsItems = []
                 }
                 
                 if $0.appCategory != .recipes {
-                    self?.recipe = Items.shared.matchItemRecipe(item: $0)
+                    self.recipe = Items.shared.matchItemRecipe(item: $0)
                 } else if let item = Items.shared.matchFinalItem(recipe: $0) {
-                    self?.recipe = item
+                    self.recipe = item
                 }
         }
     }

@@ -83,15 +83,15 @@ public class MusicPlayerManager: ObservableObject {
         NotificationCenter.default.addObserver(forName: .AVPlayerItemDidPlayToEndTime,
                                                object: player?.currentItem,
                                                queue: .main) { [weak self] _ in
-                                                guard let weakself = self else { return }
-                                                switch weakself.playmode {
+                                                guard let self = self else { return }
+                                                switch self.playmode {
                                                 case .random:
-                                                    self?.isPlaying = false
-                                                    self?.currentSong = self?.songs.randomElement()?.value
-                                                    self?.isPlaying = true
+                                                    self.isPlaying = false
+                                                    self.currentSong = self.songs.randomElement()?.value
+                                                    self.isPlaying = true
                                                 case .ordered:
-                                                    self?.isPlaying = false
-                                                    self?.next()
+                                                    self.isPlaying = false
+                                                    self.next()
                                                 }
         }
         self.setupRemoteCommands()
