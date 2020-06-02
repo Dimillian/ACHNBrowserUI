@@ -783,10 +783,10 @@ Puoi annullare il tuo abbonamento in ogni momento dalle impostazioni del tuo acc
 "Lots of cliffs, waterfalls and river forks. Normal resource spawns." = "Tanti rilievi, cascate e biforcazioni del fiume. Risorse naturali normali";
 "A very rare island with flowers, scorpions and a rectangular pond. If you climb up onto the cliff and climb down from the back, you can vault over to a tiny island in the middle and get 8 gold nuggets from a single rock." = "Un’isola molto rara con fiori, scorpioni e uno stagno rettangolare. Se ti arrampichi sul rilievo e poi scendi dietro dall’altra parte puoi saltare con l’asta su di una piccola isola che sta nel mezzo. Lì puoi prendere 8 minerali d’oro da una roccia.";
 
-// Added 2020-05-20		
-"Same color" = "Stesso colore";		
-// New settings		
-"Using iCloud sync" = "Utilizza sincronizzazione iCloud";		
+// Added 2020-05-20
+"Same color" = "Stesso colore";
+// New settings
+"Using iCloud sync" = "Utilizza sincronizzazione iCloud";
 "Synchronized with iCloud" = "Sincronizzato con iCloud";
 
 "Possible visitors" = "Visitatori possibili";
