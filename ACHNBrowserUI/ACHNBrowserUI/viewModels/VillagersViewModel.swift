@@ -11,27 +11,34 @@ import Combine
 import Backend
 
 class VillagersViewModel: ObservableObject {
-    private static var cachedVillagers: [Villager] = []
-    
+
+    // MARK: - Public properties
+
     @Published var villagers: [Villager] = []
     @Published var searchResults: [Villager] = []
     @Published var searchText = ""
     @Published var todayBirthdays: [Villager] = []
     @Published var sortedVillagers: [Villager] = []
 
+    // MARK: - Private properties
+
+    private static var cachedVillagers: [Villager] = []
     private var apiPublisher: AnyPublisher<[String: Villager], Never>?
     private var searchCancellable: AnyCancellable?
+
     private var apiCancellable: AnyCancellable? {
         willSet {
             apiCancellable?.cancel()
         }
     }
-    
+
     private var today: String {
         let formatter = DateFormatter()
         formatter.dateFormat = "d/M"
         return formatter.string(from: Date())
     }
+
+    // MARK: - Life cycle
     
     init() {
         searchCancellable = $searchText
@@ -62,7 +69,9 @@ class VillagersViewModel: ObservableObject {
                 self?.todayBirthdays = $0.filter( { $0.birthday == self?.today })
             })
     }
-    
+
+    // MARK: - Private
+
     private func villagers(with string: String) -> [Villager] {
         villagers.filter {
             $0.localizedName.lowercased().contains(string.lowercased()) == true
