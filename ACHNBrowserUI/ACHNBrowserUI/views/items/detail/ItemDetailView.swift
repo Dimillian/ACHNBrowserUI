@@ -136,7 +136,6 @@ extension ItemDetailView {
         HStack {
             LikeButtonView(item: itemViewModel.item,
                            variant: displayedVariant).imageScale(.large)
-                .environmentObject(collection)
                 .safeHoverEffectBarItem(position: .trailing)
             Spacer(minLength: 12)
             shareButton
