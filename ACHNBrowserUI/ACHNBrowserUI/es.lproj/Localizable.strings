@@ -165,7 +165,7 @@ Puedes cancelar en cualquier momento desde los ajustes de iTunes. Cualquier peri
 "Edit" = "Editar";
 "Search items" = "Buscar objetos";
 "Items added to your list from the search will be displayed there." = "Los objetos añadidos a tu lista aparecerán aquí";
-"No results for %@" = "No hay resultados para %@";
+"No results for %@" = "Sin resultados para %@";
 
 "In order to create more than one list, you need to subscribe to AC Helper+" = "Para crear más de una lista, necesitas suscribirte a AC Helper+";
 "Learn more..." = "Saber más...";
@@ -384,7 +384,6 @@ Puedes cancelar en cualquier momento desde los ajustes de iTunes. Cualquier peri
 
 "Nature" = "Natural";
 "Wardrobe" = "Armario";
-"No results for %@" = "Sin resultados para %@";
 
 "Search..." = "Buscar…";
 
@@ -412,7 +411,6 @@ Puedes cancelar en cualquier momento desde los ajustes de iTunes. Cualquier peri
 "Rocks" = "Rocas";
 "Take your chance and go visit some mystery island!" = "¡Toma tu oportunidad y visita alguna Isla misteriosa!";
 "Native" = "Nativo";
-"Normal" = "Normal";
 "Uncommon" = "Poco común";
 "Gold" = "Pepitas de oro";
 "Trash" = "Basura";
@@ -555,4 +553,3 @@ Puedes cancelar en cualquier momento desde los ajustes de iTunes. Cualquier peri
 "Art Deco Walls" = "Paredes decorativas del museo";
 "Outdoors" = "Exterior";
 "Rose Rug" = "Alfombra Rosa";
-"Fish" = "Pez";
