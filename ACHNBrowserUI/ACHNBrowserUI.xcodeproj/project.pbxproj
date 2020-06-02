@@ -992,7 +992,6 @@
 				Base,
 				de,
 				fr,
-				ZH_TW,
 				ru,
 				"zh-Hans",
 				it,
@@ -1246,6 +1245,7 @@
 				1EEB847F2486660F0084CB25 /* en */,
 				1EEB8480248666840084CB25 /* es */,
 				1EEB84812486671D0084CB25 /* zh-Hant-TW */,
+				1E15379524867B00007B9DF0 /* Base */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
