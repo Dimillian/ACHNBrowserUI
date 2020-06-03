@@ -59,6 +59,7 @@ struct UserListFormView: View {
                               onEditingChanged: {_ in
                                 self.errorBorder = .clear
                     })
+                        .multilineTextAlignment(.trailing)
                         .foregroundColor(.acText)
                 }
                 .border(errorBorder)
@@ -66,6 +67,7 @@ struct UserListFormView: View {
                     Text("Description")
                     Spacer()
                     TextField("Can be nothing", text: $viewModel.list.description)
+                        .multilineTextAlignment(.trailing)
                         .foregroundColor(.acText)
                 }
                 Picker(selection: $viewModel.selectedIcon,

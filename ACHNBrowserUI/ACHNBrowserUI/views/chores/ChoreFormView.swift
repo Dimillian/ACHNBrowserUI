@@ -33,6 +33,7 @@ struct ChoreFormView: View {
                     TextField("Chore title",
                               text: $viewModel.chore.title,
                               onEditingChanged: { _ in self.titleErrorBorderColor = .clear })
+                        .multilineTextAlignment(.trailing)
                         .foregroundColor(.acText)
                 }
                 .border(titleErrorBorderColor)
@@ -42,6 +43,7 @@ struct ChoreFormView: View {
                     Spacer()
                     TextField("Short description about the chore",
                               text: $viewModel.chore.description)
+                        .multilineTextAlignment(.trailing)
                         .foregroundColor(.acText)
                 }
             }
