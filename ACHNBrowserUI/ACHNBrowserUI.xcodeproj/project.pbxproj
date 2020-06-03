@@ -235,8 +235,8 @@
 		3D9AB08A248256C200B47041 /* CustomTaskFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTaskFormView.swift; sourceTree = "<group>"; };
 		3D9AB08E248256DC00B47041 /* CustomTaskRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTaskRow.swift; sourceTree = "<group>"; };
 		3D9AB092248257DF00B47041 /* CustomTaskFormViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTaskFormViewModel.swift; sourceTree = "<group>"; };
-		3DECE21A2483BC82001F24BA /* EditMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditMode.swift; sourceTree = "<group>"; };
 		3DB1260324686F0B00E74AA5 /* de */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; lineEnding = 0; name = de; path = de.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		3DECE21A2483BC82001F24BA /* EditMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditMode.swift; sourceTree = "<group>"; };
 		3DF14B2E24664B4A00438646 /* de */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; lineEnding = 0; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
 		4C16FB40247AC9B0009F24E3 /* GridStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridStack.swift; sourceTree = "<group>"; };
 		4C2D676A245DA41E005831C4 /* TurnipsChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TurnipsChartView.swift; sourceTree = "<group>"; };
@@ -1308,7 +1308,7 @@
 				CODE_SIGN_ENTITLEMENTS = ACHNBrowserUI/ACHNBrowserUI.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development: Thomas Ricouard (7MB55D6BJ5)";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 060312020;
+				CURRENT_PROJECT_VERSION = 060322020;
 				DEVELOPMENT_ASSET_PATHS = "\"ACHNBrowserUI/Preview Content\"";
 				DEVELOPMENT_TEAM = Z6P74P6T99;
 				ENABLE_PREVIEWS = YES;
@@ -1318,7 +1318,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.6.3;
+				MARKETING_VERSION = 1.6.4;
 				PRODUCT_BUNDLE_IDENTIFIER = com.thomasricouard.ACNH;
 				PRODUCT_NAME = "AC Helper";
 				PROVISIONING_PROFILE_SPECIFIER = "AC Dev";
@@ -1339,7 +1339,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 060312020;
+				CURRENT_PROJECT_VERSION = 060322020;
 				DEVELOPMENT_ASSET_PATHS = "\"ACHNBrowserUI/Preview Content\"";
 				DEVELOPMENT_TEAM = Z6P74P6T99;
 				ENABLE_PREVIEWS = YES;
@@ -1349,7 +1349,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.6.3;
+				MARKETING_VERSION = 1.6.4;
 				PRODUCT_BUNDLE_IDENTIFIER = com.thomasricouard.ACNH;
 				PRODUCT_NAME = "AC Helper";
 				PROVISIONING_PROFILE_SPECIFIER = "AC Dev";
