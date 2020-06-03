@@ -284,7 +284,16 @@ public class Items: ObservableObject {
                         let items = dic.value
                             .filter{ $0.colors?.isEmpty == false && $0.styles?.isEmpty == false }
                         for item in items {
-                            let colorsMatch = item.colors!.filter{ likes.contains($0.lowercased()) }
+                            var item = item
+                            var colorsMatch = item.colors!.filter{ likes.contains($0.lowercased()) }
+                            if colorsMatch.count == 0 {
+                                if let variant = item.variations?
+                                    .first(where: { $0.content.colors?
+                                        .filter{ likes.contains($0.lowercased()) }.count ?? 0 >= 1 }) {
+                                    colorsMatch.append("match")
+                                    item.preferedVariantImage = variant.content.image
+                                }
+                            }
                             let styleMatch = item.styles!.filter{ likes.contains($0.lowercased()) }
                             if colorsMatch.count >= 1 && styleMatch.count >= 1 {
                                 results.append(item)
