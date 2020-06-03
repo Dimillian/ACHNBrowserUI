@@ -38,7 +38,7 @@ class ItemDetailViewModel: ObservableObject {
                 self.listings = []
                 // self?.fetchListings()
                 
-                let items = Items.shared.categories[self.item.appCategory] ?? []
+                let items = Items.shared.categories.flatMap{ $0.value }
                 if let set = $0.set, set != "None" {
                     self.setItems = items.filter({ $0.set == set })
                 } else {
