@@ -17,7 +17,6 @@ class ItemDetailViewModel: ObservableObject {
     @Published var setItems: [Item] = []
     @Published var similarItems: [Item] = []
     @Published var thematicItems: [Item] = []
-    @Published var colorsItems: [Item] = []
     
     @Published var listings: [Listing] = []
     @Published var loading: Bool = false
@@ -53,11 +52,6 @@ class ItemDetailViewModel: ObservableObject {
                     self.thematicItems = items.filter({ $0.themes?.contains(theme) == true }).prefix(30).map{ $0 }
                 } else {
                     self.thematicItems = []
-                }
-                if let color = $0.colors?.first {
-                    self.colorsItems = items.filter({ $0.colors?.contains(color) == true }).prefix(30).map{ $0 }
-                } else {
-                    self.colorsItems = []
                 }
                 
                 if $0.appCategory != .recipes {

@@ -87,13 +87,6 @@ struct ItemDetailView: View {
                                               currentItem: $itemViewModel.item,
                                               selectedVariant: $displayedVariant)
                 }
-                if !itemViewModel.colorsItems.isEmpty && !itemViewModel.item.isCritter {
-                    ItemsCrosslineSectionView(title: "Same color",
-                                              items: itemViewModel.colorsItems,
-                                              icon: "pencil.tip",
-                                              currentItem: $itemViewModel.item,
-                                              selectedVariant: $displayedVariant)
-                }
                 if itemViewModel.item.materials != nil || itemViewModel.recipe?.materials != nil {
                     materialsSection
                 }
