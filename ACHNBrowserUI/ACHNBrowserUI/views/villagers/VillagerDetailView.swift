@@ -12,7 +12,6 @@ import UI
 
 struct VillagerDetailView: View {
     @ObservedObject var viewModel: VillagerDetailViewModel
-    @EnvironmentObject private var collection: UserCollection
     
     @State private var backgroundColor = Color.acSecondaryBackground
     @State private var textColor = Color.acText
@@ -33,7 +32,7 @@ struct VillagerDetailView: View {
     private var shareButton: some View {
         Button(action: {
             let image = NavigationView {
-                self.makeBody(items: false).environmentObject(self.collection)
+                self.makeBody(items: false)
             }
             .navigationViewStyle(StackNavigationViewStyle())
             .frame(width: 350, height: 750).asImage()
@@ -47,7 +46,6 @@ struct VillagerDetailView: View {
     private var navButtons: some View {
         HStack(spacing: 8) {
             LikeButtonView(villager: villager)
-                .environmentObject(collection)
                 .safeHoverEffectBarItem(position: .trailing)
             shareButton.padding(.top, -6)
         }
@@ -158,6 +156,5 @@ struct VillagerDetailView: View {
 struct VillagerDetailView_Previews: PreviewProvider {
     static var previews: some View {
         VillagerDetailView(villager: static_villager)
-            .environmentObject(UserCollection.shared)
     }
 }

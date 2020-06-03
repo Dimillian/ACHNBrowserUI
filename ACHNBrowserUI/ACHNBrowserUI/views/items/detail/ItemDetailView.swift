@@ -87,13 +87,6 @@ struct ItemDetailView: View {
                                               currentItem: $itemViewModel.item,
                                               selectedVariant: $displayedVariant)
                 }
-                if !itemViewModel.colorsItems.isEmpty && !itemViewModel.item.isCritter {
-                    ItemsCrosslineSectionView(title: "Same color",
-                                              items: itemViewModel.colorsItems,
-                                              icon: "pencil.tip",
-                                              currentItem: $itemViewModel.item,
-                                              selectedVariant: $displayedVariant)
-                }
                 if itemViewModel.item.materials != nil || itemViewModel.recipe?.materials != nil {
                     materialsSection
                 }
@@ -136,7 +129,6 @@ extension ItemDetailView {
         HStack {
             LikeButtonView(item: itemViewModel.item,
                            variant: displayedVariant).imageScale(.large)
-                .environmentObject(collection)
                 .safeHoverEffectBarItem(position: .trailing)
             Spacer(minLength: 12)
             shareButton

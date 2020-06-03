@@ -56,8 +56,11 @@ public struct Item: Codable, Equatable, Identifiable, Hashable {
     public let filename: String?
     public let house: String?
     public let itemImage: String?
+    public var preferedVariantImage: String?
     public var finalImage: String? {
-        if let image = image, image.hasPrefix("https://acnhcdn") || image.hasPrefix("https://i.imgur")  {
+        if let preferedVariantImage = preferedVariantImage {
+            return preferedVariantImage
+        } else if let image = image, image.hasPrefix("https://acnhcdn") || image.hasPrefix("https://i.imgur")  {
             return image
         } else if let filename = filename {
             return filename

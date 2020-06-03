@@ -7,7 +7,7 @@
 
 import Foundation
 
-public struct TodaySection: Codable, Hashable, Identifiable {
+public struct TodaySection: Codable, Hashable, Identifiable, Equatable {
     public let name: Name
     public var enabled: Bool
     public var id: Name { name }
@@ -15,6 +15,10 @@ public struct TodaySection: Codable, Hashable, Identifiable {
     public init(name: Name, enabled: Bool) {
         self.name = name
         self.enabled = enabled
+    }
+    
+    public static func == (lhs: TodaySection, rhs: TodaySection) -> Bool {
+        lhs.id == rhs.id
     }
 }
 

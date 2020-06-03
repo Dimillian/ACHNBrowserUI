@@ -87,7 +87,7 @@ struct ItemRowView: View {
                     .resizable()
                     .frame(width: imageSize, height: imageSize)
             } else {
-                ItemImage(path: displayedVariant?.content.image ?? item.finalImage,
+                ItemImage(path: displayedVariant?.content.image ?? item.preferedVariantImage ?? item.finalImage,
                           size: imageSize)
             }
             

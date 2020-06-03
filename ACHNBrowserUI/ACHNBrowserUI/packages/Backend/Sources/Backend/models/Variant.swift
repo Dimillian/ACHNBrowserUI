@@ -15,5 +15,6 @@ public struct Variant: Codable, Equatable, Identifiable {
     
     public struct Content: Codable, Equatable {
         public let image: String
+        public let colors: [String]?
     }
 }
