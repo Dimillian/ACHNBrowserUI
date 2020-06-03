@@ -61,7 +61,11 @@ struct CustomTasksListView: View {
                         self.collection.deleteCustomTask(at: index)
                     }
                     NavigationLink(destination: CustomTaskFormView(editingTask: nil)) {
-                        Text("Add a custom task").foregroundColor(.acHeaderBackground)
+                        Image(systemName: "plus")
+                            .frame(width: 30, height: 30)
+                            .foregroundColor(.acHeaderBackground)
+                        Text("Add a custom task")
+                            .foregroundColor(.acHeaderBackground)
                     }
                 }
             }
@@ -74,5 +78,13 @@ struct CustomTasksListView: View {
     
     private func onMove(source: IndexSet, destination: Int) {
         self.collection.moveCustomTask(from: source, to: destination)
+    }
+}
+
+struct CustomTaskListView_Previews: PreviewProvider {
+    static var previews: some View {
+        CustomTasksListView()
+        .previewLayout(.sizeThatFits)
+        .environmentObject(UserCollection.shared)
     }
 }

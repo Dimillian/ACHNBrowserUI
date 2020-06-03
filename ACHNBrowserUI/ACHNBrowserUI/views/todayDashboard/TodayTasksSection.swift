@@ -108,6 +108,7 @@ struct TodayTasksSection_Previews: PreviewProvider {
             .listStyle(GroupedListStyle())
             .environment(\.horizontalSizeClass, .regular)
         }
-        .previewLayout(.fixed(width: 375, height: 500))
+        .previewLayout(.sizeThatFits)
+        .environmentObject(UserCollection.shared)
     }
 }

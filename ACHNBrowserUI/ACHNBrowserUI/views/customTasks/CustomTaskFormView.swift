@@ -90,6 +90,8 @@ struct CustomTaskFormView: View {
 
 struct CutomTaskFormView_Previews: PreviewProvider {
     static var previews: some View {
-        CustomTaskFormView(editingTask: nil)
+        NavigationView {
+            CustomTaskFormView(editingTask: nil)
+        }
     }
 }
