@@ -193,6 +193,7 @@ Du kannst das Abonnement jederzeit in deinen iTunes Kontoeinstellungen beenden. 
 "Items" = "Gegenstände";
 "Critters" = "Tiere";
 "Lists" = "Listen";
+"More" = "Weitere";
 "items" = "Gegenstände";
 "villagers" = "Bewohner";
 "critters" = "Tiere";
@@ -246,6 +247,7 @@ Du kannst das Abonnement jederzeit in deinen iTunes Kontoeinstellungen beenden. 
 "Loading Listings..." = "Lade Auflistung...";
 "No listings found on Nookazon" = "Keine Auflistung auf Nookazon gefunden";
 "Your items lists" = "Deine Gegenstandslisten";
+"Keywords" = "Stichwörter";
 
 // TurnipsView
 "Minmax" = "Min-Max";
@@ -536,6 +538,7 @@ Du kannst das Abonnement jederzeit in deinen iTunes Kontoeinstellungen beenden. 
 "New Year's Eve" = "Silvester";
 "Nintendo" = "Nintendo";
 "Nook Miles Exchange" = "Nook Meilen Austausch";
+"Nook Miles Redemption" = "Nook Meilen Belohnung";
 "Nook Miles Shop" = "Nook Meilen Shop";
 "Nook Shopping Catalog" = "Nook Shopping Katalog";
 "Nook Shopping Promotion" = "Nook Shopping Werbung";
