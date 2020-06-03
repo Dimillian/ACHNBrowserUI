@@ -44,9 +44,9 @@ struct CustomTaskFormView: View {
     var body: some View {
         Form {
             HStack {
-                Text("Name of your task")
+                Text("Task name")
                 Spacer()
-                TextField("Task name",
+                TextField("Name of the task",
                           text: $viewModel.task.name,
                           onEditingChanged: { _ in
                             self.errorBorderTaskName = .clear
@@ -83,7 +83,7 @@ struct CustomTaskFormView: View {
             }
         }
         .listStyle(GroupedListStyle())
-        .navigationBarTitle("Edit your task")
+        .navigationBarTitle("Edit task")
         .navigationBarItems(trailing: saveButton)
     }
 }

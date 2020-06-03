@@ -30,14 +30,14 @@ public struct DailyCustomTasks: Codable {
 
     public var lastUpdate = Date()
     public var tasks = [
-        CustomTask(name: "Hit rocks", icon: "icon-iron", hasProgress: true, maxProgress: 8),
-        CustomTask(name: "Find fossils", icon: "icon-fossil", hasProgress: true, maxProgress: 4),
-        CustomTask(name: "Talk to villager", icon: "icon-villager", hasProgress: true, maxProgress: 10),
-        CustomTask(name: "Find furniture", icon: "icon-leaf", hasProgress: true, maxProgress: 2),
-        CustomTask(name: "Find buried bell", icon: "icon-bell", hasProgress: true, maxProgress: 1),
-        CustomTask(name: "Use ATM", icon: "icon-miles", hasProgress: true, maxProgress: 1),
-        CustomTask(name: "Find bottle message", icon: "icon-bottle-message", hasProgress: true, maxProgress: 3),
-        CustomTask(name: "Obtain DIY from villager", icon: "icon-recipe", hasProgress: true, maxProgress: 1)
+        CustomTask(name: NSLocalizedString("Hit rocks", comment: ""), icon: "icon-iron", hasProgress: true, maxProgress: 6),
+        CustomTask(name: NSLocalizedString("Find fossils", comment: ""), icon: "icon-fossil", hasProgress: true, maxProgress: 4),
+        CustomTask(name: NSLocalizedString("Talk to villager", comment: ""), icon: "icon-villager", hasProgress: true, maxProgress: 10),
+        CustomTask(name: NSLocalizedString("Find furniture", comment: ""), icon: "icon-leaf", hasProgress: true, maxProgress: 2),
+        CustomTask(name: NSLocalizedString("Find buried bell", comment: ""), icon: "icon-bell", hasProgress: true, maxProgress: 1),
+        CustomTask(name: NSLocalizedString("Use ATM", comment: ""), icon: "icon-miles", hasProgress: true, maxProgress: 1),
+        CustomTask(name: NSLocalizedString("Find bottle message", comment: ""), icon: "icon-bottle-message", hasProgress: true, maxProgress: 3),
+        CustomTask(name: NSLocalizedString("Obtain DIY from villager", comment: ""), icon: "icon-recipe", hasProgress: true, maxProgress: 1)
     ]
     
     public static let icons: [String] = [
