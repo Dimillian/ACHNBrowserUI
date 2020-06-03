@@ -12,21 +12,20 @@ struct MessageView: View {
 
     // MARK: - Properties
 
-    private let string: String
+    private let string: LocalizedStringKey
 
     // MARK: - Life cycle
 
-    init(string: String) {
+    init(string: LocalizedStringKey) {
         self.string = string
     }
 
     init(collectionName: String) {
-        self.string = String.init(format: NSLocalizedString("When you stars some %@, they'll be displayed here.",
-                                                            comment: ""), collectionName)
+        self.string = LocalizedStringKey("When you stars some \(collectionName), they'll be displayed here.")
     }
 
     init(noResultsFor string: String) {
-        self.string = String.init(format: NSLocalizedString("No results for %@", comment: ""), string)
+        self.string = LocalizedStringKey("No results for \(string)")
     }
 
     // MARK: - Public
@@ -51,6 +50,10 @@ struct CollectionEmptyView_Previews: PreviewProvider {
             MessageView(collectionName: "Vogons")
                 .previewLayout(.sizeThatFits)
                 .preferredColorScheme(.dark)
+            
+            MessageView(noResultsFor: "Lorem Ipsum")
+            .previewLayout(.sizeThatFits)
+            .preferredColorScheme(.dark)
         }
     }
 }
