@@ -33,7 +33,7 @@ struct CustomTasksListView: View {
             if self.editMode == EditMode.active {
                 Image(systemName: "checkmark.seal.fill")
                     .style(appStyle: .barButton)
-                    .foregroundColor(.acText)
+                    .foregroundColor(.acTabBarBackground)
             }
             else {
                 Image(systemName: "arrow.up.arrow.down.circle.fill")
@@ -42,8 +42,8 @@ struct CustomTasksListView: View {
             }
         })
         .buttonStyle(BorderedBarButtonStyle())
-        .accentColor(Color.acText.opacity(0.2))
-        .safeHoverEffectBarItem(position: .leading)
+            .accentColor(self.editMode == EditMode.active ?
+                Color.acTabBarBackground.opacity(0.2) : Color.acText.opacity(0.2))
     }
     
     var body: some View {
