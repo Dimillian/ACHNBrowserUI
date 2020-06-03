@@ -799,3 +799,21 @@ You can cancel anytime with your iTunes account settings. Any unused portion of 
 // Design
 "Creators and Designs" = "Créateurs et designs";
 "Add Creator/Design Item" = "Ajouter un créateur ou un design";
+
+// Added 2020-06-03
+// Custom Daily Tasks
+"Add a custom task" = "Ajouter une tâche";
+"Edit task" = "Editer une tâche";
+"Task name" = "Nom";
+"Name of the task" = "Nom de la tâche";
+"Has progress" = "Progrès";
+"Max amount" = "Nombre max.";
+// Default Custom Tasks
+"Hit rocks" = "Cogner les rochers";
+"Find fossils" = "Trouver les fossiles";
+"Talk to villager" = "Parler aux villageois";
+"Find furniture" = "Trouver les objets";
+"Find buried bell" = "Planter l'arbre à clochettes";
+"Use ATM" = "Utiliser le distributeur";
+"Find bottle message" = "Trouver la bouteille";
+"Obtain DIY from villager" = "Obtenir les recettes des villageois";
