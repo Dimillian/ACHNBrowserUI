@@ -21,7 +21,6 @@ public class UserCollection: ObservableObject {
     @Published public var critters: [Item] = []
     @Published public var lists: [UserList] = []
     @Published public var designs: [Design] = []
-    @Published public var dailyTasks = DailyTasks()
     @Published public var dailyCustomTasks = DailyCustomTasks()
     @Published public var chores: [Chore] = []
     
@@ -35,7 +34,6 @@ public class UserCollection: ObservableObject {
         let villagers: [Villager]
         let critters: [Item]
         let lists: [UserList]?
-        let dailyTasks: DailyTasks?
         let dailyCustomTasks: DailyCustomTasks?
         let designs: [Design]?
         let chores: [Chore]?
@@ -187,14 +185,14 @@ public class UserCollection: ObservableObject {
     }
     
     public func updateProgress(taskId: Int) {
-        dailyCustomTasks.tasks[taskId].curProgress += 1
         dailyCustomTasks.lastUpdate = Date()
+        dailyCustomTasks.tasks[taskId].curProgress += 1
         save()
     }
 
     public func resetProgress(taskId: Int) {
+        dailyCustomTasks.lastUpdate = Date()
         dailyCustomTasks.tasks[taskId].curProgress = 0
-        dailyTasks.lastUpdate = Date()
         save()
     }
     
@@ -362,7 +360,6 @@ public class UserCollection: ObservableObject {
                                           villagers: self.villagers,
                                           critters: self.critters,
                                           lists: self.lists,
-                                          dailyTasks: self.dailyTasks,
                                           dailyCustomTasks: self.dailyCustomTasks,
                                           designs: self.designs,
                                           chores: self.chores)
@@ -392,7 +389,6 @@ public class UserCollection: ObservableObject {
                 self.villagers = savedData.villagers
                 self.critters = savedData.critters
                 self.lists = savedData.lists ?? []
-                self.dailyTasks = savedData.dailyTasks ?? DailyTasks()
                 self.designs = savedData.designs ?? []
                 self.dailyCustomTasks = savedData.dailyCustomTasks ?? DailyCustomTasks()
                 self.chores = savedData.chores ?? []
@@ -411,7 +407,6 @@ public class UserCollection: ObservableObject {
             self.villagers = []
             self.critters = []
             self.lists = []
-            self.dailyTasks = DailyTasks()
             self.dailyCustomTasks = DailyCustomTasks()
             self.designs = []
             self.chores = []
