@@ -43,8 +43,20 @@ struct VillagerDetailView: View {
         .safeHoverEffectBarItem(position: .trailing)
     }
     
+    private var residentButton: some View {
+        Button(action: {
+            self.viewModel.toggleResident()
+            FeedbackGenerator.shared.triggerNotification(type: .success)
+        }) {
+            Image(systemName: viewModel.isResident ? "house.fill" : "house")
+                .foregroundColor(.acTabBarBackground)
+        }
+        .safeHoverEffectBarItem(position: .trailing)
+    }
+    
     private var navButtons: some View {
         HStack(spacing: 8) {
+            residentButton
             LikeButtonView(villager: villager)
                 .safeHoverEffectBarItem(position: .trailing)
             shareButton.padding(.top, -6)

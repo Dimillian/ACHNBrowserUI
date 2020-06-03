@@ -15,6 +15,8 @@ class VillagersViewModel: ObservableObject {
     // MARK: - Public properties
 
     @Published var villagers: [Villager] = []
+    @Published var residents: [Villager] = []
+    @Published var liked: [Villager] = []
     @Published var searchResults: [Villager] = []
     @Published var searchText = ""
     @Published var todayBirthdays: [Villager] = []
@@ -31,6 +33,9 @@ class VillagersViewModel: ObservableObject {
             apiCancellable?.cancel()
         }
     }
+    
+    private let collection: UserCollection
+    private var villagersCancellable: AnyCancellable?
 
     private var today: String {
         let formatter = DateFormatter()
@@ -40,7 +45,15 @@ class VillagersViewModel: ObservableObject {
 
     // MARK: - Life cycle
     
-    init() {
+    init(collection: UserCollection = .shared) {
+        self.collection = collection
+        
+        self.villagersCancellable = Publishers.CombineLatest(collection.$villagers, collection.$residents)
+            .sink { [weak self] (villagers, residents) in
+                self?.residents = residents
+                self?.liked = villagers
+        }
+        
         searchCancellable = $searchText
             .debounce(for: .milliseconds(300), scheduler: DispatchQueue.main)
             .removeDuplicates()

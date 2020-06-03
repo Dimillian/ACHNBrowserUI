@@ -19,23 +19,47 @@ struct VillagerRowView: View {
         case species
         case personality
     }
+    
+    enum Action  {
+        case like, home
+    }
 
     // MARK: - Properties
 
     @EnvironmentObject private var collection: UserCollection
     private let villager: Villager
     private let style: Style
+    private let action: Action
 
     // MARK: - Life cycle
 
-    init(villager: Villager, style: Style = .none) {
+    init(villager: Villager, style: Style = .none, action: Action = .like) {
         self.villager = villager
         self.style = style
+        self.action = action
+    }
+    
+    private var actionButton: some View {
+        Group {
+            if action == .like {
+                LikeButtonView(villager: villager)
+            } else {
+                Button(action: {
+                    _ = self.collection.toggleResident(villager: self.villager)
+                    FeedbackGenerator.shared.triggerNotification(type: .success)
+                }) {
+                    Image(systemName: collection.residents.contains(villager) ? "house.fill" : "house")
+                        .foregroundColor(.acTabBarBackground)
+                        .imageScale(.medium)
+                }
+                .buttonStyle(BorderlessButtonStyle())
+            }
+        }
     }
 
     var body: some View {
         HStack {
-            LikeButtonView(villager: villager)
+            actionButton
             ItemImage(path: ACNHApiService.BASE_URL.absoluteString +
                 ACNHApiService.Endpoint.villagerIcon(id: villager.id).path(),
                       size: 50)
@@ -45,11 +69,11 @@ struct VillagerRowView: View {
                     .style(appStyle: .rowTitle)
 
                 if style == .species {
-                    Text(villager.species)
+                    Text(LocalizedStringKey(villager.species))
                         .font(.subheadline)
                         .foregroundColor(.acSecondaryText)
                 } else if style == .personality {
-                    Text(villager.personality)
+                    Text(LocalizedStringKey(villager.personality))
                         .font(.subheadline)
                         .foregroundColor(.acSecondaryText)
                 }

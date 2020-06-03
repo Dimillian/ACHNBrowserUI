@@ -817,3 +817,9 @@ You can cancel anytime with your iTunes account settings. Any unused portion of 
 "Use ATM" = "Utiliser le distributeur";
 "Find bottle message" = "Trouver la bouteille";
 "Obtain DIY from villager" = "Obtenir les recettes des villageois";
+
+//Villagers filte
+"All" = "Tous";
+"Liked" = "Aimés";
+"Residents" = "Résidents";
+

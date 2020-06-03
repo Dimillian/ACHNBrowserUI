@@ -11,7 +11,7 @@ import SwiftUIKit
 import Backend
 
 enum Tabs: String, CaseIterable {
-    case items, villagers, lists, more
+    case items, lists, more
 }
 
 struct CollectionListView: View {
@@ -31,12 +31,6 @@ struct CollectionListView: View {
                     if selectedTab == .items && !collection.items.isEmpty {
                         ForEach(categories, id: \.self) { category in
                             CollectionRowView(category: Category(itemCategory: category))
-                        }
-                    } else if selectedTab == .villagers && !collection.villagers.isEmpty {
-                        ForEach(collection.villagers) { villager in
-                            NavigationLink(destination: VillagerDetailView(villager: villager)) {
-                                VillagerRowView(villager: villager)
-                            }
                         }
                     } else if selectedTab == .lists {
                         userListsSections

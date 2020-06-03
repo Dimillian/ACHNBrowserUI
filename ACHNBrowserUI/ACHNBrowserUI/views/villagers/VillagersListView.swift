@@ -11,16 +11,29 @@ import Backend
 import UI
 
 struct VillagersListView: View {
+    private enum Filter: String, CaseIterable {
+        case all, liked, residents
+    }
+    
     @ObservedObject var viewModel = VillagersViewModel()
+    @State private var currentFilter = Filter.all
     
     var currentVillagers: [Villager] {
         get {
-            if !viewModel.searchText.isEmpty {
-                return viewModel.searchResults
-            } else if viewModel.sort != nil {
-                return viewModel.sortedVillagers
+            if currentFilter == .all {
+                if !viewModel.searchText.isEmpty {
+                    return viewModel.searchResults
+                } else if viewModel.sort != nil {
+                    return viewModel.sortedVillagers
+                } else {
+                    return viewModel.villagers
+                }
+            } else if currentFilter == .residents {
+                return viewModel.residents
+            } else if currentFilter == .liked {
+                return viewModel.liked
             } else {
-                return viewModel.villagers
+                return []
             }
         }
     }
@@ -29,8 +42,14 @@ struct VillagersListView: View {
         NavigationView {
             List {
                 Section(header: SearchField(searchText: $viewModel.searchText,
-                                            placeholder: "Search a villager"))
+                                             placeholder: "Search a villager"))
                 {
+                    Picker("segment", selection: $currentFilter) {
+                        ForEach(Filter.allCases, id: \.self) {
+                            Text(LocalizedStringKey($0.rawValue.capitalized))
+                        }
+                    }.pickerStyle(SegmentedPickerStyle())
+                    
                     ForEach(currentVillagers) { villager in
                         NavigationLink(destination: VillagerDetailView(villager: villager)) {
                             self.makeRowView(villager: villager)
@@ -68,7 +87,7 @@ struct VillagersListView: View {
         default: style = .none
         }
 
-        return VillagerRowView(villager: villager, style: style)
+        return VillagerRowView(villager: villager, style: style, action: currentFilter == .residents ? .home : .like)
     }
 }
 

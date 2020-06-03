@@ -18,6 +18,7 @@ public class UserCollection: ObservableObject {
     @Published public var items: [Item] = []
     @Published public var variants: [String: [Variant]] = [:]
     @Published public var villagers: [Villager] = []
+    @Published public var residents: [Villager] = []
     @Published public var critters: [Item] = []
     @Published public var lists: [UserList] = []
     @Published public var designs: [Design] = []
@@ -32,6 +33,7 @@ public class UserCollection: ObservableObject {
         let items: [Item]
         let variants: [String: [Variant]]?
         let villagers: [Villager]
+        let residents: [Villager]?
         let critters: [Item]
         let lists: [UserList]?
         let dailyCustomTasks: DailyCustomTasks?
@@ -150,13 +152,13 @@ public class UserCollection: ObservableObject {
     }
     
     public func toggleVillager(villager: Villager) -> Bool {
-        var added = false
-        if villagers.contains(villager) {
-            villagers.removeAll(where: { $0 == villager })
-        } else {
-            villagers.append(villager)
-            added = true
-        }
+        let added = villagers.toggle(item: villager)
+        save()
+        return added
+    }
+    
+    public func toggleResident(villager: Villager) -> Bool {
+        let added = residents.toggle(item: villager)
         save()
         return added
     }
@@ -358,6 +360,7 @@ public class UserCollection: ObservableObject {
                 let savedData = SavedData(items: self.items,
                                           variants: self.variants,
                                           villagers: self.villagers,
+                                          residents: self.residents,
                                           critters: self.critters,
                                           lists: self.lists,
                                           dailyCustomTasks: self.dailyCustomTasks,
@@ -387,6 +390,7 @@ public class UserCollection: ObservableObject {
                 self.items = savedData.items
                 self.variants = savedData.variants ?? [:]
                 self.villagers = savedData.villagers
+                self.residents = savedData.residents ?? []
                 self.critters = savedData.critters
                 self.lists = savedData.lists ?? []
                 self.designs = savedData.designs ?? []
@@ -405,6 +409,7 @@ public class UserCollection: ObservableObject {
             try FileManager.default.removeItem(at: filePath)
             self.items = []
             self.villagers = []
+            self.residents = []
             self.critters = []
             self.lists = []
             self.dailyCustomTasks = DailyCustomTasks()

@@ -23,8 +23,8 @@ public extension Array {
 }
 
 
-public extension Array where Element == Item {
-    mutating func toggle(item: Item) -> Bool {
+public extension Array where Element: Equatable {
+    mutating func toggle(item: Element) -> Bool {
         var added = false
         if contains(item) {
             removeAll(where: { $0 == item })
