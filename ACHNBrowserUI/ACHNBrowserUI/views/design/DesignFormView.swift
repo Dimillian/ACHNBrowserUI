@@ -34,6 +34,7 @@ struct DesignFormView: View {
                     TextField("Creator/Item name",
                               text: $viewModel.design.title,
                               onEditingChanged: { _ in self.nameErrorBorderColor = .clear })
+                        .multilineTextAlignment(.trailing)
                         .foregroundColor(.acText)
                 }
                 .border(nameErrorBorderColor)
@@ -44,6 +45,7 @@ struct DesignFormView: View {
                     TextField("MX-XXXX-XXXX-XXXX",
                               text: $viewModel.design.code,
                               onEditingChanged: { _ in self.codeErrorBorderColor = .clear })
+                        .multilineTextAlignment(.trailing)
                         .foregroundColor(.acText)
                 }
                 .border(codeErrorBorderColor)
@@ -53,6 +55,7 @@ struct DesignFormView: View {
                     Spacer()
                     TextField("Short description about creator/item",
                               text: $viewModel.design.description)
+                        .multilineTextAlignment(.trailing)
                         .foregroundColor(.acText)
                 }
             }

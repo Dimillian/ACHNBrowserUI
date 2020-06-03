@@ -80,6 +80,7 @@ struct SettingsView: View {
                 Text("Island name")
                 Spacer()
                 TextField("Your island name", text: $appUserDefaults.islandName)
+                    .multilineTextAlignment(.trailing)
                     .font(.body)
                     .foregroundColor(.secondary)
             }
