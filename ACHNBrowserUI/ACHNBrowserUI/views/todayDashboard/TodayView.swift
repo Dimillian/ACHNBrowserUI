@@ -45,7 +45,6 @@ struct TodayView: View {
                                          viewModel: self.viewModel,
                                          selectedSheet: self.$selectedSheet)
                     }
-
                     arrangeSectionsButton
                 }
             }
@@ -114,7 +113,5 @@ struct TodayView_Previews: PreviewProvider {
         }
         .environmentObject(Items.shared)
         .environmentObject(UIState())
-        .environmentObject(UserCollection.shared)
-        .environmentObject(SubscriptionManager.shared)
     }
 }

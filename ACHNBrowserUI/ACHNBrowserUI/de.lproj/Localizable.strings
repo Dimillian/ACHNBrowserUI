@@ -828,3 +828,21 @@ Du kannst das Abonnement jederzeit in deinen iTunes Kontoeinstellungen beenden. 
 // Design
 "Creators and Designs" = "Ersteller und Designs";
 "Add Creator/Design Item" = "Ersteller/Design hinzufügen";
+
+// Added 2020-06-03
+// Custom Daily Tasks
+"Add a custom task" = "Eigene Aufgabe hinzufügen";
+"Edit task" = "Aufgabe bearbeiten";
+"Task name" = "Aufgabenname";
+"Name of the task" = "Name der Aufgabe";
+"Has progress" = "Hat Fortschritt";
+"Max amount" = "Max. Anzahl";
+// Default Custom Tasks
+"Hit rocks" = "Felsen hauen";
+"Find fossils" = "Fossilien finden";
+"Talk to villager" = "Mit Bewohnern sprechen";
+"Find furniture" = "Möbel in Bäumen finden";
+"Find buried bell" = "Vergrabenen Sterni finden";
+"Use ATM" = "Nook Automat benutzen";
+"Find bottle message" = "Flaschenpost finden";
+"Obtain DIY from villager" = "Bastelanleitung von Bewohner erhalten";

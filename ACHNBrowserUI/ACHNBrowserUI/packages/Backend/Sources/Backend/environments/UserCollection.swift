@@ -21,7 +21,7 @@ public class UserCollection: ObservableObject {
     @Published public var critters: [Item] = []
     @Published public var lists: [UserList] = []
     @Published public var designs: [Design] = []
-    @Published public var dailyTasks = DailyTasks()
+    @Published public var dailyCustomTasks = DailyCustomTasks()
     @Published public var chores: [Chore] = []
     
     @Published public var isCloudEnabled = true
@@ -34,7 +34,7 @@ public class UserCollection: ObservableObject {
         let villagers: [Villager]
         let critters: [Item]
         let lists: [UserList]?
-        let dailyTasks: DailyTasks?
+        let dailyCustomTasks: DailyCustomTasks?
         let designs: [Design]?
         let chores: [Chore]?
     }
@@ -161,22 +161,45 @@ public class UserCollection: ObservableObject {
         return added
     }
     
-    public func updateProgress(taskName: DailyTasks.taskName) {
-        dailyTasks.tasks[taskName]?.curProgress += 1
-        dailyTasks.lastUpdate = Date()
+    // MARK: - Todays Tasks
+    public func addCustomTask(task: DailyCustomTasks.CustomTask) {
+        dailyCustomTasks.tasks.append(task)
+        save()
+    }
+    
+    public func editCustomTask(task: DailyCustomTasks.CustomTask) {
+        guard let index = dailyCustomTasks.tasks.firstIndex(where: { $0.id == task.id } )
+            else { return }
+        dailyCustomTasks.tasks[index] = task
+        save()
+    }
+    
+    public func deleteCustomTask(at index: Int) {
+        dailyCustomTasks.tasks.remove(at: index)
+        save()
+    }
+    
+    public func moveCustomTask(from: IndexSet, to: Int) {
+        dailyCustomTasks.tasks.move(fromOffsets: from, toOffset: to)
+        save()
+    }
+    
+    public func updateProgress(taskId: Int) {
+        dailyCustomTasks.lastUpdate = Date()
+        dailyCustomTasks.tasks[taskId].curProgress += 1
         save()
     }
 
-    public func resetProgress(taskName: DailyTasks.taskName) {
-        dailyTasks.tasks[taskName]?.curProgress = 0
-        dailyTasks.lastUpdate = Date()
+    public func resetProgress(taskId: Int) {
+        dailyCustomTasks.lastUpdate = Date()
+        dailyCustomTasks.tasks[taskId].curProgress = 0
         save()
     }
     
     public func resetTasks() {
-        dailyTasks.lastUpdate = Date()
-        for(taskName, _) in dailyTasks.tasks {
-            dailyTasks.tasks[taskName]?.curProgress = 0
+        dailyCustomTasks.lastUpdate = Date()
+        for(taskId, _) in dailyCustomTasks.tasks.enumerated() {
+            dailyCustomTasks.tasks[taskId].curProgress = 0
         }
         save()
     }
@@ -337,7 +360,7 @@ public class UserCollection: ObservableObject {
                                           villagers: self.villagers,
                                           critters: self.critters,
                                           lists: self.lists,
-                                          dailyTasks: self.dailyTasks,
+                                          dailyCustomTasks: self.dailyCustomTasks,
                                           designs: self.designs,
                                           chores: self.chores)
                 let data = try self.encoder.encode(savedData)
@@ -366,8 +389,8 @@ public class UserCollection: ObservableObject {
                 self.villagers = savedData.villagers
                 self.critters = savedData.critters
                 self.lists = savedData.lists ?? []
-                self.dailyTasks = savedData.dailyTasks ?? DailyTasks()
                 self.designs = savedData.designs ?? []
+                self.dailyCustomTasks = savedData.dailyCustomTasks ?? DailyCustomTasks()
                 self.chores = savedData.chores ?? []
                 return true
             } catch {
@@ -384,7 +407,7 @@ public class UserCollection: ObservableObject {
             self.villagers = []
             self.critters = []
             self.lists = []
-            self.dailyTasks = DailyTasks()
+            self.dailyCustomTasks = DailyCustomTasks()
             self.designs = []
             self.chores = []
             save()

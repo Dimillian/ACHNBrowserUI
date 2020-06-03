@@ -11,23 +11,26 @@ import Backend
 
 struct TodayTasksSection: View {
     @EnvironmentObject private var collection: UserCollection
+    @Binding var sheet: Sheet.SheetType?
     
-    var isSunday: Bool {
-        Calendar.current.component(.weekday, from: Date()) == 1
+    private var tasksCount: Int {
+        collection.dailyCustomTasks.tasks.count
     }
     
-    // MARK: - Task Bubble
-    private func makeTaskBubble(icon: String, taskName: DailyTasks.taskName) -> some View {
-        var task: DailyTasks.Task {
-            collection.dailyTasks.tasks[taskName]!
-        }
+    private var rows: Int {
+        var rowsFloat = CGFloat(tasksCount) / 4.0
+        rowsFloat.round(.up)
+        return Int(rowsFloat)
+    }
         
-        return ZStack {
+    // MARK: - Task Bubble
+    private func makeTaskBubble(task: DailyCustomTasks.CustomTask, index: Int) -> some View {
+        ZStack {
             Circle()
                 .foregroundColor(Color("ACBackground"))
-            Image(icon)
+            Image(task.icon)
                 .resizable()
-                .aspectRatio(taskName == DailyTasks.taskName.villagerHouses ? 0.8 : 1, contentMode: .fit)
+                .aspectRatio(contentMode: .fit)
             if task.hasProgress {
                 ZStack {
                     Circle()
@@ -45,15 +48,13 @@ struct TodayTasksSection: View {
         }
         .frame(maxHeight: 44)
         .onTapGesture {
-            if !task.hasProgress {
-                return
-            }
-            self.collection.updateProgress(taskName: taskName)
+            guard task.hasProgress else { return }
+            self.collection.updateProgress(taskId: index)
             FeedbackGenerator.shared.triggerSelection()
         }
         .onLongPressGesture {
             guard task.hasProgress else { return }
-            self.collection.resetProgress(taskName: taskName)
+            self.collection.resetProgress(taskId: index)
             FeedbackGenerator.shared.triggerSelection()
         }
     }
@@ -61,19 +62,25 @@ struct TodayTasksSection: View {
     var body: some View {
         Section(header: SectionHeaderView(text: "Today's Tasks", icon: "checkmark.seal.fill")) {
             VStack(spacing: 15) {
-                HStack {
-                    makeTaskBubble(icon: "icon-iron", taskName: DailyTasks.taskName.rocks)
-                    makeTaskBubble(icon: "icon-villager", taskName: DailyTasks.taskName.villagers)
-                    makeTaskBubble(icon: "icon-fossil", taskName: DailyTasks.taskName.fossils)
-                    makeTaskBubble(icon: "icon-leaf", taskName: DailyTasks.taskName.furniture)
+                GridStack<AnyView>(rows: rows, columns: 4, showDivider: false) { (row, column) in
+                    let taskId = row * 4 + column
+                    guard let task = self.collection.dailyCustomTasks.tasks[safe: taskId] else {
+                        return EmptyView().eraseToAnyView()
+                    }
+                    return self.makeTaskBubble(task: task, index: taskId).eraseToAnyView()
                 }
                 HStack {
-                    makeTaskBubble(icon: "icon-bell", taskName: DailyTasks.taskName.bell)
-                    makeTaskBubble(icon: "icon-miles", taskName: DailyTasks.taskName.nookmiles)
-                    makeTaskBubble(icon: "icon-bottle-message", taskName: DailyTasks.taskName.bottle)
-                    makeTaskBubble(icon: "icon-recipe", taskName: DailyTasks.taskName.villagerHouses)
-                }
-                HStack {
+                    Spacer()
+                    Text("Edit")
+                    .onTapGesture {
+                        self.sheet = .customTasks(collection: self.collection)
+                    }
+                    .foregroundColor(.acText)
+                    .padding(.vertical, 8)
+                    .padding(.horizontal, 14)
+                    .background(Color.acText.opacity(0.2))
+                    .mask(RoundedRectangle(cornerRadius: 14, style: .continuous))
+                    Spacer()
                     Text("Reset")
                         .onTapGesture {
                             self.collection.resetTasks()
@@ -83,6 +90,7 @@ struct TodayTasksSection: View {
                     .padding(.horizontal, 14)
                     .background(Color.acText.opacity(0.2))
                     .mask(RoundedRectangle(cornerRadius: 14, style: .continuous))
+                    Spacer()
                 }
             }
             .frame(maxWidth: .infinity)
@@ -95,11 +103,12 @@ struct TodayTasksSection_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
             List {
-                TodayTasksSection()
+                TodayTasksSection(sheet: .constant(nil))
             }
             .listStyle(GroupedListStyle())
             .environment(\.horizontalSizeClass, .regular)
         }
-        .previewLayout(.fixed(width: 375, height: 500))
+        .previewLayout(.sizeThatFits)
+        .environmentObject(UserCollection.shared)
     }
 }
