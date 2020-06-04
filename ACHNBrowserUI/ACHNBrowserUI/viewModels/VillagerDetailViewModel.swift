@@ -31,7 +31,7 @@ public class VillagerDetailViewModel: ObservableObject {
     }
     
     func toggleResident() {
-        collection.toggleResident(villager: villager)
+        _ = collection.toggleResident(villager: villager)
     }
     
     func fetchItems() {

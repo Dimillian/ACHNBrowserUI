@@ -58,12 +58,16 @@ struct VillagersListView: View {
                 }
             }
             .listStyle(GroupedListStyle())
-            .id(viewModel.sort)
+            .id(viewModel.sort?.rawValue ?? currentFilter.rawValue)
             .navigationBarTitle(Text("Villagers"),
                                 displayMode: .automatic)
-                .navigationBarItems(trailing:
-                    HStack(spacing: 12) {
-                        VillagersSortView(sort: $viewModel.sort)
+            .navigationBarItems(trailing:
+                Group {
+                    if self.currentFilter == .all {
+                        HStack(spacing: 12) {
+                            VillagersSortView(sort: $viewModel.sort)
+                        }
+                    }
                 })
             .modifier(DismissingKeyboardOnSwipe())
             if !viewModel.villagers.isEmpty {
