@@ -34,11 +34,13 @@ struct DesignListView: View {
             })
 
             ForEach(viewModel.designs) { design in
-                DesignRowView(viewModel: DesignRowViewModel(design: design)).onTapGesture {
-                    if self.editingMode == .active {
-                        self.sheet = .designForm(editingDesign: design)
+                DesignRowView(viewModel: DesignRowViewModel(design: design))
+                    .contentShape(Rectangle())
+                    .onTapGesture {
+                        if self.editingMode == .active {
+                            self.sheet = .designForm(editingDesign: design)
+                        }
                     }
-                }
             }.onDelete { indexes in
                 self.viewModel.deleteDesign(at: indexes.first!)
             }
