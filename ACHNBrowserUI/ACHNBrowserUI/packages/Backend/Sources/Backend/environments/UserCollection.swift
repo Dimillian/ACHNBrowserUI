@@ -248,7 +248,7 @@ public class UserCollection: ObservableObject {
     }
 
     public func updateDesign(_ design: Design) {
-        guard let index = designs.firstIndex(where: { $0.id == design.id }) else { return }
+        guard let index = designs.firstIndex(of: design) else { return }
         designs[index] = design
         save()
     }
