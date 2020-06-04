@@ -273,7 +273,7 @@ public class UserCollection: ObservableObject {
     }
 
     public func updateChore(_ chore: Chore) {
-        guard let index = chores.firstIndex(where: { $0.id == chore.id }) else { return }
+        guard let index = chores.firstIndex(of: chore) else { return }
         chores[index] = chore
         save()
     }
