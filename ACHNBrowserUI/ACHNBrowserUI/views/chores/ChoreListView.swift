@@ -34,9 +34,11 @@ struct ChoreListView: View {
             self.makeDescriptionView()
 
             ForEach(self.viewModel.chores, id: \.id) { chore in
-                ChoreListRowView(chore: chore).onTapGesture {
-                    self.viewModel.toggleChore(chore)
-                }
+                ChoreListRowView(chore: chore)
+                    .contentShape(Rectangle())
+                    .onTapGesture {
+                        self.viewModel.toggleChore(chore)
+                    }
             }.onDelete { indexes in
                 self.viewModel.deleteChore(at: indexes.first!)
             }
