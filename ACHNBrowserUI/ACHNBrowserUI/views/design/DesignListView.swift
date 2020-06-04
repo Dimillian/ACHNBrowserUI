@@ -14,6 +14,7 @@ struct DesignListView: View {
 
     @ObservedObject private var viewModel: DesignListViewModel
     @State private var sheet: Sheet.SheetType?
+    @State private var editingMode: EditMode = .inactive
 
     // MARK: - Life cycle
 
@@ -33,13 +34,19 @@ struct DesignListView: View {
             })
 
             ForEach(viewModel.designs) { design in
-                DesignRowView(viewModel: DesignRowViewModel(design: design))
+                DesignRowView(viewModel: DesignRowViewModel(design: design)).onTapGesture {
+                    if self.editingMode == .active {
+                        self.sheet = .designForm(editingDesign: design)
+                    }
+                }
             }.onDelete { indexes in
                 self.viewModel.deleteDesign(at: indexes.first!)
             }
         }
         .navigationBarTitle(Text("Designs"), displayMode: .automatic)
+        .navigationBarItems(trailing: EditButton())
         .sheet(item: $sheet, content: { Sheet(sheetType: $0) })
+        .environment(\.editMode, self.$editingMode)
     }
 }
 

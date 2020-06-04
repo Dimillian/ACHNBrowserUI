@@ -247,6 +247,12 @@ public class UserCollection: ObservableObject {
         save()
     }
 
+    public func updateDesign(_ design: Design) {
+        guard let index = designs.firstIndex(where: { $0.id == design.id }) else { return }
+        designs[index] = design
+        save()
+    }
+
     // MARK: - Chores
 
     public func addChore(_ task: Chore) {
