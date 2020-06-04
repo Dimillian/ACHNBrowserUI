@@ -1071,7 +1071,7 @@ Puoi annullare il tuo abbonamento in ogni momento dalle impostazioni del tuo acc
 "Chore title" = "Nome attività";
 "Description" = "Descrizione";
 "Short description about the chore" = "Una breve descrizione dell'attività";
-"Add Chore" = "Aggiungere una attività";
+"Add Chore" = "Aggiungere un'attività";
 "Chores" = "Attività";
 "Have a friend to visit? A gift to a villager? Track your chores and to-dos here." = "Devi andare a trovare un amico? Dare un regalo ad un abitante? Tieni traccia qui delle tue attività e delle cose da fare.";
 "Reset" = "Reimposta";
@@ -1083,23 +1083,23 @@ Puoi annullare il tuo abbonamento in ogni momento dalle impostazioni del tuo acc
 
 // Added 2020-06-03
 // Custom Daily Tasks
-"Add a custom task" = "Eigene Aufgabe hinzufügen";
-"Edit task" = "Aufgabe bearbeiten";
-"Task name" = "Aufgabenname";
-"Name of the task" = "Name der Aufgabe";
-"Has progress" = "Hat Fortschritt";
-"Max amount" = "Max. Anzahl";
+"Add a custom task" = "Aggiungi obiettivo personalizzato";
+"Edit task" = "Modifica obiettivo";
+"Task name" = "Nome obiettivo";
+"Name of the task" = "Il nome del tuo obiettivo";
+"Has progress" = "Si ripete";
+"Max amount" = "Numero max";
 // Default Custom Tasks
-"Hit rocks" = "Felsen hauen";
-"Find fossils" = "Fossilien finden";
-"Talk to villager" = "Mit Bewohnern sprechen";
-"Find furniture" = "Möbel in Bäumen finden";
-"Find buried bell" = "Vergrabenen Sterni finden";
-"Use ATM" = "Nook Automat benutzen";
-"Find bottle message" = "Flaschenpost finden";
-"Obtain DIY from villager" = "Bastelanleitung von Bewohner erhalten";
+"Hit rocks" = "Colpire rocce";
+"Find fossils" = "Trovare fossili";
+"Talk to villager" = "Parlare con gli abitanti";
+"Find furniture" = "Trovare oggetti";
+"Find buried bell" = "Trovare stelline sottoterra";
+"Use ATM" = "Accedere al Punto Nook";
+"Find bottle message" = "Trovare messaggio in bottiglia";
+"Obtain DIY from villager" = "Ottenere schemi dagli abitanti";
 
 //Villagers filte
-"All" = "Alle";
-"Liked" = "Gefällt mir";
-"Residents" = "Bewohner";
+"All" = "Tutti";
+"Liked" = "Preferiti";
+"Residents" = "Residenti";
