@@ -71,6 +71,15 @@ struct ActiveCrittersView: View {
                 ActiveCritterSections(viewModel: viewModel, selectedTab: $selectedTab)
             }
         }
+        .gesture(DragGesture()
+            .onEnded { value in
+                if value.translation.width > 100 {
+                    self.selectedTab = ActiveCrittersViewModel.CritterType.fish
+                }
+                else if value.translation.width < -100 {
+                    self.selectedTab = ActiveCrittersViewModel.CritterType.bugs
+                }
+            })
         .listStyle(GroupedListStyle())
         .environment(\.horizontalSizeClass, .regular)
         .navigationBarTitle("Active Critters")
