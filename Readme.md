@@ -10,7 +10,7 @@ The best Animal Crossing New Horizons companion app!
 
 # Animal Crossing New Horizon SwiftUI application!
 
-![Image](images/promo2.png?)
+![Image](images/promo3.png?)
 
 This is a full featured Animal Crossing helper application written entirely in SwiftUI.
 
