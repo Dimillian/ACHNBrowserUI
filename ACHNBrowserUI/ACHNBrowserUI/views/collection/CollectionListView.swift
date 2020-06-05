@@ -46,10 +46,14 @@ struct CollectionListView: View {
                                 displayMode: .automatic)
             .sheet(item: $sheet, content: { Sheet(sheetType: $0) })
             
-            if collection.items.isEmpty {
-                placeholderView
+            if categories.isEmpty {
+                List {
+                    placeholderView
+                }
             } else {
-                ItemDetailView(item: collection.items.first!)
+                ItemsListView(category: Category(itemCategory: categories.first!),
+                              items: collection.items
+                                .filter({ Backend.Category(itemCategory: $0.category) == Category(itemCategory: categories.first!)}))
             }
         }
     }
