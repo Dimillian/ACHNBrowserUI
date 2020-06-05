@@ -7,6 +7,7 @@
 //
 
 import SwiftUI
+import SwiftUIKit
 
 struct DesignListView: View {
 
@@ -14,7 +15,7 @@ struct DesignListView: View {
 
     @ObservedObject private var viewModel: DesignListViewModel
     @State private var sheet: Sheet.SheetType?
-    @State private var editingMode: EditMode = .inactive
+    @State private var isEditing = false
 
     // MARK: - Life cycle
 
@@ -37,7 +38,7 @@ struct DesignListView: View {
                 DesignRowView(viewModel: DesignRowViewModel(design: design))
                     .contentShape(Rectangle())
                     .onTapGesture {
-                        if self.editingMode == .active {
+                        if self.isEditing {
                             self.sheet = .designForm(editingDesign: design)
                         }
                     }
@@ -46,9 +47,22 @@ struct DesignListView: View {
             }
         }
         .navigationBarTitle(Text("Designs"), displayMode: .automatic)
-        .navigationBarItems(trailing: EditButton())
+        .navigationBarItems(trailing: self.makeNavigationBarItems() )
         .sheet(item: $sheet, content: { Sheet(sheetType: $0) })
-        .environment(\.editMode, self.$editingMode)
+        .environment(\.editMode, .constant(self.isEditing ? .active : .inactive))
+    }
+
+    // MARK: - Private
+
+    private func makeNavigationBarItems() -> some View {
+        Button(action: {
+            self.isEditing.toggle()
+        }, label: {
+            Image(systemName: isEditing ? "pencil.circle.fill" : "pencil.circle")
+                .style(appStyle: .barButton)
+        })
+        .buttonStyle(BorderedBarButtonStyle())
+        .accentColor(Color.acText.opacity(0.2))
     }
 }
 

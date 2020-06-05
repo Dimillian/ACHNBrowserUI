@@ -24,7 +24,7 @@ struct TodayChoresSection: View {
 
     var body: some View {
         Section(header: SectionHeaderView(text: "Chores", icon: "checkmark.seal.fill")) {
-            NavigationLink(destination: ChoreListView()) {
+            NavigationLink(destination: LazyView(ChoreListView())) {
                 VStack(alignment: .leading) {
                     self.makeHeaderView()
 
@@ -65,6 +65,9 @@ struct TodayChoresSection: View {
     }
 }
 
+// MARK: - Preview
+
+#if DEBUG
 struct TodayCustomTasksSection_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
@@ -78,3 +81,4 @@ struct TodayCustomTasksSection_Previews: PreviewProvider {
         .environmentObject(UserCollection.shared)
     }
 }
+#endif
