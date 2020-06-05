@@ -30,6 +30,7 @@ struct TodayTasksSection: View {
                 .foregroundColor(Color("ACBackground"))
             Image(task.icon)
                 .resizable()
+                .scaleEffect(0.9)
                 .aspectRatio(contentMode: .fit)
             if task.hasProgress {
                 ZStack {

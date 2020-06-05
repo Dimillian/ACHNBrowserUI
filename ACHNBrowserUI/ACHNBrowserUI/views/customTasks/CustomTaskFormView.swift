@@ -56,16 +56,22 @@ struct CustomTaskFormView: View {
             }
             .border(errorBorderTaskName)
             Picker(selection: $viewModel.task.icon,
-               label: Text("Icon")) {
-                ForEach(DailyCustomTasks.icons.map { $0 }, id: \.self) { icon in
+                label: Text("Icon")) {
                     HStack {
-                        Image(icon)
+                        Image("icon-villager")
                             .renderingMode(.original)
                             .resizable()
                             .frame(width: 40, height: 40)
-                    }.tag(icon)
+                    }.tag("icon-villager")
+                    ForEach(0..<199, id: \.self) { num in
+                        HStack {
+                            Image("Inv\(num)")
+                                .renderingMode(.original)
+                                .resizable()
+                                .frame(width: 40, height: 40)
+                        }.tag("Inv\(num)")
+                    }
                 }
-            }
             .border(self.viewModel.task.icon.isEmpty ? errorBorderIcon : .clear)
             Toggle(isOn: $viewModel.task.hasProgress) {
                 Text("Has progress")
