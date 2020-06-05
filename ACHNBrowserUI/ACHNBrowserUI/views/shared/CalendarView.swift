@@ -13,9 +13,18 @@ struct CalendarView: View {
     let activeMonths: [Int]
     
     private let currentMonth = Int(Item.monthFormatter.string(from: Date()))!
-    private let months = [["jan.", "feb.", "mar.", "apr."],
-                          ["may", "june", "july", "aug."],
-                          ["sept.","oct.", "nov.", "dec."]]
+    private let months = [[Calendar.current.shortMonthSymbols[0],
+                           Calendar.current.shortMonthSymbols[1],
+                           Calendar.current.shortMonthSymbols[2],
+                           Calendar.current.shortMonthSymbols[3]],
+                          [Calendar.current.shortMonthSymbols[4],
+                           Calendar.current.shortMonthSymbols[5],
+                           Calendar.current.shortMonthSymbols[6],
+                           Calendar.current.shortMonthSymbols[7]],
+                          [Calendar.current.shortMonthSymbols[8],
+                           Calendar.current.shortMonthSymbols[9],
+                           Calendar.current.shortMonthSymbols[10],
+                           Calendar.current.shortMonthSymbols[11]]]
     
     var flatMonths: [String] {
         months.flatMap{ $0.compactMap{ $0 }}
@@ -27,7 +36,7 @@ struct CalendarView: View {
         let border =  RoundedRectangle(cornerRadius: 10)
             .stroke(lineWidth: isCurrentMonth ? 5 : 0)
             .foregroundColor(isCurrentMonth ? .acTabBarTint : .clear)
-        return Text(month.capitalized)
+        return Text(month)
             .font(.callout)
             .foregroundColor(.black)
             .frame(width: 50, height: 30)
