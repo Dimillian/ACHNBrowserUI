@@ -11,19 +11,30 @@ import Combine
 
 class ChoreFormViewModel: ObservableObject {
 
-    // MARK: - Properties
+    // MARK: - Public properties
 
     @Published var chore: Chore
 
+    // MARK: - Private properties
+
+    private let userCollection: UserCollection
+    private let isEditing: Bool
+
     // MARK: - Life cycle
 
-    init(chore: Chore?) {
+    init(chore: Chore?, userCollection: UserCollection = .shared) {
+        self.isEditing = chore != nil
         self.chore = chore ?? Chore()
+        self.userCollection = userCollection
     }
 
     // MARK: - Public
 
     func save() {
-        UserCollection.shared.addChore(chore)
+        if isEditing {
+            userCollection.updateChore(chore)
+        } else {
+            userCollection.addChore(chore)
+        }
     }
 }

@@ -16,8 +16,8 @@ final class ChoreListViewModel: ObservableObject {
 
     @Published var chores: [Chore] = []
 
-    var shouldShowResetButton: Bool {
-        !chores.filter { $0.isFinished == true }.isEmpty
+    var shouldDisableReset: Bool {
+        chores.filter { $0.isFinished == true }.isEmpty
     }
 
     var shouldShowDescriptionView: Bool {

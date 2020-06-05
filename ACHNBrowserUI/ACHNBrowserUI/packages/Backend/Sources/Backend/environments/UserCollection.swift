@@ -249,8 +249,8 @@ public class UserCollection: ObservableObject {
 
     // MARK: - Chores
 
-    public func addChore(_ task: Chore) {
-        chores.append(task)
+    public func addChore(_ chore: Chore) {
+        chores.append(chore)
         save()
     }
 
@@ -259,8 +259,8 @@ public class UserCollection: ObservableObject {
         save()
     }
 
-    public func toggleChore(_ task: Chore) {
-        guard let index = chores.firstIndex(of: task) else { return }
+    public func toggleChore(_ chore: Chore) {
+        guard let index = chores.firstIndex(of: chore) else { return }
         chores[index].isFinished.toggle()
         save()
     }
@@ -269,6 +269,12 @@ public class UserCollection: ObservableObject {
         for index in 0..<chores.count {
             chores[index].isFinished = false
         }
+        save()
+    }
+
+    public func updateChore(_ chore: Chore) {
+        guard let index = chores.firstIndex(of: chore) else { return }
+        chores[index] = chore
         save()
     }
 

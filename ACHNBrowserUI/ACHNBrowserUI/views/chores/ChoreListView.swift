@@ -15,6 +15,7 @@ struct ChoreListView: View {
 
     @ObservedObject private var viewModel: ChoreListViewModel
     @State private var sheet: Sheet.SheetType?
+    @State private var editingMode: EditMode = .inactive
 
     // MARK: - Life cycle
 
@@ -34,9 +35,15 @@ struct ChoreListView: View {
             self.makeDescriptionView()
 
             ForEach(self.viewModel.chores, id: \.id) { chore in
-                ChoreListRowView(chore: chore).onTapGesture {
-                    self.viewModel.toggleChore(chore)
-                }
+                ChoreListRowView(chore: chore)
+                    .contentShape(Rectangle())
+                    .onTapGesture {
+                        if self.editingMode == .active {
+                            self.sheet = .choreForm(chore: chore)
+                        } else {
+                            self.viewModel.toggleChore(chore)
+                        }
+                    }
             }.onDelete { indexes in
                 self.viewModel.deleteChore(at: indexes.first!)
             }
@@ -44,6 +51,7 @@ struct ChoreListView: View {
         .navigationBarTitle(Text("Chores"), displayMode: .automatic)
         .navigationBarItems(trailing: self.makeNavigationBarItems() )
         .sheet(item: $sheet, content: { Sheet(sheetType: $0) })
+        .environment(\.editMode, self.$editingMode)
     }
 
     // MARK: - Private
@@ -58,13 +66,15 @@ struct ChoreListView: View {
     }
 
     private func makeNavigationBarItems() -> some View {
-        guard viewModel.shouldShowResetButton else {
-            return EmptyView().eraseToAnyView()
-        }
+        HStack() {
+            EditButton()
+                .fixedSize()
+                .frame(width: 44, height: 44)
 
-        return Button("Reset") {
-            self.viewModel.resetChores()
-        }.eraseToAnyView()
+            Button("Reset", action: self.viewModel.resetChores)
+                .fixedSize()
+                .disabled(viewModel.shouldDisableReset)
+        }
     }
 }
 
