@@ -71,14 +71,13 @@ struct CustomTaskFormView: View {
                 Text("Has progress")
             }
             if self.viewModel.task.hasProgress {
-                HStack {
-                    Text("Max amount")
-                    Spacer()
-                    TextField("Amount",
-                              value: $viewModel.task.maxProgress,
-                              formatter: NumberFormatter())
-                    .keyboardType(.numberPad)
-                    .multilineTextAlignment(.trailing)
+                Picker(selection: $viewModel.task.maxProgress,
+                       label: Text("Max amount")) {
+                        ForEach(0..<46) {
+                            if $0 > 0 {
+                                Text("\($0)")
+                            }
+                        }
                 }
             }
         }
