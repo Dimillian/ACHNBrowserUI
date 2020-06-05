@@ -51,6 +51,7 @@ public class MusicPlayerManager: ObservableObject {
             }
         }
     }
+    @Published public var currentSongImage: UIImage?
     @Published public var isPlaying = false {
         didSet {
             isPlaying ? player?.play() : player?.pause()
@@ -160,8 +161,10 @@ public class MusicPlayerManager: ObservableObject {
         if let item = currentSongItem,
             let song = currentSong {
             SDWebImageDownloader.shared.downloadImage(with:
-            ACNHApiService.Endpoint.songsImage(id: song.id).url()) { (image, _, _, _) in
+            ACNHApiService.Endpoint.songsImage(id: song.id).url()) { [weak self] (image, _, _, _) in
                 if let image = image {
+                    self?.currentSongImage = image
+                    
                     try? AVAudioSession.sharedInstance().setCategory(.playback, mode: .default, policy: .longFormAudio, options: [])
                     try? AVAudioSession.sharedInstance().setActive(true, options: [])
                     

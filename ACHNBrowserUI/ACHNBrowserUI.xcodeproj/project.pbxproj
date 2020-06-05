@@ -150,6 +150,8 @@
 		696B454824791EDE00E16252 /* islanddevelopment in Resources */ = {isa = PBXBuildFile; fileRef = 696B454724791EDE00E16252 /* islanddevelopment */; };
 		696B454A247A633D00E16252 /* TodayMusicPlayerSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 696B4549247A633D00E16252 /* TodayMusicPlayerSection.swift */; };
 		696B454C247A948A00E16252 /* MusicPlayerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 696B454B247A948A00E16252 /* MusicPlayerManager.swift */; };
+		69855149248A281300F7BDBA /* TabbarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69855148248A281300F7BDBA /* TabbarViewModel.swift */; };
+		6985514C248A297400F7BDBA /* PlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6985514B248A297400F7BDBA /* PlayerView.swift */; };
 		69867DF1247C136900C6A759 /* CollectionProgressRowViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69867DF0247C136900C6A759 /* CollectionProgressRowViewModel.swift */; };
 		69CCD28A247D9FD000DF381B /* ItemBellsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69CCD289247D9FD000DF381B /* ItemBellsView.swift */; };
 		69CCD28C247DA4D100DF381B /* ItemStyleBadgeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69CCD28B247DA4D100DF381B /* ItemStyleBadgeView.swift */; };
@@ -307,6 +309,8 @@
 		697E63FA2449DB0C008FB710 /* VillagerDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VillagerDetailView.swift; sourceTree = "<group>"; };
 		697E63FC244AD42D008FB710 /* CategoryRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryRowView.swift; sourceTree = "<group>"; };
 		697E63FF244AD66E008FB710 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		69855148248A281300F7BDBA /* TabbarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarViewModel.swift; sourceTree = "<group>"; };
+		6985514B248A297400F7BDBA /* PlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerView.swift; sourceTree = "<group>"; };
 		69867DF0247C136900C6A759 /* CollectionProgressRowViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionProgressRowViewModel.swift; sourceTree = "<group>"; };
 		69875F4F24652A4700B1D46C /* Sheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sheet.swift; sourceTree = "<group>"; };
 		69875F5424654EB900B1D46C /* UserListFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListFormView.swift; sourceTree = "<group>"; };
@@ -613,6 +617,14 @@
 			path = settings;
 			sourceTree = "<group>";
 		};
+		6985514A248A296900F7BDBA /* musicPlayer */ = {
+			isa = PBXGroup;
+			children = (
+				6985514B248A297400F7BDBA /* PlayerView.swift */,
+			);
+			path = musicPlayer;
+			sourceTree = "<group>";
+		};
 		69875F5324654EA400B1D46C /* userLists */ = {
 			isa = PBXGroup;
 			children = (
@@ -695,6 +707,7 @@
 		69AF8C64243E2857001DD9CB /* views */ = {
 			isa = PBXGroup;
 			children = (
+				6985514A248A296900F7BDBA /* musicPlayer */,
 				69E4BBB9245B0BE4001035E2 /* about */,
 				69C5F5E8244217EF00BF8FA4 /* categories */,
 				69BEA983243E638C00F02C61 /* collection */,
@@ -741,6 +754,7 @@
 				697E63F62449A7BA008FB710 /* VillagersViewModel.swift */,
 				AE2562F324841B48008B0779 /* DesignListViewModel.swift */,
 				694C8B4624861D4E000B9B5F /* LikeButtonViewModel.swift */,
+				69855148248A281300F7BDBA /* TabbarViewModel.swift */,
 			);
 			path = viewModels;
 			sourceTree = "<group>";
@@ -1123,6 +1137,7 @@
 				69157B812471A5A1005B9002 /* RowLoadingView.swift in Sources */,
 				157C03E7247AE56600568917 /* TodaySectionView.swift in Sources */,
 				69157B822471A5A1005B9002 /* ItemDetailViewModel.swift in Sources */,
+				6985514C248A297400F7BDBA /* PlayerView.swift in Sources */,
 				69157B832471A5A1005B9002 /* TurnipsChartMinBuyPriceCurve.swift in Sources */,
 				69157B842471A5A1005B9002 /* ItemRowView.swift in Sources */,
 				69157B852471A5A1005B9002 /* VillagersListView.swift in Sources */,
@@ -1191,6 +1206,7 @@
 				69157BB42471A5A1005B9002 /* UserListRow.swift in Sources */,
 				69157BB52471A5A1005B9002 /* TodaySubscribeSection.swift in Sources */,
 				69157BB62471A5A1005B9002 /* TurnipsView.swift in Sources */,
+				69855149248A281300F7BDBA /* TabbarViewModel.swift in Sources */,
 				69157BB72471A5A1005B9002 /* ActivityIndicator.swift in Sources */,
 				69157BB82471A5A1005B9002 /* TurnipsChartBottomLegendView.swift in Sources */,
 				69157BB92471A5A1005B9002 /* DashboardViewModel.swift in Sources */,
@@ -1308,7 +1324,7 @@
 				CODE_SIGN_ENTITLEMENTS = ACHNBrowserUI/ACHNBrowserUI.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development: Thomas Ricouard (7MB55D6BJ5)";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 060512020;
+				CURRENT_PROJECT_VERSION = 060522020;
 				DEVELOPMENT_ASSET_PATHS = "\"ACHNBrowserUI/Preview Content\"";
 				DEVELOPMENT_TEAM = Z6P74P6T99;
 				ENABLE_PREVIEWS = YES;
@@ -1318,7 +1334,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.6.5;
+				MARKETING_VERSION = 1.6.6;
 				PRODUCT_BUNDLE_IDENTIFIER = com.thomasricouard.ACNH;
 				PRODUCT_NAME = "AC Helper";
 				PROVISIONING_PROFILE_SPECIFIER = "AC Dev";
@@ -1339,7 +1355,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 060512020;
+				CURRENT_PROJECT_VERSION = 060522020;
 				DEVELOPMENT_ASSET_PATHS = "\"ACHNBrowserUI/Preview Content\"";
 				DEVELOPMENT_TEAM = Z6P74P6T99;
 				ENABLE_PREVIEWS = YES;
@@ -1349,7 +1365,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.6.5;
+				MARKETING_VERSION = 1.6.6;
 				PRODUCT_BUNDLE_IDENTIFIER = com.thomasricouard.ACNH;
 				PRODUCT_NAME = "AC Helper";
 				PROVISIONING_PROFILE_SPECIFIER = "AC Dev";

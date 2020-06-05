@@ -57,6 +57,10 @@ extension Color {
         Color("ACSecondaryText")
     }
     
+    public static var acBlueText: Color {
+        Color("ACBlueText")
+    }
+    
     // ---
     public static var catalogBackground: Color {
         Color("catalog-background", bundle: nil)
