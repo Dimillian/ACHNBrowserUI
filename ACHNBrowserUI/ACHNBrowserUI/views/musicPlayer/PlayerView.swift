@@ -59,7 +59,7 @@ struct PlayerView: View {
                 .frame(width: imageSize, height: imageSize)
                 .cornerRadius(4)
                 .shadow(color: .gray, radius: 4, x: 0, y: 0)
-                .padding(.leading, 8)
+                .padding(.leading, 12)
                 
                 if isFullScreen {
                     Spacer()
@@ -127,7 +127,7 @@ struct PlayerView: View {
                     .rotationEffect(.degrees(isFullScreen ? -180 : 0))
                     .foregroundColor(.white)
             }
-            .padding(.trailing, 8)
+            .padding(.trailing, 12)
         }
     }
     
