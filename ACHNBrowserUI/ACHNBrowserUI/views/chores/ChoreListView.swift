@@ -71,7 +71,7 @@ struct ChoreListView: View {
                 .fixedSize()
                 .frame(width: 44, height: 44)
 
-            Button("Reset") { self.viewModel.resetChores() }
+            Button("Reset", action: self.viewModel.resetChores)
                 .fixedSize()
                 .disabled(viewModel.shouldDisableReset)
         }
