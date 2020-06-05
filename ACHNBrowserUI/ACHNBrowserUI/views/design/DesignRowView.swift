@@ -13,7 +13,8 @@ struct DesignRowView: View {
 
     // MARK: - Properties
 
-    let viewModel: DesignRowViewModel
+    private let viewModel: DesignRowViewModel
+    private let id = UUID()
 
     // MARK: - Life cycle
 
