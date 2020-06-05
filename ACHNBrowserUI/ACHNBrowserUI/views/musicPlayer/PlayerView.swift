@@ -92,6 +92,15 @@ struct PlayerView: View {
         .onTapGesture {
             self.toggleFullScreen()
         }
+        .gesture(DragGesture()
+            .onEnded { value in
+                if value.translation.width > 100 {
+                    self.playerManager.previous()
+                }
+                else if value.translation.width < -100 {
+                    self.playerManager.next()
+                }
+            })
     }
     
     private var smallPlayerButtonsView: some View {
