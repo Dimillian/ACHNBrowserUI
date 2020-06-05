@@ -57,6 +57,27 @@ struct VillagersListView: View {
                     }
                 }
             }
+            .gesture(DragGesture()
+                .onEnded { value in
+                    if value.translation.width > 100 {
+                        switch(self.currentFilter) {
+                        case .liked:
+                            self.currentFilter = Filter.all
+                        case .residents:
+                            self.currentFilter = Filter.liked
+                        default: break
+                        }
+                    }
+                    else if value.translation.width < -100 {
+                        switch(self.currentFilter) {
+                        case .all:
+                            self.currentFilter = Filter.liked
+                        case .liked:
+                            self.currentFilter = Filter.residents
+                        default: break
+                        }
+                    }
+                })
             .listStyle(GroupedListStyle())
             .id(viewModel.sort?.rawValue ?? currentFilter.rawValue)
             .navigationBarTitle(Text("Villagers"),
