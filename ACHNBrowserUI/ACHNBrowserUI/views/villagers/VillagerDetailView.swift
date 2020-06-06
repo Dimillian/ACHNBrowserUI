@@ -7,6 +7,7 @@
 //
 
 import SwiftUI
+import SwiftUIKit
 import Backend
 import UI
 
@@ -85,7 +86,11 @@ struct VillagerDetailView: View {
                 Image(systemName: "xmark.circle.fill")
                     .style(appStyle: .barButton)
                     .foregroundColor(.acText)
-            }.eraseToAnyView()
+            }
+            .buttonStyle(BorderedBarButtonStyle())
+            .accentColor(Color.acText.opacity(0.2))
+            .safeHoverEffectBarItem(position: .leading)
+            .eraseToAnyView()
         } else {
             return EmptyView().eraseToAnyView()
         }
