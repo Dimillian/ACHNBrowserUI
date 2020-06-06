@@ -25,7 +25,7 @@ final class ChoreListViewModel: ObservableObject {
     }
 
     var actionSheetVisibilityDescription: String {
-        filtering ? "Show Finished" : "Hide Finished"
+        isFiltering ? "Show Finished" : "Hide Finished"
     }
 
     // MARK: - Private properties
@@ -34,10 +34,8 @@ final class ChoreListViewModel: ObservableObject {
     private var cancellable: AnyCancellable?
     private var unfilteredChores: [Chore] = []
 
-    private var filtering: Bool = false {
-        didSet {
-            applyFilter()
-        }
+    private var isFiltering: Bool = false {
+        didSet { applyFilter() }
     }
 
     // MARK: - Life cycle
@@ -54,7 +52,7 @@ final class ChoreListViewModel: ObservableObject {
     }
 
     func toggleVisibility() {
-        filtering.toggle()
+        isFiltering.toggle()
     }
 
     func toggleChore(_ chore: Chore) {
@@ -72,7 +70,7 @@ final class ChoreListViewModel: ObservableObject {
     // MARK: - Private
 
     private func applyFilter() {
-        if filtering {
+        if isFiltering {
             chores = unfilteredChores.filter { !$0.isFinished }
         } else {
             chores = unfilteredChores
