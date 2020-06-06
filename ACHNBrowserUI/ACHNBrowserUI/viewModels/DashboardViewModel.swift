@@ -42,6 +42,12 @@ class DashboardViewModel: ObservableObject {
                 sectionOrder.append(TodaySection(name: section.name, enabled: true))
             }
         }
+        // If item were removed since the last update, remove from the list
+        sectionOrder.forEach { (section) in
+            if !TodaySection.defaultSectionList.contains(section) {
+                sectionOrder.remove(at: sectionOrder.firstIndex(of: section)!)
+            }
+        }
         selection = Set(sectionOrder.filter(\.enabled).map(\.name))
     }
         
