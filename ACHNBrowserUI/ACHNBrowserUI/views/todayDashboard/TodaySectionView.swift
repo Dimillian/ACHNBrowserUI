@@ -56,7 +56,7 @@ struct TodaySectionView: View {
         case .nookazon:
             return AnyView(TodayNookazonSection(sheet: $selectedSheet, viewModel: viewModel))
         case .villagerVisits:
-            return AnyView(TodayVillagerVisitsSection(sheet: $selectedSheet))
+            return AnyView(TodayVillagerVisitsSection())
         }
     }
 }

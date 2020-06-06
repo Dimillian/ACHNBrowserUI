@@ -12,32 +12,48 @@ import UI
 
 struct TodayVillagerVisitsSection: View {
     @EnvironmentObject private var collection: UserCollection
-    @Binding var sheet: Sheet.SheetType?
 
     private var residents: [Villager] { collection.residents }
+    private var rows: Int {
+        Int((Double(residents.count)/4).rounded(.up))
+    }
 
     var body: some View {
         Section(header: SectionHeaderView(text: "Villager Visits", icon: "person.crop.circle.fill.badge.checkmark")) {
-            VStack(spacing: 15) {
-                GridStack<AnyView>(rows: Int((Double(residents.count)/4).rounded(.up)), columns: 4, showDivider: false) { (row, column) in
-                    let villagerIndex = row * 4 + column
-                    guard let villager = self.residents[safe: villagerIndex] else {
-                        return EmptyView().eraseToAnyView()
-                    }
-                    return self.bubble(villager: villager, index: villagerIndex).eraseToAnyView()
-                }
-                Text("Long press on a villager to see more info about them")
-                    .foregroundColor(.acText)
-                Text("Reset")
-                    .onTapGesture(perform: reset)
-                    .foregroundColor(.acText)
-                    .padding(.vertical, 8)
-                    .padding(.horizontal, 14)
-                    .background(Color.acText.opacity(0.2))
-                    .mask(RoundedRectangle(cornerRadius: 14, style: .continuous))
+            if residents.count > 0 {
+                villagerVisits
+            } else {
+                Text("Who are your residents? Go find your villagers and tap on the Home icon in them details to track visits here!")
+                .foregroundColor(.acText)
+                .padding(.vertical, 8)
             }
-            .frame(maxWidth: .infinity)
-            .padding(.vertical, 8)
+        }
+    }
+
+    private var villagerVisits: some View {
+        VStack(spacing: 15) {
+            bubbles
+            Text("Long press on a villager to see more info about them")
+                .foregroundColor(.acText)
+            Text("Reset")
+                .onTapGesture(perform: reset)
+                .foregroundColor(.acText)
+                .padding(.vertical, 8)
+                .padding(.horizontal, 14)
+                .background(Color.acText.opacity(0.2))
+                .mask(RoundedRectangle(cornerRadius: 14, style: .continuous))
+        }
+        .frame(maxWidth: .infinity)
+        .padding(.vertical, 8)
+    }
+
+    private var bubbles: some View {
+        GridStack<AnyView>(rows: rows, columns: 4, showDivider: false) { (row, column) in
+            let villagerIndex = row * 4 + column
+            guard let villager = self.residents[safe: villagerIndex] else {
+                return EmptyView().eraseToAnyView()
+            }
+            return self.bubble(villager: villager, index: villagerIndex).eraseToAnyView()
         }
     }
 
@@ -83,3 +99,36 @@ struct TodayVillagerVisitsSection: View {
     }
 }
 
+
+struct TodayVillagerVisitsSection_Previews: PreviewProvider {
+    static var previews: some View {
+        List {
+            TodayVillagerVisitsSection()
+        }.environmentObject(mockedUserCollection)
+    }
+
+    static var mockedUserCollection: UserCollection {
+        let userCollection = UserCollection(iCloudDisabled: true)
+        userCollection.residents = mockedResidents
+        return userCollection
+    }
+
+    static var mockedResidents: [Villager] {
+        """
+[
+    { "id": 357, "name": { "name-en": "Blaire" }, "personality": "", "gender": "", "species": "" },
+    { "id": 334, "name": { "name-en": "Bonbon" }, "personality": "", "gender": "", "species": "" },
+    { "id": 281, "name": { "name-en": "Amelia" }, "personality": "", "gender": "", "species": "" },
+    { "id": 171, "name": { "name-en": "Diva" }, "personality": "", "gender": "", "species": "" },
+    { "id": 262, "name": { "name-en": "Moose" }, "personality": "", "gender": "", "species": "" },
+    { "id": 102, "name": { "name-en": "Bam" }, "personality": "", "gender": "", "species": "" },
+    { "id": 278, "name": { "name-en": "Flora" }, "personality": "", "gender": "", "species": "" },
+    { "id": 73, "name": { "name-en": "Olive" }, "personality": "", "gender": "", "species": "" },
+    { "id": 29, "name": { "name-en": "Admiral" }, "personality": "", "gender": "", "species": "" },
+    { "id": 324, "name": { "name-en": "Tiffany" }, "personality": "", "gender": "", "species": "" }
+]
+"""
+            .data(using: .utf8)
+            .map({ try! JSONDecoder().decode([Villager].self, from: $0) }) ?? []
+    }
+}
