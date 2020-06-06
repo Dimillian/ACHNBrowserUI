@@ -261,7 +261,7 @@ public class UserCollection: ObservableObject {
     }
 
     public func deleteChore(_ chore: Chore) {
-        chores.removeAll { $0.id == chore.id }
+        chores.removeAll { $0 == chore }
         save()
     }
 
