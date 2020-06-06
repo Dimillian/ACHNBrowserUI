@@ -100,7 +100,6 @@
 		69157BCF2471A5A1005B9002 /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69CA5ED9244CBA8600B275B6 /* CalendarView.swift */; };
 		69157BD02471A5A1005B9002 /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69E4BBBA245B0BEF001035E2 /* AboutView.swift */; };
 		69157BD12471A5A1005B9002 /* TurnipsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68BA5829244B693300B53811 /* TurnipsViewModel.swift */; };
-		69157BD22471A5A1005B9002 /* TodayWhatsNewSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 693E2BC524668D8E00B85CB8 /* TodayWhatsNewSection.swift */; };
 		69157BD42471A5A1005B9002 /* EventsDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69CA5F17244F447E00B275B6 /* EventsDescription.swift */; };
 		69157BD52471A5A1005B9002 /* ItemDetailInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69B13CA7245599A00089BD7B /* ItemDetailInfoView.swift */; };
 		69157BD62471A5A1005B9002 /* UserListSubscribeCallView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 693E2BCB2466DE9A00B85CB8 /* UserListSubscribeCallView.swift */; };
@@ -281,7 +280,6 @@
 		693E2BBF2465B71000B85CB8 /* CategoryHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryHeaderView.swift; sourceTree = "<group>"; };
 		693E2BC12465C2C300B85CB8 /* UserListRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListRow.swift; sourceTree = "<group>"; };
 		693E2BC3246689C500B85CB8 /* TodayNookazonSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayNookazonSection.swift; sourceTree = "<group>"; };
-		693E2BC524668D8E00B85CB8 /* TodayWhatsNewSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayWhatsNewSection.swift; sourceTree = "<group>"; };
 		693E2BC7246697FC00B85CB8 /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
 		693E2BC924669D2800B85CB8 /* TodaySubscribeSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodaySubscribeSection.swift; sourceTree = "<group>"; };
 		693E2BCB2466DE9A00B85CB8 /* UserListSubscribeCallView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListSubscribeCallView.swift; sourceTree = "<group>"; };
@@ -450,7 +448,6 @@
 				024363D62465EA15006A37A0 /* TodayTasksSection.swift */,
 				024363D12465EA14006A37A0 /* TodayTurnipSection.swift */,
 				024363D22465EA14006A37A0 /* TodayView.swift */,
-				693E2BC524668D8E00B85CB8 /* TodayWhatsNewSection.swift */,
 			);
 			path = todayDashboard;
 			sourceTree = "<group>";
@@ -1246,7 +1243,6 @@
 				69157BD02471A5A1005B9002 /* AboutView.swift in Sources */,
 				AE96184A2482B1F300CC073C /* TodayChoresSectionViewModel.swift in Sources */,
 				69157BD12471A5A1005B9002 /* TurnipsViewModel.swift in Sources */,
-				69157BD22471A5A1005B9002 /* TodayWhatsNewSection.swift in Sources */,
 				69157BD42471A5A1005B9002 /* EventsDescription.swift in Sources */,
 				69157BD52471A5A1005B9002 /* ItemDetailInfoView.swift in Sources */,
 				69157BD62471A5A1005B9002 /* UserListSubscribeCallView.swift in Sources */,

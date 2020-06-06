@@ -20,16 +20,11 @@ struct TodayView: View {
     @ObservedObject private var viewModel = DashboardViewModel()
 
     @State private var selectedSheet: Sheet.SheetType?
-    @State private var showWhatsNew: Bool = false
             
     // MARK: - Body
     var body: some View {
         NavigationView {
             List {
-                if showWhatsNew {
-                    TodayWhatsNewSection(showWhatsNew: $showWhatsNew)
-                }
-                
                 if uiState.routeEnabled {
                     uiState.route.map { route in
                         NavigationLink(destination: route.makeDetailView(),
