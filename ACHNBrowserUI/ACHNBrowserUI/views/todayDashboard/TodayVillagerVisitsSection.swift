@@ -7,11 +7,14 @@
 //
 
 import SwiftUI
+import SwiftUIKit
 import Backend
 import UI
 
 struct TodayVillagerVisitsSection: View {
     @EnvironmentObject private var collection: UserCollection
+    @EnvironmentObject private var subManager: SubscriptionManager
+    @Binding var sheet: Sheet.SheetType?
 
     private var residents: [Villager] { collection.residents }
     private var visitedResidents: [Villager] { collection.visitedResidents }
@@ -69,7 +72,11 @@ struct TodayVillagerVisitsSection: View {
             FeedbackGenerator.shared.triggerSelection()
         }
         .onLongPressGesture {
-            // TODO: open a detail for the villager in a modal
+            self.sheet = .villager(
+                villager: villager,
+                subManager: self.subManager,
+                collection: self.collection
+            )
         }
     }
 
@@ -102,7 +109,7 @@ struct TodayVillagerVisitsSection: View {
 struct TodayVillagerVisitsSection_Previews: PreviewProvider {
     static var previews: some View {
         List {
-            TodayVillagerVisitsSection()
+            TodayVillagerVisitsSection(sheet: .constant(nil))
         }.environmentObject(mockedUserCollection)
     }
 
