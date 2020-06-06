@@ -14,9 +14,8 @@ struct TodayVillagerVisitsSection: View {
     @EnvironmentObject private var collection: UserCollection
 
     private var residents: [Villager] { collection.residents }
-    private var rows: Int {
-        Int((Double(residents.count)/4).rounded(.up))
-    }
+    private var visitedResidents: [Villager] { collection.visitedResidents }
+    private var rows: Int { Int((Double(residents.count)/4).rounded(.up)) }
 
     var body: some View {
         Section(header: SectionHeaderView(text: "Villager Visits", icon: "person.crop.circle.fill.badge.checkmark")) {
@@ -59,23 +58,10 @@ struct TodayVillagerVisitsSection: View {
 
     private func bubble(villager: Villager, index: Int) -> some View {
         ZStack {
-            Circle()
-                .foregroundColor(Color("ACBackground"))
+            Circle().foregroundColor(Color.acBackground)
             icon(for: villager)
-                .scaleEffect(0.8)
                 .aspectRatio(contentMode: .fit)
-            ZStack {
-                Circle()
-                    .stroke(lineWidth: 4.0)
-                    .opacity(0.3)
-                    .foregroundColor(Color.red)
-                Circle()
-                    .trim(from: 0.0, to: collection.visitedResidents.contains(villager) ? 1.0 : 0.0)
-                    .stroke(style: StrokeStyle(lineWidth: 4.0, lineCap: .round, lineJoin: .round))
-                    .foregroundColor(Color.green)
-                    .rotationEffect(Angle(degrees: 270.0))
-                    .animation(.easeInOut)
-            }
+                .overlay(checkCircle(for: villager), alignment: .topTrailing)
         }
         .frame(maxHeight: 44)
         .onTapGesture {
@@ -92,6 +78,19 @@ struct TodayVillagerVisitsSection: View {
             path: ACNHApiService.BASE_URL.absoluteString + ACNHApiService.Endpoint.villagerIcon(id: villager.id).path(),
             size: 50
         )
+    }
+
+    private func checkCircle(for villager: Villager) -> some View {
+        ZStack {
+            Circle()
+                .scale(2)
+                .fixedSize()
+                .foregroundColor(Color.acBackground)
+            Image(systemName: "checkmark.circle.fill")
+                .foregroundColor(.green)
+                .opacity(visitedResidents.contains(villager) ? 1 : 0)
+                .animation(.linear)
+        }
     }
 
     private func reset() {
