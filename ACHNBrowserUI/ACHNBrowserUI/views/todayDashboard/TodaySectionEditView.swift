@@ -85,6 +85,7 @@ extension TodaySection {
         case .tasks: return "Today's Tasks"
         case .chores: return "Chores"
         case .nookazon: return "New on Nookazon"
+        case .villagerVisits: return "Villager visits"
         }
     }
 
@@ -102,6 +103,7 @@ extension TodaySection {
         case .tasks: return "checkmark.seal.fill"
         case .chores: return "checkmark.seal.fill"
         case .nookazon: return "cart.fill"
+        case .villagerVisits: return "person.crop.circle.fill.badge.checkmark"
         }
     }
 }
