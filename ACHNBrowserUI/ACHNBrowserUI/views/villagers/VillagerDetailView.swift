@@ -12,6 +12,7 @@ import UI
 
 struct VillagerDetailView: View {
     @ObservedObject var viewModel: VillagerDetailViewModel
+    @Environment(\.presentationMode) var presentation
     
     @State private var backgroundColor = Color.acSecondaryBackground
     @State private var textColor = Color.acText
@@ -20,13 +21,15 @@ struct VillagerDetailView: View {
     @State private var isLoadingItem = true
     @State private var expandedHouseItems = false
     @State private var expandedLikeItems = false
-    
+
+    let isPresentedInModal: Bool
     var villager: Villager {
         viewModel.villager
     }
     
-    init(villager: Villager) {
+    init(villager: Villager, isPresentedInModal: Bool = false) {
         self.viewModel = VillagerDetailViewModel(villager: villager)
+        self.isPresentedInModal = isPresentedInModal
     }
     
     private var shareButton: some View {
@@ -74,6 +77,18 @@ struct VillagerDetailView: View {
                 .foregroundColor(secondaryTextColor)
                 .font(.subheadline)
         }.listRowBackground(Rectangle().fill(backgroundColor))
+    }
+
+    private var makeCloseButton: some View {
+        if isPresentedInModal {
+            return Button(action: { self.presentation.wrappedValue.dismiss() }) {
+                Image(systemName: "xmark.circle.fill")
+                    .style(appStyle: .barButton)
+                    .foregroundColor(.acText)
+            }.eraseToAnyView()
+        } else {
+            return EmptyView().eraseToAnyView()
+        }
     }
     
     private func makeBody(items: Bool) -> some View {
@@ -161,7 +176,7 @@ struct VillagerDetailView: View {
     var body: some View {
         makeBody(items: true)
             .sheet(item: $sheet, content: { Sheet(sheetType: $0) })
-            .navigationBarItems(trailing: navButtons)
+            .navigationBarItems(leading: makeCloseButton, trailing: navButtons)
     }
 }
 

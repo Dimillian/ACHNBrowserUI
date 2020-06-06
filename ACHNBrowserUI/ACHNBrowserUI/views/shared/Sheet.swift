@@ -91,7 +91,7 @@ struct Sheet: View {
             return AnyView(ChoreFormView(viewModel: viewModel))
         case .villager(let villager, let subManager, let collection):
             return AnyView(NavigationView {
-                VillagerDetailView(villager: villager)
+                VillagerDetailView(villager: villager, isPresentedInModal: true)
                     .environmentObject(subManager)
                     .environmentObject(collection)
             })
