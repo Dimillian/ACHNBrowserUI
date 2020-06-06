@@ -21,6 +21,7 @@ struct Sheet: View {
         case settings(subManager: SubscriptionManager, collection: UserCollection)
         case designForm(editingDesign: Design?)
         case choreForm(chore: Chore?)
+        case villager(villager: Villager, subManager: SubscriptionManager, collection: UserCollection)
 
         var id: String {
             switch self {
@@ -46,6 +47,8 @@ struct Sheet: View {
                 return "designForm"
             case .choreForm:
                 return "choreForm"
+            case .villager:
+                return "villager"
             }
         }
     }
@@ -86,6 +89,12 @@ struct Sheet: View {
         case .choreForm(let chore):
             let viewModel = ChoreFormViewModel(chore: chore)
             return AnyView(ChoreFormView(viewModel: viewModel))
+        case .villager(let villager, let subManager, let collection):
+            return AnyView(NavigationView {
+                VillagerDetailView(villager: villager, isPresentedInModal: true)
+                    .environmentObject(subManager)
+                    .environmentObject(collection)
+            })
         }
     }
 

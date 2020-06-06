@@ -36,6 +36,7 @@ extension TodaySection {
         case tasks
         case chores
         case nookazon
+        case villagerVisits
     }
 
     public static let defaultSectionList: [TodaySection] = [
@@ -51,5 +52,6 @@ extension TodaySection {
         TodaySection(name: .music, enabled: true),
         //TodaySection(name: .nameNookazon, enabled: true)
         TodaySection(name: .mysteryIsland, enabled: true),
+        TodaySection(name: .villagerVisits, enabled: true),
     ]
 }
