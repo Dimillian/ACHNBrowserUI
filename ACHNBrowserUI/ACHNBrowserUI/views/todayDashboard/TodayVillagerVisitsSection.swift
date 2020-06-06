@@ -25,7 +25,7 @@ struct TodayVillagerVisitsSection: View {
             if residents.count > 0 {
                 villagerVisits
             } else {
-                Text("Who are your residents? Go find your villagers and tap on the Home icon in them details to track visits here!")
+                Text("Who are your residents? Go find your villagers and tap on the Home icon in their details to track visits here!")
                 .foregroundColor(.acText)
                 .padding(.vertical, 8)
             }
