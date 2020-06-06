@@ -16,18 +16,27 @@ final class ChoreListViewModel: ObservableObject {
 
     @Published var chores: [Chore] = []
 
-    var shouldDisableReset: Bool {
-        chores.filter { $0.isFinished == true }.isEmpty
+    var shouldShowResetChores: Bool {
+        !chores.filter { $0.isFinished == true }.isEmpty
     }
 
     var shouldShowDescriptionView: Bool {
         chores.isEmpty
     }
 
+    var actionSheetVisibilityDescription: String {
+        isFiltering ? "Show Finished" : "Hide Finished"
+    }
+
     // MARK: - Private properties
 
     @ObservedObject private var userCollection: UserCollection
     private var cancellable: AnyCancellable?
+    private var unfilteredChores: [Chore] = []
+
+    private var isFiltering: Bool = false {
+        didSet { applyFilter() }
+    }
 
     // MARK: - Life cycle
 
@@ -36,9 +45,14 @@ final class ChoreListViewModel: ObservableObject {
 
         cancellable = userCollection.$chores
             .receive(on: DispatchQueue.main)
-            .sink { chores in
-                self.chores = chores
+            .sink { unfilteredChores in
+                self.unfilteredChores = unfilteredChores
+                self.applyFilter()
         }
+    }
+
+    func toggleVisibility() {
+        isFiltering.toggle()
     }
 
     func toggleChore(_ chore: Chore) {
@@ -46,10 +60,20 @@ final class ChoreListViewModel: ObservableObject {
     }
 
     func deleteChore(at index: Int) {
-        userCollection.deleteChore(at: index)
+        userCollection.deleteChore(chores[index])
     }
 
     func resetChores() {
         userCollection.resetChores()
+    }
+
+    // MARK: - Private
+
+    private func applyFilter() {
+        if isFiltering {
+            chores = unfilteredChores.filter { !$0.isFinished }
+        } else {
+            chores = unfilteredChores
+        }
     }
 }

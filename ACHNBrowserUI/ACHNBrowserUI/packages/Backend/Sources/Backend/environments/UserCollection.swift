@@ -260,8 +260,8 @@ public class UserCollection: ObservableObject {
         save()
     }
 
-    public func deleteChore(at index: Int) {
-        chores.remove(at: index)
+    public func deleteChore(_ chore: Chore) {
+        chores.removeAll { $0 == chore }
         save()
     }
 
