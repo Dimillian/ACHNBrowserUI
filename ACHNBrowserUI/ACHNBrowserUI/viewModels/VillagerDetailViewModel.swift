@@ -15,23 +15,9 @@ public class VillagerDetailViewModel: ObservableObject {
     @Published var villagerItems: [Item]?
     @Published var preferredItems: [Item]?
     @Published var likes: [String]?
-    @Published var isResident: Bool = false
-    
-    private let collection: UserCollection
-    private var residentsCancellable: AnyCancellable?
-    
-    init(villager: Villager, collection: UserCollection = .shared) {
-        self.villager = villager
-        self.collection = collection
         
-        residentsCancellable = collection.$residents.sink
-            { [weak self] in
-                self?.isResident = $0.contains(villager)
-        }
-    }
-    
-    func toggleResident() {
-        _ = collection.toggleResident(villager: villager)
+    init(villager: Villager) {
+        self.villager = villager
     }
     
     func fetchItems() {

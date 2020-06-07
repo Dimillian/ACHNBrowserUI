@@ -46,21 +46,11 @@ struct VillagerDetailView: View {
         }
         .safeHoverEffectBarItem(position: .trailing)
     }
-    
-    private var residentButton: some View {
-        Button(action: {
-            self.viewModel.toggleResident()
-            FeedbackGenerator.shared.triggerNotification(type: .success)
-        }) {
-            Image(systemName: viewModel.isResident ? "house.fill" : "house")
-                .foregroundColor(.acTabBarBackground)
-        }
-        .safeHoverEffectBarItem(position: .trailing)
-    }
-    
+        
     private var navButtons: some View {
         HStack(spacing: 8) {
-            residentButton
+            ResidentButton(villager: villager)
+                .safeHoverEffectBarItem(position: .trailing)
             LikeButtonView(villager: villager)
                 .safeHoverEffectBarItem(position: .trailing)
             shareButton.padding(.top, -6)
@@ -109,7 +99,12 @@ struct VillagerDetailView: View {
             .padding()
             makeInfoCell(title: "Personality", value: villager.personality).padding()
             makeInfoCell(title: "Birthday", value: villager.formattedBirthday ?? "Unknown").padding()
-            makeInfoCell(title: "Like", value: viewModel.likes?.map{ $0.capitalized }.joined(separator: ", ") ?? "Unknown").padding()
+            makeInfoCell(title: "Like",
+                         value: viewModel.likes?
+                                .map{ $0.capitalized }
+                                .sorted()
+                                .joined(separator: ", ") ?? "Unknown")
+                                .padding()
             makeInfoCell(title: "Species", value: villager.species).padding()
             makeInfoCell(title: "Gender", value: villager.gender).padding()
             makeInfoCell(title: "Catch phrase", value: villager.localizedCatchPhrase.capitalized).padding()

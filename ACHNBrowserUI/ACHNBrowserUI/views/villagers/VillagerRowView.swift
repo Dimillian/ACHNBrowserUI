@@ -26,7 +26,6 @@ struct VillagerRowView: View {
 
     // MARK: - Properties
 
-    @EnvironmentObject private var collection: UserCollection
     private let villager: Villager
     private let style: Style
     private let action: Action
@@ -44,15 +43,7 @@ struct VillagerRowView: View {
             if action == .like {
                 LikeButtonView(villager: villager)
             } else {
-                Button(action: {
-                    _ = self.collection.toggleResident(villager: self.villager)
-                    FeedbackGenerator.shared.triggerNotification(type: .success)
-                }) {
-                    Image(systemName: collection.residents.contains(villager) ? "house.fill" : "house")
-                        .foregroundColor(.acTabBarBackground)
-                        .imageScale(.medium)
-                }
-                .buttonStyle(BorderlessButtonStyle())
+                ResidentButton(villager: villager)
             }
         }
     }
