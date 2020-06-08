@@ -823,3 +823,17 @@ You can cancel anytime with your iTunes account settings. Any unused portion of 
 "Liked" = "Aimés";
 "Residents" = "Résidents";
 
+// Added 2020-06-06
+"Villager visits" = "Parler aux villageois";
+"Who have you talked to today? Find the villagers you have visited and tap the home icon on the villager’s page to keep track." = "Avez-vous parlé à vos villageois aujourd'hui ? Ajoutez vos villageois depuis leurs pages en touchant l'icône maison.";
+"Long press on a villager to see more info about them" = "Appuyez longtemps sur un villageois pour voir ses informations";
+
+// Added 2020-06-08
+"Medium w/Fin" = "Moyen avec un aileron";
+"Large w/Fin" = "Grand avec un aileron";
+"XX-Large" = "Très grand";
+"Long" = "Long";
+"Sea (rainy days)" = "Mer (jour de pluie)";
+"Flying near water" = "Vol près de l'eau";
+
+
