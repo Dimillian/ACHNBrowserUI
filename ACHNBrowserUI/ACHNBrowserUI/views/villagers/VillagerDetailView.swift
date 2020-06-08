@@ -157,8 +157,6 @@ struct VillagerDetailView: View {
         .environment(\.horizontalSizeClass, .regular)
         .navigationBarTitle(Text(villager.localizedName), displayMode: .automatic)
         .onAppear {
-            self.viewModel.fetchItems()
-            
             let url = ACNHApiService.BASE_URL.absoluteString +
                 ACNHApiService.Endpoint.villagerIcon(id: self.villager.id).path()
             ImageService.getImageColors(key: url) { colors in
