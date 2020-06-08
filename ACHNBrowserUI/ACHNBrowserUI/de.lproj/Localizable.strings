@@ -859,3 +859,11 @@ Du kannst das Abonnement jederzeit in deinen iTunes Kontoeinstellungen beenden. 
 "Villager Visits" = "Bewohner Besuche";
 "Who have you talked to today? Find the villagers you have visited and tap the home icon on the villager’s page to keep track." = "Mit wem hast du heute gesprochen? Markiere die Bewohner deiner Insel mithilfe des Home-Symbol auf der Bewohner Detailseite um hier deine Gespräche mit den Bewohnern im Blick zu behalten.";
 "Long press on a villager to see more info about them" = "Lange auf einen Bewohner tippen um mehr Informationen zu erhallten";
+
+// Added 2020-06-08
+"Medium w/Fin" = "Mittel mit Flosse";
+"Large w/Fin" = "Groß mit Flosse";
+"XX-Large" = "Sehr sehr groß";
+"Long" = "Lang";
+"Sea (rainy days)" = "Meer (an regnerische Tagen)";
+"Flying near water" = "Fliegt in der nähe von Wasser";
