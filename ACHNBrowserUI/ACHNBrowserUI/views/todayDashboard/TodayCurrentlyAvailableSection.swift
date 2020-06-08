@@ -12,12 +12,10 @@ import Backend
 struct TodayCurrentlyAvailableSection: View {
     // MARK: - Body
     var body: some View {
-        Section(header: SectionHeaderView(text: "Currently Available", icon: "calendar")) {
-            NavigationLink(destination: ActiveCrittersView()) {
-               TodayCurrentlyAvailableSectionContent()
-            }
-            .padding(.vertical)
+        NavigationLink(destination: ActiveCrittersView()) {
+            TodayCurrentlyAvailableSectionContent()
         }
+        .padding(.vertical)
     }
 }
 

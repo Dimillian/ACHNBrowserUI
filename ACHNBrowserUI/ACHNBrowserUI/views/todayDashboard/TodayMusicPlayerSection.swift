@@ -20,14 +20,14 @@ struct TodayMusicPlayerSection: View {
     @State private var isNavigationActive = false
     
     var body: some View {
-        Section(header: SectionHeaderView(text: "Music player",
-                                          icon: "music.note"))
-        {
+        Group {
             if musicPlayerManager.currentSongItem != nil {
-                NavigationLink(destination: songsList, isActive: $isNavigationActive) {
-                    ItemRowView(displayMode: .largeNoButton, item: musicPlayerManager.currentSongItem!)
+                VStack(spacing: 12) {
+                    NavigationLink(destination: songsList, isActive: $isNavigationActive) {
+                        ItemRowView(displayMode: .largeNoButton, item: musicPlayerManager.currentSongItem!)
+                    }
+                    playerView
                 }
-                playerView
             } else {
                 RowLoadingView(isLoading: .constant(true))
             }

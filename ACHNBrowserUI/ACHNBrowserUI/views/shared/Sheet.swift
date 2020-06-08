@@ -13,7 +13,6 @@ struct Sheet: View {
     enum SheetType: Identifiable {
         case safari(URL), share(content: [Any])
         case about
-        case rearrange(viewModel: DashboardViewModel)
         case userListForm(editingList: UserList?)
         case customTasks(collection: UserCollection)
         case turnipsForm(subManager: SubscriptionManager)
@@ -31,8 +30,6 @@ struct Sheet: View {
                 return "share"
             case .about:
                 return "about"
-            case .rearrange:
-                return "rearrange"
             case .settings:
                 return "about"
             case .turnipsForm:
@@ -81,11 +78,6 @@ struct Sheet: View {
         case .designForm(let design):
             let viewModel = DesignFormViewModel(design: design)
             return AnyView(DesignFormView(viewModel: viewModel))
-        case .rearrange(let viewModel):
-            return AnyView(NavigationView {
-                TodaySectionEditView(viewModel: viewModel)
-            }
-            .navigationViewStyle(StackNavigationViewStyle()))
         case .choreForm(let chore):
             let viewModel = ChoreFormViewModel(chore: chore)
             return AnyView(ChoreFormView(viewModel: viewModel))

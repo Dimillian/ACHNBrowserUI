@@ -61,42 +61,40 @@ struct TodayTasksSection: View {
     }
     
     var body: some View {
-        Section(header: SectionHeaderView(text: "Today's Tasks", icon: "checkmark.seal.fill")) {
-            VStack(spacing: 15) {
-                GridStack<AnyView>(rows: rows, columns: 4, showDivider: false) { (row, column) in
-                    let taskId = row * 4 + column
-                    guard let task = self.collection.dailyCustomTasks.tasks[safe: taskId] else {
-                        return EmptyView().eraseToAnyView()
-                    }
-                    return self.makeTaskBubble(task: task, index: taskId).eraseToAnyView()
+        VStack(spacing: 15) {
+            GridStack<AnyView>(rows: rows, columns: 4, showDivider: false) { (row, column) in
+                let taskId = row * 4 + column
+                guard let task = self.collection.dailyCustomTasks.tasks[safe: taskId] else {
+                    return EmptyView().eraseToAnyView()
                 }
-                HStack {
-                    Spacer()
-                    Text("Edit")
+                return self.makeTaskBubble(task: task, index: taskId).eraseToAnyView()
+            }
+            HStack {
+                Spacer()
+                Text("Edit")
                     .onTapGesture {
                         self.sheet = .customTasks(collection: self.collection)
-                    }
-                    .foregroundColor(.acText)
-                    .padding(.vertical, 8)
-                    .padding(.horizontal, 14)
-                    .background(Color.acText.opacity(0.2))
-                    .mask(RoundedRectangle(cornerRadius: 14, style: .continuous))
-                    Spacer()
-                    Text("Reset")
-                        .onTapGesture {
-                            self.collection.resetTasks()
-                    }
-                    .foregroundColor(.acText)
-                    .padding(.vertical, 8)
-                    .padding(.horizontal, 14)
-                    .background(Color.acText.opacity(0.2))
-                    .mask(RoundedRectangle(cornerRadius: 14, style: .continuous))
-                    Spacer()
                 }
+                .foregroundColor(.acText)
+                .padding(.vertical, 8)
+                .padding(.horizontal, 14)
+                .background(Color.acText.opacity(0.2))
+                .mask(RoundedRectangle(cornerRadius: 14, style: .continuous))
+                Spacer()
+                Text("Reset")
+                    .onTapGesture {
+                        self.collection.resetTasks()
+                }
+                .foregroundColor(.acText)
+                .padding(.vertical, 8)
+                .padding(.horizontal, 14)
+                .background(Color.acText.opacity(0.2))
+                .mask(RoundedRectangle(cornerRadius: 14, style: .continuous))
+                Spacer()
             }
-            .frame(maxWidth: .infinity)
-            .padding(.vertical, 8)
         }
+        .frame(maxWidth: .infinity)
+        .padding(.vertical, 8)
     }
 }
 

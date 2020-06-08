@@ -23,18 +23,16 @@ struct TodayChoresSection: View {
     }
 
     var body: some View {
-        Section(header: SectionHeaderView(text: "Chores", icon: "checkmark.seal.fill")) {
-            NavigationLink(destination: LazyView(ChoreListView())) {
-                VStack(alignment: .leading) {
-                    self.makeHeaderView()
-
-                    HStack(spacing: 15) {
-                        self.makeProgressView()
-                        self.makeRatioLabel()
-                    }
-                    .frame(maxWidth: .infinity)
-                    .padding(.vertical, 8)
+        NavigationLink(destination: LazyView(ChoreListView())) {
+            VStack(alignment: .leading) {
+                self.makeHeaderView()
+                
+                HStack(spacing: 15) {
+                    self.makeProgressView()
+                    self.makeRatioLabel()
                 }
+                .frame(maxWidth: .infinity)
+                .padding(.vertical, 8)
             }
         }
     }

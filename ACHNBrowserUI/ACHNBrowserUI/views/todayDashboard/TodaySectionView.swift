@@ -19,14 +19,19 @@ struct TodaySectionView: View {
 
 
     var body: some View {
-        makeView()
+        Group {
+            if section.enabled {
+                Section(header: SectionHeaderView(text: section.sectionName,
+                                                  icon: section.iconName)) {
+                                                    makeView()
+                }
+            } else {
+                EmptyView()
+            }
+        }
     }
 
     func makeView() -> some View {
-        if !section.enabled {
-            return AnyView(EmptyView())
-        }
-
         switch(section.name) {
         case .events:
             return AnyView(TodayEventsSection())

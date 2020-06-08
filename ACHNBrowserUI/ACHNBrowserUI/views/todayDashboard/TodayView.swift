@@ -16,9 +16,7 @@ struct TodayView: View {
     
     // MARK: - Vars
     @EnvironmentObject private var uiState: UIState
-
     @ObservedObject private var viewModel = DashboardViewModel()
-
     @State private var selectedSheet: Sheet.SheetType?
             
     // MARK: - Body
@@ -34,38 +32,36 @@ struct TodayView: View {
                     }
                 }
 
-                Group {
-                    ForEach(viewModel.sectionOrder, id: \.self) { section in
-                        TodaySectionView(section: section,
-                                         viewModel: self.viewModel,
-                                         selectedSheet: self.$selectedSheet)
-                    }
-                    arrangeSectionsButton
+                ForEach(viewModel.sectionOrder) { section in
+                    TodaySectionView(section: section,
+                                     viewModel: self.viewModel,
+                                     selectedSheet: self.$selectedSheet)
+                }
+                
+                if UIDevice.current.userInterfaceIdiom != .pad {
+                    editSection
                 }
             }
             .listStyle(GroupedListStyle())
             .environment(\.horizontalSizeClass, .regular)
             .navigationBarTitle(Text("\(dateString.capitalized)"))
             .navigationBarItems(leading: aboutButton, trailing: settingsButton)
-            .sheet(item: $selectedSheet, content: { Sheet(sheetType: $0) })
             
             ActiveCrittersView()
         }
     }
 
-    var arrangeSectionsButton: some View {
+    var editSection: some View {
         Section {
-            Button(action: { self.selectedSheet = .rearrange(viewModel: self.viewModel) }) {
+            NavigationLink(destination: TodaySectionEditView(viewModel: viewModel)) {
                 HStack {
                     Image(systemName: "arrow.up.arrow.down")
                         .font(.system(.body, design: .rounded))
                     Text("Change Section Order")
                         .font(.system(.body, design: .rounded))
                         .fontWeight(.semibold)
-                }
+                }.foregroundColor(.acHeaderBackground)
             }
-            .frame(maxWidth: .infinity)
-            .accentColor(.acHeaderBackground)
         }
     }
     

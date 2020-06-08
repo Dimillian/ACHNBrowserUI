@@ -55,3 +55,42 @@ extension TodaySection {
         TodaySection(name: .villagerVisits, enabled: true),
     ]
 }
+
+
+extension TodaySection {
+    public var sectionName: String {
+        switch name {
+        case .events: return "Events"
+        case .specialCharacters: return "Possible visitors"
+        case .currentlyAvailable: return "Currently Available"
+        case .collectionProgress: return "Collection Progress"
+        case .birthdays: return "Today's Birthdays"
+        case .turnips: return "Turnips"
+        case .subscribe: return "AC Helper+"
+        case .mysteryIsland: return "Mystery Islands"
+        case .music: return "Music player"
+        case .tasks: return "Today's Tasks"
+        case .chores: return "Chores"
+        case .nookazon: return "New on Nookazon"
+        case .villagerVisits: return "Villager visits"
+        }
+    }
+    
+    public var iconName: String {
+        switch name {
+        case .events: return "flag.fill"
+        case .specialCharacters: return "clock"
+        case .currentlyAvailable: return "calendar"
+        case .collectionProgress: return "chart.pie.fill"
+        case .birthdays: return "gift.fill"
+        case .turnips: return "dollarsign.circle.fill"
+        case .subscribe: return "suit.heart.fill"
+        case .mysteryIsland: return "sun.haze.fill"
+        case .music: return "music.note"
+        case .tasks: return "checkmark.seal.fill"
+        case .chores: return "checkmark.seal.fill"
+        case .nookazon: return "cart.fill"
+        case .villagerVisits: return "person.crop.circle.fill.badge.checkmark"
+        }
+    }
+}

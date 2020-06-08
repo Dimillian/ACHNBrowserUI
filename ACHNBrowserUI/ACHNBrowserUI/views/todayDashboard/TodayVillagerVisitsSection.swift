@@ -21,13 +21,13 @@ struct TodayVillagerVisitsSection: View {
     private var rows: Int { Int((Double(residents.count)/4).rounded(.up)) }
 
     var body: some View {
-        Section(header: SectionHeaderView(text: "Villager Visits", icon: "person.crop.circle.fill.badge.checkmark")) {
+        Group {
             if residents.count > 0 {
                 villagerVisits
             } else {
                 Text("Who have you talked to today? Find the villagers you have visited and tap the home icon on the villager’s page to keep track.")
-                .foregroundColor(.acText)
-                .padding(.vertical, 8)
+                    .foregroundColor(.acText)
+                    .padding(.vertical, 8)
             }
         }
     }
