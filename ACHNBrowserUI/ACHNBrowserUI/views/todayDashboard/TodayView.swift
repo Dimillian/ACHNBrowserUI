@@ -16,20 +16,13 @@ struct TodayView: View {
     
     // MARK: - Vars
     @EnvironmentObject private var uiState: UIState
-
     @ObservedObject private var viewModel = DashboardViewModel()
-
     @State private var selectedSheet: Sheet.SheetType?
-    @State private var showWhatsNew: Bool = false
             
     // MARK: - Body
     var body: some View {
         NavigationView {
             List {
-                if showWhatsNew {
-                    TodayWhatsNewSection(showWhatsNew: $showWhatsNew)
-                }
-                
                 if uiState.routeEnabled {
                     uiState.route.map { route in
                         NavigationLink(destination: route.makeDetailView(),
@@ -39,13 +32,14 @@ struct TodayView: View {
                     }
                 }
 
-                Group {
-                    ForEach(viewModel.sectionOrder, id: \.self) { section in
-                        TodaySectionView(section: section,
-                                         viewModel: self.viewModel,
-                                         selectedSheet: self.$selectedSheet)
-                    }
-                    arrangeSectionsButton
+                ForEach(viewModel.sectionOrder) { section in
+                    TodaySectionView(section: section,
+                                     viewModel: self.viewModel,
+                                     selectedSheet: self.$selectedSheet)
+                }
+                
+                if UIDevice.current.userInterfaceIdiom != .pad {
+                    editSection
                 }
             }
             .listStyle(GroupedListStyle())
@@ -58,19 +52,17 @@ struct TodayView: View {
         }
     }
 
-    var arrangeSectionsButton: some View {
+    var editSection: some View {
         Section {
-            Button(action: { self.selectedSheet = .rearrange(viewModel: self.viewModel) }) {
+            NavigationLink(destination: TodaySectionEditView(viewModel: viewModel)) {
                 HStack {
                     Image(systemName: "arrow.up.arrow.down")
                         .font(.system(.body, design: .rounded))
                     Text("Change Section Order")
                         .font(.system(.body, design: .rounded))
                         .fontWeight(.semibold)
-                }
+                }.foregroundColor(.acHeaderBackground)
             }
-            .frame(maxWidth: .infinity)
-            .accentColor(.acHeaderBackground)
         }
     }
     

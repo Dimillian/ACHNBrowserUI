@@ -38,7 +38,7 @@ struct TodayBirthdaysSection: View {
     }
 
     var body: some View {
-        Section(header: SectionHeaderView(text: headerText, icon: "gift.fill")) {
+        Group {
             if viewModel.todayBirthdays.isEmpty {
                 RowLoadingView(isLoading: .constant(true))
             } else {

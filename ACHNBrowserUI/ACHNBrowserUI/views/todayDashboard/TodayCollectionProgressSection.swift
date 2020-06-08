@@ -19,14 +19,6 @@ struct TodayCollectionProgressSection: View {
     private let barHeight: CGFloat = 12
     
     var body: some View {
-        Section(header: SectionHeaderView(text: "Collection Progress", icon: "chart.pie.fill")) {
-            generateBody()
-                .frame(maxWidth: .infinity)
-                .padding(.vertical)
-        }
-    }
-
-    private func generateBody() -> some View {
         VStack(spacing: 4) {
             if items.categories.keys.count == Category.allCases.count {
                 NavigationLink(destination: CollectionProgressDetailView()) {
@@ -37,44 +29,13 @@ struct TodayCollectionProgressSection: View {
                         }
                     }
                 }
-                shareButton.padding(.top, 12)
             } else {
                 RowLoadingView(isLoading: .constant(true))
                     .frame(height: 150)
             }
         }
+        .padding(.vertical, 12)
         .animation(.interactiveSpring())
-    }
-        
-    private var shareButton: some View {
-        Button(action: { self.generateAndShareImage() } ) {
-            HStack {
-                Image(systemName: "square.and.arrow.up").padding(.bottom, 4)
-                Text("Share")
-            }
-            .font(Font.system(size: 16, weight: .bold, design: .rounded))
-        }
-        .accentColor(.acText)
-        .padding(12)
-        .frame(maxWidth: .infinity)
-        .background(
-            RoundedRectangle(cornerRadius: 14, style: .continuous)
-                .foregroundColor(Color("ACBackground"))
-        )
-        .buttonStyle(PlainButtonStyle())
-    }
-
-    private func generateAndShareImage() {
-        let image = List {
-            body
-        }
-        .frame(width: 350, height: 270)
-        .listStyle(GroupedListStyle())
-        .environment(\.horizontalSizeClass, .regular)
-        .environmentObject(UserCollection.shared)
-        .environmentObject(Items.shared)
-        .asImage()
-        self.sheet = .share(content: [ItemDetailSource(name: "My collection progress", image: image)])
     }
 }
 

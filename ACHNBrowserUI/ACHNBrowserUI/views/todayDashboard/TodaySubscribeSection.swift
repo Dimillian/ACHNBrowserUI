@@ -14,31 +14,29 @@ struct TodaySubscribeSection: View {
     @EnvironmentObject private var subManager: SubscriptionManager
     
     var body: some View {
-        Section(header: SectionHeaderView(text: "AC Helper+", icon: "suit.heart.fill")) {
-            HStack {
-                Image(systemName: "heart.circle")
-                    .resizable()
-                    .aspectRatio(1, contentMode: .fit)
-                    .foregroundColor(.red)
-                    .frame(maxWidth: 33)
-                Group {
-                    if subManager.subscriptionStatus == .subscribed {
-                        Text("You're subscribed to AC Helper+. Thank you so much for you support!")
-                    } else {
-                        Button(action: {
-                            self.sheet = .subscription(source: .dashboard, subManager: self.subManager)
-                        }) {
-                            Text("If you enjoy the application, consider subscribing to AC Helper+, to get access to some awesome features and support us!")
-                        }
+        HStack {
+            Image(systemName: "heart.circle")
+                .resizable()
+                .aspectRatio(1, contentMode: .fit)
+                .foregroundColor(.red)
+                .frame(maxWidth: 33)
+            Group {
+                if subManager.subscriptionStatus == .subscribed {
+                    Text("You're subscribed to AC Helper+. Thank you so much for you support!")
+                } else {
+                    Button(action: {
+                        self.sheet = .subscription(source: .dashboard, subManager: self.subManager)
+                    }) {
+                        Text("If you enjoy the application, consider subscribing to AC Helper+, to get access to some awesome features and support us!")
                     }
                 }
-                .font(.system(.body, design: .rounded))
-                .foregroundColor(.acText)
-                
             }
-            .frame(maxWidth: .infinity)
-            .padding(.vertical)
+            .font(.system(.body, design: .rounded))
+            .foregroundColor(.acText)
+            
         }
+        .frame(maxWidth: .infinity)
+        .padding(.vertical)
     }
 }
 

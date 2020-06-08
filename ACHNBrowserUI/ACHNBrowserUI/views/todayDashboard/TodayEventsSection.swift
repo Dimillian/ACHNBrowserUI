@@ -17,27 +17,24 @@ struct TodayEventsSection: View {
     
 
     var body: some View {
-        Section(header: SectionHeaderView(text: "Events", icon: "flag.fill")) {
+        VStack(alignment: .leading) {
             VStack(alignment: .leading) {
-
-                VStack(alignment: .leading) {
-                    subsectionHeader("Currently").padding(.top, 4)
-
-                    if todaysEvents.isEmpty {
-                        self.makeLabel("No Events Today").padding(.vertical, 8)
-                    } else {
-                        ForEach(todaysEvents, id: \.self) { event in
-                            self.makeLabel(event.title())
-                        }
+                subsectionHeader("Currently").padding(.top, 4)
+                
+                if todaysEvents.isEmpty {
+                    self.makeLabel("No Events Today").padding(.vertical, 8)
+                } else {
+                    ForEach(todaysEvents, id: \.self) { event in
+                        self.makeLabel(event.title())
                     }
                 }
-
-                if nextEvent.1 != nil && !todaysEvents.contains(nextEvent.1!) {
-                    Divider()
-                    VStack(alignment: .leading) {
-                        subsectionHeader("Upcoming")
-                        self.makeCell(event: nextEvent)
-                    }
+            }
+            
+            if nextEvent.1 != nil && !todaysEvents.contains(nextEvent.1!) {
+                Divider()
+                VStack(alignment: .leading) {
+                    subsectionHeader("Upcoming")
+                    self.makeCell(event: nextEvent)
                 }
             }
         }

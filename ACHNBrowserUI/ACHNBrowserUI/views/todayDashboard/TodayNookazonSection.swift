@@ -14,7 +14,7 @@ struct TodayNookazonSection: View {
     @ObservedObject var viewModel: DashboardViewModel
     
     var body: some View {
-        Section(header: SectionHeaderView(text: "New on Nookazon", icon: "cart.fill")) {
+        Group {
             if viewModel.recentListings?.isEmpty == false {
                 ScrollView(.horizontal, showsIndicators: false) {
                     HStack(spacing: 0) {
@@ -32,8 +32,8 @@ struct TodayNookazonSection: View {
                                 .onTapGesture {
                                     //self.sheet = .safari(URL.nookazon(listing: listing)!)
                                     UIApplication.shared.open(URL.nookazon(listing: listing)!,
-                                                               options: [:],
-                                                               completionHandler: nil)
+                                                              options: [:],
+                                                              completionHandler: nil)
                                 }
                                 
                                 Divider()

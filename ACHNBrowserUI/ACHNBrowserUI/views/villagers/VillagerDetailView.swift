@@ -7,11 +7,13 @@
 //
 
 import SwiftUI
+import SwiftUIKit
 import Backend
 import UI
 
 struct VillagerDetailView: View {
     @ObservedObject var viewModel: VillagerDetailViewModel
+    @Environment(\.presentationMode) var presentation
     
     @State private var backgroundColor = Color.acSecondaryBackground
     @State private var textColor = Color.acText
@@ -20,13 +22,15 @@ struct VillagerDetailView: View {
     @State private var isLoadingItem = true
     @State private var expandedHouseItems = false
     @State private var expandedLikeItems = false
-    
+
+    let isPresentedInModal: Bool
     var villager: Villager {
         viewModel.villager
     }
     
-    init(villager: Villager) {
+    init(villager: Villager, isPresentedInModal: Bool = false) {
         self.viewModel = VillagerDetailViewModel(villager: villager)
+        self.isPresentedInModal = isPresentedInModal
     }
     
     private var shareButton: some View {
@@ -42,21 +46,11 @@ struct VillagerDetailView: View {
         }
         .safeHoverEffectBarItem(position: .trailing)
     }
-    
-    private var residentButton: some View {
-        Button(action: {
-            self.viewModel.toggleResident()
-            FeedbackGenerator.shared.triggerNotification(type: .success)
-        }) {
-            Image(systemName: viewModel.isResident ? "house.fill" : "house")
-                .foregroundColor(.acTabBarBackground)
-        }
-        .safeHoverEffectBarItem(position: .trailing)
-    }
-    
+        
     private var navButtons: some View {
         HStack(spacing: 8) {
-            residentButton
+            ResidentButton(villager: villager)
+                .safeHoverEffectBarItem(position: .trailing)
             LikeButtonView(villager: villager)
                 .safeHoverEffectBarItem(position: .trailing)
             shareButton.padding(.top, -6)
@@ -75,6 +69,22 @@ struct VillagerDetailView: View {
                 .font(.subheadline)
         }.listRowBackground(Rectangle().fill(backgroundColor))
     }
+
+    private var makeCloseButton: some View {
+        if isPresentedInModal {
+            return Button(action: { self.presentation.wrappedValue.dismiss() }) {
+                Image(systemName: "xmark.circle.fill")
+                    .style(appStyle: .barButton)
+                    .foregroundColor(.acText)
+            }
+            .buttonStyle(BorderedBarButtonStyle())
+            .accentColor(Color.acText.opacity(0.2))
+            .safeHoverEffectBarItem(position: .leading)
+            .eraseToAnyView()
+        } else {
+            return EmptyView().eraseToAnyView()
+        }
+    }
     
     private func makeBody(items: Bool) -> some View {
         List {
@@ -89,7 +99,12 @@ struct VillagerDetailView: View {
             .padding()
             makeInfoCell(title: "Personality", value: villager.personality).padding()
             makeInfoCell(title: "Birthday", value: villager.formattedBirthday ?? "Unknown").padding()
-            makeInfoCell(title: "Like", value: viewModel.likes?.map{ $0.capitalized }.joined(separator: ", ") ?? "Unknown").padding()
+            makeInfoCell(title: "Like",
+                         value: viewModel.likes?
+                                .map{ $0.capitalized }
+                                .sorted()
+                                .joined(separator: ", ") ?? "Unknown")
+                                .padding()
             makeInfoCell(title: "Species", value: villager.species).padding()
             makeInfoCell(title: "Gender", value: villager.gender).padding()
             makeInfoCell(title: "Catch phrase", value: villager.localizedCatchPhrase.capitalized).padding()
@@ -142,8 +157,6 @@ struct VillagerDetailView: View {
         .environment(\.horizontalSizeClass, .regular)
         .navigationBarTitle(Text(villager.localizedName), displayMode: .automatic)
         .onAppear {
-            self.viewModel.fetchItems()
-            
             let url = ACNHApiService.BASE_URL.absoluteString +
                 ACNHApiService.Endpoint.villagerIcon(id: self.villager.id).path()
             ImageService.getImageColors(key: url) { colors in
@@ -161,7 +174,7 @@ struct VillagerDetailView: View {
     var body: some View {
         makeBody(items: true)
             .sheet(item: $sheet, content: { Sheet(sheetType: $0) })
-            .navigationBarItems(trailing: navButtons)
+            .navigationBarItems(leading: makeCloseButton, trailing: navButtons)
     }
 }
 

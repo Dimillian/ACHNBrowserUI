@@ -33,18 +33,16 @@ struct TodaySpecialCharactersSection: View {
     }
     
     var body: some View {
-        Section(header: SectionHeaderView(text: "Possible visitors", icon: "clock")) {
-            ZStack {
-                VStack(alignment: .leading) {
-                    timeCard
-                        .padding(.leading)
-                        .padding(.trailing)
-                    
-                    charactersCard
-                }
-                selectedCharacterPopup
-            }.listRowInsets(EdgeInsets())
-        }
+        ZStack {
+            VStack(alignment: .leading) {
+                timeCard
+                    .padding(.leading)
+                    .padding(.trailing)
+                
+                charactersCard
+            }
+            selectedCharacterPopup
+        }.listRowInsets(EdgeInsets())
     }
     
     private var timeCard: some View {
