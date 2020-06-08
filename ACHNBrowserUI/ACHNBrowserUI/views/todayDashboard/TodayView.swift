@@ -46,6 +46,7 @@ struct TodayView: View {
             .environment(\.horizontalSizeClass, .regular)
             .navigationBarTitle(Text("\(dateString.capitalized)"))
             .navigationBarItems(leading: aboutButton, trailing: settingsButton)
+            .sheet(item: $selectedSheet, content: { Sheet(sheetType: $0) })
             
             ActiveCrittersView()
         }
