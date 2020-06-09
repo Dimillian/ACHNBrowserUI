@@ -86,8 +86,8 @@ Localizable.strings
 Vous aurez aussi accès à d'autres fonctionnalités, comme les prédictions sur le prix des navets et la possibilité de créer plus d'une liste d'objets! 📈";
 
 "ACHelperPlusDetails" = "À propos de la fonctionnalité de notification:
-Tous les jours à 8H et 12H vous allez recevoir une notification avec le prix moyen d'achat dans votre magasin.
-Plus vous rajouté de prix du jeux après lundi matin dans l'application, plus les prochaines prédictions seront précises!
+Tous les jours à 8H et 12H vous allez recevoir une notification avec le prix moyen d'achat de vos navets.
+En indiquant le prix de vos navets, vous augmentez la précision des prédictions !
 
 À propos de la fonctionnalité liste d'objets:
 Dans l'application gratuite, vous pouvez créer seulement une seule liste d'objets dans votre onglet collection.
@@ -276,7 +276,7 @@ You can cancel anytime with your iTunes account settings. Any unused portion of 
 "Your in game prices" = "Vos prix dans le jeu";
 "Buy price" = "Prix d'achat";
 "Amount bought" = "Nombre acheté";
-"The more in game buy prices you'll add the better the predictions will be. Your buy price only won't give your correct averages. Add prices from the game as you get them daily." = "Plus vous aller rajouter vos prix d'achat dans le jeu plus les prochaines prédictions seront précises.";
+"The more in game buy prices you'll add the better the predictions will be. Your buy price only won't give your correct averages. Add prices from the game as you get them daily." = "En indiquant le prix de vos navets, vous augmentez la précision des prédictions.";
 "View on TurnipProphet" = "Voir sur TurnipProphet";
 "View Turnip.Exchange islands" = "Voir les îles de Turnip.Exchange";
 
