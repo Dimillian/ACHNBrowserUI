@@ -69,7 +69,6 @@ extension TurnipsFormView {
             self.fields.amount = Int($0) ?? 0
         })
         return TextField("... 📈 ...", text: amount)
-            .multilineTextAlignment(.trailing)
             .keyboardType(.numberPad)
             .foregroundColor(.acHeaderBackground)
     }
@@ -110,7 +109,6 @@ extension TurnipsFormView {
                 Text("Buy price")
                 Spacer()
                 TextField("... 🔔 ...", text: $fields.buyPrice)
-                    .multilineTextAlignment(.trailing)
                     .keyboardType(.numberPad)
                     .foregroundColor(.acHeaderBackground)
             }
