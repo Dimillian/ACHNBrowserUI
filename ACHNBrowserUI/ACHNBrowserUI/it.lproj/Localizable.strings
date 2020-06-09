@@ -29,6 +29,7 @@
 // TodaySectionEditView
 "Drag & Drop to Rearrange" = "Trascina e rilascia per riordinare";
 "Hidden" = "Nascosto";
+"Subscribe" = "Abbonamento";
 "Today Sections" = "Sezioni Oggi";
 "Done" = "Fatto";
 " to re-order sections." = " per riordinare le sezioni.";
@@ -86,7 +87,7 @@ Più prezzi inserirai ogni giorno, dopo il lunedì mattina, migliori saranno le 
 Funzione Liste:
 Senza abbonamento puoi creare solo una lista oggetti nella scheda \"Mie cose\".
 Se ti abbonerai potrai invece creare tutte le liste oggetti che desideri.";
-"ACHelperPlusPriceAndAboDetail %@" = "Un abbonamento di %@ al mese sarà aggiunto al tuo account iTunes una volta data la conferma.
+"ACHelperPlusPriceAndAboDetail %@ %@" = "Un abbonamento di %@ al mese sarà aggiunto al tuo account iTunes una volta data la conferma.
 Gli abbonamenti si rinnovano automaticamente se non vengono annullati 24 ore prima della loro scadenza.
 Puoi annullare il tuo abbonamento in ogni momento dalle impostazioni del tuo account iTunes. I periodi di prova gratuita saranno annullati se acquisti un abbonamento.";
 "Subscribe for %@ / Month" = "Abbonati per %@ / Mese";
@@ -709,8 +710,8 @@ Puoi annullare il tuo abbonamento in ogni momento dalle impostazioni del tuo acc
 
 
 // Added 2020-05-13
-"See more" = "Più info";
-"See less" = "Meno info";
+"See more" = "Mostra di più";
+"See less" = "Mostra di meno";
 
 //Added 05-14-2020
 "My data" = "I miei dati";
@@ -763,7 +764,7 @@ Puoi annullare il tuo abbonamento in ogni momento dalle impostazioni del tuo acc
 "Trash Island" = "Isola Rifiuti";
 "Fins Island" = "Isola Pinne";
 "Falls Island" = "Isola Cascate";
-"Gold Island" = "Isola Oro";
+"Gold Island" = "Isola Minerali d’oro";
 " - max %lld visit" = " - max %lld visita";
 // Island Description
 "A fairly normal island which you can get on your first tour, with one cliff, native fruit, coconuts, a river and a pond." = "Un’isola piuttosto normale che puoi trovare al tuo primo viaggio, con un rilievo, frutta nativa, palme da cocco, un fiume e uno stagno.";
@@ -817,7 +818,7 @@ Puoi annullare il tuo abbonamento in ogni momento dalle impostazioni del tuo acc
 
 // Added 2020-05-23
 "Museum Day" = "Giornata internazionale dei Musei";
-"Wedding Season" = "Stagione dei matrimoni";
+"Wedding season" = "Stagione dei matrimoni";
 "Bug-Off contest" = "Insettomania";
 "Meteor shower" =  "Pioggia di stelle";
 
@@ -1001,8 +1002,8 @@ Puoi annullare il tuo abbonamento in ogni momento dalle impostazioni del tuo acc
 "Seasonal Decor" = "Decorazione di stagione";
 "Fruit Rugs" = "Tappeti Frutta";
 "Wooden" = "Di legno";
-"Folk art" = "Arte Folk";
-"Zen-style" = "Stile Zen";
+"Folk Art" = "Arte Folk";
+"Zen-Style" = "Stile Zen";
 "Crown Walls" = "Muri Corona";
 "Sofa" = "Divano";
 "Colorful Wood" = "Legno Colorato";
@@ -1048,7 +1049,7 @@ Puoi annullare il tuo abbonamento in ogni momento dalle impostazioni del tuo acc
 "Iron" = "Ferro";
 "Special Fish" = "Pesce Speciale";
 "Beige" = "Beige";
-"Nature Walls" = "Muri natura";
+"Nature Walls" = "Muri Natura";
 "Simple Carpet" = "Tappeto semplice";
 "Neta Walls" = "Muri Neta";
 "work" = "lavoro";
@@ -1103,3 +1104,8 @@ Puoi annullare il tuo abbonamento in ogni momento dalle impostazioni del tuo acc
 "All" = "Tutti";
 "Liked" = "Preferiti";
 "Residents" = "Residenti";
+
+// Added 2020-06-06
+"Villager visits" = "Parlare agli abitanti";
+"Who have you talked to today? Find the villagers you have visited and tap the home icon on the villager’s page to keep track." = "Con chi hai parlato oggi? Aggiungi qui i residenti con il pulsante della casa che trovi nella scheda di ogni abitante.";
+"Long press on a villager to see more info about them" = "Tieni premuto su di un abitante per vedere la sua scheda.";
