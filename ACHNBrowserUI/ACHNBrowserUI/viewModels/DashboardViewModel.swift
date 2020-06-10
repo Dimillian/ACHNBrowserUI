@@ -42,6 +42,12 @@ class DashboardViewModel: ObservableObject {
                 sectionOrder.append(TodaySection(name: section.name, enabled: true))
             }
         }
+        // If item were removed since the last update, remove from the list
+        sectionOrder.forEach { (section) in
+            if let obsoletSectionIndex = sectionOrder.firstIndex(of: section) {
+                sectionOrder.remove(at: obsoletSectionIndex)
+            }
+        }
         selection = Set(sectionOrder.filter(\.enabled).map(\.name))
     }
         
