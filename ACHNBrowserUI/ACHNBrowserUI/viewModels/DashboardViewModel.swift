@@ -44,7 +44,8 @@ class DashboardViewModel: ObservableObject {
         }
         // If item were removed since the last update, remove from the list
         sectionOrder.forEach { (section) in
-            if let obsoletSectionIndex = sectionOrder.firstIndex(of: section) {
+            if !TodaySection.defaultSectionList.contains(section),
+                let obsoletSectionIndex = sectionOrder.firstIndex(of: section) {
                 sectionOrder.remove(at: obsoletSectionIndex)
             }
         }
