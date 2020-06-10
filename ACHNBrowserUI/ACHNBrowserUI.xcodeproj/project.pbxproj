@@ -719,7 +719,6 @@
 				69BEA980243E608900F02C61 /* home */,
 				69BEA982243E609400F02C61 /* items */,
 				6942FC38244989470062FE8F /* listing */,
-				AE2D7EFF247EB289006C1F1A /* message */,
 				69157B6F2471226B005B9002 /* mysteryIslands */,
 				697E63FE244AD664008FB710 /* settings */,
 				69BEA981243E608E00F02C61 /* shared */,
@@ -795,15 +794,16 @@
 		69BEA981243E608E00F02C61 /* shared */ = {
 			isa = PBXGroup;
 			children = (
-				69AF8C75243E3545001DD9CB /* SearchField.swift */,
-				68345578244C994C0072FC0C /* LikeButtonView.swift */,
-				69CA5ED9244CBA8600B275B6 /* CalendarView.swift */,
-				69CA5F00244F1AD300B275B6 /* SectionHeaderView.swift */,
 				4C7FE78224574FB50011E8AB /* ActivityIndicator.swift */,
-				69875F4F24652A4700B1D46C /* Sheet.swift */,
-				693E2BBD2465B65D00B85CB8 /* RowLoadingView.swift */,
+				69CA5ED9244CBA8600B275B6 /* CalendarView.swift */,
 				4C16FB40247AC9B0009F24E3 /* GridStack.swift */,
+				68345578244C994C0072FC0C /* LikeButtonView.swift */,
+				AE2D7F00247EB2A8006C1F1A /* MessageView.swift */,
 				6985514D248CC31A00F7BDBA /* ResidentButton.swift */,
+				693E2BBD2465B65D00B85CB8 /* RowLoadingView.swift */,
+				69AF8C75243E3545001DD9CB /* SearchField.swift */,
+				69CA5F00244F1AD300B275B6 /* SectionHeaderView.swift */,
+				69875F4F24652A4700B1D46C /* Sheet.swift */,
 			);
 			path = shared;
 			sourceTree = "<group>";
@@ -932,14 +932,6 @@
 				69E4BBBA245B0BEF001035E2 /* AboutView.swift */,
 			);
 			path = about;
-			sourceTree = "<group>";
-		};
-		AE2D7EFF247EB289006C1F1A /* message */ = {
-			isa = PBXGroup;
-			children = (
-				AE2D7F00247EB2A8006C1F1A /* MessageView.swift */,
-			);
-			path = message;
 			sourceTree = "<group>";
 		};
 		AE51C2DF247F399300F074EC /* chores */ = {
