@@ -70,6 +70,7 @@ struct DodoCodeRow: View {
                             .mask(RoundedRectangle(cornerRadius: 10, style: .continuous))
                             .overlay(counter(count: upvotes), alignment: .topTrailing) // FIXME upvote
                     }
+                    .buttonStyle(BorderlessButtonStyle())
                     .padding(.trailing, 4)
                     
                     Button(action: {
