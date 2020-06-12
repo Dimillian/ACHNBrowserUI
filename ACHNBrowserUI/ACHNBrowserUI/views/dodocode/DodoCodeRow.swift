@@ -11,6 +11,7 @@ import Backend
 
 struct DodoCodeRow: View {
     let code: DodoCode
+    let listView: Bool
     
     @State private var reported = false
     @State private var showDeleteAlert = false
@@ -45,7 +46,7 @@ struct DodoCodeRow: View {
             Text(formatter.string(from: code.creationDate))
                 .foregroundColor(.acText)
                 .font(.footnote)
-            if DodoCodeService.shared.canEdit {
+            if DodoCodeService.shared.canEdit && self.listView {
                 HStack {
                     Spacer()
                     Button(action: {
@@ -114,7 +115,7 @@ struct DodoCodeRow_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
             List {
-                DodoCodeRow(code: static_dodoCode)
+                DodoCodeRow(code: static_dodoCode, listView: true)
             }
         }
     }
