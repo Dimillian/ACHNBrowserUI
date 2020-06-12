@@ -861,15 +861,15 @@ Du kannst das Abonnement jederzeit in deinen iTunes Kontoeinstellungen beenden. 
 "Long press on a villager to see more info about them" = "Lange auf einen Bewohner tippen um mehr Informationen zu erhallten";
 
 // Added 2020-06-08
-"Medium w/Fin" = "Mittel mit Flosse";
-"Large w/Fin" = "Groß mit Flosse";
+"Medium w/Fin" = "Mittel mit Rückenflosse";
+"Large w/Fin" = "Groß mit Rückenflosse";
 "XX-Large" = "Sehr sehr groß";
 "Long" = "Lang";
 "Sea (rainy days)" = "Meer (an regnerische Tagen)";
 "Flying near water" = "Fliegt in der nähe von Wasser";
 
 // dodo code
-"dodocode.footer" = "Once your Dodo code is saved, it'll appear on the list.
-Please Ensure your gates are open before adding your code.
-You can delete and close your gates at any moment.
-Please be respectful, any Dodo code reported will be deleted.";
+"dodocode.footer" = "Sobald der Dodo Code gespeichert ist, ist er für andere in der Liste sichtbar
+Bitte stell sicher, dass dein Flugsteig geöffnet ist, bevor du den Code speicherst.
+Du kannst den Code jederzeit löschen und deinen Flugsteig schließen.
+Bitte geht respektvoll miteinander um. Jeder gemeldete Dodo Code wird gelöscht.";
