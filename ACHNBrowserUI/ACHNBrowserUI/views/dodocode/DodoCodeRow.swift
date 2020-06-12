@@ -30,7 +30,7 @@ struct DodoCodeRow: View {
                     .foregroundColor(.acText)
                     .font(.headline)
                     .fontWeight(.bold)
-                Text(code.code)
+                Text(code.code.uppercased())
                     .foregroundColor(.acHeaderBackground)
                     .font(.headline)
                     .fontWeight(.bold)
