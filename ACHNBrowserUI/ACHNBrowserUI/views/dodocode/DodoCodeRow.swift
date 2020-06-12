@@ -69,11 +69,12 @@ struct DodoCodeRow: View {
                         Button(action: {
                             DodoCodeService.shared.deleteDodoCode(code: self.code)
                         }) {
-                            Text("Delete")
-                                .foregroundColor(.red)
+                            Image(systemName: "trash.fill")
+                                .imageScale(.medium)
                                 .font(.footnote)
-                                .padding(.vertical, 3)
-                                .padding(.horizontal, 5)
+                                .foregroundColor(.red)
+                                .padding(.vertical, 6)
+                                .padding(.horizontal, 8)
                                 .background(Color.acText.opacity(0.2))
                                 .mask(RoundedRectangle(cornerRadius: 10, style: .continuous))
                         }.buttonStyle(BorderlessButtonStyle())
