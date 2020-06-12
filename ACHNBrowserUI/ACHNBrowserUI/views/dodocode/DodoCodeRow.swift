@@ -34,8 +34,7 @@ struct DodoCodeRow: View {
                     .fontWeight(.bold)
                     .lineLimit(1)
             }
-            Text(String.init(format: NSLocalizedString("Hemisphere: %@", comment: ""),
-                             NSLocalizedString(code.hemisphere.rawValue.capitalized, comment: "")))
+            Text("Hemisphere: \(NSLocalizedString(code.hemisphere.rawValue.capitalized, comment: ""))")
                 .foregroundColor(.acText)
                 .font(.subheadline)
             Text(code.text)
@@ -55,8 +54,7 @@ struct DodoCodeRow: View {
                                 ActivityIndicator(isAnimating: .constant(true),
                                                   style: .medium)
                             } else {
-                                Text(String.init(format: NSLocalizedString("Report (%lld)", comment: ""),
-                                                 code.report))
+                                Text("Report (\(code.report))")
                                     .foregroundColor(.acSecondaryText)
                             }
                         }
