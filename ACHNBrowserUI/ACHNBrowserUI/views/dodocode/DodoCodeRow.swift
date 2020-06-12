@@ -13,6 +13,8 @@ struct DodoCodeRow: View {
     let code: DodoCode
     
     @State private var reported = false
+    @State private var showDeleteAlert = false
+    @State private var showReportAlert = false
     
     var formatter: DateFormatter {
         let formatter = DateFormatter()
@@ -47,8 +49,7 @@ struct DodoCodeRow: View {
                 HStack {
                     Spacer()
                     Button(action: {
-                        self.reported = true
-                        DodoCodeService.shared.reportDodocode(code: self.code)
+                        self.showReportAlert = true
                     }) {
                         Group {
                             if reported {
@@ -64,10 +65,15 @@ struct DodoCodeRow: View {
                                     .mask(RoundedRectangle(cornerRadius: 10, style: .continuous))
                             }
                         }
-                    }.buttonStyle(BorderlessButtonStyle())
+                    }
+                    .buttonStyle(BorderlessButtonStyle())
+                    .alert(isPresented: $showReportAlert) {
+                            reportAlert
+                    }
+                    
                     if code.canDelete {
                         Button(action: {
-                            DodoCodeService.shared.deleteDodoCode(code: self.code)
+                            self.showDeleteAlert = true
                         }) {
                             Image(systemName: "trash.fill")
                                 .imageScale(.medium)
@@ -77,11 +83,30 @@ struct DodoCodeRow: View {
                                 .padding(.horizontal, 8)
                                 .background(Color.acText.opacity(0.2))
                                 .mask(RoundedRectangle(cornerRadius: 10, style: .continuous))
-                        }.buttonStyle(BorderlessButtonStyle())
+                        }
+                        .buttonStyle(BorderlessButtonStyle())
+                        .alert(isPresented: $showDeleteAlert) {
+                                deleteAlert
+                        }
                     }
                 }
             }
         }
+    }
+    
+    private var deleteAlert: Alert {
+        Alert(title: Text("Are you sure?"),
+              message: Text("Do you really want to delete your Dodo code?"), primaryButton: .destructive(Text("Delete")) {
+                      DodoCodeService.shared.deleteDodoCode(code: self.code)
+              }, secondaryButton: .cancel())
+    }
+    
+    private var reportAlert: Alert {
+        Alert(title: Text("Are you sure?"),
+              message: Text("Do you really want to report this Dodo code?"), primaryButton: .destructive(Text("Report")) {
+                      self.reported = true
+                      DodoCodeService.shared.reportDodocode(code: self.code)
+              }, secondaryButton: .cancel())
     }
 }
 
