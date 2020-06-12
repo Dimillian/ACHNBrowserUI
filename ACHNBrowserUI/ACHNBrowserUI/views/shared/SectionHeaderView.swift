@@ -31,6 +31,7 @@ struct SectionHeaderView: View {
                 .font(.system(.subheadline, design: .rounded))
                 .fontWeight(.bold)
                 .foregroundColor(.acHeaderText)
+                .lineLimit(1)
         }
         .padding(.vertical, 8)
         .padding(.horizontal, 14)

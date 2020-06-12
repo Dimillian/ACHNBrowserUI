@@ -22,13 +22,17 @@ struct DodoCodeListView: View {
                 RowLoadingView(isLoading: .constant(true))
             } else if !service.codes.isEmpty {
                 ForEach(service.codes) { code in
-                    DodoCodeRow(code: code)
+                    Section(header: SectionHeaderView(text: code.islandName, icon: "sun.haze.fill")) {
+                        DodoCodeRow(code: code)
+                    }
                 }
             } else {
                 Text("No active Dodo code yet, open your island to visitors by adding your own")
                     .foregroundColor(.acSecondaryText)
             }
         }
+        .listStyle(GroupedListStyle())
+        .environment(\.horizontalSizeClass, .regular)
         .sheet(item: $sheet, content: { Sheet(sheetType: $0) })
         .alert(isPresented: $showiCloudAlert, content: { self.iCloudAlert })
         .navigationBarTitle("Dodo codes")
