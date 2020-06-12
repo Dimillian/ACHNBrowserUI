@@ -13,6 +13,10 @@ struct DodoCodeRow: View {
     let code: DodoCode
     let listView: Bool
     
+    // TODO remove
+    @State private var upvotes = 0
+    
+    @State private var voted = false
     @State private var reported = false
     @State private var showDeleteAlert = false
     @State private var showReportAlert = false
@@ -49,6 +53,25 @@ struct DodoCodeRow: View {
             if DodoCodeService.shared.canEdit && self.listView {
                 HStack {
                     Spacer()
+                    Button(action: {
+                        if !self.voted {
+                            self.voted = true
+                            self.upvotes += 1
+                            FeedbackGenerator.shared.triggerSelection()
+                        }
+                    }) {
+                        Image(systemName: voted ? "hand.thumbsup.fill" : "hand.thumbsup")
+                            .imageScale(.medium)
+                            .font(.footnote)
+                            .foregroundColor(.green)
+                            .padding(.vertical, 7)
+                            .padding(.horizontal, 8)
+                            .background(Color.acBackground)
+                            .mask(RoundedRectangle(cornerRadius: 10, style: .continuous))
+                            .overlay(counter(count: upvotes), alignment: .topTrailing) // FIXME upvote
+                    }
+                    .padding(.trailing, 4)
+                    
                     Button(action: {
                         self.showReportAlert = true
                     }) {
