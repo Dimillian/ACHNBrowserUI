@@ -868,8 +868,23 @@ Du kannst das Abonnement jederzeit in deinen iTunes Kontoeinstellungen beenden. 
 "Sea (rainy days)" = "Meer (an regnerische Tagen)";
 "Flying near water" = "Fliegt in der nähe von Wasser";
 
-// dodo code
+// Added 2020-06-12
+// Dodo code
+"Please fill all the fields" = "Bitte füll alle Felder aus";
+"Dodo code" = "Dodo Code";
+"Dodo codes" = "Dodo Codes";
+"This Dodo code is invalid" = "Der Dodo Code ist ungültig";
+"Island description" = "Inselbeschreibung";
+"Native fruit" = "Inselfrucht";
+"Add your Dodo code" = "Dodo Code hinzufügen";
+"Hemisphere: %@" = "Hemisphäre: %@";
+"Delete" = "Löschen";
+"Report (%lld)" = "Melden (%lld)";
+"Latest Dodo code" = "Aktuellster Dodo Code";
+
 "dodocode.footer" = "Sobald der Dodo Code gespeichert ist, ist er für andere in der Liste sichtbar
 Bitte stell sicher, dass dein Flugsteig geöffnet ist, bevor du den Code speicherst.
 Du kannst den Code jederzeit löschen und deinen Flugsteig schließen.
 Bitte geht respektvoll miteinander um. Jeder gemeldete Dodo Code wird gelöscht.";
+"iCloud not enabled" = "iCloud ist nicht aktiviert";
+"You need an iCloud account to add your Dodo code" = "Du brauchst einen iCloud Account um einen Dodo Code hinzufügen zu können";
