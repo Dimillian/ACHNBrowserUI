@@ -21,12 +21,13 @@ struct SettingsView: View {
     @State private var importedFile: URL?
     @State private var showSuccessImportAlert = false
     @State private var showDeleteConfirmationAlert = false
-
+    
     var body: some View {
         NavigationView {
             Form {
                 islandSection
                 appSection
+                notificationSection
                 dataSection
             }
             .listStyle(GroupedListStyle())
@@ -123,6 +124,13 @@ struct SettingsView: View {
                         Text(LocalizedStringKey(service.rawValue.capitalized)).tag(service)
                     }
             }
+            
+            HStack {
+                Toggle(isOn: $appUserDefaults.isGameTimeInSync ) {
+                    Text("Game time in sync")
+                }
+            }
+
         }
     }
     
@@ -148,6 +156,46 @@ struct SettingsView: View {
             }
             .disabled(subscriptionManager.inPaymentProgress)
             .opacity(subscriptionManager.inPaymentProgress ? 0.5 : 1.0)
+        }
+    }
+    
+    private var notificationSection: some View {
+        Section(header: SectionHeaderView(text: "Notifications", icon: "clock")) {
+            HStack {
+                Toggle(isOn: $appUserDefaults.isShopOpenClose ) {
+                    Text("When shops open/close")
+                }
+                .onTapGesture {
+                    if !self.appUserDefaults.isShopOpenClose {
+                        self.getNotify(title: "ACHNBrowserUI", subtitle: "Nook’s Cranny store is open", hour: 8, minute: 0, isRepeated: true)
+                        self.getNotify(title: "ACHNBrowserUI", subtitle: "Nook’s Cranny store is closing in 1h", hour: 21, minute: 0, isRepeated: true)
+                        self.getNotify(title: "ACHNBrowserUI", subtitle: "Able Sisters Shop is open", hour: 9, minute: 0, isRepeated: true)
+                        self.getNotify(title: "ACHNBrowserUI", subtitle: "Able Sisters Shop is closing in 1h", hour: 20, minute: 0, isRepeated: true)
+                        
+                        // for debugging
+                        print("toggled")
+                    }
+                }
+                
+            }
+            
+            HStack {
+                Toggle(isOn: $appUserDefaults.isSpecialEventsOn) {
+                    Text("Special Events")
+                }
+            }
+            
+            HStack {
+                Toggle(isOn: $appUserDefaults.isTurnipPriceChangesOn) {
+                    Text("Turnip Price Changes")
+                }
+            }
+            
+            HStack {
+                Toggle(isOn: $appUserDefaults.isTurnipSellBuyOn) {
+                    Text("Turnip Sell/Buy reminder")
+                }
+            }
         }
     }
     
@@ -204,6 +252,35 @@ struct SettingsView: View {
             }.alert(isPresented: $showDeleteConfirmationAlert,
                     content: { self.deleteConfirmationAlert })
         }
+    }
+    
+    func getNotify(title: String, subtitle: String, hour: Int, minute: Int, isRepeated: Bool) {
+        // request permission first
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) { success, error in
+            if success {
+                print("All set!")
+            } else if let error = error {
+                print(error.localizedDescription)
+            }
+        }
+        
+        // schedule the notification
+        let content = UNMutableNotificationContent()
+        content.title = title
+        content.subtitle = subtitle
+        content.sound = UNNotificationSound.default
+        
+        // show this notification using custom date
+       var date = DateComponents()
+       date.hour = hour
+       date.minute = minute
+       let trigger = UNCalendarNotificationTrigger(dateMatching: date, repeats: isRepeated)
+
+       // choose a random identifier
+       let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
+
+       // add our notification request
+       UNUserNotificationCenter.current().add(request)
     }
 }
 
