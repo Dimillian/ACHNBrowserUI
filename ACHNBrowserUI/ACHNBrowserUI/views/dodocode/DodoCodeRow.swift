@@ -57,13 +57,14 @@ struct DodoCodeRow: View {
                                 ActivityIndicator(isAnimating: .constant(true),
                                                   style: .medium)
                             } else {
-                                Text("Report (\(code.report))")
+                                Image(systemName: "exclamationmark.triangle.fill")
                                     .foregroundColor(.acSecondaryText)
                                     .font(.footnote)
-                                    .padding(.vertical, 3)
-                                    .padding(.horizontal, 5)
-                                    .background(Color.acText.opacity(0.2))
+                                    .padding(.vertical, 7)
+                                    .padding(.horizontal, 8)
+                                    .background(Color.acBackground)
                                     .mask(RoundedRectangle(cornerRadius: 10, style: .continuous))
+                                    .overlay(counter(count: code.report), alignment: .topTrailing)
                             }
                         }
                     }
@@ -71,6 +72,7 @@ struct DodoCodeRow: View {
                     .alert(isPresented: $showReportAlert) {
                             reportAlert
                     }
+                    .padding(.trailing, 4)
                     
                     if code.canDelete {
                         Button(action: {
@@ -80,9 +82,9 @@ struct DodoCodeRow: View {
                                 .imageScale(.medium)
                                 .font(.footnote)
                                 .foregroundColor(.red)
-                                .padding(.vertical, 6)
+                                .padding(.vertical, 7)
                                 .padding(.horizontal, 8)
-                                .background(Color.acText.opacity(0.2))
+                                .background(Color.acBackground)
                                 .mask(RoundedRectangle(cornerRadius: 10, style: .continuous))
                         }
                         .buttonStyle(BorderlessButtonStyle())
@@ -108,6 +110,21 @@ struct DodoCodeRow: View {
                       self.reported = true
                       DodoCodeService.shared.reportDodocode(code: self.code)
               }, secondaryButton: .cancel())
+    }
+    
+    private func counter(count: Int) -> some View {
+        ZStack {
+            Circle()
+                .scale(2)
+                .fixedSize()
+                .foregroundColor(Color.acBackground)
+            Text("\(count)")
+                .font(.footnote)
+                .foregroundColor(.acText)
+        }
+        .opacity(count > 0 ? 1 : 0)
+        .animation(.linear)
+        .padding(EdgeInsets(top: -5, leading: 0, bottom: 0, trailing: -6))
     }
 }
 
