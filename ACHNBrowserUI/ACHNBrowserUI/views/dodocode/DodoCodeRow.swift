@@ -45,6 +45,7 @@ struct DodoCodeRow: View {
                 .font(.footnote)
             if DodoCodeService.shared.canEdit {
                 HStack {
+                    Spacer()
                     Button(action: {
                         self.reported = true
                         DodoCodeService.shared.reportDodocode(code: self.code)
@@ -56,6 +57,11 @@ struct DodoCodeRow: View {
                             } else {
                                 Text("Report (\(code.report))")
                                     .foregroundColor(.acSecondaryText)
+                                    .font(.footnote)
+                                    .padding(.vertical, 3)
+                                    .padding(.horizontal, 5)
+                                    .background(Color.acText.opacity(0.2))
+                                    .mask(RoundedRectangle(cornerRadius: 10, style: .continuous))
                             }
                         }
                     }.buttonStyle(BorderlessButtonStyle())
@@ -63,7 +69,13 @@ struct DodoCodeRow: View {
                         Button(action: {
                             DodoCodeService.shared.deleteDodoCode(code: self.code)
                         }) {
-                            Text("Delete").foregroundColor(.red)
+                            Text("Delete")
+                                .foregroundColor(.red)
+                                .font(.footnote)
+                                .padding(.vertical, 3)
+                                .padding(.horizontal, 5)
+                                .background(Color.acText.opacity(0.2))
+                                .mask(RoundedRectangle(cornerRadius: 10, style: .continuous))
                         }.buttonStyle(BorderlessButtonStyle())
                     }
                 }
