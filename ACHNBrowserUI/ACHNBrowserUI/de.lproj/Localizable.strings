@@ -878,8 +878,9 @@ Du kannst das Abonnement jederzeit in deinen iTunes Kontoeinstellungen beenden. 
 "Native fruit" = "Inselfrucht";
 "Add your Dodo code" = "Dodo Code hinzufügen";
 "Hemisphere: %@" = "Hemisphäre: %@";
+"Do you really want to report this Dodo code?" = "Möchtest du diesen Dodo Code wirklich melden?";
+"Do you really want to delete your Dodo code?" = "Möchtest du deinen Dodo Code wirklich löschen?";
 "Delete" = "Löschen";
-"Report (%lld)" = "Melden (%lld)";
 "Latest Dodo code" = "Aktuellster Dodo Code";
 
 "dodocode.footer" = "Sobald der Dodo Code gespeichert ist, ist er für andere in der Liste sichtbar
