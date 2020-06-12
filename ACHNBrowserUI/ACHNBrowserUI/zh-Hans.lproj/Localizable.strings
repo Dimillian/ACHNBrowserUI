@@ -372,4 +372,10 @@
 "Are you sure?" = "你确定吗?";
 "This will delete all your collected critters, items, villagers and items lists" = "这将会删除你所有收集的生物，村民和物品列表";
 
+// dodo code
+"dodocode.footer" = "Once your Dodo code is saved, it'll appear on the list.
+Please Ensure your gates are open before adding your code.
+You can delete and close your gates at any moment.
+Please be respectful, any Dodo code reported will be deleted.";
+
 

@@ -553,3 +553,9 @@ Puedes cancelar en cualquier momento desde los ajustes de iTunes. Cualquier peri
 "Art Deco Walls" = "Paredes decorativas del museo";
 "Outdoors" = "Exterior";
 "Rose Rug" = "Alfombra Rosa";
+
+// dodo code
+"dodocode.footer" = "Once your Dodo code is saved, it'll appear on the list.
+Please Ensure your gates are open before adding your code.
+You can delete and close your gates at any moment.
+Please be respectful, any Dodo code reported will be deleted.";

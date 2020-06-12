@@ -836,4 +836,22 @@ You can cancel anytime with your iTunes account settings. Any unused portion of 
 "Sea (rainy days)" = "Mer (jour de pluie)";
 "Flying near water" = "Vol près de l'eau";
 
+// Doco code
+"Please fill all the fields" = "Merci de remplir tous les champs";
+"Dodo code" = "Dodo code";
+"Dodo codes" = "Dodo codes";
+"This Dodo code is invalid" = "Ce Dodo code est invalide";
+"Island description" = "Description de l'île";
+"Native fruit" = "Fruit de départ";
+"Add your Dodo code" = "Ajoutez votre Dodo code";
+"Hemisphere: %@" = "Hémisphère: %@";
+"Delete" = "Supprimer";
+"Report (%lld)" = "Signaler (%lld)";
+"Latest Dodo code" = "Dernier Dodo code";
 
+"dodocode.footer" = "Une fois votre Dodo code ajouté il apparaitra dans la liste.
+Merci de vérifier que vos portes sont ouvertes avant d'ajouter votre code.
+Vous pourrez supprimer et ferme vos portes à tout moment.
+Merci d'être respecteux. Tout code signalé sera supprimé";
+"iCloud not enabled" = "iCloud n'est pas activé";
+"You need an iCloud account to add your Dodo code" = "Vous avez besoin d'iCloud pour ajouter votre Dodo code";

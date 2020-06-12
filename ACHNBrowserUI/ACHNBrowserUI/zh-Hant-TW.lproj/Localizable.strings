@@ -57,3 +57,9 @@
 "fossils" = "化石";
 
 "%lld upcomingDailyNotifications" = "你會在接下來的 %lld 個通知中收到大頭菜價錢預測";
+
+// dodo code
+"dodocode.footer" = "Once your Dodo code is saved, it'll appear on the list.
+Please Ensure your gates are open before adding your code.
+You can delete and close your gates at any moment.
+Please be respectful, any Dodo code reported will be deleted.";
