@@ -15,7 +15,6 @@ class ItemsViewModel: ObservableObject {
     @Published var sortedItems: [Item] = []
     @Published var searchItems: [Item] = []
     @Published var searchText = ""
-    @Published var allowSearch = false
     
     public let category: Backend.Category
     
@@ -73,21 +72,14 @@ class ItemsViewModel: ObservableObject {
     public init(category: Backend.Category, items: [Item]) {
         self.category = category
         self.items = items
+        setupSearch()
+        
     }
     
     public init(category: Backend.Category) {
         self.category = category
-        self.allowSearch = true
+        setupSearch()
         
-        searchCancellable = $searchText
-            .debounce(for: .milliseconds(300), scheduler: DispatchQueue.main)
-            .removeDuplicates()
-            .filter { !$0.isEmpty }
-            .map(items(with:))
-            .sink{ [weak self] in
-                self?.searchItems = $0
-        }
-
         itemCancellable = Items.shared.$categories
             .subscribe(on: DispatchQueue.global())
             .map{ $0[category]?.sorted{ $0.localizedName.localizedCompare($1.localizedName) == .orderedAscending } ?? [] }
@@ -111,11 +103,23 @@ class ItemsViewModel: ObservableObject {
                     self?.items = items
             }
         }
+        setupSearch()
     }
 
     private func items(with string: String) -> [Item] {
         items.filter {
             $0.localizedName.lowercased().contains(string.lowercased())
+        }
+    }
+    
+    private func setupSearch() {
+        searchCancellable = $searchText
+            .debounce(for: .milliseconds(300), scheduler: DispatchQueue.main)
+            .removeDuplicates()
+            .filter { !$0.isEmpty }
+            .map(items(with:))
+            .sink{ [weak self] in
+                self?.searchItems = $0
         }
     }
 }
