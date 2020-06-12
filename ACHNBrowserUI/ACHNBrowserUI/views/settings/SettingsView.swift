@@ -28,6 +28,7 @@ struct SettingsView: View {
                 islandSection
                 appSection
                 dataSection
+                notificationSection
             }
             .listStyle(GroupedListStyle())
             .environment(\.horizontalSizeClass, .regular)
@@ -203,6 +204,16 @@ struct SettingsView: View {
                 Text("Reset my collection").foregroundColor(.red)
             }.alert(isPresented: $showDeleteConfirmationAlert,
                     content: { self.deleteConfirmationAlert })
+        }
+    }
+    
+    private var notificationSection: some View {
+        Section(header: SectionHeaderView(text: "Notifications")) {
+            HStack {
+                Toggle(isOn: $appUserDefaults.shopNotificationsEnabled, label: {
+                    Text("Enable Shop Notifications")
+                })
+            }
         }
     }
 }
