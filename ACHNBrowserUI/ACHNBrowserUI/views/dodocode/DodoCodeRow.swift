@@ -12,7 +12,8 @@ import Backend
 struct DodoCodeRow: View {
     let code: DodoCode
     let listView: Bool
-    
+        
+    @State private var voted = false
     @State private var reported = false
     @State private var showDeleteAlert = false
     @State private var showReportAlert = false
@@ -46,61 +47,92 @@ struct DodoCodeRow: View {
             Text(formatter.string(from: code.creationDate))
                 .foregroundColor(.acText)
                 .font(.footnote)
-            if DodoCodeService.shared.canEdit && self.listView {
+
+            if DodoCodeService.shared.canEdit && listView {
                 HStack {
                     Spacer()
-                    Button(action: {
-                        self.showReportAlert = true
-                    }) {
-                        Group {
-                            if reported {
-                                ActivityIndicator(isAnimating: .constant(true),
-                                                  style: .medium)
-                            } else {
-                                Image(systemName: "exclamationmark.triangle.fill")
-                                    .foregroundColor(.acSecondaryText)
-                                    .font(.footnote)
-                                    .padding(.vertical, 7)
-                                    .padding(.horizontal, 8)
-                                    .background(Color.acBackground)
-                                    .mask(RoundedRectangle(cornerRadius: 10, style: .continuous))
-                                    .overlay(counter(count: code.report), alignment: .topTrailing)
-                            }
-                        }
-                    }
-                    .buttonStyle(BorderlessButtonStyle())
-                    .alert(isPresented: $showReportAlert) {
-                            reportAlert
-                    }
-                    .padding(.trailing, 4)
-                    
+                    upvoteButton
+                    reportButton
                     if code.canDelete {
-                        Button(action: {
-                            self.showDeleteAlert = true
-                        }) {
-                            Image(systemName: "trash.fill")
-                                .imageScale(.medium)
-                                .font(.footnote)
-                                .foregroundColor(.red)
-                                .padding(.vertical, 7)
-                                .padding(.horizontal, 8)
-                                .background(Color.acBackground)
-                                .mask(RoundedRectangle(cornerRadius: 10, style: .continuous))
-                        }
-                        .buttonStyle(BorderlessButtonStyle())
-                        .alert(isPresented: $showDeleteAlert) {
-                                deleteAlert
-                        }
+                        deleteButton
                     }
                 }
             }
         }
     }
     
+    private var upvoteButton: some View {
+        Button(action: {
+            if !self.voted {
+                self.voted = true
+                DodoCodeService.shared.upvote(code: self.code)
+                FeedbackGenerator.shared.triggerSelection()
+            }
+        }) {
+            Image(systemName: voted ? "hand.thumbsup.fill" : "hand.thumbsup")
+                .imageScale(.medium)
+                .font(.footnote)
+                .foregroundColor(.green)
+                .padding(.vertical, 7)
+                .padding(.horizontal, 8)
+                .background(Color.acBackground)
+                .mask(RoundedRectangle(cornerRadius: 10, style: .continuous))
+                .overlay(counter(count: code.upvotes), alignment: .topTrailing)
+        }
+        .buttonStyle(BorderlessButtonStyle())
+        .padding(.trailing, 4)
+    }
+    
+    private var reportButton: some View {
+        Button(action: {
+            self.showReportAlert = true
+        }) {
+            Group {
+                if reported {
+                    ActivityIndicator(isAnimating: .constant(true),
+                                      style: .medium)
+                } else {
+                    Image(systemName: "exclamationmark.triangle.fill")
+                        .foregroundColor(.acSecondaryText)
+                        .font(.footnote)
+                        .padding(.vertical, 7)
+                        .padding(.horizontal, 8)
+                        .background(Color.acBackground)
+                        .mask(RoundedRectangle(cornerRadius: 10, style: .continuous))
+                        .overlay(counter(count: code.report), alignment: .topTrailing)
+                }
+            }
+        }
+        .buttonStyle(BorderlessButtonStyle())
+        .alert(isPresented: $showReportAlert) {
+            reportAlert
+        }
+        .padding(.trailing, 4)
+    }
+    
+    private var deleteButton: some View {
+        Button(action: {
+            self.showDeleteAlert = true
+        }) {
+            Image(systemName: "trash.fill")
+                .imageScale(.medium)
+                .font(.footnote)
+                .foregroundColor(.red)
+                .padding(.vertical, 7)
+                .padding(.horizontal, 8)
+                .background(Color.acBackground)
+                .mask(RoundedRectangle(cornerRadius: 10, style: .continuous))
+        }
+        .buttonStyle(BorderlessButtonStyle())
+        .alert(isPresented: $showDeleteAlert) {
+            deleteAlert
+        }
+    }
+    
     private var deleteAlert: Alert {
         Alert(title: Text("Are you sure?"),
               message: Text("Do you really want to delete your Dodo code?"), primaryButton: .destructive(Text("Delete")) {
-                      DodoCodeService.shared.deleteDodoCode(code: self.code)
+                      DodoCodeService.shared.delete(code: self.code)
               }, secondaryButton: .cancel())
     }
     
@@ -108,7 +140,7 @@ struct DodoCodeRow: View {
         Alert(title: Text("Are you sure?"),
               message: Text("Do you really want to report this Dodo code?"), primaryButton: .destructive(Text("Report")) {
                       self.reported = true
-                      DodoCodeService.shared.reportDodocode(code: self.code)
+                      DodoCodeService.shared.report(code: self.code)
               }, secondaryButton: .cancel())
     }
     
