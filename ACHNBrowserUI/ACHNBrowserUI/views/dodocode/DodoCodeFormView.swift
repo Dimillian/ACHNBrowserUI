@@ -15,8 +15,8 @@ struct DodoCodeFormView: View {
     
     let isEditing: DodoCode?
     
+    @ObservedObject private var dodoCode = DodoCodeBinding()
     @State private var islandName = AppUserDefaults.shared.islandName
-    @State private var dodoCode = ""
     @State private var text = ""
     @State private var fruit = AppUserDefaults.shared.fruit
     @State private var hemisphere = AppUserDefaults.shared.hemisphere
@@ -32,10 +32,13 @@ struct DodoCodeFormView: View {
                     if validationError {
                         Text("Please fill all the fields").foregroundColor(.red)
                     }
-                    TextField("Dodo code", text: $dodoCode,
+                    TextField("Dodo code", text: $dodoCode.code,
                               onEditingChanged: { _ in
                                 self.checkDodoCode()
-                    }).foregroundColor(.acHeaderBackground)
+                    })
+                    .foregroundColor(.acHeaderBackground)
+                    .font(.custom("CourierNewPS-BoldMT", size: 20))
+                    .autocapitalization(.allCharacters)
                     if dodoCodeError {
                         Text("This Dodo code is invalid").foregroundColor(.red)
                     }
@@ -84,7 +87,7 @@ struct DodoCodeFormView: View {
         .onAppear {
             if let editing = self.isEditing {
                 self.islandName = editing.islandName
-                self.dodoCode = editing.code
+                self.dodoCode.code = editing.code
                 self.text = editing.text
                 self.hemisphere = editing.hemisphere
                 self.fruit = editing.fruit
@@ -98,7 +101,7 @@ struct DodoCodeFormView: View {
     }
     
     private func checkDodoCode() {
-        if !dodoCode.isEmpty && dodoCode.count != 5 {
+        if !dodoCode.code.isEmpty && dodoCode.code.count != 5 {
             dodoCodeError = true
             return
         }
@@ -107,7 +110,7 @@ struct DodoCodeFormView: View {
     
     private func checkForMissingField() {
         if islandName.isEmpty ||
-            dodoCode.isEmpty ||
+            dodoCode.code.isEmpty ||
             text.isEmpty {
             validationError = true
             return
@@ -134,7 +137,7 @@ struct DodoCodeFormView: View {
             if self.validationError || self.dodoCodeError {
                 return
             }
-            var code = DodoCode(code: self.dodoCode,
+            var code = DodoCode(code: self.dodoCode.code,
                                 islandName: self.islandName,
                                 text: self.text,
                                 fruit: self.fruit,
@@ -154,6 +157,16 @@ struct DodoCodeFormView: View {
         }
         .buttonStyle(BorderedBarButtonStyle())
         .accentColor(Color.acTabBarBackground.opacity(0.2))
+    }
+}
+
+class DodoCodeBinding: ObservableObject {
+    @Published var code = "" {
+        didSet {
+            if code.count > 5 && oldValue.count <= 5 {
+                code = oldValue
+            }
+        }
     }
 }
 
