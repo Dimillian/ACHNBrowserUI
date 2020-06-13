@@ -15,6 +15,7 @@ struct SettingsView: View {
     @EnvironmentObject private var subscriptionManager: SubscriptionManager
     @Environment(\.presentationMode) private var presentationMode
     @ObservedObject var appUserDefaults = AppUserDefaults.shared
+    @ObservedObject var notificationManager = NotificationManager.shared
     
     @State private var isDocumentPickerPresented = false
     @State private var documentPickderMode: UIDocumentPickerMode = .import
@@ -166,10 +167,10 @@ struct SettingsView: View {
                 }
                 .onTapGesture {
                     if !self.appUserDefaults.isShopOpenClose {
-                        self.getNotify(subtitle: "Nook’s Cranny store is open", hour: 8, minute: 0, isRepeated: true)
-                        self.getNotify(subtitle: "Nook’s Cranny store is closing in 1h", hour: 21, minute: 0, isRepeated: true)
-                        self.getNotify(subtitle: "Able Sisters Shop is open", hour: 9, minute: 0, isRepeated: true)
-                        self.getNotify(subtitle: "Able Sisters Shop is closing in 1h", hour: 20, minute: 0, isRepeated: true)
+                        self.notificationManager.getSettingsNotifications(subtitle: "Nook’s Cranny store is open", hour: 8, minute: 0, isRepeated: true)
+                        self.notificationManager.getSettingsNotifications(subtitle: "Nook’s Cranny store is closing in 1h", hour: 21, minute: 0, isRepeated: true)
+                        self.notificationManager.getSettingsNotifications(subtitle: "Able Sisters Shop is open", hour: 9, minute: 0, isRepeated: true)
+                        self.notificationManager.getSettingsNotifications(subtitle: "Able Sisters Shop is closing in 1h", hour: 20, minute: 0, isRepeated: true)
                     }
                 }
                 
@@ -248,35 +249,6 @@ struct SettingsView: View {
             }.alert(isPresented: $showDeleteConfirmationAlert,
                     content: { self.deleteConfirmationAlert })
         }
-    }
-    
-    func getNotify(subtitle: String, hour: Int, minute: Int, isRepeated: Bool) {
-        // request permission first
-        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) { success, error in
-            if success {
-                print("All set!")
-            } else if let error = error {
-                print(error.localizedDescription)
-            }
-        }
-        
-        // schedule the notification
-        let content = UNMutableNotificationContent()
-        content.title = "AC Helper"
-        content.subtitle = subtitle
-        content.sound = UNNotificationSound.default
-        
-        // show this notification using custom date
-       var date = DateComponents()
-       date.hour = hour
-       date.minute = minute
-       let trigger = UNCalendarNotificationTrigger(dateMatching: date, repeats: isRepeated)
-
-       // choose a random identifier
-       let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
-
-       // add our notification request
-       UNUserNotificationCenter.current().add(request)
     }
 }
 
