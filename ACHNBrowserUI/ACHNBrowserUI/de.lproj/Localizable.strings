@@ -32,16 +32,15 @@
 "Collection" = "Sammlung";
 
 // TodayView
-"Change Section Order" = "Ändere die Reihenfolge";
+"Change Section Order" = "Reihenfolge ändern";
 // TodaySectionEditView
-"Drag & Drop to Rearrange" = "Zum Anordnen halten und verschieben";
 "Hidden" = "Versteckt";
 "Today Sections" = "Heute Abschnitte";
 "Done" = "Fertig";
-" to re-order sections." = " to re-order sections.";
-"Check or un-check" = "Check or un-check";
-" rows to hide sections from the dashboard." = " rows to hide sections from the dashboard.";
-"Your top-most section will be the default detail view on iPad and Mac." = "Your top-most section will be the default detail view on iPad and Mac.";
+"Drag and drop" = "Drag & Drop";
+" to re-order sections." = " um die Reihenfolge zu ändern.";
+"Check or un-check" = "Aktiviere/deaktiviere";
+" rows to hide sections from the dashboard." = " Widgets, um sie auf dem Dashboard ein- oder auszublenden.";
 // TodayBirthdaySection
 "Birthdays" = "Geburtstage";
 "Today's Birthdays" = "Heutige Geburtstage";
@@ -881,6 +880,7 @@ Du kannst das Abonnement jederzeit in deinen iTunes Kontoeinstellungen beenden. 
 "Do you really want to report this Dodo code?" = "Möchtest du diesen Dodo Code wirklich melden?";
 "Do you really want to delete your Dodo code?" = "Möchtest du deinen Dodo Code wirklich löschen?";
 "Delete" = "Löschen";
+"Report" = "Melden";
 "Latest Dodo code" = "Aktuellster Dodo Code";
 
 "dodocode.footer" = "Sobald der Dodo Code gespeichert ist, ist er für andere in der Liste sichtbar
