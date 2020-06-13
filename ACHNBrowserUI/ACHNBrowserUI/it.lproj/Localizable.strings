@@ -815,7 +815,6 @@ Puoi annullare il tuo abbonamento in ogni momento dalle impostazioni del tuo acc
 "TV" = "TV";
 "Home Appliances" = "Elettrodomestici";
 "Decadence" = "Decadenza";
-"Orange" = "Arancione";
 "Kitchen Things" = "Da cucina";
 "Herringbone" = "Spina di pesce";
 "Brown" = "Marrone";
@@ -997,7 +996,7 @@ Puoi annullare il tuo abbonamento in ogni momento dalle impostazioni del tuo acc
 "Nature Walls" = "Muri Natura";
 "Simple Carpet" = "Tappeto semplice";
 "Neta Walls" = "Muri Neta";
-"Work" = "lavoro";
+"Work" = "Lavoro";
 "Special Nature Floors" = "Pavimento Speciale Natura";
 "White" = "Bianco";
 "Outdoors Decor" = "Decorazione da esterni";
@@ -1049,14 +1048,14 @@ Puoi annullare il tuo abbonamento in ogni momento dalle impostazioni del tuo acc
 "Villager visits" = "Parlare agli abitanti";
 "Who have you talked to today? Find the villagers you have visited and tap the home icon on the villager’s page to keep track." = "Con chi hai parlato oggi? Aggiungi qui i residenti con il pulsante della casa che trovi nella scheda di ogni abitante.";
 "Long press on a villager to see more info about them" = "Tieni premuto su di un abitante per vedere la sua scheda.";
-// Doco code
+// Dodo code
 "Please fill all the fields" = "Per favore compila tutti i campi";
 "Dodo code" = "Codice Dodo";
 "Dodo codes" = "Codici Dodo";
 "This Dodo code is invalid" = "Questo Codice Dodo non è valido";
 "Island description" = "Descrizione dell'isola";
 "Native fruit" = "Frutta autoctona";
-"Add your Dodo code" = "Aggiugni il tuo Codice Dodo";
+"Add your Dodo code" = "Aggiungi il tuo Codice Dodo";
 "Hemisphere: %@" = "Emisfero: %@";
 "Delete" = "Elimina";
 "Report (%lld)" = "Segnalare (%lld)";
