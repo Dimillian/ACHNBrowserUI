@@ -58,7 +58,7 @@ struct DodoCodeListView: View {
                 self.showiCloudAlert = true
                 return
             }
-            self.sheet = .dodoCodeForm
+            self.sheet = .dodoCodeForm(editing: nil)
         }) {
             Image(systemName: "plus.circle").imageScale(.large)
         }

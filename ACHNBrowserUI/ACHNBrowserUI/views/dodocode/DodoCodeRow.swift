@@ -17,6 +17,7 @@ struct DodoCodeRow: View {
     @State private var reported = false
     @State private var showDeleteAlert = false
     @State private var showReportAlert = false
+    @State private var sheet: Sheet.SheetType?
     
     var formatter: DateFormatter {
         let formatter = DateFormatter()
@@ -59,7 +60,8 @@ struct DodoCodeRow: View {
                     Spacer()
                     upvoteButton
                     reportButton
-                    if code.canDelete {
+                    if code.isMine {
+                        editButton
                         deleteButton
                     }
                 }
@@ -117,6 +119,18 @@ struct DodoCodeRow: View {
         .alert(isPresented: $showDeleteAlert) {
             deleteAlert
         }
+    }
+    
+    private var editButton: some View {
+        Button(action: {
+            self.sheet = .dodoCodeForm(editing: self.code)
+        }) {
+            ButtonImageCounterOverlay(symbol: "square.and.pencil",
+                                      foregroundColor: .blue,
+                                      counter: nil)
+        }
+        .buttonStyle(BorderlessButtonStyle())
+        .sheet(item: $sheet, content: { Sheet(sheetType: $0) })
     }
     
     private var deleteAlert: Alert {

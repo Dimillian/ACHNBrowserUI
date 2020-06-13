@@ -49,11 +49,21 @@ public class DodoCodeService: ObservableObject {
         cloudKitDatabase.save(record) { (record, error) in
             DispatchQueue.main.async {
                 if let record = record {
-                    code.canDelete = true
+                    code.isMine = true
                     code.record = record
                     self.codes.insert(code, at: 0)
                 }
                 self.isSynching = false
+                self.setError(error: error)
+            }
+        }
+    }
+    
+    public func edit(code: DodoCode) {
+        isSynching = true
+        cloudKitDatabase.save(code.toRecord()) { (record, error) in
+            DispatchQueue.main.async {
+                self.fetchCodes()
                 self.setError(error: error)
             }
         }

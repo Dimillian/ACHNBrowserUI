@@ -21,7 +21,7 @@ struct Sheet: View {
         case designForm(editingDesign: Design?)
         case choreForm(chore: Chore?)
         case villager(villager: Villager, subManager: SubscriptionManager, collection: UserCollection)
-        case dodoCodeForm
+        case dodoCodeForm(editing: DodoCode?)
 
         var id: String {
             switch self {
@@ -90,8 +90,8 @@ struct Sheet: View {
                     .environmentObject(subManager)
                     .environmentObject(collection)
             })
-        case .dodoCodeForm:
-            return AnyView(DodoCodeFormView())
+        case .dodoCodeForm(let editing):
+            return AnyView(DodoCodeFormView(isEditing: editing))
         }
     }
 

@@ -13,6 +13,8 @@ import SwiftUIKit
 struct DodoCodeFormView: View {
     @Environment(\.presentationMode) private var presentationMode
     
+    let isEditing: DodoCode?
+    
     @State private var islandName = AppUserDefaults.shared.islandName
     @State private var dodoCode = ""
     @State private var text = ""
@@ -75,9 +77,20 @@ struct DodoCodeFormView: View {
                 }
             }
             .navigationBarItems(leading: dismissButton, trailing: saveButton)
-            .navigationBarTitle("Add your Dodo code", displayMode: .inline)
+            .navigationBarTitle(isEditing != nil ? LocalizedStringKey("Edit your Dodo code") : LocalizedStringKey("Add your Dodo code"),
+                                displayMode: .inline)
         }
         .navigationViewStyle(StackNavigationViewStyle())
+        .onAppear {
+            if let editing = self.isEditing {
+                self.islandName = editing.islandName
+                self.dodoCode = editing.code
+                self.text = editing.text
+                self.hemisphere = editing.hemisphere
+                self.fruit = editing.fruit
+                self.visitor = editing.specialCharacter
+            }
+        }
     }
     
     private var footer: some View {
@@ -121,13 +134,18 @@ struct DodoCodeFormView: View {
             if self.validationError || self.dodoCodeError {
                 return
             }
-            let code = DodoCode(code: self.dodoCode,
+            var code = DodoCode(code: self.dodoCode,
                                 islandName: self.islandName,
                                 text: self.text,
                                 fruit: self.fruit,
                                 hemisphere: self.hemisphere,
                                 specialCharacter: self.visitor)
-            DodoCodeService.shared.add(code: code)
+            if let record = self.isEditing?.record {
+                code.record = record
+                DodoCodeService.shared.edit(code: code)
+            } else {
+                DodoCodeService.shared.add(code: code)
+            }
             self.presentationMode.wrappedValue.dismiss()
         }) {
             Image(systemName: "checkmark.seal.fill")
@@ -141,6 +159,6 @@ struct DodoCodeFormView: View {
 
 struct DodoCodeFormView_Previews: PreviewProvider {
     static var previews: some View {
-        DodoCodeFormView()
+        DodoCodeFormView(isEditing: nil)
     }
 }

@@ -10,7 +10,14 @@ import CloudKit
 
 public struct DodoCode: Identifiable, Equatable {
     public static func == (lhs: DodoCode, rhs: DodoCode) -> Bool {
-        lhs.id == rhs.id && lhs.upvotes == rhs.upvotes
+        lhs.id == rhs.id &&
+        lhs.upvotes == rhs.upvotes &&
+        lhs.code == rhs.code &&
+        lhs.islandName == rhs.islandName &&
+        lhs.text == rhs.text &&
+        lhs.fruit == rhs.fruit &&
+        lhs.hemisphere == rhs.hemisphere &&
+        lhs.specialCharacter == rhs.specialCharacter
     }
     
     public let id: String
@@ -22,7 +29,7 @@ public struct DodoCode: Identifiable, Equatable {
     public let fruit: Fruit
     public let hemisphere: Hemisphere
     public let specialCharacter: SpecialCharacters?
-    public var canDelete = false
+    public var isMine = false
     public var creationDate: Date {
         record?.creationDate ?? Date()
     }
@@ -55,12 +62,12 @@ public struct DodoCode: Identifiable, Equatable {
         fruit = Fruit(rawValue: record[RecordKeys.fruit.rawValue] as? String ?? "") ?? .apple
         hemisphere = Hemisphere(rawValue: record[RecordKeys.hemisphere.rawValue] as? String ?? "") ?? .north
         specialCharacter = SpecialCharacters(rawValue: record[RecordKeys.specialCharacter.rawValue] as? String ?? "")
-        canDelete = record.creatorUserRecordID?.recordName.contains("defaultOwner") == true
+        isMine = record.creatorUserRecordID?.recordName.contains("defaultOwner") == true
         self.record = record
     }
     
     func toRecord() -> CKRecord {
-        let record = CKRecord(recordType: DodoCodeService.recordType)
+        let record = self.record ?? CKRecord(recordType: DodoCodeService.recordType)
         record[RecordKeys.id.rawValue] = id
         record[RecordKeys.code.rawValue] = code
         record[RecordKeys.report.rawValue] = report
