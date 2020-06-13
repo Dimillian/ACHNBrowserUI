@@ -31,8 +31,7 @@ struct DodoCodeRow: View {
             HStack(spacing: 2) {
                 Text(code.code.uppercased())
                     .foregroundColor(.acHeaderBackground)
-                    .font(.headline)
-                    .fontWeight(.bold)
+                    .font(.custom("CourierNewPS-BoldMT", size: 20))
                     .lineLimit(1)
                 Image(code.fruit.rawValue.capitalized)
                     .renderingMode(.original)
