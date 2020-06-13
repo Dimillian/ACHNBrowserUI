@@ -68,7 +68,7 @@ public class DodoCodeService: ObservableObject {
             }
         }
     }
-    
+
     public func upvote(code: DodoCode) {
         if var record = code.record {
             record[DodoCode.RecordKeys.upvotes.rawValue] = code.upvotes + 1
@@ -87,16 +87,10 @@ public class DodoCodeService: ObservableObject {
     public func report(code: DodoCode) {
         if let record = code.record,
             var reports = record[DodoCode.RecordKeys.report.rawValue] as? Int {
-            var delete = false
-            if reports >= 10 {
-                delete = true
-            } else {
-                reports += 1
-                record[DodoCode.RecordKeys.report.rawValue] = reports
-                
-            }
-            let operation = CKModifyRecordsOperation(recordsToSave: delete ? nil : [record],
-                                                     recordIDsToDelete: delete ? [record.recordID] : nil)
+            reports += 1
+            record[DodoCode.RecordKeys.report.rawValue] = reports
+            let operation = CKModifyRecordsOperation(recordsToSave: [record],
+                                                     recordIDsToDelete: nil)
             operation.modifyRecordsCompletionBlock = { _, _, error in
                 DispatchQueue.main.async {
                     self.reported.append(code)
