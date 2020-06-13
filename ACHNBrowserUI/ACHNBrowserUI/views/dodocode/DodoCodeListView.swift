@@ -31,7 +31,7 @@ struct DodoCodeListView: View {
                             DodoCodeService.shared.enableNotifications()
                         }
                 })) {
-                    Text("Get notifided of new Dodo codes")
+                    Text("Get notified of new Dodo codes")
                         .foregroundColor(.acText)
                 }
                 .disabled(subscription.subscriptionStatus != .subscribed)
