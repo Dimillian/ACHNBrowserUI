@@ -21,7 +21,6 @@ struct SettingsView: View {
     @State private var importedFile: URL?
     @State private var showSuccessImportAlert = false
     @State private var showDeleteConfirmationAlert = false
-    
     var body: some View {
         NavigationView {
             Form {
@@ -167,13 +166,10 @@ struct SettingsView: View {
                 }
                 .onTapGesture {
                     if !self.appUserDefaults.isShopOpenClose {
-                        self.getNotify(title: "ACHNBrowserUI", subtitle: "Nook’s Cranny store is open", hour: 8, minute: 0, isRepeated: true)
-                        self.getNotify(title: "ACHNBrowserUI", subtitle: "Nook’s Cranny store is closing in 1h", hour: 21, minute: 0, isRepeated: true)
-                        self.getNotify(title: "ACHNBrowserUI", subtitle: "Able Sisters Shop is open", hour: 9, minute: 0, isRepeated: true)
-                        self.getNotify(title: "ACHNBrowserUI", subtitle: "Able Sisters Shop is closing in 1h", hour: 20, minute: 0, isRepeated: true)
-                        
-                        // for debugging
-                        print("toggled")
+                        self.getNotify(subtitle: "Nook’s Cranny store is open", hour: 8, minute: 0, isRepeated: true)
+                        self.getNotify(subtitle: "Nook’s Cranny store is closing in 1h", hour: 21, minute: 0, isRepeated: true)
+                        self.getNotify(subtitle: "Able Sisters Shop is open", hour: 9, minute: 0, isRepeated: true)
+                        self.getNotify(subtitle: "Able Sisters Shop is closing in 1h", hour: 20, minute: 0, isRepeated: true)
                     }
                 }
                 
@@ -254,7 +250,7 @@ struct SettingsView: View {
         }
     }
     
-    func getNotify(title: String, subtitle: String, hour: Int, minute: Int, isRepeated: Bool) {
+    func getNotify(subtitle: String, hour: Int, minute: Int, isRepeated: Bool) {
         // request permission first
         UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) { success, error in
             if success {
@@ -266,7 +262,7 @@ struct SettingsView: View {
         
         // schedule the notification
         let content = UNMutableNotificationContent()
-        content.title = title
+        content.title = "AC Helper"
         content.subtitle = subtitle
         content.sound = UNNotificationSound.default
         
