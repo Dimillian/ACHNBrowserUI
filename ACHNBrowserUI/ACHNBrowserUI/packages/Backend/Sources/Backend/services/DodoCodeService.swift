@@ -78,7 +78,7 @@ public class DodoCodeService: ObservableObject {
         if let record = code.record,
             var reports = record[DodoCode.RecordKeys.report.rawValue] as? Int {
             var delete = false
-            if reports >= 2 {
+            if reports >= 10 {
                 delete = true
             } else {
                 reports += 1

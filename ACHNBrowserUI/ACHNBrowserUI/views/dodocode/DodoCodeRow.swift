@@ -11,7 +11,7 @@ import Backend
 
 struct DodoCodeRow: View {
     let code: DodoCode
-    let listView: Bool
+    let showButtons: Bool
         
     @State private var voted = false
     @State private var reported = false
@@ -48,7 +48,7 @@ struct DodoCodeRow: View {
                 .foregroundColor(.acText)
                 .font(.footnote)
 
-            if DodoCodeService.shared.canEdit && listView {
+            if DodoCodeService.shared.canEdit && showButtons {
                 HStack {
                     Spacer()
                     upvoteButton
@@ -164,7 +164,7 @@ struct DodoCodeRow_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
             List {
-                DodoCodeRow(code: static_dodoCode, listView: true)
+                DodoCodeRow(code: static_dodoCode, showButtons: true)
             }
         }
     }

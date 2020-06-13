@@ -17,7 +17,7 @@ struct TodayDodoCodeSection: View {
             if service.isSynching && service.codes.isEmpty {
                 RowLoadingView(isLoading: .constant(true))
             } else if service.codes.first != nil {
-                DodoCodeRow(code: service.codes.first!, listView: false)
+                DodoCodeRow(code: service.codes.first!, showButtons: false)
             } else {
                 Text("No active Dodo code yet, open your island to visitors by adding your own")
                     .foregroundColor(.acSecondaryText)

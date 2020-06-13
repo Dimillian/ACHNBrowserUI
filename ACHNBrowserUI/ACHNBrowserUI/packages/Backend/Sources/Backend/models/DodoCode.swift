@@ -10,13 +10,13 @@ import CloudKit
 
 public struct DodoCode: Identifiable, Equatable {
     public static func == (lhs: DodoCode, rhs: DodoCode) -> Bool {
-        lhs.id == rhs.id && lhs.record == rhs.record && lhs.upvotes == rhs.upvotes
+        lhs.id == rhs.id && lhs.upvotes == rhs.upvotes
     }
     
     public let id: String
     public let code: String
     public let report: Int
-    public var upvotes: Int
+    public let upvotes: Int
     public let islandName: String
     public let text: String
     public let fruit: Fruit
