@@ -47,6 +47,7 @@ struct DodoCodeRow: View {
             Text(formatter.string(from: code.creationDate))
                 .foregroundColor(.acText)
                 .font(.footnote)
+
             if DodoCodeService.shared.canEdit && listView {
                 HStack {
                     Spacer()
