@@ -1067,3 +1067,5 @@ Puoi annullare il tuo abbonamento in ogni momento dalle impostazioni del tuo acc
 "Do you really want to delete your Dodo code?" = "Sei sicuro di voler eliminare il tuo Codice Dodo?";
 "Do you really want to report this Dodo code?" = "Sei sicuro di voler segnalare questo Codice Dodo?";
 "Visitor" = "Visitatore";
+"ACDodoCode.notification.title" = "A new Dodo code is available";
+"ACDodoCode.notification.subtitle" = "Someone opened their gates and posted a new Dodo code on the application, go check it out!";

@@ -35,6 +35,10 @@ public class DodoCodeService: ObservableObject {
         CKContainer.default().fetchUserRecordID { (id, error) in
             Self.userCloudKitId = id
         }
+        
+        if AppUserDefaults.shared.dodoNotifications {
+            subscribeToCloudKit()
+        }
     }
     
     // MARK: - Public
@@ -42,6 +46,7 @@ public class DodoCodeService: ObservableObject {
         fetchCodes()
     }
     
+        
     public func add(code: DodoCode) {
         isSynching = true
         let record = code.toRecord()
@@ -68,7 +73,7 @@ public class DodoCodeService: ObservableObject {
             }
         }
     }
-
+    
     public func upvote(code: DodoCode) {
         if var record = code.record {
             record[DodoCode.RecordKeys.upvotes.rawValue] = code.upvotes + 1
@@ -116,7 +121,45 @@ public class DodoCodeService: ObservableObject {
         }
     }
     
+    public func enableNotifications() {
+        subscribeToCloudKit()
+    }
+    
+    public func disableNotifications() {
+        deleteSubscriptions()
+    }
+    
     // MARK: - Private
+    private func subscribeToCloudKit() {
+        cloudKitDatabase.fetchAllSubscriptions { (subs, _) in
+            if subs == nil || subs?.isEmpty == true {
+                self.createSubscription()
+            }
+        }
+    }
+    
+    private func createSubscription() {
+        let sub = CKQuerySubscription(recordType: Self.recordType,
+                                      predicate: NSPredicate(value: true),
+                                      options: .firesOnRecordCreation)
+        let notif = CKSubscription.NotificationInfo()
+        notif.titleLocalizationKey = "ACDodoCode.notification.title"
+        notif.alertLocalizationKey = "ACDodoCode.notification.subtitle"
+        notif.soundName = "default"
+        sub.notificationInfo = notif
+        cloudKitDatabase.save(sub) { (_, _) in }
+    }
+    
+    private func deleteSubscriptions() {
+        cloudKitDatabase.fetchAllSubscriptions { (subs, _) in
+            if let subs = subs {
+                let operation = CKModifySubscriptionsOperation(subscriptionsToSave: nil,
+                                                               subscriptionIDsToDelete: subs.map{ $0.subscriptionID })
+                self.cloudKitDatabase.add(operation)
+            }
+        }
+    }
+    
     private func fetchCodes() {
         isSynching = true
         let query = CKQuery(recordType: Self.recordType, predicate: NSPredicate(value: true))

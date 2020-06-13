@@ -8,6 +8,7 @@
 
 import UIKit
 import Backend
+import CloudKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {

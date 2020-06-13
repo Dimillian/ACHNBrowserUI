@@ -87,5 +87,8 @@ public class AppUserDefaults: ObservableObject {
     
     @UserDefault("number_of_launch", defaultValue: 0)
     public var numberOfLaunch: Int
+    
+    @UserDefault("dodo_notifications", defaultValue: false)
+    public var dodoNotifications: Bool
 }
 

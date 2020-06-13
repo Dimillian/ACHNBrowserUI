@@ -859,3 +859,7 @@ Merci d'être respecteux. Tout code signalé sera supprimé";
 "Do you really want to report this Dodo code?" = "Voulez-vous vraiment signaler ce Dodo Code ?";
 "Visitor" = "Visiteur";
 "Edit your Dodo code" = "Éditez votre Dodo code";
+"Get notifided of new Dodo codes" = "Être notifié quand un code est posté";
+"To help us support the application and get notifications when a new Dodo code is posted, you can try out AC Helper+" = "Pour nous aider à supporter l'application et recevoir des notifications quand un nouveau Dodo codes est posté, vous pouvez souscrire à AC Helper+";
+"ACDodoCode.notification.title" = "Un nouveau Dodo code est disponible";
+"ACDodoCode.notification.subtitle" = "Quelqu'un a ouvert ses portes et a posté un Dodo code dans l'application!";

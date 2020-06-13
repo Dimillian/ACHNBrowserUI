@@ -13,12 +13,53 @@ import SwiftUIKit
 
 struct DodoCodeListView: View {
     @EnvironmentObject private var service: DodoCodeService
+    @EnvironmentObject private var subscription: SubscriptionManager
     
     @State private var sheet: Sheet.SheetType?
     @State private var showiCloudAlert = false
     
     var body: some View {
         List {
+            Section(header: SectionHeaderView(text: "Notifications", icon: "bell.fill")) {
+                Toggle(isOn: Binding<Bool>(
+                    get: { AppUserDefaults.shared.dodoNotifications },
+                    set: {
+                        AppUserDefaults.shared.dodoNotifications = $0
+                        if !$0 {
+                            DodoCodeService.shared.disableNotifications()
+                        } else {
+                            DodoCodeService.shared.enableNotifications()
+                        }
+                })) {
+                    Text("Get notifided of new Dodo codes")
+                        .foregroundColor(.acText)
+                }
+                .disabled(subscription.subscriptionStatus != .subscribed)
+                if subscription.subscriptionStatus != .subscribed {
+                    VStack(spacing: 8) {
+                        Button(action: {
+                            self.sheet = .subscription(source: .dodo, subManager: self.subscription)
+                        }) {
+                            Text("To help us support the application and get notifications when a new Dodo code is posted, you can try out AC Helper+")
+                                .foregroundColor(.acSecondaryText)
+                                .lineLimit(nil)
+                                .fixedSize(horizontal: false, vertical: true)
+                                .padding(.top, 8)
+                        }
+                        Button(action: {
+                            self.sheet = .subscription(source: .dodo, subManager: self.subscription)
+                        }) {
+                            Text("Learn more...")
+                                .font(.headline)
+                                .fontWeight(.bold)
+                                .foregroundColor(.white)
+                        }.buttonStyle(PlainRoundedButton())
+                            .accentColor(.acHeaderBackground)
+                            .padding(.bottom, 8)
+                    }
+                }
+            }
+            
             if service.isSynching && service.codes.isEmpty {
                 RowLoadingView(isLoading: .constant(true))
             } else if !service.codes.isEmpty {

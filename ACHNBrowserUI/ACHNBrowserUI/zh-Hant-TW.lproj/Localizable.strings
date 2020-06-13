@@ -63,3 +63,5 @@
 Please Ensure your gates are open before adding your code.
 You can delete and close your gates at any moment.
 Please be respectful, any Dodo code reported will be deleted.";
+"ACDodoCode.notification.title" = "A new Dodo code is available";
+"ACDodoCode.notification.subtitle" = "Someone opened their gates and posted a new Dodo code on the application, go check it out!";
