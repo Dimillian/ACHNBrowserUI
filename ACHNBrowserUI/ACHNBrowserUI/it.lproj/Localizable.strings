@@ -2,13 +2,11 @@
 "Tap here to preview a notification" = "Tocca per un anteprima della notifica";
 "Upgrade to +" = "Aggiorna a +";
 "You're subscribed to AC Helper+" = "Ti sei abbonato a AC Helper+";
-
 // copy and paste "export"  of Text() and similar SwiftUI functions
 // Global
 "Close" = "Chiudi";
 "Dismiss" = "Annulla";
 "Save" = "Salva";
-
 // Date Format
 "EEEE, dd MMMM" = "EEEE, dd MMMM";
 "d/M" = "d/M";
@@ -16,14 +14,12 @@
 "MMM" = "MMM";
 "MMM dd" = "dd MMM";
 "dd MMMM" = "dd MMMM";
-
 // TabbarView
 "Dashboard" = "Bacheca";
 "Catalog" = "Catalogo";
 "Turnips" = "Rape";
 "Villagers" = "Abitanti";
 "Collection" = "Collezione";
-
 // TodayView
 "Change Section Order" = "Cambia ordine sezioni";
 // TodaySectionEditView
@@ -72,18 +68,14 @@
 // TodaySubscribeSection
 "You're subscribed to AC Helper+. Thank you so much for you support!" = "Ti sei abbonato a AC Helper+. Grazie mille per il tuo sostegno!";
 "If you enjoy the application, consider subscribing to AC Helper+, to get access to some awesome features and support us!" = "Se ti piace l'app, considera di abbonarti a AC Helper+ per avere accesso a fantastiche funzionalità e supportarci!";
-
 // SubscribeView
 "AC Helper+" = "AC Helper+";
 "ACHelperPlusDescription" = "Abbonarsi a AC Helper+ è un bel modo per dimostrare il tuo sostegno al nostro progetto gratuito e a codice aperto. ♥️
-
 Avrai anche accesso a maggiori funzioni, notifiche con previsioni del prezzo delle rape e potrai creare infinite liste ogetti! 📈
-
 Maggiori dettagli qui sotto.";
 "ACHelperPlusDetails" = "Funzione Notifica:
 Tutti i giorni alle ore 8 e alle 12 riceverai una notifica con il prezzo medio del tuo negozio.
 Più prezzi inserirai ogni giorno, dopo il lunedì mattina, migliori saranno le previsioni!
-
 Funzione Liste:
 Senza abbonamento puoi creare solo una lista oggetti nella scheda \"Mie cose\".
 Se ti abbonerai potrai invece creare tutte le liste oggetti che desideri.";
@@ -95,7 +87,6 @@ Puoi annullare il tuo abbonamento in ogni momento dalle impostazioni del tuo acc
 "Thank you for your support!" = "Grazie mille per il tuo sostegno!";
 "%@ Monthly" = "%@ al mese";
 "%@ Yearly" = "%@ all'anno";
-
 // AboutView
 "About" = "Informazioni su";
 "The app" = "App";
@@ -114,7 +105,6 @@ Puoi annullare il tuo abbonamento in ogni momento dalle impostazioni del tuo acc
 "Shihab / JPEGuin for the icon" = "Shihab / JPEGuin per l'icona";
 "Christian & Ninji for the turnip predictions algorithm" = "Christian & Ninji per l'algoritmo predittivo delle rape";
 "Error" = "Errore";
-
 // ActiveCittersView
 "Active Critters" = "Animaletti attuali";
 "Fishes" = "Pesci";
@@ -125,7 +115,6 @@ Puoi annullare il tuo abbonamento in ogni momento dalle impostazioni del tuo acc
 "Leaving this month" = "Andranno via questo mese";
 "Caught" = "Catturato";
 "All day" = "Tutto il giorno";
-
 // SettingsView
 "Preferences" = "Impostazioni";
 "Island name" = "Nome isola";
@@ -133,7 +122,7 @@ Puoi annullare il tuo abbonamento in ogni momento dalle impostazioni del tuo acc
 "Hemisphere" = "Emisfero";
 "North" = "Nord";
 "South" = "Sud";
-"Starting fruit" = "Frutto nativo";
+"Starting fruit" = "Frutta autoctona";
 "Apple" = "Mela";
 "Cherry" = "Ciliegia";
 "Orange" = "Arancia";
@@ -152,7 +141,6 @@ Puoi annullare il tuo abbonamento in ogni momento dalle impostazioni del tuo acc
 "App Settings" = "Impostazioni App";
 "App Icon" = "Icona App";
 "Restore purchase" = "Ripristina acquisti";
-
 // NotificationManager
 "Turnip prices" = "Prezzi rape";
 "this morning" = "questa mattina";
@@ -163,25 +151,21 @@ Puoi annullare il tuo abbonamento in ogni momento dalle impostazioni del tuo acc
 "Friendly reminder" = "Promemoria";
 "It's time to buy turnips and add the buy price in the app." = "È il momento di acquistare delle rape e inserire il prezzo nell'app.";
 "It's the start of the week, don't forget to add your store buy prices in the app as you play the game. You'll get more accurate predictions." = "Inizia la settimana! Mentre giochi non dimenticare di inserire il prezzo delle rape del tuo negozio. Otterrai previsioni più accurate.";
-
 // UserListFormView
 "Edit your list" = "Modifica la tua lista";
 "Name of your list" = "Nome della lista";
 "List name" = "Nome";
 "Can be nothing" = "Puoi lasciarlo vuoto";
 "Icon" = "Icona";
-
 // UserListDetailView
 "Add %lld items" = "Aggiungi %lld oggetti";
 "Edit" = "Modifica";
 "Search items" = "Cerca oggetti";
 "Items added to your list from the search will be displayed there." = "Gli oggetti aggiunti alla tua lista dalla ricerca saranno mostrati qui.";
 "No results for %@" = "Nessun risultato per %@";
-
 // UserListSubscribeCallView
 "In order to create more than one list, you need to subscribe to AC Helper+" = "Per creare più di una lista è necessario abbonarsi a AC Helper+";
 "Learn more..." = "Maggiori informazioni...";
-
 // CollectionListView
 "Create a new list" = "Crea una nuova lista";
 "Please select or go stars some items!" = "Per favore scegli o metti la stella a degli oggetti!";
@@ -194,7 +178,6 @@ Puoi annullare il tuo abbonamento in ogni momento dalle impostazioni del tuo acc
 "critters" = "animaletti";
 "lists" = "liste";
 "More" = "Altro";
-
 // ItemsListView
 "Clear Selection" = "Cancella selezione";
 "Sort items" = "Ordina oggetti";
@@ -237,7 +220,6 @@ Puoi annullare il tuo abbonamento in ogni momento dalle impostazioni del tuo acc
 "Preview" = "Anteprima";
 // ItemDetailSeasonView
 "Seasonality" = "Stagionalità";
-
 // ItemDetailView
 "Set items" = "Oggetti del set";
 "Simillar items" = "Oggetti simili";
@@ -249,7 +231,6 @@ Puoi annullare il tuo abbonamento in ogni momento dalle impostazioni del tuo acc
 "No listings found on Nookazon" = "Nessun annuncio trovato su Nookazon";
 "Your items lists" = "La tua lista";
 "Keywords" = "Parole chiave";
-
 // TurnipsView
 "Minmax" = "Min-Max";
 "Profits" = "Profitti";
@@ -299,14 +280,12 @@ Puoi annullare il tuo abbonamento in ogni momento dalle impostazioni del tuo acc
 "Minimum" = "Minimo";
 "MinMax" = "MinMax";
 "Services" = "Servizi";
-
 // IslandDetailView
 "Join Island" = "Unisciti all'isola";
 "Island" = "Isola";
 "Description" = "Descrizione";
 "Visitors" = "Visitatori";
 "Loading Visitors...." = "Caricamento visitatori...";
-
 // VillagersListView
 "Search a villager" = "Cerca un abitante";
 "Personality" = "Carattere";
@@ -317,7 +296,6 @@ Puoi annullare il tuo abbonamento in ogni momento dalle impostazioni del tuo acc
 "Unknown" = "Sconosciuto";
 "Villager items" = "Oggetti abitante";
 "Sort villagers" = "Ordina abitanti";
-
 // VillagersDetailView
 "Unkown" = "Sconosciuto";
 "Lazy" = "Pigro";
@@ -367,11 +345,9 @@ Puoi annullare il tuo abbonamento in ogni momento dalle impostazioni del tuo acc
 "Wolf" = "Lupo";
 "Like" = "Gusti";
 "Gifts ideas" = "Idee regalo";
-
 // ListingRow
 "Make an Offer" = "Fai un'offerta";
 "Need Materials" = "Necessita materiali";
-
 // CategoryRow
 "housewares" = "Arredi";
 "miscellaneous" = "Varie";
@@ -405,13 +381,9 @@ Puoi annullare il tuo abbonamento in ogni momento dalle impostazioni del tuo acc
 // CategoriesView
 "Nature" = "Natura";
 "Wardrobe" = "Guardaroba";
-"No results for %@" = "Nessun risultato per %@";
-
-
 // Shared
 // SearchField
 "Search..." = "Cerca...";
-
 // item sources
 // Added 2020-05-11:
 "3rd House Upgrade (Left Room)" = "3° Ampliamento Casa (Stanza sinistra)";
@@ -446,7 +418,6 @@ Puoi annullare il tuo abbonamento in ogni momento dalle impostazioni del tuo acc
 "Big Sister villagers" = "Abitanti Gentili";
 "Big sister villagers" = "Abitanti gentili";
 "Black/black roses\nWater with gold watering can" = "Rose Nera/Nera\nInnaffiate con annaffiatoio d'oro";
-"Blathers" = "Blatero";
 "Blue/blue hyacinths" = "Giacinti Blu/Blu";
 "Blue/blue pansies" = "Viole Blu/Blu";
 "Blue/blue windflowers\nBlue/pink windflowers" = "Anemoni Blu/Blu\nAnemoni Blu/Rosa";
@@ -454,12 +425,10 @@ Puoi annullare il tuo abbonamento in ogni momento dalle impostazioni del tuo acc
 "Bug-Off" = "Insettomania";
 "Bunny Day" = "Caccia all'uovo";
 "Burying bells in a glowing spot" = "Sotterrare stelline in un punto luccicante";
-"C.J." = "Castorino";
 "Catching with a net (Cherry-Blossom Season)" = "Prendere con il retino (Periodo Petali Ciliegio)";
 "Catching with a net (Fall)" = "Prendere con il retino (Autunno)";
 "Catching with a net (Winter)" = "Prendere con il retino (Inverno)";
 "Catching with a net while on a quest for Wisp" = "Prendere con il retino durante la missione di Spirideo";
-"Celeste" = "Celeste";
 "Cherry blossom seasonal DIY using cherry-blossom petals (caught with net)" = "Schema petali di ciliegio usando i petali di ciliegio (presi con il retino)";
 "Cherry tree" = "Ciliegio";
 "Chopping a bamboo tree (Spring)" = "Abbattere una pianta di bambù (Primavera)";
@@ -534,9 +503,6 @@ Puoi annullare il tuo abbonamento in ogni momento dalle impostazioni del tuo acc
 "Jolly Redd's Treasure Trawler" = "Il mare dei tesori di Volpolo";
 "K.K. concert" = "Concerto di K.K.";
 "K.K. concert, Nook Shopping Catalog" = "Concerto di K.K., Catalogo Nook";
-"Kicks" = "Sciuscià";
-"Label" = "Bice";
-"Labelle" = "Beatrice";
 "Large rug" = "Tappeto grande";
 "Large shadow" = "Ombra grande";
 "Lazy villagers" = "Abitanti Pigri";
@@ -707,12 +673,9 @@ Puoi annullare il tuo abbonamento in ogni momento dalle impostazioni del tuo acc
 "Sea" = "Mare";
 "Sea (raining)" = "Mare (Pioggia)";
 "Sea (rainy days)" = "Mare (Quando piove)";
-
-
 // Added 2020-05-13
 "See more" = "Mostra di più";
 "See less" = "Mostra di meno";
-
 //Added 05-14-2020
 "My data" = "I miei dati";
 "Collection size" = "Dimensione collezione";
@@ -723,7 +686,6 @@ Puoi annullare il tuo abbonamento in ogni momento dalle impostazioni del tuo acc
 "Your AC Helper collection file was imported with success." = "La tua collezione AC Helper è stata importata correttamente.";
 "Are you sure?" = "Sei sicuro?";
 "This will delete all your collected critters, items, villagers and items lists" = "Cancellerai tutta la collezione di animaletti, oggetti, abitanti e liste oggetti";
-
 // Added 2020-05-17
 "The ACNHAPI for villagers data and images" = "ACNHAPI per i dati abitanti e immagini";
 // Islands
@@ -738,8 +700,6 @@ Puoi annullare il tuo abbonamento in ogni momento dalle impostazioni del tuo acc
 "Rocks" = "Rocce";
 "Take your chance and go visit some mystery island!" = "Tenta la sorte e visita delle isole misteriose!";
 "Native" = "Nativo"; // TODO needs a better one
-"Normal" = "Normale";
-"Uncommon" = "Non comune";
 "Gold" = "Minerale d'Oro";
 "Trash" = "Rifiuti";
 "Bamboos" = "Bambù";
@@ -767,14 +727,14 @@ Puoi annullare il tuo abbonamento in ogni momento dalle impostazioni del tuo acc
 "Gold Island" = "Isola Minerali d’oro";
 " - max %lld visit" = " - max %lld visita";
 // Island Description
-"A fairly normal island which you can get on your first tour, with one cliff, native fruit, coconuts, a river and a pond." = "Un’isola piuttosto normale che puoi trovare al tuo primo viaggio, con un rilievo, frutta nativa, palme da cocco, un fiume e uno stagno.";
+"A fairly normal island which you can get on your first tour, with one cliff, native fruit, coconuts, a river and a pond." = "Un’isola piuttosto normale che puoi trovare al tuo primo viaggio, con un rilievo, frutta autoctona, palme da cocco, un fiume e uno stagno.";
 "Practically the same as Normal Island 1, but without the pond, and with a slightly bigger cliff." = "Come l’Isola Normale 1 ma senza lo stagno e con un rilievo leggermente più grande.";
 "Somewhat more interesting in layout but it has nothing special about the resources you can get." = "Un po’ più interessante come disposizione ma niente di speciale riguardo le risorse naturali che puoi trovarci.";
 "The last of the four starter islands. No river, just a pond and the sea." = "L’ultima delle quattro isole di partenza. Nessun fiume, solo uno stagno e il mare.";
-"Multiple levels, no river. The base level has regular trees, the middle level has your native fruit, and the top level has five rocks with materials." = "Livelli multipli, nessun fiume. Il livello base ha alberi latifoglia, il livello intermedio ha la tua frutta nativa e il livello in alto ha cinque rocce con materiali.";
+"Multiple levels, no river. The base level has regular trees, the middle level has your native fruit, and the top level has five rocks with materials." = "Livelli multipli, nessun fiume. Il livello base ha alberi latifoglia, il livello intermedio ha la tua frutta autoctona e il livello in alto ha cinque rocce con materiali.";
 "Breaking the rock at the far north will let you vault over into the island with five money rocks on it." = "Rompere la roccia al limite nord ti permetterà di saltare con l’asta sull’isola con 5 rocce piene di stelline.";
 "Every tree on this island is bamboo and you can get to it at any time of year. The most common island you can get out of the 20, statistically." = "Ogni albero su quest’isola è bambù e puoi trovarla in ogni periodo dell’anno. Statisticamente è l’isola con la probabilità più alta tra tutte e 20.";
-"There are 19 fruit trees on this island and all will be your 'sister fruit'. This will be different from your native fruit - but every time you come here, it will be the same one." = "Ci sono 19 alberi da frutto in questa isola e sono tutti del tipo “gemello” della tua isola. Sarà frutta diversa da quella nativa della tua isola, ma ogni volta che visiterai quest’isola, troverai sempre lo stesso tipo di frutta.";
+"There are 19 fruit trees on this island and all will be your 'sister fruit'. This will be different from your native fruit - but every time you come here, it will be the same one." = "Ci sono 19 alberi da frutto in questa isola e sono tutti del tipo “gemello” della tua isola. Sarà frutta diversa da quella autoctona della tua isola, ma ogni volta che visiterai quest’isola, troverai sempre lo stesso tipo di frutta.";
 "This island has a pond surrounded by rare flowers and the only insects that will spawn are those that hang around flowers." = "L’isola ha uno stagno circondato da fiori rari e gli unici insetti che troverai saranno quelli che volano intorno ai fiori.";
 "There are four small triangular cliffs, one in each corner, and the ground level is full of flowers and money rocks." = "Ci sono 4 piccoli rilievi triangolari, uno in ogni angolo. Il terreno base è pieno di fiori e rocce con stelline.";
 "Yes, the infamous one. The only insects that spawn here are tarantulas (as long as it is night time in a Tarantula month), and the rocks have crafting materials if you can get to them. The river is thin enough that you can jump over it without a vaulting pole." = "Esatto, è quell’isola famigerata! Gli unici insetti che troverai sono le tarantole (purché sia notte e nel periodo delle tarantole). Le rocce hanno materiali di costruzione se riesci a prenderli. Il fiume è stretto abbastanza da essere saltato senza asta.";
@@ -787,50 +747,42 @@ Puoi annullare il tuo abbonamento in ogni momento dalle impostazioni del tuo acc
 "A rectangular pond with rectangular cliffs inside, the tallest one being too tall to climb up to. The only fish that spawn here are the largest finned fish." = "Uno stagno rettangolare con all’interno un rilievo rettangolare. Il rilievo più alto è impossibile da scalare. L’unico tipo di pesce che troverai sono i pesci grandi con la pinna.";
 "Lots of cliffs, waterfalls and river forks. Normal resource spawns." = "Tanti rilievi, cascate e biforcazioni del fiume. Risorse naturali normali";
 "A very rare island with flowers, scorpions and a rectangular pond. If you climb up onto the cliff and climb down from the back, you can vault over to a tiny island in the middle and get 8 gold nuggets from a single rock." = "Un’isola molto rara con fiori, scorpioni e uno stagno rettangolare. Se ti arrampichi sul rilievo e poi scendi dietro dall’altra parte puoi saltare con l’asta su di una piccola isola che sta nel mezzo. Lì puoi prendere 8 minerali d’oro da una roccia.";
-
 // Added 2020-05-20
 "Same color" = "Stesso colore";
 // New settings
 "Using iCloud sync" = "Utilizza sincronizzazione iCloud";
 "Synchronized with iCloud" = "Sincronizzato con iCloud";
-
 "Possible visitors" = "Visitatori possibili";
 "On" = "di";
 " your island" = " oggi";
-
 "From 6pm to 5am" = "Dalle 18:00 alle 05:00";
 "From 8pm to 5am" = "Dalle 20:00 alle 05:00";
 "From 5am to 12pm" = "Dalle 05:00 alle 12:00";
-
 //Special characters
 "K.K Slider" = "K.K. Slider";
 "Daisy Mae" = "Brunella";
-"C.J" = "Castorino";
+"C.J." = "Castorino";
 "Flick" = "Ivano";
-"Kicks" = "Sciuscià";
-"Saharah" = "Sahara";
 "Label" = "Beatrice";
 "Leif" = "Florindo";
 "Redd" = "Volpolo";
 "Wisp" = "Spirideo";
+"Blathers" = "Blatero";
 "Celeste" = "Celeste";
-
-
+"Kicks" = "Sciuscià";
+"Label" = "Bice";
+"Labelle" = "Beatrice";
 // Added 2020-05-23
 "Museum Day" = "Giornata internazionale dei Musei";
 "Wedding season" = "Stagione dei matrimoni";
 "Bug-Off contest" = "Insettomania";
 "Meteor shower" =  "Pioggia di stelle";
-
-// Added 2020-05-23
 "Reset" = "Reimposta";
 "View Turnip.Exchange islands" = "Guarda isole Turnip.Exchange";
 "View on TurnipProphet" = "Guarda su TurnipProphet";
-
 // Added 2020-05-24
 "Music player" = "Player musicale";
 "Tracks" = "Brani";
-
 "Vacation" = "Vacanze";
 "Stripe Walls" = "Muri a Strisce";
 "Office" = "Ufficio";
@@ -839,7 +791,7 @@ Puoi annullare il tuo abbonamento in ogni momento dalle impostazioni del tuo acc
 "Zen" = "Zen";
 "Deco Wood" = "Deco Legno";
 "Rubber" = "Gomma";
-"Picture" = "Foto";
+"Picture" = "Quadro";
 "Cloth Floors" = "Cloth Floors";
 "Audio" = "Audio";
 "Fruits" = "Frutta";
@@ -855,7 +807,6 @@ Puoi annullare il tuo abbonamento in ogni momento dalle impostazioni del tuo acc
 "Art Deco Walls" = "Muri Art Deco";
 "Outdoors" = "All'aperto";
 "Rose Rug" = "Tappeto Rosa";
-"Fish" = "Pesce";
 "shop" = "Negozio";
 "Wood Plank Walls" = "Muri liste legno";
 "Party" = "Festa";
@@ -863,9 +814,7 @@ Puoi annullare il tuo abbonamento in ogni momento dalle impostazioni del tuo acc
 "Frozen" = "Ghiacciato";
 "TV" = "TV";
 "Home Appliances" = "Elettrodomestici";
-"Shop" = "Negozio";
 "Decadence" = "Decadenza";
-"Orange" = "Arancione";
 "Kitchen Things" = "Da cucina";
 "Herringbone" = "Spina di pesce";
 "Brown" = "Marrone";
@@ -913,7 +862,6 @@ Puoi annullare il tuo abbonamento in ogni momento dalle impostazioni del tuo acc
 "Bathroom Things" = "Da bagno";
 "Sculpture" = "Scultura";
 "Clock" = "Orologio";
-"Bunny Day" = "Caccia all'uovo";
 "Fireplace" = "Caminetto";
 "Garden" = "Giardino";
 "Easter" = "Pasqua";
@@ -937,7 +885,6 @@ Puoi annullare il tuo abbonamento in ogni momento dalle impostazioni del tuo acc
 "Flower Walls" = "Muri Fiori";
 "Dot" = "A pois";
 "Nature - Green" = "Natura - Verde";
-"Cute" = "Carino";
 "Hall Walls" = "Muri da Sala";
 "Theatrical" = "Teatrale";
 "Air Conditioning" = "Aria condizionata";
@@ -949,8 +896,8 @@ Puoi annullare il tuo abbonamento in ogni momento dalle impostazioni del tuo acc
 "Shell" = "Conchiglia";
 "Simple Rugs" = "Tappeti Semplici";
 "Sports" = "Sport";
-"cherry Blossoms" = "Ciliegio in fiore";
-"bathroom" = "bagno";
+"Cherry Blossoms" = "Ciliegio in fiore";
+"Bathroom" = "Bagno";
 "Musical Instrument" = "Strumento musicale";
 "Living Room" = "Salotto";
 "Wooden block" = "Blocchi di legno";
@@ -971,14 +918,13 @@ Puoi annullare il tuo abbonamento in ogni momento dalle impostazioni del tuo acc
 "Iron Parquet" = "Parquet di Ferro";
 "Chocolate" = "Cioccolato";
 "NA" = "ND";
-"Fairy tale" = "Favola";
+"Fairy Tale" = "Favola";
 "Special Warm Nature Walls" = "Muri speciali Natura Calda";
 "Iron" = "Ferro";
-"Elegant" = "Élegante";
+"Elegant" = "Elegante";
 "Dining" = "Sala da pranzo";
 "Wood Tile Walls" = "Muri Piastrelle di Legno";
 "Tile Floors" = "Pavimenti a Piastrelle";
-"School" = "Scuola";
 "Cardboard" = "Cartone";
 "Tin Walls" = "Muri di Latta";
 "Desk" = "Scrivania";
@@ -1024,7 +970,6 @@ Puoi annullare il tuo abbonamento in ogni momento dalle impostazioni del tuo acc
 "Cool" = "Cool";
 "Hospital" = "Ospedale";
 "Morocco" = "Marocco";
-"Flowers" = "Fiori";
 "Everyday" = "Tutti i giorni";
 "Study" = "Studio";
 "Work Bench" = "Banco da lavoro";
@@ -1046,13 +991,12 @@ Puoi annullare il tuo abbonamento in ogni momento dalle impostazioni del tuo acc
 "Shelf" = "Scaffale";
 "Wood Floors" = "Pavimenti Legno";
 "Toilet" = "Toilette";
-"Iron" = "Ferro";
 "Special Fish" = "Pesce Speciale";
 "Beige" = "Beige";
 "Nature Walls" = "Muri Natura";
 "Simple Carpet" = "Tappeto semplice";
 "Neta Walls" = "Muri Neta";
-"work" = "lavoro";
+"Work" = "Lavoro";
 "Special Nature Floors" = "Pavimento Speciale Natura";
 "White" = "Bianco";
 "Outdoors Decor" = "Decorazione da esterni";
@@ -1066,22 +1010,19 @@ Puoi annullare il tuo abbonamento in ogni momento dalle impostazioni del tuo acc
 "Toy" = "Gioco";
 "Folk Craft Decor" = "Decorazione Folk";
 "Gorgeous" = "Magnifico";
-
+"Child's Room" = "Stanza Bambini";
+"Tree's Bounty Or Leaves" = "Frutti Albero o Foglie"
 // Chore
 "Title" = "Titolo";
 "Chore title" = "Nome attività";
-"Description" = "Descrizione";
-"Short description about the chore" = "Una breve descrizione dell'attività";
+"Short description about the chore" = "Breve descrizione attività";
 "Add Chore" = "Aggiungere un'attività";
 "Chores" = "Attività";
 "Have a friend to visit? A gift to a villager? Track your chores and to-dos here." = "Devi andare a trovare un amico? Dare un regalo ad un abitante? Tieni traccia qui delle tue attività e delle cose da fare.";
-"Reset" = "Reimposta";
 "Manage and keep track of your chores and to-dos." = "Tieni traccia e gestisci le tue attività e le cose da fare.";
-
 // Design
 "Creators and Designs" = "Stilisti e Modelli";
 "Add Creator/Design Item" = "Aggiungi uno stilista o un modello";
-
 // Added 2020-06-03
 // Custom Daily Tasks
 "Add a custom task" = "Aggiungi obiettivo personalizzato";
@@ -1099,19 +1040,30 @@ Puoi annullare il tuo abbonamento in ogni momento dalle impostazioni del tuo acc
 "Use ATM" = "Accedere al Punto Nook";
 "Find bottle message" = "Trovare messaggio in bottiglia";
 "Obtain DIY from villager" = "Ottenere schemi dagli abitanti";
-
 //Villagers filte
 "All" = "Tutti";
 "Liked" = "Preferiti";
 "Residents" = "Residenti";
-
 // Added 2020-06-06
 "Villager visits" = "Parlare agli abitanti";
 "Who have you talked to today? Find the villagers you have visited and tap the home icon on the villager’s page to keep track." = "Con chi hai parlato oggi? Aggiungi qui i residenti con il pulsante della casa che trovi nella scheda di ogni abitante.";
 "Long press on a villager to see more info about them" = "Tieni premuto su di un abitante per vedere la sua scheda.";
+// Dodo code
+"Please fill all the fields" = "Per favore compila tutti i campi";
+"Dodo code" = "Codice Dodo";
+"Dodo codes" = "Codici Dodo";
+"This Dodo code is invalid" = "Questo Codice Dodo non è valido";
+"Island description" = "Descrizione dell'isola";
+"Native fruit" = "Frutta autoctona";
+"Add your Dodo code" = "Aggiungi il tuo Codice Dodo";
+"Hemisphere: %@" = "Emisfero: %@";
+"Delete" = "Elimina";
+"Report" = "Segnalare";
+"Latest Dodo code" = "Codici Dodo recenti";
 
-// dodo code
-"dodocode.footer" = "Once your Dodo code is saved, it'll appear on the list.
-Please Ensure your gates are open before adding your code.
-You can delete and close your gates at any moment.
-Please be respectful, any Dodo code reported will be deleted.";
+"dodocode.footer" = "Il tuo Codice Dodo apparirà in questa lista quando lo aggiungerai. Per favore assicurati che il gate sia aperto prima di aggiungere il tuo codice. Puoi cancellare il codice e chiudere il gate in ogni momento. Per favore rispetta gli altri, qualunque Codice Dodo segnalato sarà rimosso.";
+"iCloud not enabled" = "iCloud non è attivo";
+"You need an iCloud account to add your Dodo code" = "È necessario iCloud per aggiungere il tuo Codice Dodo";
+"Do you really want to delete your Dodo code?" = "Sei sicuro di voler eliminare il tuo Codice Dodo?";
+"Do you really want to report this Dodo code?" = "Sei sicuro di voler segnalare questo Codice Dodo?";
+"Visitor" = "Visitatore";
