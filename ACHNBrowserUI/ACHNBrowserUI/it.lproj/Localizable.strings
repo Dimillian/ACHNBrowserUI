@@ -1058,7 +1058,7 @@ Puoi annullare il tuo abbonamento in ogni momento dalle impostazioni del tuo acc
 "Add your Dodo code" = "Aggiungi il tuo Codice Dodo";
 "Hemisphere: %@" = "Emisfero: %@";
 "Delete" = "Elimina";
-"Report (%lld)" = "Segnalare (%lld)";
+"Report" = "Segnalare";
 "Latest Dodo code" = "Codici Dodo recenti";
 
 "dodocode.footer" = "Il tuo Codice Dodo apparirà in questa lista quando lo aggiungerai. Per favore assicurati che il gate sia aperto prima di aggiungere il tuo codice. Puoi cancellare il codice e chiudere il gate in ogni momento. Per favore rispetta gli altri, qualunque Codice Dodo segnalato sarà rimosso.";
