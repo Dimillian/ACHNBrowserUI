@@ -109,7 +109,7 @@ struct DodoCodeFormView: View {
                                 text: self.text,
                                 fruit: self.fruit,
                                 hemisphere: self.hemisphere)
-            DodoCodeService.shared.addDodoCode(code: code)
+            DodoCodeService.shared.add(code: code)
             self.presentationMode.wrappedValue.dismiss()
         }) {
             Image(systemName: "checkmark.seal.fill")

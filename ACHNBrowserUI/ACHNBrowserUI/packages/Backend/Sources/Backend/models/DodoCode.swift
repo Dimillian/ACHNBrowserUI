@@ -10,12 +10,13 @@ import CloudKit
 
 public struct DodoCode: Identifiable, Equatable {
     public static func == (lhs: DodoCode, rhs: DodoCode) -> Bool {
-        lhs.id == rhs.id
+        lhs.id == rhs.id && lhs.record == rhs.record && lhs.upvotes == rhs.upvotes
     }
     
     public let id: String
     public let code: String
     public let report: Int
+    public var upvotes: Int
     public let islandName: String
     public let text: String
     public let fruit: Fruit
@@ -27,7 +28,7 @@ public struct DodoCode: Identifiable, Equatable {
     public var record: CKRecord?
     
     enum RecordKeys: String {
-        case id, code, report, islandName, text, fruit, hemisphere
+        case id, code, report, upvotes, islandName, text, fruit, hemisphere
     }
     
     public init(code: String, islandName: String, text: String, fruit: Fruit, hemisphere: Hemisphere) {
@@ -38,12 +39,14 @@ public struct DodoCode: Identifiable, Equatable {
         self.fruit = fruit
         self.hemisphere = hemisphere
         self.report = 0
+        self.upvotes = 0
     }
     
     init(withRecord record: CKRecord) {
         id = record[RecordKeys.id.rawValue] as? String ?? ""
         code = record[RecordKeys.code.rawValue] as? String ?? ""
         report = record[RecordKeys.report.rawValue] as? Int ?? 0
+        upvotes = record[RecordKeys.upvotes.rawValue] as? Int ?? 0
         islandName = record[RecordKeys.islandName.rawValue] as? String ?? ""
         text = record[RecordKeys.text.rawValue] as? String ?? ""
         fruit = Fruit(rawValue: record[RecordKeys.fruit.rawValue] as? String ?? "") ?? .apple
@@ -57,6 +60,7 @@ public struct DodoCode: Identifiable, Equatable {
         record[RecordKeys.id.rawValue] = id
         record[RecordKeys.code.rawValue] = code
         record[RecordKeys.report.rawValue] = report
+        record[RecordKeys.upvotes.rawValue] = upvotes
         record[RecordKeys.islandName.rawValue] = islandName
         record[RecordKeys.text.rawValue] = text
         record[RecordKeys.fruit.rawValue] = fruit.rawValue

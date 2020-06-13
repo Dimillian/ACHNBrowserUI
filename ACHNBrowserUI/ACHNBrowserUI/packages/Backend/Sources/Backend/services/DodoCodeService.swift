@@ -42,7 +42,7 @@ public class DodoCodeService: ObservableObject {
         fetchCodes()
     }
     
-    public func addDodoCode(code: DodoCode) {
+    public func add(code: DodoCode) {
         isSynching = true
         let record = code.toRecord()
         var code = code
@@ -59,7 +59,22 @@ public class DodoCodeService: ObservableObject {
         }
     }
     
-    public func reportDodocode(code: DodoCode) {
+    public func upvote(code: DodoCode) {
+        if var record = code.record {
+            record[DodoCode.RecordKeys.upvotes.rawValue] = code.upvotes + 1
+            let operation = CKModifyRecordsOperation(recordsToSave: [record],
+                                                     recordIDsToDelete: nil)
+            operation.modifyRecordsCompletionBlock = { _, _, error in
+                DispatchQueue.main.async {
+                    self.setError(error: error)
+                    self.fetchCodes()
+                }
+            }
+            self.cloudKitDatabase.add(operation)
+        }
+    }
+    
+    public func report(code: DodoCode) {
         if let record = code.record,
             var reports = record[DodoCode.RecordKeys.report.rawValue] as? Int {
             var delete = false
@@ -83,7 +98,7 @@ public class DodoCodeService: ObservableObject {
         }
     }
     
-    public func deleteDodoCode(code: DodoCode) {
+    public func delete(code: DodoCode) {
         codes.removeAll(where: { code.id == $0.id })
         if let record = code.record {
             let operation = CKModifyRecordsOperation(recordsToSave: nil,
