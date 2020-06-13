@@ -846,7 +846,7 @@ You can cancel anytime with your iTunes account settings. Any unused portion of 
 "Add your Dodo code" = "Ajoutez votre Dodo code";
 "Hemisphere: %@" = "Hémisphère: %@";
 "Delete" = "Supprimer";
-"Report (%lld)" = "Signaler (%lld)";
+"Report" = "Signaler";
 "Latest Dodo code" = "Dernier Dodo code";
 
 "dodocode.footer" = "Une fois votre Dodo code ajouté il apparaitra dans la liste.
