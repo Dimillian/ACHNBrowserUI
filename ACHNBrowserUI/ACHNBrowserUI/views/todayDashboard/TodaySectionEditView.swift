@@ -50,6 +50,13 @@ struct TodaySectionEditView: View {
         VStack(alignment: .leading, spacing: 8) {
             Text("Drag and drop").fontWeight(.bold) + Text(" to re-order sections.")
             Text("Check or un-check").fontWeight(.bold) + Text(" rows to hide sections from the dashboard.")
+            Spacer()
+            Text("Reset")
+            .underline()
+            .onTapGesture {
+                self.viewModel.resetSectionList()
+                FeedbackGenerator.shared.triggerSelection()
+            }
         }
         .padding(.vertical)
     }
