@@ -187,6 +187,7 @@
 		69E67EF0249376DF00ED7AC8 /* DodoCodeRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69E67EEF249376DF00ED7AC8 /* DodoCodeRow.swift */; };
 		69E67EF22493833200ED7AC8 /* DodoCodeFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69E67EF12493833200ED7AC8 /* DodoCodeFormView.swift */; };
 		69E67EF4249383DA00ED7AC8 /* TodayDodoCodeSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69E67EF3249383DA00ED7AC8 /* TodayDodoCodeSection.swift */; };
+		69E67EFB2494C35B00ED7AC8 /* ButtonImageCounterOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69E67EFA2494C35B00ED7AC8 /* ButtonImageCounterOverlay.swift */; };
 		AE0B5B5A247AD6DF0075CF16 /* DesignFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE0B5B59247AD6DF0075CF16 /* DesignFormView.swift */; };
 		AE0B5B5C247AD7590075CF16 /* DesignFormViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE0B5B5B247AD7590075CF16 /* DesignFormViewModel.swift */; };
 		AE0B5B5E247B14120075CF16 /* DesignRowViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE0B5B5D247B14120075CF16 /* DesignRowViewModel.swift */; };
@@ -392,6 +393,7 @@
 		69E67EEF249376DF00ED7AC8 /* DodoCodeRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DodoCodeRow.swift; sourceTree = "<group>"; };
 		69E67EF12493833200ED7AC8 /* DodoCodeFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DodoCodeFormView.swift; sourceTree = "<group>"; };
 		69E67EF3249383DA00ED7AC8 /* TodayDodoCodeSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayDodoCodeSection.swift; sourceTree = "<group>"; };
+		69E67EFA2494C35B00ED7AC8 /* ButtonImageCounterOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonImageCounterOverlay.swift; sourceTree = "<group>"; };
 		69E98C6E247439AD00A200FE /* it */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; lineEnding = 0; name = it; path = it.lproj/Localizable.strings; sourceTree = "<group>"; };
 		69EC82ED2461E79D00CE9064 /* TurnipsChartTopLegendView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TurnipsChartTopLegendView.swift; sourceTree = "<group>"; };
 		AE0B5B59247AD6DF0075CF16 /* DesignFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignFormView.swift; sourceTree = "<group>"; };
@@ -814,6 +816,7 @@
 				69AF8C75243E3545001DD9CB /* SearchField.swift */,
 				69CA5F00244F1AD300B275B6 /* SectionHeaderView.swift */,
 				69875F4F24652A4700B1D46C /* Sheet.swift */,
+				69E67EFA2494C35B00ED7AC8 /* ButtonImageCounterOverlay.swift */,
 			);
 			path = shared;
 			sourceTree = "<group>";
@@ -1183,6 +1186,7 @@
 				AE51C2E7248117EC00F074EC /* ChoreFormView.swift in Sources */,
 				69157B962471A5A1005B9002 /* TurnipsChartTopLegendView.swift in Sources */,
 				AE38E4A72482D772000DFED3 /* ChoreListViewModel.swift in Sources */,
+				69E67EFB2494C35B00ED7AC8 /* ButtonImageCounterOverlay.swift in Sources */,
 				69157B972471A5A1005B9002 /* TurnipsChartView.swift in Sources */,
 				696B454C247A948A00E16252 /* MusicPlayerManager.swift in Sources */,
 				69E67EEE24935DD200ED7AC8 /* DodoCodeListView.swift in Sources */,

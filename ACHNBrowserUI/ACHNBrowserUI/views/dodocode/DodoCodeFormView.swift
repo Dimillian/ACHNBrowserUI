@@ -18,6 +18,8 @@ struct DodoCodeFormView: View {
     @State private var text = ""
     @State private var fruit = AppUserDefaults.shared.fruit
     @State private var hemisphere = AppUserDefaults.shared.hemisphere
+    @State private var haveVisitor = false
+    @State private var visitor: SpecialCharacters?
     @State private var dodoCodeError = false
     @State private var validationError = false
     
@@ -53,6 +55,21 @@ struct DodoCodeFormView: View {
                                         .frame(width: 30, height: 30)
                                     Text(LocalizedStringKey(fruit.rawValue.capitalized)).tag(fruit)
                                 }
+                            }
+                    }
+                    if haveVisitor {
+                        
+                    }
+                    Picker(selection: $visitor,
+                           label: Text("Visitor")) {
+                            ForEach(SpecialCharacters.allCases, id: \.self) { visitor in
+                                HStack {
+                                    Image(visitor.rawValue)
+                                        .renderingMode(.original)
+                                        .resizable()
+                                        .frame(width: 30, height: 30)
+                                    Text(LocalizedStringKey(visitor.rawValue.capitalized))
+                                }.tag(visitor as SpecialCharacters?)
                             }
                     }
                 }
@@ -108,7 +125,8 @@ struct DodoCodeFormView: View {
                                 islandName: self.islandName,
                                 text: self.text,
                                 fruit: self.fruit,
-                                hemisphere: self.hemisphere)
+                                hemisphere: self.hemisphere,
+                                specialCharacter: self.visitor)
             DodoCodeService.shared.add(code: code)
             self.presentationMode.wrappedValue.dismiss()
         }) {

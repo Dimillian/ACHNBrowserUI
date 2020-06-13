@@ -28,15 +28,21 @@ struct DodoCodeRow: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 6) {
             HStack(spacing: 2) {
-                Image(code.fruit.rawValue.capitalized)
-                    .renderingMode(.original)
-                    .resizable()
-                    .frame(width: 30, height: 30)
                 Text(code.code.uppercased())
                     .foregroundColor(.acHeaderBackground)
                     .font(.headline)
                     .fontWeight(.bold)
                     .lineLimit(1)
+                Image(code.fruit.rawValue.capitalized)
+                    .renderingMode(.original)
+                    .resizable()
+                    .frame(width: 30, height: 30)
+                code.specialCharacter.map {
+                    Image($0.rawValue)
+                        .renderingMode(.original)
+                        .resizable()
+                        .frame(width: 30, height: 30)
+                }
             }
             Text("Hemisphere: \(NSLocalizedString(code.hemisphere.rawValue.capitalized, comment: ""))")
                 .foregroundColor(.acText)
@@ -49,7 +55,7 @@ struct DodoCodeRow: View {
                 .font(.footnote)
 
             if DodoCodeService.shared.canEdit && showButtons {
-                HStack {
+                HStack(spacing: 12) {
                     Spacer()
                     upvoteButton
                     reportButton
@@ -69,15 +75,9 @@ struct DodoCodeRow: View {
                 FeedbackGenerator.shared.triggerSelection()
             }
         }) {
-            Image(systemName: voted ? "hand.thumbsup.fill" : "hand.thumbsup")
-                .imageScale(.medium)
-                .font(.footnote)
-                .foregroundColor(.green)
-                .padding(.vertical, 7)
-                .padding(.horizontal, 8)
-                .background(Color.acBackground)
-                .mask(RoundedRectangle(cornerRadius: 10, style: .continuous))
-                .overlay(counter(count: code.upvotes), alignment: .topTrailing)
+            ButtonImageCounterOverlay(symbol: voted ? "hand.thumbsup.fill" : "hand.thumbsup",
+                               foregroundColor: .green,
+                               counter: code.upvotes)
         }
         .buttonStyle(BorderlessButtonStyle())
         .padding(.trailing, 4)
@@ -92,14 +92,9 @@ struct DodoCodeRow: View {
                     ActivityIndicator(isAnimating: .constant(true),
                                       style: .medium)
                 } else {
-                    Image(systemName: "exclamationmark.triangle.fill")
-                        .foregroundColor(.acSecondaryText)
-                        .font(.footnote)
-                        .padding(.vertical, 7)
-                        .padding(.horizontal, 8)
-                        .background(Color.acBackground)
-                        .mask(RoundedRectangle(cornerRadius: 10, style: .continuous))
-                        .overlay(counter(count: code.report), alignment: .topTrailing)
+                    ButtonImageCounterOverlay(symbol: "exclamationmark.triangle.fill",
+                                       foregroundColor: .acSecondaryText,
+                                       counter: code.report)
                 }
             }
         }
@@ -114,14 +109,9 @@ struct DodoCodeRow: View {
         Button(action: {
             self.showDeleteAlert = true
         }) {
-            Image(systemName: "trash.fill")
-                .imageScale(.medium)
-                .font(.footnote)
-                .foregroundColor(.red)
-                .padding(.vertical, 7)
-                .padding(.horizontal, 8)
-                .background(Color.acBackground)
-                .mask(RoundedRectangle(cornerRadius: 10, style: .continuous))
+            ButtonImageCounterOverlay(symbol: "trash.fill",
+                               foregroundColor: .red,
+                               counter: nil)
         }
         .buttonStyle(BorderlessButtonStyle())
         .alert(isPresented: $showDeleteAlert) {

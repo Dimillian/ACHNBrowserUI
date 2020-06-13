@@ -21,6 +21,7 @@ public struct DodoCode: Identifiable, Equatable {
     public let text: String
     public let fruit: Fruit
     public let hemisphere: Hemisphere
+    public let specialCharacter: SpecialCharacters?
     public var canDelete = false
     public var creationDate: Date {
         record?.creationDate ?? Date()
@@ -28,16 +29,18 @@ public struct DodoCode: Identifiable, Equatable {
     public var record: CKRecord?
     
     enum RecordKeys: String {
-        case id, code, report, upvotes, islandName, text, fruit, hemisphere
+        case id, code, report, upvotes, islandName, text, fruit, hemisphere, specialCharacter
     }
     
-    public init(code: String, islandName: String, text: String, fruit: Fruit, hemisphere: Hemisphere) {
+    public init(code: String, islandName: String, text: String,
+                fruit: Fruit, hemisphere: Hemisphere, specialCharacter: SpecialCharacters? = nil) {
         self.id = UUID().uuidString
         self.code = code
         self.islandName = islandName
         self.text = text
         self.fruit = fruit
         self.hemisphere = hemisphere
+        self.specialCharacter = specialCharacter
         self.report = 0
         self.upvotes = 0
     }
@@ -51,6 +54,7 @@ public struct DodoCode: Identifiable, Equatable {
         text = record[RecordKeys.text.rawValue] as? String ?? ""
         fruit = Fruit(rawValue: record[RecordKeys.fruit.rawValue] as? String ?? "") ?? .apple
         hemisphere = Hemisphere(rawValue: record[RecordKeys.hemisphere.rawValue] as? String ?? "") ?? .north
+        specialCharacter = SpecialCharacters(rawValue: record[RecordKeys.specialCharacter.rawValue] as? String ?? "")
         canDelete = record.creatorUserRecordID?.recordName.contains("defaultOwner") == true
         self.record = record
     }
@@ -65,6 +69,9 @@ public struct DodoCode: Identifiable, Equatable {
         record[RecordKeys.text.rawValue] = text
         record[RecordKeys.fruit.rawValue] = fruit.rawValue
         record[RecordKeys.hemisphere.rawValue] = hemisphere.rawValue
+        if let specialCharacter = specialCharacter {
+            record[RecordKeys.specialCharacter.rawValue] = specialCharacter.rawValue
+        }
         return record
     }
 }
