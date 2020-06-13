@@ -51,6 +51,10 @@ class DashboardViewModel: ObservableObject {
         }
         selection = Set(sectionOrder.filter(\.enabled).map(\.name))
     }
+    
+    public func resetSectionList() {
+        sectionOrder = TodaySection.defaultSectionList
+    }
         
     func fetchListings() {
         listingCancellable = NookazonService
