@@ -11,8 +11,11 @@ import Backend
 
 struct DodoCodeRow: View {
     let code: DodoCode
+    let listView: Bool
     
     @State private var reported = false
+    @State private var showDeleteAlert = false
+    @State private var showReportAlert = false
     
     var formatter: DateFormatter {
         let formatter = DateFormatter()
@@ -34,8 +37,7 @@ struct DodoCodeRow: View {
                     .fontWeight(.bold)
                     .lineLimit(1)
             }
-            Text(String.init(format: NSLocalizedString("Hemisphere: %@", comment: ""),
-                             NSLocalizedString(code.hemisphere.rawValue.capitalized, comment: "")))
+            Text("Hemisphere: \(NSLocalizedString(code.hemisphere.rawValue.capitalized, comment: ""))")
                 .foregroundColor(.acText)
                 .font(.subheadline)
             Text(code.text)
@@ -44,33 +46,85 @@ struct DodoCodeRow: View {
             Text(formatter.string(from: code.creationDate))
                 .foregroundColor(.acText)
                 .font(.footnote)
-            if DodoCodeService.shared.canEdit {
+            if DodoCodeService.shared.canEdit && self.listView {
                 HStack {
+                    Spacer()
                     Button(action: {
-                        self.reported = true
-                        DodoCodeService.shared.reportDodocode(code: self.code)
+                        self.showReportAlert = true
                     }) {
                         Group {
                             if reported {
                                 ActivityIndicator(isAnimating: .constant(true),
                                                   style: .medium)
                             } else {
-                                Text(String.init(format: NSLocalizedString("Report (%lld)", comment: ""),
-                                                 code.report))
+                                Image(systemName: "exclamationmark.triangle.fill")
                                     .foregroundColor(.acSecondaryText)
+                                    .font(.footnote)
+                                    .padding(.vertical, 7)
+                                    .padding(.horizontal, 8)
+                                    .background(Color.acBackground)
+                                    .mask(RoundedRectangle(cornerRadius: 10, style: .continuous))
+                                    .overlay(counter(count: code.report), alignment: .topTrailing)
                             }
                         }
-                    }.buttonStyle(BorderlessButtonStyle())
+                    }
+                    .buttonStyle(BorderlessButtonStyle())
+                    .alert(isPresented: $showReportAlert) {
+                            reportAlert
+                    }
+                    .padding(.trailing, 4)
+                    
                     if code.canDelete {
                         Button(action: {
-                            DodoCodeService.shared.deleteDodoCode(code: self.code)
+                            self.showDeleteAlert = true
                         }) {
-                            Text("Delete").foregroundColor(.red)
-                        }.buttonStyle(BorderlessButtonStyle())
+                            Image(systemName: "trash.fill")
+                                .imageScale(.medium)
+                                .font(.footnote)
+                                .foregroundColor(.red)
+                                .padding(.vertical, 7)
+                                .padding(.horizontal, 8)
+                                .background(Color.acBackground)
+                                .mask(RoundedRectangle(cornerRadius: 10, style: .continuous))
+                        }
+                        .buttonStyle(BorderlessButtonStyle())
+                        .alert(isPresented: $showDeleteAlert) {
+                                deleteAlert
+                        }
                     }
                 }
             }
         }
+    }
+    
+    private var deleteAlert: Alert {
+        Alert(title: Text("Are you sure?"),
+              message: Text("Do you really want to delete your Dodo code?"), primaryButton: .destructive(Text("Delete")) {
+                      DodoCodeService.shared.deleteDodoCode(code: self.code)
+              }, secondaryButton: .cancel())
+    }
+    
+    private var reportAlert: Alert {
+        Alert(title: Text("Are you sure?"),
+              message: Text("Do you really want to report this Dodo code?"), primaryButton: .destructive(Text("Report")) {
+                      self.reported = true
+                      DodoCodeService.shared.reportDodocode(code: self.code)
+              }, secondaryButton: .cancel())
+    }
+    
+    private func counter(count: Int) -> some View {
+        ZStack {
+            Circle()
+                .scale(2)
+                .fixedSize()
+                .foregroundColor(Color.acBackground)
+            Text("\(count)")
+                .font(.footnote)
+                .foregroundColor(.acText)
+        }
+        .opacity(count > 0 ? 1 : 0)
+        .animation(.linear)
+        .padding(EdgeInsets(top: -5, leading: 0, bottom: 0, trailing: -6))
     }
 }
 
@@ -78,7 +132,7 @@ struct DodoCodeRow_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
             List {
-                DodoCodeRow(code: static_dodoCode)
+                DodoCodeRow(code: static_dodoCode, listView: true)
             }
         }
     }

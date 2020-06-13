@@ -9,6 +9,7 @@
 import Foundation
 import SwiftUI
 import Backend
+import SwiftUIKit
 
 struct DodoCodeListView: View {
     @EnvironmentObject private var service: DodoCodeService
@@ -23,7 +24,7 @@ struct DodoCodeListView: View {
             } else if !service.codes.isEmpty {
                 ForEach(service.codes) { code in
                     Section(header: SectionHeaderView(text: code.islandName, icon: "sun.haze.fill")) {
-                        DodoCodeRow(code: code)
+                        DodoCodeRow(code: code, listView: true)
                     }
                 }
             } else {
@@ -61,6 +62,8 @@ struct DodoCodeListView: View {
         }) {
             Image(systemName: "plus.circle").imageScale(.large)
         }
+        .buttonStyle(BorderedBarButtonStyle())
+        .accentColor(Color.acText.opacity(0.2))
     }
     
     private var refreshButton: some View {
@@ -73,5 +76,7 @@ struct DodoCodeListView: View {
                 Image(systemName: "arrow.counterclockwise.circle").imageScale(.large)
             }
         }
+        .buttonStyle(BorderedBarButtonStyle())
+        .accentColor(Color.acText.opacity(0.2))
     }
 }
