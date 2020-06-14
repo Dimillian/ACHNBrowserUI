@@ -15,18 +15,19 @@ struct SettingsView: View {
     @EnvironmentObject private var subscriptionManager: SubscriptionManager
     @Environment(\.presentationMode) private var presentationMode
     @ObservedObject var appUserDefaults = AppUserDefaults.shared
+    @ObservedObject var notificationManager = NotificationManager.shared
     
     @State private var isDocumentPickerPresented = false
     @State private var documentPickderMode: UIDocumentPickerMode = .import
     @State private var importedFile: URL?
     @State private var showSuccessImportAlert = false
     @State private var showDeleteConfirmationAlert = false
-
     var body: some View {
         NavigationView {
             Form {
                 islandSection
                 appSection
+                notificationSection
                 dataSection
             }
             .listStyle(GroupedListStyle())
@@ -123,6 +124,13 @@ struct SettingsView: View {
                         Text(LocalizedStringKey(service.rawValue.capitalized)).tag(service)
                     }
             }
+            
+            HStack {
+                Toggle(isOn: $appUserDefaults.isGameTimeInSync ) {
+                    Text("Game time in sync")
+                }
+            }
+
         }
     }
     
@@ -148,6 +156,43 @@ struct SettingsView: View {
             }
             .disabled(subscriptionManager.inPaymentProgress)
             .opacity(subscriptionManager.inPaymentProgress ? 0.5 : 1.0)
+        }
+    }
+    
+    private var notificationSection: some View {
+        Section(header: SectionHeaderView(text: "Notifications", icon: "clock")) {
+            HStack {
+                Toggle(isOn: $appUserDefaults.isShopOpenClose ) {
+                    Text("When shops open/close")
+                }
+                .onTapGesture {
+                    if !self.appUserDefaults.isShopOpenClose {
+                        self.notificationManager.getSettingsNotifications(subtitle: "Nook’s Cranny store is open", hour: 8, minute: 0, isRepeated: true)
+                        self.notificationManager.getSettingsNotifications(subtitle: "Nook’s Cranny store is closing in 1h", hour: 21, minute: 0, isRepeated: true)
+                        self.notificationManager.getSettingsNotifications(subtitle: "Able Sisters Shop is open", hour: 9, minute: 0, isRepeated: true)
+                        self.notificationManager.getSettingsNotifications(subtitle: "Able Sisters Shop is closing in 1h", hour: 20, minute: 0, isRepeated: true)
+                    }
+                }
+                
+            }
+            
+            HStack {
+                Toggle(isOn: $appUserDefaults.isSpecialEventsOn) {
+                    Text("Special Events")
+                }
+            }
+            
+            HStack {
+                Toggle(isOn: $appUserDefaults.isTurnipPriceChangesOn) {
+                    Text("Turnip Price Changes")
+                }
+            }
+            
+            HStack {
+                Toggle(isOn: $appUserDefaults.isTurnipSellBuyOn) {
+                    Text("Turnip Sell/Buy reminder")
+                }
+            }
         }
     }
     

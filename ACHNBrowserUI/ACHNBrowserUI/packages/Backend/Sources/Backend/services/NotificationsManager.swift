@@ -9,7 +9,7 @@
 import Foundation
 import UserNotifications
 
-public class NotificationManager: NSObject {
+public class NotificationManager: NSObject, ObservableObject {
     public static let shared = NotificationManager()
     
     private override init() {
@@ -113,6 +113,26 @@ public class NotificationManager: NSObject {
         UNUserNotificationCenter.current().getPendingNotificationRequests { requests in
             completion(requests)
         }
+    }
+    
+    public func getSettingsNotifications(subtitle: String, hour: Int, minute: Int, isRepeated: Bool) {
+        // schedule the notification
+        let content = UNMutableNotificationContent()
+        content.title = "AC Helper"
+        content.subtitle = subtitle
+        content.sound = UNNotificationSound.default
+        
+        // show this notification using custom date
+       var date = DateComponents()
+       date.hour = hour
+       date.minute = minute
+       let trigger = UNCalendarNotificationTrigger(dateMatching: date, repeats: isRepeated)
+
+       // choose a random identifier
+       let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
+
+       // add our notification request
+       UNUserNotificationCenter.current().add(request)
     }
 }
 
