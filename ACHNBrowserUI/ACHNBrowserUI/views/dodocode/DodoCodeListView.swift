@@ -66,7 +66,7 @@ struct DodoCodeListView: View {
                 ForEach(service.codes) { code in
                     Section(header: SectionHeaderView(text: code.islandName, icon: "sun.haze.fill")) {
                         DodoCodeRow(code: code, showButtons: true)
-                    }
+                    }.opacity(code.archived ? 0.5 : 1.0)
                 }
             } else {
                 Text("No active Dodo code yet, open your island to visitors by adding your own")

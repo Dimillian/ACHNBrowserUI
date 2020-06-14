@@ -17,7 +17,8 @@ public struct DodoCode: Identifiable, Equatable {
         lhs.text == rhs.text &&
         lhs.fruit == rhs.fruit &&
         lhs.hemisphere == rhs.hemisphere &&
-        lhs.specialCharacter == rhs.specialCharacter
+        lhs.specialCharacter == rhs.specialCharacter &&
+        lhs.archived == rhs.archived
     }
     
     public let id: String
@@ -29,14 +30,15 @@ public struct DodoCode: Identifiable, Equatable {
     public let fruit: Fruit
     public let hemisphere: Hemisphere
     public let specialCharacter: SpecialCharacters?
-    public var isMine = false
+    public let archived: Bool
+    public let isMine: Bool
     public var creationDate: Date {
         record?.creationDate ?? Date()
     }
     public var record: CKRecord?
     
     enum RecordKeys: String {
-        case id, code, report, upvotes, islandName, text, fruit, hemisphere, specialCharacter
+        case id, code, report, upvotes, islandName, text, fruit, hemisphere, specialCharacter, archived
     }
     
     public init(code: String, islandName: String, text: String,
@@ -50,6 +52,8 @@ public struct DodoCode: Identifiable, Equatable {
         self.specialCharacter = specialCharacter
         self.report = 0
         self.upvotes = 0
+        self.archived = false
+        self.isMine = true
     }
     
     init(withRecord record: CKRecord) {
@@ -62,6 +66,7 @@ public struct DodoCode: Identifiable, Equatable {
         fruit = Fruit(rawValue: record[RecordKeys.fruit.rawValue] as? String ?? "") ?? .apple
         hemisphere = Hemisphere(rawValue: record[RecordKeys.hemisphere.rawValue] as? String ?? "") ?? .north
         specialCharacter = SpecialCharacters(rawValue: record[RecordKeys.specialCharacter.rawValue] as? String ?? "")
+        archived = record[RecordKeys.archived.rawValue] as? Bool ?? false
         isMine = record.creatorUserRecordID?.recordName.contains("defaultOwner") == true
         self.record = record
     }
@@ -76,6 +81,7 @@ public struct DodoCode: Identifiable, Equatable {
         record[RecordKeys.text.rawValue] = text
         record[RecordKeys.fruit.rawValue] = fruit.rawValue
         record[RecordKeys.hemisphere.rawValue] = hemisphere.rawValue
+        record[RecordKeys.archived.rawValue] = archived
         if let specialCharacter = specialCharacter {
             record[RecordKeys.specialCharacter.rawValue] = specialCharacter.rawValue
         }

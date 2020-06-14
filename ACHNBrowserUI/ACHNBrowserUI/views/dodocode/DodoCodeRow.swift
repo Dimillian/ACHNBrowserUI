@@ -58,10 +58,12 @@ struct DodoCodeRow: View {
                 HStack(spacing: 12) {
                     Spacer()
                     upvoteButton
-                    reportButton
                     if code.isMine {
                         editButton
+                        archiveButton
                         deleteButton
+                    } else {
+                        reportButton
                     }
                 }
             }
@@ -120,6 +122,17 @@ struct DodoCodeRow: View {
         }
     }
     
+    private var archiveButton: some View {
+        Button(action: {
+            DodoCodeService.shared.toggleArchive(code: self.code)
+        }) {
+            ButtonImageCounterOverlay(symbol: code.archived ? "lock" : "lock.open",
+                                      foregroundColor: .acSecondaryText,
+                                      counter: nil)
+        }
+        .buttonStyle(BorderlessButtonStyle())
+    }
+    
     private var editButton: some View {
         Button(action: {
             self.sheet = .dodoCodeForm(editing: self.code)
@@ -138,7 +151,7 @@ struct DodoCodeRow: View {
                       DodoCodeService.shared.delete(code: self.code)
               }, secondaryButton: .cancel())
     }
-    
+        
     private var reportAlert: Alert {
         Alert(title: Text("Are you sure?"),
               message: Text("Do you really want to report this Dodo code?"), primaryButton: .destructive(Text("Report")) {

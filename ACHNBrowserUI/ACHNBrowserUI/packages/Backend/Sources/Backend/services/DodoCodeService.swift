@@ -54,7 +54,6 @@ public class DodoCodeService: ObservableObject {
         cloudKitDatabase.save(record) { (record, error) in
             DispatchQueue.main.async {
                 if let record = record {
-                    code.isMine = true
                     code.record = record
                     self.codes.insert(code, at: 0)
                 }
@@ -66,12 +65,9 @@ public class DodoCodeService: ObservableObject {
     
     public func edit(code: DodoCode) {
         isSynching = true
-        cloudKitDatabase.save(code.toRecord()) { (record, error) in
-            DispatchQueue.main.async {
-                self.fetchCodes()
-                self.setError(error: error)
-            }
-        }
+        let operation = CKModifyRecordsOperation(recordsToSave: [code.toRecord()],
+                                                 recordIDsToDelete: nil)
+        addOperation(operation: operation, fetch: true)
     }
     
     public func upvote(code: DodoCode) {
@@ -79,13 +75,7 @@ public class DodoCodeService: ObservableObject {
             record[DodoCode.RecordKeys.upvotes.rawValue] = code.upvotes + 1
             let operation = CKModifyRecordsOperation(recordsToSave: [record],
                                                      recordIDsToDelete: nil)
-            operation.modifyRecordsCompletionBlock = { _, _, error in
-                DispatchQueue.main.async {
-                    self.setError(error: error)
-                    self.fetchCodes()
-                }
-            }
-            self.cloudKitDatabase.add(operation)
+            addOperation(operation: operation, fetch: true)
         }
     }
     
@@ -96,14 +86,8 @@ public class DodoCodeService: ObservableObject {
             record[DodoCode.RecordKeys.report.rawValue] = reports
             let operation = CKModifyRecordsOperation(recordsToSave: [record],
                                                      recordIDsToDelete: nil)
-            operation.modifyRecordsCompletionBlock = { _, _, error in
-                DispatchQueue.main.async {
-                    self.reported.append(code)
-                    self.setError(error: error)
-                    self.fetchCodes()
-                }
-            }
-            self.cloudKitDatabase.add(operation)
+            self.reported.append(code)
+            addOperation(operation: operation, fetch: true)
         }
     }
     
@@ -112,12 +96,16 @@ public class DodoCodeService: ObservableObject {
         if let record = code.record {
             let operation = CKModifyRecordsOperation(recordsToSave: nil,
                                                      recordIDsToDelete: [record.recordID])
-            operation.modifyRecordsCompletionBlock = { _, _, error in
-                DispatchQueue.main.async {
-                    self.setError(error: error)
-                }
-            }
-            self.cloudKitDatabase.add(operation)
+            addOperation(operation: operation, fetch: false)
+        }
+    }
+    
+    public func toggleArchive(code: DodoCode) {
+        if let record = code.record {
+            record[DodoCode.RecordKeys.archived.rawValue] = !code.archived
+            let operation = CKModifyRecordsOperation(recordsToSave: [record],
+                                                     recordIDsToDelete: nil)
+            addOperation(operation: operation, fetch: true)
         }
     }
     
@@ -130,6 +118,18 @@ public class DodoCodeService: ObservableObject {
     }
     
     // MARK: - Private
+    private func addOperation(operation: CKModifyRecordsOperation, fetch: Bool) {
+        operation.modifyRecordsCompletionBlock = { _, _, error in
+            DispatchQueue.main.async {
+                self.setError(error: error)
+                if fetch {
+                    self.fetchCodes()
+                }
+            }
+        }
+        self.cloudKitDatabase.add(operation)
+    }
+    
     private func subscribeToCloudKit() {
         cloudKitDatabase.fetchAllSubscriptions { (subs, _) in
             if subs == nil || subs?.isEmpty == true {
