@@ -91,35 +91,35 @@ public class AppUserDefaults: ObservableObject {
     @UserDefault("dodo_notifications", defaultValue: false)
     public var dodoNotifications: Bool
 
-    @UserDefault("isShopOpenClose", defaultValue: false)
-    public var isShopOpenClose: Bool {
+    @UserDefault("shop_notifications_enabled", defaultValue: false)
+    public var shopNotificationsEnabled: Bool {
         willSet {
             objectWillChange.send()
         }
     }
     
-    @UserDefault("isSpecialEventsOn", defaultValue: false)
-    public var isSpecialEventsOn: Bool {
+    @UserDefault("special_event_notifications_enabled", defaultValue: false)
+    public var specialEventNotificationsEnabled: Bool {
         willSet {
             objectWillChange.send()
         }
     }
     
-    @UserDefault("isTurnipPriceChangesOn", defaultValue: false)
+    @UserDefault("is_turnip_price_changes_on", defaultValue: false)
     public var isTurnipPriceChangesOn: Bool {
         willSet {
             objectWillChange.send()
         }
     }
     
-    @UserDefault("isTurnipSellBuyOn", defaultValue: false)
+    @UserDefault("is_turnip_sell_buy_on", defaultValue: false)
     public var isTurnipSellBuyOn: Bool {
         willSet {
             objectWillChange.send()
         }
     }
     
-    @UserDefault("isGameTimeInSync", defaultValue: false)
+    @UserDefault("is_game_time_in_sync", defaultValue: false)
     public var isGameTimeInSync: Bool {
         willSet {
             objectWillChange.send()
