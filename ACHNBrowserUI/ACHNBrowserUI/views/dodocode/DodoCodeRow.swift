@@ -28,31 +28,33 @@ struct DodoCodeRow: View {
     
     var body: some View {
         VStack(alignment: .leading, spacing: 6) {
-            HStack(spacing: 2) {
-                Text(code.code.uppercased())
-                    .foregroundColor(.acHeaderBackground)
-                    .font(.custom("CourierNewPS-BoldMT", size: 20))
-                    .lineLimit(1)
-                Image(code.fruit.rawValue.capitalized)
-                    .renderingMode(.original)
-                    .resizable()
-                    .frame(width: 30, height: 30)
-                code.specialCharacter.map {
-                    Image($0.rawValue)
+            Group {
+                HStack(spacing: 2) {
+                    Text(code.archived ? "-----" : code.code.uppercased())
+                        .foregroundColor(.acHeaderBackground)
+                        .font(.custom("CourierNewPS-BoldMT", size: 20))
+                        .lineLimit(1)
+                    Image(code.fruit.rawValue.capitalized)
                         .renderingMode(.original)
                         .resizable()
                         .frame(width: 30, height: 30)
+                    code.specialCharacter.map {
+                        Image($0.rawValue)
+                            .renderingMode(.original)
+                            .resizable()
+                            .frame(width: 30, height: 30)
+                    }
                 }
-            }
-            Text("Hemisphere: \(NSLocalizedString(code.hemisphere.rawValue.capitalized, comment: ""))")
-                .foregroundColor(.acText)
-                .font(.subheadline)
-            Text(code.text)
-                .foregroundColor(.acText)
-                .lineLimit(15)
-            Text(formatter.string(from: code.creationDate))
-                .foregroundColor(.acText)
-                .font(.footnote)
+                Text("Hemisphere: \(NSLocalizedString(code.hemisphere.rawValue.capitalized, comment: ""))")
+                    .foregroundColor(.acText)
+                    .font(.subheadline)
+                Text(code.text)
+                    .foregroundColor(.acText)
+                    .lineLimit(15)
+                Text(formatter.string(from: code.creationDate))
+                    .foregroundColor(.acText)
+                    .font(.footnote)
+            }.opacity(code.archived ? 0.5 : 1.0)
 
             if DodoCodeService.shared.canEdit && showButtons {
                 HStack(spacing: 12) {
@@ -61,7 +63,9 @@ struct DodoCodeRow: View {
                     if code.isMine {
                         editButton
                         archiveButton
-                        deleteButton
+                        if code.archived {
+                            deleteButton
+                        }
                     } else {
                         reportButton
                     }
