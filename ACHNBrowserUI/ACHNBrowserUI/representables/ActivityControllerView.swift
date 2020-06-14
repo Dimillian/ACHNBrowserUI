@@ -11,23 +11,24 @@ import SwiftUI
 
 #if !os(tvOS)
 public struct ActivityControllerView: UIViewControllerRepresentable {
-    
-    public let activityItems: [Any]
-    public let applicationActivities: [UIActivity]?
-    
-    public init(activityItems: [Any], applicationActivities: [UIActivity]?) {
-        self.activityItems = activityItems
-        self.applicationActivities = applicationActivities
-    }
+    @Environment(\.presentationMode) var presentation
+    public var activityItems: [Any]
+    public var applicationActivities: [UIActivity]?
     
     public func makeUIViewController(context: UIViewControllerRepresentableContext<ActivityControllerView>) -> UIActivityViewController {
-        return UIActivityViewController(activityItems: activityItems,
-                                        applicationActivities: applicationActivities)
+        let controller = UIActivityViewController(
+            activityItems: activityItems,
+            applicationActivities: applicationActivities
+        )
+        controller.completionWithItemsHandler = { _, _, _, _ in
+            self.presentation.wrappedValue.dismiss()
+        }
+        return controller
     }
     
     public func updateUIViewController(_ uiViewController: UIActivityViewController,
                                        context: UIViewControllerRepresentableContext<ActivityControllerView>) {
-        
+
     }
 }
 #endif

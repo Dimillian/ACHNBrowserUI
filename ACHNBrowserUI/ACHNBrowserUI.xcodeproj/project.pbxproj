@@ -14,6 +14,7 @@
 		3D9AB093248257DF00B47041 /* CustomTaskFormViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D9AB092248257DF00B47041 /* CustomTaskFormViewModel.swift */; };
 		3DECE21B2483BC83001F24BA /* EditMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DECE21A2483BC82001F24BA /* EditMode.swift */; };
 		4C16FB41247AC9B0009F24E3 /* GridStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C16FB40247AC9B0009F24E3 /* GridStack.swift */; };
+		4C30BFC3249627FD003E96A2 /* Sequence+Unique.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C30BFC2249627FC003E96A2 /* Sequence+Unique.swift */; };
 		4C6E95FD24842F690074433B /* Collection+SafeDirectAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C6E95FC24842F690074433B /* Collection+SafeDirectAccess.swift */; };
 		4C7F555D248B91C80089F26C /* TodayVillagerVisitsSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7F555C248B91C80089F26C /* TodayVillagerVisitsSection.swift */; };
 		690A72C924752BF4001E7294 /* villagersLikes in Resources */ = {isa = PBXBuildFile; fileRef = 690A72C824752BF4001E7294 /* villagersLikes */; };
@@ -254,6 +255,7 @@
 		4C2D6773245F4EA2005831C4 /* TurnipsChartAverageCurve.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TurnipsChartAverageCurve.swift; sourceTree = "<group>"; };
 		4C2D6775245F4F55005831C4 /* TurnipsChartMinMaxCurves.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TurnipsChartMinMaxCurves.swift; sourceTree = "<group>"; };
 		4C2D6777245F4FE8005831C4 /* TurnipsChartMinBuyPriceCurve.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TurnipsChartMinBuyPriceCurve.swift; sourceTree = "<group>"; };
+		4C30BFC2249627FC003E96A2 /* Sequence+Unique.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sequence+Unique.swift"; sourceTree = "<group>"; };
 		4C382EE7244E418800F446BA /* DismissingKeyboardOnSwipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DismissingKeyboardOnSwipe.swift; sourceTree = "<group>"; };
 		4C6E95FC24842F690074433B /* Collection+SafeDirectAccess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Collection+SafeDirectAccess.swift"; sourceTree = "<group>"; };
 		4C7F2F772461F10300930928 /* TurnipsChartVerticalLegend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TurnipsChartVerticalLegend.swift; sourceTree = "<group>"; };
@@ -569,6 +571,7 @@
 				693E2BC7246697FC00B85CB8 /* Image.swift */,
 				3DECE21A2483BC82001F24BA /* EditMode.swift */,
 				4C6E95FC24842F690074433B /* Collection+SafeDirectAccess.swift */,
+				4C30BFC2249627FC003E96A2 /* Sequence+Unique.swift */,
 			);
 			path = extensions;
 			sourceTree = "<group>";
@@ -1290,6 +1293,7 @@
 				69157BC92471A5A1005B9002 /* TurnipsChartGrid.swift in Sources */,
 				4C7F555D248B91C80089F26C /* TodayVillagerVisitsSection.swift in Sources */,
 				69157BCA2471A5A1005B9002 /* CollectionRowView.swift in Sources */,
+				4C30BFC3249627FD003E96A2 /* Sequence+Unique.swift in Sources */,
 				AE0B5B5C247AD7590075CF16 /* DesignFormViewModel.swift in Sources */,
 				AE51C2E324801D5D00F074EC /* ChoreListRowView.swift in Sources */,
 				69E67EF0249376DF00ED7AC8 /* DodoCodeRow.swift in Sources */,
