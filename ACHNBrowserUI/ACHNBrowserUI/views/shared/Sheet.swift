@@ -11,7 +11,8 @@ import Backend
 
 struct Sheet: View {
     enum SheetType: Identifiable {
-        case safari(URL), share(content: [Any])
+        case safari(URL)
+        case share(content: [Any])
         case about
         case userListForm(editingList: UserList?)
         case customTasks(collection: UserCollection)

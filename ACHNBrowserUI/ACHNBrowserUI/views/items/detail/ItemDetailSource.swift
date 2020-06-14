@@ -32,7 +32,6 @@ class ItemDetailSource: NSObject, UIActivityItemSource {
         
         metadata.title = name
         metadata.imageProvider = NSItemProvider(object: image)
-        metadata.imageProvider = NSItemProvider(object: image)
         
         return metadata
     }
