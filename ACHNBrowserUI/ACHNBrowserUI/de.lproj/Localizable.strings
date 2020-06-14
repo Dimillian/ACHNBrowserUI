@@ -889,5 +889,10 @@ Du kannst den Code jederzeit löschen und deinen Flugsteig schließen.
 Bitte geht respektvoll miteinander um. Jeder gemeldete Dodo Code wird gelöscht.";
 "iCloud not enabled" = "iCloud ist nicht aktiviert";
 "You need an iCloud account to add your Dodo code" = "Du brauchst einen iCloud Account um einen Dodo Code hinzufügen zu können";
-"ACDodoCode.notification.title" = "A new Dodo code is available";
-"ACDodoCode.notification.subtitle" = "Someone opened their gates and posted a new Dodo code on the application, go check it out!";
+"ACDodoCode.notification.title" = "Neuer Dodo Code verfügbar";
+"ACDodoCode.notification.subtitle" = "Jemand hat seine Insel für Besucher geöffnet - öffne die App und schau nach!";
+"Visitor" = "Besucher";
+"Edit your Dodo code" = "Dodo Code bearbeiten";
+"Notifications" = "Benachrichtigungen";
+"Get notified of new Dodo codes" = "Bei neuen Codes benachrichtigen";
+"To help us support the application and get notifications when a new Dodo code is posted, you can try out AC Helper+" = "Um die Entwicklung der App zu unterstützen und Benachrichtigungen über neue Dodo Codes zu erhalten, probiere AC Helper+ aus";
