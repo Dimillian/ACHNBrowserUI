@@ -160,9 +160,23 @@ public extension Item {
         return nil
     }
     
-    func isActive() -> Bool {
+    func isActiveThisMonth() -> Bool {
         let currentMonth = Int(Item.monthFormatter.string(from: Date()))!
         return activeMonthsCalendar?.contains(currentMonth - 1) == true
+    }
+
+    func isActiveAtThisHour() -> Bool {
+        guard let hours = activeHours() else { return false }
+
+        if hours.start == 0 && hours.end == 0 { return true } // All day
+
+        let thisHour = Calendar.current.dateComponents([.hour], from: Date()).hour ?? 0
+
+        if hours.start < hours.end { // Same day
+            return thisHour >= hours.start && thisHour < hours.end
+        } else { // Overnight
+            return thisHour >= hours.start || thisHour < hours.end
+        }
     }
     
     func isNewThisMonth() -> Bool {

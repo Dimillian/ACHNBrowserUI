@@ -37,7 +37,8 @@ class ActiveCrittersViewModel: ObservableObject {
         let new: [Item]
         let leaving: [Item]
         let caught: [Item]
-        let toCatch: [Item]
+        let toCatchNow: [Item]
+        let toCatchLater: [Item]
     }
     
     @Published var crittersInfo: [CritterType: CritterInfo] = [:]
@@ -55,11 +56,12 @@ class ActiveCrittersViewModel: ObservableObject {
             .receive(on: DispatchQueue.main)
             .sink { [weak self] (items, critters) in
                 for type in CritterType.allCases {
-                    var active = items[type.category()]?.filterActive() ?? []
+                    var active = items[type.category()]?.filterActiveThisMonth() ?? []
                     var new = active.filter{ $0.isNewThisMonth() }
                     var leaving = active.filter{ $0.leavingThisMonth() }
                     let caught = active.filter{ critters.contains($0) }
-                    let toCatch = active.filter{ !critters.contains($0) }
+                    let toCatchNow = active.filter{ !caught.contains($0) && $0.isActiveAtThisHour() }
+                    let toCatchLater = active.filter{ !caught.contains($0) && !toCatchNow.contains($0) }
                     
                     if filterOutInCollection {
                         new = new.filter{ !critters.contains($0) }
@@ -71,7 +73,8 @@ class ActiveCrittersViewModel: ObservableObject {
                                                            new: new,
                                                            leaving: leaving,
                                                            caught: caught,
-                                                           toCatch: toCatch)
+                                                           toCatchNow: toCatchNow,
+                                                           toCatchLater: toCatchLater)
                 }
         }
     }
