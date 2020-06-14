@@ -722,7 +722,7 @@ Du kannst das Abonnement jederzeit in deinen iTunes Kontoeinstellungen beenden. 
 "Rocks" = "Felsen";
 "Take your chance and go visit some mystery island!" = "Nutz deine Chance und besuche mysteriöse Inseln!";
 "Native" = "Nativ"; // TODO needs a better one
-"Normal" = "Normal";
+//"Normal" = "Normal"; // Overwrites translation for villager type
 "Gold" = "Gold";
 "Trash" = "Müll";
 "Bamboos" = "Bambus";
