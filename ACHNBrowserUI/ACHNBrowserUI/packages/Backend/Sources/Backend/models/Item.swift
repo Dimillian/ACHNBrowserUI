@@ -163,7 +163,6 @@ public extension Item {
     func isActive() -> Bool {
         let currentMonth = Int(Item.monthFormatter.string(from: Date()))!
         return activeMonthsCalendar?.contains(currentMonth - 1) == true
-           
     }
     
     func isNewThisMonth() -> Bool {
@@ -177,15 +176,31 @@ public extension Item {
     }
     
     func formattedTimes() -> String? {
+        guard let hours = activeHours() else { return nil }
+
+        if hours.start == 0 && hours.end == 0 {
+            return NSLocalizedString("All day", comment: "")
+        }
+        
+        let startDate = DateComponents(calendar: .current, hour: hours.start).date!
+        let endDate = DateComponents(calendar: .current, hour: hours.end).date!
+        
+        let startHour = formatter.string(from: startDate)
+        let endHour = formatter.string(from: endDate)
+        
+        return "\(startHour) - \(endHour)\(is24Hour() ? "h" : "")"
+    }
+
+    private func activeHours() -> (start: Int, end: Int)? {
         guard let activeTimes = activeMonths?.first?.value.activeTimes,
             let startTime = activeTimes.first,
             let endTime = activeTimes.last else {
                 return nil
         }
         if Int(startTime) == 0 && Int(endTime) == 0 {
-            return NSLocalizedString("All day", comment: "")
+            return (start: 0, end: 0)
         }
-        
+
         var startHourInt = 0
         var endHourInt = 0
         if let hour = Int(startTime.prefix(1)) {
@@ -194,21 +209,15 @@ public extension Item {
                 startHourInt += 12
             }
         }
-        
+
         if let hour = Int(endTime.prefix(1)) {
             endHourInt = hour
             if endTime.suffix(2) == "pm" {
                 endHourInt += 12
             }
         }
-        
-        let startDate = DateComponents(calendar: .current, hour: startHourInt).date!
-        let endDate = DateComponents(calendar: .current, hour: endHourInt).date!
-        
-        let startHour = formatter.string(from: startDate)
-        let endHour = formatter.string(from: endDate)
-        
-        return "\(startHour) - \(endHour)\(is24Hour() ? "h" : "")"
+
+        return (start: startHourInt, end: endHourInt)
     }
 }
 
