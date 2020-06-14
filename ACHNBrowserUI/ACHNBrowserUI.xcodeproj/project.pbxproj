@@ -988,6 +988,7 @@
 				69157BD92471A5A1005B9002 /* Frameworks */,
 				69157BE02471A5A1005B9002 /* Resources */,
 				69157C542471A5A1005B9002 /* Embed PlugIns */,
+				3D2E97DC24968DB30041EFA9 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -1140,6 +1141,35 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3D2E97DC24968DB30041EFA9 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/ACHNBrowserUI/en.lproj/Localizable.strings",
+				"$(SRCROOT)/ACHNBrowserUI/de.lproj/Localizable.strings",
+				"$(SRCROOT)/ACHNBrowserUI/fr.lproj/Localizable.strings",
+				"$(SRCROOT)/ACHNBrowserUI/it.lproj/Localizable.strings",
+				"$(SRCROOT)/ACHNBrowserUI/ru.lproj/Localizable.strings",
+				"$(SRCROOT)/ACHNBrowserUI/es.lproj/Localizable.strings",
+				"$(SRCROOT)/ACHNBrowserUI/ja.lproj/Localizable.strings",
+				"$(SRCROOT)/ACHNBrowserUI/zh-Hans.lproj/Localizable.strings",
+				"$(SRCROOT)/ACHNBrowserUI/zh-Hant-TW.lproj/Localizable.strings",
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "#!/bin/bash\n\nc=`expr $SCRIPT_INPUT_FILE_COUNT - 1`\nfor i in $(seq 0 $c)\n    do\n\n    var=\"SCRIPT_INPUT_FILE_$i\"\n    FILENAME=${!var}\n\n    LINT=`plutil -lint \"$FILENAME\"`\n    \n    eval $LINT\n    \n    DUPES=`cut -d' ' -f1 \"$FILENAME\" | sort | uniq -d`\n\n    while read -r line; do\n        if [[ $line == \"\\\"\"*\"\\\"\" ]] ;\n        then\n            echo \"warning: $line used multiple times on $FILENAME\"\n        fi\n    done <<< \"$DUPES\"\ndone\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		69157B7D2471A5A1005B9002 /* Sources */ = {
