@@ -50,7 +50,7 @@ public class TurnipPredictionsService: ObservableObject {
                 if self.enableNotifications == true {
                     NotificationManager.shared.registerTurnipsPredictionNotification(prediction: predictions)
                 } else if self.enableNotifications == false {
-                    NotificationManager.shared.removePendingNotifications()
+                    NotificationManager.shared.removeTurnipNotifications()
                 }
             }
         }

@@ -9,7 +9,7 @@
 import Foundation
 import UserNotifications
 
-public class NotificationManager: NSObject, ObservableObject {
+public class NotificationManager: NSObject {
     public static let shared = NotificationManager()
     
     private override init() {
@@ -23,12 +23,18 @@ public class NotificationManager: NSObject, ObservableObject {
         }
     }
     
-    public func removePendingNotifications() {
+    // TODO: Remove only setting notifications
+    public func removeSettingNotifications() {
+        
+    }
+    
+    // TODO: Remove only turnip notifications. This likely involves changing the identifier for the notification request
+    public func removeTurnipNotifications() {
         UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
     }
     
     public func registerTurnipsPredictionNotification(prediction: TurnipPredictions) {
-        removePendingNotifications()
+        removeTurnipNotifications()
         if let average = prediction.averagePrices, let minMax = prediction.minMax {
             var dayOfTheWeek = 2
             let today = Calendar.current.component(.weekday, from: Date())
@@ -50,7 +56,7 @@ public class NotificationManager: NSObject, ObservableObject {
                     components.weekday = dayOfTheWeek
                     components.hour = isMorning ? 8 : 12
                     
-                    registerNotification(content: content, date: components)
+                    registerNotification(content: content, date: components, isRepeating: false)
                 }
                 
                 if !isMorning {
@@ -85,7 +91,7 @@ public class NotificationManager: NSObject, ObservableObject {
         components.weekday = 1
         components.hour = 9
         
-        registerNotification(content: content, date: components)
+        registerNotification(content: content, date: components, isRepeating: false)
         
         content = UNMutableNotificationContent()
         content.title = NSLocalizedString("Friendly reminder", comment: "")
@@ -96,11 +102,11 @@ public class NotificationManager: NSObject, ObservableObject {
         components.weekday = 2
         components.hour = 9
         
-        registerNotification(content: content, date: components)
+        registerNotification(content: content, date: components, isRepeating: false)
     }
     
-    private func registerNotification(content: UNMutableNotificationContent, date: DateComponents) {
-        let trigger = UNCalendarNotificationTrigger(dateMatching: date, repeats: false)
+    private func registerNotification(content: UNMutableNotificationContent, date: DateComponents, _ isRepeating: Bool) {
+        let trigger = UNCalendarNotificationTrigger(dateMatching: date, repeats: isRepeating)
         let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
         UNUserNotificationCenter.current().add(request) { error in
             if let error = error {
@@ -108,14 +114,14 @@ public class NotificationManager: NSObject, ObservableObject {
             }
         }
     }
-    
+
     public func pendingNotifications(completion: @escaping (([UNNotificationRequest]) -> Void)) {
         UNUserNotificationCenter.current().getPendingNotificationRequests { requests in
             completion(requests)
         }
     }
     
-    public func getSettingsNotifications(subtitle: String, hour: Int, minute: Int, isRepeated: Bool) {
+    public func registerSettingsNotifications(subtitle: String, hour: Int, minute: Int, isRepeated: Bool) {
         // schedule the notification
         let content = UNMutableNotificationContent()
         content.title = "AC Helper"
@@ -127,12 +133,8 @@ public class NotificationManager: NSObject, ObservableObject {
        date.hour = hour
        date.minute = minute
        let trigger = UNCalendarNotificationTrigger(dateMatching: date, repeats: isRepeated)
-
-       // choose a random identifier
-       let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
-
-       // add our notification request
-       UNUserNotificationCenter.current().add(request)
+       
+       registerNotification(content: content, date: date, isRepeated)
     }
 }
 
