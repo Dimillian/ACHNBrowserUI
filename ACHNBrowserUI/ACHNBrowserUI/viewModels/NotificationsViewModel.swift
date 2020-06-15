@@ -9,15 +9,6 @@
 import Foundation
 import Combine
 import Backend
-class SettingsViewModel: ObservableObject {
+class NotificationsViewModel: ObservableObject {
     
-    @Published var shopNotificationsEnabled: Bool {
-        didSet {
-            AppUserDefaults.shared.shopNotificationsEnabled = shopNotificationsEnabled
-        }
-    }
-    
-    init() {
-        
-    }
 }
