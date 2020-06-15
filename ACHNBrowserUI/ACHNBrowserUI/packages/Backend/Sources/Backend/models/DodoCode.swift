@@ -23,8 +23,8 @@ public struct DodoCode: Identifiable, Equatable {
     
     public let id: String
     public let code: String
-    public let report: Int
-    public let upvotes: Int
+    public var report: Int
+    public var upvotes: Int
     public let islandName: String
     public let text: String
     public let fruit: Fruit

@@ -145,6 +145,8 @@ struct DodoCodeFormView: View {
                                 specialCharacter: self.visitor)
             if let record = self.isEditing?.record {
                 code.record = record
+                code.upvotes = self.isEditing?.upvotes ?? 0
+                code.report = self.isEditing?.report ?? 0
                 DodoCodeService.shared.edit(code: code)
             } else {
                 DodoCodeService.shared.add(code: code)
