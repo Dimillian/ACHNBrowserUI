@@ -84,6 +84,14 @@ struct SettingsView: View {
                     .font(.body)
                     .foregroundColor(.secondary)
             }
+            HStack {
+                Text("In game name / username")
+                Spacer()
+                TextField("Your username", text: $appUserDefaults.inGameName)
+                    .multilineTextAlignment(.trailing)
+                    .font(.body)
+                    .foregroundColor(.secondary)
+            }
             Picker(selection: $appUserDefaults.hemisphere,
                    label: Text("Hemisphere")) {
                     ForEach(Hemisphere.allCases, id: \.self) { hemispehere in

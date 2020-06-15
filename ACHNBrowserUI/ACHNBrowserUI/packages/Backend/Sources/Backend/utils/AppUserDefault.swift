@@ -19,6 +19,13 @@ public class AppUserDefaults: ObservableObject {
         }
     }
     
+    @UserDefault("game_name", defaultValue: "")
+    public var inGameName: String {
+        willSet {
+            objectWillChange.send()
+        }
+    }
+    
     @UserDefault("friend_code", defaultValue: "")
     public var friendCode: String {
         willSet {

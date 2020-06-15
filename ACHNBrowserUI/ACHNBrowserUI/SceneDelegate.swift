@@ -28,6 +28,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             .environmentObject(MusicPlayerManager.shared)
             .environmentObject(AppUserDefaults.shared)
             .environmentObject(DodoCodeService.shared)
+            .environmentObject(CommentService.shared)
         
         if let windowScene = scene as? UIWindowScene {
             

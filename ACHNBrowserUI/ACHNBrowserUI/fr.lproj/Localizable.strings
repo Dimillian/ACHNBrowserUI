@@ -865,3 +865,13 @@ Merci d'être respecteux. Tout code signalé sera supprimé";
 "To help us support the application and get notifications when a new Dodo code is posted, you can try out AC Helper+" = "Pour nous aider à supporter l'application et recevoir des notifications quand un nouveau Dodo codes est posté, vous pouvez souscrire à AC Helper+";
 "ACDodoCode.notification.title" = "Un nouveau Dodo code est disponible";
 "ACDodoCode.notification.subtitle" = "Quelqu'un a ouvert ses portes et a posté un Dodo code dans l'application!";
+
+// dodo code comments
+"Comments" = "Commentaires";
+"Be the first to leave a comment!" = "Soyez le premier à laisser un commentaire !";
+"%@ from %@" = "%@ de %@";
+"In order to add a comment you must add an island name and a username. Tap here to add them in settings" = "Pour ajouter un nouveau commentaire vous devez ajouter votre nom d'île et un nom d'utilisateur dans les réglages. Tapez ici pour les ajouter";
+"Add your comment" = "Ajouter votre commentaire";
+"Send" = "Envoyer";
+"In game name / username" = "Nom du joueur / nom d'utilisateur";
+"You need to have an iCloud account in your device settings in order to add comments" = "Vous devez avoir un compte iCloud dans les réglages de votre appareil pour ajouter des commentaires"

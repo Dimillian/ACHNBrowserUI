@@ -71,7 +71,7 @@ public class DodoCodeService: ObservableObject {
     }
     
     public func upvote(code: DodoCode) {
-        if var record = code.record {
+        if let record = code.record {
             record[DodoCode.RecordKeys.upvotes.rawValue] = code.upvotes + 1
             let operation = CKModifyRecordsOperation(recordsToSave: [record],
                                                      recordIDsToDelete: nil)

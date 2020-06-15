@@ -65,7 +65,9 @@ struct DodoCodeListView: View {
             } else if !service.codes.isEmpty {
                 ForEach(service.codes) { code in
                     Section(header: SectionHeaderView(text: code.islandName, icon: "sun.haze.fill")) {
-                        DodoCodeRow(code: code, showButtons: true)
+                        NavigationLink(destination: DodoCodeDetailView(code: code)) {
+                            DodoCodeRow(code: code, showButtons: true)
+                        }
                     }
                 }
             } else {

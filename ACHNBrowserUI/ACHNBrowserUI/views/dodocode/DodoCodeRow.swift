@@ -51,6 +51,7 @@ struct DodoCodeRow: View {
                 Text(code.text)
                     .foregroundColor(.acText)
                     .lineLimit(15)
+                    .fixedSize(horizontal: false, vertical: true)
                 Text(formatter.string(from: code.creationDate))
                     .foregroundColor(.acText)
                     .font(.footnote)
