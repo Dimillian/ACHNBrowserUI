@@ -34,12 +34,12 @@ struct ActiveCritterSections: View {
             makeSectionOrPlaceholder(title: "To catch now",
                                      icon: "calendar",
                                      critters: viewModel.crittersInfo[selectedTab]?.toCatchNow ?? [])
-            makeSectionOrPlaceholder(title: "New this month",
-                                     icon: "calendar.badge.plus",
-                                     critters: viewModel.crittersInfo[selectedTab]?.new ?? [])
             makeSectionOrPlaceholder(title: "To catch later",
                                      icon: "calendar",
                                      critters: viewModel.crittersInfo[selectedTab]?.toCatchLater ?? [])
+            makeSectionOrPlaceholder(title: "New this month",
+                                     icon: "calendar.badge.plus",
+                                     critters: viewModel.crittersInfo[selectedTab]?.new ?? [])
             makeSectionOrPlaceholder(title: "Leaving this month",
                                      icon: "calendar.badge.minus",
                                      critters: viewModel.crittersInfo[selectedTab]?.leaving ?? [])
@@ -60,8 +60,9 @@ struct ActiveCrittersView: View {
     var body: some View {
         List {
             if (viewModel.crittersInfo[.fish]?.toCatchLater.isEmpty == true || viewModel.crittersInfo[.bugs]?.toCatchLater.isEmpty == true) &&
-                (viewModel.crittersInfo[.fish]?.caught.isEmpty == true || viewModel.crittersInfo[.bugs]?.caught.isEmpty == true) {
-                // FIXME: update this condition for .toCatchNow + .toCatchLater
+                 (viewModel.crittersInfo[.fish]?.toCatchNow.isEmpty == true || viewModel.crittersInfo[.bugs]?.toCatchNow.isEmpty == true) &&
+                (viewModel.crittersInfo[.fish]?.caught.isEmpty == true ||
+                    viewModel.crittersInfo[.bugs]?.caught.isEmpty == true) {
                 RowLoadingView(isLoading: .constant(true))
             } else {
                 Picker(selection: $selectedTab, label: Text("")) {
