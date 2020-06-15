@@ -896,3 +896,13 @@ Bitte geht respektvoll miteinander um. Jeder gemeldete Dodo Code wird gelöscht.
 "Notifications" = "Benachrichtigungen";
 "Get notified of new Dodo codes" = "Bei neuen Codes benachrichtigen";
 "To help us support the application and get notifications when a new Dodo code is posted, you can try out AC Helper+" = "Um die Entwicklung der App zu unterstützen und Benachrichtigungen über neue Dodo Codes zu erhalten, probiere AC Helper+ aus";
+
+// dodo code comments
+"Comments" = "Kommentare";
+"Be the first to leave a comment!" = "Erstelle den ersten Kommentar!";
+"%@ from %@" = "%@ von %@";
+"In order to add a comment you must add an island name and a username. Tap here to add them in settings" = "Um einen Kommentar hinzufügen zu können musst deinen Inselname und Spielernamen hinzufügen. Hier drücken, um zu den Einstellungen zu gelangen";
+"Add your comment" = "Kommentar hinzufügen";
+"Send" = "Absenden";
+"In game name / username" = "Spielername / Benutzername";
+"You need to have an iCloud account in your device settings in order to add comments" = "Du muss in iCloud eingeloggt sein, um kommentieren zu können";
