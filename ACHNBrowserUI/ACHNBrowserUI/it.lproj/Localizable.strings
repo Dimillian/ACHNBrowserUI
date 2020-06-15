@@ -574,10 +574,10 @@ Puoi annullare il tuo abbonamento in ogni momento dalle impostazioni del tuo acc
 "Planting an orange" = "Piantare un'arancia";
 "Pond" = "Stagno";
 "Possible song KK will play when choosing \"A little blue...\" as your mood" = "Una delle possibili canzoni di K.K. se si sceglie \"Un po' triste..\" come stato d'animo.";
-"Possible song KK will play when choosing \"A little grumpy...\" as your mood" = "Una delle possibili canzoni di K.K. se si sceglie \"Un po' arrabbiato..\" come stato d'animo..";
-"Possible song KK will play when choosing \"I feel good!\" as your mood" = "Una delle possibili canzoni di K.K. se si sceglie \"Sto bene!\" come stato d'animo..";
-"Possible song KK will play when choosing \"It's hard to say.\" as your mood" = "Una delle possibili canzoni di K.K. se si sceglie \"Difficile da dire\" come stato d'animo..";
-"Possible song KK will play when choosing \"Laid-back.\" as your mood" = "Una delle possibili canzoni di K.K. se si sceglie \"Rilassato\" come stato d'animo..";
+"Possible song KK will play when choosing \"A little grumpy...\" as your mood" = "Una delle possibili canzoni di K.K. se si sceglie \"Irritabile... perché!?\" come stato d'animo.";
+"Possible song KK will play when choosing \"I feel good!\" as your mood" = "Una delle possibili canzoni di K.K. se si sceglie \"Mi sento benissimo!\" come stato d'animo.";
+"Possible song KK will play when choosing \"It's hard to say.\" as your mood" = "Una delle possibili canzoni di K.K. se si sceglie \"Difficile capirlo.\" come stato d'animo.";
+"Possible song KK will play when choosing \"Laid-back.\" as your mood" = "Una delle possibili canzoni di K.K. se si sceglie \"In preda alla pigrizia.\" come stato d'animo.";
 "Purchased from Tom Nook on New Year's Eve" = "Acquisto da Tom Nook l'Ultimo dell'Anno";
 "Purple/purple mums" = "Crisantemi Viola/Viola";
 "Pushing snowballs" = "Spingere palle di neve";
@@ -849,7 +849,7 @@ Puoi annullare il tuo abbonamento in ogni momento dalle impostazioni del tuo acc
 "Gray" = "Grigio";
 "Diner" = "Bar";
 "Brick" = "Mattone";
-"Den" = "Tana";
+"Den" = "Studio";
 "Formal" = "Formale";
 "Bathtub" = "Bagno";
 "Compass" = "Bussola";
@@ -1012,6 +1012,7 @@ Puoi annullare il tuo abbonamento in ogni momento dalle impostazioni del tuo acc
 "Gorgeous" = "Magnifico";
 "Child's Room" = "Stanza Bambini";
 "Tree's Bounty Or Leaves" = "Frutti Albero o Foglie";
+"Light Blue" = "Azzurro";
 // Chore
 "Title" = "Titolo";
 "Chore title" = "Nome attività";
@@ -1067,5 +1068,17 @@ Puoi annullare il tuo abbonamento in ogni momento dalle impostazioni del tuo acc
 "Do you really want to delete your Dodo code?" = "Sei sicuro di voler eliminare il tuo Codice Dodo?";
 "Do you really want to report this Dodo code?" = "Sei sicuro di voler segnalare questo Codice Dodo?";
 "Visitor" = "Visitatore";
+"Edit your Dodo code" = "Modifica il tuo Codice Dodo";
+"Get notified of new Dodo codes" = "Ricevi una notifica quando viene pubblicato un nuovo Codice Dodo";
 "ACDodoCode.notification.title" = "È disponibile un nuovo Codice Dodo";
 "ACDodoCode.notification.subtitle" = "Qualcuno ha aperto il proprio gate e pubblicato il proprio Codice Dodo nell'app, dagli una occhiata!";
+
+// dodo code comments
+"Comments" = "Commenti";
+"Be the first to leave a comment!" = "Lascia un commento per primo!";
+"%@ from %@" = "%@ da %@";
+"In order to add a comment you must add an island name and a username. Tap here to add them in settings" = "Per aggiungere un commento è necessario inserire il nome della propria isola e il nome utente. Tocca qui per aggiungerli nelle Impostazioni.";
+"Add your comment" = "Aggiungi un commento";
+"Send" = "Invia";
+"In game name / username" = "Nome nel gioco / nome utente";
+"You need to have an iCloud account in your device settings in order to add comments" = "È necessario un account iCloud per aggiungere dei commenti.";
