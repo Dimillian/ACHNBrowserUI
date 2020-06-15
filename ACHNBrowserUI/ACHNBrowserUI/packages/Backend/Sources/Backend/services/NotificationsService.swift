@@ -7,8 +7,8 @@
 
 import Foundation
 
-public class NotificationsService: ObservableObject {
-    public static let shared = NotificationsService()
+public class NotificationsService {
+    public static var shared = NotificationsService()
     
     public var shopSettingsEnabled: Bool = false {
         didSet {
