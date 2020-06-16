@@ -63,12 +63,12 @@ struct DodoCodeDetailView: View {
                 .font(.body)
                 .foregroundColor(.acText)
                 .fixedSize(horizontal: false, vertical: true)
-            if comment.isMine {
-                HStack {
-                    Text(self.formatter.string(from: comment.creationDate))
-                        .font(.footnote)
-                        .foregroundColor(.acSecondaryText)
-                    Spacer()
+            HStack {
+                Text(self.formatter.string(from: comment.creationDate))
+                    .font(.footnote)
+                    .foregroundColor(.acSecondaryText)
+                Spacer()
+                if comment.isMine {
                     Button(action: {
                         self.viewModel.deleteComment(comment: comment)
                     }) {
