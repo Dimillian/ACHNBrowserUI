@@ -124,6 +124,8 @@ Du kannst das Abonnement jederzeit in deinen iTunes Kontoeinstellungen beenden. 
 "Bugs" = "Insekten";
 "You caught them all!" = "Du hast alle gefangen!";
 "New this month" = "Diesen Monat neu";
+"To catch now" = "Jetzt fangbar";
+"To catch later" = "Zu einer anderen Tageszeit";
 "To catch" = "Zu fangen";
 "Leaving this month" = "Nur noch diesen Monat";
 "Caught" = "Gefangen";
@@ -906,5 +908,5 @@ Bitte geht respektvoll miteinander um. Jeder gemeldete Dodo Code wird gelöscht.
 "Send" = "Absenden";
 "In game name / username" = "Spielername / Benutzername";
 "You need to have an iCloud account in your device settings in order to add comments" = "Du muss in iCloud eingeloggt sein, um kommentieren zu können";
-"ACComment.notification.title" = "Someone commented on your Dodo code";
-"ACComment.notification.subtitle" = "A new comment has been added on your Dodo code, go check it out!";
+"ACComment.notification.title" = "Jemand hat einen Kommentar zu deinem Dodo Code hinterlassen";
+"ACComment.notification.subtitle" = "Ein neuer Kommentar wurde unter deinem Dodo Code hinterlassen. Öffne die App und schau nach!";
