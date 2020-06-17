@@ -59,6 +59,7 @@ struct DodoCodeDetailView: View {
                 .font(.subheadline)
                 .fontWeight(.semibold)
                 .foregroundColor(.acText)
+                .lineLimit(1)
             Text(comment.text)
                 .font(.body)
                 .foregroundColor(.acText)

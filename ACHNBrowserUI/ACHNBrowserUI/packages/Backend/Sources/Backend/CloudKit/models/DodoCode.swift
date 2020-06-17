@@ -8,7 +8,9 @@
 import Foundation
 import CloudKit
 
-public struct DodoCode: Identifiable, Equatable {
+public struct DodoCode: CloudModel, Identifiable, Equatable {
+    public static var RecordType = "ACDodoCode"
+    
     public static func == (lhs: DodoCode, rhs: DodoCode) -> Bool {
         lhs.id == rhs.id &&
         lhs.upvotes == rhs.upvotes &&
@@ -71,8 +73,8 @@ public struct DodoCode: Identifiable, Equatable {
         self.record = record
     }
     
-    func toRecord() -> CKRecord {
-        let record = self.record ?? CKRecord(recordType: DodoCodeService.recordType)
+    func toRecord(owner: CKRecord?) -> CKRecord {
+        let record = self.record ?? CKRecord(recordType: Self.RecordType)
         record[RecordKeys.id.rawValue] = id
         record[RecordKeys.code.rawValue] = code
         record[RecordKeys.report.rawValue] = report

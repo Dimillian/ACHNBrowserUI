@@ -906,3 +906,5 @@ Bitte geht respektvoll miteinander um. Jeder gemeldete Dodo Code wird gelöscht.
 "Send" = "Absenden";
 "In game name / username" = "Spielername / Benutzername";
 "You need to have an iCloud account in your device settings in order to add comments" = "Du muss in iCloud eingeloggt sein, um kommentieren zu können";
+"ACComment.notification.title" = "Someone commented on your Dodo code"
+"ACComment.notification.subtitle" = "A new comment has been added on your Dodo code, go check it out!"

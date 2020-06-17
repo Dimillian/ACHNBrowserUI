@@ -8,7 +8,9 @@
 import Foundation
 import CloudKit
 
-public struct Comment: Equatable, Identifiable {
+public struct Comment: CloudModel, Equatable, Identifiable {
+    public static var RecordType = "ACComment"
+    
     public let id: String
     public let text: String
     public let name: String
@@ -44,13 +46,15 @@ public struct Comment: Equatable, Identifiable {
         self.record = record
     }
     
-    func toRecord(owner: CKRecord) -> CKRecord {
-        let record = self.record ?? CKRecord(recordType: CommentService.recordType)
+    func toRecord(owner: CKRecord?) -> CKRecord {
+        let record = self.record ?? CKRecord(recordType: Self.RecordType)
         record[RecordKeys.id.rawValue] = id
         record[RecordKeys.text.rawValue] = text
         record[RecordKeys.name.rawValue] = name
         record[RecordKeys.islandName.rawValue] = islandName
-        record[RecordKeys.owner.rawValue] = CKRecord.Reference(record: owner, action: .deleteSelf)
+        if let owner = owner {
+            record[RecordKeys.owner.rawValue] = CKRecord.Reference(record: owner, action: .deleteSelf)
+        }
         return record
     }
 }

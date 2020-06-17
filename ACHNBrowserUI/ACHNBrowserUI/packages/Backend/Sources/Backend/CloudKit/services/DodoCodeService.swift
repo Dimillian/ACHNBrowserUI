@@ -9,11 +9,10 @@ import Foundation
 import CloudKit
 import SwiftUI
 
-public class DodoCodeService: ObservableObject {
+public class DodoCodeService: ObservableObject, PublicCloudService {
     
     // MARK: - Vars
     public static let shared = DodoCodeService()
-    public static let recordType = "ACDodoCode"
     public static var userCloudKitId: CKRecord.ID?
     
     @Published public var codes: [DodoCode] = []
@@ -23,8 +22,6 @@ public class DodoCodeService: ObservableObject {
     
     private var reported: [DodoCode] = []
     
-    private var cloudKitDatabase = CKContainer.default().publicCloudDatabase
-
     init() {
         CKContainer.default().accountStatus { (status, error) in
             DispatchQueue.main.async {
@@ -49,12 +46,13 @@ public class DodoCodeService: ObservableObject {
         
     public func add(code: DodoCode) {
         isSynching = true
-        let record = code.toRecord()
+        let record = code.toRecord(owner: nil)
         var code = code
-        cloudKitDatabase.save(record) { (record, error) in
+        database.save(record) { (record, error) in
             DispatchQueue.main.async {
                 if let record = record {
                     code.record = record
+                    CommentService.shared.subscribeNotificationsForOwner(owner: record)
                     self.codes.insert(code, at: 0)
                 }
                 self.isSynching = false
@@ -65,7 +63,7 @@ public class DodoCodeService: ObservableObject {
     
     public func edit(code: DodoCode) {
         isSynching = true
-        let operation = CKModifyRecordsOperation(recordsToSave: [code.toRecord()],
+        let operation = CKModifyRecordsOperation(recordsToSave: [code.toRecord(owner: nil)],
                                                  recordIDsToDelete: nil)
         addOperation(operation: operation, fetch: true)
     }
@@ -94,6 +92,7 @@ public class DodoCodeService: ObservableObject {
     public func delete(code: DodoCode) {
         codes.removeAll(where: { code.id == $0.id })
         if let record = code.record {
+            CommentService.shared.deleteNotificationSubscriptionFor(owner: record)
             let operation = CKModifyRecordsOperation(recordsToSave: nil,
                                                      recordIDsToDelete: [record.recordID])
             addOperation(operation: operation, fetch: false)
@@ -127,11 +126,11 @@ public class DodoCodeService: ObservableObject {
                 }
             }
         }
-        self.cloudKitDatabase.add(operation)
+        database.add(operation)
     }
     
     private func subscribeToCloudKit() {
-        cloudKitDatabase.fetchAllSubscriptions { (subs, _) in
+        database.fetchAllSubscriptions { (subs, _) in
             if subs == nil || subs?.isEmpty == true {
                 self.createSubscription()
             }
@@ -139,7 +138,7 @@ public class DodoCodeService: ObservableObject {
     }
     
     private func createSubscription() {
-        let sub = CKQuerySubscription(recordType: Self.recordType,
+        let sub = CKQuerySubscription(recordType: DodoCode.RecordType,
                                       predicate: NSPredicate(value: true),
                                       options: .firesOnRecordCreation)
         let notif = CKSubscription.NotificationInfo()
@@ -147,24 +146,24 @@ public class DodoCodeService: ObservableObject {
         notif.alertLocalizationKey = "ACDodoCode.notification.subtitle"
         notif.soundName = "default"
         sub.notificationInfo = notif
-        cloudKitDatabase.save(sub) { (_, _) in }
+        database.save(sub) { (_, _) in }
     }
     
     private func deleteSubscriptions() {
-        cloudKitDatabase.fetchAllSubscriptions { (subs, _) in
+        database.fetchAllSubscriptions { (subs, _) in
             if let subs = subs {
                 let operation = CKModifySubscriptionsOperation(subscriptionsToSave: nil,
                                                                subscriptionIDsToDelete: subs.map{ $0.subscriptionID })
-                self.cloudKitDatabase.add(operation)
+                self.database.add(operation)
             }
         }
     }
     
     private func fetchCodes() {
         isSynching = true
-        let query = CKQuery(recordType: Self.recordType, predicate: NSPredicate(value: true))
+        let query = CKQuery(recordType: DodoCode.RecordType, predicate: NSPredicate(value: true))
         query.sortDescriptors = [NSSortDescriptor(key: "creationDate", ascending: false)]
-        cloudKitDatabase.perform(query, inZoneWith: nil) { (records, error) in
+        database.perform(query, inZoneWith: nil) { (records, error) in
             self.setError(error: error)
             if let records = records {
                 var nativeRecords: [DodoCode] = []

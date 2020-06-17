@@ -8,16 +8,13 @@
 import Foundation
 import CloudKit
 
-public class CommentService: ObservableObject {
+public class CommentService: ObservableObject, PublicCloudService {
     
     // MARK: - Vars
     public static let shared = CommentService()
-    public static let recordType = "ACComment"
     
     @Published public var comments: [CKRecord.ID: [Comment]] = [:]
     @Published public var mostRecentError: Error?
-    
-    private var cloudKitDatabase = CKContainer.default().publicCloudDatabase
     
     public func addComment(comment: Comment, owner: CKRecord) {
         let record = comment.toRecord(owner: owner)
@@ -39,16 +36,16 @@ public class CommentService: ObservableObject {
                 self.setError(error: error)
             }
         }
-        cloudKitDatabase.add(operation)
+        database.add(operation)
     }
     
     public func fetchComments(record: CKRecord) {
         let reference = CKRecord.Reference(record: record, action: .deleteSelf)
-        let predicate = NSPredicate(format: "owner == %@", reference)
+        let predicate = NSPredicate(format: "owner = %@", reference)
         let sort = NSSortDescriptor(key: "creationDate", ascending: false)
-        let query = CKQuery(recordType: Self.recordType, predicate: predicate)
+        let query = CKQuery(recordType: Comment.RecordType, predicate: predicate)
         query.sortDescriptors = [sort]
-        cloudKitDatabase.perform(query, inZoneWith: nil) { (records, error) in
+        database.perform(query, inZoneWith: nil) { (records, error) in
             self.setError(error: error)
             if let records = records {
                 let comments = records.map{ Comment(withRecord: $0) }
@@ -65,7 +62,38 @@ public class CommentService: ObservableObject {
             operation.modifyRecordsCompletionBlock = { _, _, _ in
                 self.fetchComments(record: owner)
             }
-            cloudKitDatabase.add(operation)
+            database.add(operation)
+        }
+    }
+    
+    public func subscribeNotificationsForOwner(owner: CKRecord) {
+        let predicate = NSPredicate(format: "owner = %@", owner.recordID)
+        let subscription = CKQuerySubscription(recordType: Comment.RecordType,
+                                               predicate: predicate,
+                                               options: .firesOnRecordCreation)
+        let notif = CKSubscription.NotificationInfo()
+        notif.titleLocalizationKey = "ACComment.notification.title"
+        notif.alertLocalizationKey = "ACComment.notification.subtitle"
+        notif.soundName = "default"
+        subscription.notificationInfo = notif
+        database.save(subscription) { (_, _) in
+            
+        }
+    }
+    
+    public func deleteNotificationSubscriptionFor(owner: CKRecord) {
+        let predicate = NSPredicate(format: "owner = %@", owner.recordID)
+        database.fetchAllSubscriptions { (subs, _) in
+            if let subs = subs, let sub = subs.first(where: { (sub) -> Bool in
+                if let sub = sub as? CKQuerySubscription {
+                    return sub.recordType == Comment.RecordType && sub.predicate == predicate
+                }
+                return false
+            }) {
+                let operation = CKModifySubscriptionsOperation(subscriptionsToSave: nil,
+                                                               subscriptionIDsToDelete: [sub.subscriptionID])
+                self.database.add(operation)
+            }
         }
     }
     
