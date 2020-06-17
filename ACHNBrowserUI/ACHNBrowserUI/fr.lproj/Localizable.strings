@@ -875,5 +875,5 @@ Merci d'être respecteux. Tout code signalé sera supprimé";
 "Send" = "Envoyer";
 "In game name / username" = "Nom du joueur / nom d'utilisateur";
 "You need to have an iCloud account in your device settings in order to add comments" = "Vous devez avoir un compte iCloud dans les réglages de votre appareil pour ajouter des commentaires";
-"ACComment.notification.title" = "Nouveau commentaire sur votre Dodo code"
-"ACComment.notification.subtitle" = "Un nouveau commentaire a été posté sur votre Dodo code!"
+"ACComment.notification.title" = "Nouveau commentaire sur votre Dodo code";
+"ACComment.notification.subtitle" = "Un nouveau commentaire a été posté sur votre Dodo code!";
