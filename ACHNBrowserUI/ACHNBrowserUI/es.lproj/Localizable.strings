@@ -561,3 +561,5 @@ You can delete and close your gates at any moment.
 Please be respectful, any Dodo code reported will be deleted.";
 "ACDodoCode.notification.title" = "A new Dodo code is available";
 "ACDodoCode.notification.subtitle" = "Someone opened their gates and posted a new Dodo code on the application, go check it out!";
+"ACComment.notification.title" = "Someone commented on your Dodo code"
+"ACComment.notification.subtitle" = "A new comment has been added on your Dodo code, go check it out!"

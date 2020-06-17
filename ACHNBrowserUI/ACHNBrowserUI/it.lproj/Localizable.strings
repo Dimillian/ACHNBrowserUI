@@ -1082,3 +1082,5 @@ Puoi annullare il tuo abbonamento in ogni momento dalle impostazioni del tuo acc
 "Send" = "Invia";
 "In game name / username" = "Nome nel gioco / nome utente";
 "You need to have an iCloud account in your device settings in order to add comments" = "È necessario un account iCloud per aggiungere dei commenti.";
+"ACComment.notification.title" = "Someone commented on your Dodo code"
+"ACComment.notification.subtitle" = "A new comment has been added on your Dodo code, go check it out!"
