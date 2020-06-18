@@ -167,10 +167,10 @@ struct SettingsView: View {
                 }
                 .onTapGesture {
                     if !self.appUserDefaults.isShopOpenClose {
-                        self.notificationManager.getSettingsNotifications(subtitle: "Nook’s Cranny store is open", hour: 8, minute: 0, isRepeated: true)
-                        self.notificationManager.getSettingsNotifications(subtitle: "Nook’s Cranny store is closing in 1h", hour: 21, minute: 0, isRepeated: true)
-                        self.notificationManager.getSettingsNotifications(subtitle: "Able Sisters Shop is open", hour: 9, minute: 0, isRepeated: true)
-                        self.notificationManager.getSettingsNotifications(subtitle: "Able Sisters Shop is closing in 1h", hour: 20, minute: 0, isRepeated: true)
+                        self.notificationManager.registerShopsNotification(subtitle: "Nook’s Cranny store is open", hour: 8, minute: 0)
+                        self.notificationManager.registerShopsNotification(subtitle: "Nook’s Cranny store is closing in 1h", hour: 21, minute: 0)
+                        self.notificationManager.registerShopsNotification(subtitle: "Able Sisters Shop is open", hour: 9, minute: 0)
+                        self.notificationManager.registerShopsNotification(subtitle: "Able Sisters Shop is closing in 1h", hour: 20, minute: 0)
                     }
                 }
                 

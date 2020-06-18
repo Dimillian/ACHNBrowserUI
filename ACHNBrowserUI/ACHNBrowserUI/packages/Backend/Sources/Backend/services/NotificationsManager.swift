@@ -115,24 +115,21 @@ public class NotificationManager: NSObject, ObservableObject {
         }
     }
     
-    public func getSettingsNotifications(subtitle: String, hour: Int, minute: Int, isRepeated: Bool) {
+    public func registerShopsNotification(subtitle: String, hour: Int, minute: Int) {
+        // remove pending notification
+        removePendingNotifications()
+        
         // schedule the notification
         let content = UNMutableNotificationContent()
-        content.title = "AC Helper"
-        content.subtitle = subtitle
-        content.sound = UNNotificationSound.default
+        content.title = NSLocalizedString("AC Helper", comment: "")
+        content.body = NSLocalizedString(subtitle, comment: "")
         
         // show this notification using custom date
-       var date = DateComponents()
-       date.hour = hour
-       date.minute = minute
-       let trigger = UNCalendarNotificationTrigger(dateMatching: date, repeats: isRepeated)
-
-       // choose a random identifier
-       let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
-
-       // add our notification request
-       UNUserNotificationCenter.current().add(request)
+       var components = DateComponents()
+       components.hour = hour
+       components.minute = minute
+       
+       registerNotification(content: content, date: components)
     }
 }
 
