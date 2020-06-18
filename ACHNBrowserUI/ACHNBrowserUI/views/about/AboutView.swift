@@ -81,6 +81,13 @@ struct AboutView: View {
                                                       options: [:],
                                                       completionHandler: nil)
                     }
+                    makeRow(image: "photo.fill",
+                            text: "Contact / follow us on Instagram", color: .acHeaderBackground)
+                        .onTapGesture {
+                            UIApplication.shared.open(URL(string: "https://www.instagram.com/achelperapp/")!,
+                                                      options: [:],
+                                                      completionHandler: nil)
+                    }
                     makeRow(image: "star.fill",
                             text: "Rate the app on the App Store", color: .acHeaderBackground)
                         .onTapGesture {
@@ -120,6 +127,13 @@ struct AboutView: View {
                     makeRow(image: "suit.heart.fill", text: "Turnip.exchange", color: .red)
                         .onTapGesture {
                             self.selectedSheet = .safari(URL(string: "https://turnip.exchange/")!)
+                    }
+                    makeRow(image: "suit.heart.fill",
+                            text: "Meet the community of ACNH Connect", color: .red)
+                        .onTapGesture {
+                            UIApplication.shared.open(URL(string: "https://apps.apple.com/us/app/acnh-connect/id1511183931")!,
+                                                      options: [:],
+                                                      completionHandler: nil)
                     }
                     makeRow(image: "suit.heart.fill", text: "Nookazon for the marketplace", color: .red)
                         .onTapGesture {
