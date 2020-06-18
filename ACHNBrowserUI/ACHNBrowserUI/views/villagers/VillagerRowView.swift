@@ -44,6 +44,7 @@ struct VillagerRowView: View {
                 LikeButtonView(villager: villager)
             } else {
                 ResidentButton(villager: villager)
+                    .environmentObject(UserCollection.shared)
             }
         }
     }

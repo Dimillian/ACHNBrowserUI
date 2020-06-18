@@ -16,11 +16,13 @@ struct CollectionMoreDetailViewModel {
     enum Row: String, CaseIterable {
         case critters
         case designs
+        case dodoCodes
         
         var description: LocalizedStringKey {
             switch self {
             case .critters: return LocalizedStringKey("Critters")
             case .designs: return LocalizedStringKey("Creators and Designs")
+            case .dodoCodes: return LocalizedStringKey("Dodo codes")
             }
         }
     }

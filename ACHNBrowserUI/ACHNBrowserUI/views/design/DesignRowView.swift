@@ -32,7 +32,7 @@ struct DesignRowView: View {
 
                 Text(viewModel.code)
                     .fontWeight(.semibold)
-                    .font(.subheadline)
+                    .font(Font.subheadline.monospacedDigit())
 
                 if !viewModel.description.isEmpty {
                     Text(viewModel.description.capitalized)

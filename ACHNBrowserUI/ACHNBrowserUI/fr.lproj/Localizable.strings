@@ -86,8 +86,8 @@ Localizable.strings
 Vous aurez aussi accès à d'autres fonctionnalités, comme les prédictions sur le prix des navets et la possibilité de créer plus d'une liste d'objets! 📈";
 
 "ACHelperPlusDetails" = "À propos de la fonctionnalité de notification:
-Tous les jours à 8H et 12H vous allez recevoir une notification avec le prix moyen d'achat dans votre magasin.
-Plus vous rajouté de prix du jeux après lundi matin dans l'application, plus les prochaines prédictions seront précises!
+Tous les jours à 8H et 12H vous allez recevoir une notification avec le prix moyen d'achat de vos navets.
+En indiquant le prix de vos navets, vous augmentez la précision des prédictions !
 
 À propos de la fonctionnalité liste d'objets:
 Dans l'application gratuite, vous pouvez créer seulement une seule liste d'objets dans votre onglet collection.
@@ -276,7 +276,7 @@ You can cancel anytime with your iTunes account settings. Any unused portion of 
 "Your in game prices" = "Vos prix dans le jeu";
 "Buy price" = "Prix d'achat";
 "Amount bought" = "Nombre acheté";
-"The more in game buy prices you'll add the better the predictions will be. Your buy price only won't give your correct averages. Add prices from the game as you get them daily." = "Plus vous aller rajouter vos prix d'achat dans le jeu plus les prochaines prédictions seront précises.";
+"The more in game buy prices you'll add the better the predictions will be. Your buy price only won't give your correct averages. Add prices from the game as you get them daily." = "En indiquant le prix de vos navets, vous augmentez la précision des prédictions.";
 "View on TurnipProphet" = "Voir sur TurnipProphet";
 "View Turnip.Exchange islands" = "Voir les îles de Turnip.Exchange";
 
@@ -470,7 +470,7 @@ You can cancel anytime with your iTunes account settings. Any unused portion of 
 "Flying near flowers" = "Vole prêt des fleurs";
 "On the ground" = "Au sol";
 "Flying" = "Vole dans les airs";
-"Shaking trees (hardwood or cedar only)" = "En secouant les abres (feuillus et cèdres seulement)";
+"Shaking trees (hardwood or cedar only)" = "En secouant les arbres (feuillus et cèdres seulement)";
 "On trees (any kind)" = "Sur les arbres (tout types)";
 "Disguised on shoreline" = "Déguisé sur le rivage";
 "Pushing snowballs" = "Pousse une boule de neige";
@@ -486,7 +486,7 @@ You can cancel anytime with your iTunes account settings. Any unused portion of 
 "On white flowers" = "Sur les fleurs blanches";
 "Flying near trash (boots, tires, cans)" = "Vole près des ordures (bottes, pneus, canettes)";
 "Flying near blue/purple/black flowers" = "Vole près des fleurs bleues/violettes/noires";
-"Deguised under trees" = "Déguisé en feuille d'abres";
+"Deguised under trees" = "Déguisé en feuille d'arbres";
 "On villager" = "Sur le villageois";
 "Underground (dig where noise is loudest)" = "Sous le sol (creuser là où le bruit est le plus fort)";
 "Jolly Redd's Treasure Trawler" = "Sur le Rounarama(Bateau) de Rounard";
@@ -836,4 +836,30 @@ You can cancel anytime with your iTunes account settings. Any unused portion of 
 "Sea (rainy days)" = "Mer (jour de pluie)";
 "Flying near water" = "Vol près de l'eau";
 
+// Doco code
+"Please fill all the fields" = "Merci de remplir tous les champs";
+"Dodo code" = "Dodo code";
+"Dodo codes" = "Dodo codes";
+"This Dodo code is invalid" = "Ce Dodo code est invalide";
+"Island description" = "Description de l'île";
+"Native fruit" = "Fruit de départ";
+"Add your Dodo code" = "Ajoutez votre Dodo code";
+"Hemisphere: %@" = "Hémisphère: %@";
+"Delete" = "Supprimer";
+"Report" = "Signaler";
+"Latest Dodo code" = "Dernier Dodo code";
 
+"dodocode.footer" = "Une fois votre Dodo code ajouté il apparaitra dans la liste.
+Merci de vérifier que vos portes sont ouvertes avant d'ajouter votre code.
+Vous pourrez supprimer et ferme vos portes à tout moment.
+Merci d'être respecteux. Tout code signalé sera supprimé";
+"iCloud not enabled" = "iCloud n'est pas activé";
+"You need an iCloud account to add your Dodo code" = "Vous avez besoin d'iCloud pour ajouter votre Dodo code";
+"Do you really want to delete your Dodo code?" = "Voulez-vous vraiment supprimer vote Dodo code ?";
+"Do you really want to report this Dodo code?" = "Voulez-vous vraiment signaler ce Dodo Code ?";
+"Visitor" = "Visiteur";
+"Edit your Dodo code" = "Éditez votre Dodo code";
+"Get notified of new Dodo codes" = "Être notifié quand un code est posté";
+"To help us support the application and get notifications when a new Dodo code is posted, you can try out AC Helper+" = "Pour nous aider à supporter l'application et recevoir des notifications quand un nouveau Dodo codes est posté, vous pouvez souscrire à AC Helper+";
+"ACDodoCode.notification.title" = "Un nouveau Dodo code est disponible";
+"ACDodoCode.notification.subtitle" = "Quelqu'un a ouvert ses portes et a posté un Dodo code dans l'application!";
