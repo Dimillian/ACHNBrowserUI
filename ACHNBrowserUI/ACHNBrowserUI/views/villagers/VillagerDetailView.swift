@@ -50,6 +50,7 @@ struct VillagerDetailView: View {
     private var navButtons: some View {
         HStack(spacing: 8) {
             ResidentButton(villager: villager)
+                .environmentObject(UserCollection.shared)
                 .safeHoverEffectBarItem(position: .trailing)
             LikeButtonView(villager: villager)
                 .safeHoverEffectBarItem(position: .trailing)

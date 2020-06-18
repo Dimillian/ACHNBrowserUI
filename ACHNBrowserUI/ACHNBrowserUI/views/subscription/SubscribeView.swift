@@ -13,7 +13,7 @@ import Purchases
 
 struct SubscribeView: View {
     enum Source: String {
-        case dashboard, turnip, turnipForm, list, musics
+        case dashboard, turnip, turnipForm, list, musics, dodo
     }
     
     @EnvironmentObject private var subscriptionManager: SubscriptionManager

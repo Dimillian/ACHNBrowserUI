@@ -13,7 +13,9 @@
 		3D9AB08F248256DC00B47041 /* CustomTaskRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D9AB08E248256DC00B47041 /* CustomTaskRow.swift */; };
 		3D9AB093248257DF00B47041 /* CustomTaskFormViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D9AB092248257DF00B47041 /* CustomTaskFormViewModel.swift */; };
 		3DECE21B2483BC83001F24BA /* EditMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DECE21A2483BC82001F24BA /* EditMode.swift */; };
+		3EC6507F2496C5BD00679443 /* NotificationsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EC6507E2496C5BD00679443 /* NotificationsViewModel.swift */; };
 		4C16FB41247AC9B0009F24E3 /* GridStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C16FB40247AC9B0009F24E3 /* GridStack.swift */; };
+		4C30BFC3249627FD003E96A2 /* Sequence+Unique.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C30BFC2249627FC003E96A2 /* Sequence+Unique.swift */; };
 		4C6E95FD24842F690074433B /* Collection+SafeDirectAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C6E95FC24842F690074433B /* Collection+SafeDirectAccess.swift */; };
 		4C7F555D248B91C80089F26C /* TodayVillagerVisitsSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7F555C248B91C80089F26C /* TodayVillagerVisitsSection.swift */; };
 		690A72C924752BF4001E7294 /* villagersLikes in Resources */ = {isa = PBXBuildFile; fileRef = 690A72C824752BF4001E7294 /* villagersLikes */; };
@@ -183,6 +185,11 @@
 		69E4BBB6245AE5C9001035E2 /* ItemDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69E4BBB5245AE5C9001035E2 /* ItemDetailView.swift */; };
 		69E4BBB7245AE60C001035E2 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69AF8C7B243E4D29001DD9CB /* Color.swift */; };
 		69E4BBB8245AE60F001035E2 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 69AF8C79243E4C78001DD9CB /* Colors.xcassets */; };
+		69E67EEE24935DD200ED7AC8 /* DodoCodeListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69E67EED24935DD200ED7AC8 /* DodoCodeListView.swift */; };
+		69E67EF0249376DF00ED7AC8 /* DodoCodeRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69E67EEF249376DF00ED7AC8 /* DodoCodeRow.swift */; };
+		69E67EF22493833200ED7AC8 /* DodoCodeFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69E67EF12493833200ED7AC8 /* DodoCodeFormView.swift */; };
+		69E67EF4249383DA00ED7AC8 /* TodayDodoCodeSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69E67EF3249383DA00ED7AC8 /* TodayDodoCodeSection.swift */; };
+		69E67EFB2494C35B00ED7AC8 /* ButtonImageCounterOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69E67EFA2494C35B00ED7AC8 /* ButtonImageCounterOverlay.swift */; };
 		AE0B5B5A247AD6DF0075CF16 /* DesignFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE0B5B59247AD6DF0075CF16 /* DesignFormView.swift */; };
 		AE0B5B5C247AD7590075CF16 /* DesignFormViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE0B5B5B247AD7590075CF16 /* DesignFormViewModel.swift */; };
 		AE0B5B5E247B14120075CF16 /* DesignRowViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE0B5B5D247B14120075CF16 /* DesignRowViewModel.swift */; };
@@ -241,6 +248,7 @@
 		3DB1260324686F0B00E74AA5 /* de */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; lineEnding = 0; name = de; path = de.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		3DECE21A2483BC82001F24BA /* EditMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditMode.swift; sourceTree = "<group>"; };
 		3DF14B2E24664B4A00438646 /* de */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; lineEnding = 0; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
+		3EC6507E2496C5BD00679443 /* NotificationsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsViewModel.swift; sourceTree = "<group>"; };
 		4C16FB40247AC9B0009F24E3 /* GridStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridStack.swift; sourceTree = "<group>"; };
 		4C2D676A245DA41E005831C4 /* TurnipsChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TurnipsChartView.swift; sourceTree = "<group>"; };
 		4C2D676D245F0666005831C4 /* TurnipsChartBottomLegendView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TurnipsChartBottomLegendView.swift; sourceTree = "<group>"; };
@@ -249,6 +257,7 @@
 		4C2D6773245F4EA2005831C4 /* TurnipsChartAverageCurve.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TurnipsChartAverageCurve.swift; sourceTree = "<group>"; };
 		4C2D6775245F4F55005831C4 /* TurnipsChartMinMaxCurves.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TurnipsChartMinMaxCurves.swift; sourceTree = "<group>"; };
 		4C2D6777245F4FE8005831C4 /* TurnipsChartMinBuyPriceCurve.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TurnipsChartMinBuyPriceCurve.swift; sourceTree = "<group>"; };
+		4C30BFC2249627FC003E96A2 /* Sequence+Unique.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sequence+Unique.swift"; sourceTree = "<group>"; };
 		4C382EE7244E418800F446BA /* DismissingKeyboardOnSwipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DismissingKeyboardOnSwipe.swift; sourceTree = "<group>"; };
 		4C6E95FC24842F690074433B /* Collection+SafeDirectAccess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Collection+SafeDirectAccess.swift"; sourceTree = "<group>"; };
 		4C7F2F772461F10300930928 /* TurnipsChartVerticalLegend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TurnipsChartVerticalLegend.swift; sourceTree = "<group>"; };
@@ -384,6 +393,11 @@
 		69E4BBB3245AE472001035E2 /* ItemRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemRow.swift; sourceTree = "<group>"; };
 		69E4BBB5245AE5C9001035E2 /* ItemDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailView.swift; sourceTree = "<group>"; };
 		69E4BBBA245B0BEF001035E2 /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
+		69E67EED24935DD200ED7AC8 /* DodoCodeListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DodoCodeListView.swift; sourceTree = "<group>"; };
+		69E67EEF249376DF00ED7AC8 /* DodoCodeRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DodoCodeRow.swift; sourceTree = "<group>"; };
+		69E67EF12493833200ED7AC8 /* DodoCodeFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DodoCodeFormView.swift; sourceTree = "<group>"; };
+		69E67EF3249383DA00ED7AC8 /* TodayDodoCodeSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayDodoCodeSection.swift; sourceTree = "<group>"; };
+		69E67EFA2494C35B00ED7AC8 /* ButtonImageCounterOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonImageCounterOverlay.swift; sourceTree = "<group>"; };
 		69E98C6E247439AD00A200FE /* it */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; lineEnding = 0; name = it; path = it.lproj/Localizable.strings; sourceTree = "<group>"; };
 		69EC82ED2461E79D00CE9064 /* TurnipsChartTopLegendView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TurnipsChartTopLegendView.swift; sourceTree = "<group>"; };
 		AE0B5B59247AD6DF0075CF16 /* DesignFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignFormView.swift; sourceTree = "<group>"; };
@@ -437,6 +451,8 @@
 		024363CF2465E7FD006A37A0 /* todayDashboard */ = {
 			isa = PBXGroup;
 			children = (
+				024363D22465EA14006A37A0 /* TodayView.swift */,
+				157C03E6247AE56600568917 /* TodaySectionView.swift */,
 				024363D52465EA15006A37A0 /* TodayBirthdaysSection.swift */,
 				AE96184724816B7200CC073C /* TodayChoresSection.swift */,
 				024363D72465EA15006A37A0 /* TodayCollectionProgressSection.swift */,
@@ -446,13 +462,12 @@
 				69157B6D247121ED005B9002 /* TodayMysteryIslandsSection.swift */,
 				693E2BC3246689C500B85CB8 /* TodayNookazonSection.swift */,
 				024363D32465EA14006A37A0 /* TodaySectionEditView.swift */,
-				157C03E6247AE56600568917 /* TodaySectionView.swift */,
 				693352832473C4B5007EF9AB /* TodaySpecialCharactersSection.swift */,
 				693E2BC924669D2800B85CB8 /* TodaySubscribeSection.swift */,
 				024363D62465EA15006A37A0 /* TodayTasksSection.swift */,
 				024363D12465EA14006A37A0 /* TodayTurnipSection.swift */,
-				024363D22465EA14006A37A0 /* TodayView.swift */,
 				4C7F555C248B91C80089F26C /* TodayVillagerVisitsSection.swift */,
+				69E67EF3249383DA00ED7AC8 /* TodayDodoCodeSection.swift */,
 			);
 			path = todayDashboard;
 			sourceTree = "<group>";
@@ -558,6 +573,7 @@
 				693E2BC7246697FC00B85CB8 /* Image.swift */,
 				3DECE21A2483BC82001F24BA /* EditMode.swift */,
 				4C6E95FC24842F690074433B /* Collection+SafeDirectAccess.swift */,
+				4C30BFC2249627FC003E96A2 /* Sequence+Unique.swift */,
 			);
 			path = extensions;
 			sourceTree = "<group>";
@@ -709,6 +725,7 @@
 		69AF8C64243E2857001DD9CB /* views */ = {
 			isa = PBXGroup;
 			children = (
+				69E67EEC24935DC100ED7AC8 /* dodocode */,
 				6985514A248A296900F7BDBA /* musicPlayer */,
 				69E4BBB9245B0BE4001035E2 /* about */,
 				69C5F5E8244217EF00BF8FA4 /* categories */,
@@ -719,7 +736,6 @@
 				69BEA980243E608900F02C61 /* home */,
 				69BEA982243E609400F02C61 /* items */,
 				6942FC38244989470062FE8F /* listing */,
-				AE2D7EFF247EB289006C1F1A /* message */,
 				69157B6F2471226B005B9002 /* mysteryIslands */,
 				697E63FE244AD664008FB710 /* settings */,
 				69BEA981243E608E00F02C61 /* shared */,
@@ -748,6 +764,7 @@
 				AE0B5B5D247B14120075CF16 /* DesignRowViewModel.swift */,
 				68DFFFAC24492D7F00DEA07F /* ItemDetailViewModel.swift */,
 				69AF8C6C243E2A18001DD9CB /* ItemsViewModel.swift */,
+				3EC6507E2496C5BD00679443 /* NotificationsViewModel.swift */,
 				AE9618492482B1F300CC073C /* TodayChoresSectionViewModel.swift */,
 				68BA5829244B693300B53811 /* TurnipsViewModel.swift */,
 				69875F5A24655AF000B1D46C /* UserListDetailViewModel.swift */,
@@ -795,15 +812,17 @@
 		69BEA981243E608E00F02C61 /* shared */ = {
 			isa = PBXGroup;
 			children = (
-				69AF8C75243E3545001DD9CB /* SearchField.swift */,
-				68345578244C994C0072FC0C /* LikeButtonView.swift */,
-				69CA5ED9244CBA8600B275B6 /* CalendarView.swift */,
-				69CA5F00244F1AD300B275B6 /* SectionHeaderView.swift */,
 				4C7FE78224574FB50011E8AB /* ActivityIndicator.swift */,
-				69875F4F24652A4700B1D46C /* Sheet.swift */,
-				693E2BBD2465B65D00B85CB8 /* RowLoadingView.swift */,
+				69CA5ED9244CBA8600B275B6 /* CalendarView.swift */,
 				4C16FB40247AC9B0009F24E3 /* GridStack.swift */,
+				68345578244C994C0072FC0C /* LikeButtonView.swift */,
+				AE2D7F00247EB2A8006C1F1A /* MessageView.swift */,
 				6985514D248CC31A00F7BDBA /* ResidentButton.swift */,
+				693E2BBD2465B65D00B85CB8 /* RowLoadingView.swift */,
+				69AF8C75243E3545001DD9CB /* SearchField.swift */,
+				69CA5F00244F1AD300B275B6 /* SectionHeaderView.swift */,
+				69875F4F24652A4700B1D46C /* Sheet.swift */,
+				69E67EFA2494C35B00ED7AC8 /* ButtonImageCounterOverlay.swift */,
 			);
 			path = shared;
 			sourceTree = "<group>";
@@ -934,12 +953,14 @@
 			path = about;
 			sourceTree = "<group>";
 		};
-		AE2D7EFF247EB289006C1F1A /* message */ = {
+		69E67EEC24935DC100ED7AC8 /* dodocode */ = {
 			isa = PBXGroup;
 			children = (
-				AE2D7F00247EB2A8006C1F1A /* MessageView.swift */,
+				69E67EF12493833200ED7AC8 /* DodoCodeFormView.swift */,
+				69E67EED24935DD200ED7AC8 /* DodoCodeListView.swift */,
+				69E67EEF249376DF00ED7AC8 /* DodoCodeRow.swift */,
 			);
-			path = message;
+			path = dodocode;
 			sourceTree = "<group>";
 		};
 		AE51C2DF247F399300F074EC /* chores */ = {
@@ -973,6 +994,7 @@
 				69157BD92471A5A1005B9002 /* Frameworks */,
 				69157BE02471A5A1005B9002 /* Resources */,
 				69157C542471A5A1005B9002 /* Embed PlugIns */,
+				3D2E97DC24968DB30041EFA9 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -1126,6 +1148,35 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		3D2E97DC24968DB30041EFA9 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/ACHNBrowserUI/en.lproj/Localizable.strings",
+				"$(SRCROOT)/ACHNBrowserUI/de.lproj/Localizable.strings",
+				"$(SRCROOT)/ACHNBrowserUI/fr.lproj/Localizable.strings",
+				"$(SRCROOT)/ACHNBrowserUI/it.lproj/Localizable.strings",
+				"$(SRCROOT)/ACHNBrowserUI/ru.lproj/Localizable.strings",
+				"$(SRCROOT)/ACHNBrowserUI/es.lproj/Localizable.strings",
+				"$(SRCROOT)/ACHNBrowserUI/ja.lproj/Localizable.strings",
+				"$(SRCROOT)/ACHNBrowserUI/zh-Hans.lproj/Localizable.strings",
+				"$(SRCROOT)/ACHNBrowserUI/zh-Hant-TW.lproj/Localizable.strings",
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "#!/bin/bash\n\nc=`expr $SCRIPT_INPUT_FILE_COUNT - 1`\nfor i in $(seq 0 $c)\n    do\n\n    var=\"SCRIPT_INPUT_FILE_$i\"\n    FILENAME=${!var}\n\n    LINT=`plutil -lint \"$FILENAME\"`\n    \n    eval $LINT\n    \n    DUPES=`cut -d' ' -f1 \"$FILENAME\" | sort | uniq -d`\n\n    while read -r line; do\n        if [[ $line == \"\\\"\"*\"\\\"\" ]] ;\n        then\n            echo \"warning: $line used multiple times on $FILENAME\"\n        fi\n    done <<< \"$DUPES\"\ndone\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		69157B7D2471A5A1005B9002 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -1146,6 +1197,7 @@
 				69157B852471A5A1005B9002 /* VillagersListView.swift in Sources */,
 				AE2562F424841B48008B0779 /* DesignListViewModel.swift in Sources */,
 				69157B862471A5A1005B9002 /* MysteryIslandRow.swift in Sources */,
+				69E67EF4249383DA00ED7AC8 /* TodayDodoCodeSection.swift in Sources */,
 				69157B872471A5A1005B9002 /* TurnipsChartAverageCurve.swift in Sources */,
 				69157B882471A5A1005B9002 /* CategoryDetailView.swift in Sources */,
 				AE2D7EFA247E8CBD006C1F1A /* CollectionMoreDetailViewModel.swift in Sources */,
@@ -1170,8 +1222,10 @@
 				AE51C2E7248117EC00F074EC /* ChoreFormView.swift in Sources */,
 				69157B962471A5A1005B9002 /* TurnipsChartTopLegendView.swift in Sources */,
 				AE38E4A72482D772000DFED3 /* ChoreListViewModel.swift in Sources */,
+				69E67EFB2494C35B00ED7AC8 /* ButtonImageCounterOverlay.swift in Sources */,
 				69157B972471A5A1005B9002 /* TurnipsChartView.swift in Sources */,
 				696B454C247A948A00E16252 /* MusicPlayerManager.swift in Sources */,
+				69E67EEE24935DD200ED7AC8 /* DodoCodeListView.swift in Sources */,
 				69157B982471A5A1005B9002 /* ActiveCrittersView.swift in Sources */,
 				69157B992471A5A1005B9002 /* View.swift in Sources */,
 				69157B9A2471A5A1005B9002 /* AppDelegate.swift in Sources */,
@@ -1181,6 +1235,7 @@
 				69157B9E2471A5A1005B9002 /* TodayTasksSection.swift in Sources */,
 				4C16FB41247AC9B0009F24E3 /* GridStack.swift in Sources */,
 				69157B9F2471A5A1005B9002 /* SafariView.swift in Sources */,
+				69E67EF22493833200ED7AC8 /* DodoCodeFormView.swift in Sources */,
 				69157BA02471A5A1005B9002 /* DismissingKeyboardOnSwipe.swift in Sources */,
 				AE0B5B5A247AD6DF0075CF16 /* DesignFormView.swift in Sources */,
 				69157BA12471A5A1005B9002 /* ItemDetailSeasonSectionView.swift in Sources */,
@@ -1202,6 +1257,7 @@
 				69157BAD2471A5A1005B9002 /* VillagerDetailViewModel.swift in Sources */,
 				69157BAE2471A5A1005B9002 /* CollectionListView.swift in Sources */,
 				69157BAF2471A5A1005B9002 /* VillagerDetailView.swift in Sources */,
+				3EC6507F2496C5BD00679443 /* NotificationsViewModel.swift in Sources */,
 				69157BB02471A5A1005B9002 /* TodayView.swift in Sources */,
 				69157BB12471A5A1005B9002 /* CategoriesView.swift in Sources */,
 				69157BB22471A5A1005B9002 /* Sheet.swift in Sources */,
@@ -1241,8 +1297,10 @@
 				69157BC92471A5A1005B9002 /* TurnipsChartGrid.swift in Sources */,
 				4C7F555D248B91C80089F26C /* TodayVillagerVisitsSection.swift in Sources */,
 				69157BCA2471A5A1005B9002 /* CollectionRowView.swift in Sources */,
+				4C30BFC3249627FD003E96A2 /* Sequence+Unique.swift in Sources */,
 				AE0B5B5C247AD7590075CF16 /* DesignFormViewModel.swift in Sources */,
 				AE51C2E324801D5D00F074EC /* ChoreListRowView.swift in Sources */,
+				69E67EF0249376DF00ED7AC8 /* DodoCodeRow.swift in Sources */,
 				69157BCB2471A5A1005B9002 /* SearchField.swift in Sources */,
 				69157BCC2471A5A1005B9002 /* CollectionProgressDetailView.swift in Sources */,
 				69157BCD2471A5A1005B9002 /* AppIconPickerView.swift in Sources */,
@@ -1328,7 +1386,7 @@
 				CODE_SIGN_ENTITLEMENTS = ACHNBrowserUI/ACHNBrowserUI.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development: Thomas Ricouard (7MB55D6BJ5)";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 060822020;
+				CURRENT_PROJECT_VERSION = 061412020;
 				DEVELOPMENT_ASSET_PATHS = "\"ACHNBrowserUI/Preview Content\"";
 				DEVELOPMENT_TEAM = Z6P74P6T99;
 				ENABLE_PREVIEWS = YES;
@@ -1338,7 +1396,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.6.8;
+				MARKETING_VERSION = 1.7.4;
 				PRODUCT_BUNDLE_IDENTIFIER = com.thomasricouard.ACNH;
 				PRODUCT_NAME = "AC Helper";
 				PROVISIONING_PROFILE_SPECIFIER = "AC Dev";
@@ -1359,7 +1417,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 060822020;
+				CURRENT_PROJECT_VERSION = 061412020;
 				DEVELOPMENT_ASSET_PATHS = "\"ACHNBrowserUI/Preview Content\"";
 				DEVELOPMENT_TEAM = Z6P74P6T99;
 				ENABLE_PREVIEWS = YES;
@@ -1369,7 +1427,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.6.8;
+				MARKETING_VERSION = 1.7.4;
 				PRODUCT_BUNDLE_IDENTIFIER = com.thomasricouard.ACNH;
 				PRODUCT_NAME = "AC Helper";
 				PROVISIONING_PROFILE_SPECIFIER = "AC Dev";

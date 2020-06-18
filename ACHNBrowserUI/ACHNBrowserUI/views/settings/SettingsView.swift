@@ -15,7 +15,6 @@ struct SettingsView: View {
     @EnvironmentObject private var subscriptionManager: SubscriptionManager
     @Environment(\.presentationMode) private var presentationMode
     @ObservedObject var appUserDefaults = AppUserDefaults.shared
-    @ObservedObject var notificationManager = NotificationManager.shared
     
     @State private var isDocumentPickerPresented = false
     @State private var documentPickderMode: UIDocumentPickerMode = .import
@@ -127,7 +126,7 @@ struct SettingsView: View {
             
             HStack {
                 Toggle(isOn: $appUserDefaults.isGameTimeInSync ) {
-                    Text("Game time in sync")
+                    Text("Use device time for notifications")
                 }
             }
 
@@ -162,22 +161,13 @@ struct SettingsView: View {
     private var notificationSection: some View {
         Section(header: SectionHeaderView(text: "Notifications", icon: "clock")) {
             HStack {
-                Toggle(isOn: $appUserDefaults.isShopOpenClose ) {
+                Toggle(isOn: $appUserDefaults.shopNotificationsEnabled ) {
                     Text("When shops open/close")
                 }
-                .onTapGesture {
-                    if !self.appUserDefaults.isShopOpenClose {
-                        self.notificationManager.getSettingsNotifications(subtitle: "Nook’s Cranny store is open", hour: 8, minute: 0, isRepeated: true)
-                        self.notificationManager.getSettingsNotifications(subtitle: "Nook’s Cranny store is closing in 1h", hour: 21, minute: 0, isRepeated: true)
-                        self.notificationManager.getSettingsNotifications(subtitle: "Able Sisters Shop is open", hour: 9, minute: 0, isRepeated: true)
-                        self.notificationManager.getSettingsNotifications(subtitle: "Able Sisters Shop is closing in 1h", hour: 20, minute: 0, isRepeated: true)
-                    }
-                }
-                
             }
             
             HStack {
-                Toggle(isOn: $appUserDefaults.isSpecialEventsOn) {
+                Toggle(isOn: $appUserDefaults.specialEventNotificationsEnabled) {
                     Text("Special Events")
                 }
             }

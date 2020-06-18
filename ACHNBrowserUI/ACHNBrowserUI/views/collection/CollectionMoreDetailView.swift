@@ -44,6 +44,10 @@ struct CollectionMoreDetailView: View {
             return NavigationLink(destination: DesignListView()) {
                 Text(row.description)
             }.eraseToAnyView()
+        case .dodoCodes:
+            return NavigationLink(destination: DodoCodeListView()) {
+                Text(row.description)
+            }.eraseToAnyView()
         }
     }
 }

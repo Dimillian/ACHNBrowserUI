@@ -37,7 +37,10 @@ public class VillagerDetailViewModel: ObservableObject {
                     self?.preferredItems = items
                 })
             
-            self.likes = Array(Set(Items.shared.villagersLike.values.first(where: { $0.id == filename })!.likes))
+            self.likes = Items.shared.villagersLike.values
+                .first(where: { $0.id == filename })?
+                .likes
+                .unique()
             
         } else {
             self.villagerItems = nil

@@ -90,17 +90,9 @@ struct ItemsListView: View {
         return ActionSheet(title: title, buttons: buttons)
     }
     
-    private var searchView: some View {
-        Group {
-            if viewModel.allowSearch {
-                SearchField(searchText: $viewModel.searchText)
-            }
-        }
-    }
-    
     var body: some View {
         List {
-            Section(header: searchView) {
+            Section(header: SearchField(searchText: $viewModel.searchText)) {
                 ForEach(currentItems) { item in
                     NavigationLink(destination: LazyView(ItemDetailView(item: item))) {
                         ItemRowView(displayMode: self.itemRowsDisplayMode, item: item)

@@ -9,8 +9,13 @@
 import Foundation
 import UserNotifications
 
-public class NotificationManager: NSObject, ObservableObject {
+public class NotificationManager: NSObject {
     public static let shared = NotificationManager()
+    
+    private let shopIdentifier = "Shop times"
+    private let eventIdentifier = "Events"
+    private let turnipBuyIdentifier = "Buy turnips"
+    private let turnipEntryIdentifier = "Enter turnups"
     
     private override init() {
         super.init()
@@ -23,12 +28,20 @@ public class NotificationManager: NSObject, ObservableObject {
         }
     }
     
-    public func removePendingNotifications() {
-        UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
+    public func removeShopNotifications() {
+        UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: [shopIdentifier])
+    }
+    
+    public func removeEventNotifications() {
+        UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: [eventIdentifier])
+    }
+    
+    public func removeTurnipNotifications() {
+        UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: [turnipBuyIdentifier, turnipEntryIdentifier])
     }
     
     public func registerTurnipsPredictionNotification(prediction: TurnipPredictions) {
-        removePendingNotifications()
+        removeTurnipNotifications()
         if let average = prediction.averagePrices, let minMax = prediction.minMax {
             var dayOfTheWeek = 2
             let today = Calendar.current.component(.weekday, from: Date())
@@ -50,7 +63,7 @@ public class NotificationManager: NSObject, ObservableObject {
                     components.weekday = dayOfTheWeek
                     components.hour = isMorning ? 8 : 12
                     
-                    registerNotification(content: content, date: components)
+                    registerNotification(content: content, date: components, isRepeating: false)
                 }
                 
                 if !isMorning {
@@ -60,6 +73,19 @@ public class NotificationManager: NSObject, ObservableObject {
             
             registerReminderNotifications()
         }
+    }
+    
+    public func registerSettingsNotifications(subtitle: String, hour: Int, minute: Int, isRepeated: Bool) {
+        let content = UNMutableNotificationContent()
+        content.title = "AC Helper"
+        content.subtitle = subtitle
+        content.sound = UNNotificationSound.default
+        
+        var date = DateComponents()
+        date.hour = hour
+        date.minute = minute
+        
+        registerNotification(content: content, date: date, isRepeating: isRepeated)
     }
     
     public func testNotification() {
@@ -85,7 +111,7 @@ public class NotificationManager: NSObject, ObservableObject {
         components.weekday = 1
         components.hour = 9
         
-        registerNotification(content: content, date: components)
+        registerNotification(content: content, date: components, isRepeating: false)
         
         content = UNMutableNotificationContent()
         content.title = NSLocalizedString("Friendly reminder", comment: "")
@@ -96,43 +122,23 @@ public class NotificationManager: NSObject, ObservableObject {
         components.weekday = 2
         components.hour = 9
         
-        registerNotification(content: content, date: components)
+        registerNotification(content: content, date: components, isRepeating: false)
     }
     
-    private func registerNotification(content: UNMutableNotificationContent, date: DateComponents) {
-        let trigger = UNCalendarNotificationTrigger(dateMatching: date, repeats: false)
-        let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
+    private func registerNotification(content: UNMutableNotificationContent, date: DateComponents, isRepeating: Bool, identifier: String = UUID().uuidString) {
+        let trigger = UNCalendarNotificationTrigger(dateMatching: date, repeats: isRepeating)
+        let request = UNNotificationRequest(identifier: identifier, content: content, trigger: trigger)
         UNUserNotificationCenter.current().add(request) { error in
             if let error = error {
                 print("Error while registering notification: \(error.localizedDescription)")
             }
         }
     }
-    
+
     public func pendingNotifications(completion: @escaping (([UNNotificationRequest]) -> Void)) {
         UNUserNotificationCenter.current().getPendingNotificationRequests { requests in
             completion(requests)
         }
-    }
-    
-    public func getSettingsNotifications(subtitle: String, hour: Int, minute: Int, isRepeated: Bool) {
-        // schedule the notification
-        let content = UNMutableNotificationContent()
-        content.title = "AC Helper"
-        content.subtitle = subtitle
-        content.sound = UNNotificationSound.default
-        
-        // show this notification using custom date
-       var date = DateComponents()
-       date.hour = hour
-       date.minute = minute
-       let trigger = UNCalendarNotificationTrigger(dateMatching: date, repeats: isRepeated)
-
-       // choose a random identifier
-       let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
-
-       // add our notification request
-       UNUserNotificationCenter.current().add(request)
     }
 }
 

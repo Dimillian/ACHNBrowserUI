@@ -11,7 +11,8 @@ import Backend
 
 struct Sheet: View {
     enum SheetType: Identifiable {
-        case safari(URL), share(content: [Any])
+        case safari(URL)
+        case share(content: [Any])
         case about
         case userListForm(editingList: UserList?)
         case customTasks(collection: UserCollection)
@@ -21,6 +22,7 @@ struct Sheet: View {
         case designForm(editingDesign: Design?)
         case choreForm(chore: Chore?)
         case villager(villager: Villager, subManager: SubscriptionManager, collection: UserCollection)
+        case dodoCodeForm(editing: DodoCode?)
 
         var id: String {
             switch self {
@@ -46,6 +48,8 @@ struct Sheet: View {
                 return "choreForm"
             case .villager:
                 return "villager"
+            case .dodoCodeForm:
+                return "dodoCodeForm"
             }
         }
     }
@@ -87,6 +91,8 @@ struct Sheet: View {
                     .environmentObject(subManager)
                     .environmentObject(collection)
             })
+        case .dodoCodeForm(let editing):
+            return AnyView(DodoCodeFormView(isEditing: editing))
         }
     }
 
