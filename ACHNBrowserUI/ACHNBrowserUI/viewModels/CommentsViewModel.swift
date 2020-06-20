@@ -1,5 +1,5 @@
 //
-//  DodoCodeDetailViewModel.swift
+//  CommentsViewModel.swift
 //  ACHNBrowserUI
 //
 //  Created by Thomas Ricouard on 15/06/2020.
@@ -11,8 +11,8 @@ import SwiftUI
 import Combine
 import Backend
 
-class DodoCodeDetailViewModel: ObservableObject {
-    let code: DodoCode
+class CommentsViewModel: ObservableObject {
+    let model: CloudModel
     
     @Published var comments: [Comment] = []
     @Published var isLoading = false
@@ -22,11 +22,11 @@ class DodoCodeDetailViewModel: ObservableObject {
     private let commentService: CommentService
     private var commentsCancellable: AnyCancellable?
     
-    init(code: DodoCode, commentService: CommentService = .shared) {
-        self.code = code
+    init(model: CloudModel, commentService: CommentService = .shared) {
+        self.model = model
         self.commentService = commentService
         
-        if let record = code.record {
+        if let record = model.record {
             self.commentsCancellable = commentService.$comments.sink { comments in
                 DispatchQueue.main.async {
                     self.comments = comments[record.recordID] ?? []
@@ -36,25 +36,27 @@ class DodoCodeDetailViewModel: ObservableObject {
                 }
             }
         }
+        
+        self.fetchComments()
     }
     
     func fetchComments() {
         isLoading = true
-        if let record = code.record {
+        if let record = model.record {
             commentService.fetchComments(record: record)
         }
     }
     
     func addComment(comment: Comment) {
         isPosting = true
-        if let record = code.record {
+        if let record = model.record {
             commentService.addComment(comment: comment,
                                       owner: record)
         }
     }
     
     func deleteComment(comment: Comment) {
-        if let record = code.record {
+        if let record = model.record {
             isLoading = true
             inDeletion = comment.id
             commentService.deleteComment(comment: comment,

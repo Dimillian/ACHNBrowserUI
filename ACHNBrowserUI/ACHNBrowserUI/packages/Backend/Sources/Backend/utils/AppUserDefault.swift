@@ -97,5 +97,8 @@ public class AppUserDefaults: ObservableObject {
     
     @UserDefault("dodo_notifications", defaultValue: false)
     public var dodoNotifications: Bool
+    
+    @UserDefault("news_notifications", defaultValue: true)
+    public var newsNotifications: Bool
 }
 

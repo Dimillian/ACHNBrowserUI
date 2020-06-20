@@ -29,6 +29,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             .environmentObject(AppUserDefaults.shared)
             .environmentObject(DodoCodeService.shared)
             .environmentObject(CommentService.shared)
+            .environmentObject(NewsArticleService.shared)
         
         if let windowScene = scene as? UIWindowScene {
             

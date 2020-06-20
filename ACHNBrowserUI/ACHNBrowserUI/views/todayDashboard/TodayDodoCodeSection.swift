@@ -22,7 +22,7 @@ struct TodayDodoCodeSection: View {
                 Text("No active Dodo code yet, open your island to visitors by adding your own")
                     .foregroundColor(.acSecondaryText)
             }
-        }.onAppear(perform: service.refresh)
+        }
         
     }
 }

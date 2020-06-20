@@ -57,7 +57,7 @@ struct DodoCodeRow: View {
                     .font(.footnote)
             }.opacity(code.archived ? 0.5 : 1.0)
 
-            if DodoCodeService.shared.canEdit && showButtons {
+            if DodoCodeService.shared.canAddCode && showButtons {
                 HStack(spacing: 12) {
                     Spacer()
                     upvoteButton

@@ -36,7 +36,7 @@ public struct Comment: CloudModel, Equatable, Identifiable {
         self.isMine = true
     }
     
-    init(withRecord record: CKRecord) {
+    public init(withRecord record: CKRecord) {
         self.id = record[RecordKeys.id.rawValue] as? String ?? ""
         self.name = record[RecordKeys.name.rawValue] as? String ?? ""
         self.islandName = record[RecordKeys.islandName.rawValue] as? String ?? ""
@@ -46,7 +46,7 @@ public struct Comment: CloudModel, Equatable, Identifiable {
         self.record = record
     }
     
-    func toRecord(owner: CKRecord?) -> CKRecord {
+    public func toRecord(owner: CKRecord?) -> CKRecord {
         let record = self.record ?? CKRecord(recordType: Self.RecordType)
         record[RecordKeys.id.rawValue] = id
         record[RecordKeys.text.rawValue] = text

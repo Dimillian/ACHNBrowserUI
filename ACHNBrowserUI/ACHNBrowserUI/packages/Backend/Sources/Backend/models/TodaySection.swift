@@ -38,10 +38,12 @@ extension TodaySection {
         case nookazon
         case villagerVisits
         case dodoCode
+        case news
     }
 
     public static let defaultSectionList: [TodaySection] = [
         TodaySection(name: .events, enabled: true),
+        TodaySection(name: .news, enabled: true),
         TodaySection(name: .specialCharacters, enabled: true),
         TodaySection(name: .currentlyAvailable, enabled: true),
         TodaySection(name: .collectionProgress, enabled: true),
@@ -76,6 +78,7 @@ extension TodaySection {
         case .nookazon: return "New on Nookazon"
         case .villagerVisits: return "Villager visits"
         case .dodoCode: return "Latest Dodo code"
+        case .news: return "News"
         }
     }
     
@@ -95,6 +98,7 @@ extension TodaySection {
         case .nookazon: return "cart.fill"
         case .villagerVisits: return "person.crop.circle.fill.badge.checkmark"
         case .dodoCode: return "airplane"
+        case .news: return "exclamationmark.bubble.fill"
         }
     }
 }

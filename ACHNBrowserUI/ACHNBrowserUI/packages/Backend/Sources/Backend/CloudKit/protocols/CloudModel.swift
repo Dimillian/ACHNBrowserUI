@@ -8,8 +8,9 @@
 import Foundation
 import CloudKit
 
-protocol CloudModel {
+public protocol CloudModel {
     static var RecordType: String { get }
+    var record: CKRecord? { get }
     init(withRecord record: CKRecord)
     func toRecord(owner: CKRecord?) -> CKRecord
 }

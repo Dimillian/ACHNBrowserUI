@@ -18,14 +18,14 @@ public class DodoCodeService: ObservableObject, PublicCloudService {
     @Published public var codes: [DodoCode] = []
     @Published public var mostRecentError: Error?
     @Published public var isSynching = true
-    @Published public var canEdit = false
+    @Published public var canAddCode = false
     
     private var reported: [DodoCode] = []
     
     init() {
         CKContainer.default().accountStatus { (status, error) in
             DispatchQueue.main.async {
-                self.canEdit = status == .available
+                self.canAddCode = status == .available
             }
         }
         
@@ -131,7 +131,7 @@ public class DodoCodeService: ObservableObject, PublicCloudService {
     
     private func subscribeToCloudKit() {
         database.fetchAllSubscriptions { (subs, _) in
-            if subs == nil || subs?.isEmpty == true {
+            if self.serviceSubscriptionExist(recordType: DodoCode.RecordType, subs: subs) == nil {
                 self.createSubscription()
             }
         }
@@ -151,9 +151,9 @@ public class DodoCodeService: ObservableObject, PublicCloudService {
     
     private func deleteSubscriptions() {
         database.fetchAllSubscriptions { (subs, _) in
-            if let subs = subs {
+            if let sub = self.serviceSubscriptionExist(recordType: DodoCode.RecordType, subs: subs) {
                 let operation = CKModifySubscriptionsOperation(subscriptionsToSave: nil,
-                                                               subscriptionIDsToDelete: subs.map{ $0.subscriptionID })
+                                                               subscriptionIDsToDelete: [sub.subscriptionID])
                 self.database.add(operation)
             }
         }

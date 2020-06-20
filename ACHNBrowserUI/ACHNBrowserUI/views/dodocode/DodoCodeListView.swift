@@ -25,9 +25,9 @@ struct DodoCodeListView: View {
                     set: {
                         AppUserDefaults.shared.dodoNotifications = $0
                         if !$0 {
-                            DodoCodeService.shared.disableNotifications()
+                            self.service.disableNotifications()
                         } else {
-                            DodoCodeService.shared.enableNotifications()
+                            self.service.enableNotifications()
                         }
                 })) {
                     Text("Get notified of new Dodo codes")
@@ -72,7 +72,7 @@ struct DodoCodeListView: View {
     
     private var addButton: some View {
         Button(action: {
-            if !self.service.canEdit {
+            if !self.service.canAddCode {
                 self.showiCloudAlert = true
                 return
             }

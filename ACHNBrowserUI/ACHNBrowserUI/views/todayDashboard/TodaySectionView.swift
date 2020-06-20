@@ -64,6 +64,8 @@ struct TodaySectionView: View {
             return AnyView(TodayVillagerVisitsSection(sheet: $selectedSheet))
         case .dodoCode:
             return AnyView(TodayDodoCodeSection())
+        case .news:
+            return AnyView(TodayNewsSection())
         }
     }
 }

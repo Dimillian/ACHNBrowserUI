@@ -58,7 +58,7 @@ public struct DodoCode: CloudModel, Identifiable, Equatable {
         self.isMine = true
     }
     
-    init(withRecord record: CKRecord) {
+    public init(withRecord record: CKRecord) {
         id = record[RecordKeys.id.rawValue] as? String ?? ""
         code = record[RecordKeys.code.rawValue] as? String ?? ""
         report = record[RecordKeys.report.rawValue] as? Int ?? 0
@@ -73,7 +73,7 @@ public struct DodoCode: CloudModel, Identifiable, Equatable {
         self.record = record
     }
     
-    func toRecord(owner: CKRecord?) -> CKRecord {
+    public func toRecord(owner: CKRecord?) -> CKRecord {
         let record = self.record ?? CKRecord(recordType: Self.RecordType)
         record[RecordKeys.id.rawValue] = id
         record[RecordKeys.code.rawValue] = code

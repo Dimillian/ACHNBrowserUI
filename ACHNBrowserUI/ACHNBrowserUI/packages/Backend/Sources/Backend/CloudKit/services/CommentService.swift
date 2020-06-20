@@ -15,6 +15,15 @@ public class CommentService: ObservableObject, PublicCloudService {
     
     @Published public var comments: [CKRecord.ID: [Comment]] = [:]
     @Published public var mostRecentError: Error?
+    @Published public var canPostComment = false
+    
+    init() {
+        CKContainer.default().accountStatus { (status, error) in
+            DispatchQueue.main.async {
+                self.canPostComment = status == .available
+            }
+        }
+    }
     
     public func addComment(comment: Comment, owner: CKRecord) {
         let record = comment.toRecord(owner: owner)
