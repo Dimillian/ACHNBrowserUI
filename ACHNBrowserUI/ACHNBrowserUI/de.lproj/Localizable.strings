@@ -917,6 +917,6 @@ Bitte geht respektvoll miteinander um. Jeder gemeldete Dodo Code wird gelöscht.
 
 // Added 2020-06-19
 "News" = "Neuigkeiten";
-
-"ACNew.notification.title" = "A news has been posted";
-"ACNew.notification.subtitle" = "A new article about the app or the game has been posted. Check it out in the app!";
+"Get notified when a news is posted" = "Bei Neuigkeiten benachrichtigen";
+"ACNew.notification.title" = "Eine Neuigkeit wurde veröffentlicht";
+"ACNew.notification.subtitle" = "Eine Neuigkeit über die App oder das Spiel wurde veröffentlicht. Öffne die App und schau nach!";
