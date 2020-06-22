@@ -16,8 +16,6 @@ struct TodayView: View {
     
     // MARK: - Vars
     @EnvironmentObject private var uiState: UIState
-    @EnvironmentObject private var dodoService: DodoCodeService
-    @EnvironmentObject private var newsService: NewsArticleService
     @ObservedObject private var viewModel = DashboardViewModel()
     @State private var selectedSheet: Sheet.SheetType?
             
@@ -49,8 +47,8 @@ struct TodayView: View {
             .navigationBarTitle(Text("\(dateString.capitalized)"))
             .navigationBarItems(leading: aboutButton, trailing: settingsButton)
             .sheet(item: $selectedSheet, content: { Sheet(sheetType: $0) })
-            .onAppear(perform: newsService.fetchNews)
-            .onAppear(perform: dodoService.refresh)
+            .onAppear(perform: NewsArticleService.shared.fetchNews)
+            .onAppear(perform: DodoCodeService.shared.refresh)
             
             ActiveCrittersView()
         }
