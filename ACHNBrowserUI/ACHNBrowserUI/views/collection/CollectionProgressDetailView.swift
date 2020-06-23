@@ -19,6 +19,7 @@ struct CollectionProgressDetailView: View {
                 NavigationLink(destination: LazyView(ItemsListView(category: category))) {
                     CollectionProgressRow(category: category, barHeight: 20)
                 }
+                .listRowBackground(Color.acSecondaryBackground)
             }
         }
         .navigationBarTitle(Text("Collection Progress"),

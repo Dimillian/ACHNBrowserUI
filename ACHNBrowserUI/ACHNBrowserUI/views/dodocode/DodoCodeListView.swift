@@ -32,7 +32,7 @@ struct DodoCodeListView: View {
                 })) {
                     Text("Get notified of new Dodo codes")
                         .foregroundColor(.acText)
-                }
+                }.listRowBackground(Color.acSecondaryBackground)
             }
             
             if service.isSynching && service.codes.isEmpty {
@@ -42,7 +42,7 @@ struct DodoCodeListView: View {
                     Section(header: SectionHeaderView(text: code.islandName, icon: "sun.haze.fill")) {
                         NavigationLink(destination: DodoCodeDetailView(code: code)) {
                             DodoCodeRow(code: code, showButtons: true)
-                        }
+                        }.listRowBackground(Color.acSecondaryBackground)
                     }
                 }
             } else {

@@ -49,11 +49,13 @@ struct VillagersListView: View {
                             Text(LocalizedStringKey($0.rawValue.capitalized))
                         }
                     }.pickerStyle(SegmentedPickerStyle())
+                    .listRowBackground(Color.acSecondaryBackground)
                     
                     ForEach(currentVillagers) { villager in
                         NavigationLink(destination: VillagerDetailView(villager: villager)) {
                             self.makeRowView(villager: villager)
                         }
+                        .listRowBackground(Color.acSecondaryBackground)
                     }
                 }
             }

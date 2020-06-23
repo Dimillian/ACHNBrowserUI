@@ -17,7 +17,7 @@ struct DodoCodeDetailView: View {
         List {
             Section(header: SectionHeaderView(text: code.islandName,
                                               icon: "sun.haze.fill")) {
-                DodoCodeRow(code: code, showButtons: true)
+                DodoCodeRow(code: code, showButtons: true).listRowBackground(Color.acSecondaryBackground)
             }
             CommentsSection(model: code)
         }

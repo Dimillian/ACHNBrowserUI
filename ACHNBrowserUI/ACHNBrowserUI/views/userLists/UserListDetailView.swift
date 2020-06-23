@@ -69,24 +69,27 @@ struct UserListDetailView: View {
                             NavigationLink(destination: ItemDetailView(item: item)) {
                                 ItemRowView(displayMode: .largeNoButton, item: item)
                             }
+                            .listRowBackground(Color.acSecondaryBackground)
                         }.onDelete { indexes in
                             self.viewModel.deleteItem(at: indexes.first!)
                         }
                     } else {
                         MessageView(string: "Items added to your list from the search will be displayed there.")
+                            .listRowBackground(Color.acSecondaryBackground)
                     }
                 } else {
                     if searchViewModel.isLoadingData {
                         RowLoadingView().animation(.default)
                     } else if searchCategories.isEmpty {
                         MessageView(noResultsFor: searchViewModel.searchText)
+                            .listRowBackground(Color.acSecondaryBackground)
                     } else {
                         ForEach(searchCategories, id: \.0, content: searchSection)
                     }
                 }
             }
         }
-        .listStyle(InsetGroupedListStyle())
+        .listStyle(GroupedListStyle())
         .environment(\.editMode, .constant(!searchViewModel.searchText.isEmpty ? .active : .inactive))
         .onReceive(searchViewModel.$isLoadingData) { self.isLoadingData = $0 }
         .navigationBarTitle(Text(viewModel.list.name))

@@ -95,9 +95,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         UINavigationBar.appearance().barTintColor = UIColor(named: "ACSecondaryBackground",
                                                             in: UIBundle,
                                                             compatibleWith: nil)
-        UINavigationBar.appearance().backgroundColor = UIColor(named: "ACBackground",
-                                                               in: UIBundle,
-                                                               compatibleWith: nil)
+        UINavigationBar.appearance().isTranslucent = true
         UINavigationBar.appearance().tintColor = UIColor(named: "ACText",
                                                          in: UIBundle,
                                                          compatibleWith: nil)
@@ -105,20 +103,15 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         UITableView.appearance().backgroundColor = UIColor(named: "ACBackground",
                                                            in: UIBundle,
                                                            compatibleWith: nil)
-        UITableViewCell.appearance().backgroundColor = UIColor(named: "ACSecondaryBackground",
-                                                               in: UIBundle,
-                                                               compatibleWith: nil)
         UITableView.appearance().tableFooterView = UIView()
         
         UITabBar.appearance().unselectedItemTintColor = UIColor(named: "TabLabel",
                                                                 in: UIBundle,
                                                                 compatibleWith: nil)
+        UITabBar.appearance().isTranslucent = true
         UITabBar.appearance().barTintColor = UIColor(named: "ACTabBarTint",
                                                      in: UIBundle,
                                                      compatibleWith: nil)
-        UITabBar.appearance().backgroundColor = UIColor(named: "ACTabBarTint",
-                                                        in: UIBundle,
-                                                        compatibleWith: nil)
     }
 }
 

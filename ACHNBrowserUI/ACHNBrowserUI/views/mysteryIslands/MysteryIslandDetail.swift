@@ -25,17 +25,22 @@ struct MysteryIslandDetail: View {
                         .padding()
                     Spacer()
                 }
-                makeInfoCell(title: "Chance", detail: "\(island.chance) %")
-                makeInfoCell(title: "Trees", detail: island.trees.capitalized)
-                makeInfoCell(title: "Flowers", detail: island.flowers.capitalized)
-                makeInfoCell(title: "Rocks", detail: "\(island.rocks)")
-                makeInfoCell(title: "Rocks Type", detail: island.rocks_type.capitalized)
-                makeInfoCell(title: "Fish", detail: island.fish.capitalized)
-                makeInfoCell(title: "Insects", detail: island.insects.capitalized)
-                VStack(alignment: .leading, spacing: 8) {
-                    Text("Description").style(appStyle: .rowTitle)
-                    Text(LocalizedStringKey(island.description)).style(appStyle: .rowDescription)
+                .listRowBackground(Color.acSecondaryBackground)
+                
+                Group {
+                    makeInfoCell(title: "Chance", detail: "\(island.chance) %")
+                    makeInfoCell(title: "Trees", detail: island.trees.capitalized)
+                    makeInfoCell(title: "Flowers", detail: island.flowers.capitalized)
+                    makeInfoCell(title: "Rocks", detail: "\(island.rocks)")
+                    makeInfoCell(title: "Rocks Type", detail: island.rocks_type.capitalized)
+                    makeInfoCell(title: "Fish", detail: island.fish.capitalized)
+                    makeInfoCell(title: "Insects", detail: island.insects.capitalized)
+                    VStack(alignment: .leading, spacing: 8) {
+                        Text("Description").style(appStyle: .rowTitle)
+                        Text(LocalizedStringKey(island.description)).style(appStyle: .rowDescription)
+                    }
                 }
+                .listRowBackground(Color.acSecondaryBackground)
             }
         }
         .navigationBarTitle(Text(LocalizedStringKey(island.name)))

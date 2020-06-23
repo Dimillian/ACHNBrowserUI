@@ -50,6 +50,7 @@ struct ItemDetailView: View {
             ItemDetailInfoView(item: itemViewModel.item,
                                recipe: itemViewModel.recipe,
                                displayedVariant: $displayedVariant)
+                .listRowBackground(Color.acSecondaryBackground)
             Group {
                 if itemViewModel.item.variations != nil {
                     variantsSection
@@ -62,7 +63,7 @@ struct ItemDetailView: View {
                 if !itemViewModel.item.metas.isEmpty {
                     keywordsSection
                 }
-            }
+            } .listRowBackground(Color.acSecondaryBackground)
             
             Group {
                 if !itemViewModel.setItems.isEmpty {
@@ -92,7 +93,7 @@ struct ItemDetailView: View {
                 if itemViewModel.item.isCritter {
                     ItemDetailSeasonSectionView(item: itemViewModel.item)
                 }
-            }
+            }.listRowBackground(Color.acSecondaryBackground)
             
             listsSection
         }
@@ -232,7 +233,7 @@ extension ItemDetailView {
                     self.selectedSheet = .userListForm(editingList: nil)
                 }) {
                     Text("Create a new list").foregroundColor(.acHeaderBackground)
-                }
+                }.listRowBackground(Color.acSecondaryBackground)
             }
             ForEach(collection.lists) { list in
                 HStack {
@@ -248,9 +249,11 @@ extension ItemDetailView {
                         self.collection.addItems(for: list.id, items: [self.itemViewModel.item])
                     }
                 }
+                .listRowBackground(Color.acSecondaryBackground)
             }
             if subscriptionManager.subscriptionStatus != .subscribed && collection.lists.count >= 1 {
                 UserListSubscribeCallView(sheet: $selectedSheet)
+                    .listRowBackground(Color.acSecondaryBackground)
             }
         }
     }

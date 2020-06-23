@@ -117,6 +117,7 @@ struct VillagerDetailView: View {
                             NavigationLink(destination: ItemDetailView(item: item)) {
                                 ItemRowView(displayMode: .large, item: item)
                             }
+                            .listRowBackground(Color.acSecondaryBackground)
                         }
                         if !expandedHouseItems {
                             Button(action: {
@@ -126,6 +127,7 @@ struct VillagerDetailView: View {
                                     .fontWeight(.bold)
                                     .foregroundColor(.acHeaderBackground)
                             }
+                            .listRowBackground(Color.acSecondaryBackground)
                         }
                     } else {
                         RowLoadingView()
@@ -138,6 +140,7 @@ struct VillagerDetailView: View {
                             NavigationLink(destination: ItemDetailView(item: item)) {
                                 ItemRowView(displayMode: .large, item: item)
                             }
+                            .listRowBackground(Color.acSecondaryBackground)
                         }
                         if !expandedLikeItems {
                             Button(action: {
@@ -147,6 +150,7 @@ struct VillagerDetailView: View {
                                     .fontWeight(.bold)
                                     .foregroundColor(.acHeaderBackground)
                             }
+                            .listRowBackground(Color.acSecondaryBackground)
                         }
                     } else {
                         RowLoadingView()

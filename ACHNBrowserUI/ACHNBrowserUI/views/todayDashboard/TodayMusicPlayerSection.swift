@@ -93,13 +93,14 @@ struct TodayMusicPlayerSection: View {
             Section {
                 ForEach(items.categories[.music] ?? []) { item in
                     ItemRowView(displayMode: .largeNoButton, item: item)
-                        .onTapGesture {
+                    .onTapGesture {
                             if let song = self.musicPlayerManager.matchSongFrom(item: item) {
                                 self.musicPlayerManager.currentSong = song
                                 self.musicPlayerManager.isPlaying = true
                                 self.isNavigationActive = false
                             }
                     }
+                    .listRowBackground(Color.acSecondaryBackground)
                 }
             }
         }

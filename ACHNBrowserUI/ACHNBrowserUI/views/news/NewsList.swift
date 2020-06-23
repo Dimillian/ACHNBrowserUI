@@ -27,17 +27,17 @@ struct NewsList: View {
                 })) {
                     Text("Get notified when a news is posted")
                         .foregroundColor(.acText)
-                }
+                }.listRowBackground(Color.acSecondaryBackground)
             }
             
             ForEach(newsService.articles) { news in
                 Section {
                     if self.newsService.articles.isEmpty {
-                        RowLoadingView()
+                        RowLoadingView() .listRowBackground(Color.acSecondaryBackground)
                     } else {
                         NavigationLink(destination: NewsCommentView(news: news)) {
                             NewsRow(news: news)
-                        }
+                        }.listRowBackground(Color.acSecondaryBackground)
                     }
                 }
             }

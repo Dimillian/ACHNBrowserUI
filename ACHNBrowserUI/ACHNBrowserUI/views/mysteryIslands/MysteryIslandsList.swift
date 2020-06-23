@@ -17,6 +17,7 @@ struct MysteryIslandsList: View {
             NavigationLink(destination: MysteryIslandDetail(island: island)) {
                 MysteryIslandRow(island: island)
             }
+            .listRowBackground(Color.acSecondaryBackground)
         }
         .navigationBarTitle(Text("Mystery Islands"))
         .listStyle(InsetGroupedListStyle())

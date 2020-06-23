@@ -83,7 +83,7 @@ extension CategoriesView {
                     Text("\(items.itemsCount(for: categories))")
                         .style(appStyle: .rowDescription)
                 }
-        }
+        }.listRowBackground(Color.acSecondaryBackground)
     }
 
     private func searchSection(category: Backend.Category, items: [Item]) -> some View {
@@ -96,7 +96,7 @@ extension CategoriesView {
     private func searchItemRow(item: Item) -> some View {
         NavigationLink(destination: LazyView(ItemDetailView(item: item))) {
             ItemRowView(displayMode: .large, item: item)
-        }
+        }.listRowBackground(Color.acSecondaryBackground)
     }
 }
 

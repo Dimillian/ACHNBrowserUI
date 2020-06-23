@@ -26,7 +26,7 @@ struct CategoryRowView: View {
                 Text("\(Items.shared.categories[category]?.count ?? 0)")
                     .style(appStyle: .rowDescription)
             }
-        }
+        }.listRowBackground(Color.acSecondaryBackground)
     }
 }
 

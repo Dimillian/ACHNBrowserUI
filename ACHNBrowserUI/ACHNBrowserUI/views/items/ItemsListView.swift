@@ -96,8 +96,8 @@ struct ItemsListView: View {
                 ForEach(currentItems) { item in
                     NavigationLink(destination: LazyView(ItemDetailView(item: item))) {
                         ItemRowView(displayMode: self.itemRowsDisplayMode, item: item)
-                            .listRowBackground(Color.acSecondaryBackground)
                     }
+                    .listRowBackground(Color.acSecondaryBackground)
                 }
             }
         }

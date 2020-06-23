@@ -16,13 +16,16 @@ struct ActiveCritterSections: View {
     private func sectionContent(critter: Item) -> some View {
         NavigationLink(destination: ItemDetailView(item: critter)) {
             ItemRowView(displayMode: .large, item: critter)
-        }
+        }.listRowBackground(Color.acSecondaryBackground)
     }
     
     private func makeSectionOrPlaceholder(title: String, icon: String, critters: [Item]) -> some View {
         Section(header: SectionHeaderView(text: title, icon: icon)) {
             if critters.isEmpty {
-                Text("You caught them all!").font(.body).fontWeight(.bold)
+                Text("You caught them all!")
+                    .font(.body)
+                    .fontWeight(.bold)
+                    .listRowBackground(Color.acSecondaryBackground)
             } else {
                 ForEach(critters, content: sectionContent)
             }

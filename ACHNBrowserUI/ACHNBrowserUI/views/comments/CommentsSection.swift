@@ -33,7 +33,9 @@ struct CommentsSection: View {
             } else if !viewModel.comments.isEmpty {
                 ForEach(viewModel.comments, content: makeCommentRow)
             } else {
-                Text("Be the first to leave a comment!").foregroundColor(.acSecondaryText)
+                Text("Be the first to leave a comment!")
+                    .foregroundColor(.acSecondaryText)
+                    .listRowBackground(Color.acSecondaryBackground)
             }
         }
         .sheet(item: $presentedSheet, content: { Sheet(sheetType: $0) })
@@ -73,7 +75,7 @@ struct CommentsSection: View {
                     .padding(.trailing, 4)
                 }
             }
-        }
+        }.listRowBackground(Color.acSecondaryBackground)
     }
     
     private var addCommentView: some View {
@@ -113,6 +115,6 @@ struct CommentsSection: View {
                     }
                 }
             }
-        }
+        }.listRowBackground(Color.acSecondaryBackground)
     }
 }

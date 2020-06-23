@@ -31,11 +31,13 @@ struct CollectionListView: View {
                     if selectedTab == .items && !collection.items.isEmpty {
                         ForEach(categories, id: \.self) { category in
                             CollectionRowView(category: Category(itemCategory: category))
+                                .listRowBackground(Color.acSecondaryBackground)
                         }
                     } else if selectedTab == .lists {
                         userListsSections
                     } else if selectedTab == .more {
                         CollectionMoreDetailView(viewModel: CollectionMoreDetailViewModel())
+                            .listRowBackground(Color.acSecondaryBackground)
                     } else {
                         emptyView
                     }
@@ -87,16 +89,19 @@ struct CollectionListView: View {
                 }) {
                     Text("Create a new list").foregroundColor(.acHeaderBackground)
                 }
+                .listRowBackground(Color.acSecondaryBackground)
             }
             ForEach(collection.lists) { list in
                 NavigationLink(destination: UserListDetailView(list: list)) {
                     UserListRow(list: list)
                 }
+                .listRowBackground(Color.acSecondaryBackground)
             }.onDelete { indexes in
                 self.collection.deleteList(at: indexes.first!)
             }
             if subscriptionManager.subscriptionStatus != .subscribed && collection.lists.count >= 1 {
                 UserListSubscribeCallView(sheet: $sheet)
+                    .listRowBackground(Color.acSecondaryBackground)
             }
         }
     }

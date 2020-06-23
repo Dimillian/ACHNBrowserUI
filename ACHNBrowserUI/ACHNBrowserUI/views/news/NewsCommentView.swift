@@ -15,7 +15,7 @@ struct NewsCommentView: View {
     var body: some View {
         List {
             Section {
-                NewsRow(news: news)
+                NewsRow(news: news).listRowBackground(Color.acSecondaryBackground)
             }
             CommentsSection(model: news)
         }
