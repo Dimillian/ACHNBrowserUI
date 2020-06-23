@@ -44,12 +44,12 @@ class ItemDetailViewModel: ObservableObject {
                     self.setItems = []
                 }
                 if let tag = $0.tag, tag != "None" {
-                    self.similarItems = items.filter({ $0.tag == tag }).prefix(30).map{ $0 }
+                    self.similarItems = items.filter({ $0.tag == tag }).map{ $0 }
                 } else {
                     self.similarItems = []
                 }
                 if let theme = $0.themes?.filter({ $0 != "None" }).first {
-                    self.thematicItems = items.filter({ $0.themes?.contains(theme) == true }).prefix(30).map{ $0 }
+                    self.thematicItems = items.filter({ $0.themes?.contains(theme) == true }).map{ $0 }
                 } else {
                     self.thematicItems = []
                 }

@@ -78,7 +78,7 @@ struct VillagersListView: View {
                         }
                     }
                 })
-            .listStyle(InsetGroupedListStyle())
+            .listStyle(GroupedListStyle())
             .id(viewModel.sort?.rawValue ?? currentFilter.rawValue)
             .navigationBarTitle(Text("Villagers"),
                                 displayMode: .automatic)

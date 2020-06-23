@@ -21,7 +21,7 @@ struct ItemsCrosslineSectionView: View {
     var body: some View {
         Section(header: SectionHeaderView(text: title, icon: icon)) {
             ScrollView(.horizontal, showsIndicators: false) {
-                HStack {
+                LazyHStack {
                     ForEach(items) { item in
                         VStack(alignment: .center, spacing: 4) {
                             ItemImage(path: item.finalImage,
