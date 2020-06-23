@@ -80,7 +80,7 @@ struct DodoCodeFormView: View {
                 }
             }
             .navigationBarItems(leading: dismissButton, trailing: saveButton)
-            .navigationBarTitle(isEditing != nil ? LocalizedStringKey("Edit your Dodo code") : LocalizedStringKey("Add your Dodo code"),
+            .navigationBarTitle(isEditing != nil ? "Edit your Dodo code" : "Add your Dodo code",
                                 displayMode: .inline)
         }
         .navigationViewStyle(StackNavigationViewStyle())

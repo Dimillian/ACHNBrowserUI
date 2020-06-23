@@ -74,7 +74,7 @@ struct UserListDetailView: View {
                             self.viewModel.deleteItem(at: indexes.first!)
                         }
                     } else {
-                        MessageView(string: "Items added to your list from the search will be displayed there.")
+                        MessageView("Items added to your list from the search will be displayed there.")
                             .listRowBackground(Color.acSecondaryBackground)
                     }
                 } else {
