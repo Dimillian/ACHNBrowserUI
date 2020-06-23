@@ -30,10 +30,10 @@ struct TodayTurnipSection: View {
                 }  else {
                     Text("Today's average price should be around ")
                         + Text("\(turnipService.predictions!.todayAverages![0])")
-                            .foregroundColor(Color("ACSecondaryText"))
+                        .foregroundColor(.acSecondaryText)
                         + Text(" in the morning, and ")
                         + Text("\(turnipService.predictions!.todayAverages![1])")
-                            .foregroundColor(Color("ACSecondaryText"))
+                        .foregroundColor(.acSecondaryText)
                         + Text(" this afternoon.")
                 }
             }

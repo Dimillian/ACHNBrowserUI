@@ -27,7 +27,7 @@ struct TodayTasksSection: View {
     private func makeTaskBubble(task: DailyCustomTasks.CustomTask, index: Int) -> some View {
         ZStack {
             Circle()
-                .foregroundColor(Color("ACBackground"))
+                .foregroundColor(Color.acBackground)
             Image(task.icon)
                 .resizable()
                 .scaleEffect(0.9)

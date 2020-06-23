@@ -62,7 +62,7 @@ struct CollectionListView: View {
                         }
                     }
                 })
-            .listStyle(InsetGroupedListStyle())
+            .listStyle(GroupedListStyle())
             .navigationBarTitle(Text("Collection"),
                                 displayMode: .automatic)
             .sheet(item: $sheet, content: { Sheet(sheetType: $0) })

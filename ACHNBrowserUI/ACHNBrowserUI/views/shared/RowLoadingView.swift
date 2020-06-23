@@ -16,7 +16,7 @@ struct RowLoadingView: View {
             Spacer()
             ProgressView()
             Spacer()
-        }.background(Color.acSecondaryBackground)
+        }.listRowBackground(Color.acSecondaryBackground)
     }
 }
 
