@@ -151,8 +151,7 @@ struct AboutView: View {
                     }
                 }
             }
-            .listStyle(GroupedListStyle())
-            .environment(\.horizontalSizeClass, .regular)
+            .listStyle(InsetGroupedListStyle())
             .navigationBarTitle(Text("About"), displayMode: .inline)
             .navigationBarItems(leading: dismissButton)
         }

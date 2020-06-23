@@ -37,7 +37,7 @@ struct TurnipsFormView: View {
             configurationSection
             pricesSection
         }
-        .listStyle(GroupedListStyle())
+        .listStyle(InsetGroupedListStyle())
         .modifier(AdaptsToSoftwareKeyboard())
         .navigationBarItems(trailing: saveButton)
         .navigationBarTitle("Add your turnip prices", displayMode: .inline)

@@ -29,8 +29,7 @@ struct SettingsView: View {
                 appSection
                 dataSection
             }
-            .listStyle(GroupedListStyle())
-            .environment(\.horizontalSizeClass, .regular)
+            .listStyle(InsetGroupedListStyle())
             .navigationBarTitle(Text("Preferences"), displayMode: .inline)
             .navigationBarItems(leading: closeButton)
             .sheet(isPresented: $isDocumentPickerPresented,

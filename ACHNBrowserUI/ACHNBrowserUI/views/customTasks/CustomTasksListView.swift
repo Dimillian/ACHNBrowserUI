@@ -69,7 +69,6 @@ struct CustomTasksListView: View {
                     }
                 }
             }
-            .environment(\.horizontalSizeClass, .regular)
             .environment(\.editMode, $editMode)
             .navigationBarTitle(Text("Today's Tasks"), displayMode: .inline)
             .navigationBarItems(leading: closeButton, trailing: orderButton)

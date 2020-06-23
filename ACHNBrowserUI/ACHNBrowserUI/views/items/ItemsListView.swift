@@ -101,7 +101,7 @@ struct ItemsListView: View {
                 }
             }
         }
-        .listStyle(GroupedListStyle())
+        .listStyle(InsetGroupedListStyle())
         .id(viewModel.sort)
         .modifier(DismissingKeyboardOnSwipe())
         .navigationBarTitle(customTitle != nil ?

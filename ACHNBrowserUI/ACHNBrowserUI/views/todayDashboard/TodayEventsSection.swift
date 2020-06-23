@@ -85,8 +85,7 @@ struct TodayEventsSection_Previews: PreviewProvider {
             List {
                 TodayEventsSection()
             }
-            .listStyle(GroupedListStyle())
-            .environment(\.horizontalSizeClass, .regular)
+            .listStyle(InsetGroupedListStyle())
         }
         .previewLayout(.fixed(width: 375, height: 500))
     }

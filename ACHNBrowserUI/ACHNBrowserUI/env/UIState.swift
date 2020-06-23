@@ -19,12 +19,13 @@ class UIState: ObservableObject {
         case item(item: Item)
         case villager(villager: Villager)
         
+        @ViewBuilder
         func makeDetailView() -> some View {
             switch self {
             case let .item(item):
-                return AnyView(ItemDetailView(item: item))
+                ItemDetailView(item: item)
             case let .villager(villager):
-                return AnyView(VillagerDetailView(villager: villager))
+                VillagerDetailView(villager: villager)
             }
         }
     }

@@ -105,8 +105,7 @@ struct TodayMusicPlayerSection: View {
             }
         }
         .navigationBarTitle(Text("Tracks"))
-        .listStyle(GroupedListStyle())
-        .environment(\.horizontalSizeClass, .regular)
+        .listStyle(InsetGroupedListStyle())
         .sheet(item: $presentedSheet, content: { Sheet(sheetType: $0) })
     }
 
@@ -126,8 +125,7 @@ struct TodayMusicPlayer_Previews: PreviewProvider {
             List {
                 TodayMusicPlayerSection()
             }
-            .listStyle(GroupedListStyle())
-            .environment(\.horizontalSizeClass, .regular)
+            .listStyle(InsetGroupedListStyle())
             .environmentObject(MusicPlayerManager.shared)
             .environmentObject(Items.shared)
         }

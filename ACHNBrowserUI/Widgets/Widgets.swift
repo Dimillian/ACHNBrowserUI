@@ -9,36 +9,49 @@
 import WidgetKit
 import SwiftUI
 import Intents
+import Backend
+import UI
 
 struct Provider: TimelineProvider {
+    let items = Items.shared
+    
     func timeline(with context: Context, completion: @escaping (Timeline<SimpleEntry>) -> ()) {
-        let date = Date()
-        let entry = SimpleEntry(date: date)
+        let fish = items.categories[.fish]?.filterActiveThisMonth().filter{ $0.isActiveAtThisHour() }.first
+        
+        let entry = SimpleEntry(date: Date(), critter: fish)
         completion(Timeline(entries: [entry], policy: .after(Date())))
     }
     
     func snapshot(with context: Context, completion: @escaping (SimpleEntry) -> ()) {
-        let date = Date()
-        let entry = SimpleEntry(date: date)
+        let fish = items.categories[.fish]?.filterActiveThisMonth().filter{ $0.isActiveAtThisHour() }.first
+        
+        let entry = SimpleEntry(date: Date(), critter: fish)
+        
         completion(entry)
     }
 }
 
 struct SimpleEntry: TimelineEntry {
     public let date: Date
+    public let critter: Item?
 }
 
 struct PlaceholderView : View {
     var body: some View {
-        Text("Placeholder View")
+        VStack {
+            Text("Placeholder View")
+        }
     }
 }
 
 struct WidgetsEntryView : View {
-    var entry: Provider.Entry
+    var entry: SimpleEntry
 
     var body: some View {
-        Text(entry.date, style: .time)
+        VStack {
+            // ItemImage(path: entry.critter?.finalImage, size: 100)
+            Text(entry.critter?.name ?? "loading...")
+        }
     }
 }
 

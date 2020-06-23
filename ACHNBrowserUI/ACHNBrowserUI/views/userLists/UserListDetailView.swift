@@ -86,7 +86,7 @@ struct UserListDetailView: View {
                 }
             }
         }
-        .listStyle(GroupedListStyle())
+        .listStyle(InsetGroupedListStyle())
         .environment(\.editMode, .constant(!searchViewModel.searchText.isEmpty ? .active : .inactive))
         .onReceive(searchViewModel.$isLoadingData) { self.isLoadingData = $0 }
         .navigationBarTitle(Text(viewModel.list.name))

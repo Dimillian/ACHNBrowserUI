@@ -50,8 +50,7 @@ struct DodoCodeListView: View {
                     .foregroundColor(.acSecondaryText)
             }
         }
-        .listStyle(GroupedListStyle())
-        .environment(\.horizontalSizeClass, .regular)
+        .listStyle(InsetGroupedListStyle())
         .sheet(item: $sheet, content: { Sheet(sheetType: $0) })
         .alert(isPresented: $showiCloudAlert, content: { self.iCloudAlert })
         .navigationBarTitle("Dodo codes")

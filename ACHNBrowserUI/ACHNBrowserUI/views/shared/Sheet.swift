@@ -56,43 +56,44 @@ struct Sheet: View {
     
     let sheetType: SheetType
     
+    @ViewBuilder
     private func make() -> some View {
         switch sheetType {
         case .safari(let url):
-            return AnyView(SafariView(url: url))
+            SafariView(url: url)
         case .share(let content):
-            return AnyView(ActivityControllerView(activityItems: content,
-                                                  applicationActivities: nil))
+            ActivityControllerView(activityItems: content,
+                                                  applicationActivities: nil)
         case .about:
-            return AnyView(AboutView())
+            AboutView()
         case .settings(let subManager, let collection):
-            return AnyView(SettingsView()
+            SettingsView()
                 .environmentObject(subManager)
-                .environmentObject(collection))
+                .environmentObject(collection)
         case .turnipsForm(let subManager):
-            return AnyView(NavigationView {
+            NavigationView {
                 TurnipsFormView().environmentObject(subManager)
-            }.navigationViewStyle(StackNavigationViewStyle()))
+            }.navigationViewStyle(StackNavigationViewStyle())
         case .subscription(let source, let subManager):
-            return AnyView(SubscribeView(source: source).environmentObject(subManager))
+            SubscribeView(source: source).environmentObject(subManager)
         case .userListForm(let list):
-            return AnyView(UserListFormView(editingList: list))
+            UserListFormView(editingList: list)
         case .customTasks(let collection):
-            return AnyView(CustomTasksListView().environmentObject(collection))
+            CustomTasksListView().environmentObject(collection)
         case .designForm(let design):
             let viewModel = DesignFormViewModel(design: design)
-            return AnyView(DesignFormView(viewModel: viewModel))
+            DesignFormView(viewModel: viewModel)
         case .choreForm(let chore):
             let viewModel = ChoreFormViewModel(chore: chore)
-            return AnyView(ChoreFormView(viewModel: viewModel))
+            ChoreFormView(viewModel: viewModel)
         case .villager(let villager, let subManager, let collection):
-            return AnyView(NavigationView {
+            NavigationView {
                 VillagerDetailView(villager: villager, isPresentedInModal: true)
                     .environmentObject(subManager)
                     .environmentObject(collection)
-            })
+            }
         case .dodoCodeForm(let editing):
-            return AnyView(DodoCodeFormView(isEditing: editing))
+            DodoCodeFormView(isEditing: editing)
         }
     }
 

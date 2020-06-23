@@ -25,57 +25,45 @@ extension View {
         return image
     }
     
-    func safeOnDrag(data: @escaping () -> NSItemProvider) -> AnyView {
-        if #available(iOS 13.4, *) {
-            return AnyView(onDrag(data))
-        } else {
-            return AnyView(self)
-        }
+    func safeOnDrag(data: @escaping () -> NSItemProvider) -> some View {
+        onDrag(data)
     }
     
-    func safeOnHover(action: @escaping (Bool) -> Void) -> AnyView {
-        if #available(iOS 13.4, *) {
-            return AnyView(onHover(perform: action))
-        } else {
-            return AnyView(self)
-        }
+    func safeOnHover(action: @escaping (Bool) -> Void) -> some View {
+        onHover(perform: action)
     }
     
-    func safeHoverEffect(_ type: SafeHoverEffectType = .automatic ) -> AnyView {
-        if #available(iOS 13.4, *) {
-            var hoverEffectType: HoverEffect
+    func safeHoverEffect(_ type: SafeHoverEffectType = .automatic ) -> some View {
+        var hoverEffectType: HoverEffect
+        
+        switch(type) {
+        case .lift:
+            hoverEffectType = .lift
             
-            switch(type) {
-            case .lift:
-                hoverEffectType = .lift
-                
-            case .highlight:
-                hoverEffectType = .highlight
-                
-            case .automatic:
-                fallthrough
-                
-            default:
-                hoverEffectType = .automatic
-            }
+        case .highlight:
+            hoverEffectType = .highlight
             
-            return AnyView(hoverEffect(hoverEffectType))
-        } else {
-            return AnyView(self)
+        case .automatic:
+            fallthrough
+            
+        default:
+            hoverEffectType = .automatic
         }
+        
+        return hoverEffect(hoverEffectType)
     }
     
-    func safeHoverEffectBarItem(position: BarItemPosition) -> AnyView {
+    func safeHoverEffectBarItem(position: BarItemPosition) -> some View {
         let hoverPadding: CGFloat = 10
         
         // For leading bar items, we need to apply a negative offset equal to the overall padding to imitate Apple's styling in UIKit
         let offset = position == .leading ? -hoverPadding : hoverPadding
         
-        return AnyView(self
+        return self
             .padding(hoverPadding)
             .safeHoverEffect()
             .offset(x:offset)
-        )
+        
     }
 
     func eraseToAnyView() -> AnyView { AnyView(self) }

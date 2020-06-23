@@ -39,8 +39,7 @@ struct MysteryIslandDetail: View {
             }
         }
         .navigationBarTitle(Text(LocalizedStringKey(island.name)))
-        .listStyle(GroupedListStyle())
-        .environment(\.horizontalSizeClass, .regular)
+        .listStyle(InsetGroupedListStyle())
     }
     
     private func makeInfoCell(title: LocalizedStringKey,

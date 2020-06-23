@@ -87,7 +87,7 @@ struct CustomTaskFormView: View {
                 }
             }
         }
-        .listStyle(GroupedListStyle())
+        .listStyle(InsetGroupedListStyle())
         .navigationBarTitle("Edit task")
         .navigationBarItems(trailing: saveButton)
     }

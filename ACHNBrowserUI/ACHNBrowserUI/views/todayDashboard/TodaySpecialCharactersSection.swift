@@ -129,8 +129,7 @@ struct TodaySpecialCharacters_Previews: PreviewProvider {
             List {
                 TodaySpecialCharactersSection()
             }
-            .listStyle(GroupedListStyle())
-            .environment(\.horizontalSizeClass, .regular)
+            .listStyle(InsetGroupedListStyle())
         }
     }
 }

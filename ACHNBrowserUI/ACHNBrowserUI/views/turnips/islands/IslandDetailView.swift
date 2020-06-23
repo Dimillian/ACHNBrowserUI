@@ -46,7 +46,7 @@ struct IslandDetailView: View {
                 }
             }
         }
-        .listStyle(GroupedListStyle())
+        .listStyle(InsetGroupedListStyle())
         .navigationBarTitle(island.name)
         .onAppear {
             self.viewModel.fetch(turnipCode: self.island.turnipCode)

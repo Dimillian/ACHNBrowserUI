@@ -41,10 +41,10 @@ struct TodayView: View {
                 
                 if UIDevice.current.userInterfaceIdiom != .pad {
                     editSection
+                        .listRowBackground(Color.acSecondaryBackground)
                 }
             }
-            .listStyle(GroupedListStyle())
-            .environment(\.horizontalSizeClass, .regular)
+            .listStyle(InsetGroupedListStyle())
             .navigationBarTitle(Text("\(dateString.capitalized)"))
             .navigationBarItems(leading: aboutButton, trailing: settingsButton)
             .sheet(item: $selectedSheet, content: { Sheet(sheetType: $0) })

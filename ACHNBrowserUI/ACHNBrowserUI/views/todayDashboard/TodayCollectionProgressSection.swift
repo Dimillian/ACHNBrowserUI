@@ -46,8 +46,7 @@ struct TodayCollectionProgressSection_Previews: PreviewProvider {
                 TodayCollectionProgressSection(viewModel: DashboardViewModel(),
                                                sheet: .constant(nil))
             }
-            .listStyle(GroupedListStyle())
-            .environment(\.horizontalSizeClass, .regular)
+            .listStyle(InsetGroupedListStyle())
         }
         .previewLayout(.fixed(width: 375, height: 500))
         .environmentObject(UserCollection.shared)

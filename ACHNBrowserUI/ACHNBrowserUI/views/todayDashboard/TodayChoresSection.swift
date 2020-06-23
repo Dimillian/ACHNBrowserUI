@@ -72,8 +72,7 @@ struct TodayCustomTasksSection_Previews: PreviewProvider {
             List {
                 TodayChoresSection()
             }
-            .listStyle(GroupedListStyle())
-            .environment(\.horizontalSizeClass, .regular)
+            .listStyle(InsetGroupedListStyle())
         }
         .previewLayout(.sizeThatFits)
         .environmentObject(UserCollection.shared)
