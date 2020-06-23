@@ -33,7 +33,7 @@ public class TurnipPredictionsService: ObservableObject {
     
     private var turnipsCancellable: AnyCancellable?
     private lazy var calculatorContext: JSContext? = {
-        guard let url = Bundle.main.url(forResource: "turnips", withExtension: "js"),
+        guard let url = Bundle.module.url(forResource: "turnips", withExtension: "js"),
             let script = try? String(contentsOf: url) else {
                 return nil
         }

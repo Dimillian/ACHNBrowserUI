@@ -54,7 +54,7 @@ struct ActiveCritterSections: View {
 }
 
 struct ActiveCrittersView: View {
-    @ObservedObject private var viewModel = ActiveCrittersViewModel(filterOutInCollection: true)
+    @StateObject private var viewModel = ActiveCrittersViewModel(filterOutInCollection: true)
     @State private var selectedTab = ActiveCrittersViewModel.CritterType.fish
     
     var body: some View {

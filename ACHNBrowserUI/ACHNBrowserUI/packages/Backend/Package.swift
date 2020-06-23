@@ -21,7 +21,8 @@ let package = Package(
     targets: [
         .target(
             name: "Backend",
-            dependencies: ["SDWebImageSwiftUI", "UIImageColors", "Purchases"]),
+            dependencies: ["SDWebImageSwiftUI", "UIImageColors", "Purchases"],
+            resources: [.process("Resources")]),
         .testTarget(
             name: "BackendTests",
             dependencies: ["Backend"]),

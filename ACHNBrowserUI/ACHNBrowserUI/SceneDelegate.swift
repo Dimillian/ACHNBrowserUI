@@ -9,6 +9,7 @@
 import UIKit
 import SwiftUI
 import Backend
+import UI
 import CoreSpotlight
 import StoreKit
 
@@ -32,32 +33,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             .environmentObject(NewsArticleService.shared)
         
         if let windowScene = scene as? UIWindowScene {
-            
-            //TODO: Move that to SwiftUI once implemented
-            let descriptor = UIFontDescriptor.preferredFontDescriptor(withTextStyle: .title1).withSymbolicTraits(.traitBold)?.withDesign(UIFontDescriptor.SystemDesign.rounded)
-            let descriptor2 = UIFontDescriptor.preferredFontDescriptor(withTextStyle: .largeTitle).withSymbolicTraits(.traitBold)?.withDesign(UIFontDescriptor.SystemDesign.rounded)
-            
-            UINavigationBar.appearance().largeTitleTextAttributes = [
-                NSAttributedString.Key.font:UIFont.init(descriptor: descriptor2!, size: 34),
-                NSAttributedString.Key.foregroundColor: UIColor(named: "ACText")!
-            ]
-            
-            UINavigationBar.appearance().titleTextAttributes = [
-                NSAttributedString.Key.font:UIFont.init(descriptor: descriptor!, size: 17),
-                NSAttributedString.Key.foregroundColor: UIColor(named: "ACText")!
-            ]
-            
-            UINavigationBar.appearance().barTintColor = UIColor(named: "ACSecondaryBackground")
-            UINavigationBar.appearance().backgroundColor = UIColor(named: "ACBackground")
-            UINavigationBar.appearance().tintColor = UIColor(named: "ACText")
-            
-            UITableView.appearance().backgroundColor = UIColor(named: "ACBackground")
-            UITableViewCell.appearance().backgroundColor = UIColor(named: "ACSecondaryBackground")
-            UITableView.appearance().tableFooterView = UIView()
-            
-            UITabBar.appearance().unselectedItemTintColor = UIColor(named: "TabLabel")
-            UITabBar.appearance().barTintColor = UIColor(named: "ACTabBarTint")
-            UITabBar.appearance().backgroundColor = UIColor(named: "ACTabBarTint")
+            setupAppearance()
             
             let window = UIWindow(windowScene: windowScene)
             window.rootViewController = UIHostingController(rootView: contentView)
@@ -66,17 +42,18 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 			window.windowScene?.titlebar?.titleVisibility = .hidden
 			#endif
             window.makeKeyAndVisible()
-        }
-        
-        if let activity = connectionOptions.userActivities.first {
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.4) {
-                self.routeUserActivity(userActivity: activity)
+            
+            
+            if let activity = connectionOptions.userActivities.first {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.4) {
+                    self.routeUserActivity(userActivity: activity)
+                }
             }
-        }
-        
-        AppUserDefaults.shared.numberOfLaunch += 1
-        if AppUserDefaults.shared.numberOfLaunch == 3 {
-            SKStoreReviewController.requestReview()
+            
+            AppUserDefaults.shared.numberOfLaunch += 1
+            if AppUserDefaults.shared.numberOfLaunch == 3 {
+                SKStoreReviewController.requestReview(in: windowScene)
+            }
         }
     }
     
@@ -94,6 +71,54 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
                 self.uiState.routeEnabled = true
             }
         }
+    }
+    
+    private func setupAppearance() {
+        //TODO: Move that to SwiftUI once implemented
+        let descriptor = UIFontDescriptor.preferredFontDescriptor(withTextStyle: .title1).withSymbolicTraits(.traitBold)?.withDesign(UIFontDescriptor.SystemDesign.rounded)
+        let descriptor2 = UIFontDescriptor.preferredFontDescriptor(withTextStyle: .largeTitle).withSymbolicTraits(.traitBold)?.withDesign(UIFontDescriptor.SystemDesign.rounded)
+        
+        UINavigationBar.appearance().largeTitleTextAttributes = [
+            NSAttributedString.Key.font:UIFont.init(descriptor: descriptor2!, size: 34),
+            NSAttributedString.Key.foregroundColor: UIColor(named: "ACText",
+                                                            in: UIBundle,
+                                                            compatibleWith: nil)!
+        ]
+        
+        UINavigationBar.appearance().titleTextAttributes = [
+            NSAttributedString.Key.font:UIFont.init(descriptor: descriptor!, size: 17),
+            NSAttributedString.Key.foregroundColor: UIColor(named: "ACText",
+                                                            in: UIBundle,
+                                                            compatibleWith: nil)!
+        ]
+        
+        UINavigationBar.appearance().barTintColor = UIColor(named: "ACSecondaryBackground",
+                                                            in: UIBundle,
+                                                            compatibleWith: nil)
+        UINavigationBar.appearance().backgroundColor = UIColor(named: "ACBackground",
+                                                               in: UIBundle,
+                                                               compatibleWith: nil)
+        UINavigationBar.appearance().tintColor = UIColor(named: "ACText",
+                                                         in: UIBundle,
+                                                         compatibleWith: nil)
+        
+        UITableView.appearance().backgroundColor = UIColor(named: "ACBackground",
+                                                           in: UIBundle,
+                                                           compatibleWith: nil)
+        UITableViewCell.appearance().backgroundColor = UIColor(named: "ACSecondaryBackground",
+                                                               in: UIBundle,
+                                                               compatibleWith: nil)
+        UITableView.appearance().tableFooterView = UIView()
+        
+        UITabBar.appearance().unselectedItemTintColor = UIColor(named: "TabLabel",
+                                                                in: UIBundle,
+                                                                compatibleWith: nil)
+        UITabBar.appearance().barTintColor = UIColor(named: "ACTabBarTint",
+                                                     in: UIBundle,
+                                                     compatibleWith: nil)
+        UITabBar.appearance().backgroundColor = UIColor(named: "ACTabBarTint",
+                                                        in: UIBundle,
+                                                        compatibleWith: nil)
     }
 }
 

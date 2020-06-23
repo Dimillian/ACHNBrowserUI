@@ -1,4 +1,5 @@
 import XCTest
+import Combine
 @testable import Backend
 
 final class ItemsTests: XCTestCase {
@@ -12,6 +13,18 @@ final class ItemsTests: XCTestCase {
         XCTAssertTrue(items.total == 173, "ItemResponse not decoded properly")
         XCTAssertTrue(items.results.count == 2, "Items array not decoded properly")
         XCTAssertTrue(items.results.first?.name == "Aqua tile flooring", "Item object not decoded properly")
+    }
+    
+    private var disposables = Set<AnyCancellable>()
+    
+    func testItemCategories() {
+        let exp = expectation(description: "All categories are loader")
+        Items.shared.$categories.sink { categories in
+            if categories.count == 16 {
+                exp.fulfill()
+            }
+        }.store(in: &disposables)
+        wait(for: [exp], timeout: 3.0)
     }
 }
 

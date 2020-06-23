@@ -29,7 +29,7 @@ public struct ItemsAPI {
     
     public static func fetchFile<T: Codable>(name: String) -> AnyPublisher<T ,APIError> {
         Result(catching: {
-            guard let url = Bundle.main.url(forResource: name, withExtension: nil) else {
+            guard let url = Bundle.module.url(forResource: name, withExtension: nil) else {
                 throw APIError.message(reason: "Error while loading local ressource")
             }
             return try Data(contentsOf: url)

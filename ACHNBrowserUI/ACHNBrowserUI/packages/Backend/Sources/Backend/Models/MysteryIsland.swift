@@ -28,7 +28,7 @@ public struct MysteryIsland: Codable, Identifiable {
     
     public static func loadMysteryIslands() -> [MysteryIsland]? {
         guard let islands = Self.islands else {
-            if let jsonFile = Bundle.main.url(forResource: "islands", withExtension: "json"),
+            if let jsonFile = Bundle.module.url(forResource: "islands", withExtension: "json"),
                 let data = try? Data(contentsOf: jsonFile) {
                 let decoder = JSONDecoder()
                 do {

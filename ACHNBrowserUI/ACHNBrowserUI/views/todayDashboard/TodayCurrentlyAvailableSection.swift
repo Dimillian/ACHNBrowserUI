@@ -20,7 +20,7 @@ struct TodayCurrentlyAvailableSection: View {
 }
 
 struct TodayCurrentlyAvailableSectionContent: View {
-    @ObservedObject private var viewModel = ActiveCrittersViewModel()
+    @StateObject private var viewModel = ActiveCrittersViewModel()
         
     var body: some View {
         Group {

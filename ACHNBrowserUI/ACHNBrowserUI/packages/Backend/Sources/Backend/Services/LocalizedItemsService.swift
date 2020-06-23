@@ -53,7 +53,7 @@ public struct LocalizedItemService {
     private func loadCurrentLocalization() -> ([Int: LocalizedItem], [Int: LocalizedItem]) {
         let decoder = JSONDecoder()
         guard let landuageCode = currentLocale.languageCode,
-            let url = Bundle.main.url(forResource: Self.filePrefix + landuageCode, withExtension: "json"),
+            let url = Bundle.module.url(forResource: Self.filePrefix + landuageCode, withExtension: "json"),
             let data = try? Data(contentsOf: url),
             let object = try? decoder.decode([String: [LocalizedItem]].self, from: data)
             else {
@@ -71,7 +71,7 @@ public struct LocalizedItemService {
         if landuageCode.prefix(2).lowercased() == "en" {
             return true
         }
-        return Bundle.main.url(forResource: Self.filePrefix + landuageCode.prefix(2).lowercased(),
+        return Bundle.module.url(forResource: Self.filePrefix + landuageCode.prefix(2).lowercased(),
                                withExtension: "json") != nil
     }
 }
