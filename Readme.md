@@ -1,4 +1,4 @@
-[![Swift 5.2](https://img.shields.io/badge/swift-5.2-ED523F.svg?style=flat)](https://swift.org/download/)
+[![Swift 5.3](https://img.shields.io/badge/swift-5.3-ED523F.svg?style=flat)](https://swift.org/download/)
 ![Xcode Build](https://github.com/Dimillian/ACHNBrowserUI/workflows/Xcode%20build/badge.svg?branch=master)
 [![@ACHelperApp](https://img.shields.io/badge/contact-@ACHelperApp-5AA9E7.svg?style=flat)](https://twitter.com/achelperapp)
 [![@dimillian](https://img.shields.io/badge/contact-@dimillian-5AA9E7.svg?style=flat)](https://twitter.com/dimillian)
@@ -13,9 +13,16 @@ The best Animal Crossing New Horizons companion app!
 
 ![Image](images/promo3.png?)
 
-This is a full featured Animal Crossing helper application written entirely in SwiftUI.
+# Important notes:
+The project `main` branch is now updated to `Xcode 12 beta 1`. 
+
+There is a lot of SwiftUI issues that will be worked on as new betas arrive. For now it compile and will use the best & latest features of Swift 5.3 and SwiftUI.
+
+If you want to compile using the stable version of Xcode (11), you can checkout the `legacy` branch. This is the branch used to ship the app on the App Store until iOS 14 is released.
 
 # Features
+This is a full featured Animal Crossing helper application written entirely in SwiftUI.
+
 * Configureable dashboard to track your fishes, bugs, collection progress, active events, daily tasks, todos and much more.
 * See the active critters this month and catch em all! 
 * Music player for K.K. Slider's songs - plays when app is in background!
