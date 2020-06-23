@@ -8,7 +8,7 @@
 import Foundation
 
 public struct UserList: Codable, Identifiable {
-    public let id = UUID()
+    public var id = UUID()
     public var name: String = ""
     public var description: String = ""
     public var icon: String? = nil

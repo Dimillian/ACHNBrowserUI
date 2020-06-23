@@ -17,55 +17,54 @@ struct TodaySectionView: View {
     @ObservedObject var viewModel: DashboardViewModel
     @Binding var selectedSheet: Sheet.SheetType?
 
-
+    @ViewBuilder
     var body: some View {
-        Group {
-            if section.enabled {
-                Section(header: SectionHeaderView(text: section.sectionName,
-                                                  icon: section.iconName)) {
-                                                    makeView()
-                }
-            } else {
-                EmptyView()
+        if section.enabled {
+            Section(header: SectionHeaderView(text: section.sectionName,
+                                              icon: section.iconName)) {
+                makeView()
             }
+        } else {
+            EmptyView()
         }
     }
 
+    @ViewBuilder
     func makeView() -> some View {
         switch(section.name) {
         case .events:
-            return AnyView(TodayEventsSection())
+            TodayEventsSection()
         case .specialCharacters:
-            return AnyView(TodaySpecialCharactersSection())
+            TodaySpecialCharactersSection()
         case .currentlyAvailable:
-            return AnyView(TodayCurrentlyAvailableSection())
+            TodayCurrentlyAvailableSection()
         case .collectionProgress:
-            return AnyView(TodayCollectionProgressSection(viewModel: viewModel, sheet: $selectedSheet))
+            TodayCollectionProgressSection(viewModel: viewModel, sheet: $selectedSheet)
         case .birthdays:
-            return AnyView(TodayBirthdaysSection())
+            TodayBirthdaysSection()
         case .turnips:
-            return AnyView(TodayTurnipSection()
+            TodayTurnipSection()
                 .onTapGesture {
                     self.uiState.selectedTab = .turnips
-            })
+                }
         case .subscribe:
-            return AnyView(TodaySubscribeSection(sheet: $selectedSheet))
+            TodaySubscribeSection(sheet: $selectedSheet)
         case .mysteryIsland:
-            return AnyView(TodayMysteryIslandsSection())
+            TodayMysteryIslandsSection()
         case .music:
-            return AnyView(TodayMusicPlayerSection())
+            TodayMusicPlayerSection()
         case .tasks:
-            return AnyView(TodayTasksSection(sheet: $selectedSheet))
+            TodayTasksSection(sheet: $selectedSheet)
         case .chores:
-            return AnyView(TodayChoresSection())
+            TodayChoresSection()
         case .nookazon:
-            return AnyView(TodayNookazonSection(sheet: $selectedSheet, viewModel: viewModel))
+            TodayNookazonSection(sheet: $selectedSheet, viewModel: viewModel)
         case .villagerVisits:
-            return AnyView(TodayVillagerVisitsSection(sheet: $selectedSheet))
+            TodayVillagerVisitsSection(sheet: $selectedSheet)
         case .dodoCode:
-            return AnyView(TodayDodoCodeSection())
+            TodayDodoCodeSection()
         case .news:
-            return AnyView(TodayNewsSection())
+            TodayNewsSection()
         }
     }
 }

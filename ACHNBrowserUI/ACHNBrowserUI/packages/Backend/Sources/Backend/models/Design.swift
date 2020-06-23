@@ -11,7 +11,7 @@ public struct Design: Identifiable, Codable, Equatable {
 
     // MARK: - Properties
 
-    public let id = UUID()
+    public var id = UUID()
     public var title: String = ""
     public var code: String = ""
     public var description: String = ""

@@ -9,7 +9,7 @@ import Foundation
 
 public struct DailyCustomTasks: Codable {
     public struct CustomTask: Codable, Identifiable {
-        public let id = UUID()
+        public var id = UUID()
         public var name: String
         public var icon: String
         public var hasProgress: Bool
