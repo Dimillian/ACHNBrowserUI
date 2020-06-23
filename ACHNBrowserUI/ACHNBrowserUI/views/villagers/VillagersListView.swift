@@ -95,7 +95,7 @@ struct VillagersListView: View {
                 VillagerDetailView(villager: viewModel.villagers.first!)
             } else {
                 List {
-                    RowLoadingView(isLoading: .constant(true))
+                    RowLoadingView()
                 }
             }
         }

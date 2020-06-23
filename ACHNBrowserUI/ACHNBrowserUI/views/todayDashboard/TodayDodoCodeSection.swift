@@ -15,7 +15,7 @@ struct TodayDodoCodeSection: View {
     var body: some View {
         NavigationLink(destination: DodoCodeListView()) {
             if service.isSynching && service.codes.isEmpty {
-                RowLoadingView(isLoading: .constant(true))
+                RowLoadingView()
             } else if service.codes.first != nil {
                 DodoCodeRow(code: service.codes.first!, showButtons: false)
             } else {

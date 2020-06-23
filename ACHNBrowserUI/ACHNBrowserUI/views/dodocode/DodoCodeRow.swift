@@ -18,6 +18,7 @@ struct DodoCodeRow: View {
     @State private var showDeleteAlert = false
     @State private var showReportAlert = false
     @State private var sheet: Sheet.SheetType?
+    @State private var commentsLinkActive = false
     
     var formatter: DateFormatter {
         let formatter = DateFormatter()
@@ -29,6 +30,11 @@ struct DodoCodeRow: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 6) {
             Group {
+                if commentsLinkActive {
+                    NavigationLink("",
+                                   destination: DodoCodeDetailView(code: code),
+                                   isActive: $commentsLinkActive)
+                }
                 HStack(spacing: 2) {
                     Text(code.archived ? "-----" : code.code.uppercased())
                         .foregroundColor(.acHeaderBackground)
@@ -73,6 +79,8 @@ struct DodoCodeRow: View {
                 }
             }
         }
+        .sheet(item: $sheet, content: { Sheet(sheetType: $0) })
+        .contextMenu { contextMenu }
     }
     
     private var upvoteButton: some View {
@@ -146,7 +154,6 @@ struct DodoCodeRow: View {
                                       counter: nil)
         }
         .buttonStyle(BorderlessButtonStyle())
-        .sheet(item: $sheet, content: { Sheet(sheetType: $0) })
     }
     
     private var deleteAlert: Alert {
@@ -177,6 +184,23 @@ struct DodoCodeRow: View {
         .opacity(count > 0 ? 1 : 0)
         .animation(.linear)
         .padding(EdgeInsets(top: -5, leading: 0, bottom: 0, trailing: -6))
+    }
+    
+    private var contextMenu: some View {
+        VStack {
+            if code.isMine {
+                Button(action: {
+                    sheet = .dodoCodeForm(editing: self.code)
+                }) {
+                    Label("Edit", systemImage: "square.and.pencil")
+                }
+            }
+            Button(action: {
+                commentsLinkActive = true
+            }) {
+                Label("See comments", systemImage: "bubble.right.fill")
+            }
+        }
     }
 }
 

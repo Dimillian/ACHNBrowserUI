@@ -136,7 +136,7 @@ struct SubscribeView: View {
     private var paymentButtons: some View {
         VStack {
             if sub == nil && yearlySub == nil && lifetime == nil {
-                RowLoadingView(isLoading: .constant(true))
+                RowLoadingView()
             } else {
                 HStack(spacing: 0) {
                     sub.map{ sub in

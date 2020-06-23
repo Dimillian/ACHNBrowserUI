@@ -208,7 +208,7 @@ extension ItemDetailView {
     private var listingSection: some View {
         Section(header: SectionHeaderView(text: "Nookazon listings", icon: "cart.fill")) {
             if itemViewModel.loading {
-                RowLoadingView(isLoading: .constant(true))
+                RowLoadingView()
             }
             if !itemViewModel.listings.isEmpty {
                 ForEach(itemViewModel.listings.filter { $0.active && $0.selling }, content: { listing in

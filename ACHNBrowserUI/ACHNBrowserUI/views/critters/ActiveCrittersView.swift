@@ -63,7 +63,7 @@ struct ActiveCrittersView: View {
                  (viewModel.crittersInfo[.fish]?.toCatchNow.isEmpty == true || viewModel.crittersInfo[.bugs]?.toCatchNow.isEmpty == true) &&
                 (viewModel.crittersInfo[.fish]?.caught.isEmpty == true ||
                     viewModel.crittersInfo[.bugs]?.caught.isEmpty == true) {
-                RowLoadingView(isLoading: .constant(true))
+                RowLoadingView()
             } else {
                 Picker(selection: $selectedTab, label: Text("")) {
                     ForEach(ActiveCrittersViewModel.CritterType.allCases, id: \.self)

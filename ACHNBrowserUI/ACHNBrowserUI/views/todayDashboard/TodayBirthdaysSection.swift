@@ -40,7 +40,7 @@ struct TodayBirthdaysSection: View {
     var body: some View {
         Group {
             if viewModel.todayBirthdays.isEmpty {
-                RowLoadingView(isLoading: .constant(true))
+                RowLoadingView()
             } else {
                 ForEach(viewModel.todayBirthdays, id: \.id) { villager in
                     NavigationLink(destination: LazyView(VillagerDetailView(villager: villager))) {

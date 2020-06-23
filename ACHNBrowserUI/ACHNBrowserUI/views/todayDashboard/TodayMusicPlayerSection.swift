@@ -18,19 +18,18 @@ struct TodayMusicPlayerSection: View {
     
     @State private var presentedSheet: Sheet.SheetType?
     @State private var isNavigationActive = false
-    
+
+    @ViewBuilder
     var body: some View {
-        Group {
-            if musicPlayerManager.currentSongItem != nil {
-                VStack(spacing: 12) {
-                    NavigationLink(destination: songsList, isActive: $isNavigationActive) {
-                        ItemRowView(displayMode: .largeNoButton, item: musicPlayerManager.currentSongItem!)
-                    }
-                    playerView
+        if let song = musicPlayerManager.currentSongItem {
+            VStack(spacing: 12) {
+                NavigationLink(destination: songsList, isActive: $isNavigationActive) {
+                    ItemRowView(displayMode: .largeNoButton, item: song)
                 }
-            } else {
-                RowLoadingView(isLoading: .constant(true))
+                playerView
             }
+        } else {
+            RowLoadingView()
         }
     }
     

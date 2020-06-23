@@ -9,8 +9,6 @@
 import SwiftUI
 
 struct RowLoadingView: View {
-    @Binding var isLoading: Bool
-    
     var body: some View {
         HStack {
             Spacer()
@@ -22,6 +20,6 @@ struct RowLoadingView: View {
 
 struct RowLoadingView_Previews: PreviewProvider {
     static var previews: some View {
-        RowLoadingView(isLoading: .constant(true))
+        RowLoadingView()
     }
 }

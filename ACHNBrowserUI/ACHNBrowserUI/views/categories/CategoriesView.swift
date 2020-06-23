@@ -40,7 +40,7 @@ struct CategoriesView: View {
                         makeCategories()
                     } else {
                         if viewModel.isLoadingData {
-                            RowLoadingView(isLoading: $isLoadingData)
+                            RowLoadingView()
                         } else if searchCategories.isEmpty {
                             Text("No results for \(viewModel.searchText)")
                                 .foregroundColor(.acSecondaryText)

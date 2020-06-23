@@ -36,7 +36,7 @@ struct DodoCodeListView: View {
             }
             
             if service.isSynching && service.codes.isEmpty {
-                RowLoadingView(isLoading: .constant(true))
+                RowLoadingView()
             } else if !service.codes.isEmpty {
                 ForEach(service.codes) { code in
                     Section(header: SectionHeaderView(text: code.islandName, icon: "sun.haze.fill")) {

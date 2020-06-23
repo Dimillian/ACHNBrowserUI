@@ -77,7 +77,7 @@ struct UserListDetailView: View {
                     }
                 } else {
                     if searchViewModel.isLoadingData {
-                        RowLoadingView(isLoading: $isLoadingData).animation(.default)
+                        RowLoadingView().animation(.default)
                     } else if searchCategories.isEmpty {
                         MessageView(noResultsFor: searchViewModel.searchText)
                     } else {

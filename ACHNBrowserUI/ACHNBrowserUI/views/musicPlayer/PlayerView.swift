@@ -13,6 +13,7 @@ import UI
 struct PlayerView: View {
     @EnvironmentObject private var playerManager: MusicPlayerManager
     @State private var isFullScreen = false
+    @Namespace private var namespace
     
     private func toggleFullScreen() {
         withAnimation(.spring(response: 0.5, dampingFraction: 0.75, blendDuration: 0)) {
@@ -71,15 +72,20 @@ struct PlayerView: View {
             }
                         
             if isFullScreen {
-                VStack(spacing: 2) {
-                    Text(playerManager.currentSongItem?.name ?? "Loading...")
-                        .font(.title)
-                        .fontWeight(.bold)
-                        .foregroundColor(.white)
-                    Text("K.K Slider")
-                        .font(.headline)
-                        .fontWeight(.semibold)
-                        .foregroundColor(.acBlueText)
+                if let name = playerManager.currentSongItem?.name {
+                    VStack(spacing: 2) {
+                        Text(name)
+                            .font(.headline)
+                            .fontWeight(.bold)
+                            .foregroundColor(.white)
+                            .matchedGeometryEffect(id: name, in: namespace)
+                        Text("K.K Slider")
+                            .font(.headline)
+                            .fontWeight(.semibold)
+                            .foregroundColor(.acBlueText)
+                    }
+                } else {
+                    ProgressView()
                 }
                 playerTimeView
                 playerButtonsView
@@ -105,9 +111,15 @@ struct PlayerView: View {
     
     private var smallPlayerButtonsView: some View {
         Group {
-            Text(playerManager.currentSongItem?.name ?? "Loading...")
-                .font(.headline)
-                .foregroundColor(.white)
+            if let name = playerManager.currentSongItem?.name {
+                Text(name)
+                    .font(.headline)
+                    .fontWeight(.bold)
+                    .foregroundColor(.white)
+                    .matchedGeometryEffect(id: name, in: namespace)
+            } else {
+                ProgressView()
+            }
             Spacer()
             
             Button(action: {

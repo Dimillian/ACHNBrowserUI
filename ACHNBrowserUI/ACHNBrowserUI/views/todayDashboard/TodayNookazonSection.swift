@@ -45,7 +45,7 @@ struct TodayNookazonSection: View {
                 .frame(maxWidth: .infinity)
                 .padding(.vertical)
             } else {
-                RowLoadingView(isLoading: .constant(true))
+                RowLoadingView()
             }
         }
     }

@@ -30,7 +30,7 @@ struct TodayCollectionProgressSection: View {
                     }
                 }
             } else {
-                RowLoadingView(isLoading: .constant(true))
+                RowLoadingView()
                     .frame(height: 150)
             }
         }

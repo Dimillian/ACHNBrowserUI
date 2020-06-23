@@ -226,7 +226,7 @@ extension TurnipsView {
                         }
                     }
                 } else {
-                    RowLoadingView(isLoading: .constant(true))
+                    RowLoadingView()
                 }
             } else {
                 Button(action: {

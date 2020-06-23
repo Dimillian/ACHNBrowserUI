@@ -15,7 +15,7 @@ struct TodayNewsSection: View {
     var body: some View {
         NavigationLink(destination: NewsList()) {
             if newsService.articles.isEmpty == true {
-                RowLoadingView(isLoading: .constant(true))
+                RowLoadingView()
             } else {
                 NewsRow(news: newsService.articles.first!)
             }

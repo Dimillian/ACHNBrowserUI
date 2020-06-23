@@ -29,7 +29,7 @@ struct CommentsSection: View {
         Section(header: SectionHeaderView(text: "Comments", icon: "bubble.left.fill")) {
             addCommentView
             if viewModel.comments.isEmpty && viewModel.isLoading {
-                RowLoadingView(isLoading: .constant(true))
+                RowLoadingView()
             } else if !viewModel.comments.isEmpty {
                 ForEach(viewModel.comments, content: makeCommentRow)
             } else {
@@ -91,7 +91,7 @@ struct CommentsSection: View {
                 }
             } else {
                 if viewModel.isPosting {
-                    RowLoadingView(isLoading: .constant(true))
+                    RowLoadingView()
                 } else {
                     HStack {
                         TextField("Add your comment", text: $commentFieldValue)

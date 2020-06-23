@@ -128,7 +128,7 @@ struct VillagerDetailView: View {
                             }
                         }
                     } else {
-                        RowLoadingView(isLoading: .constant(true))
+                        RowLoadingView()
                     }
                 }
                 
@@ -149,7 +149,7 @@ struct VillagerDetailView: View {
                             }
                         }
                     } else {
-                        RowLoadingView(isLoading: .constant(true))
+                        RowLoadingView()
                     }
                 }
             }
