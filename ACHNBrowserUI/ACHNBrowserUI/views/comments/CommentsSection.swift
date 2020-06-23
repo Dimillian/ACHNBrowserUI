@@ -61,8 +61,7 @@ struct CommentsSection: View {
                     }) {
                         Group {
                             if viewModel.inDeletion == comment.id {
-                                ActivityIndicator(isAnimating: .constant(true),
-                                                  style: .medium)
+                                ProgressView()
                             } else {
                                 ButtonImageCounterOverlay(symbol: "trash",
                                                           foregroundColor: .red,

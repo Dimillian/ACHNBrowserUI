@@ -44,8 +44,7 @@ struct MysteryIslandRow_Previews: PreviewProvider {
             List {
                 MysteryIslandRow(island: MysteryIsland.loadMysteryIslands()!.randomElement()!)
             }
-            .listStyle(GroupedListStyle())
-            .environment(\.horizontalSizeClass, .regular)
+            .listStyle(InsetGroupedListStyle())
         }
         .previewLayout(.fixed(width: 375, height: 500))
     }

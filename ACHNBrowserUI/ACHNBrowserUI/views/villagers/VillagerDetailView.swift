@@ -154,8 +154,7 @@ struct VillagerDetailView: View {
                 }
             }
         }
-        .listStyle(GroupedListStyle())
-        .environment(\.horizontalSizeClass, .regular)
+        .listStyle(InsetGroupedListStyle())
         .navigationBarTitle(Text(villager.localizedName), displayMode: .automatic)
         .onAppear {
             let url = ACNHApiService.BASE_URL.absoluteString +

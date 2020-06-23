@@ -46,7 +46,6 @@ struct TodaySubscribeCard_Previews: PreviewProvider {
             TodaySubscribeSection(sheet: .constant(nil))
                 .environmentObject(SubscriptionManager.shared)
         }
-        .listStyle(GroupedListStyle())
-        .environment(\.horizontalSizeClass, .regular)
+        .listStyle(InsetGroupedListStyle())
     }
 }

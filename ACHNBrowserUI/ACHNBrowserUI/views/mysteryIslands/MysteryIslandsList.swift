@@ -19,8 +19,7 @@ struct MysteryIslandsList: View {
             }
         }
         .navigationBarTitle(Text("Mystery Islands"))
-        .listStyle(GroupedListStyle())
-        .environment(\.horizontalSizeClass, .regular)
+        .listStyle(InsetGroupedListStyle())
     }
 }
 

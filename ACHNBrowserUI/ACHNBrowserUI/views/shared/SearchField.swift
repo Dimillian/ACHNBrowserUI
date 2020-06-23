@@ -56,7 +56,7 @@ struct SearchField_Previews: PreviewProvider {
                                                             
                 }
                 
-            }.listStyle(GroupedListStyle())
+            }.listStyle(InsetGroupedListStyle())
         }
     }
 }

@@ -50,7 +50,7 @@ struct CategoriesView: View {
                     }
                 }
             }
-            .listStyle(GroupedListStyle())
+            .listStyle(InsetGroupedListStyle())
             .navigationBarTitle(Text("Catalog"), displayMode: .automatic)
             .onReceive(viewModel.$isLoadingData) { self.isLoadingData = $0 }
             .modifier(DismissingKeyboardOnSwipe())

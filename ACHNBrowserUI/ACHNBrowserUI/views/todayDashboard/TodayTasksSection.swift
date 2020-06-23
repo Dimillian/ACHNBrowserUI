@@ -104,8 +104,7 @@ struct TodayTasksSection_Previews: PreviewProvider {
             List {
                 TodayTasksSection(sheet: .constant(nil))
             }
-            .listStyle(GroupedListStyle())
-            .environment(\.horizontalSizeClass, .regular)
+            .listStyle(InsetGroupedListStyle())
         }
         .previewLayout(.sizeThatFits)
         .environmentObject(UserCollection.shared)

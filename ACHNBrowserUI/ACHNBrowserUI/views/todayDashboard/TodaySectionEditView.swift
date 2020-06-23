@@ -23,9 +23,8 @@ struct TodaySectionEditView: View {
                             .onMove(perform: onMove)
             }
         }
-        .listStyle(GroupedListStyle())
+        .listStyle(InsetGroupedListStyle())
         .accentColor(.acHeaderBackground)
-        .environment(\.horizontalSizeClass, .regular)
         .environment(\.editMode, .constant(.active))
         .navigationBarTitle("Today Sections")
         .onDisappear(perform: self.viewModel.saveSectionList)

@@ -21,7 +21,6 @@ struct CollectionProgressDetailView: View {
                 }
             }
         }
-        .environment(\.horizontalSizeClass, .regular)
         .navigationBarTitle(Text("Collection Progress"),
                             displayMode: .automatic)
     }

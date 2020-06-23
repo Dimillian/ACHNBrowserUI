@@ -33,21 +33,22 @@ struct CollectionMoreDetailView: View {
 
     // MARK: - Private
 
+    @ViewBuilder
     private func makeRowView(for row: CollectionMoreDetailViewModel.Row) -> some View {
         switch row {
         case .critters:
-            return NavigationLink(destination: CrittersListView()) {
+            NavigationLink(destination: CrittersListView()) {
                 Text(row.description)
-            }.eraseToAnyView()
+            }
 
         case .designs:
-            return NavigationLink(destination: DesignListView()) {
+            NavigationLink(destination: DesignListView()) {
                 Text(row.description)
-            }.eraseToAnyView()
+            }
         case .dodoCodes:
-            return NavigationLink(destination: DodoCodeListView()) {
+            NavigationLink(destination: DodoCodeListView()) {
                 Text(row.description)
-            }.eraseToAnyView()
+            }
         }
     }
 }

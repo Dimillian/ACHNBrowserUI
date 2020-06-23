@@ -21,8 +21,7 @@ struct DodoCodeDetailView: View {
             }
             CommentsSection(model: code)
         }
-        .listStyle(GroupedListStyle())
-        .environment(\.horizontalSizeClass, .regular)
+        .listStyle(InsetGroupedListStyle())
         .navigationBarTitle("Comments")
     }
 }

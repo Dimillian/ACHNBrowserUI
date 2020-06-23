@@ -43,8 +43,7 @@ struct NewsList: View {
             }
         }
         .navigationBarTitle("News")
-        .listStyle(GroupedListStyle())
-        .environment(\.horizontalSizeClass, .regular)
+        .listStyle(InsetGroupedListStyle())
         .onAppear(perform: newsService.fetchNews)
     }
 }

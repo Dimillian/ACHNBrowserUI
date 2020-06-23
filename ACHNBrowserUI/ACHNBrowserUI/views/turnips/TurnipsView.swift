@@ -68,8 +68,7 @@ struct TurnipsView: View {
                 }
                 exchangeSection
             }
-            .listStyle(GroupedListStyle())
-            .environment(\.horizontalSizeClass, .regular)
+            .listStyle(InsetGroupedListStyle())
             .navigationBarTitle("Turnips",
                                 displayMode: .automatic)
             .navigationBarItems(trailing: shareButton)
@@ -95,8 +94,7 @@ extension TurnipsView {
                     self.predictionsSection
                 }
             }
-            .listStyle(GroupedListStyle())
-            .environment(\.horizontalSizeClass, .regular)
+            .listStyle(InsetGroupedListStyle())
             .navigationViewStyle(StackNavigationViewStyle())
             .frame(width: 350, height: 650).asImage()
             self.presentedSheet = .share(content: [ItemDetailSource(name: "Turnips prediction", image: image)])

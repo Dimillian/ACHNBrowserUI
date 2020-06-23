@@ -33,8 +33,7 @@ struct ItemDetailView: View {
                                        recipe: itemViewModel.recipe,
                                        displayedVariant: $displayedVariant)
                 }
-                .listStyle(GroupedListStyle())
-                .environment(\.horizontalSizeClass, .regular)
+                .listStyle(InsetGroupedListStyle())
                 .navigationBarTitle(Text(itemViewModel.item.localizedName.capitalized),
                                     displayMode: .large)
             }
@@ -97,8 +96,7 @@ struct ItemDetailView: View {
             
             listsSection
         }
-        .listStyle(GroupedListStyle())
-        .environment(\.horizontalSizeClass, .regular)
+        .listStyle(InsetGroupedListStyle())
         .onAppear(perform: {
             self.displayedVariant = nil
             self.itemViewModel.setupItems()

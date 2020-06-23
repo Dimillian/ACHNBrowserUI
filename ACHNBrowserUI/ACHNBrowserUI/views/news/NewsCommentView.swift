@@ -19,8 +19,7 @@ struct NewsCommentView: View {
             }
             CommentsSection(model: news)
         }
-        .listStyle(GroupedListStyle())
-        .environment(\.horizontalSizeClass, .regular)
+        .listStyle(InsetGroupedListStyle())
         .navigationBarTitle("Comments")
     }
 }

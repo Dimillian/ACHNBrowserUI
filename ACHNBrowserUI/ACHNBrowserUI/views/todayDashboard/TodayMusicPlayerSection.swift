@@ -37,10 +37,10 @@ struct TodayMusicPlayerSection: View {
     
     private var playerView: some View {
         VStack(spacing: 8) {
-            ProgressView(progress: CGFloat(musicPlayerManager.playProgress),
-                         trackColor: .acText,
-                         progressColor: .acHeaderBackground,
-                         height: 5)
+            ProgressBar(progress: CGFloat(musicPlayerManager.playProgress),
+                        trackColor: .acText,
+                        progressColor: .acHeaderBackground,
+                        height: 5)
             HStack {
                 Text(musicPlayerManager.timeElasped)
                     .foregroundColor(.acText)
@@ -105,8 +105,7 @@ struct TodayMusicPlayerSection: View {
             }
         }
         .navigationBarTitle(Text("Tracks"))
-        .listStyle(GroupedListStyle())
-        .environment(\.horizontalSizeClass, .regular)
+        .listStyle(InsetGroupedListStyle())
         .sheet(item: $presentedSheet, content: { Sheet(sheetType: $0) })
     }
 
@@ -126,8 +125,7 @@ struct TodayMusicPlayer_Previews: PreviewProvider {
             List {
                 TodayMusicPlayerSection()
             }
-            .listStyle(GroupedListStyle())
-            .environment(\.horizontalSizeClass, .regular)
+            .listStyle(InsetGroupedListStyle())
             .environmentObject(MusicPlayerManager.shared)
             .environmentObject(Items.shared)
         }

@@ -29,8 +29,7 @@ struct SettingsView: View {
                 appSection
                 dataSection
             }
-            .listStyle(GroupedListStyle())
-            .environment(\.horizontalSizeClass, .regular)
+            .listStyle(InsetGroupedListStyle())
             .navigationBarTitle(Text("Preferences"), displayMode: .inline)
             .navigationBarItems(leading: closeButton)
             .sheet(isPresented: $isDocumentPickerPresented,
@@ -182,7 +181,7 @@ struct SettingsView: View {
                     Text("Synchronized with iCloud")
                     Spacer()
                     if !collection.isSynched {
-                        ActivityIndicator(isAnimating: .constant(true), style: .medium)
+                        ProgressView()
                     } else {
                         Image(systemName: "checkmark.seal.fill")
                             .foregroundColor(.acTabBarBackground)

@@ -85,8 +85,7 @@ struct ActiveCrittersView: View {
                     self.selectedTab = ActiveCrittersViewModel.CritterType.bugs
                 }
             })
-        .listStyle(GroupedListStyle())
-        .environment(\.horizontalSizeClass, .regular)
+        .listStyle(InsetGroupedListStyle())
         .navigationBarTitle("Active Critters")
     }
 }

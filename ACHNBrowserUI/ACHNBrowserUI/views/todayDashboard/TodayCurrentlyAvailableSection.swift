@@ -83,8 +83,7 @@ struct TodayCurrentlyAvailableSection_Previews: PreviewProvider {
             List {
                 TodayCurrentlyAvailableSection()
             }
-            .listStyle(GroupedListStyle())
-            .environment(\.horizontalSizeClass, .regular)
+            .listStyle(InsetGroupedListStyle())
         }
         .previewLayout(.fixed(width: 375, height: 500))
     }

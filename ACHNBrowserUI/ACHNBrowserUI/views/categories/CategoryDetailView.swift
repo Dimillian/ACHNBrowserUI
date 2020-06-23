@@ -19,7 +19,7 @@ struct CategoryDetailView: View {
                     CategoryRowView(category: category)
                 }
             }
-        }.listStyle(GroupedListStyle())
+        }.listStyle(InsetGroupedListStyle())
     }
 }
 
