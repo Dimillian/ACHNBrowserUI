@@ -37,10 +37,10 @@ struct TodayMusicPlayerSection: View {
     
     private var playerView: some View {
         VStack(spacing: 8) {
-            ProgressView(progress: CGFloat(musicPlayerManager.playProgress),
-                         trackColor: .acText,
-                         progressColor: .acHeaderBackground,
-                         height: 5)
+            ProgressBar(progress: CGFloat(musicPlayerManager.playProgress),
+                        trackColor: .acText,
+                        progressColor: .acHeaderBackground,
+                        height: 5)
             HStack {
                 Text(musicPlayerManager.timeElasped)
                     .foregroundColor(.acText)

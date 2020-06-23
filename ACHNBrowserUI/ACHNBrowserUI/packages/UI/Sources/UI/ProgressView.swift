@@ -9,7 +9,7 @@
 import Foundation
 import SwiftUI
 
-public struct ProgressView: View {
+public struct ProgressBar: View {
     public let progress: CGFloat
     public let trackColor: Color
     public let progressColor: Color

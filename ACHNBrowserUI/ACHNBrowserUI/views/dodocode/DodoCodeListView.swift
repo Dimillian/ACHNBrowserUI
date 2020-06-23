@@ -89,7 +89,7 @@ struct DodoCodeListView: View {
             self.service.refresh()
         }) {
             if service.isSynching {
-                ActivityIndicator(isAnimating: .constant(true), style: .medium)
+                ProgressView()
             } else {
                 Image(systemName: "arrow.counterclockwise.circle").imageScale(.large)
             }

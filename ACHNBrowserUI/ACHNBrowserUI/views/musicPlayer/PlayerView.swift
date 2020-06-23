@@ -142,7 +142,7 @@ struct PlayerView: View {
     
     private var playerTimeView: some View {
         VStack {
-            ProgressView(progress: CGFloat(playerManager.playProgress),
+            ProgressBar(progress: CGFloat(playerManager.playProgress),
                          trackColor: .acText,
                          progressColor: .acHeaderBackground,
                          height: 5)

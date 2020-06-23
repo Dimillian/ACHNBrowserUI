@@ -48,10 +48,10 @@ struct TodayChoresSection: View {
     }
 
     private func makeProgressView() -> some View {
-        return ProgressView(progress: CGFloat(viewModel.completeChoresCount) / CGFloat(viewModel.totalChoresCount),
-                            trackColor: .acText,
-                            progressColor: .acHeaderBackground,
-                            height: 12)
+        ProgressBar(progress: CGFloat(viewModel.completeChoresCount) / CGFloat(viewModel.totalChoresCount),
+                    trackColor: .acText,
+                    progressColor: .acHeaderBackground,
+                    height: 12)
     }
 
     private func makeRatioLabel() -> some View {

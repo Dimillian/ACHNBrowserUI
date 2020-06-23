@@ -182,7 +182,7 @@ struct SettingsView: View {
                     Text("Synchronized with iCloud")
                     Spacer()
                     if !collection.isSynched {
-                        ActivityIndicator(isAnimating: .constant(true), style: .medium)
+                        ProgressView()
                     } else {
                         Image(systemName: "checkmark.seal.fill")
                             .foregroundColor(.acTabBarBackground)

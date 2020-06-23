@@ -14,7 +14,7 @@ struct RowLoadingView: View {
     var body: some View {
         HStack {
             Spacer()
-            ActivityIndicator(isAnimating: $isLoading, style: .large)
+            ProgressView()
             Spacer()
         }.background(Color.acSecondaryBackground)
     }
