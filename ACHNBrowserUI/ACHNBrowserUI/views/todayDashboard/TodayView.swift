@@ -16,7 +16,7 @@ struct TodayView: View {
     
     // MARK: - Vars
     @EnvironmentObject private var uiState: UIState
-    @ObservedObject private var viewModel = DashboardViewModel()
+    @StateObject private var viewModel = DashboardViewModel()
     @State private var selectedSheet: Sheet.SheetType?
             
     // MARK: - Body

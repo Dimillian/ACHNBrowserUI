@@ -8,37 +8,19 @@
 
 import Foundation
 import Combine
+import SwiftUI
 
 public class AppUserDefaults: ObservableObject {
     public static let shared = AppUserDefaults()
     
-    @UserDefault("island_name", defaultValue: "")
-    public var islandName: String {
-        willSet {
-            objectWillChange.send()
-        }
-    }
+    @AppStorage("island_name")
+    public var islandName = ""
     
-    @UserDefault("game_name", defaultValue: "")
-    public var inGameName: String {
-        willSet {
-            objectWillChange.send()
-        }
-    }
+    @AppStorage("game_name")
+    public var inGameName = ""
     
-    @UserDefault("friend_code", defaultValue: "")
-    public var friendCode: String {
-        willSet {
-            objectWillChange.send()
-        }
-    }
-    
-    @UserDefault("dodo_code", defaultValue: "")
-    public var dodoCode: String {
-        willSet {
-            objectWillChange.send()
-        }
-    }
+    @AppStorage("dodo_code")
+    public var dodoCode = ""
     
     @UserDefaultEnum("hemisphere", defaultValue: Hemisphere.north)
     public var hemisphere: Hemisphere {
@@ -75,12 +57,8 @@ public class AppUserDefaults: ObservableObject {
         }
     }
     
-    @UserDefault("is_subscribed", defaultValue: false)
-    public var isSubscribed: Bool {
-        willSet {
-            objectWillChange.send()
-        }
-    }
+    @AppStorage("is_subscribed")
+    public var isSubscribed: Bool = false
     
     @UserDefaultCodable("today_sections", defaultValue: TodaySection.defaultSectionList)
     public var todaySectionList: [TodaySection] {
@@ -89,16 +67,16 @@ public class AppUserDefaults: ObservableObject {
         }
     }
 
-    @UserDefault("spotlight_index_version", defaultValue: "")
-    public var spotlightIndexVersion: String
+    @AppStorage("spotlight_index_version")
+    public var spotlightIndexVersion =  ""
     
-    @UserDefault("number_of_launch", defaultValue: 0)
-    public var numberOfLaunch: Int
+    @AppStorage("number_of_launch")
+    public var numberOfLaunch = 0
     
-    @UserDefault("dodo_notifications", defaultValue: false)
-    public var dodoNotifications: Bool
+    @AppStorage("dodo_notifications")
+    public var dodoNotifications = false
     
-    @UserDefault("news_notifications", defaultValue: true)
-    public var newsNotifications: Bool
+    @AppStorage("news_notifications")
+    public var newsNotifications = true
 }
 

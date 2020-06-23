@@ -15,7 +15,7 @@ struct VillagersListView: View {
         case all, liked, residents
     }
     
-    @ObservedObject var viewModel = VillagersViewModel()
+    @StateObject var viewModel = VillagersViewModel()
     @State private var currentFilter = Filter.all
     
     var currentVillagers: [Villager] {

@@ -35,15 +35,25 @@ struct AboutView: View {
         .safeHoverEffectBarItem(position: .leading)
     }
     
-    private func makeRow(image: String, text: LocalizedStringKey, color: Color) -> some View {
+    private func makeRow(image: String,
+                         text: LocalizedStringKey,
+                         link: URL? = nil,
+                         color: Color) -> some View {
         HStack {
             Image(systemName: image)
                 .imageScale(.medium)
                 .foregroundColor(color)
                 .frame(width: 30)
-            Text(text)
-                .foregroundColor(.acText)
-                .font(.body)
+            Group {
+                if let link = link {
+                    Link(text, destination: link)
+                } else {
+                    Text(text)
+                }
+            }
+            .foregroundColor(.acText)
+            .font(.body)
+ 
             Spacer()
             Image(systemName: "chevron.right").imageScale(.medium)
         }
@@ -70,37 +80,29 @@ struct AboutView: View {
             List {
                 Section(header: SectionHeaderView(text: "The app")) {
                     makeRow(image: "chevron.left.slash.chevron.right",
-                            text: "Souce code / report an issue", color: .acHeaderBackground)
-                        .onTapGesture {
-                            self.selectedSheet = .safari(URL(string: "https://github.com/Dimillian/ACHNBrowserUI")!)
-                    }
+                            text: "Souce code / report an issue",
+                            link: URL(string: "https://github.com/Dimillian/ACHNBrowserUI"),
+                            color: .acHeaderBackground)
                     makeRow(image: "envelope.fill",
-                            text: "Contact / follow us on Twitter", color: .acHeaderBackground)
-                        .onTapGesture {
-                            UIApplication.shared.open(URL(string: "https://twitter.com/achelperapp")!,
-                                                      options: [:],
-                                                      completionHandler: nil)
-                    }
+                            text: "Contact / follow us on Twitter",
+                            link: URL(string: "https://twitter.com/achelperapp"),
+                            color: .acHeaderBackground)
                     makeRow(image: "photo.fill",
-                            text: "Contact / follow us on Instagram", color: .acHeaderBackground)
-                        .onTapGesture {
-                            UIApplication.shared.open(URL(string: "https://www.instagram.com/achelperapp/")!,
-                                                      options: [:],
-                                                      completionHandler: nil)
-                    }
+                            text: "Contact / follow us on Instagram",
+                            link: URL(string: "https://www.instagram.com/achelperapp/"),
+                            color: .acHeaderBackground)
                     makeRow(image: "star.fill",
-                            text: "Rate the app on the App Store", color: .acHeaderBackground)
-                        .onTapGesture {
-                            UIApplication.shared.open(URL(string: "itms-apps://itunes.apple.com/app/1508764244?action=write-review")!,
-                                                      options: [:],
-                                                      completionHandler: nil)
-                    }
-                    makeRow(image: "lock", text: "Privacy Policy", color: .acHeaderBackground).onTapGesture {
-                        self.selectedSheet = .safari(URL(string: "https://github.com/Dimillian/ACHNBrowserUI/blob/master/privacy-policy.md#ac-helper-privacy-policy")!)
-                    }
-                    makeRow(image: "person", text: "Terms of Use", color: .acHeaderBackground).onTapGesture {
-                        self.selectedSheet = .safari(URL(string: "https://github.com/Dimillian/ACHNBrowserUI/blob/master/term-of-use.md#ac-helper-term-of-use")!)
-                    }
+                            text: "Rate the app on the App Store",
+                            link: URL(string: "itms-apps://itunes.apple.com/app/1508764244?action=write-review"),
+                            color: .acHeaderBackground)
+                    makeRow(image: "lock",
+                            text: "Privacy Policy",
+                            link: URL(string: "https://github.com/Dimillian/ACHNBrowserUI/blob/master/privacy-policy.md#ac-helper-privacy-policy"),
+                            color: .acHeaderBackground)
+                    makeRow(image: "person",
+                            text: "Terms of Use",
+                            link: URL(string: "https://github.com/Dimillian/ACHNBrowserUI/blob/master/term-of-use.md#ac-helper-term-of-use"),
+                            color: .acHeaderBackground)
                     makeDetailRow(image: "tag",
                                   text: "App version",
                                   detail: "\(versionNumber) (\(buildNumber))",
@@ -111,44 +113,30 @@ struct AboutView: View {
                                   color: .acHeaderBackground)
                 }
                 Section(header: SectionHeaderView(text: "Acknowledgements")) {
-                    makeRow(image: "suit.heart.fill", text: "Our amazing contributors", color: .red)
-                        .onTapGesture {
-                            self.selectedSheet = .safari(URL(string: "https://github.com/Dimillian/ACHNBrowserUI/graphs/contributors")!)
-                    }
-                    makeRow(image: "suit.heart.fill", text: "The NookPlaza API by Azarro", color: .red)
-                        .onTapGesture {
-                            self.selectedSheet = .safari(URL(string: "https://nookplaza.net/")!)
-                    }
-                    makeRow(image: "suit.heart.fill", text: "The ACNHAPI for villagers data and images",
-                            color: .red)
-                        .onTapGesture {
-                            self.selectedSheet = .safari(URL(string: "http://acnhapi.com")!)
-                    }
-                    makeRow(image: "suit.heart.fill", text: "Turnip.exchange", color: .red)
-                        .onTapGesture {
-                            self.selectedSheet = .safari(URL(string: "https://turnip.exchange/")!)
-                    }
                     makeRow(image: "suit.heart.fill",
-                            text: "Meet the community of ACNH Connect", color: .red)
-                        .onTapGesture {
-                            UIApplication.shared.open(URL(string: "https://apps.apple.com/us/app/acnh-connect/id1511183931")!,
-                                                      options: [:],
-                                                      completionHandler: nil)
-                    }
-                    makeRow(image: "suit.heart.fill", text: "Nookazon for the marketplace", color: .red)
-                        .onTapGesture {
-                            self.selectedSheet = .safari(URL(string: "https://nookazon.com/")!)
-                    }
-                    makeRow(image: "suit.heart.fill", text: "Shihab / JPEGuin for the icon", color: .red)
-                        .onTapGesture {
-                            self.selectedSheet = .safari(URL(string: "https://twitter.com/JPEGuin")!)
-                    }
+                            text: "Our amazing contributors",
+                            link: URL(string: "https://github.com/Dimillian/ACHNBrowserUI/graphs/contributors"),
+                            color: .red)
+                    makeRow(image: "suit.heart.fill",
+                            text: "The NookPlaza API by Azarro",
+                            link: URL(string: "https://nookplaza.net/"),
+                            color: .red)
+                    makeRow(image: "suit.heart.fill",
+                            text: "The ACNHAPI for villagers data and images",
+                            link: URL(string: "http://acnhapi.com"),
+                            color: .red)
+                    makeRow(image: "suit.heart.fill",
+                            text: "Meet the community of ACNH Connect",
+                            link: URL(string: "https://apps.apple.com/us/app/acnh-connect/id1511183931"),
+                            color: .red)
+                    makeRow(image: "suit.heart.fill",
+                            text: "Shihab / JPEGuin for the icon",
+                            link: URL(string: "https://twitter.com/JPEGuin"),
+                            color: .red)
                     makeRow(image: "suit.heart.fill",
                             text: "Christian & Ninji for the turnip predictions algorithm",
+                            link: URL(string: "https://elxris.github.io/Turnip-Calculator/"),
                             color: .red)
-                        .onTapGesture {
-                            self.selectedSheet = .safari(URL(string: "https://elxris.github.io/Turnip-Calculator/")!)
-                    }
                 }
             }
             .listStyle(InsetGroupedListStyle())

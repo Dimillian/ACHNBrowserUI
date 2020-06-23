@@ -14,9 +14,9 @@ struct CategoriesView: View {
     // MARK: - Vars
     let categories: [Backend.Category]
     
-    @EnvironmentObject var items: Items
-    @ObservedObject var viewModel = CategoriesSearchViewModel()
-    @State var isLoadingData = false
+    @EnvironmentObject private var items: Items
+    @StateObject private var viewModel = CategoriesSearchViewModel()
+    @State private var isLoadingData = false
 
     // MARK: - Computed vars
     private var searchCategories: [(Backend.Category, [Item])] {
