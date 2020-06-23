@@ -8,7 +8,7 @@
 import Foundation
 
 public struct Chore: Codable, Identifiable, Hashable, Equatable {
-    public let id = UUID()
+    public var id = UUID()
     public var title: String = ""
     public var description: String = ""
     public var isFinished: Bool = false

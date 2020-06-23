@@ -36,6 +36,7 @@ struct TodayView: View {
                     TodaySectionView(section: section,
                                      viewModel: self.viewModel,
                                      selectedSheet: self.$selectedSheet)
+                        .listRowBackground(Color.acSecondaryBackground)
                 }
                 
                 if UIDevice.current.userInterfaceIdiom != .pad {
