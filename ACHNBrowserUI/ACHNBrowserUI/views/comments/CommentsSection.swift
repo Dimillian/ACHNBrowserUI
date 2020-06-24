@@ -13,14 +13,7 @@ struct CommentsSection: View {
     @ObservedObject private var viewModel: CommentsViewModel
     @State private var commentFieldValue = ""
     @State private var presentedSheet: Sheet.SheetType?
-    
-    var formatter: DateFormatter {
-        let formatter = DateFormatter()
-        formatter.dateStyle = .none
-        formatter.timeStyle = .short
-        return formatter
-    }
-    
+        
     init(model: CloudModel) {
         self.viewModel = CommentsViewModel(model: model)
     }
@@ -53,7 +46,7 @@ struct CommentsSection: View {
                 .foregroundColor(.acText)
                 .fixedSize(horizontal: false, vertical: true)
             HStack {
-                Text(self.formatter.string(from: comment.creationDate))
+                Text(comment.creationDate, style: .relative)
                     .font(.footnote)
                     .foregroundColor(.acSecondaryText)
                 Spacer()

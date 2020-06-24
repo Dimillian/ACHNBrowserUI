@@ -20,13 +20,6 @@ struct DodoCodeRow: View {
     @State private var sheet: Sheet.SheetType?
     @State private var commentsLinkActive = false
     
-    var formatter: DateFormatter {
-        let formatter = DateFormatter()
-        formatter.dateStyle = .medium
-        formatter.timeStyle = .short
-        return formatter
-    }
-    
     var body: some View {
         VStack(alignment: .leading, spacing: 6) {
             Group {
@@ -58,7 +51,7 @@ struct DodoCodeRow: View {
                     .foregroundColor(.acText)
                     .lineLimit(15)
                     .fixedSize(horizontal: false, vertical: true)
-                Text(formatter.string(from: code.creationDate))
+                Text(code.creationDate, style: .relative)
                     .foregroundColor(.acText)
                     .font(.footnote)
             }.opacity(code.archived ? 0.5 : 1.0)

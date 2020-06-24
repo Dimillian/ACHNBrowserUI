@@ -13,12 +13,6 @@ import Backend
 struct TodaySpecialCharactersSection: View {
     @State private var selectedCharacter: SpecialCharacters?
     
-    private var timeString: String {
-        let f = DateFormatter()
-        f.setLocalizedDateFormatFromTemplate("HH:mm")
-        return f.string(from: Date())
-    }
-    
     private var currentIcon: String {
         let hour = Calendar.current.component(.hour, from: Date())
         if hour < 9 {
@@ -62,10 +56,9 @@ struct TodaySpecialCharactersSection: View {
                     .aspectRatio(contentMode: .fit)
                     .frame(width: 25)
                     .foregroundColor(.acHeaderBackground)
-                Text(timeString)
+                Text(Date(), style: .time)
                     .style(appStyle: .rowDetail)
             }
-            .frame(width: 90)
             .padding(16)
             .background(Color.acText.opacity(0.2))
             .mask(RoundedRectangle(cornerRadius: 16, style: .continuous))
