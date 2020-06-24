@@ -126,7 +126,6 @@ extension ItemDetailView {
             LikeButtonView(item: itemViewModel.item,
                            variant: displayedVariant).imageScale(.large)
                 .safeHoverEffectBarItem(position: .trailing)
-            Spacer(minLength: 12)
             shareButton
         }
     }

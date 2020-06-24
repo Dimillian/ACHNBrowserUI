@@ -50,6 +50,7 @@ struct CategoriesView: View {
                     }
                 }
             }
+            .animation(.interactiveSpring())
             .listStyle(GroupedListStyle())
             .navigationBarTitle(Text("Catalog"))
             .onReceive(viewModel.$isLoadingData) { self.isLoadingData = $0 }

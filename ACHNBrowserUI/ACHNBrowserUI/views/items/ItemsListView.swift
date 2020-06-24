@@ -108,6 +108,7 @@ struct ItemsListView: View {
                 }
             }
         }
+        .animation(.interactiveSpring())
         .listStyle(GroupedListStyle())
         .id(viewModel.sort)
         .modifier(DismissingKeyboardOnSwipe())

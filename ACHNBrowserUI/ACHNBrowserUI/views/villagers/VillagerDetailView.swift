@@ -158,6 +158,7 @@ struct VillagerDetailView: View {
                 }
             }
         }
+        .animation(.interactiveSpring())
         .listStyle(InsetGroupedListStyle())
         .navigationBarTitle(Text(villager.localizedName), displayMode: .automatic)
         .onAppear {
