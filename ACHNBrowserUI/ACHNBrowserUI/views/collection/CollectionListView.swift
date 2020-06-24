@@ -112,8 +112,7 @@ struct CollectionListView: View {
     }
 
     private var emptyView: some View {
-        let selectedTabName = NSLocalizedString(selectedTab.rawValue, comment: "")
-        return MessageView(collectionName: selectedTabName)
+        MessageView(collectionName: selectedTab.rawValue)
     }
 
     private var picker: some View {

@@ -16,16 +16,16 @@ struct MessageView: View {
 
     // MARK: - Life cycle
 
-    init(string: LocalizedStringKey) {
+    init(_ string: LocalizedStringKey) {
         self.string = string
     }
 
     init(collectionName: String) {
-        self.string = LocalizedStringKey("When you stars some \(collectionName), they'll be displayed here.")
+        self.string = "When you stars some \(NSLocalizedString(collectionName, comment: "")), they'll be displayed here."
     }
 
     init(noResultsFor string: String) {
-        self.string = LocalizedStringKey("No results for \(string)")
+        self.string = "No results for \(string)"
     }
 
     // MARK: - Public
@@ -41,7 +41,7 @@ struct MessageView: View {
 struct CollectionEmptyView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            MessageView(string: "Lorem Ipsum")
+            MessageView("Lorem Ipsum")
                 .previewLayout(.sizeThatFits)
 
             MessageView(collectionName: "Pan-dimensional Mice")

@@ -9,12 +9,16 @@
 import SwiftUI
 
 struct SectionHeaderView: View {
-    let text: String
+    let text: LocalizedStringKey
     var icon: String?
     
-    init(text: String, icon: String? = nil) {
+    init(text: LocalizedStringKey, icon: String? = nil) {
         self.text = text
         self.icon = icon
+    }
+    
+    init(text: String, icon: String? = nil) {
+        self.init(text: LocalizedStringKey(text), icon: icon)
     }
     
     var body: some View {
@@ -27,10 +31,8 @@ struct SectionHeaderView: View {
                     .rotationEffect(.degrees(-3))
             }
             
-            Text(LocalizedStringKey(text))
-                .font(.system(.subheadline, design: .rounded))
-                .fontWeight(.bold)
-                .foregroundColor(.acHeaderText)
+            Text(text)
+                .style(appStyle: .sectionHeader)
                 .lineLimit(1)
         }
         .padding(.vertical, 8)

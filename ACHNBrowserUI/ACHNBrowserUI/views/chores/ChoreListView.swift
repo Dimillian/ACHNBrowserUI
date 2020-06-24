@@ -64,7 +64,7 @@ struct ChoreListView: View {
             return EmptyView().eraseToAnyView()
         }
 
-        return MessageView(string: "Have a friend to visit? A gift to a villager? Track your chores and to-dos here.")
+        return MessageView("Have a friend to visit? A gift to a villager? Track your chores and to-dos here.")
             .eraseToAnyView()
     }
 

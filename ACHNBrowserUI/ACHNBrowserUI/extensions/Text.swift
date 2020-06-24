@@ -37,7 +37,7 @@ extension Text {
     private func sectionHeader() -> Text {
         self.font(.system(.subheadline, design: .rounded))
             .fontWeight(.bold)
-            .foregroundColor(Color.acSecondaryBackground)
+            .foregroundColor(.acHeaderText)
     }
     
     private func rowTitle() -> Text {
