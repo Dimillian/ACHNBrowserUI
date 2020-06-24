@@ -7,6 +7,7 @@
 //
 
 import SwiftUI
+import SwiftUIKit
 import Backend
 import UI
 
@@ -46,8 +47,11 @@ struct ItemsListView: View {
             self.showSortSheet.toggle()
         }) {
             Image(systemName: viewModel.sort == nil ? "arrow.up.arrow.down.circle" : "arrow.up.arrow.down.circle.fill")
-                .imageScale(.large)
+                .style(appStyle: .barButton)
+                .foregroundColor(.acText)
         }
+        .buttonStyle(BorderedBarButtonStyle())
+        .accentColor(Color.acText.opacity(0.2))
         .safeHoverEffectBarItem(position: .trailing)
     }
     
@@ -56,8 +60,11 @@ struct ItemsListView: View {
             self.itemRowsDisplayMode = self.itemRowsDisplayMode == .compact ? .large : .compact
         }) {
             Image(systemName: itemRowsDisplayMode == .large ? "rectangle.grid.1x2" : "list.dash")
-                .imageScale(.large)
+                .style(appStyle: .barButton)
+                .foregroundColor(.acText)
         }
+        .buttonStyle(BorderedBarButtonStyle())
+        .accentColor(Color.acText.opacity(0.2))
         .safeHoverEffectBarItem(position: .trailing)
     }
     
