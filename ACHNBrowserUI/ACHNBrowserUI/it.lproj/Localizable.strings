@@ -704,7 +704,7 @@ Puoi annullare il tuo abbonamento in ogni momento dalle impostazioni del tuo acc
 "Trash" = "Rifiuti";
 "Bamboos" = "Bambù";
 "Hardwood" = "Legno duro";
-"Exotic fruits" = "Frutti esotici";
+"Exotic Fruits" = "Frutti esotici";
 "Normal Island 1" = "Isola Normale 1";
 "Normal Island 2" = "Isola Normale 2";
 "Spiral Island" = "Isola Spirale";
@@ -762,6 +762,7 @@ Puoi annullare il tuo abbonamento in ogni momento dalle impostazioni del tuo acc
 "K.K Slider" = "K.K. Slider";
 "Daisy Mae" = "Brunella";
 "C.J." = "Castorino";
+"C.J" = "Castorino";
 "Flick" = "Ivano";
 "Label" = "Beatrice";
 "Leif" = "Florindo";
@@ -1081,8 +1082,15 @@ Puoi annullare il tuo abbonamento in ogni momento dalle impostazioni del tuo acc
 "Send" = "Invia";
 "In game name / username" = "Nome nel gioco / nome utente";
 "You need to have an iCloud account in your device settings in order to add comments" = "È necessario un account iCloud per aggiungere dei commenti.";
-"ACComment.notification.title" = "Someone commented on your Dodo code";
-"ACComment.notification.subtitle" = "A new comment has been added on your Dodo code, go check it out!";
+"ACComment.notification.title" = "Nuovo commento al tuo Codice Dodo ";
+"ACComment.notification.subtitle" = "Un nuovo commento è stato aggiunto al tuo Codice Dodo, dagli una occhiata!";
 
-"ACNew.notification.title" = "A news has been posted";
-"ACNew.notification.subtitle" = "A new article about the app or the game has been posted. Check it out in the app!";
+// Added 2020-06-18
+"Contact / follow us on Instagram" = "Contattaci / seguici su Instagram";
+"Meet the community of ACNH Connect" = "Incontra la community di ACNH Connect";
+
+// Added 2020-06-19
+"News" = "Notizie";
+"Get notified when a news is posted" = "Ricevi una notifica quando una notizia viene pubblicata";
+"ACNew.notification.title" = "È stata pubblicata una notizia";
+"ACNew.notification.subtitle" = "È stato pubblicato un nuovo articolo sull'app o sul gioco. Vai a leggerlo nell'app!";
