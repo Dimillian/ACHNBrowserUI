@@ -109,12 +109,13 @@ struct TodayMusicPlayerSection: View {
         .sheet(item: $presentedSheet, content: { Sheet(sheetType: $0) })
     }
 
-    private var playModeIcon: Image {
+    @ViewBuilder
+    private var playModeIcon: some View {
         switch musicPlayerManager.playmode {
         case .random:
-            return Image(systemName: "shuffle")
+            Image(systemName: "shuffle")
         case .ordered:
-            return Image(systemName: "list.number")
+            Image(systemName: "list.number")
         }
     }
 }

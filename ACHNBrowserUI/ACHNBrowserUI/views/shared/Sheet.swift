@@ -57,7 +57,7 @@ struct Sheet: View {
     let sheetType: SheetType
     
     @ViewBuilder
-    private func make() -> some View {
+    var body: some View {
         switch sheetType {
         case .safari(let url):
             SafariView(url: url)
@@ -95,9 +95,5 @@ struct Sheet: View {
         case .dodoCodeForm(let editing):
             DodoCodeFormView(isEditing: editing)
         }
-    }
-
-    var body: some View {
-        make()
     }
 }

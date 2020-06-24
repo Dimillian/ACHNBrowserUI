@@ -57,8 +57,6 @@ struct TodaySectionView: View {
             TodayTasksSection(sheet: $selectedSheet)
         case .chores:
             TodayChoresSection()
-        case .nookazon:
-            TodayNookazonSection(sheet: $selectedSheet, viewModel: viewModel)
         case .villagerVisits:
             TodayVillagerVisitsSection(sheet: $selectedSheet)
         case .dodoCode:

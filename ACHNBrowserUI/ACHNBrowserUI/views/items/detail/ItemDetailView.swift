@@ -102,9 +102,6 @@ struct ItemDetailView: View {
             self.displayedVariant = nil
             self.itemViewModel.setupItems()
         })
-        .onDisappear {
-            self.itemViewModel.cancellable?.cancel()
-        }
         .navigationBarItems(trailing: navButtons)
         .navigationBarTitle(Text(itemViewModel.item.localizedName.capitalized), displayMode: .large)
         .sheet(item: $selectedSheet) {
@@ -203,26 +200,6 @@ extension ItemDetailView {
                 }.padding()
             }
             .listRowInsets(EdgeInsets())
-        }
-    }
-    
-    private var listingSection: some View {
-        Section(header: SectionHeaderView(text: "Nookazon listings", icon: "cart.fill")) {
-            if itemViewModel.loading {
-                RowLoadingView()
-            }
-            if !itemViewModel.listings.isEmpty {
-                ForEach(itemViewModel.listings.filter { $0.active && $0.selling }, content: { listing in
-                    Button(action: {
-                        self.selectedSheet = .safari(URL.nookazon(listing: listing)!)
-                    }) {
-                        ListingRow(listing: listing)
-                    }
-                })
-            } else if !itemViewModel.loading {
-                Text("No listings found on Nookazon")
-                    .foregroundColor(.secondary)
-            }
         }
     }
     

@@ -35,7 +35,6 @@ extension TodaySection {
         case music
         case tasks
         case chores
-        case nookazon
         case villagerVisits
         case dodoCode
         case news
@@ -54,7 +53,6 @@ extension TodaySection {
         TodaySection(name: .chores, enabled: true),
         TodaySection(name: .subscribe, enabled: true),
         TodaySection(name: .music, enabled: true),
-        //TodaySection(name: .nameNookazon, enabled: true)
         TodaySection(name: .mysteryIsland, enabled: true),
         TodaySection(name: .villagerVisits, enabled: true),
     ]
@@ -75,7 +73,6 @@ extension TodaySection {
         case .music: return "Music player"
         case .tasks: return "Today's Tasks"
         case .chores: return "Chores"
-        case .nookazon: return "New on Nookazon"
         case .villagerVisits: return "Villager visits"
         case .dodoCode: return "Latest Dodo code"
         case .news: return "News"
@@ -95,7 +92,6 @@ extension TodaySection {
         case .music: return "music.note"
         case .tasks: return "checkmark.seal.fill"
         case .chores: return "checkmark.seal.fill"
-        case .nookazon: return "cart.fill"
         case .villagerVisits: return "person.crop.circle.fill.badge.checkmark"
         case .dodoCode: return "airplane"
         case .news: return "exclamationmark.bubble.fill"

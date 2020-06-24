@@ -13,7 +13,6 @@ import JavaScriptCore
 import Backend
 
 class TurnipsViewModel: ObservableObject {
-    @Published var islands: [Island]?
     @Published var pendingNotifications = 0
     @Published var predictions: TurnipPredictions?
     @Published var averagesPrices: [[Int]]?
@@ -50,17 +49,6 @@ class TurnipsViewModel: ObservableObject {
             DispatchQueue.main.async {
                 self?.pendingNotifications = requests.count
             }
-        }
-    }
-    
-    func fetchIslands() {
-        exchangeCancellable = TurnipExchangeService.shared
-            .fetchIslands()
-            .receive(on: RunLoop.main)
-            .sink(receiveCompletion: { _ in
-                
-            }) { [weak self] islands in
-                self?.islands = islands
         }
     }
 }
