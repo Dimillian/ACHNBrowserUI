@@ -21,6 +21,7 @@ struct DodoCodeDetailView: View {
             }
             CommentsSection(model: code)
         }
+        .animation(.easeInOut)
         .listStyle(InsetGroupedListStyle())
         .navigationBarTitle("Comments")
     }
