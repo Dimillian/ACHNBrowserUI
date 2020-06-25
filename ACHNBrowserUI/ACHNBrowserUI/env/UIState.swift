@@ -15,22 +15,32 @@ class UIState: ObservableObject {
         case dashboard, items, villagers, collection, turnips
     }
     
-    enum Route {
+    enum Route: Identifiable {
         case item(item: Item)
         case villager(villager: Villager)
         
+        var id: String {
+            switch self {
+            case .item(_): return "item"
+            case .villager(_): return "villager"
+            }
+        }
+
         @ViewBuilder
         func makeDetailView() -> some View {
-            switch self {
-            case let .item(item):
-                ItemDetailView(item: item)
-            case let .villager(villager):
-                VillagerDetailView(villager: villager)
+            NavigationView {
+                switch self {
+                case let .item(item):
+                    ItemDetailView(item: item)
+                        .environmentObject(SubscriptionManager.shared)
+                        .environmentObject(UserCollection.shared)
+                case let .villager(villager):
+                    VillagerDetailView(villager: villager)
+                }
             }
         }
     }
     
     @Published var selectedTab = Tab.dashboard
     @Published var route: Route?
-    @Published var routeEnabled = false
 }

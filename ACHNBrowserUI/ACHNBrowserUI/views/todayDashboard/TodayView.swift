@@ -15,7 +15,6 @@ import UI
 struct TodayView: View {
     
     // MARK: - Vars
-    @EnvironmentObject private var uiState: UIState
     @StateObject private var viewModel = DashboardViewModel()
     @State private var selectedSheet: Sheet.SheetType?
             
@@ -23,15 +22,6 @@ struct TodayView: View {
     var body: some View {
         NavigationView {
             List {
-                if uiState.routeEnabled {
-                    uiState.route.map { route in
-                        NavigationLink(destination: route.makeDetailView(),
-                                       isActive: $uiState.routeEnabled) {
-                                        EmptyView()
-                        }.hidden()
-                    }
-                }
-
                 ForEach(viewModel.sectionOrder) { section in
                     TodaySectionView(section: section,
                                      viewModel: self.viewModel,

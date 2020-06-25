@@ -1,75 +1,63 @@
 //
-//  SceneDelegate.swift
+//  App.swift
 //  ACHNBrowserUI
 //
-//  Created by Thomas Ricouard on 08/04/2020.
+//  Created by Thomas Ricouard on 25/06/2020.
 //  Copyright © 2020 Thomas Ricouard. All rights reserved.
 //
 
-import UIKit
+import Foundation
 import SwiftUI
+import UserNotifications
+import CoreSpotlight
 import Backend
 import UI
-import CoreSpotlight
-import StoreKit
 
-class SceneDelegate: UIResponder, UIWindowSceneDelegate {
+class AppDelegateAdaptor: NSObject, UIApplicationDelegate, UNUserNotificationCenterDelegate {
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
+        UNUserNotificationCenter.current().delegate = self
+        return true
+    }
+    
+    func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any]) {
+        UserCollection.shared.reloadFromCloudKit()
+    }
+}
 
-    var window: UIWindow?
+@main
+struct ACHelperApp: App {
+    @UIApplicationDelegateAdaptor(AppDelegateAdaptor.self) private var appDelegate
+    @StateObject private var uiState = UIState()
     
-    let uiState = UIState()
-    
-    func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
-        let contentView = TabbarView()
-            .environmentObject(UserCollection.shared)
-            .environmentObject(Items.shared)
-            .environmentObject(uiState)
-            .environmentObject(SubscriptionManager.shared)
-            .environmentObject(TurnipPredictionsService.shared)
-            .environmentObject(MusicPlayerManager.shared)
-            .environmentObject(AppUserDefaults.shared)
-            .environmentObject(DodoCodeService.shared)
-            .environmentObject(CommentService.shared)
-            .environmentObject(NewsArticleService.shared)
-        
-        if let windowScene = scene as? UIWindowScene {
-            setupAppearance()
-            
-            let window = UIWindow(windowScene: windowScene)
-            window.rootViewController = UIHostingController(rootView: contentView)
-            self.window = window
-			#if targetEnvironment(macCatalyst)
-			window.windowScene?.titlebar?.titleVisibility = .hidden
-			#endif
-            window.makeKeyAndVisible()
-            
-            
-            if let activity = connectionOptions.userActivities.first {
-                DispatchQueue.main.asyncAfter(deadline: .now() + 0.4) {
-                    self.routeUserActivity(userActivity: activity)
-                }
-            }
-            
-            AppUserDefaults.shared.numberOfLaunch += 1
-            if AppUserDefaults.shared.numberOfLaunch == 3 {
-                SKStoreReviewController.requestReview(in: windowScene)
-            }
+    var body: some Scene {
+        WindowGroup {
+            TabbarView()
+                .environmentObject(UserCollection.shared)
+                .environmentObject(Items.shared)
+                .environmentObject(uiState)
+                .environmentObject(SubscriptionManager.shared)
+                .environmentObject(TurnipPredictionsService.shared)
+                .environmentObject(MusicPlayerManager.shared)
+                .environmentObject(AppUserDefaults.shared)
+                .environmentObject(DodoCodeService.shared)
+                .environmentObject(CommentService.shared)
+                .environmentObject(NewsArticleService.shared)
+                .onAppear(perform: setupAppearance)
+                .onContinueUserActivity(CSSearchableItemActionType, perform: handleSpotlight(_:))
+                .sheet(item: $uiState.route, onDismiss: {
+                    uiState.route = nil
+                }, content: {
+                    $0.makeDetailView()
+                })
         }
     }
     
-    func scene(_ scene: UIScene, continue userActivity: NSUserActivity) {
-        routeUserActivity(userActivity: userActivity)
-    }
-    
-    func routeUserActivity(userActivity: NSUserActivity) {
-        if userActivity.activityType == CSSearchableItemActionType {
-            if let infos = userActivity.userInfo,
-                let id = infos[CSSearchableItemActivityIdentifier] as? String,
-                let name = id.components(separatedBy: "#").last,
-                let item = Items.shared.categories[Backend.Category(itemCategory: id.components(separatedBy: "#").first!)]?.first(where: { $0.name == name }) {
-                self.uiState.route = UIState.Route.item(item: item)
-                self.uiState.routeEnabled = true
-            }
+    func handleSpotlight(_ userActivity: NSUserActivity) {
+        if let infos = userActivity.userInfo,
+           let id = infos[CSSearchableItemActivityIdentifier] as? String,
+           let name = id.components(separatedBy: "#").last,
+           let item = Items.shared.categories[Backend.Category(itemCategory: id.components(separatedBy: "#").first!)]?.first(where: { $0.name == name }) {
+            uiState.route = UIState.Route.item(item: item)
         }
     }
     
@@ -114,4 +102,3 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
                                                      compatibleWith: nil)
     }
 }
-
