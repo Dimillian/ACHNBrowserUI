@@ -121,12 +121,12 @@ struct SubscribeView: View {
                 }
                 Spacer(minLength: 16)
                 makeBorderedButton(action: {
-                                    self.sheetURL = URL(string: "https://github.com/Dimillian/ACHNBrowserUI/blob/master/privacy-policy.md#ac-helper-privacy-policy")
+                                    self.sheetURL = URL(string: "https://github.com/Dimillian/ACHNBrowserUI/blob/main/privacy-policy.md#ac-helper-privacy-policy")
                 }, label: "Privacy Policy")
                 
                 Spacer(minLength: 16)
                 makeBorderedButton(action: {
-                                    self.sheetURL = URL(string: "https://github.com/Dimillian/ACHNBrowserUI/blob/master/term-of-use.md#ac-helper-term-of-use")
+                                    self.sheetURL = URL(string: "https://github.com/Dimillian/ACHNBrowserUI/blob/main/term-of-use.md#ac-helper-term-of-use")
                 }, label: "Terms of Use")
             }
             Spacer(minLength: 200)

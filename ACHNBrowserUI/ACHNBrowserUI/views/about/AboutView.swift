@@ -97,11 +97,11 @@ struct AboutView: View {
                             color: .acHeaderBackground)
                     makeRow(image: "lock",
                             text: "Privacy Policy",
-                            link: URL(string: "https://github.com/Dimillian/ACHNBrowserUI/blob/master/privacy-policy.md#ac-helper-privacy-policy"),
+                            link: URL(string: "https://github.com/Dimillian/ACHNBrowserUI/blob/main/privacy-policy.md#ac-helper-privacy-policy"),
                             color: .acHeaderBackground)
                     makeRow(image: "person",
                             text: "Terms of Use",
-                            link: URL(string: "https://github.com/Dimillian/ACHNBrowserUI/blob/master/term-of-use.md#ac-helper-term-of-use"),
+                            link: URL(string: "https://github.com/Dimillian/ACHNBrowserUI/blob/main/term-of-use.md#ac-helper-term-of-use"),
                             color: .acHeaderBackground)
                     makeDetailRow(image: "tag",
                                   text: "App version",
