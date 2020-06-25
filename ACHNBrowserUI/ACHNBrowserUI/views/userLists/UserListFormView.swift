@@ -63,6 +63,7 @@ struct UserListFormView: View {
                         .foregroundColor(.acText)
                 }
                 .border(errorBorder)
+                .listRowBackground(Color.acSecondaryBackground)
                 HStack {
                     Text("Description")
                     Spacer()
@@ -70,6 +71,7 @@ struct UserListFormView: View {
                         .multilineTextAlignment(.trailing)
                         .foregroundColor(.acText)
                 }
+                .listRowBackground(Color.acSecondaryBackground)
                 Picker(selection: $viewModel.selectedIcon,
                        label: Text("Icon")) {
                         ForEach(Category.icons().map{ $0.iconName() }, id: \.self) { icon in
@@ -78,9 +80,12 @@ struct UserListFormView: View {
                                     .renderingMode(.original)
                                     .resizable()
                                     .frame(width: 40, height: 40)
-                            }.tag(icon)
+                            }
+                            .tag(icon)
+                            .listRowBackground(Color.acSecondaryBackground)
                         }
                 }
+                .listRowBackground(Color.acSecondaryBackground)
             }
             .navigationBarTitle("Edit your list")
             .navigationBarItems(leading: dismissButton, trailing: saveButton)

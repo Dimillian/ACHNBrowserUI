@@ -37,6 +37,7 @@ struct ChoreFormView: View {
                         .foregroundColor(.acText)
                 }
                 .border(titleErrorBorderColor)
+                .listRowBackground(Color.acSecondaryBackground)
 
                 HStack {
                     Text("Description")
@@ -46,6 +47,7 @@ struct ChoreFormView: View {
                         .multilineTextAlignment(.trailing)
                         .foregroundColor(.acText)
                 }
+                .listRowBackground(Color.acSecondaryBackground)
             }
             .navigationBarTitle("Add Chore")
             .navigationBarItems(leading: dismissButton, trailing: saveButton)

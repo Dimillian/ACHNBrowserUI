@@ -14,13 +14,15 @@ struct MysteryIslandsList: View {
     
     var body: some View {
         List(islands!) { island in
-            NavigationLink(destination: MysteryIslandDetail(island: island)) {
-                MysteryIslandRow(island: island)
+            Group {
+                NavigationLink(destination: MysteryIslandDetail(island: island)) {
+                    MysteryIslandRow(island: island)
+                }
             }
             .listRowBackground(Color.acSecondaryBackground)
         }
-        .navigationBarTitle(Text("Mystery Islands"))
         .listStyle(InsetGroupedListStyle())
+        .navigationBarTitle(Text("Mystery Islands"))
     }
 }
 

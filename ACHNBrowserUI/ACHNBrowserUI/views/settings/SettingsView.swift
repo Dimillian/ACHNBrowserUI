@@ -82,7 +82,7 @@ struct SettingsView: View {
                     .multilineTextAlignment(.trailing)
                     .font(.body)
                     .foregroundColor(.secondary)
-            }
+            }.listRowBackground(Color.acSecondaryBackground)
             HStack {
                 Text("In game name / username")
                 Spacer()
@@ -90,13 +90,13 @@ struct SettingsView: View {
                     .multilineTextAlignment(.trailing)
                     .font(.body)
                     .foregroundColor(.secondary)
-            }
+            }.listRowBackground(Color.acSecondaryBackground)
             Picker(selection: $appUserDefaults.hemisphere,
                    label: Text("Hemisphere")) {
                     ForEach(Hemisphere.allCases, id: \.self) { hemispehere in
                         Text(LocalizedStringKey(hemispehere.rawValue.capitalized)).tag(hemispehere)
                     }
-            }
+            }.listRowBackground(Color.acSecondaryBackground)
             Picker(selection: $appUserDefaults.fruit,
                    label: Text("Starting fruit")) {
                     ForEach(Fruit.allCases, id: \.self) { fruit in
@@ -108,28 +108,28 @@ struct SettingsView: View {
                             Text(LocalizedStringKey(fruit.rawValue.capitalized)).tag(fruit)
                         }
                     }
-            }
+            }.listRowBackground(Color.acSecondaryBackground)
             
             Picker(selection: $appUserDefaults.nookShop,
                    label: Text("Nook shop")) {
                     ForEach(Infrastructure.NookShop.allCases, id: \.self) { shop in
                         Text(LocalizedStringKey(shop.rawValue)).tag(shop)
                     }
-            }
+            }.listRowBackground(Color.acSecondaryBackground)
             
             Picker(selection: $appUserDefaults.ableSisters,
                    label: Text("Able sisters")) {
                     ForEach(Infrastructure.AbleSisters.allCases, id: \.self) { sisters in
                         Text(LocalizedStringKey(sisters.rawValue.capitalized)).tag(sisters)
                     }
-            }
+            }.listRowBackground(Color.acSecondaryBackground)
             
             Picker(selection: $appUserDefaults.residentService,
                    label: Text("Residents service")) {
                     ForEach(Infrastructure.ResidentService.allCases, id: \.self) { service in
                         Text(LocalizedStringKey(service.rawValue.capitalized)).tag(service)
                     }
-            }
+            }.listRowBackground(Color.acSecondaryBackground)
         }
     }
     
@@ -155,6 +155,7 @@ struct SettingsView: View {
             }
             .disabled(subscriptionManager.inPaymentProgress)
             .opacity(subscriptionManager.inPaymentProgress ? 0.5 : 1.0)
+            .listRowBackground(Color.acSecondaryBackground)
         }
     }
     
@@ -166,7 +167,7 @@ struct SettingsView: View {
                 Text(collection.sizeOfArchivedState())
                     .font(.footnote)
                     .foregroundColor(.acSecondaryText)
-            }
+            }.listRowBackground(Color.acSecondaryBackground)
             
             HStack {
                 Text("Using iCloud sync")
@@ -174,7 +175,7 @@ struct SettingsView: View {
                 Image(systemName: collection.isCloudEnabled ? "icloud.fill" : "icloud.slash")
                     .foregroundColor(collection.isCloudEnabled ? .acTabBarBackground : .red)
                 
-            }
+            }.listRowBackground(Color.acSecondaryBackground)
             
             if collection.isCloudEnabled {
                 HStack {
@@ -186,7 +187,7 @@ struct SettingsView: View {
                         Image(systemName: "checkmark.seal.fill")
                             .foregroundColor(.acTabBarBackground)
                     }
-                }
+                }.listRowBackground(Color.acSecondaryBackground)
             }
             
             Button(action: {
@@ -194,21 +195,25 @@ struct SettingsView: View {
                 self.isDocumentPickerPresented = true
             }) {
                 Text("Export my collection").foregroundColor(.acHeaderBackground)
-            }
+            }.listRowBackground(Color.acSecondaryBackground)
             
             Button(action: {
                 self.documentPickderMode = .import
                 self.isDocumentPickerPresented = true
             }) {
                 Text("Import a collection").foregroundColor(.acHeaderBackground)
-            }.alert(isPresented: $showSuccessImportAlert,
+            }
+            .listRowBackground(Color.acSecondaryBackground)
+            .alert(isPresented: $showSuccessImportAlert,
                     content: { self.importSuccessAlert })
             
             Button(action: {
                 self.showDeleteConfirmationAlert = true
             }) {
                 Text("Reset my collection").foregroundColor(.red)
-            }.alert(isPresented: $showDeleteConfirmationAlert,
+            }
+            .listRowBackground(Color.acSecondaryBackground)
+            .alert(isPresented: $showDeleteConfirmationAlert,
                     content: { self.deleteConfirmationAlert })
         }
     }

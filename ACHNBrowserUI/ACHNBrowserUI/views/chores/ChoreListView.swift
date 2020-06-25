@@ -33,11 +33,14 @@ struct ChoreListView: View {
                 Text("Add Chore")
                     .foregroundColor(.acHeaderBackground)
             })
+            .listRowBackground(Color.acSecondaryBackground)
 
             self.makeDescriptionView()
+                .listRowBackground(Color.acSecondaryBackground)
 
             ForEach(self.viewModel.chores, id: \.id) { chore in
                 ChoreListRowView(chore: chore)
+                    .listRowBackground(Color.acSecondaryBackground)
                     .contentShape(Rectangle())
                     .onTapGesture {
                         if self.isEditing {

@@ -53,7 +53,7 @@ struct CustomTasksListView: View {
                     ForEach(collection.dailyCustomTasks.tasks) { task in
                         NavigationLink(destination: CustomTaskFormView(editingTask: task)) {
                             CustomTaskRow(task: task)
-                        }
+                        }.listRowBackground(Color.acSecondaryBackground)
                     }
                     .onMove(perform: onMove)
                     .onDelete { indexes in
@@ -66,7 +66,7 @@ struct CustomTasksListView: View {
                             .foregroundColor(.acHeaderBackground)
                         Text("Add a custom task")
                             .foregroundColor(.acHeaderBackground)
-                    }
+                    }.listRowBackground(Color.acSecondaryBackground)
                 }
             }
             .environment(\.editMode, $editMode)

@@ -54,6 +54,7 @@ struct CustomTaskFormView: View {
                 .multilineTextAlignment(.trailing)
                 .foregroundColor(.acText)
             }
+            .listRowBackground(Color.acSecondaryBackground)
             .border(errorBorderTaskName)
             Picker(selection: $viewModel.task.icon,
                 label: Text("Icon")) {
@@ -72,10 +73,12 @@ struct CustomTaskFormView: View {
                         }.tag("Inv\(num)")
                     }
                 }
+            .listRowBackground(Color.acSecondaryBackground)
             .border(self.viewModel.task.icon.isEmpty ? errorBorderIcon : .clear)
             Toggle(isOn: $viewModel.task.hasProgress) {
                 Text("Has progress")
             }
+            .listRowBackground(Color.acSecondaryBackground)
             if self.viewModel.task.hasProgress {
                 Picker(selection: $viewModel.task.maxProgress,
                        label: Text("Max amount")) {
@@ -84,7 +87,7 @@ struct CustomTaskFormView: View {
                                 Text("\($0)")
                             }
                         }
-                }
+                }.listRowBackground(Color.acSecondaryBackground)
             }
         }
         .listStyle(InsetGroupedListStyle())

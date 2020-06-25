@@ -30,12 +30,15 @@ struct DodoCodeFormView: View {
             Form {
                 Section(footer: footer) {
                     if validationError {
-                        Text("Please fill all the fields").foregroundColor(.red)
+                        Text("Please fill all the fields")
+                            .foregroundColor(.red)
+                            .listRowBackground(Color.acSecondaryBackground)
                     }
                     TextField("Dodo code", text: $dodoCode.code,
                               onEditingChanged: { _ in
                                 self.checkDodoCode()
                     })
+                    .listRowBackground(Color.acSecondaryBackground)
                     .foregroundColor(.acHeaderBackground)
                     .font(.custom("CourierNewPS-BoldMT", size: 20))
                     .autocapitalization(.allCharacters)
@@ -43,13 +46,17 @@ struct DodoCodeFormView: View {
                         Text("This Dodo code is invalid").foregroundColor(.red)
                     }
                     TextField("Island name", text: $islandName)
+                        .listRowBackground(Color.acSecondaryBackground)
                     TextField("Island description", text: $text)
+                        .listRowBackground(Color.acSecondaryBackground)
                     Picker(selection: $hemisphere,
                            label: Text("Hemisphere")) {
                             ForEach(Hemisphere.allCases, id: \.self) { hemispehere in
-                                Text(LocalizedStringKey(hemispehere.rawValue.capitalized)).tag(hemispehere)
+                                Text(LocalizedStringKey(hemispehere.rawValue.capitalized))
+                                    .tag(hemispehere)
+                                    .listRowBackground(Color.acSecondaryBackground)
                             }
-                    }
+                    }.listRowBackground(Color.acSecondaryBackground)
                     Picker(selection: $fruit,
                            label: Text("Native fruit")) {
                             ForEach(Fruit.allCases, id: \.self) { fruit in
@@ -60,11 +67,9 @@ struct DodoCodeFormView: View {
                                         .frame(width: 30, height: 30)
                                     Text(LocalizedStringKey(fruit.rawValue.capitalized)).tag(fruit)
                                 }
+                                .listRowBackground(Color.acSecondaryBackground)
                             }
-                    }
-                    if haveVisitor {
-                        
-                    }
+                    }.listRowBackground(Color.acSecondaryBackground)
                     Picker(selection: $visitor,
                            label: Text("Visitor")) {
                             ForEach(SpecialCharacters.allCases, id: \.self) { visitor in
@@ -74,9 +79,11 @@ struct DodoCodeFormView: View {
                                         .resizable()
                                         .frame(width: 30, height: 30)
                                     Text(LocalizedStringKey(visitor.rawValue.capitalized))
-                                }.tag(visitor as SpecialCharacters?)
+                                }
+                                .tag(visitor as SpecialCharacters?)
+                                .listRowBackground(Color.acSecondaryBackground)
                             }
-                    }
+                    }.listRowBackground(Color.acSecondaryBackground)
                 }
             }
             .navigationBarItems(leading: dismissButton, trailing: saveButton)

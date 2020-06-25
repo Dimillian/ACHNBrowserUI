@@ -43,27 +43,6 @@ struct CollectionListView: View {
                     }
                 }
             }
-            .gesture(DragGesture()
-                .onEnded { value in
-                    if value.translation.width > 100 {
-                        switch(self.selectedTab) {
-                        case .lists:
-                            self.selectedTab = .items
-                        case .more:
-                            self.selectedTab = .lists
-                        default: break
-                        }
-                    }
-                    else if value.translation.width < -100 {
-                        switch(self.selectedTab) {
-                        case .items:
-                            self.selectedTab = .lists
-                        case .lists:
-                            self.selectedTab = .more
-                        default: break
-                        }
-                    }
-                })
             .listStyle(GroupedListStyle())
             .navigationBarTitle(Text("Collection"),
                                 displayMode: .automatic)
