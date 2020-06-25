@@ -53,6 +53,7 @@ Localizable.strings
 "Currently Available" = "Disponible en ce moment";
 "%lld/%lld Bugs" = "%lld/%lld Insectes";
 "%lld/%lld Fish" = "%lld/%lld Poissons";
+"%lld/%lld Sea Creatures" = "%lld/%lld Créatures Marines";
 "%lld NEW" = "%lld NOUVEAUX";
 // TodayEventsSection
 "Events" = "Évènements";

@@ -60,7 +60,13 @@ struct TodayCurrentlyAvailableSectionContent: View {
                 .frame(width: 48)
             
             Group {
-                type == .bugs ? Text("\(caught)/\(available) Bugs") : Text("\(caught)/\(available) Fish")
+                if type == .bugs {
+                    Text("\(caught)/\(available) Bugs")
+                } else if type == .fish {
+                    Text("\(caught)/\(available) Fish")
+                } else {
+                    Text("\(caught)/\(available) Sea Creatures")
+                }
             }
             .font(.system(.headline, design: .rounded))
             .foregroundColor(.acText)
