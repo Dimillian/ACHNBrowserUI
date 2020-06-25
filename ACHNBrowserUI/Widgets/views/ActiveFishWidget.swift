@@ -81,7 +81,8 @@ struct ActiveFishWidget: Widget {
                             placeholder: PlaceholderView()) { entry in
             ActiveFishWidgetView(model: entry)
         }
-        .description("Active fish")
+        .configurationDisplayName("Acive fish")
+        .description("Fish that you can catch right now!")
         .supportedFamilies([.systemSmall, .systemMedium, .systemLarge])
     }
 }
