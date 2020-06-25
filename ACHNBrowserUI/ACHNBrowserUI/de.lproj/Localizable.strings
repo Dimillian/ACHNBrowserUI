@@ -52,6 +52,7 @@
 "Currently Available" = "Aktuell verfügbar";
 "%lld/%lld Bugs" = "%lld/%lld Insekten";
 "%lld/%lld Fish" = "%lld/%lld Fische";
+"%lld/%lld Sea Creatures" = "%lld/%lld Meerestiere";
 "%lld NEW" = "%lld NEU";
 // TodayEventsSection
 "Events" = "Ereignisse";
@@ -399,7 +400,7 @@ Du kannst das Abonnement jederzeit in deinen iTunes Kontoeinstellungen beenden. 
 "bugs" = "Insekten";
 "fish" = "Fische";
 "fossils" = "Fossilien";
-"seaCreatures" = "Sea Creatures";
+"seaCreatures" = "Meerestiere";
 // CategoriesView
 "Nature" = "Natur";
 "Wardrobe" = "Kleidung";
