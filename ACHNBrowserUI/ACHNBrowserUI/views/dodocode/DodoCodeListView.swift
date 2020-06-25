@@ -77,7 +77,9 @@ struct DodoCodeListView: View {
             }
             self.sheet = .dodoCodeForm(editing: nil)
         }) {
-            Image(systemName: "plus.circle").imageScale(.large)
+            Image(systemName: "plus.circle")
+                .style(appStyle: .barButton)
+                .foregroundColor(.acText)
         }
         .buttonStyle(BorderedBarButtonStyle())
         .accentColor(Color.acText.opacity(0.2))
@@ -90,7 +92,9 @@ struct DodoCodeListView: View {
             if service.isSynching {
                 ProgressView()
             } else {
-                Image(systemName: "arrow.counterclockwise.circle").imageScale(.large)
+                Image(systemName: "arrow.counterclockwise.circle")
+                    .style(appStyle: .barButton)
+                    .foregroundColor(.acText)
             }
         }
         .buttonStyle(BorderedBarButtonStyle())
