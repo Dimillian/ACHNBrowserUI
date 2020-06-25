@@ -16,11 +16,13 @@ class ActiveCrittersViewModel: ObservableObject {
     enum CritterType: String, CaseIterable {
         case fish = "Fishes"
         case bugs = "Bugs"
+        case seaCreatures = "Sea Creatures"
         
         func category() -> Backend.Category {
             switch self {
             case .fish: return .fish
             case .bugs: return .bugs
+            case .seaCreatures: return .seaCreatures
             }
         }
         
@@ -28,6 +30,7 @@ class ActiveCrittersViewModel: ObservableObject {
             switch self {
             case .fish: return "Fish"
             case .bugs: return "Ins"
+            case .seaCreatures: return "Fish"
             }
         }
     }
