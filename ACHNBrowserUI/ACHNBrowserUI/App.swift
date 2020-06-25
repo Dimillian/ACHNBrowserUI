@@ -29,30 +29,48 @@ struct ACHelperApp: App {
     @UIApplicationDelegateAdaptor(AppDelegateAdaptor.self) private var appDelegate
     @StateObject private var uiState = UIState()
     
+    @SceneBuilder
     var body: some Scene {
+        #if targetEnvironment(macCatalyst)
         WindowGroup {
-            TabbarView()
-                .environmentObject(UserCollection.shared)
-                .environmentObject(Items.shared)
-                .environmentObject(uiState)
-                .environmentObject(SubscriptionManager.shared)
-                .environmentObject(TurnipPredictionsService.shared)
-                .environmentObject(MusicPlayerManager.shared)
-                .environmentObject(AppUserDefaults.shared)
-                .environmentObject(DodoCodeService.shared)
-                .environmentObject(CommentService.shared)
-                .environmentObject(NewsArticleService.shared)
-                .onAppear(perform: setupAppearance)
-                .onContinueUserActivity(CSSearchableItemActionType, perform: handleSpotlight(_:))
-                .sheet(item: $uiState.route, onDismiss: {
-                    uiState.route = nil
-                }, content: {
-                    $0.makeDetailView()
-                })
+            contentView
         }
+        .windowStyle(HiddenTitleBarWindowStyle())
+        #else
+        WindowGroup {
+            contentView
+        }
+        #endif
+        
+        #if targetEnvironment(macCatalyst)
+        Settings {
+            SettingsView()
+        }
+        #endif
     }
     
-    func handleSpotlight(_ userActivity: NSUserActivity) {
+    private var contentView: some View {
+        TabbarView()
+            .environmentObject(UserCollection.shared)
+            .environmentObject(Items.shared)
+            .environmentObject(uiState)
+            .environmentObject(SubscriptionManager.shared)
+            .environmentObject(TurnipPredictionsService.shared)
+            .environmentObject(MusicPlayerManager.shared)
+            .environmentObject(AppUserDefaults.shared)
+            .environmentObject(DodoCodeService.shared)
+            .environmentObject(CommentService.shared)
+            .environmentObject(NewsArticleService.shared)
+            .onAppear(perform: setupAppearance)
+            .onContinueUserActivity(CSSearchableItemActionType, perform: handleSpotlight(_:))
+            .sheet(item: $uiState.route, onDismiss: {
+                uiState.route = nil
+            }, content: {
+                $0.makeDetailView()
+            })
+    }
+    
+    private func handleSpotlight(_ userActivity: NSUserActivity) {
         if let infos = userActivity.userInfo,
            let id = infos[CSSearchableItemActivityIdentifier] as? String,
            let name = id.components(separatedBy: "#").last,
