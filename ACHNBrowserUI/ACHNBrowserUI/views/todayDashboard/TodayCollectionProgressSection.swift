@@ -23,7 +23,7 @@ struct TodayCollectionProgressSection: View {
             if items.categories.keys.count == Category.allCases.count {
                 NavigationLink(destination: CollectionProgressDetailView()) {
                     VStack(spacing: 4) {
-                        ForEach(Category.collectionCategories().prefix(4).map{ $0 }, id: \.self) { category in
+                        ForEach(Category.collectionCategories().prefix(5).map{ $0 }, id: \.self) { category in
                             CollectionProgressRow(category: category, barHeight: 12)
                                 .padding(.trailing, 8)
                         }

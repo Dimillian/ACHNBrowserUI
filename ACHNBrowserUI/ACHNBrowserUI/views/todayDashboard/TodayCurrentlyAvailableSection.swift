@@ -24,21 +24,28 @@ struct TodayCurrentlyAvailableSectionContent: View {
         
     var body: some View {
         Group {
-            if viewModel.crittersInfo[.bugs]?.active.isEmpty == false &&
-                viewModel.crittersInfo[.fish]?.active.isEmpty == false {
-                HStack(alignment: .top) {
-                    makeCell(for: .fish,
-                             caught: viewModel.crittersInfo[.fish]?.caught.count ?? 0,
-                             available: viewModel.crittersInfo[.fish]?.active.count ?? 0 ,
-                             numberNew: viewModel.crittersInfo[.fish]?.new.count ?? 0)
-                    Divider()
-                    makeCell(for: .bugs,
-                             caught: viewModel.crittersInfo[.bugs]?.caught.count ?? 0,
-                             available: viewModel.crittersInfo[.bugs]?.active.count ?? 0,
-                             numberNew: viewModel.crittersInfo[.bugs]?.new.count ?? 0)
+            VStack {
+                if viewModel.crittersInfo[.bugs]?.active.isEmpty == false &&
+                    viewModel.crittersInfo[.fish]?.active.isEmpty == false {
+                    HStack(alignment: .top) {
+                        makeCell(for: .fish,
+                                 caught: viewModel.crittersInfo[.fish]?.caught.count ?? 0,
+                                 available: viewModel.crittersInfo[.fish]?.active.count ?? 0 ,
+                                 numberNew: viewModel.crittersInfo[.fish]?.new.count ?? 0)
+                        Divider()
+                        makeCell(for: .bugs,
+                                 caught: viewModel.crittersInfo[.bugs]?.caught.count ?? 0,
+                                 available: viewModel.crittersInfo[.bugs]?.active.count ?? 0,
+                                 numberNew: viewModel.crittersInfo[.bugs]?.new.count ?? 0)
+                    }
+                } else {
+                    RowLoadingView(isLoading: .constant(true))
                 }
-            } else {
-                RowLoadingView()
+                Divider()
+                makeCell(for: .seaCreatures,
+                         caught: viewModel.crittersInfo[.seaCreatures]?.caught.count ?? 0,
+                         available: viewModel.crittersInfo[.seaCreatures]?.active.count ?? 0 ,
+                         numberNew: viewModel.crittersInfo[.seaCreatures]?.new.count ?? 0)
             }
         }
     }

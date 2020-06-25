@@ -16,7 +16,7 @@ public enum Category: String, CaseIterable {
     case tops, bottoms, headwear, accessories, socks, shoes, bags
     case dressup = "Dress-Up"
     case umbrellas, music, recipes, construction, nookmiles, other
-    case art, bugs, fish, fossils
+    case art, bugs, fish, fossils, seaCreatures
     
     public init(itemCategory: String) {
         if itemCategory == "Fish - North" || itemCategory == "Fish - South" {
@@ -94,6 +94,8 @@ public enum Category: String, CaseIterable {
             return "icon-top"
         case .shoes:
             return "icon-shoes"
+        case .seaCreatures:
+            return "Fish25"
         }
     }
     
@@ -109,7 +111,8 @@ public enum Category: String, CaseIterable {
             category == .construction ||
             category == .fish ||
             category == .bugs ||
-            category == .fossils {
+            category == .fossils ||
+            category == .seaCreatures {
             return category.rawValue
         }
         return nil
@@ -128,7 +131,7 @@ public enum Category: String, CaseIterable {
     }
     
     public static func collectionCategories() -> [Category] {
-        var base: [Category]  = [.fish, .bugs, .fossils, .art]
+        var base: [Category]  = [.fish, .bugs, .seaCreatures, .fossils, .art]
         var items = Self.items()
         items.removeAll(where: { $0 == .art })
         base.append(contentsOf: items)
@@ -153,7 +156,7 @@ public enum Category: String, CaseIterable {
     }
     
     public static func nature() -> [Category] {
-        [.fish, .bugs, .fossils]
+        [.fish, .seaCreatures, .bugs, .fossils]
     }
     
     public static func icons() -> [Category] {

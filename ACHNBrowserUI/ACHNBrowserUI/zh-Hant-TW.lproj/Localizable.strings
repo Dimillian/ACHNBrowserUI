@@ -55,6 +55,7 @@
 "bugs" = "蟲";
 "fish" = "魚";
 "fossils" = "化石";
+"seaCreatures" = "Sea Creatures";
 
 "%lld upcomingDailyNotifications" = "你會在接下來的 %lld 個通知中收到大頭菜價錢預測";
 

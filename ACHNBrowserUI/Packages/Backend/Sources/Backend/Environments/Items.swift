@@ -23,7 +23,7 @@ public class Items: ObservableObject {
     private var villagersHouseCache: [String: [Item]] = [:]
     private var villagersLikeCache: [String: [Item]] = [:]
     
-    private let spotlightIndex: [Category] = [.fish, .bugs, .fossils, .art]
+    private let spotlightIndex: [Category] = [.fish, .bugs, .fossils, .art, .seaCreatures]
     private let spotlightQueue = DispatchQueue(label: "com.achelper.spotlight.quueue", qos: .background)
     private let itemsQueue = DispatchQueue(label: "com.achelper.items.queue",
                                            qos: .userInitiated)

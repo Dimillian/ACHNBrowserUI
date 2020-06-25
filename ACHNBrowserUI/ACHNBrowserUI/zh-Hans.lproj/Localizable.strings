@@ -334,6 +334,7 @@
 "bugs" = "昆虫";
 "fish" = "鱼类";
 "fossils" = "化石";
+"seaCreatures" = "Sea Creatures";
 // CategoriesView
 "Nature" = "图鉴";
 "Wardrobe" = "衣橱";

@@ -240,7 +240,7 @@ public extension Item {
 // MARK: - Critters
 public extension Item {
     var isCritter: Bool {
-        appCategory == .fish || appCategory == .bugs
+        appCategory == .fish || appCategory == .bugs || appCategory == .seaCreatures
     }
 }
 

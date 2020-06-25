@@ -383,6 +383,7 @@
 "bugs" = "Насекомые";
 "fish" = "Рыба";
 "fossils" = "Ископаемые";
+"seaCreatures" = "Sea Creatures";
 // CategoriesView
 "Nature" = "Природа";
 "Wardrobe" = "Гардероб";
