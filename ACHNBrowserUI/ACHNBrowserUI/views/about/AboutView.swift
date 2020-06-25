@@ -96,10 +96,10 @@ struct AboutView: View {
                                                       completionHandler: nil)
                     }
                     makeRow(image: "lock", text: "Privacy Policy", color: .acHeaderBackground).onTapGesture {
-                        self.selectedSheet = .safari(URL(string: "https://github.com/Dimillian/ACHNBrowserUI/blob/master/privacy-policy.md#ac-helper-privacy-policy")!)
+                        self.selectedSheet = .safari(URL(string: "https://github.com/Dimillian/ACHNBrowserUI/blob/main/privacy-policy.md#ac-helper-privacy-policy")!)
                     }
                     makeRow(image: "person", text: "Terms of Use", color: .acHeaderBackground).onTapGesture {
-                        self.selectedSheet = .safari(URL(string: "https://github.com/Dimillian/ACHNBrowserUI/blob/master/term-of-use.md#ac-helper-term-of-use")!)
+                        self.selectedSheet = .safari(URL(string: "https://github.com/Dimillian/ACHNBrowserUI/blob/main/term-of-use.md#ac-helper-term-of-use")!)
                     }
                     makeDetailRow(image: "tag",
                                   text: "App version",
