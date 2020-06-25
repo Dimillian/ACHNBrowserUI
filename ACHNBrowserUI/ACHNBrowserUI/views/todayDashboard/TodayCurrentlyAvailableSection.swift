@@ -39,7 +39,7 @@ struct TodayCurrentlyAvailableSectionContent: View {
                                  numberNew: viewModel.crittersInfo[.bugs]?.new.count ?? 0)
                     }
                 } else {
-                    RowLoadingView(isLoading: .constant(true))
+                    RowLoadingView()
                 }
                 Divider()
                 makeCell(for: .seaCreatures,
