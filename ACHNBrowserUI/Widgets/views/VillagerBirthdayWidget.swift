@@ -14,7 +14,7 @@ import SDWebImageSwiftUI
 struct VillagerBirthdayWidgetView: View {
     @Environment(\.widgetFamily) var family: WidgetFamily
     
-    var model: WidgetModel
+    var model: WidgetModel?
     
     private var today: String {
         let formatter = DateFormatter()
@@ -23,33 +23,31 @@ struct VillagerBirthdayWidgetView: View {
     }
     
     private var villager: Villager? {
-        model.villagers.filter( { $0.birthday == today } ).first
+        model?.villagers.filter( { $0.birthday == today } ).first
     }
     
     @ViewBuilder
     var body: some View {
-        if let villager = villager {
-            switch family {
-            case .systemSmall:
-                makeSmallWidget(villager: villager)
-            case .systemMedium:
-                makeMediumWidget(villager: villager)
-            case .systemLarge:
-                Text("Not supported yet.")
-            @unknown default:
-                Text("Not supported yet.")
-            }
-            
+        switch family {
+        case .systemSmall:
+            makeSmallWidget(villager: villager)
+        case .systemMedium:
+            makeMediumWidget(villager: villager)
+        case .systemLarge:
+            Text("Not supported yet.")
+        @unknown default:
+            Text("Not supported yet.")
         }
+        
     }
     
-    private func makeDayStamp(villager: Villager) -> some View {
+    private func makeDayStamp(villager: Villager?) -> some View {
         VStack {
-            Text(villager.birthdayMonth())
+            Text(villager?.birthdayMonth() ?? "Loading...")
                 .font(.system(.caption, design: .rounded))
                 .fontWeight(.bold)
                 .foregroundColor(.acText)
-            Text(villager.birthdayDay())
+            Text(villager?.birthdayDay() ?? "Loading...")
                 .font(.system(.subheadline, design: .rounded))
                 .fontWeight(.bold)
                 .foregroundColor(.acText)
@@ -62,26 +60,32 @@ struct VillagerBirthdayWidgetView: View {
     }
     
     @ViewBuilder
-    private func makeIcon(villager: Villager, size: CGFloat) -> some View {
-        if let url = URL(string: ACNHApiService.BASE_URL.absoluteString +
+    private func makeIcon(villager: Villager?, size: CGFloat) -> some View {
+        if let villager = villager,
+           let url = URL(string: ACNHApiService.BASE_URL.absoluteString +
                             ACNHApiService.Endpoint.villagerIcon(id: villager.id).path()) {
             WebImage(url: url)
                 .resizable()
                 .renderingMode(.original)
                 .aspectRatio(contentMode: .fit)
                 .frame(width: size, height: size)
+        } else {
+            Rectangle()
+                .fill(Color.gray)
+                .clipShape(Circle())
+                .frame(width: size, height: size)
         }
     }
     
-    private func makeName(villager: Villager) -> some View {
-        Text(villager.localizedName)
+    private func makeName(villager: Villager?) -> some View {
+        Text(villager?.localizedName ?? "Loading...")
             .font(Font.system(.headline, design: .rounded))
             .fontWeight(.semibold)
             .lineLimit(2)
             .foregroundColor(.acText)
     }
     
-    private func makeSmallWidget(villager: Villager) -> some View {
+    private func makeSmallWidget(villager: Villager?) -> some View {
         Group {
             HStack {
                 Spacer()
@@ -97,7 +101,7 @@ struct VillagerBirthdayWidgetView: View {
         }.background(Color.acBackground)
     }
     
-    private func makeMediumWidget(villager: Villager) -> some View {
+    private func makeMediumWidget(villager: Villager?) -> some View {
         Group {
             VStack {
                 Spacer()
@@ -130,7 +134,7 @@ struct VillagerBirthdayWidget: Widget {
     var body: some WidgetConfiguration {
         StaticConfiguration(kind: kind,
                             provider: WidgetProvider(),
-                            placeholder: LoadingView()) { entry in
+                            placeholder: VillagerBirthdayWidgetView()) { entry in
             VillagerBirthdayWidgetView(model: entry)
         }
         .configurationDisplayName("Villager birthday")
