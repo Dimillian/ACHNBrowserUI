@@ -34,6 +34,7 @@ struct SectionHeaderView: View {
             Text(text)
                 .style(appStyle: .sectionHeader)
                 .lineLimit(1)
+                .textCase(nil)
         }
         .padding(.vertical, 8)
         .padding(.horizontal, 14)

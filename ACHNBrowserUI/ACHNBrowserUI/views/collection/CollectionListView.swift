@@ -98,6 +98,7 @@ struct CollectionListView: View {
         Picker(selection: $selectedTab, label: Text("")) {
             ForEach(Tabs.allCases, id: \.self) { tab in
                 Text(LocalizedStringKey(tab.rawValue.capitalized))
+                    .textCase(nil)
             }
         }
         .pickerStyle(SegmentedPickerStyle())
