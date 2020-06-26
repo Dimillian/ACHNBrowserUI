@@ -50,16 +50,16 @@ struct TodayVillagerVisitsSection: View {
     }
 
     private var bubbles: some View {
-        GridStack<AnyView>(rows: rows, columns: 4, showDivider: false) { (row, column) in
-            let villagerIndex = row * 4 + column
-            guard let villager = self.residents[safe: villagerIndex] else {
-                return EmptyView().eraseToAnyView()
+        LazyVGrid(columns: Array(repeating: GridItem(.flexible(minimum: 50)), count: 4),
+                  alignment: .center,
+                  spacing: 16) {
+            ForEach(residents) { villager in
+                bubble(villager: villager)
             }
-            return self.bubble(villager: villager, index: villagerIndex).eraseToAnyView()
         }
     }
 
-    private func bubble(villager: Villager, index: Int) -> some View {
+    private func bubble(villager: Villager) -> some View {
         ZStack {
             Circle().foregroundColor(Color.acBackground)
             icon(for: villager)

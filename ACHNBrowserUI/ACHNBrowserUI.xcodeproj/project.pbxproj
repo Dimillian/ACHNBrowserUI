@@ -13,7 +13,6 @@
 		3D9AB08F248256DC00B47041 /* CustomTaskRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D9AB08E248256DC00B47041 /* CustomTaskRow.swift */; };
 		3D9AB093248257DF00B47041 /* CustomTaskFormViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D9AB092248257DF00B47041 /* CustomTaskFormViewModel.swift */; };
 		3DECE21B2483BC83001F24BA /* EditMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DECE21A2483BC82001F24BA /* EditMode.swift */; };
-		4C16FB41247AC9B0009F24E3 /* GridStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C16FB40247AC9B0009F24E3 /* GridStack.swift */; };
 		4C30BFC3249627FD003E96A2 /* Sequence+Unique.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C30BFC2249627FC003E96A2 /* Sequence+Unique.swift */; };
 		4C6E95FD24842F690074433B /* Collection+SafeDirectAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C6E95FC24842F690074433B /* Collection+SafeDirectAccess.swift */; };
 		4C7F555D248B91C80089F26C /* TodayVillagerVisitsSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7F555C248B91C80089F26C /* TodayVillagerVisitsSection.swift */; };
@@ -222,7 +221,6 @@
 		3DB1260324686F0B00E74AA5 /* de */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; lineEnding = 0; name = de; path = de.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		3DECE21A2483BC82001F24BA /* EditMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditMode.swift; sourceTree = "<group>"; };
 		3DF14B2E24664B4A00438646 /* de */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; lineEnding = 0; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
-		4C16FB40247AC9B0009F24E3 /* GridStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridStack.swift; sourceTree = "<group>"; };
 		4C2D676A245DA41E005831C4 /* TurnipsChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TurnipsChartView.swift; sourceTree = "<group>"; };
 		4C2D676D245F0666005831C4 /* TurnipsChartBottomLegendView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TurnipsChartBottomLegendView.swift; sourceTree = "<group>"; };
 		4C2D676F245F0698005831C4 /* TurnipsChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TurnipsChart.swift; sourceTree = "<group>"; };
@@ -793,7 +791,6 @@
 			isa = PBXGroup;
 			children = (
 				69CA5ED9244CBA8600B275B6 /* CalendarView.swift */,
-				4C16FB40247AC9B0009F24E3 /* GridStack.swift */,
 				68345578244C994C0072FC0C /* LikeButtonView.swift */,
 				AE2D7F00247EB2A8006C1F1A /* MessageView.swift */,
 				6985514D248CC31A00F7BDBA /* ResidentButton.swift */,
@@ -1153,7 +1150,6 @@
 				69157B9C2471A5A1005B9002 /* Path.swift in Sources */,
 				69157B9D2471A5A1005B9002 /* UIState.swift in Sources */,
 				69157B9E2471A5A1005B9002 /* TodayTasksSection.swift in Sources */,
-				4C16FB41247AC9B0009F24E3 /* GridStack.swift in Sources */,
 				69157B9F2471A5A1005B9002 /* SafariView.swift in Sources */,
 				69E67EF22493833200ED7AC8 /* DodoCodeFormView.swift in Sources */,
 				69157BA02471A5A1005B9002 /* DismissingKeyboardOnSwipe.swift in Sources */,

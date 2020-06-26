@@ -21,7 +21,7 @@ struct IconChooserSheet: View {
         NavigationView {
             ScrollView {
                 LazyVGrid(columns: [GridItem(.adaptive(minimum: itemSize))]) {
-                    ForEach(0..<iconsCount + 1, id: \.self) { num in
+                    ForEach(0..<iconsCount, id: \.self) { num in
                         let name = "Inv\(num)"
                         Button(action: {
                             selectedIcon = name
