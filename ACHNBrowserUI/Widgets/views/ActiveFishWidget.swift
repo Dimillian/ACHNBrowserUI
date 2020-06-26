@@ -77,8 +77,8 @@ struct ActiveFishWidget: Widget {
     
     var body: some WidgetConfiguration {
         StaticConfiguration(kind: kind,
-                            provider: Provider(),
-                            placeholder: PlaceholderView()) { entry in
+                            provider: WidgetProvider(),
+                            placeholder: LoadingView()) { entry in
             ActiveFishWidgetView(model: entry)
         }
         .configurationDisplayName("Acive fish")

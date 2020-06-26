@@ -13,5 +13,6 @@ import Backend
 struct WidgetModel: TimelineEntry {
     public let date: Date
     public let availableFishes: [Item]?
+    public let villagers: [Villager]
 }
 

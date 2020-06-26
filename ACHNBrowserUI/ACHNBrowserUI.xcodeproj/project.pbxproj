@@ -152,6 +152,8 @@
 		69E67EF22493833200ED7AC8 /* DodoCodeFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69E67EF12493833200ED7AC8 /* DodoCodeFormView.swift */; };
 		69E67EF4249383DA00ED7AC8 /* TodayDodoCodeSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69E67EF3249383DA00ED7AC8 /* TodayDodoCodeSection.swift */; };
 		69E67EFB2494C35B00ED7AC8 /* ButtonImageCounterOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69E67EFA2494C35B00ED7AC8 /* ButtonImageCounterOverlay.swift */; };
+		69F65BA624A66432003A4D70 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69F65BA524A66432003A4D70 /* LoadingView.swift */; };
+		69F65BA824A66447003A4D70 /* WidgetProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69F65BA724A66447003A4D70 /* WidgetProvider.swift */; };
 		AE0B5B5A247AD6DF0075CF16 /* DesignFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE0B5B59247AD6DF0075CF16 /* DesignFormView.swift */; };
 		AE0B5B5C247AD7590075CF16 /* DesignFormViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE0B5B5B247AD7590075CF16 /* DesignFormViewModel.swift */; };
 		AE0B5B5E247B14120075CF16 /* DesignRowViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE0B5B5D247B14120075CF16 /* DesignRowViewModel.swift */; };
@@ -350,6 +352,8 @@
 		69E67EFA2494C35B00ED7AC8 /* ButtonImageCounterOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonImageCounterOverlay.swift; sourceTree = "<group>"; };
 		69E98C6E247439AD00A200FE /* it */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; lineEnding = 0; name = it; path = it.lproj/Localizable.strings; sourceTree = "<group>"; };
 		69EC82ED2461E79D00CE9064 /* TurnipsChartTopLegendView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TurnipsChartTopLegendView.swift; sourceTree = "<group>"; };
+		69F65BA524A66432003A4D70 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		69F65BA724A66447003A4D70 /* WidgetProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetProvider.swift; sourceTree = "<group>"; };
 		AE0B5B59247AD6DF0075CF16 /* DesignFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignFormView.swift; sourceTree = "<group>"; };
 		AE0B5B5B247AD7590075CF16 /* DesignFormViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignFormViewModel.swift; sourceTree = "<group>"; };
 		AE0B5B5D247B14120075CF16 /* DesignRowViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignRowViewModel.swift; sourceTree = "<group>"; };
@@ -492,9 +496,9 @@
 		6917C7CA24A24B2700708F41 /* views */ = {
 			isa = PBXGroup;
 			children = (
-				698584E024A1F70F002D103C /* Widgets.swift */,
 				6917C7C624A24A0300708F41 /* ActiveFishWidget.swift */,
 				6915F8CF24A509190026D55B /* VillagerBirthdayWidget.swift */,
+				69F65BA524A66432003A4D70 /* LoadingView.swift */,
 			);
 			path = views;
 			sourceTree = "<group>";
@@ -503,6 +507,7 @@
 			isa = PBXGroup;
 			children = (
 				6917C7C824A24A4100708F41 /* WidgetModel.swift */,
+				69F65BA724A66447003A4D70 /* WidgetProvider.swift */,
 			);
 			path = models;
 			sourceTree = "<group>";
@@ -625,6 +630,7 @@
 		698584DF24A1F70F002D103C /* Widgets */ = {
 			isa = PBXGroup;
 			children = (
+				698584E024A1F70F002D103C /* Widgets.swift */,
 				6917C7CB24A24B2E00708F41 /* models */,
 				6917C7CA24A24B2700708F41 /* views */,
 				698584E324A1F710002D103C /* Assets.xcassets */,
@@ -1240,9 +1246,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				69F65BA824A66447003A4D70 /* WidgetProvider.swift in Sources */,
 				6915F8D024A509190026D55B /* VillagerBirthdayWidget.swift in Sources */,
 				6917C7C924A24A4100708F41 /* WidgetModel.swift in Sources */,
 				698584E124A1F70F002D103C /* Widgets.swift in Sources */,
+				69F65BA624A66432003A4D70 /* LoadingView.swift in Sources */,
 				6917C7C724A24A0300708F41 /* ActiveFishWidget.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
