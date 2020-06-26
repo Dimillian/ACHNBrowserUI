@@ -16,13 +16,13 @@ struct ItemDetailView: View {
     @EnvironmentObject private var subscriptionManager: SubscriptionManager
     @EnvironmentObject private var musicPlayer: MusicPlayerManager
 
-    @ObservedObject private var itemViewModel: ItemDetailViewModel
+    @StateObject private var itemViewModel: ItemDetailViewModel
     
     @State private var displayedVariant: Variant?
     @State private var selectedSheet: Sheet.SheetType?
 
     init(item: Item) {
-        self.itemViewModel = ItemDetailViewModel(item: item)
+        self._itemViewModel = StateObject(wrappedValue: ItemDetailViewModel(item: item))
     }
 
     private func makeShareContent() -> [Any] {
@@ -63,7 +63,7 @@ struct ItemDetailView: View {
                 if !itemViewModel.item.metas.isEmpty {
                     keywordsSection
                 }
-            } .listRowBackground(Color.acSecondaryBackground)
+            }.listRowBackground(Color.acSecondaryBackground)
             
             Group {
                 if !itemViewModel.setItems.isEmpty {

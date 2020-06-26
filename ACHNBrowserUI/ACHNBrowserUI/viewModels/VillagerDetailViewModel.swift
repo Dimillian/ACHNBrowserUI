@@ -18,7 +18,6 @@ public class VillagerDetailViewModel: ObservableObject {
         
     init(villager: Villager) {
         self.villager = villager
-        fetchItems()
     }
     
     func fetchItems() {

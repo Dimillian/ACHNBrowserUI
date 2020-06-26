@@ -79,64 +79,68 @@ struct AboutView: View {
         NavigationView {
             List {
                 Section(header: SectionHeaderView(text: "The app")) {
-                    makeRow(image: "chevron.left.slash.chevron.right",
-                            text: "Souce code / report an issue",
-                            link: URL(string: "https://github.com/Dimillian/ACHNBrowserUI"),
-                            color: .acHeaderBackground)
-                    makeRow(image: "envelope.fill",
-                            text: "Contact / follow us on Twitter",
-                            link: URL(string: "https://twitter.com/achelperapp"),
-                            color: .acHeaderBackground)
-                    makeRow(image: "photo.fill",
-                            text: "Contact / follow us on Instagram",
-                            link: URL(string: "https://www.instagram.com/achelperapp/"),
-                            color: .acHeaderBackground)
-                    makeRow(image: "star.fill",
-                            text: "Rate the app on the App Store",
-                            link: URL(string: "itms-apps://itunes.apple.com/app/1508764244?action=write-review"),
-                            color: .acHeaderBackground)
-                    makeRow(image: "lock",
-                            text: "Privacy Policy",
-                            link: URL(string: "https://github.com/Dimillian/ACHNBrowserUI/blob/main/privacy-policy.md#ac-helper-privacy-policy"),
-                            color: .acHeaderBackground)
-                    makeRow(image: "person",
-                            text: "Terms of Use",
-                            link: URL(string: "https://github.com/Dimillian/ACHNBrowserUI/blob/main/term-of-use.md#ac-helper-term-of-use"),
-                            color: .acHeaderBackground)
-                    makeDetailRow(image: "tag",
-                                  text: "App version",
-                                  detail: "\(versionNumber) (\(buildNumber))",
-                                  color: .acHeaderBackground)
-                    makeDetailRow(image: "gamecontroller",
-                                  text: "Game patch data",
-                                  detail: "1.2.1",
-                                  color: .acHeaderBackground)
+                    Group {
+                        makeRow(image: "chevron.left.slash.chevron.right",
+                                text: "Souce code / report an issue",
+                                link: URL(string: "https://github.com/Dimillian/ACHNBrowserUI"),
+                                color: .acHeaderBackground)
+                        makeRow(image: "envelope.fill",
+                                text: "Contact / follow us on Twitter",
+                                link: URL(string: "https://twitter.com/achelperapp"),
+                                color: .acHeaderBackground)
+                        makeRow(image: "photo.fill",
+                                text: "Contact / follow us on Instagram",
+                                link: URL(string: "https://www.instagram.com/achelperapp/"),
+                                color: .acHeaderBackground)
+                        makeRow(image: "star.fill",
+                                text: "Rate the app on the App Store",
+                                link: URL(string: "itms-apps://itunes.apple.com/app/1508764244?action=write-review"),
+                                color: .acHeaderBackground)
+                        makeRow(image: "lock",
+                                text: "Privacy Policy",
+                                link: URL(string: "https://github.com/Dimillian/ACHNBrowserUI/blob/main/privacy-policy.md#ac-helper-privacy-policy"),
+                                color: .acHeaderBackground)
+                        makeRow(image: "person",
+                                text: "Terms of Use",
+                                link: URL(string: "https://github.com/Dimillian/ACHNBrowserUI/blob/main/term-of-use.md#ac-helper-term-of-use"),
+                                color: .acHeaderBackground)
+                        makeDetailRow(image: "tag",
+                                      text: "App version",
+                                      detail: "\(versionNumber) (\(buildNumber))",
+                                      color: .acHeaderBackground)
+                        makeDetailRow(image: "gamecontroller",
+                                      text: "Game patch data",
+                                      detail: "1.2.1",
+                                      color: .acHeaderBackground)
+                    }.listRowBackground(Color.acSecondaryBackground)
                 }
                 Section(header: SectionHeaderView(text: "Acknowledgements")) {
-                    makeRow(image: "suit.heart.fill",
-                            text: "Our amazing contributors",
-                            link: URL(string: "https://github.com/Dimillian/ACHNBrowserUI/graphs/contributors"),
-                            color: .red)
-                    makeRow(image: "suit.heart.fill",
-                            text: "The NookPlaza API by Azarro",
-                            link: URL(string: "https://nookplaza.net/"),
-                            color: .red)
-                    makeRow(image: "suit.heart.fill",
-                            text: "The ACNHAPI for villagers data and images",
-                            link: URL(string: "http://acnhapi.com"),
-                            color: .red)
-                    makeRow(image: "suit.heart.fill",
-                            text: "Meet the community of ACNH Connect",
-                            link: URL(string: "https://apps.apple.com/us/app/acnh-connect/id1511183931"),
-                            color: .red)
-                    makeRow(image: "suit.heart.fill",
-                            text: "Shihab / JPEGuin for the icon",
-                            link: URL(string: "https://twitter.com/JPEGuin"),
-                            color: .red)
-                    makeRow(image: "suit.heart.fill",
-                            text: "Christian & Ninji for the turnip predictions algorithm",
-                            link: URL(string: "https://elxris.github.io/Turnip-Calculator/"),
-                            color: .red)
+                    Group {
+                        makeRow(image: "suit.heart.fill",
+                                text: "Our amazing contributors",
+                                link: URL(string: "https://github.com/Dimillian/ACHNBrowserUI/graphs/contributors"),
+                                color: .red)
+                        makeRow(image: "suit.heart.fill",
+                                text: "The NookPlaza API by Azarro",
+                                link: URL(string: "https://nookplaza.net/"),
+                                color: .red)
+                        makeRow(image: "suit.heart.fill",
+                                text: "The ACNHAPI for villagers data and images",
+                                link: URL(string: "http://acnhapi.com"),
+                                color: .red)
+                        makeRow(image: "suit.heart.fill",
+                                text: "Meet the community of ACNH Connect",
+                                link: URL(string: "https://apps.apple.com/us/app/acnh-connect/id1511183931"),
+                                color: .red)
+                        makeRow(image: "suit.heart.fill",
+                                text: "Shihab / JPEGuin for the icon",
+                                link: URL(string: "https://twitter.com/JPEGuin"),
+                                color: .red)
+                        makeRow(image: "suit.heart.fill",
+                                text: "Christian & Ninji for the turnip predictions algorithm",
+                                link: URL(string: "https://elxris.github.io/Turnip-Calculator/"),
+                                color: .red)
+                    }.listRowBackground(Color.acSecondaryBackground)
                 }
             }
             .listStyle(InsetGroupedListStyle())

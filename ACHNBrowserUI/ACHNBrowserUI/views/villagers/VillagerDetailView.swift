@@ -12,7 +12,7 @@ import Backend
 import UI
 
 struct VillagerDetailView: View {
-    @ObservedObject var viewModel: VillagerDetailViewModel
+    @StateObject var viewModel: VillagerDetailViewModel
     @Environment(\.presentationMode) var presentation
     
     @State private var backgroundColor = Color.acSecondaryBackground
@@ -29,7 +29,7 @@ struct VillagerDetailView: View {
     }
     
     init(villager: Villager, isPresentedInModal: Bool = false) {
-        self.viewModel = VillagerDetailViewModel(villager: villager)
+        self._viewModel = StateObject(wrappedValue: VillagerDetailViewModel(villager: villager))
         self.isPresentedInModal = isPresentedInModal
     }
     
@@ -162,6 +162,7 @@ struct VillagerDetailView: View {
         .listStyle(InsetGroupedListStyle())
         .navigationBarTitle(Text(villager.localizedName), displayMode: .automatic)
         .onAppear {
+            viewModel.fetchItems()
             let url = ACNHApiService.BASE_URL.absoluteString +
                 ACNHApiService.Endpoint.villagerIcon(id: self.villager.id).path()
             ImageService.getImageColors(key: url) { colors in
@@ -180,6 +181,7 @@ struct VillagerDetailView: View {
         makeBody(items: true)
             .sheet(item: $sheet, content: { Sheet(sheetType: $0) })
             .navigationBarItems(leading: makeCloseButton, trailing: navButtons)
+            .onAppear(perform: viewModel.fetchItems)
     }
 }
 
