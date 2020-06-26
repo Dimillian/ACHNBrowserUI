@@ -245,50 +245,60 @@ extension TurnipsView {
         }
     }
     
+    struct GridContent<Content: View>: View {
+        let rows: Int
+        let columns: Int
+        let content: (Int, Int) -> Content
+        
+        init(rows: Int, columns: Int, @ViewBuilder content: @escaping (Int, Int) -> Content) {
+            self.rows = rows
+            self.columns = columns
+            self.content = content
+        }
+        
+        var body: some View {
+            ForEach(0..<rows) { row in
+                ForEach(0..<columns) { column in
+                    Group {
+                        content(row, column)
+                    }.frame(height: 50)
+                }
+            }
+        }
+    }
+    
     @ViewBuilder
     private func averageGridValues() -> some View {
-        ForEach(0..<labels.count) { row in
-            ForEach(0..<3) { column in
-                Group {
-                    switch column {
-                    case 0: weekDaysText(row: row)
-                    case 1: averagePriceText(dayNumber: row, meridian: .am)
-                    case 2: averagePriceText(dayNumber: row, meridian: .pm)
-                    default: EmptyView()
-                    }
-                }.frame(height: 50)
+        GridContent(rows: labels.count, columns: 3) { row, column in
+            switch column {
+            case 0: weekDaysText(row: row)
+            case 1: averagePriceText(dayNumber: row, meridian: .am)
+            case 2: averagePriceText(dayNumber: row, meridian: .pm)
+            default: EmptyView()
             }
         }
     }
 
     @ViewBuilder
     private func minMaxGridValues() -> some View {
-        ForEach(0..<labels.count) { row in
-            ForEach(0..<3) { column in
-                Group {
-                    switch column {
-                    case 0: weekDaysText(row: row)
-                    case 1: minMaxPriceText(dayNumber: row, meridian: .am)
-                    case 2: minMaxPriceText(dayNumber: row, meridian: .pm)
-                    default: EmptyView()
-                    }
-                }.frame(height: 50)
+        GridContent(rows: labels.count, columns: 3) { row, column in
+            switch column {
+            case 0: weekDaysText(row: row)
+            case 1: minMaxPriceText(dayNumber: row, meridian: .am)
+            case 2: minMaxPriceText(dayNumber: row, meridian: .pm)
+            default: EmptyView()
             }
         }
     }
 
     @ViewBuilder
     private func averageProfitGridValues() -> some View {
-        ForEach(0..<labels.count) { row in
-            ForEach(0..<3) { column in
-                Group {
-                    switch column {
-                    case 0: weekDaysText(row: row)
-                    case 1: averageProfitText(dayNumber: row, meridian: .am)
-                    case 2: averageProfitText(dayNumber: row, meridian: .pm)
-                    default: EmptyView()
-                    }
-                }.frame(height: 50)
+        GridContent(rows: labels.count, columns: 3) { row, column in
+            switch column {
+            case 0: weekDaysText(row: row)
+            case 1: averageProfitText(dayNumber: row, meridian: .am)
+            case 2: averageProfitText(dayNumber: row, meridian: .pm)
+            default: EmptyView()
             }
         }
     }
@@ -313,7 +323,7 @@ extension TurnipsView {
             let averagePrice = meridian == .am ? averagePrices.first : averagePrices.last,
             let minMaxPricesForTheDay = viewModel.minMaxPrices?[dayNumber],
             let minMaxPrices = meridian == .am ? minMaxPricesForTheDay.first : minMaxPricesForTheDay.last else {
-                return EmptyView().eraseToAnyView()
+            return EmptyView().eraseToAnyView()
         }
 
         let isEntered = averagePrice == minMaxPrices.first && averagePrice == minMaxPrices.last
