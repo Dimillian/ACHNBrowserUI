@@ -11,9 +11,11 @@ import Backend
 
 class CustomTaskFormViewModel: ObservableObject {
     @Published var task: DailyCustomTasks.CustomTask
-    @Published var selectedIcon: String = "" {
+    @Published var selectedIcon: String? {
         didSet {
-            task.icon = selectedIcon
+            if let icon = selectedIcon {
+                task.icon = icon
+            }
         }
     }
     

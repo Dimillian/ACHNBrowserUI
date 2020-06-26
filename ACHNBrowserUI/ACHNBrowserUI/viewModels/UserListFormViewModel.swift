@@ -11,7 +11,7 @@ import Backend
 
 class UserListFormViewModel: ObservableObject {
     @Published var list: UserList
-    @Published var selectedIcon: String = "" {
+    @Published var selectedIcon: String? {
         didSet {
             list.icon = selectedIcon
         }

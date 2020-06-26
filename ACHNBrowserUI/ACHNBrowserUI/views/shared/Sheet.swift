@@ -23,6 +23,7 @@ struct Sheet: View {
         case choreForm(chore: Chore?)
         case villager(villager: Villager, subManager: SubscriptionManager, collection: UserCollection)
         case dodoCodeForm(editing: DodoCode?)
+        case iconChooser(icon: Binding<String?>)
 
         var id: String {
             switch self {
@@ -50,6 +51,8 @@ struct Sheet: View {
                 return "villager"
             case .dodoCodeForm:
                 return "dodoCodeForm"
+            case .iconChooser:
+                return "iconChooser"
             }
         }
     }
@@ -94,6 +97,8 @@ struct Sheet: View {
             }
         case .dodoCodeForm(let editing):
             DodoCodeFormView(isEditing: editing)
+        case .iconChooser(let icon):
+            IconChooserSheet(selectedIcon: icon)
         }
     }
 }

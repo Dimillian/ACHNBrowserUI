@@ -15,6 +15,7 @@ struct CustomTaskFormView: View {
     @Environment(\.presentationMode) private var presentationMode
     @State private var errorBorderTaskName: Color = .clear
     @State private var errorBorderIcon: Color = .clear
+    @State private var presentedSheet: Sheet.SheetType?
     
     init(editingTask: DailyCustomTasks.CustomTask?) {
         self.viewModel = CustomTaskFormViewModel(editingTask: editingTask)
@@ -43,56 +44,56 @@ struct CustomTaskFormView: View {
     
     var body: some View {
         Form {
-            HStack {
-                Text("Task name")
-                Spacer()
-                TextField("Name of the task",
-                          text: $viewModel.task.name,
-                          onEditingChanged: { _ in
-                            self.errorBorderTaskName = .clear
-                })
-                .multilineTextAlignment(.trailing)
-                .foregroundColor(.acText)
-            }
-            .listRowBackground(Color.acSecondaryBackground)
-            .border(errorBorderTaskName)
-            Picker(selection: $viewModel.task.icon,
-                label: Text("Icon")) {
+            Group {
+                HStack {
+                    Text("Task name")
+                    Spacer()
+                    TextField("Name of the task",
+                              text: $viewModel.task.name,
+                              onEditingChanged: { _ in
+                                self.errorBorderTaskName = .clear
+                              })
+                        .multilineTextAlignment(.trailing)
+                        .foregroundColor(.acText)
+                }
+                .border(errorBorderTaskName)
+                
+                Button(action: {
+                    presentedSheet = .iconChooser(icon: $viewModel.selectedIcon)
+                }) {
                     HStack {
-                        Image("icon-villager")
-                            .renderingMode(.original)
-                            .resizable()
-                            .frame(width: 40, height: 40)
-                    }.tag("icon-villager")
-                    ForEach(0..<199, id: \.self) { num in
-                        HStack {
-                            Image("Inv\(num)")
+                        Text("Icon")
+                            .foregroundColor(.black)
+                        Spacer()
+                        if let icon = viewModel.selectedIcon {
+                            Image(icon)
                                 .renderingMode(.original)
                                 .resizable()
                                 .frame(width: 40, height: 40)
-                        }.tag("Inv\(num)")
-                    }
+                        }
+                    } .border(viewModel.task.icon.isEmpty ? errorBorderIcon : .clear)
                 }
-            .listRowBackground(Color.acSecondaryBackground)
-            .border(self.viewModel.task.icon.isEmpty ? errorBorderIcon : .clear)
-            Toggle(isOn: $viewModel.task.hasProgress) {
-                Text("Has progress")
-            }
-            .listRowBackground(Color.acSecondaryBackground)
-            if self.viewModel.task.hasProgress {
-                Picker(selection: $viewModel.task.maxProgress,
-                       label: Text("Max amount")) {
+                
+                Toggle(isOn: $viewModel.task.hasProgress) {
+                    Text("Has progress")
+                }
+                
+                if viewModel.task.hasProgress {
+                    Picker(selection: $viewModel.task.maxProgress,
+                           label: Text("Max amount")) {
                         ForEach(0..<46) {
                             if $0 > 0 {
                                 Text("\($0)")
                             }
                         }
-                }.listRowBackground(Color.acSecondaryBackground)
-            }
+                    }
+                }
+            }.listRowBackground(Color.acSecondaryBackground)
         }
         .listStyle(InsetGroupedListStyle())
         .navigationBarTitle("Edit task")
         .navigationBarItems(trailing: saveButton)
+        .sheet(item: $presentedSheet, content: { Sheet(sheetType: $0) })
     }
 }
 

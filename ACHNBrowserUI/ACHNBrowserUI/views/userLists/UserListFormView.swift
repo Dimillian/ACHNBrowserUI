@@ -14,6 +14,7 @@ struct UserListFormView: View {
     @Environment(\.presentationMode) private var presentationMode
     @ObservedObject private var viewModel: UserListFormViewModel
     @State private var errorBorder: Color = .clear
+    @State private var presentedSheet: Sheet.SheetType?
     
     init(editingList: UserList?) {
         self.viewModel = UserListFormViewModel(editingList: editingList)
@@ -51,44 +52,47 @@ struct UserListFormView: View {
     var body: some View {
         NavigationView {
             Form {
-                HStack {
-                    Text("Name of your list")
-                    Spacer()
-                    TextField("List name",
-                              text: $viewModel.list.name,
-                              onEditingChanged: {_ in
-                                self.errorBorder = .clear
-                    })
-                        .multilineTextAlignment(.trailing)
-                        .foregroundColor(.acText)
-                }
-                .border(errorBorder)
-                .listRowBackground(Color.acSecondaryBackground)
-                HStack {
-                    Text("Description")
-                    Spacer()
-                    TextField("Can be nothing", text: $viewModel.list.description)
-                        .multilineTextAlignment(.trailing)
-                        .foregroundColor(.acText)
-                }
-                .listRowBackground(Color.acSecondaryBackground)
-                Picker(selection: $viewModel.selectedIcon,
-                       label: Text("Icon")) {
-                        ForEach(Category.icons().map{ $0.iconName() }, id: \.self) { icon in
-                            HStack {
+                Group {
+                    HStack {
+                        Text("Name of your list")
+                        Spacer()
+                        TextField("List name",
+                                  text: $viewModel.list.name,
+                                  onEditingChanged: {_ in
+                                    self.errorBorder = .clear
+                                  })
+                            .multilineTextAlignment(.trailing)
+                            .foregroundColor(.acText)
+                    }
+                    .border(errorBorder)
+                    HStack {
+                        Text("Description")
+                        Spacer()
+                        TextField("Can be nothing", text: $viewModel.list.description)
+                            .multilineTextAlignment(.trailing)
+                            .foregroundColor(.acText)
+                    }
+                    
+                    Button(action: {
+                        presentedSheet = .iconChooser(icon: $viewModel.selectedIcon)
+                    }) {
+                        HStack {
+                            Text("Icon").foregroundColor(.black)
+                            Spacer()
+                            if let icon = viewModel.selectedIcon {
                                 Image(icon)
                                     .renderingMode(.original)
                                     .resizable()
                                     .frame(width: 40, height: 40)
                             }
-                            .tag(icon)
-                            .listRowBackground(Color.acSecondaryBackground)
                         }
-                }
-                .listRowBackground(Color.acSecondaryBackground)
+                    }
+                }.listRowBackground(Color.acSecondaryBackground)
+                
             }
             .navigationBarTitle("Edit your list")
             .navigationBarItems(leading: dismissButton, trailing: saveButton)
+            .sheet(item: $presentedSheet, content: { Sheet(sheetType: $0) })
         }
         .navigationViewStyle(StackNavigationViewStyle())
     }

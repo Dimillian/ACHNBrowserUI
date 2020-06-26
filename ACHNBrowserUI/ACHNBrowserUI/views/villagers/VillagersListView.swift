@@ -40,17 +40,8 @@ struct VillagersListView: View {
         
     var body: some View {
         NavigationView {
-            List {
-                Section(header: SearchField(searchText: $viewModel.searchText,
-                                             placeholder: "Search a villager"))
-                {
-                    Picker("segment", selection: $currentFilter) {
-                        ForEach(Filter.allCases, id: \.self) {
-                            Text(LocalizedStringKey($0.rawValue.capitalized))
-                        }
-                    }.pickerStyle(SegmentedPickerStyle())
-                    .listRowBackground(Color.acSecondaryBackground)
-                    
+            ScrollView {
+                LazyVGrid(columns: [GridItem(.adaptive(minimum: 100))]) {
                     ForEach(currentVillagers) { villager in
                         NavigationLink(destination: VillagerDetailView(villager: villager)) {
                             self.makeRowView(villager: villager)
@@ -58,8 +49,7 @@ struct VillagersListView: View {
                         .listRowBackground(Color.acSecondaryBackground)
                     }
                 }
-            }
-            .gesture(DragGesture()
+            }.gesture(DragGesture()
                 .onEnded { value in
                     if value.translation.width > 100 {
                         switch(self.currentFilter) {
