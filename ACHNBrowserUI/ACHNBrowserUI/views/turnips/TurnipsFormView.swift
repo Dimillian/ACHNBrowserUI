@@ -34,8 +34,10 @@ struct TurnipsFormView: View {
     // MARK: - Body
     var body: some View {
         List {
-            configurationSection
-            pricesSection
+            Group {
+                configurationSection
+                pricesSection
+            }.listRowBackground(Color.acSecondaryBackground)
         }
         .listStyle(InsetGroupedListStyle())
         .modifier(AdaptsToSoftwareKeyboard())

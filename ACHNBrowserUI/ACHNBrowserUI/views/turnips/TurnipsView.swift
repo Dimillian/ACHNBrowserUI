@@ -46,25 +46,27 @@ struct TurnipsView: View {
                 TurnipsFormView().environmentObject(subManager)
             }
             List {
-                if subManager.subscriptionStatus == .notSubscribed {
-                    subscriptionSection
-                }
-                if UIDevice.current.userInterfaceIdiom != .pad ||
-                    (UIDevice.current.orientation == .portrait ||
-                        UIDevice.current.orientation == .portraitUpsideDown){
-                    Section(header: SectionHeaderView(text: "Your prices", icon: "pencil")) {
-                        Button(action: {
-                            self.presentedSheet = .turnipsForm(subManager: self.subManager)
-                        }) {
-                            Text(TurnipFields.exist() ? "Edit your in game prices" : "Add your in game prices")
-                                .foregroundColor(.acHeaderBackground)
+                Group {
+                    if subManager.subscriptionStatus == .notSubscribed {
+                        subscriptionSection
+                    }
+                    if UIDevice.current.userInterfaceIdiom != .pad ||
+                        (UIDevice.current.orientation == .portrait ||
+                            UIDevice.current.orientation == .portraitUpsideDown){
+                        Section(header: SectionHeaderView(text: "Your prices", icon: "pencil")) {
+                            Button(action: {
+                                self.presentedSheet = .turnipsForm(subManager: self.subManager)
+                            }) {
+                                Text(TurnipFields.exist() ? "Edit your in game prices" : "Add your in game prices")
+                                    .foregroundColor(.acHeaderBackground)
+                            }
                         }
                     }
-                }
-                predictionsSection
-                if turnipService.turnipProhetUrl != nil {
-                    prophetSection
-                }
+                    predictionsSection
+                    if turnipService.turnipProhetUrl != nil {
+                        prophetSection
+                    }
+                }.listRowBackground(Color.acSecondaryBackground)
             }
             .listStyle(InsetGroupedListStyle())
             .navigationBarTitle("Turnips",
