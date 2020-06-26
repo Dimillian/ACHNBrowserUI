@@ -22,26 +22,6 @@ struct VillagerBirthdayWidgetView: View {
         return formatter.string(from: Date())
     }
     
-    private func formattedDate(for villager: Villager) -> Date {
-        guard let birthday = villager.birthday else { return Date() }
-        let formatter = DateFormatter()
-        
-        formatter.dateFormat = "d/M"
-        return formatter.date(from: birthday) ?? Date()
-    }
-    
-    private func birthdayDay(for villager: Villager) -> String {
-        let formatter = DateFormatter()
-        formatter.setLocalizedDateFormatFromTemplate("dd")
-        return formatter.string(from: formattedDate(for: villager))
-    }
-    
-    private func birthdayMonth(for villager: Villager) -> String {
-        let formatter = DateFormatter()
-        formatter.setLocalizedDateFormatFromTemplate("MMM")
-        return formatter.string(from: formattedDate(for: villager))
-    }
-    
     private var villager: Villager? {
         model.villagers.filter( { $0.birthday == today } ).first
     }
@@ -49,50 +29,99 @@ struct VillagerBirthdayWidgetView: View {
     @ViewBuilder
     var body: some View {
         if let villager = villager {
-            Group {
-                VStack {
+            switch family {
+            case .systemSmall:
+                makeSmallWidget(villager: villager)
+            case .systemMedium:
+                makeMediumWidget(villager: villager)
+            case .systemLarge:
+                Text("Not supported yet.")
+            @unknown default:
+                Text("Not supported yet.")
+            }
+            
+        }
+    }
+    
+    private func makeDayStamp(villager: Villager) -> some View {
+        VStack {
+            Text(villager.birthdayMonth())
+                .font(.system(.caption, design: .rounded))
+                .fontWeight(.bold)
+                .foregroundColor(.acText)
+            Text(villager.birthdayDay())
+                .font(.system(.subheadline, design: .rounded))
+                .fontWeight(.bold)
+                .foregroundColor(.acText)
+        }
+        .frame(minWidth: 66)
+        .padding(10)
+        .background(Color.acText.opacity(0.2))
+        .mask(RoundedRectangle(cornerRadius: 22, style: .continuous))
+        .padding(.trailing, 8)
+    }
+    
+    @ViewBuilder
+    private func makeIcon(villager: Villager, size: CGFloat) -> some View {
+        if let url = URL(string: ACNHApiService.BASE_URL.absoluteString +
+                            ACNHApiService.Endpoint.villagerIcon(id: villager.id).path()) {
+            WebImage(url: url)
+                .resizable()
+                .renderingMode(.original)
+                .aspectRatio(contentMode: .fit)
+                .frame(width: size, height: size)
+        }
+    }
+    
+    private func makeName(villager: Villager) -> some View {
+        Text(villager.localizedName)
+            .font(Font.system(.headline, design: .rounded))
+            .fontWeight(.semibold)
+            .lineLimit(2)
+            .foregroundColor(.acText)
+    }
+    
+    private func makeSmallWidget(villager: Villager) -> some View {
+        Group {
+            HStack {
+                Spacer()
+                VStack(spacing: 8) {
                     Spacer()
-                    HStack {
-                        Spacer()
-                        VStack {
-                            Text(birthdayMonth(for: villager))
-                                .font(.system(.caption, design: .rounded))
-                                .fontWeight(.bold)
-                                .foregroundColor(.acText)
-                            Text(birthdayDay(for: villager))
-                                .font(.system(.subheadline, design: .rounded))
-                                .fontWeight(.bold)
-                                .foregroundColor(.acText)
-                        }
-                        .frame(minWidth: 66)
-                        .padding(10)
-                        .background(Color.acText.opacity(0.2))
-                        .mask(RoundedRectangle(cornerRadius: 22, style: .continuous))
-                        .padding(.trailing, 8)
-                        
-                        Text(villager.localizedName)
-                            .font(Font.system(.headline, design: .rounded))
-                            .fontWeight(.semibold)
-                            .lineLimit(2)
-                            .foregroundColor(.acText)
-                        
-                        Spacer()
-                        
-                        if let url = URL(string: ACNHApiService.BASE_URL.absoluteString +
-                                            ACNHApiService.Endpoint.villagerIcon(id: villager.id).path()) {
-                            WebImage(url: url)
-                                .resizable()
-                                .renderingMode(.original)
-                                .aspectRatio(contentMode: .fit)
-                                .frame(width: 60, height: 60)
-                                .animation(.spring())
-                        }
-                        Spacer()
-                    }
+                    makeDayStamp(villager: villager)
+                    makeIcon(villager: villager, size: 40)
+                    makeName(villager: villager)
                     Spacer()
                 }
-            }.background(Color.acBackground)
-        }
+                Spacer()
+            }
+        }.background(Color.acBackground)
+    }
+    
+    private func makeMediumWidget(villager: Villager) -> some View {
+        Group {
+            VStack {
+                Spacer()
+                HStack {
+                    Image("icon-present")
+                        .resizable()
+                        .frame(width: 40, height: 40)
+                    Text("Today's Birthday")
+                        .font(Font.system(.title3, design: .rounded))
+                        .fontWeight(.bold)
+                        .foregroundColor(.acText)
+                }
+                Spacer()
+                HStack {
+                    Spacer()
+                    makeDayStamp(villager: villager)
+                    makeName(villager: villager)
+                    Spacer()
+                    makeIcon(villager: villager, size: 60)
+                    Spacer()
+                }
+                Spacer()
+            }
+        }.background(Color.acBackground)
     }
 }
 struct VillagerBirthdayWidget: Widget {
@@ -106,6 +135,6 @@ struct VillagerBirthdayWidget: Widget {
         }
         .configurationDisplayName("Villager birthday")
         .description("Today villagers birthday")
-        .supportedFamilies([.systemMedium])
+        .supportedFamilies([.systemSmall, .systemMedium])
     }
 }

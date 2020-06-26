@@ -17,26 +17,6 @@ struct TodayBirthdaysSection: View {
         viewModel.todayBirthdays.count > 1 ? "Today's Birthdays" : "Today's Birthday"
     }
     
-    private func formattedDate(for villager: Villager) -> Date {
-        guard let birthday = villager.birthday else { return Date() }
-        let formatter = DateFormatter()
-        
-        formatter.dateFormat = "d/M"
-        return formatter.date(from: birthday) ?? Date()
-    }
-
-    private func birthdayDay(for villager: Villager) -> String {
-        let formatter = DateFormatter()
-        formatter.setLocalizedDateFormatFromTemplate("dd")
-        return formatter.string(from: formattedDate(for: villager))
-    }
-
-    private func birthdayMonth(for villager: Villager) -> String {
-        let formatter = DateFormatter()
-        formatter.setLocalizedDateFormatFromTemplate("MMM")
-        return formatter.string(from: formattedDate(for: villager))
-    }
-
     var body: some View {
         Group {
             if viewModel.todayBirthdays.isEmpty {
@@ -55,11 +35,11 @@ struct TodayBirthdaysSection: View {
     private func makeCell(for villager: Villager) -> some View {
         HStack {
             VStack {
-                Text(birthdayMonth(for: villager))
+                Text(villager.birthdayMonth())
                     .font(.system(.caption, design: .rounded))
                     .fontWeight(.bold)
                     .foregroundColor(.acText)
-                Text(birthdayDay(for: villager))
+                Text(villager.birthdayDay())
                     .font(.system(.subheadline, design: .rounded))
                     .fontWeight(.bold)
                     .foregroundColor(.acText)
