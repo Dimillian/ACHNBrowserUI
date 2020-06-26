@@ -24,7 +24,6 @@ class VillagersViewModel: ObservableObject {
 
     // MARK: - Private properties
 
-    private static var cachedVillagers: [Villager] = []
     private var apiPublisher: AnyPublisher<[String: Villager], Never>?
     private var searchCancellable: AnyCancellable?
 
@@ -60,14 +59,7 @@ class VillagersViewModel: ObservableObject {
             .filter { !$0.isEmpty }
             .map(villagers(with:))
             .sink(receiveValue: { [weak self] in self?.searchResults = $0 })
-        
-        if villagers.isEmpty {
-            villagers = Self.cachedVillagers
-            todayBirthdays = villagers.filter( { $0.birthday == today } )
-        }
-        if !villagers.isEmpty {
-            return
-        }
+
         apiPublisher = ACNHApiService.fetch(endpoint: .villagers)
             .subscribe(on: DispatchQueue.global())
             .replaceError(with: [:])
@@ -77,7 +69,6 @@ class VillagersViewModel: ObservableObject {
             .map{ $0.map{ $0.1}.sorted(by: { $0.id > $1.id }) }
             .receive(on: DispatchQueue.main)
             .sink(receiveValue: { [weak self] in
-                Self.cachedVillagers = $0
                 self?.villagers = $0
                 self?.todayBirthdays = $0.filter( { $0.birthday == self?.today })
             })

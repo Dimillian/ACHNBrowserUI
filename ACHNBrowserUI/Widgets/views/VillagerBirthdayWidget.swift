@@ -28,17 +28,19 @@ struct VillagerBirthdayWidgetView: View {
     
     @ViewBuilder
     var body: some View {
-        switch family {
-        case .systemSmall:
-            makeSmallWidget(villager: villager)
-        case .systemMedium:
-            makeMediumWidget(villager: villager)
-        case .systemLarge:
-            Text("Not supported yet.")
-        @unknown default:
-            Text("Not supported yet.")
-        }
-        
+        Group {
+            switch family {
+            case .systemSmall:
+                makeSmallWidget(villager: villager)
+            case .systemMedium:
+                makeMediumWidget(villager: villager)
+            case .systemLarge:
+                Text("Not supported yet.")
+            @unknown default:
+                Text("Not supported yet.")
+            }
+            
+        }.widgetURL(URL(string: "achelperapp://villager/\(villager?.fileName ?? "null")")!)
     }
     
     private func makeDayStamp(villager: Villager?) -> some View {

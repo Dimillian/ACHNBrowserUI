@@ -63,6 +63,7 @@ struct ACHelperApp: App {
             .environmentObject(NewsArticleService.shared)
             .onAppear(perform: setupAppearance)
             .onContinueUserActivity(CSSearchableItemActionType, perform: handleSpotlight(_:))
+            .onOpenURL(perform: handleURL(url:))
             .sheet(item: $uiState.route, onDismiss: {
                 uiState.route = nil
             }, content: {
@@ -76,6 +77,13 @@ struct ACHelperApp: App {
            let name = id.components(separatedBy: "#").last,
            let item = Items.shared.categories[Backend.Category(itemCategory: id.components(separatedBy: "#").first!)]?.first(where: { $0.name == name }) {
             uiState.route = UIState.Route.item(item: item)
+        }
+    }
+    
+    private func handleURL(url: URL) {
+        if url.absoluteString.hasPrefix(UIState.Route.prefix),
+           url.pathComponents.count == 2 {
+            //TODO: Handle villager URL
         }
     }
     

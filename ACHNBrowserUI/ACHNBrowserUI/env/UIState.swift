@@ -19,6 +19,8 @@ class UIState: ObservableObject {
         case item(item: Item)
         case villager(villager: Villager)
         
+        static let prefix = "achelperapp"
+        
         var id: String {
             switch self {
             case .item(_): return "item"
