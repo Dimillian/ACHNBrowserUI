@@ -19,10 +19,6 @@ struct ActiveFishWidgetView : View {
     var body: some View {
         VStack {
             Spacer()
-            Text("To catch now")
-                .font(Font.system(.title3, design: .rounded))
-                .fontWeight(.bold)
-                .foregroundColor(.acText)
             HStack {
                 Spacer()
             }
@@ -53,13 +49,37 @@ private struct CritterRow: View {
     
     var body: some View {
         VStack {
+            Text(critter.name)
+                .font(.callout)
+                .foregroundColor(.acText)
+            Text(critter.obtainedFrom ?? critter.obtainedFromNew?.first ?? "Unknown")
+                .font(.footnote)
+                .fontWeight(.bold)
+                .foregroundColor(.acSecondaryText)
+            Spacer()
             WebImage(url: ImageService.computeUrl(key: critter.finalImage!))
                 .resizable()
                 .renderingMode(.original)
+                .placeholder(content: {
+                    ContainerRelativeShape()
+                        .fill(Color.acSecondaryBackground)
+                })
                 .aspectRatio(contentMode: .fit)
-                .frame(width: 60, height: 60)
+                .frame(width: 40, height: 40)
                 .animation(.spring())
-            Text(critter.name).foregroundColor(.acText)
+            Spacer()
+            if let hours = critter.activeHours(), hours.0 != 0, hours.1 != 0 {
+                let endDate = Calendar.current.date(bySettingHour: hours.1, minute: 0, second: 0, of: Date())!
+                HStack {
+                    Text(endDate, style: .relative)
+                        .font(.caption)
+                        .foregroundColor(.acText)
+                }
+            } else {
+                Text("All day")
+                    .font(.caption)
+                    .foregroundColor(.acText)
+            }
         }
     }
 }
@@ -68,7 +88,7 @@ struct CritterRows: View {
     let critters: [Item]
     
     var body: some View {
-        HStack {
+        HStack(alignment: .center) {
             ForEach(critters) { critter in
                 Spacer()
                 CritterRow(critter: critter)
@@ -89,7 +109,7 @@ struct ActiveFishWidget: Widget {
         }
         .configurationDisplayName("Active fish")
         .description("See a random fish that you can catch right now!")
-        .supportedFamilies([.systemSmall, .systemMedium, .systemLarge])
+        .supportedFamilies([.systemSmall, .systemMedium])
     }
 }
 

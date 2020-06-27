@@ -42,7 +42,10 @@ struct WidgetProvider: TimelineProvider {
     }
     
     func snapshot(with context: Context, completion: @escaping (WidgetModel) -> ()) {
-        let entry = WidgetModel(date: Date(), availableFishes: nil, villagers: [])
+        let fishes = items.categories[.fish]?.filterActiveThisMonth().filter{ $0.isActiveAtThisHour() }
+        let entry = WidgetModel(date: Date(),
+                                availableFishes: fishes?.shuffled().prefix(upTo: 3).map{ $0 },
+                                villagers: [static_villager])
         completion(entry)
     }
 }

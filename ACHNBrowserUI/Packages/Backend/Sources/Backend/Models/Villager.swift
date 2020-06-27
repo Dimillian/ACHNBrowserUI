@@ -59,12 +59,12 @@ public struct Villager: Identifiable, Codable, Equatable {
     }
 }
 
-public let static_villager = Villager(id: 0,
-                                      fileName: "test",
-                                      catchPhrase: "Hello world",
+public let static_villager = Villager(id: 354,
+                                      fileName: "Pietro",
+                                      catchPhrase: "honk honk",
                                       catchTranslations: [:],
-                                      name: ["name-en": "Test villager"],
-                                      personality: "Boring",
-                                      birthday: "2/4",
+                                      name: ["name-en": "Pietro"],
+                                      personality: "Smug",
+                                      birthday: "19/4",
                                       gender: "Male",
-                                      species: "Ant")
+                                      species: "Sheep")

@@ -23,7 +23,7 @@ struct VillagerBirthdayWidgetView: View {
     }
     
     private var villager: Villager? {
-        model?.villagers.filter( { $0.birthday == today } ).first
+        model?.villagers.filter( { $0.birthday == today } ).first ?? model?.villagers.first
     }
     
     @ViewBuilder
