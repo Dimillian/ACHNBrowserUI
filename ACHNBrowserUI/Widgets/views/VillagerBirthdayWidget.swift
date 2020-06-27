@@ -56,8 +56,7 @@ struct VillagerBirthdayWidgetView: View {
         }
         .frame(minWidth: 66)
         .padding(10)
-        .background(Color.acText.opacity(0.2))
-        .mask(RoundedRectangle(cornerRadius: 22, style: .continuous))
+        .background(ContainerRelativeShape().fill(Color.acText.opacity(0.2)))
         .padding(.trailing, 8)
     }
     
@@ -130,6 +129,7 @@ struct VillagerBirthdayWidgetView: View {
         }.background(Color.acBackground)
     }
 }
+
 struct VillagerBirthdayWidget: Widget {
     private let kind: String = "VillagerBirthday"
     

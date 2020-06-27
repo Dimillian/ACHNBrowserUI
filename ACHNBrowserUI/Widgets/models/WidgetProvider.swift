@@ -33,7 +33,9 @@ struct WidgetProvider: TimelineProvider {
             .map{ $0.map{ $0.1}.sorted(by: { $0.id > $1.id }) }
             .sink(receiveValue: {
                 let now = Date()
-                let entry = WidgetModel(date: now, availableFishes: fishes, villagers: $0)
+                let entry = WidgetModel(date: now,
+                                        availableFishes: fishes?.shuffled().prefix(upTo: 3).map{ $0 },
+                                        villagers: $0)
                 let nextUpdateDate = Calendar.current.date(byAdding: .minute, value: 15, to: now)!
                 completion(Timeline(entries: [entry], policy: .after(nextUpdateDate)))
             })

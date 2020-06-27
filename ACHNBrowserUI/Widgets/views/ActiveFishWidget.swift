@@ -20,9 +20,9 @@ struct ActiveFishWidgetView : View {
         VStack {
             Spacer()
             Text("To catch now")
-                .foregroundColor(.acText)
+                .font(Font.system(.title3, design: .rounded))
                 .fontWeight(.bold)
-                .font(.title2)
+                .foregroundColor(.acText)
             HStack {
                 Spacer()
             }
@@ -33,20 +33,12 @@ struct ActiveFishWidgetView : View {
                 }
             case .systemMedium:
                 if let critters = model.availableFishes {
-                    HStack {
-                        ForEach(critters.prefix(3)) { critter in
-                            Spacer()
-                            CritterRow(critter: critter)
-                            Spacer()
-                        }
-                    }
+                    CritterRows(critters: critters)
                 }
                 
             case .systemLarge:
                 if let critters = model.availableFishes {
-                    ForEach(critters.prefix(3)) { critter in
-                        CritterRow(critter: critter)
-                    }
+                    CritterRows(critters: critters)
                 }
             @unknown default:
                 Text("Not supported")
@@ -72,6 +64,20 @@ private struct CritterRow: View {
     }
 }
 
+struct CritterRows: View {
+    let critters: [Item]
+    
+    var body: some View {
+        HStack {
+            ForEach(critters) { critter in
+                Spacer()
+                CritterRow(critter: critter)
+                Spacer()
+            }
+        }
+    }
+}
+
 struct ActiveFishWidget: Widget {
     private let kind: String = "ActiveFish"
     
@@ -81,8 +87,14 @@ struct ActiveFishWidget: Widget {
                             placeholder: LoadingView()) { entry in
             ActiveFishWidgetView(model: entry)
         }
-        .configurationDisplayName("Acive fish")
-        .description("Fish that you can catch right now!")
+        .configurationDisplayName("Active fish")
+        .description("See a random fish that you can catch right now!")
         .supportedFamilies([.systemSmall, .systemMedium, .systemLarge])
+    }
+}
+
+struct ActiveFishWidget_Previews: PreviewProvider {
+    static var previews: some View {
+        /*@START_MENU_TOKEN@*/Text("Hello, World!")/*@END_MENU_TOKEN@*/
     }
 }
