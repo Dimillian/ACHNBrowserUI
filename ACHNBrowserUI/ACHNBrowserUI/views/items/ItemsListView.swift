@@ -12,20 +12,20 @@ import Backend
 import UI
 
 struct ItemsListView: View {
-    @ObservedObject var viewModel: ItemsViewModel
+    @StateObject var viewModel: ItemsViewModel
     @State private var showSortSheet = false
     @State private var itemRowsDisplayMode: ItemRowView.DisplayMode = .large
     let customTitle: String?
     
     init(category: Backend.Category, items: [Item]? = nil, keyword: String? = nil) {
         if let items = items {
-            viewModel = ItemsViewModel(category: category, items: items)
+            _viewModel = StateObject(wrappedValue: ItemsViewModel(category: category, items: items))
             customTitle = nil
         } else if let keyword = keyword {
-            viewModel = ItemsViewModel(meta: keyword)
+            _viewModel = StateObject(wrappedValue: ItemsViewModel(meta: keyword))
             customTitle = keyword
         } else {
-            viewModel = ItemsViewModel(category: category)
+            _viewModel = StateObject(wrappedValue: ItemsViewModel(category: category))
             customTitle = nil
         }
     }
