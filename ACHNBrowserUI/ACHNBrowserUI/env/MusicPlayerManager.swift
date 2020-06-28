@@ -42,6 +42,7 @@ public class MusicPlayerManager: ObservableObject {
     @Published public var currentSong: Song? {
         didSet {
             if let song = currentSong {
+                currentSongImage = nil
                 currentSongItem = matchItemFrom(song: song)
                 let musicURL = ACNHApiService.makeURL(endpoint: .music(id: song.id))
                 player?.pause()

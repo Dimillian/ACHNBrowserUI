@@ -152,6 +152,10 @@
 		69E67EF22493833200ED7AC8 /* DodoCodeFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69E67EF12493833200ED7AC8 /* DodoCodeFormView.swift */; };
 		69E67EF4249383DA00ED7AC8 /* TodayDodoCodeSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69E67EF3249383DA00ED7AC8 /* TodayDodoCodeSection.swift */; };
 		69E67EFB2494C35B00ED7AC8 /* ButtonImageCounterOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69E67EFA2494C35B00ED7AC8 /* ButtonImageCounterOverlay.swift */; };
+		69EF2FFF24A88C1300BC0D42 /* PlayerMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69EF2FFE24A88C1300BC0D42 /* PlayerMode.swift */; };
+		69EF300124A88EA000BC0D42 /* PlayerViewSmall.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69EF300024A88EA000BC0D42 /* PlayerViewSmall.swift */; };
+		69EF300324A8904E00BC0D42 /* PlayerViewExpanded.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69EF300224A8904E00BC0D42 /* PlayerViewExpanded.swift */; };
+		69EF300524A9176200BC0D42 /* PlayerViewMusicList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69EF300424A9176200BC0D42 /* PlayerViewMusicList.swift */; };
 		69F65BA624A66432003A4D70 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69F65BA524A66432003A4D70 /* LoadingView.swift */; };
 		69F65BA824A66447003A4D70 /* WidgetProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69F65BA724A66447003A4D70 /* WidgetProvider.swift */; };
 		AE0B5B5A247AD6DF0075CF16 /* DesignFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE0B5B59247AD6DF0075CF16 /* DesignFormView.swift */; };
@@ -352,6 +356,10 @@
 		69E67EFA2494C35B00ED7AC8 /* ButtonImageCounterOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonImageCounterOverlay.swift; sourceTree = "<group>"; };
 		69E98C6E247439AD00A200FE /* it */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; lineEnding = 0; name = it; path = it.lproj/Localizable.strings; sourceTree = "<group>"; };
 		69EC82ED2461E79D00CE9064 /* TurnipsChartTopLegendView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TurnipsChartTopLegendView.swift; sourceTree = "<group>"; };
+		69EF2FFE24A88C1300BC0D42 /* PlayerMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerMode.swift; sourceTree = "<group>"; };
+		69EF300024A88EA000BC0D42 /* PlayerViewSmall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerViewSmall.swift; sourceTree = "<group>"; };
+		69EF300224A8904E00BC0D42 /* PlayerViewExpanded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerViewExpanded.swift; sourceTree = "<group>"; };
+		69EF300424A9176200BC0D42 /* PlayerViewMusicList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerViewMusicList.swift; sourceTree = "<group>"; };
 		69F65BA524A66432003A4D70 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		69F65BA724A66447003A4D70 /* WidgetProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetProvider.swift; sourceTree = "<group>"; };
 		AE0B5B59247AD6DF0075CF16 /* DesignFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignFormView.swift; sourceTree = "<group>"; };
@@ -622,7 +630,11 @@
 		6985514A248A296900F7BDBA /* musicPlayer */ = {
 			isa = PBXGroup;
 			children = (
+				69EF2FFE24A88C1300BC0D42 /* PlayerMode.swift */,
 				6985514B248A297400F7BDBA /* PlayerView.swift */,
+				69EF300024A88EA000BC0D42 /* PlayerViewSmall.swift */,
+				69EF300224A8904E00BC0D42 /* PlayerViewExpanded.swift */,
+				69EF300424A9176200BC0D42 /* PlayerViewMusicList.swift */,
 			);
 			path = musicPlayer;
 			sourceTree = "<group>";
@@ -1146,6 +1158,7 @@
 				AE51C2E7248117EC00F074EC /* ChoreFormView.swift in Sources */,
 				69157B962471A5A1005B9002 /* TurnipsChartTopLegendView.swift in Sources */,
 				AE38E4A72482D772000DFED3 /* ChoreListViewModel.swift in Sources */,
+				69EF300324A8904E00BC0D42 /* PlayerViewExpanded.swift in Sources */,
 				69E67EFB2494C35B00ED7AC8 /* ButtonImageCounterOverlay.swift in Sources */,
 				69157B972471A5A1005B9002 /* TurnipsChartView.swift in Sources */,
 				696B454C247A948A00E16252 /* MusicPlayerManager.swift in Sources */,
@@ -1209,9 +1222,12 @@
 				69157BC22471A5A1005B9002 /* TodayEventsSection.swift in Sources */,
 				69157BC32471A5A1005B9002 /* FeedbackGenerator.swift in Sources */,
 				694C8B4724861D4E000B9B5F /* LikeButtonViewModel.swift in Sources */,
+				69EF2FFF24A88C1300BC0D42 /* PlayerMode.swift in Sources */,
 				69157BC42471A5A1005B9002 /* CategoryRowView.swift in Sources */,
 				AE2D7EFE247EAF05006C1F1A /* CrittersListView.swift in Sources */,
+				69EF300524A9176200BC0D42 /* PlayerViewMusicList.swift in Sources */,
 				69157BC52471A5A1005B9002 /* TodayCollectionProgressSection.swift in Sources */,
+				69EF300124A88EA000BC0D42 /* PlayerViewSmall.swift in Sources */,
 				69157BC62471A5A1005B9002 /* SubscribeView.swift in Sources */,
 				69157BC72471A5A1005B9002 /* TurnipsFormView.swift in Sources */,
 				69157BC82471A5A1005B9002 /* TurnipsChartMinMaxCurves.swift in Sources */,
