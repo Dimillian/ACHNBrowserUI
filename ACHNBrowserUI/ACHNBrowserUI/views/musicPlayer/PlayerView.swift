@@ -42,6 +42,7 @@ struct PlayerView: View {
                         .foregroundColor(.white)
                 }
                 .padding(.top, 16)
+                .matchedGeometryEffect(id: "chevron", in: namespace)
             }
             
             HStack(spacing: 8) {
@@ -130,6 +131,7 @@ struct PlayerView: View {
                     .foregroundColor(.white)
             }
             .padding(.trailing, 8)
+            .matchedGeometryEffect(id: "play", in: namespace)
             
             Button(action: {
                 self.playerManager.next()
@@ -139,6 +141,7 @@ struct PlayerView: View {
                     .foregroundColor(.white)
             }
             .padding(.trailing, 8)
+            .matchedGeometryEffect(id: "next", in: namespace)
             
             Button(action: {
                 self.toggleFullScreen()
@@ -149,6 +152,7 @@ struct PlayerView: View {
                     .foregroundColor(.white)
             }
             .padding(.trailing, 12)
+            .matchedGeometryEffect(id: "chevron", in: namespace)
         }
     }
     
@@ -194,6 +198,7 @@ struct PlayerView: View {
                     .foregroundColor(.white)
                     .frame(width: playerButtonSize, height: playerButtonSize)
             }
+            .matchedGeometryEffect(id: "play", in: namespace)
             
             Button(action: {
                 self.playerManager.next()
@@ -204,6 +209,7 @@ struct PlayerView: View {
                     .foregroundColor(.white)
                     .frame(width: playerButtonSize, height: playerButtonSize)
             }
+            .matchedGeometryEffect(id: "next", in: namespace)
             Spacer()
         }
     }

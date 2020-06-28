@@ -100,12 +100,11 @@ struct VillagerDetailView: View {
             .padding()
             makeInfoCell(title: "Personality", value: villager.personality).padding()
             makeInfoCell(title: "Birthday", value: villager.formattedBirthday ?? "Unknown").padding()
-            makeInfoCell(title: "Like",
-                         value: viewModel.likes?
-                                .map{ $0.capitalized }
-                                .sorted()
-                                .joined(separator: ", ") ?? "Unknown")
-                                .padding()
+            if let likes = viewModel.likes {
+                makeInfoCell(title: "Like",
+                             value: ListFormatter.localizedString(byJoining: likes.map{ $0.capitalized }))
+                    .padding()
+            }
             makeInfoCell(title: "Species", value: villager.species).padding()
             makeInfoCell(title: "Gender", value: villager.gender).padding()
             makeInfoCell(title: "Catch phrase", value: villager.localizedCatchPhrase.capitalized).padding()
