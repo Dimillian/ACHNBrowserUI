@@ -57,7 +57,7 @@ class VillagersViewModel: ObservableObject {
             .debounce(for: .milliseconds(300), scheduler: DispatchQueue.main)
             .removeDuplicates()
             .filter { !$0.isEmpty }
-            .map(villagers(with:))
+            .map { [weak self] in self?.villagers(with: $0) ?? [] }
             .sink(receiveValue: { [weak self] in self?.searchResults = $0 })
 
         apiPublisher = ACNHApiService.fetch(endpoint: .villagers)

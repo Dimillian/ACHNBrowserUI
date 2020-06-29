@@ -11,7 +11,7 @@ import Backend
 import UI
 
 struct TodayBirthdaysSection: View {
-    @ObservedObject private var viewModel = VillagersViewModel()
+    @StateObject private var viewModel = VillagersViewModel()
 
     var headerText: String {
         viewModel.todayBirthdays.count > 1 ? "Today's Birthdays" : "Today's Birthday"
