@@ -28,6 +28,7 @@
 "Subscribe" = "Abbonamento";
 "Today Sections" = "Sezioni Oggi";
 "Done" = "Fatto";
+"Drag and drop" = "Trascina e rilascia";
 " to re-order sections." = " per riordinare le sezioni.";
 "Check or un-check" = "Seleziona o deseleziona";
 " rows to hide sections from the dashboard." = " righe per nascondere le sezioni dalla bacheca.";
@@ -43,6 +44,7 @@
 "Currently Available" = "Disponibili adesso";
 "%lld/%lld Bugs" = "%lld/%lld Insetti";
 "%lld/%lld Fish" = "%lld/%lld Pesci";
+"%lld/%lld Sea Creatures" = "%lld/%lld Creature marine";
 "%lld NEW" = "%lld NOVITÀ";
 // TodayEventsSection
 "Events" = "Eventi";
@@ -115,6 +117,8 @@ Puoi annullare il tuo abbonamento in ogni momento dalle impostazioni del tuo acc
 "Leaving this month" = "Andranno via questo mese";
 "Caught" = "Catturato";
 "All day" = "Tutto il giorno";
+"To catch now" = "Catturabili ora";
+"To catch later" = "Catturabili più tardi";
 // SettingsView
 "Preferences" = "Impostazioni";
 "Island name" = "Nome isola";
@@ -378,7 +382,7 @@ Puoi annullare il tuo abbonamento in ogni momento dalle impostazioni del tuo acc
 "bugs" = "Insetti";
 "fish" = "Pesci";
 "fossils" = "Fossili";
-"seaCreatures" = "Sea Creatures";
+"seaCreatures" = "Creature marine";
 // CategoriesView
 "Nature" = "Natura";
 "Wardrobe" = "Guardaroba";
@@ -777,6 +781,7 @@ Puoi annullare il tuo abbonamento in ogni momento dalle impostazioni del tuo acc
 "Museum Day" = "Giornata internazionale dei Musei";
 "Wedding season" = "Stagione dei matrimoni";
 "Bug-Off contest" = "Insettomania";
+"Fishing tourney" = "Torneo di pesca";
 "Meteor shower" =  "Pioggia di stelle";
 "Reset" = "Reimposta";
 "View Turnip.Exchange islands" = "Guarda isole Turnip.Exchange";
@@ -1070,6 +1075,7 @@ Puoi annullare il tuo abbonamento in ogni momento dalle impostazioni del tuo acc
 "Do you really want to report this Dodo code?" = "Sei sicuro di voler segnalare questo Codice Dodo?";
 "Visitor" = "Visitatore";
 "Edit your Dodo code" = "Modifica il tuo Codice Dodo";
+"Notifications" = "Notifiche";
 "Get notified of new Dodo codes" = "Ricevi una notifica quando viene pubblicato un nuovo Codice Dodo";
 "ACDodoCode.notification.title" = "È disponibile un nuovo Codice Dodo";
 "ACDodoCode.notification.subtitle" = "Qualcuno ha aperto il proprio gate e pubblicato il proprio Codice Dodo nell'app, dagli una occhiata!";
