@@ -44,6 +44,7 @@
 "Currently Available" = "Disponibili adesso";
 "%lld/%lld Bugs" = "%lld/%lld Insetti";
 "%lld/%lld Fish" = "%lld/%lld Pesci";
+"%lld/%lld Sea Creatures" = "%lld/%lld Creature marine";
 "%lld NEW" = "%lld NOVITÀ";
 // TodayEventsSection
 "Events" = "Eventi";
@@ -381,6 +382,7 @@ Puoi annullare il tuo abbonamento in ogni momento dalle impostazioni del tuo acc
 "bugs" = "Insetti";
 "fish" = "Pesci";
 "fossils" = "Fossili";
+"seaCreatures" = "Creature marine";
 // CategoriesView
 "Nature" = "Natura";
 "Wardrobe" = "Guardaroba";
