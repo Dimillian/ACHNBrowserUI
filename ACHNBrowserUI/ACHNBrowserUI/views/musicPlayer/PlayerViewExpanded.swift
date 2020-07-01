@@ -112,6 +112,7 @@ struct PlayerViewExpanded: View {
                         .foregroundColor(.white)
                         .frame(width: playerButtonSize, height: playerButtonSize)
                 }
+                .matchedGeometryEffect(id: "back", in: namespace)
                 
                 Button(action: {
                     playerManager.isPlaying.toggle()

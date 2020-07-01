@@ -56,6 +56,16 @@ struct PlayerViewSmall: View {
             Spacer()
             
             Button(action: {
+                playerManager.previous()
+            }) {
+                Image(systemName: "backward.fill")
+                    .imageScale(.large)
+                    .foregroundColor(.white)
+            }
+            .padding(.trailing, 8)
+            .matchedGeometryEffect(id: "back", in: namespace)
+            
+            Button(action: {
                 playerManager.isPlaying.toggle()
             }) {
                 Image(systemName: playerManager.isPlaying ? "pause.fill" : "play.fill")
