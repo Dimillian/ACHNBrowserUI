@@ -10,7 +10,7 @@ jobs:
     - uses: actions/checkout@v2
         
     - name: Select Xcode
-      run: sudo xcode-select -switch /Applications/Xcode_12.app
+      run: sudo xcode-select -switch /Applications/Xcode_12_beta.app
 
     - name: Xcode version
       run: /usr/bin/xcodebuild -version
