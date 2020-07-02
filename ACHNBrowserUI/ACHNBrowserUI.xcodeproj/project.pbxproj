@@ -26,7 +26,6 @@
 		69157B862471A5A1005B9002 /* MysteryIslandRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69157B70247122A5005B9002 /* MysteryIslandRow.swift */; };
 		69157B872471A5A1005B9002 /* TurnipsChartAverageCurve.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C2D6773245F4EA2005831C4 /* TurnipsChartAverageCurve.swift */; };
 		69157B892471A5A1005B9002 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 697E63FF244AD66E008FB710 /* SettingsView.swift */; };
-		69157B8B2471A5A1005B9002 /* DocumentPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69933E0E246D476E00528B51 /* DocumentPickerView.swift */; };
 		69157B8C2471A5A1005B9002 /* TodayTurnipSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 024363D12465EA14006A37A0 /* TodayTurnipSection.swift */; };
 		69157B8D2471A5A1005B9002 /* UserListDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69875F5A24655AF000B1D46C /* UserListDetailViewModel.swift */; };
 		69157B8E2471A5A1005B9002 /* SectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69CA5F00244F1AD300B275B6 /* SectionHeaderView.swift */; };
@@ -311,7 +310,6 @@
 		69875F58246557D000B1D46C /* UserListDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListDetailView.swift; sourceTree = "<group>"; };
 		69875F5A24655AF000B1D46C /* UserListDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListDetailViewModel.swift; sourceTree = "<group>"; };
 		6992892A24800A0C00F5CBC0 /* ja */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; lineEnding = 0; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
-		69933E0E246D476E00528B51 /* DocumentPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentPickerView.swift; sourceTree = "<group>"; };
 		69AE062824683429006856E4 /* fr */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; lineEnding = 0; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		69AF8C54243E283D001DD9CB /* ItemsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsListView.swift; sourceTree = "<group>"; };
 		69AF8C56243E2841001DD9CB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -573,7 +571,6 @@
 			children = (
 				693E72A6245EBB1200CD26F4 /* SafariView.swift */,
 				693E72A4245EBAF900CD26F4 /* ActivityControllerView.swift */,
-				69933E0E246D476E00528B51 /* DocumentPickerView.swift */,
 			);
 			path = representables;
 			sourceTree = "<group>";
@@ -1139,7 +1136,6 @@
 				69157B872471A5A1005B9002 /* TurnipsChartAverageCurve.swift in Sources */,
 				AE2D7EFA247E8CBD006C1F1A /* CollectionMoreDetailViewModel.swift in Sources */,
 				69157B892471A5A1005B9002 /* SettingsView.swift in Sources */,
-				69157B8B2471A5A1005B9002 /* DocumentPickerView.swift in Sources */,
 				69157B8C2471A5A1005B9002 /* TodayTurnipSection.swift in Sources */,
 				3D9AB08F248256DC00B47041 /* CustomTaskRow.swift in Sources */,
 				69157B8D2471A5A1005B9002 /* UserListDetailViewModel.swift in Sources */,

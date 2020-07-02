@@ -9,16 +9,16 @@
 import SwiftUI
 import SwiftUIKit
 import Backend
+import UniformTypeIdentifiers
 
 struct SettingsView: View {
     @EnvironmentObject private var collection: UserCollection
     @EnvironmentObject private var subscriptionManager: SubscriptionManager
     @Environment(\.presentationMode) private var presentationMode
+    @Environment(\.exportFiles) var exportAction
+    @Environment(\.importFiles) var importAction
     @ObservedObject var appUserDefaults = AppUserDefaults.shared
     
-    @State private var isDocumentPickerPresented = false
-    @State private var documentPickderMode: UIDocumentPickerMode = .import
-    @State private var importedFile: URL?
     @State private var showSuccessImportAlert = false
     @State private var showDeleteConfirmationAlert = false
 
@@ -32,17 +32,6 @@ struct SettingsView: View {
             .listStyle(InsetGroupedListStyle())
             .navigationBarTitle(Text("Preferences"), displayMode: .inline)
             .navigationBarItems(leading: closeButton)
-            .sheet(isPresented: $isDocumentPickerPresented,
-                   onDismiss: {
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
-                        if let url = self.importedFile {
-                            self.showSuccessImportAlert = self.collection.processImportedFile(url: url)
-                        }
-                    }
-                   },
-                   content: { DocumentPickerView(url: self.collection.generateExportURL(),
-                                                 mode: self.documentPickderMode,
-                                                 importedFile: self.$importedFile) })
         }.navigationViewStyle(StackNavigationViewStyle())
     }
     
@@ -191,15 +180,20 @@ struct SettingsView: View {
             }
             
             Button(action: {
-                self.documentPickderMode = .exportToService
-                self.isDocumentPickerPresented = true
+                if let url = collection.generateExportURL() {
+                    exportAction(moving: url) { _ in }
+                }
             }) {
                 Text("Export my collection").foregroundColor(.acHeaderBackground)
             }.listRowBackground(Color.acSecondaryBackground)
             
             Button(action: {
-                self.documentPickderMode = .import
-                self.isDocumentPickerPresented = true
+                let types = [UTType("com.thomasricouard.ACNH.achelper")!]
+                importAction(singleOfType: types) { (result: Result<URL, Error>?) in
+                    if let url = try? result?.get() {
+                        showSuccessImportAlert = collection.processImportedFile(url: url)
+                    }
+                }
             }) {
                 Text("Import a collection").foregroundColor(.acHeaderBackground)
             }
