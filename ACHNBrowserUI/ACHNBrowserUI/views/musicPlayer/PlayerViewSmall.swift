@@ -14,9 +14,7 @@ struct PlayerViewSmall: View {
     var namespace: Namespace.ID
     
     func togglePlayerMode() {
-        withAnimation(.spring(response: 0.5,
-                              dampingFraction: 0.75,
-                              blendDuration: 0)) {
+        withAnimation(PlayerView.ANIMATION) {
             playerMode.toggleExpanded()
         }
     }

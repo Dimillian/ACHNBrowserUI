@@ -17,9 +17,7 @@ struct PlayerViewExpanded: View {
     private let playerButtonSize: CGFloat = 38
     
     func togglePlayerMode() {
-        withAnimation(.spring(response: 0.5,
-                              dampingFraction: 0.75,
-                              blendDuration: 0)) {
+        withAnimation(PlayerView.ANIMATION) {
             playerMode.toggleExpanded()
         }
     }

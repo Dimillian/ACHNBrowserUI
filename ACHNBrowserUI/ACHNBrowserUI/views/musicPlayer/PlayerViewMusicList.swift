@@ -27,9 +27,7 @@ struct PlayerViewMusicList: View {
                         if let song = playerManager.matchSongFrom(item: item) {
                             playerManager.currentSong = song
                             playerManager.isPlaying = true
-                            withAnimation(.spring(response: 0.5,
-                                                  dampingFraction: 0.75,
-                                                  blendDuration: 0)) {
+                            withAnimation(PlayerView.ANIMATION) {
                                 playerMode = .playerExpanded
                             }
                         }
@@ -43,8 +41,8 @@ struct PlayerViewMusicList: View {
 
                 }.listRowBackground(Color.acTabBarTint)
             }
-            .animation(.interactiveSpring())
-            .transition(.scale)
+            .animation(.easeInOut)
+            .transition(.slide)
         }.padding()
     }
 }

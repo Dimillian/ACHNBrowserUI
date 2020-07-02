@@ -15,11 +15,13 @@ struct PlayerView: View {
     @EnvironmentObject private var items: Items
     @State private var playerMode = PlayerMode.playerSmall
     @Namespace private var namespace
+    
+    static let ANIMATION: Animation = .spring(response: 0.5,
+                                              dampingFraction: 0.85,
+                                              blendDuration: 0)
                 
     func togglePlayerMode() {
-        withAnimation(.spring(response: 0.5,
-                              dampingFraction: 0.75,
-                              blendDuration: 0)) {
+        withAnimation(Self.ANIMATION) {
             playerMode.toggleExpanded()
         }
     }
@@ -45,10 +47,18 @@ struct PlayerView: View {
         .gesture(DragGesture()
             .onEnded { value in
                 if value.translation.width > 100 {
-                    self.playerManager.previous()
+                    playerManager.previous()
                 }
                 else if value.translation.width < -100 {
-                    self.playerManager.next()
+                    playerManager.next()
+                } else if value.translation.height > 50 {
+                    withAnimation(Self.ANIMATION) {
+                        playerMode = .playerSmall
+                    }
+                } else if value.translation.height > -50 {
+                    withAnimation(Self.ANIMATION) {
+                        playerMode = .playerExpanded
+                    }
                 }
             })
     }
