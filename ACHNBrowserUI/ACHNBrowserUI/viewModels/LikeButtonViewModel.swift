@@ -57,7 +57,7 @@ class LikeButtonViewModel: ObservableObject {
         var added = false
         if let item = self.item {
             switch item.appCategory {
-            case .fish, .bugs, .fossils:
+            case .fish, .bugs, .fossils, .seaCreatures:
                 added = self.collection.toggleCritters(critter: item)
             default:
                 if let variant = self.variant {
