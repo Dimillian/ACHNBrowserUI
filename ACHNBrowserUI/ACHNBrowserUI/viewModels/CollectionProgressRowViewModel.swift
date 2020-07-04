@@ -20,7 +20,7 @@ class CollectionProgressRowViewModel: ObservableObject {
     
     init(category: Backend.Category) {
         self.category = category
-        if category == .fish || category == .bugs || category == .fossils {
+        if category == .fish || category == .bugs || category == .fossils || category == .seaCreatures {
             cancellable = UserCollection.shared.$critters
                 .subscribe(on: DispatchQueue.global())
                 .removeDuplicates()
