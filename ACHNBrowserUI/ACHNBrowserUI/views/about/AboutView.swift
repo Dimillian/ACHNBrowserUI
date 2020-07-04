@@ -110,10 +110,11 @@ struct AboutView: View {
                                       color: .acHeaderBackground)
                         makeDetailRow(image: "gamecontroller",
                                       text: "Game patch data",
-                                      detail: "1.2.1",
+                                      detail: "1.3.0",
                                       color: .acHeaderBackground)
                     }.listRowBackground(Color.acSecondaryBackground)
                 }
+
                 Section(header: SectionHeaderView(text: "Acknowledgements")) {
                     Group {
                         makeRow(image: "suit.heart.fill",

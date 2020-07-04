@@ -30,7 +30,7 @@ class ActiveCrittersViewModel: ObservableObject {
             switch self {
             case .fish: return "Fish"
             case .bugs: return "Ins"
-            case .seaCreatures: return "Fish"
+            case .seaCreatures: return "div"
             }
         }
     }

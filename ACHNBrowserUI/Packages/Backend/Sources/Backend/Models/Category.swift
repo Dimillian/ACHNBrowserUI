@@ -87,7 +87,7 @@ public enum Category: String, CaseIterable {
         case .bugs:
             return "Ins13"
         case .fish:
-            return "Fish28"
+            return "Fish6"
         case .tools:
             return "icon-tool"
         case .dressup:
@@ -95,7 +95,7 @@ public enum Category: String, CaseIterable {
         case .shoes:
             return "icon-shoes"
         case .seaCreatures:
-            return "Fish25"
+            return "div25"
         }
     }
     
