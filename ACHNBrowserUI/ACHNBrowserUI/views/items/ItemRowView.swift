@@ -33,10 +33,17 @@ struct ItemRowView: View {
         Group {
             Text(item.localizedName.capitalized)
                 .style(appStyle: .rowTitle)
-            Text(LocalizedStringKey(item.obtainedFrom ?? item.obtainedFromNew?.first ?? "unknown source"))
-                .font(.subheadline)
-                .fontWeight(.semibold)
-                .foregroundColor(.acSecondaryText)
+            if item.appCategory == .seaCreatures {
+                Text("Underwater")
+                    .font(.subheadline)
+                    .fontWeight(.semibold)
+                    .foregroundColor(.acSecondaryText)
+            } else {
+                Text(LocalizedStringKey(item.obtainedFrom ?? item.obtainedFromNew?.first ?? "unknown source"))
+                    .font(.subheadline)
+                    .fontWeight(.semibold)
+                    .foregroundColor(.acSecondaryText)
+            }
         }
     }
     

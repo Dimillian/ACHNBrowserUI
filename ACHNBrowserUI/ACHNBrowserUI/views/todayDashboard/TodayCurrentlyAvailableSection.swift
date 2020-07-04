@@ -42,10 +42,14 @@ struct TodayCurrentlyAvailableSectionContent: View {
                     RowLoadingView(isLoading: .constant(true))
                 }
                 Divider()
-                makeCell(for: .seaCreatures,
-                         caught: viewModel.crittersInfo[.seaCreatures]?.caught.count ?? 0,
-                         available: viewModel.crittersInfo[.seaCreatures]?.active.count ?? 0 ,
-                         numberNew: viewModel.crittersInfo[.seaCreatures]?.new.count ?? 0)
+                if viewModel.crittersInfo[.seaCreatures]?.active.isEmpty == false {
+                    makeCell(for: .seaCreatures,
+                             caught: viewModel.crittersInfo[.seaCreatures]?.caught.count ?? 0,
+                             available: viewModel.crittersInfo[.seaCreatures]?.active.count ?? 0 ,
+                             numberNew: viewModel.crittersInfo[.seaCreatures]?.new.count ?? 0)
+                } else {
+                    RowLoadingView(isLoading: .constant(true))
+                }
             }
         }
     }

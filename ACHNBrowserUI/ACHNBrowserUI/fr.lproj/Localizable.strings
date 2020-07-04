@@ -400,6 +400,7 @@ You can cancel anytime with your iTunes account settings. Any unused portion of 
 "fish" = "Poissons";
 "fossils" = "Fossiles";
 "seaCreatures" = "Créature Marines";
+"Clothing Other" = "Maillot de Bain";
 // CategoriesView
 "Nature" = "Nature";
 "Wardrobe" = "Garde-robe";
@@ -887,3 +888,12 @@ Merci d'être respecteux. Tout code signalé sera supprimé";
 "ACNew.notification.subtitle" = "Un nouvelle article de news sur le jeu ou l'app est disponible!";
 
 "Get notified when a news is posted" = "Être notifié quand une news est publiée";
+
+"Underwater" = "Sous l'eau";
+"Movement speed:" = "Vitesse de déplacement:";
+"Medium" = "Moyen";
+"Very slow" = "Très lent";
+"Slow" = "Lent";
+"Very fast" = "Très rapide";
+"Fast" = "Rapide";
+"Stationary" = "Stationnaire";

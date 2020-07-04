@@ -18,6 +18,7 @@
 		4C6E95FD24842F690074433B /* Collection+SafeDirectAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C6E95FC24842F690074433B /* Collection+SafeDirectAccess.swift */; };
 		4C7F555D248B91C80089F26C /* TodayVillagerVisitsSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7F555C248B91C80089F26C /* TodayVillagerVisitsSection.swift */; };
 		690A72C924752BF4001E7294 /* villagersLikes in Resources */ = {isa = PBXBuildFile; fileRef = 690A72C824752BF4001E7294 /* villagersLikes */; };
+		690FE00424B0885F00A891C3 /* divefish in Resources */ = {isa = PBXBuildFile; fileRef = 690FE00324B0885F00A891C3 /* divefish */; };
 		69157B7E2471A5A1005B9002 /* TodayMysteryIslandsSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69157B6D247121ED005B9002 /* TodayMysteryIslandsSection.swift */; };
 		69157B7F2471A5A1005B9002 /* TodayNookazonSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 693E2BC3246689C500B85CB8 /* TodayNookazonSection.swift */; };
 		69157B802471A5A1005B9002 /* UserListFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69875F5424654EB900B1D46C /* UserListFormView.swift */; };
@@ -283,6 +284,7 @@
 		6903CD10246C7EB800150FA1 /* CollectionProgressRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionProgressRow.swift; sourceTree = "<group>"; };
 		690A72C824752BF4001E7294 /* villagersLikes */ = {isa = PBXFileReference; lastKnownFileType = text; path = villagersLikes; sourceTree = "<group>"; };
 		690BD65324404F4300DEECD3 /* ACHNBrowserUI.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ACHNBrowserUI.entitlements; sourceTree = "<group>"; };
+		690FE00324B0885F00A891C3 /* divefish */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = divefish; sourceTree = "<group>"; };
 		69157B4924711F6C005B9002 /* islands.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = islands.json; sourceTree = "<group>"; };
 		69157B6D247121ED005B9002 /* TodayMysteryIslandsSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayMysteryIslandsSection.swift; sourceTree = "<group>"; };
 		69157B70247122A5005B9002 /* MysteryIslandRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MysteryIslandRow.swift; sourceTree = "<group>"; };
@@ -919,6 +921,7 @@
 				699425D8246927190089C21B /* localized */,
 				699425D624688C200089C21B /* clothing */,
 				695D45FC2467F26E00B5C313 /* furnitures */,
+				690FE00324B0885F00A891C3 /* divefish */,
 				69CFCA84245AAF520059C067 /* music */,
 				69CFCA86245AAF520059C067 /* tools */,
 				69CFCA87245AAF520059C067 /* nookmiles */,
@@ -1126,6 +1129,7 @@
 				69157C012471A5A1005B9002 /* items_fr.json in Resources */,
 				69157C022471A5A1005B9002 /* rugs in Resources */,
 				69157C052471A5A1005B9002 /* Colors.xcassets in Resources */,
+				690FE00424B0885F00A891C3 /* divefish in Resources */,
 				69157C092471A5A1005B9002 /* floors in Resources */,
 				69157C0A2471A5A1005B9002 /* bugs in Resources */,
 				69157C0F2471A5A1005B9002 /* villagersHouse in Resources */,

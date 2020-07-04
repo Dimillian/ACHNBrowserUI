@@ -78,6 +78,8 @@ public struct Item: Codable, Equatable, Identifiable, Hashable {
     public let dIY: Bool?
     public let customize: Bool?
     
+    public let movementSpeed: String?
+    
     public var variations: [Variant]?
     
     public let category: String
@@ -263,6 +265,7 @@ public let static_item = Item(name: "Acoustic guitar",
                        sourceNotes: "From somewhere",
                        dIY: true,
                        customize: true,
+                       movementSpeed: nil,
                        variations: nil,
                        category: "Housewares",
                        materials: nil,

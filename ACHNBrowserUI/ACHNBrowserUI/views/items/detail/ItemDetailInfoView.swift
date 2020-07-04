@@ -67,6 +67,13 @@ struct ItemDetailInfoView: View {
                                 .foregroundColor(.acSecondaryText)
                         }
                     }
+                    item.movementSpeed.map { speed in
+                        HStack(spacing: 4) {
+                            Text("Movement speed:")
+                            Text(LocalizedStringKey(speed))
+                                .foregroundColor(.acSecondaryText)
+                        }
+                    }
                 }
             }
             if !item.isCritter {
