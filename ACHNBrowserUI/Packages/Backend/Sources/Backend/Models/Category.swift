@@ -15,8 +15,10 @@ public enum Category: String, CaseIterable {
     case wallpapers, floors, rugs, photos, posters, fencing, tools
     case tops, bottoms, headwear, accessories, socks, shoes, bags
     case dressup = "Dress-Up"
+    case clothingOther = "Clothing Other"
     case umbrellas, music, recipes, construction, nookmiles, other
-    case art, bugs, fish, fossils, seaCreatures
+    case art, bugs, fish, fossils
+    case seaCreatures = "Sea Creatures"
     
     public init(itemCategory: String) {
         if itemCategory == "Fish - North" || itemCategory == "Fish - South" {
@@ -27,6 +29,12 @@ public enum Category: String, CaseIterable {
             return
         } else if itemCategory == "Dress-Up" {
             self = .dressup
+            return
+        } else if itemCategory == "Clothing Other" {
+            self = .clothingOther
+            return
+        } else if itemCategory == "Sea Creatures" {
+            self = .seaCreatures
             return
         }
         self = Category(rawValue: itemCategory.lowercased()) ?? .other
@@ -94,6 +102,8 @@ public enum Category: String, CaseIterable {
             return "icon-top"
         case .shoes:
             return "icon-shoes"
+        case .clothingOther:
+            return "icon-wetsuit"
         case .seaCreatures:
             return "div25"
         }
@@ -111,9 +121,10 @@ public enum Category: String, CaseIterable {
             category == .construction ||
             category == .fish ||
             category == .bugs ||
-            category == .fossils ||
-            category == .seaCreatures {
+            category == .fossils{
             return category.rawValue
+        } else if category == .seaCreatures {
+            return "divefish"
         }
         return nil
     }
@@ -123,7 +134,7 @@ public enum Category: String, CaseIterable {
     }
     
     public static func APIClothing() -> [Category] {
-        [.accessories, .headwear, .tops, .bottoms, .dressup, .socks, .shoes, .bags]
+        [.accessories, .headwear, .tops, .bottoms, .dressup, .socks, .shoes, .bags, .clothingOther]
     }
     
     public static func APIIslandDevelopment() -> [Category] {
@@ -152,7 +163,7 @@ public enum Category: String, CaseIterable {
     
     public static func wardrobe() -> [Category] {
         [.tops, .bottoms, .dressup, .headwear,
-         .accessories, .socks, .shoes, .bags, .umbrellas]
+         .accessories, .socks, .shoes, .bags, .umbrellas, .clothingOther]
     }
     
     public static func nature() -> [Category] {
@@ -162,7 +173,7 @@ public enum Category: String, CaseIterable {
     public static func icons() -> [Category] {
         [.housewares, .recipes, .floors, .rugs, .wallpapers, .posters,
                 .fencing, .music, .tools, .nookmiles, .construction, .tops,
-                 .bottoms, .dressup, .headwear, .accessories, .socks, .bags, .umbrellas,
+                .bottoms, .dressup, .clothingOther, .headwear, .accessories, .socks, .bags, .umbrellas,
                  .fish, .bugs, .fossils]
     }
     
