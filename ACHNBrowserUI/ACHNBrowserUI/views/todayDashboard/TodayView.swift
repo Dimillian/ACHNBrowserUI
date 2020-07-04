@@ -42,7 +42,7 @@ struct TodayView: View {
             .onAppear(perform: NewsArticleService.shared.fetchNews)
             .onAppear(perform: DodoCodeService.shared.refresh)
             
-            ActiveCrittersView()
+            ActiveCrittersView(tab: .fish)
         }
     }
 

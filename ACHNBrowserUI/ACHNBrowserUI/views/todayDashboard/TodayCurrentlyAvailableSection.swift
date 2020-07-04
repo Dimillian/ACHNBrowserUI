@@ -10,51 +10,67 @@ import SwiftUI
 import Backend
 
 struct TodayCurrentlyAvailableSection: View {
+    @StateObject private var viewModel = ActiveCrittersViewModel()
+    @State private var isNavigationLinkActive = false
+    @State private var openingTab: ActiveCrittersViewModel.CritterType = .fish
+    
     // MARK: - Body
     var body: some View {
-        NavigationLink(destination: ActiveCrittersView()) {
-            TodayCurrentlyAvailableSectionContent()
-        }
-        .padding(.vertical)
-    }
-}
-
-struct TodayCurrentlyAvailableSectionContent: View {
-    @StateObject private var viewModel = ActiveCrittersViewModel()
-        
-    var body: some View {
-        Group {
             VStack {
+                NavigationLink(destination: ActiveCrittersView(tab: openingTab),
+                               isActive: $isNavigationLinkActive) {
+                    
+                }
+                
                 if viewModel.crittersInfo[.bugs]?.active.isEmpty == false &&
                     viewModel.crittersInfo[.fish]?.active.isEmpty == false {
                     HStack(alignment: .top) {
-                        makeCell(for: .fish,
-                                 caught: viewModel.crittersInfo[.fish]?.caught.count ?? 0,
-                                 available: viewModel.crittersInfo[.fish]?.active.count ?? 0 ,
-                                 numberNew: viewModel.crittersInfo[.fish]?.new.count ?? 0)
+                        Button {
+                            openingTab = .fish
+                            isNavigationLinkActive = true
+                        } label: {
+                            makeCell(for: .fish,
+                                     caught: viewModel.crittersInfo[.fish]?.caught.count ?? 0,
+                                     available: viewModel.crittersInfo[.fish]?.active.count ?? 0 ,
+                                     numberNew: viewModel.crittersInfo[.fish]?.new.count ?? 0)
+                        }.buttonStyle(BorderlessButtonStyle())
+                        
                         Divider()
-                        makeCell(for: .bugs,
-                                 caught: viewModel.crittersInfo[.bugs]?.caught.count ?? 0,
-                                 available: viewModel.crittersInfo[.bugs]?.active.count ?? 0,
-                                 numberNew: viewModel.crittersInfo[.bugs]?.new.count ?? 0)
+                        Button {
+                            openingTab = .bugs
+                            isNavigationLinkActive = true
+                        } label: {
+                            makeCell(for: .bugs,
+                                     caught: viewModel.crittersInfo[.bugs]?.caught.count ?? 0,
+                                     available: viewModel.crittersInfo[.bugs]?.active.count ?? 0,
+                                     numberNew: viewModel.crittersInfo[.bugs]?.new.count ?? 0)
+                        }.buttonStyle(BorderlessButtonStyle())
                     }
                 } else {
                     RowLoadingView()
                 }
                 Divider()
-                makeCell(for: .seaCreatures,
-                         caught: viewModel.crittersInfo[.seaCreatures]?.caught.count ?? 0,
-                         available: viewModel.crittersInfo[.seaCreatures]?.active.count ?? 0 ,
-                         numberNew: viewModel.crittersInfo[.seaCreatures]?.new.count ?? 0)
-            }
-        }
+                if viewModel.crittersInfo[.seaCreatures]?.active.isEmpty == true {
+                    RowLoadingView()
+                } else {
+                    Button {
+                        openingTab = .seaCreatures
+                        isNavigationLinkActive = true
+                    } label: {
+                        makeCell(for: .seaCreatures,
+                                 caught: viewModel.crittersInfo[.seaCreatures]?.caught.count ?? 0,
+                                 available: viewModel.crittersInfo[.seaCreatures]?.active.count ?? 0 ,
+                                 numberNew: viewModel.crittersInfo[.seaCreatures]?.new.count ?? 0)
+                    }.buttonStyle(BorderlessButtonStyle())
+                }
+            }.padding(.vertical)
     }
-    
     
     private func makeCell(for type: ActiveCrittersViewModel.CritterType,
                           caught: Int, available: Int, numberNew: Int = 0) -> some View {
         VStack(spacing: 0) {
             Image("\(type.imagePrefix())\(dayNumber())")
+                .renderingMode(.original)
                 .resizable()
                 .aspectRatio(1, contentMode: .fit)
                 .frame(width: 48)

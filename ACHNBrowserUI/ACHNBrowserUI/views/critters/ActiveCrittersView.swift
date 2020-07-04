@@ -58,43 +58,44 @@ struct ActiveCritterSections: View {
 
 struct ActiveCrittersView: View {
     @StateObject private var viewModel = ActiveCrittersViewModel(filterOutInCollection: true)
-    @State private var selectedTab = ActiveCrittersViewModel.CritterType.fish
+    @State private var selectedTab: ActiveCrittersViewModel.CritterType
+        
+    init(tab: ActiveCrittersViewModel.CritterType) {
+        _selectedTab = State(initialValue: tab)
+    }
     
-    var body: some View {
+    private func makeList(type: ActiveCrittersViewModel.CritterType) -> some View {
         List {
-            if (viewModel.crittersInfo[.fish]?.toCatchLater.isEmpty == true || viewModel.crittersInfo[.bugs]?.toCatchLater.isEmpty == true) &&
-                 (viewModel.crittersInfo[.fish]?.toCatchNow.isEmpty == true || viewModel.crittersInfo[.bugs]?.toCatchNow.isEmpty == true) &&
-                (viewModel.crittersInfo[.fish]?.caught.isEmpty == true ||
-                    viewModel.crittersInfo[.bugs]?.caught.isEmpty == true) {
+            if viewModel.crittersInfo[type]?.active.isEmpty == true {
                 RowLoadingView()
             } else {
-                Picker(selection: $selectedTab, label: Text("")) {
-                    ForEach(ActiveCrittersViewModel.CritterType.allCases, id: \.self)
-                    { tab in
-                        Text(LocalizedStringKey(tab.rawValue)).tag(tab.rawValue)
-                    }
-                }
-                .pickerStyle(SegmentedPickerStyle())
-                .listRowBackground(Color.acBackground)
-                ActiveCritterSections(viewModel: viewModel, selectedTab: $selectedTab)
+                ActiveCritterSections(viewModel: viewModel,
+                                      selectedTab: .constant(type))
             }
         }
-        .gesture(DragGesture()
-            .onEnded { value in
-                if value.translation.width > 100 {
-                    self.selectedTab = ActiveCrittersViewModel.CritterType.fish
-                }
-                else if value.translation.width < -100 {
-                    self.selectedTab = ActiveCrittersViewModel.CritterType.bugs
-                }
-            })
         .listStyle(InsetGroupedListStyle())
-        .navigationBarTitle("Active Critters")
+    }
+    
+    var body: some View {
+        TabView(selection: $selectedTab) {
+            makeList(type: .fish)
+                .tag(ActiveCrittersViewModel.CritterType.fish)
+            
+            makeList(type: .bugs)
+                .tag(ActiveCrittersViewModel.CritterType.bugs)
+            
+            makeList(type: .seaCreatures)
+                .tag(ActiveCrittersViewModel.CritterType.seaCreatures)
+        }
+        .background(Color.acBackground)
+        .tabViewStyle(PageTabViewStyle())
+        .indexViewStyle(PageIndexViewStyle(backgroundDisplayMode: .always))
+        .navigationBarTitle("Active Critters", displayMode: .inline)
     }
 }
 
 struct ActiveCrittersView_Previews: PreviewProvider {
     static var previews: some View {
-        ActiveCrittersView()
+        ActiveCrittersView(tab: .fish)
     }
 }
