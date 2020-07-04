@@ -922,3 +922,13 @@ Bitte geht respektvoll miteinander um. Jeder gemeldete Dodo Code wird gelöscht.
 "Get notified when a news is posted" = "Bei Neuigkeiten benachrichtigen";
 "ACNew.notification.title" = "Eine Neuigkeit wurde veröffentlicht";
 "ACNew.notification.subtitle" = "Eine Neuigkeit über die App oder das Spiel wurde veröffentlicht. Öffne die App und schau nach!";
+
+// Summer Patch - added 2020-07-04
+"Underwater" = "Unterwasser";
+"Movement speed:" = "Bewegungsgeschwindigkeit:";
+"Medium" = "Mittel";
+"Very slow" = "Sehr langsam";
+"Slow" = "Langsam";
+"Very fast" = "Sehr schnell";
+"Fast" = "Schnell";
+"Stationary" = "Stillstehend";
