@@ -27,18 +27,15 @@ struct ButtonImageCounterOverlay: View {
     private var counterView: some View {
         Group {
             if counter != nil {
-                ZStack {
-                    Circle()
-                        .scale(2)
-                        .fixedSize()
-                        .foregroundColor(Color.acBackground)
-                    Text("\(counter!)")
-                        .font(.footnote)
-                        .foregroundColor(.acText)
-                }
-                .opacity(counter! > 0 ? 1 : 0)
-                .animation(.linear)
-                .padding(EdgeInsets(top: -5, leading: 0, bottom: 0, trailing: -6))
+                Text("\(counter!)")
+                    .font(.footnote)
+                    .foregroundColor(.acText)
+                    .background(Circle()
+                                    .scale(2)
+                                    .foregroundColor(Color.acBackground))
+                    .opacity(counter! > 0 ? 1 : 0)
+                    .animation(.linear)
+                    .padding(EdgeInsets(top: -10, leading: 0, bottom: 0, trailing: -6))
             } else {
                 EmptyView()
             }
