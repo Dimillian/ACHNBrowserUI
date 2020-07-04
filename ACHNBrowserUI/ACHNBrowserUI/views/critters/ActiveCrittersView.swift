@@ -71,6 +71,7 @@ struct ActiveCrittersView: View {
             } else {
                 ActiveCritterSections(viewModel: viewModel,
                                       selectedTab: .constant(type))
+                    .padding(.top, 16)
             }
         }
         .listStyle(InsetGroupedListStyle())
