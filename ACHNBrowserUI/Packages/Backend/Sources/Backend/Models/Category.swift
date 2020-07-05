@@ -36,6 +36,9 @@ public enum Category: String, CaseIterable {
         } else if itemCategory == "Sea Creatures" {
             self = .seaCreatures
             return
+        } else if itemCategory == "Wallpaper" {
+            self = .wallpapers
+            return
         }
         self = Category(rawValue: itemCategory.lowercased()) ?? .other
     }
@@ -121,7 +124,10 @@ public enum Category: String, CaseIterable {
             category == .construction ||
             category == .fish ||
             category == .bugs ||
-            category == .fossils{
+            category == .fossils ||
+            category == .floors ||
+            category == .rugs ||
+            category == .wallpapers {
             return category.rawValue
         } else if category == .seaCreatures {
             return "divefish"
