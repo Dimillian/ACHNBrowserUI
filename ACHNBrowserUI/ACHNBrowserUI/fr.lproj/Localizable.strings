@@ -489,7 +489,7 @@ You can cancel anytime with your iTunes account settings. Any unused portion of 
 "On rotten turnips" = "Sur les navets pourris";
 "Shaking trees" = "En secouant les arbres";
 "On white flowers" = "Sur les fleurs blanches";
-"Flying near trash (boots, tires, cans)" = "Vole près des ordures (bottes, pneus, canettes)";
+"Flying near trash (boots, tires, cans) or rotten turnips" = "Vole près des ordures (bottes, pneus, canettes) ou prêt des navets pourris";
 "Flying near blue/purple/black flowers" = "Vole près des fleurs bleues/violettes/noires";
 "Deguised under trees" = "Déguisé en feuille d'arbres";
 "On villager" = "Sur le villageois";
@@ -897,3 +897,37 @@ Merci d'être respecteux. Tout code signalé sera supprimé";
 "Very fast" = "Très rapide";
 "Fast" = "Rapide";
 "Stationary" = "Stationnaire";
+
+// Added 2020-06-07
+"Fishing tourney" = "Tournoi de pêche";
+"You turnips predictions will be displayed here one you fill in somes prices." = "Vos prévisions en vente de navets seront affichées ici, remplissez les prix pour l'afficher."
+"Able Sisters" = "Soeur Doigts de Fée";
+"Avaible from Able Sisters shop only" = "Disponible uniquement chez les Soeurs Doigts de Fées"
+"Avaible from either Mabel's tempory shop or Able Sisters shop" = "Disponible dans la boutique temporaire de Layette (Visiteur sur la place) ou chez des Soeurs Doigts de Fées"
+"Avaible in Nook's Cranny (either upgrade tier) in the unique furniture slot" = "Disponible dans la Boutique Nook (boutique niveau 2), objet en un exemplaire"
+"Avaible in Nook's Cranny (upgraded only), in the third unique furniture slot" = "Disponible dans la Boutique Nook (boutique seulement), objet en un exemplaire (3ème espace)"
+"Avaible in all tiers of shops, including Timmy & Tommy before the shop is opened" = "Disponible dans les deux boutiques (niveau 1 et 2), y compris via Méli et Mélo avant l'ouverture de la boutique"
+"Avaible n the re-buyable slot in Nook's Cranny" = "Achetable en plusieurs exemplaires dans la Boutique Nook"
+"Only available close the new year holiday" = "Disponible uniquement durant le nouvel ans"
+"Nook's Cranny" = "Boutique Nook"
+"Crafting" = "Craft"
+"Sea Creatures" = "Créatures marines"
+"River (clifftop)" = "Rivière (falaise)"
+"River (mouth)" = "Rivière (Embouchure)"
+"On villagers" = "Sur les villageois"
+"On rivers/ponds" = "Sur les rivières/ponts"
+"Assessing fossils" = "Après expertisation des fossiles"
+"Cyrus" = "Serge"
+"Only avaible during Wedding Season" = "Disponible uniquement durant l'évent : Saisons des Mariages"
+"Bug-Off" = "Insectosafari"
+"K.K. concert" = "Concert de Kéké"
+"K.K. concert, Nook Shopping Catalog" = "Concert de Kéké,Nook Shopping (Sélection du jour)"
+"Shaking a cedar tree (Festive Season)" = "Secouant des cèdres (Saison des Fêtes)"
+"Festive Season" = "Saison des Fêtes"
+"Shaking a hardwood or cedar tree" = "Secouant un feuillu/cèdre"
+"Don't return lost item" = "Objet perdu"
+"Wrapping a present" = "Emballer un cadeau"
+"On ground (Mushroom Season)" = "Au sol (Saison des Champignons)"
+"Mushroom Season" = "Saison des Champignons"
+"Recycle box" = "Boîte de recyclage"
+
