@@ -495,6 +495,7 @@ Du kannst das Abonnement jederzeit in deinen iTunes Kontoeinstellungen beenden. 
 "Festive seasonal DIY using ornaments (from shaking trees)" = "Bastelanleitung aus der Weihnachtszeit; benötigt Ornamente (Bäume schütteln)";
 "Fishing (Bunny Day)" = "Angeln (Häschen-Tag)";
 "Fishing Tourney" = "Angel-Turnier";
+"Fishing tourney" = "Angel-Turnier";
 "Fishing up a boot" = "Stiefel angeln";
 "Fishing up all 3 trash items" = "Alle 3 Müllgegenstände geangelt";
 "Fishing up an empty can" = "Leere Dose angeln";
@@ -926,7 +927,6 @@ Bitte geht respektvoll miteinander um. Jeder gemeldete Dodo Code wird gelöscht.
 // Summer Patch - added 2020-07-04
 "Underwater" = "Unterwasser";
 "Movement speed:" = "Bewegungsgeschwindigkeit:";
-"Medium" = "Mittel";
 "Very slow" = "Sehr langsam";
 "Slow" = "Langsam";
 "Very fast" = "Sehr schnell";
