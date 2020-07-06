@@ -138,12 +138,14 @@ struct ItemsView: View {
     private var contentView: some View {
         if contentMode == .grid {
             ScrollView {
-                LazyVGrid(columns: [GridItem(.adaptive(minimum: 100), spacing: 16)], spacing: 16) {
+                LazyVGrid(columns: [GridItem(.adaptive(minimum: 120), spacing: 16)], spacing: 16) {
                     ForEach(currentItems) { item in
                         ItemGridItemView(item: item)
                     }
-                }.background(Color.acBackground)
-            }
+                }
+                .padding(8)
+                .background(Color.acBackground)
+            }.background(Color.acBackground)
         } else {
             List {
                 Section(header: SearchField(searchText: $viewModel.searchText)) {
