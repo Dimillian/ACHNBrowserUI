@@ -15,7 +15,7 @@ class CommentsViewModel: ObservableObject {
     let model: CloudModel
     
     @Published var comments: [Comment] = []
-    @Published var isLoading = false
+    @Published var isLoading = true
     @Published var isPosting = false
     @Published var inDeletion: String?
     
@@ -29,10 +29,12 @@ class CommentsViewModel: ObservableObject {
         if let record = model.record {
             self.commentsCancellable = commentService.$comments.sink { comments in
                 DispatchQueue.main.async {
-                    self.comments = comments[record.recordID] ?? []
-                    self.isLoading = false
-                    self.isPosting = false
-                    self.inDeletion = nil
+                    if let comments = comments[record.recordID]  {
+                        self.comments = comments
+                        self.isLoading = false
+                        self.isPosting = false
+                        self.inDeletion = nil
+                    }
                 }
             }
         }
