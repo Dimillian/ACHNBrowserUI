@@ -14,7 +14,7 @@ struct CategoryRowView: View {
     let category: Backend.Category
     
     var body: some View {
-        NavigationLink(destination: LazyView(ItemsListView(category: self.category))) {
+        NavigationLink(destination: LazyView(ItemsView(category: self.category))) {
             HStack {
                 Image(category.iconName())
                     .renderingMode(.original)

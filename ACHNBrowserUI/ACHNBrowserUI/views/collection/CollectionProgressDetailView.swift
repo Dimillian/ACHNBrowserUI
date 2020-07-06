@@ -16,7 +16,7 @@ struct CollectionProgressDetailView: View {
     var body: some View {
         List {
             ForEach(Category.collectionCategories(), id: \.self) { category in
-                NavigationLink(destination: LazyView(ItemsListView(category: category))) {
+                NavigationLink(destination: LazyView(ItemsView(category: category))) {
                     CollectionProgressRow(category: category, barHeight: 20)
                 }
                 .listRowBackground(Color.acSecondaryBackground)

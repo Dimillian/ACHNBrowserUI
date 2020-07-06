@@ -29,7 +29,7 @@ struct ItemsView: View {
     
     @StateObject var viewModel: ItemsViewModel
     @State private var showSortSheet = false
-    @State private var contentMode: ContentMode = .grid
+    @State private var contentMode: ContentMode = .listLarge
     let customTitle: String?
     
     init(category: Backend.Category, items: [Item]? = nil, keyword: String? = nil) {

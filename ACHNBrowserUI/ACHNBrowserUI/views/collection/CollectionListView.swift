@@ -53,7 +53,7 @@ struct CollectionListView: View {
                     placeholderView
                 }
             } else {
-                ItemsListView(category: Category(itemCategory: categories.first!),
+                ItemsView(category: Category(itemCategory: categories.first!),
                               items: collection.items
                                 .filter({ Backend.Category(itemCategory: $0.category) == Category(itemCategory: categories.first!)}))
             }

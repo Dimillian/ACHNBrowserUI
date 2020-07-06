@@ -61,7 +61,7 @@ struct CategoriesView: View {
             .modifier(DismissingKeyboardOnSwipe())
       
             
-            ItemsListView(category: .housewares)
+            ItemsView(category: .housewares)
         }
     }
 }

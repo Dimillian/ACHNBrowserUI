@@ -135,7 +135,7 @@ extension ItemDetailView {
             ScrollView(.horizontal, showsIndicators: false) {
                 HStack(spacing: 16) {
                     ForEach(itemViewModel.item.metas, id: \.self) { meta in
-                        NavigationLink(destination: LazyView(ItemsListView(category: .other, keyword: meta))) {
+                        NavigationLink(destination: LazyView(ItemsView(category: .other, keyword: meta))) {
                                                                     ItemStyleBadgeView(title: meta)
                         }
                     }
