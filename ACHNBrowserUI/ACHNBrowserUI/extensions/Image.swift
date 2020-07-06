@@ -25,7 +25,9 @@ public extension Image {
 extension Image {
     @ViewBuilder
     private func barButton() -> some View {
-        self.imageScale(.medium)
-            .font(.system(size: 16, weight: .bold, design: .rounded))
+        self.resizable()
+            .aspectRatio(contentMode: .fit)
+            .frame(width: 16, height: 16)
+            .font(.system(size: 14, weight: .bold, design: .rounded))
     }
 }

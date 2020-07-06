@@ -54,7 +54,7 @@ extension View {
     }
     
     func safeHoverEffectBarItem(position: BarItemPosition) -> some View {
-        let hoverPadding: CGFloat = 10
+        let hoverPadding: CGFloat = 4
         
         // For leading bar items, we need to apply a negative offset equal to the overall padding to imitate Apple's styling in UIKit
         let offset = position == .leading ? -hoverPadding : hoverPadding
