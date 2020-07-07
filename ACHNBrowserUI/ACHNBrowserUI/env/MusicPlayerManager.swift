@@ -47,14 +47,16 @@ public class MusicPlayerManager: ObservableObject {
                 let musicURL = ACNHApiService.makeURL(endpoint: .music(id: song.id))
                 player?.pause()
                 player = AVPlayer(url: musicURL)
-                
-                setupBackgroundPlay()
             }
         }
     }
     @Published public var currentSongImage: UIImage?
     @Published public var isPlaying = false {
         didSet {
+            if isPlaying {
+                setupBackgroundPlay()
+            }
+            
             isPlaying ? player?.play() : player?.pause()
             setupPlayTimer()
             MPNowPlayingInfoCenter.default().playbackState = isPlaying ? .playing : .paused

@@ -52,7 +52,7 @@ struct DodoCodeRow: View {
                     .lineLimit(15)
                     .fixedSize(horizontal: false, vertical: true)
                 Text(code.creationDate, style: .relative)
-                    .foregroundColor(.acText)
+                    .foregroundColor(.acSecondaryText)
                     .font(.footnote)
             }.opacity(code.archived ? 0.5 : 1.0)
 
