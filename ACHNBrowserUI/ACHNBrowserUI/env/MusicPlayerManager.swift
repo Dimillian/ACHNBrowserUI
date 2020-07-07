@@ -38,6 +38,8 @@ public class MusicPlayerManager: ObservableObject {
         }
     }
     
+    private var songsItem: [Item] = []
+    
     @Published public var currentSongItem: Item?
     @Published public var currentSong: Song? {
         didSet {
@@ -83,6 +85,15 @@ public class MusicPlayerManager: ObservableObject {
             .sink(receiveValue: { [weak self] songs in
                 self?.songs = songs
             })
+        
+        itemsCancellable = Items.shared.$categories
+            .map{ $0[.music].map{ $0 } }
+            .sink { [weak self] musics in
+                self?.songsItem = musics ?? []
+                if let song = self?.currentSong, self?.currentSongItem == nil {
+                    self?.currentSongItem = self?.matchItemFrom(song: song)
+                }
+        }
 
         NotificationCenter.default.addObserver(forName: .AVPlayerItemDidPlayToEndTime,
                                                object: player?.currentItem,
@@ -111,13 +122,13 @@ public class MusicPlayerManager: ObservableObject {
     
     private func changeSong(newIndex: Int) {
         guard let current = currentSongItem,
-            var index = Items.shared.categories[.music]?.firstIndex(of: current) else {
+            var index = songsItem.firstIndex(of: current) else {
                 return
         }
         index += newIndex
-        if index > 0 && index < Items.shared.categories[.music]?.count ?? 0 {
-            if let newSong = Items.shared.categories[.music]?[index],
-                let song = matchSongFrom(item: newSong) {
+        if index > 0 && index < songsItem.count {
+            let newSong = songsItem[index]
+            if let song = matchSongFrom(item: newSong) {
                 currentSong = song
                 isPlaying = true
             }
@@ -129,7 +140,7 @@ public class MusicPlayerManager: ObservableObject {
     }
     
     public func matchItemFrom(song: Song) -> Item? {
-        Items.shared.categories[.music]?.first(where: { $0.filename == song.fileName })
+        songsItem.first(where: { $0.filename == song.fileName })
     }
     
     private func setupRemoteCommands() {
