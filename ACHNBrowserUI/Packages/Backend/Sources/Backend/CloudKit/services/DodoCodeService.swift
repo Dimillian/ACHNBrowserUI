@@ -15,6 +15,9 @@ public class DodoCodeService: ObservableObject, PublicCloudService {
     public static let shared = DodoCodeService()
     public static var userCloudKitId: CKRecord.ID?
     
+    public static let titleLocalizationKey = "ACDodoCode.notification.title"
+    public static let alertLocalizationKey = "ACDodoCode.notification.subtitle"
+    
     @Published public var codes: [DodoCode] = []
     @Published public var mostRecentError: Error?
     @Published public var isSynching = true
@@ -142,8 +145,8 @@ public class DodoCodeService: ObservableObject, PublicCloudService {
                                       predicate: NSPredicate(value: true),
                                       options: .firesOnRecordCreation)
         let notif = CKSubscription.NotificationInfo()
-        notif.titleLocalizationKey = "ACDodoCode.notification.title"
-        notif.alertLocalizationKey = "ACDodoCode.notification.subtitle"
+        notif.titleLocalizationKey = Self.titleLocalizationKey
+        notif.alertLocalizationKey = Self.alertLocalizationKey
         notif.soundName = "default"
         sub.notificationInfo = notif
         database.save(sub) { (_, _) in }

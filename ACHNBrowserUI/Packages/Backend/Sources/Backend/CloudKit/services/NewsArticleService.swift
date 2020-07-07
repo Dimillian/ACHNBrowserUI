@@ -12,6 +12,8 @@ import SwiftUI
 public class NewsArticleService: ObservableObject, PublicCloudService {
     
     public static let shared = NewsArticleService()
+    public static let titleLocalizationKey = "ACNew.notification.title"
+    public static let alertLocalizationKey = "ACNew.notification.subtitle"
     
     @Published public var articles: [NewArticle] = []
     
@@ -52,8 +54,8 @@ public class NewsArticleService: ObservableObject, PublicCloudService {
                                       predicate: NSPredicate(value: true),
                                       options: .firesOnRecordCreation)
         let notif = CKSubscription.NotificationInfo()
-        notif.titleLocalizationKey = "ACNew.notification.title"
-        notif.alertLocalizationKey = "ACNew.notification.subtitle"
+        notif.titleLocalizationKey = Self.titleLocalizationKey
+        notif.alertLocalizationKey = Self.alertLocalizationKey
         notif.soundName = "default"
         sub.notificationInfo = notif
         database.save(sub) { (_, _) in }

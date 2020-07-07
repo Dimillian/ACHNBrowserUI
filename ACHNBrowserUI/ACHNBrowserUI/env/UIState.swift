@@ -9,13 +9,18 @@
 import Foundation
 import SwiftUI
 import Backend
+import UI
+import SwiftUIKit
 
 class UIState: ObservableObject {
+    public static let shared = UIState()
+    
     enum Tab: Int {
         case dashboard, items, villagers, collection, turnips
     }
     
     enum Route: Identifiable {
+        case dodo, news
         case item(item: Item)
         case villager(villager: Villager)
         
@@ -25,11 +30,13 @@ class UIState: ObservableObject {
             switch self {
             case .item(_): return "item"
             case .villager(_): return "villager"
+            case .dodo: return "dodocodes"
+            case .news: return "news"
             }
         }
 
         @ViewBuilder
-        func makeDetailView() -> some View {
+        func makeSheetView() -> some View {
             NavigationView {
                 switch self {
                 case let .item(item):
@@ -38,6 +45,14 @@ class UIState: ObservableObject {
                         .environmentObject(UserCollection.shared)
                 case let .villager(villager):
                     VillagerDetailView(villager: villager)
+                case .dodo:
+                    DodoCodeListView()
+                        .environmentObject(DodoCodeService.shared)
+                        .environmentObject(CommentService.shared)
+                case .news:
+                    NewsList()
+                        .environmentObject(NewsArticleService.shared)
+                        .environmentObject(CommentService.shared)
                 }
             }
         }

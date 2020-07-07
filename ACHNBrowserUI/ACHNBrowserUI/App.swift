@@ -10,6 +10,7 @@ import Foundation
 import SwiftUI
 import UserNotifications
 import CoreSpotlight
+import CloudKit
 import Backend
 import UI
 
@@ -20,14 +21,22 @@ class AppDelegateAdaptor: NSObject, UIApplicationDelegate, UNUserNotificationCen
     }
     
     func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any]) {
-        UserCollection.shared.reloadFromCloudKit()
+        if let infos = CKNotification.init(fromRemoteNotificationDictionary: userInfo) {
+            if infos.titleLocalizationKey == DodoCodeService.titleLocalizationKey {
+                UIState.shared.route = .dodo
+            } else if infos.titleLocalizationKey == NewsArticleService.titleLocalizationKey {
+                UIState.shared.route = .news
+            } else {
+                UserCollection.shared.reloadFromCloudKit()
+            }
+        }
     }
 }
 
 @main
 struct ACHelperApp: App {
     @UIApplicationDelegateAdaptor(AppDelegateAdaptor.self) private var appDelegate
-    @StateObject private var uiState = UIState()
+    @StateObject private var uiState = UIState.shared
     
     @SceneBuilder
     var body: some Scene {
@@ -64,10 +73,11 @@ struct ACHelperApp: App {
             .onAppear(perform: setupAppearance)
             .onContinueUserActivity(CSSearchableItemActionType, perform: handleSpotlight(_:))
             .onOpenURL(perform: handleURL(url:))
-            .sheet(item: $uiState.route, onDismiss: {
+            .sheet(item: $uiState.route,
+                   onDismiss: {
                 uiState.route = nil
             }, content: {
-                $0.makeDetailView()
+                $0.makeSheetView()
             })
     }
     
