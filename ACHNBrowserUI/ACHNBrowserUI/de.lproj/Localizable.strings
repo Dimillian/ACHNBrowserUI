@@ -104,7 +104,7 @@ Du kannst das Abonnement jederzeit in deinen iTunes Kontoeinstellungen beenden. 
 // AboutView
 "About" = "Über";
 "The app" = "Die App";
-"Souce code / report an issue" = "Quell Code / Fehler melden";
+"Souce code / report an issue" = "Quellcode / Fehler melden";
 "Rate the app on the App Store" = "Bewerte die App im App Store";
 "Privacy Policy" = "Datenschutzbestimmungen";
 "Terms of Use" = "Nutzungsbedingungen";
@@ -322,7 +322,7 @@ Du kannst das Abonnement jederzeit in deinen iTunes Kontoeinstellungen beenden. 
 "Jock" = "Sportlich";
 "Cranky" = "Miesepeter";
 "Smug" = "Selbstzufrieden";
-"Normal" = "Ausgeglichen";
+"Normal" = "Lieb";
 "Peppy" = "Schwungvoll";
 "Snooty" = "Hochnäsig";
 "Uchi" = "Große Schwester";
@@ -428,8 +428,8 @@ Du kannst das Abonnement jederzeit in deinen iTunes Kontoeinstellungen beenden. 
 "Available after unlocking the shovel in the story" = "Verfügbar nach dem Entsperren der Schaufel in der Geschichte";
 "Available from Able Sisters shop only during Festive Season" = "Nur während der Weihnachtszeit in der Schneiderei erhältlich";
 "Available from Able Sisters shop only" = "Nur in der Schneiderei erhältlich";
-"Available from either Mable's temporary shop or Able Sisters shop during Festive Season" = "Während der Weihnachtszeit erhältlich an Tinas Verkaufsstand oder in der Schneiderei.";
-"Available from either Mable's temporary shop or Able Sisters shop" = "Erhältlich an Tinas Verkaufsstand oder in der Schneiderei";
+"Available from either Mabel's temporary shop or Able Sisters shop during Festive Season" = "Während der Weihnachtszeit erhältlich an Tinas Verkaufsstand oder in der Schneiderei.";
+"Available from either Mabel's temporary shop or Able Sisters shop" = "Erhältlich an Tinas Verkaufsstand oder in der Schneiderei";
 "Available in all tiers of shops, including Timmy & Tommy before the shop is opened" = "Erhältlich bei Nepp & Schlepp in jeder Stufe des Ladens";
 "Available in Nook's Cranny (either upgrade tier) in the unique furniture slot" = "Erhältlich in Nooks Laden auf dem \"Einzigarige-Möbel\" Platz";
 "Available in Nook's Cranny (upgraded only)" = "Verfügbar in Nooks Laden (ausgebaut)";
@@ -495,6 +495,7 @@ Du kannst das Abonnement jederzeit in deinen iTunes Kontoeinstellungen beenden. 
 "Festive seasonal DIY using ornaments (from shaking trees)" = "Bastelanleitung aus der Weihnachtszeit; benötigt Ornamente (Bäume schütteln)";
 "Fishing (Bunny Day)" = "Angeln (Häschen-Tag)";
 "Fishing Tourney" = "Angel-Turnier";
+"Fishing tourney" = "Angel-Turnier";
 "Fishing up a boot" = "Stiefel angeln";
 "Fishing up all 3 trash items" = "Alle 3 Müllgegenstände geangelt";
 "Fishing up an empty can" = "Leere Dose angeln";
@@ -505,7 +506,7 @@ Du kannst das Abonnement jederzeit in deinen iTunes Kontoeinstellungen beenden. 
 "Flying near blue/purple/black flowers" = "Fliegt in der Nähe von blauen/lila/schwarzen Blumen";
 "Flying near flowers" = "Fliegt in der nähe von Blumen";
 "Flying near light sources" = "Fliegt in der nähe von Lichtquellen";
-"Flying near trash (boots, tires, cans)" = "Fliegt in der Nähe von Müll (Stiefel, Reifen, Dosen)";
+"Flying near trash (boots, tires, cans) or rotten turnips" = "Fliegt in der Nähe von Müll (Stiefel, Reifen, Dosen) und faulen Rüben";
 "Flying" = "Fliegt";
 "From hitting rocks" = "Felsen schlagen";
 "From Zipper after trading one of every egg (all 6 types) during Bunny Day." = "Von Ohs T. Hase nach dem Handel mit einem von jedem Ei (alle 6 Arten) während des Häschen-Tages.";
@@ -560,7 +561,7 @@ Du kannst das Abonnement jederzeit in deinen iTunes Kontoeinstellungen beenden. 
 "On palm trees" = "Auf Palmen";
 "On rivers/ponds" = "An Flüssen/Teichen";
 "On rocks" = "Auf Felsen";
-"On rotten turnips" = "An faulen Rüben";
+"On rotten turnips" = "Auf faulen Rüben";
 "On the ground" = "Auf dem Boden";
 "On tree stumps" = "Auf Baumstümpfen";
 "On trees (any kind)" = "Auf Bäumen (jeglicher Art)";
@@ -859,7 +860,7 @@ Du kannst das Abonnement jederzeit in deinen iTunes Kontoeinstellungen beenden. 
 "Contact / follow us on Twitter" = "Kontaktiere / folge uns auf Twitter";
 
 // Added 2020-06-06
-"Villager Visits" = "Bewohner Besuche";
+"Villager visits" = "Bewohner besuchen";
 "Who have you talked to today? Find the villagers you have visited and tap the home icon on the villager’s page to keep track." = "Mit wem hast du heute gesprochen? Markiere die Bewohner deiner Insel mithilfe des Home-Symbol auf der Bewohner Detailseite um hier deine Gespräche mit den Bewohnern im Blick zu behalten.";
 "Long press on a villager to see more info about them" = "Lange auf einen Bewohner tippen um mehr Informationen zu erhallten";
 
@@ -926,9 +927,12 @@ Bitte geht respektvoll miteinander um. Jeder gemeldete Dodo Code wird gelöscht.
 // Summer Patch - added 2020-07-04
 "Underwater" = "Unterwasser";
 "Movement speed:" = "Bewegungsgeschwindigkeit:";
-"Medium" = "Mittel";
 "Very slow" = "Sehr langsam";
 "Slow" = "Langsam";
 "Very fast" = "Sehr schnell";
 "Fast" = "Schnell";
 "Stationary" = "Stillstehend";
+
+// Added 2020-07-07
+"Clothing Other" = "Taucheranzüge";
+"Sea Creatures" = "Meerestiere";
