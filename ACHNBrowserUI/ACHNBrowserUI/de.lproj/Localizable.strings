@@ -104,7 +104,7 @@ Du kannst das Abonnement jederzeit in deinen iTunes Kontoeinstellungen beenden. 
 // AboutView
 "About" = "Über";
 "The app" = "Die App";
-"Souce code / report an issue" = "Quell Code / Fehler melden";
+"Souce code / report an issue" = "Quellcode / Fehler melden";
 "Rate the app on the App Store" = "Bewerte die App im App Store";
 "Privacy Policy" = "Datenschutzbestimmungen";
 "Terms of Use" = "Nutzungsbedingungen";
@@ -428,8 +428,8 @@ Du kannst das Abonnement jederzeit in deinen iTunes Kontoeinstellungen beenden. 
 "Available after unlocking the shovel in the story" = "Verfügbar nach dem Entsperren der Schaufel in der Geschichte";
 "Available from Able Sisters shop only during Festive Season" = "Nur während der Weihnachtszeit in der Schneiderei erhältlich";
 "Available from Able Sisters shop only" = "Nur in der Schneiderei erhältlich";
-"Available from either Mable's temporary shop or Able Sisters shop during Festive Season" = "Während der Weihnachtszeit erhältlich an Tinas Verkaufsstand oder in der Schneiderei.";
-"Available from either Mable's temporary shop or Able Sisters shop" = "Erhältlich an Tinas Verkaufsstand oder in der Schneiderei";
+"Available from either Mabel's temporary shop or Able Sisters shop during Festive Season" = "Während der Weihnachtszeit erhältlich an Tinas Verkaufsstand oder in der Schneiderei.";
+"Available from either Mabel's temporary shop or Able Sisters shop" = "Erhältlich an Tinas Verkaufsstand oder in der Schneiderei";
 "Available in all tiers of shops, including Timmy & Tommy before the shop is opened" = "Erhältlich bei Nepp & Schlepp in jeder Stufe des Ladens";
 "Available in Nook's Cranny (either upgrade tier) in the unique furniture slot" = "Erhältlich in Nooks Laden auf dem \"Einzigarige-Möbel\" Platz";
 "Available in Nook's Cranny (upgraded only)" = "Verfügbar in Nooks Laden (ausgebaut)";
@@ -932,3 +932,6 @@ Bitte geht respektvoll miteinander um. Jeder gemeldete Dodo Code wird gelöscht.
 "Very fast" = "Sehr schnell";
 "Fast" = "Schnell";
 "Stationary" = "Stillstehend";
+
+// Added 2020-07-07
+"Clothing Other" = "Taucheranzüge";
