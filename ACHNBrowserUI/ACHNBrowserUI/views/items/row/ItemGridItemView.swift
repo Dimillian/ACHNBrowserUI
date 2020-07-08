@@ -8,6 +8,7 @@
 
 import SwiftUI
 import Backend
+import UI
 
 struct ItemGridItemView: View {
     let item: Item
@@ -20,10 +21,8 @@ struct ItemGridItemView: View {
                 Spacer()
                 VStack(spacing: 8) {
                     Spacer()
-                    RoundedRectangle(cornerRadius: 8)
-                        .fill(Color.acText)
-                        .frame(width: 50, height: 50)
-                        .padding(.top, 8)
+                    ItemImage(path: item.finalImage,
+                              size: 50)
                     Text(item.localizedName)
                         .foregroundColor(.acText)
                         .font(.callout)

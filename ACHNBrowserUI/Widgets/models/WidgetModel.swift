@@ -9,10 +9,12 @@
 import Foundation
 import WidgetKit
 import Backend
+import UIKit
 
 struct WidgetModel: TimelineEntry {
     public let date: Date
     public let availableFishes: [Item]?
-    public let villagers: [Villager]
+    public let villager: Villager
+    public var villagerImage: UIImage?
 }
 

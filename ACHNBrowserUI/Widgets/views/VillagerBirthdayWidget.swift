@@ -9,7 +9,6 @@
 import SwiftUI
 import WidgetKit
 import Backend
-import SDWebImageSwiftUI
 
 struct VillagerBirthdayWidgetView: View {
     @Environment(\.widgetFamily) var family: WidgetFamily
@@ -21,51 +20,45 @@ struct VillagerBirthdayWidgetView: View {
         formatter.dateFormat = "d/M"
         return formatter.string(from: Date())
     }
-    
-    private var villager: Villager? {
-        model?.villagers.filter( { $0.birthday == today } ).first ?? model?.villagers.first
-    }
-    
+        
     @ViewBuilder
     var body: some View {
         Group {
             switch family {
             case .systemSmall:
-                makeSmallWidget(villager: villager)
+                makeSmallWidget(villager: model?.villager)
             case .systemMedium:
-                makeMediumWidget(villager: villager)
+                makeMediumWidget(villager: model?.villager)
             case .systemLarge:
                 Text("Not supported yet.")
             @unknown default:
                 Text("Not supported yet.")
             }
             
-        }.widgetURL(URL(string: "achelperapp://villager/\(villager?.fileName ?? "null")")!)
+        }.widgetURL(URL(string: "achelperapp://villager/\(model?.villager.fileName ?? "null")")!)
     }
     
     private func makeDayStamp(villager: Villager?) -> some View {
         VStack {
-            Text(villager?.birthdayMonth() ?? "Loading...")
+            Text(villager?.birthdayMonth() ?? "...")
                 .font(.system(.caption, design: .rounded))
                 .fontWeight(.bold)
                 .foregroundColor(.acText)
-            Text(villager?.birthdayDay() ?? "Loading...")
+            Text(villager?.birthdayDay() ?? "...")
                 .font(.system(.subheadline, design: .rounded))
                 .fontWeight(.bold)
                 .foregroundColor(.acText)
         }
         .frame(minWidth: 66)
         .padding(10)
-        .background(ContainerRelativeShape().fill(Color.acText.opacity(0.2)))
+        .background(RoundedRectangle(cornerRadius: 16, style: /*@START_MENU_TOKEN@*/.continuous/*@END_MENU_TOKEN@*/).fill(Color.acText.opacity(0.2)))
         .padding(.trailing, 8)
     }
     
     @ViewBuilder
     private func makeIcon(villager: Villager?, size: CGFloat) -> some View {
-        if let villager = villager,
-           let url = URL(string: ACNHApiService.BASE_URL.absoluteString +
-                            ACNHApiService.Endpoint.villagerIcon(id: villager.id).path()) {
-            WebImage(url: url)
+        if let image = model?.villagerImage {
+            Image(uiImage: image)
                 .resizable()
                 .renderingMode(.original)
                 .aspectRatio(contentMode: .fit)
