@@ -10,14 +10,14 @@ import SwiftUI
 import Backend
 
 struct LikeButtonView: View {
-    @ObservedObject private var viewModel: LikeButtonViewModel
+    @StateObject private var viewModel: LikeButtonViewModel
     
     init(item: Item, variant: Variant?) {
-        viewModel = LikeButtonViewModel(item: item, variant: variant)
+        _viewModel = StateObject(wrappedValue: LikeButtonViewModel(item: item, variant: variant))
     }
     
     init(villager: Villager) {
-        viewModel = LikeButtonViewModel(villager: villager)
+        _viewModel = StateObject(wrappedValue: LikeButtonViewModel(villager: villager))
     }
         
     var imageName: String {
