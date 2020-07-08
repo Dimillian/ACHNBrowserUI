@@ -207,7 +207,7 @@ public extension Item {
         return "\(startHour) - \(endHour)\(is24Hour() ? "h" : "")"
     }
 
-    private func activeHours() -> (start: Int, end: Int)? {
+    func activeHours() -> (start: Int, end: Int)? {
         guard let activeTimes = activeMonths?.first?.value.activeTimes,
             let startTime = activeTimes.first,
             let endTime = activeTimes.last else {
@@ -216,23 +216,28 @@ public extension Item {
         if Int(startTime) == 0 && Int(endTime) == 0 {
             return (start: 0, end: 0)
         }
-
+        
         var startHourInt = 0
         var endHourInt = 0
-        if let hour = Int(startTime.prefix(1)) {
+        
+        var preIntStartTime = startTime
+        preIntStartTime.removeLast(2)
+        if let hour = Int(preIntStartTime) {
             startHourInt = hour
             if startTime.suffix(2)  == "pm" {
                 startHourInt += 12
             }
         }
-
-        if let hour = Int(endTime.prefix(1)) {
+        
+        var preIntEndTime = endTime
+        preIntEndTime.removeLast(2)
+        if let hour = Int(preIntEndTime) {
             endHourInt = hour
             if endTime.suffix(2) == "pm" {
                 endHourInt += 12
             }
         }
-
+        
         return (start: startHourInt, end: endHourInt)
     }
 }
