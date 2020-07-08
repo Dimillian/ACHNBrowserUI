@@ -536,7 +536,7 @@ Puoi annullare il tuo abbonamento in ogni momento dalle impostazioni del tuo acc
 "On flowers" = "Sui fiori";
 "On ground (Mushroom Season)" = "Sul terreno (Periodo dei funghi)";
 "On ground" = "Sul terreno";
-"On hardwood/cedar trees" = "Sui cedri";
+"On hardwood/cedar trees" = "Su alberi latifoglia/cedri";
 "On palm trees" = "Sulle palme";
 "On rivers/ponds" = "Nei fiumi/stagni";
 "On rocks" = "Sulle rocce";
@@ -1101,3 +1101,16 @@ Puoi annullare il tuo abbonamento in ogni momento dalle impostazioni del tuo acc
 "Get notified when a news is posted" = "Ricevi una notifica quando una notizia viene pubblicata";
 "ACNew.notification.title" = "È stata pubblicata una notizia";
 "ACNew.notification.subtitle" = "È stato pubblicato un nuovo articolo sull'app o sul gioco. Vai a leggerlo nell'app!";
+
+// Summer Patch - added 2020-07-04
+"Underwater" = "Sott'acqua";
+"Movement speed:" = "Velocità movimento:";
+"Very slow" = "Molto lenta";
+"Slow" = "Lenta";
+"Very fast" = "Molto veloce";
+"Fast" = "Veloce";
+"Stationary" = "Statica";
+
+// Added 2020-07-07
+"Clothing Other" = "Muta subacquea";
+"Sea Creatures" = "Creature marine";
