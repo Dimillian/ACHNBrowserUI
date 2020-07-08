@@ -14,13 +14,7 @@ struct VillagerBirthdayWidgetView: View {
     @Environment(\.widgetFamily) var family: WidgetFamily
     
     var model: WidgetModel?
-    
-    private var today: String {
-        let formatter = DateFormatter()
-        formatter.dateFormat = "d/M"
-        return formatter.string(from: Date())
-    }
-        
+            
     @ViewBuilder
     var body: some View {
         Group {
