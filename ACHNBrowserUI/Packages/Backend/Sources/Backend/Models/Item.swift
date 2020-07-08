@@ -221,14 +221,19 @@ public extension Item {
 
         var startHourInt = 0
         var endHourInt = 0
-        if let hour = Int(startTime.prefix(1)) {
+        
+        var preIntStartTime = startTime
+        preIntStartTime.removeLast(2)
+        if let hour = Int(preIntStartTime) {
             startHourInt = hour
             if startTime.suffix(2)  == "pm" {
                 startHourInt += 12
             }
         }
 
-        if let hour = Int(endTime.prefix(1)) {
+        var preIntEndTime = endTime
+        preIntEndTime.removeLast(2)
+        if let hour = Int(preIntEndTime) {
             endHourInt = hour
             if endTime.suffix(2) == "pm" {
                 endHourInt += 12
