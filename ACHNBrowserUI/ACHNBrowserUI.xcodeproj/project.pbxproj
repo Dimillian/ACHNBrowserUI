@@ -650,6 +650,7 @@
 		698584DF24A1F70F002D103C /* Widgets */ = {
 			isa = PBXGroup;
 			children = (
+				698584EB24A1F711002D103C /* WidgetsExtension.entitlements */,
 				698584E024A1F70F002D103C /* Widgets.swift */,
 				6917C7CB24A24B2E00708F41 /* models */,
 				6917C7CA24A24B2700708F41 /* views */,
@@ -673,7 +674,6 @@
 		69AF8C44243E283D001DD9CB = {
 			isa = PBXGroup;
 			children = (
-				698584EB24A1F711002D103C /* WidgetsExtension.entitlements */,
 				69CFCAC7245ADC780059C067 /* ACHNBrowserUITV */,
 				69AF8C4F243E283D001DD9CB /* ACHNBrowserUI */,
 				698584DF24A1F70F002D103C /* Widgets */,
@@ -1416,7 +1416,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
-				CODE_SIGN_ENTITLEMENTS = WidgetsExtension.entitlements;
+				CODE_SIGN_ENTITLEMENTS = Widgets/WidgetsExtension.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
@@ -1447,7 +1447,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
-				CODE_SIGN_ENTITLEMENTS = WidgetsExtension.entitlements;
+				CODE_SIGN_ENTITLEMENTS = Widgets/WidgetsExtension.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
