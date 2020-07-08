@@ -15,6 +15,7 @@
 "Dismiss" = "Cancelar";
 "Save" = "Guardar";
 
+// Date Format
 "EEEE, dd MMMM" = "EEEE, dd MMMM";
 "dM" = "dM";
 "dd" = "dd";
@@ -22,54 +23,67 @@
 "MMM dd" = "MMM dd";
 "dd MMMM" = "dd MMMM";
 
-"Dashboard" = "Pantalla Principal";
+// TabbarView
+"Dashboard" = "Inicio";
 "Catalog" = "Catálogo";
 "Turnips" = "Nabos";
 "Villagers" = "Aldeanos";
 "Collection" = "Colección";
 
+// TodayView
 "Change Section Order" = "Cambiar el orden de las secciones";
 
+// TodaySectionEditView
 "Drag & Drop to Rearrange" = "Arrastra y suelta para reorganizar";
 "Hidden" = "Oculto";
 "Today Sections" = "Secciones principales";
-"Done" = "Hecho";
+"Done" = "Listo";
 " to re-order sections." = " para reorganizar las secciones.";
-"Check or un-check" = "verifica o no verifica";
+"Check or un-check" = "marca o desmarca";
 " rows to hide sections from the dashboard." = " para esconder las secciones principales";
 
+// TodayBirthdaySection
 "Birthdays" = "Cumpleaños";
 "Today's Birthdays" = "Cumpleaños de hoy";
 "Today's Birthday" = "Cumpleaños de hoy";
 
+// TodayCollectionProgressSection
 "Collection Progress" = "Progreso de la colección";
 "Share" = "Compartir";
 
+// TodayCurrentlyAvailableSection
 "Currently Available" = "Disponible ahora";
 "%lld/%lld Bugs" = "%lld/%lld Insectos";
 "%lld/%lld Fish" = "%lld/%lld Peces";
+"%lld/%lld Sea Creatures" = "%lld/%lld Criaturas marinas";
 "%lld NEW" = "%lld NUEVO";
 
+// TodayEventsSection
 "Events" = "Eventos";
 "Currently" = "En este momento";
 "No Events Today" = "No hay eventos hoy";
 "Upcoming" = "Próximamente";
 
+// TodayTasksSection
 "Today's Tasks" = "Tareas de hoy";
 "This feature requires " = "Esta función requiere ";
 "Learn more >" = "Saber más >";
 
-"Today is sunday, don't forget to buy more turnips and fill your buy price." = "¡Hoy es domingo! No olvides comprar más nabos y poner tu precio de compra.";
-"Today's average price should be around " = "El precio medio de hoy debería ser sobre";
+// TodayTurnipSection
+"Today is sunday, don't forget to buy more turnips and fill your buy price." = "¡Hoy es domingo! No olvides comprar más nabos y registrar tu precio de compra.";
+"Today's average price should be around " = "El precio medio de hoy debería ser sobre ";
 " in the morning, and " = " por la mañana, y ";
 " this afternoon." = " por la tarde.";
 
+// TodayWhatsNewSection
 "New on Nookazon" = "Nuevo en Nookazon";
 "Nookazon is loading..." = "Nookazon está cargando...";
 
+// TodaySubscribeSection
 "What's New" = "Novedades";
 "See what's new in update %@" = "Mira qué hay de nuevo en esta actualización %@";
 
+// SubscribeView
 "You're subscribed to AC Helper+. Thank you so much for you support!" = "Te has suscrito a AC Helper*. ¡Muchas gracias por tu apoyo!";
 "If you enjoy the application, consider subscribing to AC Helper+, to get access to some awesome features and support us!" = "¡Si disfrutas de la aplicación, considera suscribirte a AC Helper+, para obtener acceso a funciones asombrosas y apoyarnos!";
 
@@ -102,8 +116,9 @@ Puedes cancelar en cualquier momento desde los ajustes de iTunes. Cualquier peri
 "Thank you for your support!" = "¡Gracias por tu apoyo!";
 "Thanks!" = "¡Gracias!";
 
-"About" = "Información";
-"The app" = "La app";
+// AboutView
+"About" = "Sobre nosotros";
+"The app" = "La aplicación";
 "Souce code / report an issue" = "Código fuente / señalar un problema";
 "Contact / follow us on Twitter" = "Contacto / síguenos en Twitter";
 "Rate the app on the App Store" = "Valorar la App en la App Store";
@@ -120,22 +135,26 @@ Puedes cancelar en cualquier momento desde los ajustes de iTunes. Cualquier peri
 "Christian & Ninji for the turnip predictions algorithm" = "Christian & Ninji por el algoritmo de predicción de los nabos";
 "Error" = "Error";
 
-"Active Critters" = "Bichos atrapables";
+// ActiveCittersView
+"Active Critters" = "Criaturas atrapables";
 "Fishes" = "Peces";
 "Bugs" = "Insectos";
 "You caught them all!" = "¡Los has atrapado todos!";
 "New this month" = "Nuevo este mes";
+"To catch now" = "Disponbiles ahora";
+"To catch later" = "Disponibles después";
 "To catch" = "Por atrapar";
-"Leaving this month" = "Abandonan este mes";
+"Leaving this month" = "Se van este mes";
 "Caught" = "Atrapados";
 
+// SettingsView
 "Preferences" = "Preferencias";
 "Island name" = "Nombre de la isla";
 "Your island name" = "El nombre de tu isla";
 "Hemisphere" = "Hemisferio";
 "North" = "Norte";
 "South" = "Sur";
-"Starting fruit" = "Fruta inicial";
+"Starting fruit" = "Fruta nativa";
 "Apple" = "Manzana";
 "Cherry" = "Cereza";
 "Orange" = "Naranja";
@@ -155,32 +174,37 @@ Puedes cancelar en cualquier momento desde los ajustes de iTunes. Cualquier peri
 "App Icon" = "Icono de la App";
 "Restore purchase" = "Restaurar compra";
 
+// UserListFormView
 "Edit your list" = "Edita tú lista";
 "Name of your list" = "Nombre de tu lista";
 "List name" = "Nombre de la lista";
 "Can be nothing" = "Puede ser nada";
 "Icon" = "Icono";
 
+// UserListDetailView
 "Add %lld items" = "Añadie %lld objetos";
 "Edit" = "Editar";
 "Search items" = "Buscar objetos";
-"Items added to your list from the search will be displayed there." = "Los objetos añadidos a tu lista aparecerán aquí";
-"No results for %@" = "Sin resultados para %@";
+"Items added to your list from the search will be displayed there." = "Cuando añadas objetos a tu lista parecerán aquí";
+"No results for %@" = "No hay resultados para: %@";
 
+// UserListSubscribeCallView
 "In order to create more than one list, you need to subscribe to AC Helper+" = "Para crear más de una lista, necesitas suscribirte a AC Helper+";
 "Learn more..." = "Saber más...";
 
+// CollectionListView
 "Create a new list" = "Crear una nueva lista";
 "Please select or go stars some items!" = "¡Selecciona o marca algunos objetos!";
-"When you stars some \%@, they'll be displayed here." = "Cuando marques algunos \%@, aparecerán aquí.";
+"When you stars some \%@, they'll be displayed here." = "Los \%@ que marques aparecerán aquí.";
 "Items" = "Objetos";
-"Critters" = "Bichos";
+"Critters" = "Criaturas";
 "Lists" = "Listas";
 "More" = "Más";
 
-"Clear Selection" = "Limpiar la selección";
+// ItemsListView
+"Clear Selection" = "No ordenar";
 "Sort items" = "Ordenar objetos";
-"Current Sort: %@" = "Orden por: %@";
+"Current Sort: %@" = "Ordenados por: %@";
 "name" = "nombre";
 "buy" = "precio de compra";
 "sell" = "precio de venta";
@@ -194,8 +218,10 @@ Puedes cancelar en cualquier momento desde los ajustes de iTunes. Cualquier peri
 "Set" = "Set";
 "Similar" = "Similar";
 
+// ItemRowView
 "unknown source" = "Origen desconocido";
 
+// ItemDetailInfoView
 "Rarity:" = "Rareza:";
 "Shadow size:" = "Tamaño de sombra:";
 "X-Small" = "Muy pequeña";
@@ -203,33 +229,41 @@ Puedes cancelar en cualquier momento desde los ajustes de iTunes. Cualquier peri
 "Medium" = "Mediana";
 "Large" = "Grande";
 "X-Large" = "Muy grande";
+"XX-Large" = "Enorme";
+"Long" = "Alargada";
 "Customizable: %@" = "Personalizable: %@";
 "Yes" = "Sí";
 "No" = "No";
 "Common" = "Común";
 "Same color" = "Del mismo color";
+"Sea (rainy days)" = "En el mar en días lluviosos";
+"Flying near water" = "Volando cerca del agua";
 
+// ItemsCrosslineSectionView
 "Preview" = "Previsualizar";
 
+// ItemDetailSeasonView
 "Seasonality" = "De temporada";
 
+// ItemDetailView
 "Set items" = "Objetos del set";
 "Simillar items" = "Objetos similares";
 "Thematics" = "Temáticas";
 "Variants" = "Variantes";
 "Materials" = "Materiales";
 "Nookazon listings" = "Nookazon";
-"Loading Listings..." = "Cargando...";
+"Loading Listings..." = "Cargando listas...";
 "No listings found on Nookazon" = "No se ha encontrado en Nookazon";
 "Your items lists" = "Tu lista de objetos";
 "Keywords" = "Palabras clave";
 
+// TurnipsView
 "Minmax" = "Min-Max";
 "Profits" = "Beneficio";
 "Average daily buy prices" = "Precio diario de compra";
 "Daily min-max prices" = "Precio min-max diario";
 "Average profits" = "Precio medio";
-"Chart" = "Gráfico";
+"Chart" = "Gráfica";
 "Mon" = "Lun";
 "Tue" = "Mar";
 "Wed" = "Mie";
@@ -241,7 +275,7 @@ Puedes cancelar en cualquier momento desde los ajustes de iTunes. Cualquier peri
 "Add your in game prices" = "Añadir tus precios de juego";
 "Turnips prediction" = "Predicción de nabos";
 "To help us support the application and get turnip predictions notification, you can try out AC Helper+" = "Para apoyar la aplicación y conseguir la notificación de predicción de nabos, puedes probar AC Helper+";
-"To help us support the application and get background playing of all the musics, you can try out AC Helper+" = "Para apoyar la aplicación y conseguir la música de fondo de todas las canciones, puedes probar AC Helper++";
+"To help us support the application and get background playing of all the musics, you can try out AC Helper+" = "Para apoyar la aplicación y conseguir la música de fondo de todas las canciones, puedes probar AC Helper+";
 "%lld upcomingDailyNotifications" = "Has recibido %lld notificaciones.";
 "Profits estimates are computed using the average of the current period" = "Los beneficios estimados se basan en el precio medio del período actual";
 "Day" = "Día";
@@ -252,45 +286,51 @@ Puedes cancelar en cualquier momento desde los ajustes de iTunes. Cualquier peri
 "Add your in game turnip prices to see predictions" = "Añade tu precio de compra de nabos en el juego para ver predicciones";
 "Exchange" = "Cambio";
 
+// TurnipsFormView
 "Monday" = "Lunes";
 "Tuesday" = "Martes";
 "Wednesday" = "Miércoles";
 "Thursday" = "Jueves";
 "Friday" = "Viernes";
 "Saturday" = "Sábado";
-"Add your turnip prices" = "Ajustar Los precios de los nabos";
+"Add your turnip prices" = "Ajustar los precios de los nabos";
 "Configuration" = "Configuración";
 "Clear all fields" = "Limpiar todo";
 "Receive prices predictions notification" = "Recibir las notificaciones de predicciones";
 "You can get daily notifications for your average turnip price by subscribing to AC Helper+" = "Puedes obtener notificaciones diarias de tu precio medio de nabos suscribiéndote a AC Helper+";
 "Preview a notification" = "Ver un ejemplo de notificación";
-"Your in game prices" = "Tus precios de juego";
+"Your in game prices" = "Tus precios en el juego";
 "Buy price" = "Precio de compra";
 "Amount bought" = "Cantidad comprada";
 "The more in game buy prices you'll add the better the predictions will be. Your buy price only won't give your correct averages. Add prices from the game as you get them daily." = "Cuantos mas precios de compra añadas mejor mes serán las predicciones. Solo tu precio de compra no te dará predicciones correctas. Añade precios del juego diariamente";
 "View on TurnipProphet" = "Ver en TurnipProphet";
 "View Turnip.Exchange islands" = "Ver las Islas de Turnip.Exchange";
 
-"Average" = "Medio";
+// TurnipsChartTopLegendView
+"Average" = "Media";
 "Minimum" = "Mínimo";
 "MinMax" = "MinMax";
+"Services" = "Servicios";
 
+// IslandDetailView
 "Join Island" = "Unirte a la isla";
 "Island" = "Isla";
 "Description" = "Descripción";
 "Visitors" = "Visitantes";
 "Loading Visitors...." = "Cargando visitantes....";
 
-"Search a villager" = "Buscar un vecino";
+// VillagersListView
+"Search a villager" = "Buscar un aldeano";
 "Personality" = "Personalidad";
 "Birthday" = "Cumpleaños";
 "Species" = "Especie";
 "Gender" = "Género";
 "Catch phrase" = "Frase típica";
 "Unknown" = "Desconocido";
-"Villager items" = "Objetos de vecinos";
-"Sort villagers" = "Ordenar vecinos";
+"Villager items" = "Objetos de aldeanos";
+"Sort villagers" = "Ordenar aldeanos";
 
+// VillagersDetailView
 "Unkown" = "Desconocido";
 "Lazy" = "Perezoso";
 "Jock" = "Atlético";
@@ -340,9 +380,11 @@ Puedes cancelar en cualquier momento desde los ajustes de iTunes. Cualquier peri
 "Like" = "Le gusta";
 "Gifts ideas" = "Ideas de regalo";
 
+// ListingRow
 "Make an Offer" = "Hacer una oferta";
 "Need Materials" = "Se necesitan materiales";
 
+// NotificationManager
 "Turnip prices" = "Precio de nabos";
 "this morning" = "esta mañana";
 "this afternoon" = "esta tarde";
@@ -353,6 +395,7 @@ Puedes cancelar en cualquier momento desde los ajustes de iTunes. Cualquier peri
 "It's time to buy turnips and add the buy price in the app." = "Es hora de comprar nabos y añadir el precio en la app.";
 "It's the start of the week, don't forget to add your store buy prices in the app as you play the game. You'll get more accurate predictions." = "Empieza la semana, no olvides añadir los precios de tu tienda en la app cuando juegues. Obtendrás unas predicciones más seguras. ";
 
+// CategoryRow
 "housewares" = "Artículos del hogar";
 "miscellaneous" = "Varios";
 "wall-mounted" = "De pared";
@@ -381,12 +424,17 @@ Puedes cancelar en cualquier momento desde los ajustes de iTunes. Cualquier peri
 "bugs" = "Insectos";
 "fish" = "Peces";
 "fossils" = "Fósiles";
+"seaCreatures" = "Criaturas marinas";
+"Clothing Other" = "Trajes de baño";
 
+// CategoriesViewv
 "Nature" = "Natural";
 "Wardrobe" = "Armario";
 
+// Search
 "Search..." = "Buscar…";
 
+// Seatch labels
 "See more" = "Ver más";
 "See less" = "Ver menos";
 
@@ -395,11 +443,13 @@ Puedes cancelar en cualquier momento desde los ajustes de iTunes. Cualquier peri
 "Export my collection" = "Exportar mi colección";
 "Import a collection" = "Importar una colección";
 "Imported with success" = "Importado con éxito";
-"Reset my collection" = "Eliminar my colección";
+"Reset my collection" = "Eliminar mi colección";
 "Your AC Helper collection file was imported with success." = "Tu colección de AC Helper ha sido importada con éxito";
 "Are you sure?" = "¿Estás seguro?";
-"This will delete all your collected critters, items, villagers and items lists" = "Eso borrará todas tus colecciones de bichos, vecinos, objetos y listas.";
+"This will delete all your collected critters, items, villagers and items lists" = "Eso borrará todas tus colecciones de criaturas, aldeanos, objetos y listas.";
 
+
+//Mystery islands
 "Mystery Islands" = "Islas misteriosas";
 "Trees: %@" = "Árboles: %@";
 "Trees" = "Árboles";
@@ -409,7 +459,7 @@ Puedes cancelar en cualquier momento desde los ajustes de iTunes. Cualquier peri
 "Insects" = "Insectos";
 "Rocks Type" = "Tipo de rocas";
 "Rocks" = "Rocas";
-"Take your chance and go visit some mystery island!" = "¡Toma tu oportunidad y visita alguna Isla misteriosa!";
+"Take your chance and go visit some mystery island!" = "¡Date una oportunidad y visita alguna isla misteriosa!";
 "Native" = "Nativo";
 "Uncommon" = "Poco común";
 "Gold" = "Pepitas de oro";
@@ -456,7 +506,7 @@ Puedes cancelar en cualquier momento desde los ajustes de iTunes. Cualquier peri
 "Pushing snowballs" = "Poniendo bolas de nieve";
 "On flowers" = "En las flores";
 "On tree stumps" = "En tocones de árbol";
-"On palm trees" = "Dn las palmeras";
+"On palm trees" = "En las palmeras";
 "On hardwoodcedar trees" = "En árboles caduciformes";
 "From hitting rocks" = "Golpeando rocas";
 "On riverponds" = "En estanques";
@@ -477,6 +527,7 @@ Puedes cancelar en cualquier momento desde los ajustes de iTunes. Cualquier peri
 "Hitting a rock" = "Golpear una roca";
 "Beach" = "Playa";
 
+// Island Description
 "A fairly normal island which you can get on your first tour, with one cliff, native fruit, coconuts, a river and a pond." = "Una isla normal donde puedes ir en tu primer tour, con un acantilado, fruta nativa, cocos, un río y un estanque";
 "Practically the same as Normal Island 1, but without the pond, and with a slightly bigger cliff." = "Prácticamente lo mismo que la Isla Normal 1, pero sin el estanque y con un acantilado un poco más grande.";
 "Somewhat more interesting in layout but it has nothing special about the resources you can get." = "Un tipo con una forma diferente más interesante pero con ningún recurso especial para obtener.";
@@ -487,7 +538,7 @@ Puedes cancelar en cualquier momento desde los ajustes de iTunes. Cualquier peri
 "There are 19 fruit trees on this island and all will be your 'sister fruit'. This will be different from your native fruit - but every time you come here, it will be the same one." = "Hay 19 árboles frutales en esta isla y todos serán de tu 'fruta hermana'. Esta es distinta de tu fruta nativa - pero cada vez que vengas aquí, será la misma.";
 "This island has a pond surrounded by rare flowers and the only insects that will spawn are those that hang around flowers." = "Esta isla tiene un estanque rodeado de flores raras y los únicos insectos que aparecerán son aquellos que vuelan alrededor de flores";
 "There are four small triangular cliffs, one in each corner, and the ground level is full of flowers and money rocks." = "Hay 4 pequeños acantilados triangulares, uno en cada esquina, y el nivel del suelo está lleno de flores y rocas de dinero";
-"Yes, the infamous one. The only insects that spawn here are tarantulas (as long as it is night time in a Tarantula month), and the rocks have crafting materials if you can get to them. The river is thin enough that you can jump over it without a vaulting pole." = "Si, la infame. Los únicos insectos que aparecen aquí son tarántulas (mientras sea de noche y en un mes que haya tarántulas), y las rocas tienen materiales si puedes llegar a ellas. El río es lo suficientemente fino como para saltar sin pértiga.";
+"Yes, the infamous one. The only insects that spawn here are tarantulas (as long as it is night time in a Tarantula month), and the rocks have crafting materials if you can get to them. The river is thin enough that you can jump over it without a vaulting pole." = "Si, la infame. Los únicos insectos que aparecen aquí son tarántulas (mientras sea de noche y en un mes que haya tarántulas), y las rocas tienen materiales si puedes llegar a ellas. El río es lo suficientemente fino como para saltar sin garrocha.";
 "This island has no river or pond and has tons of hardwood and coconut trees, and the only insects that spawn are those that are associated with trees." = "Esta isla no tiene río ni estanque y tiene un montón de árboles caducifolios y palmeras de cocos, los únicos insectos que aparecen son aquellos asociados con los árboles.";
 "Big Fish Island. This island has rare hybrid flowers and the only fish available are larger ones, including some of the more rare ones." = "La isla de los peces grandes, tiene flores híbridas bastante raras y los únicos peces disponibles son los más grandes, incluyendo los más raros.";
 "This island is exactly the same as Bamboo Island but the trees are all just regular hardwood trees." = "Esta isla es exactamente igual que la Isla de Bambú, pero los árboles son únicamente caducifolios.";
@@ -498,17 +549,20 @@ Puedes cancelar en cualquier momento desde los ajustes de iTunes. Cualquier peri
 "Lots of cliffs, waterfalls and river forks. Normal resource spawns." = "Muchos acantilados, cascadas y cruces de ríos. Aparecen recursos normales.";
 "A very rare island with flowers, scorpions and a rectangular pond. If you climb up onto the cliff and climb down from the back, you can vault over to a tiny island in the middle and get 8 gold nuggets from a single rock." = "Una isla muy rara con flores, escorpiones y un estanque rectangular. Si escalas el acantilado y bajas por la parte trasera, podrás llegar a una pequeña isla en el centro y obtener 8 pepitas de oro de una sola roca.";
 
+// New settings
 "Using iCloud sync" = "Usando sincronización con iCloud";
 "Synchronized with iCloud" = "Sincronizado con iCloud";
 
+// New card
 "Possible visitors" = "Posibles visitantes";
 "On" = "en";
 " your island" = " tu isla";
 "All day" = "Todo el día";
-"From 6pm to 5am" = "De 18H a 5H";
-"From 8pm to 5am" = "De 20H a 5H";
-"From 5am to 12pm" = "De 5H a 12H";
+"From 6pm to 5am" = "De 6pm a 5am";
+"From 8pm to 5am" = "De 8pm a 5am";
+"From 5am to 12pm" = "De 5am a 12pm";
 
+//Special characters
 "K.K Slider" = "Totakeke";
 "Daisy Mae" = "Juliana";
 "C.J" = "CJ";
@@ -521,11 +575,13 @@ Puedes cancelar en cualquier momento desde los ajustes de iTunes. Cualquier peri
 "Wisp" = "Buh";
 "Celeste" = "Estela";
 
+// Events
 "Museum Day" = "Día Internacional de los Museos";
 "Wedding Season" = "Temporada de bodas";
 "Bug-Off contest" = "Caza de Bichos";
 "Meteor shower" =  "Lluvia de meteoros";
 
+// Musics
 "Music player" = "Reproductor de música";
 "Tracks" = "Canciones";
 
@@ -554,16 +610,114 @@ Puedes cancelar en cualquier momento desde los ajustes de iTunes. Cualquier peri
 "Outdoors" = "Exterior";
 "Rose Rug" = "Alfombra Rosa";
 
-// dodo code
-"dodocode.footer" = "Once your Dodo code is saved, it'll appear on the list.
-Please Ensure your gates are open before adding your code.
-You can delete and close your gates at any moment.
-Please be respectful, any Dodo code reported will be deleted.";
-"ACDodoCode.notification.title" = "A new Dodo code is available";
-"ACDodoCode.notification.subtitle" = "Someone opened their gates and posted a new Dodo code on the application, go check it out!";
-"ACComment.notification.title" = "Someone commented on your Dodo code";
-"ACComment.notification.subtitle" = "A new comment has been added on your Dodo code, go check it out!";
-"ACNew.notification.title" = "A news has been posted";
-"ACNew.notification.subtitle" = "A new article about the app or the game has been posted. Check it out in the app!";
+// Chore
+"Title" = "Tareas";
+"Chore title" = "Título de la tarea";
+"Short description about the chore" = "Descripción corta sobre la tarea";
+"Add Chore" = "Agregar tarea";
+"Chores" = "Tareas";
+"Have a friend to visit? A gift to a villager? Track your chores and to-dos here." = "¿Tienes un amigo para visitar? ¿Un regalo para un aldeano? Haga un seguimiento de tus tareas pendientes aquí.";
+"Reset" = "Limpiar";
+"Manage and keep track of your chores and to-dos." = "Administra y realiza un seguimiento de tus tareas pendientes.";
 
-"seaCreatures" = "Sea Creatures";
+// Design
+"Creators and Designs" = "Diseños y creaciones";
+"Add Creator/Design Item" = "Agregar un diseño o creación";
+
+// Custom Daily Tasks
+"Add a custom task" = "Agregar una tarea personalizada";
+"Edit task" = "Editar una tarea";
+"Task name" = "Nombre de la tarea";
+"Name of the task" = "Nombre de la tarea";
+"Has progress" = "En progreso";
+"Max amount" = "Repeticiones";
+
+// Default Custom Tasks
+"Hit rocks" = "Golpear rocas";
+"Find fossils" = "Desenterrar fósiles";
+"Talk to villager" = "Hablar con un aldeano";
+"Find furniture" = "Encontrar un objeto";
+"Find buried bell" = "Plantar un arbol de dinero";
+"Use ATM" = "Usar el Bayero automático";
+"Find bottle message" = "Encontrar un mensaje en la playa";
+"Obtain DIY from villager" = "Obtener un proyecto de un aldeno";
+
+//Villagers Sort
+"All" = "Todos";
+"Liked" = "Favoritos";
+"Residents" = "Residentes";
+
+//Villager home section
+"Villager visits" = "Visitar a aldeanos";
+"Who have you talked to today? Find the villagers you have visited and tap the home icon on the villager’s page to keep track." = "¿Con quién has hablado hoy? Encuentra a los aldeanos que has visitado y toca el ícono del aldeano para realizar un seguimiento.";
+"Long press on a villager to see more info about them" = "Manten presionado a un aldeano para ver más información sobre ellos.";
+
+
+//Dodo code form
+"Please fill all the fields" = "Por favor rellena esta información";
+"Dodo code" = "Código Dodo";
+"Dodo codes" = "Códigos Dodo";
+"This Dodo code is invalid" = "El código Dodo es es inválido";
+"Island description" = "Descripción de la isla";
+"Native fruit" = "Fruta navita";
+"Add your Dodo code" = "Agrega tu código dodo";
+"Hemisphere: %@" = "Hemisferio: %@";
+"Delete" = "Borrar";
+"Report" = "Reportar";
+"Latest Dodo code" = "Último código Dodo";
+
+//Dodo code view
+"dodocode.footer" = "Una vez que haya guardado su código Dodo, aparecerá en la lista.
+Asegúrese de que sus puertas estén abiertas antes de agregar su código.
+Puedes eliminar y cerrar tus puertas en cualquier momento.
+Se respetuoso, cualquier código Dodo reportado será eliminado.";
+"iCloud not enabled" = "iCloud no esta habilitado";
+"You need an iCloud account to add your Dodo code" = "Necesitas una cuenta de iCloud para agregar su código Dodo";
+"Do you really want to delete your Dodo code?" = "¿Realmente quieres eliminar tu código Dodo?";
+"Do you really want to report this Dodo code?" = "¿Realmente quieres reportar este código Dodo?";
+"Visitor" = "Visitante";
+"Edit your Dodo code" = "Editar tu código Dodo";
+"Get notified of new Dodo codes" = "Recibir notificaciones de nuevos códigos Dodo";
+"To help us support the application and get notifications when a new Dodo code is posted, you can try out AC Helper+" = "Para ayudarnos a respaldar la aplicación y recibir notificaciones cuando se publique un nuevo código de Dodo, puede probar AC Helper+";
+"ACDodoCode.notification.title" = "Nuevo código Dodo disponible";
+"ACDodoCode.notification.subtitle" = "Alguien abrió sus puertas y publicó un nuevo código Dodo en la aplicación, ¡échale un vistazo!";
+
+// dodo code comments
+"Comments" = "Comentarios";
+"Be the first to leave a comment!" = "¡Se el primero en comentar!";
+"%@ from %@" = "%@ de %@";
+"In order to add a comment you must add an island name and a username. Tap here to add them in settings" = "Para agregar un comentario, debes agregar un nombre de isla y un nombre de usuario. Toque aquí para agregarlos en la configuración";
+"Add your comment" = "Agregar tu comentario";
+"Send" = "Enviar";
+"In game name / username" = "Nombre en el juego / sobrenombre";
+"You need to have an iCloud account in your device settings in order to add comments" = "Debe tener una cuenta de iCloud en la configuración de su dispositivo para agregar comentarios.";
+"ACComment.notification.title" = "Nuevo comentario sobre tu código Dodo";
+"ACComment.notification.subtitle" = "Alguien comento recientemente sobre tu códdigo Dodo";
+
+//News
+"ACNew.notification.title" = "Hay una nueva noticia publicada";
+"ACNew.notification.subtitle" = "Se ha publicado un nuevo artículo sobre la aplicación o el juego. ¡Compruébalo en la aplicación!";
+"News" = "Noticias";
+
+//Social
+"Contact / follow us on Instagram" = "Contáctanos o sigenos en Instagram";
+"Meet the community of ACNH Connect" = "Únete a nuestra comunidad en ACNH Connect";
+
+//Sea Creatures
+"Underwater" = "Bajo el agua";
+"Movement speed:" = "Velocidad:";
+"Medium" = "Normal";
+"Very slow" = "Muy lento";
+"Slow" = "Lento";
+"Very fast" = "Muy rápido";
+"Fast" = "Rápido";
+"Stationary" = "Quieto";
+
+// Added 2020-07-07
+"Fishing tourney" = "Torneo de pesca";
+"You turnips predictions will be displayed here one you fill in somes prices." = "Sus predicciones de nabos se mostrarán aquí una vez que agregues algunos precios.";
+"Able Sisters" = "Hermanas manitas";
+"Avaible from Able Sisters shop only" = "Solo diponible cerca de año nuevo";
+"Avaible from either Mabel's tempory shop or Able Sisters shop" = "Disponible en la tienda temporal de las hermanas manitas";
+"Only available close the new year holiday" = "Disponible uniquement durant le nouvel ans";
+"Crafting" = "Proyecto";
