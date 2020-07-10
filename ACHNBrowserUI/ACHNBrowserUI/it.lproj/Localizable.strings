@@ -28,6 +28,7 @@
 "Subscribe" = "Abbonamento";
 "Today Sections" = "Sezioni Oggi";
 "Done" = "Fatto";
+"Drag and drop" = "Trascina e rilascia";
 " to re-order sections." = " per riordinare le sezioni.";
 "Check or un-check" = "Seleziona o deseleziona";
 " rows to hide sections from the dashboard." = " righe per nascondere le sezioni dalla bacheca.";
@@ -43,6 +44,7 @@
 "Currently Available" = "Disponibili adesso";
 "%lld/%lld Bugs" = "%lld/%lld Insetti";
 "%lld/%lld Fish" = "%lld/%lld Pesci";
+"%lld/%lld Sea Creatures" = "%lld/%lld Creature marine";
 "%lld NEW" = "%lld NOVITÀ";
 // TodayEventsSection
 "Events" = "Eventi";
@@ -115,6 +117,8 @@ Puoi annullare il tuo abbonamento in ogni momento dalle impostazioni del tuo acc
 "Leaving this month" = "Andranno via questo mese";
 "Caught" = "Catturato";
 "All day" = "Tutto il giorno";
+"To catch now" = "Catturabili ora";
+"To catch later" = "Catturabili più tardi";
 // SettingsView
 "Preferences" = "Impostazioni";
 "Island name" = "Nome isola";
@@ -378,7 +382,7 @@ Puoi annullare il tuo abbonamento in ogni momento dalle impostazioni del tuo acc
 "bugs" = "Insetti";
 "fish" = "Pesci";
 "fossils" = "Fossili";
-"seaCreatures" = "Sea Creatures";
+"seaCreatures" = "Creature marine";
 // CategoriesView
 "Nature" = "Natura";
 "Wardrobe" = "Guardaroba";
@@ -404,8 +408,8 @@ Puoi annullare il tuo abbonamento in ogni momento dalle impostazioni del tuo acc
 "Available after unlocking the shovel in the story" = "Disponibile dopo aver ottenuto la pala nella storia";
 "Available from Able Sisters shop only during Festive Season" = "Disponibile da Ago e Filo solo durante il periodo delle festività";
 "Available from Able Sisters shop only" = "Disponibile solo da Ago e Filo";
-"Available from either Mable's temporary shop or Able Sisters shop during Festive Season" = "Disponibile dal negozio itinerante di Agostina o da Ago e Filo solo durante il periodo delle festività";
-"Available from either Mable's temporary shop or Able Sisters shop" = "Disponibile dal negozio itinerante di Agostina o da Ago e Filo";
+"Available from either Mabel's temporary shop or Able Sisters shop during Festive Season" = "Disponibile dal negozio itinerante di Agostina o da Ago e Filo solo durante il periodo delle festività";
+"Available from either Mabel's temporary shop or Able Sisters shop" = "Disponibile dal negozio itinerante di Agostina o da Ago e Filo";
 "Available in all tiers of shops, including Timmy & Tommy before the shop is opened" = "Disponibile in ogni versione del negozio di Marco e Mirco";
 "Available in Nook's Cranny (either upgrade tier) in the unique furniture slot" = "Disponibile alla Bottega di Nook (ogni versione) nello spazio mobili unici";
 "Available in Nook's Cranny (upgraded only)" = "Disponibile alla Bottega di Nook (ampliata)";
@@ -532,7 +536,7 @@ Puoi annullare il tuo abbonamento in ogni momento dalle impostazioni del tuo acc
 "On flowers" = "Sui fiori";
 "On ground (Mushroom Season)" = "Sul terreno (Periodo dei funghi)";
 "On ground" = "Sul terreno";
-"On hardwood/cedar trees" = "Sui cedri";
+"On hardwood/cedar trees" = "Su alberi latifoglia/cedri";
 "On palm trees" = "Sulle palme";
 "On rivers/ponds" = "Nei fiumi/stagni";
 "On rocks" = "Sulle rocce";
@@ -705,7 +709,7 @@ Puoi annullare il tuo abbonamento in ogni momento dalle impostazioni del tuo acc
 "Trash" = "Rifiuti";
 "Bamboos" = "Bambù";
 "Hardwood" = "Legno duro";
-"Exotic fruits" = "Frutti esotici";
+"Exotic Fruits" = "Frutti esotici";
 "Normal Island 1" = "Isola Normale 1";
 "Normal Island 2" = "Isola Normale 2";
 "Spiral Island" = "Isola Spirale";
@@ -763,6 +767,7 @@ Puoi annullare il tuo abbonamento in ogni momento dalle impostazioni del tuo acc
 "K.K Slider" = "K.K. Slider";
 "Daisy Mae" = "Brunella";
 "C.J." = "Castorino";
+"C.J" = "Castorino";
 "Flick" = "Ivano";
 "Label" = "Beatrice";
 "Leif" = "Florindo";
@@ -771,12 +776,12 @@ Puoi annullare il tuo abbonamento in ogni momento dalle impostazioni del tuo acc
 "Blathers" = "Blatero";
 "Celeste" = "Celeste";
 "Kicks" = "Sciuscià";
-"Label" = "Bice";
 "Labelle" = "Beatrice";
 // Added 2020-05-23
 "Museum Day" = "Giornata internazionale dei Musei";
 "Wedding season" = "Stagione dei matrimoni";
 "Bug-Off contest" = "Insettomania";
+"Fishing tourney" = "Torneo di pesca";
 "Meteor shower" =  "Pioggia di stelle";
 "Reset" = "Reimposta";
 "View Turnip.Exchange islands" = "Guarda isole Turnip.Exchange";
@@ -1070,6 +1075,7 @@ Puoi annullare il tuo abbonamento in ogni momento dalle impostazioni del tuo acc
 "Do you really want to report this Dodo code?" = "Sei sicuro di voler segnalare questo Codice Dodo?";
 "Visitor" = "Visitatore";
 "Edit your Dodo code" = "Modifica il tuo Codice Dodo";
+"Notifications" = "Notifiche";
 "Get notified of new Dodo codes" = "Ricevi una notifica quando viene pubblicato un nuovo Codice Dodo";
 "ACDodoCode.notification.title" = "È disponibile un nuovo Codice Dodo";
 "ACDodoCode.notification.subtitle" = "Qualcuno ha aperto il proprio gate e pubblicato il proprio Codice Dodo nell'app, dagli una occhiata!";
@@ -1083,8 +1089,28 @@ Puoi annullare il tuo abbonamento in ogni momento dalle impostazioni del tuo acc
 "Send" = "Invia";
 "In game name / username" = "Nome nel gioco / nome utente";
 "You need to have an iCloud account in your device settings in order to add comments" = "È necessario un account iCloud per aggiungere dei commenti.";
-"ACComment.notification.title" = "Someone commented on your Dodo code";
-"ACComment.notification.subtitle" = "A new comment has been added on your Dodo code, go check it out!";
+"ACComment.notification.title" = "Nuovo commento al tuo Codice Dodo ";
+"ACComment.notification.subtitle" = "Un nuovo commento è stato aggiunto al tuo Codice Dodo, dagli una occhiata!";
 
-"ACNew.notification.title" = "A news has been posted";
-"ACNew.notification.subtitle" = "A new article about the app or the game has been posted. Check it out in the app!";
+// Added 2020-06-18
+"Contact / follow us on Instagram" = "Contattaci / seguici su Instagram";
+"Meet the community of ACNH Connect" = "Incontra la community di ACNH Connect";
+
+// Added 2020-06-19
+"News" = "Notizie";
+"Get notified when a news is posted" = "Ricevi una notifica quando una notizia viene pubblicata";
+"ACNew.notification.title" = "È stata pubblicata una notizia";
+"ACNew.notification.subtitle" = "È stato pubblicato un nuovo articolo sull'app o sul gioco. Vai a leggerlo nell'app!";
+
+// Summer Patch - added 2020-07-04
+"Underwater" = "Sott'acqua";
+"Movement speed:" = "Velocità movimento:";
+"Very slow" = "Molto lenta";
+"Slow" = "Lenta";
+"Very fast" = "Molto veloce";
+"Fast" = "Veloce";
+"Stationary" = "Statica";
+
+// Added 2020-07-07
+"Clothing Other" = "Muta subacquea";
+"Sea Creatures" = "Creature marine";
