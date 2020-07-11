@@ -44,6 +44,7 @@ public class UserCollection: ObservableObject {
     }
     
     private let filePath: URL
+    private let sharedFilePath: URL?
     private let encoder = JSONEncoder()
     private let decoder = JSONDecoder()
     
@@ -57,13 +58,18 @@ public class UserCollection: ObservableObject {
     
     private let logHandler = OSLog(subsystem: "com.achelper.collection", category: "ac-perf")
     
-    public init(iCloudDisabled: Bool) {
+    public init(iCloudDisabled: Bool, fromSharedURL: Bool = false) {
         do {
             filePath = try FileManager.default.url(for: .documentDirectory,
                                                    in: .userDomainMask,
                                                    appropriateFor: nil,
                                                    create: false).appendingPathComponent("collection")
-            _ = self.loadCollection(file: filePath)
+            sharedFilePath = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.achelper.com")?.appendingPathComponent("collection")
+            if fromSharedURL, let url = sharedFilePath {
+                _ = self.loadCollection(file: url)
+            } else {
+                _ = self.loadCollection(file: filePath)
+            }
             
             if !iCloudDisabled {
                 checkiCloudStatus()
@@ -395,6 +401,9 @@ public class UserCollection: ObservableObject {
                                           chores: self.chores)
                 let data = try self.encoder.encode(savedData)
                 try data.write(to: self.filePath, options: .atomicWrite)
+                if let url = self.sharedFilePath {
+                    try data.write(to: url, options: .atomicWrite)
+                }
                 
                 if self.isCloudEnabled {
                     DispatchQueue.main.async {

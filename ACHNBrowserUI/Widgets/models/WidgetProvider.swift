@@ -20,6 +20,7 @@ private class ProviderHolder {
 }
 struct WidgetProvider: TimelineProvider {
     let items = Items.shared
+    let collection = UserCollection(iCloudDisabled: false, fromSharedURL: true)
     fileprivate let providerHolder = ProviderHolder()
     
     func timeline(with context: Context, completion: @escaping (Timeline<WidgetModel>) -> ()) {

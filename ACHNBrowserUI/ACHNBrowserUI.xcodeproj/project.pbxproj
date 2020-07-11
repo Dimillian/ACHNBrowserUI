@@ -1353,7 +1353,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = ACHNBrowserUI/ACHNBrowserUI.entitlements;
-				CODE_SIGN_IDENTITY = "Apple Development: Thomas Ricouard (7MB55D6BJ5)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Distribution";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 070812020;
 				DEVELOPMENT_ASSET_PATHS = "\"ACHNBrowserUI/Preview Content\"";
@@ -1369,7 +1370,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.thomasricouard.ACNH;
 				PRODUCT_NAME = "AC Helper";
 				PROVISIONING_PROFILE_SPECIFIER = "AC Dev";
-				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "AC Mac dev";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "Ac Mac prod";
 				STRINGS_FILE_OUTPUT_ENCODING = "UTF-16";
 				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
@@ -1385,8 +1386,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = ACHNBrowserUI/ACHNBrowserUI.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Distribution";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 070812020;
 				DEVELOPMENT_ASSET_PATHS = "\"ACHNBrowserUI/Preview Content\"";
@@ -1401,8 +1402,8 @@
 				MARKETING_VERSION = 2.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.thomasricouard.ACNH;
 				PRODUCT_NAME = "AC Helper";
-				PROVISIONING_PROFILE_SPECIFIER = "AC Dev";
-				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "AC Mac dev";
+				PROVISIONING_PROFILE_SPECIFIER = "AC prod";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "Ac Mac prod";
 				STRINGS_FILE_OUTPUT_ENCODING = "UTF-16";
 				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
