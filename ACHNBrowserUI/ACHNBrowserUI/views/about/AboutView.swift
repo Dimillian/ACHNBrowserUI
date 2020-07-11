@@ -81,7 +81,7 @@ struct AboutView: View {
                 Section(header: SectionHeaderView(text: "The app")) {
                     Group {
                         makeRow(image: "chevron.left.slash.chevron.right",
-                                text: "Souce code / report an issue",
+                                text: "Source code / report an issue",
                                 link: URL(string: "https://github.com/Dimillian/ACHNBrowserUI"),
                                 color: .acHeaderBackground)
                         makeRow(image: "envelope.fill",
