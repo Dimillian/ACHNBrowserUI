@@ -110,8 +110,8 @@ public class UserCollection: ObservableObject {
                     category.rawValue)
         
         let items = Items.shared.categories[category] ?? []
-        var caught = self.critters.count(where: { items.contains($0) } )
-        caught += self.items.count(where: { items.contains($0) && !$0.name.contains("(fake)") })
+        var caught = self.critters.count(where: { items.contains($0) || items.isEmpty && $0.appCategory == category } )
+        caught += self.items.count(where: { (items.contains($0) || items.isEmpty && $0.appCategory == category) && !$0.name.contains("(fake)") })
         
         os_signpost(.end,
                     log: logHandler,

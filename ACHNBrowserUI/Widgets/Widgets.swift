@@ -13,7 +13,7 @@ import SwiftUI
 struct Widgets: WidgetBundle {
     @WidgetBundleBuilder
     var body: some Widget {
-        ActiveFishWidget()
         VillagerBirthdayWidget()
+        MuseumProgressWidget()
     }
 }

@@ -19,7 +19,6 @@ struct NewsCommentView: View {
             }
             CommentsSection(model: news)
         }
-        .animation(.interactiveSpring())
         .listStyle(InsetGroupedListStyle())
         .navigationBarTitle("Comments")
     }

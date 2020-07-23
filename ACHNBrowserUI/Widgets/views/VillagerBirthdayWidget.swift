@@ -29,7 +29,9 @@ struct VillagerBirthdayWidgetView: View {
                 Text("Not supported yet.")
             }
             
-        }.widgetURL(URL(string: "achelperapp://villager/\(model?.villager.fileName ?? "null")")!)
+        }
+        .redacted(reason: RedactionReasons(rawValue: model?.villager == nil ? RedactionReasons.placeholder.rawValue : 0))
+        .widgetURL(URL(string: "achelperapp://villager/\(model?.villager.fileName ?? "null")")!)
     }
     
     private func makeDayStamp(villager: Villager?) -> some View {
@@ -122,8 +124,7 @@ struct VillagerBirthdayWidget: Widget {
     
     var body: some WidgetConfiguration {
         StaticConfiguration(kind: kind,
-                            provider: WidgetProvider(),
-                            placeholder: VillagerBirthdayWidgetView()) { entry in
+                            provider: WidgetProvider()) { entry in
             VillagerBirthdayWidgetView(model: entry)
         }
         .configurationDisplayName("Villager birthday")

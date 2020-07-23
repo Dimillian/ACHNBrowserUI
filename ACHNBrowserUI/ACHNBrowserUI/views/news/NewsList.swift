@@ -33,7 +33,7 @@ struct NewsList: View {
             ForEach(newsService.articles) { news in
                 Section {
                     if self.newsService.articles.isEmpty {
-                        RowLoadingView() .listRowBackground(Color.acSecondaryBackground)
+                        RowLoadingView().listRowBackground(Color.acSecondaryBackground)
                     } else {
                         NavigationLink(destination: NewsCommentView(news: news)) {
                             NewsRow(news: news)

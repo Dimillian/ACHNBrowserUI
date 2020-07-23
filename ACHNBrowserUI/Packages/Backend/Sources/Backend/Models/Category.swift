@@ -60,7 +60,7 @@ public enum Category: String, CaseIterable {
         case .photos:
             return "icon-photos"
         case .art:
-            return "icon-art"
+            return "icon-board"
         case .recipes:
             return "icon-recipe"
         case .wallpapers:

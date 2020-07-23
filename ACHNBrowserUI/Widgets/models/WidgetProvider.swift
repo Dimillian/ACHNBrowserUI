@@ -19,13 +19,11 @@ private class ProviderHolder {
     var cancellable: AnyCancellable?
 }
 struct WidgetProvider: TimelineProvider {
-    let items = Items.shared
     let collection = UserCollection(iCloudDisabled: false, fromSharedURL: true)
     fileprivate let providerHolder = ProviderHolder()
     
+    
     func timeline(with context: Context, completion: @escaping (Timeline<WidgetModel>) -> ()) {
-        let fishes = items.categories[.fish]?.filterActiveThisMonth().filter{ $0.isActiveAtThisHour() }
-        
         let formatter = DateFormatter()
         formatter.dateFormat = "d/M"
         let today = formatter.string(from: Date())
@@ -40,9 +38,9 @@ struct WidgetProvider: TimelineProvider {
             .sink(receiveValue: {
                 let now = Date()
                 let entry = WidgetModel(date: now,
-                                        availableFishes: fishes?.shuffled().prefix(upTo: 3).map{ $0 },
                                         villager: $0.filter( { $0.birthday == today } ).first ?? $0.first!,
-                                        villagerImage: nil)
+                                        villagerImage: nil,
+                                        museumCollection: generateMuseumProgress())
                 downloadImages(for: entry, completion: completion)
             })
     }
@@ -59,12 +57,30 @@ struct WidgetProvider: TimelineProvider {
         }
     }
     
+    private func generateMuseumProgress() -> [MuseumProgress] {
+        var museumProgress: [MuseumProgress] = []
+        let museumCategories: [Backend.Category] = [.fish, .bugs, .seaCreatures, .fossils, .art]
+        for category in museumCategories {
+            var total = 80
+            if category == .seaCreatures {
+                total = 40
+            } else if category == .fossils {
+                total = 73
+            } else if category == .art {
+                total = 43
+            }
+            museumProgress.append(MuseumProgress(category: category,
+                                                 have: collection.itemsIn(category: category),
+                                                 total: total))
+        }
+        return museumProgress
+    }
+    
     func snapshot(with context: Context, completion: @escaping (WidgetModel) -> ()) {
-        let fishes = items.categories[.fish]?.filterActiveThisMonth().filter{ $0.isActiveAtThisHour() }
         let entry = WidgetModel(date: Date(),
-                                availableFishes: fishes?.shuffled().prefix(upTo: 3).map{ $0 },
                                 villager: static_villager,
-                                villagerImage: nil)
+                                villagerImage: nil,
+                                museumCollection: generateMuseumProgress())
         completion(entry)
     }
 }

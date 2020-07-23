@@ -28,7 +28,6 @@ struct CollectionProgressRow: View {
                 .resizable()
                 .aspectRatio(1, contentMode: .fit)
                 .frame(height: barHeight + 12)
-            
             Group {
                 ProgressBar(progress: CGFloat(viewModel.inCollection) / CGFloat(viewModel.total),
                              trackColor: .acText,

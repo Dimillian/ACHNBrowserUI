@@ -10,12 +10,12 @@ import SwiftUI
 import Backend
 
 struct CommentsSection: View {
-    @ObservedObject private var viewModel: CommentsViewModel
+    @StateObject private var viewModel: CommentsViewModel
     @State private var commentFieldValue = ""
     @State private var presentedSheet: Sheet.SheetType?
         
     init(model: CloudModel) {
-        self.viewModel = CommentsViewModel(model: model)
+        _viewModel = StateObject(wrappedValue: CommentsViewModel(model: model))
     }
     
     var body: some View {

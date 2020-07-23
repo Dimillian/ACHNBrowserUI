@@ -80,12 +80,21 @@ struct ActiveCrittersView: View {
     var body: some View {
         TabView(selection: $selectedTab) {
             makeList(type: .fish)
+                .tabItem {
+                    Image("book-fish-icon")
+                }
                 .tag(ActiveCrittersViewModel.CritterType.fish)
             
             makeList(type: .bugs)
+                .tabItem {
+                    Image("book-insect-icon")
+                }
                 .tag(ActiveCrittersViewModel.CritterType.bugs)
             
             makeList(type: .seaCreatures)
+                .tabItem {
+                    Image("book-dive-icon")
+                }
                 .tag(ActiveCrittersViewModel.CritterType.seaCreatures)
         }
         .background(Color.acBackground)

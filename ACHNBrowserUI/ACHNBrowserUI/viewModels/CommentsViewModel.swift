@@ -43,7 +43,9 @@ class CommentsViewModel: ObservableObject {
     }
     
     func fetchComments() {
-        isLoading = true
+        if comments.isEmpty {
+            isLoading = true
+        }
         if let record = model.record {
             commentService.fetchComments(record: record)
         }

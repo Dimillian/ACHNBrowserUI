@@ -13,8 +13,15 @@ import UIKit
 
 struct WidgetModel: TimelineEntry {
     public let date: Date
-    public let availableFishes: [Item]?
     public let villager: Villager
     public var villagerImage: UIImage?
+    public let museumCollection: [MuseumProgress]
+}
+
+struct MuseumProgress: Identifiable {
+    var id: String { category.rawValue }
+    let category: Backend.Category
+    let have: Int
+    let total: Int
 }
 
