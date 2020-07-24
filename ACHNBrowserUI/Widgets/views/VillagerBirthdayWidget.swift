@@ -30,7 +30,7 @@ struct VillagerBirthdayWidgetView: View {
             }
             
         }
-        .redacted(reason: model?.villager == nil ? RedactionReasons.placeholder : RedactionReasons()))
+        .redacted(reason: model?.villager == nil ? RedactionReasons.placeholder : [])
         .widgetURL(URL(string: "achelperapp://villager/\(model?.villager.fileName ?? "null")")!)
     }
     
