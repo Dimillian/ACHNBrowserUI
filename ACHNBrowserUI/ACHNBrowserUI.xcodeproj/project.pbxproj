@@ -13,6 +13,11 @@
 		3D9AB08F248256DC00B47041 /* CustomTaskRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D9AB08E248256DC00B47041 /* CustomTaskRow.swift */; };
 		3D9AB093248257DF00B47041 /* CustomTaskFormViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D9AB092248257DF00B47041 /* CustomTaskFormViewModel.swift */; };
 		3DECE21B2483BC83001F24BA /* EditMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DECE21A2483BC82001F24BA /* EditMode.swift */; };
+		3DFC04E024D6D84E002A6CED /* TodayDreamCodeSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DFC04DF24D6D84E002A6CED /* TodayDreamCodeSection.swift */; };
+		3DFC04E224D6DA93002A6CED /* DreamCodeFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DFC04E124D6DA93002A6CED /* DreamCodeFormView.swift */; };
+		3DFC04E424D6DAA3002A6CED /* DreamCodeListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DFC04E324D6DAA3002A6CED /* DreamCodeListView.swift */; };
+		3DFC04E624D6DAAE002A6CED /* DreamCodeRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DFC04E524D6DAAE002A6CED /* DreamCodeRow.swift */; };
+		3DFC04E824D6DABC002A6CED /* DreamCodeDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DFC04E724D6DABC002A6CED /* DreamCodeDetailView.swift */; };
 		4C16FB41247AC9B0009F24E3 /* GridStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C16FB40247AC9B0009F24E3 /* GridStack.swift */; };
 		4C30BFC3249627FD003E96A2 /* Sequence+Unique.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C30BFC2249627FC003E96A2 /* Sequence+Unique.swift */; };
 		4C6E95FD24842F690074433B /* Collection+SafeDirectAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C6E95FC24842F690074433B /* Collection+SafeDirectAccess.swift */; };
@@ -255,6 +260,11 @@
 		3DB1260324686F0B00E74AA5 /* de */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; lineEnding = 0; name = de; path = de.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		3DECE21A2483BC82001F24BA /* EditMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditMode.swift; sourceTree = "<group>"; };
 		3DF14B2E24664B4A00438646 /* de */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; lineEnding = 0; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
+		3DFC04DF24D6D84E002A6CED /* TodayDreamCodeSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayDreamCodeSection.swift; sourceTree = "<group>"; };
+		3DFC04E124D6DA93002A6CED /* DreamCodeFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DreamCodeFormView.swift; sourceTree = "<group>"; };
+		3DFC04E324D6DAA3002A6CED /* DreamCodeListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DreamCodeListView.swift; sourceTree = "<group>"; };
+		3DFC04E524D6DAAE002A6CED /* DreamCodeRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DreamCodeRow.swift; sourceTree = "<group>"; };
+		3DFC04E724D6DABC002A6CED /* DreamCodeDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DreamCodeDetailView.swift; sourceTree = "<group>"; };
 		4C16FB40247AC9B0009F24E3 /* GridStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridStack.swift; sourceTree = "<group>"; };
 		4C2D676A245DA41E005831C4 /* TurnipsChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TurnipsChartView.swift; sourceTree = "<group>"; };
 		4C2D676D245F0666005831C4 /* TurnipsChartBottomLegendView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TurnipsChartBottomLegendView.swift; sourceTree = "<group>"; };
@@ -483,6 +493,7 @@
 				4C7F555C248B91C80089F26C /* TodayVillagerVisitsSection.swift */,
 				69E67EF3249383DA00ED7AC8 /* TodayDodoCodeSection.swift */,
 				6950EB2C249CFCE8002A4902 /* TodayNewsSection.swift */,
+				3DFC04DF24D6D84E002A6CED /* TodayDreamCodeSection.swift */,
 			);
 			path = todayDashboard;
 			sourceTree = "<group>";
@@ -495,6 +506,17 @@
 				3D9AB08E248256DC00B47041 /* CustomTaskRow.swift */,
 			);
 			path = customTasks;
+			sourceTree = "<group>";
+		};
+		3DFC04DE24D6D822002A6CED /* dreamcode */ = {
+			isa = PBXGroup;
+			children = (
+				3DFC04E124D6DA93002A6CED /* DreamCodeFormView.swift */,
+				3DFC04E324D6DAA3002A6CED /* DreamCodeListView.swift */,
+				3DFC04E524D6DAAE002A6CED /* DreamCodeRow.swift */,
+				3DFC04E724D6DABC002A6CED /* DreamCodeDetailView.swift */,
+			);
+			path = dreamcode;
 			sourceTree = "<group>";
 		};
 		4C2D676C245F063E005831C4 /* charts */ = {
@@ -758,6 +780,7 @@
 		69AF8C64243E2857001DD9CB /* views */ = {
 			isa = PBXGroup;
 			children = (
+				3DFC04DE24D6D822002A6CED /* dreamcode */,
 				6950EB35249D03B1002A4902 /* comments */,
 				6950EB2E249CFD5C002A4902 /* news */,
 				69E67EEC24935DC100ED7AC8 /* dodocode */,
@@ -1243,6 +1266,7 @@
 				69157B892471A5A1005B9002 /* SettingsView.swift in Sources */,
 				69157B8A2471A5A1005B9002 /* IslandDetailViewModel.swift in Sources */,
 				69157B8B2471A5A1005B9002 /* DocumentPickerView.swift in Sources */,
+				3DFC04E224D6DA93002A6CED /* DreamCodeFormView.swift in Sources */,
 				69157B8C2471A5A1005B9002 /* TodayTurnipSection.swift in Sources */,
 				3D9AB08F248256DC00B47041 /* CustomTaskRow.swift in Sources */,
 				69157B8D2471A5A1005B9002 /* UserListDetailViewModel.swift in Sources */,
@@ -1276,6 +1300,7 @@
 				4C16FB41247AC9B0009F24E3 /* GridStack.swift in Sources */,
 				69157B9F2471A5A1005B9002 /* SafariView.swift in Sources */,
 				69E67EF22493833200ED7AC8 /* DodoCodeFormView.swift in Sources */,
+				3DFC04E624D6DAAE002A6CED /* DreamCodeRow.swift in Sources */,
 				69157BA02471A5A1005B9002 /* DismissingKeyboardOnSwipe.swift in Sources */,
 				AE0B5B5A247AD6DF0075CF16 /* DesignFormView.swift in Sources */,
 				69157BA12471A5A1005B9002 /* ItemDetailSeasonSectionView.swift in Sources */,
@@ -1293,6 +1318,7 @@
 				3D9AB08B248256C200B47041 /* CustomTaskFormView.swift in Sources */,
 				69157BA82471A5A1005B9002 /* CategoryHeaderView.swift in Sources */,
 				69157BA92471A5A1005B9002 /* ItemDetailSource.swift in Sources */,
+				3DFC04E424D6DAA3002A6CED /* DreamCodeListView.swift in Sources */,
 				69157BAA2471A5A1005B9002 /* TodayCurrentlyAvailableSection.swift in Sources */,
 				69157BAB2471A5A1005B9002 /* SceneDelegate.swift in Sources */,
 				69157BAC2471A5A1005B9002 /* UserListFormViewModel.swift in Sources */,
@@ -1329,6 +1355,7 @@
 				69157BC12471A5A1005B9002 /* ItemsViewModel.swift in Sources */,
 				69157BC22471A5A1005B9002 /* TodayEventsSection.swift in Sources */,
 				69157BC32471A5A1005B9002 /* FeedbackGenerator.swift in Sources */,
+				3DFC04E824D6DABC002A6CED /* DreamCodeDetailView.swift in Sources */,
 				694C8B4724861D4E000B9B5F /* LikeButtonViewModel.swift in Sources */,
 				69157BC42471A5A1005B9002 /* CategoryRowView.swift in Sources */,
 				AE2D7EFE247EAF05006C1F1A /* CrittersListView.swift in Sources */,
@@ -1341,6 +1368,7 @@
 				4C7F555D248B91C80089F26C /* TodayVillagerVisitsSection.swift in Sources */,
 				69157BCA2471A5A1005B9002 /* CollectionRowView.swift in Sources */,
 				4C30BFC3249627FD003E96A2 /* Sequence+Unique.swift in Sources */,
+				3DFC04E024D6D84E002A6CED /* TodayDreamCodeSection.swift in Sources */,
 				AE0B5B5C247AD7590075CF16 /* DesignFormViewModel.swift in Sources */,
 				AE51C2E324801D5D00F074EC /* ChoreListRowView.swift in Sources */,
 				69E67EF0249376DF00ED7AC8 /* DodoCodeRow.swift in Sources */,

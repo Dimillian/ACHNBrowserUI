@@ -49,6 +49,7 @@ struct TodayView: View {
             .sheet(item: $selectedSheet, content: { Sheet(sheetType: $0) })
             .onAppear(perform: NewsArticleService.shared.fetchNews)
             .onAppear(perform: DodoCodeService.shared.refresh)
+            .onAppear(perform: DreamCodeService.shared.refresh)
             
             ActiveCrittersView()
         }

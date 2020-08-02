@@ -66,6 +66,8 @@ struct TodaySectionView: View {
             return AnyView(TodayDodoCodeSection())
         case .news:
             return AnyView(TodayNewsSection())
+        case .dreamCode:
+            return AnyView(TodayDreamCodeSection())
         }
     }
 }

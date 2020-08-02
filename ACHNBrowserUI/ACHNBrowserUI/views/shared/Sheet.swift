@@ -23,6 +23,7 @@ struct Sheet: View {
         case choreForm(chore: Chore?)
         case villager(villager: Villager, subManager: SubscriptionManager, collection: UserCollection)
         case dodoCodeForm(editing: DodoCode?)
+        case dreamCodeForm(editing: DreamCode?)
 
         var id: String {
             switch self {
@@ -50,6 +51,8 @@ struct Sheet: View {
                 return "villager"
             case .dodoCodeForm:
                 return "dodoCodeForm"
+            case .dreamCodeForm:
+                return "dreamCodeForm"
             }
         }
     }
@@ -93,6 +96,8 @@ struct Sheet: View {
             })
         case .dodoCodeForm(let editing):
             return AnyView(DodoCodeFormView(isEditing: editing))
+        case .dreamCodeForm(let editing):
+            return AnyView(DreamCodeFormView(isEditing: editing))
         }
     }
 

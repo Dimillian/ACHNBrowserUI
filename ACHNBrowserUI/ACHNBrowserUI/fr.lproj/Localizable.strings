@@ -931,3 +931,9 @@ Merci d'être respecteux. Tout code signalé sera supprimé";
 "Mushroom Season" = "Saison des Champignons";
 "Recycle box" = "Boîte de recyclage";
 
+// dream code
+"ACDreamCode.notification.title" = "A new dream code is available";
+"ACDreamCode.notification.subtitle" = "Someone postet their islands dream code on the application, go check it out!";
+"dreamcode.footer" = "Once your Dream code is saved, it'll appear on the list.
+You can edit or delete your dream code anytime. You can't add furhter dream codes, as long as you already have added a dream code.
+Any Dodo code reported will be deleted.";

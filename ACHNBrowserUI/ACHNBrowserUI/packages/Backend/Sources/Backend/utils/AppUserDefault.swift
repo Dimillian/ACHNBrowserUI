@@ -100,5 +100,8 @@ public class AppUserDefaults: ObservableObject {
     
     @UserDefault("news_notifications", defaultValue: true)
     public var newsNotifications: Bool
+    
+    @UserDefault("dream_notifications", defaultValue: false)
+    public var dreamNotifications: Bool
 }
 
