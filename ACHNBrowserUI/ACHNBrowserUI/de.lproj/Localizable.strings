@@ -954,3 +954,6 @@ Jeder gemeldete Dodo Code wird gelöscht.";
 "You need an iCloud account to add your dream code" = "Du brauchst einen iCloud Account um deinen Traum Code hinzufügen zu können";
 "Do you really want to report this dream code?" = "Möchtest du diesen Traum Code wirklich melden?";
 "Do you really want to delete your dream code?" = "Möchtest du deinen Traum Code wirklich löschen?";
+"Sort" = "Sortiern";
+"creationDate" = "Datum";
+"upvotes" = "Bewertungen";
