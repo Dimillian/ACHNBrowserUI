@@ -18,11 +18,12 @@ struct DreamCodeDetailView: View {
             Section(header: SectionHeaderView(text: code.islandName,
                                               icon: "moon.zzz")) {
                 DreamCodeRow(code: code, showButtons: true)
+                    .listRowBackground(Color.acSecondaryBackground)
             }
             CommentsSection(model: code)
         }
-        .listStyle(GroupedListStyle())
-        .environment(\.horizontalSizeClass, .regular)
+        .animation(.interactiveSpring())
+        .listStyle(InsetGroupedListStyle())
         .navigationBarTitle("Comments")
     }
 }

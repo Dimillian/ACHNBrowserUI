@@ -33,7 +33,7 @@ struct DreamCodeListView: View {
                     Text("Get notified of new dream codes")
                         .foregroundColor(.acText)
                 }
-            }
+            }.listRowBackground(Color.acSecondaryBackground)
             
             Section {
                 Picker(selection: $service.sort, label: Text("Sort")) {
@@ -41,25 +41,26 @@ struct DreamCodeListView: View {
                         Text(LocalizedStringKey(sort.rawValue)).tag(sort)
                     }
                 }
-            }
+            }.listRowBackground(Color.acSecondaryBackground)
             
-            if service.isSynching && service.codes.isEmpty {
-                RowLoadingView()
-            } else if !service.codes.isEmpty {
-                ForEach(service.codes) { code in
-                    Section(header: SectionHeaderView(text: code.islandName, icon: "moon.zzz")) {
-                        NavigationLink(destination: DreamCodeDetailView(code: code)) {
-                            DreamCodeRow(code: code, showButtons: true)
+            Group {
+                if service.isSynching && service.codes.isEmpty {
+                    RowLoadingView()
+                } else if !service.codes.isEmpty {
+                    ForEach(service.codes) { code in
+                        Section(header: SectionHeaderView(text: code.islandName, icon: "moon.zzz")) {
+                            NavigationLink(destination: DreamCodeDetailView(code: code)) {
+                                DreamCodeRow(code: code, showButtons: true)
+                            }
                         }
                     }
+                } else {
+                    Text("No dream codes available yet, add your own to let other players visit your island in their dreams")
+                        .foregroundColor(.acSecondaryText)
                 }
-            } else {
-                Text("No dream codes available yet, add your own to let other players visit your island in their dreams")
-                    .foregroundColor(.acSecondaryText)
-            }
+            }.listRowBackground(Color.acSecondaryBackground)
         }
-        .listStyle(GroupedListStyle())
-        .environment(\.horizontalSizeClass, .regular)
+        .listStyle(InsetGroupedListStyle())
         .sheet(item: $sheet, content: { Sheet(sheetType: $0) })
         .alert(isPresented: $showiCloudAlert, content: { self.iCloudAlert })
         .navigationBarTitle("Dream codes")

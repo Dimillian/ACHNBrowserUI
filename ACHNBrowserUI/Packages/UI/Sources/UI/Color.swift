@@ -94,6 +94,6 @@ extension Color {
     
     // ---
     public static var dreamCode : Color {
-        Color("DreamCode", bundle: nil)
+        Color("DreamCode", bundle: Bundle.module)
     }
 }

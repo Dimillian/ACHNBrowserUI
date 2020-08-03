@@ -68,6 +68,7 @@ struct ACHelperApp: App {
             .environmentObject(MusicPlayerManager.shared)
             .environmentObject(AppUserDefaults.shared)
             .environmentObject(DodoCodeService.shared)
+            .environmentObject(DreamCodeService.shared)
             .environmentObject(CommentService.shared)
             .environmentObject(NewsArticleService.shared)
             .onAppear(perform: setupAppearance)
