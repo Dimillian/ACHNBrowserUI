@@ -13,12 +13,20 @@ public class DreamCodeService: ObservableObject, PublicCloudService {
     
     // MARK: - Vars
     public static let shared = DreamCodeService()
-    public static var userCloudKitId: CKRecord.ID?
     
+    public enum Sort: String, CaseIterable {
+        case creationDate, upvotes
+    }
+
     @Published public var codes: [DreamCode] = []
     @Published public var mostRecentError: Error?
     @Published public var isSynching = true
     @Published public var canAddCode = false
+    @Published public var sort = Sort.creationDate {
+        didSet {
+            refresh()
+        }
+    }
     
     private var reported: [DreamCode] = []
     
@@ -28,11 +36,7 @@ public class DreamCodeService: ObservableObject, PublicCloudService {
                 self.canAddCode = status == .available
             }
         }
-        
-        CKContainer.default().fetchUserRecordID { (id, error) in
-            Self.userCloudKitId = id
-        }
-        
+                
         if AppUserDefaults.shared.dreamNotifications {
             subscribeToCloudKit()
         }
@@ -153,7 +157,7 @@ public class DreamCodeService: ObservableObject, PublicCloudService {
     private func fetchCodes() {
         isSynching = true
         let query = CKQuery(recordType: DreamCode.RecordType, predicate: NSPredicate(value: true))
-        query.sortDescriptors = [NSSortDescriptor(key: "creationDate", ascending: false)]
+        query.sortDescriptors = [NSSortDescriptor(key: sort.rawValue, ascending: false)]
         database.perform(query, inZoneWith: nil) { (records, error) in
             self.setError(error: error)
             if let records = records {

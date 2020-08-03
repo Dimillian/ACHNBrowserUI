@@ -75,3 +75,6 @@ Please be respectful, any Dodo code reported will be deleted.";
 "dreamcode.footer" = "Once your Dream code is saved, it'll appear on the list.
 You can edit or delete your dream code anytime. You can't add furhter dream codes, as long as you already have added a dream code.
 Any reported dream code will be deleted.";
+"Sort" = "Sort";
+"creationDate" = "Date";
+"upvotes" = "Votes";

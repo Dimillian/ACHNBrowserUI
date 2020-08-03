@@ -35,6 +35,14 @@ struct DreamCodeListView: View {
                 }
             }
             
+            Section {
+                Picker(selection: $service.sort, label: Text("Sort")) {
+                    ForEach(DreamCodeService.Sort.allCases, id: \.self) { sort in
+                        Text(LocalizedStringKey(sort.rawValue)).tag(sort)
+                    }
+                }
+            }
+            
             if service.isSynching && service.codes.isEmpty {
                 RowLoadingView(isLoading: .constant(true))
             } else if !service.codes.isEmpty {

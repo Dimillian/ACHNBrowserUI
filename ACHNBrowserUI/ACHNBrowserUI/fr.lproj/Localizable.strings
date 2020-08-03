@@ -931,9 +931,24 @@ Merci d'être respecteux. Tout code signalé sera supprimé";
 "Mushroom Season" = "Saison des Champignons";
 "Recycle box" = "Boîte de recyclage";
 
+
 // dream code
-"ACDreamCode.notification.title" = "A new dream code is available";
-"ACDreamCode.notification.subtitle" = "Someone postet their islands dream code on the application, go check it out!";
-"dreamcode.footer" = "Once your Dream code is saved, it'll appear on the list.
-You can edit or delete your dream code anytime. You can't add furhter dream codes, as long as you already have added a dream code.
-Any Dodo code reported will be deleted.";
+"ACDreamCode.notification.title" = "Un nouveau Dodo Onirique est disponible";
+"ACDreamCode.notification.subtitle" = "Quelqu'un a posté un nouveau code onirique dans l'application! ";
+"dreamcode.footer" = "Une fois votre code onirique ajouté il apparaitra dans la liste.
+Vous pourrez le supprimer à tout moment.
+Merci d'être respecteux. Tout code signalé sera supprimé";
+
+// Summer Patch II - added 2020-08-02
+"Dream code" = "Code onirique";
+"Dream codes" = "Codes onirique";
+"This Dream code is invalid" = "Ce code onirique est invalide";
+"Edit your Dream code" = "Editer votre code";
+"Add your Dream code" = "Ajoutez votre code";
+"Get notified of new dream codes" = "Être notifié quand un code est posté";
+"You need an iCloud account to add your dream code" = "Vous devez avoir un compte iCloud pour ajouter un code Onirique";
+"Do you really want to report this dream code?" = "Vous voulez vraiment reporter ce code ?";
+"Do you really want to delete your dream code?" = "Vous voulez vraiment supprimer ce code ?";
+"Sort" = "Trier par";
+"creationDate" = "Date";
+"upvotes" = "Votes";
