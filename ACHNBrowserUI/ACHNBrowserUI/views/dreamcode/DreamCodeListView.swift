@@ -44,7 +44,7 @@ struct DreamCodeListView: View {
             }
             
             if service.isSynching && service.codes.isEmpty {
-                RowLoadingView(isLoading: .constant(true))
+                RowLoadingView()
             } else if !service.codes.isEmpty {
                 ForEach(service.codes) { code in
                     Section(header: SectionHeaderView(text: code.islandName, icon: "moon.zzz")) {
@@ -97,7 +97,7 @@ struct DreamCodeListView: View {
             self.service.refresh()
         }) {
             if service.isSynching {
-                ActivityIndicator(isAnimating: .constant(true), style: .medium)
+                ProgressView()
             } else {
                 Image(systemName: "arrow.counterclockwise.circle").imageScale(.large)
             }

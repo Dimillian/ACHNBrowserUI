@@ -84,8 +84,7 @@ struct DreamCodeRow: View {
         }) {
             Group {
                 if reported {
-                    ActivityIndicator(isAnimating: .constant(true),
-                                      style: .medium)
+                    ProgressView()
                 } else {
                     ButtonImageCounterOverlay(symbol: "exclamationmark.triangle.fill",
                                        foregroundColor: .acSecondaryText,

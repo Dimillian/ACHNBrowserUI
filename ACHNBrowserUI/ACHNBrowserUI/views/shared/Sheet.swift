@@ -102,9 +102,8 @@ struct Sheet: View {
             DodoCodeFormView(isEditing: editing)
         case .iconChooser(let icon):
             IconChooserSheet(selectedIcon: icon)
-            return AnyView(DodoCodeFormView(isEditing: editing))
         case .dreamCodeForm(let editing):
-            return AnyView(DreamCodeFormView(isEditing: editing))
+            DreamCodeFormView(isEditing: editing)
         }
     }
 }

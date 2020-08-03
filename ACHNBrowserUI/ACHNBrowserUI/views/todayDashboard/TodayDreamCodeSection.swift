@@ -15,7 +15,7 @@ struct TodayDreamCodeSection: View {
     var body: some View {
         NavigationLink(destination: DreamCodeListView()) {
             if service.isSynching && service.codes.isEmpty {
-                RowLoadingView(isLoading: .constant(true))
+                RowLoadingView()
             } else if service.codes.first != nil {
                 DreamCodeRow(code: service.codes.first!, showButtons: false)
             } else {
