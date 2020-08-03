@@ -89,4 +89,9 @@ extension Color {
     public static var graphMinimum: Color {
         Color("graph-minimum", bundle: nil)
     }
+    
+    // ---
+    public static var dreamCode : Color {
+        Color("DreamCode", bundle: nil)
+    }
 }

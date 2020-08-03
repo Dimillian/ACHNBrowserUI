@@ -1114,3 +1114,10 @@ Puoi annullare il tuo abbonamento in ogni momento dalle impostazioni del tuo acc
 // Added 2020-07-07
 "Clothing Other" = "Muta subacquea";
 "Sea Creatures" = "Creature marine";
+
+// dream code
+"ACDreamCode.notification.title" = "A new dream code is available";
+"ACDreamCode.notification.subtitle" = "Someone postet their islands dream code on the application, go check it out!";
+"dreamcode.footer" = "Once your Dream code is saved, it'll appear on the list.
+You can edit or delete your dream code anytime. You can't add furhter dream codes, as long as you already have added a dream code.
+Any Dodo code reported will be deleted.";
