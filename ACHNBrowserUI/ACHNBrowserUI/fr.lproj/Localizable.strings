@@ -1,10 +1,10 @@
 /*
-Localizable.strings
-  ACHNBrowserUI
-
-  Created by Jan on 09.05.20.
-  Copyright © 2020 Thomas Ricouard. All rights reserved.
-*/
+ Localizable.strings
+ ACHNBrowserUI
+ 
+ Created by Jan on 09.05.20.
+ Copyright © 2020 Thomas Ricouard. All rights reserved.
+ */
 
 "Loading..." = "Chargement...";
 "Tap here to preview a notification" = "Appuyer ici pour voir une notification";
@@ -75,7 +75,7 @@ Localizable.strings
 // TodayWhatsNewSection
 "What's New" = "Nouveautés";
 "See what's new in update %@" = "Découvrez les nouveautés de la mise à jour
- %@";
+%@";
 // TodaySubscribeSection
 "You're subscribed to AC Helper+. Thank you so much for you support!" = "Vous avez souscrit à AC Helper+. Merci beaucoup de votre support!";
 "If you enjoy the application, consider subscribing to AC Helper+, to get access to some awesome features and support us!" = "Si vous aimez l'application, vous pouvez souscrire à AC Helper+, et vous aurez accès à nouvelles fonctionnalités en plus de nous aider!";
@@ -929,3 +929,26 @@ Merci d'être respecteux. Tout code signalé sera supprimé";
 "On ground (Mushroom Season)" = "Au sol (Saison des Champignons)";
 "Mushroom Season" = "Saison des Champignons";
 "Recycle box" = "Boîte de recyclage";
+
+
+// dream code
+"ACDreamCode.notification.title" = "Un nouveau Dodo Onirique est disponible";
+"ACDreamCode.notification.subtitle" = "Quelqu'un a posté un nouveau code onirique dans l'application! ";
+"dreamcode.footer" = "Une fois votre code onirique ajouté il apparaitra dans la liste.
+Vous pourrez le supprimer à tout moment.
+Merci d'être respecteux. Tout code signalé sera supprimé";
+
+// Summer Patch II - added 2020-08-02
+"Dream code" = "Code onirique";
+"Dream codes" = "Codes onirique";
+"This Dream code is invalid" = "Ce code onirique est invalide";
+"Edit your Dream code" = "Editer votre code";
+"Add your Dream code" = "Ajoutez votre code";
+"Get notified of new dream codes" = "Être notifié quand un code est posté";
+"You need an iCloud account to add your dream code" = "Vous devez avoir un compte iCloud pour ajouter un code Onirique";
+"Do you really want to report this dream code?" = "Vous voulez vraiment reporter ce code ?";
+"Do you really want to delete your dream code?" = "Vous voulez vraiment supprimer ce code ?";
+"Sort" = "Trier par";
+"creationDate" = "Date";
+"upvotes" = "Votes";
+"Latest Dream Code" = "Dernier Code Onirique";

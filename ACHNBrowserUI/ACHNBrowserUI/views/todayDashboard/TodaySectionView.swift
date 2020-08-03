@@ -63,6 +63,8 @@ struct TodaySectionView: View {
             TodayDodoCodeSection()
         case .news:
             TodayNewsSection()
+        case .dreamCode:
+            TodayDreamCodeSection()
         }
     }
 }

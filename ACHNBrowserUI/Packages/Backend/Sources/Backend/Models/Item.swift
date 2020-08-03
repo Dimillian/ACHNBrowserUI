@@ -218,7 +218,7 @@ public extension Item {
         if Int(startTime) == 0 && Int(endTime) == 0 {
             return (start: 0, end: 0)
         }
-
+        
         var startHourInt = 0
         var endHourInt = 0
         
@@ -230,7 +230,7 @@ public extension Item {
                 startHourInt += 12
             }
         }
-
+        
         var preIntEndTime = endTime
         preIntEndTime.removeLast(2)
         if let hour = Int(preIntEndTime) {
@@ -239,7 +239,7 @@ public extension Item {
                 endHourInt += 12
             }
         }
-
+        
         return (start: startHourInt, end: endHourInt)
     }
 }

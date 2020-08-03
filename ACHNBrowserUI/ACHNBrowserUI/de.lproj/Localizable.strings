@@ -936,3 +936,21 @@ Bitte geht respektvoll miteinander um. Jeder gemeldete Dodo Code wird gelöscht.
 // Added 2020-07-07
 "Clothing Other" = "Taucheranzüge";
 "Sea Creatures" = "Meerestiere";
+
+// Summer Patch II - added 2020-08-02
+"There are no dream codes yet. Visit Luna in your dreams, generate your islands dream code and add it here." = "Es gibt noch keine Traum-Codes. Besuche Luna in deinen Träumen, generiere den Traum-Code zu deiner Insel und stelle ihn hier ein.";
+"ACDreamCode.notification.title" = "Neuer Traum Code verfügbar";
+"ACDreamCode.notification.subtitle" = "Jemand hat den Traum-Code seiner Insel hinzugefügt - öffne die App und schau nach!";
+"Dream code" = "Traum Code";
+"Dream codes" = "Traum Codes";
+"This Dream code is invalid" = "Dieser Traum Code ist ungültig";
+"Edit your Dream code" = "Traum Code bearbeiten";
+"Add your Dream code" = "Traum Code hinzufügen";
+"dreamcode.footer" = "Sobald der Traum Code gespeichert ist, ist er für andere in der Liste sichtbar
+Du kannst deinen Traum Code jeder Zeit bearbeiten oder löschen. Du kannst nur einen Traum Code gleichzeitig einstellen.
+Jeder gemeldete Dodo Code wird gelöscht.";
+"Get notified of new dream codes" = "Bei neuen Traum Codes benachrichtigen";
+"No dream codes available yet, add your own to let other players visit your island in their dreams" = "Keine Traum Codes verfügbar. Füge deinen eigenen hinzu um anderen Spielern Zugang zu deiner Insel in ihren Träumen zu ermöglichen.";
+"You need an iCloud account to add your dream code" = "Du brauchst einen iCloud Account um deinen Traum Code hinzufügen zu können";
+"Do you really want to report this dream code?" = "Möchtest du diesen Traum Code wirklich melden?";
+"Do you really want to delete your dream code?" = "Möchtest du deinen Traum Code wirklich löschen?";

@@ -410,3 +410,10 @@ Please be respectful, any Dodo code reported will be deleted.";
 
 "ACNew.notification.title" = "A news has been posted";
 "ACNew.notification.subtitle" = "A new article about the app or the game has been posted. Check it out in the app!";
+
+// dream code
+"ACDreamCode.notification.title" = "A new dream code is available";
+"ACDreamCode.notification.subtitle" = "Someone postet their islands dream code on the application, go check it out!";
+"dreamcode.footer" = "Once your Dream code is saved, it'll appear on the list.
+You can edit or delete your dream code anytime. You can't add furhter dream codes, as long as you already have added a dream code.
+Any Dodo code reported will be deleted.";

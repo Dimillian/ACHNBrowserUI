@@ -24,6 +24,7 @@ struct Sheet: View {
         case villager(villager: Villager, subManager: SubscriptionManager, collection: UserCollection)
         case dodoCodeForm(editing: DodoCode?)
         case iconChooser(icon: Binding<String?>)
+        case dreamCodeForm(editing: DreamCode?)
 
         var id: String {
             switch self {
@@ -53,6 +54,8 @@ struct Sheet: View {
                 return "dodoCodeForm"
             case .iconChooser:
                 return "iconChooser"
+            case .dreamCodeForm:
+                return "dreamCodeForm"
             }
         }
     }
@@ -99,6 +102,9 @@ struct Sheet: View {
             DodoCodeFormView(isEditing: editing)
         case .iconChooser(let icon):
             IconChooserSheet(selectedIcon: icon)
+            return AnyView(DodoCodeFormView(isEditing: editing))
+        case .dreamCodeForm(let editing):
+            return AnyView(DreamCodeFormView(isEditing: editing))
         }
     }
 }

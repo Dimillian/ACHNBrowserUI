@@ -78,5 +78,8 @@ public class AppUserDefaults: ObservableObject {
     
     @AppStorage("news_notifications")
     public var newsNotifications = true
+
+    @AppStorage("dream_notifications", defaultValue: false)
+    public var dreamNotifications: Bool
 }
 

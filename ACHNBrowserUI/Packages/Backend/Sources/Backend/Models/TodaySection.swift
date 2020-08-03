@@ -38,6 +38,7 @@ extension TodaySection {
         case villagerVisits
         case dodoCode
         case news
+        case dreamCode
     }
 
     public static let defaultSectionList: [TodaySection] = [
@@ -48,6 +49,7 @@ extension TodaySection {
         TodaySection(name: .collectionProgress, enabled: true),
         TodaySection(name: .birthdays, enabled: true),
         TodaySection(name: .dodoCode, enabled: true),
+        TodaySection(name: .dreamCode, enabled: true),
         TodaySection(name: .turnips, enabled: true),
         TodaySection(name: .tasks, enabled: true),
         TodaySection(name: .chores, enabled: true),
@@ -76,6 +78,7 @@ extension TodaySection {
         case .villagerVisits: return "Villager visits"
         case .dodoCode: return "Latest Dodo code"
         case .news: return "News"
+        case .dreamCode: return "Latest Dream Code"
         }
     }
     
@@ -95,6 +98,7 @@ extension TodaySection {
         case .villagerVisits: return "person.crop.circle.fill.badge.checkmark"
         case .dodoCode: return "airplane"
         case .news: return "exclamationmark.bubble.fill"
+        case .dreamCode: return "zzz"
         }
     }
 }
