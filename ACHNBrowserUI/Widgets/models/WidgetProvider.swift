@@ -83,4 +83,11 @@ struct WidgetProvider: TimelineProvider {
                                 museumCollection: generateMuseumProgress())
         completion(entry)
     }
+    
+    func placeholder(in context: Context) -> WidgetModel {
+        WidgetModel(date: Date(),
+                    villager: static_villager,
+                    villagerImage: nil,
+                    museumCollection: generateMuseumProgress())
+    }
 }

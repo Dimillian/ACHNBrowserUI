@@ -30,8 +30,7 @@ struct CommentsSection: View {
                     .foregroundColor(.acSecondaryText)
                     .listRowBackground(Color.acSecondaryBackground)
             }
-        }
-        .sheet(item: $presentedSheet, content: { Sheet(sheetType: $0) })
+        }.listRowBackground(Color.acSecondaryBackground)
     }
     
     private func makeCommentRow(comment: Comment) -> some View {
@@ -108,6 +107,6 @@ struct CommentsSection: View {
                     }
                 }
             }
-        }.listRowBackground(Color.acSecondaryBackground)
+        }.sheet(item: $presentedSheet, content: { Sheet(sheetType: $0) })
     }
 }

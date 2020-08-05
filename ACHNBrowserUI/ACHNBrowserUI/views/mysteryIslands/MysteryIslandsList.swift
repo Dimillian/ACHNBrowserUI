@@ -14,12 +14,11 @@ struct MysteryIslandsList: View {
     
     var body: some View {
         List(islands!) { island in
-            Group {
+            Section {
                 NavigationLink(destination: MysteryIslandDetail(island: island)) {
                     MysteryIslandRow(island: island)
                 }
-            }
-            .listRowBackground(Color.acSecondaryBackground)
+            }.listRowBackground(Color.acSecondaryBackground)
         }
         .listStyle(InsetGroupedListStyle())
         .navigationBarTitle(Text("Mystery Islands"))
