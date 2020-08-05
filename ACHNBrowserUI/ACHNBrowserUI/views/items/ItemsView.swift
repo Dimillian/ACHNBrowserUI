@@ -28,7 +28,6 @@ struct ItemsView: View {
     }
     
     @StateObject var viewModel: ItemsViewModel
-    @State private var showSortSheet = false
     @State private var contentMode: ContentMode = .listLarge
     let customTitle: String?
     
@@ -58,16 +57,32 @@ struct ItemsView: View {
     }
     
     private var sortButton: some View {
-        Button(action: {
-            showSortSheet.toggle()
-        }) {
-            Image(systemName: viewModel.sort == nil ? "arrow.up.arrow.down.circle" : "arrow.up.arrow.down.circle.fill")
-                .style(appStyle: .barButton)
-                .foregroundColor(.acText)
+        Menu {
+            ForEach(ItemsViewModel.Sort.allCases(for: viewModel.category), id: \.self) { sort in
+                Button(LocalizedStringKey(sort.rawValue.localizedCapitalized),
+                            action:  {
+                                self.viewModel.sort = sort
+                })
+            }
+            if viewModel.sort != nil {
+                Divider()
+                Button("Clear Selection", action: {
+                    self.viewModel.sort = nil
+                })
+            }
+        } label:  {
+            Button(action: {
+                
+            }) {
+                Image(systemName: viewModel.sort == nil ? "arrow.up.arrow.down.circle" : "arrow.up.arrow.down.circle.fill")
+                    .style(appStyle: .barButton)
+                    .foregroundColor(.acText)
+            }
+            .buttonStyle(BorderedBarButtonStyle())
+            .accentColor(Color.acText.opacity(0.2))
+            .safeHoverEffectBarItem(position: .trailing)
         }
-        .buttonStyle(BorderedBarButtonStyle())
-        .accentColor(Color.acText.opacity(0.2))
-        .safeHoverEffectBarItem(position: .trailing)
+
     }
     
     private var layoutButton: some View {
@@ -89,39 +104,11 @@ struct ItemsView: View {
         .accentColor(Color.acText.opacity(0.2))
         .safeHoverEffectBarItem(position: .trailing)
     }
-    
-    private var sortSheet: ActionSheet {
-        var buttons: [ActionSheet.Button] = []
-        for sort in ItemsViewModel.Sort.allCases(for: viewModel.category) {
-            buttons.append(.default(Text(LocalizedStringKey(sort.rawValue.localizedCapitalized)),
-                                    action: {
-                                        self.viewModel.sort = sort
-            }))
-        }
         
-        if viewModel.sort != nil {
-            buttons.append(.default(Text("Clear Selection"), action: {
-                self.viewModel.sort = nil
-            }))
-        }
-        
-        buttons.append(.cancel())
-        
-        let title = Text("Sort items")
-        
-        if let currentSort = viewModel.sort {
-            let currentSortName = NSLocalizedString(currentSort.rawValue.localizedCapitalized, comment: "")
-            return ActionSheet(title: title,
-                               message: Text("Current Sort: \(currentSortName)"),
-                               buttons: buttons)
-        }
-        
-        return ActionSheet(title: title, buttons: buttons)
-    }
-    
     var body: some View {
         contentView
         .modifier(DismissingKeyboardOnSwipe())
+        .navigationBarTitleDisplayMode(contentMode == .grid ? .inline : .automatic)
         .navigationBarTitle(customTitle != nil ?
             Text(LocalizedStringKey(customTitle!)) :
             Text(viewModel.category.label()),
@@ -131,7 +118,6 @@ struct ItemsView: View {
                                         layoutButton
                                         sortButton
                                     })
-        .actionSheet(isPresented: $showSortSheet, content: { self.sortSheet })
     }
     
     @ViewBuilder
@@ -158,7 +144,6 @@ struct ItemsView: View {
                     }
                 }
             }
-            .animation(.interactiveSpring())
             .listStyle(GroupedListStyle())
             .id(viewModel.sort)
         }

@@ -11,6 +11,7 @@ import Backend
 import UI
 
 struct CategoryRowView: View {
+    @EnvironmentObject private var items: Items
     let category: Backend.Category
     
     var body: some View {
@@ -23,7 +24,7 @@ struct CategoryRowView: View {
                 Text(category.label())
                     .style(appStyle: .rowTitle)
                 Spacer()
-                Text("\(Items.shared.categories[category]?.count ?? 0)")
+                Text("\(items.categories[category]?.count ?? 0)")
                     .style(appStyle: .rowDescription)
             }
         }.listRowBackground(Color.acSecondaryBackground)
