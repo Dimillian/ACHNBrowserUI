@@ -17,6 +17,10 @@ extension Color {
         Color("ACBackground", bundle: Bundle.module)
     }
     
+    public static var acDynamicForeground: Color {
+        Color("ACDynamicForeground", bundle: Bundle.module)
+    }
+    
     public static var acSecondaryBackground: Color {
         Color("ACSecondaryBackground", bundle: Bundle.module)
     }

@@ -10,6 +10,18 @@ import SwiftUI
 import Backend
 import UI
 
+struct VisualEffectView: UIViewRepresentable {
+    
+    var effect: UIVisualEffect?
+    func makeUIView(context: UIViewRepresentableContext<Self>) -> UIVisualEffectView {
+        let view = UIVisualEffectView()
+        view.isUserInteractionEnabled = false
+        return view
+    }
+    
+    func updateUIView(_ uiView: UIVisualEffectView, context: UIViewRepresentableContext<Self>) { uiView.effect = effect }
+}
+
 struct PlayerView: View {    
     @EnvironmentObject private var playerManager: MusicPlayerManager
     @EnvironmentObject private var items: Items
@@ -42,7 +54,7 @@ struct PlayerView: View {
             }
         }
         .frame(height: playerMode.height())
-        .background(Color.acTabBarTint)
+        .background(VisualEffectView(effect: UIBlurEffect(style: .systemChromeMaterial)))
         .padding(.bottom, 48)
         .gesture(DragGesture()
             .onEnded { value in

@@ -53,7 +53,6 @@ struct TabbarView: View {
                 .tag(UIState.Tab.collection)
                 
             }
-            .accentColor(.white)
             
             if viewModel.showPlayerView {
                 PlayerView()

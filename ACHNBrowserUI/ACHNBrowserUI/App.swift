@@ -129,13 +129,5 @@ struct ACHelperApp: App {
                                                            in: UIBundle,
                                                            compatibleWith: nil)
         UITableView.appearance().tableFooterView = UIView()
-        
-        UITabBar.appearance().unselectedItemTintColor = UIColor(named: "TabLabel",
-                                                                in: UIBundle,
-                                                                compatibleWith: nil)
-        UITabBar.appearance().isTranslucent = true
-        UITabBar.appearance().barTintColor = UIColor(named: "ACTabBarTint",
-                                                     in: UIBundle,
-                                                     compatibleWith: nil)
     }
 }

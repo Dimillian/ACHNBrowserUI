@@ -300,7 +300,9 @@ public class Items: ObservableObject {
                             }
                         }
                     }
+                    objc_sync_enter(self.villagersLikeCache)
                     self.villagersLikeCache[villager] = results
+                    objc_sync_exit(self.villagersLikeCache)
                     return resolve(.success(results))
                 }
             }.eraseToAnyPublisher()

@@ -35,14 +35,16 @@ struct PlayerViewMusicList: View {
                         HStack {
                             ItemImage(path: item.finalImage, size: 50)
                             Text(item.localizedName)
-                                .foregroundColor(.white)
+                                .foregroundColor(.acText)
                         }
                     }
 
-                }.listRowBackground(Color.acTabBarTint)
+                }.listRowBackground(Color.acBackground)
             }
             .animation(.easeInOut)
             .transition(.slide)
-        }.padding()
+        }
+        .padding()
+        .background(Color.acBackground)
     }
 }

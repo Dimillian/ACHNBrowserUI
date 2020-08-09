@@ -29,10 +29,10 @@ struct PlayerViewExpanded: View {
             }) {
                 Image(systemName: "chevron.compact.down")
                     .font(Font.title.weight(.bold))
-                    .foregroundColor(.white)
+                    .foregroundColor(.acText)
+                    .matchedGeometryEffect(id: "chevron", in: namespace)
             }
             .padding(.top, 16)
-            .matchedGeometryEffect(id: "chevron", in: namespace)
             
             
             HStack {
@@ -61,7 +61,7 @@ struct PlayerViewExpanded: View {
                     Text(name)
                         .font(.headline)
                         .fontWeight(.bold)
-                        .foregroundColor(.white)
+                        .foregroundColor(.acText)
                         .matchedGeometryEffect(id: name, in: namespace)
                     Text("K.K Slider")
                         .font(.headline)
@@ -107,8 +107,8 @@ struct PlayerViewExpanded: View {
                     Image(systemName: "backward.fill")
                         .resizable()
                         .aspectRatio(contentMode: .fit)
-                        .foregroundColor(.white)
                         .frame(width: playerButtonSize, height: playerButtonSize)
+                        .foregroundColor(.acText)
                 }
                 .matchedGeometryEffect(id: "back", in: namespace)
                 
@@ -118,8 +118,8 @@ struct PlayerViewExpanded: View {
                     Image(systemName: playerManager.isPlaying ? "pause.fill" : "play.fill")
                         .resizable()
                         .aspectRatio(contentMode: .fit)
-                        .foregroundColor(.white)
                         .frame(width: playerButtonSize, height: playerButtonSize)
+                        .foregroundColor(.acText)
                 }
                 .matchedGeometryEffect(id: "play", in: namespace)
                 
@@ -129,8 +129,8 @@ struct PlayerViewExpanded: View {
                     Image(systemName: "forward.fill")
                         .resizable()
                         .aspectRatio(contentMode: .fit)
-                        .foregroundColor(.white)
                         .frame(width: playerButtonSize, height: playerButtonSize)
+                        .foregroundColor(.acText)
                 }
                 .matchedGeometryEffect(id: "next", in: namespace)
                 
@@ -149,8 +149,8 @@ struct PlayerViewExpanded: View {
                 Image(systemName: "music.note.list")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
-                    .foregroundColor(.white)
                     .frame(width: playerButtonSize, height: playerButtonSize)
+                    .foregroundColor(.acText)
             }
             .matchedGeometryEffect(id: "list", in: namespace)
             

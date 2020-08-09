@@ -46,7 +46,7 @@ struct PlayerViewSmall: View {
                 Text(name)
                     .font(.headline)
                     .fontWeight(.bold)
-                    .foregroundColor(.white)
+                    .foregroundColor(.acText)
                     .matchedGeometryEffect(id: name, in: namespace)
             } else {
                 ProgressView()
@@ -58,7 +58,7 @@ struct PlayerViewSmall: View {
             }) {
                 Image(systemName: "backward.fill")
                     .imageScale(.large)
-                    .foregroundColor(.white)
+                    .foregroundColor(.acText)
             }
             .padding(.trailing, 8)
             .matchedGeometryEffect(id: "back", in: namespace)
@@ -68,7 +68,7 @@ struct PlayerViewSmall: View {
             }) {
                 Image(systemName: playerManager.isPlaying ? "pause.fill" : "play.fill")
                     .imageScale(.large)
-                    .foregroundColor(.white)
+                    .foregroundColor(.acText)
             }
             .padding(.trailing, 8)
             .matchedGeometryEffect(id: "play", in: namespace)
@@ -78,7 +78,7 @@ struct PlayerViewSmall: View {
             }) {
                 Image(systemName: "forward.fill")
                     .imageScale(.large)
-                    .foregroundColor(.white)
+                    .foregroundColor(.acText)
             }
             .padding(.trailing, 8)
             .matchedGeometryEffect(id: "next", in: namespace)
@@ -90,7 +90,7 @@ struct PlayerViewSmall: View {
                     Image(systemName: "chevron.up")
                         .imageScale(.large)
                         .rotationEffect(.degrees(playerMode != .playerSmall ? -180 : 0))
-                        .foregroundColor(.white)
+                        .foregroundColor(.acText)
                 }
                 .padding(.trailing, 12)
                 .matchedGeometryEffect(id: "chevron", in: namespace)
@@ -104,7 +104,7 @@ struct PlayerViewSmall: View {
                 }) {
                     Image(systemName: "music.note.list")
                         .imageScale(.large)
-                        .foregroundColor(.white)
+                        .foregroundColor(.acText)
                 }
                 .padding(.trailing, 12)
                 .matchedGeometryEffect(id: "list", in: namespace)
