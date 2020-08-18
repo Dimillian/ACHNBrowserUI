@@ -1,0 +1,141 @@
+
+
+"%lld upcomingDailyNotifications" = "%lld 후에 무트코인 예측을 받으실 수 있습니다.";
+
+
+"ACComment.notification.subtitle" = "친구 코드에 누군가가 댓글을 달았습니다. 가서 확인해봐요!";
+
+
+"ACComment.notification.title" = "친구 코드에 댓글이 달림";
+
+
+"ACDodoCode.notification.subtitle" = "누군가가 꿈번지 주소를 올렸습니다! 가서 확인해봐요!";
+
+
+"ACDodoCode.notification.title" = "새로운 친구 코드를 사용할 수 있음";
+
+
+"ACDreamCode.notification.subtitle" = "누군가가 친구를 찾는 중이에요! 가서 확인해봐요!";
+
+/* dream code */
+"ACDreamCode.notification.title" = "새로운 꿈번지 주소를 사용할 수 있음";
+
+/* SubscribeView */
+"ACHelperPlusDescription" = "Subscribing to AC Helper+ is a great way to to show support to our free and open source project.♥️\n\nYou also get access more features, turnip predictions notifications and be able to create any number of items list! 📈";
+
+
+"ACHelperPlusDetails" = "알림 기능에 대해서:\nEveryday at 8 and 12 you'll get a notification with the average buy price of your store.\nThe more in game daily prices you enter after monday morning, the better next predictions will be!\n\nAbout the list feature:\nIn the free application you can create only one list of items in your \"My stuff\" tab.\nOnce you'll be subscribed to AC Helper+ you'll be able to create any number of list you desire.";
+
+
+"ACHelperPlusPriceAndAboDetail %@ %@" = "A %@ per month or %@ per year purchase will be applied to your iTunes account on confirmation.\nSubscriptions will automatically renew unless canceled within 24-hours before the end of the current period.\nYou can cancel anytime with your iTunes account settings. Any unused portion of a free trial will be forfeited if you purchase a subscription.";
+
+
+"ACNew.notification.subtitle" = "새로운 기사가 게시되었습니다. 앱에서 확인해보세요!";
+
+
+"ACNew.notification.title" = "기사가 게시됨";
+
+
+"Clothing Other" = "잠수복";
+
+
+"Sort" = "Sort";
+
+
+"accessories" = "액세서리";
+
+
+"art" = "미술품";
+
+
+"bags" = "가방";
+
+
+"bottoms" = "하의";
+
+
+"bugs" = "곤충";
+
+
+"construction" = "시설";
+
+
+"creationDate" = "Date";
+
+/* dodo code */
+"dodocode.footer" = "한 번 친구 코드가 저장되면 목록에 나타납니다.\n코드를 추가하기 전 인터넷 연결 상태를 확인해주세요.\n언제든지 꿈번지 주소를 삭제할 수 있습니다.\n상대를 존중해주세요, a신고된 코드는 삭제 조치됩니다.";
+
+
+"dreamcode.footer" = "한 번 친구 코드가 저장되면 목록에 나타납니다.\n언제든지 친구 코드를 수정, 삭제할 수 있습니다. 한 번 친구 코드를 등록하면 새로운 코드를 등록할 수 없습니다.\n신고된 코드는 삭제 조치됩니다.";
+
+
+"dresses" = "원피스";
+
+
+"fencing" = "울타리";
+
+
+"fish" = "물고기";
+
+
+"floors" = "바닥";
+
+
+"fossils" = "화석";
+
+
+"headwear" = "모자";
+
+/* CategoryRow */
+"housewares" = "가구";
+
+
+"miscellaneous" = "잡화";
+
+
+"music" = "음악";
+
+
+"nookmiles" = "너굴 마일리지";
+
+
+"other" = "Other";
+
+
+"photos" = "사진";
+
+
+"posters" = "포스터";
+
+
+"recipes" = "레시피";
+
+
+"rugs" = "러그";
+
+
+"seaCreatures" = "해산물";
+
+
+"shoes" = "신발";
+
+
+"socks" = "양말";
+
+
+"tools" = "도구";
+
+
+"tops" = "상의";
+
+
+"umbrellas" = "우산";
+
+
+"upvotes" = "좋아요";
+
+
+"wall-mounted" = "벽걸이";
+
+
+"wallpapers" = "벽지";
