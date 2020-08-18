@@ -21,13 +21,13 @@
 "ACDreamCode.notification.title" = "새로운 꿈번지 주소를 사용할 수 있음";
 
 /* SubscribeView */
-"ACHelperPlusDescription" = "Subscribing to AC Helper+ is a great way to to show support to our free and open source project.♥️\n\nYou also get access more features, turnip predictions notifications and be able to create any number of items list! 📈";
+"ACHelperPlusDescription" = "AC Helper+를 구독하여 무료 오픈소스 프로젝트를 후원해주세요.♥️\n\n무트코인 예측 알림 등 더 많은 기능을 사용할 수 있습니다! 📈";
 
 
-"ACHelperPlusDetails" = "알림 기능에 대해서:\nEveryday at 8 and 12 you'll get a notification with the average buy price of your store.\nThe more in game daily prices you enter after monday morning, the better next predictions will be!\n\nAbout the list feature:\nIn the free application you can create only one list of items in your \"My stuff\" tab.\nOnce you'll be subscribed to AC Helper+ you'll be able to create any number of list you desire.";
+"ACHelperPlusDetails" = "알림 기능에 대해서:\n매일 8시와 12시에 사용자의 가게의 평균 구매 가격을 알림으로 띄워줍니다.\n아침마다 게임 상의 가격을 자주 입력할 수록 예측이 정확해집니다!\n\nAbout the list feature:\nIn the free application you can create only one list of items in your \"My stuff\" tab.\nOnce you'll be subscribed to AC Helper+ you'll be able to create any number of list you desire.";
 
 
-"ACHelperPlusPriceAndAboDetail %@ %@" = "A %@ per month or %@ per year purchase will be applied to your iTunes account on confirmation.\nSubscriptions will automatically renew unless canceled within 24-hours before the end of the current period.\nYou can cancel anytime with your iTunes account settings. Any unused portion of a free trial will be forfeited if you purchase a subscription.";
+"ACHelperPlusPriceAndAboDetail %@ %@" = "A %@ per month or %@ per year purchase will be applied to your iTunes account on confirmation.\n24시간 이내에 구독을 취소하지 않는 한, 구독이 자동으로 갱신되며 Apple 계정 설정에서 언제든지 취소할 수 있습니다. 구독 시에 남은 무료 체험은 사라집니다.";
 
 
 "ACNew.notification.subtitle" = "새로운 기사가 게시되었습니다. 앱에서 확인해보세요!";
