@@ -53,13 +53,15 @@ struct DodoCodeListView: View {
         .listStyle(InsetGroupedListStyle())
         .sheet(item: $sheet, content: { Sheet(sheetType: $0) })
         .alert(isPresented: $showiCloudAlert, content: { self.iCloudAlert })
-        .navigationBarTitle("Dodo codes")
-        .navigationBarItems(trailing:
-            HStack(spacing: 8) {
-                refreshButton
-                addButton
+        .navigationTitle("Dodo codes")
+        .toolbar {
+            ToolbarItem(placement: .navigationBarTrailing) {
+                HStack(spacing: 8) {
+                    refreshButton
+                    addButton
+                }
             }
-        )
+        }
         .onAppear(perform: service.refresh)
     }
     

@@ -34,7 +34,7 @@ struct HomeView: View {
         NavigationView {
             List {
                 ForEach(categories, id: \.0, content: categorySection)
-            }.navigationBarTitle(Text("Items home"))
+            }.navigationTitle("Items home")
         }
     }
 }

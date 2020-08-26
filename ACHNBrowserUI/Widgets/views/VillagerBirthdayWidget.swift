@@ -13,16 +13,16 @@ import Backend
 struct VillagerBirthdayWidgetView: View {
     @Environment(\.widgetFamily) var family: WidgetFamily
     
-    var model: WidgetModel?
+    let model: WidgetModel
             
     @ViewBuilder
     var body: some View {
         Group {
             switch family {
             case .systemSmall:
-                makeSmallWidget(villager: model?.villager)
+                makeSmallWidget(villager: model.villager)
             case .systemMedium:
-                makeMediumWidget(villager: model?.villager)
+                makeMediumWidget(villager: model.villager)
             case .systemLarge:
                 Text("Not supported yet.")
             @unknown default:
@@ -30,8 +30,7 @@ struct VillagerBirthdayWidgetView: View {
             }
             
         }
-        .redacted(reason: model?.villager == nil ? .placeholder : [])
-        .widgetURL(URL(string: "achelperapp://villager/\(model?.villager.fileName ?? "null")")!)
+        .widgetURL(URL(string: "achelperapp://villager/\(model.villager?.fileName ?? "null")")!)
     }
     
     private func makeDayStamp(villager: Villager?) -> some View {
@@ -53,7 +52,7 @@ struct VillagerBirthdayWidgetView: View {
     
     @ViewBuilder
     private func makeIcon(villager: Villager?, size: CGFloat) -> some View {
-        if let image = model?.villagerImage {
+        if let image = model.villagerImage {
             Image(uiImage: image)
                 .resizable()
                 .renderingMode(.original)

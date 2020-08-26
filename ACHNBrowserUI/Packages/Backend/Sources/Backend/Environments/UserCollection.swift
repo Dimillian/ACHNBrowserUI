@@ -10,6 +10,7 @@ import Foundation
 import Combine
 import CloudKit
 import os.log
+import WidgetKit
 
 public class UserCollection: ObservableObject {
     public static let shared = UserCollection(iCloudDisabled: false)
@@ -411,6 +412,9 @@ public class UserCollection: ObservableObject {
                         self.saveToCloudKit()
                     }
                 }
+                
+                WidgetCenter.shared.reloadAllTimelines()
+                
             } catch let error {
                 print("Error while saving collection: \(error.localizedDescription)")
             }

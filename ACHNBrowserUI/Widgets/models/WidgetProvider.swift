@@ -23,7 +23,7 @@ struct WidgetProvider: TimelineProvider {
     fileprivate let providerHolder = ProviderHolder()
     
     
-    func timeline(with context: Context, completion: @escaping (Timeline<WidgetModel>) -> ()) {
+    func getTimeline(in context: Context, completion: @escaping (Timeline<WidgetModel>) -> Void) {
         let formatter = DateFormatter()
         formatter.dateFormat = "d/M"
         let today = formatter.string(from: Date())
@@ -44,11 +44,11 @@ struct WidgetProvider: TimelineProvider {
                 downloadImages(for: entry, completion: completion)
             })
     }
-    
+
     private func downloadImages(for model: WidgetModel, completion: @escaping (Timeline<WidgetModel>) -> ()) {
         var model = model
-        if let url = URL(string: ACNHApiService.BASE_URL.absoluteString +
-                            ACNHApiService.Endpoint.villagerIcon(id: model.villager.id).path()) {
+        if let villager = model.villager, let url = URL(string: ACNHApiService.BASE_URL.absoluteString +
+                            ACNHApiService.Endpoint.villagerIcon(id: villager.id).path()) {
             SDWebImageDownloader.shared.downloadImage(with: url) { (image, _, _, _) in
                 model.villagerImage = image
                 let nextUpdateDate = Calendar.current.date(byAdding: .minute, value: 15, to: Date())!
@@ -76,17 +76,17 @@ struct WidgetProvider: TimelineProvider {
         return museumProgress
     }
     
-    func snapshot(with context: Context, completion: @escaping (WidgetModel) -> ()) {
+    func getSnapshot(in context: Context, completion: @escaping (WidgetModel) -> Void) {
         let entry = WidgetModel(date: Date(),
                                 villager: static_villager,
                                 villagerImage: nil,
                                 museumCollection: generateMuseumProgress())
         completion(entry)
     }
-    
+
     func placeholder(in context: Context) -> WidgetModel {
         WidgetModel(date: Date(),
-                    villager: static_villager,
+                    villager: nil,
                     villagerImage: nil,
                     museumCollection: generateMuseumProgress())
     }

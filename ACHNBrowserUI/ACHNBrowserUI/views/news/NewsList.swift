@@ -30,11 +30,13 @@ struct NewsList: View {
                 }.listRowBackground(Color.acSecondaryBackground)
             }
             
-            ForEach(newsService.articles) { news in
+            if self.newsService.articles.isEmpty {
                 Section {
-                    if self.newsService.articles.isEmpty {
-                        RowLoadingView().listRowBackground(Color.acSecondaryBackground)
-                    } else {
+                    RowLoadingView().listRowBackground(Color.acSecondaryBackground)
+                }
+            } else {
+                ForEach(newsService.articles) { news in
+                    Section {
                         NavigationLink(destination: NewsCommentView(news: news)) {
                             NewsRow(news: news)
                         }.listRowBackground(Color.acSecondaryBackground)

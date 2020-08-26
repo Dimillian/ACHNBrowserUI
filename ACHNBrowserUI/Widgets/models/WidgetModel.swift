@@ -13,7 +13,7 @@ import UIKit
 
 struct WidgetModel: TimelineEntry {
     public let date: Date
-    public let villager: Villager
+    public let villager: Villager?
     public var villagerImage: UIImage?
     public let museumCollection: [MuseumProgress]
 }

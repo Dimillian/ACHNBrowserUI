@@ -104,8 +104,8 @@ public struct Item: Codable, Equatable, Identifiable, Hashable {
     public let colors: [String]?
     
     private static var METAS_CACHE: [String: [String]] = [:]
+    
     public var metas: [String] {
-        objc_sync_enter(Self.METAS_CACHE)
         if let metas = Self.METAS_CACHE[id] {
             return metas
         }
@@ -127,7 +127,6 @@ public struct Item: Codable, Equatable, Identifiable, Hashable {
         }
         metas = Array(Set(metas.map{ $0.capitalized })).filter({ $0.lowercased() != "none"}).sorted()
         Self.METAS_CACHE[id] = metas
-        objc_sync_exit(Self.METAS_CACHE)
         return metas
     }
 }
