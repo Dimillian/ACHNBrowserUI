@@ -15,13 +15,15 @@ struct SettingsView: View {
     @EnvironmentObject private var collection: UserCollection
     @EnvironmentObject private var subscriptionManager: SubscriptionManager
     @Environment(\.presentationMode) private var presentationMode
-    @Environment(\.exportFiles) var exportAction
-    @Environment(\.importFiles) var importAction
     @ObservedObject var appUserDefaults = AppUserDefaults.shared
+    
+    private let types = [UTType("com.thomasricouard.ACNH.achelper")!]
     
     @State private var showSuccessImportAlert = false
     @State private var showDeleteConfirmationAlert = false
-
+    @State private var isImporting = false
+    @State private var isExporting = false
+    
     var body: some View {
         NavigationView {
             Form {
@@ -32,7 +34,16 @@ struct SettingsView: View {
             .listStyle(InsetGroupedListStyle())
             .navigationBarTitle(Text("Preferences"), displayMode: .inline)
             .navigationBarItems(leading: closeButton)
-        }.navigationViewStyle(StackNavigationViewStyle())
+        }
+        .fileImporter(isPresented: $isImporting,
+                      allowedContentTypes: types) { result in
+            if let url = try? result.get() {
+                showSuccessImportAlert = collection.processImportedFile(url: url)
+            }
+        }
+        .fileMover(isPresented: $isExporting,
+                   file: collection.generateExportURL()) { _ in }
+        .navigationViewStyle(StackNavigationViewStyle())
     }
     
     private var importSuccessAlert: Alert {
@@ -180,20 +191,15 @@ struct SettingsView: View {
             }
             
             Button(action: {
-                if let url = collection.generateExportURL() {
-                    exportAction(moving: url) { _ in }
+                if collection.generateExportURL() != nil {
+                    isExporting = true
                 }
             }) {
                 Text("Export my collection").foregroundColor(.acHeaderBackground)
             }.listRowBackground(Color.acSecondaryBackground)
             
             Button(action: {
-                let types = [UTType("com.thomasricouard.ACNH.achelper")!]
-                importAction(singleOfType: types) { (result: Result<URL, Error>?) in
-                    if let url = try? result?.get() {
-                        showSuccessImportAlert = collection.processImportedFile(url: url)
-                    }
-                }
+                isImporting = true
             }) {
                 Text("Import a collection").foregroundColor(.acHeaderBackground)
             }
