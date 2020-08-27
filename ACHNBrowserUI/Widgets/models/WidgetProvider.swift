@@ -22,7 +22,6 @@ struct WidgetProvider: TimelineProvider {
     let collection = UserCollection(iCloudDisabled: false, fromSharedURL: true)
     fileprivate let providerHolder = ProviderHolder()
     
-    
     func getTimeline(in context: Context, completion: @escaping (Timeline<WidgetModel>) -> Void) {
         let formatter = DateFormatter()
         formatter.dateFormat = "d/M"

@@ -34,7 +34,6 @@ struct TodayView: View {
                         .listRowBackground(Color.acSecondaryBackground)
                 }
             }
-            .animation(.interactiveSpring())
             .listStyle(InsetGroupedListStyle())
             .navigationBarTitle(Text("\(dateString.capitalized)"))
             .navigationBarItems(leading: aboutButton, trailing: settingsButton)
