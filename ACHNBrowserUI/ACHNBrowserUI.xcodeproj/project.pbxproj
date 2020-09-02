@@ -138,6 +138,7 @@
 		698584E424A1F710002D103C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 698584E324A1F710002D103C /* Assets.xcassets */; };
 		698584EA24A1F710002D103C /* WidgetsExtension.appex in Embed PlugIns */ = {isa = PBXBuildFile; fileRef = 698584DB24A1F70F002D103C /* WidgetsExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		69867DF1247C136900C6A759 /* CollectionProgressRowViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69867DF0247C136900C6A759 /* CollectionProgressRowViewModel.swift */; };
+		69C0A44E24FFFCAF00FE7F4A /* ACNHEvents in Frameworks */ = {isa = PBXBuildFile; productRef = 69C0A44D24FFFCAF00FE7F4A /* ACNHEvents */; };
 		69CCD28A247D9FD000DF381B /* ItemBellsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69CCD289247D9FD000DF381B /* ItemBellsView.swift */; };
 		69CCD28C247DA4D100DF381B /* ItemStyleBadgeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69CCD28B247DA4D100DF381B /* ItemStyleBadgeView.swift */; };
 		69CCD293247ECDD000DF381B /* TodaySpecialCharactersSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 693352832473C4B5007EF9AB /* TodaySpecialCharactersSection.swift */; };
@@ -147,7 +148,6 @@
 		69CFCAD3245ADC7A0059C067 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 69CFCAD1245ADC7A0059C067 /* LaunchScreen.storyboard */; };
 		69CFCADB245ADC9C0059C067 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69CFCADA245ADC9C0059C067 /* HomeView.swift */; };
 		69CFCADD245ADCCF0059C067 /* Backend in Frameworks */ = {isa = PBXBuildFile; productRef = 69CFCADC245ADCCF0059C067 /* Backend */; };
-		69CFCADF245ADCD40059C067 /* ACNHEvents in Frameworks */ = {isa = PBXBuildFile; productRef = 69CFCADE245ADCD40059C067 /* ACNHEvents */; };
 		69D44C1D2497462A00378FDD /* DodoCodeDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69D44C1C2497462A00378FDD /* DodoCodeDetailView.swift */; };
 		69D44C1F249746F100378FDD /* CommentsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69D44C1E249746F100378FDD /* CommentsViewModel.swift */; };
 		69E4BBB2245AE06B001035E2 /* UI in Frameworks */ = {isa = PBXBuildFile; productRef = 69E4BBB1245AE06B001035E2 /* UI */; };
@@ -398,6 +398,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				69157C5C2471A5C1005B9002 /* CloudKit.framework in Frameworks */,
+				69C0A44E24FFFCAF00FE7F4A /* ACNHEvents in Frameworks */,
 				69157BDA2471A5A1005B9002 /* SwiftUI.framework in Frameworks */,
 				69157BDB2471A5A1005B9002 /* UI in Frameworks */,
 				69157BDC2471A5A1005B9002 /* ACNHEvents in Frameworks */,
@@ -424,7 +425,6 @@
 			files = (
 				69CFCADD245ADCCF0059C067 /* Backend in Frameworks */,
 				69E4BBB2245AE06B001035E2 /* UI in Frameworks */,
-				69CFCADF245ADCD40059C067 /* ACNHEvents in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -986,6 +986,7 @@
 				69157B792471A5A1005B9002 /* Backend */,
 				69157B7A2471A5A1005B9002 /* UI */,
 				69157B7B2471A5A1005B9002 /* SwiftUIKit */,
+				69C0A44D24FFFCAF00FE7F4A /* ACNHEvents */,
 			);
 			productName = ACHNBrowserUI;
 			productReference = 69157C582471A5A1005B9002 /* AC Helper.app */;
@@ -1027,7 +1028,6 @@
 			name = ACHNBrowserUITV;
 			packageProductDependencies = (
 				69CFCADC245ADCCF0059C067 /* Backend */,
-				69CFCADE245ADCD40059C067 /* ACNHEvents */,
 				69E4BBB1245AE06B001035E2 /* UI */,
 			);
 			productName = ACHNBrowserUITV;
@@ -1070,8 +1070,8 @@
 			);
 			mainGroup = 69AF8C44243E283D001DD9CB;
 			packageReferences = (
-				68345587244E4DEF0072FC0C /* XCRemoteSwiftPackageReference "Date-ACNHEvents" */,
 				69AA9436246035FF0040A9CA /* XCRemoteSwiftPackageReference "SwiftUIKit" */,
+				69C0A44C24FFFCAF00FE7F4A /* XCRemoteSwiftPackageReference "Date-ACNHEvents" */,
 			);
 			productRefGroup = 69AF8C4E243E283D001DD9CB /* Products */;
 			projectDirPath = "";
@@ -1709,14 +1709,6 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		68345587244E4DEF0072FC0C /* XCRemoteSwiftPackageReference "Date-ACNHEvents" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/ericlewis/Date-ACNHEvents";
-			requirement = {
-				kind = exactVersion;
-				version = 1.1.0;
-			};
-		};
 		69157B782471A5A1005B9002 /* XCRemoteSwiftPackageReference "Date-ACNHEvents" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/ericlewis/Date-ACNHEvents";
@@ -1739,6 +1731,14 @@
 			requirement = {
 				kind = upToNextMajorVersion;
 				minimumVersion = 0.0.2;
+			};
+		};
+		69C0A44C24FFFCAF00FE7F4A /* XCRemoteSwiftPackageReference "Date-ACNHEvents" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Dimillian/Date-ACNHEvents";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.1.1;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
@@ -1770,14 +1770,14 @@
 			isa = XCSwiftPackageProductDependency;
 			productName = UI;
 		};
+		69C0A44D24FFFCAF00FE7F4A /* ACNHEvents */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 69C0A44C24FFFCAF00FE7F4A /* XCRemoteSwiftPackageReference "Date-ACNHEvents" */;
+			productName = ACNHEvents;
+		};
 		69CFCADC245ADCCF0059C067 /* Backend */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = Backend;
-		};
-		69CFCADE245ADCD40059C067 /* ACNHEvents */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 68345587244E4DEF0072FC0C /* XCRemoteSwiftPackageReference "Date-ACNHEvents" */;
-			productName = ACNHEvents;
 		};
 		69E4BBB1245AE06B001035E2 /* UI */ = {
 			isa = XCSwiftPackageProductDependency;
