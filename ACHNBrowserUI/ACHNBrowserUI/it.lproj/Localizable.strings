@@ -1115,9 +1115,21 @@ Puoi annullare il tuo abbonamento in ogni momento dalle impostazioni del tuo acc
 "Clothing Other" = "Muta subacquea";
 "Sea Creatures" = "Creature marine";
 
-// dream code
-"ACDreamCode.notification.title" = "A new dream code is available";
-"ACDreamCode.notification.subtitle" = "Someone postet their islands dream code on the application, go check it out!";
-"dreamcode.footer" = "Once your Dream code is saved, it'll appear on the list.
-You can edit or delete your dream code anytime. You can't add furhter dream codes, as long as you already have added a dream code.
-Any Dodo code reported will be deleted.";
+// Summer Patch II - added 2020-08-02
+"There are no dream codes yet. Visit Luna in your dreams, generate your islands dream code and add it here." = "Non ci sono ancora Codici del Sogno. Visita Sonia nei tuoi sogni, crea il Codice Sogno della tua isola e aggiungilo qui.";
+"ACDreamCode.notification.title" = "Aggiunto un nuovo Codice del Sogno";
+"ACDreamCode.notification.subtitle" = "Qualcuno ha pubblicato il proprio Codice del Sogno nell'applicazione, vai a dare un'occhiata!";
+"Dream code" = "Codice del Sogno";
+"Dream codes" = "Codici del Sogno";
+"This Dream code is invalid" = "Questo Codice del Sogno non è valido";
+"Edit your Dream code" = "Modifica il tuo Codice del Sogno";
+"Add your Dream code" = "Aggiungi il tuo Codice del Sogno";
+"dreamcode.footer" = "Quando il tuo Codice del Sogno viene salvato, apparirà in questa lista. Puoi modificarlo o eliminarlo in ogni momento. Non puoi aggiungere altri Codici del Sogno se ne hai già aggiunto uno. Ogni Codice del Sogno segnalato verrà eliminato.";
+"Get notified of new dream codes" = "Ricevi notifiche per i nuovi Codici del Sogno";
+"No dream codes available yet, add your own to let other players visit your island in their dreams" = "Nessun Codice del Sogno disponibile. Aggiungi il tuo per permettere ad altri giocatori di visitare la tua isola in sogno.";
+"You need an iCloud account to add your dream code" = "Hai bisogno di un account iCloud per aggiungere il tuo Codice del Sogno";
+"Do you really want to report this dream code?" = "Sei sicuro di voler segnalare questo Codice del Sogno?";
+"Do you really want to delete your dream code?" = "Sei sicuro di voler cancellare il tuo Codice del Sogno?";
+"Sort" = "Ordina";
+"creationDate" = "Data";
+"upvotes" = "Voti";
