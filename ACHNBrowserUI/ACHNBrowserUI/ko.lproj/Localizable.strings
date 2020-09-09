@@ -1,0 +1,80 @@
+/*
+  Localizable.strings
+  ACHNBrowserUI
+
+  Created by Jan on 09.05.20.
+  Copyright © 2020 Thomas Ricouard. All rights reserved.
+*/
+
+// SubscribeView
+"ACHelperPlusDescription" = "AC Helper+를 구독하여 무료 오픈소스 프로젝트를 후원해주세요.♥️
+
+무트코인 예측 알림 등 더 많은 기능을 사용할 수 있습니다! 📈";
+
+"ACHelperPlusDetails" = "알림 기능에 대해서:
+매일 8시와 12시에 사용자의 가게의 평균 구매 가격을 알림으로 띄워줍니다.
+아침마다 게임 상의 가격을 자주 입력할 수록 예측이 정확해집니다!
+
+목록 기능에 대해서:
+무료 앱을 이용 시 \"내 물건\"에 단 하나의 목록만 생성할 수 있습니다.
+한 번이라도 AC Helper+를 구독하시면 무한하게 리스트를 만들 수 있습니다.";
+
+"ACHelperPlusPriceAndAboDetail %@ %@" = "매달 %@ 혹은 매년 %@ 결제가 당신의 Apple 계정에 적용됩니다.
+24시간 이내에 구독을 취소하지 않는 경우 구독은 자동으로 갱신됩니다.
+Apple 계정 설정에서 언제든지 취소할 수 있습니다. 구독 시에 남은 무료 체험은 사라집니다.";
+
+// CategoryRow
+"housewares" = "가구";
+"miscellaneous" = "잡화";
+"wall-mounted" = "벽걸이";
+"wallpapers" = "벽지";
+"floors" = "바닥";
+"rugs" = "러그";
+"photos" = "사진";
+"posters" = "포스터";
+"fencing" = "울타리";
+"tools" = "도구";
+"tops" = "상의";
+"bottoms" = "하의";
+"dresses" = "원피스";
+"headwear" = "모자";
+"accessories" = "액세서리";
+"socks" = "양말";
+"shoes" = "신발";
+"bags" = "가방";
+"umbrellas" = "우산";
+"music" = "Music";
+"recipes" = "레시피";
+"construction" = "공사";
+"nookmiles" = "너굴 마일리지";
+"other" = "기타";
+"art" = "미술품";
+"bugs" = "곤충";
+"fish" = "물고기";
+"fossils" = "화석";
+"seaCreatures" = "해산물";
+"Clothing Other" = "잠수복";
+
+"%lld upcomingDailyNotifications" = "오늘은 %lld번 무트코인 예측 알림을 받으실 수 있습니다.";  //TODO: possible mistranslation
+
+// dodo code
+"dodocode.footer" = "한 번 친구 코드가 저장되면 목록에 나타납니다.
+코드를 추가하기 전 인터넷 연결 상태를 확인해주세요.
+언제든지 꿈번지 주소를 삭제할 수 있습니다.
+상대를 존중해주세요, a신고된 코드는 삭제 조치됩니다.";
+"ACDodoCode.notification.title" = "새로운 친구 코드를 사용할 수 있음";
+"ACDodoCode.notification.subtitle" = "누군가가 친구 코드를 올렸습니다! 가서 확인해봐요!";
+"ACComment.notification.title" = "친구 코드에 댓글이 달림";
+"ACComment.notification.subtitle" = "친구 코드에 누군가가 댓글을 달았습니다. 가서 확인해봐요!";
+"ACNew.notification.title" = "기사가 게시됨";
+"ACNew.notification.subtitle" = "새로운 기사가 게시되었습니다. 앱에서 확인해보세요!";
+
+// dream code
+"ACDreamCode.notification.title" = "새로운 꿈번지 주소를 사용할 수 있음";
+"ACDreamCode.notification.subtitle" = "누군가가 꿈번지 주소를 올렸습니다! 가서 확인해봐요!";
+"dreamcode.footer" = "한 번 친구 코드가 저장되면 목록에 나타납니다.
+언제든지 친구 코드를 수정, 삭제할 수 있습니다. 한 번 친구 코드를 등록하면 새로운 코드를 등록할 수 없습니다.
+신고된 코드는 삭제 조치됩니다.";
+"Sort" = "다음 순서로 정렬";
+"creationDate" = "생성일";
+"upvotes" = "좋아요";
