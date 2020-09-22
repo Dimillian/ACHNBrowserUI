@@ -42,9 +42,6 @@ struct TurnipsView: View {
     // MARK: - Body
     var body: some View {
         NavigationView {
-            if UIDevice.current.userInterfaceIdiom == .pad {
-                TurnipsFormView().environmentObject(subManager)
-            }
             List {
                 Group {
                     if subManager.subscriptionStatus == .notSubscribed {
@@ -78,6 +75,7 @@ struct TurnipsView: View {
             })
         }
         .onAppear(perform: NotificationManager.shared.registerForNotifications)
+        .navigationViewStyle(StackNavigationViewStyle())
     }
 }
 

@@ -91,7 +91,7 @@ struct CollectionListView: View {
     }
 
     private var emptyView: some View {
-        MessageView(collectionName: selectedTab.rawValue)
+        MessageView(collectionName: selectedTab.rawValue).listRowBackground(Color.acBackground)
     }
 
     private var picker: some View {

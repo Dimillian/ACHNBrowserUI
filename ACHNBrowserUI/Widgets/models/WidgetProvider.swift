@@ -69,7 +69,7 @@ struct WidgetProvider: TimelineProvider {
                 total = 43
             }
             museumProgress.append(MuseumProgress(category: category,
-                                                 have: collection.itemsIn(category: category),
+                                                 have: collection.itemsIn(useItems: false, category: category),
                                                  total: total))
         }
         return museumProgress
@@ -87,6 +87,10 @@ struct WidgetProvider: TimelineProvider {
         WidgetModel(date: Date(),
                     villager: nil,
                     villagerImage: nil,
-                    museumCollection: generateMuseumProgress())
+                    museumCollection: [MuseumProgress(category: .fish, have: 0, total: 0),
+                                       MuseumProgress(category: .bugs, have: 0, total: 0),
+                                       MuseumProgress(category: .seaCreatures, have: 0, total: 0),
+                                       MuseumProgress(category: .fossils, have: 0, total: 0),
+                                       MuseumProgress(category: .art, have: 0, total: 0)])
     }
 }
