@@ -45,6 +45,7 @@ class ActiveCrittersViewModel: ObservableObject {
     }
     
     @Published var crittersInfo: [CritterType: CritterInfo] = [:]
+    @Published var isLoading: Bool
     
     private let items: Items
     private let collection: UserCollection
@@ -54,10 +55,12 @@ class ActiveCrittersViewModel: ObservableObject {
     init(filterOutInCollection: Bool = false, items: Items = .shared, collection: UserCollection = .shared) {
         self.items = items
         self.collection = collection
+        self.isLoading = true
         
         cancellable = Publishers.CombineLatest(items.$categories, collection.$critters)
             .receive(on: DispatchQueue.main)
             .sink { [weak self] (items, critters) in
+                guard let self = self else { return }
                 for type in CritterType.allCases {
                     var active = items[type.category()]?.filterActiveThisMonth() ?? []
                     var new = active.filter{ $0.isNewThisMonth() }
@@ -72,12 +75,13 @@ class ActiveCrittersViewModel: ObservableObject {
                         active = active.filter{ !critters.contains($0) }
                     }
                     
-                    self?.crittersInfo[type] = CritterInfo(active: active,
+                    self.crittersInfo[type] = CritterInfo(active: active,
                                                            new: new,
                                                            leaving: leaving,
                                                            caught: caught,
                                                            toCatchNow: toCatchNow,
                                                            toCatchLater: toCatchLater)
+                    self.isLoading = false
                 }
         }
     }

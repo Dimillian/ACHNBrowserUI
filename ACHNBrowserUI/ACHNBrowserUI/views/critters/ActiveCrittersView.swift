@@ -66,7 +66,7 @@ struct ActiveCrittersView: View {
     
     private func makeList(type: ActiveCrittersViewModel.CritterType) -> some View {
         List {
-            if viewModel.crittersInfo[type]?.active.isEmpty == true {
+            if viewModel.isLoading == true {
                 RowLoadingView()
             } else {
                 ActiveCritterSections(viewModel: viewModel,
