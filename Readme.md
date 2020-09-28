@@ -1,5 +1,5 @@
 [![Swift 5.3](https://img.shields.io/badge/swift-5.3-ED523F.svg?style=flat)](https://swift.org/download/)
-![Xcode Build](https://github.com/Dimillian/ACHNBrowserUI/workflows/Xcode%20build/badge.svg?branch=master)
+![Xcode build](https://github.com/Dimillian/ACHNBrowserUI/workflows/Xcode%20build/badge.svg)
 [![@ACHelperApp](https://img.shields.io/badge/contact-@ACHelperApp-5AA9E7.svg?style=flat)](https://twitter.com/achelperapp)
 [![@dimillian](https://img.shields.io/badge/contact-@dimillian-5AA9E7.svg?style=flat)](https://twitter.com/dimillian)
 
