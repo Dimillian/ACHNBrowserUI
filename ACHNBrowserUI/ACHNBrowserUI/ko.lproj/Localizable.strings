@@ -1,141 +1,958 @@
-
-
-"%lld upcomingDailyNotifications" = "%lld 후에 무트코인 예측을 받으실 수 있습니다.";
-
-
-"ACComment.notification.subtitle" = "친구 코드에 누군가가 댓글을 달았습니다. 가서 확인해봐요!";
-
-
-"ACComment.notification.title" = "친구 코드에 댓글이 달림";
-
-
-"ACDodoCode.notification.subtitle" = "누군가가 꿈번지 주소를 올렸습니다! 가서 확인해봐요!";
-
-
-"ACDodoCode.notification.title" = "새로운 친구 코드를 사용할 수 있음";
-
-
-"ACDreamCode.notification.subtitle" = "누군가가 친구를 찾는 중이에요! 가서 확인해봐요!";
-
-/* dream code */
-"ACDreamCode.notification.title" = "새로운 꿈번지 주소를 사용할 수 있음";
-
-/* SubscribeView */
-"ACHelperPlusDescription" = "AC Helper+를 구독하여 무료 오픈소스 프로젝트를 후원해주세요.♥️\n\n무트코인 예측 알림 등 더 많은 기능을 사용할 수 있습니다! 📈";
-
-
-"ACHelperPlusDetails" = "알림 기능에 대해서:\n매일 8시와 12시에 사용자의 가게의 평균 구매 가격을 알림으로 띄워줍니다.\n아침마다 게임 상의 가격을 자주 입력할 수록 예측이 정확해집니다!\n\n목록 기능에 대해서:\n무료 앱을 이용 시 \"내 물건\"에 단 하나의 목록만 생성할 수 있습니다.\n한 번이라도 AC Helper+를 구독하시면 무한하게 리스트를 만들 수 있습니다.";
-
-
-"ACHelperPlusPriceAndAboDetail %@ %@" = "매달 %@ 혹은 매년 %@ 결제가 당신의 Apple 계정에 적용됩니다.\n구독은 자동으로 갱신되며 24시간 이내에 구독을 취소하지 않는 한, Apple 계정 설정에서 언제든지 취소할 수 있습니다. 구독 시에 남은 무료 체험은 사라집니다.";
-
-
-"ACNew.notification.subtitle" = "새로운 기사가 게시되었습니다. 앱에서 확인해보세요!";
-
-
-"ACNew.notification.title" = "기사가 게시됨";
-
-
-"Clothing Other" = "잠수복";
-
-
-"Sort" = "Sort";
-
-
-"accessories" = "액세서리";
-
-
-"art" = "미술품";
-
-
-"bags" = "가방";
-
-
-"bottoms" = "하의";
-
-
-"bugs" = "곤충";
-
-
-"construction" = "시설";
-
-
-"creationDate" = "Date";
-
-/* dodo code */
-"dodocode.footer" = "한 번 친구 코드가 저장되면 목록에 나타납니다.\n코드를 추가하기 전 인터넷 연결 상태를 확인해주세요.\n언제든지 꿈번지 주소를 삭제할 수 있습니다.\n상대를 존중해주세요, a신고된 코드는 삭제 조치됩니다.";
-
-
-"dreamcode.footer" = "한 번 친구 코드가 저장되면 목록에 나타납니다.\n언제든지 친구 코드를 수정, 삭제할 수 있습니다. 한 번 친구 코드를 등록하면 새로운 코드를 등록할 수 없습니다.\n신고된 코드는 삭제 조치됩니다.";
-
-
-"dresses" = "원피스";
-
-
-"fencing" = "울타리";
-
-
-"fish" = "물고기";
-
-
-"floors" = "바닥";
-
-
-"fossils" = "화석";
-
-
-"headwear" = "모자";
-
-/* CategoryRow */
-"housewares" = "가구";
-
-
-"miscellaneous" = "잡화";
-
-
-"music" = "음악";
-
-
-"nookmiles" = "너굴 마일리지";
-
-
-"other" = "Other";
-
-
-"photos" = "사진";
-
-
-"posters" = "포스터";
-
-
-"recipes" = "레시피";
-
-
-"rugs" = "러그";
-
-
-"seaCreatures" = "해산물";
-
-
-"shoes" = "신발";
-
-
-"socks" = "양말";
-
-
-"tools" = "도구";
-
-
-"tops" = "상의";
-
-
-"umbrellas" = "우산";
-
-
-"upvotes" = "좋아요";
-
-
+/*
+ Localizable.strings
+ ACHNBrowserUI
+
+ Created by Jan on 09.05.20.
+ Copyright © 2020 Thomas Ricouard. All rights reserved.
+ */
+
+"Loading..." = "불러오는 중...";
+"Tap here to preview a notification" = "Appuyer ici pour voir une notification";
+"Upgrade to +" = "AC Helper+로 업그레이드";
+"You're subscribed to AC Helper+" = "AC Helper+를 구독하였습니다";
+
+// copy and paste "export"  of Text() and similar SwiftUI functions
+// Global
+"Close" = "닫기";
+"Dismiss" = "확인";
+"Save" = "저장";
+
+// Date Format
+"EEEE, dd MMMM" = "EEEE년 MM월 dd일";
+"d/M" = "M/d";
+"dd" = "dd";
+"MMM" = "MMM";
+"MMM dd" = "MMM dd";
+"dd MMMM" = "MMMM dd";
+
+// TabbarView
+"Dashboard" = "투데이";
+"Catalog" = "목록";
+"Turnips" = "무트코인";
+"Villagers" = "주민";
+"Collection" = "Collection";
+
+// TodayView
+"Change Section Order" = "섹션 순서 바꾸기";
+// TodaySectionEditView
+"Drag & Drop to Rearrange" = "Glisser-déposer pour réorganiser";
+"Hidden" = "Caché";
+"Today Sections" = "Sections du dashboard";
+"Done" = "완료";
+" to re-order sections." = "해서 섹션의 순서를 변경하세요.";
+"Check or un-check" = "체크를 해제";
+" rows to hide sections from the dashboard." = "해서 투데이에서 섹션을 숨기세요.";
+// TodayBirthdaySection
+"Birthdays" = "생일";
+"Today's Birthdays" = "오늘의 생일";
+"Today's Birthday" = "오늘의 생일";
+// TodayCollectionProgressSection
+"Collection Progress" = "수집 달성도";
+"Share" = "공유";
+// TodayCurrentlyAvailableSection
+"Currently Available" = "Disponible en ce moment";
+"%lld/%lld Bugs" = "%lld/%lld 마리 곤충";
+"%lld/%lld Fish" = "%lld/%lld 마리 물고기";
+"%lld/%lld Sea Creatures" = "%lld/%lld 마리 해산물";
+"%lld NEW" = "새로운 %lld 마리";
+// TodayEventsSection
+"Events" = "이벤트";
+"Currently" = "지금";
+"No Events Today" = "오늘은 이벤트가 없습니다";
+"Upcoming" = "나중에";
+// TodayTasksSection
+"Today's Tasks" = "오늘 할 일";
+"This feature requires " = "이 기능은 ";     // FIXME: "이 기능은 " + [STRING] + "을/를 필요로 합니다."
+"Learn more >" = "자세히 보기 >";
+// TodayTurnipSection
+"Today is sunday, don't forget to buy more turnips and fill your buy price." = "오늘은 일요일입니다. 무를 산 후 구매가를 입력해주세요.";
+"Today's average price should be around " = "오늘 오전의 평균 가격은 ";
+" in the morning, and " = " 이고, 오후의 평균 가격은 ";
+" this afternoon." = " 입니다.";
+/*
+"오늘 오전의 평균 가격은 " implies 'average price in this morning'
+" 이고, 오후의 평균 가격은 " implies 'is(Korean order) and one in this afternoon'
+" 입니다." implies 'is(Korean order)'
+*/
+// TodayNookazonSection
+"New on Nookazon" = "Nouveau sur Nookazon";
+"Nookazon is loading..." = "Nookazon을 불러오는 중...";
+// TodayWhatsNewSection
+"What's New" = "신상품";
+"See what's new in update %@" = "%@ 업데이트에서 새로 추가된 사항";
+// TodaySubscribeSection
+"You're subscribed to AC Helper+. Thank you so much for you support!" = "AC Helper+를 구독하였습니다. 따뜻한 후원 감사합니다!";
+"If you enjoy the application, consider subscribing to AC Helper+, to get access to some awesome features and support us!" = "Si vous aimez l'application, vous pouvez souscrire à AC Helper+, et vous aurez accès à nouvelles fonctionnalités en plus de nous aider!";
+
+// SubscribeView
+"AC Helper+" = "AC Helper+";
+"ACHelperPlusDescription" = "Souscrire à AC Helper+ est une très bonne façon de montrer votre support à notre projet open source et gratuit.♥️
+
+Vous aurez aussi accès à d'autres fonctionnalités, comme les prédictions sur le prix des navets et la possibilité de créer plus d'une liste d'objets! 📈";
+
+"ACHelperPlusDetails" = "À propos de la fonctionnalité de notification:
+Tous les jours à 8H et 12H vous allez recevoir une notification avec le prix moyen d'achat de vos navets.
+En indiquant le prix de vos navets, vous augmentez la précision des prédictions !
+
+À propos de la fonctionnalité liste d'objets:
+Dans l'application gratuite, vous pouvez créer seulement une seule liste d'objets dans votre onglet collection.
+Une fois que vous aurez souscrit à AC Helper +, vous pourrez créer autant de liste que vous voudrez.";
+
+"ACHelperPlusPriceAndAboDetail %@ %@" = "A %@ per month or %@ per year purchase will be applied to your iTunes account on confirmation.
+Subscriptions will automatically renew unless canceled within 24-hours before the end of the current period.
+You can cancel anytime with your iTunes account settings. Any unused portion of a free trial will be forfeited if you purchase a subscription.";
+"Subscribe for %@ / Month" = "매달 %@으로 구독";
+"%@ Monthly" = "매달 %@";
+"%@ Yearly" = "매년 %@";
+"Buy lifetime AC Helper+ for %@" = "%@으로 AC Helper+ 무기한 사용";
+"Thank you for your support!" = "Merci pour votre soutien !";
+"Thanks!" = "감사합니다!";
+
+// AboutView
+"About" = "정보";
+"The app" = "L'application";
+"Source code / report an issue" = "소스 코드 / 문제 리포트";
+"Contact / follow us on Twitter" = "Contactez / suivez nous sur Twitter";
+"Rate the app on the App Store" = "App Store에서 앱 평가하기";
+"Privacy Policy" = "개인정보 취급방침";
+"Term of Use" = "이용 약관";
+"App version" = "앱 버전";
+"Game patch data" = "게임 패치 데이터";
+"Acknowledgements" = "Remerciements";
+"Our amazing contributors" = "이 앱에 기여해주신 분들";
+"The NookPlaza API by Azarro" = "NookPlaza API를 제공해 주신 Azarro";
+"Turnip.exchange" = "Turnip.exchange";
+"Nookazon for the marketplace" = "매매 시스템을 제공해 주신 Nookazon";
+"Shihab / JPEGuin for the icon" = "Shihab / JPEGuin pour l'icône";
+"Christian & Ninji for the turnip predictions algorithm" = "Christian & Ninji pour l’algorithme de prédiction du prix des navets";
+"Error" = "오류";
+
+// ActiveCittersView
+"Active Critters" = "잡을 수 있는 생물";
+"Fishes" = "물고기";
+"Bugs" = "곤충";
+"You caught them all!" = "모두 잡았어!";
+"New this month" = "이번 달에 새로 잡을 수 있는 생물";
+"To catch now" = "지금 잡을 수 있는 생물";
+"To catch later" = "나중에 잡을 수 있는 생물";
+"To catch" = "À attraper";
+"Leaving this month" = "이번 달에 마지막으로 잡을 수 있는 생물";
+"Caught" = "잡았어";
+
+// SettingsView
+"Preferences" = "환경 설정";
+"Island name" = "섬 이름";
+"Your island name" = "섬 이름을 입력해주세요";
+"Hemisphere" = "반구";
+"North" = "북반구";
+"South" = "남반구";
+"Starting fruit" = "특산물";
+"Apple" = "사과";
+"Cherry" = "체리";
+"Orange" = "오렌지";
+"Peach" = "복숭아";
+"Pear" = "배";
+"Coconut" = "야자수";
+"Nook shop" = "너굴상점";
+"Tent" = "텐트";
+"Nook's Cranny" = "너굴상점 1단계";
+"Nook's Cranny upgraded" = "너굴상점 2단계";
+"Able sisters" = "에이블 시스터즈";
+"Visiting" = "방문";
+"Residents service" = "거주 시설";
+"Building" = "집";
+"App Settings" = "앱 설정";
+"App Icon" = "앱 아이콘";
+"Restore purchase" = "결제 내역 복구";
+
+// UserListFormView
+"Edit your list" = "목록을 수정하세요";
+"Name of your list" = "목록의 이름";
+"List name" = "목록 이름";
+"Can be nothing" = "Peux rester vide";
+"Icon" = "아이콘";
+
+// UserListDetailView
+"Add %lld items" = "Ajouter %lld objets";
+"Edit" = "수정";
+"Search items" = "아이템 검색";
+"Items added to your list from the search will be displayed there." = "Les objets ajoutés à votre liste vont apparaitre ici";
+"No results for %@" = "'%@'라는 검색 결과가 없습니다";
+
+// UserListSubscribeCallView
+"In order to create more than one list, you need to subscribe to AC Helper+" = "Pour pouvoir créer plus d'une liste, vous devez souscrire à AC Helper+";
+"Learn more..." = "자세히 보기...";
+
+// CollectionListView
+"Create a new list" = "새로운 목록 만들기";
+"Please select or go stars some items!" = "Sélectionner ou ajouter des objets à votre collection !";
+"When you stars some \%@, they'll be displayed here." = "Quand vous aller liker des \%@, ils seront affichés ici.";
+"Items" = "아이템";
+"Critters" = "생물";
+"Lists" = "목록";
+"More" = "더보기";
+
+// ItemsListView
+"Clear Selection" = "선택 해제";
+"Sort items" = "아이템 정렬";
+"Current Sort: %@" = "현재: %@";
+"name" = "이름 순";
+"buy" = "판매가격 순";
+"sell" = "매입가격 순";
+"from" = "obtention";
+"set" = "sets";
+"similar" = "similaire";
+"Name" = "이름 순";
+"Buy" = "판매가격 순";
+"Sell" = "매입가격 순";
+"From" = "Obtention";
+"Set" = "Sets";
+"Similar" = "Similaire";
+// ItemRowView
+"unknown source" = "source inconnue";
+// ItemDetailInfoView
+"Rarity:" = "Rareté:";
+"Shadow size:" = "그림자 크기:";
+"X-Small" = "작다";
+"Small" = "약간 작다";
+"Medium" = "중간";
+"Large" = "약간 크다";
+"X-Large" = "크다";
+"Customizable: %@" = "리폼: %@";
+"Yes" = "가능";
+"No" = "불가능";
+"Common" = "Commun";
+"Same color" = "Même couleur";
+// ItemsCrosslineSectionView
+"Preview" = "모습";
+// ItemDetailSeasonView
+"Seasonality" = "출현 기간";
+// ItemDetailView
+"Set items" = "Objets du set";
+"Simillar items" = "유사한 아이템";
+"Thematics" = "Thématiques";
+"Variants" = "변종";
+"Materials" = "재료";
+"Nookazon listings" = "Nookazon";
+"Loading Listings..." = "목록을 불러오는 중입니다...";
+"No listings found on Nookazon" = "Pas d'objets trouvés sur Nookazon";
+"Your items lists" = "나만의 아이템 목록";
+"Keywords" = "키워드";
+
+// TurnipsView
+"Minmax" = "최소-최대";
+"Profits" = "이익";
+"Average daily buy prices" = "Moyenne du prix d'achat";
+"Daily min-max prices" = "Prix min-max journalier";
+"Average profits" = "평균 이익";
+"Chart" = "그래프";
+"Mon" = "월";
+"Tue" = "화";
+"Wed" = "수";
+"Thu" = "목";
+"Fri" = "금";
+"Sat" = "토";
+"Your prices" = "Vos prix";
+"Edit your in game prices" = "Éditer vos prix du jeu";
+"Add your in game prices" = "Ajouter vos prix du jeu";
+"Turnips prediction" = "무트코인 예측";
+"To help us support the application and get turnip predictions notification, you can try out AC Helper+" = "Pour nous aider à supporter l'application et recevoir des notifications sur les prédictions du prix des navets, vous pouvez souscrire à AC Helper+";
+"To help us support the application and get background playing of all the musics, you can try out AC Helper+" = "Pour nous aider à supporter l'application et pouvoir jouer les musiques en arrière-plan, vous pouvez souscrire à AC Helper+";
+"%lld upcomingDailyNotifications" = "Vous allez recevoir %lld prochaines notifications.";
+"Profits estimates are computed using the average of the current period" = "Les bénéfices sont calculés par rapport au prix moyen de la période courante";
+"Day" = "일";
+"AM" = "오전";
+"PM" = "오후";
+"Please add the amount of turnips you bought and for how much" = "Veuillez ajouter le nombre de navets achetés et pour quel prix";
+"Add your in game turnip prices to see the predictions chart" = "Ajouter vos prix pour voir le graphique";
+"Add your in game turnip prices to see predictions" = "Ajouter vos prix pour voir les prédictions";
+"Exchange" = "Exchange";
+// TurnipsFormView
+"Monday" = "월요일";
+"Tuesday" = "화요일";
+"Wednesday" = "수요일";
+"Thursday" = "목요일";
+"Friday" = "금요일";
+"Saturday" = "토요일";
+"Add your turnip prices" = "매입한 무 가격을 추가하세요";
+"Configuration" = "일반 설정";
+"Clear all fields" = "모든 영역 비우기";
+"Receive prices predictions notification" = "Recevoir les notifications de prédictions";
+"You can get daily notifications for your average turnip price by subscribing to AC Helper+" = "Vous pouvez recevoir des notifications journalière pour le prix de vos navets en souscrivant à AC Helper+";
+"Preview a notification" = "알림 테스트";
+"Your in game prices" = "Vos prix dans le jeu";
+"Buy price" = "구매한 가격";
+"Amount bought" = "구매한 수량";
+"The more in game buy prices you'll add the better the predictions will be. Your buy price only won't give your correct averages. Add prices from the game as you get them daily." = "En indiquant le prix de vos navets, vous augmentez la précision des prédictions.";
+"View on TurnipProphet" = "TurnipProphet에서 보기";
+"View Turnip.Exchange islands" = "Voir les îles de Turnip.Exchange";
+
+// TurnipsChartTopLegendView
+"Average" = "평균";
+"Minimum" = "최소";
+"MinMax" = "최소-최대";
+
+// IslandDetailView
+"Join Island" = "Rejoindre l'Île";
+"Island" = "섬";
+"Description" = "설명";
+"Visitors" = "Visiteurs";
+"Loading Visitors...." = "Chargement des visiteurs....";
+
+// VillagersListView
+"Search a villager" = "주민을 검색하세요";
+"Personality" = "성격";
+"Birthday" = "생일";
+"Species" = "종";
+"Gender" = "성별";
+"Catch phrase" = "말버릇";
+"Unknown" = "알 수 없음";
+"Villager items" = "주민 아이템";
+"Sort villagers" = "주민 정렬 방법";
+
+// VillagersDetailView
+"Unkown" = "알 수 없음";
+"Lazy" = "먹보";
+"Jock" = "운동광";
+"Cranky" = "무뚝뚝";
+"Smug" = "느끼함";
+"Peppy" = "아이돌";
+"Snooty" = "성숙함";
+"Uchi" = "단순활발";
+"Male" = "남성";
+"Female" = "여성";
+"Alligator" = "악어";
+"Anteater" = "개미핧기";
+"Bear" = "곰";
+"Bird" = "새";
+"Bull" = "Taureau";
+"Cat" = "고양이";
+"Chicken" = "닭";
+"Cow" = "소";
+"Cub" = "Ourson";
+"Deer" = "사슴";
+"Dog" = "개";
+"Duck" = "오리";
+"Eagle" = "독수리";
+"Elephant" = "코끼리";
+"Frog" = "개구리";
+"Goat" = "염소";
+"Gorilla" = "고릴라";
+"Hamster" = "햄스터";
+"Hippo" = "하마";
+"Horse" = "말";
+"Kangaroo" = "캥거루";
+"Koala" = "코알라";
+"Lion" = "사자";
+"Monkey" = "원숭이";
+"Mouse" = "생쥐";
+"Octopus" = "문어";
+"Ostrich" = "타조";
+"Penguin" = "펭귄";
+"Pig" = "돼지";
+"Rabbit" = "토끼";
+"Rhino" = "코뿔소";
+"Sheep" = "양";
+"Squirrel" = "다람쥐";
+"Tiger" = "사자";
+"Wolf" = "늑대";
+"Like" = "Aime";
+"Gifts ideas" = "이런 선물은 어떨까요?";
+
+// ListingRow
+"Make an Offer" = "Faire une offre";
+"Need Materials" = "Besoin de materiaux";
+
+// NotificationManager
+"Turnip prices" = "매입 가격";
+"this morning" = "오늘 아침";
+"this afternoon" = "오늘 저녁";
+"Your prices predictions for %@ should be around %lld bells. With a minimum of %lld and a maximum of %lld." = "Vos prix pour %@ devraient être autour de %lld clochettes. Avec un minimum de %lld et un maximum de %lld.";
+"Turnip prices (test)" = "Prix des navets (test)";
+"Your prices predictions for this morning should be around 100 bells. With a minimum of 50 and a maximum of 650." = "Vos prix pour ce matin devraient être autour de 100 clochettes. Avec un minimum de 50 et un maximum de 100.";
+"Friendly reminder" = "Rappel";
+"It's time to buy turnips and add the buy price in the app." = "C'est l'heure d'acheter vos navets et d'ajouter votre prix d'achat dans l'application.";
+"It's the start of the week, don't forget to add your store buy prices in the app as you play the game. You'll get more accurate predictions." = "C'est le début de la semaine, n'oubliez pas d'ajouter les prix d'achats de votre magasin dans l'application.";
+
+// CategoryRow
+"housewares" = "Articles ménagers";
+"miscellaneous" = "Divers";
 "wall-mounted" = "벽걸이";
-
-
 "wallpapers" = "벽지";
+"floors" = "바닥";
+"rugs" = "러그";
+"photos" = "사진";
+"posters" = "포스터";
+"fencing" = "울타리";
+"tools" = "도구";
+"tops" = "상의";
+"bottoms" = "하의";
+"dresses" = "Robes";
+"headwear" = "모자";
+"accessories" = "액세서리";
+"socks" = "양말";
+"shoes" = "신발";
+"bags" = "가방";
+"umbrellas" = "우산";
+"music" = "음악";
+"recipes" = "DIY 레시피";
+"construction" = "시설";
+"nookmiles" = "너굴 마일리지";
+"other" = "Autre";
+"art" = "Art";
+"bugs" = "곤충";
+"fish" = "물고기";
+"fossils" = "화석";
+"seaCreatures" = "해산물";
+"Clothing Other" = "Maillot de Bain";
+// CategoriesView
+"Nature" = "자연";
+"Wardrobe" = "의상";
+
+// Shared
+// SearchField
+"Search..." = "검색...";
+
+"See more" = "더보기";
+"See less" = "덜보기";
+
+//Added 05-14-2020
+"My data" = "나의 데이터";
+"Collection size" = "Taille de ma collection";
+"Export my collection" = "Exporter ma collection";
+"Import a collection" = "Importer une collection";
+"Imported with success" = "Importé avec succès";
+"Reset my collection" = "Supprimer ma collection";
+"Your AC Helper collection file was imported with success." = "Votre collection AC Helper a été importée avec succès.";
+"Are you sure?" = "정말인가요?";
+"This will delete all your collected critters, items, villagers and items lists" = "모든 잡은 생물, 모은 아이템, 주민과 아이템 목록을 지웁니다.";
+
+//Added 05-17-2020
+"Mystery Islands" = "마일리지섬";
+"Trees: %@" = "나무: %@";
+"Trees" = "나무";
+"Flowers" = "꽃";
+"Flowers: %@" = "꽃: %@";
+"Fish" = "물고기";
+"Insects" = "곤충";
+"Rocks Type" = "Type des Rocher";
+"Rocks" = "돌";
+"Take your chance and go visit some mystery island!" = "마일리지섬에 가보지 않으실래요?";
+"Native" = "일반 나무";
+"Normal" = "일반 꽃";
+"Uncommon" = "Peux commun";
+"Gold" = "금광석";
+"Trash" = "쓰레기";
+"Bamboos" = "대나무";
+"Hardwood" = "단단한 목재";
+"Exotic fruits" = "Fruits exotiques";
+"Normal Island 1" = "일반 섬 1";
+"Normal Island 2" = "일반 섬 2";
+"Spiral Island" = "일반 섬 3";             // Translated into 'Normal Island 3' since we don't have a concept 'Spiral Island' but 'Normal Island 3'
+"Fidget Spinner Island" = "일반 섬 4";     // Translated into 'Normal Island 4' since we don't have a concept 'Fidget Spinner Island' but 'Normal Island 4'
+"Mountain Island" = "산 섬";
+"Bells Island" = "돈 바위 호수 섬";
+"Bamboo Island" = "대나무 섬";
+"Fruit Island" = "과수원 섬";
+"Flower Island" = "교배꽃섬";
+"Bell Island 2" = "돈 바위 전갈 섬";
+"Tarantula Island" = "타란튤라 섬";
+"Tree Island" = "나무 섬";
+"Big fish Island" = "대형 물고기 섬";
+"Tree Island 2" = "나무 섬 2";
+"Curvy River Island" = "수상 곤충 섬";
+"Big Fish Island 2" = "대형 물고기 섬 2";
+"Trash Island" = "쓰레기 섬";
+"Fins Island" = "지느러미 물고기 섬";
+"Falls Island" = "일반 섬 5";              // Translated into 'Normal Island 5' since we don't have a concept 'Falls Island' but 'Normal Island 5'
+"Gold Island" = "금광석 전갈 섬";
+" - max %lld visit" = " - max %lld visite";
+
+"River" = "강";
+"Sea" = "바다";
+"Ponds" = "연못";
+"Pond" = "연못";
+"Pier" = "Jetée";
+"Raining" = "Pluie";
+"Clifftop" = "절벽";
+"Mouth" = "Embouchure";
+"Flying near flowers" = "꽃 주변 비행";
+"On the ground" = "땅 위에서";
+"Flying" = "비행";
+"Shaking trees (hardwood or cedar only)" = "En secouant les arbres (feuillus et cèdres seulement)";
+"On trees (any kind)" = "모든 종류의 나무에서";
+"Disguised on shoreline" = "Déguisé sur le rivage";
+"Pushing snowballs" = "Pousse une boule de neige";
+"On flowers" = "꽃에서";
+"On tree stumps" = "Sur les souches d'arbres";
+"On palm trees" = "야자수에서";
+"On hardwood/cedar trees" = "Sur feuillus/cèdres";
+"From hitting rocks" = "돌을 쳐서";
+"On river/ponds" = "강/연못에서";
+"On rocks" = "돌에서";
+"On rotten turnips" = "썩은 무에서";
+"Shaking trees" = "나무를 흔들어서";
+"On white flowers" = "흰색 꽃에서";
+"Flying near trash (boots, tires, cans) or rotten turnips" = "Vole près des ordures (bottes, pneus, canettes) ou prêt des navets pourris";
+"Flying near blue/purple/black flowers" = "Vole près des fleurs bleues/violettes/noires";
+"Deguised under trees" = "Déguisé en feuille d'arbres";
+"On villager" = "주민에게";
+"Underground (dig where noise is loudest)" = "땅 속에서 (소리가 가장 크게 나는 곳을 파세요)";
+"Jolly Redd's Treasure Trawler" = "Sur le Rounarama(Bateau) de Rounard";
+"Mom" = "엄마";
+"Dad" = "아빠";
+"Fishing Tourney" = "Tournoi de pêche";
+"Picking flowers" = "Cueillant des fleurs";
+"Hitting a rock" = "Frapper un rocher";
+"Beach" = "해변";
+
+// Island Description
+"A fairly normal island which you can get on your first tour, with one cliff, native fruit, coconuts, a river and a pond." = "Une île assez normale que vous pouvez obtenir lors de votre première visite, avec une falaise, des fruits indigènes, des noix de coco, une rivière et un étang.";
+"Practically the same as Normal Island 1, but without the pond, and with a slightly bigger cliff." = "Pratiquement la même chose que Île Ordinaire 1, mais sans l'étang et avec une falaise légèrement plus grande.";
+"Somewhat more interesting in layout but it has nothing special about the resources you can get." = "Typologie différente des Île Ordinaire 1 et 2, mais il n'a rien de spécial sur les ressources que vous pouvez obtenir.";
+"The last of the four starter islands. No river, just a pond and the sea." = "La dernière des quatre îles de départ. Pas de rivière, juste un étang et la mer.";
+"Multiple levels, no river. The base level has regular trees, the middle level has your native fruit, and the top level has five rocks with materials." = "Plusieurs plateaux, pas de rivière. Le premier plateau comporte des arbres réguliers, le second plateau a vos fruits de départ et le dernier a cinq rochés avec des matériaux.";
+"Breaking the rock at the far north will let you vault over into the island with five money rocks on it." = "Briser le rocher à l'extrême nord vous permettra de sauter dans l'île avec cinq pierres à clochettes dessus.";
+"Every tree on this island is bamboo and you can get to it at any time of year. The most common island you can get out of the 20, statistically." = "Chaque arbre sur cette île est en bambou et vous pouvez y accéder à tout moment de l'année. L'île la plus commune que vous pouvez sortir des 20, statistiquement.";
+"There are 19 fruit trees on this island and all will be your 'sister fruit'. This will be different from your native fruit - but every time you come here, it will be the same one." = "Il y a 19 arbres fruitiers sur cette île et tous seront votre «fruit sœur». Ce sera différent de votre fruit natif à mais chaque fois que vous viendrez ici, ce sera le même.";
+"This island has a pond surrounded by rare flowers and the only insects that will spawn are those that hang around flowers." = "Cette île a un étang entouré de fleurs rares et les seuls insectes qui y sont, sont ceux qui traînent autour des fleurs.";
+"There are four small triangular cliffs, one in each corner, and the ground level is full of flowers and money rocks." = "Il y a quatre petites falaises triangulaires, une dans chaque coin, et le plateau du sol est plein de fleurs et de rochers d'argent.";
+"Yes, the infamous one. The only insects that spawn here are tarantulas (as long as it is night time in a Tarantula month), and the rocks have crafting materials if you can get to them. The river is thin enough that you can jump over it without a vaulting pole." = "Oui, l'infâme. Les seuls insectes qui apparaissent ici sont les tarentules (tant qu'il fait nuit dans un mois de tarentule), et les roches ont des matériaux d'artisanat si vous pouvez les atteindre. La rivière est suffisamment mince pour que vous puissiez la sauter sans perche de saut.";
+"This island has no river or pond and has tons of hardwood and coconut trees, and the only insects that spawn are those that are associated with trees." = "Cette île n'a ni rivière ni étang et possède des tonnes de feuillus et de cocotiers, et les seuls insectes qui y sont, sont ceux qui sont associés aux arbres.";
+"Big Fish Island. This island has rare hybrid flowers and the only fish available are larger ones, including some of the more rare ones." = "Cette île a des fleurs hybrides rares et les seuls poissons disponibles sont les plus gros, y compris certains des plus rares.";
+"This island is exactly the same as Bamboo Island but the trees are all just regular hardwood trees." = "Cette île est exactement la même que l'île Bamboo mais les arbres ne sont que des feuillus ordinaires.";
+"There is one square cliff at the north east, a few flowers and rocks and a small amount of fruit trees. Only insects associated with water spawn here." = "Il y a une falaise carrée au nord-est, quelques fleurs et rochers et une petite quantité d'arbres fruitiers. Seuls les insectes associés à l'eau y sont.";
+"This rare island only spawns big fish. Otherwise it is quite normal, with less flowers and a lower chance of appearing than the other big fish island." = "Cette île rare n'engendre que de gros poissons. Sinon, c'est tout à fait normal, avec moins de fleurs et moins de chances d'apparaître que l'autre grande île aux poissons.";
+"Everything you can fish here is trash. Only water-related insects spawn." = "낚시대를 던지면 쓰레기만 낚이며 수상 곤충만 잡을 수 있습니다.";
+"A rectangular pond with rectangular cliffs inside, the tallest one being too tall to climb up to. The only fish that spawn here are the largest finned fish." = "Un étang rectangulaire avec des falaises rectangulaires à l'intérieur, le plus haut étant trop haut pour grimper. Les seuls poissons qui y sont, sont les plus gros poissons à nageoires.";
+"Lots of cliffs, waterfalls and river forks. Normal resource spawns." = "Beaucoup de falaises, cascades. Les ressources normales apparaissent.";
+"A very rare island with flowers, scorpions and a rectangular pond. If you climb up onto the cliff and climb down from the back, you can vault over to a tiny island in the middle and get 8 gold nuggets from a single rock." = "Une île très rare avec des fleurs, des scorpions et un étang rectangulaire. Si vous montez sur la falaise et descendez par l'arrière, vous pouvez sauter sur une petite île au milieu et obtenir 8 pépites d'or à partir d'un seul rocher.";
+
+// New settings
+"Using iCloud sync" = "iCloud 동기화 사용";
+"Synchronized with iCloud" = "iCloud와 동기화 되었습니다";
+
+// New card
+"Possible visitors" = "방문했을지도 모르는 방문객";
+"On" = "에서";   // FIXME: Should be [ISLAND NAME] + "에서", not "에서 " + [ISLAND NAME] in Korean (EX. 전기음성도에서)
+" your island" = "나의 섬";
+"All day" = "하루 종일";
+"From 6pm to 5am" = "오후 6시부터 오전 5시까지";
+"From 8pm to 5am" = "오후 8시부터 오전 5시까지";
+"From 5am to 12pm" = "오전 5시부터 오후 12시까지";
+
+
+//Special characters
+"K.K Slider" = "K.K.";
+"Daisy Mae" = "무파니";
+"C.J" = "저스틴";
+"Flick" = "레온";
+"Kicks" = "패트릭";
+"Saharah" = "사하라";
+"Label" = "케이트";
+"Leif" = "늘봉";
+"Redd" = "여욱";
+"Wisp" = "깨빈";
+"Celeste" = "부옥";
+
+// Events
+"Museum Day" = "국제 박물관의 날";
+"Wedding Season" = "6월의 신부";
+"Bug-Off contest" = "곤충 채집 대회";
+"Meteor shower" =  "별똥별";
+
+// Musics
+"Music player" = "뮤직 플레이어";
+"Tracks" = "트랙";
+
+"Vacation" = "바캉스";
+"Stripe Walls" = "Mur Rayé";
+"Office" = "사무실";
+"Tile Walls" = "Murs de tuiles";
+"Tea Room Walls" = "Murs de salon de thé";
+"Zen" = "zen";
+"Deco Wood" = "Déco de bois";
+"Rubber" = "Caoutchouc";
+"Picture" = "Image";
+"Cloth Floors" = "Cloth Floors";
+"Audio" = "오디오";
+"Fruits" = "과일";
+"Antique" = "antique";
+"Honeycomb" = "Nid d'abeille";
+"Japanese Style" = "일본풍";
+"Simple Walls" = "Murs simples";
+"Golden" = "황금";
+"Simple" = "심플";
+"Country" = "컨트리";
+"Sports Floor" = "Plancher Sportif";
+"Bamboo" = "대나무";
+"Art Deco Walls" = "Murs Art Deco";
+"Outdoors" = "pleine air";
+"Rose Rug" = "Tapis Rose";
+"shop" = "magasin";
+"Wood Plank Walls" = "Murs en planches de bois";
+"Party" = "파티";
+"Special Inorganic Floors" = "Planchers inorganiques spéciaux";
+"Frozen" = "얼음";
+"TV" = "TV";
+"Home Appliances" = "가전제품";
+"Shop" = "Magazin";
+"Decadence" = "Décadence";
+"Kitchen Things" = "Choses de cuisine";
+"Herringbone" = "Chevrons";
+"Brown" = "브라운";
+"Expensive" = "coûteux";
+"Fancy" = "팬시";
+"Playground" = "Terrain de jeux";
+"Manor Walls" = "Murs de Manoire";
+"Garage" = "garage";
+"Animal" = "Animal";
+"Wood Rugs" = "Tapis en bois";
+"Heating" = "Chauffage";
+"Outdoor Tools" = "Outils de jardin";
+"Special Insect" = "Insecte spéciale";
+"Bed" = "침대";
+"Heart Walls" = "Murs Coeur";
+"Rattan" = "rotin";
+"Kitchen Rugs" = "키친 러그";
+"Purple" = "Violet";
+"Asia" = "아시아";
+"Sewing Table" = "Machine à coudre";
+"Log" = "통나무";
+"Pattern Rugs" = "Tapis à motif";
+"Flower Pop Walls" = "Murs Fleurs";
+"Nature - Fallen Leaves" = "Feuille morte";
+"Chair" = "체어";
+"Pink" = "분홍색";
+"Facility Decor" = "Décor des installations";
+"Cute" = "화려한";
+"Neta" = "Méteriel";
+"Metro Walls" = "Murs Metro";
+"Puzzle Walls" = "Murs Puzzle";
+"Gray" = "회색";
+"Diner" = "diner";
+"Brick" = "Brique";
+"Den" = "tanière";
+"Formal" = "포멀";
+"Bathtub" = "욕조";
+"Compass" = "Compas";
+"Stucco Walls" = "Murs Stucco";
+"garden" = "가든";
+"Ironwood" = "아이언우드";
+"Painted Wood" = "Bois Peint";
+"Animal Floor" = "동물 바닥";
+"Fan" = "Ventialiteur";
+"Bathroom Things" = "Choses de salle de bain";
+"Sculpture" = "조각상";
+"Clock" = "시계";
+"Bunny Day" = "Jour du lapin";
+"Fireplace" = "Cheminée";
+"Garden" = "가든";
+"Easter" = "이스터";
+"Green" = "그린";
+"Kitchen" = "키친";
+"Black" = "블랙";
+"Diner Walls" = "Murs de Diner";
+"Mush" = "bouillie";
+"Seaside" = "Bord de mer";
+"Screen" = "Écran";
+"office" = "사무실";
+"Shaggy Round Rugs" = "Tapis ronds à poils longs";
+"Vehicle" = "Véhicule";
+"Rose Walls" = "Murs Rose";
+"Beauty" = "Jolie";
+"Tatami" = "Tamami";
+"Camouflage" = "Camouflage";
+"Throwback" = "nostalique";
+"Colorful" = "컬러풀";
+"Flower Walls" = "Murs Fleurs";
+"Dot" = "Poid";
+"Nature - Green" = "Nature - Vert";
+"Hall Walls" = "Murs de Hall";
+"Theatrical" = "théâtrale";
+"Air Conditioning" = "Air conditionnée";
+"Parquet" = "Parquet";
+"Colorful Tools" = "Outils Colorés";
+"Horror" = "호러";    // overlap
+"Game Console" = "게임 콘솔";
+"Tatami Panel" = "Panneau Tatami";
+"Shell" = "coquillage";
+"Simple Rugs" = "심플 러그";
+"Sports" = "스포츠";
+"cherry Blossoms" = "벚꽃";
+"bathroom" = "욕실";
+"Musical Instrument" = "악기";
+"Living Room" = "거실";
+"Wooden block" = "bloque de bois";
+"Wood Walls" = "나무 벽지";
+"Ranch" = "목장";
+"Special Walls" = "Murs Spéciaux";
+"Outdoorsy" = "아웃도어";
+"Facility" = "installations";
+"Plants" = "Plantes";
+"Festive" = "축제";
+"Insect" = "Insect";
+"Iron Walls" = "Murs de Fer";
+"Table" = "테이블";
+"Tile Checker" = "Vérificateur de tuiles";
+"Message Mats" = "Tapis de message";
+"Concert" = "concert";
+"Motherly" = "엄마의 편지";
+"Iron Parquet" = "Parquet de Fer";
+"Chocolate" = "Chocolat";
+"NA" = "NA";
+"Fairy tale" = "메르헨";
+"Special Warm Nature Walls" = "Murs spéciale chaud";
+"Elegant" = "럭셔리";
+"Dining" = "Manger";
+"Wood Tile Walls" = "Murs en bois";
+"Tile Floors" = "타일 바닥";
+"School" = "학교";
+"Cardboard" = "carton";
+"Tin Walls" = "Murs en étain";
+"Desk" = "Bureau";
+"Arched Brick" = "Brique arquée";
+"Blue" = "블루";
+"Special Inorganic Walls" = "Murs inorganiques spéciaux";
+"Puzzle Mat" = "Tapis Puzzle";
+"Toy Walls" = "Murs Jouet";
+"Music" = "music";
+"Red" = "레드";
+"Active" = "Actif";
+"Cloth Walls" = "Murs en tissu";
+"Panel Mold Walls" = "Murs Panneaux";
+"Special Cool Nature Walls" = "Murs spéciaux Nature Cool";
+"Museum" = "박물관";
+"Panel" = "Panneau";
+"Slender Rugs" = "Tapis élancés";
+"Chest" = "Coffre";
+"Lamp" = "램프";
+"Pegboard Walls" = "Murs de panneau perforé";
+"Seasonal Decor" = "Décor saisonnier";
+"Fruit Rugs" = "Tapis Fruit";
+"Wooden" = "목재";
+"Folk art" = "art folk";
+"Zen-style" = "동양풍";
+"Crown Walls" = "Murs couronne";
+"Sofa" = "소파";
+"Colorful Wood" = "Bois Coloré";
+"Kitchen Floors" = "Pancher de Cuisine";
+"Machine Floor" = "Plancher de Machine";
+"Wedding" = "웨딩";
+"Luxury" = "Lue";
+"Sporty" = "스포티";
+"Light blue" = "스카이블루";
+"Freezing Cold" = "froid glacial";
+"Two-Tone Tile Walls" = "투톤 타일 바닥";
+"Ocean" = "바다";
+"Dresser" = "수납장";
+"Nature - White" = "Nature - Blanc";
+"Fitness" = "fitness";
+"Library Walls" = "Murs de Librairie";
+"Sidewalk" = "Troittoir";
+"Cool" = "쿨";
+"Hospital" = "Hopital";
+"Morocco" = "Maroc";
+"Everyday" = "데일리";
+"Study" = "Étude";
+"Work Bench" = "DIY 테이블";
+"House Door Decor" = "Décor de porte";
+"Comfy" = "휴식/릴렉스";
+"Arch" = "아치";
+"Space" = "Éspace";
+"Stone Floors" = "Pancher de pierre";
+"Nature - Brown" = "Nature - Marron";
+"Simple Parquet" = "Parquet simple";
+"Yellow" = "옐로우";
+"Stars" = "étoiles";
+"Cute Walls" = "Murs Mignon";
+"Icon Rugs" = "아이언 러그";
+"Stone Walls" = "Murs de Pierre";
+"Fruit Walls" = "과일 벽지";
+"Argyle" = "Argyle";
+"Dollhouse Walls" = "Dollhouse Walls";
+"Shelf" = "쉘프";
+"Wood Floors" = "나무 바닥";
+"Toilet" = "화장실";
+"Iron" = "아이언";
+"Special Fish" = "Poisson Spécial";
+"Beige" = "베이지";
+"Nature Walls" = "Murs nature";
+"Simple Carpet" = "심플 카펫";
+"Neta Walls" = "Murs Neta";
+"work" = "일/비즈니스";
+"Special Nature Floors" = "Plancher Nature Spéciale";
+"White" = "화이트";
+"Outdoors Decor" = "Décor d'éxtérieur";
+"Park Rugs" = "Tapis de parc";
+"Grassland" = "Prairie";
+"Heart Rugs" = "Tapis Coeur";
+"Slender Pattern Rugs" = "Tapis Alongé";
+"Supplies" = "Provisions";
+"kitchen" = "키친";
+"Goth" = "호러";
+"Toy" = "Jouet";
+"Folk Craft Decor" = "Décor Folk";
+"Gorgeous" = "Magnifique";
+
+// Chore
+"Title" = "제목";
+"Chore title" = "Nom de la tâche";
+"Short description about the chore" = "Une petite description de la tâche";
+"Add Chore" = "할 일 추가";
+"Chores" = "집안일";
+"Have a friend to visit? A gift to a villager? Track your chores and to-dos here." = "Vous avez un ami à visiter ? Un cadeau pour un villageois ? Gardez trace de vos tâches ici.";
+"Reset" = "재설정";
+"Manage and keep track of your chores and to-dos." = "집안일과 할 일을 목록으로 만들어서 계획해보세요.";
+
+// Design
+"Creators and Designs" = "Créateurs et designs";
+"Add Creator/Design Item" = "Ajouter un créateur ou un design";
+
+// Added 2020-06-03
+// Custom Daily Tasks
+"Add a custom task" = "사용자 지정 할 일 추가";
+"Edit task" = "할 일 수정";
+"Task name" = "이름";
+"Name of the task" = "할 일 이름";
+"Has progress" = "진행과정 유무";
+"Max amount" = "최대값";
+// Default Custom Tasks
+"Hit rocks" = "돌 캐기";
+"Find fossils" = "화석 발굴하기";
+"Talk to villager" = "주민에게 말 걸기";
+"Find furniture" = "가구 발견하기";
+"Find buried bell" = "땅에 묻힌 벨 파내기";
+"Use ATM" = "ATM 사용하기";
+"Find bottle message" = "메세지 보틀 찾기";
+"Obtain DIY from villager" = "주민으로부터 DIY 레시피 얻기";
+
+//Villagers filte
+"All" = "Tous";
+"Liked" = "좋아요";
+"Residents" = "주민";
+
+// Added 2020-06-06
+"Villager visits" = "주민의 집 방문하기";
+"Who have you talked to today? Find the villagers you have visited and tap the home icon on the villager’s page to keep track." = "Avez-vous parlé à vos villageois aujourd'hui ? Ajoutez vos villageois depuis leurs pages en touchant l'icône maison.";
+"Long press on a villager to see more info about them" = "주민에 대해 자세히 보려면 길게 누르세요";
+
+// Added 2020-06-08
+"Medium w/Fin" = "Moyen avec un aileron";
+"Large w/Fin" = "Grand avec un aileron";
+"XX-Large" = "Très grand";
+"Long" = "Long";
+"Sea (rainy days)" = "Mer (jour de pluie)";
+"Flying near water" = "물 근처에서 비행";
+
+// Doco code
+"Please fill all the fields" = "Merci de remplir tous les champs";
+"Dodo code" = "Dodo code";
+"Dodo codes" = "Dodo codes";
+"This Dodo code is invalid" = "Ce Dodo code est invalide";
+"Island description" = "섬에 대한 설명";
+"Native fruit" = "특산물";
+"Add your Dodo code" = "Ajoutez votre Dodo code";
+"Hemisphere: %@" = "반구: %@";
+"Delete" = "삭제";
+"Report" = "신고";
+"Latest Dodo code" = "Dernier Dodo code";
+
+"dodocode.footer" = "Une fois votre Dodo code ajouté il apparaitra dans la liste.
+Merci de vérifier que vos portes sont ouvertes avant d'ajouter votre code.
+Vous pourrez supprimer et ferme vos portes à tout moment.
+Merci d'être respecteux. Tout code signalé sera supprimé";
+"iCloud not enabled" = "iCloud가 활성화되지 않았습니다";
+"You need an iCloud account to add your Dodo code" = "Vous avez besoin d'iCloud pour ajouter votre Dodo code";
+"Do you really want to delete your Dodo code?" = "Voulez-vous vraiment supprimer vote Dodo code ?";
+"Do you really want to report this Dodo code?" = "Voulez-vous vraiment signaler ce Dodo Code ?";
+"Visitor" = "Visiteur";
+"Edit your Dodo code" = "Éditez votre Dodo code";
+"Get notified of new Dodo codes" = "Être notifié quand un code est posté";
+"To help us support the application and get notifications when a new Dodo code is posted, you can try out AC Helper+" = "Pour nous aider à supporter l'application et recevoir des notifications quand un nouveau Dodo codes est posté, vous pouvez souscrire à AC Helper+";
+"ACDodoCode.notification.title" = "Un nouveau Dodo code est disponible";
+"ACDodoCode.notification.subtitle" = "Quelqu'un a ouvert ses portes et a posté un Dodo code dans l'application!";
+
+// dodo code comments
+"Comments" = "댓글";
+"Be the first to leave a comment!" = "첫 번째로 댓글을 달아봐요!";
+"%@ from %@" = "%@ de %@";
+"In order to add a comment you must add an island name and a username. Tap here to add them in settings" = "Pour ajouter un nouveau commentaire vous devez ajouter votre nom d'île et un nom d'utilisateur dans les réglages. Tapez ici pour les ajouter";
+"Add your comment" = "Ajouter votre commentaire";
+"Send" = "Envoyer";
+"In game name / username" = "인게임 이름 / 사용자 이름";
+"You need to have an iCloud account in your device settings in order to add comments" = "Vous devez avoir un compte iCloud dans les réglages de votre appareil pour ajouter des commentaires";
+"ACComment.notification.title" = "Nouveau commentaire sur votre Dodo code";
+"ACComment.notification.subtitle" = "Un nouveau commentaire a été posté sur votre Dodo code!";
+
+"Contact / follow us on Instagram" = "Instagram에서 팔로우하기 / 연락하기";
+"Meet the community of ACNH Connect" = "Rencontrez la communauté de ACNH Connect";
+
+"ACNew.notification.title" = "Une news a été postée";
+"ACNew.notification.subtitle" = "Un nouvelle article de news sur le jeu ou l'app est disponible!";
+
+"Get notified when a news is posted" = "Être notifié quand une news est publiée";
+
+"Underwater" = "하의";
+"Movement speed:" = "Vitesse de déplacement:";
+"Very slow" = "Très lent";
+"Slow" = "Lent";
+"Very fast" = "Très rapide";
+"Fast" = "Rapide";
+"Stationary" = "Stationnaire";
+
+// Added 2020-06-07
+"Fishing tourney" = "Tournoi de pêche";
+"You turnips predictions will be displayed here one you fill in somes prices." = "Vos prévisions de prix de vente de navets seront affichées ici, remplissez les prix pour l'afficher.";
+"Able Sisters" = "에이블 시스터즈";
+"Available from Able Sisters shop only" = "Disponible uniquement chez les Soeurs Doigts de Fées";
+"Available from either Mabel's tempory shop or Able Sisters shop" = "Disponible dans la boutique temporaire de Layette (Visiteur sur la place) ou chez des Soeurs Doigts de Fées";
+"Available in Nook's Cranny (either upgrade tier) in the unique furniture slot" = "Disponible dans la Boutique Nook (boutique niveau 2), objet en un exemplaire";
+"Available in Nook's Cranny (upgraded only), in the third unique furniture slot" = "Disponible dans la Boutique Nook (boutique seulement), objet en un exemplaire (3ème espace)";
+"Available in all tiers of shops, including Timmy & Tommy before the shop is opened" = "Disponible dans les deux boutiques (niveau 1 et 2), y compris via Méli et Mélo avant l'ouverture de la boutique";
+"Available in the re-buyable slot in Nook's Cranny" = "Achetable en plusieurs exemplaires dans la Boutique Nook";
+"Only available close the new year holiday" = "Disponible uniquement durant le nouvel ans";
+"Nook's Cranny" = "너굴 상점";
+"Crafting" = "DIY";
+"Sea Creatures" = "해산물";
+"River (clifftop)" = "강가 (falaise)";
+"River (mouth)" = "강가에서 (Embouchure)";
+"On villagers" = "주민에게 입수";
+"On rivers/ponds" = "Sur les rivières/ponts";
+"Assessing fossils" = "Après expertisation des fossiles";
+"Cyrus" = "Serge";
+"Only available during Wedding Season" = "Disponible uniquement durant l'évent : Saisons des Mariages";
+"Bug-Off" = "곤충 채집 대회";
+"K.K. concert" = "K.K. 콘서트";
+"K.K. concert, Nook Shopping Catalog" = "Concert de Kéké, Nook Shopping (Sélection du jour)";
+"Shaking a cedar tree (Festive Season)" = "Secouant des cèdres (Saison des Fêtes)";
+"Festive Season" = "축제 시즌에 획득";
+"Shaking a hardwood or cedar tree" = "Secouant un feuillu/cèdre";
+"Don't return lost item" = "분실물을 돌려주지 않음";
+"Wrapping a present" = "선물을 포장하여 획득";
+"On ground (Mushroom Season)" = "땅 위에서 획득 (버섯 시즌)";
+"Mushroom Season" = "버섯 시즌에 획득";
+"Recycle box" = "Boîte de recyclage";
+
+
+// dream code
+"ACDreamCode.notification.title" = "Un nouveau Dodo Onirique est disponible";
+"ACDreamCode.notification.subtitle" = "Quelqu'un a posté un nouveau code onirique dans l'application! ";
+"dreamcode.footer" = "Une fois votre code onirique ajouté il apparaitra dans la liste.
+Vous pourrez le supprimer à tout moment.
+Merci d'être respecteux. Tout code signalé sera supprimé";
+
+// Summer Patch II - added 2020-08-02
+"Dream code" = "Code onirique";
+"Dream codes" = "Codes onirique";
+"This Dream code is invalid" = "Ce code onirique est invalide";
+"Edit your Dream code" = "Editer votre code";
+"Add your Dream code" = "Ajoutez votre code";
+"Get notified of new dream codes" = "Être notifié quand un code est posté";
+"You need an iCloud account to add your dream code" = "Vous devez avoir un compte iCloud pour ajouter un code Onirique";
+"Do you really want to report this dream code?" = "Vous voulez vraiment reporter ce code ?";
+"Do you really want to delete your dream code?" = "Vous voulez vraiment supprimer ce code ?";
+"Sort" = "정렬";
+"creationDate" = "Date";
+"upvotes" = "좋아요";
+"Latest Dream Code" = "Dernier Code Onirique";
