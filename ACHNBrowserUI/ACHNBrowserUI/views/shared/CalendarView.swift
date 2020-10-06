@@ -10,9 +10,9 @@ import SwiftUI
 import Backend
 
 struct CalendarView: View {
+    @Environment(\.currentDate) private var currentDate
     let activeMonths: [Int]
-    
-    private let currentMonth = Int(Item.monthFormatter.string(from: Date()))!
+
     private let months = [[Calendar.current.shortMonthSymbols[0],
                            Calendar.current.shortMonthSymbols[1],
                            Calendar.current.shortMonthSymbols[2],
@@ -32,6 +32,7 @@ struct CalendarView: View {
 
     private func makeMonthPill(month: String, selected: Bool) -> some View {
         let monthsArray = months.flatMap({ $0 })
+        let currentMonth = Int(Item.monthFormatter.string(from: currentDate))!
         let isCurrentMonth = monthsArray.firstIndex(of: month) == currentMonth - 1
         let border =  RoundedRectangle(cornerRadius: 10)
             .stroke(lineWidth: isCurrentMonth ? 5 : 0)

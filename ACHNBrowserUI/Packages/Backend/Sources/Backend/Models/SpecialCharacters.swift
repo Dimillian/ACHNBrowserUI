@@ -11,9 +11,9 @@ import SwiftUI
 public enum SpecialCharacters: String, CaseIterable {
     case kk, daisy, cj, flick, kicks, saharah, gulliver, label, leif, redd, wisp, celeste
     
-    public static func now() -> [SpecialCharacters] {
-        let day = Calendar.current.component(.weekday, from: Date())
-        let hour = Calendar.current.component(.hour, from: Date())
+    public static func forDate(_ currentDate: Date) -> [SpecialCharacters] {
+        let day = Calendar.current.component(.weekday, from: currentDate)
+        let hour = Calendar.current.component(.hour, from: currentDate)
         if day == 1 {
             return [.daisy]
         } else if day == 7 {

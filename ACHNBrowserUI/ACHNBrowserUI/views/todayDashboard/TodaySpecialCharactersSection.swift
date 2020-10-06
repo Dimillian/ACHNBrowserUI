@@ -11,11 +11,12 @@ import SwiftUIKit
 import Backend
 
 struct TodaySpecialCharactersSection: View {
+    @Environment(\.currentDate) private var currentDate
     @State private var selectedCharacter: SpecialCharacters?
     @Namespace private var namespace
     
     private var currentIcon: String {
-        let hour = Calendar.current.component(.hour, from: Date())
+        let hour = Calendar.current.component(.hour, from: currentDate)
         if hour < 9 {
             return "sunrise.fill"
         } else if hour < 17 {
@@ -54,7 +55,7 @@ struct TodaySpecialCharactersSection: View {
                     .aspectRatio(contentMode: .fit)
                     .frame(width: 25)
                     .foregroundColor(.acHeaderBackground)
-                Text(Date(), style: .time)
+                Text(currentDate, style: .time)
                     .style(appStyle: .rowDetail)
             }
             .padding(16)
@@ -96,7 +97,7 @@ struct TodaySpecialCharactersSection: View {
         } else {
             ScrollView(.horizontal, showsIndicators: false) {
                 HStack(spacing: 16) {
-                    ForEach(SpecialCharacters.now(), id: \.self) { character in
+                    ForEach(SpecialCharacters.forDate(currentDate), id: \.self) { character in
                         Image(character.rawValue)
                             .resizable()
                             .aspectRatio(contentMode: .fit)

@@ -10,6 +10,7 @@ import SwiftUI
 import Backend
 
 struct TodayCurrentlyAvailableSection: View {
+    @Environment(\.currentDate) private var currentDate
     @StateObject private var viewModel = ActiveCrittersViewModel()
     @State private var isNavigationLinkActive = false
     @State private var openingTab: ActiveCrittersViewModel.CritterType = .fish
@@ -102,7 +103,7 @@ struct TodayCurrentlyAvailableSection: View {
     }
     
     private func dayNumber() -> Int {
-        return Calendar.current.dateComponents([.day], from: Date()).day ?? 0
+        return Calendar.current.dateComponents([.day], from: currentDate).day ?? 0
     }
 }
 

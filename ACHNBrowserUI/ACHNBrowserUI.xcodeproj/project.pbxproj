@@ -18,6 +18,7 @@
 		3DFC04E424D6DAA3002A6CED /* DreamCodeListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DFC04E324D6DAA3002A6CED /* DreamCodeListView.swift */; };
 		3DFC04E624D6DAAE002A6CED /* DreamCodeRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DFC04E524D6DAAE002A6CED /* DreamCodeRow.swift */; };
 		3DFC04E824D6DABC002A6CED /* DreamCodeDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DFC04E724D6DABC002A6CED /* DreamCodeDetailView.swift */; };
+		4C062B12252BB5BE004DCFA3 /* CurrentDateEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C062B11252BB5BE004DCFA3 /* CurrentDateEnvironment.swift */; };
 		4C30BFC3249627FD003E96A2 /* Sequence+Unique.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C30BFC2249627FC003E96A2 /* Sequence+Unique.swift */; };
 		4C6E95FD24842F690074433B /* Collection+SafeDirectAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C6E95FC24842F690074433B /* Collection+SafeDirectAccess.swift */; };
 		4C7F555D248B91C80089F26C /* TodayVillagerVisitsSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7F555C248B91C80089F26C /* TodayVillagerVisitsSection.swift */; };
@@ -237,6 +238,7 @@
 		3DFC04E324D6DAA3002A6CED /* DreamCodeListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DreamCodeListView.swift; sourceTree = "<group>"; };
 		3DFC04E524D6DAAE002A6CED /* DreamCodeRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DreamCodeRow.swift; sourceTree = "<group>"; };
 		3DFC04E724D6DABC002A6CED /* DreamCodeDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DreamCodeDetailView.swift; sourceTree = "<group>"; };
+		4C062B11252BB5BE004DCFA3 /* CurrentDateEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentDateEnvironment.swift; sourceTree = "<group>"; };
 		4C2D676A245DA41E005831C4 /* TurnipsChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TurnipsChartView.swift; sourceTree = "<group>"; };
 		4C2D676D245F0666005831C4 /* TurnipsChartBottomLegendView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TurnipsChartBottomLegendView.swift; sourceTree = "<group>"; };
 		4C2D676F245F0698005831C4 /* TurnipsChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TurnipsChart.swift; sourceTree = "<group>"; };
@@ -564,6 +566,7 @@
 			children = (
 				696B454B247A948A00E16252 /* MusicPlayerManager.swift */,
 				693E728D245D71DD00CD26F4 /* UIState.swift */,
+				4C062B11252BB5BE004DCFA3 /* CurrentDateEnvironment.swift */,
 			);
 			path = env;
 			sourceTree = "<group>";
@@ -1253,6 +1256,7 @@
 				4C6E95FD24842F690074433B /* Collection+SafeDirectAccess.swift in Sources */,
 				AE2D7EFC247E9726006C1F1A /* DesignListView.swift in Sources */,
 				69157BC12471A5A1005B9002 /* ItemsViewModel.swift in Sources */,
+				4C062B12252BB5BE004DCFA3 /* CurrentDateEnvironment.swift in Sources */,
 				69157BC22471A5A1005B9002 /* TodayEventsSection.swift in Sources */,
 				69157BC32471A5A1005B9002 /* FeedbackGenerator.swift in Sources */,
 				3DFC04E824D6DABC002A6CED /* DreamCodeDetailView.swift in Sources */,

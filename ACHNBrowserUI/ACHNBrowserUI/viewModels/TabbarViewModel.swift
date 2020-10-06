@@ -16,6 +16,8 @@ class TabbarViewModel: ObservableObject {
     private var musicPlayerPlayingCancellable: AnyCancellable?
     
     @Published var showPlayerView = false
+    @Published private(set) var currentDate = Date()
+    @Published private(set) var cancellables: Set<AnyCancellable> = []
     
     init(musicPlayerManager: MusicPlayerManager) {
         self.musicPlayerManager = musicPlayerManager
@@ -26,5 +28,12 @@ class TabbarViewModel: ObservableObject {
                     self?.showPlayerView = true
                 }
         }
+    }
+
+    func updateCurrentDateOnTabChange(selectedTabPublisher: Published<UIState.Tab>.Publisher) {
+        selectedTabPublisher
+            .removeDuplicates()
+            .sink { [weak self] _ in self?.currentDate = Date() }
+            .store(in: &cancellables)
     }
 }

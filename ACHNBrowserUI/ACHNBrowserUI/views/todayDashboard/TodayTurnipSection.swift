@@ -10,10 +10,11 @@ import SwiftUI
 import Backend
 
 struct TodayTurnipSection: View {
+    @Environment(\.currentDate) private var currentDate
     @EnvironmentObject private var turnipService: TurnipPredictionsService
     
     var isSunday: Bool {
-        Calendar.current.component(.weekday, from: Date()) == 1
+        Calendar.current.component(.weekday, from: currentDate) == 1
     }
     
     var body: some View {

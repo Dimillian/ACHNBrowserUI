@@ -13,6 +13,7 @@ struct TurnipsFormView: View {
     // MARK: - Properties
     @EnvironmentObject private var subscriptionManager: SubscriptionManager
     @Environment(\.presentationMode) private var presentationMode
+    @Environment(\.currentDate) private var currentDate
     
     @State private var fields = TurnipFields.decode()
     @State private var enableNotifications = SubscriptionManager.shared.subscriptionStatus == .subscribed

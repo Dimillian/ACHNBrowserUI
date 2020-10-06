@@ -8,6 +8,7 @@
 
 import SwiftUI
 import Backend
+import Combine
 
 struct TabbarView: View {
     @EnvironmentObject private var uiState: UIState
@@ -51,7 +52,10 @@ struct TabbarView: View {
                         Text("Collection")
                 }
                 .tag(UIState.Tab.collection)
-                
+            }
+            .environment(\.currentDate, viewModel.currentDate)
+            .onAppear {
+                viewModel.updateCurrentDateOnTabChange(selectedTabPublisher: uiState.$selectedTab)
             }
             
             if viewModel.showPlayerView {

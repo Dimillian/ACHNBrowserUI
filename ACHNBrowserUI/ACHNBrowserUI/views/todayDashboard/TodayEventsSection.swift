@@ -11,10 +11,7 @@ import ACNHEvents
 import Backend
 
 struct TodayEventsSection: View {
-
-    let todaysEvents = Date().events(for: AppUserDefaults.shared.hemisphere == .north ? .north : .south)
-    let nextEvent = Event.nextEvent()
-    
+    @Environment(\.currentDate) private var currentDate
 
     var body: some View {
         VStack(alignment: .leading) {
@@ -39,6 +36,12 @@ struct TodayEventsSection: View {
             }
         }
     }
+
+    private var todaysEvents: [Event] {
+        currentDate.events(for: AppUserDefaults.shared.hemisphere == .north ? .north : .south)
+    }
+
+    private var nextEvent: (Date, Event?) { Event.nextEvent(today: currentDate) }
 
     private func subsectionHeader(_ text: String) -> some View {
         Text(LocalizedStringKey(text))

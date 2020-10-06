@@ -119,7 +119,8 @@ struct TurnipsChartView_Previews: PreviewProvider {
         minBuyPrice: 83,
         averagePrices: averagePrices,
         minMax: minMax,
-        averageProfits: averageProfits
+        averageProfits: averageProfits,
+        currentDate: Date()
     )
 
     static let averagePrices = [89, 85, 88, 104, 110, 111, 111, 111, 106, 98, 82, 77]
