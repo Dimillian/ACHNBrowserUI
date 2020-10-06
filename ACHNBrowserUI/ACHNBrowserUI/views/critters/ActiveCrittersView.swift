@@ -10,6 +10,7 @@ import SwiftUI
 import Backend
 
 struct ActiveCritterSections: View {
+    @Environment(\.currentDate) private var currentDate
     @ObservedObject var viewModel: ActiveCrittersViewModel
     @Binding var selectedTab: ActiveCrittersViewModel.CritterType
     
@@ -52,6 +53,9 @@ struct ActiveCritterSections: View {
                 ForEach(viewModel.crittersInfo[selectedTab]?.caught ?? [],
                         content: sectionContent)
             }
+        }
+        .onAppear {
+            viewModel.updateCritters(for: currentDate)
         }
     }
 }

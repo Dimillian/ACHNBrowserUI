@@ -52,7 +52,6 @@ public struct Item: Codable, Equatable, Identifiable, Hashable {
     }
     
     public let name: String
-    public var currentDate: Date
     public let image: String?
     public let filename: String?
     public let house: String?
@@ -164,12 +163,12 @@ public extension Item {
         return nil
     }
     
-    func isActiveThisMonth() -> Bool {
+    func isActiveThisMonth(currentDate: Date) -> Bool {
         let currentMonth = Int(Item.monthFormatter.string(from: currentDate))!
         return activeMonthsCalendar?.contains(currentMonth - 1) == true
     }
 
-    func isActiveAtThisHour() -> Bool {
+    func isActiveAtThisHour(currentDate: Date) -> Bool {
         guard let hours = activeHours() else { return false }
 
         if hours.start == 0 && hours.end == 0 { return true } // All day
@@ -183,12 +182,12 @@ public extension Item {
         }
     }
     
-    func isNewThisMonth() -> Bool {
+    func isNewThisMonth(currentDate: Date) -> Bool {
         let currentMonth = Int(Item.monthFormatter.string(from: currentDate))!
         return activeMonthsCalendar?.contains(currentMonth - 2) == false
     }
     
-    func leavingThisMonth() -> Bool {
+    func leavingThisMonth(currentDate: Date) -> Bool {
         let currentMonth = Int(Item.monthFormatter.string(from: currentDate))!
         return activeMonthsCalendar?.contains(currentMonth) == false
     }
@@ -261,7 +260,6 @@ public extension Sequence {
 }
 
 public let static_item = Item(name: "Acoustic guitar",
-                       currentDate: Date(),
                        image: nil,
                        filename: "https://acnhcdn.com/latest/FtrIcon/FtrAcorsticguitar_Remake_0_0.png",
                        house: nil,

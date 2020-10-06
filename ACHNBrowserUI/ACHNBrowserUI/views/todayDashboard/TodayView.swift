@@ -88,8 +88,7 @@ struct TodayView: View {
     // MARK: - Others
     private var dateString: String {
         let f = DateFormatter()
-//        f.setLocalizedDateFormatFromTemplate("EEEE, MMM d")
-        f.setLocalizedDateFormatFromTemplate("HH:mm:ssZZZZZ")
+        f.setLocalizedDateFormatFromTemplate("EEEE, MMM d")
         return f.string(from: currentDate)
     }
 }
