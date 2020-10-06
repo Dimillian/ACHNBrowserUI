@@ -44,18 +44,6 @@ struct ItemsView: View {
         }
     }
     
-    var currentItems: [Item] {
-        get {
-            if !viewModel.searchText.isEmpty {
-                return viewModel.searchItems
-            } else if viewModel.sort != nil {
-                return viewModel.sortedItems
-            } else {
-                return viewModel.items
-            }
-        }
-    }
-    
     private var sortButton: some View {
         Menu {
             ForEach(ItemsViewModel.Sort.allCases(for: viewModel.category), id: \.self) { sort in
@@ -125,7 +113,7 @@ struct ItemsView: View {
         if contentMode == .grid {
             ScrollView {
                 LazyVGrid(columns: [GridItem(.adaptive(minimum: 120), spacing: 16)], spacing: 16) {
-                    ForEach(currentItems) { item in
+                    ForEach(viewModel.items) { item in
                         ItemGridItemView(item: item)
                     }
                 }
@@ -135,7 +123,7 @@ struct ItemsView: View {
         } else {
             List {
                 Section(header: SearchField(searchText: $viewModel.searchText)) {
-                    ForEach(currentItems) { item in
+                    ForEach(viewModel.items) { item in
                         NavigationLink(destination: LazyView(ItemDetailView(item: item))) {
                             ItemRowView(displayMode: contentMode == .listLarge ? .large : .compact,
                                         item: item)
