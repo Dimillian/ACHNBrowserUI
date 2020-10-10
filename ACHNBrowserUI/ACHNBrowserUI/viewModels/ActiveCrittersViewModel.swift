@@ -49,6 +49,7 @@ class ActiveCrittersViewModel: ObservableObject {
     
     private let items: Items
     private let collection: UserCollection
+    private let filterOutInCollection: Bool
     
     private var cancellable: AnyCancellable?
     
@@ -56,33 +57,36 @@ class ActiveCrittersViewModel: ObservableObject {
         self.items = items
         self.collection = collection
         self.isLoading = true
-        
+        self.filterOutInCollection = filterOutInCollection
+    }
+
+    func updateCritters(for currentDate: Date) {
         cancellable = Publishers.CombineLatest(items.$categories, collection.$critters)
             .receive(on: DispatchQueue.main)
             .sink { [weak self] (items, critters) in
                 guard let self = self else { return }
                 for type in CritterType.allCases {
-                    var active = items[type.category()]?.filterActiveThisMonth() ?? []
-                    var new = active.filter{ $0.isNewThisMonth() }
-                    var leaving = active.filter{ $0.leavingThisMonth() }
+                    var active = items[type.category()]?.filterActiveThisMonth(currentDate: currentDate) ?? []
+                    var new = active.filter{ $0.isNewThisMonth(currentDate: currentDate) }
+                    var leaving = active.filter{ $0.leavingThisMonth(currentDate: currentDate) }
                     let caught = active.filter{ critters.contains($0) }
-                    let toCatchNow = active.filter{ !caught.contains($0) && $0.isActiveAtThisHour() }
+                    let toCatchNow = active.filter{ !caught.contains($0) && $0.isActiveAtThisHour(currentDate: currentDate) }
                     let toCatchLater = active.filter{ !caught.contains($0) && !toCatchNow.contains($0) }
-                    
-                    if filterOutInCollection {
+
+                    if self.filterOutInCollection {
                         new = new.filter{ !critters.contains($0) }
                         leaving = leaving.filter{ !critters.contains($0) }
                         active = active.filter{ !critters.contains($0) }
                     }
-                    
+
                     self.crittersInfo[type] = CritterInfo(active: active,
-                                                           new: new,
-                                                           leaving: leaving,
-                                                           caught: caught,
-                                                           toCatchNow: toCatchNow,
-                                                           toCatchLater: toCatchLater)
+                                                          new: new,
+                                                          leaving: leaving,
+                                                          caught: caught,
+                                                          toCatchNow: toCatchNow,
+                                                          toCatchLater: toCatchLater)
                     self.isLoading = false
                 }
-        }
+            }
     }
 }

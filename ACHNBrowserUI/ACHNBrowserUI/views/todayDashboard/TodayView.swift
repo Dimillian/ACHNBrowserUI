@@ -15,6 +15,7 @@ import UI
 struct TodayView: View {
     
     // MARK: - Vars
+    @Environment(\.currentDate) private var currentDate
     @StateObject private var viewModel = DashboardViewModel()
     @State private var selectedSheet: Sheet.SheetType?
             
@@ -88,7 +89,7 @@ struct TodayView: View {
     private var dateString: String {
         let f = DateFormatter()
         f.setLocalizedDateFormatFromTemplate("EEEE, MMM d")
-        return f.string(from: Date())
+        return f.string(from: currentDate)
     }
 }
 

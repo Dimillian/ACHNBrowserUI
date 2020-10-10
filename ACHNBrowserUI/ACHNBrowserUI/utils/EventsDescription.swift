@@ -38,9 +38,8 @@ extension Event {
         }
     }
     
-    static func nextEvent() -> (Date, Event?) {
+    static func nextEvent(today: Date) -> (Date, Event?) {
         let aDay: TimeInterval = 24*60*60
-        let today = Date()
         let endDate = today.addingTimeInterval(aDay * 365)
         var nextDate = today.addingTimeInterval(aDay)
         var event: Event? = nil

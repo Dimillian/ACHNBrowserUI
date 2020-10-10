@@ -18,6 +18,7 @@ public struct TurnipPredictions {
     public let averagePrices: [Int]?
     public let minMax: [[Int]]?
     public let averageProfits: [Int]?
+    public var currentDate: Date
     
     public var todayAverages: [Int]? {
         guard let averagePrices = averagePrices else {
@@ -35,12 +36,14 @@ public struct TurnipPredictions {
         minBuyPrice: Int?,
         averagePrices: [Int]?,
         minMax: [[Int]]?,
-        averageProfits: [Int]?
+        averageProfits: [Int]?,
+        currentDate: Date
     ) {
         self.minBuyPrice = minBuyPrice
         self.averagePrices = averagePrices
         self.minMax = minMax
         self.averageProfits = averageProfits
+        self.currentDate = currentDate
     }
 }
 

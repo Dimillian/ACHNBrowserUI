@@ -10,8 +10,8 @@ import Foundation
 
 
 public extension BidirectionalCollection where Element == Item {
-    func filterActiveThisMonth() -> [Item] {
-        self.filter({ $0.isActiveThisMonth() })
+    func filterActiveThisMonth(currentDate: Date) -> [Item] {
+        self.filter({ $0.isActiveThisMonth(currentDate: currentDate) })
     }
 }
 

@@ -30,6 +30,7 @@ public class TurnipPredictionsService: ObservableObject {
         base += "&first=false&pattern=-1&achelper"
         return URL(string: base)
     }
+    public var currentDate = Date()
     
     private var turnipsCancellable: AnyCancellable?
     private lazy var calculatorContext: JSContext? = {
@@ -102,6 +103,7 @@ public class TurnipPredictionsService: ObservableObject {
         return TurnipPredictions(minBuyPrice: results?.toDictionary()["minWeekValue"] as? Int,
                                  averagePrices: averagePrices,
                                  minMax: minMax,
-                                 averageProfits: averageProfits)
+                                 averageProfits: averageProfits,
+                                 currentDate: currentDate)
     }
 }

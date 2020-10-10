@@ -163,17 +163,17 @@ public extension Item {
         return nil
     }
     
-    func isActiveThisMonth() -> Bool {
-        let currentMonth = Int(Item.monthFormatter.string(from: Date()))!
+    func isActiveThisMonth(currentDate: Date) -> Bool {
+        let currentMonth = Int(Item.monthFormatter.string(from: currentDate))!
         return activeMonthsCalendar?.contains(currentMonth - 1) == true
     }
 
-    func isActiveAtThisHour() -> Bool {
+    func isActiveAtThisHour(currentDate: Date) -> Bool {
         guard let hours = activeHours() else { return false }
 
         if hours.start == 0 && hours.end == 0 { return true } // All day
 
-        let thisHour = Calendar.current.dateComponents([.hour], from: Date()).hour ?? 0
+        let thisHour = Calendar.current.dateComponents([.hour], from: currentDate).hour ?? 0
 
         if hours.start < hours.end { // Same day
             return thisHour >= hours.start && thisHour < hours.end
@@ -182,13 +182,13 @@ public extension Item {
         }
     }
     
-    func isNewThisMonth() -> Bool {
-        let currentMonth = Int(Item.monthFormatter.string(from: Date()))!
+    func isNewThisMonth(currentDate: Date) -> Bool {
+        let currentMonth = Int(Item.monthFormatter.string(from: currentDate))!
         return activeMonthsCalendar?.contains(currentMonth - 2) == false
     }
     
-    func leavingThisMonth() -> Bool {
-        let currentMonth = Int(Item.monthFormatter.string(from: Date()))!
+    func leavingThisMonth(currentDate: Date) -> Bool {
+        let currentMonth = Int(Item.monthFormatter.string(from: currentDate))!
         return activeMonthsCalendar?.contains(currentMonth) == false
     }
     
