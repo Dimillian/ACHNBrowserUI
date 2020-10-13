@@ -7,14 +7,14 @@
  */
 
 "Loading..." = "불러오는 중...";
-"Tap here to preview a notification" = "Appuyer ici pour voir une notification";
+"Tap here to preview a notification" = "알림 테스트를 하려면 여기를 누르세요";
 "Upgrade to +" = "AC Helper+로 업그레이드";
 "You're subscribed to AC Helper+" = "AC Helper+를 구독하였습니다";
 
 // copy and paste "export"  of Text() and similar SwiftUI functions
 // Global
 "Close" = "닫기";
-"Dismiss" = "확인";
+"Dismiss" = "승인";
 "Save" = "저장";
 
 // Date Format
@@ -37,7 +37,7 @@
 // TodaySectionEditView
 "Drag & Drop to Rearrange" = "Glisser-déposer pour réorganiser";
 "Hidden" = "Caché";
-"Today Sections" = "Sections du dashboard";
+"Today Sections" = "투데이 섹션";
 "Done" = "완료";
 " to re-order sections." = "해서 섹션의 순서를 변경하세요.";
 "Check or un-check" = "체크를 해제";
@@ -50,7 +50,7 @@
 "Collection Progress" = "수집 달성도";
 "Share" = "공유";
 // TodayCurrentlyAvailableSection
-"Currently Available" = "Disponible en ce moment";
+"Currently Available" = "활동중인 생물";
 "%lld/%lld Bugs" = "%lld/%lld 마리 곤충";
 "%lld/%lld Fish" = "%lld/%lld 마리 물고기";
 "%lld/%lld Sea Creatures" = "%lld/%lld 마리 해산물";
@@ -75,7 +75,7 @@
 " 입니다." implies 'is(Korean order)'
 */
 // TodayNookazonSection
-"New on Nookazon" = "Nouveau sur Nookazon";
+"New on Nookazon" = "Nookazon에 올라온 신상";
 "Nookazon is loading..." = "Nookazon을 불러오는 중...";
 // TodayWhatsNewSection
 "What's New" = "신상품";
@@ -112,19 +112,19 @@ You can cancel anytime with your iTunes account settings. Any unused portion of 
 "About" = "정보";
 "The app" = "L'application";
 "Source code / report an issue" = "소스 코드 / 문제 리포트";
-"Contact / follow us on Twitter" = "Contactez / suivez nous sur Twitter";
+"Contact / follow us on Twitter" = "Twitter에서 문의 / 팔로우하기";
 "Rate the app on the App Store" = "App Store에서 앱 평가하기";
 "Privacy Policy" = "개인정보 취급방침";
 "Term of Use" = "이용 약관";
 "App version" = "앱 버전";
 "Game patch data" = "게임 패치 데이터";
-"Acknowledgements" = "Remerciements";
+"Acknowledgements" = "약관";
 "Our amazing contributors" = "이 앱에 기여해주신 분들";
 "The NookPlaza API by Azarro" = "NookPlaza API를 제공해 주신 Azarro";
 "Turnip.exchange" = "Turnip.exchange";
 "Nookazon for the marketplace" = "매매 시스템을 제공해 주신 Nookazon";
-"Shihab / JPEGuin for the icon" = "Shihab / JPEGuin pour l'icône";
-"Christian & Ninji for the turnip predictions algorithm" = "Christian & Ninji pour l’algorithme de prédiction du prix des navets";
+"Shihab / JPEGuin for the icon" = "아이콘을 제공해 주신 Shihab / JPEGuin";
+"Christian & Ninji for the turnip predictions algorithm" = "무트코인 알고리즘을 제공해 주신 Christian & Ninji";
 "Error" = "오류";
 
 // ActiveCittersView
@@ -169,11 +169,11 @@ You can cancel anytime with your iTunes account settings. Any unused portion of 
 "Edit your list" = "목록을 수정하세요";
 "Name of your list" = "목록의 이름";
 "List name" = "목록 이름";
-"Can be nothing" = "Peux rester vide";
+"Can be nothing" = "비워둘 수 있습니다";
 "Icon" = "아이콘";
 
 // UserListDetailView
-"Add %lld items" = "Ajouter %lld objets";
+"Add %lld items" = "%lld개의 아이템 추가";
 "Edit" = "수정";
 "Search items" = "아이템 검색";
 "Items added to your list from the search will be displayed there." = "Les objets ajoutés à votre liste vont apparaitre ici";
@@ -185,7 +185,7 @@ You can cancel anytime with your iTunes account settings. Any unused portion of 
 
 // CollectionListView
 "Create a new list" = "새로운 목록 만들기";
-"Please select or go stars some items!" = "Sélectionner ou ajouter des objets à votre collection !";
+"Please select or go stars some items!" = "아이템을 즐겨찾기에 추가해보세요!";
 "When you stars some \%@, they'll be displayed here." = "Quand vous aller liker des \%@, ils seront affichés ici.";
 "Items" = "아이템";
 "Critters" = "생물";
@@ -211,7 +211,7 @@ You can cancel anytime with your iTunes account settings. Any unused portion of 
 // ItemRowView
 "unknown source" = "source inconnue";
 // ItemDetailInfoView
-"Rarity:" = "Rareté:";
+"Rarity:" = "희귀도:";
 "Shadow size:" = "그림자 크기:";
 "X-Small" = "작다";
 "Small" = "약간 작다";
@@ -253,13 +253,13 @@ You can cancel anytime with your iTunes account settings. Any unused portion of 
 "Fri" = "금";
 "Sat" = "토";
 "Your prices" = "Vos prix";
-"Edit your in game prices" = "Éditer vos prix du jeu";
-"Add your in game prices" = "Ajouter vos prix du jeu";
+"Edit your in game prices" = "게임 내 가격 수정";
+"Add your in game prices" = "게임 내 가격 추가";
 "Turnips prediction" = "무트코인 예측";
 "To help us support the application and get turnip predictions notification, you can try out AC Helper+" = "Pour nous aider à supporter l'application et recevoir des notifications sur les prédictions du prix des navets, vous pouvez souscrire à AC Helper+";
 "To help us support the application and get background playing of all the musics, you can try out AC Helper+" = "Pour nous aider à supporter l'application et pouvoir jouer les musiques en arrière-plan, vous pouvez souscrire à AC Helper+";
 "%lld upcomingDailyNotifications" = "Vous allez recevoir %lld prochaines notifications.";
-"Profits estimates are computed using the average of the current period" = "Les bénéfices sont calculés par rapport au prix moyen de la période courante";
+"Profits estimates are computed using the average of the current period" = "예상 수익은 현재 평균을 사용하여 계산됩니다";
 "Day" = "일";
 "AM" = "오전";
 "PM" = "오후";
@@ -277,10 +277,10 @@ You can cancel anytime with your iTunes account settings. Any unused portion of 
 "Add your turnip prices" = "매입한 무 가격을 추가하세요";
 "Configuration" = "일반 설정";
 "Clear all fields" = "모든 영역 비우기";
-"Receive prices predictions notification" = "Recevoir les notifications de prédictions";
-"You can get daily notifications for your average turnip price by subscribing to AC Helper+" = "Vous pouvez recevoir des notifications journalière pour le prix de vos navets en souscrivant à AC Helper+";
+"Receive prices predictions notification" = "가격 예측 알림";
+"You can get daily notifications for your average turnip price by subscribing to AC Helper+" = "AC Helper+를 구독하여 평균 무 가격을 매일 알림을 통해 받을 수 있습니다";
 "Preview a notification" = "알림 테스트";
-"Your in game prices" = "Vos prix dans le jeu";
+"Your in game prices" = "게임 내 가격";
 "Buy price" = "구매한 가격";
 "Amount bought" = "구매한 수량";
 "The more in game buy prices you'll add the better the predictions will be. Your buy price only won't give your correct averages. Add prices from the game as you get them daily." = "En indiquant le prix de vos navets, vous augmentez la précision des prédictions.";
@@ -435,7 +435,7 @@ You can cancel anytime with your iTunes account settings. Any unused portion of 
 "Flowers: %@" = "꽃: %@";
 "Fish" = "물고기";
 "Insects" = "곤충";
-"Rocks Type" = "Type des Rocher";
+"Rocks Type" = "돌 종류";
 "Rocks" = "돌";
 "Take your chance and go visit some mystery island!" = "마일리지섬에 가보지 않으실래요?";
 "Native" = "일반 나무";
@@ -573,7 +573,7 @@ You can cancel anytime with your iTunes account settings. Any unused portion of 
 "Zen" = "zen";
 "Deco Wood" = "Déco de bois";
 "Rubber" = "Caoutchouc";
-"Picture" = "Image";
+"Picture" = "사진";
 "Cloth Floors" = "Cloth Floors";
 "Audio" = "오디오";
 "Fruits" = "과일";
@@ -601,7 +601,7 @@ You can cancel anytime with your iTunes account settings. Any unused portion of 
 "Kitchen Things" = "Choses de cuisine";
 "Herringbone" = "Chevrons";
 "Brown" = "브라운";
-"Expensive" = "coûteux";
+"Expensive" = "값비쌈";
 "Fancy" = "팬시";
 "Playground" = "Terrain de jeux";
 "Manor Walls" = "Murs de Manoire";
@@ -615,7 +615,7 @@ You can cancel anytime with your iTunes account settings. Any unused portion of 
 "Heart Walls" = "Murs Coeur";
 "Rattan" = "rotin";
 "Kitchen Rugs" = "키친 러그";
-"Purple" = "Violet";
+"Purple" = "퍼플";
 "Asia" = "아시아";
 "Sewing Table" = "Machine à coudre";
 "Log" = "통나무";
@@ -699,7 +699,7 @@ You can cancel anytime with your iTunes account settings. Any unused portion of 
 "Concert" = "concert";
 "Motherly" = "엄마의 편지";
 "Iron Parquet" = "Parquet de Fer";
-"Chocolate" = "Chocolat";
+"Chocolate" = "초콜렛";
 "NA" = "NA";
 "Fairy tale" = "메르헨";
 "Special Warm Nature Walls" = "Murs spéciale chaud";
@@ -796,10 +796,10 @@ You can cancel anytime with your iTunes account settings. Any unused portion of 
 "Gorgeous" = "Magnifique";
 
 // Chore
-"Title" = "제목";
-"Chore title" = "Nom de la tâche";
-"Short description about the chore" = "Une petite description de la tâche";
-"Add Chore" = "할 일 추가";
+"Title" = "이름";
+"Chore title" = "집안일 이름";
+"Short description about the chore" = "집안일에 대한 간단한 설명";
+"Add Chore" = "집안일 추가";
 "Chores" = "집안일";
 "Have a friend to visit? A gift to a villager? Track your chores and to-dos here." = "Vous avez un ami à visiter ? Un cadeau pour un villageois ? Gardez trace de vos tâches ici.";
 "Reset" = "재설정";
@@ -838,37 +838,37 @@ You can cancel anytime with your iTunes account settings. Any unused portion of 
 "Long press on a villager to see more info about them" = "주민에 대해 자세히 보려면 길게 누르세요";
 
 // Added 2020-06-08
-"Medium w/Fin" = "Moyen avec un aileron";
-"Large w/Fin" = "Grand avec un aileron";
-"XX-Large" = "Très grand";
-"Long" = "Long";
-"Sea (rainy days)" = "Mer (jour de pluie)";
+"Medium w/Fin" = "약간 크다 (지느러미)";
+"Large w/Fin" = "특대 (지느러미)";
+"XX-Large" = "특대";
+"Long" = "길다";
+"Sea (rainy days)" = "바다 (비 오는 날)";
 "Flying near water" = "물 근처에서 비행";
 
 // Doco code
-"Please fill all the fields" = "Merci de remplir tous les champs";
-"Dodo code" = "Dodo code";
-"Dodo codes" = "Dodo codes";
-"This Dodo code is invalid" = "Ce Dodo code est invalide";
+"Please fill all the fields" = "모든 영역을 채워주세요";
+"Dodo code" = "초대 비밀번호";
+"Dodo codes" = "초대 비밀번호";
+"This Dodo code is invalid" = "이 코드는 유효하지 않습니다";
 "Island description" = "섬에 대한 설명";
 "Native fruit" = "특산물";
-"Add your Dodo code" = "Ajoutez votre Dodo code";
+"Add your Dodo code" = "초대 코드를 입력하세요";
 "Hemisphere: %@" = "반구: %@";
 "Delete" = "삭제";
 "Report" = "신고";
-"Latest Dodo code" = "Dernier Dodo code";
+"Latest Dodo code" = "최근 초대 비밀번호";
 
 "dodocode.footer" = "Une fois votre Dodo code ajouté il apparaitra dans la liste.
 Merci de vérifier que vos portes sont ouvertes avant d'ajouter votre code.
 Vous pourrez supprimer et ferme vos portes à tout moment.
 Merci d'être respecteux. Tout code signalé sera supprimé";
 "iCloud not enabled" = "iCloud가 활성화되지 않았습니다";
-"You need an iCloud account to add your Dodo code" = "Vous avez besoin d'iCloud pour ajouter votre Dodo code";
-"Do you really want to delete your Dodo code?" = "Voulez-vous vraiment supprimer vote Dodo code ?";
-"Do you really want to report this Dodo code?" = "Voulez-vous vraiment signaler ce Dodo Code ?";
+"You need an iCloud account to add your Dodo code" = "초대 코드를 추가하려면 iCloud 계정 연동이 필요합니다";
+"Do you really want to delete your Dodo code?" = "이 초대 코드를 삭제할까요?";
+"Do you really want to report this Dodo code?" = "이 초대 코드를 신고할까요?";
 "Visitor" = "Visiteur";
-"Edit your Dodo code" = "Éditez votre Dodo code";
-"Get notified of new Dodo codes" = "Être notifié quand un code est posté";
+"Edit your Dodo code" = "초대 코드 수정";
+"Get notified of new Dodo codes" = "새로운 초대 코드 알림";
 "To help us support the application and get notifications when a new Dodo code is posted, you can try out AC Helper+" = "Pour nous aider à supporter l'application et recevoir des notifications quand un nouveau Dodo codes est posté, vous pouvez souscrire à AC Helper+";
 "ACDodoCode.notification.title" = "Un nouveau Dodo code est disponible";
 "ACDodoCode.notification.subtitle" = "Quelqu'un a ouvert ses portes et a posté un Dodo code dans l'application!";
@@ -879,7 +879,7 @@ Merci d'être respecteux. Tout code signalé sera supprimé";
 "%@ from %@" = "%@ de %@";
 "In order to add a comment you must add an island name and a username. Tap here to add them in settings" = "Pour ajouter un nouveau commentaire vous devez ajouter votre nom d'île et un nom d'utilisateur dans les réglages. Tapez ici pour les ajouter";
 "Add your comment" = "Ajouter votre commentaire";
-"Send" = "Envoyer";
+"Send" = "전송";
 "In game name / username" = "인게임 이름 / 사용자 이름";
 "You need to have an iCloud account in your device settings in order to add comments" = "Vous devez avoir un compte iCloud dans les réglages de votre appareil pour ajouter des commentaires";
 "ACComment.notification.title" = "Nouveau commentaire sur votre Dodo code";
@@ -943,16 +943,16 @@ Vous pourrez le supprimer à tout moment.
 Merci d'être respecteux. Tout code signalé sera supprimé";
 
 // Summer Patch II - added 2020-08-02
-"Dream code" = "Code onirique";
-"Dream codes" = "Codes onirique";
-"This Dream code is invalid" = "Ce code onirique est invalide";
-"Edit your Dream code" = "Editer votre code";
-"Add your Dream code" = "Ajoutez votre code";
-"Get notified of new dream codes" = "Être notifié quand un code est posté";
-"You need an iCloud account to add your dream code" = "Vous devez avoir un compte iCloud pour ajouter un code Onirique";
-"Do you really want to report this dream code?" = "Vous voulez vraiment reporter ce code ?";
-"Do you really want to delete your dream code?" = "Vous voulez vraiment supprimer ce code ?";
+"Dream code" = "초대 코드";
+"Dream codes" = "초대 코드";
+"This Dream code is invalid" = "초대 코드가 유효하지 않습니다";
+"Edit your Dream code" = "초대 코드 수정";
+"Add your Dream code" = "초대 코드 추가";
+"Get notified of new dream codes" = "새로운 초대 코드 알림";
+"You need an iCloud account to add your dream code" = "초대 코드를 추가하려면 iCloud 계정 연동이 필요합니다";
+"Do you really want to report this dream code?" = "이 초대 코드를 신고할까요?";
+"Do you really want to delete your dream code?" = "이 초대 코드를 삭제할까요?";
 "Sort" = "정렬";
-"creationDate" = "Date";
+"creationDate" = "날짜";
 "upvotes" = "좋아요";
-"Latest Dream Code" = "Dernier Code Onirique";
+"Latest Dream Code" = "최근 초대 코드";
