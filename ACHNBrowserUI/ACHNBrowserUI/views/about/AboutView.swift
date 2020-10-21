@@ -110,7 +110,7 @@ struct AboutView: View {
                                       color: .acHeaderBackground)
                         makeDetailRow(image: "gamecontroller",
                                       text: "Game patch data",
-                                      detail: "1.3.0",
+                                      detail: "1.5.1",
                                       color: .acHeaderBackground)
                     }.listRowBackground(Color.acSecondaryBackground)
                 }

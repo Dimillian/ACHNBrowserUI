@@ -17,54 +17,58 @@ struct TodayCurrentlyAvailableSection: View {
     
     // MARK: - Body
     var body: some View {
-            VStack {
-                NavigationLink(destination: ActiveCrittersView(tab: openingTab),
-                               isActive: $isNavigationLinkActive) {
-                    
-                }
+        VStack {
+            NavigationLink(destination: ActiveCrittersView(tab: openingTab),
+                           isActive: $isNavigationLinkActive) {
                 
-                if viewModel.crittersInfo[.bugs]?.active.isEmpty == false &&
-                    viewModel.crittersInfo[.fish]?.active.isEmpty == false {
-                    HStack(alignment: .top) {
-                        Button {
-                            openingTab = .fish
-                            isNavigationLinkActive = true
-                        } label: {
-                            makeCell(for: .fish,
-                                     caught: viewModel.crittersInfo[.fish]?.caught.count ?? 0,
-                                     available: viewModel.crittersInfo[.fish]?.active.count ?? 0 ,
-                                     numberNew: viewModel.crittersInfo[.fish]?.new.count ?? 0)
-                        }.buttonStyle(BorderlessButtonStyle())
-                        
-                        Divider()
-                        Button {
-                            openingTab = .bugs
-                            isNavigationLinkActive = true
-                        } label: {
-                            makeCell(for: .bugs,
-                                     caught: viewModel.crittersInfo[.bugs]?.caught.count ?? 0,
-                                     available: viewModel.crittersInfo[.bugs]?.active.count ?? 0,
-                                     numberNew: viewModel.crittersInfo[.bugs]?.new.count ?? 0)
-                        }.buttonStyle(BorderlessButtonStyle())
-                    }
-                } else {
-                    RowLoadingView()
-                }
-                Divider()
-                if viewModel.crittersInfo[.seaCreatures]?.active.isEmpty == true {
-                    RowLoadingView()
-                } else {
+            }
+            
+            if viewModel.crittersInfo[.bugs]?.active.isEmpty == false &&
+                viewModel.crittersInfo[.fish]?.active.isEmpty == false {
+                HStack(alignment: .top) {
                     Button {
-                        openingTab = .seaCreatures
+                        openingTab = .fish
                         isNavigationLinkActive = true
                     } label: {
-                        makeCell(for: .seaCreatures,
-                                 caught: viewModel.crittersInfo[.seaCreatures]?.caught.count ?? 0,
-                                 available: viewModel.crittersInfo[.seaCreatures]?.active.count ?? 0 ,
-                                 numberNew: viewModel.crittersInfo[.seaCreatures]?.new.count ?? 0)
+                        makeCell(for: .fish,
+                                 caught: viewModel.crittersInfo[.fish]?.caught.count ?? 0,
+                                 available: viewModel.crittersInfo[.fish]?.active.count ?? 0 ,
+                                 numberNew: viewModel.crittersInfo[.fish]?.new.count ?? 0)
+                    }.buttonStyle(BorderlessButtonStyle())
+                    
+                    Divider()
+                    Button {
+                        openingTab = .bugs
+                        isNavigationLinkActive = true
+                    } label: {
+                        makeCell(for: .bugs,
+                                 caught: viewModel.crittersInfo[.bugs]?.caught.count ?? 0,
+                                 available: viewModel.crittersInfo[.bugs]?.active.count ?? 0,
+                                 numberNew: viewModel.crittersInfo[.bugs]?.new.count ?? 0)
                     }.buttonStyle(BorderlessButtonStyle())
                 }
-            }.padding(.vertical)
+            } else {
+                RowLoadingView()
+            }
+            Divider()
+            if viewModel.crittersInfo[.seaCreatures]?.active.isEmpty == true {
+                RowLoadingView()
+            } else {
+                Button {
+                    openingTab = .seaCreatures
+                    isNavigationLinkActive = true
+                } label: {
+                    makeCell(for: .seaCreatures,
+                             caught: viewModel.crittersInfo[.seaCreatures]?.caught.count ?? 0,
+                             available: viewModel.crittersInfo[.seaCreatures]?.active.count ?? 0 ,
+                             numberNew: viewModel.crittersInfo[.seaCreatures]?.new.count ?? 0)
+                }.buttonStyle(BorderlessButtonStyle())
+            }
+        }
+        .padding(.vertical)
+        .onAppear {
+            viewModel.updateCritters(for: currentDate)
+        }
     }
     
     private func makeCell(for type: ActiveCrittersViewModel.CritterType,
