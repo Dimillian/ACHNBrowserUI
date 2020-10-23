@@ -61,6 +61,7 @@ struct ActiveCritterSections: View {
 }
 
 struct ActiveCrittersView: View {
+    @Environment(\.currentDate) private var currentDate
     @StateObject private var viewModel = ActiveCrittersViewModel(filterOutInCollection: true)
     @State private var selectedTab: ActiveCrittersViewModel.CritterType
         
@@ -105,6 +106,9 @@ struct ActiveCrittersView: View {
         .tabViewStyle(PageTabViewStyle())
         .indexViewStyle(PageIndexViewStyle(backgroundDisplayMode: .always))
         .navigationBarTitle("Active Critters", displayMode: .inline)
+        .onAppear {
+            viewModel.updateCritters(for: currentDate)
+        }
     }
 }
 
