@@ -70,42 +70,23 @@ extension View {
 }
 
 extension View {
-    func propagateHeight<K: PreferenceKey>(_ key: K.Type) -> some View where K.Value == CGFloat? {
+    func propagate<K>(
+        _ transform: @escaping (CGRect) -> K.Value,
+        of source: Anchor<CGRect>.Source = .bounds,
+        using key: K.Type
+    ) -> some View where K: PreferenceKey {
         overlay(
             GeometryReader { proxy in
                 Color.clear
-                    .anchorPreference(key: key, value: .bounds, transform: { proxy[$0].height })
-            }
-        )
-    }
-    
-    func onHeightPreferenceChange<K: PreferenceKey>(_ key: K.Type = K.self, storeValueIn storage: Binding<CGFloat?>) -> some View where K.Value == CGFloat? {
-        onPreferenceChange(key, perform: { storage.wrappedValue = $0 })
-    }
-
-    func propagateWidth<K: PreferenceKey>(_ key: K.Type) -> some View where K.Value == CGFloat? {
-        overlay(
-            GeometryReader { proxy in
-                Color.clear
-                    .anchorPreference(key: key, value: .bounds, transform: { proxy[$0].width })
+                    .anchorPreference(key: key, value: source) { transform(proxy[$0]) }
             }
         )
     }
 
-    func onWidthPreferenceChange<K: PreferenceKey>(_ key: K.Type = K.self, storeValueIn storage: Binding<CGFloat?>) -> some View where K.Value == CGFloat? {
-        onPreferenceChange(key, perform: { storage.wrappedValue = $0 })
-    }
-
-    func propagateSize<K: PreferenceKey>(_ key: K.Type = K.self, storeValueIn storage: Binding<CGSize?>) -> some View where K.Value == CGSize? {
-        overlay(
-            GeometryReader { proxy in
-                Color.clear
-                    .anchorPreference(key: key, value: .bounds, transform: { proxy[$0].size })
-            }
-        )
-    }
-
-    func onSizePreferenceChange<K: PreferenceKey>(_ key: K.Type = K.self, storeValueIn storage: Binding<CGSize?>) -> some View where K.Value == CGSize? {
+    func storeValue<K: PreferenceKey>(
+        from key: K.Type = K.self,
+        in storage: Binding<K.Value>
+    ) -> some View where K.Value: Equatable {
         onPreferenceChange(key, perform: { storage.wrappedValue = $0 })
     }
 }

@@ -18,7 +18,7 @@ struct TurnipsChartBottomLegendView: View {
 
     var body: some View {
         texts(xValues: data.map { $0.minBuyPrice.position.x })
-            .propagateHeight(HeightPreferenceKey.self)
+            .propagate({ $0.height }, using: HeightPreferenceKey.self)
     }
 
     func texts(xValues: [CGFloat]) -> some View {

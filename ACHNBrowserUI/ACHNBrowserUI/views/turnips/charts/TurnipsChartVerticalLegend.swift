@@ -23,7 +23,7 @@ struct TurnipsChartVerticalLegend: View {
         let steps = CGFloat(TurnipsChart.steps)
         let values = Array(stride(from: minY, to: maxY + CGFloat(TurnipsChart.extraMaxSteps), by: steps))
         return texts(values: values, ratioY: ratioY)
-            .propagateWidth(WidthPreferenceKey.self)
+            .propagate({ $0.width }, using: WidthPreferenceKey.self)
         
     }
 

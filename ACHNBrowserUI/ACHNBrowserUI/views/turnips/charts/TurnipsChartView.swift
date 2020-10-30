@@ -32,9 +32,9 @@ struct TurnipsChartView: View {
                 }
             }
         }
-        .onSizePreferenceChange(ChartSizePreferenceKey.self, storeValueIn: $chartSize)
-        .onHeightPreferenceChange(TurnipsChartBottomLegendView.HeightPreferenceKey.self, storeValueIn: $bottomLegendHeight)
-        .onWidthPreferenceChange(TurnipsChartVerticalLegend.WidthPreferenceKey.self, storeValueIn: $verticalLegendWidth)
+        .storeValue(from: ChartSizePreferenceKey.self, in: $chartSize)
+        .storeValue(from: TurnipsChartBottomLegendView.HeightPreferenceKey.self, in: $bottomLegendHeight)
+        .storeValue(from: TurnipsChartVerticalLegend.WidthPreferenceKey.self, in: $verticalLegendWidth)
     }
     
     private var chart: some View {
@@ -52,7 +52,7 @@ struct TurnipsChartView: View {
             TurnipsChartGrid(data: yAxisData)
                 .stroke()
                 .opacity(0.5)
-                .propagateSize(ChartSizePreferenceKey.self, storeValueIn: $chartSize)
+                .propagate({ $0.size }, using: ChartSizePreferenceKey.self)
             TurnipsChartMinBuyPriceCurve(data: yAxisData)
                 .stroke(style: StrokeStyle(dash: [Self.verticalLinesCount]))
                 .foregroundColor(.graphMinimum)
