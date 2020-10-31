@@ -21,6 +21,7 @@ class VillagersViewModel: ObservableObject {
     @Published var searchText = ""
     @Published var todayBirthdays: [Villager] = []
     @Published var sortedVillagers: [Villager] = []
+    @Published var isLoading = false
 
     // MARK: - Private properties
 
@@ -34,25 +35,28 @@ class VillagersViewModel: ObservableObject {
     }
     
     private let collection: UserCollection
+    private let currentDate: Date
     private var villagersCancellable: AnyCancellable?
 
     private var today: String {
         let formatter = DateFormatter()
         formatter.dateFormat = "d/M"
-        return formatter.string(from: Date())
+        return formatter.string(from: currentDate)
     }
 
     // MARK: - Life cycle
     
-    init(collection: UserCollection = .shared) {
+    init(collection: UserCollection = .shared, currentDate: Date) {
         self.collection = collection
+        self.currentDate = currentDate
         
         self.villagersCancellable = Publishers.CombineLatest(collection.$villagers, collection.$residents)
             .sink { [weak self] (villagers, residents) in
                 self?.residents = residents
                 self?.liked = villagers
         }
-        
+
+        isLoading = false
         searchCancellable = $searchText
             .debounce(for: .milliseconds(300), scheduler: DispatchQueue.main)
             .removeDuplicates()
@@ -69,8 +73,10 @@ class VillagersViewModel: ObservableObject {
             .map{ $0.map{ $0.1}.sorted(by: { $0.id > $1.id }) }
             .receive(on: DispatchQueue.main)
             .sink(receiveValue: { [weak self] in
-                self?.villagers = $0
-                self?.todayBirthdays = $0.filter( { $0.birthday == self?.today })
+                guard let self = self else { return }
+                self.villagers = $0
+                self.todayBirthdays = $0.filter( { $0.birthday == self.today })
+                self.isLoading = false
             })
     }
 

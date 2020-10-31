@@ -14,8 +14,9 @@ struct VillagersListView: View {
     private enum Filter: String, CaseIterable {
         case all, liked, residents
     }
-    
-    @StateObject var viewModel = VillagersViewModel()
+
+    @Environment(\.currentDate) private static var currentDate
+    @StateObject var viewModel = VillagersViewModel(currentDate: Self.currentDate)
     @State private var currentFilter = Filter.all
     
     var currentVillagers: [Villager] {
