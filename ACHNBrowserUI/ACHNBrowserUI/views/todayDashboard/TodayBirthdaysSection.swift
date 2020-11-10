@@ -11,7 +11,8 @@ import Backend
 import UI
 
 struct TodayBirthdaysSection: View {
-    @StateObject private var viewModel = VillagersViewModel()
+    @Environment(\.currentDate) private static var currentDate
+    @StateObject private var viewModel = VillagersViewModel(currentDate: Self.currentDate)
 
     var headerText: String {
         viewModel.todayBirthdays.count > 1 ? "Today's Birthdays" : "Today's Birthday"
@@ -19,8 +20,13 @@ struct TodayBirthdaysSection: View {
     
     var body: some View {
         Group {
-            if viewModel.todayBirthdays.isEmpty {
+            if viewModel.isLoading {
                 RowLoadingView()
+            } else if viewModel.todayBirthdays.isEmpty {
+                Text("No Birthday today...")
+                    .font(.system(.caption, design: .rounded))
+                    .fontWeight(.bold)
+                    .foregroundColor(.acText)
             } else {
                 ForEach(viewModel.todayBirthdays, id: \.id) { villager in
                     NavigationLink(destination: LazyView(VillagerDetailView(villager: villager))) {
