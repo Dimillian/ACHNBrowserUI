@@ -136,18 +136,29 @@ public class UserCollection: ObservableObject {
         guard let filename = item.filename else {
             return false
         }
+        let isAdded: Bool
         if variants[filename]?.contains(variant) == true {
             variants[filename]?.removeAll(where: { $0 == variant })
             save()
-            return false
+            isAdded = false
         } else {
             if variants[filename] == nil {
                 variants[filename] = []
             }
             variants[filename]?.append(variant)
             save()
-            return true
+            isAdded = true
         }
+
+        if !items.contains(item) && variants.completionStatus(for: item) != .unstarted {
+            // We add the item to the liked items if at least one of its variant is added
+            toggleItem(item: item)
+        } else if items.contains(item) && variants.completionStatus(for: item) == .unstarted {
+            // We remove the item from the liked items if there is none of its variants liked
+            toggleItem(item: item)
+        }
+
+        return isAdded
     }
     
     public func toggleCritters(critter: Item) -> Bool {
