@@ -25,6 +25,13 @@ struct LikeButtonView: View {
             if viewModel.item?.isCritter == true {
                 return viewModel.isInCollection ? "checkmark.seal.fill" : "checkmark.seal"
             } else {
+                if viewModel.item?.hasSomeVariations == true && viewModel.variant == nil {
+                    switch viewModel.variantsCompletionStatus {
+                    case .unstarted: return "star"
+                    case .partial: return "star.leadinghalf.fill"
+                    case .complete: return "star.fill"
+                    }
+                }
                 return viewModel.isInCollection ? "star.fill" : "star"
             }
         } else {

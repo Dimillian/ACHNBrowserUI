@@ -499,10 +499,37 @@ public class UserCollection: ObservableObject {
 }
 
 public extension Dictionary where Key == String, Value == [Variant] {
-    public func contains(for item: Item, variant: Variant) -> Bool {
+    func contains(for item: Item, variant: Variant) -> Bool {
         guard let filename = item.filename else {
             return false
         }
         return self[filename]?.contains(variant) == true
+    }
+
+    func completionStatus(for item: Item) -> VariantsCompletionStatus {
+        guard let filename = item.filename,
+              let itemVariations = item.variations,
+              let currentVariations = self[filename]
+        else { return .unstarted }
+
+        if currentVariations.count <= 0 {
+            return .unstarted
+        } else if currentVariations.count < itemVariations.count {
+            return .partial
+        } else {
+            return .complete
+        }
+    }
+}
+
+public enum VariantsCompletionStatus {
+    case unstarted
+    case partial
+    case complete
+}
+
+public extension Item {
+    var hasSomeVariations: Bool {
+        variations?.count ?? 0 > 1
     }
 }
