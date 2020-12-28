@@ -76,4 +76,8 @@ class LikeButtonViewModel: ObservableObject {
         }
         return added
     }
+
+    var hasSomeVariations: Bool {
+        variant == nil && item?.hasSomeVariations == true
+    }
 }

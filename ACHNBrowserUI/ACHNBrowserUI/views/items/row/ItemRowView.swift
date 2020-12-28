@@ -17,8 +17,18 @@ struct ItemRowView: View {
     
     let displayMode: DisplayMode
     let item: Item
-    
+    @Binding var likedItemWithVariants: Item?
     @State private var displayedVariant: Variant?
+
+    init(
+        displayMode: DisplayMode,
+        item: Item,
+        likedItemWithVariants: Binding<Item?> = .constant(nil)
+    ) {
+        self.displayMode = displayMode
+        self.item = item
+        self._likedItemWithVariants = likedItemWithVariants
+    }
     
     private var imageSize: CGFloat {
         switch displayMode {
@@ -87,7 +97,11 @@ struct ItemRowView: View {
     var body: some View {
         HStack(spacing: 8) {
             if displayMode != .largeNoButton {
-                LikeButtonView(item: item, variant: displayedVariant)
+                LikeButtonView(
+                    item: item,
+                    variant: displayedVariant,
+                    likedItemWithVariants: $likedItemWithVariants
+                )
             }
             if item.finalImage == nil && displayedVariant == nil {
                 Image(item.appCategory.iconName())

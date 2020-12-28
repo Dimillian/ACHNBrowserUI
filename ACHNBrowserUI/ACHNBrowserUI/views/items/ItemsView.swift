@@ -29,6 +29,7 @@ struct ItemsView: View {
     
     @StateObject var viewModel: ItemsViewModel
     @State private var contentMode: ContentMode = .listLarge
+    @State private var likedItemWithVariants: Item?
     let customTitle: String?
     
     init(category: Backend.Category, items: [Item]? = nil, keyword: String? = nil) {
@@ -110,31 +111,65 @@ struct ItemsView: View {
     
     @ViewBuilder
     private var contentView: some View {
-        if contentMode == .grid {
-            ScrollView {
-                LazyVGrid(columns: [GridItem(.adaptive(minimum: 120), spacing: 16)], spacing: 16) {
-                    ForEach(viewModel.items) { item in
-                        ItemGridItemView(item: item)
+        ZStack {
+            if contentMode == .grid {
+                ScrollView {
+                    LazyVGrid(columns: [GridItem(.adaptive(minimum: 120), spacing: 16)], spacing: 16) {
+                        ForEach(viewModel.items) { item in
+                            ItemGridItemView(item: item)
+                        }
+                    }
+                    .padding(8)
+                    .background(Color.acBackground)
+                }.background(Color.acBackground)
+            } else {
+                List {
+                    Section(header: SearchField(searchText: $viewModel.searchText)) {
+                        ForEach(viewModel.items) { item in
+                            NavigationLink(destination: LazyView(ItemDetailView(item: item))) {
+                                ItemRowView(
+                                    displayMode: contentMode == .listLarge ? .large : .compact,
+                                    item: item,
+                                    likedItemWithVariants: $likedItemWithVariants
+                                )
+                            }
+                            .listRowBackground(Color.acSecondaryBackground)
+                        }
                     }
                 }
-                .padding(8)
-                .background(Color.acBackground)
-            }.background(Color.acBackground)
-        } else {
-            List {
-                Section(header: SearchField(searchText: $viewModel.searchText)) {
-                    ForEach(viewModel.items) { item in
-                        NavigationLink(destination: LazyView(ItemDetailView(item: item))) {
-                            ItemRowView(displayMode: contentMode == .listLarge ? .large : .compact,
-                                        item: item)
-                        }
-                        .listRowBackground(Color.acSecondaryBackground)
+                .listStyle(GroupedListStyle())
+                .id(viewModel.sort)
+            }
+            likedItemWithVariants.map { item in
+                ZStack {
+                    Color.black
+                        .opacity(1/6)
+                        .onTapGesture { likedItemWithVariants = nil }
+                    VStack {
+                        Spacer()
+                        itemVariants(for: item)
                     }
                 }
             }
-            .listStyle(GroupedListStyle())
-            .id(viewModel.sort)
         }
+    }
+
+    private func itemVariants(for item: Item) -> some View {
+        VStack {
+            SectionHeaderView(text: "Variants", icon: "paintbrush.fill").padding()
+            ScrollView(.horizontal, showsIndicators: false) {
+                HStack {
+                    ForEach(item.variations ?? []) { variant in
+                        ZStack(alignment: .topLeading) {
+                            ItemImage(path: variant.content.image, size: 75)
+                            LikeButtonView(item: item, variant: variant)
+                        }
+                    }
+                }.padding()
+            }
+            .listRowInsets(EdgeInsets())
+        }
+        .background(Color.acSecondaryBackground)
     }
 }
 
