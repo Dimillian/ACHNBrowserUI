@@ -132,13 +132,6 @@ public class UserCollection: ObservableObject {
         return added
     }
     
-    public func variantIn(item: Item, variant: Variant) -> Bool {
-        guard let filename = item.filename else {
-            return false
-        }
-        return variants[filename]?.contains(variant) == true
-    }
-    
     public func toggleVariant(item: Item, variant: Variant) -> Bool {
         guard let filename = item.filename else {
             return false
@@ -502,5 +495,14 @@ public class UserCollection: ObservableObject {
             save()
         }
         return success
+    }
+}
+
+public extension Dictionary where Key == String, Value == [Variant] {
+    public func contains(for item: Item, variant: Variant) -> Bool {
+        guard let filename = item.filename else {
+            return false
+        }
+        return self[filename]?.contains(variant) == true
     }
 }

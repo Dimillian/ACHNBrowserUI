@@ -171,8 +171,7 @@ extension ItemDetailView {
                         FeedbackGenerator.shared.triggerSelection()
                     }
             }
-            LikeButtonView(item: itemViewModel.item,
-                           variant: self.itemViewModel.item.variations?.firstIndex(of: variant) == 0 ? nil : variant)
+            LikeButtonView(item: itemViewModel.item, variant: variant)
         }
     }
     

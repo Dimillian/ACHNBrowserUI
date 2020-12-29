@@ -39,8 +39,7 @@ class LikeButtonViewModel: ObservableObject {
                 guard let self = self else { return }
                 if let item = self.item {
                     if let variant = variant {
-                        self.isInCollection = collection.variantIn(item: item,
-                                                                   variant: variant)
+                        self.isInCollection = variants.contains(for: item, variant: variant)
                         return
                     }
                     self.isInCollection = items.contains(item) || critters.contains(item)
