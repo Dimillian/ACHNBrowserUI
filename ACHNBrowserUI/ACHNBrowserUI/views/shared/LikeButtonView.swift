@@ -12,14 +12,17 @@ import Backend
 struct LikeButtonView: View {
     @StateObject private var viewModel: LikeButtonViewModel
     @Binding private var likedItemWithVariants: Item?
+    private var customAction: () -> Void = { }
     
     init(
         item: Item,
         variant: Variant?,
-        likedItemWithVariants: Binding<Item?> = .constant(nil)
+        likedItemWithVariants: Binding<Item?> = .constant(nil),
+        customAction: @escaping () -> Void = { }
     ) {
         _viewModel = StateObject(wrappedValue: LikeButtonViewModel(item: item, variant: variant))
         _likedItemWithVariants = likedItemWithVariants
+        self.customAction = customAction
     }
     
     init(villager: Villager) {
@@ -64,6 +67,7 @@ struct LikeButtonView: View {
                 let added = self.viewModel.toggleCollection()
                 FeedbackGenerator.shared.triggerNotification(type: added ? .success : .warning)
             }
+            customAction()
         }) {
             Image(systemName: imageName).foregroundColor(color)
         }

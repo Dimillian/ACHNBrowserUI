@@ -20,6 +20,7 @@ struct ItemDetailView: View {
     
     @State private var displayedVariant: Variant?
     @State private var selectedSheet: Sheet.SheetType?
+    @State private var itemToDisplayVariantsLike: Item?
 
     init(item: Item) {
         self._itemViewModel = StateObject(wrappedValue: ItemDetailViewModel(item: item))
@@ -43,9 +44,16 @@ struct ItemDetailView: View {
         
         return [ItemDetailSource(name: itemViewModel.item.localizedName.capitalized, image: image)]
     }
-    
+
     // MARK: - Boby
     var body: some View {
+        ZStack {
+            content
+            VariantsForLikeView(item: $itemToDisplayVariantsLike)
+        }
+    }
+
+    var content: some View {
         List {
             ItemDetailInfoView(item: itemViewModel.item,
                                recipe: itemViewModel.recipe,
@@ -123,11 +131,21 @@ extension ItemDetailView {
     
     private var navButtons: some View {
         HStack {
-            LikeButtonView(item: itemViewModel.item,
-                           variant: displayedVariant).imageScale(.large)
-                .safeHoverEffectBarItem(position: .trailing)
+            LikeButtonView(
+                item: itemViewModel.item,
+                variant: displayedVariant,
+                customAction: tapOnMainLikeButton
+            )
+            .imageScale(.large)
+            .safeHoverEffectBarItem(position: .trailing)
+
             shareButton
         }
+    }
+
+    private func tapOnMainLikeButton() {
+        // Display variants bottom sheet only if the item has some variants
+        itemToDisplayVariantsLike = itemViewModel.item.hasSomeVariations ? itemViewModel.item : nil
     }
     
     private var keywordsSection: some View {

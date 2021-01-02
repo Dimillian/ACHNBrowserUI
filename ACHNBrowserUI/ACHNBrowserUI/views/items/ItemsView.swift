@@ -140,36 +140,8 @@ struct ItemsView: View {
                 .listStyle(GroupedListStyle())
                 .id(viewModel.sort)
             }
-            likedItemWithVariants.map { item in
-                ZStack {
-                    Color.black
-                        .opacity(1/6)
-                        .onTapGesture { likedItemWithVariants = nil }
-                    VStack {
-                        Spacer()
-                        itemVariants(for: item)
-                    }
-                }
-            }
+            VariantsForLikeView(item: $likedItemWithVariants)
         }
-    }
-
-    private func itemVariants(for item: Item) -> some View {
-        VStack {
-            SectionHeaderView(text: "Variants", icon: "paintbrush.fill").padding()
-            ScrollView(.horizontal, showsIndicators: false) {
-                HStack {
-                    ForEach(item.variations ?? []) { variant in
-                        ZStack(alignment: .topLeading) {
-                            ItemImage(path: variant.content.image, size: 75)
-                            LikeButtonView(item: item, variant: variant)
-                        }
-                    }
-                }.padding()
-            }
-            .listRowInsets(EdgeInsets())
-        }
-        .background(Color.acSecondaryBackground)
     }
 }
 

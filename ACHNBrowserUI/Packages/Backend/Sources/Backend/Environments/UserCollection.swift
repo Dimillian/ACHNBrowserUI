@@ -152,10 +152,10 @@ public class UserCollection: ObservableObject {
 
         if !items.contains(item) && variants.completionStatus(for: item) != .unstarted {
             // We add the item to the liked items if at least one of its variant is added
-            toggleItem(item: item)
+            _ = toggleItem(item: item)
         } else if items.contains(item) && variants.completionStatus(for: item) == .unstarted {
             // We remove the item from the liked items if there is none of its variants liked
-            toggleItem(item: item)
+            _ = toggleItem(item: item)
         }
 
         return isAdded
