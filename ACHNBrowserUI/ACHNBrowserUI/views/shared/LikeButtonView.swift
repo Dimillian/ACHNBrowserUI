@@ -11,13 +11,23 @@ import Backend
 
 struct LikeButtonView: View {
     @StateObject private var viewModel: LikeButtonViewModel
+    @Binding private var likedItemWithVariants: Item?
+    private var customAction: () -> Void = { }
     
-    init(item: Item, variant: Variant?) {
+    init(
+        item: Item,
+        variant: Variant?,
+        likedItemWithVariants: Binding<Item?> = .constant(nil),
+        customAction: @escaping () -> Void = { }
+    ) {
         _viewModel = StateObject(wrappedValue: LikeButtonViewModel(item: item, variant: variant))
+        _likedItemWithVariants = likedItemWithVariants
+        self.customAction = customAction
     }
     
     init(villager: Villager) {
         _viewModel = StateObject(wrappedValue: LikeButtonViewModel(villager: villager))
+        _likedItemWithVariants = .constant(nil)
     }
         
     var imageName: String {
@@ -25,6 +35,13 @@ struct LikeButtonView: View {
             if viewModel.item?.isCritter == true {
                 return viewModel.isInCollection ? "checkmark.seal.fill" : "checkmark.seal"
             } else {
+                if viewModel.hasSomeVariations {
+                    switch viewModel.variantsCompletionStatus {
+                    case .unstarted: return "star"
+                    case .partial: return "star.leadinghalf.fill"
+                    case .complete: return "star.fill"
+                    }
+                }
                 return viewModel.isInCollection ? "star.fill" : "star"
             }
         } else {
@@ -44,8 +61,13 @@ struct LikeButtonView: View {
     
     var body: some View {
         Button(action: {
-            let added = self.viewModel.toggleCollection()
-            FeedbackGenerator.shared.triggerNotification(type: added ? .success : .warning)
+            if viewModel.hasSomeVariations {
+                likedItemWithVariants = viewModel.item
+            } else {
+                let added = self.viewModel.toggleCollection()
+                FeedbackGenerator.shared.triggerNotification(type: added ? .success : .warning)
+            }
+            customAction()
         }) {
             Image(systemName: imageName).foregroundColor(color)
         }

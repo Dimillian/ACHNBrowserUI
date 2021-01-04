@@ -18,6 +18,7 @@ class LikeButtonViewModel: ObservableObject {
     let villager: Villager?
     
     @Published var isInCollection = false
+    @Published var variantsCompletionStatus: VariantsCompletionStatus = .unstarted
     
     private let collection: UserCollection
     private var cancellable: AnyCancellable?
@@ -40,6 +41,11 @@ class LikeButtonViewModel: ObservableObject {
                 if let item = self.item {
                     if let variant = variant {
                         self.isInCollection = variants.contains(for: item, variant: variant)
+                        return
+                    }
+                    if item.hasSomeVariations {
+                        self.variantsCompletionStatus = variants.completionStatus(for: item)
+                        self.isInCollection = self.variantsCompletionStatus != .unstarted
                         return
                     }
                     self.isInCollection = items.contains(item) || critters.contains(item)
@@ -69,5 +75,9 @@ class LikeButtonViewModel: ObservableObject {
             added = self.collection.toggleVillager(villager: villager)
         }
         return added
+    }
+
+    var hasSomeVariations: Bool {
+        variant == nil && item?.hasSomeVariations == true
     }
 }

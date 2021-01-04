@@ -272,7 +272,20 @@ public let static_item = Item(name: "Acoustic guitar",
                        dIY: true,
                        customize: true,
                        movementSpeed: nil,
-                       variations: nil,
+                       variations: [
+                            Variant(id: 49134, content: Variant.Content(
+                                image: "https://acnhcdn.com/latest/FtrIcon/FtrAcorsticguitar_Remake_0_0.png",
+                                colors: ["Beige", "Brown"]
+                            )),
+                            Variant(id: 49135, content: Variant.Content(
+                                image: "https://acnhcdn.com/latest/FtrIcon/FtrAcorsticguitar_Remake_1_0.png",
+                                colors: ["Red", "Black"]
+                            )),
+                            Variant(id: 49136, content: Variant.Content(
+                                image: "https://acnhcdn.com/latest/FtrIcon/FtrAcorsticguitar_Remake_2_0.png",
+                                colors: ["Brown", "Black"]
+                            )),
+                       ],
                        category: "Housewares",
                        materials: nil,
                        buy: 200,

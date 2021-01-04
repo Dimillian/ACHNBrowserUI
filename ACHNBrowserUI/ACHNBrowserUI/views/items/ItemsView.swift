@@ -29,6 +29,7 @@ struct ItemsView: View {
     
     @StateObject var viewModel: ItemsViewModel
     @State private var contentMode: ContentMode = .listLarge
+    @State private var likedItemWithVariants: Item?
     let customTitle: String?
     
     init(category: Backend.Category, items: [Item]? = nil, keyword: String? = nil) {
@@ -110,30 +111,36 @@ struct ItemsView: View {
     
     @ViewBuilder
     private var contentView: some View {
-        if contentMode == .grid {
-            ScrollView {
-                LazyVGrid(columns: [GridItem(.adaptive(minimum: 120), spacing: 16)], spacing: 16) {
-                    ForEach(viewModel.items) { item in
-                        ItemGridItemView(item: item)
-                    }
-                }
-                .padding(8)
-                .background(Color.acBackground)
-            }.background(Color.acBackground)
-        } else {
-            List {
-                Section(header: SearchField(searchText: $viewModel.searchText)) {
-                    ForEach(viewModel.items) { item in
-                        NavigationLink(destination: LazyView(ItemDetailView(item: item))) {
-                            ItemRowView(displayMode: contentMode == .listLarge ? .large : .compact,
-                                        item: item)
+        ZStack {
+            if contentMode == .grid {
+                ScrollView {
+                    LazyVGrid(columns: [GridItem(.adaptive(minimum: 120), spacing: 16)], spacing: 16) {
+                        ForEach(viewModel.items) { item in
+                            ItemGridItemView(item: item)
                         }
-                        .listRowBackground(Color.acSecondaryBackground)
+                    }
+                    .padding(8)
+                    .background(Color.acBackground)
+                }.background(Color.acBackground)
+            } else {
+                List {
+                    Section(header: SearchField(searchText: $viewModel.searchText)) {
+                        ForEach(viewModel.items) { item in
+                            NavigationLink(destination: LazyView(ItemDetailView(item: item))) {
+                                ItemRowView(
+                                    displayMode: contentMode == .listLarge ? .large : .compact,
+                                    item: item,
+                                    likedItemWithVariants: $likedItemWithVariants
+                                )
+                            }
+                            .listRowBackground(Color.acSecondaryBackground)
+                        }
                     }
                 }
+                .listStyle(GroupedListStyle())
+                .id(viewModel.sort)
             }
-            .listStyle(GroupedListStyle())
-            .id(viewModel.sort)
+            VariantsForLikeView(item: $likedItemWithVariants)
         }
     }
 }

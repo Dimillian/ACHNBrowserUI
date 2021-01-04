@@ -136,18 +136,29 @@ public class UserCollection: ObservableObject {
         guard let filename = item.filename else {
             return false
         }
+        let isAdded: Bool
         if variants[filename]?.contains(variant) == true {
             variants[filename]?.removeAll(where: { $0 == variant })
             save()
-            return false
+            isAdded = false
         } else {
             if variants[filename] == nil {
                 variants[filename] = []
             }
             variants[filename]?.append(variant)
             save()
-            return true
+            isAdded = true
         }
+
+        if !items.contains(item) && variants.completionStatus(for: item) != .unstarted {
+            // We add the item to the liked items if at least one of its variant is added
+            _ = toggleItem(item: item)
+        } else if items.contains(item) && variants.completionStatus(for: item) == .unstarted {
+            // We remove the item from the liked items if there is none of its variants liked
+            _ = toggleItem(item: item)
+        }
+
+        return isAdded
     }
     
     public func toggleCritters(critter: Item) -> Bool {
@@ -499,10 +510,37 @@ public class UserCollection: ObservableObject {
 }
 
 public extension Dictionary where Key == String, Value == [Variant] {
-    public func contains(for item: Item, variant: Variant) -> Bool {
+    func contains(for item: Item, variant: Variant) -> Bool {
         guard let filename = item.filename else {
             return false
         }
         return self[filename]?.contains(variant) == true
+    }
+
+    func completionStatus(for item: Item) -> VariantsCompletionStatus {
+        guard let filename = item.filename,
+              let itemVariations = item.variations,
+              let currentVariations = self[filename]
+        else { return .unstarted }
+
+        if currentVariations.count <= 0 {
+            return .unstarted
+        } else if currentVariations.count < itemVariations.count {
+            return .partial
+        } else {
+            return .complete
+        }
+    }
+}
+
+public enum VariantsCompletionStatus {
+    case unstarted
+    case partial
+    case complete
+}
+
+public extension Item {
+    var hasSomeVariations: Bool {
+        variations?.count ?? 0 > 1
     }
 }
