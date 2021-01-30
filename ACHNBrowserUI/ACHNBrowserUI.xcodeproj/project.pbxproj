@@ -23,6 +23,7 @@
 		4C6E95FD24842F690074433B /* Collection+SafeDirectAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C6E95FC24842F690074433B /* Collection+SafeDirectAccess.swift */; };
 		4C7F555D248B91C80089F26C /* TodayVillagerVisitsSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7F555C248B91C80089F26C /* TodayVillagerVisitsSection.swift */; };
 		4CB1E3D925A0BB8F0021A175 /* VariantsForLikeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CB1E3D825A0BB8F0021A175 /* VariantsForLikeView.swift */; };
+		4CB37F8C25C5D1C1004E4B0A /* RoundedRectangleOnTop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CB37F8B25C5D1C1004E4B0A /* RoundedRectangleOnTop.swift */; };
 		69157B7E2471A5A1005B9002 /* TodayMysteryIslandsSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69157B6D247121ED005B9002 /* TodayMysteryIslandsSection.swift */; };
 		69157B802471A5A1005B9002 /* UserListFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69875F5424654EB900B1D46C /* UserListFormView.swift */; };
 		69157B812471A5A1005B9002 /* RowLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 693E2BBD2465B65D00B85CB8 /* RowLoadingView.swift */; };
@@ -254,6 +255,7 @@
 		4C7F555C248B91C80089F26C /* TodayVillagerVisitsSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayVillagerVisitsSection.swift; sourceTree = "<group>"; };
 		4C7FE788245B57A10011E8AB /* AdaptsToSoftwareKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdaptsToSoftwareKeyboard.swift; sourceTree = "<group>"; };
 		4CB1E3D825A0BB8F0021A175 /* VariantsForLikeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VariantsForLikeView.swift; sourceTree = "<group>"; };
+		4CB37F8B25C5D1C1004E4B0A /* RoundedRectangleOnTop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedRectangleOnTop.swift; sourceTree = "<group>"; };
 		4CF14B74246B3E9E00F740BF /* TurnipsChartValuesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TurnipsChartValuesView.swift; sourceTree = "<group>"; };
 		4CF8049A24635E54005C6C63 /* Path.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Path.swift; sourceTree = "<group>"; };
 		4F92A4522470AC01003A2911 /* CollectionRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionRowView.swift; sourceTree = "<group>"; };
@@ -854,6 +856,7 @@
 				69875F4F24652A4700B1D46C /* Sheet.swift */,
 				69E67EFA2494C35B00ED7AC8 /* ButtonImageCounterOverlay.swift */,
 				4CB1E3D825A0BB8F0021A175 /* VariantsForLikeView.swift */,
+				4CB37F8B25C5D1C1004E4B0A /* RoundedRectangleOnTop.swift */,
 			);
 			path = shared;
 			sourceTree = "<group>";
@@ -1263,6 +1266,7 @@
 				4C062B12252BB5BE004DCFA3 /* CurrentDateEnvironment.swift in Sources */,
 				69157BC22471A5A1005B9002 /* TodayEventsSection.swift in Sources */,
 				69157BC32471A5A1005B9002 /* FeedbackGenerator.swift in Sources */,
+				4CB37F8C25C5D1C1004E4B0A /* RoundedRectangleOnTop.swift in Sources */,
 				3DFC04E824D6DABC002A6CED /* DreamCodeDetailView.swift in Sources */,
 				694C8B4724861D4E000B9B5F /* LikeButtonViewModel.swift in Sources */,
 				69EF2FFF24A88C1300BC0D42 /* PlayerMode.swift in Sources */,
