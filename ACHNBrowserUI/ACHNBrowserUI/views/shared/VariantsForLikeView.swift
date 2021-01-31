@@ -18,7 +18,7 @@ struct VariantsForLikeView: View {
             Color.black
                 .opacity(item != nil ? 1/6 : 0)
                 .onTapGesture { item = nil }
-            if let item = item {
+            item.map { item in
                 VStack {
                     Spacer()
                     VStack {
@@ -36,6 +36,7 @@ struct VariantsForLikeView: View {
                         .listRowInsets(EdgeInsets())
                     }
                     .background(Color.acSecondaryBackground.shadow(radius: 2, x: 0, y: -2))
+                    .clipShape(RoundedRectangleOnTop(cornerRadius: 32))
                 }
                 .transition(.move(edge: .bottom))
             }
