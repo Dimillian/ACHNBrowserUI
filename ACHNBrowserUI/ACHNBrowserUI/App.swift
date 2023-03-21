@@ -13,10 +13,15 @@ import CoreSpotlight
 import CloudKit
 import Backend
 import UI
+import Pendo
 
 class AppDelegateAdaptor: NSObject, UIApplicationDelegate, UNUserNotificationCenterDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
         UNUserNotificationCenter.current().delegate = self
+        let appKey = "APP_KEY"
+        //PendoManager.shared().setDebugMode(true)
+        PendoManager.shared().setup(appKey, with: nil)
+        PendoManager.shared().startSession("v61",accountId:"a5", visitorData: ["visitor5":"visitor5"], accountData: ["account5":"account5"])
         return true
     }
     
@@ -30,6 +35,14 @@ class AppDelegateAdaptor: NSObject, UIApplicationDelegate, UNUserNotificationCen
                 UserCollection.shared.reloadFromCloudKit()
             }
         }
+    }
+    
+    func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
+        if url.scheme?.range(of: "pendo") != nil {
+            PendoManager.shared().initWith(url)
+            return true
+        }
+        return true
     }
 }
 
@@ -48,6 +61,8 @@ struct ACHelperApp: App {
         #else
         WindowGroup {
             contentView
+                .enableSwiftUI()
+                .onOpenURL(perform: handleURLPendo)
         }
         #endif
         
@@ -56,6 +71,12 @@ struct ACHelperApp: App {
             SettingsView()
         }
         #endif
+    }
+    
+    func handleURLPendo(_ url: URL) {
+        print("open url called")
+        _ = appDelegate.application(UIApplication.shared, open: url, options: [:])
+
     }
     
     private var contentView: some View {

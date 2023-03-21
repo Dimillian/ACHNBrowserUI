@@ -20,7 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         let window = UIWindow(frame: UIScreen.main.bounds)
         window.rootViewController = UIHostingController(rootView: HomeView()
-            .environmentObject(UserCollection())
+            //.environmentObject(UserCollection())
             .environmentObject(Items.shared))
         self.window = window
         window.makeKeyAndVisible()

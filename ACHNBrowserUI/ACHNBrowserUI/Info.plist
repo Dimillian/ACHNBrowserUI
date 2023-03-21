@@ -45,6 +45,16 @@
 				<string>achelperapp</string>
 			</array>
 		</dict>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLName</key>
+			<string>pendo-709d5d2e</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>pendo-709d5d2e</string>
+			</array>
+		</dict>
 	</array>
 	<key>CFBundleVersion</key>
 	<string>$(CURRENT_PROJECT_VERSION)</string>
