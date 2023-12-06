@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 52;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -18,6 +18,7 @@
 		3DFC04E424D6DAA3002A6CED /* DreamCodeListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DFC04E324D6DAA3002A6CED /* DreamCodeListView.swift */; };
 		3DFC04E624D6DAAE002A6CED /* DreamCodeRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DFC04E524D6DAAE002A6CED /* DreamCodeRow.swift */; };
 		3DFC04E824D6DABC002A6CED /* DreamCodeDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DFC04E724D6DABC002A6CED /* DreamCodeDetailView.swift */; };
+		424B48122B20AC43006C6BBD /* Pendo in Frameworks */ = {isa = PBXBuildFile; productRef = 424B48112B20AC43006C6BBD /* Pendo */; };
 		4C062B12252BB5BE004DCFA3 /* CurrentDateEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C062B11252BB5BE004DCFA3 /* CurrentDateEnvironment.swift */; };
 		4C30BFC3249627FD003E96A2 /* Sequence+Unique.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C30BFC2249627FC003E96A2 /* Sequence+Unique.swift */; };
 		4C6E95FD24842F690074433B /* Collection+SafeDirectAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C6E95FC24842F690074433B /* Collection+SafeDirectAccess.swift */; };
@@ -419,6 +420,7 @@
 				69157BDB2471A5A1005B9002 /* UI in Frameworks */,
 				69157BDC2471A5A1005B9002 /* ACNHEvents in Frameworks */,
 				69157BDD2471A5A1005B9002 /* Backend in Frameworks */,
+				424B48122B20AC43006C6BBD /* Pendo in Frameworks */,
 				69157BDE2471A5A1005B9002 /* SwiftUIKit in Frameworks */,
 				69157BDF2471A5A1005B9002 /* StoreKit.framework in Frameworks */,
 			);
@@ -1007,6 +1009,7 @@
 				69157B7A2471A5A1005B9002 /* UI */,
 				69157B7B2471A5A1005B9002 /* SwiftUIKit */,
 				69C0A44D24FFFCAF00FE7F4A /* ACNHEvents */,
+				424B48112B20AC43006C6BBD /* Pendo */,
 			);
 			productName = ACHNBrowserUI;
 			productReference = 69157C582471A5A1005B9002 /* AC Helper.app */;
@@ -1092,6 +1095,7 @@
 			packageReferences = (
 				69AA9436246035FF0040A9CA /* XCRemoteSwiftPackageReference "SwiftUIKit" */,
 				69C0A44C24FFFCAF00FE7F4A /* XCRemoteSwiftPackageReference "Date-ACNHEvents" */,
+				424B48102B20AB59006C6BBD /* XCRemoteSwiftPackageReference "pendo-mobile-sdk" */,
 			);
 			productRefGroup = 69AF8C4E243E283D001DD9CB /* Products */;
 			projectDirPath = "";
@@ -1734,6 +1738,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		424B48102B20AB59006C6BBD /* XCRemoteSwiftPackageReference "pendo-mobile-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pendo-io/pendo-mobile-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
+			};
+		};
 		69157B782471A5A1005B9002 /* XCRemoteSwiftPackageReference "Date-ACNHEvents" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/ericlewis/Date-ACNHEvents";
@@ -1769,6 +1781,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		424B48112B20AC43006C6BBD /* Pendo */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 424B48102B20AB59006C6BBD /* XCRemoteSwiftPackageReference "pendo-mobile-sdk" */;
+			productName = Pendo;
+		};
 		69157B772471A5A1005B9002 /* ACNHEvents */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 69157B782471A5A1005B9002 /* XCRemoteSwiftPackageReference "Date-ACNHEvents" */;

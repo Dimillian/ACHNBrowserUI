@@ -19,7 +19,7 @@ class AppDelegateAdaptor: NSObject, UIApplicationDelegate, UNUserNotificationCen
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
         UNUserNotificationCenter.current().delegate = self
         let appKey = "APP_KEY"
-        //PendoManager.shared().setDebugMode(true)
+        PendoManager.shared().setDebugMode(true)
         PendoManager.shared().setup(appKey, with: nil)
         PendoManager.shared().startSession("v61",accountId:"a5", visitorData: ["visitor5":"visitor5"], accountData: ["account5":"account5"])
         return true
@@ -61,7 +61,7 @@ struct ACHelperApp: App {
         #else
         WindowGroup {
             contentView
-                .enableSwiftUI()
+                .pendoEnableSwiftUI()
                 .onOpenURL(perform: handleURLPendo)
         }
         #endif
